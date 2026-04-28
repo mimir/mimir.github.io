@@ -1,0 +1,46 @@
+var namespacemim_1_1plug_1_1regex =
+[
+    [ "LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", "classmim_1_1plug_1_1regex_1_1LowerRegex" ],
+    [ "app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", "structmim_1_1plug_1_1regex_1_1app__range" ],
+    [ "any", "namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49", null ],
+    [ "cls", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938", [
+      [ "d", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a8277e0910d750195b448797616e091ad", null ],
+      [ "D", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af623e75af30e62bbd73d6df5b50bb7b5", null ],
+      [ "w", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68", null ],
+      [ "W", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276", null ],
+      [ "s", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a03c7c0ace395d80182db07ae2c30f034", null ],
+      [ "S", "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a5dbc98dcc983a70728bd082d1a47546e", null ]
+    ] ],
+    [ "conj", "namespacemim_1_1plug_1_1regex.html#a503fd044ea11748600b636a1590a3945", null ],
+    [ "disj", "namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628", null ],
+    [ "empty", "namespacemim_1_1plug_1_1regex.html#a8e7fb7d4e2c8eb1dce002cff7a43cf24", null ],
+    [ "lit", "namespacemim_1_1plug_1_1regex.html#aeded541d9600938bd2b0f7949ebfe7d9", null ],
+    [ "lower_regex", "namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700", null ],
+    [ "neg_lookahead", "namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be", null ],
+    [ "not_", "namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2", null ],
+    [ "quant", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55", [
+      [ "optional", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad57c24f3fe52d16e7169b912dd647f0d", null ],
+      [ "star", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55a8ff953dd97c4405234a04291dee39e0b", null ],
+      [ "plus", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad7d18cfb3a0d8293e2f5d94ea30e04d2", null ]
+    ] ],
+    [ "range", "namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75", null ],
+    [ "any_unwanted_for_not", "namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854", null ],
+    [ "compare_re", "namespacemim_1_1plug_1_1regex.html#ae5b509ae2785246a5099b89e294ac2fe", null ],
+    [ "equals_any", "namespacemim_1_1plug_1_1regex.html#afe291bf091de248e352dada9e3653c04", null ],
+    [ "equals_any", "namespacemim_1_1plug_1_1regex.html#aa8cfe9b14b05191510c403314b69f2f7", null ],
+    [ "equals_any", "namespacemim_1_1plug_1_1regex.html#adf2180c7f13b0b63b87d77fdb41f2e92", null ],
+    [ "get_range", "namespacemim_1_1plug_1_1regex.html#a22ae7a476a9fc4465086b7c5c57c33a7", null ],
+    [ "is_in_range", "namespacemim_1_1plug_1_1regex.html#a57ccd812190be59e69cc7ab1b563dfa9", null ],
+    [ "make_binary_tree", "namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc", null ],
+    [ "make_vector_unique", "namespacemim_1_1plug_1_1regex.html#a141ba9d4adefded9ef82563b7909114f", null ],
+    [ "merge_ranges", "namespacemim_1_1plug_1_1regex.html#a0f11dcb5b9b55f3624a6bcd966b4dcd5", null ],
+    [ "normalize_conj", "namespacemim_1_1plug_1_1regex.html#a69e15eff07c15faf117e019314f4ab43", null ],
+    [ "normalize_disj", "namespacemim_1_1plug_1_1regex.html#aba32ced244f11e75065ef038ce1a6d88", null ],
+    [ "normalize_not", "namespacemim_1_1plug_1_1regex.html#ad065605ee526d9128e4bc7f4ef505fc9", null ],
+    [ "normalize_quant", "namespacemim_1_1plug_1_1regex.html#aceec5ccd650757e2d47331a58afeaed1", null ],
+    [ "normalize_range", "namespacemim_1_1plug_1_1regex.html#a82ed8ada05887f87eca2042aee3d1b1a", null ],
+    [ "regex2nfa", "namespacemim_1_1plug_1_1regex.html#afbafccea4f72061dbaedab24d1fbcede", null ],
+    [ "regex2nfa", "namespacemim_1_1plug_1_1regex.html#a0b697d300d25301e1f6685015daccb3d", null ],
+    [ "register_normalizers", "namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943", null ],
+    [ "Plugin_Id", "namespacemim_1_1plug_1_1regex.html#a820085ea00f02004ffc5a08691db4748", null ]
+];
