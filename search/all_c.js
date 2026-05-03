@@ -5,7 +5,7 @@ var searchData=
   ['m_2',['M',['../mem.html#memM',1,'%mem.M'],['../core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89',1,'M:&#160;normalizers.cpp'],['../math_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89',1,'M:&#160;normalizers.cpp'],['../namespacemim_1_1plug_1_1mem.html#a44127c99fa94a5143565463d65206ea6',1,'mim::plug::mem::M']]],
   ['m_5fanx_3',['M_anx',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ab339ffcc416e89da6a893767c5dc3eba',1,'mim::ast::Tok']]],
   ['m_5fid_4',['M_id',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ad43558618211347eb1e180a76a011d7a',1,'mim::ast::Tok']]],
-  ['main_5',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['main_5',['main',['../namespacedeploy.html#a8a447a3ae55f8e98c0f27f597cedbed4',1,'deploy.main()'],['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp']]],
   ['main_2ecpp_6',['main.cpp',['../main_8cpp.html',1,'']]],
   ['major_7',['major',['../structmim_1_1Version.html#a5606f1ee23a51395505198a6728747fb',1,'mim::Version']]],
   ['make_5fbinary_5ftree_8',['make_binary_tree',['../namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc',1,'mim::plug::regex']]],
