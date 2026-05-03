@@ -9,7 +9,7 @@ var searchData=
   ['has_5fintersection_6',['has_intersection',['../classmim_1_1Sets_1_1Set.html#a02042c1f2200401840312ae0d52e907d',1,'mim::Sets::Set']]],
   ['has_5fret_5fpi_7',['has_ret_pi',['../classmim_1_1Pi.html#a35dd1d3c526daea37a86025d29eb1773',1,'mim::Pi']]],
   ['has_5fvar_8',['has_var',['../classmim_1_1Def.html#af82f20111e9f1cbdbf910d30341bd4ee',1,'mim::Def::has_var()'],['../classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3',1,'mim::Def::has_var() const']]],
-  ['hash_9',['hash',['../classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53',1,'mim::Def::hash()'],['../namespacemim.html#abe915a72a4c1481bb851622d9df4d8bd',1,'mim::hash()']]],
+  ['hash_9',['hash',['../structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597',1,'mim::Version::hash'],['../classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53',1,'mim::Def::hash()'],['../namespacemim.html#abe915a72a4c1481bb851622d9df4d8bd',1,'mim::hash()']]],
   ['hash_2eh_10',['hash.h',['../hash_8h.html',1,'']]],
   ['hash_5fbegin_11',['hash_begin',['../namespacemim.html#ab2a169d2e23178f0163bc05c774d2ac2',1,'mim::hash_begin() noexcept'],['../namespacemim.html#ac30b5cde9bbd181fac8b2cb7bf27fc62',1,'mim::hash_begin(T val) noexcept']]],
   ['hash_5fcombine_12',['hash_combine',['../namespacemim.html#a4d4c9094e2f043e1eca201f173cf96da',1,'mim']]],

@@ -80,6 +80,7 @@ var namespacemim =
     [ "PrefixCleanup", "classmim_1_1PrefixCleanup.html", "classmim_1_1PrefixCleanup" ],
     [ "RetWrap", "classmim_1_1RetWrap.html", "classmim_1_1RetWrap" ],
     [ "SymExprOpt", "classmim_1_1SymExprOpt.html", "classmim_1_1SymExprOpt" ],
+    [ "Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
     [ "Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
     [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
     [ "Rewriter", "classmim_1_1Rewriter.html", "classmim_1_1Rewriter" ],

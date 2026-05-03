@@ -419,6 +419,7 @@ var hierarchy =
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],
+    [ "mim::Version", "structmim_1_1Version.html", null ],
     [ "mim::detail::w2f_&lt; int &gt;", null, null ],
     [ "mim::detail::w2f_&lt; 16 &gt;", null, null ],
     [ "mim::detail::w2f_&lt; 32 &gt;", null, null ],

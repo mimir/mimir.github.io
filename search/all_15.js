@@ -40,12 +40,14 @@ var searchData=
   ['verbose_37',['Verbose',['../classmim_1_1Log.html#aab4ab68f72a5d79c8acc1f1cf7c68590ad4a9fa383ab700c5bdd6f31cf7df0faf',1,'mim::Log']]],
   ['verbose_38',['verbose',['../namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7',1,'mim::plug::refly']]],
   ['verify_39',['verify',['../classmim_1_1World.html#a5b9a9472a5b36bf076bdce94bcb0b672',1,'mim::World']]],
-  ['view_40',['View',['../namespacemim.html#a4d6e32c8985b06c92d46bf1c5fa7491a',1,'mim']]],
-  ['view_41',['view',['../classmim_1_1Vector.html#a960014789eeaed38aabc236e3b5b3d37',1,'mim::Vector']]],
-  ['visit_42',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final'],['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#af0a9accb45252d683e6ddaf37c2e4e91',1,'mim::plug::mem::phase::AddMem::visit()']]],
-  ['vlog_43',['VLOG',['../log_8h.html#a35e71de09dfd64892a48e3f7c56c5619',1,'log.h']]],
-  ['vmode_44',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
-  ['vs_20mim_45',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md97',1,'']]],
-  ['vs_20mutables_46',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
-  ['vs_20varrewriter_47',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md107',1,'']]]
+  ['version_40',['Version',['../structmim_1_1Version.html',1,'mim']]],
+  ['version_41',['version',['../structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251',1,'mim::Plugin::version'],['../classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540',1,'mim::Driver::version()']]],
+  ['view_42',['View',['../namespacemim.html#a4d6e32c8985b06c92d46bf1c5fa7491a',1,'mim']]],
+  ['view_43',['view',['../classmim_1_1Vector.html#a960014789eeaed38aabc236e3b5b3d37',1,'mim::Vector']]],
+  ['visit_44',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final'],['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#af0a9accb45252d683e6ddaf37c2e4e91',1,'mim::plug::mem::phase::AddMem::visit()']]],
+  ['vlog_45',['VLOG',['../log_8h.html#a35e71de09dfd64892a48e3f7c56c5619',1,'log.h']]],
+  ['vmode_46',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
+  ['vs_20mim_47',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md97',1,'']]],
+  ['vs_20mutables_48',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
+  ['vs_20varrewriter_49',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md107',1,'']]]
 ];

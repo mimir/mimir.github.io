@@ -1,7 +1,7 @@
 var searchData=
 [
   ['n_0',['N',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4a8d9c307cb7f3c4a32822a51922d1ceaa',1,'mim::ast']]],
-  ['name_1',['name',['../structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6',1,'mim::World::State::POD::name'],['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Stage.html#a988e8b306b37bd8f2bc3777582516527',1,'mim::Stage::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
+  ['name_1',['name',['../structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11',1,'mim::Plugin::name'],['../structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6',1,'mim::World::State::POD::name'],['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Stage.html#a988e8b306b37bd8f2bc3777582516527',1,'mim::Stage::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
   ['name2annex_2',['name2annex',['../classmim_1_1ast_1_1AST.html#a53873fe117107e145fa35a1eda8383c7',1,'mim::ast::AST']]],
   ['name_5f_3',['name_',['../classmim_1_1Stage.html#a6e49075de2431065ae4e8e804131c28a',1,'mim::Stage']]],
   ['names_20of_20sigmas_4',['Field Names of Sigmas',['../langref.html#autotoc_md61',1,'']]],

@@ -2,6 +2,7 @@ var config_8h =
 [
     [ "MIM_ENABLE_CHECKS", "config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b", null ],
     [ "MIM_EXPORT", "config_8h.html#acf14f602e3976ff8653bb419a1d77a7f", null ],
+    [ "MIM_GIT_HASH", "config_8h.html#a92fcfef0dd9a3b4deb53b1a204ff34d5", null ],
     [ "MIM_IMPORT", "config_8h.html#a47f601791c9e44f2967776168c5e654e", null ],
     [ "MIM_INSTALL_PREFIX", "config_8h.html#ae195ed85eb6cd182186c8365d2203a75", null ],
     [ "MIM_LIBDIR", "config_8h.html#ac717b7c5b637710932a0cfef8020069a", null ],

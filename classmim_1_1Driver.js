@@ -20,5 +20,6 @@ var classmim_1_1Driver =
     [ "search_paths", "classmim_1_1Driver.html#afd36aa36d224823727e7c4e249874754", null ],
     [ "stage", "classmim_1_1Driver.html#af398b24cfa4bac2ae657d2595269ff44", null ],
     [ "stages", "classmim_1_1Driver.html#a00af04ab4b78db159c5bf06a4c033aba", null ],
+    [ "version", "classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540", null ],
     [ "world", "classmim_1_1Driver.html#a6bb261071b0b8c994cf8dd9c90e78351", null ]
 ];

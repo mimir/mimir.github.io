@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['tab_0',['tab',['../classmim_1_1Emitter.html#a8900421e0e65b38133b106e976e290e0',1,'mim::Emitter::tab'],['../structmim_1_1ast_1_1S.html#af1be4c012e04df5c929174bcb994076a',1,'mim::ast::S::tab'],['../structmim_1_1ast_1_1R.html#aa396ebb7e47f95218052ca51b7fd9f8a',1,'mim::ast::R::tab']]],
-  ['tag_1',['tag',['../classmim_1_1Driver_1_1Imports.html#a77a6d63d306c0c9891b6d4dab3db83f7',1,'mim::Driver::Imports::Entry::tag'],['../structmim_1_1Error_1_1Msg.html#a48557b999065c7db3a7f8bddde75f0fc',1,'mim::Error::Msg::tag'],['../namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5',1,'mim::ast::AnnexInfo.sym::tag'],['../namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5',1,'mim::ast::AnnexInfo.id::tag']]],
-  ['top_2',['top',['../classmim_1_1lct_1_1Node.html#abcb4a31fc88a7e97ea7c07c22a0afbbe',1,'mim::lct::Node']]],
-  ['trace_5fgids_3',['trace_gids',['../namespacemim.html#a6751eae1d81d212268261fecba66fa6a',1,'mim::Flags']]],
-  ['trip_4',['trip',['../namespacemim_1_1ast.html#a7da7993d1249cb28b4e0c3e8524d15d2',1,'mim::ast::AnnexInfo.id']]],
-  ['trip_5f_5',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
-  ['trip_5fend_6',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
-  ['type_7',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
-  ['types_5f_8',['types_',['../classmim_1_1Emitter.html#a95c0ebfac75b42f41dd1bb134059c1f4',1,'mim::Emitter']]]
+  ['scalarize_5fthreshold_0',['scalarize_threshold',['../namespacemim.html#a39f92287adf5cb956f0696a740ba3fe7',1,'mim::Flags']]],
+  ['scheduler_5f_1',['scheduler_',['../classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e',1,'mim::Emitter']]],
+  ['sigma2sym2idx_2',['sigma2sym2idx',['../classmim_1_1ast_1_1Emitter.html#aa480a2d5ca25fb73a51ef734f569a708',1,'mim::ast::Emitter']]],
+  ['str_3',['str',['../structmim_1_1Error_1_1Msg.html#aaa0aa4ce4f863fa5b91c557d18d263ac',1,'mim::Error::Msg']]],
+  ['subs_4',['subs',['../structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37',1,'mim::ast::AnnexInfo']]],
+  ['substs_5',['substs',['../classmim_1_1World.html#a4b1bfdc913535dc888b1e9547cd85df2',1,'mim::World::Move.arena']]],
+  ['sym_6',['sym',['../structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c',1,'mim::ast::AnnexInfo::sym'],['../classmim_1_1Driver_1_1Imports.html#a6beeb2c9520722f067b2697d6de8fa94',1,'mim::Driver::Imports::Entry::sym']]]
 ];
