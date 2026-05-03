@@ -148,7 +148,7 @@ Plugin Registry</h1>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 Create a New In-Tree Plugin</h1>
 <p>Create a new in-tree plugin <span class="tt">foobar</span> based on the <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin:</p>
-<div class="fragment"><div class="line">./scripts/new_plugin.sh foobar</div>
+<div class="fragment"><div class="line">./scripts/new_plugin.py foobar</div>
 </div><!-- fragment --><p>The script also supports <span class="tt">-h</span>/<span class="tt">--help</span> and prints the same usage text when called incorrectly.</p>
 <p>By default, the script creates an in-tree plugin and updates <span class="tt">src/mim/plug/CMakeLists.txt</span>. The generated files are:</p>
 <ul>
@@ -162,7 +162,7 @@ Create a New In-Tree Plugin</h1>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 Create a Third-Party Plugin</h1>
 <p>To create a self-contained third-party plugin repository in <span class="tt">extra/</span>, use:</p>
-<div class="fragment"><div class="line">./scripts/new_plugin.sh foobar --extra</div>
+<div class="fragment"><div class="line">./scripts/new_plugin.py foobar --extra</div>
 </div><!-- fragment --><p>This creates <span class="tt">extra/&lt;plugin&gt;/</span> with:</p>
 <ul>
 <li><span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span></li>
@@ -171,8 +171,13 @@ Create a Third-Party Plugin</h1>
 <li><span class="tt">src/normalizers.cpp</span></li>
 <li><span class="tt">include/mim/plug/&lt;plugin&gt;/&lt;plugin&gt;.h</span></li>
 <li><span class="tt">lit/const.mim</span></li>
+<li><span class="tt">.github/workflows/{linux,macos,windows}.yml</span> — GitHub Actions CI/CD workflows</li>
 </ul>
-<p>In <span class="tt">--extra</span> mode, the script also initializes a new Git repository for the plugin.</p>
+<p>In <span class="tt">--extra</span> mode, the script also:</p><ul>
+<li>Initializes a new Git repository for the plugin</li>
+<li>Generates GitHub Actions workflows that automatically build and test the plugin against the main MimIR repository</li>
+<li>Patches workflow configurations to clone the main repository as the parent and the plugin as a submodule in <span class="tt">extra/&lt;plugin&gt;</span></li>
+</ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 Third-Party Plugin Discovery</h2>
 <p>If you clone a plugin repository into <span class="tt">extra/</span>, MimIR picks it up automatically during configuration when the repository contains a <span class="tt">CMakeLists.txt</span> as a direct child of <span class="tt">extra/</span>.</p>
