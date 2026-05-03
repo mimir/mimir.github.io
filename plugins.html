@@ -185,14 +185,20 @@ Third-Party Plugin Discovery</h2>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 Extract an Existing In-Tree Plugin</h1>
 <p>To move an existing in-tree plugin into <span class="tt">extra/foobar</span>, use:</p>
-<div class="fragment"><div class="line">./scripts/extract_plugin.sh foobar</div>
+<div class="fragment"><div class="line">./scripts/extract_plugin.py foobar</div>
 </div><!-- fragment --><p>This moves:</p>
 <ul>
 <li><span class="tt">src/mim/plug/&lt;plugin&gt;/</span> into <span class="tt">extra/&lt;plugin&gt;/</span></li>
 <li><span class="tt">include/mim/plug/&lt;plugin&gt;/</span> into <span class="tt">extra/&lt;plugin&gt;/include/...</span></li>
 <li><span class="tt">lit/&lt;plugin&gt;/</span> into <span class="tt">extra/&lt;plugin&gt;/lit/</span></li>
 </ul>
-<p>It also rewrites the extracted <span class="tt">CMakeLists.txt</span> for out-of-tree use and removes the plugin from the in-tree plugin list so it is picked up through <span class="tt">extra/</span> instead.</p>
+<p>It also:</p>
+<ul>
+<li>Rewrites the extracted <span class="tt">CMakeLists.txt</span> for out-of-tree use</li>
+<li>Removes the plugin from the in-tree plugin list so it is picked up through <span class="tt">extra/</span> instead</li>
+<li>Generates GitHub Actions workflows that automatically build and test the extracted plugin against the main MimIR repository</li>
+</ul>
+<p>The extracted plugin is staged with <span class="tt">git add</span> but not committed, allowing you to review the changes before committing.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
 Standalone Third-Party Builds</h1>
 <p>After installing MimIR, a third-party plugin only needs to find the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> package. For example, a plugin called <span class="tt">foo</span> can be set up like this:</p>
