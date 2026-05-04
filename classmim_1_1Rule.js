@@ -2,6 +2,7 @@ var classmim_1_1Rule =
 [
     [ "check", "classmim_1_1Rule.html#ade30e45e26f5be1fe141982cc4363273", null ],
     [ "check", "classmim_1_1Rule.html#a9e682f024f1f25fc214b05c9bcf6ab8f", null ],
+    [ "dom", "classmim_1_1Rule.html#a3397f95033a6157ad2328dc96c494298", null ],
     [ "guard", "classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9", null ],
     [ "immutabilize", "classmim_1_1Rule.html#a831f7ae7c39ded9df6444b9d919de7b1", null ],
     [ "is_in_rule", "classmim_1_1Rule.html#ab25b01037aaa77f4cf3c7b4a65217885", null ],
@@ -12,7 +13,6 @@ var classmim_1_1Rule =
     [ "reduction_offset", "classmim_1_1Rule.html#a96f812ae2eae4f26ceac27027c24e688", null ],
     [ "replace", "classmim_1_1Rule.html#aadf2fefa889ae1601205a60413c31fd5", null ],
     [ "rhs", "classmim_1_1Rule.html#ac2225d65a41229b955e97eb9c1ffe1f8", null ],
-    [ "set", "classmim_1_1Rule.html#a6b9f6e8c243752c39888a8bfd53f0dad", null ],
     [ "set", "classmim_1_1Rule.html#ab0c6923efadf1a283f85a2d238467056", null ],
     [ "set_guard", "classmim_1_1Rule.html#a6037d58b4bebbeb05d7bb84159d3b4f9", null ],
     [ "set_lhs", "classmim_1_1Rule.html#a31c0f76997d3c964c7527b462462ba26", null ],

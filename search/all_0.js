@@ -125,7 +125,7 @@ var searchData=
   ['assert_5femplace_122',['assert_emplace',['../namespacemim.html#a217db174daa31eb9e4001c60c099a96f',1,'mim']]],
   ['assert_5flookup_123',['assert_lookup',['../namespacemim.html#af140486d32afbf3b0c29b21703baa0dc',1,'mim']]],
   ['assertf_124',['assertf',['../print_8h.html#a7bc6143638d489bb640260462bf07777',1,'print.h']]],
-  ['assign_125',['assign',['../structmim_1_1ll_1_1BB.html#af1abb3f1113c7b15530edc50d6287dad',1,'mim::ll::BB::assign()'],['../structmim_1_1sexpr_1_1BB.html#a6c1abe983f78ca95022f1e536f31aefd',1,'mim::sexpr::BB::assign(Tab tab, std::string name, const char *s, Args &amp;&amp;... args)'],['../structmim_1_1sexpr_1_1BB.html#a6c37e9a7403afb87aa5e8fb78f3f1dd9',1,'mim::sexpr::BB::assign(Tab tab, std::string name, Fn &amp;&amp;print_term)']]],
+  ['assign_125',['assign',['../structmim_1_1ll_1_1BB.html#af1abb3f1113c7b15530edc50d6287dad',1,'mim::ll::BB::assign()'],['../structmim_1_1sexpr_1_1BB.html#a76e73a5466bd8c348c0c35c99b0e617a',1,'mim::sexpr::BB::assign(Tab tab, bool slotted, std::string name, const char *s, Args &amp;&amp;... args)'],['../structmim_1_1sexpr_1_1BB.html#aadd0366335a30837b9b1493ad25c78fc',1,'mim::sexpr::BB::assign(Tab tab, bool slotted, std::string name, Fn &amp;&amp;print_term)']]],
   ['assignable_126',['assignable',['../classmim_1_1Checker.html#ab291516af0fc26cbe0cef6f0cfdbd075',1,'mim::Checker']]],
   ['assigned_127',['assigned',['../structmim_1_1sexpr_1_1BB.html#ab161deefc3b29112910e20de8181c1ff',1,'mim::sexpr::BB']]],
   ['assoc_128',['Assoc',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::ast::Assoc'],['../namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::Assoc']]],

@@ -1,9 +1,9 @@
 var classmim_1_1Reform =
 [
-    [ "Reform", "classmim_1_1Reform.html#ae70fc189447dfc1a78fd82978ae5bbb5", null ],
+    [ "Reform", "classmim_1_1Reform.html#a28832b956f62e3d47fd569870e50bc15", null ],
     [ "check", "classmim_1_1Reform.html#a43b00cbf3eef3aadf37bc630a36be3a0", null ],
-    [ "infer", "classmim_1_1Reform.html#a0ea55fd65a3d43201e97b092fa2f23af", null ],
-    [ "meta_type", "classmim_1_1Reform.html#a05122932e32ffa4ece36aeed376071eb", null ],
+    [ "dom", "classmim_1_1Reform.html#a6b21eedc94ae42b927623417074cfea8", null ],
+    [ "infer", "classmim_1_1Reform.html#a6370dab4fa7b6581dbdfdc6270003b55", null ],
     [ "rebuild_", "classmim_1_1Reform.html#a006cde64b9a0b4d1a02534e75918b8c5", null ],
     [ "set", "classmim_1_1Reform.html#a04bc94151eb2087ee8f9d4ecaf8cae17", null ],
     [ "set", "classmim_1_1Reform.html#a4dd6986712b61ead7adbf7e39008d216", null ],
