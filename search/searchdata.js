@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "abcdefgijklmnopqrstuvwz",
   8: "abcdefghijklmnoprstuvwx",
   9: "acfilnopsw",
-  10: "acdeghimtvw",
+  10: "acdegimtvw",
   11: "abcdefghiklmnopqrstuvwxz⚖🌊🐉💡💬📖📦🔥🚀🧩🪾",
   12: "aev"
 };

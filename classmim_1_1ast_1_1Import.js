@@ -1,6 +1,7 @@
 var classmim_1_1ast_1_1Import =
 [
     [ "Import", "classmim_1_1ast_1_1Import.html#a27f88e248fe7d47dfd5749dc20f40ebb", null ],
+    [ "~Import", "classmim_1_1ast_1_1Import.html#a5bf9eb37b6f0183d91f89b9bf71e5098", null ],
     [ "bind", "classmim_1_1ast_1_1Import.html#a37dff1c3c359df5cc3c42c51859c34c1", null ],
     [ "dbg", "classmim_1_1ast_1_1Import.html#a42d6998af2c493d30fc151acfb8b8945", null ],
     [ "emit", "classmim_1_1ast_1_1Import.html#a52363ef4d493eeaeccf490a5a15a0fa3", null ],

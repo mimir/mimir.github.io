@@ -277,7 +277,7 @@ $(function(){initNavTree('print_8h_source.html','',''); });
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::ranges::range&lt;<span class="keyword">decltype</span>(t)&gt;) {</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                    detail::range(os, t, [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; x) { os &lt;&lt; x; }, spec.c_str());</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                    []&lt;<span class="keywordtype">bool</span> flag = <span class="keyword">false</span>&gt;() { <span class="keyword">static_assert</span>(flag, <span class="stringliteral">&quot;cannot print T t&quot;</span>); }();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                    <span class="keyword">static_assert</span>(<span class="keyword">false</span>, <span class="stringliteral">&quot;cannot print T t&quot;</span>);</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                }</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                ++s; <span class="comment">// skip closing brace &#39;}&#39;</span></div>
