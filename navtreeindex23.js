@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"namespacemim_1_1plug_1_1refly.html#af88a8fe0163ea6329bf6e4a5f1bf1aa6a5995fd022dd5387aeef53438e689619e":[2,0,3,1,13,4,1],
 "namespacemim_1_1plug_1_1refly.html#af88a8fe0163ea6329bf6e4a5f1bf1aa6a8c3bd40d02d3638c3fe992022e97c105":[2,0,3,1,13,4,4],
 "namespacemim_1_1plug_1_1refly.html#af88a8fe0163ea6329bf6e4a5f1bf1aa6aa3ebaa0ade1e4a2c852d65888af024ad":[2,0,3,1,13,4,3],
 "namespacemim_1_1plug_1_1refly.html#af88a8fe0163ea6329bf6e4a5f1bf1aa6ab6bb43df4525b928a105fb5741bddbea":[2,0,3,1,13,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "ret__wrap_8h.html":[5,0,3,1,3,5],
 "ret__wrap_8h_source.html":[5,0,3,1,3,5],
 "rewrite_8cpp.html":[5,0,4,1,18],
-"rewrite_8cpp.html#a199de7dc7775a7eb7d9cc11702d1da1a":[5,0,4,1,18,1],
-"rewrite_8cpp.html#abf17bc3bdf547027cc35451498d99653":[5,0,4,1,18,0]
+"rewrite_8cpp.html#a199de7dc7775a7eb7d9cc11702d1da1a":[5,0,4,1,18,1]
 };

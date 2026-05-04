@@ -41,6 +41,7 @@ var searchData=
   ['mim_5fver_5fmajor_38',['MIM_VER_MAJOR',['../config_8h.html#aeb0c2d81a9a26003fdbc1b6d37287fc7',1,'config.h']]],
   ['mim_5fver_5fminor_39',['MIM_VER_MINOR',['../config_8h.html#a6b91bd3488a1b181a3e8dad53777db22',1,'config.h']]],
   ['mim_5fver_5fpatch_40',['MIM_VER_PATCH',['../config_8h.html#a82839e2d7d1e1a27a0a675e064bd08bc',1,'config.h']]],
-  ['mim_5fversion_41',['MIM_VERSION',['../plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2',1,'plugin.h']]],
-  ['mim_5fwhich_42',['MIM_WHICH',['../sys_8h.html#ad457af6e616c0224bf4ce333a32a44e4',1,'sys.h']]]
+  ['mim_5fver_5fsuffix_41',['MIM_VER_SUFFIX',['../config_8h.html#a654388ccf586a85da62a6d443b103a9e',1,'config.h']]],
+  ['mim_5fversion_42',['MIM_VERSION',['../plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2',1,'plugin.h']]],
+  ['mim_5fwhich_43',['MIM_WHICH',['../sys_8h.html#ad457af6e616c0224bf4ce333a32a44e4',1,'sys.h']]]
 ];

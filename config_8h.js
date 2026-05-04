@@ -9,5 +9,6 @@ var config_8h =
     [ "MIM_VER", "config_8h.html#ad8adedde073ee4865d498db98ba9efd6", null ],
     [ "MIM_VER_MAJOR", "config_8h.html#aeb0c2d81a9a26003fdbc1b6d37287fc7", null ],
     [ "MIM_VER_MINOR", "config_8h.html#a6b91bd3488a1b181a3e8dad53777db22", null ],
-    [ "MIM_VER_PATCH", "config_8h.html#a82839e2d7d1e1a27a0a675e064bd08bc", null ]
+    [ "MIM_VER_PATCH", "config_8h.html#a82839e2d7d1e1a27a0a675e064bd08bc", null ],
+    [ "MIM_VER_SUFFIX", "config_8h.html#a654388ccf586a85da62a6d443b103a9e", null ]
 ];
