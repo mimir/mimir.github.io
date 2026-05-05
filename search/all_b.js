@@ -52,7 +52,7 @@ var searchData=
   ['level_49',['level',['../classmim_1_1ast_1_1TypeExpr.html#a39453cdf57c2c95c8ca7ce9df3fcada7',1,'mim::ast::TypeExpr::level()'],['../classmim_1_1Type.html#ad08cbde7c9801e27a6181ff0cf633fc8',1,'mim::Type::level()'],['../classmim_1_1Nest_1_1Node.html#a5ca8a41842e20f1ccf3a9ecb40630546',1,'mim::Nest::Node::level()'],['../classmim_1_1Log.html#a56d140e471c99a5737bf1b5f815de975',1,'mim::Log::level()']]],
   ['level_20matrix_20operations_50',['High-level matrix operations',['../matrix.html#autotoc_md233',1,'']]],
   ['level2acro_51',['level2acro',['../classmim_1_1Log.html#a489724a84829e8b3de2435e186ccfd25',1,'mim::Log']]],
-  ['level2color_52',['level2color',['../classmim_1_1Log.html#ad8f11a38f9affff739754f54d0b33257',1,'mim::Log']]],
+  ['level2color_52',['level2color',['../classmim_1_1Log.html#a57dc689c1ad0a6e5c3d0a3fc2bcae855',1,'mim::Log']]],
   ['level_5ft_53',['level_t',['../namespacemim.html#a81981a41f846c6a9c2a7d3d57fa81189',1,'mim']]],
   ['lex_54',['lex',['../classmim_1_1ast_1_1Lexer.html#a90fea1e1e499fa571bac95fb0d3afdc0',1,'mim::ast::Lexer']]],
   ['lexer_55',['Lexer',['../classmim_1_1ast_1_1Lexer.html',1,'mim::ast::Lexer'],['../classmim_1_1ast_1_1Lexer.html#a2c4465a819bb668e3af188f07e455bc8',1,'mim::ast::Lexer::Lexer()']]],

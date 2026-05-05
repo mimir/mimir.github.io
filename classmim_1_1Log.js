@@ -12,7 +12,7 @@ var classmim_1_1Log =
     [ "flags", "classmim_1_1Log.html#a82ecbd5ec62978304a8f3eda60981d9b", null ],
     [ "level", "classmim_1_1Log.html#a56d140e471c99a5737bf1b5f815de975", null ],
     [ "level2acro", "classmim_1_1Log.html#a489724a84829e8b3de2435e186ccfd25", null ],
-    [ "level2color", "classmim_1_1Log.html#ad8f11a38f9affff739754f54d0b33257", null ],
+    [ "level2color", "classmim_1_1Log.html#a57dc689c1ad0a6e5c3d0a3fc2bcae855", null ],
     [ "log", "classmim_1_1Log.html#a49e3c6b8b969fd0e8c907f9e472e316d", null ],
     [ "log", "classmim_1_1Log.html#ab3fb5890b2e5c09efad830efeae6f508", null ],
     [ "operator bool", "classmim_1_1Log.html#a922a7d38ec807db871706e536009e18d", null ],
