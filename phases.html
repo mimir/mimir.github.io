@@ -351,7 +351,7 @@ Typical Shape</h2>
 <div class="line">        <span class="keywordflow">return</span> Rewriter::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00144">phase.h:144</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00168">phase.h:168</a></div></div>
 </div><!-- fragment --><p>Run it with:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;MyRWPhase&gt;</a>(world);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_phase_man"></a>
@@ -374,7 +374,7 @@ Typical Shape</h2>
 <div class="line"><a class="code hl_class" href="classmim_1_1PhaseMan.html">mim::PhaseMan</a> man(world, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a">mim::plug::compile::phases</a>);</div>
 <div class="line">man.apply(<span class="comment">/*fixed_point=*/</span><span class="keyword">true</span>, std::move(phases));</div>
 <div class="line">man.run();</div>
-<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00311">phase.h:311</a></div></div>
+<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00335">phase.h:335</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1compile_html_a2ad95a9bc25b51ef2cd839513ac0fc3a"><div class="ttname"><a href="namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a">mim::plug::compile::phases</a></div><div class="ttdeci">phases</div><div class="ttdef"><b>Definition</b> <a href="compile_2autogen_8h_source.html#l00043">autogen.h:43</a></div></div>
 <div class="ttc" id="anamespacemim_html_ace9968a67fd836075490bf9fe9b62457"><div class="ttname"><a href="namespacemim.html#ace9968a67fd836075490bf9fe9b62457">mim::Phases</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; Phase &gt; &gt; Phases</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00022">phase.h:22</a></div></div>
 </div><!-- fragment --><p>Use a fixed-point pipeline when phases expose new optimization opportunities for one another.</p>
@@ -402,7 +402,7 @@ Typical Shape</h2>
 <div class="line">        <span class="comment">// process each reachable closed Lam</span></div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00342">phase.h:342</a></div></div>
+<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00366">phase.h:366</a></div></div>
 <div class="ttc" id="aclassmim_1_1ClosedMutPhase_html_ad472ea7c10d353cbd478faa84708322e"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e">mim::ClosedMutPhase::visit</a></div><div class="ttdeci">virtual void visit(M *)=0</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="phases_nest_phase"></a>
 NestPhase</h2>
@@ -505,9 +505,11 @@ Analysis</h2>
 <div class="line">        <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a>(lam-&gt;var(), abstr_var);</div>
 <div class="line">        lattice_[lam-&gt;var()] = abstr_var;</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacemim.html#a2b0eba3a59bd19880f571afb77e4d611">lookup</a>(lam))</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacemim.html#a2b0eba3a59bd19880f571afb77e4d611">lookup</a>(lam)) {</div>
+<div class="line">            <span class="keyword">auto</span> _ = enter(lam);</div>
 <div class="line">            <span class="keywordflow">for</span> (<span class="keyword">auto</span> d : lam-&gt;deps())</div>
 <div class="line">                rewrite(d);</div>
+<div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordflow">return</span> world().app(lam, abstr_args);</div>
 <div class="line">    }</div>

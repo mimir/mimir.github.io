@@ -224,6 +224,7 @@ var menudata={children:[
 {text:"Related Symbols",url:"functions_rela.html",children:[
 {text:"a",url:"functions_rela.html#index_a"},
 {text:"c",url:"functions_rela.html#index_c"},
+{text:"e",url:"functions_rela.html#index_e"},
 {text:"f",url:"functions_rela.html#index_f"},
 {text:"i",url:"functions_rela.html#index_i"},
 {text:"l",url:"functions_rela.html#index_l"},
