@@ -2,6 +2,7 @@ var classmim_1_1Analysis =
 [
     [ "Analysis", "classmim_1_1Analysis.html#a4515f0f091b7c563a7fec2b5a5127b9a", null ],
     [ "Analysis", "classmim_1_1Analysis.html#aee9e19bc9197491f6b62b274fbf2378c", null ],
+    [ "curr_mut", "classmim_1_1Analysis.html#ac32997174041824d682869da3b5afa9b", null ],
     [ "is_bootstrapping", "classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd", null ],
     [ "lattice", "classmim_1_1Analysis.html#ab9a6d69d1f878706cd3a27b577f65396", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
@@ -11,5 +12,6 @@ var classmim_1_1Analysis =
     [ "rewrite_mut", "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7", null ],
     [ "start", "classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04", null ],
     [ "world", "classmim_1_1Analysis.html#a8de439bc818291da9a12c82f794a4d65", null ],
+    [ "curr_mut_", "classmim_1_1Analysis.html#add3480f8d3f6ccc64a7e7d45f4eaf888", null ],
     [ "lattice_", "classmim_1_1Analysis.html#a9abe79797e8a50b55655cbf950903282", null ]
 ];
