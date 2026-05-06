@@ -1,5 +1,7 @@
 var NAVTREEINDEX22 =
 {
+"namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a8a68dc3e925eacf92633be230722a140":[2,0,3,1,5,4,1],
+"namespacemim_1_1plug_1_1math.html#a5d57b5407d4e7b250b7fb85f95699635":[2,0,3,1,5,41],
 "namespacemim_1_1plug_1_1math.html#a638f19e14b30d84e0a57f808645bc3d7":[2,0,3,1,5,24],
 "namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b":[2,0,3,1,5,25],
 "namespacemim_1_1plug_1_1math.html#a6997da1ee16a8a8176042a524ae02dae":[2,0,3,1,5,36],
@@ -247,7 +249,5 @@ var NAVTREEINDEX22 =
 "namespacemim_1_1plug_1_1refly.html#a9332fc41c063054ce7501beeff95c030":[2,0,3,1,13,17],
 "namespacemim_1_1plug_1_1refly.html#a97e1eae14a36a579e362b10503e5833f":[2,0,3,1,13,18],
 "namespacemim_1_1plug_1_1refly.html#a9baeafefe6ccb99821f97f9035d52c62":[2,0,3,1,13,24],
-"namespacemim_1_1plug_1_1refly.html#aa892e670a3611c79d730ddfe61bea1b8":[2,0,3,1,13,7],
-"namespacemim_1_1plug_1_1refly.html#aaa7635b22e58dbea43a404116ff8a640":[2,0,3,1,13,11],
-"namespacemim_1_1plug_1_1refly.html#aabcca7ba2e76b301232765af42655418":[2,0,3,1,13,22]
+"namespacemim_1_1plug_1_1refly.html#aa892e670a3611c79d730ddfe61bea1b8":[2,0,3,1,13,7]
 };
