@@ -207,9 +207,6 @@ var annotated_dup =
       [ "FNV1&lt; 4 &gt;", "structmim_1_1FNV1_3_014_01_4.html", "structmim_1_1FNV1_3_014_01_4" ],
       [ "FNV1&lt; 8 &gt;", "structmim_1_1FNV1_3_018_01_4.html", "structmim_1_1FNV1_3_018_01_4" ],
       [ "Log", "classmim_1_1Log.html", "classmim_1_1Log" ],
-      [ "Elem", "structmim_1_1Elem.html", "structmim_1_1Elem" ],
-      [ "StreamFn", "structmim_1_1StreamFn.html", "structmim_1_1StreamFn" ],
-      [ "Tab", "classmim_1_1Tab.html", "classmim_1_1Tab" ],
       [ "Sets", "classmim_1_1Sets.html", "classmim_1_1Sets" ],
       [ "Span", "classmim_1_1Span.html", "classmim_1_1Span" ],
       [ "unique_stack", "classmim_1_1unique__stack.html", "classmim_1_1unique__stack" ],
@@ -221,6 +218,12 @@ var annotated_dup =
     ] ],
     [ "std", "namespacestd.html", [
       [ "tuple_size&lt; mim::Span&lt; T, N &gt; &gt;", "structstd_1_1tuple__size_3_01mim_1_1Span_3_01T_00_01N_01_4_01_4.html", null ],
-      [ "tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;", "namespacestd.html#structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4", "namespacestd_structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4_dup" ]
+      [ "tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;", "namespacestd.html#structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4", "namespacestd_structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4_dup" ],
+      [ "formatter&lt; mim::ast::S &gt;", "structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html", null ],
+      [ "formatter&lt; mim::ast::R&lt; T &gt; &gt;", "structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html", null ],
+      [ "formatter&lt; mim::Op &gt;", "structstd_1_1formatter_3_01mim_1_1Op_01_4.html", null ],
+      [ "formatter&lt; mim::Dump &gt;", "structstd_1_1formatter_3_01mim_1_1Dump_01_4.html", null ],
+      [ "formatter&lt; automaton::DFA &gt;", "structstd_1_1formatter_3_01automaton_1_1DFA_01_4.html", null ],
+      [ "formatter&lt; automaton::NFA &gt;", "structstd_1_1formatter_3_01automaton_1_1NFA_01_4.html", null ]
     ] ]
 ];

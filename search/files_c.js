@@ -11,7 +11,5 @@ var searchData=
   ['plugin_2eh_8',['plugin.h',['../plugin_8h.html',1,'']]],
   ['plugins_2emd_9',['plugins.md',['../plugins_8md.html',1,'']]],
   ['prefix_5fcleanup_2ecpp_10',['prefix_cleanup.cpp',['../prefix__cleanup_8cpp.html',1,'']]],
-  ['prefix_5fcleanup_2eh_11',['prefix_cleanup.h',['../prefix__cleanup_8h.html',1,'']]],
-  ['print_2ecpp_12',['print.cpp',['../print_8cpp.html',1,'']]],
-  ['print_2eh_13',['print.h',['../print_8h.html',1,'']]]
+  ['prefix_5fcleanup_2eh_11',['prefix_cleanup.h',['../prefix__cleanup_8h.html',1,'']]]
 ];

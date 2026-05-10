@@ -6,5 +6,5 @@ var classmim_1_1ast_1_1AppExpr =
     [ "callee", "classmim_1_1ast_1_1AppExpr.html#adb5a570d2d1c6b72c378d65be51f3d14", null ],
     [ "emit_", "classmim_1_1ast_1_1AppExpr.html#a6c93214454d321e24487bfadfaff7954", null ],
     [ "is_explicit", "classmim_1_1ast_1_1AppExpr.html#a82a6269aebf052bf0390dfda382257b0", null ],
-    [ "stream", "classmim_1_1ast_1_1AppExpr.html#a75ee76bd0560974ba92256c5b0269f32", null ]
+    [ "stream", "classmim_1_1ast_1_1AppExpr.html#a71f1eb9956a9015744a390de3aaa60ee", null ]
 ];

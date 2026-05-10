@@ -8,6 +8,6 @@ var classmim_1_1ast_1_1RuleDecl =
     [ "is_normalizer", "classmim_1_1ast_1_1RuleDecl.html#a436fae2a72a0e86c3004fe7a71b9d676", null ],
     [ "lhs", "classmim_1_1ast_1_1RuleDecl.html#ac753ab2f9274d165bbd1062c9b18ca87", null ],
     [ "rhs", "classmim_1_1ast_1_1RuleDecl.html#ac3998bb2935420c2a2244bf2fe56724d", null ],
-    [ "stream", "classmim_1_1ast_1_1RuleDecl.html#a007a491c8f2773b968517bc6b4f5f416", null ],
+    [ "stream", "classmim_1_1ast_1_1RuleDecl.html#afba16a6acd7e2de31859ad965ba86cd6", null ],
     [ "var", "classmim_1_1ast_1_1RuleDecl.html#a3b47f29265106727248c3f18e9cac35c", null ]
 ];

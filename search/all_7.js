@@ -3,7 +3,7 @@ var searchData=
   ['h_0',['h',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a2510c39011c5be704182423e3a695e91',1,'mim::plug::math']]],
   ['handle_1',['Handle',['../structmim_1_1Plugin.html#aeb76fcde7e35346fbfa6b654345b3bab',1,'mim::Plugin']]],
   ['handling_20of_20mutables_2',['Handling of Mutables',['../phases.html#autotoc_md64',1,'']]],
-  ['has_5fdep_3',['has_dep',['../classmim_1_1Def.html#ab6114c2f33845b89df6c4e551ea438bb',1,'mim::Def::has_dep() const'],['../classmim_1_1Def.html#a24e57816b839ef9209073cff35710c22',1,'mim::Def::has_dep(Dep d) const'],['../classmim_1_1Def.html#a2aedb3937891f8e9575ede65c32b13c2',1,'mim::Def::has_dep(unsigned u) const']]],
+  ['has_5fdep_3',['has_dep',['../classmim_1_1Def.html#a1c60c2953cf5f5ad2869bf24c7870417',1,'mim::Def::has_dep() const noexcept'],['../classmim_1_1Def.html#a4f0300a8b362f5ec48447fe4954f3fd0',1,'mim::Def::has_dep(Dep d) const noexcept']]],
   ['has_5fintersection_4',['has_intersection',['../classmim_1_1Sets_1_1Set.html#a02042c1f2200401840312ae0d52e907d',1,'mim::Sets::Set']]],
   ['has_5fret_5fpi_5',['has_ret_pi',['../classmim_1_1Pi.html#a35dd1d3c526daea37a86025d29eb1773',1,'mim::Pi']]],
   ['has_5fvar_6',['has_var',['../classmim_1_1Def.html#af82f20111e9f1cbdbf910d30341bd4ee',1,'mim::Def::has_var()'],['../classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3',1,'mim::Def::has_var() const']]],

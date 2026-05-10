@@ -8,7 +8,7 @@ var searchData=
   ['w2s_5',['w2s',['../namespacemim.html#a92529c353d14b56a3c8470bdad2d770a',1,'mim']]],
   ['w2u_6',['w2u',['../namespacemim.html#ad0b148caad3b040f944f32bc4fa9a966',1,'mim']]],
   ['warn_7',['Warn',['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a56525ae64d370c0b448ac0d60710ef17',1,'mim::Error::Warn'],['../classmim_1_1Log.html#aab4ab68f72a5d79c8acc1f1cf7c68590a56525ae64d370c0b448ac0d60710ef17',1,'mim::Log::Warn']]],
-  ['warn_8',['warn',['../classmim_1_1ast_1_1AST.html#abda5004e0deb5465971b8a89ccee621a',1,'mim::ast::AST::warn()'],['../classmim_1_1Error.html#a8ae7ddb0b5f946fe6fd3c15f1d7cfd31',1,'mim::Error::warn()'],['../namespacemim_1_1plug_1_1refly.html#a7b28d3c30005b51a4045c19a3beee279',1,'mim::plug::refly::warn']]],
+  ['warn_8',['warn',['../classmim_1_1ast_1_1AST.html#a391d4a44b6ac9f5924184830c26f7231',1,'mim::ast::AST::warn()'],['../classmim_1_1Error.html#a65c90ba3c493fba1fc2f308c9db2e3dd',1,'mim::Error::warn()'],['../namespacemim_1_1plug_1_1refly.html#a7b28d3c30005b51a4045c19a3beee279',1,'mim::plug::refly::warn']]],
   ['watchpoint_9',['watchpoint',['../classmim_1_1World.html#a26f0fb5ac4918e179c288f377757d8a9',1,'mim::World']]],
   ['watchpoints_10',['watchpoints',['../structmim_1_1World_1_1State.html#a22d5dcbcefd078fb05bc965ab3c6ebbc',1,'mim::World::State::watchpoints'],['../classmim_1_1World.html#a3927508f5ffda384019188e6141e7f85',1,'mim::World::watchpoints()']]],
   ['why_20mimir_11',['💡 Why MimIR?',['../index.html#autotoc_md91',1,'']]],

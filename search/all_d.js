@@ -134,7 +134,7 @@ var searchData=
   ['not_5f_131',['not_',['../regex.html#autotoc_md314',1,'%regex.not_'],['../namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2',1,'mim::plug::regex::not_']]],
   ['notation_132',['Notation',['../langref.html#autotoc_md41',1,'']]],
   ['note_133',['Note',['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a3b0649c72650c313a357338dcdfb64ec',1,'mim::Error']]],
-  ['note_134',['note',['../classmim_1_1ast_1_1AST.html#a93295daed6715e4c97d791d0cf4a022f',1,'mim::ast::AST::note()'],['../classmim_1_1Error.html#a88c9fc1630230a1b850a231857bd8ac9',1,'mim::Error::note()']]],
+  ['note_134',['note',['../classmim_1_1ast_1_1AST.html#a73986e319514ea5d94b43b8a09a9e406',1,'mim::ast::AST::note()'],['../classmim_1_1Error.html#ab173801f7cd1e2c14738354690df3734',1,'mim::Error::note()']]],
   ['nsnd_135',['nsnd',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a64cb986cf64a6386b3c8e7af71d25bff',1,'mim::plug::core']]],
   ['nsw_136',['nsw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw']]],
   ['nsz_137',['nsz',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a83ad537246c68235c2ff05142fd9c91c',1,'mim::plug::math']]],

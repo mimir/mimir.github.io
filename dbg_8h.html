@@ -117,20 +117,21 @@ $(function(){initNavTree('dbg_8h.html','',''); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">dbg.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;absl/container/flat_hash_map.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;absl/container/flat_hash_map.h&gt;</code><br />
 <code>#include &lt;absl/container/flat_hash_set.h&gt;</code><br />
 <code>#include &lt;fe/loc.h&gt;</code><br />
 <code>#include &lt;fe/sym.h&gt;</code><br />
 <code>#include &lt;fe/term.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="print_8h_source.html">mim/util/print.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for dbg.h:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="dbg_8h__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="dbg_8h__incl.svg" width="100%" height="393"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -152,35 +153,13 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:acb46b9aebb614b0b0d0cb17f8cec06db" id="r_acb46b9aebb614b0b0d0cb17f8cec06db"><td class="memTemplParams" colspan="2">template&lt;class T = std::logic_error, class... Args&gt; </td></tr>
+<tr class="memitem:acb46b9aebb614b0b0d0cb17f8cec06db template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">mim::error</a> (std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:acb46b9aebb614b0b0d0cb17f8cec06db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <span class="tt">std::format</span> to throw <span class="tt">T</span> with a formatted message.  <br /></td></tr>
+<tr class="memitem:abf62ccb6d793fb6e0aa70eab0098b73e" id="r_abf62ccb6d793fb6e0aa70eab0098b73e"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#abf62ccb6d793fb6e0aa70eab0098b73e">mim::operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmim_1_1Error_1_1Msg.html">Error::Msg</a> &amp;msg)</td></tr>
 <tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Formatted Output</div></td></tr>
-<tr><td colspan="2" class="ititle"><div class="groupText"><p><a class="anchor" id="fmt"></a> Provides a <span class="tt">printf</span>-like interface to format <code class="param">s</code> with <code class="param">args</code> and puts it into <code class="param">os</code>.</p>
-<p><a class="el" href="classmim_1_1Use.html" title="const Def*erences a user.">Use</a> <span class="tt">{}</span> as a placeholder within your format string <code class="param">s</code>.</p><ul>
-<li>By default, <span class="tt">os &lt;&lt; t</span> will be used to stream the appropriate argument: <div class="fragment"><div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;int: {}, float: {}&quot;</span>, 23, 42.f);</div>
-<div class="ttc" id="anamespacemim_html_a299eaedf188f01c3d4634dd51dedcb83"><div class="ttname"><a href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">mim::print</a></div><div class="ttdeci">std::ostream &amp; print(std::ostream &amp;os, const char *s)</div><div class="ttdoc">Base case.</div><div class="ttdef"><b>Definition</b> <a href="print_8cpp_source.html#l00005">print.cpp:5</a></div></div>
-</div><!-- fragment --></li>
-<li>You can also place a function as argument to inject arbitrary code: <div class="fragment"><div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;int: {}, fun: {}, float: {}&quot;</span>, 23, [&amp;]() { os &lt;&lt; <span class="stringliteral">&quot;hey :)&quot;</span>}, 42.f);</div>
-</div><!-- fragment --></li>
-<li>There is also a variant to pass <code class="param">os</code> to the function, if you don't have easy access to it: <div class="fragment"><div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;int: {}, fun: {}, float: {}&quot;</span>, 23, [&amp;](<span class="keyword">auto</span>&amp; os) { os &lt;&lt; <span class="stringliteral">&quot;hey :)&quot;</span>}, 42.f);</div>
-</div><!-- fragment --></li>
-<li>You can put a <span class="tt">std::ranges::range</span> as argument. This will output a list - using the given specifier as separator. Each element <span class="tt">elem</span> of the range will be output via <span class="tt">os &lt;&lt; elem</span>: <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {0, 1, 2, 3};</div>
-<div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;v: {, }&quot;</span>, v);</div>
-</div><!-- fragment --></li>
-<li>If you have a <span class="tt">std::ranges::range</span> that needs to be formatted in a more complicated way, bundle it with an <a class="el" href="structmim_1_1Elem.html" title="Use with print to output complicated std::ranges::ranges.">Elem</a>: <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {3, 2, 1, 0};</div>
-<div class="line"><span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;v: {, }&quot;</span>, Elem(v, [&amp;](<span class="keyword">auto</span> elem) { <a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;{}: {}&quot;</span>, i++, elem); }));</div>
-</div><!-- fragment --></li>
-<li>You again have the option to pass <code class="param">os</code> to the bundled function: <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {3, 2, 1, 0};</div>
-<div class="line"><span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;v: {, }&quot;</span>, Elem(v, [&amp;](<span class="keyword">auto</span>&amp; os, <span class="keyword">auto</span> elem) { <a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;{}: {}&quot;</span>, i++, elem); }));</div>
-<div class="line">* <a class="code hl_class" href="classmim_1_1Use.html">Use</a> `{{` or `}}` to literally output `{` or `{`:</div>
-<div class="line"><a class="code hl_function" href="namespacemim.html#a299eaedf188f01c3d4634dd51dedcb83">print</a>(os, <span class="stringliteral">&quot;{{{}}}&quot;</span>, 23); <span class="comment">// &quot;{23}&quot;</span></div>
-<div class="ttc" id="aclassmim_1_1Use_html"><div class="ttname"><a href="classmim_1_1Use.html">mim::Use</a></div><div class="ttdoc">const Def*erences a user.</div><div class="ttdef"><b>Definition</b> <a href="schedule_8h_source.html#l00009">schedule.h:9</a></div></div>
-</div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="classmim_1_1Tab.html" title="Keeps track of indentation level.">Tab</a> </dd></dl>
-</li>
-</ul>
-</div></td></tr>
-<tr class="memitem:a6b2eebef519ceb586fdd7b047a34aa56" id="r_a6b2eebef519ceb586fdd7b047a34aa56"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a6b2eebef519ceb586fdd7b047a34aa56 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a6b2eebef519ceb586fdd7b047a34aa56">mim::error</a> (Loc loc, const char *f, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:acf196d4ba82a4a65ffe21ca021963e14" id="r_acf196d4ba82a4a65ffe21ca021963e14"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:acf196d4ba82a4a65ffe21ca021963e14 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#acf196d4ba82a4a65ffe21ca021963e14">mim::error</a> (Loc loc, std::format_string&lt; Args... &gt; f, Args &amp;&amp;... args)</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

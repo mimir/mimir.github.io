@@ -3,7 +3,7 @@ var classmim_1_1ll_1_1Emitter =
     [ "Super", "classmim_1_1ll_1_1Emitter.html#ad5dad6431ffc8fb3d803e7c43fcf0722", null ],
     [ "Emitter", "classmim_1_1ll_1_1Emitter.html#a24b5bae4d9a33324e570995b3f9c8a84", null ],
     [ "as_targetspecific_intrinsic", "classmim_1_1ll_1_1Emitter.html#a403457a5cbd2d6ffa620c3c08111102d", null ],
-    [ "declare", "classmim_1_1ll_1_1Emitter.html#af3d0b65f073435071f723f699e8f05ca", null ],
+    [ "declare", "classmim_1_1ll_1_1Emitter.html#a4cc105372a1a0a5b393bcf08bc473af4", null ],
     [ "emit_bb", "classmim_1_1ll_1_1Emitter.html#a5fce8e3e895e559e8a970cab8752cb9b", null ],
     [ "emit_epilogue", "classmim_1_1ll_1_1Emitter.html#adcc93c368ca5bcfd407d1ed764c5e35f", null ],
     [ "emit_imported", "classmim_1_1ll_1_1Emitter.html#a18166d6e69e33271c9980169eb2912d0", null ],

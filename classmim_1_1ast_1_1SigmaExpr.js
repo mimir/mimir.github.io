@@ -6,6 +6,6 @@ var classmim_1_1ast_1_1SigmaExpr =
     [ "emit_body", "classmim_1_1ast_1_1SigmaExpr.html#a9062843c827ae6ed506f2f3d19bfa6ab", null ],
     [ "emit_decl", "classmim_1_1ast_1_1SigmaExpr.html#abbd67cd0c76cce116aa5336896c8bd91", null ],
     [ "ptrn", "classmim_1_1ast_1_1SigmaExpr.html#a17ed83a4e0e649938501990e9d97c197", null ],
-    [ "stream", "classmim_1_1ast_1_1SigmaExpr.html#a5409460f6502de91919fd14f8d7aaaa3", null ],
+    [ "stream", "classmim_1_1ast_1_1SigmaExpr.html#aeececcfab2a2db400489daf864d05e09", null ],
     [ "Ptrn::to_ptrn", "classmim_1_1ast_1_1SigmaExpr.html#a89ff9d5ef6fd30362df3fe73a23db4ff", null ]
 ];

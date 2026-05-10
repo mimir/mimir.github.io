@@ -10,5 +10,5 @@ var classmim_1_1ast_1_1Module =
     [ "emit", "classmim_1_1ast_1_1Module.html#a97da72f2750be8062134eb511401d9c2", null ],
     [ "implicit_imports", "classmim_1_1ast_1_1Module.html#a32243f2f3f981c4175219148c8a9cc90", null ],
     [ "imports", "classmim_1_1ast_1_1Module.html#a84e1c550cc133bf969eaed042ef2c34e", null ],
-    [ "stream", "classmim_1_1ast_1_1Module.html#ad334003208e98ee2847de0cd94eeb4c7", null ]
+    [ "stream", "classmim_1_1ast_1_1Module.html#af17fabf475f4fdb5f3358fbd7a0a3558", null ]
 ];

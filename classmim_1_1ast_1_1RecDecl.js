@@ -10,6 +10,6 @@ var classmim_1_1ast_1_1RecDecl =
     [ "emit_body", "classmim_1_1ast_1_1RecDecl.html#a4426a66c6c764d6782087e17a0b515c7", null ],
     [ "emit_decl", "classmim_1_1ast_1_1RecDecl.html#a603da42132febe4a8dfb79c8b2a0dbaa", null ],
     [ "next", "classmim_1_1ast_1_1RecDecl.html#ac7c21cf066f7dbb313f5408b392d49f3", null ],
-    [ "stream", "classmim_1_1ast_1_1RecDecl.html#aff0f5f65fd02cbd8262e8ba42574ddf0", null ],
+    [ "stream", "classmim_1_1ast_1_1RecDecl.html#a2b2abade33c01a8318083fa41979c2c5", null ],
     [ "type", "classmim_1_1ast_1_1RecDecl.html#a9c5240fe4f12c5ac6e5fa6532b97880e", null ]
 ];

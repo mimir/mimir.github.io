@@ -21,7 +21,6 @@ var hierarchy =
     [ "mim::Dbg", "structmim_1_1Dbg.html", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
-    [ "mim::Elem&lt; R, F &gt;", "structmim_1_1Elem.html", null ],
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
     [ "mim::Analysis::Enter", "classmim_1_1Analysis_1_1Enter.html", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],
@@ -66,6 +65,15 @@ var hierarchy =
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
     [ "mim::lct::Node&lt; P, K &gt;", "classmim_1_1lct_1_1Node.html", null ],
     [ "mim::Nest::Node", "classmim_1_1Nest_1_1Node.html", null ],
+    [ "fe::ostream_formatter", null, [
+      [ "std::formatter< automaton::DFA >", "structstd_1_1formatter_3_01automaton_1_1DFA_01_4.html", null ],
+      [ "std::formatter< automaton::DFA >", "structstd_1_1formatter_3_01automaton_1_1DFA_01_4.html", null ],
+      [ "std::formatter< automaton::NFA >", "structstd_1_1formatter_3_01automaton_1_1NFA_01_4.html", null ],
+      [ "std::formatter< mim::Dump >", "structstd_1_1formatter_3_01mim_1_1Dump_01_4.html", null ],
+      [ "std::formatter< mim::Op >", "structstd_1_1formatter_3_01mim_1_1Op_01_4.html", null ],
+      [ "std::formatter< mim::ast::R< T > >", "structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html", null ],
+      [ "std::formatter< mim::ast::S >", "structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html", null ]
+    ] ],
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
     ] ],
@@ -408,11 +416,9 @@ var hierarchy =
       [ "mim::Span< T, N >", "classmim_1_1Span.html", null ]
     ] ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
-    [ "mim::StreamFn&lt; F &gt;", "structmim_1_1StreamFn.html", null ],
     [ "fe::SymPool", null, [
       [ "mim::Driver", "classmim_1_1Driver.html", null ]
     ] ],
-    [ "mim::Tab", "classmim_1_1Tab.html", null ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "std::tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;", "namespacestd.html#structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4", null ],
     [ "mim::unique_queue&lt; Set &gt;", "classmim_1_1unique__queue.html", null ],

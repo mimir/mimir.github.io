@@ -6,6 +6,6 @@ var classmim_1_1ast_1_1CDecl =
     [ "dbg", "classmim_1_1ast_1_1CDecl.html#af3c81d0ce1811aab2befd189380a986d", null ],
     [ "dom", "classmim_1_1ast_1_1CDecl.html#aa2a26d95b235cf86f7c37293a0f6e67f", null ],
     [ "emit", "classmim_1_1ast_1_1CDecl.html#aa6ece682f8f877a000e1f42a682e8fbe", null ],
-    [ "stream", "classmim_1_1ast_1_1CDecl.html#ad6ccc1745e4084f5404eba7c37872434", null ],
+    [ "stream", "classmim_1_1ast_1_1CDecl.html#ad58a45d75d5ccd6f555059594bc364b2", null ],
     [ "tag", "classmim_1_1ast_1_1CDecl.html#a6fd53e9e4bed1d6924de62c6031feb3c", null ]
 ];

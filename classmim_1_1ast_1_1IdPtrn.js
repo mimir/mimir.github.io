@@ -7,6 +7,6 @@ var classmim_1_1ast_1_1IdPtrn =
     [ "emit_value", "classmim_1_1ast_1_1IdPtrn.html#ac42da49ebbef65a1567a9592debea706", null ],
     [ "make_id", "classmim_1_1ast_1_1IdPtrn.html#a840de34d3af2a12ece8a6e8b96354149", null ],
     [ "make_type", "classmim_1_1ast_1_1IdPtrn.html#a4532fd0819c1d193a252563c0496ac09", null ],
-    [ "stream", "classmim_1_1ast_1_1IdPtrn.html#a935bffb9dba657faf6a4cdda0ae38414", null ],
+    [ "stream", "classmim_1_1ast_1_1IdPtrn.html#a0baa026abe3065e5c34e74e6aeac2cb5", null ],
     [ "type", "classmim_1_1ast_1_1IdPtrn.html#aeba3daa186e84e2f857bcc3e40e8a2fc", null ]
 ];
