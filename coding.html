@@ -202,7 +202,8 @@ Contributor Quick Start</h1>
 <div class="fragment"><div class="line">cmake -S . -B build -DBUILD_TESTING=ON -DMIM_BUILD_EXAMPLES=ON</div>
 <div class="line">cmake --build build -j$(nproc)</div>
 </div><!-- fragment --><p>Useful follow-up commands are:</p>
-<div class="fragment"><div class="line">cmake --build build --target lit</div>
+<div class="fragment"><div class="line">cmake --build build --target test-all</div>
+<div class="line">cmake --build build --target lit</div>
 <div class="line">ctest --test-dir build --output-on-failure</div>
 <div class="line">pre-commit run --all-files</div>
 </div><!-- fragment --><p>The following CMake switches are available:</p>
@@ -241,7 +242,9 @@ Dependencies</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> emits LLVM IR, but it does <em>not</em> link against LLVM. So you can simply hand the emitted <span class="tt">*.ll</span> file to your system's LLVM toolchain. Strictly speaking, LLVM is not required unless you want to continue from emitted LLVM IR.</p>
 <h1 class="doxsection"><a class="anchor" id="testing"></a>
 Testing</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<p>Run every in-tree test suite with:</p>
+<div class="fragment"><div class="line">cmake --build build --target test-all</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 lit Tests</h2>
 <p>Run the <a href="https://llvm.org/docs/CommandGuide/lit.html">lit</a> test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target lit</div>
