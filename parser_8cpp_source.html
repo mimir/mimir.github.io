@@ -708,7 +708,7 @@ $(function(){initNavTree('parser_8cpp_source.html','',''); });
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>                <span class="keyword">auto</span> rhs = ptr&lt;IdExpr&gt;(dbg);</div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>                lhs      = ptr&lt;AppExpr&gt;(track, <span class="keyword">false</span>, std::move(lhs), std::move(rhs));</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>            }</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>            <span class="keyword">auto</span> expr = parse_infix_expr(track, std::move(lhs), Prec::App);</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>            <span class="keyword">auto</span> expr = parse_infix_expr(track, std::move(lhs));</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>            ptrn      = <a class="code hl_function" href="classmim_1_1ast_1_1IdPtrn.html#a4532fd0819c1d193a252563c0496ac09">IdPtrn::make_type</a>(<a class="code hl_function" href="classmim_1_1ast_1_1Parser.html#a7644de392100f7603c8e3ffa6d5764e9">ast</a>(), std::move(expr));</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>            ptrn = parse_ptrn(style &amp; Style_Bit, <span class="stringliteral">&quot;element of a tuple pattern&quot;</span>);</div>
