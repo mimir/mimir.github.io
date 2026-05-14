@@ -122,7 +122,7 @@ var searchData=
   ['downcast_20to_20mutables_119',['Downcast to Mutables',['../dev.html#autotoc_md28',1,'']]],
   ['downcasts_20for_20built_20ins_120',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
   ['doxygen_20style_121',['Doxygen Style',['../coding.html#autotoc_md6',1,'']]],
-  ['driver_122',['Driver',['../classmim_1_1Driver.html',1,'mim::Driver'],['../classmim_1_1Driver.html#ae8008e0b5d7a78d738c465d3253aa365',1,'mim::Driver::Driver()']]],
+  ['driver_122',['Driver',['../classmim_1_1Driver.html',1,'mim::Driver'],['../classmim_1_1Driver.html#ae8008e0b5d7a78d738c465d3253aa365',1,'mim::Driver::Driver()'],['../classmim_1_1Driver.html#aab01142c53929ece60b610a25bf0809f',1,'mim::Driver::Driver(const Driver &amp;)=delete'],['../classmim_1_1Driver.html#af9b87b0d6995a419184f6bab396a816f',1,'mim::Driver::Driver(Driver &amp;&amp;)=delete']]],
   ['driver_123',['driver',['../classmim_1_1ast_1_1AST.html#a1a2b4087b193be1f3a330c44f27e35dc',1,'mim::ast::AST::driver()'],['../classmim_1_1ast_1_1Parser.html#ae57f08577b857b2be1363390044f8d91',1,'mim::ast::Parser::driver()'],['../classmim_1_1Stage.html#ae03185612be794ea360e83be93a1ace8',1,'mim::Stage::driver()'],['../classmim_1_1World.html#a32187bcd87365e3a8d712b373ceaa0d5',1,'mim::World::driver() const'],['../classmim_1_1World.html#a2a0347862f33d964457e4c9b64e75625',1,'mim::World::driver()'],['../classmim_1_1ast_1_1Scopes.html#aa09fa4aa5ea992f96da095bd6f172096',1,'mim::ast::Scopes::driver()'],['../classmim_1_1ast_1_1Emitter.html#af63c0e340a1dbef41a23238343e1da1f',1,'mim::ast::Emitter::driver()']]],
   ['driver_2ecpp_124',['driver.cpp',['../driver_8cpp.html',1,'']]],
   ['driver_2eh_125',['driver.h',['../driver_8h.html',1,'']]],

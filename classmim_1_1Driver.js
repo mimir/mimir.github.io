@@ -2,6 +2,8 @@ var classmim_1_1Driver =
 [
     [ "Imports", "classmim_1_1Driver_1_1Imports.html", "classmim_1_1Driver_1_1Imports" ],
     [ "Driver", "classmim_1_1Driver.html#ae8008e0b5d7a78d738c465d3253aa365", null ],
+    [ "Driver", "classmim_1_1Driver.html#aab01142c53929ece60b610a25bf0809f", null ],
+    [ "Driver", "classmim_1_1Driver.html#af9b87b0d6995a419184f6bab396a816f", null ],
     [ "add_search_path", "classmim_1_1Driver.html#a22e91be0c9317382a408550a00200777", null ],
     [ "backend", "classmim_1_1Driver.html#a41e5a945cac9fdfd37830a722b5bd2a4", null ],
     [ "flags", "classmim_1_1Driver.html#ab9bfcad7e7aa1cbbd7a8678dd5864e3c", null ],
@@ -17,6 +19,7 @@ var classmim_1_1Driver =
     [ "log", "classmim_1_1Driver.html#a6c91cf5797a4c02730475dda317cf14e", null ],
     [ "normalizer", "classmim_1_1Driver.html#a9da4ca3384f62706a603bacad94e98e6", null ],
     [ "normalizer", "classmim_1_1Driver.html#a66bee8d7f5f315deb200c65bf3ea0bff", null ],
+    [ "operator=", "classmim_1_1Driver.html#a916332ec561f680e7b66004a1de23325", null ],
     [ "search_paths", "classmim_1_1Driver.html#afd36aa36d224823727e7c4e249874754", null ],
     [ "stage", "classmim_1_1Driver.html#af398b24cfa4bac2ae657d2595269ff44", null ],
     [ "stages", "classmim_1_1Driver.html#a00af04ab4b78db159c5bf06a4c033aba", null ],

@@ -21,6 +21,7 @@ var classmim_1_1Error =
     [ "num_notes", "classmim_1_1Error.html#a620f24bb2c9c6ff2d477f6c5b30da2e0", null ],
     [ "num_warnings", "classmim_1_1Error.html#ab60cdddd3cbd15fedbc5f3dbdc494acd", null ],
     [ "warn", "classmim_1_1Error.html#a65c90ba3c493fba1fc2f308c9db2e3dd", null ],
+    [ "what", "classmim_1_1Error.html#a53829cfbf904e91df403789455fa8fe4", null ],
     [ "operator<<", "classmim_1_1Error.html#a871262d7e4ee05aaa9dd3bf9074ac9e0", null ],
     [ "operator<<", "classmim_1_1Error.html#a8a369575104a47be742d51e7d814d99b", null ],
     [ "swap", "classmim_1_1Error.html#a1e0561c69d6a084e21caf8243b300040", null ]
