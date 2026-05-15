@@ -1,20 +1,20 @@
 var searchData=
 [
   ['valgrind_20gdb_0',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md17',1,'']]],
-  ['values_1',['Values',['../regex.html#autotoc_md311',1,'']]],
+  ['values_1',['Values',['../regex.html#autotoc_md317',1,'']]],
   ['variables_2',['Variables',['../dev.html#autotoc_md24',1,'']]],
   ['variants_3',['Thresholded Variants',['../dev.html#autotoc_md37',1,'']]],
-  ['varrewriter_4',['VarRewriter',['../rewriting.html#autotoc_md108',1,'Rewriter vs. VarRewriter'],['../rewriting.html#varrewriter',1,'VarRewriter']]],
-  ['vec_20diff_5',['%vec.diff',['../vec.html#autotoc_md352',1,'']]],
-  ['vec_20first_20vec_20last_6',['%vec.first / %vec.last',['../vec.html#autotoc_md348',1,'']]],
-  ['vec_20fold_7',['%vec.fold',['../vec.html#autotoc_md344',1,'']]],
-  ['vec_20is_5funique_8',['%vec.is_unique',['../vec.html#autotoc_md350',1,'']]],
-  ['vec_20last_9',['%vec.first / %vec.last',['../vec.html#autotoc_md348',1,'']]],
-  ['vec_20len_10',['%vec.len',['../vec.html#autotoc_md349',1,'']]],
+  ['varrewriter_4',['VarRewriter',['../rewriting.html#autotoc_md114',1,'Rewriter vs. VarRewriter'],['../rewriting.html#varrewriter',1,'VarRewriter']]],
+  ['vec_20diff_5',['%vec.diff',['../vec.html#autotoc_md358',1,'']]],
+  ['vec_20first_20vec_20last_6',['%vec.first / %vec.last',['../vec.html#autotoc_md354',1,'']]],
+  ['vec_20fold_7',['%vec.fold',['../vec.html#autotoc_md350',1,'']]],
+  ['vec_20is_5funique_8',['%vec.is_unique',['../vec.html#autotoc_md356',1,'']]],
+  ['vec_20last_9',['%vec.first / %vec.last',['../vec.html#autotoc_md354',1,'']]],
+  ['vec_20len_10',['%vec.len',['../vec.html#autotoc_md355',1,'']]],
   ['vec_20plugin_11',['The vec Plugin',['../vec.html',1,'']]],
-  ['vec_20scan_12',['%vec.scan',['../vec.html#autotoc_md347',1,'']]],
-  ['vec_20zip_13',['%vec.zip',['../vec.html#autotoc_md345',1,'']]],
-  ['vs_20mim_14',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md98',1,'']]],
+  ['vec_20scan_12',['%vec.scan',['../vec.html#autotoc_md353',1,'']]],
+  ['vec_20zip_13',['%vec.zip',['../vec.html#autotoc_md351',1,'']]],
+  ['vs_20mim_14',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md104',1,'']]],
   ['vs_20mutables_15',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
-  ['vs_20varrewriter_16',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md108',1,'']]]
+  ['vs_20varrewriter_16',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md114',1,'']]]
 ];

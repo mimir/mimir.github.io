@@ -31,7 +31,8 @@ var menudata={children:[
 {text:"Plugins",url:"plugins.html"},
 {text:"Developer Guide",url:"dev.html"},
 {text:"Rewriting",url:"rewriting.html"},
-{text:"Phases",url:"phases.html"}]},
+{text:"Phases",url:"phases.html"},
+{text:"Python Bindings",url:"python.html"}]},
 {text:"🧩 Plugins",url:"usergroup1.html",children:[
 {text:"affine",url:"affine.html"},
 {text:"autodiff",url:"autodiff.html"},

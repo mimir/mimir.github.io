@@ -220,14 +220,16 @@ Contributor Quick Start</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">MIM_BUILD_EXAMPLES</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build the examples.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">MIM_BUILD_PYTHON</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build Python bindings.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt"><a class="el" href="config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b">MIM_ENABLE_CHECKS</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, enable expensive runtime checks <br  />
  (requires <span class="tt">CMAKE_BUILD_TYPE=Debug</span>).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">BUILD_TESTING</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build all unit tests and <span class="tt">lit</span> tests.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">BUILD_TESTING</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build all unit tests and <span class="tt">lit</span> tests.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">MIM_LIT_TIMEOUT</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;timeout_in_sec&gt;</span>  </td><td class="markdownTableBodyNone"><span class="tt">20</span>  </td><td class="markdownTableBodyNone">Timeout for <span class="tt">lit</span> tests. <br  />
  (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">MIM_LIT_WITH_VALGRIND</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, run the <a class="el" href="namespaceMim.html">Mim</a> CLI in the <span class="tt">lit</span> tests under Valgrind. <br  />
  (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
 </table>
@@ -254,9 +256,9 @@ lit Tests</h2>
 </div><!-- fragment --><p>If your build directory is actually called <span class="tt">build</span>, you can also use <span class="tt">probe.sh</span>:</p>
 <div class="fragment"><div class="line">cd lit</div>
 <div class="line">../scripts/probe.sh foo.mim</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use: <div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
-</div><!-- fragment --></dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use:</dd></dl>
+<div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 GoogleTest</h2>
 <p>Run the <a href="https://google.github.io/googletest/">GoogleTest</a> unit tests with:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
@@ -268,9 +270,9 @@ GoogleTest</h2>
 <div class="fragment"><div class="line">build/bin/mim-gtest --gtest_list_tests</div>
 </div><!-- fragment --><p>It can also be useful to turn assertion failures into debugger breakpoints:</p>
 <div class="fragment"><div class="line">build/bin/mim-gtest --gtest_break_on_failure</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific GoogleTest failure, use: <div class="fragment"><div class="line">./scripts/make_gtest_error.sh &quot;mim.World.dependent_extract&quot;</div>
-</div><!-- fragment --></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific GoogleTest failure, use:</dd></dl>
+<div class="fragment"><div class="line">./scripts/make_gtest_error.sh &quot;mim.World.dependent_extract&quot;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Coding Style</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 C++ Style</h2>

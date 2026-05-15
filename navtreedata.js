@@ -32,7 +32,8 @@ var NAVTREE =
       [ "Plugins", "plugins.html", null ],
       [ "Developer Guide", "dev.html", null ],
       [ "Rewriting", "rewriting.html", null ],
-      [ "Phases", "phases.html", null ]
+      [ "Phases", "phases.html", null ],
+      [ "Python Bindings", "python.html", null ]
     ] ],
     [ "🧩 Plugins", "usergroup1.html", [
       [ "affine", "affine.html", null ],
@@ -118,7 +119,7 @@ var NAVTREEINDEX =
 "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ead4f917633649a3c47c7ab917fa990146",
 "namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eba99db06b0f6fa55d229cf508034a70871",
 "namespacemim_1_1plug_1_1regex.html#a503fd044ea11748600b636a1590a3945",
-"schedule_8h_source.html",
+"schedule_8h.html",
 "structmim_1_1ast_1_1R.html#a1863b6de85ea7cd8147613900f6e07ad"
 ];
 

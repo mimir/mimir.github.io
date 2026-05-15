@@ -121,66 +121,66 @@ $(function(){initNavTree('regex.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md305">Dependencies </a>
+    <a href="#autotoc_md311">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md306">Types </a>
+    <a href="#autotoc_md312">Types </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md307">RE </a>
+        <a href="#autotoc_md313">RE </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md308">Meta </a>
+    <a href="#autotoc_md314">Meta </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md309">%regex.conj </a>
+        <a href="#autotoc_md315">%regex.conj </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md310">%regex.disj </a>
+        <a href="#autotoc_md316">%regex.disj </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md311">Values </a>
+    <a href="#autotoc_md317">Values </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md312">%regex.range </a>
+        <a href="#autotoc_md318">%regex.range </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md313">%regex.lit </a>
+        <a href="#autotoc_md319">%regex.lit </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md314">%regex.not_ </a>
+        <a href="#autotoc_md320">%regex.not_ </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md315">%regex.neg_lookahead </a>
+        <a href="#autotoc_md321">%regex.neg_lookahead </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md316">%regex.cls.* </a>
+        <a href="#autotoc_md322">%regex.cls.* </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md317">%regex.any </a>
+        <a href="#autotoc_md323">%regex.any </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md318">%regex.empty </a>
+    <a href="#autotoc_md324">%regex.empty </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md319">Quantifiers </a>
+    <a href="#autotoc_md325">Quantifiers </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md320">%regex.quant.* </a>
+        <a href="#autotoc_md326">%regex.quant.* </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md321">Passes and Phases </a>
+    <a href="#autotoc_md327">Passes and Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md322">Passes </a>
+        <a href="#autotoc_md328">Passes </a>
       </li>
     </ul>
   </li>
@@ -189,49 +189,49 @@ $(function(){initNavTree('regex.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2regex"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim::plug::regex</a></dd></dl>
 <p>A normalizing regex plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md305"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
 <div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
 <div class="line">plugin direct;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md306"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md307"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
 RE</h2>
 <p>Char &amp; String </p><div class="fragment"><div class="line">let Char = I8;</div>
 <div class="line">lam Str(n: Nat): * = %mem.Ptr0 «n; Char»;</div>
 </div><!-- fragment --><p> A regular expression matcher. </p><div class="fragment"><div class="line">lam Res (n: Nat): * = [%mem.M 0, Bool, Idx n];</div>
 <div class="line">let RE = {n: Nat} → [%mem.M 0, Str n, Idx n] → Res n;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md308"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
 Meta</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md309"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
 %regex.conj</h2>
 <p>A sequence of RE's. <br  />
  E.g.: <span class="tt">\d\d\d</span> matches 3 digits: <span class="tt">%regex.conj (%regex.cls.d, %regex.cls.d, %regex.cls.d)</span> </p><div class="fragment"><div class="line">axm %regex.conj: {n: Nat} → «n; RE» → RE, normalize_conj, 2;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
 %regex.disj</h2>
 <p>Match any of the sub expressions: <span class="tt">[0123456789]</span></p>
 <div class="fragment"><div class="line">axm %regex.disj: {n: Nat} → «n; RE» → RE, normalize_disj, 2;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
 Values</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
 %regex.range</h2>
 <p>Wraps a range of literals. Use: <span class="tt">%regex.range ('a', 'z')</span> to match all lower case letters.</p>
 <div class="fragment"><div class="line">axm %regex.range: «2; Char» → RE, normalize_range, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md319"></a>
 %regex.lit</h2>
 <p>Wraps a literal.</p>
 <div class="fragment"><div class="line">lam %regex.lit(val: Char) = %regex.range (val, val);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md320"></a>
 %regex.not_</h2>
 <p>Do not match any of the ranges in the parameter - parameter must only contain <span class="tt">regex.disj</span>s and <span class="tt">regex.range</span>s.</p>
 <div class="fragment"><div class="line">axm %regex.not_: RE → RE, normalize_not, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md321"></a>
 %regex.neg_lookahead</h2>
 <p>Do not match the parameter!</p>
 <div class="fragment"><div class="line">axm %regex.neg_lookahead: RE → RE, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md322"></a>
 %regex.cls.*</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -255,22 +255,22 @@ Values</h1>
 <div class="line">let %regex.cls.W = %regex.not_ %regex.cls.w;</div>
 <div class="line">let %regex.cls.s = %regex.disj (%regex.range (&#39;\t&#39;, &#39;\n&#39;), %regex.lit &#39;\r&#39;, %regex.lit &#39; &#39;);</div>
 <div class="line">let %regex.cls.S = %regex.not_ %regex.cls.s;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md323"></a>
 %regex.any</h2>
 <p>Match any character.</p>
 <div class="fragment"><div class="line">axm %regex.any: RE, 0;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
 %regex.empty</h1>
 <p>Matches the empty string.</p>
 <div class="fragment"><div class="line">axm %regex.empty: RE, 0;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md319"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Quantifiers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md320"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
 %regex.quant.*</h2>
 <div class="fragment"><div class="line">axm %regex.quant(optional,star,plus): RE → RE, normalize_quant, 1;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md321"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md327"></a>
 Passes and Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md322"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md328"></a>
 Passes</h2>
 <div class="fragment"><div class="line">axm %regex.lower_regex: %compile.Pass;</div>
 </div><!-- fragment --> </div></div><!-- contents -->

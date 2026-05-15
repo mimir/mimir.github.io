@@ -189,6 +189,7 @@ var NAVTREEINDEX23 =
 "prefix__cleanup_8cpp_source.html":[5,0,4,1,3,4],
 "prefix__cleanup_8h.html":[5,0,3,1,3,4],
 "prefix__cleanup_8h_source.html":[5,0,3,1,3,4],
+"python.html":[0,7],
 "range__helper_8h.html":[5,0,3,0,5],
 "range__helper_8h_source.html":[5,0,3,0,5],
 "refly.html":[1,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "scalarize_8h.html":[5,0,3,1,2,5],
 "scalarize_8h_source.html":[5,0,3,1,2,5],
 "schedule_8cpp.html":[5,0,4,1,20],
-"schedule_8cpp_source.html":[5,0,4,1,20],
-"schedule_8h.html":[5,0,3,1,20]
+"schedule_8cpp_source.html":[5,0,4,1,20]
 };
