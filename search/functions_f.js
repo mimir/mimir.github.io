@@ -13,7 +13,7 @@ var searchData=
   ['passmanphase_10',['PassManPhase',['../classmim_1_1PassManPhase.html#a603656e22d7143fa3f687b9d8e66e339',1,'mim::PassManPhase::PassManPhase(World &amp;world, std::unique_ptr&lt; PassMan &gt; &amp;&amp;man)'],['../classmim_1_1PassManPhase.html#a10361f3f57a4923e08b95d84374fb5c5',1,'mim::PassManPhase::PassManPhase(World &amp;world, flags_t annex)']]],
   ['path_11',['path',['../classmim_1_1ast_1_1Lexer.html#a91703ce77bfc24ff82e31d787879532d',1,'mim::ast::Lexer']]],
   ['path_5fparent_12',['path_parent',['../classmim_1_1lct_1_1Node.html#a92ef38950cfa9b6551be2e400cb361e6',1,'mim::lct::Node']]],
-  ['path_5fto_5fcurr_5fexe_13',['path_to_curr_exe',['../namespacemim_1_1sys.html#a474e2f4ec52fad60009c6b14ec631c8e',1,'mim::sys']]],
+  ['path_5fto_5flibmim_13',['path_to_libmim',['../namespacemim_1_1sys.html#ac40a2ca3b8a88f2fa48478770057f5e9',1,'mim::sys']]],
   ['phase_14',['Phase',['../classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260',1,'mim::Phase::Phase(World &amp;world, std::string name)'],['../classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707',1,'mim::Phase::Phase(World &amp;world, flags_t annex)']]],
   ['phaseman_15',['PhaseMan',['../classmim_1_1PhaseMan.html#a07c8ecc9846081ddbe641bd1533f919d',1,'mim::PhaseMan']]],
   ['phases_16',['phases',['../classmim_1_1PhaseMan.html#a17deb6d65290de8e24955b7432d63046',1,'mim::PhaseMan::phases()'],['../classmim_1_1PhaseMan.html#aa0dda207f7319622ce59a2b17fb49a6f',1,'mim::PhaseMan::phases() const']]],

@@ -30,7 +30,7 @@ var searchData=
   ['passmanphase_27',['PassManPhase',['../classmim_1_1PassManPhase.html',1,'mim::PassManPhase'],['../classmim_1_1PassManPhase.html#a603656e22d7143fa3f687b9d8e66e339',1,'mim::PassManPhase::PassManPhase(World &amp;world, std::unique_ptr&lt; PassMan &gt; &amp;&amp;man)'],['../classmim_1_1PassManPhase.html#a10361f3f57a4923e08b95d84374fb5c5',1,'mim::PassManPhase::PassManPhase(World &amp;world, flags_t annex)']]],
   ['path_28',['path',['../classmim_1_1Driver_1_1Imports.html#ab5c6924a9e88de95fb8879957e5492ab',1,'mim::Driver::Imports::Entry::path'],['../classmim_1_1ast_1_1Lexer.html#a91703ce77bfc24ff82e31d787879532d',1,'mim::ast::Lexer::path()']]],
   ['path_5fparent_29',['path_parent',['../classmim_1_1lct_1_1Node.html#a92ef38950cfa9b6551be2e400cb361e6',1,'mim::lct::Node']]],
-  ['path_5fto_5fcurr_5fexe_30',['path_to_curr_exe',['../namespacemim_1_1sys.html#a474e2f4ec52fad60009c6b14ec631c8e',1,'mim::sys']]],
+  ['path_5fto_5flibmim_30',['path_to_libmim',['../namespacemim_1_1sys.html#ac40a2ca3b8a88f2fa48478770057f5e9',1,'mim::sys']]],
   ['pattern_31',['Recommended Design Pattern',['../phases.html#autotoc_md79',1,'']]],
   ['pattern_20terminals_32',['Pattern Terminals',['../langref.html#autotoc_md45',1,'']]],
   ['patterns_33',['Patterns',['../langref.html#ptrn',1,'']]],
