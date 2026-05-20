@@ -13,7 +13,7 @@ var searchData=
   ['blocks_10',['Local Declaration Blocks',['../langref.html#autotoc_md51',1,'']]],
   ['bootstrapping_11',['Bootstrapping',['../phases.html#autotoc_md70',1,'']]],
   ['breakpoints_12',['Breakpoints',['../coding.html#autotoc_md15',1,'Conditional Breakpoints'],['../coding.html#autotoc_md18',1,'Triggering Breakpoints']]],
-  ['broadcast_5fin_5fdim_13',['%tensor.broadcast_in_dim',['../tensor.html#autotoc_md339',1,'']]],
+  ['broadcast_5fin_5fdim_13',['%tensor.broadcast_in_dim',['../tensor.html#autotoc_md340',1,'']]],
   ['builds_14',['Standalone Third-Party Builds',['../plugins.html#autotoc_md88',1,'']]],
   ['built_20ins_15',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
   ['builtin_20types_16',['Kinds and Builtin Types',['../langref.html#autotoc_md47',1,'']]]

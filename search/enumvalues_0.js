@@ -37,5 +37,6 @@ var searchData=
   ['asinh_34',['asinh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72af6cb8e42056ca445246834d78d0a1810',1,'mim::plug::math']]],
   ['atan_35',['atan',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a6d86bcdc87773d8bb8527c65ed349b97',1,'mim::plug::math']]],
   ['atanh_36',['atanh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a03d734a4901930676367606890a5db51',1,'mim::plug::math']]],
-  ['axm_37',['Axm',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849',1,'mim']]]
+  ['await_5fclosed_37',['await_closed',['../namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeaba4c4505bf732dbc2e6b2199dee195d475',1,'mim::plug::refly']]],
+  ['axm_38',['Axm',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849',1,'mim']]]
 ];

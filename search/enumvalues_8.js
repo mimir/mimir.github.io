@@ -15,5 +15,5 @@ var searchData=
   ['insert_12',['Insert',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa458be0f08b7e4ff3c0f633c100176c0',1,'mim']]],
   ['intro_13',['Intro',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188',1,'mim']]],
   ['irreducible_14',['Irreducible',['../classmim_1_1EtaRed.html#a3326314112409c514cb209a8a12bbaaea08b117860415c2990e3ee361e607b8eb',1,'mim::EtaRed']]],
-  ['is_5fclosed_15',['is_closed',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core']]]
+  ['is_5fclosed_15',['is_closed',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core::is_closed'],['../namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeaba8da26ba680a4bc49270f115861546f0e',1,'mim::plug::refly::is_closed']]]
 ];
