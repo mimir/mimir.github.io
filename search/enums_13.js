@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['unwrap_5for_0',['unwrap_or',['../namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad',1,'mim::plug::option']]],
-  ['unwrap_5funsafe_1',['unwrap_unsafe',['../namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53',1,'mim::plug::option']]]
+  ['tag_0',['Tag',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5',1,'mim::ast::Tok::Tag'],['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5',1,'mim::Error::Tag']]],
+  ['tail_1',['tail',['../namespacemim_1_1plug_1_1tuple.html#aa0f626efa11e91488ddf98be2d80ec8a',1,'mim::plug::tuple']]],
+  ['tail_5frec_5felim_5fpass_2',['tail_rec_elim_pass',['../namespacemim_1_1plug_1_1compile.html#aa116af339362d94ddef4135c1e9e67c7',1,'mim::plug::compile']]],
+  ['tangent_3',['Tangent',['../namespacemim_1_1plug_1_1autodiff.html#a731a934813e6197c347e831cb312acda',1,'mim::plug::autodiff']]],
+  ['trait_4',['trait',['../namespacemim_1_1plug_1_1core.html#a699face68306eeb01636f32010cc2d9d',1,'mim::plug::core']]],
+  ['transpose_5',['transpose',['../namespacemim_1_1plug_1_1matrix.html#a5b14c9f2cfc5a0f1d95a3657b2ec5be3',1,'mim::plug::matrix::transpose'],['../namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47',1,'mim::plug::tensor::transpose']]],
+  ['tri_6',['tri',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72',1,'mim::plug::math']]],
+  ['type_7',['type',['../namespacemim_1_1plug_1_1refly.html#a28d21b99af5c1d61200601d069b512a4',1,'mim::plug::refly']]],
+  ['typecat_8',['typecat',['../namespacemim_1_1plug_1_1tuple.html#a7947132a755044df3687e189d12929a3',1,'mim::plug::tuple']]]
 ];

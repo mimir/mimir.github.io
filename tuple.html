@@ -179,6 +179,18 @@ Operations</h1>
 <div class="line">                    (a: T, b: «i: m; Us#i»)</div>
 <div class="line">                  : %tuple.typecat T Us</div>
 <div class="line">                  = %tuple.cat (a, b);</div>
+<div class="line"> </div>
+<div class="line">lam %tuple.head {n: Nat}</div>
+<div class="line">    {Ts: «n; *»}</div>
+<div class="line">    [values: «i: n; Ts#i»]</div>
+<div class="line">  : [Ts#(%core.idx n %core.mode.US 0)]</div>
+<div class="line">  = values#(%core.idx n %core.mode.US 0);</div>
+<div class="line"> </div>
+<div class="line">lam %tuple.tail {n: Nat}</div>
+<div class="line">    {Ts: «n; *»}</div>
+<div class="line">    [values: «i: n; Ts#i»]</div>
+<div class="line">  : «i: %core.nat.sub (n, 1); Ts#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))»</div>
+<div class="line">  = ‹i: %core.nat.sub (n, 1); values#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))›;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md347"></a>
 %tuple.contains</h2>
 <p>Does the tuple conain the given element?</p>
