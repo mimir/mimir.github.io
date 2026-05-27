@@ -1,9 +1,7 @@
 var math_2normalizers_8cpp =
 [
-    [ "CODE", "math_2normalizers_8cpp.html#a19086d0f426ccfabec2dcb9799aa5ca8", null ],
     [ "CODE", "math_2normalizers_8cpp.html#af6be01806f24236e9a6add4259a7a0f3", null ],
     [ "CODE", "math_2normalizers_8cpp.html#a48da5e6acc28b0cfe9f3402f29ae9a1c", null ],
-    [ "M", "math_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89", null ],
     [ "mim::plug::math::normalize_abs", "namespacemim_1_1plug_1_1math.html#a5d57b5407d4e7b250b7fb85f95699635", null ],
     [ "mim::plug::math::normalize_arith", "namespacemim_1_1plug_1_1math.html#a94e9834a9acd4d05f2631888a416fd80", null ],
     [ "mim::plug::math::normalize_cmp", "namespacemim_1_1plug_1_1math.html#a287933bd45d163dfaeb90dcbb6c311c9", null ],

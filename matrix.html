@@ -281,8 +281,8 @@ High-level matrix operations</h2>
 <p>The <span class="tt">map_reduce</span> operation can be seen as the minimal abstraction over general iteration/control flow schemes over tensors.</p>
 <p>map_reduce applications:</p><ul>
 <li><span class="tt">einsum(idx, MatrixIndices) = map_reduce(0,+, product, MatrixIndices)</span></li>
-<li><span class="tt">map f <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = map_reduce (0,+, f,[(idx, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a>)])</span> (TODO: get rid of reduce step if not needed with dummy values)</li>
-<li><span class="tt">reduce acc f <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = map_reduce (n=0) (acc, f, id,[(idx, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a>)])</span> (TODO: see index problem above) einsum application:</li>
+<li><span class="tt">map f M = map_reduce (0,+, f,[(idx, M)])</span> (TODO: get rid of reduce step if not needed with dummy values)</li>
+<li><span class="tt">reduce acc f M = map_reduce (n=0) (acc, f, id,[(idx, M)])</span> (TODO: see index problem above) einsum application:</li>
 <li><span class="tt">tranpose ij→ji  (einsum(,[(1,0), M]))</span></li>
 <li><span class="tt">trace ii→</span></li>
 <li><span class="tt">sum ij →</span></li>

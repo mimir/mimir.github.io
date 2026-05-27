@@ -121,16 +121,23 @@ $(function(){initNavTree('util_8h.html','',''); });
   <div class="headertitle"><div class="title">util.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;queue&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;bit&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
 <code>#include &lt;stack&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;absl/container/flat_hash_map.h&gt;</code><br />
 <code>#include &lt;absl/container/flat_hash_set.h&gt;</code><br />
 <code>#include &lt;absl/container/node_hash_map.h&gt;</code><br />
 <code>#include &lt;absl/container/node_hash_set.h&gt;</code><br />
 <code>#include &lt;fe/assert.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="hash_8h_source.html">mim/util/hash.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="types_8h_source.html">mim/util/types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for util.h:</div>
 <div class="dyncontent">
@@ -146,7 +153,6 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:mim_3A_3Aunique_5Fstack_3C_20Set_20_3E" id="r_mim_3A_3Aunique_5Fstack_3C_20Set_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1unique__stack.html">mim::unique_stack&lt; Set &gt;</a></td></tr>
 <tr class="memitem:mim_3A_3Aunique_5Fqueue_3C_20Set_20_3E" id="r_mim_3A_3Aunique_5Fqueue_3C_20Set_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1unique__queue.html">mim::unique_queue&lt; Set &gt;</a></td></tr>
 <tr class="memitem:mim_3A_3AGIDHash_3C_20T_20_3E" id="r_mim_3A_3AGIDHash_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1GIDHash.html">mim::GIDHash&lt; T &gt;</a></td></tr>
 <tr class="memitem:mim_3A_3AGIDLt_3C_20T_20_3E" id="r_mim_3A_3AGIDLt_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1GIDLt.html">mim::GIDLt&lt; T &gt;</a></td></tr>
@@ -170,17 +176,16 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Utility Functions</div></td></tr>
-<tr class="memitem:a1aae5adc4db386bfd618fdc8303ceb0c" id="r_a1aae5adc4db386bfd618fdc8303ceb0c"><td class="memTemplParams" colspan="2">template&lt;class D, class S&gt; </td></tr>
-<tr class="memitem:a1aae5adc4db386bfd618fdc8303ceb0c template"><td class="memItemLeft">D&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a1aae5adc4db386bfd618fdc8303ceb0c">mim::bitcast</a> (const S &amp;src)</td></tr>
-<tr class="memdesc:a1aae5adc4db386bfd618fdc8303ceb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitcast from <code class="param">src</code> of type <code class="param">S</code> to <code class="param">D</code>.  <br /></td></tr>
-<tr class="memitem:aead08c2a07775ee15b699d35fc31e34a" id="r_aead08c2a07775ee15b699d35fc31e34a"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:aead08c2a07775ee15b699d35fc31e34a template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#aead08c2a07775ee15b699d35fc31e34a">mim::get_sign</a> (T val)</td></tr>
-<tr class="memitem:a650811c0d49d453841b016dfa775c461" id="r_a650811c0d49d453841b016dfa775c461"><td class="memItemLeft"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a650811c0d49d453841b016dfa775c461">mim::pad</a> (<a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> offset, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> align)</td></tr>
+<tr class="memitem:af3b0e6a33069525819cf00689bc697ec" id="r_af3b0e6a33069525819cf00689bc697ec"><td class="memTemplParams" colspan="2">template&lt;class D, class S&gt; <br />
+requires (std::is_trivially_copyable_v&lt;S&gt; &amp;&amp; std::is_trivially_copyable_v&lt;D&gt;)</td></tr>
+<tr class="memitem:af3b0e6a33069525819cf00689bc697ec template"><td class="memItemLeft">constexpr D&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#af3b0e6a33069525819cf00689bc697ec">mim::bitcast_resize</a> (const S &amp;src) noexcept</td></tr>
+<tr class="memdesc:af3b0e6a33069525819cf00689bc697ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bitcast from <code class="param">src</code> of type <code class="param">S</code> to <code class="param">D</code>, supporting different sizes.  <br /></td></tr>
+<tr class="memitem:a7cf8bac7f3d328acfb3ffa73223285f3" id="r_a7cf8bac7f3d328acfb3ffa73223285f3"><td class="memItemLeft">constexpr std::uint64_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a7cf8bac7f3d328acfb3ffa73223285f3">mim::pad</a> (std::uint64_t offset, std::uint64_t align) noexcept</td></tr>
 <tr id="func-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Algorithms</div></td></tr>
-<tr class="memitem:a490bc82fced6d1222ca1e66d50e573a6" id="r_a490bc82fced6d1222ca1e66d50e573a6"><td class="memTemplParams" colspan="2">template&lt;class I, class T, class L&gt; </td></tr>
-<tr class="memitem:a490bc82fced6d1222ca1e66d50e573a6 template"><td class="memItemLeft">I&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a490bc82fced6d1222ca1e66d50e573a6">mim::binary_find</a> (I begin, I end, T val, L lt)</td></tr>
-<tr class="memitem:afa3494e65f05e62afeb1a0fd07f41e94" id="r_afa3494e65f05e62afeb1a0fd07f41e94"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#afa3494e65f05e62afeb1a0fd07f41e94">mim::subview</a> (std::string_view s, size_t i, size_t n=std::string_view::npos)</td></tr>
-<tr class="memdesc:afa3494e65f05e62afeb1a0fd07f41e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <span class="tt">std::string::substr</span>, but works on <span class="tt">std::string_view</span> instead.  <br /></td></tr>
+<tr class="memitem:a5be7b360832c67a3cf97eb18ef9a6d7d" id="r_a5be7b360832c67a3cf97eb18ef9a6d7d"><td class="memTemplParams" colspan="2">template&lt;class I, class T, class L&gt; </td></tr>
+<tr class="memitem:a5be7b360832c67a3cf97eb18ef9a6d7d template"><td class="memItemLeft">constexpr I&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a5be7b360832c67a3cf97eb18ef9a6d7d">mim::binary_find</a> (I begin, I end, T val, L lt) noexcept</td></tr>
+<tr class="memitem:a7fdffb53ea4f14dbe97425cfc0f77b0e" id="r_a7fdffb53ea4f14dbe97425cfc0f77b0e"><td class="memItemLeft">constexpr std::string_view&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a7fdffb53ea4f14dbe97425cfc0f77b0e">mim::subview</a> (std::string_view s, size_t i, size_t n=std::string_view::npos) noexcept</td></tr>
+<tr class="memdesc:a7fdffb53ea4f14dbe97425cfc0f77b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <span class="tt">std::string::substr</span>, but works on <span class="tt">std::string_view</span> instead.  <br /></td></tr>
 <tr class="memitem:a8d4798ff41a16cf4a8020359f7679969" id="r_a8d4798ff41a16cf4a8020359f7679969"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a8d4798ff41a16cf4a8020359f7679969">mim::find_and_replace</a> (std::string &amp;str, std::string_view what, std::string_view repl)</td></tr>
 <tr class="memdesc:a8d4798ff41a16cf4a8020359f7679969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all occurrences of <code class="param">what</code> with <code class="param">repl</code>.  <br /></td></tr>
 <tr id="func-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Helpers for Containers</div></td></tr>

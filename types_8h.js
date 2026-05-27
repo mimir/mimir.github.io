@@ -4,7 +4,6 @@ var types_8h =
     [ "CODE2", "types_8h.html#af92a48651ac55f7fcab83b852481d5ed", null ],
     [ "CODE3", "types_8h.html#a9414ba3a2fb815027a872506cc048797", null ],
     [ "CODE4", "types_8h.html#a3753a8fd672ed997199aecbd1955c611", null ],
-    [ "MIM_16_32_64", "types_8h.html#ad78ea63dc218f5f4ae875b45f4f08acd", null ],
     [ "MIM_1_8_16_32_64", "types_8h.html#ad0d703ae60249a731135668fd43e0ba7", null ],
     [ "MIM_8_16_32_64", "types_8h.html#ad4749b26abab89b148bb964816ec7534", null ],
     [ "MIM_F16_32_64", "types_8h.html#a663b6b168eaa2a9be57d66062c32cd32", null ],

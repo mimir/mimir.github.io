@@ -19,9 +19,9 @@ var searchData=
   ['is_5fempty_16',['%ord.is_empty',['../ord.html#autotoc_md289',1,'']]],
   ['is_5floaded_17',['%compile.is_loaded',['../compile.html#autotoc_md142',1,'']]],
   ['is_5fsome_18',['%option.is_some',['../option.html#autotoc_md277',1,'']]],
-  ['is_5funique_19',['%vec.is_unique',['../vec.html#autotoc_md357',1,'']]],
+  ['is_5funique_19',['%vec.is_unique',['../vec.html#autotoc_md358',1,'']]],
   ['item_20synchronization_20',['Work-Item Synchronization',['../gpu.html#autotoc_md203',1,'']]],
   ['iterating_20over_20the_20program_21',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
   ['iterations_22',['Reset Between Iterations',['../phases.html#autotoc_md65',1,'']]],
-  ['iterators_23',['Iterators',['../vec.html#autotoc_md350',1,'']]]
+  ['iterators_23',['Iterators',['../vec.html#autotoc_md351',1,'']]]
 ];

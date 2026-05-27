@@ -138,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a96f2bfe1cfed91441871ef792f6f6d6d" id="r_a96f2bfe1cfed91441871ef792f6f6d6d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a96f2bfe1cfed91441871ef792f6f6d6d">RWPass</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;<a class="el" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="el" href="classmim_1_1Stage.html#af3818779efacabd21b68b1e3d3ec8c15">annex</a>)</td></tr>
 <tr class="memitem:a5445fbd5f0feb792055c451680ffdf73" id="r_a5445fbd5f0feb792055c451680ffdf73"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5445fbd5f0feb792055c451680ffdf73">inspect</a> () const override</td></tr>
 <tr class="memdesc:a5445fbd5f0feb792055c451680ffdf73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should the <a class="el" href="classmim_1_1PassMan.html" title="An optimizer that combines several optimizations in an optimal way.">PassMan</a> even consider this pass?  <br /></td></tr>
-<tr class="memitem:a8a816ea22672eaa6ee5524cc12e4f7e5" id="r_a8a816ea22672eaa6ee5524cc12e4f7e5"><td class="memItemLeft"><a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8a816ea22672eaa6ee5524cc12e4f7e5">curr_mut</a> () const</td></tr>
+<tr class="memitem:a8a816ea22672eaa6ee5524cc12e4f7e5" id="r_a8a816ea22672eaa6ee5524cc12e4f7e5"><td class="memItemLeft">M *&#160;</td><td class="memItemRight"><a class="el" href="#a8a816ea22672eaa6ee5524cc12e4f7e5">curr_mut</a> () const</td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1Pass"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classmim_1_1Pass')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classmim_1_1Pass.html">mim::Pass</a></td></tr>
 <tr class="memitem:a6582d93ab7013db848996d61cb1cde58 inherit pub_methods_classmim_1_1Pass" id="r_a6582d93ab7013db848996d61cb1cde58"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Pass.html#a6582d93ab7013db848996d61cb1cde58">Pass</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;<a class="el" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>, std::string <a class="el" href="classmim_1_1Stage.html#a988e8b306b37bd8f2bc3777582516527">name</a>)</td></tr>
 <tr class="memitem:aafc54b9de7dcd76171e4bb221e2ba16d inherit pub_methods_classmim_1_1Pass" id="r_aafc54b9de7dcd76171e4bb221e2ba16d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Pass.html#aafc54b9de7dcd76171e4bb221e2ba16d">Pass</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;<a class="el" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="el" href="classmim_1_1Stage.html#af3818779efacabd21b68b1e3d3ec8c15">annex</a>)</td></tr>
@@ -186,7 +186,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a6e49075de2431065ae4e8e804131c28a inherit pro_attribs_classmim_1_1Stage" id="r_a6e49075de2431065ae4e8e804131c28a"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Stage.html#a6e49075de2431065ae4e8e804131c28a">name_</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = Def&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class P, class M = Def&gt;<br />
 class mim::RWPass&lt; P, M &gt;</div><p>Inherit from this class using <a href="https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern">CRTP</a>, if your <a class="el" href="classmim_1_1Pass.html" title="All Passes that want to be registered in the PassMan must implement this interface.">Pass</a> does <b>not</b> need state and a fixed-point iteration. </p>
 <p>If you are only interested in specific mutables, you can pass this to <code class="param">M</code>. </p>
 
@@ -198,13 +198,13 @@ class mim::RWPass&lt; P, M &gt;</div><p>Inherit from this class using <a href="h
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = Def&gt; </div>
+template&lt;class P, class M = Def&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> &gt;::RWPass </td>
+          <td class="memname"><a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, M &gt;::RWPass </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
         </tr>
@@ -231,13 +231,13 @@ template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeade
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = Def&gt; </div>
+template&lt;class P, class M = Def&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> &gt;::RWPass </td>
+          <td class="memname"><a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, M &gt;::RWPass </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
         </tr>
@@ -265,13 +265,13 @@ template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeade
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = Def&gt; </div>
+template&lt;class P, class M = Def&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> * <a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> &gt;::curr_mut </td>
+          <td class="memname">M * <a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, M &gt;::curr_mut </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -294,13 +294,13 @@ template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeade
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class P, class <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> = Def&gt; </div>
+template&lt;class P, class M = Def&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, <a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a> &gt;::inspect </td>
+          <td class="memname">bool <a class="el" href="classmim_1_1RWPass.html">mim::RWPass</a>&lt; P, M &gt;::inspect </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>

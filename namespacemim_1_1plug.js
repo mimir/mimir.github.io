@@ -104,16 +104,16 @@ var namespacemim_1_1plug =
         [ "none", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
         [ "nsw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3", null ],
         [ "nuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97", null ],
-        [ "nusw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a7eb3133ffe6a944d4cf7cfe6d8e5ca54", null ]
+        [ "nsuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
       ] ],
       [ "mode", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e", [
         [ "us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2", null ],
         [ "uS", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972", null ],
         [ "Us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca", null ],
         [ "US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
-        [ "nuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea1cb6ecf47d175b4055a768fee5f76e97", null ],
         [ "nsw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3", null ],
-        [ "nusw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7eb3133ffe6a944d4cf7cfe6d8e5ca54", null ]
+        [ "nuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea1cb6ecf47d175b4055a768fee5f76e97", null ],
+        [ "nsuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
       ] ],
       [ "nat", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566", [
         [ "add", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a34ec78fcc91ffb1e54cd85e4a0924332", null ],
@@ -185,6 +185,7 @@ var namespacemim_1_1plug =
       [ "op", "namespacemim_1_1plug_1_1core.html#a5c14a5971107e0e3158eaf0c29bef4ca", null ],
       [ "op", "namespacemim_1_1plug_1_1core.html#a927f40ea1451c951c7e434c881f2f6ee", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1core.html#a9a3103f39984e3487e3466d00107eacf", null ],
+      [ "icmp_mask", "namespacemim_1_1plug_1_1core.html#ad82399b0e163c0348b58f2a8c3c43d54", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1core.html#a313da9372a97c5d81ab124e98108345e", null ]
     ] ],
     [ "direct", "namespacemim_1_1plug_1_1direct.html", "namespacemim_1_1plug_1_1direct" ],
@@ -465,6 +466,7 @@ var namespacemim_1_1plug =
     ] ],
     [ "refly", "namespacemim_1_1plug_1_1refly.html", [
       [ "check", "namespacemim_1_1plug_1_1refly.html#ad1ff0c022f81a11c0fad8b96314d2a9d", null ],
+      [ "check_bot", "namespacemim_1_1plug_1_1refly.html#ae126de749f0ee7091b07962d66cf99af", null ],
       [ "Code", "namespacemim_1_1plug_1_1refly.html#ac24c63c923883ed7d3fd7cf83a5ba6e0", null ],
       [ "dbg", "namespacemim_1_1plug_1_1refly.html#aaf6f455a242be2827c385e6fa9648c65", [
         [ "tmp", "namespacemim_1_1plug_1_1refly.html#aaf6f455a242be2827c385e6fa9648c65afa816edb83e95bf0c8da580bdfd491ef", null ],
@@ -496,6 +498,7 @@ var namespacemim_1_1plug =
       [ "verbose", "namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7", null ],
       [ "warn", "namespacemim_1_1plug_1_1refly.html#a7b28d3c30005b51a4045c19a3beee279", null ],
       [ "normalize_check", "namespacemim_1_1plug_1_1refly.html#a7e5d18897771aa6e8853df713ecbb0d3", null ],
+      [ "normalize_check_bot", "namespacemim_1_1plug_1_1refly.html#a91908f639e735972fef3b93a1469569b", null ],
       [ "normalize_dbg", "namespacemim_1_1plug_1_1refly.html#a350a79c30bf6c48389a654dfaae9dcca", null ],
       [ "normalize_equiv", "namespacemim_1_1plug_1_1refly.html#a9332fc41c063054ce7501beeff95c030", null ],
       [ "normalize_gid", "namespacemim_1_1plug_1_1refly.html#a97e1eae14a36a579e362b10503e5833f", null ],

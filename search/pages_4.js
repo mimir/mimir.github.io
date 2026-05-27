@@ -1,9 +1,9 @@
 var searchData=
 [
   ['effects_0',['Effects',['../mem.html#autotoc_md250',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md259',1,'Operations w/o Side Effects']]],
-  ['element_5fwise_1',['%tensor.element_wise',['../tensor.html#autotoc_md334',1,'']]],
+  ['element_5fwise_1',['%tensor.element_wise',['../tensor.html#autotoc_md335',1,'']]],
   ['embedded_20python_20dsl_2',['Embedded Python DSL',['../python.html#autotoc_md95',1,'']]],
-  ['empty_3',['%regex.empty',['../regex.html#autotoc_md325',1,'']]],
+  ['empty_3',['%regex.empty',['../regex.html#autotoc_md326',1,'']]],
   ['eq_4',['%core.icmp.xYgLE (eq)',['../autodiff.html#autotoc_md130',1,'']]],
   ['equiv_5',['%refly.equiv',['../refly.html#autotoc_md305',1,'']]],
   ['er_6',['%math.er',['../math.html#autotoc_md217',1,'']]],

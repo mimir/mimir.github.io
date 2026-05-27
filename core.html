@@ -241,6 +241,11 @@ Nat Operations</h1>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
 Integer Operations</h1>
 <p>Integer operations use <span class="tt">Idx s</span> as type. This is per se neither signed nor unsigned. Instead, the operations themselves exhibit signed or unsigned behavior.</p>
+<p>For <span class="tt">Idx s</span>,</p><ul>
+<li><b>unsigned</b> interpretation is the canonical carrier order on the finite set / <picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \{ 0, \dots, s-1 \} $" src="form_5.png" width="73" height="14"/></picture>.</li>
+<li><b>signed</b> interpretation is defined by choosing, for each residue class modulo <picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$s$" src="form_6.png" width="5" height="6"/></picture>, / its canonical signed representative.</li>
+</ul>
+<p>Concretely, a value <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$x : \mathrm{Idx}\;s$" src="form_7.png" width="46" height="10"/></picture> is considered non-negative iff / <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ x \le \lfloor (s-1)/2 \rfloor $" src="form_8.png" width="84" height="14"/></picture>, and negative otherwise. Hence the signed range is <picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \big[ -\lfloor s/2 \rfloor,\; \lceil s/2 \rceil - 1 \big] $" src="form_9.png" width="111" height="16"/></picture>. For powers of two, i.e. <picture><source srcset="form_10_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ s = 2^w $" src="form_10.png" width="36" height="9"/></picture>, this coincides exactly with the usual <picture><source srcset="form_11_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$w$" src="form_11.png" width="10" height="6"/></picture>-bit two's-complement interpretation.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
 Mode</h2>
 <p>A common problem when dealing with integer operations is <a href="https://en.wikipedia.org/wiki/Integer_overflow">overflow</a>. All operations that may overflow have an additional parameter <span class="tt">m</span> - <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138" title="mim::plug::core::Mode">mode</a> - of type <span class="tt">Nat</span> that determines the exact desired behavior in the case of an overflow.</p>
@@ -248,9 +253,9 @@ Mode</h2>
 <div class="line">let %core.mode.uS = 0b01; // no   signed wrap around</div>
 <div class="line">let %core.mode.Us = 0b10; // no unsigned wrap around</div>
 <div class="line">let %core.mode.US = 0b11; // no signed and unsigned wrap around</div>
-<div class="line">let %core.mode.nuw  = %core.mode.Us;</div>
 <div class="line">let %core.mode.nsw  = %core.mode.uS;</div>
-<div class="line">let %core.mode.nusw = %core.mode.US;</div>
+<div class="line">let %core.mode.nuw  = %core.mode.Us;</div>
+<div class="line">let %core.mode.nsuw = %core.mode.US;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md155"></a>
 %core.idx</h2>
 <p>Creates a literal of type <span class="tt">Idx s</span> from <span class="tt">l</span> while obeying mode <span class="tt">m</span>.</p>
@@ -272,6 +277,7 @@ Mode</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">t  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">always true  </td></tr>
 </table>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>Add type constraint that <span class="tt">bit1</span> is only allowed for powers of two.</dd></dl>
 <div class="fragment"><div class="line">axm %core.bit1(f, neg, id, t): {s: Nat} → [m: Nat] → Idx s → Idx s, normalize_bit1;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 %core.bit2</h2>
@@ -312,6 +318,7 @@ Mode</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">t  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">always true  </td></tr>
 </table>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>Add type constraint that <span class="tt">bit2</span> is only allowed for powers of two.</dd></dl>
 <div class="fragment"><div class="line">axm %core.bit2( f,      nor, nciff, nfst, niff, nsnd, xor_, nand,</div>
 <div class="line">                and_,  nxor,   snd,  iff,  fst, ciff,  or_,    t):</div>
 <div class="line">    {s: Nat} → [m: Nat] → «2; Idx s» → Idx s , normalize_bit2;</div>
@@ -321,11 +328,15 @@ Mode</h2>
 <li><a href="https://en.wikipedia.org/wiki/Arithmetic_shift"><span class="tt">a</span>rithmetic shift right</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Logical_shift"><span class="tt">l</span>ogical shift right</a></li>
 </ul>
+<p>For <span class="tt">Idx s</span>, the shift count must be smaller than the minimal bit width needed to encode the carrier. For <span class="tt">Idx ⊤</span>, this width is <span class="tt">64</span>; otherwise it is <span class="tt">max(1, ceil(log2(s)))</span>. Larger counts are undefined behavior.</p><ul>
+<li><span class="tt">shr.l</span> divides the unsigned representative by <span class="tt">2^b</span>.</li>
+<li><span class="tt">shr.a</span> divides the signed representative by <span class="tt">2^b</span>, rounding toward <span class="tt">-∞</span>.</li>
+</ul>
 <div class="fragment"><div class="line">axm %core.shr(a, l): {s: Nat} → «2; Idx s» → Idx s, normalize_shr;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
 %core.wrap</h2>
 <p>Integer operations that may overflow. You can specify the desired behavior in the case of an overflow with the curried argument just in front of the actual argument by providing a <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138">mim::plug::core::Mode</a> as <span class="tt">Nat</span>.</p>
-<div class="fragment"><div class="line">axm %core.wrap(add, sub, mul, shl): {s: Nat} → [m: Nat] → «2; Idx s» → Idx s, normalize_wrap;</div>
+<p><span class="tt">shl</span> uses the same shift-count rule as <span class="tt">%core.shr</span>. It multiplies the unsigned representative by <span class="tt">2^b</span> and then wraps modulo <span class="tt">s</span>. <span class="tt">nuw</span> and <span class="tt">nsw</span> check the unwrapped unsigned and signed results, respectively. </p><div class="fragment"><div class="line">axm %core.wrap(add, sub, mul, shl): {s: Nat} → [m: Nat] → «2; Idx s» → Idx s, normalize_wrap;</div>
 <div class="line"> </div>
 <div class="line">lam %core.minus {s: Nat} (m: Nat) (a: Idx s): Idx s = %core.wrap.sub m (0:(Idx s), a);</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md160"></a>
@@ -452,7 +463,7 @@ Mode</h2>
 %core.extrema</h2>
 <p>Minimum and Maximum of two Integers</p><ul>
 <li>un<span class="tt">s</span>igned or <span class="tt">S</span>igned</li>
-<li><span class="tt">m</span>inimum or <span class="tt"><a class="el" href="core_2normalizers_8cpp.html#aeaded74fae54146d0f196f3f31367c89">M</a></span>aximum</li>
+<li><span class="tt">m</span>inimum or <span class="tt">M</span>aximum</li>
 </ul>
 <div class="fragment"><div class="line">axm %core.extrema(sm=umin, sM=umax, Sm=smin, SM=smax): {s: Nat} → «2; Idx s» → Idx s, normalize_extrema;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
@@ -464,7 +475,10 @@ Mode</h2>
 Conversions</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md165"></a>
 %core.conv</h2>
-<p>Conversion between index types - both signed and unsigned - of different sizes.</p>
+<p>Conversion between index types - both signed and unsigned - of different sizes.</p><ul>
+<li><span class="tt">conv.u</span> preserves the unsigned representative modulo the destination carrier.</li>
+<li><span class="tt">conv.s</span> preserves the signed representative modulo the destination carrier.</li>
+</ul>
 <div class="fragment"><div class="line">axm %core.conv(s, u): {ss: Nat} → [ds: Nat] → Idx ss → Idx ds, normalize_conv;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md166"></a>
 %core.bitcast</h2>

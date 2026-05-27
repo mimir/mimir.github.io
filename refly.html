@@ -158,26 +158,29 @@ $(function(){initNavTree('refly.html','',''); });
         <a href="#autotoc_md305">%refly.equiv </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md306">%refly.check </a>
+        <a href="#autotoc_md306">%refly.check_bot </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md307">%refly.vars </a>
+        <a href="#autotoc_md307">%refly.check </a>
       </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md308">Manipulate </a>
-    <ul>
       <li class="level2">
-        <a href="#autotoc_md309">%refly.refine </a>
+        <a href="#autotoc_md308">%refly.vars </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md310">Stages </a>
+    <a href="#autotoc_md309">Manipulate </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md311">Repls </a>
+        <a href="#autotoc_md310">%refly.refine </a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md311">Stages </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md312">Repls </a>
       </li>
     </ul>
   </li>
@@ -249,10 +252,14 @@ Testing</h1>
 <div class="line">                 Ae = alpha_ne, AE = alpha_eq):</div>
 <div class="line">    {T: *} → [T, T] → T, normalize_equiv;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md306"></a>
+%refly.check_bot</h2>
+<p>Checks whether argument is bottom.</p>
+<div class="fragment"><div class="line">axm %refly.check_bot: {T: *} → T → T, normalize_check_bot;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md307"></a>
 %refly.check</h2>
 <p>Checks the given condition and emits the error message, if false.</p>
 <div class="fragment"><div class="line">axm %refly.check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md307"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md308"></a>
 %refly.vars</h2>
 <p>Inspect free-variable closedness of a <a class="el" href="namespaceMim.html">Mim</a> expression.</p><ul>
 <li><span class="tt">is_closed</span>: Normalizes immediately to <span class="tt">tt</span> if the argument has no free vars, otherwise <span class="tt">ff</span>.</li>
@@ -260,15 +267,15 @@ Testing</h1>
 </ul>
 <div class="fragment"><div class="line">axm %refly.vars(is_closed): {T: *} → T → Bool, normalize_vars;</div>
 <div class="line">axm %refly.vars(await_closed): {T U: *} → T → U → U, normalize_vars;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md308"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md309"></a>
 Manipulate</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md309"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
 %refly.refine</h2>
 <p>Sets the <span class="tt">i</span>th operand of the reified Code <span class="tt">e</span> to <span class="tt">x</span>.</p>
 <div class="fragment"><div class="line">axm %refly.refine: {E X: *} → [e: %refly.Code E, i: Nat, x: %refly.Code X] → %refly.Code E, normalize_refine;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
 Stages</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
 Repls</h2>
 <div class="fragment"><div class="line">axm %refly.remove_dbg_repl: %compile.Repl;</div>
 </div><!-- fragment --> </div></div><!-- contents -->

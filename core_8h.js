@@ -5,7 +5,7 @@ var core_8h =
       [ "mim::plug::core::Mode::none", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
       [ "mim::plug::core::Mode::nsw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3", null ],
       [ "mim::plug::core::Mode::nuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97", null ],
-      [ "mim::plug::core::Mode::nusw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a7eb3133ffe6a944d4cf7cfe6d8e5ca54", null ]
+      [ "mim::plug::core::Mode::nsuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
     ] ],
     [ "mim::plug::core::convert", "namespacemim_1_1plug_1_1core.html#aa245e9d008c0ad08a145c4b06162ebe6", null ],
     [ "mim::plug::core::convert", "namespacemim_1_1plug_1_1core.html#a12f61a2fced37e3d62c253da4c825c46", null ],
@@ -26,5 +26,6 @@ var core_8h =
     [ "mim::plug::core::make_truth_table", "namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d", null ],
     [ "mim::plug::core::mode", "namespacemim_1_1plug_1_1core.html#a3d0f9954758bcfbac8df807f8ca8e1dd", null ],
     [ "mim::plug::core::op", "namespacemim_1_1plug_1_1core.html#a5c14a5971107e0e3158eaf0c29bef4ca", null ],
-    [ "mim::plug::core::op", "namespacemim_1_1plug_1_1core.html#a927f40ea1451c951c7e434c881f2f6ee", null ]
+    [ "mim::plug::core::op", "namespacemim_1_1plug_1_1core.html#a927f40ea1451c951c7e434c881f2f6ee", null ],
+    [ "mim::plug::core::icmp_mask", "namespacemim_1_1plug_1_1core.html#ad82399b0e163c0348b58f2a8c3c43d54", null ]
 ];

@@ -81,7 +81,6 @@ var hierarchy =
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
-    [ "mim::Res", "classmim_1_1Res.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", null ],
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
@@ -422,7 +421,6 @@ var hierarchy =
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "std::tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;", "namespacestd.html#structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4", null ],
     [ "mim::unique_queue&lt; Set &gt;", "classmim_1_1unique__queue.html", null ],
-    [ "mim::unique_stack&lt; Set &gt;", "classmim_1_1unique__stack.html", null ],
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],

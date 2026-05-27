@@ -14,7 +14,6 @@ var dir_4c100286d577d9b034a54bf80a8d92ed =
     [ "lam.h", "lam_8h.html", "lam_8h" ],
     [ "lattice.h", "lattice_8h.html", "lattice_8h" ],
     [ "nest.h", "nest_8h.html", "nest_8h" ],
-    [ "normalize.h", "normalize_8h.html", "normalize_8h" ],
     [ "pass.h", "pass_8h.html", "pass_8h" ],
     [ "phase.h", "phase_8h.html", "phase_8h" ],
     [ "plugin.h", "plugin_8h.html", "plugin_8h" ],

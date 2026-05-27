@@ -17,9 +17,9 @@ var searchData=
   ['nor_14',['nor',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a57c7d11cd49333e3f722204c63016da9',1,'mim::plug::core']]],
   ['note_15',['Note',['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a3b0649c72650c313a357338dcdfb64ec',1,'mim::Error']]],
   ['nsnd_16',['nsnd',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a64cb986cf64a6386b3c8e7af71d25bff',1,'mim::plug::core']]],
-  ['nsw_17',['nsw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw']]],
-  ['nsz_18',['nsz',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a83ad537246c68235c2ff05142fd9c91c',1,'mim::plug::math']]],
-  ['nusw_19',['nusw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a7eb3133ffe6a944d4cf7cfe6d8e5ca54',1,'mim::plug::core::nusw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7eb3133ffe6a944d4cf7cfe6d8e5ca54',1,'mim::plug::core::nusw']]],
+  ['nsuw_17',['nsuw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12',1,'mim::plug::core::nsuw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12',1,'mim::plug::core::nsuw']]],
+  ['nsw_18',['nsw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3',1,'mim::plug::core::nsw']]],
+  ['nsz_19',['nsz',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a83ad537246c68235c2ff05142fd9c91c',1,'mim::plug::math']]],
   ['nuw_20',['nuw',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97',1,'mim::plug::core::nuw'],['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea1cb6ecf47d175b4055a768fee5f76e97',1,'mim::plug::core::nuw']]],
   ['nxor_21',['nxor',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a4091386482235077ea5a3357d7b5c62b',1,'mim::plug::core']]]
 ];
