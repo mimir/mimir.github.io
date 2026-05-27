@@ -18,7 +18,7 @@ var searchData=
   ['sccp_15',['Example: SCCP',['../phases.html#autotoc_md74',1,'']]],
   ['sccs_16',['SCCs',['../classmim_1_1Nest_1_1Node.html#a187c295f32e602fcc4573db9741a55c6',1,'mim::Nest::Node']]],
   ['schedule_17',['Schedule',['../classmim_1_1Scheduler.html#af7c082b610d8b7515f90b6512148f72c',1,'mim::Scheduler']]],
-  ['schedule_18',['schedule',['../classmim_1_1Scheduler.html#a880651081ca75a55266ff3018354827b',1,'mim::Scheduler']]],
+  ['schedule_18',['schedule',['../classmim_1_1ClosedMutPhase.html#a6adb5759576e3f34d34a8a052fd6de83',1,'mim::ClosedMutPhase::schedule()'],['../classmim_1_1Scheduler.html#a880651081ca75a55266ff3018354827b',1,'mim::Scheduler::schedule()']]],
   ['schedule_2ecpp_19',['schedule.cpp',['../schedule_8cpp.html',1,'']]],
   ['schedule_2eh_20',['schedule.h',['../schedule_8h.html',1,'']]],
   ['scheduler_21',['Scheduler',['../classmim_1_1Scheduler.html',1,'mim::Scheduler'],['../classmim_1_1Scheduler.html#ae3d6947e30fb089dc9f4e9ac87c97dd8',1,'mim::Scheduler::Scheduler()=default'],['../classmim_1_1Scheduler.html#a184a374363795e63584d8badf032eb43',1,'mim::Scheduler::Scheduler(const Nest &amp;)'],['../classmim_1_1Scheduler.html#a352685d4f36711c66a983a88530d54ef',1,'mim::Scheduler::Scheduler(const Scheduler &amp;)=delete'],['../classmim_1_1Scheduler.html#a183f3cbdb7f45508a2edfc79bbdce8c8',1,'mim::Scheduler::Scheduler(Scheduler &amp;&amp;other) noexcept']]],
