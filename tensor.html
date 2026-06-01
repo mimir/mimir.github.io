@@ -210,7 +210,7 @@ tensor.set</h2>
 %tensor.map_reduce</h2>
 <ul>
 <li><span class="tt">nis</span>: number of inputs</li>
-<li><span class="tt">T/R/S``is/o</span> : respectively the type/rank/shape of the inputs/output</li>
+<li><span class="tt">T/R/S</span>, <span class="tt">is/o</span> : respectively the type/rank/shape of the inputs/output</li>
 <li><span class="tt">f</span> : function to reduce over (takes an element of type <span class="tt">To</span> and one of each type in <span class="tt">Tis</span>, and returns a <span class="tt">To</span>)</li>
 <li><span class="tt">init</span> : accumulator to start <span class="tt">f</span> with</li>
 <li><span class="tt">subs</span> : for each input, for each dimension, an index to compute the output in Einstein notation</li>
@@ -258,7 +258,7 @@ tensor.set</h2>
 <li><span class="tt">s``1/2</span> : the shape of the left/right input</li>
 <li><span class="tt">a/b</span> : the left/right input</li>
 </ul>
-<p>Returns the generalised dot product of <span class="tt">a</span> and <span class="tt">b</span>. <a href="https://openxla.org/stablehlo/spec#dot_general">https://openxla.org/stablehlo/spec#dot_general</a></p>
+<p>Returns the <a href="https://openxla.org/stablehlo/spec#dot_general">generalised dot product</a> of <span class="tt">a</span> and <span class="tt">b</span>.</p>
 <div class="fragment"><div class="line">fun dot_general_fun [R: %tensor.Ring] [x: R#T, [y: R#T, z: R#T]]@tt: R#T = return (R#add (x, (R#mul (y, z))));</div>
 <div class="line">lam dot_general_pick {n: Nat} {na nb nc: Nat} (a: «na; Idx n», b: «nb; Idx n», c: «nc; Idx n») (off_1 off_2: Nat) (i: Idx n): Nat =</div>
 <div class="line">  let (ab, ai) = %vec.first (%core.icmp.e @n) (a, i);</div>
