@@ -97,6 +97,7 @@ var math_2autogen_8h =
       [ "mim::plug::math::gamma::t", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0ae358efa489f58062f10dd7316b65649e", null ],
       [ "mim::plug::math::gamma::l", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0a2db95e8e1a9267b7a1188556b2013b33", null ]
     ] ],
+    [ "mim::plug::math::is_finite", "namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059", null ],
     [ "mim::plug::math::minus", "namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199", null ],
     [ "mim::plug::math::NVTF32", "namespacemim_1_1plug_1_1math.html#a1a6f22c3b750ca37462e91f209d66fa7", null ],
     [ "mim::plug::math::nvtf32", "namespacemim_1_1plug_1_1math.html#a4b6b6615eaa73ce27195a4a716c8e199", null ],

@@ -19,5 +19,6 @@ var searchData=
   ['fppass_3c_20ssa_2c_20lam_20_3e_16',['FPPass&lt; SSA, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
   ['fppass_3c_20tailrecelim_2c_20lam_20_3e_17',['FPPass&lt; TailRecElim, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
   ['freedefana_18',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html',1,'mim::plug::clos']]],
-  ['freezer_19',['Freezer',['../structmim_1_1World_1_1Freezer.html',1,'mim::World']]]
+  ['freezer_19',['Freezer',['../structmim_1_1World_1_1Freezer.html',1,'mim::World']]],
+  ['fuse_20',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
 ];

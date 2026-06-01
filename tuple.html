@@ -121,22 +121,22 @@ $(function(){initNavTree('tuple.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md344">Dependencies </a>
+    <a href="#autotoc_md350">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md345">Operations </a>
+    <a href="#autotoc_md351">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md346">%tuple.typecat </a>
+        <a href="#autotoc_md352">%tuple.typecat </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md347">%tuple.cat </a>
+        <a href="#autotoc_md353">%tuple.cat </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md348">%tuple.contains </a>
+        <a href="#autotoc_md354">%tuple.contains </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md349">%tuple.zip </a>
+        <a href="#autotoc_md355">%tuple.zip </a>
       </li>
     </ul>
   </li>
@@ -145,12 +145,12 @@ $(function(){initNavTree('tuple.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tuple"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tuple.html" title="The tuple Plugin">mim::plug::tuple</a></dd></dl>
 <p>Utilitly functions for tuples.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md344"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md350"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md345"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md351"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md346"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md352"></a>
 %tuple.typecat</h2>
 <p>Computes the type of a <span class="tt">%tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="fragment"><div class="line">lam %tuple.typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
 <div class="line">    «i: %core.nat.add (n, m);</div>
@@ -159,7 +159,7 @@ Operations</h1>
 <div class="line">            %core.ncmp.l (nat_i, n),</div>
 <div class="line">            Ts#(%core.bitcast (Idx n) i),</div>
 <div class="line">            Us#(%core.bitcast (Idx m) (%core.nat.sub (nat_i, n))))»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md347"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md353"></a>
 %tuple.cat</h2>
 <p>Concatenation of an <span class="tt">n</span>-tuple and an <span class="tt">m</span>-tuple to an <span class="tt">n + m</span>-tuple yielding</p>
 <div class="fragment"><div class="line">axm %tuple.cat: {n m: Nat}</div>
@@ -191,11 +191,11 @@ Operations</h1>
 <div class="line">    [values: «i: n; Ts#i»]</div>
 <div class="line">  : «i: %core.nat.sub (n, 1); Ts#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))»</div>
 <div class="line">  = ‹i: %core.nat.sub (n, 1); values#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md348"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md354"></a>
 %tuple.contains</h2>
 <p>Does the tuple conain the given element?</p>
 <div class="fragment"><div class="line">axm %tuple.contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md349"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md355"></a>
 %tuple.zip</h2>
 <p><a href="https://en.wikipedia.org/wiki/Zipping_(computer_science)">Zips</a> several tensors.</p>
 <p>What is more, the signature will likely change in the future:</p><ul>

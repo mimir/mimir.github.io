@@ -42,13 +42,14 @@ var searchData=
   ['copy_39',['copy',['../classmim_1_1Pass.html#a91b8e66878e8a6ceba632d2f5ca2a27d',1,'mim::Pass::copy()'],['../classmim_1_1FPPass.html#a65d7f941f11b074aabb4af67b01039c2',1,'mim::FPPass::copy()']]],
   ['copy_5fchildren_40',['copy_children',['../namespacedeploy.html#a97d88cb6ecbf70e962c4a600a0a9f8c1',1,'deploy']]],
   ['copyprop_41',['CopyProp',['../classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html#a46173609cce228fe3d7d56413d5326c7',1,'mim::plug::mem::pass::CopyProp']]],
-  ['counting_5ffor_42',['counting_for',['../namespacemim_1_1plug_1_1matrix.html#af543155056078bfd4e2df4f16ad7458f',1,'mim::plug::matrix']]],
+  ['counting_5ffor_42',['counting_for',['../namespacemim_1_1plug_1_1matrix.html#af543155056078bfd4e2df4f16ad7458f',1,'mim::plug::matrix::counting_for()'],['../namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8',1,'mim::plug::tensor::phase::counting_for()']]],
   ['cps2dsphase_43',['CPS2DSPhase',['../classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html#aaa7edf714e19fb4625c74fd887c28af1',1,'mim::plug::direct::CPS2DSPhase']]],
   ['create_44',['create',['../classmim_1_1Stage.html#a7d0782be17d913b25c63d782e4214e64',1,'mim::Stage::create()'],['../classmim_1_1Sets.html#ad6d2206fb706506210e1f4cbb4909ee6',1,'mim::Sets::create()']]],
-  ['ctype_45',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
-  ['curr_5fgid_46',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
-  ['curr_5fmut_47',['curr_mut',['../classmim_1_1PassMan.html#a2a37453a903314314b2e463854bfac0e',1,'mim::PassMan::curr_mut()'],['../classmim_1_1RWPass.html#a8a816ea22672eaa6ee5524cc12e4f7e5',1,'mim::RWPass::curr_mut()'],['../classmim_1_1Analysis.html#ac32997174041824d682869da3b5afa9b',1,'mim::Analysis::curr_mut()']]],
-  ['curr_5frun_48',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
-  ['curr_5fundo_49',['curr_undo',['../classmim_1_1FPPass.html#a6eadcb331d94726f2e91a74d62f06eda',1,'mim::FPPass']]],
-  ['curry_50',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
+  ['create_5fouter_5floop_45',['create_outer_loop',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a019a8c048eeccbb48ed2a419e7dc57ca',1,'mim::plug::tensor::phase']]],
+  ['ctype_46',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
+  ['curr_5fgid_47',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
+  ['curr_5fmut_48',['curr_mut',['../classmim_1_1PassMan.html#a2a37453a903314314b2e463854bfac0e',1,'mim::PassMan::curr_mut()'],['../classmim_1_1RWPass.html#a8a816ea22672eaa6ee5524cc12e4f7e5',1,'mim::RWPass::curr_mut()'],['../classmim_1_1Analysis.html#ac32997174041824d682869da3b5afa9b',1,'mim::Analysis::curr_mut()']]],
+  ['curr_5frun_49',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
+  ['curr_5fundo_50',['curr_undo',['../classmim_1_1FPPass.html#a6eadcb331d94726f2e91a74d62f06eda',1,'mim::FPPass']]],
+  ['curry_51',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
 ];

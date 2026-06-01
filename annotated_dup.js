@@ -104,6 +104,13 @@ var annotated_dup =
         [ "regex", "namespacemim_1_1plug_1_1regex.html", [
           [ "LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", "classmim_1_1plug_1_1regex_1_1LowerRegex" ],
           [ "app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", "structmim_1_1plug_1_1regex_1_1app__range" ]
+        ] ],
+        [ "tensor", "namespacemim_1_1plug_1_1tensor.html", [
+          [ "phase", "namespacemim_1_1plug_1_1tensor_1_1phase.html", [
+            [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
+            [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
+            [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ]
+          ] ]
         ] ]
       ] ],
       [ "ll", "namespacemim_1_1ll.html", [

@@ -287,6 +287,7 @@ var namespacemim_1_1plug =
         [ "t", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0ae358efa489f58062f10dd7316b65649e", null ],
         [ "l", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0a2db95e8e1a9267b7a1188556b2013b33", null ]
       ] ],
+      [ "is_finite", "namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059", null ],
       [ "minus", "namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199", null ],
       [ "Mode", "namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91", [
         [ "top", "namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91ab28354b543375bfa94dabaeda722927f", null ],
@@ -382,6 +383,7 @@ var namespacemim_1_1plug =
     [ "matrix", "namespacemim_1_1plug_1_1matrix.html", "namespacemim_1_1plug_1_1matrix" ],
     [ "mem", "namespacemim_1_1plug_1_1mem.html", "namespacemim_1_1plug_1_1mem" ],
     [ "regex", "namespacemim_1_1plug_1_1regex.html", "namespacemim_1_1plug_1_1regex" ],
+    [ "tensor", "namespacemim_1_1plug_1_1tensor.html", "namespacemim_1_1plug_1_1tensor" ],
     [ "compile", "namespacemim_1_1plug_1_1compile.html", [
       [ "beta_red_pass", "namespacemim_1_1plug_1_1compile.html#a4b060f32fdef8a01e50415099cd48416", null ],
       [ "beta_red_phase", "namespacemim_1_1plug_1_1compile.html#ab5b6270aef0fd6eefef313a78ae42ed2", null ],
@@ -509,23 +511,6 @@ var namespacemim_1_1plug =
       [ "normalize_vars", "namespacemim_1_1plug_1_1refly.html#ac4498e362835106aa36fcfd9c65c574f", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1refly.html#aef69fe712603cff1f76cf43576ea1e55", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1refly.html#a9baeafefe6ccb99821f97f9035d52c62", null ]
-    ] ],
-    [ "tensor", "namespacemim_1_1plug_1_1tensor.html", [
-      [ "broadcast_in_dim", "namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77", null ],
-      [ "dot_2d_00", "namespacemim_1_1plug_1_1tensor.html#a7245629f6c91cd34c8faded6f401066d", null ],
-      [ "dot_2d_01", "namespacemim_1_1plug_1_1tensor.html#aaf94ba28bba249a3e4d5c56b937fb97a", null ],
-      [ "dot_2d_10", "namespacemim_1_1plug_1_1tensor.html#ac1861d459b0ef51886b0d7ac6050ad6e", null ],
-      [ "dot_2d_11", "namespacemim_1_1plug_1_1tensor.html#aa65540590ca3cd4db49358f365b8c8ea", null ],
-      [ "dot_general", "namespacemim_1_1plug_1_1tensor.html#a6b05dd46a3d8119c30b9e7834ac5cb3b", null ],
-      [ "map", "namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37", null ],
-      [ "map_reduce", "namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5", null ],
-      [ "reduce", "namespacemim_1_1plug_1_1tensor.html#a1f25affd40b6efbe8a3f08c4a9ba9cc3", null ],
-      [ "reshape", "namespacemim_1_1plug_1_1tensor.html#a7954b221c8c568ad0918b4397d796ad2", null ],
-      [ "slice", "namespacemim_1_1plug_1_1tensor.html#a9f32ad37dd66f405ca71286aa92bfe07", null ],
-      [ "transpose", "namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47", null ],
-      [ "normalize_dot", "namespacemim_1_1plug_1_1tensor.html#a4457cef970ca942a955fc8e8fd9b92e7", null ],
-      [ "register_normalizers", "namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3", null ],
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ]
     ] ],
     [ "tuple", "namespacemim_1_1plug_1_1tuple.html", [
       [ "append", "namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d", null ],

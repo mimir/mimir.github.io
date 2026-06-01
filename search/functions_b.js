@@ -53,11 +53,13 @@ var searchData=
   ['log_50',['log',['../classmim_1_1Driver.html#a6c91cf5797a4c02730475dda317cf14e',1,'mim::Driver::log()'],['../classmim_1_1Stage.html#ac35633fe9786d55b0c3b83838b249be0',1,'mim::Stage::log()'],['../classmim_1_1Log.html#ac028e1426981d9aa7a3d40912acca2b0',1,'mim::Log::log(Level level, Loc loc, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args) const'],['../classmim_1_1Log.html#ac5821e05395ce4cfb7f64f3ef721698d',1,'mim::Log::log(Level level, const char *file, uint16_t line, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)'],['../classmim_1_1World.html#aed6fcb0dc74ef6d72a12b7441964d890',1,'mim::World::log()']]],
   ['lookup_51',['lookup',['../classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954',1,'mim::Rewriter::lookup()'],['../classmim_1_1Zonker.html#a9baa4de21ec32c764ae27a4d7c99d436',1,'mim::Zonker::lookup()'],['../namespacemim.html#a2b0eba3a59bd19880f571afb77e4d611',1,'mim::lookup()']]],
   ['loop_5fdepth_52',['loop_depth',['../classmim_1_1Nest_1_1Node.html#aeba233c5d375cdc2f9e8c07708c09bbc',1,'mim::Nest::Node']]],
-  ['lowerfor_53',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html#a6796f282a28efaf49f4709fbc2eacb42',1,'mim::plug::affine::phase::LowerFor']]],
-  ['lowermatrixhighlevelmapred_54',['LowerMatrixHighLevelMapRed',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html#a0461ad90c0b463b4ea0e993f16ceba07',1,'mim::plug::matrix::LowerMatrixHighLevelMapRed']]],
-  ['lowermatrixlowlevel_55',['LowerMatrixLowLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html#a9150b5a7be76d3123ed7097a5149b4df',1,'mim::plug::matrix::LowerMatrixLowLevel']]],
-  ['lowermatrixmediumlevel_56',['LowerMatrixMediumLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html#ad3b0f3adfcbacf67eebffd98962b1050',1,'mim::plug::matrix::LowerMatrixMediumLevel']]],
-  ['lowerregex_57',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html#a189d2ca5397617bf4a0e9cccd00d45fb',1,'mim::plug::regex::LowerRegex']]],
-  ['lowertypedclos_58',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1LowerTypedClos.html#af9009c7812f81037bd992211b29a2cae',1,'mim::plug::clos::LowerTypedClos']]],
-  ['lowertypedclosprep_59',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html#a469521f6e82ff8d7ccbce974e490d103',1,'mim::plug::clos::LowerTypedClosPrep']]]
+  ['lower_53',['Lower',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#ae47e809c16e08f53c99d4bdc42818660',1,'mim::plug::tensor::phase::Lower']]],
+  ['lowerfor_54',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html#a6796f282a28efaf49f4709fbc2eacb42',1,'mim::plug::affine::phase::LowerFor']]],
+  ['lowermapreduce_55',['LowerMapReduce',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1',1,'mim::plug::tensor::phase::LowerMapReduce']]],
+  ['lowermatrixhighlevelmapred_56',['LowerMatrixHighLevelMapRed',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html#a0461ad90c0b463b4ea0e993f16ceba07',1,'mim::plug::matrix::LowerMatrixHighLevelMapRed']]],
+  ['lowermatrixlowlevel_57',['LowerMatrixLowLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html#a9150b5a7be76d3123ed7097a5149b4df',1,'mim::plug::matrix::LowerMatrixLowLevel']]],
+  ['lowermatrixmediumlevel_58',['LowerMatrixMediumLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html#ad3b0f3adfcbacf67eebffd98962b1050',1,'mim::plug::matrix::LowerMatrixMediumLevel']]],
+  ['lowerregex_59',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html#a189d2ca5397617bf4a0e9cccd00d45fb',1,'mim::plug::regex::LowerRegex']]],
+  ['lowertypedclos_60',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1LowerTypedClos.html#af9009c7812f81037bd992211b29a2cae',1,'mim::plug::clos::LowerTypedClos']]],
+  ['lowertypedclosprep_61',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html#a469521f6e82ff8d7ccbce974e490d103',1,'mim::plug::clos::LowerTypedClosPrep']]]
 ];

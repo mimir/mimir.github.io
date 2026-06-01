@@ -170,16 +170,19 @@ $(function(){initNavTree('math.html','',''); });
         <a href="#autotoc_md222">%math.cmp </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md223">%math.conv </a>
+        <a href="#autotoc_md223">%math.is_finite </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md224">%math.slf </a>
+        <a href="#autotoc_md224">%math.conv </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md225">%math.sgn </a>
+        <a href="#autotoc_md225">%math.slf </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md226">%math.rrt </a>
+        <a href="#autotoc_md226">%math.sgn </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md227">%math.rrt </a>
       </li>
     </ul>
   </li>
@@ -439,21 +442,25 @@ Other Operations</h1>
 <div class="line">              UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → Bool, normalize_cmp;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
+%math.is_finite</h2>
+<p>Returns True if the float is finite, and false if not (i.e. if it is +Inf/-Inf/NAN)</p>
+<div class="fragment"><div class="line">axm %math.is_finite: {pe: «2; Nat»} → Nat → %math.F pe → Bool;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
 %math.conv</h2>
 <p>Conversion between floating point and index types - both signed and unsigned - of different sizes.</p>
 <div class="fragment"><div class="line">axm %math.conv(s2f, u2f): { ss:     Nat } → [dpe: «2; Nat»] →     Idx  ss → %math.F dpe, normalize_conv;</div>
 <div class="line">axm %math.conv(f2s, f2u): {spe: «2; Nat»} → [ ds:     Nat ] → %math.F spe →     Idx  ds, normalize_conv;</div>
 <div class="line">axm %math.conv(f2f):      {spe: «2; Nat»} → [dpe: «2; Nat»] → %math.F spe → %math.F dpe, normalize_conv;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
 %math.slf</h2>
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating point number ( <picture><source srcset="form_41_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$slf(x) = \frac{1}{1+e^{-x}}$" src="form_41.png" width="83" height="18"/></picture>)</p>
 <div class="fragment"><div class="line">lam %math.slf {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
 <div class="line">    %math.arith.div m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.arith.add m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.exp.exp m (%math.minus m x)));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
 %math.sgn</h2>
 <p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="fragment"><div class="line">lam %math.sgn {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
 <div class="line">    ((%math.conv.f2f pe -1.0:(%math.F64)), ((%math.conv.f2f pe 0.0:(%math.F64)), (%math.conv.f2f pe 1.0:(%math.F64)))#(%math.cmp.g m (x,(%math.conv.f2f pe 0.0:(%math.F64)))))#(%math.cmp.ge m (x, (%math.conv.f2f pe 0.0:(%math.F64))));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
 %math.rrt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( <picture><source srcset="form_42_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$rrt(x) = \frac{1}{\sqrt{x}}$" src="form_42.png" width="66" height="19"/></picture>) </p><div class="fragment"><div class="line">lam %math.rrt {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
 <div class="line">    %math.arith.div m (%math.conv.f2f pe 1.0:(%math.F64), %math.rt.sq m x);</div>

@@ -121,13 +121,13 @@ $(function(){initNavTree('opt.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md267">Dependencies </a>
+    <a href="#autotoc_md268">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md268">Passes, Phases, and Pipelines </a>
+    <a href="#autotoc_md269">Passes, Phases, and Pipelines </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md269">Pipelines </a>
+        <a href="#autotoc_md270">Pipelines </a>
       </li>
     </ul>
   </li>
@@ -136,7 +136,7 @@ $(function(){initNavTree('opt.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">import compile;</div>
@@ -148,9 +148,10 @@ Dependencies</h1>
 <div class="line">import matrix;</div>
 <div class="line">import refly;</div>
 <div class="line">import regex;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
+<div class="line">import tensor;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
 Passes, Phases, and Pipelines</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md270"></a>
 Pipelines</h2>
 <div class="fragment"><div class="line">lam cond_phase {n: Nat} (name: «n; I8») (phase: %compile.Phase): %compile.Phase = %core.select (%compile.is_loaded name, phase, %compile.null_phase);</div>
 <div class="line">lam cond_repl  {n: Nat} (name: «n; I8») (repl:  %compile.Repl ): %compile.Repl  = %core.select (%compile.is_loaded name, repl , %compile.null_repl );</div>
@@ -169,6 +170,13 @@ Pipelines</h2>
 <div class="line">        ),</div>
 <div class="line">        %compile.eta_exp_phase,</div>
 <div class="line">        %compile.sym_expr_opt,</div>
+<div class="line">        cond_phase &quot;tensor&quot; (</div>
+<div class="line">            %compile.phases ff (</div>
+<div class="line">                %tensor.lower_tensor,</div>
+<div class="line">                %tensor.fuse_tensor,</div>
+<div class="line">                %tensor.lower_map_reduce,</div>
+<div class="line">            )</div>
+<div class="line">        ),</div>
 <div class="line">        cond_phase &quot;affine&quot; %affine.lower_for_phase,</div>
 <div class="line">        %compile.pass2phase (</div>
 <div class="line">            %compile.passes (</div>

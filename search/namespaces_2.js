@@ -27,8 +27,9 @@ var searchData=
   ['mim_3a_3aplug_3a_3arefly_24',['refly',['../namespacemim_1_1plug_1_1refly.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3aregex_25',['regex',['../namespacemim_1_1plug_1_1regex.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3atensor_26',['tensor',['../namespacemim_1_1plug_1_1tensor.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3atuple_27',['tuple',['../namespacemim_1_1plug_1_1tuple.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3avec_28',['vec',['../namespacemim_1_1plug_1_1vec.html',1,'mim::plug']]],
-  ['mim_3a_3asexpr_29',['sexpr',['../namespacemim_1_1sexpr.html',1,'mim']]],
-  ['mim_3a_3asys_30',['sys',['../namespacemim_1_1sys.html',1,'mim']]]
+  ['mim_3a_3aplug_3a_3atensor_3a_3aphase_27',['phase',['../namespacemim_1_1plug_1_1tensor_1_1phase.html',1,'mim::plug::tensor']]],
+  ['mim_3a_3aplug_3a_3atuple_28',['tuple',['../namespacemim_1_1plug_1_1tuple.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3avec_29',['vec',['../namespacemim_1_1plug_1_1vec.html',1,'mim::plug']]],
+  ['mim_3a_3asexpr_30',['sexpr',['../namespacemim_1_1sexpr.html',1,'mim']]],
+  ['mim_3a_3asys_31',['sys',['../namespacemim_1_1sys.html',1,'mim']]]
 ];

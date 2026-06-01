@@ -12,8 +12,10 @@ var searchData=
   ['prefix_5fcleanup_5fphase_9',['prefix_cleanup_phase',['../namespacemim_1_1plug_1_1compile.html#a59a120a3490b97cdacbae844d3dd2b23',1,'mim::plug::compile']]],
   ['prepend_10',['prepend',['../namespacemim_1_1plug_1_1tuple.html#ac27303d7e38479898972453b4e58f1f2',1,'mim::plug::tuple']]],
   ['prod_11',['prod',['../namespacemim_1_1plug_1_1matrix.html#a83d01fd34deff3e8ddae753c596038fc',1,'mim::plug::matrix']]],
-  ['ptr_12',['Ptr',['../namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06',1,'mim::plug::mem']]],
-  ['ptr0_13',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
-  ['pxr24_14',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
-  ['pxr24_15',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
+  ['product_5f2d_12',['product_2d',['../namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7',1,'mim::plug::tensor']]],
+  ['product_5f2d_5fimpl_13',['product_2d_impl',['../namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d',1,'mim::plug::tensor']]],
+  ['ptr_14',['Ptr',['../namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06',1,'mim::plug::mem']]],
+  ['ptr0_15',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
+  ['pxr24_16',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
+  ['pxr24_17',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
 ];

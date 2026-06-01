@@ -121,141 +121,92 @@ $(function(){initNavTree('tensor.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md331">Dependencies </a>
+    <a href="#autotoc_md332">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md332">Types </a>
+    <a href="#autotoc_md333">Types </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md333">Operations </a>
+    <a href="#autotoc_md334">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md334">%tensor.prod_2d </a>
+        <a href="#autotoc_md335">tensor.get </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md335">%tensor.element_wise </a>
+        <a href="#autotoc_md336">tensor.set </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md336">%tensor.transpose </a>
+        <a href="#autotoc_md337">%tensor.map_reduce </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md337">%tensor.slice </a>
+        <a href="#autotoc_md338">%tensor.map_reduce_ds </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md338">%tensor.reshape </a>
+        <a href="#autotoc_md339">%tensor.dot_product </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md339">%tensor.dot_general </a>
+        <a href="#autotoc_md340">%tensor.product_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md340">%tensor.prod_2d </a>
+        <a href="#autotoc_md341">%tensor.transpose </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md341">%tensor.broadcast_in_dim </a>
+        <a href="#autotoc_md342">%tensor.transpose_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md342">%tensor.reduce </a>
+        <a href="#autotoc_md343">%tensor.broadcast </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md343">%tensor.map_reduce </a>
+        <a href="#autotoc_md344">%tensor.broadcast_in_dim </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md345">%tensor.map </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md346">%tensor.unary </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md347">%tensor.binary </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md348">%tensor.select </a>
       </li>
     </ul>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md349">Phases </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tensor"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">mim::plug::tensor</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md331"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md332"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin tuple;</div>
 <div class="line">plugin refly;</div>
 <div class="line">plugin vec;</div>
 </div><!-- fragment --><p>A tensor plugin</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md332"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md333"></a>
 Types</h1>
 <p>Represents an <a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">algebraic Ring</a>.</p>
-<div class="fragment"><div class="line">let Ring = [</div>
+<div class="fragment"><div class="line">let %tensor.Ring = [</div>
 <div class="line">    T: *,</div>
 <div class="line">    _0: T,</div>
-<div class="line">    _1: T,</div>
 <div class="line">    add: [T, T] → T,</div>
 <div class="line">    mul: [T, T] → T,</div>
 <div class="line">];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md333"></a>
+</div><!-- fragment --><p> let nat_ring = (Nat, 0, core.nat.add, core.nat.mul);</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md334"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md334"></a>
-%tensor.prod_2d</h2>
-<p>let nat_ring = (Nat, 0, 1, core.nat.add, core.nat.mul);</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md335"></a>
-%tensor.element_wise</h2>
-<div class="fragment"><div class="line">axm %tensor.map:  {T: *}</div>
-<div class="line">                → {r: Nat, s: «r; Nat»}</div>
-<div class="line">                → {ni: Nat, Is: «ni; *»}</div>
-<div class="line">                → [app: «i: ni; Is#i» → T]</div>
-<div class="line">                → [is: «i: ni; «s; Is#i» »]</div>
-<div class="line">                → «s; T»;</div>
+tensor.get</h2>
+<p>Extracts the element of <span class="tt">index</span> from <span class="tt">arr</span>. tensor.get arr (a, b, c) = arr#a#b#c;</p>
+<div class="fragment"><div class="line">axm %tensor.get: {T: *, r: Nat, s: «r; Nat»} → [arr: «s; T», index: «i: r; Idx (s#i)»] → T, normalize_get;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md336"></a>
-%tensor.transpose</h2>
-<div class="fragment"><div class="line">axm %tensor.transpose:  {T: *}</div>
-<div class="line">                      → {r: Nat, s: «r; Nat»}</div>
-<div class="line">                      → [input: «s;T», permutation: «r;Idx r»]</div>
-<div class="line">                      → « &lt;j: r; s#(permutation#j)&gt;; T»;</div>
+tensor.set</h2>
+<p>Inserts the element <span class="tt">x</span> in <span class="tt">arr</span> at <span class="tt">index</span>. tensor.set arr (a, b, c) x = Insert arr a (Insert (arr#a) b (Insert (arr#a#b) c x));</p>
+<div class="fragment"><div class="line">axm %tensor.set: {T: *, r: Nat, s: «r; Nat»} → [arr: «s; T», index: «i: r; Idx (s#i)», x: T] → «s; T», normalize_set;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md337"></a>
-%tensor.slice</h2>
-<div class="fragment"><div class="line">axm %tensor.slice:  {T: *}</div>
-<div class="line">                  → {r: Nat, s: «r; Nat»}</div>
-<div class="line">                  → [input: «s;T», output_shape: «r; Nat», start_indices: «i :r; Idx (s#i)», steps: «i: r; Nat»]</div>
-<div class="line">                  → «output_shape; T»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md338"></a>
-%tensor.reshape</h2>
-<div class="fragment"><div class="line">axm %tensor.reshape:  {T: *}</div>
-<div class="line">                    → {r: Nat, s: «r; Nat»}</div>
-<div class="line">                    → [input: «s;T», output_shape: «r; Nat»]</div>
-<div class="line">                    → «output_shape; T»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md339"></a>
-%tensor.dot_general</h2>
-<p><a href="https://github.com/openxla/stablehlo/blob/main/docs/spec.md#dot_general">Generalized dot product</a>:</p><ul>
-<li><span class="tt">out_r = nb + (r1 - nc - nb) + (r2 - nc - nb)</span></li>
-</ul>
-<div class="fragment"><div class="line">axm %tensor.dot_general:  [R: Ring]</div>
-<div class="line">                        → {r1 r2: Nat}</div>
-<div class="line">                        → {nc nb: Nat}</div>
-<div class="line">                        → {s1: «r1; Nat», s2: «r2; Nat»}</div>
-<div class="line">                        → [c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»]</div>
-<div class="line">                        → [«s1; R#T», «s2; R#T»]</div>
-<div class="line">                        → let bs       = ‹i: nb; %refly.check (%core.ncmp.e (s1#(b1#i), s2#(b2#i)), s1#(b1#i), &quot;batching dims don&#39;t match&quot;)›;</div>
-<div class="line">                          let cs       = ‹i: nc; %refly.check (%core.ncmp.e (s1#(c1#i), s2#(c2#i)), s1#(c1#i), &quot;contracting dims don&#39;t match&quot;)›;</div>
-<div class="line">                          let bc_1     = %tuple.cat (b1, c1);</div>
-<div class="line">                          let bc_2     = %tuple.cat (b2, c2);</div>
-<div class="line">                          let s12_res  = %tuple.cat (%vec.diff (s1, bc_1), %vec.diff (s2, bc_2));</div>
-<div class="line">                          let s_out    = %tuple.cat (bs, s12_res);</div>
-<div class="line">                          «s_out; R#T», normalize_dot;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md340"></a>
-%tensor.prod_2d</h2>
-<div class="fragment"><div class="line">//lam %tensor.prod_2d_lam {R: Ring} {m: Nat, k: Nat, l: Nat} [t1: «m, k; R#T», t2: «k, l; R#T»]</div>
-<div class="line">//         : «m, l; R#T»</div>
-<div class="line">//         = %tensor.dot_general R (0_2, 1_2, (), ()) (t1, t2);</div>
-</div><!-- fragment --><div class="fragment"><div class="line">axm %tensor.dot_2d_00: {R: Ring} → {m: Nat, k: Nat, l: Nat} → [t1: «m, k; R#T», t2: «k, l; R#T»] → «m, l; R#T»;</div>
-<div class="line">axm %tensor.dot_2d_01: {R: Ring} → {m: Nat, k: Nat, l: Nat} → [t1: «m, k; R#T», t2: «k, l; R#T»] → «m, l; R#T»;</div>
-<div class="line">axm %tensor.dot_2d_10: {R: Ring} → {m: Nat, k: Nat, l: Nat} → [t1: «m, k; R#T», t2: «k, l; R#T»] → «m, l; R#T»;</div>
-<div class="line">axm %tensor.dot_2d_11: {R: Ring} → {m: Nat, k: Nat, l: Nat} → [t1: «m, k; R#T», t2: «k, l; R#T»] → «m, l; R#T»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md341"></a>
-%tensor.broadcast_in_dim</h2>
-<div class="fragment"><div class="line">axm %tensor.broadcast_in_dim: {T: *}</div>
-<div class="line">                            → {r_in r_out: Nat, s_in: «r_in; Nat», s_out: «r_out; Nat»}</div>
-<div class="line">                            → [«s_in; T», «r_in; Idx r_in»]</div>
-<div class="line">                            → «s_out; T»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md342"></a>
-%tensor.reduce</h2>
-<p><span class="tt">ni</span> tensors each of shape <span class="tt">s</span> and type <span class="tt">Is#i</span> in arg is</p><ul>
-<li>i: ni is a notation for i : (Idx ni)</li>
-</ul>
-<div class="fragment"><div class="line">axm %tensor.reduce: {r: Nat, s: «r; Nat»}</div>
-<div class="line">                  → {ni: Nat, Is: «ni; *»}</div>
-<div class="line">                  → [f: «2; «i: ni; Is#i» » → «i: ni; Is#i»]</div>
-<div class="line">                  → [is: «i: ni; «s; Is#i» », init: «i: ni; Is#i», dims: «r; Bool»]</div>
-<div class="line">                  → «i: ni; « &lt;j: r; (s#j, 1)#(dims#j)&gt;; Is#i» »;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md343"></a>
 %tensor.map_reduce</h2>
 <ul>
 <li><span class="tt">nis</span>: number of inputs</li>
@@ -266,14 +217,201 @@ Operations</h1>
 <li><span class="tt">is</span> : the inputs</li>
 </ul>
 <p>Returns a tensor obtained by folding <span class="tt">f</span> following the indexes in <span class="tt">subs</span></p>
+<p><span class="tt">nis</span>, <span class="tt">Ro</span>, <span class="tt">Ris</span> and <span class="tt">subs</span> must be literals, before entering the <span class="tt">tensor::Lower</span> phase, for the lowering to succeed.</p>
 <div class="fragment"><div class="line">axm %tensor.map_reduce: {nis: Nat}</div>
 <div class="line">                      → {To: *, Ro: Nat}</div>
 <div class="line">                      → [So: «Ro; Nat»]</div>
 <div class="line">                      → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i:nis; «Ris#i; Nat»»}</div>
-<div class="line">                      → [f: [To, «i: nis; Tis#i»] → To, init: To]</div>
+<div class="line">                      → [f: Fn [To, «i: nis; Tis#i»] → To, init: To]</div>
 <div class="line">                      → [subs: «i: nis; « Ris#i; Nat»»]</div>
 <div class="line">                      → [is: «i: nis; «Sis#i; Tis#i» »]</div>
-<div class="line">                      → «So; To»;</div>
+<div class="line">                      → «So; To», normalize_map_reduce;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md338"></a>
+%tensor.map_reduce_ds</h2>
+<p>Variant of tensor.map_reduce that takes a direct-style function as input.</p>
+<div class="fragment"><div class="line">axm %tensor.map_reduce_ds: {nis: Nat}</div>
+<div class="line">                           → {To: *, Ro: Nat}</div>
+<div class="line">                           → [So: «Ro; Nat»]</div>
+<div class="line">                           → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i:nis; «Ris#i; Nat»»}</div>
+<div class="line">                           → [f: [To, «i: nis; Tis#i»] → To, init: To]</div>
+<div class="line">                           → [subs: «i: nis; « Ris#i; Nat»»]</div>
+<div class="line">                           → [is: «i: nis; «Sis#i; Tis#i» »]</div>
+<div class="line">                           → «So; To»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.map_reduce_ds_impl {nis: Nat}</div>
+<div class="line">                                 {To: *, Ro: Nat}</div>
+<div class="line">                                 (So: «Ro; Nat»)</div>
+<div class="line">                                 {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i:nis; «Ris#i; Nat»»}</div>
+<div class="line">                                 (f: [To, «i: nis; Tis#i»] → To, init: To)</div>
+<div class="line">                                 (subs: «i: nis; « Ris#i; Nat»»)</div>
+<div class="line">                                 (is: «i: nis; «Sis#i; Tis#i» »)</div>
+<div class="line">                                 : «So; To»</div>
+<div class="line">                                 = fun f_ (x: To, y: «i: nis; Tis#i»)@tt = return (f (x, y));</div>
+<div class="line">                                   %tensor.map_reduce @nis @(To, Ro) So @(Tis, Ris, Sis) (f_, init) subs is;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md339"></a>
+%tensor.dot_product</h2>
+<ul>
+<li><span class="tt">R</span>: the ring in which the dot product is performed</li>
+<li><span class="tt">r1/r2</span> : the ranks of the input matrices</li>
+<li><span class="tt">nc/nb</span> : the amount of contracting/batching dimensions</li>
+<li><span class="tt">c/b``1/2</span> : respectively the contracting/batching dimensions of the left/right input</li>
+<li><span class="tt">s``1/2</span> : the shape of the left/right input</li>
+<li><span class="tt">a/b</span> : the left/right input</li>
+</ul>
+<p>Returns the generalised dot product of <span class="tt">a</span> and <span class="tt">b</span>. <a href="https://openxla.org/stablehlo/spec#dot_general">https://openxla.org/stablehlo/spec#dot_general</a></p>
+<div class="fragment"><div class="line">fun dot_general_fun [R: %tensor.Ring] [x: R#T, [y: R#T, z: R#T]]@tt: R#T = return (R#add (x, (R#mul (y, z))));</div>
+<div class="line">lam dot_general_pick {n: Nat} {na nb nc: Nat} (a: «na; Idx n», b: «nb; Idx n», c: «nc; Idx n») (off_1 off_2: Nat) (i: Idx n): Nat =</div>
+<div class="line">  let (ab, ai) = %vec.first (%core.icmp.e @n) (a, i);</div>
+<div class="line">  let (bb, bi) = %vec.first (%core.icmp.e @n) (b, i);</div>
+<div class="line">  let (cb, ci) = %vec.first (%core.icmp.e @n) (c, i);</div>
+<div class="line">  let ai_nat = %core.bitcast Nat ai;</div>
+<div class="line">  let ai_out = %core.nat.add (off_1, ai_nat);</div>
+<div class="line">  let bi_nat = %core.bitcast Nat bi;</div>
+<div class="line">  let ci_nat = %core.bitcast Nat ci;</div>
+<div class="line">  let ci_out = %core.nat.add (off_2, ci_nat);</div>
+<div class="line">  ((ai_out, ci_out)#cb, bi_nat)#bb;</div>
+<div class="line">lam dot_general_shape {r1 r2: Nat} {nc nb: Nat}</div>
+<div class="line">  (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)</div>
+<div class="line">  (s1: «r1; Nat», s2: «r2; Nat») =</div>
+<div class="line">      let bs_check = ‹i: nb; %refly.check (%core.ncmp.e ((s1#(b1#i), s2#(b2#i))), s1#(b1#i), &quot;batching dims don&#39;t match&quot;)›;</div>
+<div class="line">      let cs_check = ‹i: nc; %refly.check (%core.ncmp.e ((s1#(c1#i), s2#(c2#i))), s1#(c1#i), &quot;contracting dims don&#39;t match&quot;)›;</div>
+<div class="line">      let bs       = ‹i: nb; s1#(b1#i)›;</div>
+<div class="line">      let bc_1     = %vec.cat (b1, c1);</div>
+<div class="line">      let s1_res   = %vec.diff (s1, bc_1);</div>
+<div class="line">      let bc_2     = %vec.cat (b2, c2);</div>
+<div class="line">      let s2_res   = %vec.diff (s2, bc_2);</div>
+<div class="line">      let s12_res  = %vec.cat (s1_res, s2_res);</div>
+<div class="line">      let s_out    = %vec.cat (bs, s12_res);</div>
+<div class="line">      s_out;</div>
+<div class="line">axm %tensor.dot_product: [R: %tensor.Ring]</div>
+<div class="line">                       → {r1 r2: Nat}</div>
+<div class="line">                       → {nc nb: Nat}</div>
+<div class="line">                       → [c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»]</div>
+<div class="line">                       → {s1: «r1; Nat», s2: «r2; Nat»}</div>
+<div class="line">                       → [a: «s1; R#T», b: «s2; R#T»]</div>
+<div class="line">                       → «dot_general_shape (c1, c2, b1, b2) (s1, s2); R#T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.dot_product_impl</div>
+<div class="line">  (R: %tensor.Ring) {r1 r2: Nat} {nc nb: Nat}</div>
+<div class="line">  (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)</div>
+<div class="line">  {s1: «r1; Nat», s2: «r2; Nat»} (a: «s1; R#T», b: «s2; R#T»)</div>
+<div class="line">    : let s_out = dot_general_shape (c1, c2, b1, b2) (s1, s2);</div>
+<div class="line">      «s_out; R#T»</div>
+<div class="line">    = let s_out    = dot_general_shape (c1, c2, b1, b2) (s1, s2);</div>
+<div class="line">      let bc_1     = %vec.cat (b1, c1);</div>
+<div class="line">      let s1_res   = %vec.diff (s1, bc_1);</div>
+<div class="line">      let n_s1_res = %vec.len s1_res;</div>
+<div class="line">      let bc_2     = %vec.cat (b2, c2);</div>
+<div class="line">      let f        = dot_general_fun R;</div>
+<div class="line">      let r_out    = %vec.len s_out;</div>
+<div class="line">      let a1       = %vec.diff (‹i: r1; i›, bc_1);</div>
+<div class="line">      let a2       = %vec.diff (‹i: r2; i›, bc_2);</div>
+<div class="line">      let ein_1    = ‹i: r1; dot_general_pick (a1, b1, c1) (nb, r_out) i›;</div>
+<div class="line">      let off_ein2 = %core.nat.add (nb, n_s1_res);</div>
+<div class="line">      let ein_2    = ‹i: r2; dot_general_pick (a2, b2, c2) (off_ein2, r_out) i›;</div>
+<div class="line">      %tensor.map_reduce @2 s_out (f, R#_0) (ein_1, ein_2) (a, b);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md340"></a>
+%tensor.product_2d</h2>
+<p>Computes the dot product of two 2-dimensional tensors.</p>
+<div class="fragment"><div class="line">axm %tensor.product_2d: [R: %tensor.Ring]</div>
+<div class="line">                      → {m k l: Nat}</div>
+<div class="line">                      → [t1: «m, k; R#T», t2: «k, l; R#T»]</div>
+<div class="line">                      → «m, l; R#T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.product_2d_impl (R: %tensor.Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
+<div class="line">        = %tensor.dot_product_impl R @(2, 2) (1_2, 0_2, (), ()) @((m, k), (k, l)) (t1, t2);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md341"></a>
+%tensor.transpose</h2>
+<p>Permutes the dimensions of <span class="tt">input</span> according to <span class="tt">permutation</span>.</p>
+<div class="fragment"><div class="line">fun transpose_fun {T:*} [x: T, y: T]@tt: T = return y;</div>
+<div class="line">lam transpose_shape {r: Nat} (s: «r; Nat», permutation: «r; Idx r»): «r; Nat» =</div>
+<div class="line">  let shape_permutation = ‹i: r; (%vec.first (%core.icmp.e @r) (permutation, i))#tt›;</div>
+<div class="line">  ‹i: r; s#(shape_permutation#i)›;</div>
+<div class="line">axm %tensor.transpose: {T: *, r: Nat, s: «r; Nat»}</div>
+<div class="line">                     → [input: «s; T», permutation: «r; Idx r»]</div>
+<div class="line">                     → «transpose_shape (s, permutation); T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.transpose_impl {T: *, r: Nat, s: «r; Nat»}</div>
+<div class="line">                           (input: «s;T», permutation: «r; Idx r»)</div>
+<div class="line">                         : «transpose_shape (s, permutation); T»</div>
+<div class="line">                         = let permutation_nat   = &lt;i: r; %core.bitcast Nat permutation#i&gt;;</div>
+<div class="line">                           let out_s             = transpose_shape (s, permutation);</div>
+<div class="line">                           %tensor.map_reduce @1 @(T, r) out_s @(T, r, s) (transpose_fun @T, ⊥: T) permutation_nat input;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md342"></a>
+%tensor.transpose_2d</h2>
+<p>Permutes the dimensions of a 2-dimensional tensor.</p>
+<div class="fragment"><div class="line">axm %tensor.transpose_2d: {T: *}</div>
+<div class="line">                        → {s: «2; Nat»}</div>
+<div class="line">                        → [input: «s; T»]</div>
+<div class="line">                        → «s#tt, s#ff; T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =</div>
+<div class="line">  %tensor.transpose_impl @(T, 2, s) (input, (tt, ff));</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md343"></a>
+%tensor.broadcast</h2>
+<p>Expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span>. For all i, <span class="tt">s_in#i</span> = <span class="tt">s_out#i</span> or 1 The dimensions of size 1 are expanded to fit <span class="tt">s_out</span>.</p>
+<div class="fragment"><div class="line">axm %tensor.broadcast:  {T: *, r: Nat}</div>
+<div class="line">                      → [s_in: «r; Nat», s_out: «r; Nat», input: «s_in; T»]</div>
+<div class="line">                      → «s_out; T», normalize_broadcast;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md344"></a>
+%tensor.broadcast_in_dim</h2>
+<p>Transposes and expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span>. Each dimensions is mapped to the corresponding <span class="tt">index</span> output dimension. The holes are filled by broadcasting. Todo: We could probably just implement this in terms of tensor.broadcast and tensor.transpose directly?</p>
+<div class="fragment"><div class="line">axm %tensor.broadcast_in_dim: {T: *, r_in r_out: Nat}</div>
+<div class="line">                            → [s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»]</div>
+<div class="line">                            → «s_out; T», normalize_broadcast_in_dim;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md345"></a>
+%tensor.map</h2>
+<p>Maps a function over a collection of tensors.</p>
+<div class="fragment"><div class="line">axm %tensor.map: {T: *, ni: Nat, Is: «ni; *»}</div>
+<div class="line">               → [app: «i: ni; Is#i» → T]</div>
+<div class="line">               → {r: Nat, s: «r; Nat»}</div>
+<div class="line">               → [is: «i: ni; «s; Is#i»»]</div>
+<div class="line">               → «s; T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.map_impl {T: *, ni: Nat, Is: «ni; *»}</div>
+<div class="line">                     (app: «i: ni; Is#i» → T)</div>
+<div class="line">                     {r: Nat, s: «r; Nat»}</div>
+<div class="line">                     (is: «i: ni; «s; Is#i» »)</div>
+<div class="line">                     : «s; T» =</div>
+<div class="line">  fun app_mr [x: T, y: «i: ni; Is#i»]@tt = return (app y);</div>
+<div class="line">  %tensor.map_reduce @ni @(T, r) s @(Is, ‹ni; r›, ‹ni; s›) (app_mr, ⊥: T) ‹ni; ‹i:r; %core.bitcast Nat i›› is;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md346"></a>
+%tensor.unary</h2>
+<p>Maps a unary function over a tensor.</p>
+<div class="fragment"><div class="line">axm %tensor.unary: {Ti To: *}</div>
+<div class="line">                 → [app: Ti → To]</div>
+<div class="line">                 → {r: Nat, s: «r; Nat»}</div>
+<div class="line">                 → [i: «s; Ti»]</div>
+<div class="line">                 → «s; To»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.unary_impl {Ti To : *} [app: Ti → To] {r: Nat, s: «r; Nat»} (i: «s; Ti»): «s; To» =</div>
+<div class="line">  %tensor.map_impl @(To, 1, Ti) app @(r, s) i;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md347"></a>
+%tensor.binary</h2>
+<p>Maps a binary function over a pair of tensors.</p>
+<div class="fragment"><div class="line">axm %tensor.binary: {Ti1 Ti2 To: *}</div>
+<div class="line">                  → [app: [Ti1, Ti2] → To]</div>
+<div class="line">                  → {r: Nat, s: «r; Nat»}</div>
+<div class="line">                  → [is: [«s; Ti1», «s; Ti2»]]</div>
+<div class="line">                  → «s; To»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.binary_impl {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat, s: «r; Nat»} (is: [«s; Ti1», «s; Ti2»]): «s; To» =</div>
+<div class="line">  %tensor.map_impl @(To, 2, (Ti1, Ti2)) app @(r, s) is;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md348"></a>
+%tensor.select</h2>
+<p>Maps core.select over tensors.</p>
+<div class="fragment"><div class="line">axm %tensor.select: {T: *}</div>
+<div class="line">                  → {r: Nat, s: «r; Nat»}</div>
+<div class="line">                  → [is: [«s; Bool», «s; T», «s; T»]]</div>
+<div class="line">                  → «s; T»;</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.select_impl {T: *} {r: Nat, s: «r; Nat»} (is: [«s; Bool», «s; T», «s; T»]): «s; T» =</div>
+<div class="line">  %tensor.map_impl @(T, 3, (Bool, T, T)) (%core.select @T) @(r, s) is;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md349"></a>
+Phases</h1>
+<div class="fragment"><div class="line">axm %tensor.lower_tensor: %compile.Phase;</div>
+<div class="line">axm %tensor.lower_map_reduce: %compile.Phase;</div>
+<div class="line">axm %tensor.fuse_tensor: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
