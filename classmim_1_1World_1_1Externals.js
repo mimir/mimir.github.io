@@ -7,6 +7,7 @@ var classmim_1_1World_1_1Externals =
     [ "mutate", "classmim_1_1World_1_1Externals.html#a12a56ab6829109dd40a05457df85eaa7", null ],
     [ "muts", "classmim_1_1World_1_1Externals.html#ac1b577682e6553faf40ae1ade97f6d7e", null ],
     [ "operator[]", "classmim_1_1World_1_1Externals.html#a8382b5eaa8fe649513a2720500fb727b", null ],
+    [ "size", "classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7", null ],
     [ "sym2mut", "classmim_1_1World_1_1Externals.html#ac72a6eff11ad513f4a98462cc487e36a", null ],
     [ "syms", "classmim_1_1World_1_1Externals.html#af73e1fc6bb699ac0af55a3339f366e85", null ],
     [ "swap", "classmim_1_1World_1_1Externals.html#a8bf1ffe11aba511355eef07444806186", null ]

@@ -51,13 +51,14 @@ var searchData=
   ['rhs_48',['rhs',['../classmim_1_1ast_1_1RuleDecl.html#ac3998bb2935420c2a2244bf2fe56724d',1,'mim::ast::RuleDecl::rhs()'],['../classmim_1_1Rule.html#ac2225d65a41229b955e97eb9c1ffe1f8',1,'mim::Rule::rhs()']]],
   ['rol_49',['rol',['../classmim_1_1lct_1_1Node.html#a72972346ef70692eb69b01d66538eb71',1,'mim::lct::Node']]],
   ['root_50',['root',['../classmim_1_1Nest.html#ac099472ee5301d183779c4c70d2b7ef3',1,'mim::Nest::root()'],['../classmim_1_1ClosedMutPhase.html#a06b703ae1027080726991949ee0deec5',1,'mim::ClosedMutPhase::root()'],['../classmim_1_1Scheduler.html#a0f91a1a8a83f0dd1da306d524eaaaf3b',1,'mim::Scheduler::root()']]],
-  ['ror_51',['ror',['../classmim_1_1lct_1_1Node.html#a28dfc84ca1bc23d127afabac43ddfe3b',1,'mim::lct::Node']]],
-  ['rotate_52',['rotate',['../classmim_1_1lct_1_1Node.html#a8184ed21119e0fedb3605dc4f2192a72',1,'mim::lct::Node']]],
-  ['rsubspan_53',['rsubspan',['../classmim_1_1Span.html#a95ad9bdf9ac1eb16588ad4c96fef3791',1,'mim::Span::rsubspan(size_t i, size_t n=D) const noexcept'],['../classmim_1_1Span.html#aca1a6c80020a977de13fb1ce3573c160',1,'mim::Span::rsubspan() const noexcept']]],
-  ['rule_54',['rule',['../classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1',1,'mim::World']]],
-  ['ruledecl_55',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html#a31cace7df0461ce8af94e3994c06d503',1,'mim::ast::RuleDecl']]],
-  ['ruleexpr_56',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html#a3b8071a6515d765f9c2f396e3639611b',1,'mim::ast::RuleExpr']]],
-  ['run_57',['run',['../classmim_1_1PassMan.html#a65259d543c7d9396d4c69a19b966a80b',1,'mim::PassMan::run()'],['../classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f',1,'mim::Phase::run()'],['../classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a',1,'mim::Phase::run(Args &amp;&amp;... args)'],['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html#a537a58634ca20c1143e3c123bc36e336',1,'mim::plug::clos::FreeDefAna::run()'],['../namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4',1,'mim::sys::run()']]],
-  ['rwpass_58',['RWPass',['../classmim_1_1RWPass.html#a0658053fe0b5e63e4041ccd20711bc5a',1,'mim::RWPass::RWPass(World &amp;world, std::string name)'],['../classmim_1_1RWPass.html#a96f2bfe1cfed91441871ef792f6f6d6d',1,'mim::RWPass::RWPass(World &amp;world, flags_t annex)']]],
-  ['rwphase_59',['RWPhase',['../classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e',1,'mim::RWPhase::RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)'],['../classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c',1,'mim::RWPhase::RWPhase(World &amp;world, flags_t annex, Analysis *analysis=nullptr)']]]
+  ['roots_51',['roots',['../classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855',1,'mim::World']]],
+  ['ror_52',['ror',['../classmim_1_1lct_1_1Node.html#a28dfc84ca1bc23d127afabac43ddfe3b',1,'mim::lct::Node']]],
+  ['rotate_53',['rotate',['../classmim_1_1lct_1_1Node.html#a8184ed21119e0fedb3605dc4f2192a72',1,'mim::lct::Node']]],
+  ['rsubspan_54',['rsubspan',['../classmim_1_1Span.html#a95ad9bdf9ac1eb16588ad4c96fef3791',1,'mim::Span::rsubspan(size_t i, size_t n=D) const noexcept'],['../classmim_1_1Span.html#aca1a6c80020a977de13fb1ce3573c160',1,'mim::Span::rsubspan() const noexcept']]],
+  ['rule_55',['rule',['../classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1',1,'mim::World']]],
+  ['ruledecl_56',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html#a31cace7df0461ce8af94e3994c06d503',1,'mim::ast::RuleDecl']]],
+  ['ruleexpr_57',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html#a3b8071a6515d765f9c2f396e3639611b',1,'mim::ast::RuleExpr']]],
+  ['run_58',['run',['../classmim_1_1PassMan.html#a65259d543c7d9396d4c69a19b966a80b',1,'mim::PassMan::run()'],['../classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f',1,'mim::Phase::run()'],['../classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a',1,'mim::Phase::run(Args &amp;&amp;... args)'],['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html#a537a58634ca20c1143e3c123bc36e336',1,'mim::plug::clos::FreeDefAna::run()'],['../namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4',1,'mim::sys::run()']]],
+  ['rwpass_59',['RWPass',['../classmim_1_1RWPass.html#a0658053fe0b5e63e4041ccd20711bc5a',1,'mim::RWPass::RWPass(World &amp;world, std::string name)'],['../classmim_1_1RWPass.html#a96f2bfe1cfed91441871ef792f6f6d6d',1,'mim::RWPass::RWPass(World &amp;world, flags_t annex)']]],
+  ['rwphase_60',['RWPhase',['../classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e',1,'mim::RWPhase::RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)'],['../classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c',1,'mim::RWPhase::RWPhase(World &amp;world, flags_t annex, Analysis *analysis=nullptr)']]]
 ];

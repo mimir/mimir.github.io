@@ -173,6 +173,7 @@ var classmim_1_1World =
     [ "reform", "classmim_1_1World.html#a6af2068ef4e7e65397126093ea729673", null ],
     [ "register_annex", "classmim_1_1World.html#adaeed3797dfe3ac1ba62047a608f5f90", null ],
     [ "register_annex", "classmim_1_1World.html#a6cc63933812f5ad23533789cbd234066", null ],
+    [ "roots", "classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855", null ],
     [ "rule", "classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1", null ],
     [ "select", "classmim_1_1World.html#ae336d8df53ea40e63899b84c41d91ab0", null ],
     [ "seq", "classmim_1_1World.html#a1234349dfc409f6ac1ad98f1190af75a", null ],

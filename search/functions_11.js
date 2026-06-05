@@ -36,7 +36,7 @@ var searchData=
   ['sibl_5fdeps_33',['sibl_deps',['../classmim_1_1Nest_1_1Node.html#a2a29ed570ed6ad81039fa1ad52a9b784',1,'mim::Nest::Node::sibl_deps()'],['../classmim_1_1Nest_1_1Node.html#a42cacaae58788b53f4aeaea495b1293e',1,'mim::Nest::Node::sibl_deps() const']]],
   ['sigma_34',['sigma',['../classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856',1,'mim::World::sigma(Defs ops)'],['../classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0',1,'mim::World::sigma()']]],
   ['sigmaexpr_35',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html#ac3bff2a4e5141d5a6ed8e36ebc00d3c3',1,'mim::ast::SigmaExpr']]],
-  ['size_36',['size',['../classmim_1_1Sets_1_1Set.html#a81c90b3ef8cd75899233202f36b9ef46',1,'mim::Sets::Set']]],
+  ['size_36',['size',['../classmim_1_1Sets_1_1Set.html#a81c90b3ef8cd75899233202f36b9ef46',1,'mim::Sets::Set::size()'],['../classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7',1,'mim::World::Externals::size()']]],
   ['size2bitwidth_37',['size2bitwidth',['../classmim_1_1Idx.html#a445658b6d8a1922d7fc9fb33235417ff',1,'mim::Idx::size2bitwidth(nat_t n)'],['../classmim_1_1Idx.html#a476bd0b41bda503d46dac1584823e1e1',1,'mim::Idx::size2bitwidth(const Def *size)']]],
   ['skip_5fenv_38',['skip_env',['../namespacemim_1_1plug_1_1clos.html#aa48ad3e4ecbbb87cea1f4034ffe29fc2',1,'mim::plug::clos']]],
   ['smart_39',['smart',['../classmim_1_1Scheduler.html#a12a699ef67babd6c87b732194b1036e1',1,'mim::Scheduler']]],

@@ -1,5 +1,13 @@
 var NAVTREEINDEX23 =
 {
+"namespacemim_1_1plug_1_1refly.html#ac24c63c923883ed7d3fd7cf83a5ba6e0":[2,0,3,1,14,2],
+"namespacemim_1_1plug_1_1refly.html#ac4498e362835106aa36fcfd9c65c574f":[2,0,3,1,14,26],
+"namespacemim_1_1plug_1_1refly.html#acdf0aa3a0beb8ab1cff0ce3017ac4973":[2,0,3,1,14,4],
+"namespacemim_1_1plug_1_1refly.html#ad1ff0c022f81a11c0fad8b96314d2a9d":[2,0,3,1,14,0],
+"namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7":[2,0,3,1,14,15],
+"namespacemim_1_1plug_1_1refly.html#ade1981ed2304c796bdde12f0bf85f837":[2,0,3,1,14,23],
+"namespacemim_1_1plug_1_1refly.html#ae126de749f0ee7091b07962d66cf99af":[2,0,3,1,14,1],
+"namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeab":[2,0,3,1,14,14],
 "namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeaba4c4505bf732dbc2e6b2199dee195d475":[2,0,3,1,14,14,1],
 "namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeaba8da26ba680a4bc49270f115861546f0e":[2,0,3,1,14,14,0],
 "namespacemim_1_1plug_1_1refly.html#aee2261b0b7331b07efb5c1cea91421ae":[2,0,3,1,14,10],
@@ -241,13 +249,5 @@ var NAVTREEINDEX23 =
 "range__helper_8h.html":[5,0,3,0,5],
 "range__helper_8h_source.html":[5,0,3,0,5],
 "refly.html":[1,14],
-"refly_2autogen_8h.html":[5,0,0,1,0,0,14,0],
-"refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,14,0,0],
-"refly_2autogen_8h_source.html":[5,0,0,1,0,0,14,0],
-"refly_2normalizers_8cpp.html":[5,0,4,1,4,14,0],
-"refly_2normalizers_8cpp_source.html":[5,0,4,1,4,14,0],
-"refly_8cpp.html":[5,0,4,1,4,14,1],
-"refly_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,4,14,1,0],
-"refly_8cpp.html#a3886e4c865b2b15eae2cc4c6f84a9176":[5,0,4,1,4,14,1,1],
-"refly_8cpp_source.html":[5,0,4,1,4,14,1]
+"refly_2autogen_8h.html":[5,0,0,1,0,0,14,0]
 };

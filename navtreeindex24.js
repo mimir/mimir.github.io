@@ -1,5 +1,13 @@
 var NAVTREEINDEX24 =
 {
+"refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,14,0,0],
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,14,0],
+"refly_2normalizers_8cpp.html":[5,0,4,1,4,14,0],
+"refly_2normalizers_8cpp_source.html":[5,0,4,1,4,14,0],
+"refly_8cpp.html":[5,0,4,1,4,14,1],
+"refly_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,4,14,1,0],
+"refly_8cpp.html#a3886e4c865b2b15eae2cc4c6f84a9176":[5,0,4,1,4,14,1,1],
+"refly_8cpp_source.html":[5,0,4,1,4,14,1],
 "refly_8h.html":[5,0,3,1,4,14,0],
 "refly_8h_source.html":[5,0,3,1,4,14,0],
 "regex.html":[1,15],
@@ -241,13 +249,5 @@ var NAVTREEINDEX24 =
 "structmim_1_1World_1_1Freezer.html#adfb433df1f4257c5c82bb3842559b6d4":[2,0,3,102,2,1],
 "structmim_1_1World_1_1Freezer.html#adfb433df1f4257c5c82bb3842559b6d4":[4,0,1,100,2,1],
 "structmim_1_1World_1_1Freezer.html#aee3e0e14f3c3fc7cd29f5c0c894c8140":[2,0,3,102,2,3],
-"structmim_1_1World_1_1Freezer.html#aee3e0e14f3c3fc7cd29f5c0c894c8140":[4,0,1,100,2,3],
-"structmim_1_1World_1_1ScopedLoc.html":[2,0,3,102,1],
-"structmim_1_1World_1_1ScopedLoc.html":[4,0,1,100,1],
-"structmim_1_1World_1_1ScopedLoc.html#a5ede016f5ad81b87b0e5dcce51117f9c":[2,0,3,102,1,1],
-"structmim_1_1World_1_1ScopedLoc.html#a5ede016f5ad81b87b0e5dcce51117f9c":[4,0,1,100,1,1],
-"structmim_1_1World_1_1ScopedLoc.html#ae1131f521caaa76d5c82f10b32cd0f7e":[2,0,3,102,1,0],
-"structmim_1_1World_1_1ScopedLoc.html#ae1131f521caaa76d5c82f10b32cd0f7e":[4,0,1,100,1,0],
-"structmim_1_1World_1_1State.html":[2,0,3,102,0],
-"structmim_1_1World_1_1State.html":[4,0,1,100,0]
+"structmim_1_1World_1_1Freezer.html#aee3e0e14f3c3fc7cd29f5c0c894c8140":[4,0,1,100,2,3]
 };
