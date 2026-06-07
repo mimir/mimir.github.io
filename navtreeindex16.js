@@ -1,5 +1,13 @@
 var NAVTREEINDEX16 =
 {
+"classmim_1_1plug_1_1autodiff_1_1Eval.html#af70ead2918d33d379f73d0c337b037ac":[2,0,3,1,1,0,10],
+"classmim_1_1plug_1_1autodiff_1_1Eval.html#af70ead2918d33d379f73d0c337b037ac":[4,0,1,1,1,0,10],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html":[2,0,3,1,2,1],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html":[4,0,1,1,2,1],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html#ab47e8a2aa1d72d70736015bd240fa4b6":[2,0,3,1,2,1,0],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html#ab47e8a2aa1d72d70736015bd240fa4b6":[4,0,1,1,2,1,0],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html#ad32074c185fc02b0b3920cd3a5984923":[2,0,3,1,2,1,1],
+"classmim_1_1plug_1_1clos_1_1BranchClosElim.html#ad32074c185fc02b0b3920cd3a5984923":[4,0,1,1,2,1,1],
 "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html":[2,0,3,1,2,2],
 "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html":[4,0,1,1,2,2],
 "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html#a1c8aa0cc90581f545b2638646f546215":[2,0,3,1,2,2,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX16 =
 "classmim_1_1sexpr_1_1Emitter.html#a6e3089e2c9f8c51f9be2770de3dc1018":[4,0,1,3,1,17],
 "classmim_1_1sexpr_1_1Emitter.html#a8d7a66d40251252fee814156c75c09a6":[2,0,3,3,1,13],
 "classmim_1_1sexpr_1_1Emitter.html#a8d7a66d40251252fee814156c75c09a6":[4,0,1,3,1,13],
-"classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2":[2,0,3,3,1,10],
-"classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2":[4,0,1,3,1,10],
-"classmim_1_1sexpr_1_1Emitter.html#a962bd130f854a76a2a06ea4fd7c4a815":[2,0,3,3,1,5],
-"classmim_1_1sexpr_1_1Emitter.html#a962bd130f854a76a2a06ea4fd7c4a815":[4,0,1,3,1,5],
-"classmim_1_1sexpr_1_1Emitter.html#a9704378aec852e1c758411214c75a771":[2,0,3,3,1,2],
-"classmim_1_1sexpr_1_1Emitter.html#a9704378aec852e1c758411214c75a771":[4,0,1,3,1,2],
-"classmim_1_1sexpr_1_1Emitter.html#a9bbfe1eb5061a54717874b928ce9cb84":[2,0,3,3,1,7],
-"classmim_1_1sexpr_1_1Emitter.html#a9bbfe1eb5061a54717874b928ce9cb84":[4,0,1,3,1,7],
-"classmim_1_1sexpr_1_1Emitter.html#ab5afffcf4c4b443137899ce7fbe604d8":[2,0,3,3,1,15]
+"classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2":[2,0,3,3,1,10]
 };

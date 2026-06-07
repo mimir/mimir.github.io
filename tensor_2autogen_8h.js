@@ -14,6 +14,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::map", "namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37", null ],
     [ "mim::plug::tensor::map_impl", "namespacemim_1_1plug_1_1tensor.html#a67b1512448efe745b8d5c41337da58f0", null ],
     [ "mim::plug::tensor::map_reduce", "namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5", null ],
+    [ "mim::plug::tensor::map_reduce_aff", "namespacemim_1_1plug_1_1tensor.html#aa7c5f3fd575e4e7626a27731220b94ef", null ],
     [ "mim::plug::tensor::map_reduce_ds", "namespacemim_1_1plug_1_1tensor.html#a3d564cc723a5910236faff5a8aa1c177", null ],
     [ "mim::plug::tensor::map_reduce_ds_impl", "namespacemim_1_1plug_1_1tensor.html#ac1b9d59fc55126f92dfca5b06f5b7ac1", null ],
     [ "mim::plug::tensor::product_2d", "namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7", null ],
@@ -32,6 +33,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::normalize_broadcast_in_dim", "namespacemim_1_1plug_1_1tensor.html#a42c1609b7678afe0a84377ae3cb461ea", null ],
     [ "mim::plug::tensor::normalize_get", "namespacemim_1_1plug_1_1tensor.html#a3d35d4acf473b0128bd90539f63d6403", null ],
     [ "mim::plug::tensor::normalize_map_reduce", "namespacemim_1_1plug_1_1tensor.html#aa0534e075b47793751c5eb6f7f65f202", null ],
+    [ "mim::plug::tensor::normalize_map_reduce_aff", "namespacemim_1_1plug_1_1tensor.html#af03de4eba3079a7736f4cafb406a5d97", null ],
     [ "mim::plug::tensor::normalize_set", "namespacemim_1_1plug_1_1tensor.html#a55718c39985682aac0b3bb0fd127e937", null ],
     [ "mim::plug::tensor::register_normalizers", "namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3", null ],
     [ "mim::plug::tensor::Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ]

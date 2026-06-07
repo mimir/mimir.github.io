@@ -94,6 +94,7 @@ var hierarchy =
         [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
         [ "mim::SymExprOpt", "classmim_1_1SymExprOpt.html", null ],
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
+        [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
         [ "mim::plug::direct::DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", null ],
         [ "mim::plug::matrix::LowerMatrixLowLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],

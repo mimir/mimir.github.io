@@ -5,5 +5,6 @@ var tensor_2normalizers_8cpp =
     [ "mim::plug::tensor::normalize_broadcast_in_dim", "namespacemim_1_1plug_1_1tensor.html#a42c1609b7678afe0a84377ae3cb461ea", null ],
     [ "mim::plug::tensor::normalize_get", "namespacemim_1_1plug_1_1tensor.html#a3d35d4acf473b0128bd90539f63d6403", null ],
     [ "mim::plug::tensor::normalize_map_reduce", "namespacemim_1_1plug_1_1tensor.html#aa0534e075b47793751c5eb6f7f65f202", null ],
+    [ "mim::plug::tensor::normalize_map_reduce_aff", "namespacemim_1_1plug_1_1tensor.html#af03de4eba3079a7736f4cafb406a5d97", null ],
     [ "mim::plug::tensor::normalize_set", "namespacemim_1_1plug_1_1tensor.html#a55718c39985682aac0b3bb0fd127e937", null ]
 ];

@@ -111,16 +111,17 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1LamExpr.html#a81b9f339ed6a125d70464df5b5ee8ea0",
 "classmim_1_1ast_1_1RuleDecl.html",
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ac89e310d3d2616d226fe13bec22ea52f",
-"classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html",
-"classmim_1_1sexpr_1_1Emitter.html#ab5afffcf4c4b443137899ce7fbe604d8",
-"dir_ded25568453abcdd28d422036317e29b.html",
-"mem_2normalizers_8cpp_source.html",
-"namespacemim.html#ad0b148caad3b040f944f32bc4fa9a966",
-"namespacemim_1_1plug_1_1core.html#a3965efe43a42e535a3dde409b3f582ef",
-"namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32",
-"namespacemim_1_1plug_1_1refly.html#ac24c63c923883ed7d3fd7cf83a5ba6e0",
-"refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15",
-"structmim_1_1World_1_1ScopedLoc.html"
+"classmim_1_1plug_1_1autodiff_1_1Eval.html#af70ead2918d33d379f73d0c337b037ac",
+"classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2",
+"dir_cb1fe3d6493747165906617030c554a4.html",
+"matrix_2normalizers_8cpp_source.html",
+"namespacemim.html#ac4e6752bd834d28cb851c128dfa5b8c7",
+"namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa34ec78fcc91ffb1e54cd85e4a0924332",
+"namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72ab8613bd6a8d7b42a2fec6643bcf08f84",
+"namespacemim_1_1plug_1_1ord.html#acfdfd946d58d1ec4b8773d1e87204a17",
+"phase_8cpp_source.html",
+"structmim_1_1UseHash.html#a6d13f2e0a9453f2bfcc5f67bcd47e741",
+"vec_8cpp.html#a35bb34350e93d508e52544f4abd50e59"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

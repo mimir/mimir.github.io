@@ -11,12 +11,13 @@ var searchData=
   ['log_8',['Log',['../classmim_1_1Log.html',1,'mim']]],
   ['lower_9',['Lower',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html',1,'mim::plug::tensor::phase']]],
   ['lowerfor_10',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html',1,'mim::plug::affine::phase']]],
-  ['lowermapreduce_11',['LowerMapReduce',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::tensor::phase']]],
-  ['lowermatrixhighlevelmapred_12',['LowerMatrixHighLevelMapRed',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html',1,'mim::plug::matrix']]],
-  ['lowermatrixlowlevel_13',['LowerMatrixLowLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html',1,'mim::plug::matrix']]],
-  ['lowermatrixmediumlevel_14',['LowerMatrixMediumLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html',1,'mim::plug::matrix']]],
-  ['lowerregex_15',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html',1,'mim::plug::regex']]],
-  ['lowertypedclos_16',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1LowerTypedClos.html',1,'mim::plug::clos']]],
-  ['lowertypedclosprep_17',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html',1,'mim::plug::clos']]],
-  ['lt_18',['Lt',['../structautomaton_1_1DFANode_1_1Lt.html',1,'automaton::DFANode']]]
+  ['lowerindex_11',['LowerIndex',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html',1,'mim::plug::affine::phase']]],
+  ['lowermapreduce_12',['LowerMapReduce',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::tensor::phase']]],
+  ['lowermatrixhighlevelmapred_13',['LowerMatrixHighLevelMapRed',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html',1,'mim::plug::matrix']]],
+  ['lowermatrixlowlevel_14',['LowerMatrixLowLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html',1,'mim::plug::matrix']]],
+  ['lowermatrixmediumlevel_15',['LowerMatrixMediumLevel',['../classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html',1,'mim::plug::matrix']]],
+  ['lowerregex_16',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html',1,'mim::plug::regex']]],
+  ['lowertypedclos_17',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1LowerTypedClos.html',1,'mim::plug::clos']]],
+  ['lowertypedclosprep_18',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html',1,'mim::plug::clos']]],
+  ['lt_19',['Lt',['../structautomaton_1_1DFANode_1_1Lt.html',1,'automaton::DFANode']]]
 ];

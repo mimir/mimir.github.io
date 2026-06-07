@@ -14,12 +14,13 @@ var searchData=
   ['localptr_11',['LocalPtr',['../namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d',1,'mim::plug::gpu']]],
   ['longjmp_12',['longjmp',['../namespacemim_1_1plug_1_1clos.html#a8c9d1749e78425672fc67a331980da7d',1,'mim::plug::clos']]],
   ['lower_5ffor_5fphase_13',['lower_for_phase',['../namespacemim_1_1plug_1_1affine.html#aa58381bede626b4c4d80d8f15e996d3e',1,'mim::plug::affine']]],
-  ['lower_5fmap_5freduce_14',['lower_map_reduce',['../namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632',1,'mim::plug::tensor']]],
-  ['lower_5fmatrix_5fhigh_5flevel_5fmap_5freduce_15',['lower_matrix_high_level_map_reduce',['../namespacemim_1_1plug_1_1matrix.html#a26667b55e4b1b958050cfe9ecbf327fd',1,'mim::plug::matrix']]],
-  ['lower_5fmatrix_5flow_5flevel_16',['lower_matrix_low_level',['../namespacemim_1_1plug_1_1matrix.html#ae3f0ab7b8527477c358984c01ddbd94c',1,'mim::plug::matrix']]],
-  ['lower_5fmatrix_5fmedium_5flevel_17',['lower_matrix_medium_level',['../namespacemim_1_1plug_1_1matrix.html#af206cc10642f27ab0e14c586d512f3d6',1,'mim::plug::matrix']]],
-  ['lower_5fregex_18',['lower_regex',['../namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700',1,'mim::plug::regex']]],
-  ['lower_5ftensor_19',['lower_tensor',['../namespacemim_1_1plug_1_1tensor.html#ae1fdc14eb6abcb8076cf61c55f87a9be',1,'mim::plug::tensor']]],
-  ['lower_5ftyped_5fclos_5fphase_20',['lower_typed_clos_phase',['../namespacemim_1_1plug_1_1clos.html#a9602b11d42128cf1a9d2f396e1af7243',1,'mim::plug::clos']]],
-  ['lower_5ftyped_5fclos_5fprep_5fpass_21',['lower_typed_clos_prep_pass',['../namespacemim_1_1plug_1_1clos.html#a0c2680156b5d79d705d4d4556d1bc007',1,'mim::plug::clos']]]
+  ['lower_5findex_5fphase_14',['lower_index_phase',['../namespacemim_1_1plug_1_1affine.html#aec9162d7957bf44839e5dce6490550c5',1,'mim::plug::affine']]],
+  ['lower_5fmap_5freduce_15',['lower_map_reduce',['../namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632',1,'mim::plug::tensor']]],
+  ['lower_5fmatrix_5fhigh_5flevel_5fmap_5freduce_16',['lower_matrix_high_level_map_reduce',['../namespacemim_1_1plug_1_1matrix.html#a26667b55e4b1b958050cfe9ecbf327fd',1,'mim::plug::matrix']]],
+  ['lower_5fmatrix_5flow_5flevel_17',['lower_matrix_low_level',['../namespacemim_1_1plug_1_1matrix.html#ae3f0ab7b8527477c358984c01ddbd94c',1,'mim::plug::matrix']]],
+  ['lower_5fmatrix_5fmedium_5flevel_18',['lower_matrix_medium_level',['../namespacemim_1_1plug_1_1matrix.html#af206cc10642f27ab0e14c586d512f3d6',1,'mim::plug::matrix']]],
+  ['lower_5fregex_19',['lower_regex',['../namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700',1,'mim::plug::regex']]],
+  ['lower_5ftensor_20',['lower_tensor',['../namespacemim_1_1plug_1_1tensor.html#ae1fdc14eb6abcb8076cf61c55f87a9be',1,'mim::plug::tensor']]],
+  ['lower_5ftyped_5fclos_5fphase_21',['lower_typed_clos_phase',['../namespacemim_1_1plug_1_1clos.html#a9602b11d42128cf1a9d2f396e1af7243',1,'mim::plug::clos']]],
+  ['lower_5ftyped_5fclos_5fprep_5fpass_22',['lower_typed_clos_prep_pass',['../namespacemim_1_1plug_1_1clos.html#a0c2680156b5d79d705d4d4556d1bc007',1,'mim::plug::clos']]]
 ];
