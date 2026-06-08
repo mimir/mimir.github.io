@@ -20,7 +20,7 @@ var searchData=
   ['lamdecl_17',['LamDecl',['../classmim_1_1ast_1_1LamDecl.html',1,'mim::ast::LamDecl'],['../classmim_1_1ast_1_1LamDecl_1_1Dom.html#a3d6b84b4849cf59ca68ddf41600ed6f5',1,'mim::ast::LamDecl::Dom::LamDecl()'],['../classmim_1_1ast_1_1LamDecl.html#a9c8e9c23ca1e4caeb4528d8ee39186b6',1,'mim::ast::LamDecl::LamDecl()']]],
   ['lamexpr_18',['LamExpr',['../classmim_1_1ast_1_1LamExpr.html',1,'mim::ast::LamExpr'],['../classmim_1_1ast_1_1LamExpr.html#a81b9f339ed6a125d70464df5b5ee8ea0',1,'mim::ast::LamExpr::LamExpr()']]],
   ['lammap_19',['LamMap',['../namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034',1,'mim']]],
-  ['lamset_20',['LamSet',['../classmim_1_1sexpr_1_1Emitter.html#a3027d764fe467b19bd4c5e6d98d2c551',1,'mim::sexpr::Emitter::LamSet'],['../namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9',1,'mim::LamSet']]],
+  ['lamset_20',['LamSet',['../namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9',1,'mim']]],
   ['lamspec_21',['LamSpec',['../classmim_1_1LamSpec.html',1,'mim::LamSpec'],['../classmim_1_1LamSpec.html#a67fb40de0a319bdf6af3ebcf1c4f98d2',1,'mim::LamSpec::LamSpec()']]],
   ['langref_2emd_22',['langref.md',['../langref_8md.html',1,'']]],
   ['language_20reference_23',['Mim Language Reference',['../langref.html',1,'']]],

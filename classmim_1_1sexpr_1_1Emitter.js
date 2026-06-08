@@ -1,6 +1,5 @@
 var classmim_1_1sexpr_1_1Emitter =
 [
-    [ "LamSet", "classmim_1_1sexpr_1_1Emitter.html#a3027d764fe467b19bd4c5e6d98d2c551", null ],
     [ "Super", "classmim_1_1sexpr_1_1Emitter.html#ace321ab9a75bd8da7a5edc7d6a4673ec", null ],
     [ "Emitter", "classmim_1_1sexpr_1_1Emitter.html#a9704378aec852e1c758411214c75a771", null ],
     [ "direct_style", "classmim_1_1sexpr_1_1Emitter.html#a51e7606647714fbe2f508c882edafd84", null ],
@@ -13,12 +12,12 @@ var classmim_1_1sexpr_1_1Emitter =
     [ "emit_imported", "classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2", null ],
     [ "emit_lam", "classmim_1_1sexpr_1_1Emitter.html#a41f9bf17c83e211e9efcee718ff4dcdf", null ],
     [ "emit_node", "classmim_1_1sexpr_1_1Emitter.html#a422331acd4a304385e6322c0ac488f5b", null ],
-    [ "emit_type", "classmim_1_1sexpr_1_1Emitter.html#a8d7a66d40251252fee814156c75c09a6", null ],
+    [ "emit_type", "classmim_1_1sexpr_1_1Emitter.html#a8911f26c1668a67fd291e1f6617c647f", null ],
     [ "emit_var", "classmim_1_1sexpr_1_1Emitter.html#a352c804695d00463e65a88c5d83acbba", null ],
     [ "finalize", "classmim_1_1sexpr_1_1Emitter.html#ab5afffcf4c4b443137899ce7fbe604d8", null ],
     [ "is_valid", "classmim_1_1sexpr_1_1Emitter.html#ac7b63a51d1de5fec7297e89125e9fb11", null ],
     [ "isa_nested_proj", "classmim_1_1sexpr_1_1Emitter.html#a6e3089e2c9f8c51f9be2770de3dc1018", null ],
-    [ "next_lams", "classmim_1_1sexpr_1_1Emitter.html#af0f084e2f8d6d889ef62ed8c34b47ce2", null ],
+    [ "next_lams", "classmim_1_1sexpr_1_1Emitter.html#af95121fb843144000a289c64113e1407", null ],
     [ "prepare", "classmim_1_1sexpr_1_1Emitter.html#a168bc5e3367df68312aa5d8c0d408c60", null ],
     [ "start", "classmim_1_1sexpr_1_1Emitter.html#a20777cde3de0b7b4ef7e61317c3f0f3d", null ]
 ];
