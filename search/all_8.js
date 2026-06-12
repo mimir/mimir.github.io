@@ -70,7 +70,7 @@ var searchData=
   ['is_5fbasicblock_67',['is_basicblock',['../classmim_1_1plug_1_1clos_1_1ClosLit.html#ad42cae1fac8d09dec25ee45e5e8d7a3a',1,'mim::plug::clos::ClosLit']]],
   ['is_5fbootstrapping_68',['is_bootstrapping',['../classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd',1,'mim::Analysis::is_bootstrapping()'],['../classmim_1_1RWPhase.html#a8c1256f93cc63c1d8d0609e2aa474b51',1,'mim::RWPhase::is_bootstrapping()']]],
   ['is_5fbrckt_69',['is_brckt',['../classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029',1,'mim::ast::TuplePtrn']]],
-  ['is_5fclosed_70',['is_closed',['../classmim_1_1Def.html#aec7aa74467c589b28b16a9630eb96a69',1,'mim::Def::is_closed()'],['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core::is_closed'],['../namespacemim_1_1plug_1_1refly.html#ae1f9c9f5f0c28703d7b9b1342699aeaba8da26ba680a4bc49270f115861546f0e',1,'mim::plug::refly::is_closed']]],
+  ['is_5fclosed_70',['is_closed',['../classmim_1_1Def.html#aec7aa74467c589b28b16a9630eb96a69',1,'mim::Def::is_closed()'],['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core::is_closed']]],
   ['is_5fcommutative_71',['is_commutative',['../namespacemim.html#a651a2dea89f330efd5ed961191620af8',1,'mim::is_commutative(Id)'],['../namespacemim.html#a54b5eaeee81baedf35cb803d4c39b222',1,'mim::is_commutative(plug::core::nat id)'],['../namespacemim.html#a1189caa65b6a3177f4f13793dcd0fa26',1,'mim::is_commutative(plug::core::ncmp id)'],['../namespacemim.html#a0bdcde6a7d8c95ba967b0d003a60aa6b',1,'mim::is_commutative(plug::core::wrap id)'],['../namespacemim.html#ab43ced57443efca4748c2e3254568828',1,'mim::is_commutative(plug::core::icmp id)'],['../namespacemim.html#aaabd11fa56b1d4815c409ba3eba2d5c8',1,'mim::is_commutative(plug::core::bit2 id)'],['../namespacemim.html#a2d08547c4fc3b6bcf3d8779269813b50',1,'mim::is_commutative(plug::math::extrema)'],['../namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a',1,'mim::is_commutative(plug::math::arith id)'],['../namespacemim.html#a1bf9f164e985cb56deedf827f7fb2c3f',1,'mim::is_commutative(plug::math::cmp id)']]],
   ['is_5fdescendant_5fof_72',['is_descendant_of',['../classmim_1_1lct_1_1Node.html#a6bbe1bbad5c5444ff72c4d1bcb376b73',1,'mim::lct::Node']]],
   ['is_5fdirectly_5frecursive_73',['is_directly_recursive',['../classmim_1_1Nest_1_1Node.html#ae2e265b880bc9c14348f8eeb3c38eec1',1,'mim::Nest::Node']]],
@@ -108,7 +108,7 @@ var searchData=
   ['is_5fsome_105',['is_some',['../option.html#autotoc_md287',1,'%option.is_some'],['../namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263',1,'mim::plug::option::is_some']]],
   ['is_5fterm_106',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5funiform_107',['is_uniform',['../classmim_1_1Checker.html#a169a88c923419cfcfb6d15a14d1cfa4b',1,'mim::Checker']]],
-  ['is_5funique_108',['is_unique',['../vec.html#autotoc_md374',1,'%vec.is_unique'],['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique']]],
+  ['is_5funique_108',['is_unique',['../vec.html#autotoc_md373',1,'%vec.is_unique'],['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique']]],
   ['is_5funit_109',['is_unit',['../namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8',1,'mim']]],
   ['is_5fvalid_110',['is_valid',['../classmim_1_1ll_1_1Emitter.html#ad43b49a65f405d25e5e1a6124c2aedb9',1,'mim::ll::Emitter::is_valid()'],['../classmim_1_1sexpr_1_1Emitter.html#ac7b63a51d1de5fec7297e89125e9fb11',1,'mim::sexpr::Emitter::is_valid()']]],
   ['is_5fwhere_111',['is_where',['../classmim_1_1ast_1_1DeclExpr.html#aeb34f62478eb3d88f8d546e41b2249dc',1,'mim::ast::DeclExpr']]],
@@ -143,6 +143,6 @@ var searchData=
   ['iterations_140',['Reset Between Iterations',['../phases.html#autotoc_md65',1,'']]],
   ['iterator_141',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html',1,'mim::Sets&lt; D, N &gt;::Set::iterator'],['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator::iterator() noexcept=default']]],
   ['iterator_5fcategory_142',['iterator_category',['../classmim_1_1Sets_1_1Set_1_1iterator.html#ab299636e45522b09b7da7c97ecc78da2',1,'mim::Sets::Set::iterator']]],
-  ['iterators_143',['Iterators',['../vec.html#autotoc_md367',1,'']]],
+  ['iterators_143',['Iterators',['../vec.html#autotoc_md366',1,'']]],
   ['its_5fa_5fmatch_144',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

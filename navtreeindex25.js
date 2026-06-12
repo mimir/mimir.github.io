@@ -1,9 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"structmim_1_1Version.html":[2,0,3,67],
-"structmim_1_1Version.html":[4,0,1,65],
-"structmim_1_1Version.html#a078ca55c1d61ce8f670123681a81fcaf":[2,0,3,67,2],
-"structmim_1_1Version.html#a078ca55c1d61ce8f670123681a81fcaf":[4,0,1,65,2],
 "structmim_1_1Version.html#a3a241d7d6bf3d7280b6dc360ce7018e2":[2,0,3,67,1],
 "structmim_1_1Version.html#a3a241d7d6bf3d7280b6dc360ce7018e2":[4,0,1,65,1],
 "structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49":[2,0,3,67,5],
@@ -249,5 +245,9 @@ var NAVTREEINDEX25 =
 "vec_2normalizers_8cpp_source.html":[5,0,4,1,4,18,0],
 "vec_8cpp.html":[5,0,4,1,4,18,1],
 "vec_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,4,18,1,0],
-"vec_8cpp_source.html":[5,0,4,1,4,18,1]
+"vec_8cpp_source.html":[5,0,4,1,4,18,1],
+"vec_8h.html":[5,0,3,1,4,18,0],
+"vec_8h_source.html":[5,0,3,1,4,18,0],
+"vector_8h.html":[5,0,3,1,5,10],
+"vector_8h_source.html":[5,0,3,1,5,10]
 };

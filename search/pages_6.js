@@ -3,7 +3,7 @@ var searchData=
   ['gamma_0',['%math.gamma',['../math.html#autotoc_md227',1,'']]],
   ['gdb_1',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md17',1,'']]],
   ['general_20downcast_2',['General Downcast',['../dev.html#autotoc_md26',1,'']]],
-  ['get_3',['get',['../ord.html#autotoc_md301',1,'%ord.get'],['../tensor.html#autotoc_md344',1,'tensor.get']]],
+  ['get_3',['get',['../ord.html#autotoc_md301',1,'%ord.get'],['../tensor.html#autotoc_md343',1,'tensor.get']]],
   ['gid_4',['%refly.gid',['../refly.html#autotoc_md312',1,'']]],
   ['googletest_5',['GoogleTest',['../coding.html#autotoc_md3',1,'']]],
   ['gpu_20alloc_6',['%gpu.alloc',['../gpu.html#autotoc_md198',1,'']]],

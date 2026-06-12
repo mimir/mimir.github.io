@@ -2,7 +2,7 @@ var searchData=
 [
   ['effects_0',['Effects',['../mem.html#autotoc_md260',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md269',1,'Operations w/o Side Effects']]],
   ['embedded_20python_20dsl_1',['Embedded Python DSL',['../python.html#autotoc_md95',1,'']]],
-  ['empty_2',['%regex.empty',['../regex.html#autotoc_md336',1,'']]],
+  ['empty_2',['%regex.empty',['../regex.html#autotoc_md335',1,'']]],
   ['eq_3',['%core.icmp.xYgLE (eq)',['../autodiff.html#autotoc_md139',1,'']]],
   ['equiv_4',['%refly.equiv',['../refly.html#autotoc_md315',1,'']]],
   ['er_5',['%math.er',['../math.html#autotoc_md226',1,'']]],

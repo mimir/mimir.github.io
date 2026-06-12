@@ -22,9 +22,9 @@ var searchData=
   ['is_5ffinite_19',['%math.is_finite',['../math.html#autotoc_md232',1,'']]],
   ['is_5floaded_20',['%compile.is_loaded',['../compile.html#autotoc_md151',1,'']]],
   ['is_5fsome_21',['%option.is_some',['../option.html#autotoc_md287',1,'']]],
-  ['is_5funique_22',['%vec.is_unique',['../vec.html#autotoc_md374',1,'']]],
+  ['is_5funique_22',['%vec.is_unique',['../vec.html#autotoc_md373',1,'']]],
   ['item_20synchronization_23',['Work-Item Synchronization',['../gpu.html#autotoc_md212',1,'']]],
   ['iterating_20over_20the_20program_24',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
   ['iterations_25',['Reset Between Iterations',['../phases.html#autotoc_md65',1,'']]],
-  ['iterators_26',['Iterators',['../vec.html#autotoc_md367',1,'']]]
+  ['iterators_26',['Iterators',['../vec.html#autotoc_md366',1,'']]]
 ];
