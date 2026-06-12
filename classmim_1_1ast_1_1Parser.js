@@ -6,7 +6,5 @@ var classmim_1_1ast_1_1Parser =
     [ "import", "classmim_1_1ast_1_1Parser.html#a35aaa0547ed9fcd8a673ff074a2a513a", null ],
     [ "import", "classmim_1_1ast_1_1Parser.html#a45f990368c8922c1b7fb1aaa12d4e609", null ],
     [ "import", "classmim_1_1ast_1_1Parser.html#a360ec977d51e0ef176af90f4b9777a21", null ],
-    [ "plugin", "classmim_1_1ast_1_1Parser.html#ad10a983446703bc09c22172f940f97ca", null ],
-    [ "plugin", "classmim_1_1ast_1_1Parser.html#ae74335d89ab002052322c38655985523", null ],
-    [ "plugin", "classmim_1_1ast_1_1Parser.html#aa9dd5fbefd74d46e1cbe5826cbc00de1", null ]
+    [ "import_main", "classmim_1_1ast_1_1Parser.html#a2f1bf4b9c9382acab9db247753f83c0b", null ]
 ];

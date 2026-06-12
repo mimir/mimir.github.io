@@ -389,6 +389,7 @@ var namespacemim_1_1plug =
       [ "beta_red_phase", "namespacemim_1_1plug_1_1compile.html#ab5b6270aef0fd6eefef313a78ae42ed2", null ],
       [ "branch_normalize_phase", "namespacemim_1_1plug_1_1compile.html#a5c6d8f36b1820caad534d4777a3bd136", null ],
       [ "cleanup_phase", "namespacemim_1_1plug_1_1compile.html#a1b62916f46aa4d27565c3691e67677d6", null ],
+      [ "cond_phase", "namespacemim_1_1plug_1_1compile.html#a6a0f48ebe10d7e4e7844a1f2d98f5679", null ],
       [ "eta_exp_pass", "namespacemim_1_1plug_1_1compile.html#af5d6fbc0d851384b27f36f203c5d0c2c", null ],
       [ "eta_exp_phase", "namespacemim_1_1plug_1_1compile.html#a4169f2221176073c64c80c6113cb68a8", null ],
       [ "eta_red_pass", "namespacemim_1_1plug_1_1compile.html#a80471b46ed8ae4c99f8e3602ba0db3af", null ],
@@ -396,6 +397,9 @@ var namespacemim_1_1plug =
       [ "internal_cleanup_phase", "namespacemim_1_1plug_1_1compile.html#a235cf519806595c0244845a62b1d74ed", null ],
       [ "is_loaded", "namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515", null ],
       [ "lam_spec_pass", "namespacemim_1_1plug_1_1compile.html#a2d4eb7a6b25350fd030a3a9087544b71", null ],
+      [ "named_pass", "namespacemim_1_1plug_1_1compile.html#a13a8f187a7ee7ae4ae2eb92cdcb00fa1", null ],
+      [ "named_phase", "namespacemim_1_1plug_1_1compile.html#a4b50c1d66649aabf44ed29f270eb2877", null ],
+      [ "named_repl", "namespacemim_1_1plug_1_1compile.html#abba973fb45f6cc6d0033befb2dedaf7b", null ],
       [ "null_pass", "namespacemim_1_1plug_1_1compile.html#aadfaa97d82794c8513ba2b0e1f14a388", null ],
       [ "null_phase", "namespacemim_1_1plug_1_1compile.html#a717b94f01a471ccef3b533ec1a3e5433", null ],
       [ "null_repl", "namespacemim_1_1plug_1_1compile.html#a4e6e9bade75847c21e45ebcf3c32f2f7", null ],
@@ -412,6 +416,7 @@ var namespacemim_1_1plug =
       [ "scalarize_pass", "namespacemim_1_1plug_1_1compile.html#a961935589c51b84c285852b051fbbf37", null ],
       [ "sym_expr_opt", "namespacemim_1_1plug_1_1compile.html#a31eeb6e669f91a61e09299a709f188cc", null ],
       [ "tail_rec_elim_pass", "namespacemim_1_1plug_1_1compile.html#aa116af339362d94ddef4135c1e9e67c7", null ],
+      [ "normalize_cond_phase", "namespacemim_1_1plug_1_1compile.html#a48c31e544c9d49eaa5cee9e37ac16c09", null ],
       [ "normalize_is_loaded", "namespacemim_1_1plug_1_1compile.html#a99c96c2c9e8f4f5320e6c8c2b7f92f0d", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1compile.html#aef3b98337630972b708d60ed42298eda", null ]
@@ -422,6 +427,7 @@ var namespacemim_1_1plug =
       [ "register_normalizers", "namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08", null ]
     ] ],
+    [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
     [ "option", "namespacemim_1_1plug_1_1option.html", [
       [ "is_some", "namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263", null ],
       [ "none", "namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f", null ],

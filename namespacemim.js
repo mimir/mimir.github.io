@@ -2,7 +2,6 @@ var namespacemim =
 [
     [ "ast", "namespacemim_1_1ast.html", "namespacemim_1_1ast" ],
     [ "plug", "namespacemim_1_1plug.html", "namespacemim_1_1plug" ],
-    [ "ll", "namespacemim_1_1ll.html", "namespacemim_1_1ll" ],
     [ "sexpr", "namespacemim_1_1sexpr.html", "namespacemim_1_1sexpr" ],
     [ "dl", "namespacemim_1_1dl.html", [
       [ "close", "namespacemim_1_1dl.html#a8538f23ca881de5358d0d6838994fcf4", null ],
@@ -119,7 +118,6 @@ var namespacemim =
     [ "annex_without_subs", "conceptmim_1_1annex__without__subs.html", null ],
     [ "Vectorlike", "conceptmim_1_1Vectorlike.html", null ],
     [ "Enum", "conceptmim_1_1Enum.html", null ],
-    [ "Backends", "namespacemim.html#a6e05089762ab1bde20507ee3d7b37242", null ],
     [ "Bot", "namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4", null ],
     [ "Def2Def", "namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab", null ],
     [ "DefMap", "namespacemim.html#a879f9e518002de13d65d757536033f0e", null ],

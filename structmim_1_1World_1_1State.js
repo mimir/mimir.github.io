@@ -8,6 +8,7 @@ var structmim_1_1World_1_1State =
       [ "name", "structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6", null ]
     ] ],
     [ "State", "structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15", null ],
+    [ "State", "structmim_1_1World_1_1State.html#ac6d0b4af9f5e603ec83916971af5b104", null ],
     [ "swap", "structmim_1_1World_1_1State.html#a5180ce487b39e57ec00a32e3d992fa94", null ],
     [ "breakpoints", "structmim_1_1World_1_1State.html#ae8b660ef148e3b7b5c237744a4b2f228", null ],
     [ "pod", "structmim_1_1World_1_1State.html#ad34d8b326ee124c94315cded90ce1ab9", null ],

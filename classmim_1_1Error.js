@@ -7,8 +7,6 @@ var classmim_1_1Error =
       [ "Note", "classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a3b0649c72650c313a357338dcdfb64ec", null ]
     ] ],
     [ "Error", "classmim_1_1Error.html#a78dabe943bab1b92fa61cb11976b52c0", null ],
-    [ "Error", "classmim_1_1Error.html#a796d05ed57b5f2f7755d7e1b53afd805", null ],
-    [ "Error", "classmim_1_1Error.html#a8d2fda8b7544626df5f08f3c3f4e4c7a", null ],
     [ "Error", "classmim_1_1Error.html#aa437b5e26ec84de51156eb18d9af6c5e", null ],
     [ "ack", "classmim_1_1Error.html#ace5d8cc68846c8b473a277395b3dd980", null ],
     [ "clear", "classmim_1_1Error.html#a9f2ae1bff9bfd5f973026423470b8bf5", null ],
@@ -23,6 +21,5 @@ var classmim_1_1Error =
     [ "warn", "classmim_1_1Error.html#a65c90ba3c493fba1fc2f308c9db2e3dd", null ],
     [ "what", "classmim_1_1Error.html#a53829cfbf904e91df403789455fa8fe4", null ],
     [ "operator<<", "classmim_1_1Error.html#a871262d7e4ee05aaa9dd3bf9074ac9e0", null ],
-    [ "operator<<", "classmim_1_1Error.html#a8a369575104a47be742d51e7d814d99b", null ],
-    [ "swap", "classmim_1_1Error.html#a1e0561c69d6a084e21caf8243b300040", null ]
+    [ "operator<<", "classmim_1_1Error.html#a8a369575104a47be742d51e7d814d99b", null ]
 ];

@@ -1,7 +1,6 @@
 var ll_8cpp =
 [
-    [ "mim::ll::compile", "namespacemim_1_1ll.html#a58f332ff50319041ec5458482d1de347", null ],
-    [ "mim::ll::compile", "namespacemim_1_1ll.html#a8853938d8898dc6f8759f6cfe4e7ff95", null ],
-    [ "mim::ll::compile_and_run", "namespacemim_1_1ll.html#a469e9639fe5031433849021ed17047ea", null ],
-    [ "mim::ll::emit", "namespacemim_1_1ll.html#a7e9fadd25e15c54724c0db2a57cdd16d", null ]
+    [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
+    [ "mim_get_plugin", "ll_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
+    [ "reg_stages", "ll_8cpp.html#a46b02d290c03e1527e7e6d9b2aae4763", null ]
 ];

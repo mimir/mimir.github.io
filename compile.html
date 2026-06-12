@@ -134,25 +134,31 @@ $(function(){initNavTree('compile.html','',''); });
       <li class="level2">
         <a href="#autotoc_md151">%compile.is_loaded </a>
       </li>
+      <li class="level2">
+        <a href="#autotoc_md152">%compile.named_phase / %compile.named_pass / %compile.named_repl </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md153">%compile.cond_phase </a>
+      </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md152">Constructors </a>
+    <a href="#autotoc_md154">Constructors </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md153">%compile.phases / %compile.passes </a>
+        <a href="#autotoc_md155">%compile.phases / %compile.passes </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md154">Phases </a>
+        <a href="#autotoc_md156">Phases </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md155">Repls </a>
+        <a href="#autotoc_md157">Repls </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md156">Passes </a>
+        <a href="#autotoc_md158">Passes </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md157">Pipelines </a>
+        <a href="#autotoc_md159">Pipelines </a>
       </li>
     </ul>
   </li>
@@ -175,15 +181,25 @@ Utility</h1>
 %compile.is_loaded</h2>
 <p>Checks whether the given plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %compile.is_loaded: {n: Nat} → «n; I8» → Bool, normalize_is_loaded;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
+%compile.named_phase / %compile.named_pass / %compile.named_repl</h2>
+<p>Resolve to the <span class="tt">compile.Phase</span> / <span class="tt">compile.Pass</span> / <span class="tt">compile.Repl</span> annex with the given fully-qualified name (e.g. <span class="tt">"clos.clos_conv_phase"</span>). Resolution is deferred until the stage pipeline is built so that the referenced plugin's <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file does not have to be imported by users of this axm. If the named annex is missing at stage build time (its plugin is not loaded), it is silently elided, i.e. the enclosing <span class="tt">compile.phases</span> / <span class="tt">compile.passes</span> / <span class="tt">compile.repls</span> simply skips it.</p>
+<div class="fragment"><div class="line">axm %compile.named_phase: {n: Nat} → «n; I8» → %compile.Phase;</div>
+<div class="line">axm %compile.named_pass:  {n: Nat} → «n; I8» → %compile.Pass;</div>
+<div class="line">axm %compile.named_repl:  {n: Nat} → «n; I8» → %compile.Repl;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
+%compile.cond_phase</h2>
+<p>Yields <span class="tt">phase</span> if the named plugin is loaded, otherwise <span class="tt">compile.null_phase</span>. Used to gate whole sub-pipelines on a plugin without importing it.</p>
+<div class="fragment"><div class="line">axm %compile.cond_phase: {n: Nat} → «n; I8» → %compile.Phase → %compile.Phase, normalize_cond_phase;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md155"></a>
 %compile.phases / %compile.passes</h2>
 <p>Sets up <span class="tt">n</span> phases / passes anad bundles them</p>
 <div class="fragment"><div class="line">axm %compile.phases: {n: Nat} → Bool → «n; %compile.Phase» → %compile.Phase;</div>
 <div class="line">axm %compile.passes: {n: Nat} →        «n; %compile.Pass » → %compile.Pass;</div>
 <div class="line">axm %compile.repls:  {n: Nat} →        «n; %compile.Repl » → %compile.Repl;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
 Phases</h2>
 <div class="fragment"><div class="line">axm %compile.beta_red_phase:                            %compile.Phase;</div>
 <div class="line">axm %compile.branch_normalize_phase:                    %compile.Phase;</div>
@@ -198,10 +214,10 @@ Phases</h2>
 <div class="line">axm %compile.prefix_cleanup_phase: {n: Nat} → «n; I8» → %compile.Phase;</div>
 <div class="line"> </div>
 <div class="line">let %compile.internal_cleanup_phase = %compile.prefix_cleanup_phase &quot;internal_&quot;;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md155"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 Repls</h2>
 <div class="fragment"><div class="line">axm %compile.null_repl: %compile.Repl;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
 Passes</h2>
 <div class="fragment"><div class="line">axm %compile.beta_red_pass:                             %compile.Pass;</div>
 <div class="line">axm %compile.eta_exp_pass:                              %compile.Pass;</div>
@@ -210,7 +226,7 @@ Passes</h2>
 <div class="line">axm %compile.null_pass:                                 %compile.Pass;</div>
 <div class="line">axm %compile.scalarize_pass:                            %compile.Pass;</div>
 <div class="line">axm %compile.tail_rec_elim_pass:                        %compile.Pass;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
 Pipelines</h2>
 <div class="fragment"><div class="line">let optimization_passes = %compile.passes (</div>
 <div class="line">    %compile.beta_red_pass,</div>

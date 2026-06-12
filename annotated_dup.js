@@ -112,11 +112,12 @@ var annotated_dup =
             [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
             [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ]
           ] ]
+        ] ],
+        [ "ll", "namespacemim_1_1plug_1_1ll.html", [
+          [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
+          [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
+          [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ]
         ] ]
-      ] ],
-      [ "ll", "namespacemim_1_1ll.html", [
-        [ "BB", "structmim_1_1ll_1_1BB.html", "structmim_1_1ll_1_1BB" ],
-        [ "Emitter", "classmim_1_1ll_1_1Emitter.html", "classmim_1_1ll_1_1Emitter" ]
       ] ],
       [ "sexpr", "namespacemim_1_1sexpr.html", [
         [ "BB", "structmim_1_1sexpr_1_1BB.html", "structmim_1_1sexpr_1_1BB" ],

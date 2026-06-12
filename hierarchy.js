@@ -13,7 +13,7 @@ var hierarchy =
     [ "automaton::AutomatonBase&lt; NFANode &gt;", "classautomaton_1_1AutomatonBase.html", [
       [ "automaton::NFA", "classautomaton_1_1NFA.html", null ]
     ] ],
-    [ "mim::ll::BB", "structmim_1_1ll_1_1BB.html", null ],
+    [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::sexpr::BB", "structmim_1_1sexpr_1_1BB.html", null ],
     [ "mim::Checker", "classmim_1_1Checker.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
@@ -227,7 +227,7 @@ var hierarchy =
           [ "mim::ClosedMutPhase< Lam >", "classmim_1_1ClosedMutPhase.html", [
             [ "mim::NestPhase< Lam >", "classmim_1_1NestPhase.html", [
               [ "mim::Emitter< std::string, std::string, BB, Emitter >", "classmim_1_1Emitter.html", [
-                [ "mim::ll::Emitter", "classmim_1_1ll_1_1Emitter.html", null ],
+                [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", null ],
                 [ "mim::sexpr::Emitter", "classmim_1_1sexpr_1_1Emitter.html", null ]
               ] ],
               [ "mim::Emitter< Value, Type, BB, Child >", "classmim_1_1Emitter.html", null ],
@@ -244,7 +244,8 @@ var hierarchy =
           [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
           [ "mim::plug::clos::ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", null ],
           [ "mim::plug::clos::LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", null ],
-          [ "mim::plug::direct::CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", null ]
+          [ "mim::plug::direct::CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", null ],
+          [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ]
         ] ],
         [ "mim::Repl", "classmim_1_1Repl.html", [
           [ "mim::ReplMan", "classmim_1_1ReplMan.html", null ]
