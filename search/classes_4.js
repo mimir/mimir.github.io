@@ -4,7 +4,7 @@ var searchData=
   ['emitter_1',['Emitter',['../classmim_1_1ast_1_1Emitter.html',1,'mim::ast::Emitter'],['../classmim_1_1Emitter.html',1,'mim::Emitter&lt; Value, Type, BB, Child &gt;'],['../classmim_1_1plug_1_1ll_1_1Emitter.html',1,'mim::plug::ll::Emitter'],['../classmim_1_1sexpr_1_1Emitter.html',1,'mim::sexpr::Emitter']]],
   ['emitter_3c_20std_3a_3astring_2c_20std_3a_3astring_2c_20bb_2c_20emitter_20_3e_2',['Emitter&lt; std::string, std::string, BB, Emitter &gt;',['../classmim_1_1Emitter.html',1,'mim']]],
   ['enter_3',['Enter',['../classmim_1_1Analysis_1_1Enter.html',1,'mim::Analysis']]],
-  ['entry_4',['Entry',['../classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry',1,'mim::Driver::Imports']]],
+  ['entry_4',['Entry',['../classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry',1,'mim::Driver::Imports::Entry'],['../classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry',1,'mim::World::Annexes::Entry']]],
   ['equal_5',['Equal',['../structmim_1_1Sets_1_1Data_1_1Equal.html',1,'mim::Sets::Data']]],
   ['error_6',['Error',['../classmim_1_1Error.html',1,'mim']]],
   ['errorexpr_7',['ErrorExpr',['../classmim_1_1ast_1_1ErrorExpr.html',1,'mim::ast']]],

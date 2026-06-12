@@ -36,7 +36,7 @@ var searchData=
   ['sibl_5fdeps_33',['sibl_deps',['../classmim_1_1Nest_1_1Node.html#a2a29ed570ed6ad81039fa1ad52a9b784',1,'mim::Nest::Node::sibl_deps()'],['../classmim_1_1Nest_1_1Node.html#a42cacaae58788b53f4aeaea495b1293e',1,'mim::Nest::Node::sibl_deps() const']]],
   ['sigma_34',['sigma',['../classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856',1,'mim::World::sigma(Defs ops)'],['../classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0',1,'mim::World::sigma()']]],
   ['sigmaexpr_35',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html#ac3bff2a4e5141d5a6ed8e36ebc00d3c3',1,'mim::ast::SigmaExpr']]],
-  ['size_36',['size',['../classmim_1_1Sets_1_1Set.html#a81c90b3ef8cd75899233202f36b9ef46',1,'mim::Sets::Set::size()'],['../classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7',1,'mim::World::Externals::size()']]],
+  ['size_36',['size',['../classmim_1_1Sets_1_1Set.html#a81c90b3ef8cd75899233202f36b9ef46',1,'mim::Sets::Set::size()'],['../classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7',1,'mim::World::Externals::size()'],['../classmim_1_1World_1_1Annexes.html#a72e019414dcca26b5c4674ce4734bddb',1,'mim::World::Annexes::size()']]],
   ['size2bitwidth_37',['size2bitwidth',['../classmim_1_1Idx.html#a445658b6d8a1922d7fc9fb33235417ff',1,'mim::Idx::size2bitwidth(nat_t n)'],['../classmim_1_1Idx.html#a476bd0b41bda503d46dac1584823e1e1',1,'mim::Idx::size2bitwidth(const Def *size)']]],
   ['skip_5fenv_38',['skip_env',['../namespacemim_1_1plug_1_1clos.html#aa48ad3e4ecbbb87cea1f4034ffe29fc2',1,'mim::plug::clos']]],
   ['smart_39',['smart',['../classmim_1_1Scheduler.html#a12a699ef67babd6c87b732194b1036e1',1,'mim::Scheduler']]],
@@ -64,11 +64,12 @@ var searchData=
   ['subspan_61',['subspan',['../classmim_1_1Span.html#a1061ecc23e5b0b01638e8bc04ae25877',1,'mim::Span::subspan(size_t i, size_t n=D) const noexcept'],['../classmim_1_1Span.html#a596fbf8c6b7eb7fb0d8af55bba442e51',1,'mim::Span::subspan() const noexcept']]],
   ['subview_62',['subview',['../namespacemim.html#a7fdffb53ea4f14dbe97425cfc0f77b0e',1,'mim']]],
   ['sym_63',['sym',['../classmim_1_1ast_1_1AST.html#aabc7c822c356b3cc17ce638289966b13',1,'mim::ast::AST::sym(const char *s)'],['../classmim_1_1ast_1_1AST.html#a607ada8eb3fe062648edbd483b0f2ff6',1,'mim::ast::AST::sym(std::string_view s)'],['../classmim_1_1ast_1_1AST.html#af37a2dfcc38d784f2e8b47039e9e108a',1,'mim::ast::AST::sym(const std::string &amp;s)'],['../classmim_1_1ast_1_1Tok.html#a1614f4001b6ff119534d0d434a80f608',1,'mim::ast::Tok::sym()'],['../classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c',1,'mim::Def::sym() const'],['../classmim_1_1Def.html#a21afe5afd0b258ded3981bed4d78364c',1,'mim::Def::sym(const char *) const'],['../classmim_1_1Def.html#afe3ec0b409009159678e603ebea3489b',1,'mim::Def::sym(std::string_view) const'],['../classmim_1_1Def.html#aabd288124bdb49880e02a1e053b87737',1,'mim::Def::sym(std::string) const'],['../structmim_1_1Dbg.html#a1f6805e001bec9cd88aa3297a108cd80',1,'mim::Dbg::sym()'],['../classmim_1_1World.html#aa4df2feb5a0d1c856ca94a05445c1e99',1,'mim::World::sym(std::string_view)'],['../classmim_1_1World.html#aaf0847343a45223101b3550faed8bb1b',1,'mim::World::sym(const char *)'],['../classmim_1_1World.html#a079bca4777830870f5d7d70af2d82ff6',1,'mim::World::sym(const std::string &amp;)']]],
-  ['sym2mut_64',['sym2mut',['../classmim_1_1World_1_1Externals.html#ac72a6eff11ad513f4a98462cc487e36a',1,'mim::World::Externals']]],
-  ['sym_5fanon_65',['sym_anon',['../classmim_1_1ast_1_1AST.html#a8899c2750a526004e0bbcae3f327a01c',1,'mim::ast::AST']]],
-  ['sym_5ferror_66',['sym_error',['../classmim_1_1ast_1_1AST.html#addcecc401fa2340d35035a6c8bf23f1e',1,'mim::ast::AST']]],
-  ['sym_5freturn_67',['sym_return',['../classmim_1_1ast_1_1AST.html#a85ddb7b560da4ba40d7923a8dc6ccd2d',1,'mim::ast::AST']]],
-  ['symexpropt_68',['SymExprOpt',['../classmim_1_1SymExprOpt.html#a629c3483378c67735716dc1965944227',1,'mim::SymExprOpt']]],
-  ['syms_69',['syms',['../classmim_1_1World_1_1Externals.html#af73e1fc6bb699ac0af55a3339f366e85',1,'mim::World::Externals']]],
-  ['system_70',['system',['../namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396',1,'mim::sys']]]
+  ['sym2flags_64',['sym2flags',['../classmim_1_1World_1_1Annexes.html#a5633b98b3963f687df45ab58f4c83c2a',1,'mim::World::Annexes']]],
+  ['sym2mut_65',['sym2mut',['../classmim_1_1World_1_1Externals.html#ac72a6eff11ad513f4a98462cc487e36a',1,'mim::World::Externals']]],
+  ['sym_5fanon_66',['sym_anon',['../classmim_1_1ast_1_1AST.html#a8899c2750a526004e0bbcae3f327a01c',1,'mim::ast::AST']]],
+  ['sym_5ferror_67',['sym_error',['../classmim_1_1ast_1_1AST.html#addcecc401fa2340d35035a6c8bf23f1e',1,'mim::ast::AST']]],
+  ['sym_5freturn_68',['sym_return',['../classmim_1_1ast_1_1AST.html#a85ddb7b560da4ba40d7923a8dc6ccd2d',1,'mim::ast::AST']]],
+  ['symexpropt_69',['SymExprOpt',['../classmim_1_1SymExprOpt.html#a629c3483378c67735716dc1965944227',1,'mim::SymExprOpt']]],
+  ['syms_70',['syms',['../classmim_1_1World_1_1Externals.html#af73e1fc6bb699ac0af55a3339f366e85',1,'mim::World::Externals']]],
+  ['system_71',['system',['../namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396',1,'mim::sys']]]
 ];

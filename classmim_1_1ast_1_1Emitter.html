@@ -129,7 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f9b94cf6c3b3a065893050cfdf3b8f7" id="r_a2f9b94cf6c3b3a065893050cfdf3b8f7"><td class="memItemLeft"><a class="el" href="classmim_1_1ast_1_1AST.html">AST</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2f9b94cf6c3b3a065893050cfdf3b8f7">ast</a> () const</td></tr>
 <tr class="memitem:a4d8496ba716eead72b41b4f709361792" id="r_a4d8496ba716eead72b41b4f709361792"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4d8496ba716eead72b41b4f709361792">world</a> ()</td></tr>
 <tr class="memitem:af63c0e340a1dbef41a23238343e1da1f" id="r_af63c0e340a1dbef41a23238343e1da1f"><td class="memItemLeft"><a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af63c0e340a1dbef41a23238343e1da1f">driver</a> ()</td></tr>
-<tr class="memitem:a86974be9ec0c12be182d6e48e0464a8c" id="r_a86974be9ec0c12be182d6e48e0464a8c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a86974be9ec0c12be182d6e48e0464a8c">register_annex</a> (<a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *annex, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> sub, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memitem:a28759c4620302518f452a04423300e0b" id="r_a28759c4620302518f452a04423300e0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a28759c4620302518f452a04423300e0b">attach</a> (<a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *annex, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> sub, Sym name, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a28759c4620302518f452a04423300e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">name</code> is the full syntactic name of <em>this</em> registration (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -198,6 +199,52 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a28759c4620302518f452a04423300e0b" name="a28759c4620302518f452a04423300e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28759c4620302518f452a04423300e0b">&#9670;&#160;</a></span>attach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::attach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *</td>          <td class="paramname"><span class="paramname"><em>annex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a></td>          <td class="paramname"><span class="paramname"><em>sub</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code class="param">name</code> is the full syntactic name of <em>this</em> registration (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>). </p>
+<p>We must take it from the declaration rather than from <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a>, since hash-consing can make several annexes share a single <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> (e.g. <span class="tt">let foo.bar = 23; let foo.baz = 23;</span>). </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00024">24</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8h_source.html#l00285">mim::World::annexes()</a>, <a class="el" href="world_8cpp_source.html#l00043">mim::World::Annexes::attach()</a>, <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793">mim::ast::AnnexInfo::id</a>, <a class="el" href="ast_8h_source.html#l00034">mim::ast::AnnexInfo::plugin_id()</a>, and <a class="el" href="emit_8cpp_source.html#l00018">world()</a>.</p>
+
+</div>
+</div>
 <a id="af63c0e340a1dbef41a23238343e1da1f" name="af63c0e340a1dbef41a23238343e1da1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af63c0e340a1dbef41a23238343e1da1f">&#9670;&#160;</a></span>driver()</h2>
 
@@ -227,44 +274,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a86974be9ec0c12be182d6e48e0464a8c" name="a86974be9ec0c12be182d6e48e0464a8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86974be9ec0c12be182d6e48e0464a8c">&#9670;&#160;</a></span>register_annex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mim::ast::Emitter::register_annex </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *</td>          <td class="paramname"><span class="paramname"><em>annex</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a></td>          <td class="paramname"><span class="paramname"><em>sub</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00021">21</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793">mim::ast::AnnexInfo::id</a>, <a class="el" href="world_8cpp_source.html#l00095">mim::World::register_annex()</a>, and <a class="el" href="emit_8cpp_source.html#l00018">world()</a>.</p>
-
-</div>
-</div>
 <a id="a4d8496ba716eead72b41b4f709361792" name="a4d8496ba716eead72b41b4f709361792"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d8496ba716eead72b41b4f709361792">&#9670;&#160;</a></span>world()</h2>
 
@@ -290,9 +299,9 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00018">18</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00017">ast()</a>, and <a class="el" href="ast_8h_source.html#l00062">mim::ast::AST::world()</a>.</p>
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00017">ast()</a>, and <a class="el" href="ast_8h_source.html#l00067">mim::ast::AST::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00019">driver()</a>, and <a class="el" href="emit_8cpp_source.html#l00021">register_annex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00024">attach()</a>, and <a class="el" href="emit_8cpp_source.html#l00019">driver()</a>.</p>
 
 </div>
 </div>

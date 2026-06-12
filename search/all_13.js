@@ -29,7 +29,7 @@ var searchData=
   ['tail_5frec_5felim_2eh_26',['tail_rec_elim.h',['../tail__rec__elim_8h.html',1,'']]],
   ['tail_5frec_5felim_5fpass_27',['tail_rec_elim_pass',['../namespacemim_1_1plug_1_1compile.html#aa116af339362d94ddef4135c1e9e67c7',1,'mim::plug::compile']]],
   ['tailrecelim_28',['TailRecElim',['../classmim_1_1TailRecElim.html',1,'mim::TailRecElim'],['../classmim_1_1TailRecElim.html#aff7acacd3209be045b220464e5d344dd',1,'mim::TailRecElim::TailRecElim()']]],
-  ['take_5fresolved_29',['take_resolved',['../classmim_1_1Stage.html#a6859349f38bd575df9e899f69641f2a1',1,'mim::Stage']]],
+  ['take_5fresolved_29',['take_resolved',['../classmim_1_1Stage.html#a6859349f38bd575df9e899f69641f2a1',1,'mim::Stage::take_resolved()'],['../classNamed.html#a7a68a9ac394246cd962b9bed92971e3c',1,'Named::take_resolved()']]],
   ['tan_30',['tan',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a5b2d4484498235e80d61a233a7c04991',1,'mim::plug::math']]],
   ['tangent_31',['Tangent',['../namespacemim_1_1plug_1_1autodiff.html#a731a934813e6197c347e831cb312acda',1,'mim::plug::autodiff']]],
   ['tangent_5ftype_5ffun_32',['tangent_type_fun',['../namespacemim_1_1plug_1_1autodiff.html#a68aae344814c11b1359c6b945f109153',1,'mim::plug::autodiff']]],

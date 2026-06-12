@@ -210,7 +210,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1c5cd105ce8fad4292146bcb3d98cc04" id="r_a1c5cd105ce8fad4292146bcb3d98cc04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04">start</a> () override</td></tr>
 <tr class="memdesc:a1c5cd105ce8fad4292146bcb3d98cc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
 <tr class="memitem:a89cc9660298e11167b0a7fc8963b4c25" id="r_a89cc9660298e11167b0a7fc8963b4c25"><td class="memItemLeft"><a class="el" href="classmim_1_1Analysis_1_1Enter.html">Enter</a>&#160;</td><td class="memItemRight"><a class="el" href="#a89cc9660298e11167b0a7fc8963b4c25">enter</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
-<tr class="memitem:adc7ffb4a0abc0dc29f4eb8238336760a" id="r_adc7ffb4a0abc0dc29f4eb8238336760a"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adc7ffb4a0abc0dc29f4eb8238336760a">rewrite_annex</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a87831539535ddfa21b1777d9554e153d" id="r_a87831539535ddfa21b1777d9554e153d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a87831539535ddfa21b1777d9554e153d">rewrite_annex</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, Sym, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:aa7d78ed906cc6531fa13d42e18bc398d" id="r_aa7d78ed906cc6531fa13d42e18bc398d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aa7d78ed906cc6531fa13d42e18bc398d">rewrite_external</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:aae866134817430f9d32514c775d12a99" id="r_aae866134817430f9d32514c775d12a99"><td class="memItemLeft">virtual <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aae866134817430f9d32514c775d12a99">rewrite_deps</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memdesc:aae866134817430f9d32514c775d12a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walks <code class="param">mut's</code> dependencies under its <a class="el" href="#ac32997174041824d682869da3b5afa9b">curr_mut()</a> scope.  <br /></td></tr>
@@ -242,7 +242,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Traverses the current <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a> using <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> infrastructure while staying in the same world. </p>
 <p>It recursively rewrites</p><ol type="1">
-<li>all <a class="el" href="classmim_1_1World.html#ae8850b8e8f58014a9fb7205ddd7ffb47">World::annexes()</a> (during which <a class="el" href="#aec37998476295eb08d93ff605e866ddd">Analysis::is_bootstrapping()</a> is <span class="tt">true</span>), and then</li>
+<li>all <a class="el" href="classmim_1_1World.html#a861dd0450f17714ee8ae458629d773cd">World::annexes()</a> (during which <a class="el" href="#aec37998476295eb08d93ff605e866ddd">Analysis::is_bootstrapping()</a> is <span class="tt">true</span>), and then</li>
 <li>all <a class="el" href="classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a">World::externals()</a> (during which it is <span class="tt">false</span>).</li>
 </ol>
 <p><a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> provides a reusable <a class="el" href="#ab9a6d69d1f878706cd3a27b577f65396">lattice()</a> mapping old <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s to abstract values, represented as ordinary MimIR <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s. </p><dl class="section note"><dt>Note</dt><dd>You can override<ul>
@@ -499,8 +499,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="adc7ffb4a0abc0dc29f4eb8238336760a" name="adc7ffb4a0abc0dc29f4eb8238336760a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc7ffb4a0abc0dc29f4eb8238336760a">&#9670;&#160;</a></span>rewrite_annex()</h2>
+<a id="a87831539535ddfa21b1777d9554e153d" name="a87831539535ddfa21b1777d9554e153d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87831539535ddfa21b1777d9554e153d">&#9670;&#160;</a></span>rewrite_annex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,6 +512,11 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void mim::Analysis::rewrite_annex </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -12,6 +12,11 @@ var world_8h =
     [ "mim::World::ScopedLoc", "structmim_1_1World_1_1ScopedLoc.html", "structmim_1_1World_1_1ScopedLoc" ],
     [ "mim::World::Freezer", "structmim_1_1World_1_1Freezer.html", "structmim_1_1World_1_1Freezer" ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", "classmim_1_1World_1_1Externals" ],
+    [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", "classmim_1_1World_1_1Annexes" ],
+    [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", [
+      [ "def", "classmim_1_1World_1_1Annexes.html#a19d160b43b0d5e7d7b596d2194b510a0", null ],
+      [ "sym", "classmim_1_1World_1_1Annexes.html#a33c4fb5a895f0c15bae4743eb3b41fb6", null ]
+    ] ],
     [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", [
       [ "defs", "classmim_1_1World.html#acd8fc2597193b4c938e7ff50062936e3", null ],
       [ "substs", "classmim_1_1World.html#a4b1bfdc913535dc888b1e9547cd85df2", null ]

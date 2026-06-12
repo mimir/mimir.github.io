@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "mim::Annex", "structmim_1_1Annex.html", null ],
+    [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", null ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", null ],
     [ "mim::ast::AnnexInfo.id", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8id", null ],
     [ "mim::ast::AnnexInfo.sym", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8sym", null ],
@@ -24,6 +25,7 @@ var hierarchy =
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
     [ "mim::Analysis::Enter", "classmim_1_1Analysis_1_1Enter.html", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],
+    [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", null ],
     [ "mim::Sets&lt; D, N &gt;::Data::Equal", "structmim_1_1Sets_1_1Data_1_1Equal.html", null ],
     [ "std::exception", null, [
       [ "mim::Error", "classmim_1_1Error.html", null ]
@@ -150,6 +152,7 @@ var hierarchy =
         [ "mim::Var", "classmim_1_1Var.html", null ]
       ] ],
       [ "mim::Stage", "classmim_1_1Stage.html", [
+        [ "Named", "classNamed.html", null ],
         [ "mim::Pass", "classmim_1_1Pass.html", [
           [ "mim::RWPass< P, M >", "classmim_1_1RWPass.html", null ],
           [ "mim::RWPass< BetaRed, Def >", "classmim_1_1RWPass.html", [
