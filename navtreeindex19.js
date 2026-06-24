@@ -1,7 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"lower__map__reduce_8h.html":[5,0,3,1,4,16,0,2],
-"lower__map__reduce_8h_source.html":[5,0,3,1,4,16,0,2],
 "lower__matrix__highlevel_8cpp.html":[5,0,4,1,4,10,0,0],
 "lower__matrix__highlevel_8cpp_source.html":[5,0,4,1,4,10,0,0],
 "lower__matrix__highlevel_8h.html":[5,0,3,1,4,9,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX19 =
 "namespacemim.html#a815524784f39e99f0d5929c8ef950552":[5,0,3,1,10,0,4],
 "namespacemim.html#a818035940bd9a579f69cb89e3cd097b4":[2,0,3,250],
 "namespacemim.html#a81981a41f846c6a9c2a7d3d57fa81189":[2,0,3,124],
-"namespacemim.html#a829c76d14d02cad2fb4f21aff1e0fb6a":[2,0,3,256]
+"namespacemim.html#a829c76d14d02cad2fb4f21aff1e0fb6a":[2,0,3,256],
+"namespacemim.html#a82b4995bab86fa95f954caf7b4805764":[2,0,3,112],
+"namespacemim.html#a82bd82851e0f25f0390ebe12e4963ed4":[2,0,3,140]
 };

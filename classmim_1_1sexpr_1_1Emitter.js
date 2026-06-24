@@ -16,7 +16,6 @@ var classmim_1_1sexpr_1_1Emitter =
     [ "emit_var", "classmim_1_1sexpr_1_1Emitter.html#a352c804695d00463e65a88c5d83acbba", null ],
     [ "finalize", "classmim_1_1sexpr_1_1Emitter.html#ab5afffcf4c4b443137899ce7fbe604d8", null ],
     [ "is_valid", "classmim_1_1sexpr_1_1Emitter.html#ac7b63a51d1de5fec7297e89125e9fb11", null ],
-    [ "isa_nested_proj", "classmim_1_1sexpr_1_1Emitter.html#a6e3089e2c9f8c51f9be2770de3dc1018", null ],
     [ "next_lams", "classmim_1_1sexpr_1_1Emitter.html#af95121fb843144000a289c64113e1407", null ],
     [ "prepare", "classmim_1_1sexpr_1_1Emitter.html#a168bc5e3367df68312aa5d8c0d408c60", null ],
     [ "start", "classmim_1_1sexpr_1_1Emitter.html#a20777cde3de0b7b4ef7e61317c3f0f3d", null ]

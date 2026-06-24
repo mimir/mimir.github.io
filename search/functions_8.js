@@ -91,13 +91,12 @@ var searchData=
   ['isa_5fmut_5fbasicblock_88',['isa_mut_basicblock',['../classmim_1_1Lam.html#a4868f1bfe7fb5cbc7d453c0f83009dbe',1,'mim::Lam']]],
   ['isa_5fmut_5fcn_89',['isa_mut_cn',['../classmim_1_1Lam.html#adab8c4822338fe32fb4a7711b7d479c0',1,'mim::Lam']]],
   ['isa_5fmut_5freturning_90',['isa_mut_returning',['../classmim_1_1Lam.html#a637291bc1cf994803562402bb0d77909',1,'mim::Lam']]],
-  ['isa_5fnested_5fproj_91',['isa_nested_proj',['../classmim_1_1sexpr_1_1Emitter.html#a6e3089e2c9f8c51f9be2770de3dc1018',1,'mim::sexpr::Emitter']]],
-  ['isa_5foptimizable_92',['isa_optimizable',['../namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf',1,'mim']]],
-  ['isa_5fproxy_93',['isa_proxy',['../classmim_1_1Pass.html#aecf198ac657f8ef581878741e2282aef',1,'mim::Pass']]],
-  ['isa_5freturning_94',['isa_returning',['../classmim_1_1Pi.html#afe493c2ca2eb3e7e1d484eceb5138356',1,'mim::Pi::isa_returning()'],['../classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79',1,'mim::Lam::isa_returning()']]],
-  ['isa_5fset_95',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
-  ['isa_5ftargetspecific_5fintrinsic_96',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter']]],
-  ['isa_5funset_97',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
-  ['iterator_98',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
-  ['its_5fa_5fmatch_99',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
+  ['isa_5foptimizable_91',['isa_optimizable',['../namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf',1,'mim']]],
+  ['isa_5fproxy_92',['isa_proxy',['../classmim_1_1Pass.html#aecf198ac657f8ef581878741e2282aef',1,'mim::Pass']]],
+  ['isa_5freturning_93',['isa_returning',['../classmim_1_1Pi.html#afe493c2ca2eb3e7e1d484eceb5138356',1,'mim::Pi::isa_returning()'],['../classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79',1,'mim::Lam::isa_returning()']]],
+  ['isa_5fset_94',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
+  ['isa_5ftargetspecific_5fintrinsic_95',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter']]],
+  ['isa_5funset_96',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
+  ['iterator_97',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
+  ['its_5fa_5fmatch_98',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

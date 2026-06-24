@@ -114,15 +114,15 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4",
 "classmim_1_1plug_1_1autodiff_1_1Eval.html#acaf79108b413889d1a7e502dba4677cb",
 "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html",
-"dir_63735fdd0e5a2805284c40e197f12d6d.html",
-"lower__map__reduce_8h.html",
-"namespacemim.html#a82b4995bab86fa95f954caf7b4805764",
-"namespacemim_1_1plug_1_1compile.html",
-"namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0",
-"namespacemim_1_1plug_1_1mem.html#ab9dc13e98db47613da7cefa40740ec82",
-"opt_8h_source.html",
-"structmim_1_1Nest_1_1Node_1_1Children.html#a41cde5894303b7317a2c403220f88a8b",
-"tensor_2autogen_8h.html"
+"dir_668a0f825cfe857b14c8faca47414cea.html",
+"lower__matrix__highlevel_8cpp.html",
+"namespacemim.html#a83f7d40900e583112dead0917f4188b2",
+"namespacemim_1_1plug_1_1compile.html#a1b62916f46aa4d27565c3691e67677d6",
+"namespacemim_1_1plug_1_1ll.html",
+"namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3",
+"optimize_8cpp_source.html",
+"structmim_1_1Nest_1_1Node_1_1Children.html#a60b692321eac11789d3d4528322d7505",
+"tensor_2autogen_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
