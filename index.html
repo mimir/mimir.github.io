@@ -213,7 +213,7 @@ $(function(){initNavTree('index.html','',''); });
 📦 Install (Optional)</h2>
 <div class="fragment"><div class="line">cmake -S . -B build -DBUILD_TESTING=ON -DMIM_BUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/my/local/install/prefix</div>
 <div class="line">cmake --build build -j$(nproc) --target install</div>
-</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the docs. You can find the rest of the documentation <a href="file:///home/roland/mimir/mimir/build/html/usergroup0.html">here</a></p>
+</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the <a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a> guide. From there, the documentation continues with the <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a>, the <a class="el" href="langref.html" title="Mim Language Reference">Language Reference</a>, the <a class="el" href="dev.html" title="Developer Guide">Developer Guide</a>, <a class="el" href="plugins.html" title="Plugins">Plugins</a>, <a class="el" href="rewriting.html" title="Rewriting">Rewriting</a>, <a class="el" href="phases.html" title="Phases">Phases</a>, and the <a class="el" href="python.html" title="Python Bindings">Python Bindings</a>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 🔥 Key Innovations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
@@ -240,8 +240,8 @@ $(function(){initNavTree('index.html','',''); });
 <ul>
 <li><b>Free variables</b> replace dominance; the <b>nesting tree</b> replaces the dominator tree</li>
 <li><p class="startli">Free-variable queries “just work”:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().contains(x)) <span class="comment">/*x free in expr*/</span></div>
-<div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().has_intersection(xyz)) <span class="comment">/*x, y, or z free in expr*/</span></div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().contains(x))           <span class="comment">// x free in expr</span></div>
+<div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().has_intersection(xyz)) <span class="comment">// x, y, or z free in expr</span></div>
 </div><!-- fragment --><p class="startli">This is always correct. MimIR maintains free-variable information <b>lazily</b>, <b>locally</b>, and <b>transparently</b>: results are computed on demand, memoized, and invalidated only where needed.</p>
 </li>
 <li>Data dependencies remain precise, even for higher-order code</li>

@@ -381,21 +381,21 @@ Debugging</h1>
 Dumping</h2>
 <p>You can directly invoke several MimIR dump helpers from within GDB, for example:</p>
 <ul>
-<li><a class="el" href="classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487" title="mim::Def::dump">mim::Def::dump</a>,</li>
-<li><a class="el" href="classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc" title="mim::Def::write">mim::Def::write</a>,</li>
-<li><a class="el" href="classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f" title="mim::World::dump">mim::World::dump</a>,</li>
-<li><a class="el" href="classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb" title="mim::World::write">mim::World::write</a>, ...</li>
+<li><a class="el" href="classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487" title="mim::Def::dump"><span class="tt">mim::Def::dump</span></a>,</li>
+<li><a class="el" href="classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc" title="mim::Def::write"><span class="tt">mim::Def::write</span></a>,</li>
+<li><a class="el" href="classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f" title="mim::World::dump"><span class="tt">mim::World::dump</span></a>,</li>
+<li><a class="el" href="classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb" title="mim::World::write"><span class="tt">mim::World::write</span></a>, ...</li>
 </ul>
 <div class="fragment"><div class="line">(gdb) call def-&gt;dump()</div>
 <div class="line">(gdb) call def-&gt;dump(0)</div>
 <div class="line">(gdb) call def-&gt;dump(3)</div>
 <div class="line">(gdb) call world().write(&quot;out.mim&quot;)</div>
-</div><!-- fragment --><p>In particular, note the different output levels of <a class="el" href="classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487" title="mim::Def::dump">mim::Def::dump</a>.</p>
-<p>You can also tweak the output behavior directly from within GDB by changing <a class="el" href="classmim_1_1World.html#a84dc41b987937f59141de186c5a2975e" title="mim::World::flags">mim::World::flags</a> or <a class="el" href="classmim_1_1World.html#aed6fcb0dc74ef6d72a12b7441964d890" title="mim::World::log">mim::World::log</a>:</p>
+</div><!-- fragment --><p>In particular, note the different output levels of <a class="el" href="classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487" title="mim::Def::dump"><span class="tt">mim::Def::dump</span></a>.</p>
+<p>You can also tweak the output behavior directly from within GDB by changing <a class="el" href="classmim_1_1World.html#a84dc41b987937f59141de186c5a2975e" title="mim::World::flags"><span class="tt">mim::World::flags</span></a> or <a class="el" href="classmim_1_1World.html#aed6fcb0dc74ef6d72a12b7441964d890" title="mim::World::log"><span class="tt">mim::World::log</span></a>:</p>
 <div class="fragment"><div class="line">(gdb) call world().flags().dump_gid = 1</div>
 <div class="line">(gdb) call world().flags().dump_recursive = 1</div>
 <div class="line">(gdb) call world().log().max_level_ = 4</div>
-</div><!-- fragment --><p>Another useful trick is to recover a <span class="tt">Def*</span> from a <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid">mim::Def::gid</a> via <a class="el" href="classmim_1_1World.html#a8166ab5122fb1a299072eac68286b3a8" title="mim::World::gid2def">mim::World::gid2def</a>:</p>
+</div><!-- fragment --><p>Another useful trick is to recover a <span class="tt">Def*</span> from a <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid"><span class="tt">mim::Def::gid</span></a> via <a class="el" href="classmim_1_1World.html#a8166ab5122fb1a299072eac68286b3a8" title="mim::World::gid2def"><span class="tt">mim::World::gid2def</span></a>:</p>
 <div class="fragment"><div class="line">(gdb) p world().gid2def(123)</div>
 <div class="line">$1 = ...</div>
 <div class="line">(gdb) call $1-&gt;dump()</div>
@@ -463,8 +463,8 @@ cgdb session using xdot</div></div>
 <div class="line">xdotw &amp;def-&gt;world() 1 1</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Conditional Breakpoints</h2>
-<p>Often, you will want to inspect a specific <a class="el" href="classmim_1_1Def.html" title="mim::Def">mim::Def</a> at a particular point in the program. <a href="https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_33.html">Conditional breakpoints</a> are very handy for this.</p>
-<p>For example, the following command breaks if the <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid">mim::Def::gid</a> of variable <span class="tt">def</span> is <span class="tt">42</span> at source location <span class="tt">foo.cpp:23</span>:</p>
+<p>Often, you will want to inspect a specific <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">mim::Def</span></a> at a particular point in the program. <a href="https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_33.html">Conditional breakpoints</a> are very handy for this.</p>
+<p>For example, the following command breaks if the <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid"><span class="tt">mim::Def::gid</span></a> of variable <span class="tt">def</span> is <span class="tt">42</span> at source location <span class="tt">foo.cpp:23</span>:</p>
 <div class="fragment"><div class="line">break foo.cpp:23 if def-&gt;gid() == 42</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Catching Exceptions</h2>
