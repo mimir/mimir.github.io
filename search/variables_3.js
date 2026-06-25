@@ -7,5 +7,6 @@ var searchData=
   ['def_5f_4',['def_',['../classmim_1_1ast_1_1Decl.html#ae3ddbb0016f6130e84f3e7b423144cf2',1,'mim::ast::Decl']]],
   ['default_5finlined_5fsize_5',['Default_Inlined_Size',['../namespacemim.html#a39efaf0b2304223993b837cc3e0bd605',1,'mim']]],
   ['defs_6',['defs',['../classmim_1_1World.html#acd8fc2597193b4c938e7ff50062936e3',1,'mim::World::Move.arena']]],
-  ['dump_5frecursive_7',['dump_recursive',['../namespacemim.html#afc6c15ed47123ead7dae5a3c7b5e8506',1,'mim::Flags']]]
+  ['depth_7',['depth',['../structmim_1_1Profiler_1_1Span.html#a3b018e507d17a105131ec342731f6d93',1,'mim::Profiler::Span']]],
+  ['dump_5frecursive_8',['dump_recursive',['../structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506',1,'mim::Flags']]]
 ];

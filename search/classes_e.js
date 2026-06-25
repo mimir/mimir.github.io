@@ -52,7 +52,7 @@ var searchData=
   ['sibldeps_3c_20true_20_3e_49',['SiblDeps&lt; true &gt;',['../structmim_1_1Nest_1_1Node_1_1SiblDeps.html',1,'mim::Nest::Node']]],
   ['sigma_50',['Sigma',['../classmim_1_1Sigma.html',1,'mim']]],
   ['sigmaexpr_51',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html',1,'mim::ast']]],
-  ['span_52',['Span',['../classmim_1_1Span.html',1,'mim']]],
+  ['span_52',['Span',['../structmim_1_1Profiler_1_1Span.html',1,'mim::Profiler::Span'],['../classmim_1_1Span.html',1,'mim::Span&lt; T, N &gt;']]],
   ['span_3c_20const_20t_2c_20n_20_3e_53',['Span&lt; const T, N &gt;',['../classmim_1_1Span.html',1,'mim']]],
   ['split_54',['Split',['../classmim_1_1Split.html',1,'mim']]],
   ['ssa_55',['SSA',['../classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html',1,'mim::plug::mem::pass']]],

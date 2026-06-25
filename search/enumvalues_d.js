@@ -12,7 +12,7 @@ var searchData=
   ['ninf_9',['ninf',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a4feafbe2844085aa42e95fb6d9ea3de8',1,'mim::plug::math']]],
   ['nnan_10',['nnan',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a8d4e062f52a20018f38b08a87940fc07',1,'mim::plug::math']]],
   ['non_5fcallee_5f1_11',['Non_Callee_1',['../classmim_1_1EtaExp.html#a5a75570e634c37f72097c1110ca23665aa931101a40618021a5dcb1bbdec43384',1,'mim::EtaExp']]],
-  ['none_12',['None',['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6adf97f83acf6453d4a6a4b1070f3754',1,'mim']]],
+  ['none_12',['None',['../structmim_1_1Flags.html#a859d1deec88adc34df34f6662250d9f5a6adf97f83acf6453d4a6a4b1070f3754',1,'mim::Flags::None'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6adf97f83acf6453d4a6a4b1070f3754',1,'mim::None']]],
   ['none_13',['none',['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8',1,'mim::plug::core::none'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a334c4a4c42fdb79d7ebc3e73b517e6f8',1,'mim::plug::math::none']]],
   ['nor_14',['nor',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a57c7d11cd49333e3f722204c63016da9',1,'mim::plug::core']]],
   ['note_15',['Note',['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a3b0649c72650c313a357338dcdfb64ec',1,'mim::Error']]],

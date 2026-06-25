@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['flags_0',['Flags',['../namespacemim.html#structmim_1_1Flags',1,'mim']]],
+  ['flags_0',['Flags',['../structmim_1_1Flags.html',1,'mim']]],
   ['fnv1_1',['FNV1',['../namespacemim.html#structmim_1_1FNV1',1,'mim']]],
   ['fnv1_3c_204_20_3e_2',['FNV1&lt; 4 &gt;',['../structmim_1_1FNV1_3_014_01_4.html',1,'mim']]],
   ['fnv1_3c_208_20_3e_3',['FNV1&lt; 8 &gt;',['../structmim_1_1FNV1_3_018_01_4.html',1,'mim']]],

@@ -5,6 +5,7 @@ var dir_ff1b7b5329a4b5bde2c45ec2ac3be82c =
     [ "hash.h", "hash_8h.html", "hash_8h" ],
     [ "link_cut_tree.h", "link__cut__tree_8h.html", "link__cut__tree_8h" ],
     [ "log.h", "log_8h.html", "log_8h" ],
+    [ "profile.h", "profile_8h.html", "profile_8h" ],
     [ "sets.h", "sets_8h.html", "sets_8h" ],
     [ "span.h", "span_8h.html", "span_8h" ],
     [ "sys.h", "sys_8h.html", "sys_8h" ],

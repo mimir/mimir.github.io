@@ -31,7 +31,7 @@ var hierarchy =
       [ "mim::Error", "classmim_1_1Error.html", null ]
     ] ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", null ],
-    [ "mim::Flags", "namespacemim.html#structmim_1_1Flags", null ],
+    [ "mim::Flags", "structmim_1_1Flags.html", null ],
     [ "mim::FNV1&lt; size_t &gt;", "namespacemim.html#structmim_1_1FNV1", null ],
     [ "mim::FNV1&lt; 4 &gt;", "structmim_1_1FNV1_3_014_01_4.html", null ],
     [ "mim::FNV1&lt; 8 &gt;", "structmim_1_1FNV1_3_018_01_4.html", null ],
@@ -47,6 +47,8 @@ var hierarchy =
       [ "mim::Vector< Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Range >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< void * >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< size_t >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< mim::Profiler::Span >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
     ] ],
@@ -81,6 +83,7 @@ var hierarchy =
     ] ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
+    [ "mim::Profiler", "classmim_1_1Profiler.html", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
@@ -418,6 +421,7 @@ var hierarchy =
       [ "mim::Var", "classmim_1_1Var.html", null ]
     ] ],
     [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
+    [ "mim::Profiler::Span", "structmim_1_1Profiler_1_1Span.html", null ],
     [ "std::span", null, [
       [ "mim::Span< const T, N >", "classmim_1_1Span.html", null ],
       [ "mim::Span< T, N >", "classmim_1_1Span.html", null ]

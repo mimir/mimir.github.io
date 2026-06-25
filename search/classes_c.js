@@ -14,6 +14,7 @@ var searchData=
   ['prefixcleanup_11',['PrefixCleanup',['../classmim_1_1PrefixCleanup.html',1,'mim']]],
   ['primaryexpr_12',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
   ['prod_13',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
-  ['proxy_14',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
-  ['ptrn_15',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]]
+  ['profiler_14',['Profiler',['../classmim_1_1Profiler.html',1,'mim']]],
+  ['proxy_15',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
+  ['ptrn_16',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]]
 ];

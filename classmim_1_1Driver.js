@@ -20,6 +20,8 @@ var classmim_1_1Driver =
     [ "normalizer", "classmim_1_1Driver.html#a9da4ca3384f62706a603bacad94e98e6", null ],
     [ "normalizer", "classmim_1_1Driver.html#a66bee8d7f5f315deb200c65bf3ea0bff", null ],
     [ "operator=", "classmim_1_1Driver.html#a916332ec561f680e7b66004a1de23325", null ],
+    [ "profiler", "classmim_1_1Driver.html#a2bf93cbc7f216b6eb34698b12783ebef", null ],
+    [ "profiler", "classmim_1_1Driver.html#a8d0069a17d1820a60cd17d3bd1bbdf28", null ],
     [ "search_paths", "classmim_1_1Driver.html#afd36aa36d224823727e7c4e249874754", null ],
     [ "stage", "classmim_1_1Driver.html#af398b24cfa4bac2ae657d2595269ff44", null ],
     [ "stages", "classmim_1_1Driver.html#a00af04ab4b78db159c5bf06a4c033aba", null ],
