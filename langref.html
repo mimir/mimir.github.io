@@ -247,7 +247,7 @@ Primary Terminals</h3>
 Secondary Terminals</h3>
 <div class="fragment"><div class="line">&lt; &gt; &lt;&lt; &gt;&gt;</div>
 <div class="line">-&gt; bot top lm insert</div>
-</div><!-- fragment --><p><span class="tt">⟨</span>, <span class="tt">⟩</span>, <span class="tt">⟪</span>, and <span class="tt">⟫</span> may be used as alternatives for <span class="tt">‹</span>, <span class="tt">›</span>, <span class="tt">«</span>, and <span class="tt">»</span>.</p>
+</div><!-- fragment --><p><span class="tt">⟨</span>, <span class="tt">⟩</span>, <span class="tt">⟪</span>, and <span class="tt">⟫</span> may be used as alternatives for <span class="tt">‹</span>, <span class="tt">›</span>, <span class="tt">«</span>, and <span class="tt">»</span>. <span class="tt">★</span> may be used as an alternative for <span class="tt">*</span>.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
 Keywords</h3>
 <div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Nat Rule Type Univ</div>
@@ -283,12 +283,12 @@ Pattern Terminals</h3>
 <div class="line">         |  sign &quot;0&quot; [&quot;bB&quot;] bin+</div>
 <div class="line">         |  sign &quot;0&quot; [&quot;oO&quot;] oct+</div>
 <div class="line">         |  sign &quot;0&quot; [&quot;xX&quot;] hex+</div>
-<div class="line">         |  sign? dec+ eE sign dec+</div>
-<div class="line">         |  sign? dec+ &quot;.&quot; dec* (eE sign dec+)?</div>
-<div class="line">         |  sign? dec* &quot;.&quot; dec+ (eE sign dec+)?</div>
-<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex+ pP sign dec+</div>
-<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex+ &quot;.&quot; hex* pP sign dec+</div>
-<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex* &quot;.&quot; hex+ pP sign dec+</div>
+<div class="line">         |  sign? dec+ eE sign? dec+</div>
+<div class="line">         |  sign? dec+ &quot;.&quot; dec* (eE sign? dec+)?</div>
+<div class="line">         |  sign? dec* &quot;.&quot; dec+ (eE sign? dec+)?</div>
+<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex+ pP sign? dec+</div>
+<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex+ &quot;.&quot; hex* pP sign? dec+</div>
+<div class="line">         |  sign? &quot;0&quot; [&quot;xX&quot;] hex* &quot;.&quot; hex+ pP sign? dec+</div>
 <div class="line">X_n    ::= dec+ sub+</div>
 <div class="line">         |  dec+ &quot;_&quot; dec+</div>
 <div class="line">C      ::= &quot;&#39;&quot; (ascii_char | esc) &quot;&#39;&quot;</div>
@@ -335,14 +335,14 @@ Declarations</h2>
 <div class="fragment"><div class="line">let p = e</div>
 <div class="line">let A = e</div>
 <div class="line"> </div>
-<div class="line">lam|con|fun [extern] n dom* [: e] = e</div>
+<div class="line">lam|con|fun [extern] n dom+ [: e] = e</div>
 <div class="line">ccon|cfun I b [: e]</div>
 <div class="line"> </div>
 <div class="line">rec n [: e] = e</div>
 <div class="line">and n [: e] = e</div>
-<div class="line">and lam|con|fun [extern] n dom* [: e] = e</div>
+<div class="line">and lam|con|fun [extern] n dom+ [: e] = e</div>
 <div class="line"> </div>
-<div class="line">axm A [(tag (= alias)*)*] : e [, normalizer] [, curry] [, trip]</div>
+<div class="line">axm A [&quot;(&quot; tag (&quot;=&quot; alias)* (&quot;,&quot; tag (&quot;=&quot; alias)*)* &quot;)&quot;] : e [, normalizer] [, curry] [, trip]</div>
 <div class="line"> </div>
 <div class="line">rule|norm n p : e [when e] =&gt; e</div>
 </div><!-- fragment --><p>Here <span class="tt">n</span> is either an identifier or an annex name.</p>
@@ -432,13 +432,13 @@ Literals and Basic Forms</h3>
 <div class="line">     |  &quot;⊥&quot; (&quot;:&quot; e)?</div>
 <div class="line">     |  &quot;⊤&quot; (&quot;:&quot; e)?</div>
 <div class="line">     |  n</div>
-<div class="line">     |  &quot;{&quot; d* e &quot;}&quot;</div>
+<div class="line">     |  d+ e</div>
 <div class="line">     |  &quot;⦃&quot; e &quot;⦄&quot;</div>
 </div><!-- fragment --><ul>
 <li>A numeric, character, string, <span class="tt">⊥</span>, or <span class="tt">⊤</span> literal may carry an explicit type ascription.</li>
 <li>Without an explicit type, numeric literals default to <span class="tt">Nat</span>.</li>
 <li>Without an explicit type, <span class="tt">⊥</span> and <span class="tt">⊤</span> default to <span class="tt">*</span>.</li>
-<li><span class="tt">{ d* e }</span> is a declaration expression whose result is the final expression <span class="tt">e</span>.</li>
+<li><span class="tt">d+ e</span> is a declaration expression: one or more declarations followed by a final expression <span class="tt">e</span>, which is the result. It is not delimited by any brackets; it simply starts with a declaration keyword such as <span class="tt">let</span>.</li>
 <li><span class="tt">⦃ e ⦄</span> is a singleton type.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
@@ -465,8 +465,8 @@ Functions and Continuations</h3>
 Products, Sequences, Unions, and Matching</h3>
 <div class="fragment"><div class="line">e   ::= &quot;[&quot; ... &quot;]&quot;</div>
 <div class="line">     |  &quot;(&quot; (e (&quot;,&quot; e)* &quot;,&quot;?)? &quot;)&quot;</div>
-<div class="line">     |  &quot;«&quot; arity (&quot;;&quot; e) &quot;»&quot;</div>
-<div class="line">     |  &quot;‹&quot; arity (&quot;;&quot; e) &quot;›&quot;</div>
+<div class="line">     |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
+<div class="line">     |  &quot;‹&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;›&quot;</div>
 <div class="line">     |  e &quot;#&quot; e</div>
 <div class="line">     |  e &quot;#&quot; I</div>
 <div class="line">     |  &quot;ins&quot; &quot;(&quot; e &quot;,&quot; e &quot;,&quot; e &quot;)&quot;</div>
@@ -481,7 +481,7 @@ Products, Sequences, Unions, and Matching</h3>
 <li><span class="tt">( ... )</span> is a tuple expression.</li>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
-<li>Each array or pack dimension may optionally be named, as in <span class="tt">«n: len; body»</span>.</li>
+<li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
 <li><span class="tt">e # i</span> or <span class="tt">e # e</span> extracts a component.</li>
 <li><span class="tt">ins(tuple, index, value)</span> inserts a value into a tuple-like aggregate.</li>
 <li><span class="tt">e ∪ t</span> forms a union type.</li>
