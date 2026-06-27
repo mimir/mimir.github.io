@@ -87,6 +87,11 @@ var annotated_dup =
           [ "CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase" ],
           [ "DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", "classmim_1_1plug_1_1direct_1_1DS2CPS" ]
         ] ],
+        [ "ll", "namespacemim_1_1plug_1_1ll.html", [
+          [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
+          [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
+          [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ]
+        ] ],
         [ "matrix", "namespacemim_1_1plug_1_1matrix.html", [
           [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed" ],
           [ "LowerMatrixLowLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel" ],
@@ -112,11 +117,6 @@ var annotated_dup =
             [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
             [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ]
           ] ]
-        ] ],
-        [ "ll", "namespacemim_1_1plug_1_1ll.html", [
-          [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
-          [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
-          [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ]
         ] ]
       ] ],
       [ "sexpr", "namespacemim_1_1sexpr.html", [

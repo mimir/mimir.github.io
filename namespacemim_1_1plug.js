@@ -189,6 +189,7 @@ var namespacemim_1_1plug =
       [ "Plugin_Id", "namespacemim_1_1plug_1_1core.html#a313da9372a97c5d81ab124e98108345e", null ]
     ] ],
     [ "direct", "namespacemim_1_1plug_1_1direct.html", "namespacemim_1_1plug_1_1direct" ],
+    [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
     [ "math", "namespacemim_1_1plug_1_1math.html", [
       [ "VMode", "namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a", null ],
       [ "abs", "namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b", null ],
@@ -427,7 +428,6 @@ var namespacemim_1_1plug =
       [ "register_normalizers", "namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08", null ]
     ] ],
-    [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
     [ "option", "namespacemim_1_1plug_1_1option.html", [
       [ "is_some", "namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263", null ],
       [ "none", "namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f", null ],
