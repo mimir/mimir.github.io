@@ -24,12 +24,10 @@ var searchData=
   ['copy_5fprop_5fpass_21',['copy_prop_pass',['../namespacemim_1_1plug_1_1mem.html#a526eb86f6219aa1645e12144c1a3a6e8',1,'mim::plug::mem']]],
   ['copy_5fprop_5ftt_5fpass_22',['copy_prop_tt_pass',['../namespacemim_1_1plug_1_1mem.html#a7b5c09d3677f6ab46e54118e5ca073f1',1,'mim::plug::mem']]],
   ['copy_5fto_5fdevice_23',['copy_to_device',['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3e',1,'mim::plug::gpu']]],
-  ['copy_5fto_5fdevice_5fasync_24',['copy_to_device_async',['../namespacemim_1_1plug_1_1gpu.html#ab4f3fbb7c4cd668a7b425569c324a011',1,'mim::plug::gpu']]],
-  ['copy_5fto_5fhost_25',['copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056',1,'mim::plug::gpu']]],
-  ['copy_5fto_5fhost_5fasync_26',['copy_to_host_async',['../namespacemim_1_1plug_1_1gpu.html#af8472e49d13bcfe5f3a72e17c894bdda',1,'mim::plug::gpu']]],
-  ['cps2ds_27',['cps2ds',['../namespacemim_1_1plug_1_1direct.html#ab2a0fe9b03b60f04b11532493ed42cac',1,'mim::plug::direct']]],
-  ['cps2ds_5fdep_28',['cps2ds_dep',['../namespacemim_1_1plug_1_1direct.html#ae16ba35b7bcfa757a84a6e0ba0ca7e00',1,'mim::plug::direct']]],
-  ['cps2ds_5fphase_29',['cps2ds_phase',['../namespacemim_1_1plug_1_1direct.html#aa7cc430476ee39d6ac174c4f85bf5308',1,'mim::plug::direct']]],
-  ['create_5fmap_30',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
-  ['create_5fset_31',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
+  ['copy_5fto_5fhost_24',['copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056',1,'mim::plug::gpu']]],
+  ['cps2ds_25',['cps2ds',['../namespacemim_1_1plug_1_1direct.html#ab2a0fe9b03b60f04b11532493ed42cac',1,'mim::plug::direct']]],
+  ['cps2ds_5fdep_26',['cps2ds_dep',['../namespacemim_1_1plug_1_1direct.html#ae16ba35b7bcfa757a84a6e0ba0ca7e00',1,'mim::plug::direct']]],
+  ['cps2ds_5fphase_27',['cps2ds_phase',['../namespacemim_1_1plug_1_1direct.html#aa7cc430476ee39d6ac174c4f85bf5308',1,'mim::plug::direct']]],
+  ['create_5fmap_28',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
+  ['create_5fset_29',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
 ];

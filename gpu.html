@@ -144,88 +144,99 @@ $(function(){initNavTree('gpu.html','',''); });
     <a href="#autotoc_md194">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md195">Streams </a>
+        <a href="#autotoc_md195">Context </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md196">%gpu.stream_init </a>
+            <a href="#autotoc_md196">%gpu.init </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md197">%gpu.stream_deinit </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md198">%gpu.stream_sync </a>
+            <a href="#autotoc_md197">%gpu.deinit </a>
           </li>
         </ul>
       </li>
       <li class="level2">
-        <a href="#autotoc_md199">Blocking Memory Operations </a>
+        <a href="#autotoc_md198">Streams </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md200">%gpu.alloc </a>
+            <a href="#autotoc_md199">%gpu.stream_init </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md201">%gpu.free </a>
+            <a href="#autotoc_md200">%gpu.stream_deinit </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md202">%gpu.copy_to_device </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md203">%gpu.copy_to_host </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md204">%gpu.alloc_copy </a>
+            <a href="#autotoc_md201">%gpu.stream_sync </a>
           </li>
         </ul>
       </li>
       <li class="level2">
-        <a href="#autotoc_md205">Asynchronous Memory Operations </a>
+        <a href="#autotoc_md202">%gpu.with_streams </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md203">Blocking Memory Operations </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md206">%gpu.alloc_async </a>
+            <a href="#autotoc_md204">%gpu.alloc(block) </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md207">%gpu.free_async </a>
+            <a href="#autotoc_md205">%gpu.free(block) </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md208">%gpu.copy_to_device_async </a>
+            <a href="#autotoc_md206">%gpu.copy_to_device(block) </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md209">%gpu.copy_to_host_async </a>
+            <a href="#autotoc_md207">%gpu.copy_to_host(block) </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md210">%gpu.alloc_copy_async </a>
+            <a href="#autotoc_md208">%gpu.alloc_copy(block) </a>
           </li>
         </ul>
       </li>
       <li class="level2">
-        <a href="#autotoc_md211">Kernel Launch </a>
+        <a href="#autotoc_md209">Asynchronous Memory Operations </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md212">%gpu.launch </a>
+            <a href="#autotoc_md210">%gpu.alloc(asyn) </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md213">%gpu.launch_with_smem </a>
+            <a href="#autotoc_md211">%gpu.free(asyn) </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md212">%gpu.copy_to_device(asyn) </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md213">%gpu.copy_to_host(asyn) </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md214">%gpu.alloc_copy(asyn) </a>
           </li>
         </ul>
       </li>
       <li class="level2">
-        <a href="#autotoc_md214">Work-Item Synchronization </a>
+        <a href="#autotoc_md215">Kernel Launch </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md215">%gpu.sync_work_items </a>
+            <a href="#autotoc_md216">%gpu.launch </a>
+          </li>
+        </ul>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md217">Work-Item Synchronization </a>
+        <ul>
+          <li class="level3">
+            <a href="#autotoc_md218">%gpu.sync_work_items </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md216">%gpu.synced_scope </a>
+            <a href="#autotoc_md219">%gpu.synced_scope </a>
           </li>
         </ul>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md217">Stages </a>
+    <a href="#autotoc_md220">Stages </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md218">Repls </a>
+        <a href="#autotoc_md221">Repls </a>
       </li>
     </ul>
   </li>
@@ -237,6 +248,7 @@ $(function(){initNavTree('gpu.html','',''); });
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
+<div class="line">import compile;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md189"></a>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md190"></a>
@@ -265,96 +277,144 @@ Pointer Types</h2>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
 Streams</h2>
 <div class="fragment"><div class="line">axm %gpu.Stream: *;</div>
-<div class="line">axm %gpu.DefaultStream: %gpu.Stream;</div>
+<div class="line">axm %gpu.default_stream: %gpu.Stream;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md194"></a>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
-Streams</h2>
+Context</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
-%gpu.stream_init</h3>
-<p>Initializes a stream </p><div class="fragment"><div class="line">axm %gpu.stream_init: [%mem.M 0, %mem.Ptr0 %gpu.Stream] → %mem.M 0;</div>
+%gpu.init</h3>
+<p>Initializes the GPU runtime </p><div class="fragment"><div class="line">// TODO: consider allowing multiple contexts and configuration of device number or context flags</div>
+<div class="line">axm %gpu.init: %mem.M 0 → [%mem.M 0, %gpu.GlobalM, %gpu.ConstM];</div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
+%gpu.deinit</h3>
+<p>Deinitializes the GPU runtime </p><div class="fragment"><div class="line">axm %gpu.deinit: [%mem.M 0, %gpu.GlobalM, %gpu.ConstM] → %mem.M 0;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
+Streams</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
+%gpu.stream_init</h3>
+<p>Initializes a stream </p><div class="fragment"><div class="line">axm %gpu.stream_init: [%mem.M 0, %gpu.GlobalM, %mem.Ptr0 %gpu.Stream] → [%mem.M 0, %gpu.GlobalM];</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
 %gpu.stream_deinit</h3>
-<p>Deinitializes a stream </p><div class="fragment"><div class="line">axm %gpu.stream_deinit: [%mem.M 0, %gpu.Stream] → %mem.M 0;</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
-%gpu.stream_sync</h3>
-<p>Waits for a stream to finish all its work </p><div class="fragment"><div class="line">axm %gpu.stream_sync: [%mem.M 0, %gpu.Stream] → %mem.M 0;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
-Blocking Memory Operations</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
-%gpu.alloc</h3>
-<p>Allocates memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.alloc: [T: *] → %gpu.GlobalM → [%gpu.GlobalM, %gpu.GlobalPtr T];</div>
+<p>Deinitializes a stream </p><div class="fragment"><div class="line">axm %gpu.stream_deinit: [%mem.M 0, %gpu.GlobalM, %gpu.Stream] → [%mem.M 0, %gpu.GlobalM];</div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
-%gpu.free</h3>
-<p>Frees memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.free: {T: *} → [%gpu.GlobalM, %gpu.GlobalPtr T] → %gpu.GlobalM;</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
-%gpu.copy_to_device</h3>
-<p>Copies data from host memory to device memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_device: {T: *}</div>
-<div class="line">                       → [%mem.M 0, %gpu.GlobalM, %mem.Ptr0 T, %gpu.GlobalPtr T]</div>
-<div class="line">                       → [%mem.M 0, %gpu.GlobalM];</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
-%gpu.copy_to_host</h3>
-<p>Copies data from device memory to host memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_host: {T: *}</div>
-<div class="line">                     → [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T, %mem.Ptr0 T]</div>
-<div class="line">                     → [%mem.M 0, %gpu.GlobalM];</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
-%gpu.alloc_copy</h3>
-<p>Allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory </p><div class="fragment"><div class="line">lam %gpu.alloc_copy {T: *}</div>
-<div class="line">                    (m0: %mem.M 0, m1: %gpu.GlobalM, ptr: %mem.Ptr0 T)</div>
-<div class="line">                  : [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T] =</div>
-<div class="line">    let (m1, d_ptr) = %gpu.alloc T m1;</div>
-<div class="line">    let (m0, m1) = %gpu.copy_to_device (m0, m1, ptr, d_ptr);</div>
-<div class="line">    (m0, m1, d_ptr);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md205"></a>
-Asynchronous Memory Operations</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md206"></a>
-%gpu.alloc_async</h3>
-<p>Asynchronously allocates memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.alloc_async: [T: *] → [%gpu.GlobalM, %gpu.Stream] → [%gpu.GlobalM, %gpu.GlobalPtr T];</div>
+%gpu.stream_sync</h3>
+<p>Waits for a stream to finish all its work </p><div class="fragment"><div class="line">axm %gpu.stream_sync: [%mem.M 0, %gpu.GlobalM, %gpu.Stream] → [%mem.M 0, %gpu.GlobalM];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
+%gpu.with_streams</h2>
+<p>Provides a number of streams to execute asynchronous GPU operations with </p><div class="fragment"><div class="line">fun %gpu.with_streams (n: Nat, func: Fn [%mem.M 0, %gpu.GlobalM, «n; %gpu.Stream»] → [%mem.M 0, %gpu.GlobalM])</div>
+<div class="line">                      (m0: %mem.M 0, m1: %gpu.GlobalM)</div>
+<div class="line">                    : [%mem.M 0, %gpu.GlobalM] =</div>
+<div class="line">    let (m0, streams_ptr) = %mem.alloc («n; %gpu.Stream», 0) m0;</div>
+<div class="line">    init (m0, m1)</div>
+<div class="line">    where</div>
+<div class="line">        con init (m0: %mem.M 0, m1: %gpu.GlobalM) =</div>
+<div class="line">            loop (m0, m1, 0)</div>
+<div class="line">            where</div>
+<div class="line">                con loop (m0: %mem.M 0, m1: %gpu.GlobalM, i: Nat) =</div>
+<div class="line">                    let cond = %core.ncmp.l (i, n);</div>
+<div class="line">                    (run, body)#cond (m0, m1)</div>
+<div class="line">                    where</div>
+<div class="line">                        con body (m0: %mem.M 0, m1: %gpu.GlobalM) =</div>
+<div class="line">                            let lea = %mem.lea (streams_ptr, %core.bitcast (Idx n) i);</div>
+<div class="line">                            let (m0, m1) = %gpu.stream_init (m0, m1, lea);</div>
+<div class="line">                            let inc = %core.nat.add (i, 1);</div>
+<div class="line">                            loop (m0, m1, inc);</div>
+<div class="line">                    end;</div>
+<div class="line">            end;</div>
+<div class="line">        con run (m0: %mem.M 0, m1: %gpu.GlobalM) =</div>
+<div class="line">            let (m0, streams) = %mem.load (m0, streams_ptr);</div>
+<div class="line">            ret (m0, m1) = func $ (m0, m1, streams);</div>
+<div class="line">            deinit (m0, m1);</div>
+<div class="line">        con deinit (m0: %mem.M 0, m1: %gpu.GlobalM) =</div>
+<div class="line">            let (m0, streams) = %mem.load (m0, streams_ptr);</div>
+<div class="line">            loop (m0, m1, 0)</div>
+<div class="line">            where</div>
+<div class="line">                con loop (m0: %mem.M 0, m1: %gpu.GlobalM, i: Nat) =</div>
+<div class="line">                    let cond = %core.ncmp.l (i, n);</div>
+<div class="line">                    (return, body)#cond (m0, m1)</div>
+<div class="line">                    where</div>
+<div class="line">                        con body (m0: %mem.M 0, m1: %gpu.GlobalM) =</div>
+<div class="line">                            let idx = %core.bitcast (Idx n) i;</div>
+<div class="line">                            let (m0, m1) = %gpu.stream_deinit (m0, m1, streams#idx);</div>
+<div class="line">                            let inc = %core.nat.add (i, 1);</div>
+<div class="line">                            loop (m0, m1, inc);</div>
+<div class="line">                    end;</div>
+<div class="line">            end;</div>
+<div class="line">    end;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
+Blocking Memory Operations</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
+%gpu.alloc(block)</h3>
+<p>Allocates memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.alloc(block): [T: *] → %gpu.GlobalM → [%gpu.GlobalM, %gpu.GlobalPtr T];</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md205"></a>
+%gpu.free(block)</h3>
+<p>Frees memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.free(block): {T: *} → [%gpu.GlobalM, %gpu.GlobalPtr T] → %gpu.GlobalM;</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md206"></a>
+%gpu.copy_to_device(block)</h3>
+<p>Copies data from host memory to device memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_device(block): {T: *}</div>
+<div class="line">                              → [%mem.M 0, %gpu.GlobalM, %mem.Ptr0 T, %gpu.GlobalPtr T]</div>
+<div class="line">                              → [%mem.M 0, %gpu.GlobalM];</div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md207"></a>
-%gpu.free_async</h3>
-<p>Asynchronously frees memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.free_async: {T: *} → [%gpu.GlobalM, %gpu.GlobalPtr T, %gpu.Stream] → %gpu.GlobalM;</div>
+%gpu.copy_to_host(block)</h3>
+<p>Copies data from device memory to host memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_host(block): {T: *}</div>
+<div class="line">                            → [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T, %mem.Ptr0 T]</div>
+<div class="line">                            → [%mem.M 0, %gpu.GlobalM];</div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md208"></a>
-%gpu.copy_to_device_async</h3>
-<p>Asynchronously copies data from host memory to device memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_device_async: {T: *}</div>
-<div class="line">                             → [%mem.M 0, %gpu.GlobalM, %mem.Ptr0 T, %gpu.GlobalPtr T, %gpu.Stream]</div>
-<div class="line">                             → [%mem.M 0, %gpu.GlobalM];</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md209"></a>
-%gpu.copy_to_host_async</h3>
-<p>Asynchronously copies data from device memory to host memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_host_async: {T: *}</div>
-<div class="line">                           → [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T, %mem.Ptr0 T, %gpu.Stream]</div>
-<div class="line">                           → [%mem.M 0, %gpu.GlobalM];</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md210"></a>
-%gpu.alloc_copy_async</h3>
-<p>Asynchronously allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory </p><div class="fragment"><div class="line">lam %gpu.alloc_copy_async {T: *}</div>
-<div class="line">                          (m0: %mem.M 0, m1: %gpu.GlobalM, ptr: %mem.Ptr0 T, stream: %gpu.Stream)</div>
-<div class="line">                        : [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T] =</div>
-<div class="line">    let (m1, d_ptr) = %gpu.alloc_async T (m1, stream);</div>
-<div class="line">    let (m0, m1) = %gpu.copy_to_device_async (m0, m1, ptr, d_ptr, stream);</div>
+%gpu.alloc_copy(block)</h3>
+<p>Allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory </p><div class="fragment"><div class="line">let %gpu.alloc_copy.block = lm {T: *}</div>
+<div class="line">                               (m0: %mem.M 0, m1: %gpu.GlobalM, ptr: %mem.Ptr0 T)</div>
+<div class="line">                             : [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T] =</div>
+<div class="line">    let (m1, d_ptr) = %gpu.alloc.block T m1;</div>
+<div class="line">    let (m0, m1) = %gpu.copy_to_device.block (m0, m1, ptr, d_ptr);</div>
 <div class="line">    (m0, m1, d_ptr);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md211"></a>
-Kernel Launch</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md212"></a>
-%gpu.launch</h3>
-<p>Launches a kernel function on the device (without dynamic shared memory) </p><div class="fragment"><div class="line">axm %gpu.launch: {s: Nat, Ts: «s; *»}</div>
-<div class="line">               → [%mem.M 0, n_groups: Nat, n_items: Nat, %gpu.Stream]</div>
-<div class="line">               → [Fn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM, Idx n_groups, Idx n_items, «i: s; Ts#i»]</div>
-<div class="line">                   → [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM]]</div>
-<div class="line">               → Fn «i: s; Ts#i» → %mem.M 0;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md209"></a>
+Asynchronous Memory Operations</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md210"></a>
+%gpu.alloc(asyn)</h3>
+<p>Asynchronously allocates memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.alloc(asyn): [T: *] → [%gpu.GlobalM, %gpu.Stream] → [%gpu.GlobalM, %gpu.GlobalPtr T];</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md211"></a>
+%gpu.free(asyn)</h3>
+<p>Asynchronously frees memory on the device (in global address space) </p><div class="fragment"><div class="line">axm %gpu.free(asyn): {T: *} → [%gpu.GlobalM, %gpu.GlobalPtr T, %gpu.Stream] → %gpu.GlobalM;</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md212"></a>
+%gpu.copy_to_device(asyn)</h3>
+<p>Asynchronously copies data from host memory to device memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_device(asyn): {T: *}</div>
+<div class="line">                              → [%mem.M 0, %gpu.GlobalM, %mem.Ptr0 T, %gpu.GlobalPtr T, %gpu.Stream]</div>
+<div class="line">                              → [%mem.M 0, %gpu.GlobalM];</div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md213"></a>
-%gpu.launch_with_smem</h3>
-<p>Launches a kernel function on the device with dynamic shared memory </p><div class="fragment"><div class="line">axm %gpu.launch_with_smem: {s: Nat, Ts: «s; *»}</div>
-<div class="line">                         → [%mem.M 0, n_groups: Nat, n_items: Nat, %gpu.Stream, T: *]</div>
-<div class="line">                         → [Fn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM, Idx n_groups, Idx n_items, %gpu.SharedPtr T, «i: s; Ts#i»]</div>
-<div class="line">                             → [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM]]</div>
-<div class="line">                         → Fn «i: s; Ts#i» → %mem.M 0;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md214"></a>
+%gpu.copy_to_host(asyn)</h3>
+<p>Asynchronously copies data from device memory to host memory </p><div class="fragment"><div class="line">axm %gpu.copy_to_host(asyn): {T: *}</div>
+<div class="line">                            → [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T, %mem.Ptr0 T, %gpu.Stream]</div>
+<div class="line">                            → [%mem.M 0, %gpu.GlobalM];</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md214"></a>
+%gpu.alloc_copy(asyn)</h3>
+<p>Asynchronously allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory </p><div class="fragment"><div class="line">let %gpu.alloc_copy.asyn = lm {T: *}</div>
+<div class="line">                               (m0: %mem.M 0, m1: %gpu.GlobalM, ptr: %mem.Ptr0 T, stream: %gpu.Stream)</div>
+<div class="line">                             : [%mem.M 0, %gpu.GlobalM, %gpu.GlobalPtr T] =</div>
+<div class="line">    let (m1, d_ptr) = %gpu.alloc.asyn T (m1, stream);</div>
+<div class="line">    let (m0, m1) = %gpu.copy_to_device.asyn (m0, m1, ptr, d_ptr, stream);</div>
+<div class="line">    (m0, m1, d_ptr);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md215"></a>
+Kernel Launch</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md216"></a>
+%gpu.launch</h3>
+<p>Launches a kernel function on the device with dynamic shared memory and module symbols </p><div class="fragment"><div class="line">// TODO: refactor to {n m: N, Ts: «n; *»} as soon as type inference bug is fixed</div>
+<div class="line">axm %gpu.launch: {n: Nat, Ts: «n; *»}</div>
+<div class="line">               → [n_groups: Nat, n_items: Nat, %gpu.Stream, m: Bool, MT: «%core.bitcast Nat m; *»]</div>
+<div class="line">               → Cn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM, Idx n_groups, Idx n_items,</div>
+<div class="line">                     «i: %core.bitcast Nat m; %gpu.SharedPtr MT#i», «i: n; Ts#i»,</div>
+<div class="line">                     Cn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM]]</div>
+<div class="line">               → «i: n; Ts#i»</div>
+<div class="line">               → Fn [%mem.M 0, %gpu.GlobalM, %gpu.ConstM]</div>
+<div class="line">               → [%mem.M 0, %gpu.GlobalM, %gpu.ConstM];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md217"></a>
 Work-Item Synchronization</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md215"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
 %gpu.sync_work_items</h3>
 <p>Low-level operation to synchronize all work-items in the same work-group </p><div class="fragment"><div class="line">axm %gpu.sync_work_items: [%gpu.GlobalM, %gpu.SharedM] → [%gpu.GlobalM, %gpu.SharedM];</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md216"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
 %gpu.synced_scope</h3>
-<p>Operation to provide scoped parallelism to work items </p><div class="fragment"><div class="line">// TODO: this is an initial idea that needs to be optimized with a RWPhase and maybe variadic arguments for the scope</div>
+<p>Operation to provide scoped parallelism to work items </p><div class="fragment"><div class="line">// TODO: consider variadic arguments and returns values for the scope</div>
 <div class="line">lam %gpu.synced_scope (m1: %gpu.GlobalM, m3: %gpu.SharedM,</div>
 <div class="line">                       scope: [%gpu.GlobalM, %gpu.SharedM] → [%gpu.GlobalM, %gpu.SharedM])</div>
 <div class="line">                    : [%gpu.GlobalM, %gpu.SharedM] =</div>
@@ -362,9 +422,9 @@ Work-Item Synchronization</h2>
 <div class="line">    let (m1, m3) = scope (m1, m3);</div>
 <div class="line">    let (m1, m3) = %gpu.sync_work_items (m1, m3);</div>
 <div class="line">    (m1, m3);</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md217"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
 Stages</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
 Repls</h2>
 <div class="fragment"><div class="line">axm %gpu.malloc2gpualloc_repl: %compile.Repl;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
