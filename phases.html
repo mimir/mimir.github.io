@@ -226,14 +226,14 @@ Overview</h1>
 <h1 class="doxsection"><a class="anchor" id="phases_phase"></a>
 Phase</h1>
 <p><a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">Phase</span></a> is the minimal base class.</p>
-<p>A phase has:</p>
+<p>A phase provides:</p>
 <ul>
 <li>a name or annex,</li>
 <li>access to the current <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>,</li>
 <li>a <a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f" title="mim::Phase::run"><span class="tt">run()</span></a> wrapper for logging and verification,</li>
 <li>a <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8" title="mim::Phase::todo"><span class="tt">todo()</span></a> accessor backed by the internal <span class="tt">todo_</span> flag for fixed-point iteration.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>A phase sets this flag via <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate()</span></a> when it discovers that another round is required.<ul>
+<dl class="section note"><dt>Note</dt><dd>A phase requests another round by calling <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate()</span></a>.<ul>
 <li><a class="el" href="classmim_1_1PhaseMan.html" title="mim::PhaseMan"><span class="tt">PhaseMan</span></a> uses this to drive fixed-point pipelines.</li>
 <li><a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> uses this to drive its optional pre-analysis to a fixed point.</li>
 </ul>
