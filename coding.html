@@ -34,6 +34,7 @@
 <link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -412,40 +413,33 @@ cgdb session using xdot</div></div>
     <div class="fragment"><div class="line">xdot</div>
 <div class="line">Generates DOT output for the given EXP and invokes xdot.</div>
 <div class="line"> </div>
-<div class="line">Usage: xdot EXP [MAX] [TYPES]</div>
-<div class="line">    EXP     Must provide $EXP-&gt;dot(file, $MAX, $TYPES).</div>
-<div class="line"> </div>
-<div class="line">    MAX     Maximum recursion depth while following a Def&#39;s ops.</div>
-<div class="line">            Default: 0xFFFFFFFF.</div>
+<div class="line">Usage: xdot EXP [TYPES]</div>
+<div class="line">    EXP     Must provide $EXP-&gt;dot(file, mim::DotConfig).</div>
 <div class="line"> </div>
 <div class="line">    TYPES   Follow type dependencies?</div>
 <div class="line">            Default: 0 (no)</div>
 <div class="line"> </div>
 <div class="line">Examples:</div>
 <div class="line"> </div>
-<div class="line">xdot def      - Show full DOT graph of &#39;def&#39; but ignore type dependencies.</div>
-<div class="line">xdot ref.def_ - As above but on a Ref.</div>
-<div class="line">xdot def 3    - As above but use recursion depth of 3.</div>
-<div class="line">xdot def 3 1  - As above but follow type dependencies.</div>
+<div class="line">xdot def        - Show full DOT graph of &#39;def&#39; but ignore type dependencies.</div>
+<div class="line">xdot ref.def_   - As above but on a Ref.</div>
+<div class="line">xdot def 1      - As above but follow type dependencies.</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">xdott</div>
 <div class="line">Generates DOT output for the given argument and invokes xdot while always</div>
 <div class="line">following type dependencies.</div>
 <div class="line"> </div>
-<div class="line">Usage: xdott EXP [MAX]</div>
+<div class="line">Usage: xdott EXP</div>
 <div class="line"> </div>
-<div class="line">Same as: xdot EXP $MAX 1</div>
+<div class="line">Same as: xdot EXP 1</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">xdotw</div>
 <div class="line">Generates DOT output for the given World and invokes xdot.</div>
 <div class="line"> </div>
-<div class="line">Usage: xdotw WORLD [ANNEXES] [TYPES]</div>
-<div class="line">    WORLD   Must provide $WORLD.dot(file, $ANNEXES, $TYPES).</div>
-<div class="line"> </div>
-<div class="line">    ANNEXES Include all annexes - even if unused?</div>
-<div class="line">            Default: 0 (no)</div>
+<div class="line">Usage: xdotw WORLD [TYPES]</div>
+<div class="line">    WORLD   Must provide $WORLD.dot(file, mim::DotConfig).</div>
 <div class="line"> </div>
 <div class="line">    TYPES   Follow type dependencies?</div>
 <div class="line">            Default: 0 (no)</div>
@@ -456,11 +450,11 @@ cgdb session using xdot</div></div>
 <div class="line"> </div>
 <div class="line">Examples:</div>
 <div class="line"> </div>
-<div class="line">Show DOT graph of &#39;world&#39; - ignoring type dependencies and unused annexes.</div>
+<div class="line">Show DOT graph of &#39;world&#39; - ignoring type dependencies.</div>
 <div class="line">xdotw &amp;def-&gt;world()</div>
 <div class="line"> </div>
-<div class="line">Show full DOT graph of &#39;world&#39; including types and all annexes.</div>
-<div class="line">xdotw &amp;def-&gt;world() 1 1</div>
+<div class="line">Show DOT graph of &#39;world&#39; including types.</div>
+<div class="line">xdotw &amp;def-&gt;world() 1</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Conditional Breakpoints</h2>
 <p>Often, you will want to inspect a specific <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">mim::Def</span></a> at a particular point in the program. <a href="https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_33.html">Conditional breakpoints</a> are very handy for this.</p>

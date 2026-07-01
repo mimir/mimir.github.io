@@ -34,6 +34,7 @@
 <link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -121,41 +122,44 @@ $(function(){initNavTree('index.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md97">💡 Why MimIR? </a>
+    <a href="#autotoc_md100">✨ A Taste of <a class="el" href="namespaceMim.html">Mim</a> </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md98">🚀 Quick Start </a>
+    <a href="#autotoc_md101">💡 Why MimIR? </a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md102">🚀 Quick Start </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md99">📦 Install (Optional) </a>
+        <a href="#autotoc_md103">📦 Install (Optional) </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md100">🔥 Key Innovations </a>
+    <a href="#autotoc_md104">🔥 Key Innovations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md101">🧩 Plugins </a>
+        <a href="#autotoc_md105">🧩 Plugins </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md102">🌊 Sea of Nodes </a>
+        <a href="#autotoc_md106">🌊 Sea of Nodes </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md103">🪾 SSA without Dominance </a>
+        <a href="#autotoc_md107">🪾 SSA without Dominance </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md104">🐉 Naming: MimIR vs. <a class="el" href="namespaceMim.html">Mim</a> </a>
+    <a href="#autotoc_md108">🐉 Naming: MimIR vs. <a class="el" href="namespaceMim.html">Mim</a> </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md105">💬 Community </a>
+    <a href="#autotoc_md109">💬 Community </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md106">⚖️ License </a>
+    <a href="#autotoc_md110">⚖️ License </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md107">📖 Publications </a>
+    <a href="#autotoc_md111">📖 Publications </a>
   </li>
 </ul>
 </div>
@@ -163,15 +167,34 @@ $(function(){initNavTree('index.html','',''); });
 <p><a href="https://github.com/mimir/mimir/stargazers"><img src="https://img.shields.io/github/stars/mimir/mimir" alt="Stars" class="inline"/></a> <a href="https://github.com/mimir/mimir/fork"><img src="https://img.shields.io/github/forks/mimir/mimir" alt="Forks" class="inline"/></a> <a href="https://discord.gg/FPp7hdj3fQ"><img src="https://img.shields.io/discord/960975142459179068?style=social&amp;logo=discord&amp;logoColor=black" alt="Discord" class="inline"/></a></p>
 <p><a href="https://github.com/mimir/mimir/releases"><img src="https://img.shields.io/github/v/release/mimir/mimir?style=flat-square&amp;logo=starship&amp;color=blue&amp;label=Release" alt="Release" class="inline"/></a> <a href="https://mimir.github.io"><img src="https://img.shields.io/badge/Docs-master/v0.1-blue?style=flat-square&amp;logo=gitbook&amp;logoColor=white" alt="Docs" class="inline"/></a> <a href="https://github.com/mimir/mimir/blob/master/LICENSE.TXT"><img src="https://img.shields.io/github/license/mimir/mimir?style=flat-square&amp;color=blue&amp;logo=opensourceinitiative&amp;logoColor=white&amp;label=License" alt="License" class="inline"/></a> <a href="https://en.wikipedia.org/wiki/C%2B%2B#Standardization"><img src="https://img.shields.io/badge/C%2B%2B-23-blue?style=flat-square&amp;logo=cplusplus" alt="C++23" class="inline"/></a> <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3.10-blue?style=flat-square&amp;logo=python&amp;logoColor=white" alt="Python" class="inline"/></a></p>
 <p><a href="https://github.com/mimir/mimir/actions/workflows/doxygen.yml?query=branch%3Amaster"><img src="https://img.shields.io/github/actions/workflow/status/mimir/mimir/doxygen.yml?style=flat-square&amp;logo=doxygen&amp;logoSize=auto&amp;label=&amp;labelColor=555&amp;branch=master" alt="Doxygen" class="inline"/></a> <a href="https://github.com/mimir/mimir/actions/workflows/linux.yml?query=branch%3Amaster"><img src="https://img.shields.io/github/actions/workflow/status/mimir/mimir/linux.yml?style=flat-square&amp;logo=linux&amp;label=Linux&amp;logoColor=white&amp;branch=master" alt="Linux" class="inline"/></a> <a href="https://github.com/mimir/mimir/actions/workflows/macos.yml?query=branch%3Amaster"><img src="https://img.shields.io/github/actions/workflow/status/mimir/mimir/macos.yml?style=flat-square&amp;logo=apple&amp;label=macOS&amp;branch=master" alt="macOS" class="inline"/></a> <a href="https://github.com/mimir/mimir/actions/workflows/windows.yml?query=branch%3Amaster"><img src="https://img.shields.io/github/actions/workflow/status/mimir/mimir/windows.yml?style=flat-square&amp;label=⊞%20Windows&amp;branch=master" alt="Windows" class="inline"/></a></p>
-<p><b>MimIR</b> is a pure, graph-based, higher-order intermediate representation rooted in the <b>Calculus of Constructions</b>. MimIR provides:</p>
+<p><b>MimIR</b> is a pure, graph-based, <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order</a> intermediate representation rooted in the <a href="https://en.wikipedia.org/wiki/Calculus_of_constructions"><b>Calculus of Constructions</b></a>. MimIR provides:</p>
 <ul>
-<li><b>Dependent types</b>, <b>parametric polymorphism</b>, and <b>higher-order functions</b> out of the box</li>
+<li><a href="https://en.wikipedia.org/wiki/Dependent_type"><b>Dependent types</b></a>, <a href="https://en.wikipedia.org/wiki/Parametric_polymorphism"><b>parametric polymorphism</b></a>, and <a href="https://en.wikipedia.org/wiki/Higher-order_function"><b>higher-order functions</b></a> out of the box</li>
 <li><b>Extensible plugins</b> for domain-specific axioms, types, normalizers, and code generation</li>
-<li><b>SSA without dominance</b>: a scopeless IR for higher-order programs based on free-variable nesting</li>
-<li>A <b>sea-of-nodes</b> style IR with on-the-fly normalization, type checking, and partial evaluation</li>
+<li><a href="https://en.wikipedia.org/wiki/Static_single-assignment_form"><b>SSA</b></a> <b>without dominance</b>: a scopeless IR for higher-order programs based on free-variable nesting</li>
+<li>A <a href="https://github.com/SeaOfNodes"><b>sea-of-nodes</b></a> style IR with on-the-fly normalization, type checking, and <a href="https://en.wikipedia.org/wiki/Partial_evaluation">partial evaluation</a></li>
 </ul>
-<p>MimIR is well suited for DSL compilers, tensor compilers, automatic differentiation, regex engines, and other systems that need high-performance code from high-level abstractions.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
+<p>MimIR is well suited for <a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> compilers, tensor compilers, <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic differentiation</a>, <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a> engines, and other systems that need high-performance code from high-level abstractions.</p>
+<p>MimIR brings two worlds together: typed functional IRs supply the abstractions — polymorphism, dependent types — while sea-of-nodes graphs supply the performance. It has both at once, by extending sea-of-nodes to the Calculus of Constructions. And it pays off in practice: the <a class="el" href="regex.html" title="The regex Plugin">regex</a> plugin is the fastest engine in our evaluation (see the <a href="https://doi.org/10.1145/3704840">POPL'25 paper</a>).</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+✨ A Taste of Mim</h1>
+<p>The following function <span class="tt">sq</span> squares <span class="tt">x</span> — for <b>any</b> type <span class="tt">T</span>, as long as <span class="tt">T</span> comes packaged with its own multiplication. Then, <span class="tt">f</span> instantiates <span class="tt">sq</span> for <span class="tt">Nat</span>:</p>
+<div class="fragment"><div class="line">// RUN: %mim %s</div>
+<div class="line">plugin core;</div>
+<div class="line"> </div>
+<div class="line">lam sq (T: *, mul: [T, T] → T) (x: T): T = mul (x, x);</div>
+<div class="line"> </div>
+<div class="line">fun extern f(x: Nat): Nat =</div>
+<div class="line">    return (sq (Nat, %core.nat.mul) x);</div>
+</div><!-- fragment --><p>That first argument <span class="tt">(T: *, mul: [T, T] → T)</span> is a <a href="https://en.wikipedia.org/wiki/Dependent_type#%CE%A3_type"><b>dependent pair</b></a> — an <a href="https://en.wikipedia.org/wiki/Type_system#Existential_types">existential</a> bundling a type together with an operation on it. In MimIR, types are ordinary <a href="https://en.wikipedia.org/wiki/First-class_citizen"><b>first-class values</b></a>: <span class="tt">T</span> and <span class="tt">mul</span> are just arguments, so polymorphism, <a href="https://en.wikipedia.org/wiki/Type_constructor">type operators</a>, and dependent types all fall out of the same mechanism.</p>
+<p>And under the hood, MimIR is not a list of instructions but a <b>graph</b> — and that graph <em>is</em> the program. The graph is also <b>complete</b>: it holds everything needed to make sense of the program, with no auxiliary side structure. Contrast a traditional instruction list, which is meaningless on its own and only becomes intelligible once you pair it with a separately maintained <a href="https://en.wikipedia.org/wiki/Control-flow_graph">control-flow graph</a>.</p>
+<p>Watch what happens to <span class="tt">sq</span>. When <span class="tt">f</span> applies <span class="tt">sq (Nat, core.nat.mul)</span>, that application is <a href="https://en.wikipedia.org/wiki/Lambda_calculus">β-reduced</a> <b>on the fly, during graph construction</b> — not in any later pass. This is permitted because <span class="tt">sq</span> carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a> that every direct-style function gets, which greenlights inlining. What remains is the bare <span class="tt">x * x</span>, with <b>no trace</b> of <span class="tt">sq</span> or the existential abstraction. The original <span class="tt">sq</span> lambda is now simply unreachable from the world's <a class="el" href="classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855" title="mim::World::roots">roots</a> (<span class="tt">sq</span> is not <span class="tt">extern</span>), so traversing the graph never reaches it; a <a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> phase later drops it for good:</p>
+<div class="image">
+<object type="image/svg+xml" data="sq.svg" style="pointer-events: none;"></object>
+<div class="caption">
+The MimIR graph of `f` — the abstraction has evaporated.</div></div>
+<p>For the full picture, with more examples and the graphs MimIR builds for them, read the <a class="el" href="mimir.html" title="A Tour of MimIR">Tour of MimIR</a>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
 💡 Why MimIR?</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -203,24 +226,27 @@ $(function(){initNavTree('index.html','',''); });
  (dialects, lowering)  </td><td class="markdownTableBodyNone">⬆️ High (<a href="https://en.wikipedia.org/wiki/Calculus_of_constructions">CC</a>, <a href="https://en.wikipedia.org/wiki/Partial_evaluation">partial evaluation</a>, typed axioms, normalizers, lowering)  </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The table compares native IR-level support and representation, not what can be emulated via custom IR extensions, closure conversion, lowering, or external analyses.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 🚀 Quick Start</h1>
 <div class="fragment"><div class="line">git clone --recursive git@github.com:mimir/mimir.git</div>
 <div class="line">cd mimir</div>
 <div class="line">cmake -S . -B build -DBUILD_TESTING=ON -DMIM_BUILD_EXAMPLES=ON</div>
 <div class="line">cmake --build build -j$(nproc)</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 📦 Install (Optional)</h2>
 <div class="fragment"><div class="line">cmake -S . -B build -DBUILD_TESTING=ON -DMIM_BUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/my/local/install/prefix</div>
 <div class="line">cmake --build build -j$(nproc) --target install</div>
-</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the <a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a> guide. From there, the documentation continues with the <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a>, the <a class="el" href="langref.html" title="Mim Language Reference">Language Reference</a>, the <a class="el" href="dev.html" title="Developer Guide">Developer Guide</a>, <a class="el" href="plugins.html" title="Plugins">Plugins</a>, <a class="el" href="rewriting.html" title="Rewriting">Rewriting</a>, <a class="el" href="phases.html" title="Phases">Phases</a>, and the <a class="el" href="python.html" title="Python Bindings">Python Bindings</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the <a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a> guide. New here? Start with the <a class="el" href="mimir.html" title="A Tour of MimIR">Tour of MimIR</a>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
 🔥 Key Innovations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 🧩 Plugins</h2>
-<p>Declare new types, operations, and normalizers in a single <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file. C++ provides the heavy lifting: optimization, lowering, and code generation.</p>
+<p>Declare new types, operations, and normalizers in a single <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file. For example, the <a class="el" href="demo.html" title="The demo Plugin"><span class="tt">demo</span></a> plugin declares one axiom and wires it to a C++ normalizer:</p>
+<div class="fragment"><div class="line">/// the 42 constant, folded by the `normalize_const` C++ normalizer</div>
+<div class="line">axm %demo.const_idx: [n: Nat] → Idx n, normalize_const;</div>
+</div><!-- fragment --><p>The matching shared library implements <span class="tt">normalize_const</span> and any lowering or <a class="el" href="phases.html" title="Phases">phases</a>; C++ does the heavy lifting of optimization, lowering, and code generation.</p>
 <p>Explore the <a href="https://mimir.github.io/plugins">Plugin Registry</a> to discover and share community-developed plugins.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
 🌊 Sea of Nodes</h2>
 <p>MimIR uses a <a href="https://github.com/SeaOfNodes">sea-of-nodes-style</a> program graph and extends it to the Calculus of Constructions with higher-order functions, polymorphism, and dependent types. MimIR hits the <a class="el" href="dev.html#mut" title="Immutables vs. Mutables"><b>sweet spot</b></a> between a fully mutable IR, which is easy to construct, and a fully immutable IR:</p>
 <ul>
@@ -234,7 +260,7 @@ $(function(){initNavTree('index.html','',''); });
 <p class="startli">Terms, types, and type-level computations all live in the same program graph as ordinary expressions.</p>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 🪾 SSA without Dominance</h2>
 <p>Forget CFG dominance. MimIR uses free-variable nesting:</p>
 <ul>
@@ -242,24 +268,24 @@ $(function(){initNavTree('index.html','',''); });
 <li><p class="startli">Free-variable queries “just work”:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().contains(x))           <span class="comment">// x free in expr</span></div>
 <div class="line"><span class="keywordflow">if</span> (expr-&gt;free_vars().has_intersection(xyz)) <span class="comment">// x, y, or z free in expr</span></div>
-</div><!-- fragment --><p class="startli">This is always correct. MimIR maintains free-variable information <b>lazily</b>, <b>locally</b>, and <b>transparently</b>: results are computed on demand, memoized, and invalidated only where needed.</p>
+</div><!-- fragment --><p class="startli">This is always correct. MimIR maintains free-variable information <b>lazily</b>, <b>locally</b>, and <b>transparently</b>: results are computed on demand, memoized, and invalidated only where needed. For realistic programs a query costs <b>O(n log n)</b> in the size of the subgraph, and <b>O(1)</b> once memoized (see the <a href="https://doi.org/10.48550/arXiv.2604.09961">PLDI'26 paper</a>).</p>
 </li>
 <li>Data dependencies remain precise, even for higher-order code</li>
 <li>Loop peeling and unrolling reduce to simple β-reduction</li>
 <li>Mutual recursion and higher-order functions are handled naturally</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
 🐉 Naming: MimIR vs. Mim</h1>
 <p><b>MimIR</b> is a recursive acronym for <em>MimIR is my Intermediate Representation</em>.</p>
 <p>In Norse mythology, <a href="https://en.wikipedia.org/wiki/M%C3%ADmir">Mímir</a> was a being of immense wisdom. After being beheaded in the Æsir–Vanir War, Odin preserved his head, which continued to speak secret knowledge and offer counsel.</p>
 <p>Today, <b>you</b> have Mímir's head at your fingertips.</p>
 <ul>
-<li><b>MimIR</b> refers to the core graph-based intermediate representation and its C++ API.</li>
+<li><b>MimIR</b> refers to the graph-based intermediate representation and its C++ API.</li>
 <li><b><a class="el" href="namespaceMim.html">Mim</a></b> is a lightweight textual representation of MimIR. It is not a full-featured programming language, but provides enough syntactic sugar to concisely express polymorphic and dependent types (including type-level dependencies introduced by many type variables). <a class="el" href="namespaceMim.html">Mim</a> is mainly intended for defining plugin interfaces and writing small test cases.</li>
 </ul>
 <p>Throughout the codebase, we consistently use <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> / <span class="tt">MIM</span> for namespaces, macros, CMake variables, and related identifiers.</p>
 <p><b>Acknowledgments</b>: We gratefully acknowledge <a href="https://github.com/AlexWendland">Alex Wendland</a> and the other maintainers of the former <span class="tt">MimIR</span> GitHub organization for kindly making the organization name available for this project. The previous organization has been renamed to <a href="https://github.com/mimir-depricated"><span class="tt">mimir-depricated</span></a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 💬 Community</h1>
 <ul>
 <li>💬 <b>Discord</b> → <a href="https://discord.gg/FPp7hdj3fQ">Join the chat</a></li>
@@ -268,10 +294,10 @@ $(function(){initNavTree('index.html','',''); });
 </ul>
 <p><b>Ready to build the next generation of DSL compilers?</b></p>
 <p><a href="https://github.com/mimir/mimir">⭐ Star MimIR on GitHub</a>, join Discord, and let's make high-performance DSLs easy.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
 ⚖️ License</h1>
 <p>MimIR is licensed under the <a href="https://github.com/mimir/mimir/blob/master/LICENSE.TXT">MIT License</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 📖 Publications</h1>
 <ul>
 <li><b>SSA without Dominance for Higher-Order Programs</b> <br  />

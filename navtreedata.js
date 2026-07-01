@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "MimIR", "index.html", [
     [ "📚 Documentation", "usergroup0.html", [
+      [ "A Tour of MimIR", "mimir.html", null ],
       [ "Mim Command-Line Reference", "cli.html", null ],
       [ "Mim Language Reference", "langref.html", null ],
       [ "Contributing & Debugging", "coding.html", null ],
@@ -98,7 +99,7 @@ var NAVTREEINDEX =
 [
 "Mim_8cmake.html",
 "classmim_1_1Arr.html#a5b106c12c37f54bfecd0af8ed0e35d30",
-"classmim_1_1Def.html#a41c6630a112450ceaa0398079203ee7f",
+"classmim_1_1Def.html#a4c1e435f509cc12ed0f3eb05833db81c",
 "classmim_1_1Driver.html#a450f415760ac6d553161282dc75eba7d",
 "classmim_1_1FPPass.html#a283ca8c0644c40d57b384a1bd4b9d32e",
 "classmim_1_1Log.html#a922a7d38ec807db871706e536009e18d",
@@ -107,7 +108,7 @@ var NAVTREEINDEX =
 "classmim_1_1Sets_1_1Set.html#a38c114ec2bd059a4929ffbf69def7712",
 "classmim_1_1UInc.html#a7b4bcdf992c21ae83363f25df05b1d25",
 "classmim_1_1World.html#a52b5c22ff4c01fdfa5b1c18412f38a6f",
-"classmim_1_1World.html#ad4b90e8e3810a86af8aa46ace6b91f62",
+"classmim_1_1World.html#ad4256db8f91cc94d168d161ddad8d030",
 "classmim_1_1ast_1_1AxmDecl.html#a0654a2fcf9b284c34e23ccf803daa8c1",
 "classmim_1_1ast_1_1InsertExpr.html#a2f97614888e19919ad248543c6663dca",
 "classmim_1_1ast_1_1Ptrn.html",
@@ -116,13 +117,13 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html#aa8f5502d0d0a935c7615343f9568b5ed",
 "dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html",
 "log_8h.html#a0c221110c77b993968e98cb53c0d652e",
-"namespacemim.html#a69dc278a82313ca3dc770a868a1e57d1",
-"namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cae948e5de0a4b5744fd5517f9453e380e",
-"namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09",
-"namespacemim_1_1plug_1_1mem.html#a5395005a43203efa44f863486903f780",
-"nest_8h_source.html",
-"structmim_1_1FNV1_3_014_01_4.html#a9555e548af38942c16ec874fa850ea44",
-"structmim_1_1plug_1_1ll_1_1BB.html#ae98331825156008e568347c12d357929"
+"namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a",
+"namespacemim_1_1plug_1_1clos.html#aa0ca2fcb9e982a0383e82981f5112b78",
+"namespacemim_1_1plug_1_1gpu.html#a60b2d54940be560945911cc9eb21cd73",
+"namespacemim_1_1plug_1_1mem.html#a43333076ddd59792bfe8daa553b80a77",
+"namespacemim_1_1sys.html#aeddc00f97e1561955278bfcc831d9db7",
+"structmim_1_1Error_1_1Msg.html#aaa0aa4ce4f863fa5b91c557d18d263ac",
+"structmim_1_1plug_1_1ll_1_1BB.html#a7acb0b55f26bd76389834909a61653c1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

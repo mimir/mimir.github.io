@@ -22,6 +22,7 @@ var hierarchy =
     [ "mim::Dbg", "structmim_1_1Dbg.html", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
+    [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
     [ "mim::Analysis::Enter", "classmim_1_1Analysis_1_1Enter.html", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],

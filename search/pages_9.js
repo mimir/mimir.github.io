@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['kernel_20launch_0',['Kernel Launch',['../gpu.html#autotoc_md215',1,'']]],
-  ['key_1',['%ord.Key',['../ord.html#autotoc_md300',1,'']]],
-  ['key_20innovations_2',['🔥 Key Innovations',['../index.html#autotoc_md100',1,'']]],
+  ['kernel_20launch_0',['Kernel Launch',['../gpu.html#autotoc_md219',1,'']]],
+  ['key_1',['%ord.Key',['../ord.html#autotoc_md304',1,'']]],
+  ['key_20innovations_2',['🔥 Key Innovations',['../index.html#autotoc_md104',1,'']]],
   ['keywords_3',['Keywords',['../langref.html#autotoc_md44',1,'']]],
   ['kinds_20and_20builtin_20types_4',['Kinds and Builtin Types',['../langref.html#autotoc_md47',1,'']]]
 ];

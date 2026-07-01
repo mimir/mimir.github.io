@@ -23,6 +23,7 @@ var namespacemim =
     [ "Hole", "classmim_1_1Hole.html", "classmim_1_1Hole" ],
     [ "Checker", "classmim_1_1Checker.html", "classmim_1_1Checker" ],
     [ "Setters", "classmim_1_1Setters.html", "classmim_1_1Setters" ],
+    [ "DotConfig", "namespacemim.html#structmim_1_1DotConfig", "namespacemim_structmim_1_1DotConfig_dup" ],
     [ "Def", "classmim_1_1Def.html", "classmim_1_1Def" ],
     [ "Var", "classmim_1_1Var.html", "classmim_1_1Var" ],
     [ "Univ", "classmim_1_1Univ.html", "classmim_1_1Univ" ],

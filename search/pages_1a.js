@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🐉_20naming_3a_20mimir_20vs_20mim_0',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md104',1,'']]]
+  ['🌊_20sea_20of_20nodes_0',['🌊 Sea of Nodes',['../index.html#autotoc_md106',1,'']]]
 ];
