@@ -141,6 +141,9 @@ $(function(){initNavTree('mimir.html','',''); });
     <a href="#mimir_cps">SSA via CPS </a>
     <ul>
       <li class="level2">
+        <a href="#autotoc_md65">Correspondence between SSA form and CPS in MimIR </a>
+      </li>
+      <li class="level2">
         <a href="#mimir_scopeless">Scopeless Binders </a>
       </li>
     </ul>
@@ -154,8 +157,12 @@ $(function(){initNavTree('mimir.html','',''); });
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2mimir"></a></p>
-<p>This tour walks through three small but complete MimIR programs. All are compiled by the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> CLI and the graphs shown are generated automatically from the source via <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-dot</span>.</p>
-<p>The first shows how you write a classic <a href="https://en.wikipedia.org/wiki/Static_single-assignment_form"><b>SSA</b></a> computation — a counting loop — using <a href="https://en.wikipedia.org/wiki/Continuation-passing_style"><b>continuation-passing style (CPS)</b></a>. The second switches to <b>direct style</b> and adds <a href="https://en.wikipedia.org/wiki/Higher-order_function"><b>higher-order functions</b></a> and <a href="https://en.wikipedia.org/wiki/Parametric_polymorphism"><b>parametric polymorphism</b></a>. The third shows MimIR's defining trait: <b>types are ordinary values</b>, computed in the same graph as terms — the basis for <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent types</b></a>.</p>
+<p>This tour walks through MimIR's plugin architecture, then three MimIR programs. These are compiled by the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> <a class="el" href="cli.html" title="Command-Line Reference">CLI</a> and the graphs shown are generated automatically from the source via <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-dot</span>.</p>
+<ol type="1">
+<li>A classic <a href="https://en.wikipedia.org/wiki/Static_single-assignment_form"><b>SSA</b></a> computation — a counting loop — written in <a href="https://en.wikipedia.org/wiki/Continuation-passing_style"><b>continuation-passing style (CPS)</b></a>.</li>
+<li>A switch to <b>direct style</b> that adds <a href="https://en.wikipedia.org/wiki/Higher-order_function"><b>higher-order functions</b></a> and <a href="https://en.wikipedia.org/wiki/Parametric_polymorphism"><b>parametric polymorphism</b></a>.</li>
+<li>A demonstration of MimIR's defining trait: <b>types are ordinary values</b>, computed in the same graph as terms — the basis for <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent types</b></a>.</li>
+</ol>
 <p>Under the hood, MimIR is not a list of instructions but a <b>graph</b>. The <span class="tt">let</span> bindings in the examples below are pure surface sugar — they only name subexpressions. Inlining them or adding more yields the <b>exact same graph</b>, because in MimIR the graph <em>is</em> the program.</p>
 <h1 class="doxsection"><a class="anchor" id="mimir_plugins"></a>
 Plugins</h1>
@@ -203,7 +210,7 @@ SSA via CPS</h1>
 <div class="line">exit:</div>
 <div class="line">  ret i32 %acc</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>MimIR expresses the <b>same</b> program through the well-established correspondence between SSA form and CPS (see <a href="https://dl.acm.org/doi/10.1145/202530.202532">Kelsey'95</a> and <a href="https://dl.acm.org/doi/10.1145/278283.278285">Appel'98</a>): every basic block becomes a <b>continuation</b> (<span class="tt">con</span>: a function that never returns). However, in contrast to other CPS representations, functions and other binders in MimIR are <b>scopeless</b>: they are <b>not</b> explicitly nested inside one another. This makes MimIR's take on CPS much more faithful to the original SSA formulation (see <a class="el" href="#mimir_scopeless" title="Scopeless Binders">Scopeless Binders</a>):</p>
+</div><!-- fragment --><p>MimIR expresses the <b>same</b> program through the well-established correspondence between SSA form and CPS (see <a href="https://dl.acm.org/doi/10.1145/202530.202532">Kelsey'95</a> and <a href="https://dl.acm.org/doi/10.1145/278283.278285">Appel'98</a>): every basic block becomes a <b>continuation</b> (<span class="tt">con</span> is a function that never returns). However, in contrast to other CPS representations, functions and other binders in MimIR are <b>scopeless</b>: they are <b>not</b> explicitly nested inside one another. This makes MimIR's take on CPS much more faithful to the original SSA formulation (see <a class="el" href="#mimir_scopeless" title="Scopeless Binders">Scopeless Binders</a>):</p>
 <div class="fragment"><div class="line">// RUN: %mim -p ll %s</div>
 <div class="line">plugin core;</div>
 <div class="line"> </div>
@@ -221,7 +228,8 @@ SSA via CPS</h1>
 <div class="line">                con exit() = return acc;</div>
 <div class="line">            end;</div>
 <div class="line">    end;</div>
-</div><!-- fragment --><p>The correspondence is exact:</p>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+Correspondence between SSA form and CPS in MimIR</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">SSA  </th><th class="markdownTableHeadNone">MimIR / CPS  </th></tr>
@@ -248,30 +256,35 @@ SSA via CPS</h1>
 <p class="startli">With block arguments that is plainly one argument tuple per edge, not a pile of pseudo-instructions to sequentialize.</p>
 </li>
 <li><p class="startli"><b>Blocks have honest types.</b></p>
-<p class="startli"><span class="tt">loop : Cn [I32, I32]</span>, <span class="tt">body, exit : Cn []</span>, and the return continuation <span class="tt">: Cn I32</span>, where <span class="tt">Cn A</span> is a function from <span class="tt">A</span> that never returns. A traditional basic block carries no type at all.</p>
+<p class="startli"><span class="tt">Cn A</span> is a function from <span class="tt">A</span> that never returns and is syntactic sugar for <span class="tt">A → ⊥</span>. All basic blocks and even the return point are continuations:</p><ul>
+<li><span class="tt">loop : Cn [I32, I32]</span></li>
+<li><span class="tt">body, exit : Cn []</span></li>
+<li><span class="tt">return : Cn I32</span> In contrast, a traditional basic block carries no type at all.</li>
+</ul>
 </li>
 </ul>
 <p>This is the graph MimIR builds for <span class="tt">count</span>:</p>
-<dl class="section note"><dt>Note</dt><dd><b>Reading the graphs.</b> Each box is a <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> — one node of the program graph — labelled with its kind. Boxes drawn with a clipped, <b>diagonal corner</b> are <em>mutable</em> binders (functions and other recursive nodes); plain boxes are <em>immutable</em>, <a href="https://en.wikipedia.org/wiki/Hash_consing">hash-consed</a> expressions. Edges run from a node to its operands.</dd></dl>
 <div class="image">
 <object type="image/svg+xml" data="count.svg" style="pointer-events: none;"></object>
 <div class="caption">
 The MimIR graph of `count`.</div></div>
-<dl class="section note"><dt>Note</dt><dd><span class="tt">extern</span> marks <span class="tt">count</span> as a root of the program graph. Without it, MimIR's sea-of-nodes cleanup would prune the unused function away.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><b>Reading the graphs.</b> Each box is a <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> — one node of the program graph — labelled with its kind. Boxes drawn with a clipped, <b>diagonal corner</b> are <em>mutable</em> binders (functions and other recursive nodes); plain boxes are <em>immutable</em>, <a href="https://en.wikipedia.org/wiki/Hash_consing">hash-consed</a> expressions. Edges run from a node to its operands.</dd>
+<dd>
+<span class="tt">extern</span> marks <span class="tt">count</span> as a root of the program graph. Without it, MimIR's sea-of-nodes cleanup would prune the unused function away.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="mimir_scopeless"></a>
 Scopeless Binders</h2>
 <p>And here is MimIR's twist. Like traditional basic blocks — which float in the CFG, reached by label rather than by lexical position — <b>every</b> MimIR binder is <em>floating</em> and <em>scopeless</em>. The <a class="el" href="namespaceMim.html">Mim</a> source nests <span class="tt">body</span> and <span class="tt">exit</span> inside <span class="tt">loop</span> with <span class="tt">where</span>, but that nesting exists <b>only in the surface syntax</b>: in the graph there is no containment — <span class="tt">body</span> and <span class="tt">exit</span> are ordinary nodes the branch indexes into, and <span class="tt">loop</span>'s back-edge is just an edge from <span class="tt">loop</span> to itself. That cycle is well-formed because binders like <span class="tt">loop</span> are <b>mutable</b> nodes (drawn with the diagonal corner); everything else stays an acyclic, <a href="https://en.wikipedia.org/wiki/Hash_consing">hash-consed</a> DAG — the <a class="el" href="dev.html#mut" title="Immutables vs. Mutables">sweet spot</a> MimIR hits between a fully mutable and a fully immutable IR.</p>
 <p>This is where MimIR diverges from other functional IRs. In a scoped IR a binder lives at a specific point in the nesting, and transformations must keep every variable properly scoped — so the compiler spends real effort moving binders around. MimIR has no scopes: nothing has to move, and there is no lexical scoping to preserve. Two classic chores simply vanish:</p>
 <ul>
 <li><p class="startli"><b>β-reduction.</b></p>
-<p class="startli">A scoped IR typically <em>block-floats</em> functions outward before β-reduction to avoid duplicating them. MimIR just β-reduces on the spot. And this is not special to β-reduction: substitution in MimIR is a graph traversal that automatically skips any subgraph not depending on the substituted variables — unrelated functions are left untouched and shared — with no scopes to keep consistent.</p>
+<p class="startli">A scoped IR typically <em>block-floats</em> functions independent from the substitution outward before β-reduction to avoid duplicating them. MimIR just β-reduces on the spot. And this is not special to β-reduction: substitution in MimIR is a graph traversal that automatically skips any subgraph not depending on the substituted variables — unrelated functions are left untouched and shared — with no scopes to keep consistent.</p>
 </li>
 <li><p class="startli"><b>Specialization.</b></p>
-<p class="startli">A scoped IR <em>block-sinks</em> a function inward, nesting it deep enough that the variables it uses stay in scope. MimIR never needs to: a binder simply refers to whatever it refers to, wherever it sits.</p>
+<p class="startli">When specializing a function, a scoped IR needs to <em>block-sink</em> it inward, nesting it deep enough that all new free variables are correctly scoped. MimIR never needs to: a binder simply refers to whatever it refers to, wherever it sits.</p>
 </li>
 </ul>
 <p>And this is not limited to continuations: in MimIR <b>every</b> binder is scopeless — direct-style functions, dependent tuple types, and the rest.</p>
-<p>What is more, there is <b>no control-flow graph and no dominator tree</b>. The natural worry is <em>then how do you run any analysis?</em> — SSA leans on dominance for φ-placement, GVN, code motion, and the rest. MimIR replaces the dominator tree with the <b>nesting tree</b> induced by free variables, and answers liveness/scoping questions by querying a <span class="tt">Def</span>'s free-variable set directly — computed lazily and memoized. These queries are always correct, even for higher-order code, and the standard SSA optimizations carry over; the construction, its complexity bounds, and its metatheory are spelled out in <a href="https://doi.org/10.48550/arXiv.2604.09961"><em>SSA without Dominance for Higher-Order Programs</em></a>.</p>
+<p>What is more, there is <b>no control-flow graph and no dominator tree</b>. The natural worry is <em>then how do you run any analysis?</em> — SSA leans on dominance for φ-placement, GVN, code motion, etc. MimIR replaces the dominator tree with the <b>nesting tree</b> induced by free variables, and answers liveness/scoping questions by querying a <span class="tt">Def</span>'s free-variable set directly — computed lazily and memoized. These queries are always correct, even for higher-order code, and the standard SSA optimizations carry over; the construction, its complexity bounds, and its metatheory are spelled out in <a href="https://doi.org/10.48550/arXiv.2604.09961"><em>SSA without Dominance for Higher-Order Programs</em></a>.</p>
 <h1 class="doxsection"><a class="anchor" id="mimir_iter"></a>
 Polymorphic Iteration</h1>
 <p>CPS is not the only option. MimIR equally supports <b>direct-style</b> functions that simply return a value, and these compose with higher-order functions and polymorphism. The two styles even mix within one curried function: the outer arguments can be direct-style while the final one is a continuation, as in <span class="tt">con {T: *} (x: T) = …</span>.</p>
@@ -306,7 +319,7 @@ Polymorphic Iteration</h1>
 <p>Each step hands a <em>partially applied</em> function — <span class="tt">add x</span>, <span class="tt">mul x</span> — to <span class="tt">iter</span>'s higher-order parameter <span class="tt">f</span>. The final line is a <b>compile-time assertion</b>:</p>
 <div class="fragment"><div class="line">let _ = %refly.equiv.struc_eq (pow 3 5, 243);</div>
 </div><!-- fragment --><p>Because <span class="tt">iter</span> carries the <span class="tt">@(%core.pe.is_closed n)</span> <a href="https://en.wikipedia.org/wiki/Partial_evaluation">partial-evaluation</a> filter — and every function in the tower is direct-style with the default <span class="tt">tt</span> filter — MimIR evaluates <span class="tt">pow 3 5</span> <b>completely during graph construction</b>: the whole tower unrolls to the literal <span class="tt">243</span>, and <span class="tt">%refly.equiv.struc_eq</span> statically checks it. A mismatch would fail the build.</p>
-<p>Now notice what <em>survives</em>. Only <span class="tt">iter</span> is <span class="tt">extern</span>, hence the sole <a class="el" href="classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855" title="mim::World::roots">root</a>. <span class="tt">succ</span>, <span class="tt">add</span>, <span class="tt">mul</span>, <span class="tt">pow</span>, and the assertion are all unreachable from the roots once partial evaluation has run, so <a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> prunes them. The graph MimIR keeps is therefore just <span class="tt">iter</span> itself:</p>
+<p>Now notice what <em>survives</em>. Only <span class="tt">iter</span> is <span class="tt">extern</span>, hence the sole <a class="el" href="classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855" title="mim::World::roots">root</a>. <span class="tt">succ</span>, <span class="tt">add</span>, <span class="tt">mul</span>, <span class="tt">pow</span>, and the assertion are all unreachable from the roots, so <a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> prunes them. The graph MimIR keeps is therefore just <span class="tt">iter</span> itself:</p>
 <div class="image">
 <object type="image/svg+xml" data="iter.svg" style="pointer-events: none;"></object>
 <div class="caption">
