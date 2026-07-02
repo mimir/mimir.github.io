@@ -263,7 +263,7 @@ SSA via CPS</h1>
 <div class="image">
 <object type="image/svg+xml" data="count.svg" style="pointer-events: none;"></object>
 <div class="caption">
-The MimIR graph of `count`.</div></div>
+The MimIR graph of `count` (type edges elided)</div></div>
 <dl class="section note"><dt>Note</dt><dd><b>Reading the graphs.</b> Each box is a <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> — one node of the program graph — labelled with its kind. Boxes drawn with a clipped, <b>diagonal corner</b> are <em>mutable</em> binders (functions and other recursive nodes); plain boxes are <em>immutable</em>, <a href="https://en.wikipedia.org/wiki/Hash_consing">hash-consed</a> expressions. Edges run from a node to its operands.</dd>
 <dd>
 <span class="tt">extern</span> marks <span class="tt">count</span> as a root of the program graph. Without it, MimIR's sea-of-nodes cleanup would prune the unused function away.</dd></dl>
@@ -319,7 +319,7 @@ Polymorphic Iteration</h1>
 <div class="image">
 <object type="image/svg+xml" data="iter.svg" style="pointer-events: none;"></object>
 <div class="caption">
-The MimIR graph of `iter` — only the `extern` root survives.</div></div>
+The MimIR graph of `iter` — only the `extern` root survives (type edges elided)</div></div>
 <p>The two branches <span class="tt">alt</span> and <span class="tt">cons</span> are <b>floating functions</b>: MimIR references them as ordinary nodes selected by <span class="tt">cond</span> instead of nesting them inside <span class="tt">iter</span>, and the recursive call simply points straight back at the <span class="tt">iter</span> node. This is MimIR's sea-of-nodes representation in action — the same machinery that expressed the counting loop above, now carrying a higher-order, polymorphic, direct-style function.</p>
 <p>You <b>cannot</b> represent this program directly in <a href="https://en.wikipedia.org/wiki/LLVM">LLVM</a> or <a href="https://en.wikipedia.org/wiki/MLIR_(software)">MLIR</a>: <span class="tt">iter</span> is polymorphic over <span class="tt">T</span> <em>and</em> takes a first-class function as an argument, neither of which those IRs model natively. Getting there requires <em>at least partially lowering</em> the program first — <a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">closure conversion</a> for the higher-order arguments, <a href="https://en.wikipedia.org/wiki/Type_erasure">type erasure</a> or monomorphization for the polymorphism, and so on. MimIR represents — and here even partially evaluates — it as written.</p>
 <dl class="section note"><dt>Note</dt><dd>Unlike <span class="tt">count</span>, <span class="tt">iter</span> is a <span class="tt">lam</span> in <b>direct style</b>: it returns a <span class="tt">T</span> directly instead of threading a return continuation. The same graph substrate represents both styles uniformly.</dd></dl>
@@ -340,11 +340,10 @@ Types Are Values</h1>
 <div class="line">// `zeros 3` is partial-evaluated to `‹3; 0›` during graph construction; assert it statically.</div>
 <div class="line">let _ = %refly.equiv.struc_eq (zeros 3, ‹3; 0›);</div>
 </div><!-- fragment --><p><span class="tt">Vec</span> is just a <span class="tt">lam</span> — but it returns <span class="tt">*</span>, the type of types, so it is a function <span class="tt">Nat → *</span>: a <a href="https://en.wikipedia.org/wiki/Type_constructor">type constructor</a>. <span class="tt">zeros</span> then has a <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent function type</b></a>: its return type <span class="tt">Vec n</span> mentions the <em>value</em> <span class="tt">n</span> of its argument. Nothing special happens to make this work — <span class="tt">Vec n</span> is β-reduced to <span class="tt">«n; Nat»</span> during construction exactly like <span class="tt">%core.select</span> above, even though the result is a <em>type</em> — and <span class="tt">%refly.equiv.struc_eq</span> statically checks that <span class="tt">zeros 3</span> evaluates to <span class="tt">‹3; 0›</span>.</p>
-<p>With type edges followed, the graph makes it literal:</p>
 <div class="image">
 <object type="image/svg+xml" data="dep.svg" style="pointer-events: none;"></object>
 <div class="caption">
-The MimIR graph of `Vec` and `zeros` with type edges shown.</div></div>
+The MimIR graph of `Vec` and `zeros` with type edges shown (type edges are dashed)</div></div>
 <p>The same variable node <span class="tt">n</span> feeds both the array <b>type</b> <span class="tt">«n; Nat»</span> and the array <b>value</b> <span class="tt">‹n; 0›</span> — a type pointing straight at a term. Types are not an earlier, separate phase that has been erased before the IR begins; they are ordinary nodes, hash-consed, normalized, and partially evaluated alongside everything else. This is the foundation the <a class="el" href="tensor.html" title="The tensor Plugin"><span class="tt">%tensor</span></a> plugin builds on: array shapes live in the types and are checked — and optimized — by the very same normalization you have already seen. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
