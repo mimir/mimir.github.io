@@ -122,24 +122,24 @@ $(function(){initNavTree('opt.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md290">Dependencies </a>
+    <a href="#autotoc_md289">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md291">Inlined partial pipelines </a>
+    <a href="#autotoc_md290">Inlined partial pipelines </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md292">The default pipeline </a>
+    <a href="#autotoc_md291">The default pipeline </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md289"></a>
 Dependencies</h1>
 <p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">compile.named_phase</span> / <span class="tt">compile.named_pass</span> / <span class="tt">compile.named_repl</span> (which resolve to the plugin's annexes iff it is loaded) and <span class="tt">compile.cond_phase</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
 <div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md291"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
 Inlined partial pipelines</h1>
 <p>These used to live in the respective plugins; they are inlined here so that <span class="tt">opt</span> does not depend on them. All foreign passes/phases are referenced by name.</p>
 <div class="fragment"><div class="line">let mem_opt_passes =</div>
@@ -194,7 +194,7 @@ Inlined partial pipelines</h1>
 <div class="line">        %compile.pass2phase clos_opt2_passes,</div>
 <div class="line">        %compile.named_phase &quot;%clos.lower_typed_clos_phase&quot;,</div>
 <div class="line">    );</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md292"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md291"></a>
 The default pipeline</h1>
 <div class="fragment"><div class="line">lam extern _default_compile (): %compile.Phase =</div>
 <div class="line">    %compile.phases ff (</div>
