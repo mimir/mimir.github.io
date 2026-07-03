@@ -11,6 +11,7 @@ var searchData=
   ['insert_8',['Insert',['../classmim_1_1Insert.html',1,'mim']]],
   ['insertexpr_9',['InsertExpr',['../classmim_1_1ast_1_1InsertExpr.html',1,'mim::ast']]],
   ['isa_10',['IsA',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
-  ['isanode_11',['IsANode',['../classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode',1,'mim::Axm']]],
-  ['iterator_12',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html',1,'mim::Sets::Set']]]
+  ['isa_3c_20mem_3a_3am_2c_20mim_3a_3aapp_20_3e_11',['IsA&lt; mem::M, mim::App &gt;',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
+  ['isanode_12',['IsANode',['../classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode',1,'mim::Axm']]],
+  ['iterator_13',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html',1,'mim::Sets::Set']]]
 ];

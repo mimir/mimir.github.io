@@ -8,11 +8,15 @@ var searchData=
   ['sexpr_2ecpp_5',['sexpr.cpp',['../sexpr_8cpp.html',1,'']]],
   ['sexpr_2eh_6',['sexpr.h',['../sexpr_8h.html',1,'']]],
   ['span_2eh_7',['span.h',['../span_8h.html',1,'']]],
-  ['ssa_2ecpp_8',['ssa.cpp',['../ssa_8cpp.html',1,'']]],
-  ['ssa_2eh_9',['ssa.h',['../ssa_8h.html',1,'']]],
-  ['stream_2ecpp_10',['stream.cpp',['../stream_8cpp.html',1,'']]],
-  ['sym_5fexpr_5fopt_2ecpp_11',['sym_expr_opt.cpp',['../sym__expr__opt_8cpp.html',1,'']]],
-  ['sym_5fexpr_5fopt_2eh_12',['sym_expr_opt.h',['../sym__expr__opt_8h.html',1,'']]],
-  ['sys_2ecpp_13',['sys.cpp',['../sys_8cpp.html',1,'']]],
-  ['sys_2eh_14',['sys.h',['../sys_8h.html',1,'']]]
+  ['split_5fapply_2ecpp_8',['split_apply.cpp',['../split__apply_8cpp.html',1,'']]],
+  ['split_5fapply_2eh_9',['split_apply.h',['../split__apply_8h.html',1,'']]],
+  ['split_5foff_5fkernels_2ecpp_10',['split_off_kernels.cpp',['../split__off__kernels_8cpp.html',1,'']]],
+  ['split_5foff_5fkernels_2eh_11',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
+  ['ssa_2ecpp_12',['ssa.cpp',['../ssa_8cpp.html',1,'']]],
+  ['ssa_2eh_13',['ssa.h',['../ssa_8h.html',1,'']]],
+  ['stream_2ecpp_14',['stream.cpp',['../stream_8cpp.html',1,'']]],
+  ['sym_5fexpr_5fopt_2ecpp_15',['sym_expr_opt.cpp',['../sym__expr__opt_8cpp.html',1,'']]],
+  ['sym_5fexpr_5fopt_2eh_16',['sym_expr_opt.h',['../sym__expr__opt_8h.html',1,'']]],
+  ['sys_2ecpp_17',['sys.cpp',['../sys_8cpp.html',1,'']]],
+  ['sys_2eh_18',['sys.h',['../sys_8h.html',1,'']]]
 ];

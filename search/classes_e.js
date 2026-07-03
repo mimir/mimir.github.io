@@ -55,8 +55,10 @@ var searchData=
   ['span_52',['Span',['../structmim_1_1Profiler_1_1Span.html',1,'mim::Profiler::Span'],['../classmim_1_1Span.html',1,'mim::Span&lt; T, N &gt;']]],
   ['span_3c_20const_20t_2c_20n_20_3e_53',['Span&lt; const T, N &gt;',['../classmim_1_1Span.html',1,'mim']]],
   ['split_54',['Split',['../classmim_1_1Split.html',1,'mim']]],
-  ['ssa_55',['SSA',['../classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html',1,'mim::plug::mem::pass']]],
-  ['stage_56',['Stage',['../classmim_1_1Stage.html',1,'mim']]],
-  ['state_57',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]],
-  ['symexpropt_58',['SymExprOpt',['../classmim_1_1SymExprOpt.html',1,'mim']]]
+  ['splitapply_55',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase']]],
+  ['splitoffkernels_56',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
+  ['ssa_57',['SSA',['../classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html',1,'mim::plug::mem::pass']]],
+  ['stage_58',['Stage',['../classmim_1_1Stage.html',1,'mim']]],
+  ['state_59',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]],
+  ['symexpropt_60',['SymExprOpt',['../classmim_1_1SymExprOpt.html',1,'mim']]]
 ];

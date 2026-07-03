@@ -114,16 +114,16 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1Ptrn.html",
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a54736d35195c3aa2a7159d1cdbe3f872",
 "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html",
-"classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html#aa8f5502d0d0a935c7615343f9568b5ed",
-"dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html",
-"log_8h.html#a0c221110c77b993968e98cb53c0d652e",
-"namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a",
-"namespacemim_1_1plug_1_1clos.html#aa0ca2fcb9e982a0383e82981f5112b78",
-"namespacemim_1_1plug_1_1gpu.html#a555dfadc10ca559592ce1581159b598f",
-"namespacemim_1_1plug_1_1mem.html#a4025842143683194dc1312705c823188",
-"namespacemim_1_1sys.html#aabf9e272ba0bd6b36223a016499591a6",
-"structmim_1_1Error_1_1Msg.html#a9278f83e1385aa9acba822087457aaec",
-"structmim_1_1plug_1_1ll_1_1BB.html#a6dfaa41a56a6055de214bbc6ef7ecdc6"
+"classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html#af6944879a8a9bfc6ce6d82ac876575ee",
+"dfa2matcher_8cpp.html#a929a326a16b0a4c9d2e277325e556017",
+"gpu_8h_source.html",
+"namespacemim.html#a249738da6a953390b70691dd3fe7132ba5a92344ee95acf10c31901b36418be77",
+"namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420",
+"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661",
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dac1111bd512b29e821b120b86446026b8",
+"namespacemim_1_1plug_1_1tensor_1_1phase.html",
+"structmim_1_1Annex.html#a2396ad51f7f065120a421a1fbd529d8f",
+"structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

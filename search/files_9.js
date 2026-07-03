@@ -10,6 +10,8 @@ var searchData=
   ['mem_2ecpp_7',['mem.cpp',['../mem_8cpp.html',1,'']]],
   ['mem_2eh_8',['mem.h',['../mem_8h.html',1,'']]],
   ['mem_2emd_9',['mem.md',['../mem_8md.html',1,'']]],
-  ['mim_2ecmake_10',['Mim.cmake',['../Mim_8cmake.html',1,'']]],
-  ['mimir_2emd_11',['mimir.md',['../mimir_8md.html',1,'']]]
+  ['mem_5fchecks_2ecpp_10',['mem_checks.cpp',['../mem__checks_8cpp.html',1,'']]],
+  ['mem_5fchecks_2eh_11',['mem_checks.h',['../mem__checks_8h.html',1,'']]],
+  ['mim_2ecmake_12',['Mim.cmake',['../Mim_8cmake.html',1,'']]],
+  ['mimir_2emd_13',['mimir.md',['../mimir_8md.html',1,'']]]
 ];

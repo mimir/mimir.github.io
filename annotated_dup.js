@@ -87,6 +87,14 @@ var annotated_dup =
           [ "CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase" ],
           [ "DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", "classmim_1_1plug_1_1direct_1_1DS2CPS" ]
         ] ],
+        [ "gpu", "namespacemim_1_1plug_1_1gpu.html", [
+          [ "phase", "namespacemim_1_1plug_1_1gpu_1_1phase.html", [
+            [ "MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks" ],
+            [ "RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs" ],
+            [ "SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply" ],
+            [ "SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels" ]
+          ] ]
+        ] ],
         [ "ll", "namespacemim_1_1plug_1_1ll.html", [
           [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
           [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],

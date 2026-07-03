@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md281',1,'']]],
-  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md272',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md283',1,'']]],
+  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md274',1,'']]],
   ['why_20mimir_2',['💡 Why MimIR?',['../index.html#autotoc_md101',1,'']]],
   ['with_20indices_3',['Working with Indices',['../dev.html#autotoc_md34',1,'']]],
   ['with_20subtags_4',['With Subtags',['../dev.html#autotoc_md32',1,'']]],

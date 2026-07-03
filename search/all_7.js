@@ -14,10 +14,12 @@ var searchData=
   ['hash_5fcombine_11',['hash_combine',['../namespacemim.html#a4d4c9094e2f043e1eca201f173cf96da',1,'mim']]],
   ['head_12',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
   ['helpers_13',['Error Handling Helpers',['../python.html#autotoc_md96',1,'']]],
-  ['high_20level_20matrix_20operations_14',['High-level matrix operations',['../matrix.html#autotoc_md261',1,'']]],
+  ['high_20level_20matrix_20operations_14',['High-level matrix operations',['../matrix.html#autotoc_md263',1,'']]],
   ['highlighting_15',['Syntax Highlighting',['../coding.html#autotoc_md11',1,'']]],
   ['hlt_16',['hlt',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a4f4000d921968b9665f52e88333007da',1,'mim::plug::core']]],
   ['hole_17',['Hole',['../classmim_1_1Hole.html',1,'mim::Hole'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole']]],
   ['holeexpr_18',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html',1,'mim::ast::HoleExpr'],['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr::HoleExpr()']]],
-  ['hook_19',['hook',['../classmim_1_1Stage.html#aaf397a927e480d7c69023d39441e7a90',1,'mim::Stage']]]
+  ['hook_19',['hook',['../classmim_1_1Stage.html#aaf397a927e480d7c69023d39441e7a90',1,'mim::Stage']]],
+  ['host_5fmalloc2gpualloc_5frepl_20',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu']]],
+  ['host_5fspecific_5fphases_21',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]]
 ];

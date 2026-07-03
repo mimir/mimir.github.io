@@ -88,7 +88,9 @@ var hierarchy =
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
-      [ "mim::Analysis", "classmim_1_1Analysis.html", null ],
+      [ "mim::Analysis", "classmim_1_1Analysis.html", [
+        [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ]
+      ] ],
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
         [ "mim::BetaRedPhase", "classmim_1_1BetaRedPhase.html", null ],
         [ "mim::BranchNormalizePhase", "classmim_1_1BranchNormalizePhase.html", null ],
@@ -102,6 +104,9 @@ var hierarchy =
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
         [ "mim::plug::direct::DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", null ],
+        [ "mim::plug::gpu::phase::RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", null ],
+        [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
+        [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
         [ "mim::plug::matrix::LowerMatrixLowLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],
         [ "mim::plug::tensor::phase::Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", null ],

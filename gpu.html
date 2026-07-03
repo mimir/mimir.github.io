@@ -239,6 +239,12 @@ $(function(){initNavTree('gpu.html','',''); });
       <li class="level2">
         <a href="#autotoc_md225">Repls </a>
       </li>
+      <li class="level2">
+        <a href="#autotoc_md226">Phases </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md227">Pipelines </a>
+      </li>
     </ul>
   </li>
 </ul>
@@ -427,7 +433,20 @@ Work-Item Synchronization</h2>
 Stages</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
 Repls</h2>
-<div class="fragment"><div class="line">axm %gpu.malloc2gpualloc_repl: %compile.Repl;</div>
+<div class="fragment"><div class="line">axm %gpu.check_addr_spaces_repl:    %compile.Repl;</div>
+<div class="line">axm %gpu.host_malloc2gpualloc_repl: %compile.Repl;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
+Phases</h2>
+<div class="fragment"><div class="line">axm %gpu.mem_checks_phase:                 %compile.Phase;</div>
+<div class="line">axm %gpu.remove_double_syncs:              %compile.Phase;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
+Pipelines</h2>
+<div class="fragment"><div class="line">lam %gpu.host_specific_phases () = %compile.phases ff (</div>
+<div class="line">    %compile.repl2phase %gpu.host_malloc2gpualloc_repl,</div>
+<div class="line">);</div>
+<div class="line">lam %gpu.device_specific_phases () = %compile.phases ff (</div>
+<div class="line">    %gpu.remove_double_syncs,</div>
+<div class="line">);</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
