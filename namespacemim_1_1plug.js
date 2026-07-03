@@ -118,7 +118,9 @@ var namespacemim_1_1plug =
       [ "nat", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566", [
         [ "add", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a34ec78fcc91ffb1e54cd85e4a0924332", null ],
         [ "sub", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a8a68dc3e925eacf92633be230722a140", null ],
-        [ "mul", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a353942263d1bedfbe06b7bfa78226253", null ]
+        [ "mul", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a353942263d1bedfbe06b7bfa78226253", null ],
+        [ "div", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a", null ],
+        [ "mod", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566aad148a3ca8bd0ef3b48c52454c493ec5", null ]
       ] ],
       [ "ncmp", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985e", [
         [ "gle", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea6044f05aa3ccdbb9313c6a26b30036b6", null ],

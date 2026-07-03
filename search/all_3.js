@@ -106,7 +106,7 @@ var searchData=
   ['disj_103',['disj',['../regex.html#autotoc_md339',1,'%regex.disj'],['../namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628',1,'mim::plug::regex::disj']]],
   ['dispatch_104',['Dispatch',['../classmim_1_1Dispatch.html',1,'mim::Dispatch'],['../classmim_1_1Dispatch.html#a64ec0fe80990bcdb673d16ea7a64100f',1,'mim::Dispatch::Dispatch()']]],
   ['displaying_20dot_20graphs_105',['Displaying DOT Graphs',['../coding.html#autotoc_md14',1,'']]],
-  ['div_106',['div',['../core.html#autotoc_md175',1,'%core.div'],['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]],
+  ['div_106',['div',['../core.html#autotoc_md175',1,'%core.div'],['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]],
   ['dl_2ecpp_107',['dl.cpp',['../dl_8cpp.html',1,'']]],
   ['dl_2eh_108',['dl.h',['../dl_8h.html',1,'']]],
   ['dlog_109',['DLOG',['../log_8h.html#a87fe05eb8767a6b1abf71eea0bdcfcac',1,'log.h']]],

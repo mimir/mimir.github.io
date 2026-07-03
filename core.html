@@ -207,8 +207,11 @@ Nat Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md166"></a>
 %core.nat</h2>
 <p>Standard arithmetic operations on <span class="tt">Nat</span>s. <br  />
- <span class="tt">%core.nat.sub (a, b)</span> yields <span class="tt">0</span>, if <span class="tt">a</span> &lt; <span class="tt">b</span>.</p>
-<div class="fragment"><div class="line">axm %core.nat(add, sub, mul): «2; Nat» → Nat, normalize_nat;</div>
+ <span class="tt">%core.nat.sub (a, b)</span> yields <span class="tt">0</span>, if <span class="tt">a</span> &lt; <span class="tt">b</span>. <br  />
+ <span class="tt">%core.nat.div (a, b)</span> yields <span class="tt">0</span>, if <span class="tt">b</span> is <span class="tt">0</span>. <br  />
+ <span class="tt">%core.nat.mod (a, b)</span> yields <span class="tt">a</span>, if <span class="tt">b</span> is <span class="tt">0</span>. <br  />
+ This holds both statically (literal folding) and dynamically (runtime lowering).</p>
+<div class="fragment"><div class="line">axm %core.nat(add, sub, mul, div, mod): «2; Nat» → Nat, normalize_nat;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md167"></a>
 %core.ncmp</h2>
 <p>Nat comparison is made of 3 disjoint relations:</p><ul>
