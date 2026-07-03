@@ -15,15 +15,10 @@ var searchData=
   ['dfa2matcher_2eh_12',['dfa2matcher.h',['../dfa2matcher_8h.html',1,'']]],
   ['dfamin_2ecpp_13',['dfamin.cpp',['../dfamin_8cpp.html',1,'']]],
   ['dfamin_2eh_14',['dfamin.h',['../dfamin_8h.html',1,'']]],
-  ['direct_2ecpp_15',['direct.cpp',['../direct_8cpp.html',1,'']]],
-  ['direct_2eh_16',['direct.h',['../direct_8h.html',1,'']]],
-  ['direct_2emd_17',['direct.md',['../direct_8md.html',1,'']]],
-  ['dl_2ecpp_18',['dl.cpp',['../dl_8cpp.html',1,'']]],
-  ['dl_2eh_19',['dl.h',['../dl_8h.html',1,'']]],
-  ['dot_2ecpp_20',['dot.cpp',['../dot_8cpp.html',1,'']]],
-  ['driver_2ecpp_21',['driver.cpp',['../driver_8cpp.html',1,'']]],
-  ['driver_2eh_22',['driver.h',['../driver_8h.html',1,'']]],
-  ['ds2cps_2ecpp_23',['ds2cps.cpp',['../ds2cps_8cpp.html',1,'']]],
-  ['ds2cps_2eh_24',['ds2cps.h',['../ds2cps_8h.html',1,'']]],
-  ['dump_2ecpp_25',['dump.cpp',['../dump_8cpp.html',1,'']]]
+  ['dl_2ecpp_15',['dl.cpp',['../dl_8cpp.html',1,'']]],
+  ['dl_2eh_16',['dl.h',['../dl_8h.html',1,'']]],
+  ['dot_2ecpp_17',['dot.cpp',['../dot_8cpp.html',1,'']]],
+  ['driver_2ecpp_18',['driver.cpp',['../driver_8cpp.html',1,'']]],
+  ['driver_2eh_19',['driver.h',['../driver_8h.html',1,'']]],
+  ['dump_2ecpp_20',['dump.cpp',['../dump_8cpp.html',1,'']]]
 ];

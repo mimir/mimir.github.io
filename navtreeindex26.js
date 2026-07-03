@@ -1,12 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1":[5,0,3,1,22,2,1],
-"structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD":[2,0,3,103,0,0],
-"structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD":[4,0,1,101,0,0],
-"structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD":[5,0,3,1,22,2],
-"structmim_1_1ast_1_1AnnexInfo.html":[2,0,3,0,0],
-"structmim_1_1ast_1_1AnnexInfo.html":[4,0,1,0,0],
-"structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37":[2,0,3,0,0,7],
 "structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37":[4,0,1,0,0,7],
 "structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c":[2,0,3,0,0,8],
 "structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c":[4,0,1,0,0,8],

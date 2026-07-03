@@ -41,7 +41,7 @@ var menudata={children:[
 {text:"compile",url:"compile.html"},
 {text:"core",url:"core.html"},
 {text:"demo",url:"demo.html"},
-{text:"direct",url:"direct.html"},
+{text:"cps",url:"cps.html"},
 {text:"gpu",url:"gpu.html"},
 {text:"ll",url:"ll.html"},
 {text:"math",url:"math.html"},

@@ -51,6 +51,7 @@ var hierarchy =
       [ "mim::Vector< size_t >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Profiler::Span >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< Pending >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
     ] ],
     [ "std::integral_constant", null, [
@@ -103,7 +104,7 @@ var hierarchy =
         [ "mim::SymExprOpt", "classmim_1_1SymExprOpt.html", null ],
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
-        [ "mim::plug::direct::DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", null ],
+        [ "mim::plug::cps::Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", null ],
         [ "mim::plug::gpu::phase::RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", null ],
         [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
         [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
@@ -256,7 +257,6 @@ var hierarchy =
           [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
           [ "mim::plug::clos::ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", null ],
           [ "mim::plug::clos::LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", null ],
-          [ "mim::plug::direct::CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", null ],
           [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ]
         ] ],
         [ "mim::Repl", "classmim_1_1Repl.html", [

@@ -11,6 +11,6 @@ var searchData=
   ['closedmutphase_3c_20def_20_3e_8',['ClosedMutPhase&lt; Def &gt;',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closedmutphase_3c_20lam_20_3e_9',['ClosedMutPhase&lt; Lam &gt;',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closlit_10',['ClosLit',['../classmim_1_1plug_1_1clos_1_1ClosLit.html',1,'mim::plug::clos']]],
-  ['copyprop_11',['CopyProp',['../classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html',1,'mim::plug::mem::pass']]],
-  ['cps2dsphase_12',['CPS2DSPhase',['../classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html',1,'mim::plug::direct']]]
+  ['conv_11',['Conv',['../classmim_1_1plug_1_1cps_1_1Conv.html',1,'mim::plug::cps']]],
+  ['copyprop_12',['CopyProp',['../classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html',1,'mim::plug::mem::pass']]]
 ];

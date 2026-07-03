@@ -36,7 +36,7 @@ var searchData=
   ['conditional_20breakpoints_33',['Conditional Breakpoints',['../coding.html#autotoc_md15',1,'']]],
   ['conj_34',['%regex.conj',['../regex.html#autotoc_md340',1,'']]],
   ['const_35',['%matrix.const',['../matrix.html#autotoc_md257',1,'']]],
-  ['const_5fidx_36',['%demo.const_idx',['../demo.html#autotoc_md187',1,'']]],
+  ['const_5fidx_36',['%demo.const_idx',['../demo.html#autotoc_md191',1,'']]],
   ['constant_37',['%affine.constant',['../affine.html#autotoc_md124',1,'']]],
   ['constructors_38',['Constructors',['../compile.html#autotoc_md158',1,'Constructors'],['../option.html#autotoc_md297',1,'Constructors'],['../ord.html#autotoc_md308',1,'Constructors']]],
   ['contains_39',['contains',['../ord.html#autotoc_md316',1,'%ord.contains'],['../tuple.html#autotoc_md377',1,'%tuple.contains']]],
@@ -71,9 +71,11 @@ var searchData=
   ['core_20wrap_20add_68',['%core.wrap.add',['../autodiff.html#autotoc_md144',1,'']]],
   ['core_20wrap_20mul_69',['%core.wrap.mul',['../autodiff.html#autotoc_md145',1,'']]],
   ['cps_70',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
-  ['cps2ds_71',['%direct.cps2ds',['../direct.html#autotoc_md190',1,'']]],
-  ['create_72',['%ord.create',['../ord.html#autotoc_md310',1,'']]],
-  ['create_20a_20new_20in_20tree_20plugin_73',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md87',1,'']]],
-  ['create_20a_20third_20party_20plugin_74',['Create a Third-Party Plugin',['../plugins.html#autotoc_md88',1,'']]],
-  ['current_20scope_75',['Current Scope',['../python.html#autotoc_md97',1,'']]]
+  ['cps_20cps2ds_71',['%cps.cps2ds',['../cps.html#autotoc_md188',1,'']]],
+  ['cps_20plugin_72',['The CPS Plugin',['../cps.html',1,'']]],
+  ['cps2ds_73',['%cps.cps2ds',['../cps.html#autotoc_md188',1,'']]],
+  ['create_74',['%ord.create',['../ord.html#autotoc_md310',1,'']]],
+  ['create_20a_20new_20in_20tree_20plugin_75',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md87',1,'']]],
+  ['create_20a_20third_20party_20plugin_76',['Create a Third-Party Plugin',['../plugins.html#autotoc_md88',1,'']]],
+  ['current_20scope_77',['Current Scope',['../python.html#autotoc_md97',1,'']]]
 ];

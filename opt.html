@@ -148,10 +148,9 @@ Inlined partial pipelines</h1>
 <div class="line">        %compile.named_pass &quot;%mem.copy_prop_ff_pass&quot;,</div>
 <div class="line">    );</div>
 <div class="line"> </div>
-<div class="line">let direct_phases =</div>
+<div class="line">let cps_phases =</div>
 <div class="line">    %compile.phases ff (</div>
-<div class="line">        %compile.named_phase &quot;%direct.ds2cps_phase&quot;,</div>
-<div class="line">        %compile.named_phase &quot;%direct.cps2ds_phase&quot;,</div>
+<div class="line">        %compile.named_phase &quot;%cps.conv&quot;,</div>
 <div class="line">        optimization_phase,</div>
 <div class="line">    );</div>
 <div class="line"> </div>
@@ -231,11 +230,11 @@ The default pipeline</h1>
 <div class="line">                %compile.repl2phase (%compile.named_repl &quot;%autodiff.zero_repl&quot;),</div>
 <div class="line">            )</div>
 <div class="line">        ),</div>
-<div class="line">        %compile.cond_phase &quot;direct&quot; direct_phases,</div>
+<div class="line">        %compile.cond_phase &quot;cps&quot; cps_phases,</div>
 <div class="line">        %compile.cond_phase &quot;matrix&quot; (</div>
 <div class="line">            %compile.phases ff (</div>
 <div class="line">                matrix_lower_phase,</div>
-<div class="line">                %compile.cond_phase &quot;direct&quot; direct_phases,</div>
+<div class="line">                %compile.cond_phase &quot;cps&quot; cps_phases,</div>
 <div class="line">            )</div>
 <div class="line">        ),</div>
 <div class="line">        %compile.named_phase &quot;%affine.lower_for_phase&quot;,</div>

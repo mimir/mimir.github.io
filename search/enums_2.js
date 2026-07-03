@@ -20,15 +20,14 @@ var searchData=
   ['constmat_17',['constMat',['../namespacemim_1_1plug_1_1matrix.html#a11b9674b35894ca4f3605791d4783b74',1,'mim::plug::matrix']]],
   ['constptr_18',['ConstPtr',['../namespacemim_1_1plug_1_1gpu.html#a555dfadc10ca559592ce1581159b598f',1,'mim::plug::gpu']]],
   ['contains_19',['contains',['../namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166d',1,'mim::plug::ord::contains'],['../namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664',1,'mim::plug::tuple::contains']]],
-  ['conv_20',['conv',['../namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712a',1,'mim::plug::core::conv'],['../namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eb',1,'mim::plug::math::conv']]],
+  ['conv_20',['conv',['../namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712a',1,'mim::plug::core::conv'],['../namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec',1,'mim::plug::cps::conv'],['../namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eb',1,'mim::plug::math::conv']]],
   ['copy_5fprop_5fff_5fpass_21',['copy_prop_ff_pass',['../namespacemim_1_1plug_1_1mem.html#a43333076ddd59792bfe8daa553b80a77',1,'mim::plug::mem']]],
   ['copy_5fprop_5fpass_22',['copy_prop_pass',['../namespacemim_1_1plug_1_1mem.html#a526eb86f6219aa1645e12144c1a3a6e8',1,'mim::plug::mem']]],
   ['copy_5fprop_5ftt_5fpass_23',['copy_prop_tt_pass',['../namespacemim_1_1plug_1_1mem.html#a7b5c09d3677f6ab46e54118e5ca073f1',1,'mim::plug::mem']]],
   ['copy_5fto_5fdevice_24',['copy_to_device',['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3e',1,'mim::plug::gpu']]],
   ['copy_5fto_5fhost_25',['copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056',1,'mim::plug::gpu']]],
-  ['cps2ds_26',['cps2ds',['../namespacemim_1_1plug_1_1direct.html#ab2a0fe9b03b60f04b11532493ed42cac',1,'mim::plug::direct']]],
-  ['cps2ds_5fdep_27',['cps2ds_dep',['../namespacemim_1_1plug_1_1direct.html#ae16ba35b7bcfa757a84a6e0ba0ca7e00',1,'mim::plug::direct']]],
-  ['cps2ds_5fphase_28',['cps2ds_phase',['../namespacemim_1_1plug_1_1direct.html#aa7cc430476ee39d6ac174c4f85bf5308',1,'mim::plug::direct']]],
-  ['create_5fmap_29',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
-  ['create_5fset_30',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
+  ['cps2ds_26',['cps2ds',['../namespacemim_1_1plug_1_1cps.html#a5a24afd7ba8b82c842e0accc5ad5816e',1,'mim::plug::cps']]],
+  ['cps2ds_5fdep_27',['cps2ds_dep',['../namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7',1,'mim::plug::cps']]],
+  ['create_5fmap_28',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
+  ['create_5fset_29',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
 ];

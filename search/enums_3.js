@@ -10,6 +10,5 @@ var searchData=
   ['disj_7',['disj',['../namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628',1,'mim::plug::regex']]],
   ['div_8',['div',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core']]],
   ['dot_5fproduct_9',['dot_product',['../namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e',1,'mim::plug::tensor']]],
-  ['dot_5fproduct_5fimpl_10',['dot_product_impl',['../namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba',1,'mim::plug::tensor']]],
-  ['ds2cps_5fphase_11',['ds2cps_phase',['../namespacemim_1_1plug_1_1direct.html#a3c094b343d7344c05a3cca414b8472d2',1,'mim::plug::direct']]]
+  ['dot_5fproduct_5fimpl_10',['dot_product_impl',['../namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba',1,'mim::plug::tensor']]]
 ];

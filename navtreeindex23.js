@@ -1,12 +1,5 @@
 var NAVTREEINDEX23 =
 {
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dac1111bd512b29e821b120b86446026b8":[2,0,3,1,7,10,4],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad30f3020a7f0e5899fb8e1ee6afedb4d":[2,0,3,1,7,10,6],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2":[2,0,3,1,7,10,14],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad7d058fbb1486f940542f8837551bab6":[2,0,3,1,7,10,11],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadada9654756c6302840e41e8089ede29":[2,0,3,1,7,10,13],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f":[2,0,3,1,7,10,10],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dae578203a9e0b19048f8868e46958c2ed":[2,0,3,1,7,10,3],
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5daf46378b62001c246c5ac3cdfc9d7f93f":[2,0,3,1,7,10,8],
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895":[2,0,3,1,7,10,0],
 "namespacemim_1_1plug_1_1math.html#afdab7fe16d606d2e9ce35568c84b0960":[2,0,3,1,7,50],
@@ -249,5 +242,12 @@ var NAVTREEINDEX23 =
 "namespacemim_1_1plug_1_1tensor.html#ae1fdc14eb6abcb8076cf61c55f87a9be":[2,0,3,1,11,10],
 "namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e":[2,0,3,1,11,5],
 "namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5":[2,0,3,1,11,13],
-"namespacemim_1_1plug_1_1tensor.html#af03de4eba3079a7736f4cafb406a5d97":[2,0,3,1,11,34]
+"namespacemim_1_1plug_1_1tensor.html#af03de4eba3079a7736f4cafb406a5d97":[2,0,3,1,11,34],
+"namespacemim_1_1plug_1_1tensor_1_1phase.html":[2,0,3,1,11,0],
+"namespacemim_1_1plug_1_1tensor_1_1phase.html#a019a8c048eeccbb48ed2a419e7dc57ca":[2,0,3,1,11,0,4],
+"namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8":[2,0,3,1,11,0,3],
+"namespacemim_1_1plug_1_1tensor_1_1phase.html#aee1a63ee348772f524bf09dbd9ce0ade":[2,0,3,1,11,0,5],
+"namespacemim_1_1plug_1_1tuple.html":[2,0,3,1,17],
+"namespacemim_1_1plug_1_1tuple.html#a12e1d6408db489bf216da5d9ec52aaae":[2,0,3,1,17,12],
+"namespacemim_1_1plug_1_1tuple.html#a135279856795948a173cceb114cb7dc2":[2,0,3,1,17,7]
 };

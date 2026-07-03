@@ -83,9 +83,8 @@ var annotated_dup =
           [ "ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", "classmim_1_1plug_1_1clos_1_1ClosConv" ],
           [ "LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClos" ]
         ] ],
-        [ "direct", "namespacemim_1_1plug_1_1direct.html", [
-          [ "CPS2DSPhase", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase.html", "classmim_1_1plug_1_1direct_1_1CPS2DSPhase" ],
-          [ "DS2CPS", "classmim_1_1plug_1_1direct_1_1DS2CPS.html", "classmim_1_1plug_1_1direct_1_1DS2CPS" ]
+        [ "cps", "namespacemim_1_1plug_1_1cps.html", [
+          [ "Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", "classmim_1_1plug_1_1cps_1_1Conv" ]
         ] ],
         [ "gpu", "namespacemim_1_1plug_1_1gpu.html", [
           [ "phase", "namespacemim_1_1plug_1_1gpu_1_1phase.html", [

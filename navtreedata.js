@@ -43,7 +43,7 @@ var NAVTREE =
       [ "compile", "compile.html", null ],
       [ "core", "core.html", null ],
       [ "demo", "demo.html", null ],
-      [ "direct", "direct.html", null ],
+      [ "cps", "cps.html", null ],
       [ "gpu", "gpu.html", null ],
       [ "ll", "ll.html", null ],
       [ "math", "math.html", null ],
@@ -114,16 +114,16 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1Ptrn.html",
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a54736d35195c3aa2a7159d1cdbe3f872",
 "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html",
-"classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html#af6944879a8a9bfc6ce6d82ac876575ee",
-"dfa2matcher_8cpp.html#a929a326a16b0a4c9d2e277325e556017",
-"gpu_8h_source.html",
-"namespacemim.html#a249738da6a953390b70691dd3fe7132ba5a92344ee95acf10c31901b36418be77",
-"namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420",
-"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661",
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dac1111bd512b29e821b120b86446026b8",
-"namespacemim_1_1plug_1_1tensor_1_1phase.html",
-"structmim_1_1Annex.html#a2396ad51f7f065120a421a1fbd529d8f",
-"structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1"
+"classmim_1_1plug_1_1mem_1_1pass_1_1Reshape.html",
+"demo_8cpp.html#a35bb34350e93d508e52544f4abd50e59",
+"lam_8h.html",
+"namespacemim.html#a281d4e910e9913b8ce626aa19bc1de9c",
+"namespacemim_1_1plug_1_1autodiff.html#a68aae344814c11b1359c6b945f109153",
+"namespacemim_1_1plug_1_1core.html#ac5e6745c0724f9ad515f710379700abe",
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5daf46378b62001c246c5ac3cdfc9d7f93f",
+"namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664",
+"structmim_1_1Annex.html#a55390291c63a6d3d6af01f6901cc48e9",
+"structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

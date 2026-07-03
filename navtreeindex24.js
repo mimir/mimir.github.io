@@ -1,12 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"namespacemim_1_1plug_1_1tensor_1_1phase.html":[2,0,3,1,11,0],
-"namespacemim_1_1plug_1_1tensor_1_1phase.html#a019a8c048eeccbb48ed2a419e7dc57ca":[2,0,3,1,11,0,4],
-"namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8":[2,0,3,1,11,0,3],
-"namespacemim_1_1plug_1_1tensor_1_1phase.html#aee1a63ee348772f524bf09dbd9ce0ade":[2,0,3,1,11,0,5],
-"namespacemim_1_1plug_1_1tuple.html":[2,0,3,1,17],
-"namespacemim_1_1plug_1_1tuple.html#a12e1d6408db489bf216da5d9ec52aaae":[2,0,3,1,17,12],
-"namespacemim_1_1plug_1_1tuple.html#a135279856795948a173cceb114cb7dc2":[2,0,3,1,17,7],
 "namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664":[2,0,3,1,17,2],
 "namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e":[2,0,3,1,17,3],
 "namespacemim_1_1plug_1_1tuple.html#a3e6250caa1e19267b5edccdc28b4428a":[2,0,3,1,17,1],
@@ -249,5 +242,12 @@ var NAVTREEINDEX24 =
 "structmim_1_1Annex.html":[2,0,3,69],
 "structmim_1_1Annex.html":[4,0,1,67],
 "structmim_1_1Annex.html#a0ff56015a870a88adda114eb894858b1":[2,0,3,69,3],
-"structmim_1_1Annex.html#a0ff56015a870a88adda114eb894858b1":[4,0,1,67,3]
+"structmim_1_1Annex.html#a0ff56015a870a88adda114eb894858b1":[4,0,1,67,3],
+"structmim_1_1Annex.html#a2396ad51f7f065120a421a1fbd529d8f":[2,0,3,69,10],
+"structmim_1_1Annex.html#a2396ad51f7f065120a421a1fbd529d8f":[4,0,1,67,10],
+"structmim_1_1Annex.html#a2e4d439767921ebb103a8256fc2f8524":[2,0,3,69,0],
+"structmim_1_1Annex.html#a2e4d439767921ebb103a8256fc2f8524":[4,0,1,67,0],
+"structmim_1_1Annex.html#a3448571d44e72d9078aa9ea5e8e7c0c6":[2,0,3,69,12],
+"structmim_1_1Annex.html#a3448571d44e72d9078aa9ea5e8e7c0c6":[4,0,1,67,12],
+"structmim_1_1Annex.html#a55390291c63a6d3d6af01f6901cc48e9":[2,0,3,69,7]
 };

@@ -190,7 +190,7 @@ var namespacemim_1_1plug =
       [ "icmp_mask", "namespacemim_1_1plug_1_1core.html#ad82399b0e163c0348b58f2a8c3c43d54", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1core.html#a313da9372a97c5d81ab124e98108345e", null ]
     ] ],
-    [ "direct", "namespacemim_1_1plug_1_1direct.html", "namespacemim_1_1plug_1_1direct" ],
+    [ "cps", "namespacemim_1_1plug_1_1cps.html", "namespacemim_1_1plug_1_1cps" ],
     [ "gpu", "namespacemim_1_1plug_1_1gpu.html", "namespacemim_1_1plug_1_1gpu" ],
     [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
     [ "math", "namespacemim_1_1plug_1_1math.html", [
