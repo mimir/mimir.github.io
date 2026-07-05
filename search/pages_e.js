@@ -38,10 +38,11 @@ var searchData=
   ['product_35',['product',['../matrix.html#autotoc_md266',1,'']]],
   ['product_5f2d_36',['%tensor.product_2d',['../tensor.html#autotoc_md364',1,'']]],
   ['products_20sequences_20unions_20and_20matching_37',['Products, Sequences, Unions, and Matching',['../langref.html#autotoc_md50',1,'']]],
-  ['program_38',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
-  ['projs_39',['Projs',['../dev.html#autotoc_md36',1,'']]],
-  ['ptr_40',['%mem.Ptr',['../mem.html#autotoc_md274',1,'']]],
-  ['publications_41',['📖 Publications',['../index.html#autotoc_md112',1,'']]],
-  ['python_20bindings_42',['Python Bindings',['../python.html',1,'']]],
-  ['python_20dsl_43',['Embedded Python DSL',['../python.html#autotoc_md99',1,'']]]
+  ['profiling_38',['Profiling',['../coding.html#profiling',1,'']]],
+  ['program_39',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
+  ['projs_40',['Projs',['../dev.html#autotoc_md36',1,'']]],
+  ['ptr_41',['%mem.Ptr',['../mem.html#autotoc_md274',1,'']]],
+  ['publications_42',['📖 Publications',['../index.html#autotoc_md112',1,'']]],
+  ['python_20bindings_43',['Python Bindings',['../python.html',1,'']]],
+  ['python_20dsl_44',['Embedded Python DSL',['../python.html#autotoc_md99',1,'']]]
 ];
