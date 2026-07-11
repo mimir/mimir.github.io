@@ -14,6 +14,7 @@ var structmim_1_1Flags =
     [ "break_on_warn", "structmim_1_1Flags.html#accee3d68c6800853cbb887679212d540", null ],
     [ "dump_recursive", "structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506", null ],
     [ "force_load", "structmim_1_1Flags.html#ac51779de7dc26d692adab99bcc8a9a39", null ],
+    [ "max_fp_iters", "structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d", null ],
     [ "profile", "structmim_1_1Flags.html#afc1f0ccd205ffa9e1c9a760997c9ddfc", null ],
     [ "reeval_breakpoints", "structmim_1_1Flags.html#aa3d3421bf85526b22938b6f5d289af22", null ],
     [ "scalarize_threshold", "structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7", null ],

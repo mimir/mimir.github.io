@@ -122,8 +122,8 @@ var NAVTREEINDEX =
 "namespacemim_1_1plug_1_1math.html#a6cfc88272031d116d79518a19cc929dd",
 "namespacemim_1_1plug_1_1refly.html#aaf6f455a242be2827c385e6fa9648c65afa816edb83e95bf0c8da580bdfd491ef",
 "refly_2autogen_8h_source.html",
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#adbdadc2458b37ff87cabeab4e0380d93",
-"tok_8h.html#a9858c29a6d8cc9ffe286cc134ec56da5"
+"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a8d9210c34cc2ae3f1846acbe1d9d04de",
+"tok_8h.html#a6db46bc72a5da9001ba48cbe37741e8d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

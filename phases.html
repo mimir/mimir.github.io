@@ -290,7 +290,7 @@ Lattice API</h2>
 <ul>
 <li>An <em>absent</em> entry means ⊥ - nothing is known yet.</li>
 <li>An entry mapping a definition <b>to itself</b> (<span class="tt">def ↦ def</span>) means ⊤ - "no useful information, keep as-is".</li>
-<li>Anything else is a discovered abstract value; analyses may also introduce their own sentinels in between (e.g. SEO's <span class="tt">nullptr</span> and GVN-bundle proxies).</li>
+<li>Anything else is a discovered abstract value; analyses may also introduce their own sentinels in between as ordinary <span class="tt">Def</span>s (e.g. SEO's GVN-bundle and pending-⊤ proxies).</li>
 </ul>
 <p><a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> provides the following accessors and mutators:</p>
 <ul>
@@ -300,7 +300,7 @@ Lattice API</h2>
 <li><a class="el" href="classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa" title="mim::Analysis::pin_top"><span class="tt">pin_top(def)</span></a> monotonically forces <span class="tt">def</span> to ⊤. Being built on <a class="el" href="classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4" title="mim::Analysis::update"><span class="tt">update()</span></a>, it invalidates iff it overwrote previous information.</li>
 <li><a class="el" href="classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab" title="mim::Analysis::is_top"><span class="tt">is_top(def)</span></a> checks for <span class="tt">def ↦ def</span>.</li>
 </ul>
-<p>All lattice writes go through <a class="el" href="classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4" title="mim::Analysis::update"><span class="tt">update()</span></a>, <a class="el" href="classmim_1_1Analysis.html#ad4e0380b377966a338ef6914c578e16e" title="mim::Analysis::set"><span class="tt">set()</span></a>, or <a class="el" href="classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa" title="mim::Analysis::pin_top"><span class="tt">pin_top()</span></a>; read access is available via <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice(def)</span></a> or the full map returned by <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice()</span></a>. An analysis that stores a <span class="tt">nullptr</span> sentinel (like SEO) can distinguish it from an <em>absent</em> entry via <span class="tt">lattice().contains(def)</span>.</p>
+<p>All lattice writes go through <a class="el" href="classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4" title="mim::Analysis::update"><span class="tt">update()</span></a>, <a class="el" href="classmim_1_1Analysis.html#ad4e0380b377966a338ef6914c578e16e" title="mim::Analysis::set"><span class="tt">set()</span></a>, or <a class="el" href="classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa" title="mim::Analysis::pin_top"><span class="tt">pin_top()</span></a>; read access is available via <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice(def)</span></a> or the full map returned by <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice()</span></a>. Analysis-specific sentinels should be ordinary <span class="tt">Def</span>s - e.g. a dedicated <a class="el" href="classmim_1_1Proxy.html" title="mim::Proxy"><span class="tt">Proxy</span></a> tag, as SEO uses for its GVN and pending-⊤ markers - never <span class="tt">nullptr</span>, which is reserved for <em>absent</em>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Handling of Mutables</h2>
 <p>Unlike <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, an <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> must traverse the entire reachable program without rebuilding it. For this reason, <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> overrides <a class="el" href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7" title="mim::Analysis::rewrite_mut"><span class="tt">rewrite_mut()</span></a> to keep mutables in place and use the rewriter machinery as a graph-aware traversal over the existing world.</p>
@@ -379,7 +379,7 @@ Typical Shape</h2>
 <div class="line">        <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00254">phase.h:254</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00255">phase.h:255</a></div></div>
 </div><!-- fragment --><p>Run it with:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;MyRWPhase&gt;</a>(world);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_phase_man"></a>
@@ -402,7 +402,7 @@ Typical Shape</h2>
 <div class="line"><a class="code hl_class" href="classmim_1_1PhaseMan.html">mim::PhaseMan</a> man(world, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a">mim::plug::compile::phases</a>);</div>
 <div class="line">man.apply(<span class="comment">/*fixed_point=*/</span><span class="keyword">true</span>, std::move(phases));</div>
 <div class="line">man.run();</div>
-<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00374">phase.h:374</a></div></div>
+<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00375">phase.h:375</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1compile_html_a2ad95a9bc25b51ef2cd839513ac0fc3a"><div class="ttname"><a href="namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a">mim::plug::compile::phases</a></div><div class="ttdeci">phases</div><div class="ttdef"><b>Definition</b> <a href="compile_2autogen_8h_source.html#l00044">autogen.h:44</a></div></div>
 <div class="ttc" id="anamespacemim_html_ace9968a67fd836075490bf9fe9b62457"><div class="ttname"><a href="namespacemim.html#ace9968a67fd836075490bf9fe9b62457">mim::Phases</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; Phase &gt; &gt; Phases</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00020">phase.h:20</a></div></div>
 </div><!-- fragment --><p>Use a fixed-point pipeline when phases expose new optimization opportunities for one another.</p>
@@ -430,7 +430,7 @@ Typical Shape</h2>
 <div class="line">        <span class="comment">// process each reachable closed Lam</span></div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00406">phase.h:406</a></div></div>
+<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00407">phase.h:407</a></div></div>
 <div class="ttc" id="aclassmim_1_1ClosedMutPhase_html_ad472ea7c10d353cbd478faa84708322e"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e">mim::ClosedMutPhase::visit</a></div><div class="ttdeci">virtual void visit(M *)=0</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="phases_nest_phase"></a>
 NestPhase</h2>
