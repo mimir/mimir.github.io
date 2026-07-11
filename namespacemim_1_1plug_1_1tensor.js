@@ -38,7 +38,7 @@ var namespacemim_1_1plug_1_1tensor =
     [ "normalize_set", "namespacemim_1_1plug_1_1tensor.html#a55718c39985682aac0b3bb0fd127e937", null ],
     [ "op_get", "namespacemim_1_1plug_1_1tensor.html#ab81673d70e22003fa65a4736b5e9b08a", null ],
     [ "op_set", "namespacemim_1_1plug_1_1tensor.html#a3520819e9d3ed4ab46dcd49fdd6d80ab", null ],
-    [ "reg_stages", "namespacemim_1_1plug_1_1tensor.html#a219a26a9f6d037ea78e3e8e0e32b964d", null ],
+    [ "reg_phases", "namespacemim_1_1plug_1_1tensor.html#a24478d6a245a774370863390a8998d7e", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ]
 ];

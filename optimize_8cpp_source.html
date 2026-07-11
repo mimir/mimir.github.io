@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MimIR: src/mim/pass/optimize.cpp Source File</title>
+<title>MimIR: src/mim/phase/optimize.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -119,7 +119,7 @@ $(function(){initNavTree('optimize_8cpp_source.html','',''); });
   <div class="headertitle"><div class="title">optimize.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="optimize_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="optimize_8h.html">mim/pass/optimize.h</a>&quot;</span></div>
+<a href="optimize_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="optimize_8h.html">mim/phase/optimize.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="driver_8h.html">mim/driver.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="phase_8h.html">mim/phase.h</a>&quot;</span></div>
@@ -162,10 +162,10 @@ $(function(){initNavTree('optimize_8cpp_source.html','',''); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">auto</span> callee = <a class="code hl_function" href="classmim_1_1App.html#abd69aef92172ab4b4bbc3a5eb76cca78">App::uncurry_callee</a>(body);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        world.DLOG(<span class="stringliteral">&quot;Building pipeline&quot;</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> f = world.<a class="code hl_function" href="classmim_1_1World.html#a32187bcd87365e3a8d712b373ceaa0d5">driver</a>().<a class="code hl_function" href="classmim_1_1Driver.html#af398b24cfa4bac2ae657d2595269ff44">stage</a>(callee-&gt;flags())) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> f = world.<a class="code hl_function" href="classmim_1_1World.html#a32187bcd87365e3a8d712b373ceaa0d5">driver</a>().<a class="code hl_function" href="classmim_1_1Driver.html#ae98e9444e90210ce6ab197daec6c56fb">phase</a>(callee-&gt;flags())) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">auto</span> stage = (*f)(world);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keyword">auto</span> phase = stage.get()-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Phase.html">Phase</a>&gt;();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> app = body-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1App.html">App</a>&gt;()) phase-&gt;<a class="code hl_function" href="classmim_1_1Stage.html#a86d4778398f4afe1a7088dba6361b7e3">apply</a>(app);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> app = body-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1App.html">App</a>&gt;()) phase-&gt;<a class="code hl_function" href="classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87">apply</a>(app);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            phase-&gt;run();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        } <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            world.ELOG(<span class="stringliteral">&quot;axm not found in passes&quot;</span>);</div>
@@ -179,10 +179,10 @@ $(function(){initNavTree('optimize_8cpp_source.html','',''); });
 <div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00258">def.h:258</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_a9ab6cb5c35d630f631fd365cf7fa8f0c"><div class="ttname"><a href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">mim::Def::type</a></div><div class="ttdeci">const Def * type() const noexcept</div><div class="ttdoc">Yields the &quot;raw&quot; type of this Def (maybe nullptr).</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00452">def.cpp:452</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_aa73c33fa04415ff69e455ec10193244c"><div class="ttname"><a href="classmim_1_1Def.html#aa73c33fa04415ff69e455ec10193244c">mim::Def::internalize</a></div><div class="ttdeci">void internalize()</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00576">def.cpp:576</a></div></div>
-<div class="ttc" id="aclassmim_1_1Driver_html_af398b24cfa4bac2ae657d2595269ff44"><div class="ttname"><a href="classmim_1_1Driver.html#af398b24cfa4bac2ae657d2595269ff44">mim::Driver::stage</a></div><div class="ttdeci">auto stage(flags_t flags)</div><div class="ttdef"><b>Definition</b> <a href="driver_8h_source.html#l00123">driver.h:123</a></div></div>
+<div class="ttc" id="aclassmim_1_1Driver_html_ae98e9444e90210ce6ab197daec6c56fb"><div class="ttname"><a href="classmim_1_1Driver.html#ae98e9444e90210ce6ab197daec6c56fb">mim::Driver::phase</a></div><div class="ttdeci">auto phase(flags_t flags)</div><div class="ttdef"><b>Definition</b> <a href="driver_8h_source.html#l00123">driver.h:123</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00110">lam.h:110</a></div></div>
-<div class="ttc" id="aclassmim_1_1Phase_html"><div class="ttname"><a href="classmim_1_1Phase.html">mim::Phase</a></div><div class="ttdoc">Unlike a Pass, a Phase performs one self-contained task and does not interleave with other phases.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00027">phase.h:27</a></div></div>
-<div class="ttc" id="aclassmim_1_1Stage_html_a86d4778398f4afe1a7088dba6361b7e3"><div class="ttname"><a href="classmim_1_1Stage.html#a86d4778398f4afe1a7088dba6361b7e3">mim::Stage::apply</a></div><div class="ttdeci">virtual void apply(const App *)</div><div class="ttdoc">Invoked if your Stage has additional args.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00037">pass.h:37</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html"><div class="ttname"><a href="classmim_1_1Phase.html">mim::Phase</a></div><div class="ttdoc">A Phase performs one self-contained task over the whole World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00025">phase.h:25</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ae53d7b9cecc27b16e8bec12c4e6e2e87"><div class="ttname"><a href="classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87">mim::Phase::apply</a></div><div class="ttdeci">virtual void apply(const App *)</div><div class="ttdoc">Invoked if your Phase has additional args.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00036">phase.h:36</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_1_1Externals_html_a12a56ab6829109dd40a05457df85eaa7"><div class="ttname"><a href="classmim_1_1World_1_1Externals.html#a12a56ab6829109dd40a05457df85eaa7">mim::World::Externals::mutate</a></div><div class="ttdeci">Vector&lt; Def * &gt; mutate() const</div><div class="ttdoc">Returns a copy of muts() in a Vector; this allows you to modify the Externals while iterating.</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00202">world.h:202</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00036">world.h:36</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html_a32187bcd87365e3a8d712b373ceaa0d5"><div class="ttname"><a href="classmim_1_1World.html#a32187bcd87365e3a8d712b373ceaa0d5">mim::World::driver</a></div><div class="ttdeci">const Driver &amp; driver() const</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00093">world.h:93</a></div></div>
@@ -199,7 +199,7 @@ $(function(){initNavTree('optimize_8cpp_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_42f0c2cf79570de0b647c74f0c8a88ee.html">pass</a></li><li class="navelem"><a href="optimize_8cpp.html">optimize.cpp</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_4ad15e0004aa2fc2424d5bded02c9369.html">phase</a></li><li class="navelem"><a href="optimize_8cpp.html">optimize.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

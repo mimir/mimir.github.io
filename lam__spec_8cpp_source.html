@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MimIR: src/mim/pass/lam_spec.cpp Source File</title>
+<title>MimIR: src/mim/phase/lam_spec.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -119,7 +119,7 @@ $(function(){initNavTree('lam__spec_8cpp_source.html','',''); });
   <div class="headertitle"><div class="title">lam_spec.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="lam__spec_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lam__spec_8h.html">mim/pass/lam_spec.h</a>&quot;</span></div>
+<a href="lam__spec_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="lam__spec_8h.html">mim/phase/lam_spec.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="nest_8h.html">mim/nest.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
@@ -128,66 +128,82 @@ $(function(){initNavTree('lam__spec_8cpp_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classmim_1_1LamSpec.html#aa94675b29af484568c829207cd38b576">    9</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1LamSpec.html#aa94675b29af484568c829207cd38b576">LamSpec::rewrite</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = old2new_.find(def); i != old2new_.end()) <span class="keywordflow">return</span> i-&gt;second;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">auto</span> [app, old_lam] = <a class="code hl_function" href="namespacemim.html#a3036ca68b9ff9ebd00b9b35c7ad1a9a0">isa_apped_mut_lam</a>(def);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf">isa_optimizable</a>(old_lam)) <span class="keywordflow">return</span> def;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Skip recursion to avoid infinite inlining if not &quot;aggressive_lam_spec&quot;.</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// This is a hack - but we want to get rid off this Pass anyway.</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a> nest(old_lam);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>().flags().aggressive_lam_spec &amp;&amp; nest.<a class="code hl_function" href="classmim_1_1Nest.html#a49652caf6c6f54036e31936e80161753">is_recursive</a>()) <span class="keywordflow">return</span> def;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_typedef" href="namespacemim.html#a1433b0566b2cbdbf0c6f74baed22bb52">DefVec</a> new_doms, new_vars, new_args;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">auto</span> skip     = old_lam-&gt;ret_var() &amp;&amp; old_lam-&gt;is_closed();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">auto</span> old_doms = old_lam-&gt;doms();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classmim_1_1LamSpec.html#a945faa70d0f04e81a9d5109a09aae3e1">    9</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1LamSpec.html#a945faa70d0f04e81a9d5109a09aae3e1">LamSpec::rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* old_app) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#a8c1256f93cc63c1d8d0609e2aa474b51">is_bootstrapping</a>()) <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = old2new_.find(old_app); i != old2new_.end()) <span class="keywordflow">return</span> i-&gt;second;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">auto</span> old_lam = old_app-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">isa_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf">isa_optimizable</a>(old_lam)) <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// Skip recursion to avoid infinite inlining if not &quot;aggressive_lam_spec&quot;.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// This is a hack - but we want to get rid off this stage anyway.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a> nest(old_lam);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().flags().aggressive_lam_spec &amp;&amp; nest.<a class="code hl_function" href="classmim_1_1Nest.html#a49652caf6c6f54036e31936e80161753">is_recursive</a>()) <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// Specialize the ordinary new-world copy of old_lam; everything below happens in the new world.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">auto</span> lam = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam)-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792">as_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;();</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dom : old_doms.view().rsubspan(skip))</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">if</span> (!dom-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;()) new_doms.emplace_back(dom);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (skip) new_doms.emplace_back(old_lam-&gt;doms().back());</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (new_doms.size() == old_lam-&gt;num_doms()) <span class="keywordflow">return</span> def;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">auto</span> new_lam = old_lam-&gt;<a class="code hl_function" href="classmim_1_1Def.html#af09d5f11c586c2dd9c9c27597540837a">stub</a>(<a class="code hl_function" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>().cn(new_doms));</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> arg_i = 0, var_i = 0, n = app-&gt;num_args() - skip; arg_i != n; ++arg_i) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">auto</span> arg = app-&gt;arg(arg_i);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (old_lam-&gt;dom(arg_i)-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;()) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            new_vars.emplace_back(arg);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            new_vars.emplace_back(new_lam-&gt;var(var_i++));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            new_args.emplace_back(arg);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_typedef" href="namespacemim.html#a1433b0566b2cbdbf0c6f74baed22bb52">DefVec</a> new_doms, new_vars, new_args;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">auto</span> skip = lam-&gt;ret_var() &amp;&amp; lam-&gt;is_closed();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> doms = lam-&gt;doms();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dom : doms.view().rsubspan(skip))</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (!dom-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;()) new_doms.emplace_back(dom);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (skip) new_doms.emplace_back(doms.back());</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (new_doms.size() == lam-&gt;num_doms()) <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span>&amp; w      = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span> new_lam = lam-&gt;stub(w.cn(new_doms));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Project new_lam&#39;s var with the explicit arity new_doms.size():</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// a single remaining sigma dom is flattened by cn(), so new_lam-&gt;var(i) would project into that sigma.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">auto</span> num_new = new_doms.size();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">auto</span> num_old = old_app-&gt;num_args();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (skip) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        new_vars.emplace_back(new_lam-&gt;vars().back());</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        new_args.emplace_back(app-&gt;args().back());</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    new_lam-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97">set</a>(old_lam-&gt;reduce(<a class="code hl_function" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>().tuple(new_vars)));</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_define" href="log_8h.html#a87fe05eb8767a6b1abf71eea0bdcfcac">DLOG</a>(<span class="stringliteral">&quot;{} -&gt; {}: {} -&gt; {})&quot;</span>, old_lam, new_lam, old_lam-&gt;dom(), new_lam-&gt;dom());</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> old2new_[def] = <a class="code hl_function" href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">world</a>().<a class="code hl_function" href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">app</a>(new_lam, new_args);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> arg_i = 0, var_i = 0, n = num_old - skip; arg_i != n; ++arg_i) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">auto</span> arg = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_app-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>(num_old, arg_i));</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (lam-&gt;dom(arg_i)-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;()) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            new_vars.emplace_back(arg);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            new_vars.emplace_back(new_lam-&gt;var(num_new, var_i++));</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            new_args.emplace_back(arg);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (skip) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        new_vars.emplace_back(new_lam-&gt;var(num_new, num_new - 1));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        new_args.emplace_back(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_app-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>(num_old, num_old - 1)));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    new_lam-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97">set</a>(lam-&gt;reduce(w.tuple(new_vars)));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_define" href="log_8h.html#a87fe05eb8767a6b1abf71eea0bdcfcac">DLOG</a>(<span class="stringliteral">&quot;{} -&gt; {}: {} -&gt; {})&quot;</span>, lam, new_lam, lam-&gt;dom(), new_lam-&gt;dom());</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> old2new_[old_app] = w.app(new_lam, new_args);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>} <span class="comment">// namespace mim</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00224">lam.h:224</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_a9df7e6baae6a143ed3af2bc7ec643641"><div class="ttname"><a href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">mim::App::callee</a></div><div class="ttdeci">const Def * callee() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00276">lam.h:276</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_adf118f16568ef138e33bdb1f330112d1"><div class="ttname"><a href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">mim::App::arg</a></div><div class="ttdeci">const Def * arg() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00285">lam.h:285</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00258">def.h:258</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_a1164a26b23818879edfa4e6b9fe41d97"><div class="ttname"><a href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97">mim::Def::set</a></div><div class="ttdeci">Def * set(size_t i, const Def *)</div><div class="ttdoc">Successively set from left to right.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00266">def.cpp:266</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html_af09d5f11c586c2dd9c9c27597540837a"><div class="ttname"><a href="classmim_1_1Def.html#af09d5f11c586c2dd9c9c27597540837a">mim::Def::stub</a></div><div class="ttdeci">Def * stub(World &amp;w, const Def *type)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00564">def.h:564</a></div></div>
-<div class="ttc" id="aclassmim_1_1LamSpec_html_aa94675b29af484568c829207cd38b576"><div class="ttname"><a href="classmim_1_1LamSpec.html#aa94675b29af484568c829207cd38b576">mim::LamSpec::rewrite</a></div><div class="ttdeci">const Def * rewrite(const Def *) override</div><div class="ttdef"><b>Definition</b> <a href="#l00009">lam_spec.cpp:9</a></div></div>
-<div class="ttc" id="aclassmim_1_1Nest_html"><div class="ttname"><a href="classmim_1_1Nest.html">mim::Nest</a></div><div class="ttdoc">Builds a nesting tree for all mutables/binders.</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00018">nest.h:18</a></div></div>
-<div class="ttc" id="aclassmim_1_1Nest_html_a49652caf6c6f54036e31936e80161753"><div class="ttname"><a href="classmim_1_1Nest.html#a49652caf6c6f54036e31936e80161753">mim::Nest::is_recursive</a></div><div class="ttdeci">bool is_recursive() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00211">nest.h:211</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a18c97ca601e090eed9bcbc9369c2c792"><div class="ttname"><a href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792">mim::Def::as_mut</a></div><div class="ttdeci">T * as_mut() const</div><div class="ttdoc">Asserts that this is a mutable, casts constness away and performs a static_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00514">def.h:514</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00505">def.h:505</a></div></div>
+<div class="ttc" id="aclassmim_1_1LamSpec_html_a945faa70d0f04e81a9d5109a09aae3e1"><div class="ttname"><a href="classmim_1_1LamSpec.html#a945faa70d0f04e81a9d5109a09aae3e1">mim::LamSpec::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00009">lam_spec.cpp:9</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00110">lam.h:110</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_html"><div class="ttname"><a href="classmim_1_1Nest.html">mim::Nest</a></div><div class="ttdoc">Builds a nesting tree for all mutables/binders.</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00030">nest.h:30</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_html_a49652caf6c6f54036e31936e80161753"><div class="ttname"><a href="classmim_1_1Nest.html#a49652caf6c6f54036e31936e80161753">mim::Nest::is_recursive</a></div><div class="ttdeci">bool is_recursive() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00226">nest.h:226</a></div></div>
 <div class="ttc" id="aclassmim_1_1Pi_html"><div class="ttname"><a href="classmim_1_1Pi.html">mim::Pi</a></div><div class="ttdoc">A dependent function type.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00014">lam.h:14</a></div></div>
-<div class="ttc" id="aclassmim_1_1Stage_html_a39ade56bc81b636a7830048ca2b68a42"><div class="ttname"><a href="classmim_1_1Stage.html#a39ade56bc81b636a7830048ca2b68a42">mim::Stage::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00077">pass.h:77</a></div></div>
-<div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00205">world.cpp:205</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00276">phase.h:276</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8c1256f93cc63c1d8d0609e2aa474b51"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8c1256f93cc63c1d8d0609e2aa474b51">mim::RWPhase::is_bootstrapping</a></div><div class="ttdeci">bool is_bootstrapping() const</div><div class="ttdoc">Returns whether we are currently bootstrapping (rewriting annexes).</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00264">phase.h:264</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_aef58721bd5f8d89e624eea65ff51f6b3"><div class="ttname"><a href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">mim::RWPhase::old_world</a></div><div class="ttdeci">World &amp; old_world()</div><div class="ttdoc">Get old Defs from here.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00275">phase.h:275</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00056">rewrite.cpp:56</a></div></div>
 <div class="ttc" id="alam__spec_8h_html"><div class="ttname"><a href="lam__spec_8h.html">lam_spec.h</a></div></div>
 <div class="ttc" id="alog_8h_html_a87fe05eb8767a6b1abf71eea0bdcfcac"><div class="ttname"><a href="log_8h.html#a87fe05eb8767a6b1abf71eea0bdcfcac">DLOG</a></div><div class="ttdeci">#define DLOG(...)</div><div class="ttdoc">Vaporizes to nothingness in Debug build.</div><div class="ttdef"><b>Definition</b> <a href="log_8h_source.html#l00094">log.h:94</a></div></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
 <div class="ttc" id="anamespacemim_html_a1433b0566b2cbdbf0c6f74baed22bb52"><div class="ttname"><a href="namespacemim.html#a1433b0566b2cbdbf0c6f74baed22bb52">mim::DefVec</a></div><div class="ttdeci">Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00079">def.h:79</a></div></div>
-<div class="ttc" id="anamespacemim_html_a3036ca68b9ff9ebd00b9b35c7ad1a9a0"><div class="ttname"><a href="namespacemim.html#a3036ca68b9ff9ebd00b9b35c7ad1a9a0">mim::isa_apped_mut_lam</a></div><div class="ttdeci">std::pair&lt; const App *, Lam * &gt; isa_apped_mut_lam(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00357">lam.h:357</a></div></div>
 <div class="ttc" id="anamespacemim_html_a4c25bbfc1f84134320947fd7980fbacf"><div class="ttname"><a href="namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf">mim::isa_optimizable</a></div><div class="ttdeci">Lam * isa_optimizable(Lam *lam)</div><div class="ttdoc">These are Lams that are.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00352">lam.h:352</a></div></div>
 <div class="ttc" id="anest_8h_html"><div class="ttname"><a href="nest_8h.html">nest.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -196,7 +212,7 @@ $(function(){initNavTree('lam__spec_8cpp_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_42f0c2cf79570de0b647c74f0c8a88ee.html">pass</a></li><li class="navelem"><a href="lam__spec_8cpp.html">lam_spec.cpp</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_4ad15e0004aa2fc2424d5bded02c9369.html">phase</a></li><li class="navelem"><a href="lam__spec_8cpp.html">lam_spec.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

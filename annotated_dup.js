@@ -77,11 +77,11 @@ var annotated_dup =
           [ "ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ],
           [ "BranchClosElim", "classmim_1_1plug_1_1clos_1_1BranchClosElim.html", "classmim_1_1plug_1_1clos_1_1BranchClosElim" ],
           [ "Clos2SJLJ", "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html", "classmim_1_1plug_1_1clos_1_1Clos2SJLJ" ],
-          [ "ClosConvPrep", "classmim_1_1plug_1_1clos_1_1ClosConvPrep.html", "classmim_1_1plug_1_1clos_1_1ClosConvPrep" ],
-          [ "LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep" ],
           [ "FreeDefAna", "classmim_1_1plug_1_1clos_1_1FreeDefAna.html", "classmim_1_1plug_1_1clos_1_1FreeDefAna" ],
           [ "ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", "classmim_1_1plug_1_1clos_1_1ClosConv" ],
-          [ "LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClos" ]
+          [ "ClosConvPrep", "classmim_1_1plug_1_1clos_1_1ClosConvPrep.html", "classmim_1_1plug_1_1clos_1_1ClosConvPrep" ],
+          [ "LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClos" ],
+          [ "LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep" ]
         ] ],
         [ "cps", "namespacemim_1_1plug_1_1cps.html", [
           [ "Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", "classmim_1_1plug_1_1cps_1_1Conv" ]
@@ -105,13 +105,10 @@ var annotated_dup =
           [ "LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel" ]
         ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
-          [ "pass", "namespacemim_1_1plug_1_1mem_1_1pass.html", [
-            [ "CopyProp", "classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp.html", "classmim_1_1plug_1_1mem_1_1pass_1_1CopyProp" ],
-            [ "Reshape", "classmim_1_1plug_1_1mem_1_1pass_1_1Reshape.html", "classmim_1_1plug_1_1mem_1_1pass_1_1Reshape" ],
-            [ "SSA", "classmim_1_1plug_1_1mem_1_1pass_1_1SSA.html", "classmim_1_1plug_1_1mem_1_1pass_1_1SSA" ]
-          ] ],
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [
-            [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ]
+            [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ],
+            [ "Reshape", "classmim_1_1plug_1_1mem_1_1phase_1_1Reshape.html", "classmim_1_1plug_1_1mem_1_1phase_1_1Reshape" ],
+            [ "SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO" ]
           ] ]
         ] ],
         [ "regex", "namespacemim_1_1plug_1_1regex.html", [
@@ -165,35 +162,22 @@ var annotated_dup =
       [ "TExt", "classmim_1_1TExt.html", "classmim_1_1TExt" ],
       [ "Uniq", "classmim_1_1Uniq.html", "classmim_1_1Uniq" ],
       [ "Nest", "classmim_1_1Nest.html", "classmim_1_1Nest" ],
-      [ "Stage", "classmim_1_1Stage.html", "classmim_1_1Stage" ],
-      [ "Pass", "classmim_1_1Pass.html", "classmim_1_1Pass" ],
-      [ "PassMan", "classmim_1_1PassMan.html", "classmim_1_1PassMan" ],
-      [ "RWPass", "classmim_1_1RWPass.html", "classmim_1_1RWPass" ],
-      [ "FPPass", "classmim_1_1FPPass.html", "classmim_1_1FPPass" ],
-      [ "BetaRed", "classmim_1_1BetaRed.html", "classmim_1_1BetaRed" ],
-      [ "EtaExp", "classmim_1_1EtaExp.html", "classmim_1_1EtaExp" ],
-      [ "EtaRed", "classmim_1_1EtaRed.html", "classmim_1_1EtaRed" ],
-      [ "LamSpec", "classmim_1_1LamSpec.html", "classmim_1_1LamSpec" ],
-      [ "Scalarize", "classmim_1_1Scalarize.html", "classmim_1_1Scalarize" ],
-      [ "TailRecElim", "classmim_1_1TailRecElim.html", "classmim_1_1TailRecElim" ],
       [ "Phase", "classmim_1_1Phase.html", "classmim_1_1Phase" ],
       [ "Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
       [ "RWPhase", "classmim_1_1RWPhase.html", "classmim_1_1RWPhase" ],
       [ "Repl", "classmim_1_1Repl.html", "classmim_1_1Repl" ],
-      [ "ReplMan", "classmim_1_1ReplMan.html", "classmim_1_1ReplMan" ],
-      [ "ReplManPhase", "classmim_1_1ReplManPhase.html", "classmim_1_1ReplManPhase" ],
       [ "Cleanup", "classmim_1_1Cleanup.html", "classmim_1_1Cleanup" ],
-      [ "PassManPhase", "classmim_1_1PassManPhase.html", "classmim_1_1PassManPhase" ],
       [ "PhaseMan", "classmim_1_1PhaseMan.html", "classmim_1_1PhaseMan" ],
       [ "ClosedMutPhase", "classmim_1_1ClosedMutPhase.html", "classmim_1_1ClosedMutPhase" ],
       [ "NestPhase", "classmim_1_1NestPhase.html", "classmim_1_1NestPhase" ],
-      [ "BetaRedPhase", "classmim_1_1BetaRedPhase.html", "classmim_1_1BetaRedPhase" ],
-      [ "BranchNormalizePhase", "classmim_1_1BranchNormalizePhase.html", "classmim_1_1BranchNormalizePhase" ],
-      [ "EtaExpPhase", "classmim_1_1EtaExpPhase.html", "classmim_1_1EtaExpPhase" ],
-      [ "EtaRedPhase", "classmim_1_1EtaRedPhase.html", "classmim_1_1EtaRedPhase" ],
+      [ "BetaRed", "classmim_1_1BetaRed.html", "classmim_1_1BetaRed" ],
+      [ "BranchNormalize", "classmim_1_1BranchNormalize.html", "classmim_1_1BranchNormalize" ],
+      [ "EtaConv", "classmim_1_1EtaConv.html", "classmim_1_1EtaConv" ],
+      [ "LamSpec", "classmim_1_1LamSpec.html", "classmim_1_1LamSpec" ],
       [ "PrefixCleanup", "classmim_1_1PrefixCleanup.html", "classmim_1_1PrefixCleanup" ],
       [ "RetWrap", "classmim_1_1RetWrap.html", "classmim_1_1RetWrap" ],
-      [ "SymExprOpt", "classmim_1_1SymExprOpt.html", "classmim_1_1SymExprOpt" ],
+      [ "Scalarize", "classmim_1_1Scalarize.html", "classmim_1_1Scalarize" ],
+      [ "TailRecElim", "classmim_1_1TailRecElim.html", "classmim_1_1TailRecElim" ],
       [ "Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
       [ "Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
       [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],

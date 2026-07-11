@@ -1,5 +1,6 @@
 var classautomaton_1_1NFANode =
 [
+    [ "Lt", "structautomaton_1_1NFANode_1_1Lt.html", "structautomaton_1_1NFANode_1_1Lt" ],
     [ "NFANode", "classautomaton_1_1NFANode.html#a4bce9f2ffd89711ca62626e24521eb05", null ],
     [ "add_transition", "classautomaton_1_1NFANode.html#aff5b6cdf06607dab8dcdb3a1be38736b", null ],
     [ "for_transitions", "classautomaton_1_1NFANode.html#a86583f12e4866ee42ae50822a9de85dd", null ],

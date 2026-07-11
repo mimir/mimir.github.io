@@ -139,7 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27a58ecd31ac562612a9de83a4d3e92b" id="r_a27a58ecd31ac562612a9de83a4d3e92b"><td class="memItemLeft">NodeType *&#160;</td><td class="memItemRight"><a class="el" href="#a27a58ecd31ac562612a9de83a4d3e92b">add_state</a> ()</td></tr>
 <tr class="memitem:a0e05846b6df87852aefea2874b4a6c49" id="r_a0e05846b6df87852aefea2874b4a6c49"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0e05846b6df87852aefea2874b4a6c49">set_start</a> (const NodeType *start)</td></tr>
 <tr class="memitem:a5ee7463fbfa2f071ea1deb56490ba8d5" id="r_a5ee7463fbfa2f071ea1deb56490ba8d5"><td class="memItemLeft">const NodeType *&#160;</td><td class="memItemRight"><a class="el" href="#a5ee7463fbfa2f071ea1deb56490ba8d5">get_start</a> () const</td></tr>
-<tr class="memitem:ab8aad500443bc3c938b8ecbfc5b9f41d" id="r_ab8aad500443bc3c938b8ecbfc5b9f41d"><td class="memItemLeft">std::set&lt; const NodeType * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab8aad500443bc3c938b8ecbfc5b9f41d">get_reachable_states</a> () const</td></tr>
+<tr class="memitem:a3e63306c358b3d4904cc6ccbfef2a738" id="r_a3e63306c358b3d4904cc6ccbfef2a738"><td class="memItemLeft">std::set&lt; const NodeType *, typename NodeType::Lt &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3e63306c358b3d4904cc6ccbfef2a738">get_reachable_states</a> () const</td></tr>
+<tr class="memdesc:a3e63306c358b3d4904cc6ccbfef2a738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordered by NodeType::Lt (i.e. by id) so that iteration is deterministic.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -175,7 +176,7 @@ template&lt;class NodeType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#ad86b0ef360f67a92a83e118ea5c05abf">AutomatonBase()</a>, <a class="el" href="automaton_8h_source.html#l00048">operator&lt;&lt;</a>, and <a class="el" href="#af855d27249a3454b48202f5b557f3f4d">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#ad86b0ef360f67a92a83e118ea5c05abf">AutomatonBase()</a>, <a class="el" href="automaton_8h_source.html#l00049">operator&lt;&lt;</a>, and <a class="el" href="#af855d27249a3454b48202f5b557f3f4d">operator=()</a>.</p>
 
 </div>
 </div>
@@ -238,8 +239,8 @@ template&lt;class NodeType&gt; </div>
 
 </div>
 </div>
-<a id="ab8aad500443bc3c938b8ecbfc5b9f41d" name="ab8aad500443bc3c938b8ecbfc5b9f41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8aad500443bc3c938b8ecbfc5b9f41d">&#9670;&#160;</a></span>get_reachable_states()</h2>
+<a id="a3e63306c358b3d4904cc6ccbfef2a738" name="a3e63306c358b3d4904cc6ccbfef2a738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e63306c358b3d4904cc6ccbfef2a738">&#9670;&#160;</a></span>get_reachable_states()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +251,7 @@ template&lt;class NodeType&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::set&lt; const NodeType * &gt; <a class="el" href="classautomaton_1_1AutomatonBase.html">automaton::AutomatonBase</a>&lt; NodeType &gt;::get_reachable_states </td>
+          <td class="memname">std::set&lt; const NodeType *, typename NodeType::Lt &gt; <a class="el" href="classautomaton_1_1AutomatonBase.html">automaton::AutomatonBase</a>&lt; NodeType &gt;::get_reachable_states </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -263,11 +264,13 @@ template&lt;class NodeType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="automaton_8h_source.html#l00033">33</a> of file <a class="el" href="automaton_8h_source.html">automaton.h</a>.</p>
+<p>Ordered by NodeType::Lt (i.e. by id) so that iteration is deterministic. </p>
+
+<p class="definition">Definition at line <a class="el" href="automaton_8h_source.html#l00034">34</a> of file <a class="el" href="automaton_8h_source.html">automaton.h</a>.</p>
 
 <p class="reference">References <a class="el" href="automaton_8h_source.html#l00031">get_start()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="dfa2matcher_8cpp_source.html#l00098">dfa2matcher()</a>, and <a class="el" href="dfamin_8cpp_source.html#l00115">automaton::minimize_dfa()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="dfa2matcher_8cpp_source.html#l00093">dfa2matcher()</a>, and <a class="el" href="dfamin_8cpp_source.html#l00113">automaton::minimize_dfa()</a>.</p>
 
 </div>
 </div>
@@ -298,7 +301,7 @@ template&lt;class NodeType&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="automaton_8h_source.html#l00031">31</a> of file <a class="el" href="automaton_8h_source.html">automaton.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="dfa2matcher_8cpp_source.html#l00098">dfa2matcher()</a>, <a class="el" href="automaton_8h_source.html#l00033">get_reachable_states()</a>, <a class="el" href="dfamin_8cpp_source.html#l00115">automaton::minimize_dfa()</a>, and <a class="el" href="nfa2dfa_8cpp_source.html#l00033">automaton::nfa2dfa()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="dfa2matcher_8cpp_source.html#l00093">dfa2matcher()</a>, <a class="el" href="automaton_8h_source.html#l00034">get_reachable_states()</a>, <a class="el" href="dfamin_8cpp_source.html#l00113">automaton::minimize_dfa()</a>, and <a class="el" href="nfa2dfa_8cpp_source.html#l00039">automaton::nfa2dfa()</a>.</p>
 
 </div>
 </div>
@@ -390,7 +393,7 @@ template&lt;class NodeType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="automaton_8h_source.html#l00048">48</a> of file <a class="el" href="automaton_8h_source.html">automaton.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="automaton_8h_source.html#l00049">49</a> of file <a class="el" href="automaton_8h_source.html">automaton.h</a>.</p>
 
 <p class="reference">References <a class="el" href="#a52c06768d3b52067ac400da1f478f3b5">AutomatonBase()</a>.</p>
 

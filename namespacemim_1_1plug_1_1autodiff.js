@@ -4,7 +4,7 @@ var namespacemim_1_1plug_1_1autodiff =
     [ "AD", "namespacemim_1_1plug_1_1autodiff.html#ad4255585ac73ccd9e621fd1ccf342064", null ],
     [ "ad", "namespacemim_1_1plug_1_1autodiff.html#afb5a3e7eb156faf3bf02f211e7ad22ed", null ],
     [ "add", "namespacemim_1_1plug_1_1autodiff.html#adec076a151d709a29626cbe2a3c20337", null ],
-    [ "eval_pass", "namespacemim_1_1plug_1_1autodiff.html#a0ee5e52957243a73fe7f24a089d7a738", null ],
+    [ "eval", "namespacemim_1_1plug_1_1autodiff.html#adf94367a8aeb140540cb64f07e46fcf8", null ],
     [ "sum", "namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420", null ],
     [ "Tangent", "namespacemim_1_1plug_1_1autodiff.html#a731a934813e6197c347e831cb312acda", null ],
     [ "zero", "namespacemim_1_1plug_1_1autodiff.html#a1e3297839dced2ccc616d130b6404148", null ],

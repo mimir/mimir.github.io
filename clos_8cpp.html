@@ -124,16 +124,14 @@ $(function(){initNavTree('clos_8cpp.html','',''); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="clos_8h_source.html">mim/plug/clos/clos.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="config_8h_source.html">mim/config.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="pass_8h_source.html">mim/pass.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__exp_8h_source.html">mim/pass/eta_exp.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__red_8h_source.html">mim/pass/eta_red.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="scalarize_8h_source.html">mim/pass/scalarize.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="branch__clos__elim_8h_source.html">mim/plug/clos/pass/branch_clos_elim.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="clos2sjlj_8h_source.html">mim/plug/clos/pass/clos2sjlj.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="clos__conv__prep_8h_source.html">mim/plug/clos/pass/clos_conv_prep.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="lower__typed__clos__prep_8h_source.html">mim/plug/clos/pass/lower_typed_clos_prep.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="scalarize_8h_source.html">mim/phase/scalarize.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="branch__clos__elim_8h_source.html">mim/plug/clos/phase/branch_clos_elim.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="clos2sjlj_8h_source.html">mim/plug/clos/phase/clos2sjlj.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clos__conv_8h_source.html">mim/plug/clos/phase/clos_conv.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="clos__conv__prep_8h_source.html">mim/plug/clos/phase/clos_conv_prep.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lower__typed__clos_8h_source.html">mim/plug/clos/phase/lower_typed_clos.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lower__typed__clos__prep_8h_source.html">mim/plug/clos/phase/lower_typed_clos_prep.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for clos.cpp:</div>
 <div class="dyncontent">
@@ -151,7 +149,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3886e4c865b2b15eae2cc4c6f84a9176" id="r_a3886e4c865b2b15eae2cc4c6f84a9176"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3886e4c865b2b15eae2cc4c6f84a9176">reg_stages</a> (<a class="el" href="namespacemim.html#a73c02685bc8b4078797ffde79a9c1ac9">Flags2Stages</a> &amp;stages)</td></tr>
+<tr class="memitem:a1eac1e88e03dcfc2f038c5c0d3a7d88a" id="r_a1eac1e88e03dcfc2f038c5c0d3a7d88a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a> (<a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases)</td></tr>
 <tr class="memitem:a35bb34350e93d508e52544f4abd50e59" id="r_a35bb34350e93d508e52544f4abd50e59"><td class="memItemLeft"><a class="el" href="structmim_1_1Plugin.html">Plugin</a>&#160;</td><td class="memItemRight"><a class="el" href="#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a> ()</td></tr>
 <tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Closures</div></td></tr>
 <tr class="memitem:a08e2dd10f68834ee59b63662b9a63c06" id="r_a08e2dd10f68834ee59b63662b9a63c06"><td class="memItemLeft"><a class="el" href="classmim_1_1plug_1_1clos_1_1ClosLit.html">ClosLit</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a08e2dd10f68834ee59b63662b9a63c06">mim::plug::clos::isa_clos_lit</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, bool fn_isa_lam=true)</td></tr>
@@ -189,30 +187,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00033">33</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00030">30</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="config_8h_source.html#l00019">MIM_EXPORT</a>, <a class="el" href="plugin_8h_source.html#l00054">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_stages()</a>, and <a class="el" href="namespacemim_1_1plug_1_1clos.html#a16d3c86f0515a0b9c2d5653f412f58d0">mim::plug::clos::register_normalizers()</a>.</p>
+<p class="reference">References <a class="el" href="config_8h_source.html#l00019">MIM_EXPORT</a>, <a class="el" href="plugin_8h_source.html#l00054">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1clos.html#a16d3c86f0515a0b9c2d5653f412f58d0">mim::plug::clos::register_normalizers()</a>.</p>
 
 </div>
 </div>
-<a id="a3886e4c865b2b15eae2cc4c6f84a9176" name="a3886e4c865b2b15eae2cc4c6f84a9176"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3886e4c865b2b15eae2cc4c6f84a9176">&#9670;&#160;</a></span>reg_stages()</h2>
+<a id="a1eac1e88e03dcfc2f038c5c0d3a7d88a" name="a1eac1e88e03dcfc2f038c5c0d3a7d88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">&#9670;&#160;</a></span>reg_phases()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void reg_stages </td>
+          <td class="memname">void reg_phases </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacemim.html#a73c02685bc8b4078797ffde79a9c1ac9">Flags2Stages</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stages</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>phases</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00020">20</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00018">18</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="pass_8h_source.html#l00070">mim::Stage::hook()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00069">mim::Phase::hook()</a>.</p>
 
 </div>
 </div>

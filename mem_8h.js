@@ -15,6 +15,7 @@ var mem_8h =
     [ "mim::plug::mem::op_mslot", "namespacemim_1_1plug_1_1mem.html#a44065fab91e9fa4ac7e6011a4dd5e2c0", null ],
     [ "mim::plug::mem::op_slot", "namespacemim_1_1plug_1_1mem.html#a1b78348e3f4c86316b13319b4488e43a", null ],
     [ "mim::plug::mem::op_slot", "namespacemim_1_1plug_1_1mem.html#a202eddfb72e63f66c369964e5a028590", null ],
+    [ "mim::plug::mem::pointee", "namespacemim_1_1plug_1_1mem.html#aede1b45bcf193567f1120d04697b8aa7", null ],
     [ "mim::plug::mem::strip_mem", "namespacemim_1_1plug_1_1mem.html#ab5cdf3d78f6189c7c91c73f52ebcfc9c", null ],
     [ "mim::plug::mem::strip_mem_ty", "namespacemim_1_1plug_1_1mem.html#a4b2337e685c87cd59cd16b2bb90a217a", null ]
 ];

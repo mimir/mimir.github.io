@@ -167,7 +167,7 @@ var classmim_1_1World =
     [ "pi", "classmim_1_1World.html#abb4e8cfafda4feb5a081798ec2b28fa2", null ],
     [ "prod", "classmim_1_1World.html#ac89faba0bc1bda24eddee799708865ed", null ],
     [ "prod", "classmim_1_1World.html#ac4e4f8fed18d6d76d31a0c107382c762", null ],
-    [ "proxy", "classmim_1_1World.html#ab621471dc2a700682bc2e646b5aeddcc", null ],
+    [ "proxy", "classmim_1_1World.html#a341fb44cab26f77ad8bc9211f25db154", null ],
     [ "push", "classmim_1_1World.html#a87a7eb81c623ecbfa5108905f2985215", null ],
     [ "raw_app", "classmim_1_1World.html#ac49e089f686b5294788c9d71e59b5f98", null ],
     [ "raw_app", "classmim_1_1World.html#abcd10262c0fd72a56ca0257ad088b51d", null ],

@@ -146,7 +146,8 @@ var menudata={children:[
 {text:"u",url:"namespacemembers_enum_u.html#index_u"},
 {text:"v",url:"namespacemembers_enum_v.html#index_v"},
 {text:"w",url:"namespacemembers_enum_w.html#index_w"},
-{text:"z",url:"namespacemembers_enum_z.html#index_z"}]}]}]},
+{text:"z",url:"namespacemembers_enum_z.html#index_z"}]},
+{text:"Enumerator",url:"namespacemembers_eval.html"}]}]},
 {text:"🔧 Concepts",url:"concepts.html"},
 {text:"🔷 Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
@@ -189,7 +190,6 @@ var menudata={children:[
 {text:"h",url:"functions_func_h.html#index_h"},
 {text:"i",url:"functions_func_i.html#index_i"},
 {text:"j",url:"functions_func_j.html#index_j"},
-{text:"k",url:"functions_func_k.html#index_k"},
 {text:"l",url:"functions_func_l.html#index_l"},
 {text:"m",url:"functions_func_m.html#index_m"},
 {text:"n",url:"functions_func_n.html#index_n"},
@@ -228,7 +228,6 @@ var menudata={children:[
 {text:"Related Symbols",url:"functions_rela.html",children:[
 {text:"a",url:"functions_rela.html#index_a"},
 {text:"c",url:"functions_rela.html#index_c"},
-{text:"e",url:"functions_rela.html#index_e"},
 {text:"f",url:"functions_rela.html#index_f"},
 {text:"i",url:"functions_rela.html#index_i"},
 {text:"l",url:"functions_rela.html#index_l"},

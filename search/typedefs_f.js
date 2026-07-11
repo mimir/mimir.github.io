@@ -5,6 +5,5 @@ var searchData=
   ['u32_2',['u32',['../namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0',1,'mim']]],
   ['u64_3',['u64',['../namespacemim.html#ad8bae182cdb06699fc07a348105f193c',1,'mim']]],
   ['u8_4',['u8',['../namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7',1,'mim']]],
-  ['undo_5ft_5',['undo_t',['../namespacemim.html#abfb343322c95d8c70952e41e6d9728bc',1,'mim']]],
-  ['uses_6',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]]
+  ['uses_5',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]]
 ];

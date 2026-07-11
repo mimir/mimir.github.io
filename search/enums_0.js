@@ -4,7 +4,7 @@ var searchData=
   ['ad_1',['AD',['../namespacemim_1_1plug_1_1autodiff.html#ad4255585ac73ccd9e621fd1ccf342064',1,'mim::plug::autodiff']]],
   ['ad_2',['ad',['../namespacemim_1_1plug_1_1autodiff.html#afb5a3e7eb156faf3bf02f211e7ad22ed',1,'mim::plug::autodiff']]],
   ['add_3',['add',['../namespacemim_1_1plug_1_1autodiff.html#adec076a151d709a29626cbe2a3c20337',1,'mim::plug::autodiff']]],
-  ['add_5fmem_5fphase_4',['add_mem_phase',['../namespacemim_1_1plug_1_1mem.html#a1890f866b3c4a93c26c295f76b7c507b',1,'mim::plug::mem']]],
+  ['add_5fmem_4',['add_mem',['../namespacemim_1_1plug_1_1mem.html#a8a648f12a72d6a66add41e2e7936fa10',1,'mim::plug::mem']]],
   ['addr_5fspace_5fconst_5',['addr_space_const',['../namespacemim_1_1plug_1_1gpu.html#aa5554bc8e2765c644bc5b18846adf760',1,'mim::plug::gpu']]],
   ['addr_5fspace_5fglobal_6',['addr_space_global',['../namespacemim_1_1plug_1_1gpu.html#a2162f02e855e9e68704a27f5879e2f7b',1,'mim::plug::gpu']]],
   ['addr_5fspace_5flocal_7',['addr_space_local',['../namespacemim_1_1plug_1_1gpu.html#a1d166cfad60b6a084479058b8280d9c4',1,'mim::plug::gpu']]],

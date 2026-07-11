@@ -126,21 +126,15 @@ $(function(){initNavTree('compile_8cpp.html','',''); });
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;<a class="el" href="config_8h_source.html">mim/config.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="driver_8h_source.html">mim/driver.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="pass_8h_source.html">mim/pass.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="beta__red_8h_source.html">mim/pass/beta_red.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__exp_8h_source.html">mim/pass/eta_exp.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__red_8h_source.html">mim/pass/eta_red.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="lam__spec_8h_source.html">mim/pass/lam_spec.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="scalarize_8h_source.html">mim/pass/scalarize.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="tail__rec__elim_8h_source.html">mim/pass/tail_rec_elim.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="beta__red__phase_8h_source.html">mim/phase/beta_red_phase.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="beta__red_8h_source.html">mim/phase/beta_red.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="branch__normalize_8h_source.html">mim/phase/branch_normalize.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__exp__phase_8h_source.html">mim/phase/eta_exp_phase.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="eta__red__phase_8h_source.html">mim/phase/eta_red_phase.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="eta__conv_8h_source.html">mim/phase/eta_conv.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="lam__spec_8h_source.html">mim/phase/lam_spec.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="prefix__cleanup_8h_source.html">mim/phase/prefix_cleanup.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ret__wrap_8h_source.html">mim/phase/ret_wrap.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="sym__expr__opt_8h_source.html">mim/phase/sym_expr_opt.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="scalarize_8h_source.html">mim/phase/scalarize.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tail__rec__elim_8h_source.html">mim/phase/tail_rec_elim.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="compile_2autogen_8h_source.html">mim/plug/compile/autogen.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for compile.cpp:</div>
@@ -153,11 +147,11 @@ Include dependency graph for compile.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Named" id="r_Named"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classNamed.html">Named</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage hook for <span class="tt">compile.named_phase</span>, <span class="tt">compile.named_pass</span>, and <span class="tt">compile.named_repl</span>.  <a href="classNamed.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase hook for <span class="tt">compile.named</span>.  <a href="classNamed.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3886e4c865b2b15eae2cc4c6f84a9176" id="r_a3886e4c865b2b15eae2cc4c6f84a9176"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3886e4c865b2b15eae2cc4c6f84a9176">reg_stages</a> (<a class="el" href="namespacemim.html#a73c02685bc8b4078797ffde79a9c1ac9">Flags2Stages</a> &amp;stages)</td></tr>
+<tr class="memitem:a1eac1e88e03dcfc2f038c5c0d3a7d88a" id="r_a1eac1e88e03dcfc2f038c5c0d3a7d88a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a> (<a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases)</td></tr>
 <tr class="memitem:a35bb34350e93d508e52544f4abd50e59" id="r_a35bb34350e93d508e52544f4abd50e59"><td class="memItemLeft"><a class="el" href="structmim_1_1Plugin.html">Plugin</a>&#160;</td><td class="memItemRight"><a class="el" href="#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -176,30 +170,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compile_8cpp_source.html#l00092">92</a> of file <a class="el" href="compile_8cpp_source.html">compile.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compile_8cpp_source.html#l00072">72</a> of file <a class="el" href="compile_8cpp_source.html">compile.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="config_8h_source.html#l00019">MIM_EXPORT</a>, <a class="el" href="plugin_8h_source.html#l00054">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_stages()</a>, and <a class="el" href="namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2">mim::plug::compile::register_normalizers()</a>.</p>
+<p class="reference">References <a class="el" href="config_8h_source.html#l00019">MIM_EXPORT</a>, <a class="el" href="plugin_8h_source.html#l00054">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2">mim::plug::compile::register_normalizers()</a>.</p>
 
 </div>
 </div>
-<a id="a3886e4c865b2b15eae2cc4c6f84a9176" name="a3886e4c865b2b15eae2cc4c6f84a9176"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3886e4c865b2b15eae2cc4c6f84a9176">&#9670;&#160;</a></span>reg_stages()</h2>
+<a id="a1eac1e88e03dcfc2f038c5c0d3a7d88a" name="a1eac1e88e03dcfc2f038c5c0d3a7d88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">&#9670;&#160;</a></span>reg_phases()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void reg_stages </td>
+          <td class="memname">void reg_phases </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacemim.html#a73c02685bc8b4078797ffde79a9c1ac9">Flags2Stages</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>stages</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>phases</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="compile_8cpp_source.html#l00059">59</a> of file <a class="el" href="compile_8cpp_source.html">compile.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="compile_8cpp_source.html#l00055">55</a> of file <a class="el" href="compile_8cpp_source.html">compile.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="util_8h_source.html#l00117">mim::assert_emplace()</a>, <a class="el" href="plugin_8h_source.html#l00150">mim::Annex::base()</a>, and <a class="el" href="pass_8h_source.html#l00070">mim::Stage::hook()</a>.</p>
+<p class="reference">References <a class="el" href="util_8h_source.html#l00117">mim::assert_emplace()</a>, <a class="el" href="plugin_8h_source.html#l00150">mim::Annex::base()</a>, and <a class="el" href="phase_8h_source.html#l00069">mim::Phase::hook()</a>.</p>
 
 </div>
 </div>

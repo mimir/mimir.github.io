@@ -134,10 +134,7 @@ $(function(){initNavTree('clos.html','',''); });
     <a href="#autotoc_md150">Passes and Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md151">Passes </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md152">Phases </a>
+        <a href="#autotoc_md151">Phases </a>
       </li>
     </ul>
   </li>
@@ -156,7 +153,7 @@ Operations related to longjmp</h1>
 <div class="line">axm %clos.longjmp: Cn [%mem.M 0, %clos.BufPtr, I32];</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md149"></a>
 Closure Attribute</h1>
-<p>Used internally to classify the use of differen Lambdas. <a class="el" href="classmim_1_1plug_1_1clos_1_1ClosConvPrep.html">mim::plug::clos::ClosConvPrep</a> places these attributes:</p><ul>
+<p>Used internally to classify the use of differen Lambdas. <a class="el" href="classmim_1_1plug_1_1clos_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, freeBB, fstclassBB, ...) and eta-expands branches a...">mim::plug::clos::ClosConvPrep</a> places these attributes:</p><ul>
 <li><span class="tt">ret</span>: returning lambda</li>
 <li><span class="tt">freeBB</span>: ordinary basic block (see mim::Lam::is_basicblock())</li>
 <li><span class="tt">fstclassBB</span>: basic block that is passed around</li>
@@ -167,15 +164,13 @@ Closure Attribute</h1>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md150"></a>
 Passes and Phases</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md151"></a>
-Passes</h2>
-<div class="fragment"><div class="line">axm %clos.clos_conv_prep_pass:        %compile.Pass;</div>
-<div class="line">axm %clos.branch_clos_pass:           %compile.Pass;</div>
-<div class="line">axm %clos.lower_typed_clos_prep_pass: %compile.Pass;</div>
-<div class="line">axm %clos.clos2sjlj_pass:             %compile.Pass;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
 Phases</h2>
-<div class="fragment"><div class="line">axm %clos.clos_conv_phase:        %compile.Phase;</div>
-<div class="line">axm %clos.lower_typed_clos_phase: %compile.Phase;</div>
+<div class="fragment"><div class="line">axm %clos.clos_conv_prep:        %compile.Phase;</div>
+<div class="line">axm %clos.branch_clos:           %compile.Phase;</div>
+<div class="line">axm %clos.lower_typed_clos_prep: %compile.Phase;</div>
+<div class="line">axm %clos.clos2sjlj:             %compile.Phase;</div>
+<div class="line">axm %clos.clos_conv:             %compile.Phase;</div>
+<div class="line">axm %clos.lower_typed_clos:      %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

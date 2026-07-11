@@ -4,8 +4,8 @@ var namespacemim_1_1plug_1_1affine =
     [ "constant", "namespacemim_1_1plug_1_1affine.html#a6fd22fefb01caaabd4b4bb3f3d27189e", null ],
     [ "For", "namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068", null ],
     [ "index", "namespacemim_1_1plug_1_1affine.html#a8e7357d0da767e79b2ea558ad2d33e12", null ],
-    [ "lower_for_phase", "namespacemim_1_1plug_1_1affine.html#aa58381bede626b4c4d80d8f15e996d3e", null ],
-    [ "lower_index_phase", "namespacemim_1_1plug_1_1affine.html#aec9162d7957bf44839e5dce6490550c5", null ],
+    [ "lower_for", "namespacemim_1_1plug_1_1affine.html#a5093f750e1eed7e945cceda1dc6d801b", null ],
+    [ "lower_index", "namespacemim_1_1plug_1_1affine.html#aedd92c9ff720a4054cdecc835b38ccf3", null ],
     [ "map", "namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0", null ],
     [ "op", "namespacemim_1_1plug_1_1affine.html#a207279532fb5b73280711baa550e32c6", [
       [ "add", "namespacemim_1_1plug_1_1affine.html#a207279532fb5b73280711baa550e32c6a34ec78fcc91ffb1e54cd85e4a0924332", null ],

@@ -38,7 +38,7 @@ var gpu_2autogen_8h =
     [ "mim::plug::gpu::launch", "namespacemim_1_1plug_1_1gpu.html#a773fb7d4ca4880bab4addd6a02fc4c4c", null ],
     [ "mim::plug::gpu::LocalM", "namespacemim_1_1plug_1_1gpu.html#aa6d70dda548aedc0b513d84df80215b3", null ],
     [ "mim::plug::gpu::LocalPtr", "namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d", null ],
-    [ "mim::plug::gpu::mem_checks_phase", "namespacemim_1_1plug_1_1gpu.html#a6585eb39912ee29031be130a0e8d5fad", null ],
+    [ "mim::plug::gpu::mem_checks", "namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261", null ],
     [ "mim::plug::gpu::remove_double_syncs", "namespacemim_1_1plug_1_1gpu.html#a53aab38379370b0e8e83083324481d4d", null ],
     [ "mim::plug::gpu::SharedM", "namespacemim_1_1plug_1_1gpu.html#ada4af0be77efab4561c465c2647a9a87", null ],
     [ "mim::plug::gpu::SharedPtr", "namespacemim_1_1plug_1_1gpu.html#a75350d6f235da51cb4a186a7b04cd738", null ],

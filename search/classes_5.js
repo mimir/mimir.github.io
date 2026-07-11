@@ -10,15 +10,7 @@ var searchData=
   ['formatter_3c_20mim_3a_3aast_3a_3as_20_3e_7',['formatter&lt; mim::ast::S &gt;',['../structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html',1,'std']]],
   ['formatter_3c_20mim_3a_3adump_20_3e_8',['formatter&lt; mim::Dump &gt;',['../structstd_1_1formatter_3_01mim_1_1Dump_01_4.html',1,'std']]],
   ['formatter_3c_20mim_3a_3aop_20_3e_9',['formatter&lt; mim::Op &gt;',['../structstd_1_1formatter_3_01mim_1_1Op_01_4.html',1,'std']]],
-  ['fppass_10',['FPPass',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20betared_2c_20def_20_3e_11',['FPPass&lt; BetaRed, Def &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20copyprop_2c_20lam_20_3e_12',['FPPass&lt; CopyProp, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20etaexp_2c_20lam_20_3e_13',['FPPass&lt; EtaExp, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20etared_2c_20def_20_3e_14',['FPPass&lt; EtaRed, Def &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20lowertypedclosprep_2c_20lam_20_3e_15',['FPPass&lt; LowerTypedClosPrep, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20ssa_2c_20lam_20_3e_16',['FPPass&lt; SSA, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['fppass_3c_20tailrecelim_2c_20lam_20_3e_17',['FPPass&lt; TailRecElim, Lam &gt;',['../classmim_1_1FPPass.html',1,'mim']]],
-  ['freedefana_18',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html',1,'mim::plug::clos']]],
-  ['freezer_19',['Freezer',['../structmim_1_1World_1_1Freezer.html',1,'mim::World']]],
-  ['fuse_20',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
+  ['freedefana_10',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html',1,'mim::plug::clos']]],
+  ['freezer_11',['Freezer',['../structmim_1_1World_1_1Freezer.html',1,'mim::World']]],
+  ['fuse_12',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
 ];

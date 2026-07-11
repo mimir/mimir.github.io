@@ -19,5 +19,5 @@ var searchData=
   ['lowerregex_16',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html',1,'mim::plug::regex']]],
   ['lowertypedclos_17',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1LowerTypedClos.html',1,'mim::plug::clos']]],
   ['lowertypedclosprep_18',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html',1,'mim::plug::clos']]],
-  ['lt_19',['Lt',['../structautomaton_1_1DFANode_1_1Lt.html',1,'automaton::DFANode']]]
+  ['lt_19',['Lt',['../structautomaton_1_1DFANode_1_1Lt.html',1,'automaton::DFANode::Lt'],['../structautomaton_1_1NFANode_1_1Lt.html',1,'automaton::NFANode::Lt']]]
 ];

@@ -2,9 +2,10 @@ var classmim_1_1Nest_1_1Node =
 [
     [ "Children", "structmim_1_1Nest_1_1Node_1_1Children.html", "structmim_1_1Nest_1_1Node_1_1Children" ],
     [ "SiblDeps", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", "structmim_1_1Nest_1_1Node_1_1SiblDeps" ],
-    [ "SCC", "classmim_1_1Nest_1_1Node.html#acbe7fe8d7710b145f48364b5c0ce7c72", null ],
+    [ "SCC", "classmim_1_1Nest_1_1Node.html#ae9959bd55ff49d0f1ac66f18aad554db", null ],
     [ "children", "classmim_1_1Nest_1_1Node.html#ae93dcb002e841ab5e3660b44c63cfdd9", null ],
     [ "children", "classmim_1_1Nest_1_1Node.html#aabfd78eeaa88bfaa0ce7f9dbb08b751a", null ],
+    [ "gid", "classmim_1_1Nest_1_1Node.html#af8ef137435359d0e0c6d14d9b7d4e9c9", null ],
     [ "idom", "classmim_1_1Nest_1_1Node.html#ac06dfb9e97477a73e34fba4684cdbf02", null ],
     [ "inest", "classmim_1_1Nest_1_1Node.html#af0dd6fc13e1e752eb7864b6c346fe985", null ],
     [ "is_directly_recursive", "classmim_1_1Nest_1_1Node.html#ae2e265b880bc9c14348f8eeb3c38eec1", null ],

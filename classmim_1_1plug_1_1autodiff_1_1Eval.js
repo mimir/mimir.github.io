@@ -12,5 +12,5 @@ var classmim_1_1plug_1_1autodiff_1_1Eval =
     [ "augment_var", "classmim_1_1plug_1_1autodiff_1_1Eval.html#af6faec6c56f712974a915d6c38be3a5a", null ],
     [ "derive", "classmim_1_1plug_1_1autodiff_1_1Eval.html#af70ead2918d33d379f73d0c337b037ac", null ],
     [ "derive_", "classmim_1_1plug_1_1autodiff_1_1Eval.html#a16c6cf5927782756779686bf896ff504", null ],
-    [ "rewrite", "classmim_1_1plug_1_1autodiff_1_1Eval.html#adf3fc4ba045dbb124603ec35ae459d6a", null ]
+    [ "rewrite_imm_App", "classmim_1_1plug_1_1autodiff_1_1Eval.html#ab683b8f7aed1d0368bd4bee0e743e0fc", null ]
 ];

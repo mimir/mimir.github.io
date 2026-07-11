@@ -2,6 +2,7 @@ var classmim_1_1RWPhase =
 [
     [ "RWPhase", "classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e", null ],
     [ "RWPhase", "classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c", null ],
+    [ "abstracted", "classmim_1_1RWPhase.html#a18efa384a7f736418c24aa21483f3885", null ],
     [ "analysis", "classmim_1_1RWPhase.html#a760cecd514080c336c4ff7758f5da545", null ],
     [ "analysis", "classmim_1_1RWPhase.html#adb7fa60ae641bb8e6a9cb439b2e8129b", null ],
     [ "analyze", "classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811", null ],

@@ -1,8 +1,11 @@
 var classmim_1_1Rewriter =
 [
+    [ "Enter", "classmim_1_1Rewriter_1_1Enter.html", "classmim_1_1Rewriter_1_1Enter" ],
     [ "Rewriter", "classmim_1_1Rewriter.html#acbd0fb347253ef6deb7846de430ace8e", null ],
     [ "Rewriter", "classmim_1_1Rewriter.html#a91e2e9a8aac307e43309ce8458e74d91", null ],
     [ "~Rewriter", "classmim_1_1Rewriter.html#a927f0d7a4ad6aa61787c9a972eff7f7f", null ],
+    [ "curr_mut", "classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70", null ],
+    [ "enter", "classmim_1_1Rewriter.html#a58b25dbcc9c5a45790a95d8a2c86872a", null ],
     [ "lookup", "classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954", null ],
     [ "map", "classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4", null ],
     [ "map", "classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04", null ],
