@@ -27,7 +27,7 @@ var searchData=
   ['language_20reference_24',['Mim Language Reference',['../langref.html',1,'']]],
   ['last_25',['last',['../vec.html#autotoc_md378',1,'%vec.first / %vec.last'],['../namespacemim_1_1plug_1_1vec.html#afd082a7ad8cc8afabbcc2ebf09bc7ba4',1,'mim::plug::vec::last']]],
   ['late_26',['late',['../classmim_1_1Scheduler.html#a7181e660c82f0a354ae42cae8d3008b0',1,'mim::Scheduler']]],
-  ['lattice_27',['lattice',['../classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a',1,'mim::Analysis::lattice() const'],['../classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628',1,'mim::Analysis::lattice(const Def *def) const'],['../classmim_1_1Analysis.html#ab9a6d69d1f878706cd3a27b577f65396',1,'mim::Analysis::lattice()'],['../classmim_1_1RWPhase.html#aa06ea4e48c087f2eab4a4aa260603987',1,'mim::RWPhase::lattice()']]],
+  ['lattice_27',['lattice',['../classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a',1,'mim::Analysis::lattice() const'],['../classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628',1,'mim::Analysis::lattice(const Def *def) const'],['../classmim_1_1RWPhase.html#aa06ea4e48c087f2eab4a4aa260603987',1,'mim::RWPhase::lattice()']]],
   ['lattice_20api_28',['Lattice API',['../phases.html#autotoc_md68',1,'']]],
   ['lattice_2ecpp_29',['lattice.cpp',['../lattice_8cpp.html',1,'']]],
   ['lattice_2eh_30',['lattice.h',['../lattice_8h.html',1,'']]],

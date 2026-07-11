@@ -1,16 +1,10 @@
 var classmim_1_1Analysis =
 [
-    [ "Update", "classmim_1_1Analysis.html#a048b50bd5713ad5e5f89f0067c3dc12a", [
-      [ "Unchanged", "classmim_1_1Analysis.html#a048b50bd5713ad5e5f89f0067c3dc12aa5ff3c6978f87d96febfdc8ed3899a97e", null ],
-      [ "Inserted", "classmim_1_1Analysis.html#a048b50bd5713ad5e5f89f0067c3dc12aa157d034f9c98a305eb73776582550027", null ],
-      [ "Changed", "classmim_1_1Analysis.html#a048b50bd5713ad5e5f89f0067c3dc12aa820dbd2b8f606aff866c0bbfb6b737c1", null ]
-    ] ],
     [ "Analysis", "classmim_1_1Analysis.html#a4515f0f091b7c563a7fec2b5a5127b9a", null ],
     [ "Analysis", "classmim_1_1Analysis.html#aee9e19bc9197491f6b62b274fbf2378c", null ],
     [ "finalize", "classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d", null ],
     [ "is_bootstrapping", "classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd", null ],
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
-    [ "lattice", "classmim_1_1Analysis.html#ab9a6d69d1f878706cd3a27b577f65396", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
     [ "lattice", "classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628", null ],
     [ "pin_top", "classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa", null ],
@@ -21,6 +15,6 @@ var classmim_1_1Analysis =
     [ "rewrite_mut", "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7", null ],
     [ "set", "classmim_1_1Analysis.html#ad4e0380b377966a338ef6914c578e16e", null ],
     [ "start", "classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04", null ],
-    [ "update", "classmim_1_1Analysis.html#a08510457fdfed84149531d74012824d5", null ],
+    [ "update", "classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4", null ],
     [ "world", "classmim_1_1Analysis.html#a8de439bc818291da9a12c82f794a4d65", null ]
 ];

@@ -1,15 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"classmim_1_1RWPhase.html":[4,0,1,38],
-"classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811":[2,0,3,40,5],
-"classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811":[4,0,1,38,5],
-"classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19":[2,0,3,40,8],
-"classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19":[4,0,1,38,8],
-"classmim_1_1RWPhase.html#a18efa384a7f736418c24aa21483f3885":[2,0,3,40,2],
-"classmim_1_1RWPhase.html#a18efa384a7f736418c24aa21483f3885":[4,0,1,38,2],
-"classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c":[2,0,3,40,1],
-"classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c":[4,0,1,38,1],
-"classmim_1_1RWPhase.html#a5aad3ec295eb2987ca065051fec1e4cd":[2,0,3,40,10],
 "classmim_1_1RWPhase.html#a5aad3ec295eb2987ca065051fec1e4cd":[4,0,1,38,10],
 "classmim_1_1RWPhase.html#a760cecd514080c336c4ff7758f5da545":[2,0,3,40,3],
 "classmim_1_1RWPhase.html#a760cecd514080c336c4ff7758f5da545":[4,0,1,38,3],
@@ -249,5 +239,15 @@ var NAVTREEINDEX6 =
 "classmim_1_1Seq.html#aa308123fd663ddd571238019a640cbdf":[4,0,1,67,0],
 "classmim_1_1Seq.html#ad717f4e81e7e5065bdfcded4bb81d3f1":[2,0,3,69,7],
 "classmim_1_1Seq.html#ad717f4e81e7e5065bdfcded4bb81d3f1":[4,0,1,67,7],
-"classmim_1_1Seq.html#adc53eafc37f05573f0ff37df37a06b6b":[2,0,3,69,6]
+"classmim_1_1Seq.html#adc53eafc37f05573f0ff37df37a06b6b":[2,0,3,69,6],
+"classmim_1_1Seq.html#adc53eafc37f05573f0ff37df37a06b6b":[4,0,1,67,6],
+"classmim_1_1Seq.html#ae59703ead7befb26e835d4d9793e2786":[2,0,3,69,3],
+"classmim_1_1Seq.html#ae59703ead7befb26e835d4d9793e2786":[4,0,1,67,3],
+"classmim_1_1Sets.html":[2,0,3,84],
+"classmim_1_1Sets.html":[4,0,1,82],
+"classmim_1_1Sets.html#a0663d20e103d888b7b61f8a54d1fe8e9":[2,0,3,84,11],
+"classmim_1_1Sets.html#a0663d20e103d888b7b61f8a54d1fe8e9":[4,0,1,82,11],
+"classmim_1_1Sets.html#a0b45cb5566879539a8b7a11a9f48af0c":[2,0,3,84,5],
+"classmim_1_1Sets.html#a0b45cb5566879539a8b7a11a9f48af0c":[4,0,1,82,5],
+"classmim_1_1Sets.html#a258ff3e0630af409d343a3d936ef43e9":[2,0,3,84,6]
 };
