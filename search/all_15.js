@@ -49,11 +49,10 @@ var searchData=
   ['via_20cps_46',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
   ['view_47',['View',['../namespacemim.html#a4d6e32c8985b06c92d46bf1c5fa7491a',1,'mim']]],
   ['view_48',['view',['../classmim_1_1Vector.html#a960014789eeaed38aabc236e3b5b3d37',1,'mim::Vector']]],
-  ['visible_49',['visible',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a3557ddb5a9fecafee6b875f149327b9e',1,'mim::plug::mem::phase']]],
-  ['visit_50',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final'],['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#af0a9accb45252d683e6ddaf37c2e4e91',1,'mim::plug::mem::phase::AddMem::visit()']]],
-  ['vlog_51',['VLOG',['../log_8h.html#a35e71de09dfd64892a48e3f7c56c5619',1,'log.h']]],
-  ['vmode_52',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
-  ['vs_20mim_53',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md111',1,'']]],
-  ['vs_20mutables_54',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
-  ['vs_20varrewriter_55',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md121',1,'']]]
+  ['visit_49',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final'],['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#af0a9accb45252d683e6ddaf37c2e4e91',1,'mim::plug::mem::phase::AddMem::visit()']]],
+  ['vlog_50',['VLOG',['../log_8h.html#a35e71de09dfd64892a48e3f7c56c5619',1,'log.h']]],
+  ['vmode_51',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
+  ['vs_20mim_52',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md111',1,'']]],
+  ['vs_20mutables_53',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
+  ['vs_20varrewriter_54',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md121',1,'']]]
 ];

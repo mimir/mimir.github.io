@@ -64,6 +64,8 @@ var classmim_1_1Def =
     [ "local_vars", "classmim_1_1Def.html#a3f5a341398bd97b516f9fd7d1d170e5b", null ],
     [ "mark", "classmim_1_1Def.html#a592578e8733989b79ab6649485eae42b", null ],
     [ "needs_zonk", "classmim_1_1Def.html#ae9f80ca1bccce9842c16092f977fbf79", null ],
+    [ "nests", "classmim_1_1Def.html#a4215aea9762a0fca45f190b40509b4a8", null ],
+    [ "nests", "classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab", null ],
     [ "node", "classmim_1_1Def.html#a107ccfac1058aee369926112bb593d35", null ],
     [ "node_name", "classmim_1_1Def.html#a361f116b80b8b8fd1eac9a22e34564b0", null ],
     [ "num_deps", "classmim_1_1Def.html#a086b8caf2ce9bdfc870871854f021d90", null ],
