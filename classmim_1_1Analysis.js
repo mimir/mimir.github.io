@@ -9,7 +9,7 @@ var classmim_1_1Analysis =
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
     [ "lattice", "classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628", null ],
-    [ "make_sparse", "classmim_1_1Analysis.html#a90e6f2f4a68ac4f480265a6a0e8e7418", null ],
+    [ "make_dense", "classmim_1_1Analysis.html#a496981c42113362621010d00370e84e7", null ],
     [ "owner", "classmim_1_1Analysis.html#a6851c8e0a0d71bdb58299e7d586dbd23", null ],
     [ "pin_top", "classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa", null ],
     [ "prepare", "classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f", null ],
