@@ -2,11 +2,12 @@ var classmim_1_1Phase =
 [
     [ "Phase", "classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260", null ],
     [ "Phase", "classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707", null ],
-    [ "~Phase", "classmim_1_1Phase.html#af1ee1aba228756a429741fd748f1cf7c", null ],
+    [ "~Phase", "classmim_1_1Phase.html#a0e83855522ece527844628e9128db2cc", null ],
     [ "annex", "classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1", null ],
     [ "apply", "classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87", null ],
     [ "apply", "classmim_1_1Phase.html#aae46baa7ff0775b46c1fc4b1bed9ef54", null ],
     [ "create", "classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00", null ],
+    [ "dirty", "classmim_1_1Phase.html#a8d589fd14571cc0e0472be45569a87ef", null ],
     [ "driver", "classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc", null ],
     [ "hook", "classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3", null ],
     [ "invalidate", "classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6", null ],
@@ -17,9 +18,11 @@ var classmim_1_1Phase =
     [ "run", "classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f", null ],
     [ "run", "classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a", null ],
     [ "start", "classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d", null ],
+    [ "taint", "classmim_1_1Phase.html#a8aa2e4e803d6a1f9ea654f3a12f8759c", null ],
     [ "take_resolved", "classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6", null ],
     [ "todo", "classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8", null ],
     [ "world", "classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f", null ],
     [ "Analysis", "classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d", null ],
+    [ "dirty_", "classmim_1_1Phase.html#a29743f91685e7b33a1af509c4d12d415", null ],
     [ "name_", "classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012", null ]
 ];

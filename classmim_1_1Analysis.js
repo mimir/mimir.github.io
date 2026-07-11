@@ -7,6 +7,8 @@ var classmim_1_1Analysis =
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
     [ "lattice", "classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628", null ],
+    [ "make_sparse", "classmim_1_1Analysis.html#a90e6f2f4a68ac4f480265a6a0e8e7418", null ],
+    [ "owner", "classmim_1_1Analysis.html#a6851c8e0a0d71bdb58299e7d586dbd23", null ],
     [ "pin_top", "classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa", null ],
     [ "prepare", "classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f", null ],
     [ "reset", "classmim_1_1Analysis.html#ac94bad8fbf28de336d4c2f9046ac0555", null ],
@@ -14,7 +16,10 @@ var classmim_1_1Analysis =
     [ "rewrite_external", "classmim_1_1Analysis.html#aa7d78ed906cc6531fa13d42e18bc398d", null ],
     [ "rewrite_mut", "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7", null ],
     [ "set", "classmim_1_1Analysis.html#ad4e0380b377966a338ef6914c578e16e", null ],
+    [ "sparse", "classmim_1_1Analysis.html#a98e6412fd193b627e6b46fb245556f5b", null ],
     [ "start", "classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04", null ],
+    [ "taint", "classmim_1_1Analysis.html#ab2e5e84adbfc1dfae1acedc53d0ede9e", null ],
+    [ "taint", "classmim_1_1Analysis.html#a8aa2e4e803d6a1f9ea654f3a12f8759c", null ],
     [ "update", "classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4", null ],
     [ "world", "classmim_1_1Analysis.html#a8de439bc818291da9a12c82f794a4d65", null ]
 ];
