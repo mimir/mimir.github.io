@@ -15,7 +15,7 @@ var searchData=
   ['mat_12',['Mat',['../namespacemim_1_1plug_1_1matrix.html#af6839dbbb5d2ef291479523aafd649d4',1,'mim::plug::matrix']]],
   ['mem_5fchecks_13',['mem_checks',['../namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261',1,'mim::plug::gpu']]],
   ['minus_14',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
-  ['mode_15',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../classmim_1_1plug_1_1mem_1_1phase_1_1Reshape.html#a7dd60acc00c2d1a664412763b3f78a12',1,'mim::plug::mem::phase::Reshape::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
+  ['mode_15',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
   ['mode_16',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core']]],
   ['mslot_17',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
   ['mut_18',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim']]]

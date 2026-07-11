@@ -107,7 +107,6 @@ var annotated_dup =
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [
             [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ],
-            [ "Reshape", "classmim_1_1plug_1_1mem_1_1phase_1_1Reshape.html", "classmim_1_1plug_1_1mem_1_1phase_1_1Reshape" ],
             [ "SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO" ]
           ] ]
         ] ],

@@ -9,13 +9,9 @@ var searchData=
   ['remem_5frepl_6',['remem_repl',['../namespacemim_1_1plug_1_1mem.html#ad9d89e9549e0e2492fa7f2f4ae29a230',1,'mim::plug::mem']]],
   ['remove_5fdbg_5frepl_7',['remove_dbg_repl',['../namespacemim_1_1plug_1_1refly.html#aaa7635b22e58dbea43a404116ff8a640',1,'mim::plug::refly']]],
   ['remove_5fdouble_5fsyncs_8',['remove_double_syncs',['../namespacemim_1_1plug_1_1gpu.html#a53aab38379370b0e8e83083324481d4d',1,'mim::plug::gpu']]],
-  ['reshape_9',['reshape',['../namespacemim_1_1plug_1_1mem.html#a83c7e5cee8c7de55a8d4a1fc5ad1d93c',1,'mim::plug::mem']]],
-  ['reshape_5farg_10',['reshape_arg',['../namespacemim_1_1plug_1_1mem.html#aeb9697d7f21a6353fec209d17af59b1b',1,'mim::plug::mem']]],
-  ['reshape_5fflat_11',['reshape_flat',['../namespacemim_1_1plug_1_1mem.html#af1ce190e137cdb2ed5ad67076a0c4b24',1,'mim::plug::mem']]],
-  ['reshape_5fmode_12',['reshape_mode',['../namespacemim_1_1plug_1_1mem.html#a710a923b412df8100cf79e67ba3f6601',1,'mim::plug::mem']]],
-  ['ret_5fwrap_13',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
-  ['ring_14',['Ring',['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor']]],
-  ['round_15',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
-  ['rrt_16',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
-  ['rt_17',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
+  ['ret_5fwrap_9',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
+  ['ring_10',['Ring',['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor']]],
+  ['round_11',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
+  ['rrt_12',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
+  ['rt_13',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
 ];

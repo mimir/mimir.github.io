@@ -1,18 +1,18 @@
 var searchData=
 [
   ['language_20reference_0',['Mim Language Reference',['../langref.html',1,'']]],
-  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md379',1,'']]],
+  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md377',1,'']]],
   ['launch_2',['Kernel Launch',['../gpu.html#autotoc_md216',1,'']]],
   ['launch_3',['%gpu.launch',['../gpu.html#autotoc_md217',1,'']]],
   ['layout_4',['Package Layout',['../python.html#autotoc_md94',1,'']]],
   ['lea_5',['%mem.lea',['../mem.html#autotoc_md280',1,'']]],
-  ['len_6',['%vec.len',['../vec.html#autotoc_md380',1,'']]],
+  ['len_6',['%vec.len',['../vec.html#autotoc_md378',1,'']]],
   ['level_20matrix_20operations_7',['High-level matrix operations',['../matrix.html#autotoc_md260',1,'']]],
   ['lexical_20structure_8',['Lexical Structure',['../langref.html#lex',1,'']]],
   ['license_9',['⚖️ License',['../index.html#autotoc_md111',1,'']]],
   ['line_20reference_10',['Command-Line Reference',['../cli.html',1,'']]],
   ['list_11',['List',['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
-  ['lit_12',['%regex.lit',['../regex.html#autotoc_md338',1,'']]],
+  ['lit_12',['%regex.lit',['../regex.html#autotoc_md336',1,'']]],
   ['lit_20tests_13',['lit Tests',['../coding.html#autotoc_md2',1,'']]],
   ['literals_14',['Matching Literals',['../dev.html#cast_lit',1,'']]],
   ['literals_20and_20basic_20forms_15',['Literals and Basic Forms',['../langref.html#autotoc_md48',1,'']]],
@@ -22,7 +22,7 @@ var searchData=
   ['loading_20plugins_19',['Loading Plugins',['../python.html#autotoc_md96',1,'']]],
   ['local_20declaration_20blocks_20',['Local Declaration Blocks',['../langref.html#autotoc_md51',1,'']]],
   ['longjmp_21',['Operations related to longjmp',['../clos.html#autotoc_md148',1,'']]],
-  ['lookup_22',['Lookup',['../ord.html#autotoc_md308',1,'']]],
+  ['lookup_22',['Lookup',['../ord.html#autotoc_md306',1,'']]],
   ['lower_5ffor_23',['%affine.lower_for',['../affine.html#autotoc_md132',1,'']]],
   ['lower_5findex_24',['%affine.lower_index',['../affine.html#autotoc_md133',1,'']]]
 ];

@@ -12,13 +12,11 @@ var searchData=
   ['regex2nfa_2eh_9',['regex2nfa.h',['../regex2nfa_8h.html',1,'']]],
   ['remove_5fdouble_5fsyncs_2ecpp_10',['remove_double_syncs.cpp',['../remove__double__syncs_8cpp.html',1,'']]],
   ['remove_5fdouble_5fsyncs_2eh_11',['remove_double_syncs.h',['../remove__double__syncs_8h.html',1,'']]],
-  ['reshape_2ecpp_12',['reshape.cpp',['../reshape_8cpp.html',1,'']]],
-  ['reshape_2eh_13',['reshape.h',['../reshape_8h.html',1,'']]],
-  ['ret_5fwrap_2ecpp_14',['ret_wrap.cpp',['../ret__wrap_8cpp.html',1,'']]],
-  ['ret_5fwrap_2eh_15',['ret_wrap.h',['../ret__wrap_8h.html',1,'']]],
-  ['rewrite_2ecpp_16',['rewrite.cpp',['../rewrite_8cpp.html',1,'']]],
-  ['rewrite_2eh_17',['rewrite.h',['../rewrite_8h.html',1,'']]],
-  ['rewriting_2emd_18',['rewriting.md',['../rewriting_8md.html',1,'']]],
-  ['rule_2ecpp_19',['rule.cpp',['../rule_8cpp.html',1,'']]],
-  ['rule_2eh_20',['rule.h',['../rule_8h.html',1,'']]]
+  ['ret_5fwrap_2ecpp_12',['ret_wrap.cpp',['../ret__wrap_8cpp.html',1,'']]],
+  ['ret_5fwrap_2eh_13',['ret_wrap.h',['../ret__wrap_8h.html',1,'']]],
+  ['rewrite_2ecpp_14',['rewrite.cpp',['../rewrite_8cpp.html',1,'']]],
+  ['rewrite_2eh_15',['rewrite.h',['../rewrite_8h.html',1,'']]],
+  ['rewriting_2emd_16',['rewriting.md',['../rewriting_8md.html',1,'']]],
+  ['rule_2ecpp_17',['rule.cpp',['../rule_8cpp.html',1,'']]],
+  ['rule_2eh_18',['rule.h',['../rule_8h.html',1,'']]]
 ];

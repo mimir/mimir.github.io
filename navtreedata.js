@@ -114,16 +114,16 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1RecDecl.html",
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a6da5bae6ea82cf71edf060395adc8e7b",
 "classmim_1_1plug_1_1autodiff_1_1Eval.html#a383869396479173707c7c6ac4a09bf91",
-"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#a49130aa931fe2a8924532c29b62c02f8",
-"dir_8f2980731aba7ec7b9fcae5764f196e3.html",
-"matrix_2normalizers_8cpp.html",
-"namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0",
-"namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822",
-"namespacemim_1_1plug_1_1math.html#a323f568770c539e1621e3d566638e5e6",
-"namespacemim_1_1plug_1_1ord.html#acfdfd946d58d1ec4b8773d1e87204a17",
-"plug_2tuple_2tuple_8cpp.html",
-"structmim_1_1Nest_1_1Node_1_1Children.html#a41cde5894303b7317a2c403220f88a8b",
-"sys_8cpp.html"
+"classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2",
+"dir_c81a4445134ea055746248e54998b75a.html",
+"mem__checks_8h.html",
+"namespacemim.html#ae4993d8ec478d9b21be0d34df1047d50",
+"namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985eadd101b0057a1ed60edcbacfdb2f8c043",
+"namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91",
+"namespacemim_1_1plug_1_1refly.html#acdf0aa3a0beb8ab1cff0ce3017ac4973",
+"refly_2normalizers_8cpp_source.html",
+"structmim_1_1Plugin.html",
+"tok_8h.html#abef6cfdd2d8604506ef76d0f49a722cb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

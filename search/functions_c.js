@@ -27,7 +27,7 @@ var searchData=
   ['mim_5flib_5fanchor_24',['mim_lib_anchor',['../sys_8cpp.html#a43ed4c35849191c8ebc8aed5430e133f',1,'sys.cpp']]],
   ['minimize_5fdfa_25',['minimize_dfa',['../namespaceautomaton.html#a0a07cb42cd7cc111f81d4f73f00c1bdd',1,'automaton']]],
   ['mk_5fphi_26',['mk_phi',['../namespacemim_1_1plug_1_1mem_1_1phase.html#acab92e534d4abc11bd41fcc12136090d',1,'mim::plug::mem::phase']]],
-  ['mode_27',['mode',['../classmim_1_1plug_1_1mem_1_1phase_1_1Reshape.html#a8279e29bfc6b8a63e3e0a273da96b179',1,'mim::plug::mem::phase::Reshape::mode()'],['../namespacemim_1_1plug_1_1core.html#a3d0f9954758bcfbac8df807f8ca8e1dd',1,'mim::plug::core::mode()'],['../namespacemim_1_1plug_1_1math.html#a88d9bfdf9fbcd82d0a00f06088221ec6',1,'mim::plug::math::mode()']]],
+  ['mode_27',['mode',['../namespacemim_1_1plug_1_1core.html#a3d0f9954758bcfbac8df807f8ca8e1dd',1,'mim::plug::core::mode()'],['../namespacemim_1_1plug_1_1math.html#a88d9bfdf9fbcd82d0a00f06088221ec6',1,'mim::plug::math::mode()']]],
   ['module_28',['Module',['../classmim_1_1ast_1_1Module.html#a0bef96b176c6048cc6d8f8cff8845284',1,'mim::ast::Module']]],
   ['module_29',['module',['../classmim_1_1ast_1_1Import.html#a71dfa10a74b031ecd786f416976b2c4b',1,'mim::ast::Import']]],
   ['msg_30',['msg',['../classmim_1_1Error.html#a2de17924251fc9d7d52e6751f17dcc5a',1,'mim::Error']]],
