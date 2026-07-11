@@ -13,6 +13,7 @@ var classmim_1_1Phase =
     [ "invalidate", "classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6", null ],
     [ "log", "classmim_1_1Phase.html#a49cbe26dc916c595dfb2ab5f4f1e1f03", null ],
     [ "name", "classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a", null ],
+    [ "profile_count", "classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6", null ],
     [ "recreate", "classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750", null ],
     [ "redirects", "classmim_1_1Phase.html#ae6352de218de18f9ddba804f583a9e21", null ],
     [ "run", "classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f", null ],

@@ -173,6 +173,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8aa2e4e803d6a1f9ea654f3a12f8759c inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks <code class="param">mut</code> as <em>needs a (re)visit</em>: sets <a class="el" href="classmim_1_1Def.html#a7b6ee57e613b8d05a35b8ac5ce0d16dc">Def::is_dirty()</a> and records <code class="param">mut</code> in <a class="el" href="classmim_1_1Phase.html#a8d589fd14571cc0e0472be45569a87ef" title="The muts this Phase changed or wants re-examined - the unified &quot;dirt&quot; currency: a sparse Analysis see...">dirty()</a>.  <br /></td></tr>
 <tr class="memitem:aba635c81bd49841a563dc533e5ae347f inherit pub_methods_classmim_1_1Phase" id="r_aba635c81bd49841a563dc533e5ae347f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">run</a> ()</td></tr>
 <tr class="memdesc:aba635c81bd49841a563dc533e5ae347f inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point and generates some debug output; invokes <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d" title="Actual entry.">Phase::start</a>.  <br /></td></tr>
+<tr class="memitem:a856fff2fdf7482d4a48fb0de3f1f43b6 inherit pub_methods_classmim_1_1Phase" id="r_a856fff2fdf7482d4a48fb0de3f1f43b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a> (std::string_view key, uint64_t n=1)</td></tr>
+<tr class="memdesc:a856fff2fdf7482d4a48fb0de3f1f43b6 inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds <code class="param">n</code> to the custom <a class="el" href="classmim_1_1Profiler.html" title="Records wall-clock timings for (possibly nested) Phase runs and reports them in various formats.">Profiler</a> counter <code class="param">key</code> of the current run; no-op unless profiling is enabled.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -201,7 +203,7 @@ Additional Inherited Members</h2></td></tr>
 class mim::NestPhase&lt; M &gt;</div><p>Like <a class="el" href="classmim_1_1ClosedMutPhase.html" title="Transitively visits all reachable, closed mutables in the World.">ClosedMutPhase</a> but computes a <a class="el" href="classmim_1_1Nest.html" title="Builds a nesting tree for all mutables/binders.">Nest</a> for each <a class="el" href="#a101203cdf21e91486513e9cd7e4b0396">NestPhase::visit</a>. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="phases.html#phases_nest_phase" title="NestPhase">NestPhase</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00534">534</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00554">554</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa10dc01891c0b3f39a1175e0345318b4" name="aa10dc01891c0b3f39a1175e0345318b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa10dc01891c0b3f39a1175e0345318b4">&#9670;&#160;</a></span>NestPhase() <span class="overload">[1/2]</span></h2>
@@ -242,9 +244,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00536">536</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00556">556</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00506">mim::ClosedMutPhase&lt; Def &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00515">mim::ClosedMutPhase&lt; Def &gt;::elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00086">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00516">mim::ClosedMutPhase&lt; Def &gt;::schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00526">mim::ClosedMutPhase&lt; Def &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00535">mim::ClosedMutPhase&lt; Def &gt;::elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00086">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00536">mim::ClosedMutPhase&lt; Def &gt;::schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -287,9 +289,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00538">538</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00558">558</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00087">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00506">mim::ClosedMutPhase&lt; Def &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00515">mim::ClosedMutPhase&lt; Def &gt;::elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00516">mim::ClosedMutPhase&lt; Def &gt;::schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00087">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00526">mim::ClosedMutPhase&lt; Def &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00535">mim::ClosedMutPhase&lt; Def &gt;::elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00536">mim::ClosedMutPhase&lt; Def &gt;::schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -319,9 +321,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00541">541</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00561">561</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00545">visit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00565">visit()</a>.</p>
 
 </div>
 </div>
@@ -352,7 +354,7 @@ template&lt;class M = Def&gt; </div>
 
 <p>Implemented in <a class="el" href="classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c">mim::Emitter&lt; Value, Type, BB, Child &gt;</a>, <a class="el" href="classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;</a>, and <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#af0a9accb45252d683e6ddaf37c2e4e91">mim::plug::mem::phase::AddMem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00545">visit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00565">visit()</a>.</p>
 
 </div>
 </div>
@@ -381,9 +383,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00545">545</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00565">565</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00541">nest()</a>, and <a class="el" href="#a101203cdf21e91486513e9cd7e4b0396">visit()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00561">nest()</a>, and <a class="el" href="#a101203cdf21e91486513e9cd7e4b0396">visit()</a>.</p>
 
 </div>
 </div>

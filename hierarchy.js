@@ -52,6 +52,9 @@ var hierarchy =
       [ "mim::Vector< Pending >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
     ] ],
+    [ "absl::InlinedVector&lt; std::pair&lt; std::string, uint64_t &gt;, Default_Inlined_Size&lt; std::pair&lt; std::string, uint64_t &gt; &gt;, std::allocator&lt; std::pair&lt; std::string, uint64_t &gt; &gt; &gt;", null, [
+      [ "mim::Vector< std::pair< std::string, uint64_t > >", "classmim_1_1Vector.html", null ]
+    ] ],
     [ "std::integral_constant", null, [
       [ "std::tuple_size< mim::Span< T, N > >", "structstd_1_1tuple__size_3_01mim_1_1Span_3_01T_00_01N_01_4_01_4.html", null ]
     ] ],

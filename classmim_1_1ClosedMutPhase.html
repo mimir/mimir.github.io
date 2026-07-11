@@ -169,6 +169,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8aa2e4e803d6a1f9ea654f3a12f8759c inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks <code class="param">mut</code> as <em>needs a (re)visit</em>: sets <a class="el" href="classmim_1_1Def.html#a7b6ee57e613b8d05a35b8ac5ce0d16dc">Def::is_dirty()</a> and records <code class="param">mut</code> in <a class="el" href="classmim_1_1Phase.html#a8d589fd14571cc0e0472be45569a87ef" title="The muts this Phase changed or wants re-examined - the unified &quot;dirt&quot; currency: a sparse Analysis see...">dirty()</a>.  <br /></td></tr>
 <tr class="memitem:aba635c81bd49841a563dc533e5ae347f inherit pub_methods_classmim_1_1Phase" id="r_aba635c81bd49841a563dc533e5ae347f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">run</a> ()</td></tr>
 <tr class="memdesc:aba635c81bd49841a563dc533e5ae347f inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point and generates some debug output; invokes <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d" title="Actual entry.">Phase::start</a>.  <br /></td></tr>
+<tr class="memitem:a856fff2fdf7482d4a48fb0de3f1f43b6 inherit pub_methods_classmim_1_1Phase" id="r_a856fff2fdf7482d4a48fb0de3f1f43b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a> (std::string_view key, uint64_t n=1)</td></tr>
+<tr class="memdesc:a856fff2fdf7482d4a48fb0de3f1f43b6 inherit pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds <code class="param">n</code> to the custom <a class="el" href="classmim_1_1Profiler.html" title="Records wall-clock timings for (possibly nested) Phase runs and reports them in various formats.">Profiler</a> counter <code class="param">key</code> of the current run; no-op unless profiling is enabled.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -200,7 +202,7 @@ class mim::ClosedMutPhase&lt; M &gt;</div><p>Transitively visits all <em>reachab
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00504">504</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00524">524</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae5c46ade842883f9b90878a92c3f9c6b" name="ae5c46ade842883f9b90878a92c3f9c6b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5c46ade842883f9b90878a92c3f9c6b">&#9670;&#160;</a></span>ClosedMutPhase() <span class="overload">[1/2]</span></h2>
@@ -241,9 +243,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00506">506</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00526">526</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00515">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00086">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00029">mim::Phase::Phase()</a>, <a class="el" href="phase_8h_source.html#l00516">schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00535">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00086">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00029">mim::Phase::Phase()</a>, <a class="el" href="phase_8h_source.html#l00536">schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -286,9 +288,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00510">510</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00530">530</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00087">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00515">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00029">mim::Phase::Phase()</a>, <a class="el" href="phase_8h_source.html#l00516">schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00087">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00535">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00029">mim::Phase::Phase()</a>, <a class="el" href="phase_8h_source.html#l00536">schedule()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -318,9 +320,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00515">515</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00535">535</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00510">ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00506">ClosedMutPhase()</a>, and <a class="el" href="phase_8h_source.html#l00519">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00530">ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00526">ClosedMutPhase()</a>, and <a class="el" href="phase_8h_source.html#l00539">start()</a>.</p>
 
 </div>
 </div>
@@ -349,7 +351,7 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00523">523</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00543">543</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -378,9 +380,9 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00516">516</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00536">536</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00510">ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00506">ClosedMutPhase()</a>, and <a class="el" href="phase_8h_source.html#l00519">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00530">ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00526">ClosedMutPhase()</a>, and <a class="el" href="phase_8h_source.html#l00539">start()</a>.</p>
 
 </div>
 </div>
@@ -415,9 +417,9 @@ template&lt;class M = Def&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html#ac0f9e4889a963e8dccc382090d247357">mim::plug::ll::Emitter</a>, and <a class="el" href="classmim_1_1sexpr_1_1Emitter.html#a20777cde3de0b7b4ef7e61317c3f0f3d">mim::sexpr::Emitter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00519">519</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00539">539</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00515">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00516">schedule()</a>, <a class="el" href="#ad472ea7c10d353cbd478faa84708322e">visit()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00535">elide_empty()</a>, <a class="el" href="phase_8h_source.html#l00536">schedule()</a>, <a class="el" href="#ad472ea7c10d353cbd478faa84708322e">visit()</a>, and <a class="el" href="phase_8h_source.html#l00083">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -446,7 +448,7 @@ template&lt;class M = Def&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00519">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00539">start()</a>.</p>
 
 </div>
 </div>

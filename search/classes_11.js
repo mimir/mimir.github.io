@@ -12,5 +12,6 @@ var searchData=
   ['vector_3c_20pending_20_3e_9',['Vector&lt; Pending &gt;',['../classmim_1_1Vector.html',1,'mim']]],
   ['vector_3c_20range_20_3e_10',['Vector&lt; Range &gt;',['../classmim_1_1Vector.html',1,'mim']]],
   ['vector_3c_20size_5ft_20_3e_11',['Vector&lt; size_t &gt;',['../classmim_1_1Vector.html',1,'mim']]],
-  ['version_12',['Version',['../structmim_1_1Version.html',1,'mim']]]
+  ['vector_3c_20std_3a_3apair_3c_20std_3a_3astring_2c_20uint64_5ft_20_3e_20_3e_12',['Vector&lt; std::pair&lt; std::string, uint64_t &gt; &gt;',['../classmim_1_1Vector.html',1,'mim']]],
+  ['version_13',['Version',['../structmim_1_1Version.html',1,'mim']]]
 ];

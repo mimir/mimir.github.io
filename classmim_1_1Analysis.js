@@ -2,6 +2,8 @@ var classmim_1_1Analysis =
 [
     [ "Analysis", "classmim_1_1Analysis.html#a4515f0f091b7c563a7fec2b5a5127b9a", null ],
     [ "Analysis", "classmim_1_1Analysis.html#aee9e19bc9197491f6b62b274fbf2378c", null ],
+    [ "changed", "classmim_1_1Analysis.html#a963458e17280ca3ca4e9b6263b2a6cd0", null ],
+    [ "coverage_holes", "classmim_1_1Analysis.html#ae3a97b917f2b09d2c7e2b9eb7677482f", null ],
     [ "finalize", "classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d", null ],
     [ "is_bootstrapping", "classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd", null ],
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
