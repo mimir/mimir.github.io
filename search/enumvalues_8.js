@@ -13,6 +13,7 @@ var searchData=
   ['info_10',['Info',['../classmim_1_1Log.html#aab4ab68f72a5d79c8acc1f1cf7c68590a4059b0251f66a18cb56f544728796875',1,'mim::Log']]],
   ['inj_11',['Inj',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da62d8e3eff7a84b91e1fac08d56e1455b',1,'mim']]],
   ['insert_12',['Insert',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa458be0f08b7e4ff3c0f633c100176c0',1,'mim']]],
-  ['intro_13',['Intro',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188',1,'mim']]],
-  ['is_5fclosed_14',['is_closed',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core']]]
+  ['inserted_13',['Inserted',['../classmim_1_1Analysis.html#a048b50bd5713ad5e5f89f0067c3dc12aa157d034f9c98a305eb73776582550027',1,'mim::Analysis']]],
+  ['intro_14',['Intro',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188',1,'mim']]],
+  ['is_5fclosed_15',['is_closed',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e',1,'mim::plug::core']]]
 ];

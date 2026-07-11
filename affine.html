@@ -122,50 +122,50 @@ $(function(){initNavTree('affine.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md120">Dependencies </a>
+    <a href="#autotoc_md121">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md121">Operations </a>
+    <a href="#autotoc_md122">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md122">%affine.For </a>
+        <a href="#autotoc_md123">%affine.For </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md123">Affine Index Operations </a>
+    <a href="#autotoc_md124">Affine Index Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md124">%affine.index </a>
+        <a href="#autotoc_md125">%affine.index </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md125">%affine.constant </a>
+        <a href="#autotoc_md126">%affine.constant </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md126">%affine.op(add,sub) </a>
+        <a href="#autotoc_md127">%affine.op(add,sub) </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md127">%affine.op(neg) </a>
+        <a href="#autotoc_md128">%affine.op(neg) </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md128">%affine.semiop(mul,ceildiv,floordiv,mod) </a>
+        <a href="#autotoc_md129">%affine.semiop(mul,ceildiv,floordiv,mod) </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md129">%affine.op(mul) </a>
+        <a href="#autotoc_md130">%affine.op(mul) </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md130">%affine.map </a>
+        <a href="#autotoc_md131">%affine.map </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md131">Passes and Phases </a>
+    <a href="#autotoc_md132">Passes and Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md132">%affine.lower_for </a>
+        <a href="#autotoc_md133">%affine.lower_for </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md133">%affine.lower_index </a>
+        <a href="#autotoc_md134">%affine.lower_index </a>
       </li>
     </ul>
   </li>
@@ -173,14 +173,14 @@ $(function(){initNavTree('affine.html','',''); });
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2affine"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1affine.html" title="The affine Plugin">mim::plug::affine</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import mem;</div>
 <div class="line">import core;</div>
 <div class="line">import refly;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
 %affine.For</h2>
 <p>This operation ranges from (including) <span class="tt">begin</span> to (excluding) <span class="tt">end</span> using <span class="tt">step</span> as stride. In addition, this loop manages <span class="tt">n</span> loop accumulators whose initial values <span class="tt">init</span> must be given. Each iteration the given <span class="tt">body</span> is invoked which receives</p><ul>
 <li>the current iteration index, and</li>
@@ -191,34 +191,34 @@ Operations</h1>
 <div class="line">               → [Cn [iter: Idx m, acc: «i: n; Ts#i», yield: Cn «i: n; Ts#i»]] // body</div>
 <div class="line">               → [Cn «i: n; Ts#i»]                                             // exit</div>
 <div class="line">               → Cn [begin _end step: Idx m, init: «i: n; Ts#i»];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
 Affine Index Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
 %affine.index</h2>
 <p>The affine index type is an opaque type that can only be manipulated through the following operations.</p>
 <div class="fragment"><div class="line">axm %affine.index: *;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
 %affine.constant</h2>
 <p>Constructs an affine index from a constant natural number.</p>
 <div class="fragment"><div class="line">axm %affine.constant: Nat → %affine.index;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
 %affine.op(add,sub)</h2>
 <p>Performs addition and subtraction on affine indices.</p>
 <div class="fragment"><div class="line">axm %affine.op(add,sub): [%affine.index, %affine.index] → %affine.index;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
 %affine.op(neg)</h2>
 <p>Negates an affine index.</p>
 <div class="fragment"><div class="line">axm %affine.op(neg): %affine.index → %affine.index;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
 %affine.semiop(mul,ceildiv,floordiv,mod)</h2>
 <p>Performs semi-linear operations on affine indices. The second argument must be a constant natural number with regards to the indices.</p>
 <div class="fragment"><div class="line">axm %affine.semiop(mul,ceildiv,floordiv,mod): [%affine.index, Nat] → %affine.index;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
 %affine.op(mul)</h2>
 <p>Performs multiplication of an affine index with a constant natural number. The second argument must be a constant natural number (which is a stronger argument than the semiop).</p>
 <div class="fragment"><div class="line">lam %affine.op.mul (d : %affine.index, c : Nat): %affine.index =</div>
 <div class="line">    %affine.semiop.mul(d, %refly.check (%core.pe.is_closed(c), c, &quot;The second argument of %affine.op.mul must be a constant.&quot;));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
 %affine.map</h2>
 <p>Maps a function over a list of affine indices. Any captured variables of the function must be closed over the entire list of indices, i.e. they must not depend on the iteration index. The moduli are per-element: each input index <span class="tt">i</span> carries its own modulus <span class="tt">sin#i</span> and each output index <span class="tt">j</span> its own <span class="tt">sout#j</span>.</p>
 <div class="fragment"><div class="line">axm %affine.map: {m n: Nat}</div>
@@ -226,13 +226,13 @@ Affine Index Operations</h1>
 <div class="line">               → ([«n; %affine.index»] → «m; %affine.index»)</div>
 <div class="line">               → «i: n; Idx (sin#i)»</div>
 <div class="line">               → «i: m; Idx (sout#i)»;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md132"></a>
 Passes and Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md132"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md133"></a>
 %affine.lower_for</h2>
 <p>Lowers the %%affine.For operation to recursive function calls.</p>
 <div class="fragment"><div class="line">axm %affine.lower_for: %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md133"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md134"></a>
 %affine.lower_index</h2>
 <p>Lowers the affine index algebra (%%affine.index, %%affine.constant, %%affine.op, %%affine.semiop, %%affine.map) to %core arithmetic.</p>
 <div class="fragment"><div class="line">axm %affine.lower_index: %compile.Phase;</div>

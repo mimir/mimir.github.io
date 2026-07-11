@@ -122,22 +122,22 @@ $(function(){initNavTree('python.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md94">Package Layout </a>
+    <a href="#autotoc_md95">Package Layout </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md95">First Steps </a>
+    <a href="#autotoc_md96">First Steps </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md96">Loading Plugins </a>
+    <a href="#autotoc_md97">Loading Plugins </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md97">Error Handling Helpers </a>
+    <a href="#autotoc_md98">Error Handling Helpers </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md98">Current Scope </a>
+    <a href="#autotoc_md99">Current Scope </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md99">Embedded Python DSL </a>
+    <a href="#autotoc_md100">Embedded Python DSL </a>
   </li>
 </ul>
 </div>
@@ -148,7 +148,7 @@ $(function(){initNavTree('python.html','',''); });
 <div class="line">python -c &#39;import mim; print(mim.Driver)&#39;</div>
 </div><!-- fragment --><p>Run the Python test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target test-py</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 Package Layout</h1>
 <p>The public entry point is:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
@@ -159,7 +159,7 @@ Package Layout</h1>
 <li><span class="tt"><a class="el" href="namespacemim_1_1plug.html">mim.plug</a>.&lt;name&gt;</span>: generated plugin enum facades, for example <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">mim.plug.core</a></span>,</li>
 </ul>
 <p>The package also ships <span class="tt">.pyi</span> stubs, so editors and type checkers can see the exported binding surface.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
 First Steps</h1>
 <p>The usual entry point is <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>, just like in C++:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
@@ -183,7 +183,7 @@ First Steps</h1>
 <div class="line">typed = var[2, 0]</div>
 <div class="line">parts = var.projs(2)</div>
 </div><!-- fragment --><p>So the Python surface follows the same “named IR handle” model as the C++ API rather than copying nodes into Python-owned objects.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
 Loading Plugins</h1>
 <p>Runtime plugins are still discovered the same way as in C++. <span class="tt">Driver()</span> usually picks up the in-tree plugin build directory automatically, including from the editable Python package. Use <span class="tt">add_search_path(...)</span> only when you want to load plugins from an extra directory:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
@@ -203,7 +203,7 @@ Loading Plugins</h1>
 <div class="line">expr = world.call(regex.any)</div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1regex_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1regex.html">mim::plug::regex</a></div><div class="ttdoc">The regex Plugin</div><div class="ttdef"><b>Definition</b> <a href="lower__regex_8h_source.html#l00005">lower_regex.h:5</a></div></div>
 </div><!-- fragment --><p>If you need finer control, call <span class="tt">world.annex(...)</span>, <span class="tt">world.implicit_app(...)</span>, or <span class="tt">world.app(...)</span> directly.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
 Error Handling Helpers</h1>
 <p>The top-level Python package adds a few small utilities for MimIR exceptions:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> io</div>
@@ -220,7 +220,7 @@ Error Handling Helpers</h1>
 <li><span class="tt">catch_mim_errors(...)</span></li>
 </ul>
 <p>These are ordinary Python wrappers around the <span class="tt">MIM_Error</span> exception type exported by the binding module.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
 Current Scope</h1>
 <p>The Python bindings are intentionally selective. They already support useful workflows for:</p>
 <ul>
@@ -230,7 +230,7 @@ Current Scope</h1>
 <li>end-to-end regex/JIT experiments.</li>
 </ul>
 <p>But the Python API is not yet a one-to-one mirror of the full C++ surface. If you need a feature that exists in C++ but not in Python yet, the binding files under <span class="tt">py/bindings/</span> are the place to extend.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 Embedded Python DSL</h1>
 <p>The file <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim.plug.regex</a></span> provides a higher-level wrapper around the regex plugin in form of an embedded domain-specific language. It builds MimIR through overloaded operators, runs optimization, emits LLVM IR, invokes <span class="tt">clang</span>, and loads the resulting shared object via <span class="tt">ctypes</span>.</p>
 <div class="fragment"><div class="line"><span class="comment"># To run, do this beforehand:</span></div>
