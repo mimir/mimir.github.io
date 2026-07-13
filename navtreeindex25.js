@@ -1,7 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"structstd_1_1formatter_3_01mim_1_1Op_01_4.html":[2,0,4,4],
-"structstd_1_1formatter_3_01mim_1_1Op_01_4.html":[4,0,2,4],
 "structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html":[2,0,4,3],
 "structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html":[4,0,2,3],
 "structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html":[2,0,4,2],
