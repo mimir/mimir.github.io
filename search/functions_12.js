@@ -4,7 +4,7 @@ var searchData=
   ['tag2str_1',['tag2str',['../classmim_1_1ast_1_1Tok.html#adfdd06396522bc87762953a716ed2b80',1,'mim::ast::Tok']]],
   ['tail_2',['tail',['../structmim_1_1plug_1_1ll_1_1BB.html#a276b8e5f06369ef28ea2bb57bc00dccf',1,'mim::plug::ll::BB::tail()'],['../structmim_1_1plug_1_1ll_1_1BB.html#ac627a2f5944b6d0358e5f5bed124abb1',1,'mim::plug::ll::BB::tail(std::format_string&lt; Args... &gt; s, Args &amp;&amp;... args)'],['../structmim_1_1sexpr_1_1BB.html#a34898584157b1e405f02a9c3127519b5',1,'mim::sexpr::BB::tail()'],['../structmim_1_1sexpr_1_1BB.html#ad1e1f2efe4a51a7e60f713d5145ff759',1,'mim::sexpr::BB::tail(std::format_string&lt; Args... &gt; s, Args &amp;&amp;... args)']]],
   ['tailrecelim_3',['TailRecElim',['../classmim_1_1TailRecElim.html#aff7acacd3209be045b220464e5d344dd',1,'mim::TailRecElim']]],
-  ['taint_4',['taint',['../classmim_1_1Phase.html#a8aa2e4e803d6a1f9ea654f3a12f8759c',1,'mim::Phase::taint()'],['../classmim_1_1Analysis.html#ab2e5e84adbfc1dfae1acedc53d0ede9e',1,'mim::Analysis::taint(const Def *key)'],['../classmim_1_1Analysis.html#a8aa2e4e803d6a1f9ea654f3a12f8759c',1,'mim::Analysis::taint(Def *mut)']]],
+  ['taint_4',['taint',['../classmim_1_1Phase.html#a8aa2e4e803d6a1f9ea654f3a12f8759c',1,'mim::Phase']]],
   ['take_5fresolved_5',['take_resolved',['../classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6',1,'mim::Phase::take_resolved()'],['../classNamed.html#a5f080fa8399746869e91c0599f9083ba',1,'Named::take_resolved()']]],
   ['tangent_5ftype_5ffun_6',['tangent_type_fun',['../namespacemim_1_1plug_1_1autodiff.html#a68aae344814c11b1359c6b945f109153',1,'mim::plug::autodiff']]],
   ['target_7',['target',['../classmim_1_1Dispatch.html#aaf6bb17d1006cf7560e9e2cbe7f598e6',1,'mim::Dispatch']]],

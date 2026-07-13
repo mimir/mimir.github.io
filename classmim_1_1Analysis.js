@@ -2,13 +2,14 @@ var classmim_1_1Analysis =
 [
     [ "Analysis", "classmim_1_1Analysis.html#a4515f0f091b7c563a7fec2b5a5127b9a", null ],
     [ "Analysis", "classmim_1_1Analysis.html#aee9e19bc9197491f6b62b274fbf2378c", null ],
-    [ "changed", "classmim_1_1Analysis.html#a963458e17280ca3ca4e9b6263b2a6cd0", null ],
     [ "coverage_holes", "classmim_1_1Analysis.html#ae3a97b917f2b09d2c7e2b9eb7677482f", null ],
     [ "finalize", "classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d", null ],
     [ "is_bootstrapping", "classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd", null ],
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
+    [ "lattice", "classmim_1_1Analysis.html#a66aeeff62149090ca33a1cd320f79e7c", null ],
     [ "lattice", "classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628", null ],
+    [ "lattice_mut", "classmim_1_1Analysis.html#ae4deaf8a3e2954b56b01ff5fce9f570c", null ],
     [ "make_dense", "classmim_1_1Analysis.html#a496981c42113362621010d00370e84e7", null ],
     [ "owner", "classmim_1_1Analysis.html#a6851c8e0a0d71bdb58299e7d586dbd23", null ],
     [ "pin_top", "classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa", null ],
@@ -17,10 +18,6 @@ var classmim_1_1Analysis =
     [ "rewrite_annex", "classmim_1_1Analysis.html#a87831539535ddfa21b1777d9554e153d", null ],
     [ "rewrite_external", "classmim_1_1Analysis.html#aa7d78ed906cc6531fa13d42e18bc398d", null ],
     [ "rewrite_mut", "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7", null ],
-    [ "sparse", "classmim_1_1Analysis.html#a98e6412fd193b627e6b46fb245556f5b", null ],
     [ "start", "classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04", null ],
-    [ "taint", "classmim_1_1Analysis.html#ab2e5e84adbfc1dfae1acedc53d0ede9e", null ],
-    [ "taint", "classmim_1_1Analysis.html#a8aa2e4e803d6a1f9ea654f3a12f8759c", null ],
-    [ "update", "classmim_1_1Analysis.html#aa3ab6e06d62a812f6352045d311cf3e4", null ],
-    [ "world", "classmim_1_1Analysis.html#a8de439bc818291da9a12c82f794a4d65", null ]
+    [ "world", "classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f", null ]
 ];

@@ -391,6 +391,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a83f7d40900e583112dead0917f4188b2 template"><td class="memItemLeft">constexpr decltype(auto)&#160;</td><td class="memItemRight"><a class="el" href="#a83f7d40900e583112dead0917f4188b2">get</a> (<a class="el" href="classmim_1_1Span.html">Span</a>&lt; T, N &gt; span) noexcept</td></tr>
 <tr class="memitem:aba1dd89e9049fc3fd5f807e098d95cd9" id="r_aba1dd89e9049fc3fd5f807e098d95cd9"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aba1dd89e9049fc3fd5f807e098d95cd9">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:aba1dd89e9049fc3fd5f807e098d95cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will stream <code class="param">def</code> as an operand.  <br /></td></tr>
+<tr class="memitem:ad45187480ea300d849ccf005b084bbd3" id="r_ad45187480ea300d849ccf005b084bbd3"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ad45187480ea300d849ccf005b084bbd3">is_lam_tuple</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:ad45187480ea300d849ccf005b084bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt"><a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a></span> all of whose ops are mutable <span class="tt"><a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a></span>s - i.e. a branch / dispatch table.  <br /></td></tr>
 <tr class="memitem:a31108855e962bd3bf8dbf912eb4349b0" id="r_a31108855e962bd3bf8dbf912eb4349b0"><td class="memItemLeft">std::tuple&lt; const <a class="el" href="classmim_1_1Var.html">Var</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a31108855e962bd3bf8dbf912eb4349b0">tuple_of_dict</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &amp;v2v)</td></tr>
 <tr class="memitem:ada5cb760897eaa1e558552b65009fa67" id="r_ada5cb760897eaa1e558552b65009fa67"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ada5cb760897eaa1e558552b65009fa67">post_order</a> (const <a class="el" href="classmim_1_1Nest.html">Nest</a> &amp;nest, const <a class="el" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a> *node, <a class="el" href="classmim_1_1Scheduler.html#af7c082b610d8b7515f90b6512148f72c">Scheduler::Schedule</a> &amp;res, <a class="el" href="#a9cef35a428a391739d168b05bad8dfb2">MutSet</a> &amp;done)</td></tr>
 <tr class="memitem:acc7b1158f83b80e637de1a63f56d514c" id="r_acc7b1158f83b80e637de1a63f56d514c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc7b1158f83b80e637de1a63f56d514c">flatten_umax</a> (<a class="el" href="#a1433b0566b2cbdbf0c6f74baed22bb52">DefVec</a> &amp;ops, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
@@ -528,6 +530,8 @@ Variables</h2></td></tr>
 <tr class="memitem:a39efaf0b2304223993b837cc3e0bd605" id="r_a39efaf0b2304223993b837cc3e0bd605"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a39efaf0b2304223993b837cc3e0bd605 template"><td class="memItemLeft">static constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a39efaf0b2304223993b837cc3e0bd605">Default_Inlined_Size</a> = std::max((size_t)1, 4 * sizeof(size_t) / sizeof(T))</td></tr>
 <tr class="memdesc:a39efaf0b2304223993b837cc3e0bd605"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Use.html" title="const Def*erences a user.">Use</a> up to 4 words (i.e., 4 * sizeof(size_t)) of inlined storage, rounded up.  <br /></td></tr>
+<tr class="memitem:ad70d80188d4a31ea1ab6199969ce4e63" id="r_ad70d80188d4a31ea1ab6199969ce4e63"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ad70d80188d4a31ea1ab6199969ce4e63">BitmaskWidth</a> = sizeof(<a class="el" href="#ad8bae182cdb06699fc07a348105f193c">u64</a>) * 8</td></tr>
+<tr class="memdesc:ad70d80188d4a31ea1ab6199969ce4e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of params a single <span class="tt"><a class="el" href="#ad8bae182cdb06699fc07a348105f193c">u64</a></span> keep-bitmask can represent; wider doms fall back to the ⊤ sentinel.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Enums that classify certain aspects of Defs.</h2></td></tr>
@@ -3173,6 +3177,39 @@ template&lt;class Id&gt; </div>
 
 </div>
 </div>
+<a id="ad45187480ea300d849ccf005b084bbd3" name="ad45187480ea300d849ccf005b084bbd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad45187480ea300d849ccf005b084bbd3">&#9670;&#160;</a></span>is_lam_tuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::is_lam_tuple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A <span class="tt"><a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a></span> all of whose ops are mutable <span class="tt"><a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a></span>s - i.e. a branch / dispatch table. </p>
+
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00014">14</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00317">mim::Def::num_ops()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="scalarize_8cpp_source.html#l00203">mim::Scalarize::rewrite_imm_App()</a>.</p>
+
+</div>
+</div>
 <a id="a2efd858db7ed2bd9c205337f6129daa8" name="a2efd858db7ed2bd9c205337f6129daa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2efd858db7ed2bd9c205337f6129daa8">&#9670;&#160;</a></span>is_unit()</h2>
 
@@ -4272,11 +4309,37 @@ template&lt;class I, class A = std::allocator&lt;typename std::iterator_traits&l
 
 <p class="reference">References <a class="el" href="vector_8h_source.html#l00011">Default_Inlined_Size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sets_8h_source.html#l00528">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::erase()</a>, <a class="el" href="sets_8h_source.html#l00492">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::merge()</a>, <a class="el" href="def_8h_source.html#l00416">mim::Def::projs()</a>, <a class="el" href="scalarize_8cpp_source.html#l00184">mim::Scalarize::rewrite_imm_App()</a>, and <a class="el" href="scalarize_8cpp_source.html#l00129">mim::Scalarize::rewrite_mut_Lam()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sets_8h_source.html#l00528">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::erase()</a>, <a class="el" href="sets_8h_source.html#l00492">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::merge()</a>, <a class="el" href="def_8h_source.html#l00416">mim::Def::projs()</a>, <a class="el" href="scalarize_8cpp_source.html#l00203">mim::Scalarize::rewrite_imm_App()</a>, and <a class="el" href="scalarize_8cpp_source.html#l00148">mim::Scalarize::rewrite_mut_Lam()</a>.</p>
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="ad70d80188d4a31ea1ab6199969ce4e63" name="ad70d80188d4a31ea1ab6199969ce4e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70d80188d4a31ea1ab6199969ce4e63">&#9670;&#160;</a></span>BitmaskWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mim::BitmaskWidth = sizeof(<a class="el" href="#ad8bae182cdb06699fc07a348105f193c">u64</a>) * 8</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of params a single <span class="tt"><a class="el" href="#ad8bae182cdb06699fc07a348105f193c">u64</a></span> keep-bitmask can represent; wider doms fall back to the ⊤ sentinel. </p>
+
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00011">11</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a39efaf0b2304223993b837cc3e0bd605" name="a39efaf0b2304223993b837cc3e0bd605"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39efaf0b2304223993b837cc3e0bd605">&#9670;&#160;</a></span>Default_Inlined_Size</h2>
 

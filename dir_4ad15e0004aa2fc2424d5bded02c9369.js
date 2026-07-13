@@ -7,6 +7,6 @@ var dir_4ad15e0004aa2fc2424d5bded02c9369 =
     [ "optimize.cpp", "optimize_8cpp.html", "optimize_8cpp" ],
     [ "prefix_cleanup.cpp", "prefix__cleanup_8cpp.html", null ],
     [ "ret_wrap.cpp", "ret__wrap_8cpp.html", null ],
-    [ "scalarize.cpp", "scalarize_8cpp.html", null ],
+    [ "scalarize.cpp", "scalarize_8cpp.html", "scalarize_8cpp" ],
     [ "tail_rec_elim.cpp", "tail__rec__elim_8cpp.html", null ]
 ];
