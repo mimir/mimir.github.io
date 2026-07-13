@@ -62,8 +62,10 @@ var namespacemim_1_1ast =
       [ "R", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4ae1e1d3d40573127e9ee0480caf1283d6", null ]
     ] ],
     [ "Prec", "namespacemim_1_1ast.html#afc6cb12ae859bd6554aebf244d2db28a", null ],
+    [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
     [ "is_lassoc", "namespacemim_1_1ast.html#a1eb898857b7ca5ba98b77ffc52ada0b7", null ],
     [ "is_rassoc", "namespacemim_1_1ast.html#a50e9195843afe95df3aa715f91e1b32b", null ],
+    [ "isa_math_f", "namespacemim_1_1ast.html#ad2a1c1594048c3494e84b1150fd23576", null ],
     [ "load_plugin", "namespacemim_1_1ast.html#a6db5d77581a0ddab4453d88440ffc830", null ],
     [ "load_plugin", "namespacemim_1_1ast.html#a75735247d726a0bffe05706d52021f8c", null ],
     [ "load_plugins", "namespacemim_1_1ast.html#a5fe7be09bffcd1f540353919cc95ee07", null ],

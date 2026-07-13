@@ -118,12 +118,12 @@ var NAVTREEINDEX =
 "dir_70d9fef2f2f39648191fdbe3b0353a1a.html",
 "math_2normalizers_8cpp.html#a48da5e6acc28b0cfe9f3402f29ae9a1c",
 "namespacemim.html#abbff49ce5bff270e09db6d916fa58c3a",
-"namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12",
-"namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a6e24df830093951640cb407d7ca737d8",
-"namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166dacdaeeeba9b4a4c5ebf042c0215a7bb0e",
-"phase_8h.html#a14d4a7c6df40734cbfbca567beddbb87",
-"structmim_1_1Nest_1_1Node_1_1Children.html",
-"structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html"
+"namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2",
+"namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a66defbc98fee165daf09806f9bc40fe5",
+"namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166d",
+"phase_8cpp_source.html",
+"structmim_1_1GIDLt.html#a0e10fe218e277abd24ff8c86940b5b3f",
+"structstd_1_1formatter_3_01mim_1_1Op_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

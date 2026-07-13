@@ -246,6 +246,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a1eb898857b7ca5ba98b77ffc52ada0b7" id="r_a1eb898857b7ca5ba98b77ffc52ada0b7"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a1eb898857b7ca5ba98b77ffc52ada0b7">is_lassoc</a> (<a class="el" href="#afc6cb12ae859bd6554aebf244d2db28a">Prec</a> p)</td></tr>
 <tr class="memitem:a73ea7269ed47d29b3408e6ec172f6890" id="r_a73ea7269ed47d29b3408e6ec172f6890"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a73ea7269ed47d29b3408e6ec172f6890">should_reduce</a> (<a class="el" href="#afc6cb12ae859bd6554aebf244d2db28a">Prec</a> curr, <a class="el" href="#afc6cb12ae859bd6554aebf244d2db28a">Prec</a> op)</td></tr>
 <tr class="memdesc:a73ea7269ed47d29b3408e6ec172f6890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should a Pratt parser reduce when the current binding power is <code class="param">curr</code> and the infix operator has precedence <code class="param">op</code>?  <br /></td></tr>
+<tr class="memitem:ad2a1c1594048c3494e84b1150fd23576" id="r_ad2a1c1594048c3494e84b1150fd23576"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad2a1c1594048c3494e84b1150fd23576">isa_math_f</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, const <a class="el" href="classmim_1_1Def.html">Def</a> *type)</td></tr>
+<tr class="memdesc:ad2a1c1594048c3494e84b1150fd23576"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <code class="param">type</code> is a <span class="tt">math.F</span> type of known precision/exponent, yields its bit width.  <br /></td></tr>
+<tr class="memitem:a4d5e6bb359fe6aff819c36df26777e77" id="r_a4d5e6bb359fe6aff819c36df26777e77"><td class="memItemLeft">static <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4d5e6bb359fe6aff819c36df26777e77">encode_f</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, Loc loc, const <a class="el" href="classmim_1_1Def.html">Def</a> *t, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> bits)</td></tr>
+<tr class="memdesc:a4d5e6bb359fe6aff819c36df26777e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">A float <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a> stores its value as <a class="el" href="namespacemim.html#a43c8683ea43b0bd8c38bb973d5f91d63">mim::f64</a> bits; re-encode them for the width of the annotated type <code class="param">t</code>.  <br /></td></tr>
 <tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">std::ostream operator</div></td></tr>
 <tr class="memitem:ae8647f142657ffe401f0ca6f29c09b74" id="r_ae8647f142657ffe401f0ca6f29c09b74"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae8647f142657ffe401f0ca6f29c09b74">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a> tok)</td></tr>
 </table><table class="memberdecls">
@@ -451,6 +455,53 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a4d5e6bb359fe6aff819c36df26777e77" name="a4d5e6bb359fe6aff819c36df26777e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5e6bb359fe6aff819c36df26777e77">&#9670;&#160;</a></span>encode_f()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> mim::ast::encode_f </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Loc</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>          <td class="paramname"><span class="paramname"><em>bits</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A float <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a> stores its value as <a class="el" href="namespacemim.html#a43c8683ea43b0bd8c38bb973d5f91d63">mim::f64</a> bits; re-encode them for the width of the annotated type <code class="param">t</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00194">194</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="dbg_8h_source.html#l00017">mim::error()</a>, and <a class="el" href="emit_8cpp_source.html#l00181">isa_math_f()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00210">mim::ast::LitExpr::emit_()</a>.</p>
+
+</div>
+</div>
 <a id="a1eb898857b7ca5ba98b77ffc52ada0b7" name="a1eb898857b7ca5ba98b77ffc52ada0b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1eb898857b7ca5ba98b77ffc52ada0b7">&#9670;&#160;</a></span>is_lassoc()</h2>
 
@@ -508,6 +559,44 @@ template&lt;class T&gt; </div>
 <p class="reference">References <a class="el" href="tok_8h_source.html#l00045">prec_assoc()</a>, and <a class="el" href="tok_8h_source.html#l00035">R</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00060">should_reduce()</a>.</p>
+
+</div>
+</div>
+<a id="ad2a1c1594048c3494e84b1150fd23576" name="ad2a1c1594048c3494e84b1150fd23576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a1c1594048c3494e84b1150fd23576">&#9670;&#160;</a></span>isa_math_f()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt; mim::ast::isa_math_f </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If <code class="param">type</code> is a <span class="tt">math.F</span> type of known precision/exponent, yields its bit width. </p>
+<p>Note that libmim must not depend on the generated math plugin header, so lookup the <a class="el" href="classmim_1_1Axm.html">Axm</a> at runtime instead. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00181">181</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00276">mim::App::callee()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00194">encode_f()</a>.</p>
 
 </div>
 </div>
