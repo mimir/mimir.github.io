@@ -22,7 +22,7 @@ var searchData=
   ['plugin_20discovery_19',['Third-Party Plugin Discovery',['../plugins.html#autotoc_md96',1,'']]],
   ['plugin_20registry_20',['Plugin Registry',['../plugins.html#autotoc_md93',1,'']]],
   ['plugins_21',['Plugins',['../index.html#autotoc_md112',1,'🧩 Plugins'],['../python.html#autotoc_md102',1,'Loading Plugins'],['../plugins.html',1,'Plugins'],['../mimir.html#mimir_plugins',1,'Plugins']]],
-  ['point_20iteration_22',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
+  ['point_20iteration_22',['Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
   ['pointer_20types_23',['Pointer Types',['../gpu.html#autotoc_md199',1,'']]],
   ['polymorphic_20iteration_24',['Polymorphic Iteration',['../mimir.html#mimir_iter',1,'']]],
   ['pow_25',['%math.pow',['../math.html#autotoc_md240',1,'']]],

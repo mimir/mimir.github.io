@@ -45,7 +45,6 @@ var hierarchy =
       [ "mim::Vector< const Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Range >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< mim::Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< size_t >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Profiler::Span >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],

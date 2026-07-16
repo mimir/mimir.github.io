@@ -1,15 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"namespacemim_1_1plug_1_1ord.html#abc7482320010e15a67481e999f1e8e37":[2,0,3,1,15,9],
-"namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8f":[2,0,3,1,15,5],
-"namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8fa1d78dc8ed51214e518b5114fe24490ae":[2,0,3,1,15,5,1],
-"namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8facdaeeeba9b4a4c5ebf042c0215a7bb0e":[2,0,3,1,15,5,0],
-"namespacemim_1_1plug_1_1ord.html#acfdfd946d58d1ec4b8773d1e87204a17":[2,0,3,1,15,14],
-"namespacemim_1_1plug_1_1ord.html#adf40c77e7d3537a42c2423fb1b4e33c5":[2,0,3,1,15,7],
-"namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3":[2,0,3,1,15,4],
-"namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3a1d78dc8ed51214e518b5114fe24490ae":[2,0,3,1,15,4,1],
-"namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3acdaeeeba9b4a4c5ebf042c0215a7bb0e":[2,0,3,1,15,4,0],
-"namespacemim_1_1plug_1_1refly.html":[2,0,3,1,16],
 "namespacemim_1_1plug_1_1refly.html#a0b47eae97de21cec7ec74eda953bb795":[2,0,3,1,16,23],
 "namespacemim_1_1plug_1_1refly.html#a28d21b99af5c1d61200601d069b512a4":[2,0,3,1,16,13],
 "namespacemim_1_1plug_1_1refly.html#a350a79c30bf6c48389a654dfaae9dcca":[2,0,3,1,16,18],
@@ -249,5 +239,15 @@ var NAVTREEINDEX22 =
 "phase_8cpp_source.html":[5,0,4,1,14],
 "phase_8h.html":[5,0,3,1,13],
 "phase_8h.html#a14d4a7c6df40734cbfbca567beddbb87":[5,0,3,1,13,10],
-"phase_8h.html#a4419b3e848ca4506713b0e73848c118d":[5,0,3,1,13,11]
+"phase_8h.html#a4419b3e848ca4506713b0e73848c118d":[5,0,3,1,13,11],
+"phase_8h.html#a4b6ee482611c96913829f74c17ee1df4":[5,0,3,1,13,8],
+"phase_8h.html#a5524d37751342ad354f02d31c7fd6a55":[5,0,3,1,13,9],
+"phase_8h_source.html":[5,0,3,1,13],
+"phases.html":[0,7],
+"plug_2tuple_2tuple_8cpp.html":[5,0,4,1,3,18,1],
+"plug_2tuple_2tuple_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,18,1,0],
+"plug_2tuple_2tuple_8cpp_source.html":[5,0,4,1,3,18,1],
+"plug_2tuple_2tuple_8h.html":[5,0,3,1,3,18,0],
+"plug_2tuple_2tuple_8h_source.html":[5,0,3,1,3,18,0],
+"plugin_8cpp.html":[5,0,4,1,15]
 };

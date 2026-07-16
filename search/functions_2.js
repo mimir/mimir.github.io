@@ -43,12 +43,11 @@ var searchData=
   ['copy_5fchildren_40',['copy_children',['../namespacedeploy.html#a97d88cb6ecbf70e962c4a600a0a9f8c1',1,'deploy']]],
   ['count_41',['count',['../classmim_1_1Profiler.html#a7ecf517535840dcd99dcaca6675389c4',1,'mim::Profiler']]],
   ['counting_5ffor_42',['counting_for',['../namespacemim_1_1plug_1_1matrix.html#af543155056078bfd4e2df4f16ad7458f',1,'mim::plug::matrix::counting_for()'],['../namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8',1,'mim::plug::tensor::phase::counting_for()']]],
-  ['coverage_5fholes_43',['coverage_holes',['../classmim_1_1Analysis.html#ae3a97b917f2b09d2c7e2b9eb7677482f',1,'mim::Analysis']]],
-  ['create_44',['create',['../classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00',1,'mim::Phase::create()'],['../classmim_1_1Sets.html#ad6d2206fb706506210e1f4cbb4909ee6',1,'mim::Sets::create()']]],
-  ['create_5fouter_5floop_45',['create_outer_loop',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a019a8c048eeccbb48ed2a419e7dc57ca',1,'mim::plug::tensor::phase']]],
-  ['ctype_46',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
-  ['curr_5fgid_47',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
-  ['curr_5fmut_48',['curr_mut',['../classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70',1,'mim::Rewriter']]],
-  ['curr_5frun_49',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
-  ['curry_50',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
+  ['create_43',['create',['../classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00',1,'mim::Phase::create()'],['../classmim_1_1Sets.html#ad6d2206fb706506210e1f4cbb4909ee6',1,'mim::Sets::create()']]],
+  ['create_5fouter_5floop_44',['create_outer_loop',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a019a8c048eeccbb48ed2a419e7dc57ca',1,'mim::plug::tensor::phase']]],
+  ['ctype_45',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
+  ['curr_5fgid_46',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
+  ['curr_5fmut_47',['curr_mut',['../classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70',1,'mim::Rewriter']]],
+  ['curr_5frun_48',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
+  ['curry_49',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
 ];

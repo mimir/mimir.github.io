@@ -42,6 +42,5 @@ var searchData=
   ['ops_39',['ops',['../classmim_1_1Def.html#a3e96d1f2d3715f3d059a7396366af7eb',1,'mim::Def']]],
   ['optimize_40',['optimize',['../namespacemim.html#a60ee93398f76269a406c841b2bb2c306',1,'mim']]],
   ['ostream_41',['ostream',['../classmim_1_1Emitter.html#a614e61750773436c58e728b596c4b19b',1,'mim::Emitter::ostream()'],['../classmim_1_1Log.html#a76fece32622255541b97f9674bf57725',1,'mim::Log::ostream()']]],
-  ['outermost_5fbinder_42',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
-  ['owner_43',['owner',['../classmim_1_1Analysis.html#a6851c8e0a0d71bdb58299e7d586dbd23',1,'mim::Analysis']]]
+  ['outermost_5fbinder_42',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]]
 ];

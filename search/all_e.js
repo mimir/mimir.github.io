@@ -100,6 +100,5 @@ var searchData=
   ['other_20operations_97',['Other Operations',['../core.html#autotoc_md185',1,'Other Operations'],['../math.html#autotoc_md247',1,'Other Operations']]],
   ['outermost_5fbinder_98',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
   ['over_20the_20program_99',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
-  ['overview_100',['Overview',['../phases.html#autotoc_md66',1,'']]],
-  ['owner_101',['owner',['../classmim_1_1Analysis.html#a6851c8e0a0d71bdb58299e7d586dbd23',1,'mim::Analysis']]]
+  ['overview_100',['Overview',['../phases.html#autotoc_md66',1,'']]]
 ];

@@ -29,7 +29,7 @@ var searchData=
   ['dfa2matcher_26',['dfa2matcher',['../dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895',1,'dfa2matcher(mim::World &amp;, const automaton::DFA &amp;, const mim::Def *):&#160;dfa2matcher.cpp'],['../dfa2matcher_8cpp.html#ac08b97e6d39b1db82f6238f662dc2dbd',1,'dfa2matcher(World &amp;w, const DFA &amp;dfa, const Def *n):&#160;dfa2matcher.cpp']]],
   ['dfanode_27',['DFANode',['../classautomaton_1_1DFANode.html#a92167a1ac6cae89eba1fabe128bdfb9b',1,'automaton::DFANode']]],
   ['direct_5fstyle_28',['direct_style',['../classmim_1_1Emitter.html#a48bb4bd0e25affe798480c41c06dc032',1,'mim::Emitter::direct_style()'],['../classmim_1_1sexpr_1_1Emitter.html#a51e7606647714fbe2f508c882edafd84',1,'mim::sexpr::Emitter::direct_style()']]],
-  ['dirty_29',['dirty',['../classmim_1_1Def.html#a1bac5358605561eaa594d7aa3c750e1e',1,'mim::Def::dirty()'],['../classmim_1_1Phase.html#a8d589fd14571cc0e0472be45569a87ef',1,'mim::Phase::dirty()']]],
+  ['dirty_29',['dirty',['../classmim_1_1Def.html#a1bac5358605561eaa594d7aa3c750e1e',1,'mim::Def']]],
   ['dispatch_30',['Dispatch',['../classmim_1_1Dispatch.html#a64ec0fe80990bcdb673d16ea7a64100f',1,'mim::Dispatch']]],
   ['do_5ffreeze_31',['do_freeze',['../classmim_1_1World.html#aa250797c84ea4b2f9ee08967fb888b47',1,'mim::World']]],
   ['dom_32',['Dom',['../classmim_1_1ast_1_1PiExpr_1_1Dom.html#a50d0bf610f36787bcd43773f1f062cca',1,'mim::ast::PiExpr::Dom::Dom()'],['../classmim_1_1ast_1_1LamDecl_1_1Dom.html#ad691b750824af387b5826d24aabc2ef5',1,'mim::ast::LamDecl::Dom::Dom()']]],

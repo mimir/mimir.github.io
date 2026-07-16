@@ -1,15 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html":[2,0,4,2],
-"structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html":[4,0,2,2],
-"structstd_1_1tuple__size_3_01mim_1_1Span_3_01T_00_01N_01_4_01_4.html":[2,0,4,0],
-"structstd_1_1tuple__size_3_01mim_1_1Span_3_01T_00_01N_01_4_01_4.html":[4,0,2,0],
-"sys_8cpp.html":[5,0,4,1,4,4],
-"sys_8cpp.html#a43ed4c35849191c8ebc8aed5430e133f":[5,0,4,1,4,4,3],
-"sys_8cpp_source.html":[5,0,4,1,4,4],
-"sys_8h.html":[5,0,3,1,4,8],
-"sys_8h.html#ad457af6e616c0224bf4ce333a32a44e4":[5,0,3,1,4,8,0],
-"sys_8h_source.html":[5,0,3,1,4,8],
 "tail__rec__elim_8cpp.html":[5,0,4,1,2,8],
 "tail__rec__elim_8cpp_source.html":[5,0,4,1,2,8],
 "tail__rec__elim_8h.html":[5,0,3,1,2,8],
