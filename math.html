@@ -122,68 +122,68 @@ $(function(){initNavTree('math.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md250">Types </a>
+    <a href="#autotoc_md254">Types </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md251">%math.F </a>
+        <a href="#autotoc_md255">%math.F </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md252">Numerical Operations </a>
+    <a href="#autotoc_md256">Numerical Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md253">%math.arith </a>
+        <a href="#autotoc_md257">%math.arith </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md254">%math.extrema </a>
+        <a href="#autotoc_md258">%math.extrema </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md255">%math.tri </a>
+        <a href="#autotoc_md259">%math.tri </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md256">%math.pow </a>
+        <a href="#autotoc_md260">%math.pow </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md257">%math.rt </a>
+        <a href="#autotoc_md261">%math.rt </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md258">%math.exp </a>
+        <a href="#autotoc_md262">%math.exp </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md259">%math.er </a>
+        <a href="#autotoc_md263">%math.er </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md260">%math.gamma </a>
+        <a href="#autotoc_md264">%math.gamma </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md261">%math.abs </a>
+        <a href="#autotoc_md265">%math.abs </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md262">%math.round </a>
+        <a href="#autotoc_md266">%math.round </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md263">Other Operations </a>
+    <a href="#autotoc_md267">Other Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md264">%math.cmp </a>
+        <a href="#autotoc_md268">%math.cmp </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md265">%math.is_finite </a>
+        <a href="#autotoc_md269">%math.is_finite </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md266">%math.conv </a>
+        <a href="#autotoc_md270">%math.conv </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md267">%math.slf </a>
+        <a href="#autotoc_md271">%math.slf </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md268">%math.sgn </a>
+        <a href="#autotoc_md272">%math.sgn </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md269">%math.rrt </a>
+        <a href="#autotoc_md273">%math.rrt </a>
       </li>
     </ul>
   </li>
@@ -191,12 +191,12 @@ $(function(){initNavTree('math.html','',''); });
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2math"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1math.html" title="The math Plugin">mim::plug::math</a></dd></dl>
-<p>Introduces a type constructor <span class="tt">%math.F</span> for viarious <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE-754</a> floating-point formats and a set of operations to calculate with instances of these types. All operations with the exception of <span class="tt">%math.conv</span> expect a <span class="tt">Nat</span> just in front of its actual argument. Here you can fine adjust via <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="Allowed optimizations for a specific operation.">mim::plug::math::Mode</a> how strictly you want to obey floating-point transformations.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md250"></a>
+<p>Introduces a type constructor <span class="tt">%math.F</span> for various <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE-754</a> floating-point formats and a set of operations to calculate with instances of these types. All operations with the exception of <span class="tt">%math.conv</span> expect a <span class="tt">Nat</span> just in front of their actual argument. Via this <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="mim::plug::math::Mode">mode</a> you can fine-tune how strictly floating-point transformations must obey IEEE semantics.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md254"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md251"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md255"></a>
 %math.F</h2>
-<p>A floating-point type with <span class="tt">p</span> many bits as precision and <span class="tt">e</span> many bits as exponent. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="fragment"><div class="line">axm %math.F: «2; Nat» → *;</div>
+<p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="fragment"><div class="line">axm %math.F: «2; Nat» → *;</div>
 <div class="line"> </div>
 <div class="line">let %math.f16     = (10,  5);</div>
 <div class="line">let %math.f32     = (23,  8);</div>
@@ -213,29 +213,25 @@ Types</h1>
 <div class="line">let %math.NVTF32  = %math.F %math.nvtf32; // actually 19 bits; aligns to 32 bit</div>
 <div class="line">let %math.AMDFP24 = %math.F %math.amdfp24;</div>
 <div class="line">let %math.PXR24   = %math.F %math.pxr24;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md252"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md256"></a>
 Numerical Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md253"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md257"></a>
 %math.arith</h2>
 <p>Arithmetic operations. </p><div class="fragment"><div class="line">axm %math.arith(add, sub, mul, div, rem):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_arith;</div>
 <div class="line"> </div>
 <div class="line">lam %math.minus {pe: «2; Nat»} (m: Nat) (a: %math.F pe): %math.F pe =</div>
 <div class="line">    %math.arith.sub m (0:(%math.F pe), a);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md254"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
 %math.extrema</h2>
-<p>Minimum and Maximum.</p><ul>
+<p>Minimum and maximum:</p><ul>
 <li><span class="tt">m</span>in or <span class="tt">M</span>ax</li>
-<li><p class="startli"><span class="tt">i</span>: Follows the behavior of libm’s fmin/fmax.</p>
-<p class="startli">If either operand is a NaN, returns the other non-NaN operand. Returns NaN only if both operands are NaN. The returned NaN is always quiet. If the operands compare equal, returns a value that compares equal to both operands. This means that <span class="tt">fmin(+/-0.0, +/-0.0)</span> could return either <span class="tt">-0.0</span> or <span class="tt">0.0</span>.</p>
-</li>
-<li><p class="startli"><span class="tt">I</span>: Follows the semantics of <span class="tt">minNum</span>/<span class="tt">maxNum</span> specified in the draft of IEEE 754-2018.</p>
-<p class="startli">If either operand is a NaN, returns NaN. Otherwise returns the lesser of the two arguments. <span class="tt">-0.0</span> is considered to be less than <span class="tt">+0.0</span> for this intrinsic.</p>
-</li>
+<li><span class="tt">i</span>: Follows the behavior of libm's fmin/fmax. If either operand is a NaN, returns the other non-NaN operand. Returns NaN only if both operands are NaN; the returned NaN is always quiet. If the operands compare equal, returns a value that compares equal to both operands. This means that <span class="tt">fmin(+/-0.0, +/-0.0)</span> could return either <span class="tt">-0.0</span> or <span class="tt">0.0</span>.</li>
+<li><span class="tt">I</span>: Follows the semantics of <span class="tt">minNum</span>/<span class="tt">maxNum</span> specified in the draft of IEEE 754-2018. If either operand is a NaN, returns NaN. Otherwise, returns the lesser of the two arguments. <span class="tt">-0.0</span> is considered to be less than <span class="tt">+0.0</span> for this intrinsic.</li>
 </ul>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">N  </th><th class="markdownTableHeadNone">M  </th></tr>
+<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">I  </th><th class="markdownTableHeadNone">M  </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">im</span>  </td><td class="markdownTableBodyNone"><span class="tt">fmin</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td></tr>
 <tr class="markdownTableRowEven">
@@ -248,7 +244,7 @@ Numerical Operations</h1>
 <div class="fragment"><div class="line">axm %math.extrema(im = fmin,       iM = fmax,</div>
 <div class="line">                  Im = ieee754min, IM = ieee754max):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_extrema;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md255"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
 %math.tri</h2>
 <p><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">Trigonometric</a> and <a href="https://en.wikipedia.org/wiki/Hyperbolic_functions">hypberbolic</a> functions.</p>
 <ul>
@@ -258,50 +254,50 @@ Numerical Operations</h1>
 </ul>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">A  </th><th class="markdownTableHeadNone">H  </th><th class="markdownTableHeadNone">R  </th><th class="markdownTableHeadNone">FF  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
+<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">A  </th><th class="markdownTableHeadNone">H  </th><th class="markdownTableHeadNone">FF  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">ahff</span>  </td><td class="markdownTableBodyNone"><span class="tt">sin</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\sin x$" src="form_12.png" width="25" height="9"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">ahff</span>  </td><td class="markdownTableBodyNone"><span class="tt">sin</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\sin x$" src="form_12.png" width="25" height="9"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">ahfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">cos</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\cos x$" src="form_13.png" width="26" height="6"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">ahfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">cos</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\cos x$" src="form_13.png" width="26" height="6"/></picture>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">ahFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">tan</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_14_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\tan x$" src="form_14.png" width="29" height="9"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">ahFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">tan</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_14_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\tan x$" src="form_14.png" width="29" height="9"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">ahFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">ahFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">aHff</span>  </td><td class="markdownTableBodyNone"><span class="tt">sinh</span>, <span class="tt">h</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">hyperbolic sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_15_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\sinh x$" src="form_15.png" width="33" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aHff</span>  </td><td class="markdownTableBodyNone"><span class="tt">sinh</span>, <span class="tt">h</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">hyperbolic sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_15_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\sinh x$" src="form_15.png" width="33" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">aHfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">cosh</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">hyperbolic cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_16_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\cosh x$" src="form_16.png" width="34" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aHfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">cosh</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">hyperbolic cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_16_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\cosh x$" src="form_16.png" width="34" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">aHFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">tanh</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">hyperbolic tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_17_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\tanh x$" src="form_17.png" width="35" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aHFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">tanh</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">hyperbolic tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_17_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\tanh x$" src="form_17.png" width="35" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">aHFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aHFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Ahff</span>  </td><td class="markdownTableBodyNone"><span class="tt">asin</span> , <span class="tt">a</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">arcus sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{asin}\,x$" src="form_18.png" width="31" height="9"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">Ahff</span>  </td><td class="markdownTableBodyNone"><span class="tt">asin</span> , <span class="tt">a</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">arcus sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{asin}\,x$" src="form_18.png" width="31" height="9"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">AhfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">acos</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">arcus cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{acos}\,x$" src="form_19.png" width="33" height="6"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AhfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">acos</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">arcus cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{acos}\,x$" src="form_19.png" width="33" height="6"/></picture>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">AhFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">atan</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">arcus tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_20_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{atan}\,x$" src="form_20.png" width="35" height="9"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AhFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">atan</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">arcus tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_20_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{atan}\,x$" src="form_20.png" width="35" height="9"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">AhFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone">arcus <em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AhFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">AHff</span>  </td><td class="markdownTableBodyNone"><span class="tt">asinh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">area hyperbolic sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{asinh}\,x$" src="form_21.png" width="39" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AHff</span>  </td><td class="markdownTableBodyNone"><span class="tt">asinh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">oo  </td><td class="markdownTableBodyNone">area hyperbolic sine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{asinh}\,x$" src="form_21.png" width="39" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">AHfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">acosh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">area hyperbolic cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_22_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{acosh}\,x$" src="form_22.png" width="40" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AHfF</span>  </td><td class="markdownTableBodyNone"><span class="tt">acosh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xo  </td><td class="markdownTableBodyNone">area hyperbolic cosine  </td><td class="markdownTableBodyNone"><picture><source srcset="form_22_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{acosh}\,x$" src="form_22.png" width="40" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">AHFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">atanh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">area hyperbolic tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_23_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{atanh}\,x$" src="form_23.png" width="41" height="10"/></picture>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AHFf</span>  </td><td class="markdownTableBodyNone"><span class="tt">atanh</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">ox  </td><td class="markdownTableBodyNone">area hyperbolic tangent  </td><td class="markdownTableBodyNone"><picture><source srcset="form_23_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{atanh}\,x$" src="form_23.png" width="41" height="10"/></picture>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">AHFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">AHFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
 <div class="fragment"><div class="line">axm %math.tri(ahff =  sin     , ahfF =  cos , ahFf =  tan , ahFF,</div>
 <div class="line">              aHff =  sinh = h, aHfF =  cosh, aHFf =  tanh, aHFF,</div>
 <div class="line">              Ahff = asin  = a, AhfF = acos , AhFf = atan , AhFF,</div>
 <div class="line">              AHff = asinh    , AHfF = acosh, AHFf = atanh, AHFF):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_tri;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md256"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
 %math.pow</h2>
 <p>Power function: <picture><source srcset="form_24_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$x^y$" src="form_24.png" width="14" height="9"/></picture></p>
 <div class="fragment"><div class="line">axm %math.pow: {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_pow;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md257"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md261"></a>
 %math.rt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Square_root">Square</a> and <a href="https://en.wikipedia.org/wiki/Cube_root">cube root</a>:</p>
 <table class="markdownTable">
@@ -313,7 +309,7 @@ Numerical Operations</h1>
 <td class="markdownTableBodyNone"><span class="tt">%math.rt.cb</span>  </td><td class="markdownTableBodyNone">cube root  </td><td class="markdownTableBodyNone"><picture><source srcset="form_26_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\sqrt[3]{x}$" src="form_26.png" width="19" height="14"/></picture>  </td></tr>
 </table>
 <div class="fragment"><div class="line">axm %math.rt(sq, cb): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_rt;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md262"></a>
 %math.exp</h2>
 <p><a href="https://en.wikipedia.org/wiki/Exponential_function">Exponential function</a> and <a href="https://en.wikipedia.org/wiki/Logarithm">logarithm</a>:</p><ul>
 <li><span class="tt">L</span>ogarithm</li>
@@ -342,7 +338,7 @@ Numerical Operations</h1>
 <div class="fragment"><div class="line">axm %math.exp(lbb = exp, lbB = exp2 = bin, lBb = exp10 = dec, lBB,</div>
 <div class="line">              Lbb = log, LbB = log2      , LBb = log10      , LBB):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_exp;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md263"></a>
 %math.er</h2>
 <p><a href="https://en.wikipedia.org/wiki/Error_function">Error</a> and <a href="https://en.wikipedia.org/wiki/Error_function#Complementary_error_function">complementary error function</a>.</p>
 <table class="markdownTable">
@@ -354,7 +350,7 @@ Numerical Operations</h1>
 <td class="markdownTableBodyNone"><span class="tt">%math.er.fc</span>  </td><td class="markdownTableBodyNone">complementary error function  </td><td class="markdownTableBodyNone"><picture><source srcset="form_34_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\frac{2}{\sqrt\pi}\int_x^\infty e^{-t^2}\,dt = 1 - \textrm{erf}(x)$" src="form_34.png" width="144" height="21"/></picture>  </td></tr>
 </table>
 <div class="fragment"><div class="line">axm %math.er(f, fc): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_er;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md264"></a>
 %math.gamma</h2>
 <p><a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a> and its natural <a href="https://en.wikipedia.org/wiki/Gamma_function#The_log-gamma_function">logarithm</a>.</p>
 <table class="markdownTable">
@@ -366,13 +362,13 @@ Numerical Operations</h1>
 <td class="markdownTableBodyNone"><span class="tt">%math.gamma.l</span>  </td><td class="markdownTableBodyNone">natural logarithm of gamma function  </td><td class="markdownTableBodyNone"><picture><source srcset="form_36_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\ln \mid \int_0^\infty t^{x-1} e^{-t}\,dt \mid$" src="form_36.png" width="104" height="16"/></picture>  </td></tr>
 </table>
 <div class="fragment"><div class="line">axm %math.gamma(t, l): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_gamma;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md261"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md265"></a>
 %math.abs</h2>
-<p><a href="https://en.wikipedia.org/wiki/Absolute_value">Absolute value</a> of a floating point number</p>
+<p><a href="https://en.wikipedia.org/wiki/Absolute_value">Absolute value</a> of a floating-point number.</p>
 <div class="fragment"><div class="line">axm %math.abs: {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_abs;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md262"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md266"></a>
 %math.round</h2>
-<p>Common rounding operations for floating points:</p><ul>
+<p>Common rounding operations for floating-point numbers:</p><ul>
 <li><span class="tt">f</span>loor</li>
 <li><span class="tt">c</span>eil</li>
 <li><span class="tt">r</span>ound</li>
@@ -391,12 +387,12 @@ Numerical Operations</h1>
 <td class="markdownTableBodyNone"><span class="tt">%math.round.t</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_toward_zero">round towards zero</a>  </td><td class="markdownTableBodyNone"><picture><source srcset="form_40_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$trunc (x)$" src="form_40.png" width="48" height="14"/></picture>  </td></tr>
 </table>
 <div class="fragment"><div class="line">axm %math.round(f,c,r,t): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_round;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md263"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
 Other Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md264"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
 %math.cmp</h2>
-<p>Floating point comparison is made of 4 disjoint relations:</p><ul>
-<li><span class="tt">U</span>nordered (yields true if either operand is a QNAN)</li>
+<p>Floating-point comparison is composed of 4 disjoint relations:</p><ul>
+<li><span class="tt">U</span>nordered (yields true if either operand is a QNaN)</li>
 <li><span class="tt">G</span>reater</li>
 <li><span class="tt">L</span>ess</li>
 <li><span class="tt">E</span>qual</li>
@@ -421,7 +417,7 @@ Other Operations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">uGLE</span>  </td><td class="markdownTableBodyNone"><span class="tt">o</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">ordered (no NaNs)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Ugle</span>  </td><td class="markdownTableBodyNone"><span class="tt">u</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">unordered (either NaNs)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">Ugle</span>  </td><td class="markdownTableBodyNone"><span class="tt">u</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">unordered (either is NaN)  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">UglE</span>  </td><td class="markdownTableBodyNone"><span class="tt">ue</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">unordered or equal  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -431,7 +427,7 @@ Other Operations</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">UGle</span>  </td><td class="markdownTableBodyNone"><span class="tt">ug</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">unordered or greater  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">UGlE</span>  </td><td class="markdownTableBodyNone"><span class="tt">uge</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">unordered or greater or equa  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">UGlE</span>  </td><td class="markdownTableBodyNone"><span class="tt">uge</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">unordered or greater or equal  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">UGLe</span>  </td><td class="markdownTableBodyNone"><span class="tt">une</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">unordered or not equal  </td></tr>
 <tr class="markdownTableRowEven">
@@ -442,28 +438,28 @@ Other Operations</h1>
 <div class="line">              Ugle =   u, UglE =  ue, UgLe =  ul, UgLE = ule,</div>
 <div class="line">              UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):</div>
 <div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → Bool, normalize_cmp;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md265"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
 %math.is_finite</h2>
-<p>Returns True if the float is finite, and false if not (i.e. if it is +Inf/-Inf/NAN)</p>
+<p>Returns <span class="tt">tt</span> if the float is finite and <span class="tt">ff</span> if not (i.e. if it is ±∞ or NaN).</p>
 <div class="fragment"><div class="line">axm %math.is_finite: {pe: «2; Nat»} → Nat → %math.F pe → Bool;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md266"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md270"></a>
 %math.conv</h2>
-<p>Conversion between floating point and index types - both signed and unsigned - of different sizes.</p>
+<p>Conversion between floating-point and index types - both signed and unsigned - of different sizes.</p>
 <div class="fragment"><div class="line">axm %math.conv(s2f, u2f): { ss:     Nat } → [dpe: «2; Nat»] →     Idx  ss → %math.F dpe, normalize_conv;</div>
 <div class="line">axm %math.conv(f2s, f2u): {spe: «2; Nat»} → [ ds:     Nat ] → %math.F spe →     Idx  ds, normalize_conv;</div>
 <div class="line">axm %math.conv(f2f):      {spe: «2; Nat»} → [dpe: «2; Nat»] → %math.F spe → %math.F dpe, normalize_conv;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md271"></a>
 %math.slf</h2>
-<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating point number ( <picture><source srcset="form_41_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$slf(x) = \frac{1}{1+e^{-x}}$" src="form_41.png" width="83" height="18"/></picture>)</p>
-<div class="fragment"><div class="line">lam %math.slf {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
+<p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating-point number ( <picture><source srcset="form_41_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{slf}(x) = \frac{1}{1+e^{-x}}$" src="form_41.png" width="79" height="18"/></picture>)</p>
+<div class="fragment"><div class="line">lam %math.slf {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
 <div class="line">    %math.arith.div m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.arith.add m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.exp.exp m (%math.minus m x)));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md272"></a>
 %math.sgn</h2>
-<p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="fragment"><div class="line">lam %math.sgn {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
+<p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="fragment"><div class="line">lam %math.sgn {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
 <div class="line">    ((%math.conv.f2f pe -1.0:(%math.F64)), ((%math.conv.f2f pe 0.0:(%math.F64)), (%math.conv.f2f pe 1.0:(%math.F64)))#(%math.cmp.g m (x,(%math.conv.f2f pe 0.0:(%math.F64)))))#(%math.cmp.ge m (x, (%math.conv.f2f pe 0.0:(%math.F64))));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md273"></a>
 %math.rrt</h2>
-<p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( <picture><source srcset="form_42_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$rrt(x) = \frac{1}{\sqrt{x}}$" src="form_42.png" width="66" height="19"/></picture>) </p><div class="fragment"><div class="line">lam %math.rrt {pe : &lt;&lt;2; Nat&gt;&gt;} (m : Nat) (x : %math.F pe): %math.F pe =</div>
+<p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( <picture><source srcset="form_42_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$\textrm{rrt}(x) = \frac{1}{\sqrt{x}}$" src="form_42.png" width="65" height="19"/></picture>) </p><div class="fragment"><div class="line">lam %math.rrt {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
 <div class="line">    %math.arith.div m (%math.conv.f2f pe 1.0:(%math.F64), %math.rt.sq m x);</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

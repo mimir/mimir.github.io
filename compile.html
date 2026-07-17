@@ -122,35 +122,35 @@ $(function(){initNavTree('compile.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md174">Types </a>
+    <a href="#autotoc_md176">Types </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md175">%compile.Phase </a>
+        <a href="#autotoc_md177">%compile.Phase </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md176">Utility </a>
+    <a href="#autotoc_md178">Utility </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md177">%compile.is_loaded </a>
+        <a href="#autotoc_md179">%compile.is_loaded </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md178">%compile.named </a>
+        <a href="#autotoc_md180">%compile.named </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md179">%compile.cond </a>
+        <a href="#autotoc_md181">%compile.cond </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md180">Constructors </a>
+    <a href="#autotoc_md182">Constructors </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md181">%compile.phases </a>
+        <a href="#autotoc_md183">%compile.phases </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md182">Phases </a>
+        <a href="#autotoc_md184">Phases </a>
       </li>
     </ul>
   </li>
@@ -158,35 +158,48 @@ $(function(){initNavTree('compile.html','',''); });
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2compile"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1compile.html" title="The compile Plugin">mim::plug::compile</a></dd></dl>
-<p>This plugin handles the optimization pipeline of the compilation of MimIR programs. This plugin's axioms can register <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">mim::Phase</a>s. Invoke the optimization pipeline by defining a function <span class="tt">_compile: [] → %compile.Phase</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md174"></a>
+<p>This plugin provides the building blocks for MimIR's optimization pipeline. This plugin's axioms can register <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">mim::Phase</a>s. Invoke the optimization pipeline by defining a function <span class="tt">_compile: [] → %compile.Phase</span> (or rely on a plugin-provided <span class="tt">_default_compile</span> such as the one in the <span class="tt">opt</span> plugin).</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md176"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md175"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md177"></a>
 %compile.Phase</h2>
 <p>The type of compilation phases.</p>
 <div class="fragment"><div class="line">axm %compile.Phase: *;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md176"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md178"></a>
 Utility</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md177"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md179"></a>
 %compile.is_loaded</h2>
 <p>Checks whether the given plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %compile.is_loaded: {n: Nat} → «n; I8» → Bool, normalize_is_loaded;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md178"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md180"></a>
 %compile.named</h2>
-<p>Resolves to the <span class="tt">compile.Phase</span> annex with the given fully-qualified name (e.g. <span class="tt">"clos.clos_conv"</span>). Resolution is deferred until the phase pipeline is built so that the referenced plugin's <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file does not have to be imported by users of this axm. If the named annex is missing at pipeline build time (its plugin is not loaded), it is silently elided, i.e. the enclosing <span class="tt">compile.phases</span> simply skips it.</p>
+<p>Resolves to the <span class="tt">%compile.Phase</span> annex with the given fully-qualified name (e.g. <span class="tt">"clos.clos_conv"</span>). Resolution is deferred until the phase pipeline is built so that the referenced plugin's <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file does not have to be imported by users of this axm. If the named annex is missing at pipeline build time (its plugin is not loaded), it is silently elided, i.e. the enclosing <span class="tt">compile.phases</span> simply skips it.</p>
 <div class="fragment"><div class="line">axm %compile.named: {n: Nat} → «n; I8» → %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md179"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md181"></a>
 %compile.cond</h2>
 <p>Yields <span class="tt">phase</span> if the named plugin is loaded, otherwise <span class="tt">compile.null</span>. Used to gate whole sub-pipelines on a plugin without importing it.</p>
 <div class="fragment"><div class="line">axm %compile.cond: {n: Nat} → «n; I8» → %compile.Phase → %compile.Phase, normalize_cond;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md180"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md182"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md181"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md183"></a>
 %compile.phases</h2>
-<p>Sets up <span class="tt">n</span> phases and bundles them</p>
+<p>Bundles <span class="tt">n</span> phases into one pipeline (a <a class="el" href="classmim_1_1PhaseMan.html" title="Organizes several Phases into a pipeline.">mim::PhaseMan</a>). The Bool selects fixed-point iteration: <span class="tt">tt</span> reruns the pipeline until no phase requests another round, <span class="tt">ff</span> runs it once.</p>
 <div class="fragment"><div class="line">axm %compile.phases: {n: Nat} → Bool → «n; %compile.Phase» → %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md182"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md184"></a>
 Phases</h2>
+<ul>
+<li><span class="tt">beta_red</span>: β-reduction; inlines Lams that occur exactly once in the program (<a class="el" href="classmim_1_1BetaRed.html" title="Inlines in post-order all Lams that occur exactly once in the program.">mim::BetaRed</a>).</li>
+<li><span class="tt">branch_normalize</span>: η-expands non-Lam branch targets so both sides of a branch are Lams (<a class="el" href="classmim_1_1BranchNormalize.html" title="Normalizes branches: η-expands non-Lam branch targets so that both sides of a (f, t)#cond branch are ...">mim::BranchNormalize</a>).</li>
+<li><span class="tt">cleanup</span>: removes dead and unreachable code by rebuilding the World (<a class="el" href="classmim_1_1Cleanup.html" title="Removes unreachable and dead code by rebuilding the whole World into a new one and swapping them afte...">mim::Cleanup</a>).</li>
+<li><span class="tt">eta_conv</span>: combined, idempotent η-reduction/η-expansion (<a class="el" href="classmim_1_1EtaConv.html" title="Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase.">mim::EtaConv</a>).</li>
+<li><span class="tt">lam_spec</span>: specializes a Lam at its call site by inlining higher-order arguments (<a class="el" href="classmim_1_1LamSpec.html" title="Specializes a Lam at its call site by inlining all Pi-typed (i.e. higher-order) arguments.">mim::LamSpec</a>).</li>
+<li><span class="tt">null</span>: does nothing; useful as an elided placeholder.</li>
+<li><span class="tt">ret_wrap</span>: prepares return continuations for the backend (<a class="el" href="classmim_1_1RetWrap.html">mim::RetWrap</a>).</li>
+<li><span class="tt">scalarize</span>: flattens function signatures (<a class="el" href="classmim_1_1Scalarize.html" title="Perform Scalarization (= Argument simplification).">mim::Scalarize</a>).</li>
+<li><span class="tt">tail_rec_elim</span>: turns tail recursion into loops (<a class="el" href="classmim_1_1TailRecElim.html" title="Eliminates tail recursion: A returning Lam f that calls itself with its own ret var as continuation i...">mim::TailRecElim</a>).</li>
+<li><span class="tt">prefix_cleanup</span>: like <span class="tt">cleanup</span>, but additionally drops externals whose name starts with the given prefix (<a class="el" href="classmim_1_1PrefixCleanup.html">mim::PrefixCleanup</a>).</li>
+<li><span class="tt">internal_cleanup</span>: <span class="tt">prefix_cleanup "internal_"</span>.</li>
+</ul>
 <div class="fragment"><div class="line">axm %compile.beta_red:                            %compile.Phase;</div>
 <div class="line">axm %compile.branch_normalize:                    %compile.Phase;</div>
 <div class="line">axm %compile.cleanup:                             %compile.Phase;</div>

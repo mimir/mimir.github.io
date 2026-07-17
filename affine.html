@@ -151,7 +151,7 @@ $(function(){initNavTree('affine.html','',''); });
         <a href="#autotoc_md134">%affine.semiop(mul,ceildiv,floordiv,mod) </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md135">%affine.op(mul) </a>
+        <a href="#autotoc_md135">%affine.op.mul </a>
       </li>
       <li class="level2">
         <a href="#autotoc_md136">%affine.map </a>
@@ -191,12 +191,12 @@ Dependencies</h1>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
 %affine.For</h2>
-<p>This operation ranges from (including) <span class="tt">begin</span> to (excluding) <span class="tt">end</span> using <span class="tt">step</span> as stride. In addition, this loop manages <span class="tt">n</span> loop accumulators whose initial values <span class="tt">init</span> must be given. Each iteration the given <span class="tt">body</span> is invoked which receives</p><ul>
-<li>the current iteration index, and</li>
+<p>This operation ranges from (including) <span class="tt">begin</span> to (excluding) <span class="tt">end</span> using <span class="tt">step</span> as stride. In addition, this loop manages <span class="tt">n</span> loop accumulators whose initial values <span class="tt">init</span> must be given. On each iteration, the given <span class="tt">body</span> is invoked and receives</p><ul>
+<li>the current iteration index,</li>
 <li>the current values of the loop accumulators <span class="tt">acc</span>, and</li>
-<li>a <span class="tt">yield</span> continuation to prematurely continue with the next iteration.</li>
+<li>a <span class="tt">yield</span> continuation to continue with the next iteration, passing the new accumulator values.</li>
 </ul>
-<p>After termination of the loop <span class="tt">exit</span> is invoked. </p><div class="fragment"><div class="line">axm %affine.For: {m n: Nat, Ts: «n; *»}</div>
+<p>After termination of the loop, <span class="tt">exit</span> is invoked with the final accumulator values. </p><div class="fragment"><div class="line">axm %affine.For: {m n: Nat, Ts: «n; *»}</div>
 <div class="line">               → [Cn [iter: Idx m, acc: «i: n; Ts#i», yield: Cn «i: n; Ts#i»]] // body</div>
 <div class="line">               → [Cn «i: n; Ts#i»]                                             // exit</div>
 <div class="line">               → Cn [begin _end step: Idx m, init: «i: n; Ts#i»];</div>
@@ -220,11 +220,11 @@ Affine Index Operations</h1>
 <div class="fragment"><div class="line">axm %affine.op(neg): %affine.index → %affine.index;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md134"></a>
 %affine.semiop(mul,ceildiv,floordiv,mod)</h2>
-<p>Performs semi-linear operations on affine indices. The second argument must be a constant natural number with regards to the indices.</p>
+<p>Performs semi-linear operations on affine indices. The second argument is a natural number that must be constant with regard to the indices.</p>
 <div class="fragment"><div class="line">axm %affine.semiop(mul,ceildiv,floordiv,mod): [%affine.index, Nat] → %affine.index;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md135"></a>
-%affine.op(mul)</h2>
-<p>Performs multiplication of an affine index with a constant natural number. The second argument must be a constant natural number (which is a stronger argument than the semiop).</p>
+%affine.op.mul</h2>
+<p>Performs multiplication of an affine index with a constant natural number. The second argument must be a <em>closed</em> constant - a stronger requirement than %affine.semiop imposes - which is enforced via %refly.check.</p>
 <div class="fragment"><div class="line">lam %affine.op.mul (d : %affine.index, c : Nat): %affine.index =</div>
 <div class="line">    %affine.semiop.mul(d, %refly.check (%core.pe.is_closed(c), c, &quot;The second argument of %affine.op.mul must be a constant.&quot;));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md136"></a>
