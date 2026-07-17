@@ -209,7 +209,7 @@ Operations w/ Side Effects</h1>
 <p>Allocates memory of type <span class="tt">T</span> in address space <span class="tt">a</span>. </p><div class="fragment"><div class="line">axm %mem.alloc: [*, a: Nat] as Ta → [%mem.M a] → [%mem.M a, %mem.Ptr Ta];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md296"></a>
 %mem.slot</h2>
-<p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The provided <span class="tt">id</span> must be unique. </p><div class="fragment"><div class="line">axm %mem.slot: [*, a: Nat] as Ta → [%mem.M a, id: Nat] → [%mem.M a, %mem.Ptr Ta];</div>
+<p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The slot is passed to the continuation and its lifetime is scoped to that continuation. </p><div class="fragment"><div class="line">axm %mem.slot: [*, a: Nat] as Ta → Fn %mem.M a → [%mem.M a, %mem.Ptr Ta];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md297"></a>
 %mem.malloc</h2>
 <p>Allocates memory of type <span class="tt">T</span> in address space <span class="tt">a</span>. The difference to <span class="tt">%mem.alloc</span> is that the size is passed explicitly (in bytes) instead of being derived from <span class="tt">T</span>. </p><div class="fragment"><div class="line">axm %mem.malloc: [*, a: Nat] as Ta → [%mem.M a, Nat] → [%mem.M a, %mem.Ptr Ta];</div>
@@ -218,7 +218,7 @@ Operations w/ Side Effects</h1>
 <p>Frees memory of type <span class="tt">T</span> in address space <span class="tt">a</span>. </p><div class="fragment"><div class="line">axm %mem.free: {*, a: Nat} as Ta → [%mem.M a, %mem.Ptr Ta] → %mem.M a;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md299"></a>
 %mem.mslot</h2>
-<p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The reserved slot will be <span class="tt">size</span> bytes large. The provided <span class="tt">id</span> must be unique. </p><div class="fragment"><div class="line">axm %mem.mslot: [*, a: Nat] as Ta → [%mem.M a, size: Nat, id: Nat] → [%mem.M a, %mem.Ptr Ta];</div>
+<p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The reserved slot will be <span class="tt">size</span> bytes large. The slot is passed to the continuation and its lifetime is scoped to that continuation. </p><div class="fragment"><div class="line">axm %mem.mslot: [*, a: Nat] as Ta → Fn [%mem.M a, size: Nat] → [%mem.M a, %mem.Ptr Ta];</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md300"></a>
 Operations w/o Side Effects</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md301"></a>
