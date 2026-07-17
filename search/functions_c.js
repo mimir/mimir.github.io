@@ -33,7 +33,7 @@ var searchData=
   ['msg_30',['msg',['../classmim_1_1Error.html#a2de17924251fc9d7d52e6751f17dcc5a',1,'mim::Error']]],
   ['msgs_31',['msgs',['../classmim_1_1Error.html#a717742335e466f95d4e01880e4120182',1,'mim::Error']]],
   ['murmur3_32',['murmur3',['../namespacemim.html#acc8c144dd090446d1c2fc0ae2ca908a9',1,'mim']]],
-  ['mut_33',['mut',['../classmim_1_1Var.html#aa8d07cb130fdf324995f4402f0c5cfc7',1,'mim::Var::mut()'],['../classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf',1,'mim::Nest::Node::mut()']]],
+  ['mut_33',['mut',['../classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf',1,'mim::Nest::Node']]],
   ['mut2node_34',['mut2node',['../structmim_1_1Nest_1_1Node_1_1Children.html#ae86c55c9a66d32d2af776bfdea206530',1,'mim::Nest::Node::Children']]],
   ['mut_5farr_35',['mut_arr',['../classmim_1_1World.html#ade2c4cd0464f3b54829c93fd1ff65e16',1,'mim::World::mut_arr()'],['../classmim_1_1World.html#a5cbd853edc17a6223f7578297b776e39',1,'mim::World::mut_arr(const Def *type)']]],
   ['mut_5fcon_36',['mut_con',['../classmim_1_1World.html#ade141ec63f54f6a72fde808046e0508f',1,'mim::World::mut_con(const Def *dom)'],['../classmim_1_1World.html#ae633c16d97913478bc487dff8286b880',1,'mim::World::mut_con(Defs dom)'],['../namespacemim_1_1plug_1_1mem.html#a8cedca0dc21ce4001f0f3b87655b6a29',1,'mim::plug::mem::mut_con(World &amp;w, nat_t a=0)'],['../namespacemim_1_1plug_1_1mem.html#adbee722c1697d7962e26b44e1972a6dd',1,'mim::plug::mem::mut_con(const Def *dom)']]],

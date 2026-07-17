@@ -180,7 +180,7 @@ $(function(){initNavTree('nest_8cpp_source.html','',''); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    uint32_t max = 0;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    <span class="keyword">auto</span> inest   = root_;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> var : local_mut-&gt;free_vars()) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                        <span class="keywordflow">if</span> (<span class="keyword">auto</span> node = (*<span class="keyword">this</span>)[var-&gt;mut()]; node &amp;&amp; node-&gt;level() &gt; max) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                        <span class="keywordflow">if</span> (<span class="keyword">auto</span> node = (*<span class="keyword">this</span>)[var-&gt;binder()]; node &amp;&amp; node-&gt;level() &gt; max) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                            max   = node-&gt;level();</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                            inest = node;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        }</div>

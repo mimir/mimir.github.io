@@ -1,6 +1,6 @@
 var classmim_1_1Var =
 [
-    [ "mut", "classmim_1_1Var.html#aa8d07cb130fdf324995f4402f0c5cfc7", null ],
+    [ "binder", "classmim_1_1Var.html#a7e86cad5b81a007f8d25825b97ec83c4", null ],
     [ "rebuild_", "classmim_1_1Var.html#a49df56bd90776647800853c943bd8370", null ],
     [ "type", "classmim_1_1Var.html#a42bc9b2f4d88e8d4cd8cf8f4b3d45db9", null ],
     [ "World", "classmim_1_1Var.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],

@@ -9,6 +9,7 @@ var classmim_1_1Def =
     [ "Def", "classmim_1_1Def.html#ae59703ead7befb26e835d4d9793e2786", null ],
     [ "Def", "classmim_1_1Def.html#a7d17c70789416483a8f248e2c7e9a5e3", null ],
     [ "Def", "classmim_1_1Def.html#a73acaf4ded5bcd2d42491fe01140f880", null ],
+    [ "Def", "classmim_1_1Def.html#a0cf31336b9645e39685b7a9404d99a11", null ],
     [ "~Def", "classmim_1_1Def.html#a28c96a2a0852a5559694dd2cd439edd5", null ],
     [ "arity", "classmim_1_1Def.html#ae51857d275509b1b70aa8f696cee3a0a", null ],
     [ "as_imm", "classmim_1_1Def.html#ac62b72371d95ea3e8774d11336ed640b", null ],

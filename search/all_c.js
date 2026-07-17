@@ -215,7 +215,7 @@ var searchData=
   ['mul_20ceildiv_20floordiv_20mod_212',['%affine.semiop(mul,ceildiv,floordiv,mod)',['../affine.html#autotoc_md134',1,'']]],
   ['murmur3_213',['murmur3',['../namespacemim.html#acc8c144dd090446d1c2fc0ae2ca908a9',1,'mim']]],
   ['mut_214',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim::Mut'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132baebb87a770abac0e394d963d20ed574b7',1,'mim::Mut'],['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08daebb87a770abac0e394d963d20ed574b7',1,'mim::Mut']]],
-  ['mut_215',['mut',['../classmim_1_1Var.html#aa8d07cb130fdf324995f4402f0c5cfc7',1,'mim::Var::mut()'],['../classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf',1,'mim::Nest::Node::mut()']]],
+  ['mut_215',['mut',['../classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf',1,'mim::Nest::Node']]],
   ['mut2mut_216',['Mut2Mut',['../namespacemim.html#a9fd6d037a8eb540c32dbe840e32c90e9',1,'mim']]],
   ['mut2node_217',['mut2node',['../structmim_1_1Nest_1_1Node_1_1Children.html#ae86c55c9a66d32d2af776bfdea206530',1,'mim::Nest::Node::Children']]],
   ['mut_5farr_218',['mut_arr',['../classmim_1_1World.html#ade2c4cd0464f3b54829c93fd1ff65e16',1,'mim::World::mut_arr()'],['../classmim_1_1World.html#a5cbd853edc17a6223f7578297b776e39',1,'mim::World::mut_arr(const Def *type)']]],
