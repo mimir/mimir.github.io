@@ -391,8 +391,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a83f7d40900e583112dead0917f4188b2 template"><td class="memItemLeft">constexpr decltype(auto)&#160;</td><td class="memItemRight"><a class="el" href="#a83f7d40900e583112dead0917f4188b2">get</a> (<a class="el" href="classmim_1_1Span.html">Span</a>&lt; T, N &gt; span) noexcept</td></tr>
 <tr class="memitem:aba1dd89e9049fc3fd5f807e098d95cd9" id="r_aba1dd89e9049fc3fd5f807e098d95cd9"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aba1dd89e9049fc3fd5f807e098d95cd9">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:aba1dd89e9049fc3fd5f807e098d95cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will stream <code class="param">def</code> as an operand.  <br /></td></tr>
-<tr class="memitem:ad45187480ea300d849ccf005b084bbd3" id="r_ad45187480ea300d849ccf005b084bbd3"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ad45187480ea300d849ccf005b084bbd3">is_lam_tuple</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
-<tr class="memdesc:ad45187480ea300d849ccf005b084bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt"><a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a></span> all of whose ops are mutable <span class="tt"><a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a></span>s - i.e. a branch / dispatch table.  <br /></td></tr>
+<tr class="memitem:a67e4f473bae8456d99c9c4ffc043c62b" id="r_a67e4f473bae8456d99c9c4ffc043c62b"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Pi.html">Pi</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a67e4f473bae8456d99c9c4ffc043c62b">isa_flattenable</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a67e4f473bae8456d99c9c4ffc043c62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The only <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a>s we ever reshape: immutable (non-dependent) continuations.  <br /></td></tr>
+<tr class="memitem:a14e875ff9d37fba52618767b032ed91d" id="r_a14e875ff9d37fba52618767b032ed91d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a14e875ff9d37fba52618767b032ed91d">collect</a> (<a class="el" href="#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> &amp;set, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a14e875ff9d37fba52618767b032ed91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collects <code class="param">def's</code> immutable subtree into <code class="param">set</code>; stops at mutables.  <br /></td></tr>
 <tr class="memitem:a31108855e962bd3bf8dbf912eb4349b0" id="r_a31108855e962bd3bf8dbf912eb4349b0"><td class="memItemLeft">std::tuple&lt; const <a class="el" href="classmim_1_1Var.html">Var</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a31108855e962bd3bf8dbf912eb4349b0">tuple_of_dict</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &amp;v2v)</td></tr>
 <tr class="memitem:ada5cb760897eaa1e558552b65009fa67" id="r_ada5cb760897eaa1e558552b65009fa67"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ada5cb760897eaa1e558552b65009fa67">post_order</a> (const <a class="el" href="classmim_1_1Nest.html">Nest</a> &amp;nest, const <a class="el" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a> *node, <a class="el" href="classmim_1_1Scheduler.html#af7c082b610d8b7515f90b6512148f72c">Scheduler::Schedule</a> &amp;res, <a class="el" href="#a9cef35a428a391739d168b05bad8dfb2">MutSet</a> &amp;done)</td></tr>
 <tr class="memitem:acc7b1158f83b80e637de1a63f56d514c" id="r_acc7b1158f83b80e637de1a63f56d514c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc7b1158f83b80e637de1a63f56d514c">flatten_umax</a> (<a class="el" href="#a1433b0566b2cbdbf0c6f74baed22bb52">DefVec</a> &amp;ops, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
@@ -2315,6 +2317,43 @@ requires (std::is_trivially_copyable_v&lt;S&gt; &amp;&amp; std::is_trivially_cop
 
 </div>
 </div>
+<a id="a14e875ff9d37fba52618767b032ed91d" name="a14e875ff9d37fba52618767b032ed91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e875ff9d37fba52618767b032ed91d">&#9670;&#160;</a></span>collect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::collect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>set</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collects <code class="param">def's</code> immutable subtree into <code class="param">set</code>; stops at mutables. </p>
+
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00056">56</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="scalarize_8cpp_source.html#l00056">collect()</a>, <a class="el" href="def_8cpp_source.html#l00506">mim::Def::deps()</a>, and <a class="el" href="def_8h_source.html#l00520">mim::Def::isa_mut()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="scalarize_8cpp_source.html#l00056">collect()</a>.</p>
+
+</div>
+</div>
 <a id="aab8bd049eb0b9bf7561a602f62ce7ebd" name="aab8bd049eb0b9bf7561a602f62ce7ebd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab8bd049eb0b9bf7561a602f62ce7ebd">&#9670;&#160;</a></span>compose_cn()</h2>
 
@@ -3177,39 +3216,6 @@ template&lt;class Id&gt; </div>
 
 </div>
 </div>
-<a id="ad45187480ea300d849ccf005b084bbd3" name="ad45187480ea300d849ccf005b084bbd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad45187480ea300d849ccf005b084bbd3">&#9670;&#160;</a></span>is_lam_tuple()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mim::is_lam_tuple </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>A <span class="tt"><a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a></span> all of whose ops are mutable <span class="tt"><a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a></span>s - i.e. a branch / dispatch table. </p>
-
-<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00014">14</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="def_8h_source.html#l00317">mim::Def::num_ops()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="scalarize_8cpp_source.html#l00201">mim::Scalarize::rewrite_imm_App()</a>.</p>
-
-</div>
-</div>
 <a id="a2efd858db7ed2bd9c205337f6129daa8" name="a2efd858db7ed2bd9c205337f6129daa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2efd858db7ed2bd9c205337f6129daa8">&#9670;&#160;</a></span>is_unit()</h2>
 
@@ -3289,6 +3295,37 @@ template&lt;class Id&gt; </div>
 
 </div>
 </div>
+<a id="a67e4f473bae8456d99c9c4ffc043c62b" name="a67e4f473bae8456d99c9c4ffc043c62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e4f473bae8456d99c9c4ffc043c62b">&#9670;&#160;</a></span>isa_flattenable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Pi.html">Pi</a> * mim::isa_flattenable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The only <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a>s we ever reshape: immutable (non-dependent) continuations. </p>
+
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00013">13</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00047">mim::Pi::isa_cn()</a>.</p>
+
+</div>
+</div>
 <a id="aed08f1594b45cd3b7b35140ecb7366bc" name="aed08f1594b45cd3b7b35140ecb7366bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed08f1594b45cd3b7b35140ecb7366bc">&#9670;&#160;</a></span>isa_indicies()</h2>
 
@@ -3347,7 +3384,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00497">mim::Def::is_annex()</a>, <a class="el" href="def_8h_source.html#l00493">mim::Def::is_external()</a>, and <a class="el" href="def_8cpp_source.html#l00300">mim::Def::is_set()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="scalarize_8cpp_source.html#l00275">mim::Scalarize::rewrite_imm_App()</a>, and <a class="el" href="scalarize_8cpp_source.html#l00225">mim::Scalarize::rewrite_mut_Lam()</a>.</p>
 
 </div>
 </div>
@@ -4309,7 +4346,7 @@ template&lt;class I, class A = std::allocator&lt;typename std::iterator_traits&l
 
 <p class="reference">References <a class="el" href="vector_8h_source.html#l00011">Default_Inlined_Size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sets_8h_source.html#l00528">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::erase()</a>, <a class="el" href="sets_8h_source.html#l00492">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::merge()</a>, <a class="el" href="def_8h_source.html#l00416">mim::Def::projs()</a>, <a class="el" href="scalarize_8cpp_source.html#l00201">mim::Scalarize::rewrite_imm_App()</a>, and <a class="el" href="scalarize_8cpp_source.html#l00146">mim::Scalarize::rewrite_mut_Lam()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sets_8h_source.html#l00528">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::erase()</a>, <a class="el" href="sets_8h_source.html#l00492">mim::Sets&lt; Def &gt;::Set&lt; Def &gt;::merge()</a>, <a class="el" href="def_8h_source.html#l00416">mim::Def::projs()</a>, <a class="el" href="scalarize_8cpp_source.html#l00202">mim::Scalarize::rewrite_imm_Pi()</a>, and <a class="el" href="scalarize_8cpp_source.html#l00225">mim::Scalarize::rewrite_mut_Lam()</a>.</p>
 
 </div>
 </div>
@@ -4336,7 +4373,7 @@ template&lt;class I, class A = std::allocator&lt;typename std::iterator_traits&l
 
 <p>Number of params a single <span class="tt"><a class="el" href="#ad8bae182cdb06699fc07a348105f193c">u64</a></span> keep-bitmask can represent; wider doms fall back to the ⊤ sentinel. </p>
 
-<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00011">11</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00010">10</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
 
 </div>
 </div>

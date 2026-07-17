@@ -1,5 +1,8 @@
 var NAVTREEINDEX23 =
 {
+"plug_2tuple_2tuple_8h.html":[5,0,3,1,3,18,0],
+"plug_2tuple_2tuple_8h_source.html":[5,0,3,1,3,18,0],
+"plugin_8cpp.html":[5,0,4,1,15],
 "plugin_8cpp_source.html":[5,0,4,1,15],
 "plugin_8h.html":[5,0,3,1,14],
 "plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2":[5,0,3,1,14,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX23 =
 "structmim_1_1Nest_1_1Node_1_1Children.html#a41cde5894303b7317a2c403220f88a8b":[4,0,1,35,0,0,0],
 "structmim_1_1Nest_1_1Node_1_1Children.html#a60b692321eac11789d3d4528322d7505":[2,0,3,37,0,0,6],
 "structmim_1_1Nest_1_1Node_1_1Children.html#a60b692321eac11789d3d4528322d7505":[4,0,1,35,0,0,6],
-"structmim_1_1Nest_1_1Node_1_1Children.html#a7cd6467a476c3a7d4dceb5b720acdc7d":[2,0,3,37,0,0,1],
-"structmim_1_1Nest_1_1Node_1_1Children.html#a7cd6467a476c3a7d4dceb5b720acdc7d":[4,0,1,35,0,0,1],
-"structmim_1_1Nest_1_1Node_1_1Children.html#a835cdf64395521c736b393399a1dddbd":[2,0,3,37,0,0,8],
-"structmim_1_1Nest_1_1Node_1_1Children.html#a835cdf64395521c736b393399a1dddbd":[4,0,1,35,0,0,8]
+"structmim_1_1Nest_1_1Node_1_1Children.html#a7cd6467a476c3a7d4dceb5b720acdc7d":[2,0,3,37,0,0,1]
 };

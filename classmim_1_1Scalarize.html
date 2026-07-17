@@ -211,6 +211,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a4ed698d3ea3dbb65ec7b649e8e1fa870" id="r_a4ed698d3ea3dbb65ec7b649e8e1fa870"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4ed698d3ea3dbb65ec7b649e8e1fa870">rewrite_imm_Pi</a> (const <a class="el" href="classmim_1_1Pi.html">Pi</a> *) final</td></tr>
 <tr class="memitem:acbc797c64395dc9596b153dab2d900f3" id="r_acbc797c64395dc9596b153dab2d900f3"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#acbc797c64395dc9596b153dab2d900f3">rewrite_mut_Lam</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *) final</td></tr>
 <tr class="memitem:a8a473f4c48ce64f67df4dfd0956d0b69" id="r_a8a473f4c48ce64f67df4dfd0956d0b69"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8a473f4c48ce64f67df4dfd0956d0b69">rewrite_imm_App</a> (const <a class="el" href="classmim_1_1App.html">App</a> *) final</td></tr>
 </table><table class="memberdecls">
@@ -237,12 +238,19 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Perform Scalarization (= Argument simplification). </p>
 <p>This means that, e.g., </p><div class="fragment"><div class="line">f := λ (x_1: [T_1, T_2], .., x_n: T_n).E</div>
 </div><!-- fragment --><p> will be transformed to </p><div class="fragment"><div class="line">f<span class="stringliteral">&#39; := λ (y_1: T_1, y_2: T_2, .. y_n: T_n).E[x_1 \ (y_1, y_2); ..; x_n \ y_n]</span></div>
-</div><!-- fragment --><p> if <span class="tt">f</span> appears in callee position only (see <code class="param">EtaExp</code>).</p>
-<p>The phase flattens <b>one level</b> of a lambda's (thresholded) parameters per run. Because it is scheduled inside a fixed-point pipeline (<span class="tt">compile.phases tt (...)</span>), re-running it converges to a full flatten; each run that peels calls <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>.</p>
-<p>Flattening respects <a class="el" href="structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7">Flags::scalarize_threshold</a> via the thresholded projection helpers (<a class="el" href="classmim_1_1Def.html#a26e88f05b40da602dbc2d3cfc02e4799" title="As above but yields 1, if Flags::scalarize_threshold is exceeded.">Def::num_tprojs</a>, <a class="el" href="classmim_1_1Def.html#a41594be2f5849f844f1321ca6ddfe544">Lam::tvar</a>, App::targ): a parameter is only expanded if its arity is below the threshold. It will not flatten mutable <code class="param"><a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a>s</code> or <code class="param"><a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a>ays</code> (their vars have no static arity).</p>
-<p>A parameter that is <code class="param"><a class="el" href="classmim_1_1Extract.html" title="Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.">Extract</a>ed</code> / <code class="param"><a class="el" href="classmim_1_1Insert.html" title="Creates a new Tuple / Pack by inserting Insert::value at position Insert::index into Insert::tuple.">Insert</a>ed</code> via a <b>non-constant</b> index is left intact: splitting it would only force the body to reassemble the tuple. </p>
+</div><!-- fragment --><p>The transformation is <b>type-directed</b>: the decision to flatten is made per continuation <em>type</em> (immutable <span class="tt">Cn</span>) - not per <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>. Every producer and consumer of such a type is reshaped in the same sweep: the <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a> itself, all <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>s of that type, and all <a class="el" href="classmim_1_1App.html">App</a>s through it - no matter whether the callee is a mutable <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>, a <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> (higher-order parameter), a branch tuple, or a value loaded back from memory. Hence, a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> may escape (be stored, passed as argument) and still get its signature flattened.</p>
+<p>A <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a> is <em>pinned</em> (left untouched) if</p><ul>
+<li>it is reachable from an annex (normalizers and backends rely on its exact shape),</li>
+<li>an <a class="el" href="classmim_1_1Axm.html">Axm</a> application's signature dictates it - what the <a class="el" href="classmim_1_1Axm.html">Axm</a> consumes and produces, plus a <em>bare</em> function argument's type (<span class="tt">%autodiff.ad f</span>) - except for subtrees that are merely substituted in via (type) arguments (<span class="tt">T</span> in <span class="tt">%mem.store T</span>), which stay flattenable,</li>
+<li>it occurs inside an <em>interface</em> <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>'s signature (external, annex, or unset declaration) - only such a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>'s own top-level <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a> stays flattenable (it may be shared with internal values; <a class="el" href="#acbc797c64395dc9596b153dab2d900f3">rewrite_mut_Lam()</a> preserves the interface's top level by hand),</li>
+<li>it types a value inside a dependently-typed aggregate (a typed closure),</li>
+<li>an <a class="el" href="classmim_1_1App.html">App</a> connects a dom and an arg whose types are alpha-equivalent yet <em>distinct</em> defs, or</li>
+<li>one of its parameters is <a class="el" href="classmim_1_1Extract.html" title="Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.">Extract</a>ed / <a class="el" href="classmim_1_1Insert.html" title="Creates a new Tuple / Pack by inserting Insert::value at position Insert::index into Insert::tuple.">Insert</a>ed via a <b>non-constant</b> index (splitting would only force the body to reassemble the tuple); this is tracked per parameter via a keep-bitmask.</li>
+</ul>
+<p>The phase flattens <b>one level</b> of a <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a>'s (thresholded) domain per run. Because it is scheduled inside a fixed-point pipeline (<span class="tt">compile.phases tt (...)</span>), re-running it converges to a full flatten; each run that peels calls <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>.</p>
+<p>Flattening respects <a class="el" href="structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7">Flags::scalarize_threshold</a> via the thresholded projection helpers (<a class="el" href="classmim_1_1Def.html#a26e88f05b40da602dbc2d3cfc02e4799" title="As above but yields 1, if Flags::scalarize_threshold is exceeded.">Def::num_tprojs</a>, Pi::tdom, App::targ): a parameter is only expanded if its arity is below the threshold. It will not flatten mutable <code class="param"><a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a>s</code> or <code class="param"><a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a>ays</code> (their vars have no static arity). </p>
 
-<p class="definition">Definition at line <a class="el" href="scalarize_8h_source.html#l00029">29</a> of file <a class="el" href="scalarize_8h_source.html">scalarize.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scalarize_8h_source.html#l00046">46</a> of file <a class="el" href="scalarize_8h_source.html">scalarize.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac7695239456b200cd538abf51694f668" name="ac7695239456b200cd538abf51694f668"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7695239456b200cd538abf51694f668">&#9670;&#160;</a></span>Scalarize()</h2>
@@ -271,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="scalarize_8h_source.html#l00063">63</a> of file <a class="el" href="scalarize_8h_source.html">scalarize.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scalarize_8h_source.html#l00078">78</a> of file <a class="el" href="scalarize_8h_source.html">scalarize.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00271">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
@@ -301,9 +309,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00201">201</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00275">275</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00276">mim::App::callee()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="scalarize_8cpp_source.html#l00014">mim::is_lam_tuple()</a>, <a class="el" href="def_8h_source.html#l00520">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, and <a class="el" href="namespacemim.html#afca0bb4c47e185182e4fc7ad6bcec3a1">mim::Vector()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00205">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00276">mim::App::callee()</a>, <a class="el" href="lam_8h_source.html#l00278">mim::App::callee_type()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="def_8h_source.html#l00520">mim::Def::isa_mut()</a>, <a class="el" href="lam_8h_source.html#l00352">mim::isa_optimizable()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>.</p>
+
+</div>
+</div>
+<a id="a4ed698d3ea3dbb65ec7b649e8e1fa870" name="a4ed698d3ea3dbb65ec7b649e8e1fa870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed698d3ea3dbb65ec7b649e8e1fa870">&#9670;&#160;</a></span>rewrite_imm_Pi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Scalarize::rewrite_imm_Pi </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Pi.html">Pi</a> *</td>          <td class="paramname"><span class="paramname"><em>pi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00202">202</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00036">mim::Pi::codom()</a>, <a class="el" href="log_8h_source.html#l00094">DLOG</a>, <a class="el" href="phase_8h_source.html#l00094">mim::Phase::invalidate()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="lam_8h_source.html#l00026">mim::Pi::is_implicit()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, and <a class="el" href="namespacemim.html#afca0bb4c47e185182e4fc7ad6bcec3a1">mim::Vector()</a>.</p>
 
 </div>
 </div>
@@ -330,9 +367,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00146">146</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00225">225</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00123">mim::Lam::body()</a>, <a class="el" href="def_8h_source.html#l00540">mim::Def::dbg()</a>, <a class="el" href="log_8h_source.html#l00094">DLOG</a>, <a class="el" href="lam_8h_source.html#l00122">mim::Lam::filter()</a>, <a class="el" href="phase_8h_source.html#l00094">mim::Phase::invalidate()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::num_tvars()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::tvar()</a>, <a class="el" href="def_8cpp_source.html#l00483">mim::Def::type()</a>, <a class="el" href="lam_8h_source.html#l00130">mim::Lam::type()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::var()</a>, and <a class="el" href="namespacemim.html#afca0bb4c47e185182e4fc7ad6bcec3a1">mim::Vector()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00123">mim::Lam::body()</a>, <a class="el" href="def_8h_source.html#l00540">mim::Def::dbg()</a>, <a class="el" href="log_8h_source.html#l00094">DLOG</a>, <a class="el" href="lam_8h_source.html#l00122">mim::Lam::filter()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="lam_8h_source.html#l00352">mim::isa_optimizable()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::num_tvars()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, <a class="el" href="rewrite_8cpp_source.html#l00267">mim::Rewriter::rewrite_stub()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::tvar()</a>, <a class="el" href="def_8cpp_source.html#l00483">mim::Def::type()</a>, <a class="el" href="lam_8h_source.html#l00130">mim::Lam::type()</a>, <a class="el" href="def_8h_source.html#l00437">mim::Def::var()</a>, and <a class="el" href="namespacemim.html#afca0bb4c47e185182e4fc7ad6bcec3a1">mim::Vector()</a>.</p>
 
 </div>
 </div>
