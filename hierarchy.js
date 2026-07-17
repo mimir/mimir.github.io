@@ -108,6 +108,7 @@ var hierarchy =
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
         [ "mim::plug::autodiff::Eval", "classmim_1_1plug_1_1autodiff_1_1Eval.html", null ],
+        [ "mim::plug::buffer::LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", null ],
         [ "mim::plug::clos::BranchClosElim", "classmim_1_1plug_1_1clos_1_1BranchClosElim.html", null ],
         [ "mim::plug::clos::Clos2SJLJ", "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html", null ],
         [ "mim::plug::clos::ClosConvPrep", "classmim_1_1plug_1_1clos_1_1ClosConvPrep.html", null ],
@@ -116,14 +117,16 @@ var hierarchy =
         [ "mim::plug::gpu::phase::RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", null ],
         [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
         [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
+        [ "mim::plug::matrix::LowerAff", "classmim_1_1plug_1_1matrix_1_1LowerAff.html", null ],
         [ "mim::plug::matrix::LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", null ],
-        [ "mim::plug::matrix::LowerMatrixLowLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html", null ],
         [ "mim::plug::matrix::LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html", null ],
         [ "mim::plug::mem::phase::SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", null ],
         [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],
         [ "mim::plug::tensor::phase::Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", null ],
-        [ "mim::plug::tensor::phase::LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", null ]
+        [ "mim::plug::tensor::phase::LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", null ],
+        [ "mim::plug::tensor::phase::LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", null ],
+        [ "mim::plug::tensor::phase::LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", null ]
       ] ],
       [ "mim::VarRewriter", "classmim_1_1VarRewriter.html", null ],
       [ "mim::Zonker", "classmim_1_1Zonker.html", null ]

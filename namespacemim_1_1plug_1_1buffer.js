@@ -1,0 +1,27 @@
+var namespacemim_1_1plug_1_1buffer =
+[
+    [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ],
+    [ "alloc", "namespacemim_1_1plug_1_1buffer.html#a6d3e35261f35dea8968c3b995a30f0ee", null ],
+    [ "Buf", "namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c", null ],
+    [ "constant", "namespacemim_1_1plug_1_1buffer.html#a93b73e91892f0ce92337488e8561fa81", null ],
+    [ "copy", "namespacemim_1_1plug_1_1buffer.html#a3fb378dcb7592932135a7f5167d12380", null ],
+    [ "init", "namespacemim_1_1plug_1_1buffer.html#a510dfa839a89984f2c6d54ab2295657d", null ],
+    [ "lower_ptr", "namespacemim_1_1plug_1_1buffer.html#a217eccd3a90c9a01efb7d3901d352bee", null ],
+    [ "read", "namespacemim_1_1plug_1_1buffer.html#a872977650adc88b46c7cd60f543a654b", null ],
+    [ "shape", "namespacemim_1_1plug_1_1buffer.html#a8619b621474e22361c22bdc19bda0bed", null ],
+    [ "write", "namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886", null ],
+    [ "normalize_Buf", "namespacemim_1_1plug_1_1buffer.html#af9c784e7898190a6b68b046e9fbfcf4c", null ],
+    [ "normalize_read", "namespacemim_1_1plug_1_1buffer.html#a6133cb09675fd0c38ad9e28511b1aa66", null ],
+    [ "normalize_shape", "namespacemim_1_1plug_1_1buffer.html#a205230a8fbf5e686a174ca332c57138b", null ],
+    [ "normalize_write", "namespacemim_1_1plug_1_1buffer.html#a1f336dadf3b16e8153af1e9e7383f202", null ],
+    [ "op_alloc", "namespacemim_1_1plug_1_1buffer.html#aeb923067ffb5d6389b8c711d9d8ae534", null ],
+    [ "op_constant", "namespacemim_1_1plug_1_1buffer.html#a8e7a49f64403567790b67362d70ba571", null ],
+    [ "op_copy", "namespacemim_1_1plug_1_1buffer.html#aff6fec8329ff1de1d64a5f64e002d978", null ],
+    [ "op_init", "namespacemim_1_1plug_1_1buffer.html#abd0c6f20c924ce86ad3382e4b6aecbfb", null ],
+    [ "op_read", "namespacemim_1_1plug_1_1buffer.html#abcbe876c1da1e47b6e1ce84d634d28f1", null ],
+    [ "op_write", "namespacemim_1_1plug_1_1buffer.html#a3b41cd78cfb6f80fe4c1dd11e55e1e0b", null ],
+    [ "reg_phases", "namespacemim_1_1plug_1_1buffer.html#ae10753950f548d6b4c264a05c3f04149", null ],
+    [ "register_normalizers", "namespacemim_1_1plug_1_1buffer.html#a6ab03f26d35d2317310583cd1f361cad", null ],
+    [ "type_buf", "namespacemim_1_1plug_1_1buffer.html#a0620f0531bd572b2baeb94cc4a706f40", null ],
+    [ "Plugin_Id", "namespacemim_1_1plug_1_1buffer.html#a43a9ef56aed96ce6f6ac6fc73469cd4c", null ]
+];

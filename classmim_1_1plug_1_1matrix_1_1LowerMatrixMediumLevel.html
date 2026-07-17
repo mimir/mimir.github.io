@@ -230,18 +230,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>In this step, we lower <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1matrix.html#a66955a2552e5d88d664a8212aedfe40d">map_reduce</a></span> operations into affine for loops making the iteration scheme explicit. </p>
-<p>Pseudo-code: </p><div class="fragment"><div class="line">out_matrix = <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1matrix.html#af3d33c72062b1db8a1b997ec650a8f3d">init</a></div>
+<p>Pseudo-code: </p><div class="fragment"><div class="line">out_matrix = init</div>
 <div class="line"><span class="keywordflow">for</span> output_indices:</div>
 <div class="line">  acc = zero</div>
 <div class="line">  <span class="keywordflow">for</span> input_indices:</div>
-<div class="line">    element_[0..m] = <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1matrix.html#ad88476eb54b27ecc6ea9b6656c378f01">read</a>(<a class="code hl_namespace" href="namespacemim_1_1plug_1_1matrix.html">matrix</a>[0..m], indices)</div>
+<div class="line">    element_[0..m] = read(<a class="code hl_namespace" href="namespacemim_1_1plug_1_1matrix.html">matrix</a>[0..m], indices)</div>
 <div class="line">    acc = f (acc, elements)</div>
-<div class="line">  <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1matrix.html#a43f6250da3d2391f05e4a545540a2f38">insert</a> (out_matrix, output_indices, acc)</div>
+<div class="line">  insert (out_matrix, output_indices, acc)</div>
 <div class="line"><span class="keywordflow">return</span> out_matrix</div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1matrix_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1matrix.html">mim::plug::matrix</a></div><div class="ttdoc">The matrix Plugin</div><div class="ttdef"><b>Definition</b> <a href="matrix_8h_source.html#l00007">matrix.h:7</a></div></div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1matrix_html_a43f6250da3d2391f05e4a545540a2f38"><div class="ttname"><a href="namespacemim_1_1plug_1_1matrix.html#a43f6250da3d2391f05e4a545540a2f38">mim::plug::matrix::insert</a></div><div class="ttdeci">insert</div><div class="ttdef"><b>Definition</b> <a href="matrix_2autogen_8h_source.html#l00044">autogen.h:44</a></div></div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1matrix_html_ad88476eb54b27ecc6ea9b6656c378f01"><div class="ttname"><a href="namespacemim_1_1plug_1_1matrix.html#ad88476eb54b27ecc6ea9b6656c378f01">mim::plug::matrix::read</a></div><div class="ttdeci">read</div><div class="ttdef"><b>Definition</b> <a href="matrix_2autogen_8h_source.html#l00036">autogen.h:36</a></div></div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1matrix_html_af3d33c72062b1db8a1b997ec650a8f3d"><div class="ttname"><a href="namespacemim_1_1plug_1_1matrix.html#af3d33c72062b1db8a1b997ec650a8f3d">mim::plug::matrix::init</a></div><div class="ttdeci">init</div><div class="ttdef"><b>Definition</b> <a href="matrix_2autogen_8h_source.html#l00052">autogen.h:52</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1matrix_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1matrix.html">mim::plug::matrix</a></div><div class="ttdoc">The matrix Plugin</div><div class="ttdef"><b>Definition</b> <a href="matrix_8h_source.html#l00008">matrix.h:8</a></div></div>
 </div><!-- fragment --><p>Detailed pseudo-code:</p><ul>
 <li>out indices = (0,1,2, ..., n)</li>
 <li>bounds in S</li>
@@ -255,9 +252,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">      for j in [0, SI<span class="preprocessor">#(...)]:</span></div>
 <div class="line">        <span class="comment">// indices depend on the specified access</span></div>
 <div class="line">        <span class="comment">// input#k#0</span></div>
-<div class="line">        e_0 = <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1matrix.html#ad88476eb54b27ecc6ea9b6656c378f01">read</a> (input#0#1, (i_1, i_0))</div>
+<div class="line">        e_0 = read (input#0#1, (i_1, i_0))</div>
 <div class="line">        ...</div>
-<div class="line">        e_(m-1) = <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1matrix.html#ad88476eb54b27ecc6ea9b6656c378f01">read</a> (input#(m-1)#1, (i_2, j))</div>
+<div class="line">        e_(m-1) = read (input#(m-1)#1, (i_2, j))</div>
 <div class="line"> </div>
 <div class="line">        s = add(s, mul (e_0, ..., e_(m-1)) )</div>
 <div class="line">      write (output, (i_0, ..., i_{n-1}), s)</div>
@@ -323,9 +320,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html#l00032">32</a> of file <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html">lower_matrix_mediumlevel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html#l00033">33</a> of file <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html">lower_matrix_mediumlevel.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html#l00019">mim::plug::matrix::counting_for()</a>, <a class="el" href="log_8h_source.html#l00094">DLOG</a>, <a class="el" href="log_8h_source.html#l00088">ELOG</a>, <a class="el" href="span_8h_source.html#l00119">mim::get()</a>, <a class="el" href="def_8h_source.html#l00851">mim::Lit::get()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="axm_8h_source.html#l00107">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00864">mim::Lit::isa()</a>, <a class="el" href="mem_8h_source.html#l00016">mim::plug::mem::mut_con()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="cps_8h_source.html#l00016">mim::plug::cps::op_cps2ds_dep()</a>, <a class="el" href="matrix_8h_source.html#l00015">mim::plug::matrix::op_read()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, and <a class="el" href="lam_8cpp_source.html#l00029">mim::Lam::set()</a>.</p>
+<p class="reference">References <a class="el" href="lower__matrix__mediumlevel_8cpp_source.html#l00020">mim::plug::matrix::counting_for()</a>, <a class="el" href="log_8h_source.html#l00094">DLOG</a>, <a class="el" href="log_8h_source.html#l00088">ELOG</a>, <a class="el" href="span_8h_source.html#l00119">mim::get()</a>, <a class="el" href="def_8h_source.html#l00851">mim::Lit::get()</a>, <a class="el" href="phase_8h_source.html#l00311">mim::RWPhase::is_bootstrapping()</a>, <a class="el" href="axm_8h_source.html#l00107">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00864">mim::Lit::isa()</a>, <a class="el" href="mem_8h_source.html#l00016">mim::plug::mem::mut_con()</a>, <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>, <a class="el" href="buffer_8h_source.html#l00016">mim::plug::buffer::op_alloc()</a>, <a class="el" href="cps_8h_source.html#l00016">mim::plug::cps::op_cps2ds_dep()</a>, <a class="el" href="matrix_8h_source.html#l00011">mim::plug::matrix::op_read()</a>, <a class="el" href="buffer_8h_source.html#l00029">mim::plug::buffer::op_write()</a>, <a class="el" href="def_8h_source.html#l00398">mim::Def::projs()</a>, <a class="el" href="rewrite_8cpp_source.html#l00056">mim::Rewriter::rewrite()</a>, and <a class="el" href="lam_8cpp_source.html#l00029">mim::Lam::set()</a>.</p>
 
 </div>
 </div>

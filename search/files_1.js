@@ -6,5 +6,8 @@ var searchData=
   ['branch_5fclos_5felim_2ecpp_3',['branch_clos_elim.cpp',['../branch__clos__elim_8cpp.html',1,'']]],
   ['branch_5fclos_5felim_2eh_4',['branch_clos_elim.h',['../branch__clos__elim_8h.html',1,'']]],
   ['branch_5fnormalize_2ecpp_5',['branch_normalize.cpp',['../branch__normalize_8cpp.html',1,'']]],
-  ['branch_5fnormalize_2eh_6',['branch_normalize.h',['../branch__normalize_8h.html',1,'']]]
+  ['branch_5fnormalize_2eh_6',['branch_normalize.h',['../branch__normalize_8h.html',1,'']]],
+  ['buffer_2ecpp_7',['buffer.cpp',['../buffer_8cpp.html',1,'']]],
+  ['buffer_2eh_8',['buffer.h',['../buffer_8h.html',1,'']]],
+  ['buffer_2emd_9',['buffer.md',['../buffer_8md.html',1,'']]]
 ];

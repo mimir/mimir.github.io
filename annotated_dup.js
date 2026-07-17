@@ -73,6 +73,9 @@ var annotated_dup =
         [ "autodiff", "namespacemim_1_1plug_1_1autodiff.html", [
           [ "Eval", "classmim_1_1plug_1_1autodiff_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1Eval" ]
         ] ],
+        [ "buffer", "namespacemim_1_1plug_1_1buffer.html", [
+          [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ]
+        ] ],
         [ "clos", "namespacemim_1_1plug_1_1clos.html", [
           [ "ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ],
           [ "BranchClosElim", "classmim_1_1plug_1_1clos_1_1BranchClosElim.html", "classmim_1_1plug_1_1clos_1_1BranchClosElim" ],
@@ -100,8 +103,8 @@ var annotated_dup =
           [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ]
         ] ],
         [ "matrix", "namespacemim_1_1plug_1_1matrix.html", [
+          [ "LowerAff", "classmim_1_1plug_1_1matrix_1_1LowerAff.html", "classmim_1_1plug_1_1matrix_1_1LowerAff" ],
           [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed" ],
-          [ "LowerMatrixLowLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixLowLevel" ],
           [ "LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel" ]
         ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
@@ -118,7 +121,9 @@ var annotated_dup =
           [ "phase", "namespacemim_1_1plug_1_1tensor_1_1phase.html", [
             [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
             [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
-            [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ]
+            [ "LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet" ],
+            [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
+            [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ]
           ] ]
         ] ]
       ] ],

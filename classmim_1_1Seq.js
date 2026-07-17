@@ -1,5 +1,6 @@
 var classmim_1_1Seq =
 [
+    [ "~Seq", "classmim_1_1Seq.html#a8b75de5fd049fb3a2a4738376dcef384", null ],
     [ "body", "classmim_1_1Seq.html#aa308123fd663ddd571238019a640cbdf", null ],
     [ "Def", "classmim_1_1Seq.html#a7d17c70789416483a8f248e2c7e9a5e3", null ],
     [ "Def", "classmim_1_1Seq.html#a73acaf4ded5bcd2d42491fe01140f880", null ],

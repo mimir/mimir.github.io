@@ -9,7 +9,7 @@ var searchData=
   ['addr_5fspace_5fglobal_6',['addr_space_global',['../namespacemim_1_1plug_1_1gpu.html#a2162f02e855e9e68704a27f5879e2f7b',1,'mim::plug::gpu']]],
   ['addr_5fspace_5flocal_7',['addr_space_local',['../namespacemim_1_1plug_1_1gpu.html#a1d166cfad60b6a084479058b8280d9c4',1,'mim::plug::gpu']]],
   ['addr_5fspace_5fshared_8',['addr_space_shared',['../namespacemim_1_1plug_1_1gpu.html#a3b801190a370e486190970bb75a71fd4',1,'mim::plug::gpu']]],
-  ['alloc_9',['alloc',['../namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36',1,'mim::plug::gpu::alloc'],['../namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc',1,'mim::plug::mem::alloc']]],
+  ['alloc_9',['alloc',['../namespacemim_1_1plug_1_1buffer.html#a6d3e35261f35dea8968c3b995a30f0ee',1,'mim::plug::buffer::alloc'],['../namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36',1,'mim::plug::gpu::alloc'],['../namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc',1,'mim::plug::mem::alloc']]],
   ['alloc2malloc_5frepl_10',['alloc2malloc_repl',['../namespacemim_1_1plug_1_1mem.html#a4af6c0a89b26ab2719c93fa85a18d9fc',1,'mim::plug::mem']]],
   ['alloc_5fcopy_11',['alloc_copy',['../namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09',1,'mim::plug::gpu']]],
   ['alloc_5fjmpbuf_12',['alloc_jmpbuf',['../namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0',1,'mim::plug::clos']]],

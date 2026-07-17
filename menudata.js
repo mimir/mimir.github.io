@@ -37,6 +37,7 @@ var menudata={children:[
 {text:"🧩 Plugins",url:"usergroup1.html",children:[
 {text:"affine",url:"affine.html"},
 {text:"autodiff",url:"autodiff.html"},
+{text:"buffer",url:"buffer.html"},
 {text:"clos",url:"clos.html"},
 {text:"compile",url:"compile.html"},
 {text:"core",url:"core.html"},

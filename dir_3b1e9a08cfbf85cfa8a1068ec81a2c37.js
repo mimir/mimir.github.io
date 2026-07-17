@@ -2,6 +2,7 @@ var dir_3b1e9a08cfbf85cfa8a1068ec81a2c37 =
 [
     [ "affine", "dir_54381ff9b6fe69a53e93aa1c021f973f.html", "dir_54381ff9b6fe69a53e93aa1c021f973f" ],
     [ "autodiff", "dir_63735fdd0e5a2805284c40e197f12d6d.html", "dir_63735fdd0e5a2805284c40e197f12d6d" ],
+    [ "buffer", "dir_ee2a4a2601494bea7a20dde94d733d1b.html", "dir_ee2a4a2601494bea7a20dde94d733d1b" ],
     [ "clos", "dir_ed99f5753030233661c0389c82bd4677.html", "dir_ed99f5753030233661c0389c82bd4677" ],
     [ "compile", "dir_cb1fe3d6493747165906617030c554a4.html", "dir_cb1fe3d6493747165906617030c554a4" ],
     [ "core", "dir_893c614dfc26359ef9972db39f5999c1.html", "dir_893c614dfc26359ef9972db39f5999c1" ],

@@ -124,7 +124,7 @@ $(function(){initNavTree('classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html','',
 </div><!--header-->
 <div class="contents">
 
-<p>Lowers the high-level tensor axioms into the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>, …).  
+<p>Lowers the high-level tensor axioms into the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, …).  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="lower_8h_source.html">mim/plug/tensor/phase/lower.h</a>&gt;</code></p>
@@ -233,10 +233,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abbcbabc35c7bffffb0e01346e248d99f inherit pro_attribs_classmim_1_1Rewriter" id="r_abbcbabc35c7bffffb0e01346e248d99f"><td class="memItemLeft">std::deque&lt; <a class="el" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">old2news_</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lowers the high-level tensor axioms into the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>, …). </p>
-<p>For axioms that come with a matching <span class="tt">*_impl</span> annex (a <span class="tt">lam</span> with the same signature as the axiom) the lowering simply re-applies the args to the <span class="tt">_impl</span> annex; each <span class="tt">_impl</span> body references the <span class="tt">_impl</span> variants of its dependencies, so the chain of beta-reductions bottoms out at the low-level axioms in one step. <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77">broadcast_in_dim</a></span> does not have an <span class="tt">_impl</span> counterpart and is desugared directly. The resulting low-level axioms are then expected to be lowered to primitives by <span class="tt"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html" title="Lowers the low-level tensor axioms (map_reduce, get, set, broadcast) directly to their underlying pri...">LowerMapReduce</a></span>. </p>
+<div class="textblock"><p>Lowers the high-level tensor axioms into the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, …). </p>
+<p>Each high-level axiom comes with a matching <span class="tt">*_impl</span> annex (a <span class="tt">lam</span> with the same signature as the axiom); the lowering simply re-applies the args to the <span class="tt">_impl</span> annex. Each <span class="tt">_impl</span> body references the <span class="tt">_impl</span> variants of its dependencies, so the chain of beta-reductions bottoms out at the low-level axioms in one step. The resulting low-level axioms are then lowered to primitives by <span class="tt"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html" title="Lowers the low-level tensor axioms (map_reduce, pad, concat, broadcast) directly to their underlying ...">LowerMapReduce</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="lower_8h_source.html#l00015">15</a> of file <a class="el" href="lower_8h_source.html">lower.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower_8h_source.html#l00014">14</a> of file <a class="el" href="lower_8h_source.html">lower.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae47e809c16e08f53c99d4bdc42818660" name="ae47e809c16e08f53c99d4bdc42818660"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae47e809c16e08f53c99d4bdc42818660">&#9670;&#160;</a></span>Lower()</h2>
@@ -265,7 +265,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower_8h_source.html#l00017">17</a> of file <a class="el" href="lower_8h_source.html">lower.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower_8h_source.html#l00016">16</a> of file <a class="el" href="lower_8h_source.html">lower.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00271">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
@@ -295,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower_8cpp_source.html#l00107">107</a> of file <a class="el" href="lower_8cpp_source.html">lower.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower_8cpp_source.html#l00033">33</a> of file <a class="el" href="lower_8cpp_source.html">lower.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00107">mim::Axm::isa()</a>, and <a class="el" href="phase_8h_source.html#l00323">mim::RWPhase::new_world()</a>.</p>
 

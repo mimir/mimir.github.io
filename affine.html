@@ -156,16 +156,25 @@ $(function(){initNavTree('affine.html','',''); });
       <li class="level2">
         <a href="#autotoc_md136">%affine.map </a>
       </li>
+      <li class="level2">
+        <a href="#autotoc_md137">%affine.id </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md138">%affine.linearize </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md139">%affine.delinearize </a>
+      </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md137">Passes and Phases </a>
+    <a href="#autotoc_md140">Passes and Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md138">%affine.lower_for </a>
+        <a href="#autotoc_md141">%affine.lower_for </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md139">%affine.lower_index </a>
+        <a href="#autotoc_md142">%affine.lower_index </a>
       </li>
     </ul>
   </li>
@@ -177,7 +186,7 @@ $(function(){initNavTree('affine.html','',''); });
 Dependencies</h1>
 <div class="fragment"><div class="line">import mem;</div>
 <div class="line">import core;</div>
-<div class="line">import refly;</div>
+<div class="line">plugin refly;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
@@ -225,14 +234,27 @@ Affine Index Operations</h1>
 <div class="line">               → {sin: «n; Nat», sout: «m; Nat»}</div>
 <div class="line">               → ([«n; %affine.index»] → «m; %affine.index»)</div>
 <div class="line">               → «i: n; Idx (sin#i)»</div>
-<div class="line">               → «i: m; Idx (sout#i)»;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md137"></a>
+<div class="line">               → (%mem.M 0)</div>
+<div class="line">               → [(%mem.M 0), «i: m; Idx (sout#i)»];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md137"></a>
+%affine.id</h2>
+<p>The identity map on affine indices.</p>
+<div class="fragment"><div class="line">lam %affine.id {r: Nat} (o: «r; %affine.index»): «r; %affine.index» = o;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md138"></a>
+%affine.linearize</h2>
+<p>Row-major flattening of a multi-index: <span class="tt">linearize(idxs, s) = Σ_k idxs#k · (∏_{j&gt;k} s#j)</span>. <span class="tt">s</span> is the (row-major) shape; only its rank <span class="tt">n</span> need be a literal.</p>
+<div class="fragment"><div class="line">axm %affine.linearize: {n: Nat} → [idxs: «n; %affine.index», s: «n; Nat»] → %affine.index;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md139"></a>
+%affine.delinearize</h2>
+<p>Row-major unflattening: <span class="tt">delinearize(lin, s)#d = (lin floordiv (∏_{j&gt;d} s#j)) mod s#d</span>. The inverse of affine.linearize; only the rank <span class="tt">m</span> of <span class="tt">s</span> need be a literal.</p>
+<div class="fragment"><div class="line">axm %affine.delinearize: {m: Nat} → [lin: %affine.index, s: «m; Nat»] → «m; %affine.index»;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md140"></a>
 Passes and Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md138"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md141"></a>
 %affine.lower_for</h2>
 <p>Lowers the %%affine.For operation to recursive function calls.</p>
 <div class="fragment"><div class="line">axm %affine.lower_for: %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md139"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md142"></a>
 %affine.lower_index</h2>
 <p>Lowers the affine index algebra (%%affine.index, %%affine.constant, %%affine.op, %%affine.semiop, %%affine.map) to %core arithmetic.</p>
 <div class="fragment"><div class="line">axm %affine.lower_index: %compile.Phase;</div>

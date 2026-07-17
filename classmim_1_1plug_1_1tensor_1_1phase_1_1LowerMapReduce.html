@@ -124,7 +124,7 @@ $(function(){initNavTree('classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.
 </div><!--header-->
 <div class="contents">
 
-<p>Lowers the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>) directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, <span class="tt">pack</span>, …).  
+<p>Lowers the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>) directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, <span class="tt">pack</span>, …).  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="lower__map__reduce_8h_source.html">mim/plug/tensor/phase/lower_map_reduce.h</a>&gt;</code></p>
@@ -233,10 +233,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abbcbabc35c7bffffb0e01346e248d99f inherit pro_attribs_classmim_1_1Rewriter" id="r_abbcbabc35c7bffffb0e01346e248d99f"><td class="memItemLeft">std::deque&lt; <a class="el" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">old2news_</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lowers the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>) directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, <span class="tt">pack</span>, …). </p>
-<p>High-level axioms like <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77">broadcast_in_dim</a></span> or <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7">product_2d</a></span> are expected to have been desugared to these low-level axioms by an earlier <span class="tt"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html" title="Lowers the high-level tensor axioms into the low-level tensor axioms (map_reduce, broadcast,...">Lower</a></span> phase. </p>
+<div class="textblock"><p>Lowers the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span>) directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, <span class="tt">pack</span>, …). </p>
+<p>High-level axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47">transpose</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8">conv</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77">broadcast_in_dim</a></span>, …) are expected to have been desugared to these low-level axioms by an earlier <span class="tt"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html" title="Lowers the high-level tensor axioms into the low-level tensor axioms (map_reduce, …).">Lower</a></span> phase. </p>
 
-<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8h_source.html#l00011">11</a> of file <a class="el" href="lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8h_source.html#l00013">13</a> of file <a class="el" href="lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae784d563e4baf1faee47b2d7597b6ed1" name="ae784d563e4baf1faee47b2d7597b6ed1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae784d563e4baf1faee47b2d7597b6ed1">&#9670;&#160;</a></span>LowerMapReduce()</h2>
@@ -265,7 +265,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8h_source.html#l00013">13</a> of file <a class="el" href="lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8h_source.html#l00015">15</a> of file <a class="el" href="lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00271">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
@@ -295,9 +295,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8cpp_source.html#l00671">671</a> of file <a class="el" href="lower__map__reduce_8cpp_source.html">lower_map_reduce.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__map__reduce_8cpp_source.html#l00426">426</a> of file <a class="el" href="lower__map__reduce_8cpp_source.html">lower_map_reduce.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00107">mim::Axm::isa()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00081">mim::cat()</a>, <a class="el" href="axm_8h_source.html#l00107">mim::Axm::isa()</a>, and <a class="el" href="lower__map__reduce_8cpp_source.html#l00426">rewrite_imm_App()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lower__map__reduce_8cpp_source.html#l00426">rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
