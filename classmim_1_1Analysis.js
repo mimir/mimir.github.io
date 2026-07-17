@@ -9,7 +9,7 @@ var classmim_1_1Analysis =
     [ "lattice", "classmim_1_1Analysis.html#a66aeeff62149090ca33a1cd320f79e7c", null ],
     [ "lattice", "classmim_1_1Analysis.html#a8f7b00c11d97657ed2ef7dcdaf5e3628", null ],
     [ "lattice_force", "classmim_1_1Analysis.html#a2a47fc0b6867d524f4b55ac13ac7ac07", null ],
-    [ "pin_top", "classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa", null ],
+    [ "pin", "classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d", null ],
     [ "prepare", "classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f", null ],
     [ "reset", "classmim_1_1Analysis.html#ac94bad8fbf28de336d4c2f9046ac0555", null ],
     [ "rewrite_annex", "classmim_1_1Analysis.html#a87831539535ddfa21b1777d9554e153d", null ],

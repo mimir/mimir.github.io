@@ -38,7 +38,7 @@ var searchData=
   ['pi_5f_35',['pi_',['../classmim_1_1ast_1_1PiExpr_1_1Dom.html#a77c0d6489f4ca3fec857a0fea9bf1b4d',1,'mim::ast::PiExpr::Dom']]],
   ['picture_36',['picture',['../phases.html#autotoc_md83',1,'The classical picture'],['../phases.html#autotoc_md84',1,'The MimIR picture']]],
   ['piexpr_37',['PiExpr',['../classmim_1_1ast_1_1PiExpr.html',1,'mim::ast::PiExpr'],['../classmim_1_1ast_1_1PiExpr_1_1Dom.html#ac16300bad5e71d2721ebc61f4bf1e89c',1,'mim::ast::PiExpr::Dom::PiExpr()'],['../classmim_1_1ast_1_1PiExpr.html#a376a1ac87fa987ba23af99e333d55391',1,'mim::ast::PiExpr::PiExpr()']]],
-  ['pin_5ftop_38',['pin_top',['../classmim_1_1Analysis.html#aaa47b3e519a52590c1b85c166ba91faa',1,'mim::Analysis']]],
+  ['pin_38',['pin',['../classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d',1,'mim::Analysis']]],
   ['pipeline_39',['The default pipeline',['../opt.html#autotoc_md304',1,'']]],
   ['pipelines_40',['Pipelines',['../gpu.html#autotoc_md245',1,'']]],
   ['pipelines_20in_20m⁠im_41',['Compilation Pipelines in M⁠im',['../phases.html#autotoc_md91',1,'']]],
