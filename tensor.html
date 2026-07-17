@@ -131,13 +131,13 @@ $(function(){initNavTree('tensor.html','',''); });
     <a href="#autotoc_md364">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md365">tensor.get </a>
+        <a href="#autotoc_md365">%tensor.get </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md366">tensor.set </a>
+        <a href="#autotoc_md366">%tensor.set </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md367">tensor.shape </a>
+        <a href="#autotoc_md367">%tensor.shape </a>
       </li>
       <li class="level2">
         <a href="#autotoc_md368">%tensor.map_reduce </a>
@@ -236,15 +236,15 @@ Types</h1>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md364"></a>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md365"></a>
-tensor.get</h2>
+%tensor.get</h2>
 <p>Extracts the element of <span class="tt">index</span> from <span class="tt">arr</span>. tensor.get arr (a, b, c) = arr#a#b#c;</p>
 <div class="fragment"><div class="line">axm %tensor.get: {T: *, r: Nat, s: «r; Nat»} → [arr: «s; T», index: «i: r; Idx (s#i)»] → T, normalize_get;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md366"></a>
-tensor.set</h2>
+%tensor.set</h2>
 <p>Inserts the element <span class="tt">x</span> in <span class="tt">arr</span> at <span class="tt">index</span>. tensor.set arr (a, b, c) x = Insert arr a (Insert (arr#a) b (Insert (arr#a#b) c x));</p>
 <div class="fragment"><div class="line">axm %tensor.set: {T: *, r: Nat, s: «r; Nat»} → [arr: «s; T», index: «i: r; Idx (s#i)», x: T] → «s; T», normalize_set;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
-tensor.shape</h2>
+%tensor.shape</h2>
 <p>Returns the shape of <span class="tt">arr</span> as a rank-<span class="tt">r</span> array of Nats: <span class="tt">(s#0, …, s#(r-1))</span>.</p>
 <p>The rank <span class="tt">r</span> is given explicitly. A tensor's shape vector lives in its (nested array) type, which <span class="tt">normalize_shape</span> reads off by peeling <span class="tt">r</span> levels — it cannot be recovered by inference, since <span class="tt">«s; T»</span> with a vector <span class="tt">s</span> expands to a nested array and does not reverse-unify. (Size-1 axes collapse out of the type, so <span class="tt">arr</span> must have no literal-1 dims among the first <span class="tt">r</span>.)</p>
 <div class="fragment"><div class="line">axm %tensor.shape: {A: *} → [r: Nat] → [arr: A] → «r; Nat», normalize_shape;</div>
@@ -640,10 +640,10 @@ tensor.shape</h2>
 <div class="line">  %tensor.map_impl @(T, 3, (Bool, T, T)) (%core.select @T) @(r, s) is;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md388"></a>
 Phases</h1>
-<div class="fragment"><div class="line">axm %tensor.lower_tensor: %compile.Phase;</div>
+<div class="fragment"><div class="line">axm %tensor.lower_tensor:     %compile.Phase;</div>
 <div class="line">axm %tensor.lower_map_reduce: %compile.Phase;</div>
-<div class="line">axm %tensor.lower_get_set: %compile.Phase;</div>
-<div class="line">axm %tensor.fuse_tensor: %compile.Phase;</div>
+<div class="line">axm %tensor.lower_get_set:    %compile.Phase;</div>
+<div class="line">axm %tensor.fuse_tensor:      %compile.Phase;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md389"></a>
 %tensor.lower_to_mem</h2>
 <p>Bufferizes the low-level tensor axioms (<span class="tt">get</span>, <span class="tt">set</span>, <span class="tt">map_reduce</span>) onto the <span class="tt">buffer</span> layer: tensor array values become <span class="tt">%buffer.Buf</span> handles and the operations become <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.alloc</span> (threading <span class="tt">%mem.M</span>). Memory is threaded by <span class="tt">%mem.add_mem</span> (scheduled next in the pipeline); run <span class="tt">%buffer.lower_ptr</span> afterwards to reach <span class="tt">%mem.Ptr</span>.</p>
