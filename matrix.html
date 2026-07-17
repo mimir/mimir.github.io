@@ -122,65 +122,65 @@ $(function(){initNavTree('matrix.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md274">Dependencies </a>
+    <a href="#autotoc_md269">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md275">Types </a>
+    <a href="#autotoc_md270">Types </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md276">High-level matrix operations </a>
+    <a href="#autotoc_md271">High-level matrix operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md277">%matrix.prod </a>
+        <a href="#autotoc_md272">%matrix.prod </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md278">%matrix.transpose </a>
+        <a href="#autotoc_md273">%matrix.transpose </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md279">%matrix.sum </a>
+        <a href="#autotoc_md274">%matrix.sum </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md280">%matrix.map_reduce </a>
+        <a href="#autotoc_md275">%matrix.map_reduce </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md281">%matrix.map_reduce_aff </a>
+        <a href="#autotoc_md276">%matrix.map_reduce_aff </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md282">%matrix.broadcast </a>
+        <a href="#autotoc_md277">%matrix.broadcast </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md283">%matrix.pad </a>
+        <a href="#autotoc_md278">%matrix.pad </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md284">%matrix.concat </a>
+        <a href="#autotoc_md279">%matrix.concat </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md285">Unfolding functions </a>
+    <a href="#autotoc_md280">Unfolding functions </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md286">product </a>
+        <a href="#autotoc_md281">product </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md287">transpose </a>
+        <a href="#autotoc_md282">transpose </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md288">sum </a>
+        <a href="#autotoc_md283">sum </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md289">Passes and Phases </a>
+    <a href="#autotoc_md284">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md290">%matrix.lower_matrix_high_level_map_reduce </a>
+        <a href="#autotoc_md285">%matrix.lower_matrix_high_level_map_reduce </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md291">%matrix.lower_matrix_medium_level </a>
+        <a href="#autotoc_md286">%matrix.lower_matrix_medium_level </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md292">%matrix.lower_aff </a>
+        <a href="#autotoc_md287">%matrix.lower_aff </a>
       </li>
     </ul>
   </li>
@@ -188,7 +188,7 @@ $(function(){initNavTree('matrix.html','',''); });
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2matrix"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1matrix.html" title="The matrix Plugin">mim::plug::matrix</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md274"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin math;</div>
@@ -196,31 +196,31 @@ Dependencies</h1>
 <div class="line">plugin cps;</div>
 <div class="line">plugin affine;</div>
 <div class="line">plugin buffer;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md275"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md270"></a>
 Types</h1>
 <p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">%buffer.Buf</span> type. The element operations (<span class="tt">%buffer.alloc</span> / <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.constant</span> / <span class="tt">%buffer.shape</span>) and their lowering to <span class="tt">%mem.Ptr</span> (<span class="tt">%buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md276"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md271"></a>
 High-level matrix operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md277"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md272"></a>
 %matrix.prod</h2>
 <p>Matrix product of an <span class="tt">m × k</span> and a <span class="tt">k × l</span> matrix.</p>
 <div class="fragment"><div class="line">// TODO: define alias: * fst, snd, split * zip = zipWith id</div>
 <div class="line">axm %matrix.prod: [m: Nat, k: Nat, l: Nat, [p: Nat, e:Nat]]</div>
 <div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, k), %math.F (p, e)), %buffer.Buf (2, (k, l), %math.F (p, e))]</div>
 <div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, l), %math.F (p, e))], normalize_prod;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md278"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md273"></a>
 %matrix.transpose</h2>
 <p>Transposes a <span class="tt">k × l</span> matrix.</p>
 <div class="fragment"><div class="line">axm %matrix.transpose: [[k:Nat, l:Nat], T: *]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (2, (k, l), T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (2, (l, k), T)], normalize_transpose;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md279"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md274"></a>
 %matrix.sum</h2>
 <p>Sums up all elements of a matrix and returns a scalar.</p>
 <div class="fragment"><div class="line">axm %matrix.sum: [n: Nat, S: «n; Nat», [p:Nat, e:Nat]]</div>
 <div class="line">               → [%mem.M 0, %buffer.Buf (n, S, %math.F (p, e))]</div>
 <div class="line">               → [%mem.M 0, %math.F (p, e)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md280"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md275"></a>
 %matrix.map_reduce</h2>
 <div class="fragment"><div class="line">// TODO: handle reduction case: n=0, S=[] =&gt; not empty but scalar</div>
 </div><!-- fragment --><p> Our notation is inspired by einsum (with some generalizations):</p><ul>
@@ -267,7 +267,7 @@ High-level matrix operations</h1>
 <div class="line">    normalize_map_reduce;</div>
 </div><!-- fragment --></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md281"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md276"></a>
 %matrix.map_reduce_aff</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.map_reduce</span>: the affine-indexed generalisation of <span class="tt">map_reduce</span> on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>. <span class="tt">So</span>/<span class="tt">Sr</span> are the (logical) output shape and full loop bounds; <span class="tt">acc_out</span>/<span class="tt">accs</span> are affine maps from the <span class="tt">Ro+Rr</span> loop vector to the output/input coordinates. The combiner is mem-threaded, like <span class="tt">%matrix.map_reduce</span>.</p>
 <div class="fragment"><div class="line">axm %matrix.map_reduce_aff: {nis: Nat}</div>
@@ -279,21 +279,21 @@ High-level matrix operations</h1>
 <div class="line">                          → [accs: «i: nis; ([«%core.nat.add (Ro, Rr); %affine.index»] → «Ris#i; %affine.index»)»]</div>
 <div class="line">                          → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»]</div>
 <div class="line">                          → [%mem.M 0, %buffer.Buf (Ro, So, To)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md282"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md277"></a>
 %matrix.broadcast</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.broadcast</span>: expand <span class="tt">input</span> from logical shape <span class="tt">s_in</span> to <span class="tt">s_out</span> (each dimension is either equal or broadcast from size 1). The input/output buffer shapes (<span class="tt">ri</span>/<span class="tt">si</span>, <span class="tt">ro</span>/<span class="tt">so</span>) are the actual — possibly size-1-folded — buffer shapes and are inferred from the operands; <span class="tt">s_in</span>/<span class="tt">s_out</span> are the logical (unfolded) shapes.</p>
 <div class="fragment"><div class="line">axm %matrix.broadcast: {T: *, ri: Nat, si: «ri; Nat», ro: Nat, so: «ro; Nat», r: Nat}</div>
 <div class="line">                     → [s_in: «r; Nat», s_out: «r; Nat»]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ri, si, T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ro, so, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md283"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md278"></a>
 %matrix.pad</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.pad</span>: <span class="tt">out[…o…] = input[…o−lo…]</span> inside the interior, <span class="tt">value</span> (mode 0, constant) or the clamped edge element (mode ≠ 0, replicate) outside. <span class="tt">s_out#d = lo#d + s_in#d + hi#d</span> is passed explicitly. The buffer shapes are stated as the logical shapes; <span class="tt">%buffer.Buf</span> normalizes literal size-1 axes away, so they agree with the folded buffer handles, and the loop generation folds its read/write indices accordingly.</p>
 <div class="fragment"><div class="line">axm %matrix.pad: {T: *, r: Nat}</div>
 <div class="line">              → [s_in s_out: «r; Nat», mode: Nat, lo hi: «r; Nat»]</div>
 <div class="line">              → [%mem.M 0, input: %buffer.Buf (r, s_in, T), value: T]</div>
 <div class="line">              → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md284"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md279"></a>
 %matrix.concat</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.concat</span>: joins <span class="tt">nis</span> buffers along axis <span class="tt">ax</span>. <span class="tt">out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]</span>, where <span class="tt">k</span> is the input whose range <span class="tt">o#ax</span> lands in (<span class="tt">off</span> are the prefix sums of the per-input extents along <span class="tt">ax</span>). <span class="tt">s_out</span> (the summed extent along <span class="tt">ax</span>, the shared extents elsewhere) is passed explicitly.</p>
 <div class="fragment"><div class="line">axm %matrix.concat: {T: *, nis r: Nat}</div>
@@ -302,9 +302,9 @@ High-level matrix operations</h1>
 <div class="line">                  → [s_out: «r; Nat»]</div>
 <div class="line">                  → [%mem.M 0, is: «i: nis; %buffer.Buf (r, Sis#i, T)»]</div>
 <div class="line">                  → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md285"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md280"></a>
 Unfolding functions</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md286"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md281"></a>
 product</h2>
 <p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) by using multiplication as combination function and addition as reduction function. </p><div class="fragment"><div class="line">fun %matrix.mapRed_prod(m k l: Nat, pe: «2; Nat»)</div>
 <div class="line">                                      (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe),</div>
@@ -331,7 +331,7 @@ product</h2>
 <div class="line">                )</div>
 <div class="line">            )</div>
 <div class="line">    );</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md287"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md282"></a>
 transpose</h2>
 <p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">// TODO: check code for 1-matrix edge case</div>
 <div class="line">// TODO: would this automatically be handled by read(transpose) ?</div>
@@ -355,7 +355,7 @@ transpose</h2>
 <div class="line">                ((1, 0), M)</div>
 <div class="line">            )</div>
 <div class="line">    );</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md288"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md283"></a>
 sum</h2>
 <p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">//  TODO: test 0d matrix (edge cases in code)</div>
 <div class="line">fun %matrix.mapRed_sum(n: Nat, S: «n; Nat», pe: «2; Nat»)</div>
@@ -384,17 +384,17 @@ sum</h2>
 <div class="line">            )</div>
 <div class="line">        );</div>
 <div class="line">    return (mem, %core.bitcast R res); // TODO: test this cast</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md289"></a>
-Passes and Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md284"></a>
+Phases</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md285"></a>
 %matrix.lower_matrix_high_level_map_reduce</h2>
 <p>Rewrites the high-level matrix operations (<span class="tt">%matrix.prod</span>, <span class="tt">%matrix.transpose</span>, <span class="tt">%matrix.sum</span>) into <span class="tt">%matrix.map_reduce</span> via the <span class="tt">mapRed_*</span> unfolding functions above.</p>
 <div class="fragment"><div class="line">axm %matrix.lower_matrix_high_level_map_reduce: %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md291"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md286"></a>
 %matrix.lower_matrix_medium_level</h2>
 <p>Lowers <span class="tt">%matrix.map_reduce</span> into <span class="tt">%affine.For</span> loops, making the iteration scheme explicit.</p>
 <div class="fragment"><div class="line">axm %matrix.lower_matrix_medium_level:          %compile.Phase;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md292"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md287"></a>
 %matrix.lower_aff</h2>
 <p>Lowers the buffer-world ops (<span class="tt">%matrix.map_reduce_aff</span>, <span class="tt">%matrix.broadcast</span>, <span class="tt">%matrix.pad</span>, <span class="tt">%matrix.concat</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations.</p>
 <div class="fragment"><div class="line">axm %matrix.lower_aff:                          %compile.Phase;</div>
