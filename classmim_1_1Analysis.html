@@ -219,8 +219,8 @@ lattice</h2></td></tr>
 <tr class="memitem:a9833bb5af241375f6f2b0ee59e9928ab" id="r_a9833bb5af241375f6f2b0ee59e9928ab"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9833bb5af241375f6f2b0ee59e9928ab">is_top</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
 <tr class="memitem:aaa47b3e519a52590c1b85c166ba91faa" id="r_aaa47b3e519a52590c1b85c166ba91faa"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aaa47b3e519a52590c1b85c166ba91faa">pin_top</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:aaa47b3e519a52590c1b85c166ba91faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monotonically forces <code class="param">def</code> to ⊤ (keep as is).  <br /></td></tr>
-<tr class="memitem:ae4deaf8a3e2954b56b01ff5fce9f570c" id="r_ae4deaf8a3e2954b56b01ff5fce9f570c"><td class="memItemLeft">auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ae4deaf8a3e2954b56b01ff5fce9f570c">lattice_mut</a> ()</td></tr>
-<tr class="memdesc:ae4deaf8a3e2954b56b01ff5fce9f570c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low-level, <b>mutable</b> access to the raw map.  <br /></td></tr>
+<tr class="memitem:a2a47fc0b6867d524f4b55ac13ac7ac07" id="r_a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2a47fc0b6867d524f4b55ac13ac7ac07">lattice_force</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
+<tr class="memdesc:a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Non-monotone</b> write of <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> - and <em>only</em> the lattice; <a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map()</a> is <b>not</b> seeded.  <br /></td></tr>
 <tr class="memitem:a66aeeff62149090ca33a1cd320f79e7c" id="r_a66aeeff62149090ca33a1cd320f79e7c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a66aeeff62149090ca33a1cd320f79e7c">lattice</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
 <tr class="memdesc:a66aeeff62149090ca33a1cd320f79e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map()</a>.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -350,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>after</b> the main analysis. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00217">217</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00228">228</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00054">start()</a>.</p>
 
@@ -474,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Writes <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map()</a>. </p>
 <p><a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s - and thereby triggers another fixed-point round - iff this changes observable information: an existing entry was overwritten, or a fresh fact other than ⊤ was inserted. Freshly inserting ⊤ (<span class="tt">concr ↦ concr</span>) stays silent, as it is indistinguishable from <em>absent</em> for consumers. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed observable information - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00195">195</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00206">206</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00094">mim::Phase::invalidate()</a>, and <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>.</p>
 
@@ -508,8 +508,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae4deaf8a3e2954b56b01ff5fce9f570c" name="ae4deaf8a3e2954b56b01ff5fce9f570c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4deaf8a3e2954b56b01ff5fce9f570c">&#9670;&#160;</a></span>lattice_mut()</h2>
+<a id="a2a47fc0b6867d524f4b55ac13ac7ac07" name="a2a47fc0b6867d524f4b55ac13ac7ac07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a47fc0b6867d524f4b55ac13ac7ac07">&#9670;&#160;</a></span>lattice_force()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,10 +518,14 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto &amp; mim::Analysis::lattice_mut </td>
+          <td class="memname">bool mim::Analysis::lattice_force </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>concr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>abstr</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -531,9 +535,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Low-level, <b>mutable</b> access to the raw map. </p>
+<p><b>Non-monotone</b> write of <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> - and <em>only</em> the lattice; <a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map()</a> is <b>not</b> seeded. </p>
+<p>This is the escape hatch for analyses that must overwrite an earlier round's value (descending from ⊤ is fine) or that must not feed the <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> (e.g. sentinel encodings that are no valid substitutes). <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s iff the stored value changed; an <em>absent</em> entry counts as changed - even for ⊤ - since a non-monotone lattice's consumers may well distinguish ⊥ from ⊤. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed the entry - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00188">188</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00193">193</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00094">mim::Phase::invalidate()</a>.</p>
 
 </div>
 </div>
@@ -593,7 +600,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>before</b> the main analysis. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00216">216</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00227">227</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00054">start()</a>.</p>
 
@@ -729,7 +736,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>By default: ignore <a class="el" href="classmim_1_1Proxy.html">Proxy</a>s. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00221">221</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00232">232</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -796,7 +803,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00054">54</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00217">finalize()</a>, <a class="el" href="phase_8h_source.html#l00216">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00039">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00072">rewrite_annex()</a>, <a class="el" href="phase_8cpp_source.html#l00073">rewrite_external()</a>, and <a class="el" href="phase_8h_source.html#l00077">world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00228">finalize()</a>, <a class="el" href="phase_8h_source.html#l00227">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00039">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00072">rewrite_annex()</a>, <a class="el" href="phase_8cpp_source.html#l00073">rewrite_external()</a>, and <a class="el" href="phase_8h_source.html#l00077">world()</a>.</p>
 
 </div>
 </div>

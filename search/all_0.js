@@ -6,7 +6,7 @@ var searchData=
   ['a_20third_20party_20plugin_3',['Create a Third-Party Plugin',['../plugins.html#autotoc_md95',1,'']]],
   ['a_20tour_20of_20mimir_4',['A Tour of MimIR',['../mimir.html',1,'']]],
   ['abs_5',['abs',['../core.html#autotoc_md181',1,'%core.abs'],['../math.html#autotoc_md245',1,'%math.abs'],['../namespacemim_1_1plug_1_1core.html#a465c016f162127abd9c362f9a4f21055',1,'mim::plug::core::abs'],['../namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b',1,'mim::plug::math::abs']]],
-  ['abstracted_6',['abstracted',['../classmim_1_1RWPhase.html#a18efa384a7f736418c24aa21483f3885',1,'mim::RWPhase']]],
+  ['abstracted_6',['abstracted',['../classmim_1_1RWPhase.html#a5c8a301f561501bbd22bfcfdb8b89542',1,'mim::RWPhase']]],
   ['ack_7',['ack',['../classmim_1_1Error.html#ace5d8cc68846c8b473a277395b3dd980',1,'mim::Error']]],
   ['acos_8',['acos',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72acbdb2632628e9ed7d677a713d9817b0d',1,'mim::plug::math']]],
   ['acosh_9',['acosh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a23ee62ee4587c09fa7b7ffe53122dc92',1,'mim::plug::math']]],
