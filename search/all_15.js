@@ -44,7 +44,7 @@ var searchData=
   ['verbose_41',['verbose',['../namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7',1,'mim::plug::refly']]],
   ['verify_42',['verify',['../classmim_1_1World.html#a5b9a9472a5b36bf076bdce94bcb0b672',1,'mim::World']]],
   ['version_43',['Version',['../structmim_1_1Version.html',1,'mim']]],
-  ['version_44',['version',['../structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251',1,'mim::Plugin::version'],['../classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540',1,'mim::Driver::version()']]],
+  ['version_44',['version',['../structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251',1,'mim::Plugin::version'],['../classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540',1,'mim::Driver::version()'],['../classmim_1_1Analysis.html#a07b16850f29a35f1f7311aa861302c40',1,'mim::Analysis::version()']]],
   ['version_5fre_45',['VERSION_RE',['../namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328',1,'deploy']]],
   ['via_20cps_46',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
   ['view_47',['View',['../namespacemim.html#a4d6e32c8985b06c92d46bf1c5fa7491a',1,'mim']]],

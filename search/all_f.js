@@ -57,7 +57,7 @@ var searchData=
   ['plus_54',['plus',['../namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad7d18cfb3a0d8293e2f5d94ea30e04d2',1,'mim::plug::regex']]],
   ['pod_55',['POD',['../structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD',1,'mim::World::State']]],
   ['pod_56',['pod',['../structmim_1_1World_1_1State.html#ad34d8b326ee124c94315cded90ce1ab9',1,'mim::World::State']]],
-  ['point_20iteration_57',['Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
+  ['point_20iteration_57',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
   ['pointee_58',['pointee',['../namespacemim_1_1plug_1_1mem.html#aede1b45bcf193567f1120d04697b8aa7',1,'mim::plug::mem']]],
   ['pointer_59',['pointer',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a68a83086b569a1bbdfab44abeae501bc',1,'mim::Sets::Set::iterator']]],
   ['pointer_20types_60',['Pointer Types',['../gpu.html#autotoc_md216',1,'']]],

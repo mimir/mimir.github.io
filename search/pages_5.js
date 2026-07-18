@@ -5,7 +5,7 @@ var searchData=
   ['field_20names_20of_20sigmas_2',['Field Names of Sigmas',['../langref.html#autotoc_md61',1,'']]],
   ['first_20steps_3',['First Steps',['../python.html#autotoc_md101',1,'']]],
   ['first_20vec_20last_4',['%vec.first / %vec.last',['../vec.html#autotoc_md407',1,'']]],
-  ['fixed_20point_20iteration_5',['Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
+  ['fixed_20point_20iteration_5',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md70',1,'']]],
   ['flip_6',['%tensor.flip',['../tensor.html#autotoc_md376',1,'']]],
   ['floordiv_20mod_7',['%affine.semiop(mul,ceildiv,floordiv,mod)',['../affine.html#autotoc_md134',1,'']]],
   ['fold_8',['%vec.fold',['../vec.html#autotoc_md403',1,'']]],

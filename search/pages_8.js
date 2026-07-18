@@ -28,7 +28,7 @@ var searchData=
   ['is_5funique_25',['%vec.is_unique',['../vec.html#autotoc_md409',1,'']]],
   ['item_20synchronization_26',['Work-Item Synchronization',['../gpu.html#autotoc_md241',1,'']]],
   ['iterating_20over_20the_20program_27',['Iterating over the Program',['../dev.html#autotoc_md40',1,'']]],
-  ['iteration_28',['Iteration',['../phases.html#autotoc_md70',1,'Fixed-Point Iteration'],['../mimir.html#mimir_iter',1,'Polymorphic Iteration']]],
+  ['iteration_28',['Iteration',['../mimir.html#mimir_iter',1,'Polymorphic Iteration'],['../phases.html#autotoc_md70',1,'Sparse Fixed-Point Iteration']]],
   ['iterations_29',['Reset Between Iterations',['../phases.html#autotoc_md71',1,'']]],
   ['iterators_30',['Iterators',['../vec.html#autotoc_md402',1,'']]]
 ];

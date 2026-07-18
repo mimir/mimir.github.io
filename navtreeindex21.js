@@ -1,5 +1,13 @@
 var NAVTREEINDEX21 =
 {
+"namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08":[2,0,3,1,14,3],
+"namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954":[2,0,3,1,14,1],
+"namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b":[2,0,3,1,14,2],
+"namespacemim_1_1plug_1_1gpu.html":[2,0,3,1,6],
+"namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d":[2,0,3,1,6,23],
+"namespacemim_1_1plug_1_1gpu.html#a1a3dd6851806a943500d14ecbd0942bf":[2,0,3,1,6,7],
+"namespacemim_1_1plug_1_1gpu.html#a1d166cfad60b6a084479058b8280d9c4":[2,0,3,1,6,3],
+"namespacemim_1_1plug_1_1gpu.html#a2162f02e855e9e68704a27f5879e2f7b":[2,0,3,1,6,2],
 "namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b":[2,0,3,1,6,30],
 "namespacemim_1_1plug_1_1gpu.html#a3b801190a370e486190970bb75a71fd4":[2,0,3,1,6,4],
 "namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36":[2,0,3,1,6,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX21 =
 "namespacemim_1_1plug_1_1matrix.html#a6d735b8748b3f4626e15b3c1b0e64bdd":[2,0,3,1,9,23],
 "namespacemim_1_1plug_1_1matrix.html#a83d01fd34deff3e8ddae753c596038fc":[2,0,3,1,9,14],
 "namespacemim_1_1plug_1_1matrix.html#a96a4917b2783e5e1e86a95ca7c052cca":[2,0,3,1,9,9],
-"namespacemim_1_1plug_1_1matrix.html#a9cfdfa17dccd4a83feae85135342336d":[2,0,3,1,9,20],
-"namespacemim_1_1plug_1_1matrix.html#aaab0d6525ffe559b25902ed0b8cd9bdc":[2,0,3,1,9,4],
-"namespacemim_1_1plug_1_1matrix.html#ab3dde8b812f5e14656689aa5a2d89880":[2,0,3,1,9,18],
-"namespacemim_1_1plug_1_1matrix.html#aca1703a7f3112b4a04835434362c12a7":[2,0,3,1,9,10],
-"namespacemim_1_1plug_1_1matrix.html#acebf47b909478afdfd9a757ada3f7cbd":[2,0,3,1,9,3],
-"namespacemim_1_1plug_1_1matrix.html#aed39265d1e8f9976a8736695ee834126":[2,0,3,1,9,21],
-"namespacemim_1_1plug_1_1matrix.html#aed9dd1e1eb04afbbbe78ac969663cf80":[2,0,3,1,9,11],
-"namespacemim_1_1plug_1_1matrix.html#af206cc10642f27ab0e14c586d512f3d6":[2,0,3,1,9,7],
-"namespacemim_1_1plug_1_1matrix.html#af543155056078bfd4e2df4f16ad7458f":[2,0,3,1,9,17]
+"namespacemim_1_1plug_1_1matrix.html#a9cfdfa17dccd4a83feae85135342336d":[2,0,3,1,9,20]
 };
