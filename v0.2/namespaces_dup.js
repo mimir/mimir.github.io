@@ -1,0 +1,21 @@
+var namespaces_dup =
+[
+    [ "automaton", "namespaceautomaton.html", "namespaceautomaton" ],
+    [ "deploy", "namespacedeploy.html", [
+      [ "commit_and_push", "namespacedeploy.html#af336a106b21d5ec155e57dfc80fff6a4", null ],
+      [ "copy_children", "namespacedeploy.html#a97d88cb6ecbf70e962c4a600a0a9f8c1", null ],
+      [ "deploy", "namespacedeploy.html#aed81f46885d5734e93634d834566e5b7", null ],
+      [ "deploy_root", "namespacedeploy.html#a99e1fcf522ff2986070648618762268f", null ],
+      [ "deploy_version", "namespacedeploy.html#afead878bbf461e081c7a4029ce7b697a", null ],
+      [ "git", "namespacedeploy.html#ab568b4018787446eb069e87d9d9176ad", null ],
+      [ "main", "namespacedeploy.html#a8a447a3ae55f8e98c0f27f597cedbed4", null ],
+      [ "natural_key", "namespacedeploy.html#a1f0b2098858f10bc91de9952da5bb208", null ],
+      [ "parse_args", "namespacedeploy.html#adc80dd65b847168034ed499f8f2a77bd", null ],
+      [ "remove_path", "namespacedeploy.html#ab4fb0d4c585202d90c670be93eed298a", null ],
+      [ "update_versions", "namespacedeploy.html#abe1ddaa7117a05b93d0fe65d3c81f3bf", null ],
+      [ "VERSION_RE", "namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328", null ]
+    ] ],
+    [ "Mim", "namespaceMim.html", null ],
+    [ "mim", "namespacemim.html", "namespacemim" ],
+    [ "std", "namespacestd.html", "namespacestd" ]
+];

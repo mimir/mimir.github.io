@@ -1,0 +1,28 @@
+var namespacemim_1_1plug_1_1autodiff =
+[
+    [ "Eval", "classmim_1_1plug_1_1autodiff_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1Eval" ],
+    [ "AD", "namespacemim_1_1plug_1_1autodiff.html#ad4255585ac73ccd9e621fd1ccf342064", null ],
+    [ "ad", "namespacemim_1_1plug_1_1autodiff.html#afb5a3e7eb156faf3bf02f211e7ad22ed", null ],
+    [ "add", "namespacemim_1_1plug_1_1autodiff.html#adec076a151d709a29626cbe2a3c20337", null ],
+    [ "eval", "namespacemim_1_1plug_1_1autodiff.html#adf94367a8aeb140540cb64f07e46fcf8", null ],
+    [ "sum", "namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420", null ],
+    [ "Tangent", "namespacemim_1_1plug_1_1autodiff.html#a731a934813e6197c347e831cb312acda", null ],
+    [ "zero", "namespacemim_1_1plug_1_1autodiff.html#a1e3297839dced2ccc616d130b6404148", null ],
+    [ "zero_repl", "namespacemim_1_1plug_1_1autodiff.html#a12e6386bac07e09fa61550bfa5631b9d", null ],
+    [ "autodiff_type_fun", "namespacemim_1_1plug_1_1autodiff.html#a589f0358511f85fee02a5e10db63a5b7", null ],
+    [ "autodiff_type_fun_pi", "namespacemim_1_1plug_1_1autodiff.html#a0147856a9a811ec390d08298087df30e", null ],
+    [ "id_pullback", "namespacemim_1_1plug_1_1autodiff.html#a968c053d85aa0d5c782ca7bacb51e727", null ],
+    [ "normalize_AD", "namespacemim_1_1plug_1_1autodiff.html#a62c42124ec5ea23d4f34edf5780caa6c", null ],
+    [ "normalize_ad", "namespacemim_1_1plug_1_1autodiff.html#a6514ec29aa7b54b50764711fa08c0183", null ],
+    [ "normalize_add", "namespacemim_1_1plug_1_1autodiff.html#a5336dc359684924721224f8ef84d3f6a", null ],
+    [ "normalize_sum", "namespacemim_1_1plug_1_1autodiff.html#aa3d70ec4dbce55be9c92fd122f5d99ae", null ],
+    [ "normalize_Tangent", "namespacemim_1_1plug_1_1autodiff.html#a1dc31296e5402ebb6e3816ed82393538", null ],
+    [ "normalize_zero", "namespacemim_1_1plug_1_1autodiff.html#ab295e085cfcd4ba9cf9ed821621d02ef", null ],
+    [ "op_sum", "namespacemim_1_1plug_1_1autodiff.html#a0dc86993105c5eda1d3a217ba20ce699", null ],
+    [ "pullback_type", "namespacemim_1_1plug_1_1autodiff.html#aea750f837c2ff1b730c268bf3c88cb26", null ],
+    [ "register_normalizers", "namespacemim_1_1plug_1_1autodiff.html#ae559e1df7e384d843cb9e1951c7d1d90", null ],
+    [ "tangent_type_fun", "namespacemim_1_1plug_1_1autodiff.html#a68aae344814c11b1359c6b945f109153", null ],
+    [ "zero_def", "namespacemim_1_1plug_1_1autodiff.html#a5fbb31cd7dee586d07837fc5c55eed78", null ],
+    [ "zero_pullback", "namespacemim_1_1plug_1_1autodiff.html#a7d78f8fc3e4b05738330a02f7f8502e9", null ],
+    [ "Plugin_Id", "namespacemim_1_1plug_1_1autodiff.html#a5d96c7438cbfe2c1aaed98783dbd3635", null ]
+];
