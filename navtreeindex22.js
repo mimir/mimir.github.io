@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"namespacemim_1_1plug_1_1matrix.html#a9cfdfa17dccd4a83feae85135342336d":[2,0,3,1,9,20],
 "namespacemim_1_1plug_1_1matrix.html#aaab0d6525ffe559b25902ed0b8cd9bdc":[2,0,3,1,9,4],
 "namespacemim_1_1plug_1_1matrix.html#ab3dde8b812f5e14656689aa5a2d89880":[2,0,3,1,9,18],
 "namespacemim_1_1plug_1_1matrix.html#aca1703a7f3112b4a04835434362c12a7":[2,0,3,1,9,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "namespacemim_1_1plug_1_1tensor_1_1phase.html#a8750cc1811594898bbb25f65eaa14cc6":[2,0,3,1,12,0,7],
 "namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8":[2,0,3,1,12,0,6],
 "namespacemim_1_1plug_1_1tuple.html":[2,0,3,1,18],
-"namespacemim_1_1plug_1_1tuple.html#a12e1d6408db489bf216da5d9ec52aaae":[2,0,3,1,18,12],
-"namespacemim_1_1plug_1_1tuple.html#a135279856795948a173cceb114cb7dc2":[2,0,3,1,18,7]
+"namespacemim_1_1plug_1_1tuple.html#a12e1d6408db489bf216da5d9ec52aaae":[2,0,3,1,18,12]
 };

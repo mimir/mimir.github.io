@@ -120,9 +120,9 @@ var NAVTREEINDEX =
 "lower_8h.html",
 "namespacemim.html#a56993a288f2c09ca7ec203a365dce3ad",
 "namespacemim_1_1plug_1_1buffer.html#a93b73e91892f0ce92337488e8561fa81",
-"namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08",
-"namespacemim_1_1plug_1_1matrix.html#aaab0d6525ffe559b25902ed0b8cd9bdc",
-"namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664",
+"namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46",
+"namespacemim_1_1plug_1_1matrix.html#a9cfdfa17dccd4a83feae85135342336d",
+"namespacemim_1_1plug_1_1tuple.html#a135279856795948a173cceb114cb7dc2",
 "structmim_1_1Annex.html#a596c047a68129d48ea1adf08987b2633",
 "structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37"
 ];

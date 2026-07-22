@@ -1,9 +1,9 @@
 var clos_8cpp =
 [
     [ "mim::plug::clos::clos_apply", "namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac", null ],
-    [ "mim::plug::clos::clos_insert_env", "namespacemim_1_1plug_1_1clos.html#a5e10b46dbff30fe88eaef944787b00ce", null ],
+    [ "mim::plug::clos::clos_insert_env", "namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d", null ],
     [ "mim::plug::clos::clos_pack", "namespacemim_1_1plug_1_1clos.html#ac1ebc28bb550c21607c7980b5a65ce1e", null ],
-    [ "mim::plug::clos::clos_remove_env", "namespacemim_1_1plug_1_1clos.html#a5cd5fb35f5be450afd320abdfb237cf6", null ],
+    [ "mim::plug::clos::clos_remove_env", "namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542", null ],
     [ "mim::plug::clos::clos_type", "namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa", null ],
     [ "mim::plug::clos::clos_type_to_pi", "namespacemim_1_1plug_1_1clos.html#a908c7bfdc816d89e4a7ebb16c1d7ee03", null ],
     [ "mim::plug::clos::clos_unpack", "namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497", null ],
