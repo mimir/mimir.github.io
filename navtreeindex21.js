@@ -1,5 +1,13 @@
 var NAVTREEINDEX21 =
 {
+"namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a":[2,0,3,1,4,9],
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138":[2,0,3,1,4,12],
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97":[2,0,3,1,4,12,2],
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8":[2,0,3,1,4,12,0],
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12":[2,0,3,1,4,12,3],
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3":[2,0,3,1,4,12,1],
+"namespacemim_1_1plug_1_1core.html#aed6032a690b0654e14fdf971993025f5":[2,0,3,1,4,4],
+"namespacemim_1_1plug_1_1core.html#af9d9013ee2de9117cc3576555e8df6c5":[2,0,3,1,4,42],
 "namespacemim_1_1plug_1_1cps.html":[2,0,3,1,5],
 "namespacemim_1_1plug_1_1cps.html#a5a24afd7ba8b82c842e0accc5ad5816e":[2,0,3,1,5,2],
 "namespacemim_1_1plug_1_1cps.html#a5c1da7647233982afc305276f62abd85":[2,0,3,1,5,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX21 =
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f":[2,0,3,1,8,10,10],
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dae578203a9e0b19048f8868e46958c2ed":[2,0,3,1,8,10,3],
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5daf46378b62001c246c5ac3cdfc9d7f93f":[2,0,3,1,8,10,8],
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895":[2,0,3,1,8,10,0],
-"namespacemim_1_1plug_1_1math.html#afdab7fe16d606d2e9ce35568c84b0960":[2,0,3,1,8,50],
-"namespacemim_1_1plug_1_1math.html#affa2e23bf7486738df24d3d3f1ce79da":[2,0,3,1,8,39],
-"namespacemim_1_1plug_1_1math.html#affdd54f0267ccefcffa518f9a44a0162":[2,0,3,1,8,45],
-"namespacemim_1_1plug_1_1matrix.html":[2,0,3,1,9],
-"namespacemim_1_1plug_1_1matrix.html#a16779fcb9eddd2e937cd68822b511231":[2,0,3,1,9,24],
-"namespacemim_1_1plug_1_1matrix.html#a1fa517a02a307259c4a1405bd88d6ccc":[2,0,3,1,9,5],
-"namespacemim_1_1plug_1_1matrix.html#a25b7c31b65c2a91faeb93be61e409944":[2,0,3,1,9,19],
-"namespacemim_1_1plug_1_1matrix.html#a26667b55e4b1b958050cfe9ecbf327fd":[2,0,3,1,9,6]
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895":[2,0,3,1,8,10,0]
 };

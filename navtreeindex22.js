@@ -1,5 +1,13 @@
 var NAVTREEINDEX22 =
 {
+"namespacemim_1_1plug_1_1math.html#afdab7fe16d606d2e9ce35568c84b0960":[2,0,3,1,8,50],
+"namespacemim_1_1plug_1_1math.html#affa2e23bf7486738df24d3d3f1ce79da":[2,0,3,1,8,39],
+"namespacemim_1_1plug_1_1math.html#affdd54f0267ccefcffa518f9a44a0162":[2,0,3,1,8,45],
+"namespacemim_1_1plug_1_1matrix.html":[2,0,3,1,9],
+"namespacemim_1_1plug_1_1matrix.html#a16779fcb9eddd2e937cd68822b511231":[2,0,3,1,9,24],
+"namespacemim_1_1plug_1_1matrix.html#a1fa517a02a307259c4a1405bd88d6ccc":[2,0,3,1,9,5],
+"namespacemim_1_1plug_1_1matrix.html#a25b7c31b65c2a91faeb93be61e409944":[2,0,3,1,9,19],
+"namespacemim_1_1plug_1_1matrix.html#a26667b55e4b1b958050cfe9ecbf327fd":[2,0,3,1,9,6],
 "namespacemim_1_1plug_1_1matrix.html#a36565709b5af1a534d625e8c8443da7c":[2,0,3,1,9,12],
 "namespacemim_1_1plug_1_1matrix.html#a44054a55721da5ba91baa9d661a598f0":[2,0,3,1,9,22],
 "namespacemim_1_1plug_1_1matrix.html#a5b14c9f2cfc5a0f1d95a3657b2ec5be3":[2,0,3,1,9,16],
@@ -241,13 +249,5 @@ var NAVTREEINDEX22 =
 "namespacemim_1_1plug_1_1tensor.html#abd9f1619367c3c59608291c816a32913":[2,0,3,1,12,42],
 "namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b":[2,0,3,1,12,34],
 "namespacemim_1_1plug_1_1tensor.html#ac2ee92fd2968762dd2c8939940a99797":[2,0,3,1,12,29],
-"namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632":[2,0,3,1,12,18],
-"namespacemim_1_1plug_1_1tensor.html#ac686361a5e7f522d84adb349b6b90643":[2,0,3,1,12,1],
-"namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692":[2,0,3,1,12,16],
-"namespacemim_1_1plug_1_1tensor.html#ad569704b20c40f43af9caa1700288ab0":[2,0,3,1,12,7],
-"namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37":[2,0,3,1,12,21],
-"namespacemim_1_1plug_1_1tensor.html#ae1fdc14eb6abcb8076cf61c55f87a9be":[2,0,3,1,12,19],
-"namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e":[2,0,3,1,12,11],
-"namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5":[2,0,3,1,12,23],
-"namespacemim_1_1plug_1_1tensor.html#ae853e4d62b56281acaaad1e45741b6f4":[2,0,3,1,12,3]
+"namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632":[2,0,3,1,12,18]
 };

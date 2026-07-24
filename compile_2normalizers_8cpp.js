@@ -1,5 +1,6 @@
 var compile_2normalizers_8cpp =
 [
+    [ "mim::plug::compile::normalize_aggr", "namespacemim_1_1plug_1_1compile.html#aff478d151e97170b9981a93af28468ff", null ],
     [ "mim::plug::compile::normalize_cond", "namespacemim_1_1plug_1_1compile.html#a1893a8582c67746a61e0449cb10a37ab", null ],
     [ "mim::plug::compile::normalize_is_loaded", "namespacemim_1_1plug_1_1compile.html#a99c96c2c9e8f4f5320e6c8c2b7f92f0d", null ]
 ];

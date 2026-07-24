@@ -194,6 +194,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad255a2786ccfe3ca27450b36940d6bc5" id="r_ad255a2786ccfe3ca27450b36940d6bc5"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad255a2786ccfe3ca27450b36940d6bc5">phases</a> () const</td></tr>
 <tr class="memitem:a9da4ca3384f62706a603bacad94e98e6" id="r_a9da4ca3384f62706a603bacad94e98e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9da4ca3384f62706a603bacad94e98e6">normalizer</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="el" href="#ab9bfcad7e7aa1cbbd7a8678dd5864e3c">flags</a>) const</td></tr>
 <tr class="memitem:a66bee8d7f5f315deb200c65bf3ea0bff" id="r_a66bee8d7f5f315deb200c65bf3ea0bff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66bee8d7f5f315deb200c65bf3ea0bff">normalizer</a> (<a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a> d, <a class="el" href="namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288">tag_t</a> t, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> s) const</td></tr>
+<tr id="pub-methods-6" class="groupHeader"><td colspan="2"><div class="groupHeader">Plugin/Phase Arguments</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Freeform command-line arguments addressed to a plugin/phase (<span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>).</p>
+<p>A <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> reads its own arguments via <a class="el" href="classmim_1_1Phase.html#ac444684ac23216a2b8e7dac0e3aad2ac" title="Command-line arguments passed to this Phase&#39;s plugin via -X &lt;plugin&gt;:&lt;arg&gt;.">Phase::args()</a>. </p>
+</div></td></tr>
+<tr class="memitem:ae61bdd6efe4bd638f97f58d43c94e6bc" id="r_ae61bdd6efe4bd638f97f58d43c94e6bc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae61bdd6efe4bd638f97f58d43c94e6bc">add_arg</a> (Sym plugin, std::string arg)</td></tr>
+<tr class="memitem:a3e639dbc05817a9ad41ea6cf7a545219" id="r_a3e639dbc05817a9ad41ea6cf7a545219"><td class="memItemLeft">const <a class="el" href="classmim_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a3e639dbc05817a9ad41ea6cf7a545219">args</a> (Sym plugin) const</td></tr>
+<tr class="memdesc:a3e639dbc05817a9ad41ea6cf7a545219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields an empty <a class="el" href="classmim_1_1Vector.html" title="This is a thin wrapper for absl::InlinedVector&lt;T, N, A&gt; which is a drop-in replacement for std::vecto...">Vector</a> if <code class="param">plugin</code> has none.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some "global" variables needed all over the place. </p>
@@ -308,6 +315,39 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae61bdd6efe4bd638f97f58d43c94e6bc" name="ae61bdd6efe4bd638f97f58d43c94e6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61bdd6efe4bd638f97f58d43c94e6bc">&#9670;&#160;</a></span>add_arg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::add_arg </td>
+          <td>(</td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00133">133</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">main()</a>.</p>
+
+</div>
+</div>
 <a id="a22e91be0c9317382a408550a00200777" name="a22e91be0c9317382a408550a00200777"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22e91be0c9317382a408550a00200777">&#9670;&#160;</a></span>add_search_path()</h2>
 
@@ -337,6 +377,29 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3e639dbc05817a9ad41ea6cf7a545219" name="a3e639dbc05817a9ad41ea6cf7a545219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e639dbc05817a9ad41ea6cf7a545219">&#9670;&#160;</a></span>args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp; mim::Driver::args </td>
+          <td>(</td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yields an empty <a class="el" href="classmim_1_1Vector.html" title="This is a thin wrapper for absl::InlinedVector&lt;T, N, A&gt; which is a drop-in replacement for std::vecto...">Vector</a> if <code class="param">plugin</code> has none. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00127">127</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>.</p>
+
+</div>
+</div>
 <a id="ab9bfcad7e7aa1cbbd7a8678dd5864e3c" name="ab9bfcad7e7aa1cbbd7a8678dd5864e3c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9bfcad7e7aa1cbbd7a8678dd5864e3c">&#9670;&#160;</a></span>flags() <span class="overload">[1/2]</span></h2>
 
@@ -362,7 +425,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00035">35</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00102">mim::World::flags()</a>, <a class="el" href="driver_8cpp_source.html#l00076">load()</a>, <a class="el" href="ast_8cpp_source.html#l00243">mim::ast::load_plugins()</a>, <a class="el" href="main_8cpp_source.html#l00023">main()</a>, <a class="el" href="driver_8h_source.html#l00125">normalizer()</a>, <a class="el" href="driver_8h_source.html#l00123">phase()</a>, <a class="el" href="phase_8cpp_source.html#l00030">mim::Phase::run()</a>, <a class="el" href="phase_8cpp_source.html#l00189">mim::PhaseMan::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00124">mim::RWPhase::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00102">mim::World::flags()</a>, <a class="el" href="driver_8cpp_source.html#l00076">load()</a>, <a class="el" href="ast_8cpp_source.html#l00243">mim::ast::load_plugins()</a>, <a class="el" href="main_8cpp_source.html#l00023">main()</a>, <a class="el" href="driver_8h_source.html#l00125">normalizer()</a>, <a class="el" href="driver_8h_source.html#l00123">phase()</a>, <a class="el" href="phase_8cpp_source.html#l00034">mim::Phase::run()</a>, <a class="el" href="phase_8cpp_source.html#l00193">mim::PhaseMan::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00128">mim::RWPhase::start()</a>.</p>
 
 </div>
 </div>
@@ -781,7 +844,7 @@ template&lt;class F&gt; </div>
 
 <p class="reference">References <a class="el" href="driver_8h_source.html#l00035">flags()</a>, and <a class="el" href="util_8h_source.html#l00099">mim::lookup()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="optimize_8cpp_source.html#l00008">mim::optimize()</a>, <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::recreate()</a>, and <a class="el" href="split__apply_8cpp_source.html#l00009">mim::plug::gpu::phase::run_stage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="optimize_8cpp_source.html#l00008">mim::optimize()</a>, <a class="el" href="phase_8cpp_source.html#l00027">mim::Phase::recreate()</a>, and <a class="el" href="split__apply_8cpp_source.html#l00009">mim::plug::gpu::phase::run_stage()</a>.</p>
 
 </div>
 </div>
@@ -837,7 +900,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00038">38</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">main()</a>, <a class="el" href="phase_8cpp_source.html#l00039">mim::Phase::profile_count()</a>, and <a class="el" href="phase_8cpp_source.html#l00030">mim::Phase::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">main()</a>, <a class="el" href="phase_8cpp_source.html#l00043">mim::Phase::profile_count()</a>, and <a class="el" href="phase_8cpp_source.html#l00034">mim::Phase::run()</a>.</p>
 
 </div>
 </div>

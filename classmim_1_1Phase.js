@@ -6,6 +6,7 @@ var classmim_1_1Phase =
     [ "annex", "classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1", null ],
     [ "apply", "classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87", null ],
     [ "apply", "classmim_1_1Phase.html#aae46baa7ff0775b46c1fc4b1bed9ef54", null ],
+    [ "args", "classmim_1_1Phase.html#ac444684ac23216a2b8e7dac0e3aad2ac", null ],
     [ "create", "classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00", null ],
     [ "driver", "classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc", null ],
     [ "hook", "classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3", null ],

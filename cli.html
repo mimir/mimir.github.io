@@ -125,6 +125,14 @@ $(function(){initNavTree('cli.html','',''); });
     <a href="#autotoc_md0">Usage </a>
   </li>
   <li class="level1">
+    <a href="#clipluginargs">Passing Arguments to Plugins &amp; Phases </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md1">Known Arguments </a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
     <a href="#clidebug">Debugging Features </a>
   </li>
 </ul>
@@ -133,7 +141,7 @@ $(function(){initNavTree('cli.html','',''); });
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 Usage</h1>
 <div class="fragment"><div class="line">USAGE:</div>
-<div class="line">  mim [-?|-h|--help] [-v|--version] [-l|--list-search-paths] [-c|--clang &lt;clang&gt;] [-p|--plugin &lt;plugin&gt;] [-P|--plugin-path &lt;path&gt;] [-V|--verbose] [--output-ast &lt;file&gt;] [--output-dot &lt;file&gt;] [--output-h &lt;file&gt;] [--output-py &lt;file&gt;] [--output-md &lt;file&gt;] [-o|--output-mim &lt;file&gt;] [--output-nest &lt;file&gt;] [--output-sexpr &lt;file&gt;] [--output-sexpr-slotted &lt;file&gt;] [--force-load] [--profile &lt;|summary|tree|trace&gt;] [--output-profile &lt;file&gt;] [-a|--ascii] [--bootstrap] [--sexpr-include-types] [--dot-follow-types] [--dot-all-annexes] [--dot-inline-consts] [--dot-default-filter] [--dot-show-hidden] [--dump-recursive] [--aggr-lam-spec] [--scalarize-threshold &lt;threshold&gt;] [--max-fp-iters &lt;num&gt;] [-b|--break &lt;gid&gt;] [-w|--watch &lt;gid&gt;] [--reeval-breakpoints] [--break-on-alpha] [--break-on-error] [--break-on-warn] [--trace-gids] [&lt;file&gt;]</div>
+<div class="line">  mim [-?|-h|--help] [-v|--version] [-l|--list-search-paths] [-c|--clang &lt;clang&gt;] [-p|--plugin &lt;plugin&gt;] [-P|--plugin-path &lt;path&gt;] [-X|--plugin-arg &lt;plugin:arg&gt;] [-V|--verbose] [--output-ast &lt;file&gt;] [--output-dot &lt;file&gt;] [--output-h &lt;file&gt;] [--output-py &lt;file&gt;] [--output-md &lt;file&gt;] [-o|--output-mim &lt;file&gt;] [--output-nest &lt;file&gt;] [--output-sexpr &lt;file&gt;] [--output-sexpr-slotted &lt;file&gt;] [--force-load] [--profile &lt;|summary|tree|trace&gt;] [--output-profile &lt;file&gt;] [-a|--ascii] [--bootstrap] [--sexpr-include-types] [--dot-follow-types] [--dot-all-annexes] [--dot-inline-consts] [--dot-default-filter] [--dot-show-hidden] [--dump-recursive] [--aggr-lam-spec] [--scalarize-threshold &lt;threshold&gt;] [--max-fp-iters &lt;num&gt;] [-b|--break &lt;gid&gt;] [-w|--watch &lt;gid&gt;] [--reeval-breakpoints] [--break-on-alpha] [--break-on-error] [--break-on-warn] [--trace-gids] [&lt;file&gt;]</div>
 <div class="line"> </div>
 <div class="line">Display usage information.</div>
 <div class="line"> </div>
@@ -145,6 +153,8 @@ Usage</h1>
 <div class="line">  -p, --plugin &lt;plugin&gt;   Dynamically load plugin.</div>
 <div class="line">  -P, --plugin-path &lt;path&gt;</div>
 <div class="line">                          Path to search for plugins.</div>
+<div class="line">  -X, --plugin-arg &lt;plugin:arg&gt;</div>
+<div class="line">                          Pass &lt;arg&gt; to plugin/phase &lt;plugin&gt;, e.g. -X ll:--target=sm_80. Repeatable.</div>
 <div class="line">  -V, --verbose           Verbose mode. Multiple -V options increase the verbosity. The maximum is 4.</div>
 <div class="line">  --output-ast &lt;file&gt;     Directly emits AST representation of input.</div>
 <div class="line">  --output-dot &lt;file&gt;     Emits the Mim program as a MimIR graph using Graphviz&#39; DOT language.</div>
@@ -192,6 +202,26 @@ Usage</h1>
 <li><span class="tt">path/to/mim.exe/../../lib/mim</span></li>
 <li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
 </ol>
+<h1 class="doxsection"><a class="anchor" id="clipluginargs"></a>
+Passing Arguments to Plugins &amp; Phases</h1>
+<p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
+<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr=on</div>
+</div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
+<ul>
+<li>The option is repeatable; each occurrence contributes one argument.</li>
+<li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
+<li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ac444684ac23216a2b8e7dac0e3aad2ac" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Known Arguments</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Plugin  </th><th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Effect  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="compile.html" title="The compile Plugin">compile</a>  </td><td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>; toggles fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>. See <a class="el" href="compile.html#compile_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>. See <a class="el" href="ll.html#ll_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+</table>
 <h1 class="doxsection"><a class="anchor" id="clidebug"></a>
 Debugging Features</h1>
 <ul>
