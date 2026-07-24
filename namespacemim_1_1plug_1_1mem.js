@@ -17,6 +17,8 @@ var namespacemim_1_1plug_1_1mem =
     [ "seo", "namespacemim_1_1plug_1_1mem.html#a145c0289fe1e8b476c2753d14eb16010", null ],
     [ "slot", "namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4", null ],
     [ "store", "namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c", null ],
+    [ "has_leading_mem", "namespacemim_1_1plug_1_1mem.html#a0b3a4f02c49f44380ce8b9e83a5affc5", null ],
+    [ "isa_mem", "namespacemim_1_1plug_1_1mem.html#ada840448f31c6d5165bd35848433793b", null ],
     [ "mem_def", "namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2", null ],
     [ "mem_var", "namespacemim_1_1plug_1_1mem.html#a2446c4ae7a339f03a420a00338ee8e3d", null ],
     [ "mut_con", "namespacemim_1_1plug_1_1mem.html#adbee722c1697d7962e26b44e1972a6dd", null ],

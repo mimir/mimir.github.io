@@ -120,6 +120,7 @@ var hierarchy =
         [ "mim::plug::matrix::LowerAff", "classmim_1_1plug_1_1matrix_1_1LowerAff.html", null ],
         [ "mim::plug::matrix::LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", null ],
         [ "mim::plug::matrix::LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html", null ],
+        [ "mim::plug::mem::phase::AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", null ],
         [ "mim::plug::mem::phase::SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", null ],
         [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],
@@ -183,8 +184,7 @@ var hierarchy =
               [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", null ],
               [ "mim::sexpr::Emitter", "classmim_1_1sexpr_1_1Emitter.html", null ]
             ] ],
-            [ "mim::Emitter< Value, Type, BB, Child >", "classmim_1_1Emitter.html", null ],
-            [ "mim::plug::mem::phase::AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", null ]
+            [ "mim::Emitter< Value, Type, BB, Child >", "classmim_1_1Emitter.html", null ]
           ] ]
         ] ],
         [ "mim::ClosedMutPhase< Def >", "classmim_1_1ClosedMutPhase.html", [
