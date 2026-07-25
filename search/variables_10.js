@@ -8,5 +8,6 @@ var searchData=
   ['trip_5f_5',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
   ['trip_5fend_6',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
   ['type_7',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
-  ['types_5f_8',['types_',['../classmim_1_1Emitter.html#a95c0ebfac75b42f41dd1bb134059c1f4',1,'mim::Emitter']]]
+  ['type_5fdecls_5f_8',['type_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879',1,'mim::plug::ll::Emitter']]],
+  ['types_5f_9',['types_',['../classmim_1_1Emitter.html#a95c0ebfac75b42f41dd1bb134059c1f4',1,'mim::Emitter']]]
 ];

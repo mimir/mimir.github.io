@@ -42,6 +42,7 @@ var gpu_2autogen_8h =
     [ "mim::plug::gpu::remove_double_syncs", "namespacemim_1_1plug_1_1gpu.html#a53aab38379370b0e8e83083324481d4d", null ],
     [ "mim::plug::gpu::SharedM", "namespacemim_1_1plug_1_1gpu.html#ada4af0be77efab4561c465c2647a9a87", null ],
     [ "mim::plug::gpu::SharedPtr", "namespacemim_1_1plug_1_1gpu.html#a75350d6f235da51cb4a186a7b04cd738", null ],
+    [ "mim::plug::gpu::split_apply", "namespacemim_1_1plug_1_1gpu.html#abd4cc171f8effb9c046c05ab8aac1f5e", null ],
     [ "mim::plug::gpu::Stream", "namespacemim_1_1plug_1_1gpu.html#a80eea9263170b268667e282c8eb51224", null ],
     [ "mim::plug::gpu::stream_deinit", "namespacemim_1_1plug_1_1gpu.html#a745872ed5defe6928b6e95e73643b72d", null ],
     [ "mim::plug::gpu::stream_init", "namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b", null ],

@@ -15,14 +15,15 @@ var searchData=
   ['hash_5fbegin_12',['hash_begin',['../namespacemim.html#ab2a169d2e23178f0163bc05c774d2ac2',1,'mim::hash_begin() noexcept'],['../namespacemim.html#ac30b5cde9bbd181fac8b2cb7bf27fc62',1,'mim::hash_begin(T val) noexcept']]],
   ['hash_5fcombine_13',['hash_combine',['../namespacemim.html#a4d4c9094e2f043e1eca201f173cf96da',1,'mim']]],
   ['head_14',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md400',1,'']]],
+  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md408',1,'']]],
   ['helpers_16',['Error Handling Helpers',['../python.html#autotoc_md104',1,'']]],
-  ['high_20level_20matrix_20operations_17',['High-level matrix operations',['../matrix.html#autotoc_md273',1,'']]],
+  ['high_20level_20matrix_20operations_17',['High-level matrix operations',['../matrix.html#autotoc_md276',1,'']]],
   ['highlighting_18',['Syntax Highlighting',['../coding.html#autotoc_md12',1,'']]],
   ['hlt_19',['hlt',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a4f4000d921968b9665f52e88333007da',1,'mim::plug::core']]],
   ['hole_20',['Hole',['../classmim_1_1Hole.html',1,'mim::Hole'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole']]],
   ['holeexpr_21',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html',1,'mim::ast::HoleExpr'],['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr::HoleExpr()']]],
   ['hook_22',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
   ['host_5fmalloc2gpualloc_5frepl_23',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu']]],
-  ['host_5fspecific_5fphases_24',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]]
+  ['host_5fspecific_5fphases_24',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
+  ['hostemitter_25',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html',1,'mim::plug::ll_nvptx::HostEmitter'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab533f6d9e904301676ba050227e3a364',1,'mim::plug::ll_nvptx::HostEmitter::HostEmitter()']]]
 ];

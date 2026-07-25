@@ -194,6 +194,7 @@ var namespacemim_1_1plug =
     [ "cps", "namespacemim_1_1plug_1_1cps.html", "namespacemim_1_1plug_1_1cps" ],
     [ "gpu", "namespacemim_1_1plug_1_1gpu.html", "namespacemim_1_1plug_1_1gpu" ],
     [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
+    [ "ll_nvptx", "namespacemim_1_1plug_1_1ll__nvptx.html", "namespacemim_1_1plug_1_1ll__nvptx" ],
     [ "math", "namespacemim_1_1plug_1_1math.html", [
       [ "VMode", "namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a", null ],
       [ "abs", "namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b", null ],
@@ -543,6 +544,11 @@ var namespacemim_1_1plug =
       [ "normalize_zip", "namespacemim_1_1plug_1_1vec.html#ae2df07a23e69b8802ebe4ec5df3ae747", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1vec.html#a0f5ea338a78435939ef48ab0e1111e1b", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1vec.html#ad3b6bd69dddb4ad52e620122c43f9965", null ]
+    ] ],
+    [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
+      [ "Stream", "namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee", null ],
+      [ "stream_impl_repl", "namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf", null ],
+      [ "Plugin_Id", "namespacemim_1_1plug_1_1nvptx.html#a08e942c03727b7c051996fa7b39aab27", null ]
     ] ],
     [ "opt", "namespacemim_1_1plug_1_1opt.html", [
       [ "Plugin_Id", "namespacemim_1_1plug_1_1opt.html#a0987aaf63a0209e71b7fcea95c848951", null ]

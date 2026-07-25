@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['gamma_0',['%math.gamma',['../math.html#autotoc_md261',1,'']]],
+  ['gamma_0',['%math.gamma',['../math.html#autotoc_md264',1,'']]],
   ['gdb_1',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md18',1,'']]],
   ['general_20downcast_2',['General Downcast',['../dev.html#autotoc_md27',1,'']]],
-  ['get_3',['get',['../ord.html#autotoc_md328',1,'%ord.get'],['../tensor.html#autotoc_md371',1,'%tensor.get']]],
-  ['gid_4',['%refly.gid',['../refly.html#autotoc_md340',1,'']]],
+  ['get_3',['get',['../ord.html#autotoc_md336',1,'%ord.get'],['../tensor.html#autotoc_md379',1,'%tensor.get']]],
+  ['gid_4',['%refly.gid',['../refly.html#autotoc_md348',1,'']]],
   ['googletest_5',['GoogleTest',['../coding.html#autotoc_md4',1,'']]],
   ['gpu_20alloc_20asyn_6',['%gpu.alloc(asyn)',['../gpu.html#autotoc_md236',1,'']]],
   ['gpu_20alloc_20block_7',['%gpu.alloc(block)',['../gpu.html#autotoc_md230',1,'']]],

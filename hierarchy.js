@@ -20,6 +20,7 @@ var hierarchy =
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
     [ "mim::Dbg", "structmim_1_1Dbg.html", null ],
+    [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
@@ -181,7 +182,10 @@ var hierarchy =
         [ "mim::ClosedMutPhase< Lam >", "classmim_1_1ClosedMutPhase.html", [
           [ "mim::NestPhase< Lam >", "classmim_1_1NestPhase.html", [
             [ "mim::Emitter< std::string, std::string, BB, Emitter >", "classmim_1_1Emitter.html", [
-              [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", null ],
+              [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", [
+                [ "mim::plug::ll_nvptx::DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", null ],
+                [ "mim::plug::ll_nvptx::HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", null ]
+              ] ],
               [ "mim::sexpr::Emitter", "classmim_1_1sexpr_1_1Emitter.html", null ]
             ] ],
             [ "mim::Emitter< Value, Type, BB, Child >", "classmim_1_1Emitter.html", null ]
@@ -197,7 +201,8 @@ var hierarchy =
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
         [ "mim::plug::clos::ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", null ],
         [ "mim::plug::clos::LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", null ],
-        [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ]
+        [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
+        [ "mim::plug::ll_nvptx::Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", null ]
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [

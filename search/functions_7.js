@@ -10,5 +10,6 @@ var searchData=
   ['hash_5fcombine_7',['hash_combine',['../namespacemim.html#a4d4c9094e2f043e1eca201f173cf96da',1,'mim']]],
   ['head_8',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()']]],
   ['holeexpr_9',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
-  ['hook_10',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]]
+  ['hook_10',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
+  ['hostemitter_11',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab533f6d9e904301676ba050227e3a364',1,'mim::plug::ll_nvptx::HostEmitter']]]
 ];

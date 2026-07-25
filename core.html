@@ -354,7 +354,7 @@ Mode</h2>
 <p>Signed and unsigned integer division/remainder.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Division by zero is <em>undefined behavior</em> and a visible side effect. For this reason, these axioms expect a <span class="tt">%mem.M</span>.</dd></dl>
 <div class="fragment"><div class="line">axm %core.div(sdiv, udiv, srem, urem):</div>
-<div class="line">    {s: Nat} → [%mem.M 0, «2; Idx s»] → [%mem.M 0, Idx s], normalize_div;</div>
+<div class="line">    {s a: Nat} → [%mem.M a, «2; Idx s»] → [%mem.M a, Idx s], normalize_div;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
 %core.icmp</h2>
 <p>Integer comparison is composed of 5 disjoint relations:</p><ul>
@@ -480,7 +480,7 @@ Mode</h2>
 %core.abs</h2>
 <p>Absolute value of an integer.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Computing the absolute value of the lowest possible value leads to <em>undefined behavior</em>, which is why this axiom expects a <span class="tt">%mem.M</span>.</dd></dl>
-<div class="fragment"><div class="line">axm %core.abs: {s: Nat} → [%mem.M 0, Idx s] → [%mem.M 0, Idx s], normalize_abs;</div>
+<div class="fragment"><div class="line">axm %core.abs: {s a: Nat} → [%mem.M a, Idx s] → [%mem.M a, Idx s], normalize_abs;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
 Conversions</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md201"></a>

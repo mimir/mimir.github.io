@@ -102,6 +102,12 @@ var annotated_dup =
           [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
           [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ]
         ] ],
+        [ "ll_nvptx", "namespacemim_1_1plug_1_1ll__nvptx.html", [
+          [ "DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx_structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags_dup" ],
+          [ "Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", "classmim_1_1plug_1_1ll__nvptx_1_1Emit" ],
+          [ "HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter" ],
+          [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ]
+        ] ],
         [ "matrix", "namespacemim_1_1plug_1_1matrix.html", [
           [ "LowerAff", "classmim_1_1plug_1_1matrix_1_1LowerAff.html", "classmim_1_1plug_1_1matrix_1_1LowerAff" ],
           [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed" ],
