@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661',1,'mim::plug::core::a'],['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a0cc175b9c0f1b6a831c399e269772661',1,'mim::plug::math::a']]],
-  ['a_20cheap_20approximation_1',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md44',1,'']]],
+  ['a_20cheap_20approximation_1',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md29',1,'']]],
   ['a_20new_20in_20tree_20plugin_2',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md99',1,'']]],
   ['a_20taste_20of_20mim_3',['✨ A Taste of Mim',['../index.html#autotoc_md112',1,'']]],
   ['a_20third_20party_20plugin_4',['Create a Third-Party Plugin',['../plugins.html#autotoc_md100',1,'']]],
@@ -125,7 +125,7 @@ var searchData=
   ['applications_122',['Applications',['../langref.html#autotoc_md61',1,'']]],
   ['apply_123',['apply',['../classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87',1,'mim::Phase::apply(const App *)'],['../classmim_1_1Phase.html#aae46baa7ff0775b46c1fc4b1bed9ef54',1,'mim::Phase::apply(Phase &amp;)'],['../classmim_1_1PhaseMan.html#adaa20cccfa31bc1cba10e61544461f4b',1,'mim::PhaseMan::apply(bool, Phases &amp;&amp;)'],['../classmim_1_1PhaseMan.html#a4ac8ec166a180d048266660f58d9aa58',1,'mim::PhaseMan::apply(const App *) final'],['../classmim_1_1PhaseMan.html#a4599174403087067194085551decb444',1,'mim::PhaseMan::apply(Phase &amp;) final'],['../classmim_1_1PrefixCleanup.html#a7fb130bb4a51a183d9179a2cb2c2814a',1,'mim::PrefixCleanup::apply(std::string)'],['../classmim_1_1PrefixCleanup.html#abb4cbc3ae059cd58b84a6c78483e1696',1,'mim::PrefixCleanup::apply(const App *app) final'],['../classmim_1_1PrefixCleanup.html#ac8b9774a4eb09d96f82dbcd786a4de9a',1,'mim::PrefixCleanup::apply(Phase &amp;p) final'],['../classNamed.html#a39bc8e61785a1414c402914d9c893102',1,'Named::apply()']]],
   ['apply_5fclosure_124',['apply_closure',['../namespacemim_1_1plug_1_1clos.html#a9c9b39e2470025325c86bdca2f93b556',1,'mim::plug::clos']]],
-  ['approximation_125',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md44',1,'']]],
+  ['approximation_125',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md29',1,'']]],
   ['arcp_126',['arcp',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a1e53eb7993b8fa102e59ad895d7acc68',1,'mim::plug::math']]],
   ['are_20values_127',['Types Are Values',['../mimir.html#mimir_dep',1,'']]],
   ['arg_128',['arg',['../classmim_1_1ast_1_1AppExpr.html#ab5d05a7f8401ab7c4a1dd7886e33373a',1,'mim::ast::AppExpr::arg()'],['../classmim_1_1ast_1_1RetExpr.html#a60c2ddd939138201a26faa9428218d70',1,'mim::ast::RetExpr::arg()'],['../classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1',1,'mim::App::arg()'],['../classmim_1_1Branch.html#a9e548fb8b816bee5007ac3456e519cd5',1,'mim::Branch::arg()'],['../classmim_1_1Dispatch.html#a187d53a740ae797c49c89d192bca4f32',1,'mim::Dispatch::arg()']]],
@@ -133,7 +133,7 @@ var searchData=
   ['arguments_130',['Arguments',['../compile.html#compile_cli_args',1,'Command-Line Arguments'],['../ll.html#ll_cli_args',1,'Command-Line Arguments'],['../ll_nvptx.html#ll_nvptx_cli_args',1,'Command-Line Arguments'],['../cli.html#autotoc_md1',1,'Known Arguments']]],
   ['arguments_20to_20plugins_131',['Passing Arguments to Plugins',['../cli.html#clipluginargs',1,'']]],
   ['arith_132',['arith',['../math.html#autotoc_md261',1,'%math.arith'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686',1,'mim::plug::math::arith']]],
-  ['arity_133',['Arity',['../dev.html#autotoc_md36',1,'']]],
+  ['arity_133',['Arity',['../dev.html#autotoc_md40',1,'']]],
   ['arity_134',['arity',['../classmim_1_1ast_1_1SeqExpr.html#a5106f6d92f62a27a2ca0de5ce7b26517',1,'mim::ast::SeqExpr::arity()'],['../classmim_1_1Def.html#ae51857d275509b1b70aa8f696cee3a0a',1,'mim::Def::arity()'],['../classmim_1_1Sigma.html#ad3444708c04904c67cad47a48a82c68d',1,'mim::Sigma::arity()'],['../classmim_1_1Arr.html#a104019a5b4e34696589d87a36d4f3c81',1,'mim::Arr::arity()'],['../classmim_1_1Pack.html#a45c76ecd6f4884d46746cff9f92e1574',1,'mim::Pack::arity()']]],
   ['arm_135',['Arm',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html',1,'mim::ast::MatchExpr::Arm'],['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#a291c92e3f8db3250bcfee75463758edd',1,'mim::ast::MatchExpr::Arm::Arm()']]],
   ['arm_136',['arm',['../classmim_1_1ast_1_1MatchExpr.html#ab7b061710d35ae9b019ccba4504b9358',1,'mim::ast::MatchExpr::arm()'],['../classmim_1_1Match.html#ad4c29afb6b4f08aa1b875927ac75eec0',1,'mim::Match::arm()']]],

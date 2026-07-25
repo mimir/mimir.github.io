@@ -10,7 +10,7 @@ var searchData=
   ['var2var_7',['Var2Var',['../namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06',1,'mim']]],
   ['var_5ftype_8',['var_type',['../classmim_1_1Def.html#ae27e362495c89965b30a40f16cfd860a',1,'mim::Def']]],
   ['variables_9',['Variables',['../dev.html#free_vars',1,'Free Variables'],['../dev.html#autotoc_md25',1,'Variables']]],
-  ['variants_10',['Thresholded Variants',['../dev.html#autotoc_md38',1,'']]],
+  ['variants_10',['Thresholded Variants',['../dev.html#autotoc_md42',1,'']]],
   ['varmap_11',['VarMap',['../namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab',1,'mim']]],
   ['varrewriter_12',['VarRewriter',['../rewriting.html#autotoc_md130',1,'Rewriter vs. VarRewriter'],['../classmim_1_1VarRewriter.html',1,'mim::VarRewriter'],['../classmim_1_1VarRewriter.html#ad5fa9305f338f599b3c16c5c7fe0998d',1,'mim::VarRewriter::VarRewriter(World &amp;world)'],['../classmim_1_1VarRewriter.html#aef6de1378cb65a40e441dfad4fa983f2',1,'mim::VarRewriter::VarRewriter(const Var *var, const Def *arg)'],['../rewriting.html#varrewriter',1,'VarRewriter']]],
   ['vars_13',['Vars',['../namespacemim.html#ac1bc6fc8487a4e7490dcee047b176f7f',1,'mim']]],
@@ -53,7 +53,7 @@ var searchData=
   ['visit_50',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final']]],
   ['vlog_51',['VLOG',['../log_8h.html#a35e71de09dfd64892a48e3f7c56c5619',1,'log.h']]],
   ['vmode_52',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
-  ['vs_20global_53',['Local vs. Global',['../dev.html#autotoc_md41',1,'']]],
+  ['vs_20global_53',['Local vs. Global',['../dev.html#autotoc_md26',1,'']]],
   ['vs_20mim_54',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md120',1,'']]],
   ['vs_20mutables_55',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
   ['vs_20varrewriter_56',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md130',1,'']]]

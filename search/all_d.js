@@ -26,7 +26,7 @@ var searchData=
   ['nest_2eh_23',['nest.h',['../nest_8h.html',1,'']]],
   ['nested_5fextract_24',['nested_extract',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a65132c68509115cd49b4a011a7ae256b',1,'mim::plug::tensor::phase']]],
   ['nested_5finsert_25',['nested_insert',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a03e3a3fd45e2bd665e52291badcd73a2',1,'mim::plug::tensor::phase']]],
-  ['nesting_26',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md43',1,'']]],
+  ['nesting_26',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md28',1,'']]],
   ['nestphase_27',['NestPhase',['../classmim_1_1NestPhase.html',1,'mim::NestPhase&lt; M &gt;'],['../classmim_1_1NestPhase.html#aa10dc01891c0b3f39a1175e0345318b4',1,'mim::NestPhase::NestPhase(World &amp;world, std::string name, bool elide_empty, bool schedule=false)'],['../classmim_1_1NestPhase.html#aa638f53027d12fe60a19650f99d131ab',1,'mim::NestPhase::NestPhase(World &amp;world, flags_t annex, bool elide_empty, bool schedule=false)'],['../phases.html#phases_nest_phase',1,'NestPhase']]],
   ['nestphase_3c_20lam_20_3e_28',['NestPhase&lt; Lam &gt;',['../classmim_1_1NestPhase.html',1,'mim']]],
   ['nests_29',['nests',['../classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab',1,'mim::Def::nests(Def *mut)'],['../classmim_1_1Def.html#a4215aea9762a0fca45f190b40509b4a8',1,'mim::Def::nests(const Def *def)']]],

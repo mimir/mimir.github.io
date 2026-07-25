@@ -26,7 +26,7 @@ var searchData=
   ['load_23',['%mem.load',['../mem.html#autotoc_md301',1,'']]],
   ['loading_20plugins_24',['Loading Plugins',['../python.html#autotoc_md107',1,'']]],
   ['local_20declaration_20blocks_25',['Local Declaration Blocks',['../langref.html#autotoc_md56',1,'']]],
-  ['local_20vs_20global_26',['Local vs. Global',['../dev.html#autotoc_md41',1,'']]],
+  ['local_20vs_20global_26',['Local vs. Global',['../dev.html#autotoc_md26',1,'']]],
   ['longjmp_27',['Operations related to longjmp',['../clos.html#autotoc_md175',1,'']]],
   ['lookup_28',['Lookup',['../ord.html#autotoc_md339',1,'']]],
   ['lower_5faff_29',['%matrix.lower_aff',['../matrix.html#autotoc_md296',1,'']]],

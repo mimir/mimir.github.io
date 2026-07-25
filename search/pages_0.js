@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_20cheap_20approximation_0',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md44',1,'']]],
+  ['a_20cheap_20approximation_0',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md29',1,'']]],
   ['a_20new_20in_20tree_20plugin_1',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md99',1,'']]],
   ['a_20taste_20of_20mim_2',['✨ A Taste of Mim',['../index.html#autotoc_md112',1,'']]],
   ['a_20third_20party_20plugin_3',['Create a Third-Party Plugin',['../plugins.html#autotoc_md100',1,'']]],
@@ -48,12 +48,12 @@ var searchData=
   ['api_45',['Lattice API',['../phases.html#autotoc_md73',1,'']]],
   ['append_20tuple_20prepend_46',['%tuple.append / %tuple.prepend',['../tuple.html#autotoc_md411',1,'']]],
   ['applications_47',['Applications',['../langref.html#autotoc_md61',1,'']]],
-  ['approximation_48',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md44',1,'']]],
+  ['approximation_48',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md29',1,'']]],
   ['are_20values_49',['Types Are Values',['../mimir.html#mimir_dep',1,'']]],
   ['arguments_50',['Arguments',['../compile.html#compile_cli_args',1,'Command-Line Arguments'],['../ll.html#ll_cli_args',1,'Command-Line Arguments'],['../ll_nvptx.html#ll_nvptx_cli_args',1,'Command-Line Arguments'],['../cli.html#autotoc_md1',1,'Known Arguments']]],
   ['arguments_20to_20plugins_51',['Passing Arguments to Plugins',['../cli.html#clipluginargs',1,'']]],
   ['arith_52',['%math.arith',['../math.html#autotoc_md261',1,'']]],
-  ['arity_53',['Arity',['../dev.html#autotoc_md36',1,'']]],
+  ['arity_53',['Arity',['../dev.html#autotoc_md40',1,'']]],
   ['asyn_54',['asyn',['../gpu.html#autotoc_md240',1,'%gpu.alloc(asyn)'],['../gpu.html#autotoc_md244',1,'%gpu.alloc_copy(asyn)'],['../gpu.html#autotoc_md242',1,'%gpu.copy_to_device(asyn)'],['../gpu.html#autotoc_md243',1,'%gpu.copy_to_host(asyn)'],['../gpu.html#autotoc_md241',1,'%gpu.free(asyn)']]],
   ['asynchronous_20memory_20operations_55',['Asynchronous Memory Operations',['../gpu.html#autotoc_md239',1,'']]],
   ['at_20all_56',['Why the guard exists at all',['../phases.html#autotoc_md87',1,'']]],

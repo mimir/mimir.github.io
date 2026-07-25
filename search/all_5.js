@@ -96,7 +96,7 @@ var searchData=
   ['functions_93',['Unfolding functions',['../matrix.html#autotoc_md289',1,'']]],
   ['functions_20and_20continuations_94',['Functions and Continuations',['../langref.html#autotoc_md54',1,'']]],
   ['functions_20and_20types_95',['Summary: Functions and Types',['../langref.html#autotoc_md58',1,'']]],
-  ['further_20casts_96',['Further Casts',['../dev.html#autotoc_md31',1,'']]],
+  ['further_20casts_96',['Further Casts',['../dev.html#autotoc_md35',1,'']]],
   ['fuse_97',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase::Fuse'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html#a11cd8a6824114cab3b5f25cbd2a27535',1,'mim::plug::tensor::phase::Fuse::Fuse()']]],
   ['fuse_2ecpp_98',['fuse.cpp',['../fuse_8cpp.html',1,'']]],
   ['fuse_2eh_99',['fuse.h',['../fuse_8h.html',1,'']]],

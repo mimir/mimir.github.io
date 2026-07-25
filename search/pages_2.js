@@ -2,11 +2,11 @@ var searchData=
 [
   ['c_20style_0',['C++ Style',['../coding.html#autotoc_md6',1,'']]],
   ['capacity_1',['Capacity',['../ord.html#autotoc_md336',1,'']]],
-  ['casts_2',['Further Casts',['../dev.html#autotoc_md31',1,'']]],
+  ['casts_2',['Further Casts',['../dev.html#autotoc_md35',1,'']]],
   ['cat_3',['cat',['../tuple.html#autotoc_md410',1,'%tuple.cat'],['../vec.html#autotoc_md425',1,'%vec.cat']]],
   ['catching_20exceptions_4',['Catching Exceptions',['../coding.html#autotoc_md17',1,'']]],
   ['ceildiv_20floordiv_20mod_5',['%affine.semiop(mul,ceildiv,floordiv,mod)',['../affine.html#autotoc_md139',1,'']]],
-  ['cheap_20approximation_6',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md44',1,'']]],
+  ['cheap_20approximation_6',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md29',1,'']]],
   ['check_7',['%refly.check',['../refly.html#autotoc_md357',1,'']]],
   ['check_5fbot_8',['%refly.check_bot',['../refly.html#autotoc_md356',1,'']]],
   ['choosing_20the_20right_20base_20class_9',['Choosing the Right Base Class',['../phases.html#autotoc_md93',1,'']]],

@@ -39,7 +39,7 @@ var searchData=
   ['products_20sequences_20unions_20and_20matching_36',['Products, Sequences, Unions, and Matching',['../langref.html#autotoc_md55',1,'']]],
   ['profiling_37',['Profiling',['../coding.html#profiling',1,'']]],
   ['program_38',['Iterating over the Program',['../dev.html#autotoc_md45',1,'']]],
-  ['projs_39',['Projs',['../dev.html#autotoc_md37',1,'']]],
+  ['projs_39',['Projs',['../dev.html#autotoc_md41',1,'']]],
   ['ptr_40',['%mem.Ptr',['../mem.html#autotoc_md299',1,'']]],
   ['publications_41',['📖 Publications',['../index.html#autotoc_md123',1,'']]],
   ['python_20bindings_42',['Python Bindings',['../python.html',1,'']]],

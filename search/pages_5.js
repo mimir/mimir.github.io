@@ -20,5 +20,5 @@ var searchData=
   ['functions_17',['Unfolding functions',['../matrix.html#autotoc_md289',1,'']]],
   ['functions_20and_20continuations_18',['Functions and Continuations',['../langref.html#autotoc_md54',1,'']]],
   ['functions_20and_20types_19',['Summary: Functions and Types',['../langref.html#autotoc_md58',1,'']]],
-  ['further_20casts_20',['Further Casts',['../dev.html#autotoc_md31',1,'']]]
+  ['further_20casts_20',['Further Casts',['../dev.html#autotoc_md35',1,'']]]
 ];

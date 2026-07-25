@@ -12,7 +12,7 @@ var searchData=
   ['markdown_20style_9',['Markdown Style',['../coding.html#autotoc_md10',1,'']]],
   ['matching_10',['Products, Sequences, Unions, and Matching',['../langref.html#autotoc_md55',1,'']]],
   ['matching_20axioms_11',['Matching Axioms',['../dev.html#cast_axm',1,'']]],
-  ['matching_20ir_12',['Matching IR',['../dev.html#autotoc_md26',1,'']]],
+  ['matching_20ir_12',['Matching IR',['../dev.html#autotoc_md30',1,'']]],
   ['matching_20literals_13',['Matching Literals',['../dev.html#cast_lit',1,'']]],
   ['math_20abs_14',['%math.abs',['../math.html#autotoc_md269',1,'']]],
   ['math_20arith_15',['%math.arith',['../math.html#autotoc_md261',1,'']]],
@@ -76,5 +76,5 @@ var searchData=
   ['mul_73',['mul',['../affine.html#autotoc_md140',1,'%affine.op.mul'],['../autodiff.html#autotoc_md160',1,'%core.wrap.mul']]],
   ['mul_20ceildiv_20floordiv_20mod_74',['%affine.semiop(mul,ceildiv,floordiv,mod)',['../affine.html#autotoc_md139',1,'']]],
   ['mutable_20rewrites_75',['Mutable Rewrites',['../rewriting.html#autotoc_md125',1,'']]],
-  ['mutables_76',['Mutables',['../dev.html#autotoc_md29',1,'Downcast to Mutables'],['../phases.html#autotoc_md74',1,'Handling of Mutables'],['../dev.html#mut',1,'Immutables vs. Mutables'],['../dev.html#autotoc_md22',1,'Mutables']]]
+  ['mutables_76',['Mutables',['../dev.html#autotoc_md33',1,'Downcast to Mutables'],['../phases.html#autotoc_md74',1,'Handling of Mutables'],['../dev.html#mut',1,'Immutables vs. Mutables'],['../dev.html#autotoc_md22',1,'Mutables']]]
 ];

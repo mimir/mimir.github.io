@@ -115,7 +115,7 @@ var searchData=
   ['loading_20plugins_112',['Loading Plugins',['../python.html#autotoc_md107',1,'']]],
   ['loc_113',['loc',['../structmim_1_1Error_1_1Msg.html#aef1765829e8404858ce26d4f8c386333',1,'mim::Error::Msg::loc'],['../structmim_1_1World_1_1State.html#acf99b3988b968fecc0c92692ae828265',1,'mim::World::State::POD::loc'],['../classmim_1_1ast_1_1Node.html#abfb47e24f20d0d09e954f6c380f21981',1,'mim::ast::Node::loc()'],['../classmim_1_1ast_1_1Tok.html#a69bf7ff4e4c8d152132845616e68abcd',1,'mim::ast::Tok::loc()'],['../classmim_1_1Def.html#ababa287f8ec65ff8971c8b379a0afa2f',1,'mim::Def::loc()'],['../structmim_1_1Dbg.html#a38e3c0a467a875dab5ae0cbd71bc6f54',1,'mim::Dbg::loc()']]],
   ['local_20declaration_20blocks_114',['Local Declaration Blocks',['../langref.html#autotoc_md56',1,'']]],
-  ['local_20vs_20global_115',['Local vs. Global',['../dev.html#autotoc_md41',1,'']]],
+  ['local_20vs_20global_115',['Local vs. Global',['../dev.html#autotoc_md26',1,'']]],
   ['local_5fmuts_116',['local_muts',['../classmim_1_1Def.html#a8a6a0861bea1acfecbf8e2260774b212',1,'mim::Def']]],
   ['local_5fvars_117',['local_vars',['../classmim_1_1Def.html#a3f5a341398bd97b516f9fd7d1d170e5b',1,'mim::Def']]],
   ['localm_118',['LocalM',['../namespacemim_1_1plug_1_1gpu.html#aa6d70dda548aedc0b513d84df80215b3',1,'mim::plug::gpu']]],

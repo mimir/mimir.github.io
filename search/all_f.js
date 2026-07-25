@@ -100,7 +100,7 @@ var searchData=
   ['program_97',['Iterating over the Program',['../dev.html#autotoc_md45',1,'']]],
   ['proj_98',['proj',['../classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592',1,'mim::Def::proj(nat_t a, nat_t i) const'],['../classmim_1_1Def.html#a7369b1efd0e7e17974dda4f4f948eed1',1,'mim::Def::proj(nat_t i) const']]],
   ['proj_5fmap_99',['proj_map',['../namespacemim_1_1plug_1_1tensor.html#ac2ee92fd2968762dd2c8939940a99797',1,'mim::plug::tensor']]],
-  ['projs_100',['Projs',['../dev.html#autotoc_md37',1,'']]],
+  ['projs_100',['Projs',['../dev.html#autotoc_md41',1,'']]],
   ['projs_101',['projs',['../classmim_1_1Def.html#a77a2d17816449bbdd98765161b433eec',1,'mim::Def::projs(F f) const'],['../classmim_1_1Def.html#a3a4ff7026ecdb5fbe7d361f1882f49be',1,'mim::Def::projs(nat_t a, F f) const'],['../classmim_1_1Def.html#a229cd5ecfe0a9116449acbee70fedb5b',1,'mim::Def::projs() const'],['../classmim_1_1Def.html#a5d7e27c33828e4829363b3932fed229a',1,'mim::Def::projs(nat_t a) const']]],
   ['proxy_102',['Proxy',['../classmim_1_1Proxy.html',1,'mim::Proxy'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daf56ec2ab97d604832d90f6394e3f341f',1,'mim::Proxy'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132baf56ec2ab97d604832d90f6394e3f341f',1,'mim::Proxy']]],
   ['proxy_103',['proxy',['../classmim_1_1World.html#a341fb44cab26f77ad8bc9211f25db154',1,'mim::World']]],
