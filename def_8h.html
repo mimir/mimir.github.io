@@ -186,7 +186,7 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab992e926dce870b1e086b34589849a92" id="r_ab992e926dce870b1e086b34589849a92"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#ab992e926dce870b1e086b34589849a92">mim::NormalizeFn</a> = const <a class="el" href="classmim_1_1Def.html">Def</a>* (*)(const <a class="el" href="classmim_1_1Def.html">Def</a>*, const <a class="el" href="classmim_1_1Def.html">Def</a>*, const <a class="el" href="classmim_1_1Def.html">Def</a>*)</td></tr>
 <tr id="typedef-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Def</div></td></tr>
-<tr><td colspan="2" class="ititle"><div class="groupText"><p><a class="el" href="namespacemim.html#aed213d360936f015062f16dd7a3210d4">GIDSet</a> / <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a> keyed by <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">Def::gid</a> of <span class="tt">conset Def*</span>. </p>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p><a class="el" href="namespacemim.html#aed213d360936f015062f16dd7a3210d4">GIDSet</a> / <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a> keyed by <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">Def::gid</a> of <span class="tt">const Def*</span>. </p>
 </div></td></tr>
 <tr class="memitem:a879f9e518002de13d65d757536033f0e" id="r_a879f9e518002de13d65d757536033f0e"><td class="memTemplParams" colspan="2">template&lt;class To&gt; </td></tr>
 <tr class="memitem:a879f9e518002de13d65d757536033f0e template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a> = <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a>&lt;const <a class="el" href="classmim_1_1Def.html">Def</a>*, To&gt;</td></tr>
@@ -293,7 +293,7 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacemim.html#a249738da6a953390b70691dd3fe7132baf56ec2ab97d604832d90f6394e3f341f">mim::Proxy</a> = 1 &lt;&lt; 3
 <br />
  }</td></tr>
-<tr class="memdesc:a249738da6a953390b70691dd3fe7132b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracks a dependency to certain <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s transitively through the <a class="el" href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">Def::deps()</a> up to but excliding <em>mutables</em>.  <a href="namespacemim.html#a249738da6a953390b70691dd3fe7132b">More...</a><br /></td></tr>
+<tr class="memdesc:a249738da6a953390b70691dd3fe7132b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracks whether a <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> transitively depends - through its <a class="el" href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">Def::deps()</a> but only up to (and excluding) the next <em>mutable</em> - on certain kinds of <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s.  <a href="namespacemim.html#a249738da6a953390b70691dd3fe7132b">More...</a><br /></td></tr>
 <tr class="memitem:adccbc1a0a55e33b72bc7e987075c2293" id="r_adccbc1a0a55e33b72bc7e987075c2293"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293">mim::Judge</a> : u32 { <br />
 &#160;&#160;<a class="el" href="namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e">mim::Form</a> = 1 &lt;&lt; 0
 , <br />
@@ -313,7 +313,7 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08dada9470e1aa5be1858e667318254dcb4b">mim::Imm</a> = 1 &lt;&lt; 1
 <br />
  }</td></tr>
-<tr class="memdesc:ad3c9308ec5430fd41d4aab5d38e3e08d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a href="https://ncatlab.org/nlab/show/judgment">Judgement</a>.  <a href="namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d">More...</a><br /></td></tr>
+<tr class="memdesc:ad3c9308ec5430fd41d4aab5d38e3e08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifies whether a <a class="el" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d" title="mim::Node"><span class="tt">Node</span></a> may occur as a <em>mutable</em>, an <em>immutable</em>, or both.  <a href="namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d">More...</a><br /></td></tr>
 <tr class="memitem:ab5f8c3cd104922822656e5d29311f0dd" id="r_ab5f8c3cd104922822656e5d29311f0dd"><td class="memItemLeft">static constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd">mim::Num_Nodes</a> = size_t(0) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1)</td></tr>
 </table>
 <hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
@@ -331,7 +331,7 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 <div class="textblock"><p>Options for <a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a> and <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a>. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a> and <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a> honor <a class="el" href="namespacemim.html#a472ea1eba4d59fb1743c2087de458c1b" title="Maximum recursion depth.">DotConfig::max</a>; <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a> also honors <a class="el" href="namespacemim.html#a7ee84b1ca3e1d3d0beccc1b0486eb00c" title="Include all annexes - even if unused (World::dot only).">DotConfig::all_annexes</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00214">214</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00217">217</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -571,7 +571,7 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><!-- fragment -->
 <p>Use as mixin to wrap all kind of Def::proj and Def::projs variants. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00159">159</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00162">162</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>

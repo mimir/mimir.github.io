@@ -125,7 +125,7 @@ $(function(){initNavTree('cli.html','',''); });
     <a href="#autotoc_md0">Usage </a>
   </li>
   <li class="level1">
-    <a href="#clipluginargs">Passing Arguments to Plugins &amp; Phases </a>
+    <a href="#clipluginargs">Passing Arguments to Plugins </a>
     <ul>
       <li class="level2">
         <a href="#autotoc_md1">Known Arguments </a>
@@ -203,7 +203,7 @@ Usage</h1>
 <li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
 </ol>
 <h1 class="doxsection"><a class="anchor" id="clipluginargs"></a>
-Passing Arguments to Plugins &amp; Phases</h1>
+Passing Arguments to Plugins</h1>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
 <div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr=on</div>
 </div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
@@ -218,28 +218,28 @@ Known Arguments</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Plugin  </th><th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Effect  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="compile.html" title="The compile Plugin">compile</a>  </td><td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>; toggles fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>. See <a class="el" href="compile.html#compile_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="compile.html" title="The compile Plugin">compile</a>  </td><td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>; toggles fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
- <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>. See <a class="el" href="ll.html#ll_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+ <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
- <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the (host) LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>. See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+ <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the (host) LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;</span> <br  />
- <span class="tt">output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>. See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+ <span class="tt">output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Don't embed the compiled device binary into the host LLVM IR (embedding is the default on Linux). See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Don't embed the compiled device binary into the host LLVM IR (embedding is the default on Linux).  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the PTX image into the fat binary (default: embed both PTX and CUBIN). See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the PTX image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the CUBIN image into the fat binary (default: embed both PTX and CUBIN). See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the CUBIN image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary, compile the device binary for compute capability sm_<span class="tt">&lt;SM&gt;</span>. See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary, compile the device binary for compute capability sm_<span class="tt">&lt;SM&gt;</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary and if linking libdevice, link against the libdevice NVVM library at <span class="tt">&lt;path&gt;</span> instead of trying to find it via CUDA paths. See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary and if linking libdevice, link against the libdevice NVVM library at <span class="tt">&lt;path&gt;</span> instead of trying to find it via CUDA paths.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">X&lt;tool&gt;=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary invoke <span class="tt">&lt;tool&gt;</span> with <span class="tt">&lt;args&gt;</span>. See <a class="el" href="ll_nvptx.html#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a> for more details.  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">X&lt;tool&gt;=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary invoke <span class="tt">&lt;tool&gt;</span> with <span class="tt">&lt;args&gt;</span>.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="clidebug"></a>
 Debugging Features</h1>
