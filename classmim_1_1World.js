@@ -2,7 +2,6 @@ var classmim_1_1World =
 [
     [ "State", "structmim_1_1World_1_1State.html", "structmim_1_1World_1_1State" ],
     [ "ScopedLoc", "structmim_1_1World_1_1ScopedLoc.html", "structmim_1_1World_1_1ScopedLoc" ],
-    [ "Freezer", "structmim_1_1World_1_1Freezer.html", "structmim_1_1World_1_1Freezer" ],
     [ "Externals", "classmim_1_1World_1_1Externals.html", "classmim_1_1World_1_1Externals" ],
     [ "Annexes", "classmim_1_1World_1_1Annexes.html", "classmim_1_1World_1_1Annexes" ],
     [ "Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", [
@@ -48,7 +47,6 @@ var classmim_1_1World =
     [ "curr_gid", "classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685", null ],
     [ "curr_run", "classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3", null ],
     [ "debug_dump", "classmim_1_1World.html#a888c0001cb304f075ddcb69ad0063996", null ],
-    [ "do_freeze", "classmim_1_1World.html#aa250797c84ea4b2f9ee08967fb888b47", null ],
     [ "dot", "classmim_1_1World.html#aa0d4eefcd74bcc00658434908f6ce5ec", null ],
     [ "dot", "classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a", null ],
     [ "driver", "classmim_1_1World.html#a2a0347862f33d964457e4c9b64e75625", null ],
@@ -69,7 +67,7 @@ var classmim_1_1World =
     [ "fn", "classmim_1_1World.html#af7d5522b078684cf479d8c037903b921", null ],
     [ "for_each", "classmim_1_1World.html#a77576e28b0d76b87b3754d1293701e4b", null ],
     [ "for_each", "classmim_1_1World.html#a6213ad6701ea5c88133b3ee66076bc2b", null ],
-    [ "freeze", "classmim_1_1World.html#a8c639e60d776f524a36e032e59885009", null ],
+    [ "freeze", "classmim_1_1World.html#ae0e0fca3c07a0aa075daea8895cecd6c", null ],
     [ "fun", "classmim_1_1World.html#a8c26f975e073f144c693904cc99432a9", null ],
     [ "fun", "classmim_1_1World.html#a6ad7073ebe6fe154f2c1700bbaceb929", null ],
     [ "fun", "classmim_1_1World.html#a58f6deb4c2f0747490dbdfacce1a01b5", null ],

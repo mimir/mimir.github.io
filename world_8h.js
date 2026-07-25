@@ -10,7 +10,6 @@ var world_8h =
       [ "name", "structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6", null ]
     ] ],
     [ "mim::World::ScopedLoc", "structmim_1_1World_1_1ScopedLoc.html", "structmim_1_1World_1_1ScopedLoc" ],
-    [ "mim::World::Freezer", "structmim_1_1World_1_1Freezer.html", "structmim_1_1World_1_1Freezer" ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", "classmim_1_1World_1_1Externals" ],
     [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", "classmim_1_1World_1_1Annexes" ],
     [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", [

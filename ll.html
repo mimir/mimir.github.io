@@ -139,7 +139,7 @@ $(function(){initNavTree('ll.html','',''); });
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ll"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ll.html" title="The ll Plugin">mim::plug::ll</a></dd></dl>
-<p>The LLVM backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll</span>) appends an emission phase to the compilation pipeline that writes the LLVM IR of the fully lowered program to <span class="tt">&lt;world&gt;.ll</span>. The output path can be overridden via the <span class="tt">-X ll:o=&lt;file&gt;</span> command-line argument; see <a class="el" href="#ll_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.</p>
+<p>The LLVM backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll</span>) appends an emission phase to the compilation pipeline that writes the LLVM IR of the fully lowered program to <span class="tt">&lt;world&gt;.ll</span> (or <span class="tt">a.ll</span> if the world is unnamed). The output path can be overridden via the <span class="tt">-X ll:o=&lt;file&gt;</span> command-line argument; see <a class="el" href="#ll_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md248"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin opt;</div>
@@ -150,7 +150,8 @@ Command-Line Arguments</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Effect  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
+ <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md249"></a>
 Phases</h1>

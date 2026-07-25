@@ -1,7 +1,6 @@
 var rewrite_8h =
 [
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", "classmim_1_1Rewriter" ],
-    [ "mim::Rewriter::Enter", "classmim_1_1Rewriter_1_1Enter.html", "classmim_1_1Rewriter_1_1Enter" ],
     [ "mim::VarRewriter", "classmim_1_1VarRewriter.html", "classmim_1_1VarRewriter" ],
     [ "mim::Zonker", "classmim_1_1Zonker.html", "classmim_1_1Zonker" ],
     [ "CODE_IMM", "rewrite_8h.html#abf17bc3bdf547027cc35451498d99653", null ],

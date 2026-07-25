@@ -25,7 +25,6 @@ var hierarchy =
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
-    [ "mim::Rewriter::Enter", "classmim_1_1Rewriter_1_1Enter.html", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],
     [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", null ],
     [ "mim::Sets&lt; D, N &gt;::Data::Equal", "structmim_1_1Sets_1_1Data_1_1Equal.html", null ],
@@ -38,7 +37,6 @@ var hierarchy =
     [ "mim::FNV1&lt; 4 &gt;", "structmim_1_1FNV1_3_014_01_4.html", null ],
     [ "mim::FNV1&lt; 8 &gt;", "structmim_1_1FNV1_3_018_01_4.html", null ],
     [ "mim::plug::clos::FreeDefAna", "classmim_1_1plug_1_1clos_1_1FreeDefAna.html", null ],
-    [ "mim::World::Freezer", "structmim_1_1World_1_1Freezer.html", null ],
     [ "mim::GIDHash&lt; T &gt;", "structmim_1_1GIDHash.html", null ],
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", null ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
@@ -91,6 +89,7 @@ var hierarchy =
     [ "mim::Profiler", "classmim_1_1Profiler.html", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
+    [ "mim::Restore&lt; T &gt;", "classmim_1_1Restore.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
         [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ]

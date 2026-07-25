@@ -11,6 +11,5 @@ var searchData=
   ['formatter_3c_20mim_3a_3adump_20_3e_8',['formatter&lt; mim::Dump &gt;',['../structstd_1_1formatter_3_01mim_1_1Dump_01_4.html',1,'std']]],
   ['formatter_3c_20mim_3a_3aop_20_3e_9',['formatter&lt; mim::Op &gt;',['../structstd_1_1formatter_3_01mim_1_1Op_01_4.html',1,'std']]],
   ['freedefana_10',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html',1,'mim::plug::clos']]],
-  ['freezer_11',['Freezer',['../structmim_1_1World_1_1Freezer.html',1,'mim::World']]],
-  ['fuse_12',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
+  ['fuse_11',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
 ];

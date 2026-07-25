@@ -101,6 +101,7 @@ var namespacemim =
     [ "unique_queue", "classmim_1_1unique__queue.html", "classmim_1_1unique__queue" ],
     [ "GIDHash", "structmim_1_1GIDHash.html", "structmim_1_1GIDHash" ],
     [ "GIDLt", "structmim_1_1GIDLt.html", "structmim_1_1GIDLt" ],
+    [ "Restore", "classmim_1_1Restore.html", "classmim_1_1Restore" ],
     [ "Vector", "classmim_1_1Vector.html", "classmim_1_1Vector" ],
     [ "World", "classmim_1_1World.html", "classmim_1_1World" ],
     [ "annex_with_subs", "conceptmim_1_1annex__with__subs.html", null ],

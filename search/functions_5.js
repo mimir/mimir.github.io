@@ -28,9 +28,8 @@ var searchData=
   ['free_5fdefs_25',['free_defs',['../namespacemim_1_1plug_1_1clos.html#a5485374ab8e8586644bc7537515df475',1,'mim::plug::clos']]],
   ['free_5fvars_26',['free_vars',['../classmim_1_1Def.html#aed49f75ef33a07d498daffbcc3d2d838',1,'mim::Def::free_vars() const'],['../classmim_1_1Def.html#a55751862df2e7aab0d76521dd77fadb9',1,'mim::Def::free_vars()']]],
   ['freedefana_27',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html#a997eda73047d92577e9f1896536f4fa7',1,'mim::plug::clos::FreeDefAna']]],
-  ['freeze_28',['freeze',['../classmim_1_1World.html#a8c639e60d776f524a36e032e59885009',1,'mim::World']]],
-  ['freezer_29',['Freezer',['../structmim_1_1World_1_1Freezer.html#a818ef9b85c0577003a841560821c188e',1,'mim::World::Freezer']]],
-  ['front_30',['front',['../classmim_1_1unique__queue.html#a706602cdaf314aa94a65a6f0404913c0',1,'mim::unique_queue']]],
-  ['fun_31',['fun',['../classmim_1_1World.html#a8c26f975e073f144c693904cc99432a9',1,'mim::World::fun(const Def *dom, const Def *codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a58f6deb4c2f0747490dbdfacce1a01b5',1,'mim::World::fun(Defs dom, const Def *codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a6ad7073ebe6fe154f2c1700bbaceb929',1,'mim::World::fun(const Def *dom, Defs codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a7ea64d61855d93ede0d879ca158ecec7',1,'mim::World::fun(Defs dom, Defs codom, Lam::Filter f, const Def *body)']]],
-  ['fuse_32',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html#a11cd8a6824114cab3b5f25cbd2a27535',1,'mim::plug::tensor::phase::Fuse']]]
+  ['freeze_28',['freeze',['../classmim_1_1World.html#ae0e0fca3c07a0aa075daea8895cecd6c',1,'mim::World']]],
+  ['front_29',['front',['../classmim_1_1unique__queue.html#a706602cdaf314aa94a65a6f0404913c0',1,'mim::unique_queue']]],
+  ['fun_30',['fun',['../classmim_1_1World.html#a8c26f975e073f144c693904cc99432a9',1,'mim::World::fun(const Def *dom, const Def *codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a58f6deb4c2f0747490dbdfacce1a01b5',1,'mim::World::fun(Defs dom, const Def *codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a6ad7073ebe6fe154f2c1700bbaceb929',1,'mim::World::fun(const Def *dom, Defs codom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a7ea64d61855d93ede0d879ca158ecec7',1,'mim::World::fun(Defs dom, Defs codom, Lam::Filter f, const Def *body)']]],
+  ['fuse_31',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html#a11cd8a6824114cab3b5f25cbd2a27535',1,'mim::plug::tensor::phase::Fuse']]]
 ];
