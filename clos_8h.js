@@ -2,7 +2,6 @@ var clos_8h =
 [
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ],
     [ "mim::plug::clos::apply_closure", "namespacemim_1_1plug_1_1clos.html#a9c9b39e2470025325c86bdca2f93b556", null ],
-    [ "mim::plug::clos::ca_isa_var", "namespacemim_1_1plug_1_1clos.html#a32504612ebac26d2f6a87d1c4a6c6f47", null ],
     [ "mim::plug::clos::clos_apply", "namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac", null ],
     [ "mim::plug::clos::clos_insert_env", "namespacemim_1_1plug_1_1clos.html#a83d7cfb21645bf5a8bfb54c54cd921cf", null ],
     [ "mim::plug::clos::clos_insert_env", "namespacemim_1_1plug_1_1clos.html#a0638765c0d0f0c4b9766edcce739c237", null ],
@@ -20,6 +19,7 @@ var clos_8h =
     [ "mim::plug::clos::env_param", "namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6", null ],
     [ "mim::plug::clos::isa_clos_lit", "namespacemim_1_1plug_1_1clos.html#a08e2dd10f68834ee59b63662b9a63c06", null ],
     [ "mim::plug::clos::isa_clos_type", "namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19", null ],
+    [ "mim::plug::clos::isa_var_proj", "namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b", null ],
     [ "mim::plug::clos::shift_env", "namespacemim_1_1plug_1_1clos.html#a50b8b1bc3c13d8035fc3db8cf4c70772", null ],
     [ "mim::plug::clos::skip_env", "namespacemim_1_1plug_1_1clos.html#aba47885b5f553af0dacae464a463675b", null ]
 ];

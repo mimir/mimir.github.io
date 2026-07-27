@@ -20,7 +20,7 @@ var searchData=
   ['bound_17',['bound',['../classmim_1_1World.html#aab1e5167972818efdf9c13b16046842e',1,'mim::World']]],
   ['branch_18',['Branch',['../classmim_1_1Branch.html#a9aa9b480fdb0fe09f1f8277505459280',1,'mim::Branch']]],
   ['branch_19',['branch',['../classmim_1_1Lam.html#a9371fbebae39cfcc9a4c7943b756a18a',1,'mim::Lam']]],
-  ['branchcloselim_20',['BranchClosElim',['../classmim_1_1plug_1_1clos_1_1BranchClosElim.html#ab47e8a2aa1d72d70736015bd240fa4b6',1,'mim::plug::clos::BranchClosElim']]],
+  ['branchcloselim_20',['BranchClosElim',['../classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim.html#a70529127b5b9ce44a9760ede9cdffe06',1,'mim::plug::clos::phase::BranchClosElim']]],
   ['branchnormalize_21',['BranchNormalize',['../classmim_1_1BranchNormalize.html#a08456b10e498780c726da9a8766318bd',1,'mim::BranchNormalize']]],
   ['breakpoint_22',['breakpoint',['../classmim_1_1World.html#ae2b230faf05210f655cbfd4806fd75fb',1,'mim::World']]],
   ['breakpoints_23',['breakpoints',['../classmim_1_1World.html#a8e95b756aab85d9cf0adc65cc40f7c4f',1,'mim::World']]]

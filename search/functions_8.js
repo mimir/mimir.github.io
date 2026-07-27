@@ -34,7 +34,7 @@ var searchData=
   ['is_5fanon_31',['is_anon',['../structmim_1_1Dbg.html#a80689d81de74123e448925babb7ff246',1,'mim::Dbg']]],
   ['is_5fassigned_32',['is_assigned',['../structmim_1_1sexpr_1_1BB.html#a7559def815b351c7bc81b5d4b64e3326',1,'mim::sexpr::BB']]],
   ['is_5fassociative_33',['is_associative',['../namespacemim.html#abe80f437b1eb4a8af99d7a4e6fff1fe3',1,'mim::is_associative(Id id)'],['../namespacemim.html#a18ea687fca3cafcb3ae2e8afacdb6a43',1,'mim::is_associative(plug::core::bit2 id)'],['../namespacemim.html#ae4993d8ec478d9b21be0d34df1047d50',1,'mim::is_associative(plug::core::nat id)'],['../namespacemim.html#abd0be8cef745edc10628729e7096bba0',1,'mim::is_associative(plug::core::ncmp id)'],['../namespacemim.html#a789eca4a75e2540e6d34f59994f69704',1,'mim::is_associative(plug::core::icmp id)'],['../namespacemim.html#a7883d619ee40a111d64345ec295dbe89',1,'mim::is_associative(plug::core::wrap id)'],['../namespacemim.html#af485193faab3fd743dc27aa379950c00',1,'mim::is_associative(plug::math::arith id)']]],
-  ['is_5fbasicblock_34',['is_basicblock',['../classmim_1_1plug_1_1clos_1_1ClosLit.html#ad42cae1fac8d09dec25ee45e5e8d7a3a',1,'mim::plug::clos::ClosLit']]],
+  ['is_5fbasicblock_34',['is_basicblock',['../classmim_1_1plug_1_1clos_1_1ClosLit.html#aa14370d726c8afa8fa10853b1d3118f6',1,'mim::plug::clos::ClosLit']]],
   ['is_5fbootstrapping_35',['is_bootstrapping',['../classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd',1,'mim::Analysis::is_bootstrapping()'],['../classmim_1_1RWPhase.html#a8c1256f93cc63c1d8d0609e2aa474b51',1,'mim::RWPhase::is_bootstrapping()']]],
   ['is_5fbrckt_36',['is_brckt',['../classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029',1,'mim::ast::TuplePtrn']]],
   ['is_5fclosed_37',['is_closed',['../classmim_1_1Def.html#aec7aa74467c589b28b16a9630eb96a69',1,'mim::Def']]],
@@ -64,7 +64,7 @@ var searchData=
   ['is_5fparen_61',['is_paren',['../classmim_1_1ast_1_1TuplePtrn.html#a1176d6f6f64281b96a02177112d56d0e',1,'mim::ast::TuplePtrn']]],
   ['is_5frassoc_62',['is_rassoc',['../namespacemim_1_1ast.html#a50e9195843afe95df3aa715f91e1b32b',1,'mim::ast']]],
   ['is_5frecursive_63',['is_recursive',['../classmim_1_1Nest_1_1Node.html#aa81c36ca3e5a1b8aa646c841bea42351',1,'mim::Nest::Node::is_recursive()'],['../classmim_1_1Nest.html#a49652caf6c6f54036e31936e80161753',1,'mim::Nest::is_recursive()']]],
-  ['is_5freturning_64',['is_returning',['../classmim_1_1plug_1_1clos_1_1ClosLit.html#a6df1bc401956576a3a401553a904222a',1,'mim::plug::clos::ClosLit']]],
+  ['is_5freturning_64',['is_returning',['../classmim_1_1plug_1_1clos_1_1ClosLit.html#acd7f8de1a7e93da949ab1624629af1cc',1,'mim::plug::clos::ClosLit']]],
   ['is_5froot_65',['is_root',['../classmim_1_1Nest_1_1Node.html#abf7a4a88a37c86159baa8e283705b84a',1,'mim::Nest::Node']]],
   ['is_5fset_66',['is_set',['../classmim_1_1Def.html#a075f30462bdc7ae0e435c8e15cb48fff',1,'mim::Def']]],
   ['is_5fsimd_67',['is_simd',['../namespacemim_1_1plug_1_1ll.html#a03f0cd076f43b618bd51d9a8158d1352',1,'mim::plug::ll']]],
@@ -104,6 +104,7 @@ var searchData=
   ['isa_5fset_101',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
   ['isa_5ftargetspecific_5fintrinsic_102',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab834c3096a2840d77482cd36bcedbf48',1,'mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad',1,'mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()']]],
   ['isa_5funset_103',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
-  ['iterator_104',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
-  ['its_5fa_5fmatch_105',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
+  ['isa_5fvar_5fproj_104',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
+  ['iterator_105',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
+  ['its_5fa_5fmatch_106',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

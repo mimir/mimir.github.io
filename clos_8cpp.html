@@ -125,7 +125,6 @@ $(function(){initNavTree('clos_8cpp.html','',''); });
 <div class="textblock"><code>#include &quot;<a class="el" href="clos_8h_source.html">mim/plug/clos/clos.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="config_8h_source.html">mim/config.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="scalarize_8h_source.html">mim/phase/scalarize.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="branch__clos__elim_8h_source.html">mim/plug/clos/phase/branch_clos_elim.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clos2sjlj_8h_source.html">mim/plug/clos/phase/clos2sjlj.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clos__conv_8h_source.html">mim/plug/clos/phase/clos_conv.h</a>&quot;</code><br />
@@ -155,7 +154,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a08e2dd10f68834ee59b63662b9a63c06" id="r_a08e2dd10f68834ee59b63662b9a63c06"><td class="memItemLeft"><a class="el" href="classmim_1_1plug_1_1clos_1_1ClosLit.html">ClosLit</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a08e2dd10f68834ee59b63662b9a63c06">mim::plug::clos::isa_clos_lit</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, bool fn_isa_lam=true)</td></tr>
 <tr class="memdesc:a08e2dd10f68834ee59b63662b9a63c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to match a closure literal.  <br /></td></tr>
 <tr class="memitem:ac1ebc28bb550c21607c7980b5a65ce1e" id="r_ac1ebc28bb550c21607c7980b5a65ce1e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#ac1ebc28bb550c21607c7980b5a65ce1e">mim::plug::clos::clos_pack</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *env, const <a class="el" href="classmim_1_1Def.html">Def</a> *fn, const <a class="el" href="classmim_1_1Def.html">Def</a> *ct=nullptr)</td></tr>
-<tr class="memdesc:ac1ebc28bb550c21607c7980b5a65ce1e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Pack.html" title="A (possibly paramterized) Tuple.">Pack</a> a typed closure. This assumes that <code class="param">fn</code> expects the environment at its <a class="el" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6" title="Describes where the environment is placed in the argument list: right after a leading mem....">env_param()</a>th argument.  <br /></td></tr>
+<tr class="memdesc:ac1ebc28bb550c21607c7980b5a65ce1e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Pack.html" title="A (possibly paramterized) Tuple.">Pack</a> a typed closure.  <br /></td></tr>
 <tr class="memitem:a9e0c77c2d7c17c5092792342a7fe9497" id="r_a9e0c77c2d7c17c5092792342a7fe9497"><td class="memItemLeft">std::tuple&lt; const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">mim::plug::clos::clos_unpack</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *c)</td></tr>
 <tr class="memdesc:a9e0c77c2d7c17c5092792342a7fe9497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstruct a closure into <span class="tt">(env_type, function, env)</span>.  <br /></td></tr>
 <tr class="memitem:ac8edb2eb6faca8f7fef791659bf332ac" id="r_ac8edb2eb6faca8f7fef791659bf332ac"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac">mim::plug::clos::clos_apply</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *closure, const <a class="el" href="classmim_1_1Def.html">Def</a> *args)</td></tr>
@@ -170,6 +169,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a83e143af89ac230140aca29f6674ba5d" id="r_a83e143af89ac230140aca29f6674ba5d"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d">mim::plug::clos::clos_insert_env</a> (size_t ep, size_t i, const <a class="el" href="classmim_1_1Def.html">Def</a> *env, std::function&lt; const <a class="el" href="classmim_1_1Def.html">Def</a> *(size_t)&gt; f)</td></tr>
 <tr class="memitem:a3f40a4012ea8c2b93e631b3c2d7c8542" id="r_a3f40a4012ea8c2b93e631b3c2d7c8542"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">mim::plug::clos::clos_remove_env</a> (size_t ep, size_t i, std::function&lt; const <a class="el" href="classmim_1_1Def.html">Def</a> *(size_t)&gt; f)</td></tr>
 <tr class="memitem:a7820bb02f38dcb275393c75227c85114" id="r_a7820bb02f38dcb275393c75227c85114"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">mim::plug::clos::ctype</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, <a class="el" href="namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740">Defs</a> doms, const <a class="el" href="classmim_1_1Def.html">Def</a> *env_type=nullptr)</td></tr>
+<tr class="memdesc:a7820bb02f38dcb275393c75227c85114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a closure type from the domains <code class="param">doms</code> of a <span class="tt">Cn</span>.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a35bb34350e93d508e52544f4abd50e59" name="a35bb34350e93d508e52544f4abd50e59"></a>
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00030">30</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00027">27</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="config_8h_source.html#l00019">MIM_EXPORT</a>, <a class="el" href="plugin_8h_source.html#l00054">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1clos.html#a16d3c86f0515a0b9c2d5653f412f58d0">mim::plug::clos::register_normalizers()</a>.</p>
 
@@ -208,7 +208,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00018">18</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clos_8cpp_source.html#l00016">16</a> of file <a class="el" href="clos_8cpp_source.html">clos.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00070">mim::Phase::hook()</a>.</p>
 

@@ -1,6 +1,6 @@
 var namespacemim_1_1plug_1_1autodiff =
 [
-    [ "Eval", "classmim_1_1plug_1_1autodiff_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1Eval" ],
+    [ "phase", "namespacemim_1_1plug_1_1autodiff_1_1phase.html", "namespacemim_1_1plug_1_1autodiff_1_1phase" ],
     [ "AD", "namespacemim_1_1plug_1_1autodiff.html#ad4255585ac73ccd9e621fd1ccf342064", null ],
     [ "ad", "namespacemim_1_1plug_1_1autodiff.html#afb5a3e7eb156faf3bf02f211e7ad22ed", null ],
     [ "add", "namespacemim_1_1plug_1_1autodiff.html#adec076a151d709a29626cbe2a3c20337", null ],

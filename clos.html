@@ -122,47 +122,86 @@ $(function(){initNavTree('clos.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md174">Dependencies </a>
+    <a href="#autotoc_md175">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md175">Operations related to longjmp </a>
+    <a href="#autotoc_md176">Operations </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md177">%clos.BufPtr </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md178">%clos.alloc_jmpbuf </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md179">%clos.setjmp </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md180">%clos.longjmp </a>
+      </li>
+    </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md176">Closure Attribute </a>
+    <a href="#autotoc_md181">Closure Attribute </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md182">%clos.attr </a>
+      </li>
+    </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md177">Phases </a>
+    <a href="#autotoc_md183">Phases </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2clos"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1clos.html" title="The clos Plugin">mim::plug::clos</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md174"></a>
+<p>This plugin performs <em>typed closure conversion</em>: it turns functions that capture free variables into self-contained <em>closures</em> - a pair of a <em>code pointer</em> and an <em>environment</em> holding the captured values - so that every function becomes closed and can be lifted to the top level. Later it lowers these typed closures to untyped <span class="tt">(code-ptr, env-ptr)</span> pairs and turns exception-like basic blocks into <span class="tt">setjmp</span>/<span class="tt">longjmp</span>. The transformation is a pipeline of <a class="el" href="phases.html" title="Phases">Phases</a> (see below); the C++ implementation lives in <a class="el" href="namespacemim_1_1plug_1_1clos.html" title="The clos Plugin">mim::plug::clos</a>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md175"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md175"></a>
-Operations related to longjmp</h1>
-<div class="fragment"><div class="line">let %clos.BufPtr = %mem.Ptr0 I8;</div>
-<div class="line">axm %clos.alloc_jmpbuf: %mem.M 0 → [%mem.M 0, %clos.BufPtr];</div>
-<div class="line">axm %clos.setjmp: [%mem.M 0, %clos.BufPtr] → [%mem.M 0, I32];</div>
-<div class="line">axm %clos.longjmp: Cn [%mem.M 0, %clos.BufPtr, I32];</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md176"></a>
+Operations</h1>
+<p><a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html" title="Lowers basicblock closures that are passed as arguments (i.e.">mim::plug::clos::phase::Clos2SJLJ</a> lowers exception-like basic-block closures to these operations.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md177"></a>
+%clos.BufPtr</h2>
+<p>An opaque pointer to a C <span class="tt">jmp_buf</span>; its size in bytes is provided by the runtime. </p><div class="fragment"><div class="line">let %clos.BufPtr = %mem.Ptr0 I8;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md178"></a>
+%clos.alloc_jmpbuf</h2>
+<p>Allocates a fresh <span class="tt">jmp_buf</span> and yields a pointer to it. </p><div class="fragment"><div class="line">axm %clos.alloc_jmpbuf: %mem.M 0 → [%mem.M 0, %clos.BufPtr];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md179"></a>
+%clos.setjmp</h2>
+<p>Saves the current execution context into the <span class="tt">jmp_buf</span> (like C <span class="tt">setjmp</span>). Yields <span class="tt">0</span> on the initial call and the non-zero tag passed to <span class="tt">%clos.longjmp</span> when jumped to. </p><div class="fragment"><div class="line">axm %clos.setjmp: [%mem.M 0, %clos.BufPtr] → [%mem.M 0, I32];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md180"></a>
+%clos.longjmp</h2>
+<p>Restores the context saved in the <span class="tt">jmp_buf</span>, resuming right after the corresponding <span class="tt">%clos.setjmp</span> and making it yield the given tag (like C <span class="tt">longjmp</span>). </p><div class="fragment"><div class="line">axm %clos.longjmp: Cn [%mem.M 0, %clos.BufPtr, I32];</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md181"></a>
 Closure Attribute</h1>
-<p>Used internally to classify the use of different Lambdas. <a class="el" href="classmim_1_1plug_1_1clos_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, freeBB, fstclassBB, ...) and eta-expands branches a...">mim::plug::clos::ClosConvPrep</a> places these attributes:</p><ul>
-<li><span class="tt">returning</span>: returning lambda</li>
-<li><span class="tt">freeBB</span>: ordinary basic block (see <a class="el" href="classmim_1_1Lam.html#a846446604fca73562a518ec65fc65cb8">mim::Lam::isa_basicblock()</a>)</li>
-<li><span class="tt">fstclassBB</span>: basic block that is passed around</li>
-<li><span class="tt">esc</span>: lambda that escapes its parent scope</li>
-<li><span class="tt">bottom</span>: no special use</li>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md182"></a>
+%clos.attr</h2>
+<p>A marker wrapped around a <span class="tt">Lam</span> (or a use of it) that classifies how it is used. <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, free_bb, fstclass_bb, ...) and eta-expands branches...">mim::plug::clos::phase::ClosConvPrep</a> introduces these so that <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html" title="Performs typed closure conversion, rebuilding the old world into a new one.">mim::plug::clos::phase::ClosConv</a> sees a canonical program and can treat each kind of continuation appropriately:</p><ul>
+<li><span class="tt">returning</span>: a <em>returning continuation</em> ("function"); fully closure converted.</li>
+<li><span class="tt">free_bb</span>: an ordinary basic block referenced from an enclosing scope (see <a class="el" href="classmim_1_1Lam.html#a846446604fca73562a518ec65fc65cb8">mim::Lam::isa_basicblock</a>).</li>
+<li><span class="tt">fstclass_bb</span>: a basic block used as a first-class value (passed around) rather than only called.</li>
+<li><span class="tt">esc</span>: a closure whose environment escapes its parent scope, so it is heap- instead of stack-allocated (introduced by <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html" title="Escape analysis for closures: closure literals get their function wrapped in clos....">mim::plug::clos::phase::LowerTypedClosPrep</a>).</li>
+<li><span class="tt">bottom</span>: no special use; this is the identity marker and is normalized away by <span class="tt">normalize_clos</span>. <div class="fragment"><div class="line">axm %clos.attr(returning, free_bb, fstclass_bb, esc, bottom): {T: *} → T → T, normalize_clos;</div>
+</div><!-- fragment --></li>
 </ul>
-<div class="fragment"><div class="line">axm %clos.attr(returning, freeBB, fstclassBB, esc, bottom): {T: *} → T → T, normalize_clos;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md177"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md183"></a>
 Phases</h1>
+<p>The <span class="tt">%opt</span> pipeline runs these in the order below, reusing <span class="tt">%clos.branch_clos</span> as a repeated cleanup after the passes that introduce branch closures.</p><ul>
+<li><span class="tt">clos_conv_prep</span>: prepares for closure conversion by wrapping operands with the <span class="tt">%clos.attr</span> markers above and eta-expanding branches and continuations (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, free_bb, fstclass_bb, ...) and eta-expands branches...">mim::plug::clos::phase::ClosConvPrep</a>).</li>
+<li><span class="tt">clos_conv</span>: the actual <em>typed closure conversion</em> (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html" title="Performs typed closure conversion, rebuilding the old world into a new one.">mim::plug::clos::phase::ClosConv</a>).</li>
+<li><span class="tt">branch_clos</span>: flattens a branch over closure literals back into a direct branch over the underlying <span class="tt">Lam</span>s, inlining their environments (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim.html" title="Flattens branches over closure literals back into a direct branch over Lams.">mim::plug::clos::phase::BranchClosElim</a>).</li>
+<li><span class="tt">lower_typed_clos_prep</span>: escape analysis; marks closures whose environment escapes with <span class="tt">%clos.attr.esc</span> (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html" title="Escape analysis for closures: closure literals get their function wrapped in clos....">mim::plug::clos::phase::LowerTypedClosPrep</a>).</li>
+<li><span class="tt">clos2sjlj</span>: lowers exception-like basic-block closures to <span class="tt">setjmp</span>/<span class="tt">longjmp</span> (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html" title="Lowers basicblock closures that are passed as arguments (i.e.">mim::plug::clos::phase::Clos2SJLJ</a>).</li>
+<li><span class="tt">lower_typed_clos</span>: lowers <em>typed</em> closures to untyped <span class="tt">(code-ptr, env-ptr)</span> pairs, boxing or unboxing the environment (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html" title="This pass lowers typed closures to untyped closures.">mim::plug::clos::phase::LowerTypedClos</a>).</li>
+</ul>
 <div class="fragment"><div class="line">axm %clos.clos_conv_prep:        %compile.Phase;</div>
+<div class="line">axm %clos.clos_conv:             %compile.Phase;</div>
 <div class="line">axm %clos.branch_clos:           %compile.Phase;</div>
 <div class="line">axm %clos.lower_typed_clos_prep: %compile.Phase;</div>
 <div class="line">axm %clos.clos2sjlj:             %compile.Phase;</div>
-<div class="line">axm %clos.clos_conv:             %compile.Phase;</div>
 <div class="line">axm %clos.lower_typed_clos:      %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

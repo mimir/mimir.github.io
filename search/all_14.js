@@ -35,7 +35,7 @@ var searchData=
   ['umax_32',['UMax',['../classmim_1_1UMax.html',1,'mim::UMax'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dafaa1f94cd925672925f691e7f5727a6b',1,'mim::UMax']]],
   ['umax_33',['umax',['../classmim_1_1World.html#ac9137dd725b1e68cb0236246c463f07a',1,'mim::World::umax()'],['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a82c1089b8c973b65be6d620f765ed1f5',1,'mim::plug::core::umax']]],
   ['umin_34',['umin',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a017163727bc806385f1453c130b4fce3',1,'mim::plug::core']]],
-  ['unary_35',['unary',['../tensor.html#autotoc_md402',1,'%tensor.unary'],['../namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65',1,'mim::plug::tensor::unary']]],
+  ['unary_35',['unary',['../tensor.html#autotoc_md408',1,'%tensor.unary'],['../namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65',1,'mim::plug::tensor::unary']]],
   ['unary_5fimpl_36',['unary_impl',['../namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd',1,'mim::plug::tensor']]],
   ['uncurry_37',['uncurry',['../classmim_1_1App.html#a88adc23138a6b3ce936b0af483421a11',1,'mim::App::uncurry(const Def *def)'],['../classmim_1_1App.html#a7ef3a62008e14c5bd706e56bf81b7d31',1,'mim::App::uncurry() const']]],
   ['uncurry_5fargs_38',['uncurry_args',['../classmim_1_1App.html#aa6d570d00183417757fd4ebdf2ee45b8',1,'mim::App::uncurry_args(const Def *def)'],['../classmim_1_1App.html#ac69c2673100202cef7725773dcc08d5f',1,'mim::App::uncurry_args() const']]],
@@ -43,7 +43,7 @@ var searchData=
   ['underscore_40',['Underscore',['../langref.html#autotoc_md64',1,'']]],
   ['une_41',['une',['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a92df19e29c9d45d888ed5f68bad1c3b5',1,'mim::plug::math']]],
   ['unfold_5ftype_42',['unfold_type',['../classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96',1,'mim::Def']]],
-  ['unfolding_20functions_43',['Unfolding functions',['../matrix.html#autotoc_md289',1,'']]],
+  ['unfolding_20functions_43',['Unfolding functions',['../matrix.html#autotoc_md295',1,'']]],
   ['unionexpr_44',['UnionExpr',['../classmim_1_1ast_1_1UnionExpr.html',1,'mim::ast::UnionExpr'],['../classmim_1_1ast_1_1UnionExpr.html#a0d0e31dffce181c4656acc477dab5814',1,'mim::ast::UnionExpr::UnionExpr()']]],
   ['unions_20and_20matching_45',['Products, Sequences, Unions, and Matching',['../langref.html#autotoc_md55',1,'']]],
   ['uniq_46',['Uniq',['../classmim_1_1Uniq.html',1,'mim::Uniq'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa52035083e0f187cb1b19b131b4ecdd5',1,'mim::Uniq']]],
@@ -56,8 +56,8 @@ var searchData=
   ['univ_53',['univ',['../classmim_1_1World.html#a5355ae94cd13f800273330d30f38ad8d',1,'mim::World']]],
   ['unsafe_54',['unsafe',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a64c823fad1d87e0df1ef3cdeb8ac684f',1,'mim::plug::math']]],
   ['unset_55',['unset',['../classmim_1_1Hole.html#a8d591b06cb894d13113e8514343faa8b',1,'mim::Hole::unset()'],['../classmim_1_1Def.html#ae5dedfaf24a0f270bdb0fe58ed62cdc3',1,'mim::Def::unset()'],['../classmim_1_1Pi.html#a33ce4a2b9f089af0ca6a99385ebed77d',1,'mim::Pi::unset()'],['../classmim_1_1Lam.html#a072eca45c3daaf3e26a30cef5c17f589',1,'mim::Lam::unset()'],['../classmim_1_1Reform.html#ac594b06ac2f5c68a271f0c6127b57dd0',1,'mim::Reform::unset()'],['../classmim_1_1Rule.html#abc6c0f3fc341d45e6807f3e10021f968',1,'mim::Rule::unset()'],['../classmim_1_1Sigma.html#a03817306a72b907aff0d8904e3c5bd1b',1,'mim::Sigma::unset()'],['../classmim_1_1Seq.html#ad717f4e81e7e5065bdfcded4bb81d3f1',1,'mim::Seq::unset()'],['../classmim_1_1Arr.html#a3787acf95dd4e98481931ea48732ab49',1,'mim::Arr::unset()'],['../classmim_1_1Pack.html#a6c24b7c8a0cbc99df4809ed0ad0fc84d',1,'mim::Pack::unset()']]],
-  ['unwrap_5for_56',['unwrap_or',['../option.html#autotoc_md327',1,'%option.unwrap_or'],['../namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad',1,'mim::plug::option::unwrap_or']]],
-  ['unwrap_5funsafe_57',['unwrap_unsafe',['../option.html#autotoc_md326',1,'%option.unwrap_unsafe'],['../namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53',1,'mim::plug::option::unwrap_unsafe']]],
+  ['unwrap_5for_56',['unwrap_or',['../option.html#autotoc_md333',1,'%option.unwrap_or'],['../namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad',1,'mim::plug::option::unwrap_or']]],
+  ['unwrap_5funsafe_57',['unwrap_unsafe',['../option.html#autotoc_md332',1,'%option.unwrap_unsafe'],['../namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53',1,'mim::plug::option::unwrap_unsafe']]],
   ['update_5fversions_58',['update_versions',['../namespacedeploy.html#abe1ddaa7117a05b93d0fe65d3c81f3bf',1,'deploy']]],
   ['urem_59',['urem',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9ae1851600007553e51484056678cdb3d1',1,'mim::plug::core']]],
   ['us_60',['US',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2',1,'mim::plug::core']]],
@@ -73,5 +73,5 @@ var searchData=
   ['uses_70',['uses',['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler']]],
   ['uses_5flibdevice_71',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]],
   ['util_2eh_72',['util.h',['../util_8h.html',1,'']]],
-  ['utility_73',['Utility',['../compile.html#autotoc_md180',1,'']]]
+  ['utility_73',['Utility',['../compile.html#autotoc_md186',1,'']]]
 ];

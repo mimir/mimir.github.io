@@ -122,16 +122,16 @@ $(function(){initNavTree('ll.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md252">Dependencies </a>
+    <a href="#autotoc_md258">Dependencies </a>
   </li>
   <li class="level1">
     <a href="#ll_cli_args">Command-Line Arguments </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md253">Phases </a>
+    <a href="#autotoc_md259">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md254">%ll.emit </a>
+        <a href="#autotoc_md260">%ll.emit </a>
       </li>
     </ul>
   </li>
@@ -140,7 +140,7 @@ $(function(){initNavTree('ll.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ll"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ll.html" title="The ll Plugin">mim::plug::ll</a></dd></dl>
 <p>The LLVM backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll</span>) appends an emission phase to the compilation pipeline that writes the LLVM IR of the fully lowered program to <span class="tt">&lt;world&gt;.ll</span> (or <span class="tt">a.ll</span> if the world is unnamed). The output path can be overridden via the <span class="tt">-X ll:o=&lt;file&gt;</span> command-line argument; see <a class="el" href="#ll_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>. Some intrinsics are lowered to calls into a small C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime</a> (<span class="tt"><a class="el" href="mim__rt_8c.html">rt/mim_rt.c</a></span>) whose LLVM IR is embedded into or linked with the output, controlled via <span class="tt">-X ll:rt=embed</span>/<span class="tt">extern</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md252"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin opt;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="ll_cli_args"></a>
@@ -156,9 +156,9 @@ Command-Line Arguments</h1>
 <td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
  <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the emitted module (self-contained); <span class="tt">extern</span> only <span class="tt">declare</span>s them so the runtime is linked in separately.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md253"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md254"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
 %ll.emit</h2>
 <p>Emits the LLVM IR of the current world to <span class="tt">&lt;world&gt;.ll</span> (or to the path given via <span class="tt">-X ll:o=&lt;file&gt;</span>). This phase is spliced into the default pipeline (see <span class="tt">opt</span>) whenever the <span class="tt">ll</span> plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %ll.emit: %compile.Phase;</div>

@@ -71,20 +71,24 @@ var annotated_dup =
           ] ]
         ] ],
         [ "autodiff", "namespacemim_1_1plug_1_1autodiff.html", [
-          [ "Eval", "classmim_1_1plug_1_1autodiff_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1Eval" ]
+          [ "phase", "namespacemim_1_1plug_1_1autodiff_1_1phase.html", [
+            [ "Eval", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval" ]
+          ] ]
         ] ],
         [ "buffer", "namespacemim_1_1plug_1_1buffer.html", [
           [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ]
         ] ],
         [ "clos", "namespacemim_1_1plug_1_1clos.html", [
-          [ "ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ],
-          [ "BranchClosElim", "classmim_1_1plug_1_1clos_1_1BranchClosElim.html", "classmim_1_1plug_1_1clos_1_1BranchClosElim" ],
-          [ "Clos2SJLJ", "classmim_1_1plug_1_1clos_1_1Clos2SJLJ.html", "classmim_1_1plug_1_1clos_1_1Clos2SJLJ" ],
-          [ "FreeDefAna", "classmim_1_1plug_1_1clos_1_1FreeDefAna.html", "classmim_1_1plug_1_1clos_1_1FreeDefAna" ],
-          [ "ClosConv", "classmim_1_1plug_1_1clos_1_1ClosConv.html", "classmim_1_1plug_1_1clos_1_1ClosConv" ],
-          [ "ClosConvPrep", "classmim_1_1plug_1_1clos_1_1ClosConvPrep.html", "classmim_1_1plug_1_1clos_1_1ClosConvPrep" ],
-          [ "LowerTypedClos", "classmim_1_1plug_1_1clos_1_1LowerTypedClos.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClos" ],
-          [ "LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep.html", "classmim_1_1plug_1_1clos_1_1LowerTypedClosPrep" ]
+          [ "phase", "namespacemim_1_1plug_1_1clos_1_1phase.html", [
+            [ "BranchClosElim", "classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim.html", "classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim" ],
+            [ "Clos2SJLJ", "classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html", "classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ" ],
+            [ "FreeDefAna", "classmim_1_1plug_1_1clos_1_1phase_1_1FreeDefAna.html", "classmim_1_1plug_1_1clos_1_1phase_1_1FreeDefAna" ],
+            [ "ClosConv", "classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html", "classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv" ],
+            [ "ClosConvPrep", "classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html", "classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep" ],
+            [ "LowerTypedClos", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos" ],
+            [ "LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep" ]
+          ] ],
+          [ "ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ]
         ] ],
         [ "cps", "namespacemim_1_1plug_1_1cps.html", [
           [ "Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", "classmim_1_1plug_1_1cps_1_1Conv" ]
@@ -109,9 +113,11 @@ var annotated_dup =
           [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ]
         ] ],
         [ "matrix", "namespacemim_1_1plug_1_1matrix.html", [
-          [ "LowerAff", "classmim_1_1plug_1_1matrix_1_1LowerAff.html", "classmim_1_1plug_1_1matrix_1_1LowerAff" ],
-          [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixHighLevelMapRed" ],
-          [ "LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel.html", "classmim_1_1plug_1_1matrix_1_1LowerMatrixMediumLevel" ]
+          [ "phase", "namespacemim_1_1plug_1_1matrix_1_1phase.html", [
+            [ "LowerAff", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerAff.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerAff" ],
+            [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixHighLevelMapRed" ],
+            [ "LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixMediumLevel.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixMediumLevel" ]
+          ] ]
         ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [

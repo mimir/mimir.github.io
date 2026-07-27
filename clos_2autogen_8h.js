@@ -4,8 +4,8 @@ var clos_2autogen_8h =
     [ "mim::plug::clos::alloc_jmpbuf", "namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0", null ],
     [ "mim::plug::clos::attr", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8c", [
       [ "mim::plug::clos::attr::returning", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca167a77939d6d79814e846ff5885b63b9", null ],
-      [ "mim::plug::clos::attr::freeBB", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cafe63353cdfb591c479c9e6076beccb55", null ],
-      [ "mim::plug::clos::attr::fstclassBB", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cae948e5de0a4b5744fd5517f9453e380e", null ],
+      [ "mim::plug::clos::attr::free_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cacecd0f2415ba21a6a908010576282c6d", null ],
+      [ "mim::plug::clos::attr::fstclass_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8caae0d060ff580e732d2ef22e37a765c23", null ],
       [ "mim::plug::clos::attr::esc", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca3f0e951cdec5a39685cb08fa6edc6094", null ],
       [ "mim::plug::clos::attr::bottom", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca71f262d796bed1ab30e8a2d5a8ddee6f", null ]
     ] ],
