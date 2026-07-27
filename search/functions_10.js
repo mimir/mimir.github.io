@@ -54,10 +54,12 @@ var searchData=
   ['ror_51',['ror',['../classmim_1_1lct_1_1Node.html#a28dfc84ca1bc23d127afabac43ddfe3b',1,'mim::lct::Node']]],
   ['rotate_52',['rotate',['../classmim_1_1lct_1_1Node.html#a8184ed21119e0fedb3605dc4f2192a72',1,'mim::lct::Node']]],
   ['rsubspan_53',['rsubspan',['../classmim_1_1Span.html#a95ad9bdf9ac1eb16588ad4c96fef3791',1,'mim::Span::rsubspan(size_t i, size_t n=D) const noexcept'],['../classmim_1_1Span.html#aca1a6c80020a977de13fb1ce3573c160',1,'mim::Span::rsubspan() const noexcept']]],
-  ['rule_54',['rule',['../classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1',1,'mim::World']]],
-  ['ruledecl_55',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html#a31cace7df0461ce8af94e3994c06d503',1,'mim::ast::RuleDecl']]],
-  ['ruleexpr_56',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html#a3b8071a6515d765f9c2f396e3639611b',1,'mim::ast::RuleExpr']]],
-  ['run_57',['run',['../classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f',1,'mim::Phase::run()'],['../classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a',1,'mim::Phase::run(Args &amp;&amp;... args)'],['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html#a537a58634ca20c1143e3c123bc36e336',1,'mim::plug::clos::FreeDefAna::run()'],['../namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4',1,'mim::sys::run()']]],
-  ['run_5fstage_58',['run_stage',['../namespacemim_1_1plug_1_1gpu_1_1phase.html#ac6e0784661dc3de9ab464706fbf3bf9c',1,'mim::plug::gpu::phase']]],
-  ['rwphase_59',['RWPhase',['../classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e',1,'mim::RWPhase::RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)'],['../classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c',1,'mim::RWPhase::RWPhase(World &amp;world, flags_t annex, Analysis *analysis=nullptr)']]]
+  ['rt_5fmode_54',['rt_mode',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a716f42495d52bea72d6f34ce9f708aef',1,'mim::plug::ll::Emitter']]],
+  ['rt_5fmodule_55',['rt_module',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a028ef63fb02d2876ccfe254f2f6aab80',1,'mim::plug::ll::Emitter']]],
+  ['rule_56',['rule',['../classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1',1,'mim::World']]],
+  ['ruledecl_57',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html#a31cace7df0461ce8af94e3994c06d503',1,'mim::ast::RuleDecl']]],
+  ['ruleexpr_58',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html#a3b8071a6515d765f9c2f396e3639611b',1,'mim::ast::RuleExpr']]],
+  ['run_59',['run',['../classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f',1,'mim::Phase::run()'],['../classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a',1,'mim::Phase::run(Args &amp;&amp;... args)'],['../classmim_1_1plug_1_1clos_1_1FreeDefAna.html#a537a58634ca20c1143e3c123bc36e336',1,'mim::plug::clos::FreeDefAna::run()'],['../namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4',1,'mim::sys::run()']]],
+  ['run_5fstage_60',['run_stage',['../namespacemim_1_1plug_1_1gpu_1_1phase.html#ac6e0784661dc3de9ab464706fbf3bf9c',1,'mim::plug::gpu::phase']]],
+  ['rwphase_61',['RWPhase',['../classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e',1,'mim::RWPhase::RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)'],['../classmim_1_1RWPhase.html#a338b4217843a5a9514433f2c70edeb5c',1,'mim::RWPhase::RWPhase(World &amp;world, flags_t annex, Analysis *analysis=nullptr)']]]
 ];

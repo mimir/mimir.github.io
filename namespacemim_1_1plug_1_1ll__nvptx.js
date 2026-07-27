@@ -6,7 +6,7 @@ var namespacemim_1_1plug_1_1ll__nvptx =
     [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ],
     [ "emit", "namespacemim_1_1plug_1_1ll__nvptx.html#a8de38fbeb041ce6fb2295aed0626b8bc", null ],
     [ "emit_device", "namespacemim_1_1plug_1_1ll__nvptx.html#a298c6ec63f9136bd5a745f1b532c0364", null ],
-    [ "emit_host", "namespacemim_1_1plug_1_1ll__nvptx.html#a74b5b90e3e188b5bc09bb084ae0c9eee", null ],
+    [ "emit_host", "namespacemim_1_1plug_1_1ll__nvptx.html#a88d9b1b2a50b47e8098cbd3b446269fc", null ],
     [ "Cu_Ctx_Create", "namespacemim_1_1plug_1_1ll__nvptx.html#ad47fd7918f863742567bbf7fb2e9c4db", null ],
     [ "Cu_Ctx_Destroy", "namespacemim_1_1plug_1_1ll__nvptx.html#af3902c9b68990a335d691cee8cda18cd", null ],
     [ "Cu_Device_Get", "namespacemim_1_1plug_1_1ll__nvptx.html#a079f558bf0003d09506c79f224b92083", null ],

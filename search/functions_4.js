@@ -16,7 +16,7 @@ var searchData=
   ['emit_5fdevice_13',['emit_device',['../namespacemim_1_1plug_1_1ll__nvptx.html#a298c6ec63f9136bd5a745f1b532c0364',1,'mim::plug::ll_nvptx']]],
   ['emit_5fepilogue_14',['emit_epilogue',['../classmim_1_1plug_1_1ll_1_1Emitter.html#adb599525bac3039cb5adbf91ed3035dd',1,'mim::plug::ll::Emitter::emit_epilogue()'],['../classmim_1_1sexpr_1_1Emitter.html#afb1e68f7b064f898e78e1b5a9e99251a',1,'mim::sexpr::Emitter::emit_epilogue(Lam *)']]],
   ['emit_5fhead_15',['emit_head',['../classmim_1_1sexpr_1_1Emitter.html#aff504ba508ff08891c69d541480dd6f2',1,'mim::sexpr::Emitter']]],
-  ['emit_5fhost_16',['emit_host',['../namespacemim_1_1plug_1_1ll__nvptx.html#a74b5b90e3e188b5bc09bb084ae0c9eee',1,'mim::plug::ll_nvptx']]],
+  ['emit_5fhost_16',['emit_host',['../namespacemim_1_1plug_1_1ll__nvptx.html#a88d9b1b2a50b47e8098cbd3b446269fc',1,'mim::plug::ll_nvptx']]],
   ['emit_5fimported_17',['emit_imported',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a21fc75b1b6035deeecddf5f30f652ee5',1,'mim::plug::ll::Emitter::emit_imported()'],['../classmim_1_1sexpr_1_1Emitter.html#a8de1154d5ffa44b09d9b80380ecbdbf2',1,'mim::sexpr::Emitter::emit_imported(Lam *)']]],
   ['emit_5flam_18',['emit_lam',['../classmim_1_1sexpr_1_1Emitter.html#a41f9bf17c83e211e9efcee718ff4dcdf',1,'mim::sexpr::Emitter']]],
   ['emit_5fnode_19',['emit_node',['../classmim_1_1sexpr_1_1Emitter.html#a422331acd4a304385e6322c0ac488f5b',1,'mim::sexpr::Emitter']]],

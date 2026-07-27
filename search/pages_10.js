@@ -50,5 +50,6 @@ var searchData=
   ['round_47',['%math.round',['../math.html#autotoc_md270',1,'']]],
   ['rrt_48',['%math.rrt',['../math.html#autotoc_md277',1,'']]],
   ['rt_49',['%math.rt',['../math.html#autotoc_md265',1,'']]],
-  ['rwphase_50',['RWPhase',['../phases.html#phases_rwphase',1,'']]]
+  ['runtime_20wrappers_50',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
+  ['rwphase_51',['RWPhase',['../phases.html#phases_rwphase',1,'']]]
 ];

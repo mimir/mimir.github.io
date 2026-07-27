@@ -142,6 +142,9 @@ $(function(){initNavTree('plugins.html','',''); });
     <a href="#autotoc_md103">Standalone Third-Party Builds </a>
   </li>
   <li class="level1">
+    <a href="#plugin_runtime">Runtime Wrappers </a>
+  </li>
+  <li class="level1">
     <a href="#autotoc_md104">Normalizers </a>
   </li>
 </ul>
@@ -224,6 +227,23 @@ Standalone Third-Party Builds</h1>
 </div><!-- fragment --><p>Configure the project standalone with:</p>
 <div class="fragment"><div class="line">cmake .. -Dmim_DIR=&lt;MIM_INSTALL_PREFIX&gt;/lib/cmake/mim</div>
 </div><!-- fragment --><p>The authoritative reference for <span class="tt">add_mim_plugin</span> itself lives in <a class="el" href="add_mim_plugin_cmake.html" title="add_mim_plugin"><span class="tt">cmake/Mim.cmake</span></a>.</p>
+<h1 class="doxsection"><a class="anchor" id="plugin_runtime"></a>
+Runtime Wrappers</h1>
+<p>Backends such as <a class="el" href="ll.html" title="The ll Plugin"><span class="tt">ll</span></a> sometimes need to emit calls to functionality that is awkward or brittle to express as hand-written LLVM IR — for example libc helpers, or complex argument setup for vendor APIs. Instead of emitting the implementation inline, a backend can offload it to a small C <em>wrapper</em> that is compiled to LLVM IR by <span class="tt">clang</span> and pulled into the output. This keeps the backend focused on emitting LLVM and lets <span class="tt">clang</span> deal with platform- and version-specific details.</p>
+<p>The <a class="el" href="add_mim_runtime_cmake.html" title="add_mim_runtime"><span class="tt">add_mim_runtime</span></a> CMake command compiles a plugin's C wrapper sources to textual LLVM IR:</p>
+<div class="fragment"><div class="line">add_mim_plugin(foo</div>
+<div class="line">    SOURCES</div>
+<div class="line">        src/foo.cpp</div>
+<div class="line">)</div>
+<div class="line"> </div>
+<div class="line">add_mim_runtime(foo</div>
+<div class="line">    SOURCES</div>
+<div class="line">        rt/foo_rt.c</div>
+<div class="line">    INSTALL</div>
+<div class="line">)</div>
+</div><!-- fragment --><p>All sources are merged into a single module <span class="tt">&lt;libdir&gt;/mim/rt/&lt;plugin&gt;_rt.ll</span> (next to the plugins) and, with <span class="tt">INSTALL</span>, installed alongside them — one runtime module per plugin, addressable by a well-known name no matter how many <span class="tt">.c</span> files it is split into. This step is optional: it requires <span class="tt">clang</span> (discovered as <span class="tt">MIM_CLANG</span>; merging multiple sources additionally needs <span class="tt">llvm-link</span>) and is skipped when <span class="tt">clang</span> is unavailable or <span class="tt">MIM_BUILD_LL_RUNTIME</span> is <span class="tt">OFF</span>.</p>
+<p>The <a class="el" href="ll.html" title="The ll Plugin"><span class="tt">ll</span></a> backend locates such a runtime module via the driver's <a class="el" href="cli.html" title="Command-Line Reference">search paths</a> and either embeds it into or links it with its emitted module, selected via <span class="tt">-X ll:rt=embed</span> (default) or <span class="tt">-X ll:rt=extern</span>; see the <a class="el" href="cli.html" title="Command-Line Reference">CLI reference</a>. The in-tree examples are <span class="tt"><a class="el" href="mim__rt_8c.html">src/mim/plug/ll/rt/mim_rt.c</a></span>, which provides <span class="tt">@<a class="el" href="mim__rt_8c.html#ace4a0e80be08cf4828e5651b30de2a9c" title="Size in bytes of a jmp_buf, used by clos.alloc_jmpbuf to reserve stack space.">mim_jmpbuf_size</a></span> for <span class="tt">%clos.alloc_jmpbuf</span>, and <span class="tt"><a class="el" href="mim__cuda__rt_8c.html">src/mim/plug/ll_nvptx/rt/mim_cuda_rt.c</a></span>, whose <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span> performs the <span class="tt">ll_nvptx</span> backend's CUDA driver-API error handling. The <span class="tt">ll_nvptx</span> backend reuses the very same <a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html#a9bef375c0acf34184b55999e1269e878" title="mim::plug::ll::Emitter::load_rt_module"><span class="tt">load_rt_module</span></a> helper as <span class="tt">ll</span>, differing only in the runtime module it names.</p>
+<p>The authoritative reference for <span class="tt">add_mim_runtime</span> lives in <a class="el" href="add_mim_runtime_cmake.html" title="add_mim_runtime"><span class="tt">cmake/Mim.cmake</span></a>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
 Normalizers</h1>
 <p>Normalizers usually obtain the owning <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> from one of their arguments, often <span class="tt">type-&gt;world()</span>, and then build the replacement directly in that world. Small normalizers are expected to be direct and side-effect free.</p>

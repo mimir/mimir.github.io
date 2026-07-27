@@ -1,10 +1,15 @@
 var classmim_1_1plug_1_1ll_1_1Emitter =
 [
     [ "Super", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab56b18760592b2d57a48d3032dedd33d", null ],
+    [ "Rt", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64", [
+      [ "embed", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc", null ],
+      [ "ext", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca", null ]
+    ] ],
     [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html#a18da2834ff9f5fd902b0a0b7118a2e79", null ],
     [ "convert", "classmim_1_1plug_1_1ll_1_1Emitter.html#ae1cb1a4b934957ebfa6bada2eaef279d", null ],
     [ "convert_ret_pi", "classmim_1_1plug_1_1ll_1_1Emitter.html#a82fcc166141b236eae4b6c4c21c92780", null ],
     [ "declare", "classmim_1_1plug_1_1ll_1_1Emitter.html#a9b788582fce25ed9f6ff3c67b7fe3d6c", null ],
+    [ "declare_rt", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa7f8831b6671a290b85713952a92b8f6", null ],
     [ "emit_bb", "classmim_1_1plug_1_1ll_1_1Emitter.html#ae2260be08319fc64acdbe86eb946ac61", null ],
     [ "emit_epilogue", "classmim_1_1plug_1_1ll_1_1Emitter.html#adb599525bac3039cb5adbf91ed3035dd", null ],
     [ "emit_imported", "classmim_1_1plug_1_1ll_1_1Emitter.html#a21fc75b1b6035deeecddf5f30f652ee5", null ],
@@ -15,7 +20,10 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "id", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa7b0c48aeb683107867c68a55d7c1240", null ],
     [ "is_valid", "classmim_1_1plug_1_1ll_1_1Emitter.html#a68c770c0945b284bd2211a593e54523a", null ],
     [ "isa_targetspecific_intrinsic", "classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597", null ],
+    [ "load_rt_module", "classmim_1_1plug_1_1ll_1_1Emitter.html#a9bef375c0acf34184b55999e1269e878", null ],
     [ "prepare", "classmim_1_1plug_1_1ll_1_1Emitter.html#a0553a4b3a37018e2ae31211674d55dd6", null ],
+    [ "rt_mode", "classmim_1_1plug_1_1ll_1_1Emitter.html#a716f42495d52bea72d6f34ce9f708aef", null ],
+    [ "rt_module", "classmim_1_1plug_1_1ll_1_1Emitter.html#a028ef63fb02d2876ccfe254f2f6aab80", null ],
     [ "start", "classmim_1_1plug_1_1ll_1_1Emitter.html#ac0f9e4889a963e8dccc382090d247357", null ],
     [ "mim_ll_convert", "classmim_1_1plug_1_1ll_1_1Emitter.html#a785c96819fab5e5c2021f7718285d32b", null ],
     [ "mim_ll_emit_bb", "classmim_1_1plug_1_1ll_1_1Emitter.html#af5d5ecfe6ed2528530e067e675e7d6bc", null ],
@@ -24,6 +32,9 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a65ac63a5b52dcac775dc3c0ee75a3520", null ],
     [ "func_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa27e43c7bfe8e0e3284eadf1fd17060a", null ],
     [ "func_impls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab31bbfcaecd5d6fc4d1e54e1d19716be", null ],
+    [ "rt_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a7e23ce15d7a02dcda74c2fc997757754", null ],
+    [ "rt_module_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a894d2de6157af5afdddb7f644bae9227", null ],
+    [ "rt_used_", "classmim_1_1plug_1_1ll_1_1Emitter.html#afb2702775e8afcf83b2cc4f95aef9c91", null ],
     [ "simd_phi_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ae829eb2d9c43cf8a881c3b7712d26994", null ],
     [ "type_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879", null ],
     [ "vars_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aaff1b1d0552221ddf170ccd92af7bd9a", null ]

@@ -15,5 +15,6 @@ var searchData=
   ['wrap_12',['%core.wrap',['../core.html#autotoc_md199',1,'']]],
   ['wrap_20add_13',['%core.wrap.add',['../autodiff.html#autotoc_md159',1,'']]],
   ['wrap_20mul_14',['%core.wrap.mul',['../autodiff.html#autotoc_md160',1,'']]],
-  ['write_15',['%buffer.write',['../buffer.html#autotoc_md167',1,'']]]
+  ['wrappers_15',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
+  ['write_16',['%buffer.write',['../buffer.html#autotoc_md167',1,'']]]
 ];

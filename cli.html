@@ -223,11 +223,17 @@ Known Arguments</h2>
 <td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
  <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
+ <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the emitted module (self-contained); <span class="tt">extern</span> only <span class="tt">declare</span>s them so the runtime is linked in separately.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
  <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the (host) LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;</span> <br  />
  <span class="tt">output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
+ <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> (e.g. <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>): <span class="tt">embed</span> (default) splices their LLVM IR in; <span class="tt">extern</span> only <span class="tt">declare</span>s them.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Don't embed the compiled device binary into the host LLVM IR (embedding is the default on Linux).  </td></tr>
 <tr class="markdownTableRowEven">

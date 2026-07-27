@@ -17,5 +17,6 @@ var searchData=
   ['ring_14',['Ring',['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor']]],
   ['round_15',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
   ['rrt_16',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
-  ['rt_17',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
+  ['rt_17',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],
+  ['rt_18',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
 ];
