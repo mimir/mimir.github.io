@@ -29,6 +29,7 @@ var classmim_1_1Def =
     [ "dot", "classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f", null ],
     [ "dump", "classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487", null ],
     [ "dump", "classmim_1_1Def.html#aa042dd90667f6f3e6950166b478ec694", null ],
+    [ "expect_mut", "classmim_1_1Def.html#a7d36a16bdd367893e96f4f3fa0851b7e", null ],
     [ "externalize", "classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0", null ],
     [ "flags", "classmim_1_1Def.html#a41c6630a112450ceaa0398079203ee7f", null ],
     [ "free_vars", "classmim_1_1Def.html#a55751862df2e7aab0d76521dd77fadb9", null ],

@@ -8,6 +8,7 @@ var classmim_1_1Axm =
     [ "as", "classmim_1_1Axm.html#a0797677a8c96feb484429cda0c5f8082", null ],
     [ "base", "classmim_1_1Axm.html#a7f72e924025ab0db142542e4fcc92bf1", null ],
     [ "curry", "classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba", null ],
+    [ "expect", "classmim_1_1Axm.html#ad16bd09114066c0dc61f413634ba3396", null ],
     [ "get", "classmim_1_1Axm.html#aeeaa1986a69f4d11556b9f042fd2688e", null ],
     [ "infer_curry_and_trip", "classmim_1_1Axm.html#a9ceee59d324b06f67049b25c1aa26058", null ],
     [ "isa", "classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338", null ],

@@ -10,14 +10,7 @@ var namespacemim =
       [ "extension", "namespacemim_1_1dl.html#ae6d2732db28431965eb93b89c2dbfc72", null ]
     ] ],
     [ "lct", "namespacemim_1_1lct.html", "namespacemim_1_1lct" ],
-    [ "sys", "namespacemim_1_1sys.html", [
-      [ "escape", "namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d", null ],
-      [ "exec", "namespacemim_1_1sys.html#aeddc00f97e1561955278bfcc831d9db7", null ],
-      [ "find_cmd", "namespacemim_1_1sys.html#aabf9e272ba0bd6b36223a016499591a6", null ],
-      [ "path_to_libmim", "namespacemim_1_1sys.html#ac40a2ca3b8a88f2fa48478770057f5e9", null ],
-      [ "run", "namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4", null ],
-      [ "system", "namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396", null ]
-    ] ],
+    [ "sys", "namespacemim_1_1sys.html", "namespacemim_1_1sys" ],
     [ "Axm", "classmim_1_1Axm.html", "classmim_1_1Axm" ],
     [ "Emitter", "classmim_1_1Emitter.html", "classmim_1_1Emitter" ],
     [ "Hole", "classmim_1_1Hole.html", "classmim_1_1Hole" ],
@@ -234,7 +227,6 @@ var namespacemim =
     [ "erase", "namespacemim.html#abbff49ce5bff270e09db6d916fa58c3a", null ],
     [ "erase_if", "namespacemim.html#a3226816eeebc2105ed68aac1c8f8a932", null ],
     [ "error", "namespacemim.html#acf196d4ba82a4a65ffe21ca021963e14", null ],
-    [ "error", "namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db", null ],
     [ "find_and_replace", "namespacemim.html#a8d4798ff41a16cf4a8020359f7679969", null ],
     [ "flatten_umax", "namespacemim.html#acc7b1158f83b80e637de1a63f56d514c", null ],
     [ "get", "namespacemim.html#a83f7d40900e583112dead0917f4188b2", null ],

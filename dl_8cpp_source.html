@@ -137,17 +137,17 @@ $(function(){initNavTree('dl_8cpp_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (HMODULE handle = LoadLibraryA(file)) {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(handle);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39; due to error &#39;{}&#39;\n&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>              <span class="stringliteral">&quot;see https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes\n&quot;</span>,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>              file, GetLastError());</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        fe::throwf(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39; due to error &#39;{}&#39;\n&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                   <span class="stringliteral">&quot;see https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes\n&quot;</span>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                   file, GetLastError());</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (<span class="keywordtype">void</span>* handle = dlopen(file, RTLD_NOW))</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> handle;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span> err = dlerror())</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39; due to error &#39;{}&#39;\n&quot;</span>, file, err);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        fe::throwf(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39; due to error &#39;{}&#39;\n&quot;</span>, file, err);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39;\n&quot;</span>, file);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        fe::throwf(<span class="stringliteral">&quot;could not load plugin &#39;{}&#39;\n&quot;</span>, file);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
@@ -158,15 +158,15 @@ $(function(){initNavTree('dl_8cpp_source.html','',''); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> addr = GetProcAddress(<span class="keyword">static_cast&lt;</span>HMODULE<span class="keyword">&gt;</span>(handle), symbol)) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(addr);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;could not find symbol &#39;{}&#39; in plugin due to error &#39;{}&#39;\n&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>              <span class="stringliteral">&quot;see (https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes)\n&quot;</span>,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>              symbol, GetLastError());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        fe::throwf(<span class="stringliteral">&quot;could not find symbol &#39;{}&#39; in plugin due to error &#39;{}&#39;\n&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                   <span class="stringliteral">&quot;see (https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes)\n&quot;</span>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                   symbol, GetLastError());</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    dlerror(); <span class="comment">// clear error state</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span>* addr = dlsym(handle, symbol);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> err = dlerror())</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;could not find symbol &#39;{}&#39; in plugin due to error &#39;{}&#39; \n&quot;</span>, symbol, err);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fe::throwf(<span class="stringliteral">&quot;could not find symbol &#39;{}&#39; in plugin due to error &#39;{}&#39; \n&quot;</span>, symbol, err);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> addr;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
@@ -176,9 +176,9 @@ $(function(){initNavTree('dl_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespacemim_1_1dl.html#a8538f23ca881de5358d0d6838994fcf4">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacemim_1_1dl.html#a8538f23ca881de5358d0d6838994fcf4">close</a>(<span class="keywordtype">void</span>* handle) {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!FreeLibrary(<span class="keyword">static_cast&lt;</span>HMODULE<span class="keyword">&gt;</span>(handle))) <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;FreeLibrary() failed\n&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!FreeLibrary(<span class="keyword">static_cast&lt;</span>HMODULE<span class="keyword">&gt;</span>(handle))) fe::throwf(<span class="stringliteral">&quot;FreeLibrary() failed\n&quot;</span>);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> err = dlclose(handle)) <a class="code hl_function" href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">error</a>(<span class="stringliteral">&quot;dlclose() failed with error code &#39;{}&#39;\n&quot;</span>, err);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> err = dlclose(handle)) fe::throwf(<span class="stringliteral">&quot;dlclose() failed with error code &#39;{}&#39;\n&quot;</span>, err);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
@@ -190,7 +190,6 @@ $(function(){initNavTree('dl_8cpp_source.html','',''); });
 <div class="ttc" id="anamespacemim_1_1dl_html_a7f900531d9304c1515a00f136ff01b0f"><div class="ttname"><a href="namespacemim_1_1dl.html#a7f900531d9304c1515a00f136ff01b0f">mim::dl::get</a></div><div class="ttdeci">void * get(void *handle, const char *symbol_name)</div><div class="ttdef"><b>Definition</b> <a href="#l00032">dl.cpp:32</a></div></div>
 <div class="ttc" id="anamespacemim_1_1dl_html_a8538f23ca881de5358d0d6838994fcf4"><div class="ttname"><a href="namespacemim_1_1dl.html#a8538f23ca881de5358d0d6838994fcf4">mim::dl::close</a></div><div class="ttdeci">void close(void *handle)</div><div class="ttdef"><b>Definition</b> <a href="#l00051">dl.cpp:51</a></div></div>
 <div class="ttc" id="anamespacemim_1_1dl_html_aac8c9df11f9075d0bec60f2541ae47e6"><div class="ttname"><a href="namespacemim_1_1dl.html#aac8c9df11f9075d0bec60f2541ae47e6">mim::dl::open</a></div><div class="ttdeci">void * open(const char *filename)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">dl.cpp:13</a></div></div>
-<div class="ttc" id="anamespacemim_html_acb46b9aebb614b0b0d0cb17f8cec06db"><div class="ttname"><a href="namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db">mim::error</a></div><div class="ttdeci">void error(std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdoc">Wraps std::format to throw T with a formatted message.</div><div class="ttdef"><b>Definition</b> <a href="dbg_8h_source.html#l00017">dbg.h:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

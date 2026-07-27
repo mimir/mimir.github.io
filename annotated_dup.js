@@ -140,6 +140,9 @@ var annotated_dup =
       [ "lct", "namespacemim_1_1lct.html", [
         [ "Node", "classmim_1_1lct_1_1Node.html", "classmim_1_1lct_1_1Node" ]
       ] ],
+      [ "sys", "namespacemim_1_1sys.html", [
+        [ "CmdNotFound", "classmim_1_1sys_1_1CmdNotFound.html", "classmim_1_1sys_1_1CmdNotFound" ]
+      ] ],
       [ "Axm", "classmim_1_1Axm.html", "classmim_1_1Axm" ],
       [ "Emitter", "classmim_1_1Emitter.html", "classmim_1_1Emitter" ],
       [ "Hole", "classmim_1_1Hole.html", "classmim_1_1Hole" ],

@@ -3,6 +3,7 @@ var classmim_1_1Idx =
     [ "as", "classmim_1_1Idx.html#ae95408e6077d75d927cea9abf0091922", null ],
     [ "as_lit", "classmim_1_1Idx.html#a205f902b6156d862d538960868670e93", null ],
     [ "bitwidth2size", "classmim_1_1Idx.html#a752a4648753c26f9d618a451fdf3b703", null ],
+    [ "expect_bitwidth", "classmim_1_1Idx.html#a9714d21ad12c168c16d1de07dc7500f2", null ],
     [ "isa", "classmim_1_1Idx.html#a7b4496e71deaa94835f732de364e5d76", null ],
     [ "isa_lit", "classmim_1_1Idx.html#ab6aa921a9f36cb7f3f7ddee0ae22726a", null ],
     [ "rebuild_", "classmim_1_1Idx.html#a15488a58361fc609ca0913d02c4c024c", null ],

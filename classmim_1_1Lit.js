@@ -1,6 +1,7 @@
 var classmim_1_1Lit =
 [
     [ "as", "classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523", null ],
+    [ "expect", "classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b", null ],
     [ "get", "classmim_1_1Lit.html#a803287a2ae4c917b44be99ca53bc8d7d", null ],
     [ "isa", "classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7", null ],
     [ "rebuild_", "classmim_1_1Lit.html#aa51116fb46057f10b755b2b922b7a523", null ],

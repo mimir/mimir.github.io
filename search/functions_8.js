@@ -68,7 +68,7 @@ var searchData=
   ['is_5froot_65',['is_root',['../classmim_1_1Nest_1_1Node.html#abf7a4a88a37c86159baa8e283705b84a',1,'mim::Nest::Node']]],
   ['is_5fset_66',['is_set',['../classmim_1_1Def.html#a075f30462bdc7ae0e435c8e15cb48fff',1,'mim::Def']]],
   ['is_5fsimd_67',['is_simd',['../namespacemim_1_1plug_1_1ll.html#a03f0cd076f43b618bd51d9a8158d1352',1,'mim::plug::ll']]],
-  ['is_5fsimd_5faggregate_68',['is_simd_aggregate',['../namespacemim_1_1plug_1_1ll.html#a1820f211ff3bca6431742731b2358dec',1,'mim::plug::ll']]],
+  ['is_5fsimd_5faggregate_68',['is_simd_aggregate',['../namespacemim_1_1plug_1_1ll.html#ad5e0668dd4ef5579ce17a1ca3ed02070',1,'mim::plug::ll']]],
   ['is_5fsparse_69',['is_sparse',['../classmim_1_1Analysis.html#aa8bf5be5944dd6d94abdcfb9c7ff6433',1,'mim::Analysis']]],
   ['is_5fterm_70',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5ftop_71',['is_top',['../classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab',1,'mim::Analysis']]],

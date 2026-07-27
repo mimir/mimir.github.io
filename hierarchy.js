@@ -63,6 +63,9 @@ var hierarchy =
       [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ]
     ] ],
     [ "mim::Log", "classmim_1_1Log.html", null ],
+    [ "std::logic_error", null, [
+      [ "mim::sys::CmdNotFound", "classmim_1_1sys_1_1CmdNotFound.html", null ]
+    ] ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
     [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", null ],

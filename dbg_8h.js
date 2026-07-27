@@ -4,6 +4,5 @@ var dbg_8h =
     [ "mim::Error::Msg", "structmim_1_1Error_1_1Msg.html", "structmim_1_1Error_1_1Msg" ],
     [ "mim::Dbg", "structmim_1_1Dbg.html", "structmim_1_1Dbg" ],
     [ "mim::error", "namespacemim.html#acf196d4ba82a4a65ffe21ca021963e14", null ],
-    [ "mim::error", "namespacemim.html#acb46b9aebb614b0b0d0cb17f8cec06db", null ],
     [ "mim::operator<<", "namespacemim.html#abf62ccb6d793fb6e0aa70eab0098b73e", null ]
 ];
