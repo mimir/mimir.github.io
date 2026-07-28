@@ -267,77 +267,37 @@ Unfolding functions</h1>
 <p>These express the high-level operations above in terms of <span class="tt">%matrix.map_reduce</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md296"></a>
 %matrix.map_reduce_prod</h2>
-<p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) using multiplication as combination and addition as reduction. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_prod(m k l: Nat, pe: «2; Nat»)</div>
-<div class="line">    (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe), N: %buffer.Buf (2, (k, l), %math.F pe))@tt</div>
-<div class="line">    : [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)] =</div>
+<p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) using multiplication as combination and addition as reduction. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_prod (m k l: Nat, pe: «2; Nat») (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe), N: %buffer.Buf (2, (k, l), %math.F pe))@tt: [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)] =</div>
 <div class="line">    let R = %math.F pe;</div>
 <div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
-<div class="line">    return (</div>
-<div class="line">        %matrix.map_reduce</div>
-<div class="line">            (2, (m, l), R,</div>
-<div class="line">                2,</div>
-<div class="line">                (2, 2),</div>
-<div class="line">                (R, R),</div>
-<div class="line">                ((m, k), (k, l))</div>
-<div class="line">            )</div>
-<div class="line">            (</div>
-<div class="line">                mem,</div>
-<div class="line">                zero_real,</div>
-<div class="line">                fn (mem: %mem.M 0, acc: R, ab: «2; R»): [%mem.M 0, R] =</div>
-<div class="line">                    return (mem, %math.arith.add 0 (acc, %math.arith.mul 0 ab)),</div>
-<div class="line">                (</div>
-<div class="line">                    ((0, 2), M),</div>
-<div class="line">                    ((2, 1), N)</div>
-<div class="line">                )</div>
-<div class="line">            )</div>
-<div class="line">    );</div>
+<div class="line">    return (%matrix.map_reduce</div>
+<div class="line">        (2, (m, l), R, 2, (2, 2), (R, R), ((m, k), (k, l)))</div>
+<div class="line">        (mem, zero_real,</div>
+<div class="line">            fn (mem: %mem.M 0, acc: R, ab: «2; R»): [%mem.M 0, R] =</div>
+<div class="line">                return (mem, %math.arith.add 0 (acc, %math.arith.mul 0 ab)),</div>
+<div class="line">            (((0, 2), M), ((2, 1), N))));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md297"></a>
 %matrix.map_reduce_transpose</h2>
-<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose((k l: Nat), T: *)</div>
-<div class="line">    (mem: %mem.M 0, M: %buffer.Buf (2, (k, l), T))@tt</div>
-<div class="line">    : [%mem.M 0, %buffer.Buf (2, (l, k), T)] =</div>
+<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose ((k l: Nat), T: *) (mem: %mem.M 0, M: %buffer.Buf (2, (k, l), T))@tt: [%mem.M 0, %buffer.Buf (2, (l, k), T)] =</div>
 <div class="line">    let zero = ⊥:T;</div>
-<div class="line">    return (</div>
-<div class="line">        %matrix.map_reduce</div>
-<div class="line">            (2, (l, k), T,</div>
-<div class="line">                1,</div>
-<div class="line">                2,</div>
-<div class="line">                T,</div>
-<div class="line">                (k, l)</div>
-<div class="line">            )</div>
-<div class="line">            (</div>
-<div class="line">                mem,</div>
-<div class="line">                zero,</div>
-<div class="line">                // We ignore the (zero) accumulator and just return the read value.</div>
-<div class="line">                fn (mem: %mem.M 0, acc a: T): [%mem.M 0, T] = return (mem, a),</div>
-<div class="line">                ((1, 0), M)</div>
-<div class="line">            )</div>
-<div class="line">    );</div>
+<div class="line">    return (%matrix.map_reduce</div>
+<div class="line">        (2, (l, k), T, 1, 2, T, (k, l))</div>
+<div class="line">        (mem, zero,</div>
+<div class="line">            // We ignore the (zero) accumulator and just return the read value.</div>
+<div class="line">            fn (mem: %mem.M 0, acc a: T): [%mem.M 0, T] = return (mem, a),</div>
+<div class="line">            ((1, 0), M)));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md298"></a>
 %matrix.map_reduce_sum</h2>
-<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_sum(n: Nat, S: «n; Nat», pe: «2; Nat»)</div>
-<div class="line">    (mem: %mem.M 0, M: %buffer.Buf (n, S, %math.F pe))@tt</div>
-<div class="line">    : [%mem.M 0, %math.F pe] =</div>
+<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_sum(n: Nat, S: «n; Nat», pe: «2; Nat») (mem: %mem.M 0, M: %buffer.Buf (n, S, %math.F pe))@tt: [%mem.M 0, %math.F pe] =</div>
 <div class="line">    let R = %math.F pe;</div>
-<div class="line">    let zero_64 = 0.0:(%math.F (52,11));</div>
-<div class="line">    let zero_real = %math.conv.f2f pe zero_64;</div>
+<div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
 <div class="line">    let idxs = ‹i: n; %core.nat.add (1, %core.bitcast Nat i)›;</div>
 <div class="line">    let (mem, res) = %matrix.map_reduce</div>
-<div class="line">        (1, (1), R,</div>
-<div class="line">            1,</div>
-<div class="line">            n,</div>
-<div class="line">            R,</div>
-<div class="line">            S</div>
-<div class="line">        )</div>
-<div class="line">        (</div>
-<div class="line">            mem,</div>
-<div class="line">            zero_real,</div>
-<div class="line">            fn (mem: %mem.M 0, acc: R, a: R): [%mem.M 0, R]</div>
-<div class="line">                = return (mem, %math.arith.add 0 (acc, a)),</div>
-<div class="line">            (</div>
-<div class="line">                (idxs, M)</div>
-<div class="line">            )</div>
-<div class="line">        );</div>
+<div class="line">        (1, 1, R, 1, n, R, S)</div>
+<div class="line">        (mem, zero_real,</div>
+<div class="line">            fn (mem: %mem.M 0, acc: R, a: R): [%mem.M 0, R] =</div>
+<div class="line">                return (mem, %math.arith.add 0 (acc, a)),</div>
+<div class="line">            (idxs, M));</div>
 <div class="line">    return (mem, %core.bitcast R res);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md299"></a>
 Phases</h1>
