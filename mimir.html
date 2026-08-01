@@ -166,7 +166,38 @@ $(function(){initNavTree('mimir.html','',''); });
 <p>Under the hood, MimIR is not a list of instructions but a <b>graph</b>. The <span class="tt">let</span> bindings in the examples below are pure surface sugar — they only name subexpressions. Inlining them or adding more yields the <b>exact same graph</b>, because in MimIR the graph <em>is</em> the program.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Syntax</h1>
-<p>Before we dive in, here is just enough <a class="el" href="namespaceMim.html">Mim</a> syntax to read the examples. Much of it is merely <b>syntactic sugar</b> over that graph: <span class="tt">let</span> names a subexpression, <span class="tt">where</span> groups binders for readability, and <span class="tt">fun</span> / <span class="tt">return</span> is sugar for threading an explicit return continuation. <span class="tt">lam</span> is a direct-style function that returns a value; <span class="tt">con</span> is just sugar for a <span class="tt">lam</span> whose return type is <span class="tt">⊥</span>. Equivalently, <span class="tt">Cn A</span> is sugar for <span class="tt">A → ⊥</span>; this matters in the <a class="el" href="#mimir_cps" title="SSA via CPS">CPS section</a> below. <span class="tt">{}</span> carries implicit arguments, usually types. Tuples are written <span class="tt">(a, b, c)</span>, and tuple types are written <span class="tt">[A, B, C]</span>; more generally <span class="tt">[x: A, B x]</span> is a dependent pair type. Arrays are written <span class="tt">«i: n; T»</span> or just <span class="tt">«n; T»</span> when the element type does not mention the index, while packs are written <span class="tt">‹i: n; v›</span> or <span class="tt">‹n; v›</span> and represent homogeneous tuple terms. So <span class="tt">«n; Nat»</span> is the type of length-<span class="tt">n</span> arrays of naturals, and <span class="tt">‹n; 0›</span> is the pack of <span class="tt">n</span> zeros. Finally, <span class="tt">Idx n</span> is the finite type of <span class="tt">n</span> indices. So <span class="tt">Idx 3</span> is inhabited by <span class="tt">0₃</span>, <span class="tt">1₃</span>, <span class="tt">2₃</span>. In particular, <span class="tt">Idx 2</span> is just <span class="tt">Bool</span>, with <span class="tt">0₂</span> = <span class="tt">ff</span> and <span class="tt">1₂</span> = <span class="tt">tt</span>, so <span class="tt">(f, t)#cond</span> simply indexes the two-element tuple <span class="tt">(f, t)</span> with the boolean <span class="tt">cond</span>.</p>
+<p>Before we dive in, here is just enough <a class="el" href="namespaceMim.html">Mim</a> syntax to read the examples. Much of it is merely <b>syntactic sugar</b> over that graph:</p>
+<ul>
+<li><b>Naming and grouping</b><ul>
+<li><span class="tt">let</span> names a subexpression.</li>
+<li><span class="tt">where</span> is an upside-down <span class="tt">let</span>: it attaches a block of declarations — <span class="tt">let</span>s, but also whole <span class="tt">lam</span>s/<span class="tt">con</span>s — <em>after</em> the expression that uses them.</li>
+</ul>
+</li>
+<li><b>Functions</b><ul>
+<li><span class="tt">lam</span> is a direct-style function that returns a value.</li>
+<li><span class="tt">con</span> is just sugar for a <span class="tt">lam</span> whose return type is <span class="tt">⊥</span> — a function that never returns.</li>
+<li>Equivalently, <span class="tt">Cn A</span> is sugar for <span class="tt">A → ⊥</span>; this matters in the <a class="el" href="#mimir_cps" title="SSA via CPS">CPS section</a> below.</li>
+<li><span class="tt">fun</span> / <span class="tt">return</span> is sugar for threading an explicit return continuation, so a CPS function still reads like an ordinary one.</li>
+<li><span class="tt">{}</span> carries implicit arguments — usually types — as in <div class="fragment"><div class="line">lam id {T: *} (x: T): T = x</div>
+</div><!-- fragment --> where <span class="tt">T</span> is inferred at the call site (<span class="tt">id 23</span>).</li>
+</ul>
+</li>
+<li><b>Tuples</b><ul>
+<li>Tuples are written <span class="tt">(a, b, c)</span>, tuple types <span class="tt">[A, B, C]</span>.</li>
+<li>More generally, <span class="tt">[x: A, B x]</span> is a dependent pair type.</li>
+</ul>
+</li>
+<li><b>Arrays and packs</b><ul>
+<li>Arrays are written <span class="tt">«i: n; T»</span>, or just <span class="tt">«n; T»</span> when the element type does not mention the index <span class="tt">i</span>. So <span class="tt">«n; Nat»</span> is the type of length-<span class="tt">n</span> arrays of naturals.</li>
+<li>Packs are the corresponding homogeneous tuple terms, written <span class="tt">‹i: n; v›</span> or <span class="tt">‹n; v›</span>. So <span class="tt">‹n; 0›</span> is the pack of <span class="tt">n</span> zeros.</li>
+</ul>
+</li>
+<li><b>Indices</b><ul>
+<li><span class="tt">Idx n</span> is the finite type of <span class="tt">n</span> indices, so <span class="tt">Idx 3</span> is inhabited by <span class="tt">0₃</span>, <span class="tt">1₃</span>, <span class="tt">2₃</span>.</li>
+<li>In particular, <span class="tt">Idx 2</span> is just <span class="tt">Bool</span>, with <span class="tt">0₂</span> = <span class="tt">ff</span> and <span class="tt">1₂</span> = <span class="tt">tt</span>. Hence <span class="tt">(f, t)#cond</span> simply indexes the two-element tuple <span class="tt">(f, t)</span> with the boolean <span class="tt">cond</span>.</li>
+</ul>
+</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="mimir_plugins"></a>
 Plugins</h1>
 <p>MimIR's built-in language is deliberately tiny: functions, applications, tuples, and the like. Everything domain-specific — arithmetic, comparisons, memory, control-flow helpers, even entire <a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSLs</a> — lives in <b>plugins</b>. Plugins can sit at any level you like: from low-level bit-fiddling all the way up to full-blown domain-specific operations such as <a class="el" href="regex.html" title="The regex Plugin">regular expressions</a>. A plugin has two halves that share one name:</p>

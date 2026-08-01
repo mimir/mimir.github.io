@@ -457,7 +457,7 @@ Downcasts for Built-ins</h2>
 <ul>
 <li><span class="tt">isa</span> behave like <span class="tt">dynamic_cast</span>: they perform a runtime check and return <span class="tt">nullptr</span> if the cast fails;</li>
 <li><span class="tt">as</span> behave more like <span class="tt">static_cast</span>: in <span class="tt">Debug</span> builds they assert, via the corresponding <span class="tt">isa</span>, that the cast is valid.</li>
-<li><span class="tt">expect</span> behave like <span class="tt">as</span>, but - instead of merely asserting in <span class="tt">Debug</span> builds and being silently unchecked in <span class="tt">Release</span> - they <em>always</em> check via the corresponding <span class="tt">isa</span> and throw a formatted exception (via mim::throwf) when the cast fails. Reach for <span class="tt">expect</span> (over <span class="tt">as</span>) whenever the assumption is really a claim about the incoming IR that should surface as a proper error message rather than a <span class="tt">Debug</span>-only assertion or Release-mode undefined behavior - e.g. in backends that validate an already-lowered program.</li>
+<li><span class="tt">expect</span> behave like <span class="tt">as</span>, but - instead of merely asserting in <span class="tt">Debug</span> builds and being silently unchecked in <span class="tt">Release</span> - they <em>always</em> check via the corresponding <span class="tt">isa</span> and throw a formatted exception (via <a href="https://leissa.github.io/fe/namespacefe.html#a90e0f8ec6bf736dde22be99a5cfde6ca"><span class="tt">fe::throwf</span></a>) when the cast fails. Reach for <span class="tt">expect</span> (over <span class="tt">as</span>) whenever the assumption is really a claim about the incoming IR that should surface as a proper error message rather than a <span class="tt">Debug</span>-only assertion or Release-mode undefined behavior - e.g. in backends that validate an already-lowered program.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
 General Downcast</h3>
@@ -472,7 +472,7 @@ General Downcast</h3>
 <div class="line">    <span class="keyword">auto</span> sigma = def-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// sigma has type &quot;const Sigma*&quot; and may be mutable or immutable</span></div>
-<div class="line">    <span class="comment">// throws an exception (via mim::throwf) like &quot;expected a struct type, but got &#39;&lt;def&gt;&#39;&quot; if def is not a Sigma;</span></div>
+<div class="line">    <span class="comment">// throws an exception (via fe::throwf) like &quot;expected a struct type, but got &#39;&lt;def&gt;&#39;&quot; if def is not a Sigma;</span></div>
 <div class="line">    <span class="comment">// the argument is a description of what was expected - a plain string or a format string plus arguments</span></div>
 <div class="line">    <span class="keyword">auto</span> s1 = def-&gt;expect&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;(<span class="stringliteral">&quot;a struct type&quot;</span>);</div>
 <div class="line">    <span class="keyword">auto</span> s2 = def-&gt;expect&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;(<span class="stringliteral">&quot;the operand of {}&quot;</span>, parent);</div>
@@ -555,7 +555,7 @@ Matching Literals</h3>
 <div class="line">    <span class="keyword">auto</span> lu64 = <a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">Lit::as</a>(def);</div>
 <div class="line">    <span class="keyword">auto</span> lf32 = <a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">Lit::as&lt;f32&gt;</a>(def);</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// throws an exception (via mim::throwf) like &quot;expected an address space, but got &#39;&lt;def&gt;&#39;&quot; if def is not a Lit</span></div>
+<div class="line">    <span class="comment">// throws an exception (via fe::throwf) like &quot;expected an address space, but got &#39;&lt;def&gt;&#39;&quot; if def is not a Lit</span></div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_function" href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">Lit::expect</a>(def, <span class="stringliteral">&quot;an address space&quot;</span>);</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea8fa14cdd754f91cc6554c9e71929cce7">f</a> = <a class="code hl_function" href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">Lit::expect&lt;f32&gt;</a>(def, <span class="stringliteral">&quot;a floating-point constant&quot;</span>);</div>
 <div class="line">}</div>
@@ -567,7 +567,7 @@ Matching Literals</h3>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
 Summary</h3>
 <p>The following table summarizes the most important casts:</p>
-<p>A method beginning with <span class="tt">expect</span> behaves like the <span class="tt">as</span> in the same row, but throws a formatted exception (via mim::throwf) instead of asserting; it takes a description (a plain string or a format string plus arguments) of what was expected.</p>
+<p>A method beginning with <span class="tt">expect</span> behaves like the <span class="tt">as</span> in the same row, but throws a formatted exception (via <a href="https://leissa.github.io/fe/namespacefe.html#a90e0f8ec6bf736dde22be99a5cfde6ca"><span class="tt">fe::throwf</span></a>) instead of asserting; it takes a description (a plain string or a format string plus arguments) of what was expected.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"><span class="tt">dynamic_cast</span> <br  />
@@ -612,7 +612,7 @@ Further Casts</h3>
 <div class="line">        <span class="comment">// def is a Pi whose codomain is bottom and which is not returning</span></div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// yields the bit width of an Idx type, or throws a formatted exception (via mim::throwf) if it is not statically known</span></div>
+<div class="line">    <span class="comment">// yields the bit width of an Idx type, or throws a formatted exception (via fe::throwf) if it is not statically known</span></div>
 <div class="line">    <span class="comment">// (the throwing counterpart of the std::optional-returning Idx::size2bitwidth)</span></div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = <a class="code hl_function" href="classmim_1_1Idx.html#a9714d21ad12c168c16d1de07dc7500f2">Idx::expect_bitwidth</a>(def, <span class="stringliteral">&quot;an index type of known width&quot;</span>);</div>
 <div class="line">}</div>
@@ -626,7 +626,7 @@ Matching Axioms</h2>
 <ul>
 <li><a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338" title="mim::Axm::isa"><span class="tt">mim::Axm::isa</span></a>, which behaves like a checked <span class="tt">dynamic_cast</span> and returns <a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338" title="mim::Axm::isa">a wrapped</a> <span class="tt">nullptr</span>-like value on failure,</li>
 <li><a class="el" href="classmim_1_1Axm.html#a9f1fab5798d4606f5de24533ec9310e1" title="mim::Axm::as"><span class="tt">mim::Axm::as</span></a>, which behaves like a checked <span class="tt">static_cast</span> and asserts in <span class="tt">Debug</span> builds if the match fails, or</li>
-<li><a class="el" href="classmim_1_1Axm.html#ad16bd09114066c0dc61f413634ba3396" title="mim::Axm::expect"><span class="tt">mim::Axm::expect</span></a>, which - like the other <span class="tt">expect</span> helpers - throws a formatted exception (via mim::throwf) instead of asserting: <span class="tt">Axm::expect&lt;mem::Ptr&gt;(def, "a mem.Ptr")</span>.</li>
+<li><a class="el" href="classmim_1_1Axm.html#ad16bd09114066c0dc61f413634ba3396" title="mim::Axm::expect"><span class="tt">mim::Axm::expect</span></a>, which - like the other <span class="tt">expect</span> helpers - throws a formatted exception (via <a href="https://leissa.github.io/fe/namespacefe.html#a90e0f8ec6bf736dde22be99a5cfde6ca"><span class="tt">fe::throwf</span></a>) instead of asserting: <span class="tt">Axm::expect&lt;mem::Ptr&gt;(def, "a mem.Ptr")</span>.</li>
 </ul>
 <p>The result is a <span class="tt"><a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">mim::Axm::isa</a>&lt;Id, D&gt;</span>, which wraps a <span class="tt">const D*</span>. Here, <span class="tt">Id</span> is the enum corresponding to the <a class="el" href="classmim_1_1Axm.html#anatomy" title="anatomy">matched axiom tag</a>, and <span class="tt">D</span> is usually an <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a>, because most <a class="el" href="classmim_1_1Axm.html" title="mim::Axm">axioms</a> inhabit a <a class="el" href="classmim_1_1Pi.html" title="mim::Pi">function type</a>. In other cases, it may wrap a plain <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> or some other subclass.</p>
 <p>By default, MimIR assumes that an <a class="el" href="classmim_1_1Axm.html" title="mim::Axm">axiom</a> becomes "active" when its final curried argument is applied. For example, <a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338" title="mim::Axm::isa">matching</a> <span class="tt">%mem.load</span> only succeeds on the final <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> of the curried call</p>
@@ -653,7 +653,7 @@ Without Subtags</h3>
 <div class="line">    <span class="comment">// def must match mem::load - otherwise, this asserts</span></div>
 <div class="line">    <span class="keyword">auto</span> load = <a class="code hl_function" href="classmim_1_1Axm.html#a9f1fab5798d4606f5de24533ec9310e1">Axm::as&lt;mem::load&gt;</a>(def);</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// def must match mem::load - otherwise, this throws a formatted exception (via mim::throwf)</span></div>
+<div class="line">    <span class="comment">// def must match mem::load - otherwise, this throws a formatted exception (via fe::throwf)</span></div>
 <div class="line">    <span class="keyword">auto</span> ld = <a class="code hl_function" href="classmim_1_1Axm.html#ad16bd09114066c0dc61f413634ba3396">Axm::expect&lt;mem::load&gt;</a>(def, <span class="stringliteral">&quot;a %mem.load&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassmim_1_1Axm_html_a606d1a978089ad57ff1369cb233f6338"><div class="ttname"><a href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">mim::Axm::isa</a></div><div class="ttdeci">static auto isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="axm_8h_source.html#l00107">axm.h:107</a></div></div>
