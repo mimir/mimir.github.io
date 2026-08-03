@@ -147,6 +147,9 @@ $(function(){initNavTree('coding.html','',''); });
         <a href="#autotoc_md6">C++ Style </a>
         <ul>
           <li class="level3">
+            <a href="#includes">Include Style </a>
+          </li>
+          <li class="level3">
             <a href="#autotoc_md7">Doxygen Style </a>
           </li>
         </ul>
@@ -315,6 +318,48 @@ C++ Style</h2>
 </ol>
 </li>
 </ul>
+<h3 class="doxsection"><a class="anchor" id="includes"></a>
+Include Style</h3>
+<p>Use <span class="tt">#include "..."</span> for headers that belong to the artifact you are currently building and <span class="tt">#include &lt;...&gt;</span> for everything you link against - including external dependencies such as <a href="https://abseil.io/">Abseil</a>, <a href="https://github.com/leissa/fe">fe</a>, and the standard library.</p>
+<p>The artifact a file belongs to - and hence the prefix of its own headers - follows from its path:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Path  </th><th class="markdownTableHeadNone">Artifact  </th><th class="markdownTableHeadNone">Own headers  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">src/mim/...</span>, <span class="tt">include/mim/...</span>  </td><td class="markdownTableBodyNone"><span class="tt">libmim</span>  </td><td class="markdownTableBodyNone"><span class="tt">"mim/..."</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">src/automaton/...</span>, <span class="tt">include/automaton/...</span>  </td><td class="markdownTableBodyNone"><span class="tt">libautomaton</span>  </td><td class="markdownTableBodyNone"><span class="tt">"automaton/..."</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/X/...</span>, <span class="tt">include/mim/plug/X/...</span>  </td><td class="markdownTableBodyNone">plugin <span class="tt">X</span>  </td><td class="markdownTableBodyNone"><span class="tt">"mim/plug/X/..."</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">extra/X/...</span>  </td><td class="markdownTableBodyNone">out-of-tree plugin <span class="tt">X</span>  </td><td class="markdownTableBodyNone"><span class="tt">"mim/plug/X/..."</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">src/mim/cli/...</span>  </td><td class="markdownTableBodyNone">the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> CLI  </td><td class="markdownTableBodyNone">-  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">gtest/...</span>  </td><td class="markdownTableBodyNone">the unit tests  </td><td class="markdownTableBodyNone">-  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">py/bindings/...</span>  </td><td class="markdownTableBodyNone">the Python bindings  </td><td class="markdownTableBodyNone">-  </td></tr>
+</table>
+<p>The last three link against <span class="tt">libmim</span> but do not ship headers of their own, so they use <span class="tt">&lt;...&gt;</span> throughout. A plugin is a separate build artifact as well, so for a plugin <span class="tt">X</span>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdlib&gt;</span> <span class="comment">// standard library</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;absl/container/flat_hash_map.h&gt;</span> <span class="comment">// other external dependencies</span></div>
+<div class="line"><span class="preprocessor">#include &lt;fe/assert.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="world_8h.html">mim/world.h</a>&gt;</span> <span class="comment">// libmim</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="mem_8h.html">mim/plug/mem/mem.h</a>&gt;</span> <span class="comment">// another plugin</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;mim/plug/X/autogen.h&quot;</span> <span class="comment">// the plugin itself</span></div>
+<div class="line"><span class="preprocessor">#include &quot;mim/plug/X/X.h&quot;</span></div>
+<div class="ttc" id="amem_8h_html"><div class="ttname"><a href="mem_8h.html">mem.h</a></div></div>
+<div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div></div>
+</div><!-- fragment --><p>The generated <span class="tt">autogen.h</span> counts as part of the plugin, while another plugin's <span class="tt">autogen.h</span> does not.</p>
+<p>The main upshot is that in-tree plugins in <span class="tt">src/mim/plug/X</span> and out-of-tree plugins in <span class="tt">extra/X</span> spell their includes in exactly the same way. Hence, <span class="tt">scripts/extract_plugin.py</span> can move a plugin out of the tree without touching a single <span class="tt">#include</span>, and an in-tree plugin exercises the same public header surface that an external plugin sees.</p>
+<p>This is checked by <span class="tt">scripts/check_includes.py</span>, which is also wired up as a <a href="https://pre-commit.com/">pre-commit</a> hook:</p>
+<div class="fragment"><div class="line">./scripts/check_includes.py          # check all sources</div>
+<div class="line">./scripts/check_includes.py --fix    # rewrite offending includes in place</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><span class="tt">--fix</span> only changes <span class="tt">"..."</span> to <span class="tt">&lt;...&gt;</span> and vice versa. Since the two forms belong to different include groups, run <span class="tt">pre-commit run clang-format --files &lt;fixed files&gt;</span> afterwards to regroup them. Only path-qualified includes are checked, so a plain <span class="tt">#include "foo.h"</span> next to the including file is always fine.</dd></dl>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Doxygen Style</h3>
 <ul>

@@ -40,7 +40,7 @@ var searchData=
   ['stream_5fsync_37',['%gpu.stream_sync',['../gpu.html#autotoc_md237',1,'']]],
   ['streams_38',['Streams',['../gpu.html#autotoc_md229',1,'Streams'],['../gpu.html#autotoc_md234',1,'Streams'],['../nvptx.html#autotoc_md320',1,'Streams']]],
   ['structure_39',['Lexical Structure',['../langref.html#lex',1,'']]],
-  ['style_40',['Style',['../coding.html#autotoc_md6',1,'C++ Style'],['../coding.html#autotoc_md9',1,'CMake Style'],['../coding.html#autotoc_md5',1,'Coding Style'],['../coding.html#autotoc_md7',1,'Doxygen Style'],['../coding.html#autotoc_md11',1,'M⁠im Coding Style'],['../coding.html#autotoc_md10',1,'Markdown Style']]],
+  ['style_40',['Style',['../coding.html#autotoc_md6',1,'C++ Style'],['../coding.html#autotoc_md9',1,'CMake Style'],['../coding.html#autotoc_md5',1,'Coding Style'],['../coding.html#autotoc_md7',1,'Doxygen Style'],['../coding.html#includes',1,'Include Style'],['../coding.html#autotoc_md11',1,'M⁠im Coding Style'],['../coding.html#autotoc_md10',1,'Markdown Style']]],
   ['sub_41',['%affine.op(add,sub)',['../affine.html#autotoc_md137',1,'']]],
   ['substitution_42',['Scoped Substitution',['../rewriting.html#autotoc_md128',1,'']]],
   ['subtags_43',['Subtags',['../dev.html#autotoc_md37',1,'With Subtags'],['../dev.html#autotoc_md36',1,'Without Subtags']]],
