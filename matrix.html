@@ -203,19 +203,22 @@ Types</h1>
 High-level matrix operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md287"></a>
 %matrix.prod</h2>
-<p>Matrix product of an <span class="tt">m × k</span> and a <span class="tt">k × l</span> matrix. </p><div class="fragment"><div class="line">axm %matrix.prod: [m k l: Nat, [p e: Nat]]</div>
-<div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, k), %math.F (p, e)), %buffer.Buf (2, (k, l), %math.F (p, e))]</div>
-<div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, l), %math.F (p, e))], normalize_prod;</div>
+<p>Matrix product of an <span class="tt">m × k</span> and a <span class="tt">k × l</span> matrix. </p><div class="fragment"><div class="line">axm %matrix.prod: {pe: «2; Nat»}</div>
+<div class="line">                → {m k l: Nat}</div>
+<div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, k), %math.F pe), %buffer.Buf (2, (k, l), %math.F pe)]</div>
+<div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)], normalize_prod;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md288"></a>
 %matrix.transpose</h2>
-<p>Transposes a <span class="tt">k × l</span> matrix. </p><div class="fragment"><div class="line">axm %matrix.transpose: [[k l: Nat], T: *]</div>
+<p>Transposes a <span class="tt">k × l</span> matrix. </p><div class="fragment"><div class="line">axm %matrix.transpose: {k l: Nat}</div>
+<div class="line">                     → {T: *}</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (2, (k, l), T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (2, (l, k), T)], normalize_transpose;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md289"></a>
 %matrix.sum</h2>
-<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">axm %matrix.sum: [n: Nat, S: «n; Nat», [p e: Nat]]</div>
-<div class="line">               → [%mem.M 0, %buffer.Buf (n, S, %math.F (p, e))]</div>
-<div class="line">               → [%mem.M 0, %math.F (p, e)];</div>
+<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">axm %matrix.sum: {pe: «2; Nat»}</div>
+<div class="line">               → {n: Nat, S: «n; Nat»}</div>
+<div class="line">               → [%mem.M 0, %buffer.Buf (n, S, %math.F pe)]</div>
+<div class="line">               → [%mem.M 0, %math.F pe];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
 %matrix.map_reduce</h2>
 <p>A general iteration/reduction scheme over tensors, inspired by and generalizing einsum. It maps a combination function <span class="tt">comb</span> over the elements addressed by a set of index tuples and reduces the results with an accumulator starting from <span class="tt">zero</span>; e.g. <span class="tt">einsum(idx, inputs) = map_reduce(0, +, product, inputs)</span>. <span class="tt">%matrix.prod</span>, <span class="tt">%matrix.transpose</span>, and <span class="tt">%matrix.sum</span> are all expressed via <span class="tt">map_reduce</span> (see the unfolding functions below). The counts, dimensions, and indices are assumed to be statically known, to avoid inline meta-programming. </p><div class="fragment"><div class="line">axm %matrix.map_reduce:</div>
@@ -267,7 +270,7 @@ Unfolding functions</h1>
 <p>These express the high-level operations above in terms of <span class="tt">%matrix.map_reduce</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md296"></a>
 %matrix.map_reduce_prod</h2>
-<p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) using multiplication as combination and addition as reduction. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_prod (m k l: Nat, pe: «2; Nat») (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe), N: %buffer.Buf (2, (k, l), %math.F pe))@tt: [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)] =</div>
+<p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) using multiplication as combination and addition as reduction. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_prod {pe: «2; Nat»} {m k l: Nat} (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe), N: %buffer.Buf (2, (k, l), %math.F pe))@tt: [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)] =</div>
 <div class="line">    let R = %math.F pe;</div>
 <div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
 <div class="line">    return (%matrix.map_reduce</div>
@@ -278,7 +281,7 @@ Unfolding functions</h1>
 <div class="line">            (((0, 2), M), ((2, 1), N))));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md297"></a>
 %matrix.map_reduce_transpose</h2>
-<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose ((k l: Nat), T: *) (mem: %mem.M 0, M: %buffer.Buf (2, (k, l), T))@tt: [%mem.M 0, %buffer.Buf (2, (l, k), T)] =</div>
+<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose {k l: Nat} {T: *} (mem: %mem.M 0, M: %buffer.Buf (2, (k, l), T))@tt: [%mem.M 0, %buffer.Buf (2, (l, k), T)] =</div>
 <div class="line">    let zero = ⊥:T;</div>
 <div class="line">    return (%matrix.map_reduce</div>
 <div class="line">        (2, (l, k), T, 1, 2, T, (k, l))</div>
@@ -288,7 +291,7 @@ Unfolding functions</h1>
 <div class="line">            ((1, 0), M)));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md298"></a>
 %matrix.map_reduce_sum</h2>
-<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_sum(n: Nat, S: «n; Nat», pe: «2; Nat») (mem: %mem.M 0, M: %buffer.Buf (n, S, %math.F pe))@tt: [%mem.M 0, %math.F pe] =</div>
+<p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_sum {pe: «2; Nat»} {n: Nat, S: «n; Nat»} (mem: %mem.M 0, M: %buffer.Buf (n, S, %math.F pe))@tt: [%mem.M 0, %math.F pe] =</div>
 <div class="line">    let R = %math.F pe;</div>
 <div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
 <div class="line">    let idxs = ‹i: n; %core.nat.add (1, %core.bitcast Nat i)›;</div>
