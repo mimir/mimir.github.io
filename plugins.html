@@ -122,40 +122,232 @@ $(function(){initNavTree('plugins.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md98">Plugin Registry </a>
+    <a href="#autotoc_md99">Example: demo Plugin </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md99">Create a New In-Tree Plugin </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md100">Create a Third-Party Plugin </a>
+    <a href="#plugin_codegen">Generated Interfaces </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md101">Third-Party Plugin Discovery </a>
+        <a href="#plugin_h">Generated Header </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md100">Generated Python Module </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md101">Generated Markdown Page </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md102">Extract an Existing In-Tree Plugin </a>
+    <a href="#autotoc_md102">Plugin Registry </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md103">Standalone Third-Party Builds </a>
+    <a href="#autotoc_md103">Create a New In-Tree Plugin </a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md104">Create a Third-Party Plugin </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md105">Third-Party Plugin Discovery </a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md106">Extract an Existing In-Tree Plugin </a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md107">Standalone Third-Party Builds </a>
   </li>
   <li class="level1">
     <a href="#plugin_runtime">Runtime Wrappers </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md104">Normalizers </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2plugins"></a></p>
 <p>Check out the <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin for a minimal example. It uses our custom <a class="el" href="add_mim_plugin_cmake.html" title="add_mim_plugin"><span class="tt">add_mim_plugin</span></a> CMake command. A plugin generally consists of two halves with the same name: a <span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span> file that declares the public annexes and a shared library that registers the runtime behavior.</p>
 <p>Plugin names may only contain letters, digits, and underscores, and are limited to 8 characters.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+Example: demo Plugin</h1>
+<p>The <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin at <span class="tt">src/mim/plug/demo/</span> is the minimal, complete example every in-tree plugin follows. It consists of five checked-in files:</p>
+<ul>
+<li><span class="tt">CMakeLists.txt</span> — a single <span class="tt">add_mim_plugin</span> call</li>
+<li><span class="tt">demo.mim</span> — the public annex surface</li>
+<li><span class="tt"><a class="el" href="demo_8h.html">demo.h</a></span> — the public header, over in <span class="tt">include/mim/plug/demo/</span></li>
+<li><span class="tt"><a class="el" href="demo_8cpp.html">demo.cpp</a></span> — the plugin's entry point</li>
+<li><span class="tt">normalizers.cpp</span> — the normalizer implementations</li>
+</ul>
+<p><b><span class="tt">CMakeLists.txt</span></b>:</p>
+<div class="fragment"><div class="line">add_mim_plugin(demo</div>
+<div class="line">    SOURCES</div>
+<div class="line">        demo.cpp</div>
+<div class="line">        normalizers.cpp</div>
+<div class="line">    INSTALL</div>
+<div class="line">)</div>
+</div><!-- fragment --><p><b><span class="tt">demo.mim</span></b>:</p>
+<div class="fragment"><div class="line">/// # The demo Plugin {#demo}</div>
+<div class="line">///</div>
+<div class="line">/// @see mim::plug::demo</div>
+<div class="line">///</div>
+<div class="line">/// A minimal demo plugin.</div>
+<div class="line">///</div>
+<div class="line">/// [TOC]</div>
+<div class="line">///</div>
+<div class="line">/// ## Operations</div>
+<div class="line">///</div>
+<div class="line">/// ### %%demo.const_idx</div>
+<div class="line">///</div>
+<div class="line">/// The constant `42`, evaluated by a normalizer.</div>
+<div class="line">///</div>
+<div class="line">axm %demo.const_idx: [n: Nat] → Idx n, normalize_const;</div>
+</div><!-- fragment --><p>Doc comments (<span class="tt">///</span>) are ordinary Doxygen-flavored Markdown (headings, <span class="tt">[TOC]</span>, <span class="tt">@see</span>, ...); everything else is plain <a class="el" href="namespaceMim.html">Mim</a> syntax declaring the annex itself. Here <span class="tt">demo.const_idx</span> is a single axiom with no subtags, and <span class="tt">normalize_const</span> names the C++ function that evaluates it. Building the plugin auto-generates a C++ header and a Python module from this very file, and turns its doc comments into the plugin's Doxygen page — see <a class="el" href="#plugin_codegen" title="Generated Interfaces">Generated Interfaces</a> below, since this applies to every plugin, not just <span class="tt">demo</span>.</p>
+<p><a class="anchor" id="demo_h"></a><b><span class="tt"><a class="el" href="demo_8h.html">demo.h</a></span></b>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="demo_2autogen_8h.html">mim/plug/demo/autogen.h</a>&quot;</span></div>
+<div class="ttc" id="ademo_2autogen_8h_html"><div class="ttname"><a href="demo_2autogen_8h.html">autogen.h</a></div></div>
+</div><!-- fragment --><p>It is a header, not a translation unit of its own: <span class="tt"><a class="el" href="demo_8cpp.html">demo.cpp</a></span> and <span class="tt">normalizers.cpp</span> <span class="tt">#include</span> it, and it in turn <span class="tt">#include</span>s the generated header it wraps. See <a class="el" href="#plugin_h" title="Generated Header">Generated Header</a> below for why it is just this two-line indirection.</p>
+<p><b><span class="tt"><a class="el" href="demo_8cpp.html">demo.cpp</a></span></b>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="demo_8h.html">mim/plug/demo/demo.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="plugin_8h.html">mim/plugin.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a>;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/// Registers normalizers as well as Phase%s and Pass%es for the Axm%s of this Plugin.</span></div>
+<div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code hl_define" href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a> <a class="code hl_struct" href="structmim_1_1Plugin.html">Plugin</a> <a class="code hl_function" href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a>() {</div>
+<div class="line">    <span class="keywordflow">return</span> {<span class="stringliteral">&quot;demo&quot;</span>, <a class="code hl_define" href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>, <a class="code hl_function" href="namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b">plug::demo::register_normalizers</a>, <span class="keyword">nullptr</span>};</div>
+<div class="line">}</div>
+<div class="ttc" id="aaffine_8cpp_html_a35bb34350e93d508e52544f4abd50e59"><div class="ttname"><a href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a></div><div class="ttdeci">Plugin mim_get_plugin()</div><div class="ttdef"><b>Definition</b> <a href="affine_8cpp_source.html#l00017">affine.cpp:17</a></div></div>
+<div class="ttc" id="aconfig_8h_html_acf14f602e3976ff8653bb419a1d77a7f"><div class="ttname"><a href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a></div><div class="ttdeci">#define MIM_EXPORT</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00019">config.h:19</a></div></div>
+<div class="ttc" id="ademo_8h_html"><div class="ttname"><a href="demo_8h.html">demo.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1demo_html_ae296affd3e0486ee32cf817d398dc72b"><div class="ttname"><a href="namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b">mim::plug::demo::register_normalizers</a></div><div class="ttdeci">void register_normalizers(Normalizers &amp;normalizers)</div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
+<div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
+<div class="ttc" id="aplugin_8h_html"><div class="ttname"><a href="plugin_8h.html">plugin.h</a></div></div>
+<div class="ttc" id="aplugin_8h_html_a2f1c22749113d1954fe381a30a0d5bb2"><div class="ttname"><a href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a></div><div class="ttdeci">#define MIM_VERSION</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00054">plugin.h:54</a></div></div>
+<div class="ttc" id="astructmim_1_1Plugin_html"><div class="ttname"><a href="structmim_1_1Plugin.html">mim::Plugin</a></div><div class="ttdoc">Basic info and registration function pointer to be returned from a specific plugin.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00059">plugin.h:59</a></div></div>
+</div><!-- fragment --><p>The function <span class="tt"><a class="el" href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a></span> is the single entry point <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a> looks up (via <span class="tt">dlopen</span>/<span class="tt">dlsym</span>) when a <span class="tt">plugin demo;</span> directive or <span class="tt">-p demo</span> loads the shared module. It returns a <a class="el" href="structmim_1_1Plugin.html" title="mim::Plugin"><span class="tt">mim::Plugin</span></a> record: the plugin's name, the <span class="tt"><a class="el" href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a></span> it was built against (checked against the loading <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> binary), the <span class="tt">register_normalizers</span> function that <span class="tt">normalizers.cpp</span> defined via <span class="tt"><a class="el" href="demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419">MIM_demo_NORMALIZER_IMPL</a></span>, and an optional backend-registration callback (<span class="tt">nullptr</span> here, since <span class="tt">demo</span> provides no backend).</p>
+<p><b><span class="tt">normalizers.cpp</span></b>:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="world_8h.html">mim/world.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="demo_8h.html">mim/plug/demo/demo.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1demo.html">mim::plug::demo</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954">normalize_const</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* type, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg) {</div>
+<div class="line">    <span class="keyword">auto</span>&amp; world = type-&gt;world();</div>
+<div class="line">    <span class="keywordflow">return</span> world.lit(world.type_idx(arg), 42);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419">MIM_demo_NORMALIZER_IMPL</a></div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace mim::plug::demo</span></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00261">def.h:261</a></div></div>
+<div class="ttc" id="ademo_2autogen_8h_html_a1ba8774a500268cb4745a2d4400ea419"><div class="ttname"><a href="demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419">MIM_demo_NORMALIZER_IMPL</a></div><div class="ttdeci">#define MIM_demo_NORMALIZER_IMPL</div><div class="ttdef"><b>Definition</b> <a href="demo_2autogen_8h_source.html#l00022">autogen.h:22</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1demo_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1demo.html">mim::plug::demo</a></div><div class="ttdoc">The demo Plugin</div><div class="ttdef"><b>Definition</b> <a href="demo_2normalizers_8cpp_source.html#l00005">normalizers.cpp:5</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1demo_html_ab917477fbcc57a3f25e21953c7d70954"><div class="ttname"><a href="namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954">mim::plug::demo::normalize_const</a></div><div class="ttdeci">const Def * normalize_const(const Def *type, const Def *, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="demo_2normalizers_8cpp_source.html#l00007">normalizers.cpp:7</a></div></div>
+<div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div></div>
+</div><!-- fragment --><p>Normalizers usually obtain the owning <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> from one of their arguments — here <span class="tt">type-&gt;world()</span> — and build the replacement directly in that world, without ever materializing the <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> node it replaces; that is why <span class="tt">normalize_const</span> just returns the literal <span class="tt">42</span>. If a normalizer cannot do anything meaningful, it should return <span class="tt">{}</span>/<span class="tt">nullptr</span>: <a class="el" href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6" title="mim::World::app"><span class="tt">World::app</span></a> treats a null return as "give up" and falls back to constructing the real <span class="tt">App</span> node from the original arguments instead. The macro <span class="tt"><a class="el" href="demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419">MIM_demo_NORMALIZER_IMPL</a></span> stems from the generated header (see <a class="el" href="#plugin_codegen" title="Generated Interfaces">below</a>) that expands into a full definition of <span class="tt">register_normalizers</span>, wiring <span class="tt">normalize_const</span> up under the axiom's mangled id.</p>
+<h1 class="doxsection"><a class="anchor" id="plugin_codegen"></a>
+Generated Interfaces</h1>
+<p>Every plugin's <span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span> file is also machine-readable input to <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> itself. MimIR's custom CMake command <span class="tt">add_mim_plugin</span> runs the freshly built <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> binary over it once, in <span class="tt">--bootstrap</span> mode (which makes <span class="tt">plugin</span> directives behave as plain <span class="tt">import</span>s instead of <span class="tt">dlopen</span>ing other plugins that may not exist yet at header-generation time), asking for three outputs in one invocation:</p>
+<div class="fragment"><div class="line">mim demo.mim --bootstrap \</div>
+<div class="line">    --output-h  build/include/mim/plug/demo/autogen.h \</div>
+<div class="line">    --output-py build/lib/mim/demo.py \</div>
+<div class="line">    --output-md build/docs/plug/demo.md</div>
+</div><!-- fragment --><p>This happens automatically as part of the normal build — plugin authors never invoke this by hand. See the <a class="el" href="cli.html" title="Command-Line Reference">CLI reference</a> for the flags themselves.</p>
+<h2 class="doxsection"><a class="anchor" id="plugin_h"></a>
+Generated Header</h2>
+<p>The switch <span class="tt">--output-h</span> walks the plugin's annexes after name binding and writes <span class="tt">include/mim/plug/&lt;plugin&gt;/autogen.h</span> into the build tree. For <span class="tt">demo</span>, that's:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="axm_8h.html">mim/axm.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="plugin_8h.html">mim/plugin.h</a>&gt;</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/// @namespace mim::plug::demo @ref demo</span></div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
+<div class="line"><span class="keyword">namespace </span>plug::demo {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08">Plugin_Id</a> = 0x1463900000000000;</div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/// @name %%demo.const_idx</span></div>
+<div class="line"><span class="comment">///@{</span></div>
+<div class="line"><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46">const_idx</a> : <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> {</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> Def* <a class="code hl_function" href="namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954">normalize_const</a>(<span class="keyword">const</span> Def*, <span class="keyword">const</span> Def*, <span class="keyword">const</span> Def*);<span class="comment"></span></div>
+<div class="line"><span class="comment">///@}</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b">register_normalizers</a>(<a class="code hl_typedef" href="namespacemim.html#ab875464e5f495601abff7287573e1405">Normalizers</a>&amp; normalizers);</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define MIM_demo_NORMALIZER_IMPL \</span></div>
+<div class="line"><span class="preprocessor">    void register_normalizers(Normalizers&amp; normalizers) {\</span></div>
+<div class="line"><span class="preprocessor">        normalizers[flags_t(Annex::Base&lt;const_idx&gt;)] = &amp;normalize_const; \</span></div>
+<div class="line"><span class="preprocessor">    }</span></div>
+<div class="line">} <span class="comment">// namespace plug::demo</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef DOXYGEN </span><span class="comment">// don&#39;t include in Doxygen documentation</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_variable" href="structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698">Annex::Base&lt;plug::demo::const_idx&gt;</a> = 0x1463900000000000;</div>
+<div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structmim_1_1Annex.html#aac0126d5e408071ae28567cb65bf256f">Annex::Num&lt;plug::demo::const_idx&gt;</a> = 0;</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line">} <span class="comment">// namespace mim</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifndef DOXYGEN </span><span class="comment">// don&#39;t include in Doxygen documentation</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aaxm_8h_html"><div class="ttname"><a href="axm_8h.html">axm.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1demo_html_a190324d76d5d13cf2c933c82e381fb46"><div class="ttname"><a href="namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46">mim::plug::demo::const_idx</a></div><div class="ttdeci">const_idx</div><div class="ttdef"><b>Definition</b> <a href="demo_2autogen_8h_source.html#l00014">autogen.h:14</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1demo_html_a8e835071634d3978aea424f632e35d08"><div class="ttname"><a href="namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08">mim::plug::demo::Plugin_Id</a></div><div class="ttdeci">static constexpr plugin_t Plugin_Id</div><div class="ttdef"><b>Definition</b> <a href="demo_2autogen_8h_source.html#l00010">autogen.h:10</a></div></div>
+<div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
+<div class="ttc" id="anamespacemim_html_ab875464e5f495601abff7287573e1405"><div class="ttname"><a href="namespacemim.html#ab875464e5f495601abff7287573e1405">mim::Normalizers</a></div><div class="ttdeci">absl::flat_hash_map&lt; flags_t, NormalizeFn &gt; Normalizers</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00022">plugin.h:22</a></div></div>
+<div class="ttc" id="anamespacemim_html_abb3c4d87d349db095756fced097d8ac8"><div class="ttname"><a href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">mim::plugin_t</a></div><div class="ttdeci">u64 plugin_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00040">types.h:40</a></div></div>
+<div class="ttc" id="astructmim_1_1Annex_html_aac0126d5e408071ae28567cb65bf256f"><div class="ttname"><a href="structmim_1_1Annex.html#aac0126d5e408071ae28567cb65bf256f">mim::Annex::Num</a></div><div class="ttdeci">static constexpr size_t Num</div><div class="ttdoc">Number of Axm::subtags.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00147">plugin.h:147</a></div></div>
+<div class="ttc" id="astructmim_1_1Annex_html_ac6aa4113e5e94cd7420ced85036ae698"><div class="ttname"><a href="structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698">mim::Annex::Base</a></div><div class="ttdeci">static constexpr flags_t Base</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00148">plugin.h:148</a></div></div>
+</div><!-- fragment --><p>For each annex tag it emits an <span class="tt">enum class &lt;tag&gt; : flags_t</span> (populated with subtags/aliases when the axiom has any — empty here, since <span class="tt">const_idx</span> has none), a forward declaration of the tag's normalizer matching <a class="el" href="namespacemim.html#ab992e926dce870b1e086b34589849a92" title="mim::NormalizeFn"><span class="tt">mim::NormalizeFn</span></a>'s <span class="tt">(type, callee, arg) -&gt; const Def*</span> signature, and — once per plugin — a <span class="tt">register_normalizers</span> declaration plus the <span class="tt">MIM_&lt;plugin&gt;_NORMALIZER_IMPL</span> macro that defines it, wiring every axiom's normalizer into the <span class="tt">Normalizers</span> map under its mangled <span class="tt">Annex::Base&lt;Tag&gt;</span> id. The <span class="tt">Annex::Base</span>/<span class="tt">Annex::Num</span> template specializations outside the plugin's namespace are implementation plumbing and are hidden from Doxygen via <span class="tt">#ifndef DOXYGEN</span>.</p>
+<p>This generated header is never checked in and never included directly. Instead, each plugin checks in a thin wrapper at <span class="tt">include/mim/plug/&lt;plugin&gt;/&lt;plugin&gt;.h</span> that plugin sources <span class="tt">#include</span> — <a class="el" href="#demo_h" title="demo_h"><span class="tt">demo.h</span></a>, shown above, is exactly that wrapper.</p>
+<p>Larger plugins (e.g. <a class="el" href="core.html" title="The core Plugin">core</a>, <a class="el" href="mem.html" title="The mem Plugin">mem</a>, <a class="el" href="clos.html" title="The clos Plugin">clos</a>) follow the same wrapper pattern but add hand-written declarations around the <span class="tt">#include</span>, so plugin authors can extend the generated boilerplate without editing generated code. <span class="tt">add_mim_plugin</span>'s <span class="tt">INSTALL</span> option installs <span class="tt">autogen.h</span> itself (not the wrapper) into <span class="tt">&lt;prefix&gt;/include/mim/plug/&lt;plugin&gt;/</span> for out-of-tree consumers.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+Generated Python Module</h2>
+<p>The switch <span class="tt">--output-py</span> emits the same information as an <span class="tt">IntEnum</span>, for tooling written in Python:</p>
+<div class="fragment"><div class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> IntEnum</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>demo(IntEnum):</div>
+<div class="line">    ID = 0x1463900000000000</div>
+<div class="line">    const_idx = 0x1463900000000000</div>
+<div class="line"> </div>
+</div><!-- fragment --><p>A tag with subtags gets its own <span class="tt">_&lt;plugin&gt;_&lt;tag&gt;(IntEnum)</span> class (later aliased as <span class="tt">&lt;plugin&gt;.&lt;tag&gt;</span>) instead of a plain member. This is the <span class="tt"><a class="el" href="namespacemim_1_1plug.html">mim.plug</a>.&lt;plugin&gt;</span> module the Python bindings re-export; see <a class="el" href="python.html#pyplugins" title="Loading Plugins">Loading Plugins</a> in the <a class="el" href="python.html" title="Python Bindings">Python Bindings</a> guide for <span class="tt">world.annex(...)</span>/<span class="tt">world.call(...)</span> from Python.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
+Generated Markdown Page</h2>
+<p>The switch <span class="tt">--output-md</span> works differently from <span class="tt">-h</span>/<span class="tt">-py</span>: rather than being derived from the bound AST, it is streamed straight out of the lexer while it scans <span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span>. Text inside <span class="tt">///</span> doc comments (ordinary Markdown, including Doxygen commands like <span class="tt">[TOC]</span> and <span class="tt">@see</span>) is copied through verbatim; every stretch of actual <a class="el" href="namespaceMim.html">Mim</a> syntax between comments is wrapped in a fenced <span class="tt"> ``</span> <span class="tt"> code block.
+The result for </span>demo.mim<span class="tt"> is written to </span><a class="el" href="demo_8md.html">docs/plug/demo.md</a>` in the build tree:</p>
+<div class="fragment"><div class="line"># The demo Plugin {#demo}</div>
+<div class="line"> </div>
+<div class="line">@see mim::plug::demo</div>
+<div class="line"> </div>
+<div class="line">A minimal demo plugin.</div>
+<div class="line"> </div>
+<div class="line">[TOC]</div>
+<div class="line"> </div>
+<div class="line">## Operations</div>
+<div class="line"> </div>
+<div class="line">### %%demo.const_idx</div>
+<div class="line"> </div>
+<div class="line">The constant `42`, evaluated by a normalizer.</div>
+<div class="line"> </div>
+<div class="line">```</div>
+<div class="line">axm %demo.const_idx: [n: Nat] → Idx n, normalize_const;</div>
+<div class="line"> </div>
+<div class="line">```</div>
+</div><!-- fragment --><p><span class="tt">docs/Doxyfile.in</span>'s <span class="tt">INPUT</span> includes that build-tree <span class="tt">docs/plug</span> directory, so Doxygen picks up every plugin's generated <span class="tt">.md</span> file directly as a documentation page, anchored at whatever <span class="tt">{#...}</span> id the plugin's leading doc comment declares (<span class="tt">{#demo}</span> here — the same anchor used by <span class="tt">@ref demo</span> elsewhere in the docs). <span class="tt">add_mim_plugin</span> also adds a sidebar tab (of type <span class="tt">user</span>, pointing at <span class="tt">@ref &lt;plugin&gt;</span>) to the Doxygen layout for every registered plugin, so this page is linked from the sidebar automatically. Writing good <span class="tt">///</span> doc comments in a plugin's <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file is therefore both the axiom documentation and the plugin's Doxygen page — there is no separate place to describe a plugin's annexes.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Plugin Registry</h1>
 <p>The <a href="https://mimir.github.io/plugins">MimIR Plugin Registry</a> is the central hub for discovering, sharing, and maintaining third-party MimIR plugins. The registry lists available plugins and provides guidance on how to discover and use them. If you've created a plugin you'd like to share with the community, please consider submitting it to the registry.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 Create a New In-Tree Plugin</h1>
 <p>Create a new in-tree plugin <span class="tt">foobar</span> based on the <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin:</p>
 <div class="fragment"><div class="line">./scripts/new_plugin.py foobar</div>
@@ -169,7 +361,7 @@ Create a New In-Tree Plugin</h1>
 <li><span class="tt">include/mim/plug/&lt;plugin&gt;/&lt;plugin&gt;.h</span></li>
 <li><span class="tt">lit/&lt;plugin&gt;/const.<a class="el" href="namespacemim.html">mim</a></span></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
 Create a Third-Party Plugin</h1>
 <p>To create a self-contained third-party plugin repository in <span class="tt">extra/</span>, use:</p>
 <div class="fragment"><div class="line">./scripts/new_plugin.py foobar --extra</div>
@@ -188,11 +380,11 @@ Create a Third-Party Plugin</h1>
 <li>Generates GitHub Actions workflows that automatically build and test the plugin against the main MimIR repository</li>
 <li>Patches workflow configurations to clone the main repository as the parent and the plugin as a submodule in <span class="tt">extra/&lt;plugin&gt;</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 Third-Party Plugin Discovery</h2>
 <p>If you clone a plugin repository into <span class="tt">extra/</span>, MimIR picks it up automatically during configuration when the repository contains a <span class="tt">CMakeLists.txt</span> as a direct child of <span class="tt">extra/</span>.</p>
 <p>If the plugin repository also contains <span class="tt">lit/*.<a class="el" href="namespacemim.html">mim</a></span> tests, they are picked up automatically by the main <span class="tt">lit</span> target as well.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
 Extract an Existing In-Tree Plugin</h1>
 <p>To move an existing in-tree plugin into <span class="tt">extra/foobar</span>, use:</p>
 <div class="fragment"><div class="line">./scripts/extract_plugin.py foobar</div>
@@ -209,7 +401,7 @@ Extract an Existing In-Tree Plugin</h1>
 <li>Generates GitHub Actions workflows that automatically build and test the extracted plugin against the main MimIR repository</li>
 </ul>
 <p>The extracted plugin is staged with <span class="tt">git add</span> but not committed, allowing you to review the changes before committing.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 Standalone Third-Party Builds</h1>
 <p>After installing MimIR, a third-party plugin only needs to find the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> package. For example, a plugin called <span class="tt">foo</span> can be set up like this:</p>
 <div class="fragment"><div class="line">cmake_minimum_required(VERSION 3.25 FATAL_ERROR)</div>
@@ -243,16 +435,8 @@ Runtime Wrappers</h1>
 <div class="line">)</div>
 </div><!-- fragment --><p>All sources are merged into a single module <span class="tt">&lt;libdir&gt;/mim/rt/&lt;plugin&gt;_rt.ll</span> (next to the plugins) and, with <span class="tt">INSTALL</span>, installed alongside them — one runtime module per plugin, addressable by a well-known name no matter how many <span class="tt">.c</span> files it is split into. This step is optional: it requires <span class="tt">clang</span> (discovered as <span class="tt">MIM_CLANG</span>; merging multiple sources additionally needs <span class="tt">llvm-link</span>) and is skipped when <span class="tt">clang</span> is unavailable or <span class="tt">MIM_BUILD_LL_RUNTIME</span> is <span class="tt">OFF</span>.</p>
 <p>The <a class="el" href="ll.html" title="The ll Plugin"><span class="tt">ll</span></a> backend locates such a runtime module via the driver's <a class="el" href="cli.html" title="Command-Line Reference">search paths</a> and either embeds it into or links it with its emitted module, selected via <span class="tt">-X ll:rt=embed</span> (default) or <span class="tt">-X ll:rt=extern</span>; see the <a class="el" href="cli.html" title="Command-Line Reference">CLI reference</a>. The in-tree examples are <span class="tt"><a class="el" href="mim__rt_8c.html">src/mim/plug/ll/rt/mim_rt.c</a></span>, which provides <span class="tt">@<a class="el" href="mim__rt_8c.html#ace4a0e80be08cf4828e5651b30de2a9c" title="Size in bytes of a jmp_buf, used by clos.alloc_jmpbuf to reserve stack space.">mim_jmpbuf_size</a></span> for <span class="tt">%clos.alloc_jmpbuf</span>, and <span class="tt"><a class="el" href="mim__cuda__rt_8c.html">src/mim/plug/ll_nvptx/rt/mim_cuda_rt.c</a></span>, whose <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span> performs the <span class="tt">ll_nvptx</span> backend's CUDA driver-API error handling. The <span class="tt">ll_nvptx</span> backend reuses the very same <a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html#a9bef375c0acf34184b55999e1269e878" title="mim::plug::ll::Emitter::load_rt_module"><span class="tt">load_rt_module</span></a> helper as <span class="tt">ll</span>, differing only in the runtime module it names.</p>
-<p>The authoritative reference for <span class="tt">add_mim_runtime</span> lives in <a class="el" href="add_mim_runtime_cmake.html" title="add_mim_runtime"><span class="tt">cmake/Mim.cmake</span></a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
-Normalizers</h1>
-<p>Normalizers usually obtain the owning <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> from one of their arguments, often <span class="tt">type-&gt;world()</span>, and then build the replacement directly in that world. Small normalizers are expected to be direct and side-effect free.</p>
-<p>That often leads to tiny functions of the form:</p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> Def* normalize_const(<span class="keyword">const</span> Def* type, <span class="keyword">const</span> Def*, <span class="keyword">const</span> Def* arg) {</div>
-<div class="line">    <span class="keyword">auto</span>&amp; world = type-&gt;world();</div>
-<div class="line">    <span class="keywordflow">return</span> world.lit(world.type_idx(arg), 42);</div>
-<div class="line">}</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<p>The authoritative reference for <span class="tt">add_mim_runtime</span> lives in <a class="el" href="add_mim_runtime_cmake.html" title="add_mim_runtime"><span class="tt">cmake/Mim.cmake</span></a>. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 </div><!-- container -->

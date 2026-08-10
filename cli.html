@@ -125,6 +125,9 @@ $(function(){initNavTree('cli.html','',''); });
     <a href="#autotoc_md0">Usage </a>
   </li>
   <li class="level1">
+    <a href="#cligen">Generating Plugin Interfaces </a>
+  </li>
+  <li class="level1">
     <a href="#clipluginargs">Passing Arguments to Plugins </a>
     <ul>
       <li class="level2">
@@ -202,6 +205,9 @@ Usage</h1>
 <li><span class="tt">path/to/mim.exe/../../lib/mim</span></li>
 <li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
 </ol>
+<h1 class="doxsection"><a class="anchor" id="cligen"></a>
+Generating Plugin Interfaces</h1>
+<p>The switches <span class="tt">--output-h</span>, <span class="tt">--output-py</span>, and <span class="tt">--output-md</span> turn a <span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span> file into, respectively, a C++ header, a Python <span class="tt">IntEnum</span> module, and a Markdown documentation page. The flag <span class="tt">--bootstrap</span> makes <span class="tt">plugin</span> directives behave as plain <span class="tt">import</span>s instead of <span class="tt">dlopen</span>ing other plugins, which matters when generating these outputs during the build, before the plugin's own shared library even exists. The CMake command <a class="el" href="add_mim_plugin_cmake.html" title="add_mim_plugin"><span class="tt">add_mim_plugin</span></a> runs all three automatically for every plugin as part of the normal build; see <a class="el" href="plugins.html#plugin_codegen" title="Generated Interfaces">Generated Interfaces</a> for a full walkthrough using the <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin.</p>
 <h1 class="doxsection"><a class="anchor" id="clipluginargs"></a>
 Passing Arguments to Plugins</h1>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
