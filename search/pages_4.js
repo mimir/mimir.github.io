@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['effects_0',['Effects',['../mem.html#autotoc_md306',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md315',1,'Operations w/o Side Effects']]],
+  ['effects_0',['Effects',['../mem.html#autotoc_md306',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md316',1,'Operations w/o Side Effects']]],
   ['elsewhere_1',['Why this is hard elsewhere',['../phases.html#autotoc_md90',1,'']]],
   ['embedded_20python_20dsl_2',['Embedded Python DSL',['../python.html#autotoc_md110',1,'']]],
   ['emit_3',['emit',['../ll.html#autotoc_md260',1,'%ll.emit'],['../ll_nvptx.html#autotoc_md263',1,'%ll_nvptx.emit']]],
-  ['empty_4',['%regex.empty',['../regex.html#autotoc_md379',1,'']]],
+  ['empty_4',['%regex.empty',['../regex.html#autotoc_md380',1,'']]],
   ['eq_5',['%core.icmp.xYgLE (eq)',['../autodiff.html#autotoc_md159',1,'']]],
-  ['equiv_6',['%refly.equiv',['../refly.html#autotoc_md360',1,'']]],
+  ['equiv_6',['%refly.equiv',['../refly.html#autotoc_md361',1,'']]],
   ['er_7',['%math.er',['../math.html#autotoc_md273',1,'']]],
   ['error_20handling_20helpers_8',['Error Handling Helpers',['../python.html#autotoc_md108',1,'']]],
   ['evaluation_9',['Partial Evaluation',['../dev.html#autotoc_md24',1,'']]],

@@ -49,6 +49,7 @@ var hierarchy =
       [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Node * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Pending >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< mim::Lam * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
     ] ],
     [ "absl::InlinedVector&lt; std::pair&lt; std::string, uint64_t &gt;, Default_Inlined_Size&lt; std::pair&lt; std::string, uint64_t &gt; &gt;, std::allocator&lt; std::pair&lt; std::string, uint64_t &gt; &gt; &gt;", null, [

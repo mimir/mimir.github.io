@@ -1,13 +1,13 @@
 var searchData=
 [
   ['language_20reference_0',['Mim Language Reference',['../langref.html',1,'']]],
-  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md426',1,'']]],
+  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md427',1,'']]],
   ['lattice_20api_2',['Lattice API',['../phases.html#autotoc_md73',1,'']]],
   ['launch_3',['Kernel Launch',['../gpu.html#autotoc_md251',1,'']]],
   ['launch_4',['%gpu.launch',['../gpu.html#autotoc_md252',1,'']]],
   ['layout_5',['Package Layout',['../python.html#autotoc_md105',1,'']]],
-  ['lea_6',['%mem.lea',['../mem.html#autotoc_md316',1,'']]],
-  ['len_7',['%vec.len',['../vec.html#autotoc_md427',1,'']]],
+  ['lea_6',['%mem.lea',['../mem.html#autotoc_md317',1,'']]],
+  ['len_7',['%vec.len',['../vec.html#autotoc_md428',1,'']]],
   ['level_20matrix_20operations_8',['High-level matrix operations',['../matrix.html#autotoc_md286',1,'']]],
   ['lexical_20structure_9',['Lexical Structure',['../langref.html#lex',1,'']]],
   ['license_10',['⚖️ License',['../index.html#autotoc_md122',1,'']]],
@@ -15,7 +15,7 @@ var searchData=
   ['line_20reference_12',['Command-Line Reference',['../cli.html',1,'']]],
   ['linearize_13',['%affine.linearize',['../affine.html#autotoc_md143',1,'']]],
   ['list_14',['List',['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
-  ['lit_15',['%regex.lit',['../regex.html#autotoc_md374',1,'']]],
+  ['lit_15',['%regex.lit',['../regex.html#autotoc_md375',1,'']]],
   ['lit_20tests_16',['lit Tests',['../coding.html#autotoc_md3',1,'']]],
   ['literals_17',['Matching Literals',['../dev.html#cast_lit',1,'']]],
   ['literals_20and_20basic_20forms_18',['Literals and Basic Forms',['../langref.html#autotoc_md53',1,'']]],
@@ -28,12 +28,12 @@ var searchData=
   ['local_20declaration_20blocks_25',['Local Declaration Blocks',['../langref.html#autotoc_md56',1,'']]],
   ['local_20vs_20global_26',['Local vs. Global',['../dev.html#autotoc_md26',1,'']]],
   ['longjmp_27',['%clos.longjmp',['../clos.html#autotoc_md180',1,'']]],
-  ['lookup_28',['Lookup',['../ord.html#autotoc_md344',1,'']]],
+  ['lookup_28',['Lookup',['../ord.html#autotoc_md345',1,'']]],
   ['lower_5faff_29',['%matrix.lower_aff',['../matrix.html#autotoc_md302',1,'']]],
   ['lower_5ffor_30',['%affine.lower_for',['../affine.html#autotoc_md146',1,'']]],
   ['lower_5findex_31',['%affine.lower_index',['../affine.html#autotoc_md147',1,'']]],
   ['lower_5fmatrix_5fhigh_5flevel_5fmap_5freduce_32',['%matrix.lower_matrix_high_level_map_reduce',['../matrix.html#autotoc_md300',1,'']]],
   ['lower_5fmatrix_5fmedium_5flevel_33',['%matrix.lower_matrix_medium_level',['../matrix.html#autotoc_md301',1,'']]],
   ['lower_5fptr_34',['%buffer.lower_ptr',['../buffer.html#autotoc_md174',1,'']]],
-  ['lower_5fregex_35',['%regex.lower_regex',['../regex.html#autotoc_md383',1,'']]]
+  ['lower_5fregex_35',['%regex.lower_regex',['../regex.html#autotoc_md384',1,'']]]
 ];

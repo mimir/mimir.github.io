@@ -118,16 +118,16 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a16b614bec0670bc8776c90f9d69d2a62",
 "classmim_1_1ast_1_1UniqExpr.html#ab99a64d95d145ecb704f77c4102e5f33",
 "classmim_1_1plug_1_1ll_1_1Emitter.html#a620e3fd2fa2748dac7c20f62b2f2defa",
-"clos2sjlj_8cpp.html",
-"dl_8h_source.html",
-"mim__rt_8c_source.html",
-"namespacemim.html#add322dac68393a6b179d1243a52cf9a1",
-"namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12",
-"namespacemim_1_1plug_1_1math.html#a06f8e322ad566ab8a02f096000db80f4",
-"namespacemim_1_1plug_1_1nvptx.html",
-"nest_8h_source.html",
-"structmim_1_1Dbg.html#ab337621c8995e2cee820470bef37e36b",
-"structmim_1_1plug_1_1ll_1_1BB.html#a696c92baef3b9c271c61f3922d178864"
+"cli.html",
+"dl_8cpp_source.html",
+"mim__rt_8c.html",
+"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e",
+"namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2",
+"namespacemim_1_1plug_1_1math.html",
+"namespacemim_1_1plug_1_1mem_1_1phase.html#ab7f8de36bdae13ccceb6e0cf573a401a",
+"nest_8cpp.html",
+"structmim_1_1Dbg.html#a829fc089b5e57f3d0251fa96a9b77a6f",
+"structmim_1_1plug_1_1ll_1_1BB.html#a624316e192405d0c58e6bb744767ab08"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

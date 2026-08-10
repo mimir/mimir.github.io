@@ -5,6 +5,7 @@ var namespacemim_1_1plug_1_1mem =
     [ "alloc", "namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc", null ],
     [ "alloc2malloc_repl", "namespacemim_1_1plug_1_1mem.html#a4af6c0a89b26ab2719c93fa85a18d9fc", null ],
     [ "free", "namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b", null ],
+    [ "fresh", "namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6", null ],
     [ "lea", "namespacemim_1_1plug_1_1mem.html#add102b8e1cf16c9e60dbcacb03c9f4eb", null ],
     [ "load", "namespacemim_1_1plug_1_1mem.html#a029144aa6e194281070cc4406fe2268e", null ],
     [ "M", "namespacemim_1_1plug_1_1mem.html#a44127c99fa94a5143565463d65206ea6", null ],

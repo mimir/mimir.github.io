@@ -15,7 +15,7 @@ var searchData=
   ['hash_5fbegin_12',['hash_begin',['../namespacemim.html#ab2a169d2e23178f0163bc05c774d2ac2',1,'mim::hash_begin() noexcept'],['../namespacemim.html#ac30b5cde9bbd181fac8b2cb7bf27fc62',1,'mim::hash_begin(T val) noexcept']]],
   ['hash_5fcombine_13',['hash_combine',['../namespacemim.html#a4d4c9094e2f043e1eca201f173cf96da',1,'mim']]],
   ['head_14',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md417',1,'']]],
+  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md418',1,'']]],
   ['helpers_16',['Error Handling Helpers',['../python.html#autotoc_md108',1,'']]],
   ['high_20level_20matrix_20operations_17',['High-level matrix operations',['../matrix.html#autotoc_md286',1,'']]],
   ['highlighting_18',['Syntax Highlighting',['../coding.html#autotoc_md12',1,'']]],

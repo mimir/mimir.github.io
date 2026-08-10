@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md315',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md316',1,'']]],
   ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md306',1,'']]],
   ['why_20mimir_2',['💡 Why MimIR?',['../index.html#autotoc_md113',1,'']]],
   ['why_20the_20guard_20exists_20at_20all_3',['Why the guard exists at all',['../phases.html#autotoc_md87',1,'']]],
