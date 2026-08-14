@@ -23,7 +23,7 @@ var searchData=
   ['schedule_2eh_20',['schedule.h',['../schedule_8h.html',1,'']]],
   ['scheduler_21',['Scheduler',['../classmim_1_1Scheduler.html',1,'mim::Scheduler'],['../classmim_1_1Scheduler.html#ae3d6947e30fb089dc9f4e9ac87c97dd8',1,'mim::Scheduler::Scheduler()=default'],['../classmim_1_1Scheduler.html#a184a374363795e63584d8badf032eb43',1,'mim::Scheduler::Scheduler(const Nest &amp;)'],['../classmim_1_1Scheduler.html#a352685d4f36711c66a983a88530d54ef',1,'mim::Scheduler::Scheduler(const Scheduler &amp;)=delete'],['../classmim_1_1Scheduler.html#a183f3cbdb7f45508a2edfc79bbdce8c8',1,'mim::Scheduler::Scheduler(Scheduler &amp;&amp;other) noexcept']]],
   ['scheduler_5f_22',['scheduler_',['../classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e',1,'mim::Emitter']]],
-  ['scope_23',['Scope',['../python.html#autotoc_md111',1,'Current Scope'],['../classmim_1_1ast_1_1Scopes.html#ab64af275afa2f1825fde3b0fc264f6bd',1,'mim::ast::Scopes::Scope']]],
+  ['scope_23',['Scope',['../classmim_1_1ast_1_1Scopes.html#ab64af275afa2f1825fde3b0fc264f6bd',1,'mim::ast::Scopes']]],
   ['scope_20nesting_24',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md29',1,'']]],
   ['scoped_20substitution_25',['Scoped Substitution',['../rewriting.html#autotoc_md130',1,'']]],
   ['scopedloc_26',['ScopedLoc',['../structmim_1_1World_1_1ScopedLoc.html',1,'mim::World::ScopedLoc'],['../structmim_1_1World_1_1ScopedLoc.html#ae1131f521caaa76d5c82f10b32cd0f7e',1,'mim::World::ScopedLoc::ScopedLoc()']]],

@@ -20,6 +20,7 @@ var searchData=
   ['exists_20at_20all_17',['Why the guard exists at all',['../phases.html#autotoc_md88',1,'']]],
   ['exp_18',['%math.exp',['../math.html#autotoc_md274',1,'']]],
   ['expressions_19',['Expressions',['../langref.html#expr',1,'Expressions'],['../langref.html#autotoc_md61',1,'Expressions']]],
-  ['extract_20an_20existing_20in_20tree_20plugin_20',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md106',1,'']]],
-  ['extrema_21',['extrema',['../core.html#autotoc_md210',1,'%core.extrema'],['../math.html#autotoc_md270',1,'%math.extrema']]]
+  ['extending_20the_20bindings_20',['Extending the Bindings',['../python.html#python_extending',1,'']]],
+  ['extract_20an_20existing_20in_20tree_20plugin_21',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md106',1,'']]],
+  ['extrema_22',['extrema',['../core.html#autotoc_md210',1,'%core.extrema'],['../math.html#autotoc_md270',1,'%math.extrema']]]
 ];

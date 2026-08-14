@@ -134,7 +134,15 @@ $(function(){initNavTree('python.html','',''); });
     <a href="#autotoc_md110">Error Handling Helpers </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md111">Current Scope </a>
+    <a href="#autotoc_md111">Coverage </a>
+  </li>
+  <li class="level1">
+    <a href="#python_extending">Extending the Bindings </a>
+    <ul>
+      <li class="level2">
+        <a href="#python_bindable">Bindable Types </a>
+      </li>
+    </ul>
   </li>
   <li class="level1">
     <a href="#autotoc_md112">Embedded Python DSL </a>
@@ -142,7 +150,7 @@ $(function(){initNavTree('python.html','',''); });
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2python"></a></p>
-<p>MimIR ships a Python package called <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>. It wraps selected parts of the C++ API via <a href="https://nanobind.readthedocs.io/">nanobind</a> and adds a small Python layer on top for convenience. The package is intentionally close to the C++ API. Names such as <span class="tt">lit_i8</span>, <span class="tt">type_i32</span>, <span class="tt">arr</span>, <span class="tt">mut_con</span>, and <span class="tt">optimize</span> are exposed with the same spelling you see in the C++ code. You have to enable <span class="tt">MIM_BUILD_PYTHON</span> (default) during configuration for Python support. The build creates a virtual environment at <span class="tt">build/.venv</span> and installs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> into it. Only the initial creation of that venv needs a network connection to fetch <span class="tt">pip</span>, <span class="tt">setuptools</span>, <span class="tt">wheel</span>, and <span class="tt">pytest</span>. Once <span class="tt">build/.venv</span> exists, all further builds stay offline.</p>
+<p>MimIR ships a Python package called <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>. Its binding code is generated directly from the C++ headers via <a href="https://nanobind.readthedocs.io/">nanobind</a> (see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>), so it mirrors a large portion of the C++ API rather than a hand-picked subset, with a small Python layer on top for convenience. Because the surface is generated, it stays close to the C++ API by construction. Names such as <span class="tt">lit_i8</span>, <span class="tt">type_i32</span>, <span class="tt">arr</span>, <span class="tt">mut_con</span>, and <span class="tt">optimize</span> are exposed with the same spelling you see in the C++ code. You have to enable <span class="tt">MIM_BUILD_PYTHON</span> (default) during configuration for Python support. The build creates a virtual environment at <span class="tt">build/.venv</span> and installs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> into it. Only the initial creation of that venv needs a network connection to fetch <span class="tt">pip</span>, <span class="tt">setuptools</span>, <span class="tt">wheel</span>, <span class="tt">pytest</span>, and <span class="tt">libclang</span> (which the binding generator runs on). Once <span class="tt">build/.venv</span> exists, all further builds stay offline.</p>
 <p>Activate that environment before importing <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>:</p>
 <div class="fragment"><div class="line">source build/.venv/bin/activate</div>
 <div class="line">python -c &#39;import mim; print(mim.Driver)&#39;</div>
@@ -154,7 +162,7 @@ Package Layout</h1>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
 </div><!-- fragment --><p>Internally, the package consists of a few layers:</p>
 <ul>
-<li><span class="tt">_mim</span>: the compiled nanobind extension module,</li>
+<li><span class="tt">_mim</span>: the compiled nanobind extension module (its C++ sources are generated at build time, see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>),</li>
 <li><span class="tt"><a class="el" href="namespacemim.html">mim</a></span>: the public Python package that re-exports <span class="tt">_mim</span> and adds helper functions,</li>
 <li><span class="tt"><a class="el" href="namespacemim_1_1plug.html">mim.plug</a>.&lt;name&gt;</span>: generated plugin enum facades, for example <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">mim.plug.core</a></span>,</li>
 </ul>
@@ -221,15 +229,35 @@ Error Handling Helpers</h1>
 </ul>
 <p>These are ordinary Python wrappers around the <span class="tt">MIM_Error</span> exception type exported by the binding module.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
-Current Scope</h1>
-<p>The Python bindings are intentionally selective. They already support useful workflows for:</p>
+Coverage</h1>
+<p>Because the bindings are generated straight from the C++ headers (see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>), the Python surface tracks the C++ API broadly rather than being a hand-picked subset. Core types such as <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>, <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>, <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>, and <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> and their public methods are exposed automatically, with the same spelling.</p>
+<p>Typical workflows are all supported out of the box:</p>
 <ul>
-<li>constructing small IR fragments directly from Python,</li>
+<li>constructing IR fragments directly from Python,</li>
 <li>loading plugins and calling generated annex enums,</li>
-<li>driving optimization and backend emission through <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>, and</li>
-<li>end-to-end regex/JIT experiments.</li>
+<li>driving optimization over a <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> (<span class="tt">world.optimize()</span>), and</li>
+<li>end-to-end regex/JIT experiments (which emit LLVM IR and invoke <span class="tt">clang</span> under the hood).</li>
 </ul>
-<p>But the Python API is not yet a one-to-one mirror of the full C++ surface. If you need a feature that exists in C++ but not in Python yet, the binding files under <span class="tt">py/bindings/</span> are the place to extend.</p>
+<p>The gaps are the handful of constructs libclang cannot express as a plain binding (e.g. template methods) and the members whose signature mentions a type nanobind cannot convert to a Python object (see <a class="el" href="#python_bindable" title="Bindable Types">Bindable Types</a>); closing either is trivial — expose the C++ method, or add a small <span class="tt">.nbextra</span> patch, as described next.</p>
+<h1 class="doxsection"><a class="anchor" id="python_extending"></a>
+Extending the Bindings</h1>
+<p>Most of the binding code is <b>generated at build time</b> rather than written by hand. <span class="tt">scripts/gen_nanobind_bindings.py</span> parses the C++ headers with libclang and emits one nanobind translation unit per header into <span class="tt">build/py/auto_bindings/</span>. <span class="tt">py/CMakeLists.txt</span> holds two hand-maintained lists: the headers to wrap, and the order in which every <span class="tt">init_*</span> — generated and hand-written alike — is registered. The module entry point (<span class="tt">NB_MODULE</span>) is generated from the second one, so its forward declarations and its calls can never disagree; keeping a new header in both lists is still up to you.</p>
+<p>To expose more of an already-wrapped class, just add the C++ method: on the next build it is picked up automatically, provided every type in its signature is convertible (see <a class="el" href="#python_bindable" title="Bindable Types">Bindable Types</a>). Adding a new header to the manifest in <span class="tt">py/CMakeLists.txt</span> wraps a new class.</p>
+<p>Some declarations cannot be expressed by the generator: template methods (e.g. <span class="tt">World::app</span>), signatures that need translating into something Python can use at all (<span class="tt">Log::set</span> takes a <span class="tt">std::ostream*</span>, so <span class="tt">py/nbextra/log.nbextra</span> substitutes a <span class="tt">set_stdout()</span>), and overload sets whose C++ resolution differs across standard libraries (<span class="tt">py/nbextra/sym.nbextra</span> replaces <span class="tt">SymPool::sym</span>'s three overloads with a single one). For these, drop a companion <span class="tt">&lt;header-stem&gt;.nbextra</span> file into <span class="tt">py/nbextra/</span> (it is picked up automatically when it exists). An <span class="tt">.nbextra</span> file is a small patch applied to the generated unit, with bracketed sections:</p>
+<ul>
+<li><span class="tt">[include]</span> — extra <span class="tt">#include</span> lines,</li>
+<li><span class="tt">[class:Name]</span> — a <span class="tt">.def(...)</span> chain appended to that class's binding,</li>
+<li><span class="tt">[skip:Name]</span> — whitespace-separated method names to drop from that class (pair with <span class="tt">[class:Name]</span> to substitute a hand-written binding),</li>
+<li><span class="tt">[standalone]</span> — raw code injected after all class/enum blocks.</li>
+</ul>
+<p>A <span class="tt">[class:Name]</span>/<span class="tt">[skip:Name]</span> that matches no parsed class fails the build loudly, so a stale name after a C++ rename cannot silently drop bindings.</p>
+<p>A handful of units are still fully hand-written under <span class="tt">py/bindings/</span> (listed in <span class="tt">py/CMakeLists.txt</span>): <span class="tt">error.cpp</span> registers the <span class="tt">MIM_Error</span> exception, while <span class="tt"><a class="el" href="ast_8cpp.html">ast.cpp</a></span> and <span class="tt"><a class="el" href="parser_8cpp.html">parser.cpp</a></span> cover surface the generator does not yet handle.</p>
+<h2 class="doxsection"><a class="anchor" id="python_bindable"></a>
+Bindable Types</h2>
+<p>A member is only generated if nanobind can convert <em>every</em> type in its signature; otherwise it is dropped. This matters because nanobind does not complain about the ones it cannot: the binding compiles, fails only when Python eventually calls it, and <span class="tt">stubgen</span> spells the raw C++ type into <span class="tt">_mim.pyi</span> (<span class="tt">std::reverse_iterator&lt;char const*&gt;</span>, <span class="tt">absl::flat_hash_map&lt;…&gt;</span>, <span class="tt"><a class="el" href="structmim_1_1Dbg.html">mim::Dbg</a></span>) in the meantime.</p>
+<p>Convertible are: built-in types and <span class="tt">const char*</span>; the standard containers with a nanobind caster (<span class="tt">std::pair</span>, <span class="tt">std::tuple</span>, <span class="tt">std::optional</span>, <span class="tt">std::function</span>, <span class="tt">std::filesystem::path</span>, …, for which the generator emits the matching <span class="tt">nanobind/stl/*.h</span> include); every top-level class or enum declared in a header of the manifest — those are the ones registered as Python types, so a pointer or reference to one becomes a Python object; and MimIR's own ranges (<span class="tt">Defs</span>, <span class="tt">DefVec</span>, <span class="tt">Vars</span>, <span class="tt">Muts</span>, <span class="tt">Span&lt;const nat_t&gt;</span>), which are copied into a <span class="tt">std::vector</span> so they arrive as a list and can be passed as one.</p>
+<p>Everything else — <span class="tt">std::ostream</span>, abseil containers, iterators, nested classes such as <span class="tt">World::State</span>, and any class from a header nobody wraps — makes its member disappear. To get such a member into Python, either add its type's header to the manifest, or write a <span class="tt">[class:Name]</span> binding that translates the type into a Python-friendly one (<span class="tt">py/nbextra/driver.nbextra</span> does this for <span class="tt">Imports::add</span>, which reports a <span class="tt">const fs::path*</span>).</p>
+<p><span class="tt">py/tests/stubs.py</span> fails <span class="tt">test-py</span> if any C++ type still reaches <span class="tt">_mim.pyi</span>, e.g. from a hand-written <span class="tt">.nbextra</span> fragment or on a standard library that spells a type differently.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
 Embedded Python DSL</h1>
 <p>The file <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim.plug.regex</a></span> provides a higher-level wrapper around the regex plugin in form of an embedded domain-specific language. It builds MimIR through overloaded operators, runs optimization, emits LLVM IR, invokes <span class="tt">clang</span>, and loads the resulting shared object via <span class="tt">ctypes</span>.</p>

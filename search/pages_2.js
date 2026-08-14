@@ -79,13 +79,13 @@ var searchData=
   ['core_20wrap_76',['%core.wrap',['../core.html#autotoc_md207',1,'']]],
   ['core_20wrap_20add_77',['%core.wrap.add',['../autodiff.html#autotoc_md162',1,'']]],
   ['core_20wrap_20mul_78',['%core.wrap.mul',['../autodiff.html#autotoc_md163',1,'']]],
-  ['cps_79',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
-  ['cps_20conv_80',['%cps.conv',['../cps.html#autotoc_md223',1,'']]],
-  ['cps_20cps2ds_81',['%cps.cps2ds',['../cps.html#autotoc_md221',1,'']]],
-  ['cps_20plugin_82',['The CPS Plugin',['../cps.html',1,'']]],
-  ['cps2ds_83',['%cps.cps2ds',['../cps.html#autotoc_md221',1,'']]],
-  ['create_84',['%ord.create',['../ord.html#autotoc_md343',1,'']]],
-  ['create_20a_20new_20in_20tree_20plugin_85',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md103',1,'']]],
-  ['create_20a_20third_20party_20plugin_86',['Create a Third-Party Plugin',['../plugins.html#autotoc_md104',1,'']]],
-  ['current_20scope_87',['Current Scope',['../python.html#autotoc_md111',1,'']]]
+  ['coverage_79',['Coverage',['../python.html#autotoc_md111',1,'']]],
+  ['cps_80',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
+  ['cps_20conv_81',['%cps.conv',['../cps.html#autotoc_md223',1,'']]],
+  ['cps_20cps2ds_82',['%cps.cps2ds',['../cps.html#autotoc_md221',1,'']]],
+  ['cps_20plugin_83',['The CPS Plugin',['../cps.html',1,'']]],
+  ['cps2ds_84',['%cps.cps2ds',['../cps.html#autotoc_md221',1,'']]],
+  ['create_85',['%ord.create',['../ord.html#autotoc_md343',1,'']]],
+  ['create_20a_20new_20in_20tree_20plugin_86',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md103',1,'']]],
+  ['create_20a_20third_20party_20plugin_87',['Create a Third-Party Plugin',['../plugins.html#autotoc_md104',1,'']]]
 ];
