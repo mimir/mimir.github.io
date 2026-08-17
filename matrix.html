@@ -248,7 +248,7 @@ High-level matrix operations</h1>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md294"></a>
 %matrix.broadcast</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.broadcast</span>: expand <span class="tt">input</span> from logical shape <span class="tt">s_in</span> to <span class="tt">s_out</span> (each dimension is either equal or broadcast from size 1). The input/output buffer shapes (<span class="tt">ri</span>/<span class="tt">si</span>, <span class="tt">ro</span>/<span class="tt">so</span>) are the actual — possibly size-1-folded — buffer shapes and are inferred from the operands; <span class="tt">s_in</span>/<span class="tt">s_out</span> are the logical (unfolded) shapes. </p><div class="fragment"><div class="line">axm %matrix.broadcast: {T: *, ri: Nat, si: «ri; Nat», ro: Nat, so: «ro; Nat», r: Nat}</div>
-<div class="line">                     → [s_in: «r; Nat», s_out: «r; Nat»]</div>
+<div class="line">                     → [s_in s_out: «r; Nat»]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ri, si, T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ro, so, T)];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md295"></a>
@@ -298,7 +298,7 @@ Unfolding functions</h1>
 <div class="line">    let (mem, res) = %matrix.map_reduce</div>
 <div class="line">        (1, 1, R, 1, n, R, S)</div>
 <div class="line">        (mem, zero_real,</div>
-<div class="line">            fn (mem: %mem.M 0, acc: R, a: R): [%mem.M 0, R] =</div>
+<div class="line">            fn (mem: %mem.M 0, acc a: R): [%mem.M 0, R] =</div>
 <div class="line">                return (mem, %math.arith.add 0 (acc, a)),</div>
 <div class="line">            (idxs, M));</div>
 <div class="line">    return (mem, %core.bitcast R res);</div>

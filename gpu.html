@@ -401,7 +401,7 @@ Kernel Launch</h2>
 %gpu.launch</h3>
 <p>Launches a kernel function on the device with dynamic shared memory and module symbols. </p><div class="fragment"><div class="line">// TODO: refactor to {n m: N, Ts: «n; *»} as soon as type inference bug is fixed</div>
 <div class="line">axm %gpu.launch: {n: Nat, Ts: «n; *»}</div>
-<div class="line">               → [n_groups: Nat, n_items: Nat, %gpu.Stream, m: Bool, MT: «%core.bitcast Nat m; *»]</div>
+<div class="line">               → [n_groups n_items: Nat, %gpu.Stream, m: Bool, MT: «%core.bitcast Nat m; *»]</div>
 <div class="line">               → Cn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM, Idx n_groups, Idx n_items,</div>
 <div class="line">                     «i: %core.bitcast Nat m; %gpu.SharedPtr MT#i», «i: n; Ts#i»,</div>
 <div class="line">                     Cn [%gpu.GlobalM, %gpu.SharedM, %gpu.ConstM, %gpu.LocalM]]</div>

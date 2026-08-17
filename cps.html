@@ -158,7 +158,7 @@ Operations</h1>
 %cps.cps2ds</h2>
 <p>This axiom lets the user call a CPS function in direct style. The function is not converted; only the call site is changed. <span class="tt">%cps.cps2ds_dep</span> is the dependently-typed general form; <span class="tt">%cps.cps2ds</span> is the non-dependent shorthand.</p>
 <div class="fragment"><div class="line">axm %cps.cps2ds_dep: {T: *} → [U: T → *] → [Fn [t: T] → U t] → [[t: T] → U t], 3;</div>
-<div class="line">lam %cps.cps2ds      {T: *, U:     *}   (f: Fn     T  → U  ):  [    T  → U  ] = %cps.cps2ds_dep (λ [T]: * = U) f;</div>
+<div class="line">lam %cps.cps2ds      {T U: *}           (f: Fn     T  → U  ):  [    T  → U  ] = %cps.cps2ds_dep (λ [T]: * = U) f;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
 Phases</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
