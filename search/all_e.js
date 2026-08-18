@@ -7,7 +7,7 @@ var searchData=
   ['of_20mutables_4',['Handling of Mutables',['../phases.html#autotoc_md75',1,'']]],
   ['of_20nodes_5',['🌊 Sea of Nodes',['../index.html#autotoc_md120',1,'']]],
   ['of_20sigmas_6',['Field Names of Sigmas',['../langref.html#autotoc_md67',1,'']]],
-  ['offset_7',['offset',['../structmim_1_1FNV1_3_014_01_4.html#a34ba62076ec244d3db27083451801503',1,'mim::FNV1&lt; 4 &gt;::offset'],['../structmim_1_1FNV1_3_018_01_4.html#a167973001ea74d4798e80d658aece4f0',1,'mim::FNV1&lt; 8 &gt;::offset'],['../classmim_1_1UInc.html#ac09662b71a4e497e4aa65fa6647ba866',1,'mim::UInc::offset()']]],
+  ['offset_7',['offset',['../classmim_1_1UInc.html#ac09662b71a4e497e4aa65fa6647ba866',1,'mim::UInc']]],
   ['old2news_5f_8',['old2news_',['../classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f',1,'mim::Rewriter']]],
   ['old_5fworld_9',['old_world',['../classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3',1,'mim::RWPhase']]],
   ['op_10',['op',['../classmim_1_1Hole.html#a1d6405f684572dd5ce1a872f1d7fe401',1,'mim::Hole::op()'],['../classmim_1_1Def.html#a67a94030742a4217fe19bb739990f73e',1,'mim::Def::op()'],['../classmim_1_1UInc.html#a010398edc1e1a3045628aa476b4597d7',1,'mim::UInc::op()'],['../classmim_1_1Uniq.html#a55d461b1296bcfae2dd8e71cb896b5bb',1,'mim::Uniq::op()'],['../namespacemim_1_1plug_1_1affine.html#a207279532fb5b73280711baa550e32c6',1,'mim::plug::affine::op'],['../namespacemim_1_1plug_1_1core.html#a927f40ea1451c951c7e434c881f2f6ee',1,'mim::plug::core::op(trait o, const Def *type)'],['../namespacemim_1_1plug_1_1core.html#a5c14a5971107e0e3158eaf0c29bef4ca',1,'mim::plug::core::op(pe o, const Def *def)']]],

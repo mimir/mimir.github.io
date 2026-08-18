@@ -248,6 +248,6 @@ var NAVTREEINDEX16 =
 "classmim_1_1sys_1_1CmdNotFound.html":[4,0,1,4,0],
 "classmim_1_1sys_1_1CmdNotFound.html#a12722c955d23074096b239cfe880fe0c":[2,0,3,5,0,0],
 "classmim_1_1sys_1_1CmdNotFound.html#a12722c955d23074096b239cfe880fe0c":[4,0,1,4,0,0],
-"classmim_1_1unique__queue.html":[2,0,3,86],
-"classmim_1_1unique__queue.html":[4,0,1,85]
+"classmim_1_1unique__queue.html":[2,0,3,83],
+"classmim_1_1unique__queue.html":[4,0,1,82]
 };
