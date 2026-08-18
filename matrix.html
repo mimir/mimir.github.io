@@ -236,13 +236,13 @@ High-level matrix operations</h1>
 <div class="line">  → [%mem.M 0, %buffer.Buf (n, S, T)], normalize_map_reduce;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md293"></a>
 %matrix.map_reduce_aff</h2>
-<p>The buffer-world counterpart of <span class="tt">%tensor.map_reduce</span>: the affine-indexed generalisation of <span class="tt">map_reduce</span> on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>. <span class="tt">So</span>/<span class="tt">Sr</span> are the (logical) output shape and full loop bounds; <span class="tt">acc_out</span>/<span class="tt">accs</span> are affine maps from the <span class="tt">Ro+Rr</span> loop vector to the output/input coordinates. The combiner is mem-threaded, like <span class="tt">%matrix.map_reduce</span>. </p><div class="fragment"><div class="line">axm %matrix.map_reduce_aff: {nis: Nat}</div>
-<div class="line">                          → {To: *, Ro Rr: Nat}</div>
-<div class="line">                          → [So: «Ro; Nat», Sr: «%core.nat.add (Ro, Rr); Nat»]</div>
+<p>The buffer-world counterpart of <span class="tt">%tensor.map_reduce</span>: the affine-indexed generalisation of <span class="tt">map_reduce</span> on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>. <span class="tt">So</span>/<span class="tt">Sr</span> are the (logical) output shape and full loop bounds; <span class="tt">acc_out</span>/<span class="tt">accs</span> are affine maps from the <span class="tt">Rn</span> loop vector to the output/input coordinates (<span class="tt">Ro</span> output loops, <span class="tt">Rn - Ro</span> reduction loops). The combiner is mem-threaded, like <span class="tt">%matrix.map_reduce</span>. </p><div class="fragment"><div class="line">axm %matrix.map_reduce_aff: {nis: Nat}</div>
+<div class="line">                          → {To: *, Ro Rn: Nat}</div>
+<div class="line">                          → [So: «Ro; Nat», Sr: «Rn; Nat»]</div>
 <div class="line">                          → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}</div>
 <div class="line">                          → [f: Fn [%mem.M 0, To, «i: nis; Tis#i»] → [%mem.M 0, To], init: To]</div>
-<div class="line">                          → [acc_out: [«%core.nat.add (Ro, Rr); %affine.index»] → «Ro; %affine.index»]</div>
-<div class="line">                          → [accs: «i: nis; ([«%core.nat.add (Ro, Rr); %affine.index»] → «Ris#i; %affine.index»)»]</div>
+<div class="line">                          → [acc_out: [«Rn; %affine.index»] → «Ro; %affine.index»]</div>
+<div class="line">                          → [accs: «i: nis; ([«Rn; %affine.index»] → «Ris#i; %affine.index»)»]</div>
 <div class="line">                          → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»]</div>
 <div class="line">                          → [%mem.M 0, %buffer.Buf (Ro, So, To)];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md294"></a>
