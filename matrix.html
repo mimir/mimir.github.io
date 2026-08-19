@@ -209,10 +209,10 @@ High-level matrix operations</h1>
 <div class="line">                → [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)], normalize_prod;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md290"></a>
 %matrix.transpose</h2>
-<p>Transposes a <span class="tt">k × l</span> matrix. </p><div class="fragment"><div class="line">axm %matrix.transpose: {k l: Nat}</div>
-<div class="line">                     → {T: *}</div>
-<div class="line">                     → [%mem.M 0, %buffer.Buf (2, (k, l), T)]</div>
-<div class="line">                     → [%mem.M 0, %buffer.Buf (2, (l, k), T)], normalize_transpose;</div>
+<p>Transposes a <span class="tt">s#0 × s#1</span> matrix. Mirrors %tensor.transpose_2d: the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s, and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>. </p><div class="fragment"><div class="line">axm %matrix.transpose: {T: *}</div>
+<div class="line">                     → {s: «2; Nat»}</div>
+<div class="line">                     → [%mem.M 0, %buffer.Buf (2, s, T)]</div>
+<div class="line">                     → [%mem.M 0, %buffer.Buf (2, (s#tt, s#ff), T)], normalize_transpose;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md291"></a>
 %matrix.sum</h2>
 <p>Sums up all elements of a matrix and returns a scalar. </p><div class="fragment"><div class="line">axm %matrix.sum: {pe: «2; Nat»}</div>
@@ -221,20 +221,25 @@ High-level matrix operations</h1>
 <div class="line">               → [%mem.M 0, %math.F pe];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md292"></a>
 %matrix.map_reduce</h2>
-<p>A general iteration/reduction scheme over tensors, inspired by and generalizing einsum. It maps a combination function <span class="tt">comb</span> over the elements addressed by a set of index tuples and reduces the results with an accumulator starting from <span class="tt">zero</span>; e.g. <span class="tt">einsum(idx, inputs) = map_reduce(0, +, product, inputs)</span>. <span class="tt">%matrix.prod</span>, <span class="tt">%matrix.transpose</span>, and <span class="tt">%matrix.sum</span> are all expressed via <span class="tt">map_reduce</span> (see the unfolding functions below). The counts, dimensions, and indices are assumed to be statically known, to avoid inline meta-programming. </p><div class="fragment"><div class="line">axm %matrix.map_reduce:</div>
-<div class="line">    [ n: Nat, S: «n; Nat», T: *, // output shape</div>
-<div class="line">      m: Nat,                    // number of inputs</div>
-<div class="line">      NI: «m; Nat»,              // input dimension counts</div>
-<div class="line">      TI: «m; *»,                // input element types</div>
-<div class="line">      SI: «i: m; «NI#i; Nat»»    // input shapes</div>
-<div class="line">    ]</div>
-<div class="line">  → [ mem:   %mem.M 0,</div>
-<div class="line">      zero:  T,                                              // initial accumulator</div>
-<div class="line">      comb:  Fn [%mem.M 0, T, «i: m; TI#i»] → [%mem.M 0, T], // inner combination</div>
-<div class="line">      input: «i: m; [«NI#i; Nat», %buffer.Buf (NI#i, SI#i, TI#i)]»</div>
-<div class="line">    ]</div>
-<div class="line">  → [%mem.M 0, %buffer.Buf (n, S, T)], normalize_map_reduce;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md293"></a>
+<p>A general iteration/reduction scheme over tensors, inspired by and generalizing einsum. It maps a combination function <span class="tt">comb</span> over the elements addressed by a set of index tuples and reduces the results with an accumulator starting from <span class="tt">zero</span>; e.g. <span class="tt">einsum(idx, inputs) = map_reduce(0, +, product, inputs)</span>. <span class="tt">%matrix.prod</span>, <span class="tt">%matrix.transpose</span>, and <span class="tt">%matrix.sum</span> are all expressed via <span class="tt">map_reduce</span> (see the unfolding functions below). The counts, dimensions, and indices are assumed to be statically known, to avoid inline meta-programming.</p>
+<p>The group structure mirrors %tensor.map_reduce: input count, then output element type and rank, then the output shape as the only <em>explicit</em> group, then the input meta. Everything but the output shape <span class="tt">S</span> is inferred:</p><ul>
+<li><span class="tt">T</span> from <span class="tt">zero</span>, and <span class="tt">n</span> from <span class="tt">S</span> itself;</li>
+<li><span class="tt">m</span>, <span class="tt">NI</span>, <span class="tt">TI</span> and <span class="tt">SI</span> from <span class="tt">input</span> — <span class="tt">%buffer.Buf</span> spells its rank, shape and element type out as ordinary arguments, so they unify structurally (no nested-array peeling involved). <div class="fragment"><div class="line">axm %matrix.map_reduce: {m: Nat}                     // number of inputs</div>
+<div class="line">                      → {T: *, n: Nat}               // output element type and rank</div>
+<div class="line">                      → [S: «n; Nat»]                // output shape</div>
+<div class="line">                      → { NI: «m; Nat»,              // input dimension counts</div>
+<div class="line">                          TI: «m; *»,                // input element types</div>
+<div class="line">                          SI: «i: m; «NI#i; Nat»»    // input shapes</div>
+<div class="line">                        }</div>
+<div class="line">                      → [ mem:   %mem.M 0,</div>
+<div class="line">                          zero:  T,                                              // initial accumulator</div>
+<div class="line">                          comb:  Fn [%mem.M 0, T, «i: m; TI#i»] → [%mem.M 0, T], // inner combination</div>
+<div class="line">                          input: «i: m; [«NI#i; Nat», %buffer.Buf (NI#i, SI#i, TI#i)]»</div>
+<div class="line">                        ]</div>
+<div class="line">                      → [%mem.M 0, %buffer.Buf (n, S, T)], normalize_map_reduce;</div>
+</div><!-- fragment --></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md293"></a>
 %matrix.map_reduce_aff</h2>
 <p>The buffer-world counterpart of <span class="tt">%tensor.map_reduce</span>: the affine-indexed generalisation of <span class="tt">map_reduce</span> on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>. <span class="tt">So</span>/<span class="tt">Sr</span> are the (logical) output shape and full loop bounds; <span class="tt">acc_out</span>/<span class="tt">accs</span> are affine maps from the <span class="tt">Rn</span> loop vector to the output/input coordinates (<span class="tt">Ro</span> output loops, <span class="tt">Rn - Ro</span> reduction loops). The combiner is mem-threaded, like <span class="tt">%matrix.map_reduce</span>. </p><div class="fragment"><div class="line">axm %matrix.map_reduce_aff: {nis: Nat}</div>
 <div class="line">                          → {To: *, Ro Rn: Nat}</div>
@@ -253,8 +258,9 @@ High-level matrix operations</h1>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ro, so, T)];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md295"></a>
 %matrix.pad</h2>
-<p>The buffer-world counterpart of <span class="tt">%tensor.pad</span>: <span class="tt">out[…o…] = input[…o−lo…]</span> inside the interior, <span class="tt">value</span> (mode 0, constant) or the clamped edge element (mode ≠ 0, replicate) outside. <span class="tt">s_out#d = lo#d + s_in#d + hi#d</span> is passed explicitly. The buffer shapes are stated as the logical shapes; <span class="tt">%buffer.Buf</span> normalizes literal size-1 axes away, so they agree with the folded buffer handles, and the loop generation folds its read/write indices accordingly. </p><div class="fragment"><div class="line">axm %matrix.pad: {T: *, r: Nat}</div>
-<div class="line">              → [s_in s_out: «r; Nat», mode: Nat, lo hi: «r; Nat»]</div>
+<p>The buffer-world counterpart of <span class="tt">%tensor.pad</span>: <span class="tt">out[…o…] = input[…o−lo…]</span> inside the interior, <span class="tt">value</span> (mode 0, constant) or the clamped edge element (mode ≠ 0, replicate) outside. The groups mirror %tensor.pad (<span class="tt">{T, r}</span> → input shape → pad parameters → operands); unlike there, <span class="tt">s_out</span> cannot be computed here (<span class="tt">pad_shape</span> lives in the <span class="tt">tensor</span> plugin), so it rides along with the parameters. The buffer shapes are stated as the logical shapes; <span class="tt">%buffer.Buf</span> normalizes literal size-1 axes away, so they agree with the folded buffer handles, and the loop generation folds its read/write indices accordingly. </p><div class="fragment"><div class="line">axm %matrix.pad: {T: *, r: Nat}</div>
+<div class="line">              → [s_in: «r; Nat»]</div>
+<div class="line">              → [s_out: «r; Nat», mode: Nat, lo hi: «r; Nat»]</div>
 <div class="line">              → [%mem.M 0, input: %buffer.Buf (r, s_in, T), value: T]</div>
 <div class="line">              → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md296"></a>
@@ -273,18 +279,16 @@ Unfolding functions</h1>
 <p>Follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k in1[i, k] · in2[k, j]</span>) using multiplication as combination and addition as reduction. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_prod {pe: «2; Nat»} {m k l: Nat} (mem: %mem.M 0, M: %buffer.Buf (2, (m, k), %math.F pe), N: %buffer.Buf (2, (k, l), %math.F pe))@tt: [%mem.M 0, %buffer.Buf (2, (m, l), %math.F pe)] =</div>
 <div class="line">    let R = %math.F pe;</div>
 <div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
-<div class="line">    return (%matrix.map_reduce</div>
-<div class="line">        (2, (m, l), R, 2, (2, 2), (R, R), ((m, k), (k, l)))</div>
+<div class="line">    return (%matrix.map_reduce (m, l)</div>
 <div class="line">        (mem, zero_real,</div>
 <div class="line">            fn (mem: %mem.M 0, acc: R, ab: «2; R»): [%mem.M 0, R] =</div>
 <div class="line">                return (mem, %math.arith.add 0 (acc, %math.arith.mul 0 ab)),</div>
 <div class="line">            (((0, 2), M), ((2, 1), N))));</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md299"></a>
 %matrix.map_reduce_transpose</h2>
-<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose {k l: Nat} {T: *} (mem: %mem.M 0, M: %buffer.Buf (2, (k, l), T))@tt: [%mem.M 0, %buffer.Buf (2, (l, k), T)] =</div>
+<p>Transpose a matrix by iterating the indices in swapped order. </p><div class="fragment"><div class="line">fun %matrix.map_reduce_transpose {T: *} {s: «2; Nat»} (mem: %mem.M 0, M: %buffer.Buf (2, s, T))@tt: [%mem.M 0, %buffer.Buf (2, (s#tt, s#ff), T)] =</div>
 <div class="line">    let zero = ⊥:T;</div>
-<div class="line">    return (%matrix.map_reduce</div>
-<div class="line">        (2, (l, k), T, 1, 2, T, (k, l))</div>
+<div class="line">    return (%matrix.map_reduce (s#tt, s#ff)</div>
 <div class="line">        (mem, zero,</div>
 <div class="line">            // We ignore the (zero) accumulator and just return the read value.</div>
 <div class="line">            fn (mem: %mem.M 0, acc a: T): [%mem.M 0, T] = return (mem, a),</div>
@@ -295,8 +299,7 @@ Unfolding functions</h1>
 <div class="line">    let R = %math.F pe;</div>
 <div class="line">    let zero_real = %math.conv.f2f pe 0.0:%math.F64;</div>
 <div class="line">    let idxs = ‹i: n; %core.nat.add (1, %core.bitcast Nat i)›;</div>
-<div class="line">    let (mem, res) = %matrix.map_reduce</div>
-<div class="line">        (1, 1, R, 1, n, R, S)</div>
+<div class="line">    let (mem, res) = %matrix.map_reduce 1</div>
 <div class="line">        (mem, zero_real,</div>
 <div class="line">            fn (mem: %mem.M 0, acc a: R): [%mem.M 0, R] =</div>
 <div class="line">                return (mem, %math.arith.add 0 (acc, a)),</div>

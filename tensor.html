@@ -522,7 +522,7 @@ Operations</h1>
 <div class="line">                      → {m k l: Nat}</div>
 <div class="line">                      → [t1: «m, k; R#T», t2: «k, l; R#T»]</div>
 <div class="line">                      → «m, l; R#T»;</div>
-</div><!-- fragment --><p> The <span class="tt">{r1 r2}</span> and <span class="tt">{s1 s2}</span> groups are passed explicitly on purpose: <span class="tt">%tensor.dot_product_impl</span> builds its subscript rows with <span class="tt">%vec.diff</span>/<span class="tt">%vec.fold.l</span>, whose normalizers only fold once the ranks and shapes are literals. Leaving them to inference still type-checks, but the <span class="tt">%vec.*</span> scaffolding is built <em>before</em> the Holes are solved and never re-normalized, so the resulting access maps stay unfolded. </p><div class="fragment"><div class="line">lam %tensor.product_2d_impl (R: %tensor.Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
+</div><!-- fragment --><p> The <span class="tt">{r1 r2}</span> and <span class="tt">{s1 s2}</span> groups are passed explicitly on purpose - not because inference fails, but because of <em>when</em> it succeeds. <span class="tt">%tensor.dot_product_impl</span> is a curried <span class="tt">lam</span>, so applying it to a group β-reduces its body right away; with a still-unsolved Hole for the ranks, the <span class="tt">%vec.diff</span>/<span class="tt">%vec.fold.l</span> subscript machinery gets built over non-literals, its normalizers decline to fold, and nothing re-normalizes the body once the Holes are resolved. The result type-checks but keeps the whole <span class="tt">%vec.*</span> scaffolding inside its access maps (<span class="tt">%refly.equiv.struc_eq</span> in lit/tensor/dot_product.mim pins this down). Passing literals up front folds it away. </p><div class="fragment"><div class="line">lam %tensor.product_2d_impl (R: %tensor.Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
 <div class="line">        = %tensor.dot_product_impl R @(2, 2) (1_2, 0_2, (), ()) @((m, k), (k, l)) (t1, t2);</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md405"></a>
 %tensor.bmm</h2>
@@ -539,13 +539,15 @@ Operations</h1>
 <div class="fragment"><div class="line">lam transpose_shape {r: Nat} (s: «r; Nat», permutation: «r; Idx r»): «r; Nat» =</div>
 <div class="line">  let shape_permutation = ‹i: r; (%vec.first %core.icmp.e (permutation, i))#tt›;</div>
 <div class="line">  ‹i: r; s#(shape_permutation#i)›;</div>
-<div class="line">axm %tensor.transpose: {T: *, r: Nat, s: «r; Nat»}</div>
-<div class="line">                     → [input: «s; T», permutation: «r; Idx r»]</div>
+</div><!-- fragment --><p> <span class="tt">permutation</span> precedes <span class="tt">input</span>, and <span class="tt">{s}</span> is a <em>separate</em> implicit group introduced after it, so that <span class="tt">{T, r, s}</span> can be inferred: <span class="tt">permutation: «r; Idx r»</span> pins the rank <span class="tt">r</span>, and only then is the <span class="tt">{s}</span> Hole created - with the now-literal type <span class="tt">«r; Nat»</span>, which lets <span class="tt">input: «s; T»</span> peel off exactly <span class="tt">r</span> levels of its nested array type. Merging the two groups would not do: the domain <span class="tt">«s; T»</span> is built once, while <span class="tt">r</span> is still unknown. </p><div class="fragment"><div class="line">axm %tensor.transpose: {T: *, r: Nat}</div>
+<div class="line">                     → [permutation: «r; Idx r»]</div>
+<div class="line">                     → {s: «r; Nat»}</div>
+<div class="line">                     → [input: «s; T»]</div>
 <div class="line">                     → «transpose_shape (s, permutation); T»;</div>
 </div><!-- fragment --><p> <span class="tt">o ↦ (o#(perm#0), …, o#(perm#(r−1)))</span>: input axis <span class="tt">j</span> reads output-loop var <span class="tt">o#(perm#j)</span>. </p><div class="fragment"><div class="line">lam transpose_map {r: Nat} (perm: «r; Idx r») (o: «r; %affine.index»): «r; %affine.index» = ‹j: r; o#(perm#j)›;</div>
 <div class="line"> </div>
-<div class="line">lam %tensor.transpose_impl {T: *, r: Nat, s: «r; Nat»}</div>
-<div class="line">                           (input: «s;T», permutation: «r; Idx r»)</div>
+<div class="line">lam %tensor.transpose_impl {T: *, r: Nat}</div>
+<div class="line">                           (permutation: «r; Idx r») {s: «r; Nat»} (input: «s; T»)</div>
 <div class="line">                         : «transpose_shape (s, permutation); T»</div>
 <div class="line">                         = let out_s = transpose_shape (s, permutation);</div>
 <div class="line">                           %tensor.map_reduce (out_s, out_s) (tensor_copy, ⊥: T)</div>
@@ -557,8 +559,9 @@ Operations</h1>
 <div class="line">                        → {s: «2; Nat»}</div>
 <div class="line">                        → [input: «s; T»]</div>
 <div class="line">                        → «s#tt, s#ff; T»;</div>
-</div><!-- fragment --><p> <span class="tt">{T, r, s}</span> is explicit because <span class="tt">input</span> is checked before <span class="tt">permutation</span>: at that point the rank <span class="tt">r</span> is still unknown, so how many levels to peel off <span class="tt">input</span>'s nested array type - and hence the shape vector <span class="tt">s</span> - is ambiguous. Only <span class="tt">permutation: «r; Idx r»</span> pins <span class="tt">r</span>, and by then <span class="tt">s</span> has already been committed to. </p><div class="fragment"><div class="line">lam %tensor.transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =</div>
-<div class="line">  %tensor.transpose_impl @(T, 2, s) (input, (tt, ff));</div>
+<div class="line"> </div>
+<div class="line">lam %tensor.transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =</div>
+<div class="line">  %tensor.transpose_impl (tt, ff) input;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md408"></a>
 %tensor.broadcast</h2>
 <p>Expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span>: for all <span class="tt">i</span>, either <span class="tt">s_in#i = s_out#i</span> or <span class="tt">s_in#i = 1</span>, and the size-1 dimensions are expanded to fit <span class="tt">s_out</span>.</p>
