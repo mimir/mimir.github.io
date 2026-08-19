@@ -37,6 +37,7 @@ var menudata={children:[
 {text:"🧩 Plugins",url:"usergroup1.html",children:[
 {text:"affine",url:"affine.html"},
 {text:"autodiff",url:"autodiff.html"},
+{text:"btensor",url:"btensor.html"},
 {text:"buffer",url:"buffer.html"},
 {text:"clos",url:"clos.html"},
 {text:"compile",url:"compile.html"},
@@ -47,7 +48,6 @@ var menudata={children:[
 {text:"ll",url:"ll.html"},
 {text:"ll_nvptx",url:"ll_nvptx.html"},
 {text:"math",url:"math.html"},
-{text:"matrix",url:"matrix.html"},
 {text:"mem",url:"mem.html"},
 {text:"nvptx",url:"nvptx.html"},
 {text:"opt",url:"opt.html"},

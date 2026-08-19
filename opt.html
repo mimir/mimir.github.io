@@ -27,6 +27,22 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -122,21 +138,21 @@ $(function(){initNavTree('opt.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md325">Dependencies </a>
+    <a href="#autotoc_md317">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md326">The default pipeline </a>
+    <a href="#autotoc_md318">The default pipeline </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
 Dependencies</h1>
 <p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">%compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">%compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
 <div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
 The default pipeline</h1>
 <div class="fragment"><div class="line">lam extern _default_compile (): %compile.Phase =</div>
 <div class="line">    let optimize =</div>
@@ -159,12 +175,10 @@ The default pipeline</h1>
 <div class="line">        %compile.named &quot;%tensor.lower_to_mem&quot;,</div>
 <div class="line">        // Only run add_mem if the tensor plugin is loaded: tensor bufferization emits %mem.M placeholders that must be stitched into a global mem chain.</div>
 <div class="line">        %compile.cond &quot;tensor&quot; (%compile.named &quot;%mem.add_mem&quot;),</div>
-<div class="line">        %compile.named &quot;%matrix.lower_aff&quot;,</div>
+<div class="line">        %compile.named &quot;%btensor.lower_map_reduce&quot;,</div>
 <div class="line">        %compile.named &quot;%gpu.mem_checks&quot;,</div>
 <div class="line">        %compile.named &quot;%autodiff.eval&quot;,</div>
 <div class="line">        %compile.named &quot;%autodiff.zero_repl&quot;,</div>
-<div class="line">        %compile.named &quot;%matrix.lower_matrix_high_level_map_reduce&quot;,</div>
-<div class="line">        %compile.named &quot;%matrix.lower_matrix_medium_level&quot;,</div>
 <div class="line">        %compile.named &quot;%buffer.lower_ptr&quot;,</div>
 <div class="line">        %compile.named &quot;%affine.lower_index&quot;,</div>
 <div class="line">        %compile.named &quot;%cps.conv&quot;,</div>

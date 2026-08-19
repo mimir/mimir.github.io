@@ -27,6 +27,22 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -122,21 +138,21 @@ $(function(){initNavTree('cps.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md219">Dependencies </a>
+    <a href="#autotoc_md230">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md220">Operations </a>
+    <a href="#autotoc_md231">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md221">%cps.cps2ds </a>
+        <a href="#autotoc_md232">%cps.cps2ds </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md222">Phases </a>
+    <a href="#autotoc_md233">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md223">%cps.conv </a>
+        <a href="#autotoc_md234">%cps.conv </a>
       </li>
     </ul>
   </li>
@@ -149,19 +165,19 @@ $(function(){initNavTree('cps.html','',''); });
 <li>Wrap direct-style functions as CPS functions using an axiom.</li>
 <li>Call CPS functions in direct style using an axiom.</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md230"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md231"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md232"></a>
 %cps.cps2ds</h2>
 <p>This axiom lets the user call a CPS function in direct style. The function is not converted; only the call site is changed. <span class="tt">%cps.cps2ds_dep</span> is the dependently-typed general form; <span class="tt">%cps.cps2ds</span> is the non-dependent shorthand.</p>
 <div class="fragment"><div class="line">axm %cps.cps2ds_dep: {T: *} → [U: T → *] → [Fn [t: T] → U t] → [[t: T] → U t], 3;</div>
 <div class="line">lam %cps.cps2ds      {T U: *}           (f: Fn     T  → U  ):  [    T  → U  ] = %cps.cps2ds_dep (λ [T]: * = U) f;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md233"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md234"></a>
 %cps.conv</h2>
 <p>Converts direct-style functions and calls to CPS.</p>
 <div class="fragment"><div class="line">axm %cps.conv: %compile.Phase;</div>

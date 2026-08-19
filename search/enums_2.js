@@ -12,7 +12,7 @@ var searchData=
   ['cmp_9',['Cmp',['../classmim_1_1Def.html#afefb7dc2241a0caf582a2c4d7ed4b954',1,'mim::Def']]],
   ['cmp_10',['cmp',['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3',1,'mim::plug::math']]],
   ['code_11',['Code',['../namespacemim_1_1plug_1_1refly.html#ac24c63c923883ed7d3fd7cf83a5ba6e0',1,'mim::plug::refly']]],
-  ['concat_12',['concat',['../namespacemim_1_1plug_1_1matrix.html#aaab0d6525ffe559b25902ed0b8cd9bdc',1,'mim::plug::matrix::concat'],['../namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a',1,'mim::plug::tensor::concat']]],
+  ['concat_12',['concat',['../namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085',1,'mim::plug::btensor::concat'],['../namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a',1,'mim::plug::tensor::concat']]],
   ['cond_13',['cond',['../namespacemim_1_1plug_1_1compile.html#aaffcccd734f6667f8fceee27b0c66004',1,'mim::plug::compile']]],
   ['conj_14',['conj',['../namespacemim_1_1plug_1_1regex.html#a503fd044ea11748600b636a1590a3945',1,'mim::plug::regex']]],
   ['const_5fidx_15',['const_idx',['../namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46',1,'mim::plug::demo']]],

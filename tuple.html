@@ -27,6 +27,22 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -122,28 +138,28 @@ $(function(){initNavTree('tuple.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md415">Dependencies </a>
+    <a href="#autotoc_md407">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md416">Operations </a>
+    <a href="#autotoc_md408">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md417">%tuple.typecat </a>
+        <a href="#autotoc_md409">%tuple.typecat </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md418">%tuple.cat </a>
+        <a href="#autotoc_md410">%tuple.cat </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md419">%tuple.append / %tuple.prepend </a>
+        <a href="#autotoc_md411">%tuple.append / %tuple.prepend </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md420">%tuple.head / %tuple.tail </a>
+        <a href="#autotoc_md412">%tuple.head / %tuple.tail </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md421">%tuple.contains </a>
+        <a href="#autotoc_md413">%tuple.contains </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md422">%tuple.zip </a>
+        <a href="#autotoc_md414">%tuple.zip </a>
       </li>
     </ul>
   </li>
@@ -152,12 +168,12 @@ $(function(){initNavTree('tuple.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tuple"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tuple.html" title="The tuple Plugin">mim::plug::tuple</a></dd></dl>
 <p>Utility functions for tuples.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md415"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md407"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md416"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md408"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md417"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md409"></a>
 %tuple.typecat</h2>
 <p>Computes the type of a <span class="tt">%tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="fragment"><div class="line">lam %tuple.typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
 <div class="line">    «i: %core.nat.add (n, m);</div>
@@ -166,7 +182,7 @@ Operations</h1>
 <div class="line">            %core.ncmp.l (nat_i, n),</div>
 <div class="line">            Ts#(%core.bitcast (Idx n) i),</div>
 <div class="line">            Us#(%core.bitcast (Idx m) (%core.nat.sub (nat_i, n))))»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md418"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md410"></a>
 %tuple.cat</h2>
 <p>Concatenates an <span class="tt">n</span>-tuple and an <span class="tt">m</span>-tuple to an <span class="tt">n + m</span>-tuple.</p>
 <div class="fragment"><div class="line">axm %tuple.cat: {n m: Nat}</div>
@@ -174,7 +190,7 @@ Operations</h1>
 <div class="line">                 → [«i: n; Ts#i», «i: m; Us#i»]</div>
 <div class="line">                 → %tuple.typecat Ts Us</div>
 <div class="line">                 , normalize_cat;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md411"></a>
 %tuple.append / %tuple.prepend</h2>
 <p>Appends / prepends a single element to a tuple.</p>
 <div class="fragment"><div class="line">lam %tuple.append   {n: Nat}</div>
@@ -188,7 +204,7 @@ Operations</h1>
 <div class="line">                    (a: T, b: «i: m; Us#i»)</div>
 <div class="line">                  : %tuple.typecat T Us</div>
 <div class="line">                  = %tuple.cat (a, b);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md412"></a>
 %tuple.head / %tuple.tail</h2>
 <p>The first element of a tuple / all elements but the first.</p>
 <div class="fragment"><div class="line">lam %tuple.head {n: Nat}</div>
@@ -202,11 +218,11 @@ Operations</h1>
 <div class="line">    [values: «i: n; Ts#i»]</div>
 <div class="line">  : «i: %core.nat.sub (n, 1); Ts#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))»</div>
 <div class="line">  = ‹i: %core.nat.sub (n, 1); values#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md413"></a>
 %tuple.contains</h2>
 <p>Does the tuple contain the given element?</p>
 <div class="fragment"><div class="line">axm %tuple.contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md414"></a>
 %tuple.zip</h2>
 <p><a href="https://en.wikipedia.org/wiki/Zipping_(computer_science)">Zips</a> several tensors. The signature will likely change in the future:</p><ul>
 <li><span class="tt">r</span>: rank of the tensors to zip</li>

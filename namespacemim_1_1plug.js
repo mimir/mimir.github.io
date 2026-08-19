@@ -2,6 +2,7 @@ var namespacemim_1_1plug =
 [
     [ "affine", "namespacemim_1_1plug_1_1affine.html", "namespacemim_1_1plug_1_1affine" ],
     [ "autodiff", "namespacemim_1_1plug_1_1autodiff.html", "namespacemim_1_1plug_1_1autodiff" ],
+    [ "btensor", "namespacemim_1_1plug_1_1btensor.html", "namespacemim_1_1plug_1_1btensor" ],
     [ "buffer", "namespacemim_1_1plug_1_1buffer.html", "namespacemim_1_1plug_1_1buffer" ],
     [ "clos", "namespacemim_1_1plug_1_1clos.html", "namespacemim_1_1plug_1_1clos" ],
     [ "core", "namespacemim_1_1plug_1_1core.html", [
@@ -386,7 +387,6 @@ var namespacemim_1_1plug =
       [ "type_f", "namespacemim_1_1plug_1_1math.html#aa4960fe0b7013ecd6c2a2bd437246212", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1math.html#a05ac4b1ef1e0a51c44e4b0622835c4f4", null ]
     ] ],
-    [ "matrix", "namespacemim_1_1plug_1_1matrix.html", "namespacemim_1_1plug_1_1matrix" ],
     [ "mem", "namespacemim_1_1plug_1_1mem.html", "namespacemim_1_1plug_1_1mem" ],
     [ "regex", "namespacemim_1_1plug_1_1regex.html", "namespacemim_1_1plug_1_1regex" ],
     [ "tensor", "namespacemim_1_1plug_1_1tensor.html", "namespacemim_1_1plug_1_1tensor" ],

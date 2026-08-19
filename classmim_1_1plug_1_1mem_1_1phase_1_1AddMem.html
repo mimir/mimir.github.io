@@ -27,6 +27,22 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -250,9 +266,9 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 <p>Because the <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> visits operands before their users, the current memory naturally threads through the data-dependency order - no separate schedule is required. Independent <span class="tt">⊥</span>/<span class="tt">⊤</span> placeholder chains are thereby linearized into one chain in encounter order.</p>
 <p>Three rules keep the rewrite type-correct in the presence of axiom-pinned ABIs:</p><ul>
-<li>Only continuations (<a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="Is this a continuation - i.e. is the Pi::codom mim::Bottom?">Pi::isa_cn</a>) are mem-extended; direct-style functions (e.g. the affine index mappings passed to <span class="tt">matrix.map_reduce_aff</span>) keep their signature.</li>
+<li>Only continuations (<a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="Is this a continuation - i.e. is the Pi::codom mim::Bottom?">Pi::isa_cn</a>) are mem-extended; direct-style functions (e.g. the affine index mappings passed to <span class="tt">btensor.map_reduce</span>) keep their signature.</li>
 <li>A pi whose leading parameter carries the memory <em>grouped</em> (the <span class="tt">Fn [mem.M 0, To, ins] → …</span> shape of a mem-threaded combiner) counts as already mem-threaded.</li>
-<li>Lams reachable from axm-app arguments are preserved untouched: axioms pin their arguments' ABI (e.g. the combiner slot of <span class="tt">matrix.map_reduce_aff</span>), so mem-extending them would be ill-typed. </li>
+<li>Lams reachable from axm-app arguments are preserved untouched: axioms pin their arguments' ABI (e.g. the combiner slot of <span class="tt">btensor.map_reduce</span>), so mem-extending them would be ill-typed. </li>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="add__mem_8h_source.html#l00032">32</a> of file <a class="el" href="add__mem_8h_source.html">add_mem.h</a>.</p>

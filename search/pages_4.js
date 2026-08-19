@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['effects_0',['Effects',['../mem.html#autotoc_md308',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md318',1,'Operations w/o Side Effects']]],
+  ['effects_0',['Effects',['../mem.html#autotoc_md300',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md310',1,'Operations w/o Side Effects']]],
   ['elsewhere_1',['Why this is hard elsewhere',['../phases.html#autotoc_md91',1,'']]],
   ['embedded_20python_20dsl_2',['Embedded Python DSL',['../python.html#autotoc_md112',1,'']]],
-  ['emit_3',['emit',['../ll.html#autotoc_md262',1,'%ll.emit'],['../ll_nvptx.html#autotoc_md265',1,'%ll_nvptx.emit']]],
-  ['empty_4',['%regex.empty',['../regex.html#autotoc_md382',1,'']]],
+  ['emit_3',['emit',['../ll.html#autotoc_md273',1,'%ll.emit'],['../ll_nvptx.html#autotoc_md276',1,'%ll_nvptx.emit']]],
+  ['empty_4',['%regex.empty',['../regex.html#autotoc_md374',1,'']]],
   ['eq_5',['%core.icmp.xYgLE (eq)',['../autodiff.html#autotoc_md161',1,'']]],
-  ['equiv_6',['%refly.equiv',['../refly.html#autotoc_md363',1,'']]],
-  ['er_7',['%math.er',['../math.html#autotoc_md275',1,'']]],
+  ['equiv_6',['%refly.equiv',['../refly.html#autotoc_md355',1,'']]],
+  ['er_7',['%math.er',['../math.html#autotoc_md286',1,'']]],
   ['error_20handling_20helpers_8',['Error Handling Helpers',['../python.html#autotoc_md110',1,'']]],
   ['evaluation_9',['Partial Evaluation',['../dev.html#autotoc_md25',1,'']]],
   ['example_10',['Example',['../coding.html#autotoc_md8',1,'']]],
@@ -18,9 +18,9 @@ var searchData=
   ['execution_20model_15',['Execution Model',['../phases.html#autotoc_md79',1,'']]],
   ['existing_20in_20tree_20plugin_16',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md106',1,'']]],
   ['exists_20at_20all_17',['Why the guard exists at all',['../phases.html#autotoc_md88',1,'']]],
-  ['exp_18',['%math.exp',['../math.html#autotoc_md274',1,'']]],
+  ['exp_18',['%math.exp',['../math.html#autotoc_md285',1,'']]],
   ['expressions_19',['Expressions',['../langref.html#expr',1,'Expressions'],['../langref.html#autotoc_md61',1,'Expressions']]],
   ['extending_20the_20bindings_20',['Extending the Bindings',['../python.html#python_extending',1,'']]],
   ['extract_20an_20existing_20in_20tree_20plugin_21',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md106',1,'']]],
-  ['extrema_22',['extrema',['../core.html#autotoc_md210',1,'%core.extrema'],['../math.html#autotoc_md270',1,'%math.extrema']]]
+  ['extrema_22',['extrema',['../core.html#autotoc_md221',1,'%core.extrema'],['../math.html#autotoc_md281',1,'%math.extrema']]]
 ];

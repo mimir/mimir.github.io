@@ -27,6 +27,22 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -240,7 +256,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bufferizes the low-level tensor axioms onto the shared <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1buffer.html" title="The buffer Plugin">buffer</a></span> layer. </p>
-<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span> become <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span> become their buffer-world <span class="tt">matrix.*</span> counterparts, and tensor array values <span class="tt">«s; T»</span> become <span class="tt">buffer.Buf (r, s, T)</span> handles. Afterwards <span class="tt">buffer.lower_ptr</span> lowers the buffer layer to <span class="tt">mem.Ptr</span> + <span class="tt">mem.lea</span> / <span class="tt">mem.load</span> / <span class="tt">mem.store</span>.</p>
+<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span> become <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span> become their buffer-world <span class="tt">btensor.*</span> counterparts, and tensor array values <span class="tt">«s; T»</span> become <span class="tt">buffer.Buf (r, s, T)</span> handles. Afterwards <span class="tt">buffer.lower_ptr</span> lowers the buffer layer to <span class="tt">mem.Ptr</span> + <span class="tt">mem.lea</span> / <span class="tt">mem.load</span> / <span class="tt">mem.store</span>.</p>
 <p>This phase is <em>conversion-only</em>: it rewrites types and operations but does not thread the <span class="tt">mem.M</span> memory monad itself. Emitted buffer operations consume a <span class="tt">⊥: mem.M 0</span> placeholder (or a short local chain rooted in a LowerToMem::fresh_mem continuation's var), and the SSA value dependencies keep them anchored and ordered. The <span class="tt">mem.add_mem</span> phase (<a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html" title="Threads the mem.M memory monad through the world: mem-extends continuations and rewires every memory ...">mim::plug::mem::phase::AddMem</a>), scheduled right after this one in the pipeline, then mem-extends all continuations and rewires every memory operand to the scheduler-placed current memory — handling returns, error continuations, join points, branch arms, and interleaving with a caller's own memory operations uniformly.</p>
 <p>Which array types denote tensors (as opposed to index/shape arrays that share the <span class="tt"><a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a></span> structure) is determined by <em>role</em>: a pre-pass collects the array operand/result types of the tensor operations, and only those types are rewritten to <span class="tt">Buf</span> — and only at function boundaries, never as a global type rewrite. </p>
 

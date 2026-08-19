@@ -75,6 +75,11 @@ var annotated_dup =
             [ "Eval", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval" ]
           ] ]
         ] ],
+        [ "btensor", "namespacemim_1_1plug_1_1btensor.html", [
+          [ "phase", "namespacemim_1_1plug_1_1btensor_1_1phase.html", [
+            [ "LowerMapReduce", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce" ]
+          ] ]
+        ] ],
         [ "buffer", "namespacemim_1_1plug_1_1buffer.html", [
           [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ]
         ] ],
@@ -111,13 +116,6 @@ var annotated_dup =
           [ "Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", "classmim_1_1plug_1_1ll__nvptx_1_1Emit" ],
           [ "HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter" ],
           [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ]
-        ] ],
-        [ "matrix", "namespacemim_1_1plug_1_1matrix.html", [
-          [ "phase", "namespacemim_1_1plug_1_1matrix_1_1phase.html", [
-            [ "LowerAff", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerAff.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerAff" ],
-            [ "LowerMatrixHighLevelMapRed", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixHighLevelMapRed.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixHighLevelMapRed" ],
-            [ "LowerMatrixMediumLevel", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixMediumLevel.html", "classmim_1_1plug_1_1matrix_1_1phase_1_1LowerMatrixMediumLevel" ]
-          ] ]
         ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [

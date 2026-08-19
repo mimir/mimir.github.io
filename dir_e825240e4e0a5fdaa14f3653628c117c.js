@@ -2,6 +2,7 @@ var dir_e825240e4e0a5fdaa14f3653628c117c =
 [
     [ "affine", "dir_8d24e27d73faea8351edf90f42805032.html", "dir_8d24e27d73faea8351edf90f42805032" ],
     [ "autodiff", "dir_ce447323c3a2264f701af78452cc6760.html", "dir_ce447323c3a2264f701af78452cc6760" ],
+    [ "btensor", "dir_c0eb5dbbc6fc9a9859f5924b7aa74251.html", "dir_c0eb5dbbc6fc9a9859f5924b7aa74251" ],
     [ "buffer", "dir_4b68f274d0492caa54709b1c7878ccde.html", "dir_4b68f274d0492caa54709b1c7878ccde" ],
     [ "clos", "dir_ded25568453abcdd28d422036317e29b.html", "dir_ded25568453abcdd28d422036317e29b" ],
     [ "compile", "dir_5fefecb038edfd562c668bd712d7f49b.html", "dir_5fefecb038edfd562c668bd712d7f49b" ],
@@ -12,7 +13,6 @@ var dir_e825240e4e0a5fdaa14f3653628c117c =
     [ "ll", "dir_3c26acf5aa7d80fae3569b3fe7273302.html", "dir_3c26acf5aa7d80fae3569b3fe7273302" ],
     [ "ll_nvptx", "dir_4b1d03e261eb21553e7e75552dc222c6.html", "dir_4b1d03e261eb21553e7e75552dc222c6" ],
     [ "math", "dir_9a4d2ab5d7052ff5e52692f522ee4768.html", "dir_9a4d2ab5d7052ff5e52692f522ee4768" ],
-    [ "matrix", "dir_f2fe2310ad44617c40e7ecb7cdc459b8.html", "dir_f2fe2310ad44617c40e7ecb7cdc459b8" ],
     [ "mem", "dir_2b8155c79fe456239a885e12a4388c9f.html", "dir_2b8155c79fe456239a885e12a4388c9f" ],
     [ "nvptx", "dir_83cc86c5e3255f7e14086c480ca69442.html", "dir_83cc86c5e3255f7e14086c480ca69442" ],
     [ "opt", "dir_e884a516ff4eb84233003344b2ceffc3.html", "dir_e884a516ff4eb84233003344b2ceffc3" ],
