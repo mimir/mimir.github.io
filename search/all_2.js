@@ -43,7 +43,7 @@ var searchData=
   ['classical_20picture_40',['The classical picture',['../phases.html#autotoc_md89',1,'']]],
   ['cleanup_41',['Cleanup',['../classmim_1_1Cleanup.html',1,'mim::Cleanup'],['../classmim_1_1Cleanup.html#af1de642ec25e581a4091c3f1e48beaee',1,'mim::Cleanup::Cleanup(World &amp;world)'],['../classmim_1_1Cleanup.html#ac181084cd594a1b51302b8f4b6a03a10',1,'mim::Cleanup::Cleanup(World &amp;world, flags_t annex)'],['../phases.html#autotoc_md78',1,'Cleanup']]],
   ['cleanup_42',['cleanup',['../namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a',1,'mim::plug::compile']]],
-  ['clear_43',['clear',['../classmim_1_1Error.html#a9f2ae1bff9bfd5f973026423470b8bf5',1,'mim::Error::clear()'],['../classmim_1_1Sets_1_1Set_1_1iterator.html#af7d4de5e544ae02db7375fb619b1a99d',1,'mim::Sets::Set::iterator::clear()'],['../classmim_1_1unique__queue.html#aaf24a124fbb2b7e8e652e27b22466060',1,'mim::unique_queue::clear()']]],
+  ['clear_43',['clear',['../classmim_1_1Error.html#a9f2ae1bff9bfd5f973026423470b8bf5',1,'mim::Error::clear()'],['../classmim_1_1Sets_1_1Set_1_1iterator.html#a3745b135915454475c5b2ad2e333d2b1',1,'mim::Sets::Set::iterator::clear()'],['../classmim_1_1unique__queue.html#aaf24a124fbb2b7e8e652e27b22466060',1,'mim::unique_queue::clear()']]],
   ['cli_2emd_44',['cli.md',['../cli_8md.html',1,'']]],
   ['clock_45',['Clock',['../classmim_1_1Profiler.html#a0578f7a313b6943d47d1e24028d952bc',1,'mim::Profiler']]],
   ['clos_20alloc_5fjmpbuf_46',['%clos.alloc_jmpbuf',['../clos.html#autotoc_md180',1,'']]],

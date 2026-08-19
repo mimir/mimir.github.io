@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['tab_0',['tab',['../classmim_1_1Emitter.html#a59ec86ba00b809dae2415fe8d7f702b2',1,'mim::Emitter::tab'],['../structmim_1_1ast_1_1S.html#a54fab320707ca39f7305431cb6c051d4',1,'mim::ast::S::tab'],['../structmim_1_1ast_1_1R.html#a1863b6de85ea7cd8147613900f6e07ad',1,'mim::ast::R::tab']]],
-  ['tag_1',['tag',['../classmim_1_1Driver_1_1Imports.html#a77a6d63d306c0c9891b6d4dab3db83f7',1,'mim::Driver::Imports::Entry::tag'],['../structmim_1_1Error_1_1Msg.html#a48557b999065c7db3a7f8bddde75f0fc',1,'mim::Error::Msg::tag'],['../namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5',1,'mim::ast::AnnexInfo.sym::tag'],['../namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5',1,'mim::ast::AnnexInfo.id::tag']]],
-  ['top_2',['top',['../classmim_1_1lct_1_1Node.html#abcb4a31fc88a7e97ea7c07c22a0afbbe',1,'mim::lct::Node']]],
-  ['trace_5fgids_3',['trace_gids',['../structmim_1_1Flags.html#a6751eae1d81d212268261fecba66fa6a',1,'mim::Flags']]],
-  ['trip_4',['trip',['../namespacemim_1_1ast.html#a7da7993d1249cb28b4e0c3e8524d15d2',1,'mim::ast::AnnexInfo.id']]],
-  ['trip_5f_5',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
-  ['trip_5fend_6',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
-  ['type_7',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
-  ['type_5fdecls_5f_8',['type_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879',1,'mim::plug::ll::Emitter']]],
-  ['types_5f_9',['types_',['../classmim_1_1Emitter.html#a95c0ebfac75b42f41dd1bb134059c1f4',1,'mim::Emitter']]]
+  ['scalarize_5fthreshold_0',['scalarize_threshold',['../structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7',1,'mim::Flags']]],
+  ['schedule_5f_1',['schedule_',['../classmim_1_1Emitter.html#a024a7069ea511418e459905ba3314aae',1,'mim::Emitter']]],
+  ['scheduler_5f_2',['scheduler_',['../classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e',1,'mim::Emitter']]],
+  ['sep_3',['sep',['../structmim_1_1ast_1_1R.html#a35809d559dec171dcc6bfa30a6d8ea21',1,'mim::ast::R']]],
+  ['show_5fhidden_4',['show_hidden',['../namespacemim.html#a9e33595ab8eda7b2df31eccc5176345d',1,'mim::DotConfig']]],
+  ['sigma2sym2idx_5',['sigma2sym2idx',['../classmim_1_1ast_1_1Emitter.html#aa480a2d5ca25fb73a51ef734f569a708',1,'mim::ast::Emitter']]],
+  ['simd_5fphi_5f_6',['simd_phi_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae829eb2d9c43cf8a881c3b7712d26994',1,'mim::plug::ll::Emitter']]],
+  ['start_7',['start',['../structmim_1_1Profiler_1_1Span.html#a522e8a14752035768360a059c296a3ef',1,'mim::Profiler::Span']]],
+  ['stop_8',['stop',['../structmim_1_1Profiler_1_1Span.html#a80fca893615af904426cc9f8cc4f34af',1,'mim::Profiler::Span']]],
+  ['str_9',['str',['../structmim_1_1Error_1_1Msg.html#aaa0aa4ce4f863fa5b91c557d18d263ac',1,'mim::Error::Msg']]],
+  ['subs_10',['subs',['../structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37',1,'mim::ast::AnnexInfo']]],
+  ['substs_11',['substs',['../classmim_1_1World.html#a4b1bfdc913535dc888b1e9547cd85df2',1,'mim::World::Move.arena']]],
+  ['suffix_12',['suffix',['../structmim_1_1Version.html#adab4afd7dcbeb498f4d5631dbf65dcc3',1,'mim::Version']]],
+  ['sym_13',['sym',['../structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c',1,'mim::ast::AnnexInfo::sym'],['../classmim_1_1Driver_1_1Imports.html#a6beeb2c9520722f067b2697d6de8fa94',1,'mim::Driver::Imports::Entry::sym'],['../classmim_1_1World_1_1Annexes.html#a33c4fb5a895f0c15bae4743eb3b41fb6',1,'mim::World::Annexes::Entry::sym']]]
 ];

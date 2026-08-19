@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['w_0',['w',['../structmim_1_1plug_1_1regex_1_1app__range.html#a2761d4060fc6d48c0bb624d69ad06286',1,'mim::plug::regex::app_range']]],
-  ['watchpoints_1',['watchpoints',['../structmim_1_1World_1_1State.html#a22d5dcbcefd078fb05bc965ab3c6ebbc',1,'mim::World::State']]]
+  ['vars_5fdecls_5f_0',['vars_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#aaff1b1d0552221ddf170ccd92af7bd9a',1,'mim::plug::ll::Emitter']]],
+  ['version_1',['version',['../structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251',1,'mim::Plugin']]],
+  ['version_5fre_2',['VERSION_RE',['../namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328',1,'deploy']]]
 ];

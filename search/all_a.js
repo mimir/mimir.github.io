@@ -51,7 +51,8 @@ var searchData=
   ['key_48',['Key',['../ord.html#autotoc_md339',1,'%ord.Key'],['../namespacemim_1_1plug_1_1ord.html#a87a29d8695533c2820227f29d2124532',1,'mim::plug::ord::Key']]],
   ['key_20innovations_49',['🔥 Key Innovations',['../index.html#autotoc_md118',1,'']]],
   ['keywords_50',['Keywords',['../langref.html#autotoc_md50',1,'']]],
-  ['kind_51',['Kind',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42fafaa5ce425501a5673f4cd7f55c22f97d',1,'mim::UMax']]],
-  ['kinds_20and_20builtin_20types_52',['Kinds and Builtin Types',['../langref.html#autotoc_md53',1,'']]],
-  ['known_20arguments_53',['Known Arguments',['../cli.html#autotoc_md1',1,'']]]
+  ['kids_51',['kids',['../classmim_1_1lct_1_1Node.html#a34ec24517d4e1c8cdb20b6d15e5495fa',1,'mim::lct::Node']]],
+  ['kind_52',['Kind',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42fafaa5ce425501a5673f4cd7f55c22f97d',1,'mim::UMax']]],
+  ['kinds_20and_20builtin_20types_53',['Kinds and Builtin Types',['../langref.html#autotoc_md53',1,'']]],
+  ['known_20arguments_54',['Known Arguments',['../cli.html#autotoc_md1',1,'']]]
 ];
