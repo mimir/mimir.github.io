@@ -220,6 +220,7 @@ var annotated_dup =
       [ "Dispatch", "classmim_1_1Dispatch.html", "classmim_1_1Dispatch" ],
       [ "Error", "classmim_1_1Error.html", "classmim_1_1Error" ],
       [ "Dbg", "structmim_1_1Dbg.html", "structmim_1_1Dbg" ],
+      [ "DbgKey", "classmim_1_1DbgKey.html", "classmim_1_1DbgKey" ],
       [ "Log", "classmim_1_1Log.html", "classmim_1_1Log" ],
       [ "Profiler", "classmim_1_1Profiler.html", "classmim_1_1Profiler" ],
       [ "Sets", "classmim_1_1Sets.html", "classmim_1_1Sets" ],

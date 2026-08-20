@@ -6,7 +6,6 @@ var classmim_1_1App =
     [ "callee_type", "classmim_1_1App.html#a32c9f4063d4704399111ca2a9ebdf036", null ],
     [ "curry", "classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99", null ],
     [ "decurry", "classmim_1_1App.html#a7683660e8ed01ddc495f8859393b720e", null ],
-    [ "rebuild_", "classmim_1_1App.html#af598e21caeb263950916ebe16075fafd", null ],
     [ "trip", "classmim_1_1App.html#adf8da6305b674a2c035bde102db37740", null ],
     [ "uncurry", "classmim_1_1App.html#a7ef3a62008e14c5bd706e56bf81b7d31", null ],
     [ "uncurry", "classmim_1_1App.html#a88adc23138a6b3ce936b0af483421a11", null ],

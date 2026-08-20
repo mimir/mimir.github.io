@@ -5,7 +5,7 @@ var classmim_1_1Axm_1_1IsA =
     [ "axm", "classmim_1_1Axm_1_1IsA.html#a3790dafb43cc9544535ce85056c71934", null ],
     [ "base", "classmim_1_1Axm_1_1IsA.html#a0435403d6bd226f0773aee962e52f3a5", null ],
     [ "id", "classmim_1_1Axm_1_1IsA.html#a1aeeadf51205078976ea23075a079d9f", null ],
-    [ "operator bool", "classmim_1_1Axm_1_1IsA.html#a13990e87c731f838770b8ebd695c394b", null ],
+    [ "operator bool", "classmim_1_1Axm_1_1IsA.html#a7404a78fbc3745178d161a6214a09d67", null ],
     [ "operator const D *", "classmim_1_1Axm_1_1IsA.html#af520ae0a3f0506bf7435c22f1e78ccfd", null ],
     [ "operator->", "classmim_1_1Axm_1_1IsA.html#a1f28dbd66a944ac12517a71b88ca3b43", null ],
     [ "plugin", "classmim_1_1Axm_1_1IsA.html#a8e7c9b940c94c2705e5e58b89b643f73", null ],

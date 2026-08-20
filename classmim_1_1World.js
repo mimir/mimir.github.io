@@ -1,13 +1,17 @@
 var classmim_1_1World =
 [
+    [ "CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", [
+      [ "key", "classmim_1_1World.html#ab3cf23206d16cfb2aaadaabb1c32dd92", null ],
+      [ "loc", "classmim_1_1World.html#abdb537c1c783aa4c2b68ed2ad9ec6dc3", null ]
+    ] ],
     [ "State", "structmim_1_1World_1_1State.html", "structmim_1_1World_1_1State" ],
-    [ "ScopedLoc", "structmim_1_1World_1_1ScopedLoc.html", "structmim_1_1World_1_1ScopedLoc" ],
     [ "Externals", "classmim_1_1World_1_1Externals.html", "classmim_1_1World_1_1Externals" ],
     [ "Annexes", "classmim_1_1World_1_1Annexes.html", "classmim_1_1World_1_1Annexes" ],
     [ "Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", [
       [ "defs", "classmim_1_1World.html#acd8fc2597193b4c938e7ff50062936e3", null ],
       [ "substs", "classmim_1_1World.html#a4b1bfdc913535dc888b1e9547cd85df2", null ]
     ] ],
+    [ "ScopedLoc", "classmim_1_1World.html#a91a9c8bf7a320ea48b645725600d4a29", null ],
     [ "World", "classmim_1_1World.html#a21f49c56917226caa95a8b83394b6690", null ],
     [ "World", "classmim_1_1World.html#a29adf201f52b7026225b705bbedf105d", null ],
     [ "World", "classmim_1_1World.html#aef94e6300d8fc8af845805bdfd02c8b2", null ],
@@ -46,6 +50,7 @@ var classmim_1_1World =
     [ "con", "classmim_1_1World.html#a0c7dfef7a0114fbf8dbd040dbf50bf5e", null ],
     [ "curr_gid", "classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685", null ],
     [ "curr_run", "classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3", null ],
+    [ "dbg_key", "classmim_1_1World.html#ac4a43b135c9d9d83f931f41dab0105f8", null ],
     [ "debug_dump", "classmim_1_1World.html#a888c0001cb304f075ddcb69ad0063996", null ],
     [ "dot", "classmim_1_1World.html#aa0d4eefcd74bcc00658434908f6ce5ec", null ],
     [ "dot", "classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a", null ],
@@ -166,7 +171,7 @@ var classmim_1_1World =
     [ "prod", "classmim_1_1World.html#ac89faba0bc1bda24eddee799708865ed", null ],
     [ "prod", "classmim_1_1World.html#ac4e4f8fed18d6d76d31a0c107382c762", null ],
     [ "proxy", "classmim_1_1World.html#a341fb44cab26f77ad8bc9211f25db154", null ],
-    [ "push", "classmim_1_1World.html#a87a7eb81c623ecbfa5108905f2985215", null ],
+    [ "push", "classmim_1_1World.html#a530372f1dfadd2f5004fba5692675dab", null ],
     [ "raw_app", "classmim_1_1World.html#ac49e089f686b5294788c9d71e59b5f98", null ],
     [ "raw_app", "classmim_1_1World.html#abcd10262c0fd72a56ca0257ad088b51d", null ],
     [ "raw_app", "classmim_1_1World.html#aa9647c5c7e5972427b919fb8c9079449", null ],
@@ -182,7 +187,6 @@ var classmim_1_1World =
     [ "seq_unsafe", "classmim_1_1World.html#a022cf924cdccb8d6c8528b9190b91b79", null ],
     [ "set", "classmim_1_1World.html#a3f10b56130f94afb1c8ad0ac9c728da6", null ],
     [ "set", "classmim_1_1World.html#a927a5919dd9570c51e181079144bfc67", null ],
-    [ "set_loc", "classmim_1_1World.html#a6340bada165a5ce8908ce0540289e269", null ],
     [ "sigma", "classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0", null ],
     [ "sigma", "classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856", null ],
     [ "split", "classmim_1_1World.html#ae644ffbc67d772ab717fbe02ba1db250", null ],
@@ -228,5 +232,6 @@ var classmim_1_1World =
     [ "write", "classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd", null ],
     [ "write", "classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb", null ],
     [ "zonker", "classmim_1_1World.html#a2a88991106de4223e4ed8d5fb0c7bfa0", null ],
-    [ "swap", "classmim_1_1World.html#a135815fb4bc60759449fe056c54a7eaa", null ]
+    [ "swap", "classmim_1_1World.html#a135815fb4bc60759449fe056c54a7eaa", null ],
+    [ "Num_Lit_Nats", "classmim_1_1World.html#ab69b7b834fe928086204e2adae0cc9c4", null ]
 ];

@@ -118,7 +118,7 @@ var searchData=
   ['ptrs_115',['Ptrs',['../namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed',1,'mim::ast']]],
   ['publications_116',['📖 Publications',['../index.html#autotoc_md125',1,'']]],
   ['pullback_5ftype_117',['pullback_type',['../namespacemim_1_1plug_1_1autodiff.html#aea750f837c2ff1b730c268bf3c88cb26',1,'mim::plug::autodiff']]],
-  ['push_118',['push',['../classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96',1,'mim::Rewriter::push()'],['../classmim_1_1VarRewriter.html#ac29d30f671daec7c01345363249542e7',1,'mim::VarRewriter::push()'],['../classmim_1_1unique__queue.html#ad2d075da9d644427c35f019ca2b5bb9e',1,'mim::unique_queue::push()'],['../classmim_1_1World.html#a87a7eb81c623ecbfa5108905f2985215',1,'mim::World::push()'],['../classmim_1_1ast_1_1Scopes.html#a7b66277eef69295c498385f34ad3ca54',1,'mim::ast::Scopes::push()']]],
+  ['push_118',['push',['../classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96',1,'mim::Rewriter::push()'],['../classmim_1_1VarRewriter.html#ac29d30f671daec7c01345363249542e7',1,'mim::VarRewriter::push()'],['../classmim_1_1unique__queue.html#ad2d075da9d644427c35f019ca2b5bb9e',1,'mim::unique_queue::push()'],['../classmim_1_1World.html#a530372f1dfadd2f5004fba5692675dab',1,'mim::World::push()'],['../classmim_1_1ast_1_1Scopes.html#a7b66277eef69295c498385f34ad3ca54',1,'mim::ast::Scopes::push()']]],
   ['pxr24_119',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
   ['pxr24_120',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]],
   ['python_20bindings_121',['Python Bindings',['../python.html',1,'']]],

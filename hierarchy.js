@@ -19,7 +19,9 @@ var hierarchy =
     [ "mim::Checker", "classmim_1_1Checker.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
+    [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
     [ "mim::Dbg", "structmim_1_1Dbg.html", null ],
+    [ "mim::DbgKey", "classmim_1_1DbgKey.html", null ],
     [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
@@ -41,6 +43,7 @@ var hierarchy =
       [ "mim::Vector< const Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Range >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< mim::Dbg >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< size_t >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Profiler::Span >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],
@@ -258,7 +261,6 @@ var hierarchy =
     ] ],
     [ "mim::ast::S", "structmim_1_1ast_1_1S.html", null ],
     [ "mim::Scheduler", "classmim_1_1Scheduler.html", null ],
-    [ "mim::World::ScopedLoc", "structmim_1_1World_1_1ScopedLoc.html", null ],
     [ "mim::ast::Scopes", "classmim_1_1ast_1_1Scopes.html", null ],
     [ "mim::Select", "classmim_1_1Select.html", [
       [ "mim::Branch", "classmim_1_1Branch.html", null ]
@@ -400,5 +402,6 @@ var hierarchy =
     [ "const bool", "namespace_3globalScope_4.html#classconst_01bool", null ],
     [ "int", "namespace_3globalScope_4.html#classint", null ],
     [ "list&lt; DFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01DFANode_01_4", null ],
-    [ "list&lt; NFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01NFANode_01_4", null ]
+    [ "list&lt; NFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01NFANode_01_4", null ],
+    [ "static constexpr bool", "namespace_3globalScope_4.html#classstatic_01constexpr_01bool", null ]
 ];

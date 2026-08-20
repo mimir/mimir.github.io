@@ -8,6 +8,8 @@ var classmim_1_1Driver =
     [ "add_arg", "classmim_1_1Driver.html#ae61bdd6efe4bd638f97f58d43c94e6bc", null ],
     [ "add_search_path", "classmim_1_1Driver.html#a22e91be0c9317382a408550a00200777", null ],
     [ "args", "classmim_1_1Driver.html#a3e639dbc05817a9ad41ea6cf7a545219", null ],
+    [ "dbg", "classmim_1_1Driver.html#a4b2096e3c000109d8e3e716fe91d22f7", null ],
+    [ "dbg", "classmim_1_1Driver.html#aae325097b1011d301ff015916aeb435a", null ],
     [ "flags", "classmim_1_1Driver.html#ab9bfcad7e7aa1cbbd7a8678dd5864e3c", null ],
     [ "flags", "classmim_1_1Driver.html#a78b10fb4e8109c0ebe30d86b7cac7d28", null ],
     [ "get_fun_ptr", "classmim_1_1Driver.html#ac9350a2290817ca8f25b72ba85d24032", null ],
