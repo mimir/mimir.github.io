@@ -4,6 +4,11 @@ var autodiff_2autogen_8h =
     [ "mim::plug::autodiff::AD", "namespacemim_1_1plug_1_1autodiff.html#ad4255585ac73ccd9e621fd1ccf342064", null ],
     [ "mim::plug::autodiff::ad", "namespacemim_1_1plug_1_1autodiff.html#afb5a3e7eb156faf3bf02f211e7ad22ed", null ],
     [ "mim::plug::autodiff::add", "namespacemim_1_1plug_1_1autodiff.html#adec076a151d709a29626cbe2a3c20337", null ],
+    [ "mim::plug::autodiff::diff", "namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2", [
+      [ "mim::plug::autodiff::diff::core_icmp_xYgLE", "namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a3e1c7c0cb0758565df59b2b4acf8d6ff", null ],
+      [ "mim::plug::autodiff::diff::core_wrap_add", "namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a48f6bbd0b74b75043761bdd3c24bce20", null ],
+      [ "mim::plug::autodiff::diff::core_wrap_mul", "namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2abd92a780b9468178527f7bc8c1260c99", null ]
+    ] ],
     [ "mim::plug::autodiff::eval", "namespacemim_1_1plug_1_1autodiff.html#adf94367a8aeb140540cb64f07e46fcf8", null ],
     [ "mim::plug::autodiff::sum", "namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420", null ],
     [ "mim::plug::autodiff::Tangent", "namespacemim_1_1plug_1_1autodiff.html#a731a934813e6197c347e831cb312acda", null ],

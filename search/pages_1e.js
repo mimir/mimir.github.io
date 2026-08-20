@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20publications_0',['📖 Publications',['../index.html#autotoc_md125',1,'']]]
+  ['📦_20install_20optional_0',['📦 Install (Optional)',['../index.html#autotoc_md117',1,'']]]
 ];

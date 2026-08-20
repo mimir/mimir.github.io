@@ -8,14 +8,13 @@ var searchData=
   ['pool_5fimpl_5',['pool_impl',['../namespacemim_1_1plug_1_1tensor.html#af6e21969cf9ba718efd729276a836057',1,'mim::plug::tensor']]],
   ['pow_6',['pow',['../namespacemim_1_1plug_1_1math.html#a638f19e14b30d84e0a57f808645bc3d7',1,'mim::plug::math']]],
   ['prec_7',['Prec',['../namespacemim_1_1ast.html#afc6cb12ae859bd6554aebf244d2db28a',1,'mim::ast::Prec'],['../namespacemim.html#afc6cb12ae859bd6554aebf244d2db28a',1,'mim::Prec']]],
-  ['prefix_5fcleanup_8',['prefix_cleanup',['../namespacemim_1_1plug_1_1compile.html#ad06d79c465889ac45d9c8e12598b344b',1,'mim::plug::compile']]],
-  ['prepend_9',['prepend',['../namespacemim_1_1plug_1_1tuple.html#ac27303d7e38479898972453b4e58f1f2',1,'mim::plug::tuple']]],
-  ['product_5f2d_10',['product_2d',['../namespacemim_1_1plug_1_1btensor.html#aba813b28b836393826b0878bcccd66fb',1,'mim::plug::btensor::product_2d'],['../namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7',1,'mim::plug::tensor::product_2d']]],
-  ['product_5f2d_5fimpl_11',['product_2d_impl',['../namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d',1,'mim::plug::tensor']]],
-  ['profile_12',['Profile',['../structmim_1_1Flags.html#a859d1deec88adc34df34f6662250d9f5',1,'mim::Flags']]],
-  ['proj_5fmap_13',['proj_map',['../namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864',1,'mim::plug::btensor::proj_map'],['../namespacemim_1_1plug_1_1tensor.html#ac2ee92fd2968762dd2c8939940a99797',1,'mim::plug::tensor::proj_map']]],
-  ['ptr_14',['Ptr',['../namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06',1,'mim::plug::mem']]],
-  ['ptr0_15',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
-  ['pxr24_16',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
-  ['pxr24_17',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
+  ['prepend_8',['prepend',['../namespacemim_1_1plug_1_1tuple.html#ac27303d7e38479898972453b4e58f1f2',1,'mim::plug::tuple']]],
+  ['product_5f2d_9',['product_2d',['../namespacemim_1_1plug_1_1btensor.html#aba813b28b836393826b0878bcccd66fb',1,'mim::plug::btensor::product_2d'],['../namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7',1,'mim::plug::tensor::product_2d']]],
+  ['product_5f2d_5fimpl_10',['product_2d_impl',['../namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d',1,'mim::plug::tensor']]],
+  ['profile_11',['Profile',['../structmim_1_1Flags.html#a859d1deec88adc34df34f6662250d9f5',1,'mim::Flags']]],
+  ['proj_5fmap_12',['proj_map',['../namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864',1,'mim::plug::btensor::proj_map'],['../namespacemim_1_1plug_1_1tensor.html#ac2ee92fd2968762dd2c8939940a99797',1,'mim::plug::tensor::proj_map']]],
+  ['ptr_13',['Ptr',['../namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06',1,'mim::plug::mem']]],
+  ['ptr0_14',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
+  ['pxr24_15',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
+  ['pxr24_16',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
 ];

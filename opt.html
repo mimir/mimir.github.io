@@ -138,21 +138,21 @@ $(function(){initNavTree('opt.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md317">Dependencies </a>
+    <a href="#autotoc_md318">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md318">The default pipeline </a>
+    <a href="#autotoc_md319">The default pipeline </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
 Dependencies</h1>
 <p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">%compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">%compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
 <div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md319"></a>
 The default pipeline</h1>
 <div class="fragment"><div class="line">lam extern _default_compile (): %compile.Phase =</div>
 <div class="line">    let optimize =</div>
@@ -169,21 +169,40 @@ The default pipeline</h1>
 <div class="line"> </div>
 <div class="line">    %compile.phases ff (</div>
 <div class="line">        optimize,</div>
+<div class="line">        // regex</div>
 <div class="line">        %compile.named &quot;%regex.lower_regex&quot;,</div>
+<div class="line">        %compile.unload &quot;regex&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // tensor</div>
 <div class="line">        %compile.named &quot;%tensor.lower_tensor&quot;,</div>
 <div class="line">        %compile.named &quot;%tensor.fuse_tensor&quot;,</div>
 <div class="line">        %compile.named &quot;%tensor.lower_to_mem&quot;,</div>
 <div class="line">        // Only run add_mem if the tensor plugin is loaded: tensor bufferization emits %mem.M placeholders that must be stitched into a global mem chain.</div>
 <div class="line">        %compile.cond &quot;tensor&quot; (%compile.named &quot;%mem.add_mem&quot;),</div>
+<div class="line">        %compile.unload &quot;tensor&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // btensor</div>
 <div class="line">        %compile.named &quot;%btensor.lower_map_reduce&quot;,</div>
+<div class="line">        %compile.unload &quot;btensor&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // gpu</div>
 <div class="line">        %compile.named &quot;%gpu.mem_checks&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // autdoiff</div>
 <div class="line">        %compile.named &quot;%autodiff.eval&quot;,</div>
 <div class="line">        %compile.named &quot;%autodiff.zero_repl&quot;,</div>
+<div class="line">        %compile.unload &quot;autodiff&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // buffer</div>
 <div class="line">        %compile.named &quot;%buffer.lower_ptr&quot;,</div>
+<div class="line">        %compile.unload &quot;buffer&quot;,</div>
+<div class="line"> </div>
+<div class="line">        // affine + cpsp</div>
 <div class="line">        %compile.named &quot;%affine.lower_index&quot;,</div>
 <div class="line">        %compile.named &quot;%cps.conv&quot;,</div>
 <div class="line">        %compile.named &quot;%affine.lower_for&quot;,</div>
-<div class="line">        %compile.internal_cleanup,</div>
+<div class="line">        %compile.unload &quot;affine&quot;,</div>
+<div class="line">        %compile.unload &quot;cps&quot;,</div>
 <div class="line"> </div>
 <div class="line">        // clos conv</div>
 <div class="line">        let clos_opt_phases =</div>

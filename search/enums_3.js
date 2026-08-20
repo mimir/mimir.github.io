@@ -7,7 +7,7 @@ var searchData=
   ['delinearize_4',['delinearize',['../namespacemim_1_1plug_1_1affine.html#a45aa1b8d1a89a8f0aead5b9e194001b7',1,'mim::plug::affine']]],
   ['dep_5',['Dep',['../namespacemim.html#a249738da6a953390b70691dd3fe7132b',1,'mim']]],
   ['device_5fspecific_5fphases_6',['device_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a4e7ca3a0a6541b974f26ac2b2fd1cd51',1,'mim::plug::gpu']]],
-  ['diff_7',['diff',['../namespacemim_1_1plug_1_1vec.html#a5c01986cca7021fdf3002667cb8f347e',1,'mim::plug::vec']]],
+  ['diff_7',['diff',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2',1,'mim::plug::autodiff::diff'],['../namespacemim_1_1plug_1_1vec.html#a5c01986cca7021fdf3002667cb8f347e',1,'mim::plug::vec::diff']]],
   ['dir_8',['Dir',['../classmim_1_1lct_1_1Node.html#a45ef4ada7dae155761c35728e6caa2f3',1,'mim::lct::Node']]],
   ['disj_9',['disj',['../namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628',1,'mim::plug::regex']]],
   ['div_10',['div',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core']]],

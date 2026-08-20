@@ -8,10 +8,9 @@ var searchData=
   ['piexpr_5',['PiExpr',['../classmim_1_1ast_1_1PiExpr.html',1,'mim::ast']]],
   ['plugin_6',['Plugin',['../structmim_1_1Plugin.html',1,'mim']]],
   ['pod_7',['POD',['../structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD',1,'mim::World::State']]],
-  ['prefixcleanup_8',['PrefixCleanup',['../classmim_1_1PrefixCleanup.html',1,'mim']]],
-  ['primaryexpr_9',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
-  ['prod_10',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
-  ['profiler_11',['Profiler',['../classmim_1_1Profiler.html',1,'mim']]],
-  ['proxy_12',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
-  ['ptrn_13',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]]
+  ['primaryexpr_8',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
+  ['prod_9',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
+  ['profiler_10',['Profiler',['../classmim_1_1Profiler.html',1,'mim']]],
+  ['proxy_11',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
+  ['ptrn_12',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]]
 ];

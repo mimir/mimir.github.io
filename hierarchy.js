@@ -105,7 +105,6 @@ var hierarchy =
         [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
         [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ],
         [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
-        [ "mim::PrefixCleanup", "classmim_1_1PrefixCleanup.html", null ],
         [ "mim::Repl", "classmim_1_1Repl.html", null ],
         [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
         [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
@@ -203,6 +202,7 @@ var hierarchy =
         [ "mim::ClosedMutPhase< M >", "classmim_1_1ClosedMutPhase.html", null ],
         [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", null ],
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
+        [ "mim::Unload", "classmim_1_1Unload.html", null ],
         [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
         [ "mim::plug::ll_nvptx::Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", null ]
       ] ],

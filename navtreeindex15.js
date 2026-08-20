@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html#a5c2cb70a91c5bfd87507f9782b4894cf":[2,0,3,1,2,0,0,1],
+"classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html#a5c2cb70a91c5bfd87507f9782b4894cf":[4,0,1,1,2,0,0,1],
+"classmim_1_1plug_1_1buffer_1_1LowerPtr.html":[2,0,3,1,3,0],
+"classmim_1_1plug_1_1buffer_1_1LowerPtr.html":[4,0,1,1,3,0],
 "classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a00bbff21a1c4cea0592cf5137c5352bc":[2,0,3,1,3,0,0],
 "classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a00bbff21a1c4cea0592cf5137c5352bc":[4,0,1,1,3,0,0],
 "classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a5060f6a97c20cb7aad13814ff329f804":[2,0,3,1,3,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html":[2,0,3,1,9,1],
 "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html":[4,0,1,1,8,1],
 "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb":[2,0,3,1,9,1,1],
-"classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb":[4,0,1,1,8,1,1],
-"classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884":[2,0,3,1,9,1,0],
-"classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884":[4,0,1,1,8,1,0],
-"classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html":[2,0,3,1,9,2],
-"classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html":[4,0,1,1,8,2]
+"classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb":[4,0,1,1,8,1,1]
 };

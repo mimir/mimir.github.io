@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419":[5,0,0,1,0,0,8,0,0],
+"demo_2autogen_8h_source.html":[5,0,0,1,0,0,8,0],
+"demo_2normalizers_8cpp.html":[5,0,4,1,3,8,1],
+"demo_2normalizers_8cpp_source.html":[5,0,4,1,3,8,1],
 "demo_8cpp.html":[5,0,4,1,3,8,0],
 "demo_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,8,0,0],
 "demo_8cpp_source.html":[5,0,4,1,3,8,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "lam_8cpp.html":[5,0,4,1,11],
 "lam_8cpp_source.html":[5,0,4,1,11],
 "lam_8h.html":[5,0,3,1,10],
-"lam_8h_source.html":[5,0,3,1,10],
-"lam__spec_8cpp.html":[5,0,4,1,2,3],
-"lam__spec_8cpp_source.html":[5,0,4,1,2,3],
-"lam__spec_8h.html":[5,0,3,1,2,3],
-"lam__spec_8h_source.html":[5,0,3,1,2,3]
+"lam_8h_source.html":[5,0,3,1,10]
 };

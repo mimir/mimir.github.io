@@ -13,7 +13,7 @@ var searchData=
   ['fixed_5fpoint_10',['fixed_point',['../classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57',1,'mim::PhaseMan']]],
   ['flags_11',['flags',['../classmim_1_1Def.html#a41c6630a112450ceaa0398079203ee7f',1,'mim::Def::flags()'],['../classmim_1_1Driver.html#ab9bfcad7e7aa1cbbd7a8678dd5864e3c',1,'mim::Driver::flags()'],['../classmim_1_1Driver.html#a78b10fb4e8109c0ebe30d86b7cac7d28',1,'mim::Driver::flags() const'],['../structmim_1_1Annex.html#a0ff56015a870a88adda114eb894858b1',1,'mim::Annex::flags()'],['../classmim_1_1Log.html#a82ecbd5ec62978304a8f3eda60981d9b',1,'mim::Log::flags()'],['../classmim_1_1World.html#a84dc41b987937f59141de186c5a2975e',1,'mim::World::flags()']]],
   ['flags2base_12',['flags2base',['../structmim_1_1Annex.html#adc889bc17746e7afdd83e53d55ae344b',1,'mim::Annex']]],
-  ['flags2entry_13',['flags2entry',['../classmim_1_1World_1_1Annexes.html#aa49014d56ba93a5b45ed9657f8f97847',1,'mim::World::Annexes']]],
+  ['flags2entry_13',['flags2entry',['../classmim_1_1World_1_1Annexes.html#acf7d4b2d487169350a86ad24d306dd25',1,'mim::World::Annexes::flags2entry()'],['../classmim_1_1World_1_1Annexes.html#aa49014d56ba93a5b45ed9657f8f97847',1,'mim::World::Annexes::flags2entry() const']]],
   ['flags2plugin_14',['flags2plugin',['../structmim_1_1Annex.html#a77a3df48afdd813f04c126f32f7de554',1,'mim::Annex']]],
   ['flags2sub_15',['flags2sub',['../structmim_1_1Annex.html#a596c047a68129d48ea1adf08987b2633',1,'mim::Annex']]],
   ['flags2tag_16',['flags2tag',['../structmim_1_1Annex.html#a55390291c63a6d3d6af01f6901cc48e9',1,'mim::Annex']]],

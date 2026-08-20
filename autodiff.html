@@ -175,13 +175,18 @@ $(function(){initNavTree('autodiff.html','',''); });
     <a href="#autotoc_md160">Registered translations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md161">%core.icmp.xYgLE (eq) </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md162">%core.wrap.add </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md163">%core.wrap.mul </a>
+        <a href="#autotoc_md161">%autodiff.diff </a>
+        <ul>
+          <li class="level3">
+            <a href="#autotoc_md162">%autodiff.diff.core_icmp_xYgLE </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md163">%autodiff.diff.core_wrap_add </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md164">%autodiff.diff.core_wrap_mul </a>
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -217,7 +222,7 @@ Operations</h1>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 %autodiff.add</h2>
 <p>A universal addition that consumes zeros and defaults to normal addition for scalar types. It lifts addition over structured types and special-cases types that do not allow addition.</p>
-<p>TODO: how do we handle summations that need memory? (grab current memory?) </p><div class="fragment"><div class="line">axm %autodiff.add: {T: *} → [T, T] → T, normalize_add;</div>
+<div class="fragment"><div class="line">axm %autodiff.add: {T: *} → [T, T] → T, normalize_add;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
 %autodiff.sum</h2>
 <p>Performs %autodiff.add over a list of terms.</p>
@@ -240,19 +245,22 @@ Registered translations</h1>
 <div class="line">r,r* = (cps2ds (mul&#39;_cps (m,w))) (a,b)</div>
 </div><!-- fragment --><p>The pullback is the derivative with respect to the input (weighted with the output tangent). For arithmetic operations, <span class="tt">s</span> is simply multiplied onto each input tangent: <span class="tt">∂_i f(x1,...,xn) * s</span> It follows that the applied partial pullback needs to be: <span class="tt">sum x_i*(∂_i f(x1,...,xn) * s) = sum x_i*(•)</span> with <span class="tt">•</span> as the formula from above. This is a direct result of the chain-rule composition with the partial pullback of a tuple. The tuple pullback transports the partial pullbacks of the operands and handles the sums. By its nature the pullback of a tuple needs to be a sum.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md161"></a>
-%core.icmp.xYgLE (eq)</h2>
-<p>The comparison pullback exists formally but is not used.</p>
-<div class="fragment"><div class="line">fun extern internal_diff_core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =</div>
+%autodiff.diff</h2>
+<p>The derivative of the axiom <span class="tt">%plugin.tag.sub</span> is the annex <span class="tt">%autodiff.diff.plugin_tag_sub</span>, i.e. the axiom's name with the <span class="tt">%</span> dropped and all <span class="tt">.</span>s replaced by <span class="tt">_</span>s; this is how <a class="el" href="classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html" title="This phase is the heart of AD.">mim::plug::autodiff::phase::Eval</a> looks a derivative up. Being annexes, they are roots of the World and hence survive until <a class="el" href="classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html" title="This phase is the heart of AD.">mim::plug::autodiff::phase::Eval</a> has consumed them. But - unlike externals - they are invisible to the backends and a <span class="tt">%compile.unload "autodiff"</span> nukes them along with all the other annexes of this plugin.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
+%autodiff.diff.core_icmp_xYgLE</h3>
+<p>The derivative of %core.icmp.xYgLE (eq). The comparison pullback exists formally but is not used.</p>
+<div class="fragment"><div class="line">fun %autodiff.diff.core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =</div>
 <div class="line">    return (%core.icmp.sle ab, fn [Bool]@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
-%core.wrap.add</h2>
-<p>s ↦ (s, s)</p>
-<div class="fragment"><div class="line">fun extern internal_diff_core_wrap_add {s: Nat} (m: Nat) (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
+%autodiff.diff.core_wrap_add</h3>
+<p>The derivative of %core.wrap.add: s ↦ (s, s)</p>
+<div class="fragment"><div class="line">fun %autodiff.diff.core_wrap_add {s: Nat} (m: Nat) (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
 <div class="line">    return (%core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
-%core.wrap.mul</h2>
-<p>s ↦ (s*b, s*a)</p>
-<div class="fragment"><div class="line">fun extern internal_diff_core_wrap_mul {s: Nat} (m: Nat) (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
+%autodiff.diff.core_wrap_mul</h3>
+<p>The derivative of %core.wrap.mul: s ↦ (s*b, s*a)</p>
+<div class="fragment"><div class="line">fun %autodiff.diff.core_wrap_mul {s: Nat} (m: Nat) (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
 <div class="line">    return (%core.wrap.mul m ab, fn (i: Idx s)@tt: «2; Idx s» = return (%core.wrap.mul m (i, b), %core.wrap.mul m (i, a)));</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

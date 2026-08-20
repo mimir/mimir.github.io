@@ -12,8 +12,10 @@ var classmim_1_1World_1_1Annexes =
     [ "driver", "classmim_1_1World_1_1Annexes.html#a1a9ab925719b9b8e18220f8e8523f4b3", null ],
     [ "end", "classmim_1_1World_1_1Annexes.html#a5735a19d6a5d65d2abeab61945a227e6", null ],
     [ "entries", "classmim_1_1World_1_1Annexes.html#ad32a1cd71a9e82e819e218c5b6e89a1a", null ],
+    [ "flags2entry", "classmim_1_1World_1_1Annexes.html#acf7d4b2d487169350a86ad24d306dd25", null ],
     [ "flags2entry", "classmim_1_1World_1_1Annexes.html#aa49014d56ba93a5b45ed9657f8f97847", null ],
     [ "size", "classmim_1_1World_1_1Annexes.html#a72e019414dcca26b5c4674ce4734bddb", null ],
+    [ "sym2flags", "classmim_1_1World_1_1Annexes.html#af43ebedcedb134508c61fd2a4da9e682", null ],
     [ "sym2flags", "classmim_1_1World_1_1Annexes.html#a5633b98b3963f687df45ab58f4c83c2a", null ],
     [ "swap", "classmim_1_1World_1_1Annexes.html#abdbea9893bde97000ed6114519613afd", null ]
 ];
