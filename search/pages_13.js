@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unary_0',['%tensor.unary',['../tensor.html#autotoc_md404',1,'']]],
+  ['unary_0',['%tensor.unary',['../tensor.html#autotoc_md405',1,'']]],
   ['underscore_1',['Underscore',['../langref.html#autotoc_md65',1,'']]],
   ['unions_20and_20matching_2',['Products, Sequences, Unions, and Matching',['../langref.html#autotoc_md56',1,'']]],
   ['unwrap_5for_3',['%option.unwrap_or',['../option.html#autotoc_md329',1,'']]],

@@ -121,7 +121,7 @@ var searchData=
   ['app_118',['app',['../classmim_1_1Lam.html#aa5c1c1fa53947444e053016d9254830f',1,'mim::Lam::app(Filter filter, const Def *callee, const Def *arg)'],['../classmim_1_1Lam.html#aeb1b28bd416cc50f801312fe6d34e967',1,'mim::Lam::app(Filter filter, const Def *callee, Defs args)'],['../classmim_1_1Branch.html#a900ff0e894cfe0147f7e5bf17cac2d3b',1,'mim::Branch::app()'],['../classmim_1_1Dispatch.html#abd7c512730a69e5464c6f1ab8ef6f3b8',1,'mim::Dispatch::app()'],['../classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6',1,'mim::World::app(const Def *callee, const Def *arg)'],['../classmim_1_1World.html#a93a98b93cc3a2bf64432ca28a53668b7',1,'mim::World::app(const Def *callee, Defs args)']]],
   ['app_5frange_119',['app_range',['../structmim_1_1plug_1_1regex_1_1app__range.html',1,'mim::plug::regex']]],
   ['append_120',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
-  ['append_20tuple_20prepend_121',['%tuple.append / %tuple.prepend',['../tuple.html#autotoc_md412',1,'']]],
+  ['append_20tuple_20prepend_121',['%tuple.append / %tuple.prepend',['../tuple.html#autotoc_md413',1,'']]],
   ['append_5frange_122',['append_range',['../classmim_1_1Vector.html#a2f37dbeda5f215368f7cc8fafe7b4b24',1,'mim::Vector']]],
   ['append_5fsuffix_123',['append_suffix',['../classmim_1_1World.html#aaec8ce547395bdcc185851bc38fe0452',1,'mim::World']]],
   ['appexpr_124',['AppExpr',['../classmim_1_1ast_1_1AppExpr.html',1,'mim::ast::AppExpr'],['../classmim_1_1ast_1_1AppExpr.html#a2634a7175e1397ccd5deac553f2cee17',1,'mim::ast::AppExpr::AppExpr()']]],

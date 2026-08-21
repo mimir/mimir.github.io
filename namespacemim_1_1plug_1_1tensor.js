@@ -41,6 +41,7 @@ var namespacemim_1_1plug_1_1tensor =
     [ "shape", "namespacemim_1_1plug_1_1tensor.html#a9534815b4b93985f29fab13e29c2d794", null ],
     [ "slice", "namespacemim_1_1plug_1_1tensor.html#a9f32ad37dd66f405ca71286aa92bfe07", null ],
     [ "slice_impl", "namespacemim_1_1plug_1_1tensor.html#a069b471a87f8931264fc1f0e62988f49", null ],
+    [ "splat", "namespacemim_1_1plug_1_1tensor.html#a16a6978611660fab5fcbd02501f236e7", null ],
     [ "transpose", "namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47", null ],
     [ "transpose_2d", "namespacemim_1_1plug_1_1tensor.html#abd9f1619367c3c59608291c816a32913", null ],
     [ "transpose_2d_impl", "namespacemim_1_1plug_1_1tensor.html#a45608437d1db2d4b8b4a7f560c2fd642", null ],

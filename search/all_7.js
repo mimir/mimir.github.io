@@ -15,7 +15,7 @@ var searchData=
   ['has_5fvar_12',['has_var',['../classmim_1_1Def.html#af82f20111e9f1cbdbf910d30341bd4ee',1,'mim::Def::has_var()'],['../classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3',1,'mim::Def::has_var() const']]],
   ['hash_13',['hash',['../structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597',1,'mim::Version::hash'],['../classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53',1,'mim::Def::hash()']]],
   ['head_14',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md413',1,'']]],
+  ['head_20tuple_20tail_15',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md414',1,'']]],
   ['header_16',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['helpers_17',['Error Handling Helpers',['../python.html#autotoc_md110',1,'']]],
   ['highlighting_18',['Syntax Highlighting',['../coding.html#autotoc_md12',1,'']]],

@@ -48,7 +48,7 @@ var searchData=
   ['annexes_45',['Annexes',['../mimir.html#autotoc_md69',1,'Annexes'],['../dev.html#autotoc_md22',1,'Calling Annexes']]],
   ['any_46',['%regex.any',['../regex.html#autotoc_md374',1,'']]],
   ['api_47',['Lattice API',['../phases.html#autotoc_md74',1,'']]],
-  ['append_20tuple_20prepend_48',['%tuple.append / %tuple.prepend',['../tuple.html#autotoc_md412',1,'']]],
+  ['append_20tuple_20prepend_48',['%tuple.append / %tuple.prepend',['../tuple.html#autotoc_md413',1,'']]],
   ['applications_49',['Applications',['../langref.html#autotoc_md62',1,'']]],
   ['approximation_50',['&lt;span class=&quot;tt&quot;&gt;Dep&lt;/span&gt;: A Cheap Approximation',['../dev.html#autotoc_md30',1,'']]],
   ['are_20values_51',['Types Are Values',['../mimir.html#mimir_dep',1,'']]],

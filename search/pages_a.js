@@ -1,13 +1,13 @@
 var searchData=
 [
   ['language_20reference_0',['Mim Language Reference',['../langref.html',1,'']]],
-  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md422',1,'']]],
+  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md423',1,'']]],
   ['lattice_20api_2',['Lattice API',['../phases.html#autotoc_md74',1,'']]],
   ['launch_3',['Kernel Launch',['../gpu.html#autotoc_md265',1,'']]],
   ['launch_4',['%gpu.launch',['../gpu.html#autotoc_md266',1,'']]],
   ['layout_5',['Package Layout',['../python.html#autotoc_md108',1,'']]],
   ['lea_6',['%mem.lea',['../mem.html#autotoc_md312',1,'']]],
-  ['len_7',['%vec.len',['../vec.html#autotoc_md423',1,'']]],
+  ['len_7',['%vec.len',['../vec.html#autotoc_md424',1,'']]],
   ['lexical_20structure_8',['Lexical Structure',['../langref.html#lex',1,'']]],
   ['license_9',['⚖️ License',['../index.html#autotoc_md124',1,'']]],
   ['line_20arguments_10',['Line Arguments',['../compile.html#compile_cli_args',1,'Command-Line Arguments'],['../ll.html#ll_cli_args',1,'Command-Line Arguments'],['../ll_nvptx.html#ll_nvptx_cli_args',1,'Command-Line Arguments']]],

@@ -115,7 +115,7 @@ var searchData=
   ['is_5fterm_112',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5ftop_113',['is_top',['../classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab',1,'mim::Analysis']]],
   ['is_5funiform_114',['is_uniform',['../classmim_1_1Checker.html#a169a88c923419cfcfb6d15a14d1cfa4b',1,'mim::Checker']]],
-  ['is_5funique_115',['is_unique',['../vec.html#autotoc_md424',1,'%vec.is_unique'],['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique']]],
+  ['is_5funique_115',['is_unique',['../vec.html#autotoc_md425',1,'%vec.is_unique'],['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique']]],
   ['is_5funit_116',['is_unit',['../namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8',1,'mim']]],
   ['is_5fusing_5flibdevice_117',['is_using_libdevice',['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a217d389870f78878e620b8d1ddeaaf56',1,'mim::plug::ll_nvptx::DeviceEmitter']]],
   ['is_5fvalid_118',['is_valid',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a68c770c0945b284bd2211a593e54523a',1,'mim::plug::ll::Emitter::is_valid()'],['../classmim_1_1sexpr_1_1Emitter.html#ac7b63a51d1de5fec7297e89125e9fb11',1,'mim::sexpr::Emitter::is_valid()']]],
@@ -156,6 +156,6 @@ var searchData=
   ['iterations_153',['Reset Between Iterations',['../phases.html#autotoc_md77',1,'']]],
   ['iterator_154',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html',1,'mim::Sets&lt; D, N &gt;::Set::iterator'],['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator::iterator() noexcept=default']]],
   ['iterator_5fcategory_155',['iterator_category',['../classmim_1_1Sets_1_1Set_1_1iterator.html#ab299636e45522b09b7da7c97ecc78da2',1,'mim::Sets::Set::iterator']]],
-  ['iterators_156',['Iterators',['../vec.html#autotoc_md417',1,'']]],
+  ['iterators_156',['Iterators',['../vec.html#autotoc_md418',1,'']]],
   ['its_5fa_5fmatch_157',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

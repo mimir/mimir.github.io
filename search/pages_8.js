@@ -27,10 +27,10 @@ var searchData=
   ['is_5ffinite_24',['%math.is_finite',['../math.html#autotoc_md293',1,'']]],
   ['is_5floaded_25',['%compile.is_loaded',['../compile.html#autotoc_md201',1,'']]],
   ['is_5fsome_26',['%option.is_some',['../option.html#autotoc_md327',1,'']]],
-  ['is_5funique_27',['%vec.is_unique',['../vec.html#autotoc_md424',1,'']]],
+  ['is_5funique_27',['%vec.is_unique',['../vec.html#autotoc_md425',1,'']]],
   ['item_20synchronization_28',['Work-Item Synchronization',['../gpu.html#autotoc_md267',1,'']]],
   ['iterating_20over_20the_20program_29',['Iterating over the Program',['../dev.html#autotoc_md46',1,'']]],
   ['iteration_30',['Iteration',['../mimir.html#mimir_iter',1,'Polymorphic Iteration'],['../phases.html#autotoc_md76',1,'Sparse Fixed-Point Iteration']]],
   ['iterations_31',['Reset Between Iterations',['../phases.html#autotoc_md77',1,'']]],
-  ['iterators_32',['Iterators',['../vec.html#autotoc_md417',1,'']]]
+  ['iterators_32',['Iterators',['../vec.html#autotoc_md418',1,'']]]
 ];
