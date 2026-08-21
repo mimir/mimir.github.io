@@ -154,7 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4515f0f091b7c563a7fec2b5a5127b9a" id="r_a4515f0f091b7c563a7fec2b5a5127b9a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4515f0f091b7c563a7fec2b5a5127b9a">Analysis</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;<a class="el" href="#afeae25f4ecab3e3812e9607f630a506f">world</a>, std::string <a class="el" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a>)</td></tr>
 <tr class="memitem:aee9e19bc9197491f6b62b274fbf2378c" id="r_aee9e19bc9197491f6b62b274fbf2378c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aee9e19bc9197491f6b62b274fbf2378c">Analysis</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;<a class="el" href="#afeae25f4ecab3e3812e9607f630a506f">world</a>, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="el" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</td></tr>
 <tr class="memitem:ac94bad8fbf28de336d4c2f9046ac0555" id="r_ac94bad8fbf28de336d4c2f9046ac0555"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac94bad8fbf28de336d4c2f9046ac0555">reset</a> ()</td></tr>
-<tr class="memdesc:ac94bad8fbf28de336d4c2f9046ac0555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> for the next fixed-point iteration.  <br /></td></tr>
+<tr class="memdesc:ac94bad8fbf28de336d4c2f9046ac0555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> and <a class="el" href="#aec37998476295eb08d93ff605e866ddd" title="&lt; Disambiguates the Phase/Rewriter double base; for an Analysis both denote the same World.">is_bootstrapping()</a> for the next fixed-point iteration.  <br /></td></tr>
 <tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
 <tr class="memitem:aec37998476295eb08d93ff605e866ddd" id="r_aec37998476295eb08d93ff605e866ddd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aec37998476295eb08d93ff605e866ddd">is_bootstrapping</a> () const</td></tr>
 <tr class="memdesc:aec37998476295eb08d93ff605e866ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Disambiguates the Phase/Rewriter double base; for an <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> both denote the same <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>.  <br /></td></tr>
@@ -221,12 +221,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr id="pro-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Rewrite</div></td></tr>
+<tr class="memitem:a1c5cd105ce8fad4292146bcb3d98cc04" id="r_a1c5cd105ce8fad4292146bcb3d98cc04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04">start</a> () override</td></tr>
+<tr class="memdesc:a1c5cd105ce8fad4292146bcb3d98cc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
 <tr class="memitem:a066ffcf7433a84ba859331ea5b199f4f" id="r_a066ffcf7433a84ba859331ea5b199f4f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a066ffcf7433a84ba859331ea5b199f4f">prepare</a> ()</td></tr>
 <tr class="memdesc:a066ffcf7433a84ba859331ea5b199f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <b>before</b> the main analysis.  <br /></td></tr>
 <tr class="memitem:ad06b63e77f01f2780b54c98fdc7c5d5d" id="r_ad06b63e77f01f2780b54c98fdc7c5d5d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ad06b63e77f01f2780b54c98fdc7c5d5d">finalize</a> ()</td></tr>
 <tr class="memdesc:ad06b63e77f01f2780b54c98fdc7c5d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <b>after</b> the main analysis - only in <b>full</b> rounds, so it always sees the complete abstract <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>.  <br /></td></tr>
-<tr class="memitem:a1c5cd105ce8fad4292146bcb3d98cc04" id="r_a1c5cd105ce8fad4292146bcb3d98cc04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04">start</a> () override</td></tr>
-<tr class="memdesc:a1c5cd105ce8fad4292146bcb3d98cc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
 <tr class="memitem:a87831539535ddfa21b1777d9554e153d" id="r_a87831539535ddfa21b1777d9554e153d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a87831539535ddfa21b1777d9554e153d">rewrite_annex</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, Sym, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:aa7d78ed906cc6531fa13d42e18bc398d" id="r_aa7d78ed906cc6531fa13d42e18bc398d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aa7d78ed906cc6531fa13d42e18bc398d">rewrite_external</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:a3339b4cc840d3e782eba78bf41608faa" id="r_a3339b4cc840d3e782eba78bf41608faa"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a3339b4cc840d3e782eba78bf41608faa">rewrite_imm_Proxy</a> (const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *proxy) override</td></tr>
@@ -379,9 +379,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>after</b> the main analysis - only in <b>full</b> rounds, so it always sees the complete abstract <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00256">256</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00257">257</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00058">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00059">start()</a>.</p>
 
 </div>
 </div>
@@ -688,9 +688,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>before</b> the main analysis. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00254">254</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00255">255</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00058">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00059">start()</a>.</p>
 
 </div>
 </div>
@@ -717,8 +717,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> for the next fixed-point iteration. </p>
-<p><a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> is <b>preserved</b> across iterations so that abstract values accumulated in earlier rounds remain available - this is what makes fixed-point convergence possible. The dirty set survives as well; <a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04" title="Actual entry.">start()</a> consumes it to decide whether the round can be sparse. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811" title="Runs the optional pre-analysis on RWPhase::old_world(), typically to a fixed point,...">RWPhase::analyze</a> </dd></dl>
+<p>Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> and <a class="el" href="#aec37998476295eb08d93ff605e866ddd" title="&lt; Disambiguates the Phase/Rewriter double base; for an Analysis both denote the same World.">is_bootstrapping()</a> for the next fixed-point iteration. </p>
+<p><a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> is <b>preserved</b> across iterations so that abstract values accumulated in earlier rounds remain available - this is what makes fixed-point convergence possible. The dirty set survives as well; <a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04" title="Actual entry.">start()</a> consumes it to decide whether the round can be sparse. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmim_1_1RWBase.html#abf525ff7bf362f4c64f7a8b7bf2dc60c" title="Runs the optional pre-analysis on Phase::world, typically to a fixed point, before rewriting begins.">RWBase::analyze</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00051">51</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
@@ -758,11 +758,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00101">101</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00103">103</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00058">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00059">start()</a>.</p>
 
 </div>
 </div>
@@ -791,11 +791,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html#afba8f4898c747f151f1dc47f18ae9083">mim::plug::gpu::phase::MemChecks</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00102">102</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00104">104</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem__checks_8cpp_source.html#l00056">mim::plug::gpu::phase::MemChecks::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00058">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem__checks_8cpp_source.html#l00056">mim::plug::gpu::phase::MemChecks::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00059">start()</a>.</p>
 
 </div>
 </div>
@@ -852,11 +852,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Schedules <code class="param">mut</code> for a breadth-first visit of its dependencies and records <span class="tt">mut -&gt; mut</span>. </p>
-<p>Mutables are enqueued instead of recursed into; Analysis::drain then walks them in BFS order. The <span class="tt">mut -&gt; mut</span> entry doubles as the per-round "already scheduled" marker (<a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">Rewriter::old2news_</a> is cleared by <a class="el" href="#ac94bad8fbf28de336d4c2f9046ac0555" title="Clears the rewriter map and resets Phase::todo() for the next fixed-point iteration.">reset()</a>), so each mutable's deps are visited at most once per fixed-point round. </p>
+<p>Mutables are enqueued instead of recursed into; Analysis::drain then walks them in BFS order. The <span class="tt">mut -&gt; mut</span> entry doubles as the per-round "already scheduled" marker (<a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">Rewriter::old2news_</a> is cleared by <a class="el" href="#ac94bad8fbf28de336d4c2f9046ac0555" title="Clears the rewriter map and resets Phase::todo() and is_bootstrapping() for the next fixed-point iter...">reset()</a>), so each mutable's deps are visited at most once per fixed-point round. </p>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00104">104</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00106">106</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8h_source.html#l00055">mim::Rewriter::lookup()</a>, and <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>.</p>
 
@@ -889,9 +889,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d">mim::Phase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00058">58</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00059">59</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00256">finalize()</a>, <a class="el" href="phase_8h_source.html#l00098">mim::Phase::invalidate()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00254">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00043">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00101">rewrite_annex()</a>, <a class="el" href="phase_8cpp_source.html#l00102">rewrite_external()</a>, <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>, <a class="el" href="log_8h_source.html#l00093">VLOG</a>, and <a class="el" href="phase_8h_source.html#l00077">world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00257">finalize()</a>, <a class="el" href="phase_8h_source.html#l00098">mim::Phase::invalidate()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00255">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00043">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00103">rewrite_annex()</a>, <a class="el" href="phase_8cpp_source.html#l00104">rewrite_external()</a>, <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>, <a class="el" href="log_8h_source.html#l00093">VLOG</a>, and <a class="el" href="phase_8h_source.html#l00077">world()</a>.</p>
 
 </div>
 </div>
@@ -979,7 +979,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00077">77</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00156">Analysis()</a>, <a class="el" href="phase_8h_source.html#l00153">Analysis()</a>, <a class="el" href="mem__checks_8h_source.html#l00013">mim::plug::gpu::phase::MemChecks::MemChecks()</a>, and <a class="el" href="phase_8cpp_source.html#l00058">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00156">Analysis()</a>, <a class="el" href="phase_8h_source.html#l00153">Analysis()</a>, <a class="el" href="mem__checks_8h_source.html#l00013">mim::plug::gpu::phase::MemChecks::MemChecks()</a>, and <a class="el" href="phase_8cpp_source.html#l00059">start()</a>.</p>
 
 </div>
 </div>

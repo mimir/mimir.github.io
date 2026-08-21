@@ -14,6 +14,7 @@ var classmim_1_1World_1_1Annexes =
     [ "entries", "classmim_1_1World_1_1Annexes.html#ad32a1cd71a9e82e819e218c5b6e89a1a", null ],
     [ "flags2entry", "classmim_1_1World_1_1Annexes.html#acf7d4b2d487169350a86ad24d306dd25", null ],
     [ "flags2entry", "classmim_1_1World_1_1Annexes.html#aa49014d56ba93a5b45ed9657f8f97847", null ],
+    [ "reattach", "classmim_1_1World_1_1Annexes.html#a15c36dfad372b7f5922aedcddb00a5d6", null ],
     [ "size", "classmim_1_1World_1_1Annexes.html#a72e019414dcca26b5c4674ce4734bddb", null ],
     [ "sym2flags", "classmim_1_1World_1_1Annexes.html#af43ebedcedb134508c61fd2a4da9e682", null ],
     [ "sym2flags", "classmim_1_1World_1_1Annexes.html#a5633b98b3963f687df45ab58f4c83c2a", null ],

@@ -52,6 +52,7 @@ var classmim_1_1Def =
     [ "is_elim", "classmim_1_1Def.html#a24edc8f00822c4b32e141cf5169970ab", null ],
     [ "is_external", "classmim_1_1Def.html#aa3519178f6136b088a41d1bfa0cab603", null ],
     [ "is_form", "classmim_1_1Def.html#a86fba98511a12c201e423aabee4fd84b", null ],
+    [ "is_ground", "classmim_1_1Def.html#a8bd9c7c1760dedf6d6907ff1ed8e0abc", null ],
     [ "is_immutabilizable", "classmim_1_1Def.html#a6c53a687bf33a26663eb3c11c06f53fc", null ],
     [ "is_intro", "classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d", null ],
     [ "is_meta", "classmim_1_1Def.html#ab4d87dc008712929125e68fcaca8017e", null ],

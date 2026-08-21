@@ -2,7 +2,9 @@ var phase_8h =
 [
     [ "mim::Phase", "classmim_1_1Phase.html", "classmim_1_1Phase" ],
     [ "mim::Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
+    [ "mim::RWBase", "classmim_1_1RWBase.html", "classmim_1_1RWBase" ],
     [ "mim::RWPhase", "classmim_1_1RWPhase.html", "classmim_1_1RWPhase" ],
+    [ "mim::InplaceRWPhase", "classmim_1_1InplaceRWPhase.html", "classmim_1_1InplaceRWPhase" ],
     [ "mim::Repl", "classmim_1_1Repl.html", "classmim_1_1Repl" ],
     [ "mim::Cleanup", "classmim_1_1Cleanup.html", "classmim_1_1Cleanup" ],
     [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", "classmim_1_1PhaseMan" ],

@@ -14,5 +14,6 @@ var searchData=
   ['rule_11',['Rule',['../classmim_1_1Rule.html',1,'mim']]],
   ['ruledecl_12',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html',1,'mim::ast']]],
   ['ruleexpr_13',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html',1,'mim::ast']]],
-  ['rwphase_14',['RWPhase',['../classmim_1_1RWPhase.html',1,'mim']]]
+  ['rwbase_14',['RWBase',['../classmim_1_1RWBase.html',1,'mim']]],
+  ['rwphase_15',['RWPhase',['../classmim_1_1RWPhase.html',1,'mim']]]
 ];

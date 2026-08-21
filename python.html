@@ -138,19 +138,19 @@ $(function(){initNavTree('python.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md108">Package Layout </a>
+    <a href="#autotoc_md115">Package Layout </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md109">First Steps </a>
+    <a href="#autotoc_md116">First Steps </a>
   </li>
   <li class="level1">
     <a href="#pyplugins">Loading Plugins </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md110">Error Handling Helpers </a>
+    <a href="#autotoc_md117">Error Handling Helpers </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md111">Coverage </a>
+    <a href="#autotoc_md118">Coverage </a>
   </li>
   <li class="level1">
     <a href="#python_extending">Extending the Bindings </a>
@@ -161,7 +161,7 @@ $(function(){initNavTree('python.html','',''); });
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md112">Embedded Python DSL </a>
+    <a href="#autotoc_md119">Embedded Python DSL </a>
   </li>
 </ul>
 </div>
@@ -172,7 +172,7 @@ $(function(){initNavTree('python.html','',''); });
 <div class="line">python -c &#39;import mim; print(mim.Driver)&#39;</div>
 </div><!-- fragment --><p>Run the Python test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target test-py</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
 Package Layout</h1>
 <p>The public entry point is:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
@@ -183,7 +183,7 @@ Package Layout</h1>
 <li><span class="tt"><a class="el" href="namespacemim_1_1plug.html">mim.plug</a>.&lt;name&gt;</span>: generated plugin enum facades, for example <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">mim.plug.core</a></span>,</li>
 </ul>
 <p>The package also ships <span class="tt">.pyi</span> stubs, so editors and type checkers can see the exported binding surface.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 First Steps</h1>
 <p>The usual entry point is <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>, just like in C++:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
@@ -227,7 +227,7 @@ Loading Plugins</h1>
 <div class="line">expr = world.call(regex.any)</div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1regex_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1regex.html">mim::plug::regex</a></div><div class="ttdoc">The regex Plugin</div><div class="ttdef"><b>Definition</b> <a href="lower__regex_8h_source.html#l00005">lower_regex.h:5</a></div></div>
 </div><!-- fragment --><p>If you need finer control, call <span class="tt">world.annex(...)</span>, <span class="tt">world.implicit_app(...)</span>, or <span class="tt">world.app(...)</span> directly.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
 Error Handling Helpers</h1>
 <p>The top-level Python package adds a few small utilities for MimIR exceptions:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> io</div>
@@ -244,7 +244,7 @@ Error Handling Helpers</h1>
 <li><span class="tt">catch_mim_errors(...)</span></li>
 </ul>
 <p>These are ordinary Python wrappers around the <span class="tt">MIM_Error</span> exception type exported by the binding module.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
 Coverage</h1>
 <p>Because the bindings are generated straight from the C++ headers (see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>), the Python surface tracks the C++ API broadly rather than being a hand-picked subset. Core types such as <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>, <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>, <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>, and <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> and their public methods are exposed automatically, with the same spelling.</p>
 <p>Typical workflows are all supported out of the box:</p>
@@ -274,7 +274,7 @@ Bindable Types</h2>
 <p>Convertible are: built-in types and <span class="tt">const char*</span>; the standard containers with a nanobind caster (<span class="tt">std::pair</span>, <span class="tt">std::tuple</span>, <span class="tt">std::optional</span>, <span class="tt">std::function</span>, <span class="tt">std::filesystem::path</span>, …, for which the generator emits the matching <span class="tt">nanobind/stl/*.h</span> include); every top-level class or enum declared in a header of the manifest — those are the ones registered as Python types, so a pointer or reference to one becomes a Python object; and MimIR's own ranges (<span class="tt">Defs</span>, <span class="tt">DefVec</span>, <span class="tt">Vars</span>, <span class="tt">Muts</span>, <span class="tt">Span&lt;const nat_t&gt;</span>), which are copied into a <span class="tt">std::vector</span> so they arrive as a list and can be passed as one.</p>
 <p>Everything else — <span class="tt">std::ostream</span>, abseil containers, iterators, nested classes such as <span class="tt">World::State</span>, and any class from a header nobody wraps — makes its member disappear. To get such a member into Python, either add its type's header to the manifest, or write a <span class="tt">[class:Name]</span> binding that translates the type into a Python-friendly one (<span class="tt">py/nbextra/driver.nbextra</span> does this for <span class="tt">Imports::add</span>, which reports a <span class="tt">const fs::path*</span>).</p>
 <p><span class="tt">py/tests/stubs.py</span> fails <span class="tt">test-py</span> if any C++ type still reaches <span class="tt">_mim.pyi</span>, e.g. from a hand-written <span class="tt">.nbextra</span> fragment or on a standard library that spells a type differently.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Embedded Python DSL</h1>
 <p>The file <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim.plug.regex</a></span> provides a higher-level wrapper around the regex plugin in form of an embedded domain-specific language. It builds MimIR through overloaded operators, runs optimization, emits LLVM IR, invokes <span class="tt">clang</span>, and loads the resulting shared object via <span class="tt">ctypes</span>.</p>
 <div class="fragment"><div class="line"><span class="comment"># To run, do this beforehand:</span></div>

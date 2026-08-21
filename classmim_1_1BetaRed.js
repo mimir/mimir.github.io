@@ -1,5 +1,6 @@
 var classmim_1_1BetaRed =
 [
+    [ "Super", "classmim_1_1BetaRed.html#aaf1890b84b92504bc4b2785554852898", null ],
     [ "BetaRed", "classmim_1_1BetaRed.html#abf13ece3d661598a5f80a34d8614e061", null ],
     [ "BetaRed", "classmim_1_1BetaRed.html#ad18358e51ced85ae37fabf93dbbac626", null ],
     [ "analyze", "classmim_1_1BetaRed.html#ac5e8603725cbc04d35fdb6cda0cdf9c9", null ],
