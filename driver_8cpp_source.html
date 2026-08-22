@@ -222,7 +222,7 @@ $(function(){initNavTree('driver_8cpp_source.html','',''); });
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (!handle) fe::throwf(<span class="stringliteral">&quot;cannot open plugin &#39;{}&#39;&quot;</span>, name);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (!handle) fe::throwf(<span class="stringliteral">&quot;cannot open plugin `{}`&quot;</span>, name);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> get_info = <span class="keyword">reinterpret_cast&lt;</span>decltype(&amp;<a class="code hl_function" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim_get_plugin</a>)<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespacemim_1_1dl.html#a7f900531d9304c1515a00f136ff01b0f">dl::get</a>(handle.get(), <span class="stringliteral">&quot;mim_get_plugin&quot;</span>))) {</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">auto</span> plugin = get_info();</div>
@@ -241,7 +241,7 @@ $(function(){initNavTree('driver_8cpp_source.html','',''); });
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> reg = plugin.register_phases)      reg(phases_);</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="comment">// clang-format on</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        fe::throwf(<span class="stringliteral">&quot;mim/plugin has no &#39;mim_get_plugin()&#39;&quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        fe::throwf(<span class="stringliteral">&quot;plugin `{}` has no `mim_get_plugin()`&quot;</span>, name);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
 </div>

@@ -213,7 +213,7 @@ $(function(){initNavTree('sys_8cpp_source.html','',''); });
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            result += buffer.data();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        fe::throwf(<span class="stringliteral">&quot;popen() failed!&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        fe::throwf(<span class="stringliteral">&quot;`popen()` failed&quot;</span>);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
 </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
@@ -228,58 +228,59 @@ $(function(){initNavTree('sys_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#abf749df61514a4b81638b08633d423b1">  101</a></span>std::string <a class="code hl_function" href="namespacemim_1_1sys.html#abf749df61514a4b81638b08633d423b1">require_cmd</a>(std::string_view name) {</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">auto</span> cmd = <a class="code hl_function" href="namespacemim_1_1sys.html#aabf9e272ba0bd6b36223a016499591a6">find_cmd</a>(std::string(name));</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (!fs::exists(cmd)) fe::throwf&lt;CmdNotFound&gt;(<span class="stringliteral">&quot;Could not find command: {} {}&quot;</span>, name, cmd);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> cmd;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (!fs::exists(cmd))</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        fe::throwf&lt;CmdNotFound&gt;(<span class="stringliteral">&quot;could not find command `{}`; resolved path `{}` does not exist&quot;</span>, name, cmd);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> cmd;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">  107</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">system</a>(std::string cmd) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    std::cout &lt;&lt; cmd &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">int</span> status = std::system(cmd.c_str());</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> WEXITSTATUS(status);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">  108</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">system</a>(std::string cmd) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::cout &lt;&lt; cmd &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">int</span> status = std::system(cmd.c_str());</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> WEXITSTATUS(status);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">  113</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">require_run</a>(<span class="keyword">const</span> std::string&amp; cmd) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> rc = <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">sys::system</a>(cmd); rc != 0) fe::throwf(<span class="stringliteral">&quot;Command exited with error code {}&quot;</span>, rc);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">  114</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">require_run</a>(<span class="keyword">const</span> std::string&amp; cmd) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> rc = <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">sys::system</a>(cmd); rc != 0) fe::throwf(<span class="stringliteral">&quot;command `{}` exited with error code {}&quot;</span>, cmd, rc);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
 </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">  117</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">run</a>(std::string cmd, std::string args <span class="comment">/* = {}*/</span>) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    cmd += <span class="stringliteral">&quot;.exe&quot;</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    cmd = <span class="stringliteral">&quot;./&quot;</span>s + cmd;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">sys::system</a>(cmd + <span class="stringliteral">&quot; &quot;</span>s + args);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">  118</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">run</a>(std::string cmd, std::string args <span class="comment">/* = {}*/</span>) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    cmd += <span class="stringliteral">&quot;.exe&quot;</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    cmd = <span class="stringliteral">&quot;./&quot;</span>s + cmd;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">sys::system</a>(cmd + <span class="stringliteral">&quot; &quot;</span>s + args);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
 </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">  126</a></span>std::string <a class="code hl_function" href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">escape</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    std::string str;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : path.string()) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">if</span> (isspace(c)) str += <span class="charliteral">&#39;\\&#39;</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        str += c;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> str;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">  127</a></span>std::string <a class="code hl_function" href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">escape</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    std::string str;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : path.string()) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (isspace(c)) str += <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        str += c;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">return</span> str;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
 </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>} <span class="comment">// namespace mim::sys</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>} <span class="comment">// namespace mim::sys</span></div>
 <div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
 <div class="ttc" id="aconfig_8h_html_ac717b7c5b637710932a0cfef8020069a"><div class="ttname"><a href="config_8h.html#ac717b7c5b637710932a0cfef8020069a">MIM_LIBDIR</a></div><div class="ttdeci">#define MIM_LIBDIR</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00013">config.h:13</a></div></div>
 <div class="ttc" id="aconfig_8h_html_acf14f602e3976ff8653bb419a1d77a7f"><div class="ttname"><a href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a></div><div class="ttdeci">#define MIM_EXPORT</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00019">config.h:19</a></div></div>
 <div class="ttc" id="adbg_8h_html"><div class="ttname"><a href="dbg_8h.html">dbg.h</a></div></div>
 <div class="ttc" id="anamespace_3globalScope_4_html_classint"><div class="ttname"><a href="namespace_3globalScope_4.html#classint">int</a></div></div>
 <div class="ttc" id="anamespacemim_1_1sys_html"><div class="ttname"><a href="namespacemim_1_1sys.html">mim::sys</a></div><div class="ttdef"><b>Definition</b> <a href="sys_8h_source.html#l00019">sys.h:19</a></div></div>
-<div class="ttc" id="anamespacemim_1_1sys_html_a427b6a5c17042bb1943e921a81bebec4"><div class="ttname"><a href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">mim::sys::run</a></div><div class="ttdeci">int run(std::string cmd, std::string args={})</div><div class="ttdoc">Wraps sys::system and puts .exe at the back (Windows) and ./ at the front (otherwise) of cmd.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">sys.cpp:117</a></div></div>
-<div class="ttc" id="anamespacemim_1_1sys_html_a42d15f824f63a7bf77bf2ec140ed99f5"><div class="ttname"><a href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">mim::sys::require_run</a></div><div class="ttdeci">void require_run(const std::string &amp;cmd)</div><div class="ttdoc">Runs cmd via sys::system and throws if it exits with a non-zero status.</div><div class="ttdef"><b>Definition</b> <a href="#l00113">sys.cpp:113</a></div></div>
-<div class="ttc" id="anamespacemim_1_1sys_html_a45bd42e13e6b59eacaf1bba01adda396"><div class="ttname"><a href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">mim::sys::system</a></div><div class="ttdeci">int system(std::string)</div><div class="ttdoc">Wraps std::system and makes the return value usable.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">sys.cpp:107</a></div></div>
-<div class="ttc" id="anamespacemim_1_1sys_html_a93800ed312b2d2504d2027bd089acb2d"><div class="ttname"><a href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">mim::sys::escape</a></div><div class="ttdeci">std::string escape(const std::filesystem::path &amp;path)</div><div class="ttdoc">Returns the path as std::string and escapes all whitespaces with backslash.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">sys.cpp:126</a></div></div>
+<div class="ttc" id="anamespacemim_1_1sys_html_a427b6a5c17042bb1943e921a81bebec4"><div class="ttname"><a href="namespacemim_1_1sys.html#a427b6a5c17042bb1943e921a81bebec4">mim::sys::run</a></div><div class="ttdeci">int run(std::string cmd, std::string args={})</div><div class="ttdoc">Wraps sys::system and puts .exe at the back (Windows) and ./ at the front (otherwise) of cmd.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">sys.cpp:118</a></div></div>
+<div class="ttc" id="anamespacemim_1_1sys_html_a42d15f824f63a7bf77bf2ec140ed99f5"><div class="ttname"><a href="namespacemim_1_1sys.html#a42d15f824f63a7bf77bf2ec140ed99f5">mim::sys::require_run</a></div><div class="ttdeci">void require_run(const std::string &amp;cmd)</div><div class="ttdoc">Runs cmd via sys::system and throws if it exits with a non-zero status.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">sys.cpp:114</a></div></div>
+<div class="ttc" id="anamespacemim_1_1sys_html_a45bd42e13e6b59eacaf1bba01adda396"><div class="ttname"><a href="namespacemim_1_1sys.html#a45bd42e13e6b59eacaf1bba01adda396">mim::sys::system</a></div><div class="ttdeci">int system(std::string)</div><div class="ttdoc">Wraps std::system and makes the return value usable.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">sys.cpp:108</a></div></div>
+<div class="ttc" id="anamespacemim_1_1sys_html_a93800ed312b2d2504d2027bd089acb2d"><div class="ttname"><a href="namespacemim_1_1sys.html#a93800ed312b2d2504d2027bd089acb2d">mim::sys::escape</a></div><div class="ttdeci">std::string escape(const std::filesystem::path &amp;path)</div><div class="ttdoc">Returns the path as std::string and escapes all whitespaces with backslash.</div><div class="ttdef"><b>Definition</b> <a href="#l00127">sys.cpp:127</a></div></div>
 <div class="ttc" id="anamespacemim_1_1sys_html_aabf9e272ba0bd6b36223a016499591a6"><div class="ttname"><a href="namespacemim_1_1sys.html#aabf9e272ba0bd6b36223a016499591a6">mim::sys::find_cmd</a></div><div class="ttdeci">std::string find_cmd(std::string)</div><div class="ttdef"><b>Definition</b> <a href="#l00095">sys.cpp:95</a></div></div>
 <div class="ttc" id="anamespacemim_1_1sys_html_abf749df61514a4b81638b08633d423b1"><div class="ttname"><a href="namespacemim_1_1sys.html#abf749df61514a4b81638b08633d423b1">mim::sys::require_cmd</a></div><div class="ttdeci">std::string require_cmd(std::string_view name)</div><div class="ttdoc">Locates name on the system or throws CmdNotFound.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">sys.cpp:101</a></div></div>
 <div class="ttc" id="anamespacemim_1_1sys_html_ac40a2ca3b8a88f2fa48478770057f5e9"><div class="ttname"><a href="namespacemim_1_1sys.html#ac40a2ca3b8a88f2fa48478770057f5e9">mim::sys::path_to_libmim</a></div><div class="ttdeci">std::optional&lt; fs::path &gt; path_to_libmim()</div><div class="ttdoc">Yields std::nullopt if an error occurred.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">sys.cpp:52</a></div></div>

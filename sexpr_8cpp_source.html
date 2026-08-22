@@ -877,7 +877,7 @@ $(function(){initNavTree('sexpr_8cpp_source.html','',''); });
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span> top = type-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#a8c95db47da2d9514da3e16e015062bf2">Top</a>&gt;()) {</div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        std::print(os, <span class="stringliteral">&quot;(top {})&quot;</span>, <a class="code hl_function" href="classmim_1_1sexpr_1_1Emitter.html#a8911f26c1668a67fd291e1f6617c647f">emit_type</a>(bb, top-&gt;type(), in_term));</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        fe::throwf(<span class="stringliteral">&quot;unsupported type &#39;{}&#39;&quot;</span>, type);</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        fe::throwf(<span class="stringliteral">&quot;unsupported type `{}`&quot;</span>, type);</div>
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        fe::unreachable();</div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    }</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
@@ -1094,7 +1094,7 @@ $(function(){initNavTree('sexpr_8cpp_source.html','',''); });
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">auto</span> hole = def-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Hole.html">Hole</a>&gt;()) {</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>        std::print(os, <span class="stringliteral">&quot;\n{}(hole {})&quot;</span>, <a class="code hl_variable" href="classmim_1_1Emitter.html#a59ec86ba00b809dae2415fe8d7f702b2">tab</a>, <a class="code hl_function" href="classmim_1_1sexpr_1_1Emitter.html#a8911f26c1668a67fd291e1f6617c647f">emit_type</a>(bb, hole-&gt;type()));</div>
 <div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>        fe::throwf(<span class="stringliteral">&quot;Unhandled Def in SExpr backend: {} : {}&quot;</span>, def, def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>());</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>        fe::throwf(<span class="stringliteral">&quot;SExpr backend: unhandled def `{}` of type `{}`&quot;</span>, def, def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>());</div>
 <div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>        fe::unreachable();</div>
 <div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    }</div>
 <div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span> </div>
