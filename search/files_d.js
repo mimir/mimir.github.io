@@ -14,7 +14,9 @@ var searchData=
   ['split_5fapply_2eh_11',['split_apply.h',['../split__apply_8h.html',1,'']]],
   ['split_5foff_5fkernels_2ecpp_12',['split_off_kernels.cpp',['../split__off__kernels_8cpp.html',1,'']]],
   ['split_5foff_5fkernels_2eh_13',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
-  ['stream_2ecpp_14',['stream.cpp',['../stream_8cpp.html',1,'']]],
-  ['sys_2ecpp_15',['sys.cpp',['../sys_8cpp.html',1,'']]],
-  ['sys_2eh_16',['sys.h',['../sys_8h.html',1,'']]]
+  ['static_5farg_5fopt_2ecpp_14',['static_arg_opt.cpp',['../static__arg__opt_8cpp.html',1,'']]],
+  ['static_5farg_5fopt_2eh_15',['static_arg_opt.h',['../static__arg__opt_8h.html',1,'']]],
+  ['stream_2ecpp_16',['stream.cpp',['../stream_8cpp.html',1,'']]],
+  ['sys_2ecpp_17',['sys.cpp',['../sys_8cpp.html',1,'']]],
+  ['sys_2eh_18',['sys.h',['../sys_8h.html',1,'']]]
 ];

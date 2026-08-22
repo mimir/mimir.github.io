@@ -41,6 +41,7 @@ var hierarchy =
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
     [ "absl::InlinedVector", null, [
       [ "mim::Vector< const Def * >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< bool >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Def * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Range >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Dbg >", "classmim_1_1Vector.html", null ],
@@ -111,7 +112,7 @@ var hierarchy =
           [ "mim::Repl", "classmim_1_1Repl.html", null ],
           [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
           [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
-          [ "mim::TailRecElim", "classmim_1_1TailRecElim.html", null ],
+          [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],
           [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
           [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
           [ "mim::plug::autodiff::phase::Eval", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html", null ],

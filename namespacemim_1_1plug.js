@@ -405,7 +405,7 @@ var namespacemim_1_1plug =
       [ "phases", "namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a", null ],
       [ "ret_wrap", "namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34", null ],
       [ "scalarize", "namespacemim_1_1plug_1_1compile.html#abe7aa45fb16af8ecaf314c3aa23cdef4", null ],
-      [ "tail_rec_elim", "namespacemim_1_1plug_1_1compile.html#a6d51765c592d8a40f11be7b57b6815d6", null ],
+      [ "static_arg_opt", "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de", null ],
       [ "unload", "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10", null ],
       [ "normalize_aggr", "namespacemim_1_1plug_1_1compile.html#aff478d151e97170b9981a93af28468ff", null ],
       [ "normalize_cond", "namespacemim_1_1plug_1_1compile.html#a1893a8582c67746a61e0449cb10a37ab", null ],

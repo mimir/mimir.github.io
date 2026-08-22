@@ -231,7 +231,7 @@ Phases</h2>
 <li><span class="tt">null</span>: does nothing; useful as an elided placeholder.</li>
 <li><span class="tt">ret_wrap</span>: prepares return continuations for the backend (<a class="el" href="classmim_1_1RetWrap.html">mim::RetWrap</a>).</li>
 <li><span class="tt">scalarize</span>: flattens function signatures (<a class="el" href="classmim_1_1Scalarize.html" title="Perform Scalarization (= Argument simplification).">mim::Scalarize</a>).</li>
-<li><span class="tt">tail_rec_elim</span>: turns tail recursion into loops (<a class="el" href="classmim_1_1TailRecElim.html" title="Eliminates tail recursion: A returning Lam f that calls itself with its own ret var as continuation i...">mim::TailRecElim</a>).</li>
+<li><span class="tt">static_arg_opt</span>: drops params that recursive calls merely forward, turning them into loops (<a class="el" href="classmim_1_1StaticArgOpt.html" title="Static Argument Transformation.">mim::StaticArgOpt</a>).</li>
 <li><span class="tt">unload</span>: unloads a plugin and nukes its annexes on the next World swap.</li>
 </ul>
 <div class="fragment"><div class="line">axm %compile.beta_red:         %compile.Phase;</div>
@@ -242,7 +242,7 @@ Phases</h2>
 <div class="line">axm %compile.null:             %compile.Phase;</div>
 <div class="line">axm %compile.ret_wrap:         %compile.Phase;</div>
 <div class="line">axm %compile.scalarize:        %compile.Phase;</div>
-<div class="line">axm %compile.tail_rec_elim:    %compile.Phase;</div>
+<div class="line">axm %compile.static_arg_opt:   %compile.Phase;</div>
 <div class="line">axm %compile.unload:           {n: Nat} → «n; I8» → %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

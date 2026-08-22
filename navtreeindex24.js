@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"profile_8cpp_source.html":[5,0,4,1,4,3],
+"profile_8h.html":[5,0,3,1,4,4],
 "profile_8h_source.html":[5,0,3,1,4,4],
 "python.html":[0,8],
 "range__helper_8h.html":[5,0,3,0,5],
@@ -84,6 +86,10 @@ var NAVTREEINDEX24 =
 "split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,3],
 "split__off__kernels_8h.html":[5,0,3,1,3,9,0,3],
 "split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,3],
+"static__arg__opt_8cpp.html":[5,0,4,1,2,7],
+"static__arg__opt_8cpp_source.html":[5,0,4,1,2,7],
+"static__arg__opt_8h.html":[5,0,3,1,2,7],
+"static__arg__opt_8h_source.html":[5,0,3,1,2,7],
 "stream_8cpp.html":[5,0,4,1,0,5],
 "stream_8cpp_source.html":[5,0,4,1,0,5],
 "structautomaton_1_1DFANode_1_1Lt.html":[2,0,0,1,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX24 =
 "structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458":[2,0,3,37,0,1,2],
 "structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458":[4,0,1,36,0,1,2],
 "structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a58e2094f80e777a8bf75e1efc29386df":[2,0,3,37,0,1,0],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a58e2094f80e777a8bf75e1efc29386df":[4,0,1,36,0,1,0],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a7622d1297d17838731d4f249fbff1f1c":[2,0,3,37,0,1,3],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a7622d1297d17838731d4f249fbff1f1c":[4,0,1,36,0,1,3],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a835cdf64395521c736b393399a1dddbd":[2,0,3,37,0,1,5],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a835cdf64395521c736b393399a1dddbd":[4,0,1,36,0,1,5],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a8d9210c34cc2ae3f1846acbe1d9d04de":[2,0,3,37,0,1,4],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a8d9210c34cc2ae3f1846acbe1d9d04de":[4,0,1,36,0,1,4]
+"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a58e2094f80e777a8bf75e1efc29386df":[4,0,1,36,0,1,0]
 };

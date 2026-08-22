@@ -24,13 +24,14 @@ var searchData=
   ['specialtransitons_21',['SpecialTransitons',['../classautomaton_1_1DFA.html#a0e1eba2b8de869d374e647966c20b6d3',1,'automaton::DFA::SpecialTransitons'],['../classautomaton_1_1NFA.html#aa22a4b55ded13c4fc0b6fb4c4fd11d12',1,'automaton::NFA::SpecialTransitons']]],
   ['splat_22',['splat',['../namespacemim_1_1plug_1_1tensor.html#a16a6978611660fab5fcbd02501f236e7',1,'mim::plug::tensor']]],
   ['split_5fapply_23',['split_apply',['../namespacemim_1_1plug_1_1gpu.html#abd4cc171f8effb9c046c05ab8aac1f5e',1,'mim::plug::gpu']]],
-  ['store_24',['store',['../namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c',1,'mim::plug::mem']]],
-  ['stream_25',['Stream',['../namespacemim_1_1plug_1_1gpu.html#a80eea9263170b268667e282c8eb51224',1,'mim::plug::gpu::Stream'],['../namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee',1,'mim::plug::nvptx::Stream']]],
-  ['stream_5fdeinit_26',['stream_deinit',['../namespacemim_1_1plug_1_1gpu.html#a745872ed5defe6928b6e95e73643b72d',1,'mim::plug::gpu']]],
-  ['stream_5fimpl_5frepl_27',['stream_impl_repl',['../namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf',1,'mim::plug::nvptx']]],
-  ['stream_5finit_28',['stream_init',['../namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b',1,'mim::plug::gpu']]],
-  ['stream_5fsync_29',['stream_sync',['../namespacemim_1_1plug_1_1gpu.html#ad487f5418b04c412b0e522aa43b93f1b',1,'mim::plug::gpu']]],
-  ['sum_30',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
-  ['sync_5fwork_5fitems_31',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
-  ['synced_5fscope_32',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
+  ['static_5farg_5fopt_24',['static_arg_opt',['../namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de',1,'mim::plug::compile']]],
+  ['store_25',['store',['../namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c',1,'mim::plug::mem']]],
+  ['stream_26',['Stream',['../namespacemim_1_1plug_1_1gpu.html#a80eea9263170b268667e282c8eb51224',1,'mim::plug::gpu::Stream'],['../namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee',1,'mim::plug::nvptx::Stream']]],
+  ['stream_5fdeinit_27',['stream_deinit',['../namespacemim_1_1plug_1_1gpu.html#a745872ed5defe6928b6e95e73643b72d',1,'mim::plug::gpu']]],
+  ['stream_5fimpl_5frepl_28',['stream_impl_repl',['../namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf',1,'mim::plug::nvptx']]],
+  ['stream_5finit_29',['stream_init',['../namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b',1,'mim::plug::gpu']]],
+  ['stream_5fsync_30',['stream_sync',['../namespacemim_1_1plug_1_1gpu.html#ad487f5418b04c412b0e522aa43b93f1b',1,'mim::plug::gpu']]],
+  ['sum_31',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
+  ['sync_5fwork_5fitems_32',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
+  ['synced_5fscope_33',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
 ];

@@ -57,5 +57,6 @@ var searchData=
   ['split_54',['Split',['../classmim_1_1Split.html',1,'mim']]],
   ['splitapply_55',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase']]],
   ['splitoffkernels_56',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
-  ['state_57',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]]
+  ['state_57',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]],
+  ['staticargopt_58',['StaticArgOpt',['../classmim_1_1StaticArgOpt.html',1,'mim']]]
 ];

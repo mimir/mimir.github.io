@@ -59,7 +59,7 @@ var namespacemim =
     [ "LamSpec", "classmim_1_1LamSpec.html", "classmim_1_1LamSpec" ],
     [ "RetWrap", "classmim_1_1RetWrap.html", "classmim_1_1RetWrap" ],
     [ "Scalarize", "classmim_1_1Scalarize.html", "classmim_1_1Scalarize" ],
-    [ "TailRecElim", "classmim_1_1TailRecElim.html", "classmim_1_1TailRecElim" ],
+    [ "StaticArgOpt", "classmim_1_1StaticArgOpt.html", "classmim_1_1StaticArgOpt" ],
     [ "Unload", "classmim_1_1Unload.html", "classmim_1_1Unload" ],
     [ "Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
     [ "Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
