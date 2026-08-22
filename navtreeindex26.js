@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"tuple.html":[1,21],
+"tuple_2autogen_8h.html":[5,0,0,1,0,0,21,0],
 "tuple_2autogen_8h.html#a30ab67dd73a26a4766362cadbff33551":[5,0,0,1,0,0,21,0,0],
 "tuple_2autogen_8h_source.html":[5,0,0,1,0,0,21,0],
 "tuple_2normalizers_8cpp.html":[5,0,4,1,3,21,0],
