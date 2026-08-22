@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"plugin_8h_source.html":[5,0,3,1,14],
 "plugins.html":[0,4],
 "profile_8cpp.html":[5,0,4,1,4,3],
 "profile_8cpp_source.html":[5,0,4,1,4,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "structmim_1_1Nest_1_1Node_1_1Children.html#af567525f5ecd5223fee825f6b5e92ffb":[4,0,1,36,0,0,7],
 "structmim_1_1Nest_1_1Node_1_1SiblDeps.html":[2,0,3,37,0,1],
 "structmim_1_1Nest_1_1Node_1_1SiblDeps.html":[4,0,1,36,0,1],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458":[2,0,3,37,0,1,2],
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458":[4,0,1,36,0,1,2]
+"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458":[2,0,3,37,0,1,2]
 };

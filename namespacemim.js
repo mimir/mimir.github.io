@@ -283,6 +283,7 @@ var namespacemim =
     [ "Span", "namespacemim.html#a1b6005cc1b5a083a366f7966710919d2", null ],
     [ "Span", "namespacemim.html#a49bdc152ae45f8486620a95995a7d1f5", null ],
     [ "Span", "namespacemim.html#ad28d887db48325d86a01396353c21676", null ],
+    [ "stream_code", "namespacemim.html#ac3fee23ea375f73ae6bdb4be1f9c63ab", null ],
     [ "subview", "namespacemim.html#a7fdffb53ea4f14dbe97425cfc0f77b0e", null ],
     [ "tuple2str", "namespacemim.html#a491928b70e9d5a3cc4bb053cd49bf49e", null ],
     [ "tuple_of_dict", "namespacemim.html#a31108855e962bd3bf8dbf912eb4349b0", null ],

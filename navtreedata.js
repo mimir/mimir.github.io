@@ -121,13 +121,13 @@ var NAVTREEINDEX =
 "config_8h.html#ac717b7c5b637710932a0cfef8020069a",
 "functions_func_t.html",
 "namespacemembers_func_s.html",
-"namespacemim_1_1dl.html#a7f900531d9304c1515a00f136ff01b0f",
-"namespacemim_1_1plug_1_1core.html#a699face68306eeb01636f32010cc2d9daf792d1afb0399dce47533bead9d71a8a",
-"namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a64c823fad1d87e0df1ef3cdeb8ac684f",
-"namespacemim_1_1plug_1_1regex.html#a69e15eff07c15faf117e019314f4ab43",
-"plugins.html",
-"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a58e2094f80e777a8bf75e1efc29386df",
-"tuple.html"
+"namespacemim_1_1dl.html",
+"namespacemim_1_1plug_1_1core.html#a699face68306eeb01636f32010cc2d9d",
+"namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a4feafbe2844085aa42e95fb6d9ea3de8",
+"namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75",
+"plugin_8h_source.html",
+"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a0c2c9e99cc03913760c4fdde365ed458",
+"tok_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
