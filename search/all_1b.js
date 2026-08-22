@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['✨_20a_20taste_20of_20mim_0',['✨ A Taste of Mim',['../index.html#autotoc_md121',1,'']]]
+  ['⚖️_20license_0',['⚖️ License',['../index.html#autotoc_md131',1,'']]]
 ];
