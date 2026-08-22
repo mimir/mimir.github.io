@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"namespacemim_1_1plug_1_1regex.html#a8e7fb7d4e2c8eb1dce002cff7a43cf24":[2,0,3,1,12,6],
 "namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943":[2,0,3,1,12,30],
 "namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49":[2,0,3,1,12,2],
 "namespacemim_1_1plug_1_1regex.html#aa8cfe9b14b05191510c403314b69f2f7":[2,0,3,1,12,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "plugins.html":[0,4],
 "profile_8cpp.html":[5,0,4,1,4,3],
 "profile_8cpp_source.html":[5,0,4,1,4,3],
-"profile_8h.html":[5,0,3,1,4,4],
-"profile_8h_source.html":[5,0,3,1,4,4]
+"profile_8h.html":[5,0,3,1,4,4]
 };

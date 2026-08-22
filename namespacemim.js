@@ -247,6 +247,7 @@ var namespacemim =
     [ "is_commutative", "namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a", null ],
     [ "is_commutative", "namespacemim.html#a1bf9f164e985cb56deedf827f7fb2c3f", null ],
     [ "is_commutative", "namespacemim.html#a2d08547c4fc3b6bcf3d8779269813b50", null ],
+    [ "is_flex", "namespacemim.html#af13ff5627285a5c96c9df99a12612858", null ],
     [ "is_unit", "namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8", null ],
     [ "isa_apped_mut_lam", "namespacemim.html#a3036ca68b9ff9ebd00b9b35c7ad1a9a0", null ],
     [ "isa_callee", "namespacemim.html#aa6e918f49777aea04b1993cded8aa1f7", null ],

@@ -407,5 +407,6 @@ var hierarchy =
     [ "int", "namespace_3globalScope_4.html#classint", null ],
     [ "list&lt; DFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01DFANode_01_4", null ],
     [ "list&lt; NFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01NFANode_01_4", null ],
-    [ "static constexpr bool", "namespace_3globalScope_4.html#classstatic_01constexpr_01bool", null ]
+    [ "static constexpr bool", "namespace_3globalScope_4.html#classstatic_01constexpr_01bool", null ],
+    [ "uint32_t", "namespace_3globalScope_4.html#classuint32__t", null ]
 ];
