@@ -47,7 +47,7 @@ var searchData=
   ['mem_20remem_44',['%mem.remem',['../mem.html#autotoc_md330',1,'']]],
   ['mem_20slot_45',['%mem.slot',['../mem.html#autotoc_md333',1,'']]],
   ['mem_20store_46',['%mem.store',['../mem.html#autotoc_md329',1,'']]],
-  ['memory_20operations_47',['Memory Operations',['../gpu.html#autotoc_md285',1,'Asynchronous Memory Operations'],['../gpu.html#autotoc_md279',1,'Blocking Memory Operations']]],
+  ['memory_20operations_47',['Memory Operations',['../gpu.html#autotoc_md285',1,'Async Memory Operations'],['../gpu.html#autotoc_md279',1,'Blocking Memory Operations']]],
   ['memory_20types_48',['Memory Types',['../gpu.html#autotoc_md267',1,'']]],
   ['meta_49',['Meta',['../regex.html#autotoc_md391',1,'']]],
   ['metadata_50',['Preserving Metadata',['../rewriting.html#autotoc_md135',1,'']]],

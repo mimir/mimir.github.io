@@ -87,7 +87,7 @@ var searchData=
   ['mem_5fdef_84',['mem_def',['../namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2',1,'mim::plug::mem']]],
   ['mem_5fvar_85',['mem_var',['../namespacemim_1_1plug_1_1mem.html#a2446c4ae7a339f03a420a00338ee8e3d',1,'mim::plug::mem']]],
   ['memchecks_86',['MemChecks',['../classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html',1,'mim::plug::gpu::phase::MemChecks'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html#a2a011bdbb5cfa77d0274bd990ce7df04',1,'mim::plug::gpu::phase::MemChecks::MemChecks()']]],
-  ['memory_20operations_87',['Memory Operations',['../gpu.html#autotoc_md285',1,'Asynchronous Memory Operations'],['../gpu.html#autotoc_md279',1,'Blocking Memory Operations']]],
+  ['memory_20operations_87',['Memory Operations',['../gpu.html#autotoc_md285',1,'Async Memory Operations'],['../gpu.html#autotoc_md279',1,'Blocking Memory Operations']]],
   ['memory_20types_88',['Memory Types',['../gpu.html#autotoc_md267',1,'']]],
   ['merge_89',['Merge',['../classmim_1_1Merge.html',1,'mim::Merge'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da68be4837f6c739877233e527a996dd00',1,'mim::Merge']]],
   ['merge_90',['merge',['../classmim_1_1Sets.html#a3715f24419e8a8e20c8a3ba5086b9583',1,'mim::Sets::merge()'],['../classmim_1_1World.html#ad042699cd6434abf9a9a9c3b8f9e0e53',1,'mim::World::merge(const Def *type, Defs ops)'],['../classmim_1_1World.html#acf00d26c993b5eed84f76b572d2c476b',1,'mim::World::merge(Defs ops)']]],

@@ -67,7 +67,7 @@ var searchData=
   ['arith_64',['%math.arith',['../math.html#autotoc_md307',1,'']]],
   ['arity_65',['Arity',['../dev.html#autotoc_md41',1,'']]],
   ['asyn_66',['asyn',['../gpu.html#autotoc_md286',1,'%gpu.alloc(asyn)'],['../gpu.html#autotoc_md290',1,'%gpu.alloc_copy(asyn)'],['../gpu.html#autotoc_md288',1,'%gpu.copy_to_device(asyn)'],['../gpu.html#autotoc_md289',1,'%gpu.copy_to_host(asyn)'],['../gpu.html#autotoc_md287',1,'%gpu.free(asyn)']]],
-  ['asynchronous_20memory_20operations_67',['Asynchronous Memory Operations',['../gpu.html#autotoc_md285',1,'']]],
+  ['async_20memory_20operations_67',['Async Memory Operations',['../gpu.html#autotoc_md285',1,'']]],
   ['at_20all_68',['Why the guard exists at all',['../phases.html#autotoc_md95',1,'']]],
   ['attr_69',['%clos.attr',['../clos.html#autotoc_md222',1,'']]],
   ['attribute_70',['Closure Attribute',['../clos.html#autotoc_md221',1,'']]],

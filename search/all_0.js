@@ -173,7 +173,7 @@ var searchData=
   ['ast_2ecpp_170',['ast.cpp',['../ast_8cpp.html',1,'']]],
   ['ast_2eh_171',['ast.h',['../ast_8h.html',1,'']]],
   ['asyn_172',['asyn',['../gpu.html#autotoc_md286',1,'%gpu.alloc(asyn)'],['../gpu.html#autotoc_md290',1,'%gpu.alloc_copy(asyn)'],['../gpu.html#autotoc_md288',1,'%gpu.copy_to_device(asyn)'],['../gpu.html#autotoc_md289',1,'%gpu.copy_to_host(asyn)'],['../gpu.html#autotoc_md287',1,'%gpu.free(asyn)'],['../namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36acdafd35814cb81a2db371ef99baf6014',1,'mim::plug::gpu::asyn'],['../namespacemim_1_1plug_1_1gpu.html#a984ce474f7a834df9bc48a3851e28650acdafd35814cb81a2db371ef99baf6014',1,'mim::plug::gpu::asyn'],['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3eacdafd35814cb81a2db371ef99baf6014',1,'mim::plug::gpu::asyn'],['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056acdafd35814cb81a2db371ef99baf6014',1,'mim::plug::gpu::asyn'],['../namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09acdafd35814cb81a2db371ef99baf6014',1,'mim::plug::gpu::asyn']]],
-  ['asynchronous_20memory_20operations_173',['Asynchronous Memory Operations',['../gpu.html#autotoc_md285',1,'']]],
+  ['async_20memory_20operations_173',['Async Memory Operations',['../gpu.html#autotoc_md285',1,'']]],
   ['at_20all_174',['Why the guard exists at all',['../phases.html#autotoc_md95',1,'']]],
   ['atan_175',['atan',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a6d86bcdc87773d8bb8527c65ed349b97',1,'mim::plug::math']]],
   ['atanh_176',['atanh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a03d734a4901930676367606890a5db51',1,'mim::plug::math']]],
