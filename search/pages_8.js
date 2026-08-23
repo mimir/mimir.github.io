@@ -41,11 +41,11 @@ var searchData=
   ['is_5ffinite_38',['%math.is_finite',['../math.html#autotoc_md319',1,'']]],
   ['is_5floaded_39',['%compile.is_loaded',['../compile.html#autotoc_md227',1,'']]],
   ['is_5fsome_40',['%option.is_some',['../option.html#autotoc_md353',1,'']]],
-  ['is_5funique_41',['%vec.is_unique',['../vec.html#autotoc_md451',1,'']]],
+  ['is_5funique_41',['%vec.is_unique',['../vec.html#autotoc_md449',1,'']]],
   ['it_20defeats_20the_20purpose_42',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md157',1,'']]],
   ['item_20synchronization_43',['Work-Item Synchronization',['../gpu.html#autotoc_md293',1,'']]],
   ['iterating_20over_20the_20program_44',['Iterating over the Program',['../dev.html#autotoc_md46',1,'']]],
   ['iteration_45',['Iteration',['../mimir.html#mimir_iter',1,'Polymorphic Iteration'],['../phases.html#autotoc_md76',1,'Sparse Fixed-Point Iteration']]],
   ['iterations_46',['Reset Between Iterations',['../phases.html#autotoc_md77',1,'']]],
-  ['iterators_47',['Iterators',['../vec.html#autotoc_md444',1,'']]]
+  ['iterators_47',['Iterators',['../vec.html#autotoc_md442',1,'']]]
 ];

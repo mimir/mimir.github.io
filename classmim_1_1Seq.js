@@ -8,6 +8,5 @@ var classmim_1_1Seq =
     [ "isa_node", "classmim_1_1Seq.html#a8144cb2b5e69f51c6b9ad7496b3b9c5c", null ],
     [ "reduce", "classmim_1_1Seq.html#aff8407c985780fb2e06f85d2365c0e32", null ],
     [ "set", "classmim_1_1Seq.html#a0a8ff8b4a1aa33daaf847e296e4931e0", null ],
-    [ "stub", "classmim_1_1Seq.html#adc53eafc37f05573f0ff37df37a06b6b", null ],
     [ "unset", "classmim_1_1Seq.html#ad717f4e81e7e5065bdfcded4bb81d3f1", null ]
 ];

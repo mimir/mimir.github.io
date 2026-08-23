@@ -8,7 +8,7 @@ var searchData=
   ['generated_20markdown_20page_5',['Generated Markdown Page',['../plugins.html#autotoc_md108',1,'']]],
   ['generated_20python_20module_6',['Generated Python Module',['../plugins.html#autotoc_md107',1,'']]],
   ['generating_20plugin_20interfaces_7',['Generating Plugin Interfaces',['../cli.html#cligen',1,'']]],
-  ['get_8',['get',['../ord.html#autotoc_md367',1,'%ord.get'],['../tensor.html#autotoc_md410',1,'%tensor.get']]],
+  ['get_8',['get',['../ord.html#autotoc_md367',1,'%ord.get'],['../tensor.html#autotoc_md408',1,'%tensor.get']]],
   ['gid_9',['%refly.gid',['../refly.html#autotoc_md379',1,'']]],
   ['global_10',['Local vs. Global',['../dev.html#autotoc_md27',1,'']]],
   ['googletest_11',['GoogleTest',['../coding.html#autotoc_md4',1,'']]],

@@ -20,7 +20,6 @@ var classmim_1_1Pi =
     [ "set_codom", "classmim_1_1Pi.html#a4cef9485136e5a1b0f0d638e8523a4c7", null ],
     [ "set_dom", "classmim_1_1Pi.html#af983745aa89993bf3c0efe8fb2c97380", null ],
     [ "set_dom", "classmim_1_1Pi.html#a2fa17a30aeb2c900b3876e3afc1ba8b7", null ],
-    [ "stub", "classmim_1_1Pi.html#ac8dfd8b3e2566da30721e06f4fdc0a7f", null ],
     [ "unset", "classmim_1_1Pi.html#a33ce4a2b9f089af0ca6a99385ebed77d", null ],
     [ "World", "classmim_1_1Pi.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],
     [ "Node", "classmim_1_1Pi.html#ab9dee5ab84bdc0bcd567cafe9c4a2231", null ],

@@ -1,13 +1,13 @@
 var searchData=
 [
   ['language_20reference_0',['Mim Language Reference',['../langref.html',1,'']]],
-  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md449',1,'']]],
+  ['last_1',['%vec.first / %vec.last',['../vec.html#autotoc_md447',1,'']]],
   ['lattice_20api_2',['Lattice API',['../phases.html#autotoc_md74',1,'']]],
   ['launch_3',['Kernel Launch',['../gpu.html#autotoc_md291',1,'']]],
   ['launch_4',['%gpu.launch',['../gpu.html#autotoc_md292',1,'']]],
   ['layout_5',['Package Layout',['../python.html#autotoc_md115',1,'']]],
   ['lea_6',['%mem.lea',['../mem.html#autotoc_md338',1,'']]],
-  ['len_7',['%vec.len',['../vec.html#autotoc_md450',1,'']]],
+  ['len_7',['%vec.len',['../vec.html#autotoc_md448',1,'']]],
   ['lexical_20structure_8',['Lexical Structure',['../langref.html#lex',1,'']]],
   ['license_9',['⚖️ License',['../index.html#autotoc_md131',1,'']]],
   ['line_20arguments_10',['Line Arguments',['../compile.html#compile_cli_args',1,'Command-Line Arguments'],['../ll.html#ll_cli_args',1,'Command-Line Arguments'],['../ll_nvptx.html#ll_nvptx_cli_args',1,'Command-Line Arguments']]],
@@ -15,7 +15,7 @@ var searchData=
   ['linearize_12',['%affine.linearize',['../affine.html#autotoc_md171',1,'']]],
   ['link_20cut_20tree_20mutates_20in_20place_13',['The link-cut tree mutates in place',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['list_14',['List',['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
-  ['lit_15',['%regex.lit',['../regex.html#autotoc_md396',1,'']]],
+  ['lit_15',['%regex.lit',['../regex.html#autotoc_md394',1,'']]],
   ['lit_20tests_16',['lit Tests',['../coding.html#autotoc_md3',1,'']]],
   ['literals_17',['Matching Literals',['../dev.html#cast_lit',1,'']]],
   ['literals_20and_20basic_20forms_18',['Literals and Basic Forms',['../langref.html#autotoc_md54',1,'']]],
@@ -33,5 +33,5 @@ var searchData=
   ['lower_5ffor_30',['%affine.lower_for',['../affine.html#autotoc_md174',1,'']]],
   ['lower_5findex_31',['%affine.lower_index',['../affine.html#autotoc_md175',1,'']]],
   ['lower_5fptr_32',['%buffer.lower_ptr',['../buffer.html#autotoc_md214',1,'']]],
-  ['lower_5fregex_33',['%regex.lower_regex',['../regex.html#autotoc_md405',1,'']]]
+  ['lower_5fregex_33',['%regex.lower_regex',['../regex.html#autotoc_md403',1,'']]]
 ];

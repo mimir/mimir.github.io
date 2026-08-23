@@ -12,7 +12,6 @@ var classmim_1_1Rule =
     [ "set_guard", "classmim_1_1Rule.html#a6037d58b4bebbeb05d7bb84159d3b4f9", null ],
     [ "set_lhs", "classmim_1_1Rule.html#a31c0f76997d3c964c7527b462462ba26", null ],
     [ "set_rhs", "classmim_1_1Rule.html#a1d94acec81a1d5e013669c356ea7676f", null ],
-    [ "stub", "classmim_1_1Rule.html#a75578233937205a1766218be4a107ee9", null ],
     [ "type", "classmim_1_1Rule.html#afec2183d2e0d1ba109384b2ed68843a3", null ],
     [ "unset", "classmim_1_1Rule.html#abc6c0f3fc341d45e6807f3e10021f968", null ],
     [ "World", "classmim_1_1Rule.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],

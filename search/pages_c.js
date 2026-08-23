@@ -7,7 +7,7 @@ var searchData=
   ['nat_20operations_4',['Nat Operations',['../core.html#autotoc_md235',1,'']]],
   ['ncmp_5',['%core.ncmp',['../core.html#autotoc_md237',1,'']]],
   ['neg_6',['%affine.op(neg)',['../affine.html#autotoc_md166',1,'']]],
-  ['neg_5flookahead_7',['%regex.neg_lookahead',['../regex.html#autotoc_md398',1,'']]],
+  ['neg_5flookahead_7',['%regex.neg_lookahead',['../regex.html#autotoc_md396',1,'']]],
   ['nesting_8',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md29',1,'']]],
   ['nestphase_9',['NestPhase',['../phases.html#phases_nest_phase',1,'']]],
   ['new_20in_20tree_20plugin_10',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md110',1,'']]],
@@ -16,7 +16,7 @@ var searchData=
   ['non_20performance_20costs_13',['Non-performance costs',['../md_docs_2why-cpp.html#autotoc_md155',1,'']]],
   ['none_14',['%option.none',['../option.html#autotoc_md351',1,'']]],
   ['not_20apply_20here_15',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md154',1,'']]],
-  ['not_5f_16',['%regex.not_',['../regex.html#autotoc_md397',1,'']]],
+  ['not_5f_16',['%regex.not_',['../regex.html#autotoc_md395',1,'']]],
   ['notation_17',['Notation',['../langref.html#autotoc_md47',1,'']]],
   ['numerical_20operations_18',['Numerical Operations',['../math.html#autotoc_md306',1,'']]],
   ['nvptx_20plugin_19',['The nvptx Plugin',['../nvptx.html',1,'']]]

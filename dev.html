@@ -353,7 +353,7 @@ Immutables vs. Mutables</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Hash_consing">hash-consed</a>  </td><td class="markdownTableBodyNone">each new instance is fresh  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="classmim_1_1Def.html#aa620bd9f4f38559ce1863300acc92ca2" title="mim::Def::rebuild"><span class="tt">Def::rebuild</span></a>  </td><td class="markdownTableBodyNone"><a class="el" href="classmim_1_1Def.html#af09d5f11c586c2dd9c9c27597540837a" title="mim::Def::stub"><span class="tt">Def::stub</span></a>  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb" title="mim::Rewriter::rewrite_imm"><span class="tt">Rewriter::rewrite_imm</span></a>  </td><td class="markdownTableBodyNone"><a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112" title="mim::Rewriter::rewrite_mut"><span class="tt">Rewriter::rewrite_mut</span></a>  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Immutables</h2>
@@ -380,7 +380,7 @@ Calling Annexes</h3>
 Mutables</h2>
 <p>Mutables are built in three phases:</p>
 <ol type="1">
-<li>Create the mutable node with a <span class="tt">mut_*</span> factory or a <a class="el" href="classmim_1_1Def.html#af09d5f11c586c2dd9c9c27597540837a" title="mim::Def::stub"><span class="tt">stub</span></a>.</li>
+<li>Create the mutable node with a <span class="tt">mut_*</span> factory.</li>
 <li>Optionally, obtain its variable.</li>
 <li>Fill in the body via <a class="el" href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97" title="mim::Def::set"><span class="tt">mim::Def::set</span></a>:</li>
 </ol>
@@ -413,7 +413,7 @@ Binders</h2>
 <div class="line">    lamT-&gt;set(<span class="comment">/*tt filter*/</span> <span class="keyword">true</span>, lamx); <span class="comment">// λ {T: *} (x: T): T = x</span></div>
 <div class="line">    <span class="keywordflow">return</span> lamT;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00113">lam.h:113</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00112">lam.h:112</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00036">world.h:36</a></div></div>
 <div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div></div>
 </div><!-- fragment --><p>We first build the function type <span class="tt">{T: *} → T → T</span> (stored in <span class="tt">pi</span>). Since this type introduces the implicit variable <span class="tt">T</span> (stored in <span class="tt">pT</span>), the outer <a class="el" href="classmim_1_1Pi.html" title="mim::Pi"><span class="tt">Pi</span></a> must be created as a mutable. Before we can retrieve this variable, we must set the domain <span class="tt">*</span> (<span class="tt">w.type()</span>). This is also the reason why the <a class="el" href="classmim_1_1Pi.html" title="mim::Pi"><span class="tt">Pi</span></a> itself lives one universe level above, in <span class="tt">w.type&lt;1&gt;()</span>. The name <span class="tt">"T"</span> is purely for debugging and has no semantic meaning.</p>
@@ -533,8 +533,8 @@ Downcast to Mutables</h3>
 <div class="line">    <span class="keywordflow">if</span> (<span class="keyword">auto</span> mut = def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">isa_mut</a>()) {</div>
 <div class="line">        <span class="comment">// mut has type &quot;Def*&quot; - note that &quot;const&quot; has been removed</span></div>
 <div class="line">        <span class="comment">// This gives you access to the non-const methods:</span></div>
-<div class="line">        <span class="keyword">auto</span> var  = mut-&gt;var();</div>
-<div class="line">        <span class="keyword">auto</span> stub = mut-&gt;stub(type);</div>
+<div class="line">        <span class="keyword">auto</span> var = mut-&gt;var();</div>
+<div class="line">        mut-&gt;unset();</div>
 <div class="line">        <span class="comment">// ...</span></div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -584,9 +584,9 @@ Matching Literals</h3>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_function" href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">Lit::expect</a>(def, <span class="stringliteral">&quot;an address space&quot;</span>);</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea8fa14cdd754f91cc6554c9e71929cce7">f</a> = <a class="code hl_function" href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">Lit::expect&lt;f32&gt;</a>(def, <span class="stringliteral">&quot;a floating-point constant&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmim_1_1Lit_html_a429b15b3da51e9b60ffab09a744896b7"><div class="ttname"><a href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">mim::Lit::isa</a></div><div class="ttdeci">static std::optional&lt; T &gt; isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00925">def.h:925</a></div></div>
-<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00931">def.h:931</a></div></div>
-<div class="ttc" id="aclassmim_1_1Lit_html_ae456e7accf25109716cc43cc369f653b"><div class="ttname"><a href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">mim::Lit::expect</a></div><div class="ttdeci">static T expect(const Def *def, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdoc">Like Lit::as but throws a formatted mim::error instead of merely asserting in Debug; see Def::expect.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00936">def.h:936</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a429b15b3da51e9b60ffab09a744896b7"><div class="ttname"><a href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">mim::Lit::isa</a></div><div class="ttdeci">static std::optional&lt; T &gt; isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00911">def.h:911</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00917">def.h:917</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_ae456e7accf25109716cc43cc369f653b"><div class="ttname"><a href="classmim_1_1Lit.html#ae456e7accf25109716cc43cc369f653b">mim::Lit::expect</a></div><div class="ttdeci">static T expect(const Def *def, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdoc">Like Lit::as but throws a formatted mim::error instead of merely asserting in Debug; see Def::expect.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00922">def.h:922</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1core_html_a4fd1e12f25215e48e67478a04191985ea8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea8fa14cdd754f91cc6554c9e71929cce7">mim::plug::core::ncmp::f</a></div><div class="ttdeci">@ f</div><div class="ttdef"><b>Definition</b> <a href="core_2autogen_8h_source.html#l00031">autogen.h:31</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1core_html_aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661">mim::plug::core::shr::a</a></div><div class="ttdeci">@ a</div><div class="ttdef"><b>Definition</b> <a href="core_2autogen_8h_source.html#l00126">autogen.h:126</a></div></div>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
@@ -641,9 +641,9 @@ Further Casts</h3>
 <div class="line">    <span class="comment">// (the throwing counterpart of the std::optional-returning Idx::size2bitwidth)</span></div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68">w</a> = <a class="code hl_function" href="classmim_1_1Idx.html#a9714d21ad12c168c16d1de07dc7500f2">Idx::expect_bitwidth</a>(def, <span class="stringliteral">&quot;an index type of known width&quot;</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmim_1_1Idx_html_a7b4496e71deaa94835f732de364e5d76"><div class="ttname"><a href="classmim_1_1Idx.html#a7b4496e71deaa94835f732de364e5d76">mim::Idx::isa</a></div><div class="ttdeci">static const Def * isa(const Def *def)</div><div class="ttdoc">Checks if def is a Idx s and returns s or nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00671">def.cpp:671</a></div></div>
-<div class="ttc" id="aclassmim_1_1Idx_html_a9714d21ad12c168c16d1de07dc7500f2"><div class="ttname"><a href="classmim_1_1Idx.html#a9714d21ad12c168c16d1de07dc7500f2">mim::Idx::expect_bitwidth</a></div><div class="ttdeci">static nat_t expect_bitwidth(const Def *type, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdoc">Yields the bit width of the Idx type or throws a formatted mim::error - instead of yielding std::null...</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01002">def.h:1002</a></div></div>
-<div class="ttc" id="aclassmim_1_1Lam_html_adab8c4822338fe32fb4a7711b7d479c0"><div class="ttname"><a href="classmim_1_1Lam.html#adab8c4822338fe32fb4a7711b7d479c0">mim::Lam::isa_mut_cn</a></div><div class="ttdeci">static Lam * isa_mut_cn(const Def *d)</div><div class="ttdoc">Only for mutables.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00147">lam.h:147</a></div></div>
+<div class="ttc" id="aclassmim_1_1Idx_html_a7b4496e71deaa94835f732de364e5d76"><div class="ttname"><a href="classmim_1_1Idx.html#a7b4496e71deaa94835f732de364e5d76">mim::Idx::isa</a></div><div class="ttdeci">static const Def * isa(const Def *def)</div><div class="ttdoc">Checks if def is a Idx s and returns s or nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00605">def.cpp:605</a></div></div>
+<div class="ttc" id="aclassmim_1_1Idx_html_a9714d21ad12c168c16d1de07dc7500f2"><div class="ttname"><a href="classmim_1_1Idx.html#a9714d21ad12c168c16d1de07dc7500f2">mim::Idx::expect_bitwidth</a></div><div class="ttdeci">static nat_t expect_bitwidth(const Def *type, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdoc">Yields the bit width of the Idx type or throws a formatted mim::error - instead of yielding std::null...</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00988">def.h:988</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html_adab8c4822338fe32fb4a7711b7d479c0"><div class="ttname"><a href="classmim_1_1Lam.html#adab8c4822338fe32fb4a7711b7d479c0">mim::Lam::isa_mut_cn</a></div><div class="ttdeci">static Lam * isa_mut_cn(const Def *d)</div><div class="ttdoc">Only for mutables.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00146">lam.h:146</a></div></div>
 <div class="ttc" id="aclassmim_1_1Pi_html_a6b21a83dcd04211ce2bf6c3770d64919"><div class="ttname"><a href="classmim_1_1Pi.html#a6b21a83dcd04211ce2bf6c3770d64919">mim::Pi::isa_basicblock</a></div><div class="ttdeci">static const Pi * isa_basicblock(const Def *d)</div><div class="ttdoc">Is this a continuation (Pi::isa_cn) that is not Pi::isa_returning?</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00056">lam.h:56</a></div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="cast_axm"></a>
 Matching Axioms</h2>
@@ -804,7 +804,7 @@ Iterating over the Program</h1>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> def : world.roots())</div>
 <div class="line">        visit(done, def);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmim_1_1Def_html_a20e9e09e55fc9b46a6f74423f2c5d35d"><div class="ttname"><a href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">mim::Def::deps</a></div><div class="ttdeci">Defs deps() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00434">def.cpp:434</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a20e9e09e55fc9b46a6f74423f2c5d35d"><div class="ttname"><a href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">mim::Def::deps</a></div><div class="ttdeci">Defs deps() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00428">def.cpp:428</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00080">def.h:80</a></div></div>
 </div><!-- fragment --><p>In practice, though, you will usually want to use the <a class="el" href="phases.html" title="Phases">phase</a> infrastructure instead. </p>
 </div></div><!-- contents -->

@@ -35,7 +35,7 @@ var searchData=
   ['umax_32',['UMax',['../classmim_1_1UMax.html',1,'mim::UMax'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dafaa1f94cd925672925f691e7f5727a6b',1,'mim::UMax']]],
   ['umax_33',['umax',['../classmim_1_1World.html#ac9137dd725b1e68cb0236246c463f07a',1,'mim::World::umax()'],['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a82c1089b8c973b65be6d620f765ed1f5',1,'mim::plug::core::umax']]],
   ['umin_34',['umin',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a017163727bc806385f1453c130b4fce3',1,'mim::plug::core']]],
-  ['unary_35',['unary',['../tensor.html#autotoc_md431',1,'%tensor.unary'],['../namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65',1,'mim::plug::tensor::unary']]],
+  ['unary_35',['unary',['../tensor.html#autotoc_md429',1,'%tensor.unary'],['../namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65',1,'mim::plug::tensor::unary']]],
   ['unary_5fimpl_36',['unary_impl',['../namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd',1,'mim::plug::tensor']]],
   ['uncurry_37',['uncurry',['../classmim_1_1App.html#a88adc23138a6b3ce936b0af483421a11',1,'mim::App::uncurry(const Def *def)'],['../classmim_1_1App.html#a7ef3a62008e14c5bd706e56bf81b7d31',1,'mim::App::uncurry() const']]],
   ['uncurry_5fargs_38',['uncurry_args',['../classmim_1_1App.html#aa6d570d00183417757fd4ebdf2ee45b8',1,'mim::App::uncurry_args(const Def *def)'],['../classmim_1_1App.html#ac69c2673100202cef7725773dcc08d5f',1,'mim::App::uncurry_args() const']]],

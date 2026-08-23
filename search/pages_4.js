@@ -5,7 +5,7 @@ var searchData=
   ['embedded_20python_20dsl_2',['Embedded Python DSL',['../python.html#autotoc_md119',1,'']]],
   ['emit_3',['emit',['../ll.html#autotoc_md300',1,'%ll.emit'],['../ll_nvptx.html#autotoc_md303',1,'%ll_nvptx.emit']]],
   ['empirical_20argument_4',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
-  ['empty_5',['%regex.empty',['../regex.html#autotoc_md401',1,'']]],
+  ['empty_5',['%regex.empty',['../regex.html#autotoc_md399',1,'']]],
   ['equiv_6',['%refly.equiv',['../refly.html#autotoc_md382',1,'']]],
   ['er_7',['%math.er',['../math.html#autotoc_md313',1,'']]],
   ['error_20handling_20helpers_8',['Error Handling Helpers',['../python.html#autotoc_md117',1,'']]],
