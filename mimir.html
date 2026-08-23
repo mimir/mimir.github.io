@@ -138,19 +138,19 @@ $(function(){initNavTree('mimir.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md68">Syntax </a>
+    <a href="#autotoc_md69">Syntax </a>
   </li>
   <li class="level1">
     <a href="#mimir_plugins">Plugins </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md69">Annexes </a>
+        <a href="#autotoc_md70">Annexes </a>
         <ul>
           <li class="level3">
-            <a href="#autotoc_md70">Axioms </a>
+            <a href="#autotoc_md71">Axioms </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md71">Other Definitions </a>
+            <a href="#autotoc_md72">Other Definitions </a>
           </li>
         </ul>
       </li>
@@ -180,7 +180,7 @@ $(function(){initNavTree('mimir.html','',''); });
 <li>A demonstration of MimIR's defining trait: <b>types are ordinary values</b>, computed in the same graph as terms — the basis for <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent types</b></a>.</li>
 </ol>
 <p>Under the hood, MimIR is not a list of instructions but a <b>graph</b>. The <span class="tt">let</span> bindings in the examples below are pure surface sugar — they only name subexpressions. Inlining them or adding more yields the <b>exact same graph</b>, because in MimIR the graph <em>is</em> the program.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Syntax</h1>
 <p>Before we dive in, here is just enough <a class="el" href="namespaceMim.html">Mim</a> syntax to read the examples. Much of it is merely <b>syntactic sugar</b> over that graph:</p>
 <ul>
@@ -222,14 +222,14 @@ Plugins</h1>
 <li>a shared library that registers their runtime behavior: normalizers and plugin-specific compiler <a class="el" href="phases.html" title="Phases">phases</a>.</li>
 </ul>
 <p>The examples below use the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin throughout, hence the <span class="tt">plugin core;</span> at the top of each file.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Annexes</h2>
 <p>An <b>annex</b> is any entity a plugin exports; you reference it with the <span class="tt">%plugin.path</span> syntax, such as <span class="tt">%core.wrap.add</span> or <span class="tt">%core.select</span> from the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin. Annexes come in two flavors: Axioms and other definitions.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Axioms</h3>
 <p>These are opaque primitives with <em>no</em> <a class="el" href="namespaceMim.html">Mim</a> definition. Their meaning comes from the plugin's C++ side (see below), not from any <a class="el" href="namespaceMim.html">Mim</a> code. <span class="tt">%core.wrap.add</span> (machine addition) and <span class="tt">%core.pe.is_closed</span> (which checks whether an expression contains no free variables) are treated as axioms.</p>
 <p>Axioms get their behavior from <b>normalizers</b>: small C++ functions that live <em>inside</em> the plugin's shared library, each attached to an axiom. Whenever a node is constructed, MimIR fires the matching normalizer <b>eagerly, on the fly</b> — so the simplified node is the only one that ever exists. <a href="https://en.wikipedia.org/wiki/Constant_folding">Constant folding</a> and <a href="https://en.wikipedia.org/wiki/Peephole_optimization">peephole</a> rewrites such as <span class="tt">x + 0 → x</span> are implemented exactly this way: you never build <span class="tt">%core.wrap.add (x, 0)</span> and optimize it away later — it collapses to <span class="tt">x</span> at construction time.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Other Definitions</h3>
 <p>These are ordinary <a class="el" href="namespaceMim.html">Mim</a> values, written as plain <a class="el" href="namespaceMim.html">Mim</a>. <span class="tt">%core.select</span>, for instance, is just </p><div class="fragment"><div class="line">lam %core.select {T: *} (cond, t, f): T = (f, t)#cond;</div>
 </div><!-- fragment --><p> Being a direct-style function, it carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a>, which tells MimIR to <b>β-reduce its applications eagerly during graph construction</b>. So a call <span class="tt">%core.select (a, b, c)</span> is inlined on the spot, collapsing to the indexed read <span class="tt">(c, b)#a</span> — the <span class="tt">select</span> itself never appears in the graph.</p>

@@ -190,46 +190,49 @@ $(function(){initNavTree('langref.html','',''); });
             <a href="#autotoc_md55">Functions and Continuations </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md56">Products, Sequences, Unions, and Matching </a>
+            <a href="#autotoc_md56">Products </a>
           </li>
           <li class="level3">
-            <a href="#autotoc_md57">Local Declaration Blocks </a>
+            <a href="#autotoc_md57">Unions </a>
+          </li>
+          <li class="level3">
+            <a href="#autotoc_md58">Local Declaration Blocks </a>
           </li>
         </ul>
       </li>
       <li class="level2">
-        <a href="#autotoc_md58">Precedence </a>
+        <a href="#autotoc_md59">Precedence </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md59">Summary: Functions and Types </a>
+    <a href="#autotoc_md60">Summary: Functions and Types </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md60">Declarations </a>
+        <a href="#autotoc_md61">Declarations </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md61">Expressions </a>
+        <a href="#autotoc_md62">Expressions </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md62">Applications </a>
+        <a href="#autotoc_md63">Applications </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md63">Function Types </a>
+        <a href="#autotoc_md64">Function Types </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md64">Scoping </a>
+    <a href="#autotoc_md65">Scoping </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md65">Underscore </a>
+        <a href="#autotoc_md66">Underscore </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md66">Annex </a>
+        <a href="#autotoc_md67">Annex </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md67">Field Names of Sigmas </a>
+        <a href="#autotoc_md68">Field Names of Sigmas </a>
       </li>
     </ul>
   </li>
@@ -480,7 +483,7 @@ Functions and Continuations</h3>
 <li><span class="tt">ret p = callee $ arg; body</span> binds the result of a continuation-style call and continues with <span class="tt">body</span>.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
-Products, Sequences, Unions, and Matching</h3>
+Products</h3>
 <div class="fragment"><div class="line">e   ::= &quot;[&quot; ... &quot;]&quot;</div>
 <div class="line">     |  &quot;(&quot; (e (&quot;,&quot; e)* &quot;,&quot;?)? &quot;)&quot;</div>
 <div class="line">     |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
@@ -488,9 +491,6 @@ Products, Sequences, Unions, and Matching</h3>
 <div class="line">     |  e &quot;#&quot; e</div>
 <div class="line">     |  e &quot;#&quot; I</div>
 <div class="line">     |  &quot;ins&quot; &quot;(&quot; e &quot;,&quot; e &quot;,&quot; e &quot;)&quot;</div>
-<div class="line">     |  e &quot;∪&quot; e</div>
-<div class="line">     |  e &quot;inj&quot; e</div>
-<div class="line">     |  &quot;match&quot; e &quot;with&quot; (&quot;|&quot;? p &quot;=&gt;&quot; e)+</div>
 <div class="line"> </div>
 <div class="line">arity ::= e</div>
 <div class="line">       |  I &quot;:&quot; e</div>
@@ -502,15 +502,22 @@ Products, Sequences, Unions, and Matching</h3>
 <li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
 <li><span class="tt">e # i</span> or <span class="tt">e # e</span> extracts a component.</li>
 <li><span class="tt">ins(tuple, index, value)</span> inserts a value into a tuple-like aggregate.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+Unions</h3>
+<div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
+<div class="line">     |  e &quot;inj&quot; e</div>
+<div class="line">     |  &quot;match&quot; e &quot;with&quot; (&quot;|&quot;? p &quot;=&gt;&quot; e)+</div>
+</div><!-- fragment --><ul>
 <li><span class="tt">e ∪ t</span> forms a union type.</li>
 <li><span class="tt">e inj t</span> injects a value into a union type.</li>
 <li><span class="tt">match e with | p =&gt; e | ...</span> eliminates a union value.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
 Local Declaration Blocks</h3>
 <div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
 </div><!-- fragment --><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
 Precedence</h2>
 <p>The current parser uses the following precedence, from strongest to weakest binding:</p>
 <div class="fragment"><div class="line">1.  L : e                  literal and token-local type ascription</div>
@@ -525,48 +532,48 @@ Precedence</h2>
 <li><span class="tt">inj</span> and <span class="tt">→</span> associate right-to-left.</li>
 <li><span class="tt">where</span> is the loosest surface operator.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
 Summary: Functions and Types</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses different surface syntax for declarations, expressions, and types:</p>
 <div class="fragment"><div class="line">Declaration   Expression   Type</div>
 <div class="line">lam           λ / lm       -&gt;</div>
 <div class="line">con           cn           Cn</div>
 <div class="line">fun           fn           Fn</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
 <div class="fragment"><div class="line">lam f(T: *)((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">con f(T: *)((x y: T), return: Cn T)        = return x;</div>
 <div class="line">fun f(T: *) (x y: T): T                    = return x;</div>
 </div><!-- fragment --><p>Partial-evaluation filters default to <span class="tt">tt</span>, except for <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, and <span class="tt">fn</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above:</p>
 <div class="fragment"><div class="line">let f =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)   : ⊥ = return x;</div>
 <div class="line">let f = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f = fn (T: *)  (x y: T): T                    = return x;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Applications</h2>
 <p>The following applications of <span class="tt">f</span> are equivalent:</p>
 <div class="fragment"><div class="line">f Nat ((23, 42), cn res: Nat = use(res))</div>
 <div class="line">ret res = f Nat $ (23, 42); use(res)</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
 <div class="fragment"><div class="line">[T: *] →    [[T, T], T → ⊥] → ⊥</div>
 <div class="line">[T: *] → Cn [[T, T], Cn T]</div>
 <div class="line">[T: *] → Fn  [T, T] → T</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same namespace.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Annex</h2>
 <p>Annex names live in a separate global namespace.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Field Names of Sigmas</h2>
 <p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of mutable sigma types are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">X</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>
 <div class="fragment"><div class="line">let i = 1_2;</div>

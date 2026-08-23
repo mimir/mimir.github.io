@@ -176,7 +176,7 @@ $(function(){initNavTree('dev.html','',''); });
                 <a href="#autotoc_md29">Scope &amp; Nesting </a>
               </li>
               <li class="level4">
-                <a href="#autotoc_md30"><span class="tt">Dep</span>: A Cheap Approximation </a>
+                <a href="#autotoc_md30"><span class="tt">Dep</span> </a>
               </li>
             </ul>
           </li>
@@ -468,7 +468,7 @@ Scope &amp; Nesting</h4>
 <li><a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">mim::Def::nests</span></a> answers whether a mutable statically nests another <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>. The relation is <b>strict</b>: <span class="tt">f-&gt;nests(f)</span> is <span class="tt">false</span>, and a <span class="tt">def</span> that only uses <span class="tt">f</span>'s own <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a> sits at <span class="tt">f</span>'s level and is likewise <em>not</em> nested.</li>
 </ul>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
-<span class="tt">Dep</span>: A Cheap Approximation</h4>
+<span class="tt">Dep</span></h4>
 <p>When you only need a yes/no answer — <em>does this subtree contain <b>any</b> <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a>, <a class="el" href="classmim_1_1Hole.html" title="mim::Hole"><span class="tt">Hole</span></a>, mutable, or <a class="el" href="classmim_1_1Proxy.html" title="mim::Proxy"><span class="tt">Proxy</span></a>?</em> — <a class="el" href="classmim_1_1Def.html#a1c60c2953cf5f5ad2869bf24c7870417" title="mim::Def::has_dep"><span class="tt">mim::Def::has_dep</span></a> is far cheaper than materializing <span class="tt">free_vars()</span>. Like <span class="tt">local_vars()</span>, it is a per-node bitset (see <a class="el" href="namespacemim.html#a249738da6a953390b70691dd3fe7132b" title="mim::Dep"><span class="tt">mim::Dep</span></a>) that only looks up to the next mutable:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (def-&gt;has_dep(<a class="code hl_enumvalue" href="namespacemim.html#a249738da6a953390b70691dd3fe7132ba5a92344ee95acf10c31901b36418be77">Dep::Var</a>)) { <span class="comment">/* def mentions some Var before the next mutable */</span> }</div>
 <div class="line"><span class="keywordflow">if</span> (!def-&gt;has_dep())        { <span class="comment">/* def is a fully closed, ground term */</span> }</div>

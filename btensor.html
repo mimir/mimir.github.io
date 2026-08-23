@@ -138,41 +138,41 @@ $(function(){initNavTree('btensor.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md191">Dependencies </a>
+    <a href="#autotoc_md192">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md192">Types </a>
+    <a href="#autotoc_md193">Types </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md193">%btensor.Ring </a>
+        <a href="#autotoc_md194">%btensor.Ring </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md194">Operations </a>
+    <a href="#autotoc_md195">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md195">%btensor.map_reduce </a>
+        <a href="#autotoc_md196">%btensor.map_reduce </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md196">%btensor.product_2d </a>
+        <a href="#autotoc_md197">%btensor.product_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md197">%btensor.transpose_2d </a>
+        <a href="#autotoc_md198">%btensor.transpose_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md198">%btensor.broadcast </a>
+        <a href="#autotoc_md199">%btensor.broadcast </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md199">%btensor.pad </a>
+        <a href="#autotoc_md200">%btensor.pad </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md200">%btensor.concat </a>
+        <a href="#autotoc_md201">%btensor.concat </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md201">Phases </a>
+    <a href="#autotoc_md202">Phases </a>
   </li>
 </ul>
 </div>
@@ -180,16 +180,16 @@ $(function(){initNavTree('btensor.html','',''); });
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1btensor.html" title="The btensor Plugin">mim::plug::btensor</a></dd></dl>
 <p>Bufferized tensor operations: a generic <span class="tt">map_reduce</span> loop-nest abstraction plus derived operations (matrix product, transpose, pad, concat, ...), lowered to <span class="tt">%affine.For</span> loop nests over <span class="tt">%buffer</span> element operations.</p>
 <p>This is the bufferized mirror of the <span class="tt">tensor</span> plugin: every op here is the <span class="tt">%buffer.Buf</span> counterpart of a <span class="tt">%tensor.*</span> op, takes the same groups in the same order, and threads <span class="tt">%mem.M</span> on top. <span class="tt">%tensor.lower_to_mem</span> bufferizes the SSA-world <span class="tt">%tensor.*</span> ops onto these.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md191"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md192"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin cps; // for %cps.cps2ds</div>
 <div class="line">plugin affine;</div>
 <div class="line">plugin buffer;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md192"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
 Types</h1>
 <p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">%buffer.Buf</span> type. The element operations (<span class="tt">%buffer.alloc</span> / <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.constant</span> / <span class="tt">%buffer.shape</span>) and their lowering to <span class="tt">%mem.Ptr</span> (<span class="tt">%buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md194"></a>
 %btensor.Ring</h2>
 <p>Represents an <a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">algebraic ring</a>. E.g., <span class="tt">let nat_ring = (Nat, 0, %core.nat.add, %core.nat.mul);</span>.</p>
 <p>%tensor.Ring is an alias for this type: <span class="tt">tensor</span> bufferizes onto <span class="tt">%btensor.*</span>, so <span class="tt">btensor</span> is the lower of the two layers and owns the definition. </p><div class="fragment"><div class="line">let %btensor.Ring = [</div>
@@ -198,9 +198,9 @@ Types</h1>
 <div class="line">    add: [T, T] → T,</div>
 <div class="line">    mul: [T, T] → T,</div>
 <div class="line">];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md194"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
 %btensor.map_reduce</h2>
 <p>The buffer-world counterpart of %tensor.map_reduce and the workhorse behind every operation below: a reduction fold over an affinely-indexed loop nest on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>.</p>
 <p>The iteration domain and the result shape are stated explicitly:</p><ul>
@@ -224,10 +224,11 @@ Operations</h1>
 <div class="line">                      → [%mem.M 0, %buffer.Buf (Ro, So, To)];</div>
 </div><!-- fragment --><p> <span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. %tensor.proj_map is an alias for this lam. </p><div class="fragment"><div class="line">lam %btensor.proj_map {n r: Nat} (subs: «r; Nat») (o: «n; %affine.index»): «r; %affine.index» =</div>
 <div class="line">    ‹j: r; o#(%core.idx n 0 (subs#j))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
 %btensor.product_2d</h2>
 <p>Computes the matrix product of two 2-dimensional matrices in the ring <span class="tt">R</span> - the buffer-world counterpart of %tensor.product_2d. <span class="tt">[R: %btensor.Ring]</span> is the leading <em>explicit</em> group, as in %tensor.product_2d: a ring cannot be recovered from <span class="tt">R#T</span> by inference.</p>
-<p>Unlike %tensor.product_2d this is a <span class="tt">lam</span> wrapping %btensor.map_reduce directly, not an <span class="tt">axm</span> paired with an <span class="tt">_impl</span> annex and a lowering phase: nothing in this plugin inspects the high-level form - there is no fusion phase over <span class="tt">%btensor.*</span> and the normalizer was a no-op - so the extra staging bought nothing. %btensor.transpose_2d follows the same pattern. </p><div class="fragment"></div><!-- fragment --><p> Fused multiply-add over the ring <span class="tt">R</span>; <span class="tt">ab#0</span> is the <span class="tt">t1</span> element, <span class="tt">ab#1</span> the <span class="tt">t2</span> element. The mem-threaded counterpart of the <span class="tt">tensor</span> plugin's <span class="tt">conv_fun</span>. </p><div class="fragment"><div class="line">fun product_2d_fun [R: %btensor.Ring] (mem: %mem.M 0, acc: R#T, ab: «2; R#T»)@tt: [%mem.M 0, R#T] =</div>
+<p>Unlike %tensor.product_2d this is a <span class="tt">lam</span> wrapping %btensor.map_reduce directly, not an <span class="tt">axm</span> paired with an <span class="tt">_impl</span> annex and a lowering phase: nothing in this plugin inspects the high-level form - there is no fusion phase over <span class="tt">%btensor.*</span> and the normalizer was a no-op - so the extra staging bought nothing. %btensor.transpose_2d follows the same pattern.</p>
+<p>Fused multiply-add over the ring <span class="tt">R</span>; <span class="tt">ab#0</span> is the <span class="tt">t1</span> element, <span class="tt">ab#1</span> the <span class="tt">t2</span> element. The mem-threaded counterpart of the <span class="tt">tensor</span> plugin's <span class="tt">conv_fun</span>. </p><div class="fragment"><div class="line">fun product_2d_fun [R: %btensor.Ring] (mem: %mem.M 0, acc: R#T, ab: «2; R#T»)@tt: [%mem.M 0, R#T] =</div>
 <div class="line">    return (mem, R#add (acc, R#mul (ab#0_2, ab#1_2)));</div>
 </div><!-- fragment --><p> The loop vector is <span class="tt">(i, j, k)</span> and follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k t1[i, k] · t2[k, j]</span>), so <span class="tt">k</span> is the single reduction loop. </p><div class="fragment"><div class="line">lam %btensor.product_2d [R: %btensor.Ring] {m k l: Nat}</div>
 <div class="line">                       (mem: %mem.M 0, t1: %buffer.Buf (2, (m, k), R#T), t2: %buffer.Buf (2, (k, l), R#T))</div>
@@ -237,10 +238,13 @@ Operations</h1>
 <div class="line">        (%btensor.proj_map (0, 1))</div>
 <div class="line">        (%btensor.proj_map (0, 2), %btensor.proj_map (2, 1))</div>
 <div class="line">        (mem, (t1, t2));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
 %btensor.transpose_2d</h2>
-<p>Permutes the dimensions of a 2-dimensional matrix - the buffer-world counterpart of %tensor.transpose_2d. As there, the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s, and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>. Like %btensor.product_2d this is a <span class="tt">lam</span> over %btensor.map_reduce rather than an <span class="tt">axm</span>. </p><div class="fragment"></div><!-- fragment --><p> Ignores the (⊥) accumulator and just returns the read value - the mem-threaded counterpart of <span class="tt">tensor_copy</span>. </p><div class="fragment"><div class="line">fun btensor_copy {T: *} (mem: %mem.M 0, acc y: T)@tt: [%mem.M 0, T] = return (mem, y);</div>
-</div><!-- fragment --><p> Transpose a matrix by reading the input at the swapped loop variables; there is no reduction loop. </p><div class="fragment"><div class="line">lam %btensor.transpose_2d {T: *} {s: «2; Nat»}</div>
+<p>Permutes the dimensions of a 2-dimensional matrix - the buffer-world counterpart of %tensor.transpose_2d. As there, the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s, and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>. Like %btensor.product_2d this is a <span class="tt">lam</span> over %btensor.map_reduce rather than an <span class="tt">axm</span>.</p>
+<p>Ignores the (⊥) accumulator and just returns the read value - the mem-threaded counterpart of <span class="tt">tensor_copy</span>.</p>
+<div class="fragment"><div class="line">fun btensor_copy {T: *} (mem: %mem.M 0, acc y: T)@tt: [%mem.M 0, T] = return (mem, y);</div>
+</div><!-- fragment --><p>Transpose a matrix by reading the input at the swapped loop variables; there is no reduction loop.</p>
+<div class="fragment"><div class="line">lam %btensor.transpose_2d {T: *} {s: «2; Nat»}</div>
 <div class="line">                         (mem: %mem.M 0, input: %buffer.Buf (2, s, T))</div>
 <div class="line">                       : [%mem.M 0, %buffer.Buf (2, (s#tt, s#ff), T)] =</div>
 <div class="line">    let s_out = (s#tt, s#ff);</div>
@@ -249,14 +253,14 @@ Operations</h1>
 <div class="line">        %affine.id</div>
 <div class="line">        (%btensor.proj_map (1, 0),)</div>
 <div class="line">        (mem, input);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
 %btensor.broadcast</h2>
 <p>Expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span> - the buffer-world counterpart of %tensor.broadcast: for all <span class="tt">i</span>, either <span class="tt">s_in#i = s_out#i</span> or <span class="tt">s_in#i = 1</span>, and the size-1 dimensions are expanded to fit <span class="tt">s_out</span>. The input/output buffer shapes (<span class="tt">ri</span>/<span class="tt">si</span>, <span class="tt">ro</span>/<span class="tt">so</span>) are the actual — possibly size-1-folded — buffer shapes and are inferred from the operands; <span class="tt">s_in</span>/<span class="tt">s_out</span> are the logical (unfolded) shapes.</p>
 <div class="fragment"><div class="line">axm %btensor.broadcast: {T: *, ri: Nat, si: «ri; Nat», ro: Nat, so: «ro; Nat», r: Nat}</div>
 <div class="line">                     → [s_in s_out: «r; Nat»]</div>
 <div class="line">                     → [%mem.M 0, input: %buffer.Buf (ri, si, T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ro, so, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
 %btensor.pad</h2>
 <p>Pads each axis - the buffer-world counterpart of %tensor.pad: <span class="tt">out[…o…] = input[…o−lo…]</span> inside the interior, <span class="tt">value</span> (mode 0, constant) or the clamped edge element (mode ≠ 0, replicate) outside. The groups mirror %tensor.pad (<span class="tt">{T, r}</span> → input shape → pad parameters → operands); unlike there, <span class="tt">s_out</span> cannot be computed here (<span class="tt">pad_shape</span> lives in the <span class="tt">tensor</span> plugin), so it rides along with the parameters. The buffer shapes are stated as the logical shapes; <span class="tt">%buffer.Buf</span> normalizes literal size-1 axes away, so they agree with the folded buffer handles, and the loop generation folds its read/write indices accordingly.</p>
 <div class="fragment"><div class="line">axm %btensor.pad: {T: *, r: Nat}</div>
@@ -264,7 +268,7 @@ Operations</h1>
 <div class="line">              → [s_out: «r; Nat», mode: Nat, lo hi: «r; Nat»]</div>
 <div class="line">              → [%mem.M 0, input: %buffer.Buf (r, s_in, T), value: T]</div>
 <div class="line">              → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
 %btensor.concat</h2>
 <p>Joins <span class="tt">nis</span> buffers along axis <span class="tt">ax</span> - the buffer-world counterpart of %tensor.concat. <span class="tt">out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]</span>, where <span class="tt">k</span> is the input whose range <span class="tt">o#ax</span> lands in (<span class="tt">off</span> are the prefix sums of the per-input extents along <span class="tt">ax</span>). Unlike %tensor.concat, <span class="tt">s_out</span> (the summed extent along <span class="tt">ax</span>, the shared extents elsewhere) is passed explicitly, since <span class="tt">concat_shape</span> lives in the <span class="tt">tensor</span> plugin.</p>
 <div class="fragment"><div class="line">axm %btensor.concat: {T: *, nis r: Nat}</div>
@@ -273,7 +277,7 @@ Operations</h1>
 <div class="line">                  → [s_out: «r; Nat»]</div>
 <div class="line">                  → [%mem.M 0, is: «i: nis; %buffer.Buf (r, Sis#i, T)»]</div>
 <div class="line">                  → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
 Phases</h1>
 <ul>
 <li><span class="tt">lower_map_reduce</span>: lowers the buffer-world ops (<span class="tt">%btensor.map_reduce</span>, <span class="tt">%btensor.broadcast</span>, <span class="tt">%btensor.pad</span>, <span class="tt">%btensor.concat</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations. <span class="tt">%btensor.product_2d</span> and <span class="tt">%btensor.transpose_2d</span> need no phase of their own: they are <span class="tt">lam</span>s that reduce to <span class="tt">%btensor.map_reduce</span> at their call site.</li>

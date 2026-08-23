@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🧩_20plugins_0',['🧩 Plugins',['../index.html#autotoc_md126',1,'']]]
+  ['🧩_20plugins_0',['🧩 Plugins',['../index.html#autotoc_md127',1,'']]]
 ];
