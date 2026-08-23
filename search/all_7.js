@@ -18,7 +18,7 @@ var searchData=
   ['haskell_20specifically_15',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_16',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md158',1,'']]],
   ['head_17',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tuple_20tail_18',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md439',1,'']]],
+  ['head_20tuple_20tail_18',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md444',1,'']]],
   ['header_19',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['helpers_20',['Error Handling Helpers',['../python.html#autotoc_md118',1,'']]],
   ['here_21',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md155',1,'']]],

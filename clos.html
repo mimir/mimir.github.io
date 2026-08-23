@@ -138,62 +138,62 @@ $(function(){initNavTree('clos.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md216">Dependencies </a>
+    <a href="#autotoc_md221">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md217">Operations </a>
+    <a href="#autotoc_md222">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md218">%clos.BufPtr </a>
+        <a href="#autotoc_md223">%clos.BufPtr </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md219">%clos.alloc_jmpbuf </a>
+        <a href="#autotoc_md224">%clos.alloc_jmpbuf </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md220">%clos.setjmp </a>
+        <a href="#autotoc_md225">%clos.setjmp </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md221">%clos.longjmp </a>
+        <a href="#autotoc_md226">%clos.longjmp </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md222">Closure Attribute </a>
+    <a href="#autotoc_md227">Closure Attribute </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md223">%clos.attr </a>
+        <a href="#autotoc_md228">%clos.attr </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md224">Phases </a>
+    <a href="#autotoc_md229">Phases </a>
   </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2clos"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1clos.html" title="The clos Plugin">mim::plug::clos</a></dd></dl>
 <p>This plugin performs <em>typed closure conversion</em>: it turns functions that capture free variables into self-contained <em>closures</em> - a pair of a <em>code pointer</em> and an <em>environment</em> holding the captured values - so that every function becomes closed and can be lifted to the top level. Later it lowers these typed closures to untyped <span class="tt">(code-ptr, env-ptr)</span> pairs and turns exception-like basic blocks into <span class="tt">setjmp</span>/<span class="tt">longjmp</span>. The transformation is a pipeline of <a class="el" href="phases.html" title="Phases">Phases</a> (see below); the C++ implementation lives in <a class="el" href="namespacemim_1_1plug_1_1clos.html" title="The clos Plugin">mim::plug::clos</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md216"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md217"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
 Operations</h1>
 <p><a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html" title="Lowers basicblock closures that are passed as arguments (i.e.">mim::plug::clos::phase::Clos2SJLJ</a> lowers exception-like basic-block closures to these operations.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
 %clos.BufPtr</h2>
 <p>An opaque pointer to a C <span class="tt">jmp_buf</span>; its size in bytes is provided by the runtime. </p><div class="fragment"><div class="line">let %clos.BufPtr = %mem.Ptr0 I8;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
 %clos.alloc_jmpbuf</h2>
 <p>Allocates a fresh <span class="tt">jmp_buf</span> and yields a pointer to it. </p><div class="fragment"><div class="line">axm %clos.alloc_jmpbuf: %mem.M 0 → [%mem.M 0, %clos.BufPtr];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
 %clos.setjmp</h2>
 <p>Saves the current execution context into the <span class="tt">jmp_buf</span> (like C <span class="tt">setjmp</span>). Yields <span class="tt">0</span> on the initial call and the non-zero tag passed to <span class="tt">%clos.longjmp</span> when jumped to. </p><div class="fragment"><div class="line">axm %clos.setjmp: [%mem.M 0, %clos.BufPtr] → [%mem.M 0, I32];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
 %clos.longjmp</h2>
 <p>Restores the context saved in the <span class="tt">jmp_buf</span>, resuming right after the corresponding <span class="tt">%clos.setjmp</span> and making it yield the given tag (like C <span class="tt">longjmp</span>). </p><div class="fragment"><div class="line">axm %clos.longjmp: Cn [%mem.M 0, %clos.BufPtr, I32];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
 Closure Attribute</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md228"></a>
 %clos.attr</h2>
 <p>A marker wrapped around a <span class="tt">Lam</span> (or a use of it) that classifies how it is used. <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, free_bb, fstclass_bb, ...) and eta-expands branches...">mim::plug::clos::phase::ClosConvPrep</a> introduces these so that <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html" title="Performs typed closure conversion, rebuilding the old world into a new one.">mim::plug::clos::phase::ClosConv</a> sees a canonical program and can treat each kind of continuation appropriately:</p><ul>
 <li><span class="tt">returning</span>: a <em>returning continuation</em> ("function"); fully closure converted.</li>
@@ -203,7 +203,7 @@ Closure Attribute</h1>
 <li><span class="tt">bottom</span>: no special use; this is the identity marker and is normalized away by <span class="tt">normalize_clos</span>. <div class="fragment"><div class="line">axm %clos.attr(returning, free_bb, fstclass_bb, esc, bottom): {T: *} → T → T, normalize_clos;</div>
 </div><!-- fragment --></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md229"></a>
 Phases</h1>
 <p>The <span class="tt">%opt</span> pipeline runs these in the order below, reusing <span class="tt">%clos.branch_clos</span> as a repeated cleanup after the passes that introduce branch closures.</p><ul>
 <li><span class="tt">clos_conv_prep</span>: prepares for closure conversion by wrapping operands with the <span class="tt">%clos.attr</span> markers above and eta-expanding branches and continuations (<a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html" title="Wraps operands with clos.attr markers (returning, free_bb, fstclass_bb, ...) and eta-expands branches...">mim::plug::clos::phase::ClosConvPrep</a>).</li>

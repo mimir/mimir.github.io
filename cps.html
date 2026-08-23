@@ -138,21 +138,21 @@ $(function(){initNavTree('cps.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md258">Dependencies </a>
+    <a href="#autotoc_md263">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md259">Operations </a>
+    <a href="#autotoc_md264">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md260">%cps.cps2ds </a>
+        <a href="#autotoc_md265">%cps.cps2ds </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md261">Phases </a>
+    <a href="#autotoc_md266">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md262">%cps.conv </a>
+        <a href="#autotoc_md267">%cps.conv </a>
       </li>
     </ul>
   </li>
@@ -165,19 +165,19 @@ $(function(){initNavTree('cps.html','',''); });
 <li>Wrap direct-style functions as CPS functions using an axiom.</li>
 <li>Call CPS functions in direct style using an axiom.</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md263"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md264"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md265"></a>
 %cps.cps2ds</h2>
 <p>This axiom lets the user call a CPS function in direct style. The function is not converted; only the call site is changed. <span class="tt">%cps.cps2ds_dep</span> is the dependently-typed general form; <span class="tt">%cps.cps2ds</span> is the non-dependent shorthand.</p>
 <div class="fragment"><div class="line">axm %cps.cps2ds_dep: {T: *} → [U: T → *] → [Fn [t: T] → U t] → [[t: T] → U t], 3;</div>
 <div class="line">lam %cps.cps2ds      {T U: *}           (f: Fn     T  → U  ):  [    T  → U  ] = %cps.cps2ds_dep (λ [T]: * = U) f;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md261"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md266"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md262"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
 %cps.conv</h2>
 <p>Converts direct-style functions and calls to CPS.</p>
 <div class="fragment"><div class="line">axm %cps.conv: %compile.Phase;</div>
