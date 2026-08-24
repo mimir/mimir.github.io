@@ -1,5 +1,10 @@
 var classmim_1_1Driver =
 [
+    [ "Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", [
+      [ "clashed", "classmim_1_1Driver.html#aa0e3fe9aba97f39b60f8a9eb20428f2d", null ],
+      [ "depth", "classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695", null ],
+      [ "sym2gid", "classmim_1_1Driver.html#aa30c43e39f9f46e8f5eb20d4f2c324ce", null ]
+    ] ],
     [ "Imports", "classmim_1_1Driver_1_1Imports.html", "classmim_1_1Driver_1_1Imports" ],
     [ "Driver", "classmim_1_1Driver.html#a450f415760ac6d553161282dc75eba7d", null ],
     [ "Driver", "classmim_1_1Driver.html#ae8008e0b5d7a78d738c465d3253aa365", null ],
@@ -21,6 +26,7 @@ var classmim_1_1Driver =
     [ "load", "classmim_1_1Driver.html#ab2a9cb2f89e19b17b632b2d7bf7d4904", null ],
     [ "load", "classmim_1_1Driver.html#a0be4fca042e007d5206f23ccdcc734b3", null ],
     [ "log", "classmim_1_1Driver.html#a6c91cf5797a4c02730475dda317cf14e", null ],
+    [ "names", "classmim_1_1Driver.html#a97a7d0745c0466134d1c8f93c880af85", null ],
     [ "normalizer", "classmim_1_1Driver.html#a9da4ca3384f62706a603bacad94e98e6", null ],
     [ "normalizer", "classmim_1_1Driver.html#a66bee8d7f5f315deb200c65bf3ea0bff", null ],
     [ "operator=", "classmim_1_1Driver.html#a916332ec561f680e7b66004a1de23325", null ],

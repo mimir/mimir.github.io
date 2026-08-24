@@ -1,6 +1,11 @@
 var driver_8h =
 [
     [ "mim::Driver", "classmim_1_1Driver.html", "classmim_1_1Driver" ],
+    [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", [
+      [ "clashed", "classmim_1_1Driver.html#aa0e3fe9aba97f39b60f8a9eb20428f2d", null ],
+      [ "depth", "classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695", null ],
+      [ "sym2gid", "classmim_1_1Driver.html#aa30c43e39f9f46e8f5eb20d4f2c324ce", null ]
+    ] ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", "classmim_1_1Driver_1_1Imports" ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", [
       [ "path", "classmim_1_1Driver_1_1Imports.html#ab5c6924a9e88de95fb8879957e5492ab", null ],

@@ -73,6 +73,7 @@ var hierarchy =
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
     [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", null ],
     [ "mim::Error::Msg", "structmim_1_1Error_1_1Msg.html", null ],
+    [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
     [ "mim::lct::Node&lt; P, K &gt;", "classmim_1_1lct_1_1Node.html", null ],
@@ -90,6 +91,7 @@ var hierarchy =
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
     ] ],
+    [ "mim::PlainNames", "classmim_1_1PlainNames.html", null ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
     [ "mim::Profiler", "classmim_1_1Profiler.html", null ],
