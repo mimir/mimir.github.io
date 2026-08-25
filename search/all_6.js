@@ -76,5 +76,6 @@ var searchData=
   ['grpptrn_73',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast::GrpPtrn'],['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn::GrpPtrn()']]],
   ['guard_74',['guard',['../classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251',1,'mim::ast::RuleDecl::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard()']]],
   ['guard_20exists_20at_20all_75',['Why the guard exists at all',['../phases.html#autotoc_md96',1,'']]],
-  ['guide_76',['Developer Guide',['../dev.html',1,'']]]
+  ['guide_76',['Developer Guide',['../dev.html',1,'']]],
+  ['gutter_77',['gutter',['../structmim_1_1Flags.html#a9e06ea3bb8bc66cf19f5a20c07581a15',1,'mim::Flags']]]
 ];

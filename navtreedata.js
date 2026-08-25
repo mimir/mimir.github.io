@@ -126,8 +126,8 @@ var NAVTREEINDEX =
 "namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0",
 "namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7",
 "phase_2ll__nvptx_8cpp.html",
-"structmim_1_1Nest_1_1Node_1_1Children.html#a7cd6467a476c3a7d4dceb5b720acdc7d",
-"tensor_8cpp_source.html"
+"structmim_1_1Nest_1_1Node_1_1Children.html#a41cde5894303b7317a2c403220f88a8b",
+"tensor_2phase_2lower__map__reduce_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

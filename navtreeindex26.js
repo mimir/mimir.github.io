@@ -1,5 +1,9 @@
 var NAVTREEINDEX26 =
 {
+"tensor_2phase_2lower__map__reduce_8h.html":[5,0,3,1,3,20,0,3],
+"tensor_2phase_2lower__map__reduce_8h_source.html":[5,0,3,1,3,20,0,3],
+"tensor_8cpp.html":[5,0,4,1,3,20,2],
+"tensor_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,20,2,0],
 "tensor_8cpp_source.html":[5,0,4,1,3,20,2],
 "tensor_8h.html":[5,0,3,1,3,20,1],
 "tensor_8h_source.html":[5,0,3,1,3,20,1],
