@@ -464,7 +464,7 @@ Typical Shape</h2>
 <div class="line">        <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00391">phase.h:391</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00426">phase.h:426</a></div></div>
 </div><!-- fragment --><p>Run it with:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;MyRWPhase&gt;</a>(world);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_inplace_rw_phase"></a>
@@ -507,7 +507,7 @@ Typical Shape</h2>
 <div class="line">        <span class="keywordflow">return</span> Rewriter::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1InplaceRWPhase_html"><div class="ttname"><a href="classmim_1_1InplaceRWPhase.html">mim::InplaceRWPhase</a></div><div class="ttdoc">Rewrites the current World in place - unlike an RWPhase, which rebuilds a new World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00449">phase.h:449</a></div></div>
+<div class="ttc" id="aclassmim_1_1InplaceRWPhase_html"><div class="ttname"><a href="classmim_1_1InplaceRWPhase.html">mim::InplaceRWPhase</a></div><div class="ttdoc">Rewrites the current World in place - unlike an RWPhase, which rebuilds a new World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00484">phase.h:484</a></div></div>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00055">rewrite.cpp:55</a></div></div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_phase_man"></a>
 PhaseMan</h1>
@@ -529,7 +529,7 @@ Typical Shape</h2>
 <div class="line"><a class="code hl_class" href="classmim_1_1PhaseMan.html">mim::PhaseMan</a> man(world, <a class="code hl_function" href="structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658">mim::Annex::base&lt;mim::plug::compile::phases&gt;</a>());</div>
 <div class="line">man.apply(<span class="comment">/*fixed_point=*/</span><span class="keyword">true</span>, std::move(phases));</div>
 <div class="line">man.run();</div>
-<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00537">phase.h:537</a></div></div>
+<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00572">phase.h:572</a></div></div>
 <div class="ttc" id="anamespacemim_html_ace9968a67fd836075490bf9fe9b62457"><div class="ttname"><a href="namespacemim.html#ace9968a67fd836075490bf9fe9b62457">mim::Phases</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; Phase &gt; &gt; Phases</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00020">phase.h:20</a></div></div>
 <div class="ttc" id="astructmim_1_1Annex_html_abb47b7da8a1e6cc0e8c2754b978b2658"><div class="ttname"><a href="structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658">mim::Annex::base</a></div><div class="ttdeci">static consteval flags_t base()</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00150">plugin.h:150</a></div></div>
 </div><!-- fragment --><p>Use a fixed-point pipeline when phases expose new optimization opportunities for one another.</p>
@@ -557,7 +557,7 @@ Typical Shape</h2>
 <div class="line">        <span class="comment">// process each reachable closed Lam</span></div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00569">phase.h:569</a></div></div>
+<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00604">phase.h:604</a></div></div>
 <div class="ttc" id="aclassmim_1_1ClosedMutPhase_html_ad472ea7c10d353cbd478faa84708322e"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e">mim::ClosedMutPhase::visit</a></div><div class="ttdeci">virtual void visit(M *)=0</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="phases_nest_phase"></a>
 NestPhase</h2>
@@ -610,7 +610,7 @@ Example: SCCP</h1>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1Analysis_html"><div class="ttname"><a href="classmim_1_1Analysis.html">mim::Analysis</a></div><div class="ttdoc">Traverses the current World using Rewriter infrastructure while staying in the same world.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00149">phase.h:149</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html"><div class="ttname"><a href="classmim_1_1Analysis.html">mim::Analysis</a></div><div class="ttdoc">Traverses the current World using Rewriter infrastructure while staying in the same world.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00151">phase.h:151</a></div></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
 <div class="ttc" id="anamespacemim_html_a8d37dada179be276702eb8680efbc370"><div class="ttname"><a href="namespacemim.html#a8d37dada179be276702eb8680efbc370">mim::Lam2Lam</a></div><div class="ttdeci">LamMap&lt; Lam * &gt; Lam2Lam</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00217">lam.h:217</a></div></div>
 <div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
@@ -879,9 +879,9 @@ Minimal Examples</h1>
 <div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a>(mut);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1Analysis_html_afa57ec108651407ce0e7fe30452b24c7"><div class="ttname"><a href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a></div><div class="ttdeci">Def * rewrite_mut(Def *) override</div><div class="ttdoc">Schedules mut for a breadth-first visit of its dependencies and records mut -&gt; mut.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00106">phase.cpp:106</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_afa57ec108651407ce0e7fe30452b24c7"><div class="ttname"><a href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a></div><div class="ttdeci">Def * rewrite_mut(Def *) override</div><div class="ttdoc">Schedules mut for a breadth-first visit of its dependencies and records mut -&gt; mut.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00128">phase.cpp:128</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00552">def.h:552</a></div></div>
-<div class="ttc" id="aclassmim_1_1Rewriter_html_aed2afef37f09545f262d8a8ce5471954"><div class="ttname"><a href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954">mim::Rewriter::lookup</a></div><div class="ttdeci">virtual const Def * lookup(const Def *old_def)</div><div class="ttdoc">Lookup old_def by searching in reverse through the stack of maps.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00055">rewrite.h:55</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_aed2afef37f09545f262d8a8ce5471954"><div class="ttname"><a href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954">mim::Rewriter::lookup</a></div><div class="ttdeci">virtual const Def * lookup(const Def *old_def)</div><div class="ttdoc">Lookup old_def by searching in reverse through the stack of maps.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00060">rewrite.h:60</a></div></div>
 </div><!-- fragment --><p>Using both:</p>
 <div class="fragment"><div class="line">CountMutLams analysis(world);</div>
 <div class="line">analysis.run();</div>

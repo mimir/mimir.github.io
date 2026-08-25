@@ -13,5 +13,6 @@ var searchData=
   ['prod_10',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
   ['profiler_11',['Profiler',['../classmim_1_1Profiler.html',1,'mim']]],
   ['proxy_12',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
-  ['ptrn_13',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]]
+  ['ptrn_13',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]],
+  ['pureread_14',['PureRead',['../namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead',1,'mim::plug::tensor']]]
 ];

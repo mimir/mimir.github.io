@@ -51,6 +51,7 @@ var hierarchy =
       [ "mim::Vector< Node * >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< Pending >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< mim::Lam * >", "classmim_1_1Vector.html", null ],
+      [ "mim::Vector< Phi >", "classmim_1_1Vector.html", null ],
       [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
     ] ],
     [ "absl::InlinedVector&lt; std::pair&lt; std::string, uint64_t &gt;, Default_Inlined_Size&lt; std::pair&lt; std::string, uint64_t &gt; &gt;, std::allocator&lt; std::pair&lt; std::string, uint64_t &gt; &gt; &gt;", null, [
@@ -95,8 +96,10 @@ var hierarchy =
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
     [ "mim::Profiler", "classmim_1_1Profiler.html", null ],
+    [ "mim::plug::tensor::PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
+    [ "mim::plug::tensor::phase::ReadThrough", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough", null ],
     [ "mim::Restore&lt; T &gt;", "classmim_1_1Restore.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [

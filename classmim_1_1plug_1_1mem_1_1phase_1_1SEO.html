@@ -171,8 +171,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3e86038d68efc0cfad3f580cce75efb6 inherit pub_methods_classmim_1_1RWBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the abstract value computed by the associated <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> for <code class="param">def</code>, or <span class="tt">nullptr</span> if no value is available.  <br /></td></tr>
 <tr class="memitem:aaa63653384fc99054468bdf5b4a25e34 inherit pub_methods_classmim_1_1RWBase" id="r_aaa63653384fc99054468bdf5b4a25e34"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1RWBase.html#aaa63653384fc99054468bdf5b4a25e34">abstracted</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
 <tr class="memdesc:aaa63653384fc99054468bdf5b4a25e34 inherit pub_methods_classmim_1_1RWBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns lattice(<code class="param">def</code>) if it differs from <code class="param">def</code> (i.e. we learned something), otherwise <span class="tt">nullptr</span>.  <br /></td></tr>
-<tr class="memitem:abf525ff7bf362f4c64f7a8b7bf2dc60c inherit pub_methods_classmim_1_1RWBase" id="r_abf525ff7bf362f4c64f7a8b7bf2dc60c"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1RWBase.html#abf525ff7bf362f4c64f7a8b7bf2dc60c">analyze</a> ()</td></tr>
-<tr class="memdesc:abf525ff7bf362f4c64f7a8b7bf2dc60c inherit pub_methods_classmim_1_1RWBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the optional pre-analysis on <a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">Phase::world</a>, typically to a fixed point, before rewriting begins.  <br /></td></tr>
 <tr class="memitem:a82eb77fe14e42a3187474fe572ca3734 inherit pub_methods_classmim_1_1RWBase" id="r_a82eb77fe14e42a3187474fe572ca3734"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1RWBase.html#a82eb77fe14e42a3187474fe572ca3734">is_bootstrapping</a> () const</td></tr>
 <tr class="memdesc:a82eb77fe14e42a3187474fe572ca3734 inherit pub_methods_classmim_1_1RWBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether we are currently bootstrapping (rewriting annexes).  <br /></td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1Phase"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classmim_1_1Phase')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
@@ -215,6 +213,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7fc46133b467d4b2683529aa6c4eea96 inherit pub_methods_classmim_1_1Rewriter" id="r_a7fc46133b467d4b2683529aa6c4eea96"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96">push</a> ()</td></tr>
 <tr class="memitem:a87c9821a28ae231d8e9434ff049dce35 inherit pub_methods_classmim_1_1Rewriter" id="r_a87c9821a28ae231d8e9434ff049dce35"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a87c9821a28ae231d8e9434ff049dce35">pop</a> ()</td></tr>
 <tr class="memitem:a832644b4df14efed752cba8e8568aca4 inherit pub_methods_classmim_1_1Rewriter" id="r_a832644b4df14efed752cba8e8568aca4"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
+<tr class="memitem:a8d9865dc4bc2e36f2fc325d42d70e774 inherit pub_methods_classmim_1_1Rewriter" id="r_a8d9865dc4bc2e36f2fc325d42d70e774"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a8d9865dc4bc2e36f2fc325d42d70e774">map_root</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
+<tr class="memdesc:a8d9865dc4bc2e36f2fc325d42d70e774 inherit pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map()</a> but records into the <em>root</em> map, so the entry outlives the current <a class="el" href="classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96">push()</a>/pop() scope.  <br /></td></tr>
 <tr class="memitem:a052f77bcdfc66751ed8f33ffd0b3be04 inherit pub_methods_classmim_1_1Rewriter" id="r_a052f77bcdfc66751ed8f33ffd0b3be04"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04">map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, <a class="el" href="namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740">Defs</a> new_defs)</td></tr>
 <tr class="memitem:ab799239c0c41f5dfa4afb2f9fe3522b9 inherit pub_methods_classmim_1_1Rewriter" id="r_ab799239c0c41f5dfa4afb2f9fe3522b9"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab799239c0c41f5dfa4afb2f9fe3522b9">map</a> (<a class="el" href="namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740">Defs</a> old_defs, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
 <tr class="memitem:ac2f8ad29b11cf04069145a379cda1c16 inherit pub_methods_classmim_1_1Rewriter" id="r_ac2f8ad29b11cf04069145a379cda1c16"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac2f8ad29b11cf04069145a379cda1c16">map</a> (<a class="el" href="namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740">Defs</a> old_defs, <a class="el" href="namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740">Defs</a> new_defs)</td></tr>
@@ -231,7 +231,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a575e45a09ce4e151cc3af736555c36f3" id="r_a575e45a09ce4e151cc3af736555c36f3"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a575e45a09ce4e151cc3af736555c36f3">rewrite_imm_App</a> (const <a class="el" href="classmim_1_1App.html">App</a> *) final</td></tr>
+<tr class="memitem:a46f55e9d7a19c274951db7c7b3c7a7c2" id="r_a46f55e9d7a19c274951db7c7b3c7a7c2"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a46f55e9d7a19c274951db7c7b3c7a7c2">rewrite_imm_Var</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *) final</td></tr>
 <tr class="memitem:ab101779f40aff6013df0e0395cb67a0e" id="r_ab101779f40aff6013df0e0395cb67a0e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ab101779f40aff6013df0e0395cb67a0e">rewrite_mut_Lam</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *) final</td></tr>
+<tr class="memitem:a45e297dc91e42baebdd17a424dfb42be" id="r_a45e297dc91e42baebdd17a424dfb42be"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a45e297dc91e42baebdd17a424dfb42be">analyze</a> () final</td></tr>
+<tr class="memdesc:a45e297dc91e42baebdd17a424dfb42be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the optional pre-analysis on <a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">Phase::world</a>, typically to a fixed point, before rewriting begins.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -316,13 +319,47 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8h_source.html#l00105">105</a> of file <a class="el" href="seo_8h_source.html">seo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8h_source.html#l00111">111</a> of file <a class="el" href="seo_8h_source.html">seo.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00395">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00430">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a45e297dc91e42baebdd17a424dfb42be" name="a45e297dc91e42baebdd17a424dfb42be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e297dc91e42baebdd17a424dfb42be">&#9670;&#160;</a></span>analyze()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::mem::phase::SEO::analyze </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs the optional pre-analysis on <a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">Phase::world</a>, typically to a fixed point, before rewriting begins. </p>
+<p>If <a class="el" href="classmim_1_1RWBase.html#a39c107684aeee51c7dba3f711e8853c5">analysis()</a> is set, this is the natural place to iterate until <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> becomes <span class="tt">false</span>. If no <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> is needed, simply return <span class="tt">false</span>. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1RWBase.html#abf525ff7bf362f4c64f7a8b7bf2dc60c">mim::RWBase</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00439">439</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00180">mim::RWBase::analyze()</a>.</p>
+
+</div>
+</div>
 <a id="a575e45a09ce4e151cc3af736555c36f3" name="a575e45a09ce4e151cc3af736555c36f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a575e45a09ce4e151cc3af736555c36f3">&#9670;&#160;</a></span>rewrite_imm_App()</h2>
 
@@ -346,9 +383,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00419">419</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00484">484</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00346">mim::RWBase::abstracted()</a>, <a class="el" href="def_8h_source.html#l00561">mim::Def::as_mut()</a>, <a class="el" href="lam_8h_source.html#l00271">mim::App::callee()</a>, <a class="el" href="rewrite_8h_source.html#l00089">mim::Rewriter::curr_mut()</a>, <a class="el" href="log_8h_source.html#l00100">DLOG</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00552">mim::Def::isa_mut()</a>, <a class="el" href="util_8h_source.html#l00098">mim::lookup()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00416">mim::RWPhase::new_world()</a>, <a class="el" href="mem_8h_source.html#l00140">mim::plug::mem::op_slot()</a>, <a class="el" href="phase_8cpp_source.html#l00043">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="mem_8h_source.html#l00150">mim::plug::mem::split_slot()</a>, and <a class="el" href="world_8cpp_source.html#l00316">mim::World::tuple()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00381">mim::RWBase::abstracted()</a>, <a class="el" href="lam_8h_source.html#l00280">mim::App::arg()</a>, <a class="el" href="def_8h_source.html#l00561">mim::Def::as_mut()</a>, <a class="el" href="lam_8h_source.html#l00271">mim::App::callee()</a>, <a class="el" href="rewrite_8h_source.html#l00094">mim::Rewriter::curr_mut()</a>, <a class="el" href="log_8h_source.html#l00100">DLOG</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00552">mim::Def::isa_mut()</a>, <a class="el" href="util_8h_source.html#l00098">mim::lookup()</a>, <a class="el" href="rewrite_8h_source.html#l00045">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00451">mim::Def::num_tvars()</a>, <a class="el" href="mem_8h_source.html#l00140">mim::plug::mem::op_slot()</a>, <a class="el" href="phase_8cpp_source.html#l00043">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="mem_8h_source.html#l00150">mim::plug::mem::split_slot()</a>, <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>, and <a class="el" href="world_8cpp_source.html#l00316">mim::World::tuple()</a>.</p>
+
+</div>
+</div>
+<a id="a46f55e9d7a19c274951db7c7b3c7a7c2" name="a46f55e9d7a19c274951db7c7b3c7a7c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f55e9d7a19c274951db7c7b3c7a7c2">&#9670;&#160;</a></span>rewrite_imm_Var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::mem::phase::SEO::rewrite_imm_Var </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Var.html">Var</a> *</td>          <td class="paramname"><span class="paramname"><em>var</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00548">548</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00809">mim::Var::binder()</a>, <a class="el" href="def_8h_source.html#l00552">mim::Def::isa_mut()</a>, and <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
 
 </div>
 </div>
@@ -375,7 +441,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00477">477</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00540">540</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
 
 </div>
 </div>

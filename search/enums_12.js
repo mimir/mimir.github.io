@@ -31,7 +31,9 @@ var searchData=
   ['stream_5fimpl_5frepl_28',['stream_impl_repl',['../namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf',1,'mim::plug::nvptx']]],
   ['stream_5finit_29',['stream_init',['../namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b',1,'mim::plug::gpu']]],
   ['stream_5fsync_30',['stream_sync',['../namespacemim_1_1plug_1_1gpu.html#ad487f5418b04c412b0e522aa43b93f1b',1,'mim::plug::gpu']]],
-  ['sum_31',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
-  ['sync_5fwork_5fitems_32',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
-  ['synced_5fscope_33',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
+  ['strip_5fmine_5fpar_31',['strip_mine_par',['../namespacemim_1_1plug_1_1tensor.html#ab511548cbf48ece2876c0cd008cf7a8b',1,'mim::plug::tensor']]],
+  ['strip_5fmine_5fred_32',['strip_mine_red',['../namespacemim_1_1plug_1_1tensor.html#a3d09af2fd51b0c11677db5e4eaa4d273',1,'mim::plug::tensor']]],
+  ['sum_33',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
+  ['sync_5fwork_5fitems_34',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
+  ['synced_5fscope_35',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
 ];

@@ -12,10 +12,11 @@ var searchData=
   ['repeat_5fimpl_9',['repeat_impl',['../namespacemim_1_1plug_1_1tensor.html#a5814fef73877a1b9809d09fcaaad3b7c',1,'mim::plug::tensor']]],
   ['reshape_10',['reshape',['../namespacemim_1_1plug_1_1tensor.html#a7954b221c8c568ad0918b4397d796ad2',1,'mim::plug::tensor']]],
   ['reshape_5fimpl_11',['reshape_impl',['../namespacemim_1_1plug_1_1tensor.html#ab50f852fce42de48377c115841616c7a',1,'mim::plug::tensor']]],
-  ['ret_5fwrap_12',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
-  ['ring_13',['Ring',['../namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87',1,'mim::plug::btensor::Ring'],['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor::Ring']]],
-  ['round_14',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
-  ['rrt_15',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
-  ['rt_16',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],
-  ['rt_17',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
+  ['reshape_5fmap_12',['reshape_map',['../namespacemim_1_1plug_1_1tensor.html#a5846df9fb3d27c6dc67f0b23ac630b15',1,'mim::plug::tensor']]],
+  ['ret_5fwrap_13',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
+  ['ring_14',['Ring',['../namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87',1,'mim::plug::btensor::Ring'],['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor::Ring']]],
+  ['round_15',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
+  ['rrt_16',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
+  ['rt_17',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],
+  ['rt_18',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
 ];

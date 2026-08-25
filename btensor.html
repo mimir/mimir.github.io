@@ -149,30 +149,36 @@ $(function(){initNavTree('btensor.html','',''); });
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md200">Operations </a>
+    <a href="#autotoc_md200">Loop nests as first-class IR values </a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md201">Operations </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md201">%btensor.map_reduce </a>
+        <a href="#autotoc_md202">%btensor.map_reduce_post </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md202">%btensor.product_2d </a>
+        <a href="#autotoc_md203">%btensor.map_reduce </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md203">%btensor.transpose_2d </a>
+        <a href="#autotoc_md204">%btensor.product_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md204">%btensor.broadcast </a>
+        <a href="#autotoc_md205">%btensor.transpose_2d </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md205">%btensor.pad </a>
+        <a href="#autotoc_md206">%btensor.broadcast </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md206">%btensor.concat </a>
+        <a href="#autotoc_md207">%btensor.pad </a>
+      </li>
+      <li class="level2">
+        <a href="#autotoc_md208">%btensor.concat </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md207">Phases </a>
+    <a href="#autotoc_md209">Phases </a>
   </li>
 </ul>
 </div>
@@ -186,6 +192,9 @@ Dependencies</h1>
 <div class="line">plugin cps; // for %cps.cps2ds</div>
 <div class="line">plugin affine;</div>
 <div class="line">plugin buffer;</div>
+<div class="line">plugin vec; // for %vec.fold</div>
+<div class="line">plugin mem;</div>
+<div class="line">import ll;  // for the %ll.vec loop annotation (declarations only — no module load, no emit phase)</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
 Types</h1>
 <p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">%buffer.Buf</span> type. The element operations (<span class="tt">%buffer.alloc</span> / <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.constant</span> / <span class="tt">%buffer.shape</span>) and their lowering to <span class="tt">%mem.Ptr</span> (<span class="tt">%buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
@@ -199,21 +208,253 @@ Types</h1>
 <div class="line">    mul: [T, T] → T,</div>
 <div class="line">];</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
+Loop nests as first-class IR values</h1>
+<p>The schedule of a <span class="tt">%btensor.map_reduce_post</span> is not data interpreted by a lowering — it is a chooser over the target's loop-nest builder (see <span class="tt">%tensor.mk_sched</span>), carried as an operand; <span class="tt">%btensor.lower_map_reduce</span> binds it to <span class="tt">%btensor.mr_nest</span> and merely <em>applies</em> the result. The builders below construct every loop structure in the frontend IR (loop-implementation policies, window unrolling, the row-accumulator interchange); partial evaluation unfolds them once the ranks are known.</p>
+<p>The type of anything with %affine.For's calling convention over <span class="tt">[mem, A]</span> accumulators — a "loop implementation" policy value. </p><div class="fragment"><div class="line">lam ForT (A: *): * =</div>
+<div class="line">      [Cn [I32, [%mem.M 0, A], Cn [%mem.M 0, A]]]</div>
+<div class="line">    → [Cn [%mem.M 0, A]]</div>
+<div class="line">    → Cn [I32, I32, I32, [%mem.M 0, A]];</div>
+</div><!-- fragment --><p> The default loop implementation: %affine.For itself, eta-wrapped. </p><div class="fragment"><div class="line">con affine_for {A: *} (body: Cn [I32, [%mem.M 0, A], Cn [%mem.M 0, A]])</div>
+<div class="line">               (exit: Cn [%mem.M 0, A])</div>
+<div class="line">               (begin stop step: I32, init: [%mem.M 0, A])@tt =</div>
+<div class="line">    %affine.For body exit (begin, stop, step, init);</div>
+</div><!-- fragment --><p> The loop implementation for a schedule's VECTOR dim: the same <span class="tt">%affine.For</span>, its body wrapped in the identity annotation <span class="tt">%ll.vec</span> — the nomination to run this loop as the innermost unit-stride vectorized loop. <span class="tt">%affine.lower_for</span> moves the wrapper onto the loop's exit condition for the backend (and drops it when the ll module is not loaded). </p><div class="fragment"><div class="line">con vec_for {A: *} (body: Cn [I32, [%mem.M 0, A], Cn [%mem.M 0, A]])</div>
+<div class="line">            (exit: Cn [%mem.M 0, A])</div>
+<div class="line">            (begin stop step: I32, init: [%mem.M 0, A])@tt =</div>
+<div class="line">    %affine.For (%ll.vec body) exit (begin, stop, step, init);</div>
+</div><!-- fragment --><p> One nest of <span class="tt">loop</span>-implemented loops over the dim range <span class="tt">[lo, hi)</span> of the bounds <span class="tt">Sr</span>, threading an accumulator <span class="tt">A</span> and the shared «r; I32» loop-vector prefix; calls <span class="tt">inner</span> at the bottom with the prefix updated at the range's positions. Composed by a right fold — no recursion, and the flat I32 prefix avoids dependently-typed loop-variable tuples. </p><div class="fragment"><div class="line">lam range_nest (r: Nat, Sr: «r; Nat») (A: *) (loop: ForT A, lo hi: Nat)</div>
+<div class="line">               (inner: Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]])</div>
+<div class="line">             : Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]] =</div>
+<div class="line">    lam wrap (d: Nat, w: Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]])</div>
+<div class="line">           : Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]] =</div>
+<div class="line">        con level (pref: «r; I32», mem: %mem.M 0, acc: A, k: Cn [%mem.M 0, A]) =</div>
+<div class="line">            loop lbody lexit (0I32, %core.bitcast I32 (Sr#(%core.idx r 0 d)), 1I32, (mem, acc))</div>
+<div class="line">            where</div>
+<div class="line">                con lbody (iv: I32, macc: [%mem.M 0, A], yield: Cn [%mem.M 0, A]) =</div>
+<div class="line">                    let pref2 = ‹j: r; %core.select (%core.ncmp.e (%core.bitcast Nat j, d), iv, pref#j)›;</div>
+<div class="line">                    w (pref2, macc#0_2, macc#1_2, yield);</div>
+<div class="line">                con lexit (macc: [%mem.M 0, A]) = k macc;</div>
+<div class="line">            end;</div>
+<div class="line">        level;</div>
+<div class="line">    let m  = %core.nat.sub (hi, lo);</div>
+<div class="line">    let ds = ‹i: m; %core.nat.add (lo, %core.bitcast Nat i)›;</div>
+<div class="line">    %vec.fold.r @(Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]], Nat) @m wrap (ds, inner);</div>
+</div><!-- fragment --><p> Like <span class="tt">range_nest</span>, but every dim in the range is fully UNROLLED: the inner continuation is chained once per iteration point by a right fold over the dim's (compile-time) extent — straight-line code with constant coordinates, no loops, and structurally terminating (no recursion, no PE filters: the fold itself unfolds once the extent is a literal). </p><div class="fragment"><div class="line">lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)</div>
+<div class="line">                 (inner: Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]])</div>
+<div class="line">               : Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]] =</div>
+<div class="line">    lam wrap (d: Nat, w: Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]])</div>
+<div class="line">           : Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]] =</div>
+<div class="line">        con level (pref: «r; I32», mem: %mem.M 0, acc: A, k: Cn [%mem.M 0, A]) =</div>
+<div class="line">            lam step (i: Nat, kk: Cn [%mem.M 0, A]): Cn [%mem.M 0, A] =</div>
+<div class="line">                con at (m2: %mem.M 0, a2: A) =</div>
+<div class="line">                    let pref2 = ‹j: r; %core.select (%core.ncmp.e (%core.bitcast Nat j, d),</div>
+<div class="line">                                                     %core.bitcast I32 i, pref#j)›;</div>
+<div class="line">                    w (pref2, m2, a2, kk);</div>
+<div class="line">                at;</div>
+<div class="line">            let t  = Sr#(%core.idx r 0 d);</div>
+<div class="line">            let ks = ‹i: t; %core.bitcast Nat i›;</div>
+<div class="line">            (%vec.fold.r @(Cn [%mem.M 0, A], Nat) @t step (ks, k)) (mem, acc);</div>
+<div class="line">        level;</div>
+<div class="line">    let m  = %core.nat.sub (hi, lo);</div>
+<div class="line">    let ds = ‹i: m; %core.nat.add (lo, %core.bitcast Nat i)›;</div>
+<div class="line">    %vec.fold.r @(Cn [«r; I32», %mem.M 0, A, Cn [%mem.M 0, A]], Nat) @m wrap (ds, inner);</div>
+</div><!-- fragment --><p> The type of scheduled loop nests for a map_reduce over the domain <span class="tt">Sr</span> (<span class="tt">ro</span> leading parallel dims, <span class="tt">rr</span> trailing reduction dims, fold element type <span class="tt">To</span>): given the fold seed <span class="tt">init</span>, the per-point fold step <span class="tt">cell</span> (fold the elements at one loop vector into the accumulator) and the per-cell write-back <span class="tt">wb</span> (consume one folded value at its output coordinates), run the nest. </p><div class="fragment"><div class="line">lam %btensor.NestT (ro rr: Nat, Sr: «%core.nat.add (ro, rr); Nat», To U: *): * =</div>
+<div class="line">      [init: To,</div>
+<div class="line">       cell: Cn [%mem.M 0, To, «%core.nat.add (ro, rr); I32», Cn [%mem.M 0, To]],</div>
+<div class="line">       wb:   Cn [%mem.M 0, U, To, «%core.nat.add (ro, rr); I32», Cn [%mem.M 0, U]]]</div>
+<div class="line">    → Cn [%mem.M 0, U, Cn [%mem.M 0, U]];</div>
+</div><!-- fragment --><p> The scheduled nest builder: <span class="tt">unroll</span> trailing reduction dims run as compile-time-unrolled straight-line code; a valid <span class="tt">vdim</span> (a parallel dim, currently the last one, of extent ≠ 1) runs as the innermost loop, inside the reduction loops, over a row-accumulator buffer — the unit-stride vectorization dim. A <span class="tt">vdim</span> naming the innermost REDUCTION dim instead selects the reduction-vectorized nest (see the <span class="tt">redvec</span> branch below): the contraction runs as the vector loop with the last parallel dim unroll-and-jammed into its body. Per-cell fold order is untouched by any of these transforms. </p><div class="fragment"><div class="line">lam %btensor.mr_nest (ro rr: Nat, Sr: «%core.nat.add (ro, rr); Nat», To U: *) (vdim unroll: Nat)</div>
+<div class="line">                   : %btensor.NestT (ro, rr, Sr, To, U) =</div>
+<div class="line">    let r    = %core.nat.add (ro, rr);</div>
+<div class="line">    // The unroll window must stay within the reduction dims.</div>
+<div class="line">    let u_lo = %core.nat.sub (r, unroll);</div>
+<div class="line">    let u_lo = (ro, u_lo)#(%core.ncmp.le (ro, u_lo));</div>
+<div class="line">    lam nest (init: To,</div>
+<div class="line">              cell: Cn [%mem.M 0, To, «r; I32», Cn [%mem.M 0, To]],</div>
+<div class="line">              wb:   Cn [%mem.M 0, U, To, «r; I32», Cn [%mem.M 0, U]])</div>
+<div class="line">            : Cn [%mem.M 0, U, Cn [%mem.M 0, U]] =</div>
+<div class="line">        con cell_at (pref: «r; I32», mem: %mem.M 0, acc: To, k: Cn [%mem.M 0, To]) =</div>
+<div class="line">            cell (mem, acc, pref, k);</div>
+<div class="line">        // The fully unrolled trailing window around the fold step.</div>
+<div class="line">        let win = range_unroll (r, Sr) To (u_lo, r) cell_at;</div>
+<div class="line">        // `vd` is `vdim` clamped through the dispatch condition: the non-selected branch is still</div>
+<div class="line">        // ELABORATED, so its body must be type-sane even when `vdim` is the out-of-range sentinel.</div>
+<div class="line">        let vec_ok = %core.bit2.and_ 2 (%core.ncmp.e (%core.nat.add (vdim, 1), ro),</div>
+<div class="line">                                        %core.ncmp.ne (Sr#(%core.idx r 0 ((0, vdim)#(%core.ncmp.l (vdim, r)))), 1));</div>
+<div class="line">        let vd = (0, vdim)#vec_ok;</div>
+<div class="line"> </div>
+<div class="line">        // CLASSIC: reduction loops inside all output loops, one accumulator cell at a time; the</div>
+<div class="line">        // write-back target `U` is threaded through the output loops like any loop accumulator.</div>
+<div class="line">        con classic (mem0: %mem.M 0, u0: U, done: Cn [%mem.M 0, U])@tt =</div>
+<div class="line">            con at_cell (pref: «r; I32», mem: %mem.M 0, u: U, k: Cn [%mem.M 0, U]) =</div>
+<div class="line">                con folded (mem2: %mem.M 0, v: To) =</div>
+<div class="line">                    wb (mem2, u, v, pref, k);</div>
+<div class="line">                (range_nest (r, Sr) To (affine_for @To, ro, u_lo) win) (pref, mem, init, folded);</div>
+<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, ro) at_cell) (‹r; 0I32›, mem0, u0, done);</div>
+<div class="line"> </div>
+<div class="line">        // VECTORIZED: the vector dim as the innermost loop over a row of accumulators — refill the</div>
+<div class="line">        // row per output row, fold whole rows in lockstep, then write the row back cell by cell.</div>
+<div class="line">        con vectorized (mem0: %mem.M 0, u0: U, done: Cn [%mem.M 0, U])@tt =</div>
+<div class="line">            let Sv = Sr#(%core.idx r 0 vd);</div>
+<div class="line">            let vi_of = lm (pref: «r; I32»): Idx Sv = %core.conv.u Sv (pref#(%core.idx r 0 vd));</div>
+<div class="line">            let (mem1, row) = %buffer.alloc (1, Sv, To) mem0;</div>
+<div class="line">            con at_row (pref: «r; I32», mem: %mem.M 0, u: U, k: Cn [%mem.M 0, U]) =</div>
+<div class="line">                con fill (pref2: «r; I32», memf: %mem.M 0, uf: U, kf: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memf2, row2) = %buffer.write (1, Sv, To) (memf, row, vi_of pref2, init);</div>
+<div class="line">                    kf (memf2, uf);</div>
+<div class="line">                con at_point (pref2: «r; I32», memp: %mem.M 0, up: U, kp: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memp1, acc0) = %buffer.read (1, Sv, To) (memp, row, vi_of pref2);</div>
+<div class="line">                    con after_win (memp2: %mem.M 0, accn: To) =</div>
+<div class="line">                        let (memp3, row3) = %buffer.write (1, Sv, To) (memp2, row, vi_of pref2, accn);</div>
+<div class="line">                        kp (memp3, up);</div>
+<div class="line">                    win (pref2, memp1, acc0, after_win);</div>
+<div class="line">                con wb_cell (pref2: «r; I32», memw: %mem.M 0, uw: U, kw: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memw1, v) = %buffer.read (1, Sv, To) (memw, row, vi_of pref2);</div>
+<div class="line">                    wb (memw1, uw, v, pref2, kw);</div>
+<div class="line">                con s2 (memB: %mem.M 0, uB: U) =</div>
+<div class="line">                    (range_nest (r, Sr) U (vec_for @U, vd, %core.nat.add (vd, 1)) wb_cell) (pref, memB, uB, k);</div>
+<div class="line">                con s1 (memA: %mem.M 0, uA: U) =</div>
+<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, vd, %core.nat.add (vd, 1)) at_point))</div>
+<div class="line">                        (pref, memA, uA, s2);</div>
+<div class="line">                (range_nest (r, Sr) U (vec_for @U, vd, %core.nat.add (vd, 1)) fill) (pref, mem, u, s1);</div>
+<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, vd) at_row) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line"> </div>
+<div class="line">        // BLOCKED (`vdim = ro − 2`): the two trailing parallel dims are sunk inside the reduction</div>
+<div class="line">        // loops — the last dim runs as the vector loop and the BLOCK dim before it (any extent Sp;</div>
+<div class="line">        // a strip-mined row block) is unrolled into its body (unroll-and-jam), so one pass over the</div>
+<div class="line">        // row folds the whole block through a flattened «Sp·Sv; To» accumulator panel. Values</div>
+<div class="line">        // hoisted out of the vector loop (a conv&#39;s window weights) now serve every row of the</div>
+<div class="line">        // block, and adjacent rows&#39; overlapping reads sit in the same loop body. Clamps as above:</div>
+<div class="line">        // the non-selected branch is still elaborated.</div>
+<div class="line">        let pd_c    = (0, vdim)#(%core.ncmp.l (vdim, r));</div>
+<div class="line">        let sd_r    = %core.nat.add (vdim, 1);</div>
+<div class="line">        let sd_c    = (0, sd_r)#(%core.ncmp.l (sd_r, r));</div>
+<div class="line">        let block_ok = %core.bit2.and_ 2 (%core.ncmp.e (%core.nat.add (vdim, 2), ro),</div>
+<div class="line">                      %core.bit2.and_ 2 (%core.ncmp.ne (Sr#(%core.idx r 0 pd_c), 1),</div>
+<div class="line">                                         %core.ncmp.ne (Sr#(%core.idx r 0 sd_c), 1)));</div>
+<div class="line"> </div>
+<div class="line">        con blocked (mem0: %mem.M 0, u0: U, done: Cn [%mem.M 0, U])@tt =</div>
+<div class="line">            let Sp = Sr#(%core.idx r 0 pd_c);</div>
+<div class="line">            let Sv = Sr#(%core.idx r 0 sd_c);</div>
+<div class="line">            let Np = %core.nat.mul (Sp, Sv);</div>
+<div class="line">            let vi_of = lm (pref: «r; I32»): Idx Np =</div>
+<div class="line">                %core.conv.u Np (%core.wrap.add 0</div>
+<div class="line">                    (%core.wrap.mul 0 (pref#(%core.idx r 0 pd_c), %core.bitcast I32 Sv),</div>
+<div class="line">                     pref#(%core.idx r 0 sd_c)));</div>
+<div class="line">            let (mem1, panel) = %buffer.alloc (1, Np, To) mem0;</div>
+<div class="line">            con at_block (pref: «r; I32», mem: %mem.M 0, u: U, k: Cn [%mem.M 0, U]) =</div>
+<div class="line">                con fill (pref2: «r; I32», memf: %mem.M 0, uf: U, kf: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memf2, panel2) = %buffer.write (1, Np, To) (memf, panel, vi_of pref2, init);</div>
+<div class="line">                    kf (memf2, uf);</div>
+<div class="line">                con at_point (pref2: «r; I32», memp: %mem.M 0, up: U, kp: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memp1, acc0) = %buffer.read (1, Np, To) (memp, panel, vi_of pref2);</div>
+<div class="line">                    con after_win (memp2: %mem.M 0, accn: To) =</div>
+<div class="line">                        let (memp3, panel3) = %buffer.write (1, Np, To) (memp2, panel, vi_of pref2, accn);</div>
+<div class="line">                        kp (memp3, up);</div>
+<div class="line">                    win (pref2, memp1, acc0, after_win);</div>
+<div class="line">                con wb_cell (pref2: «r; I32», memw: %mem.M 0, uw: U, kw: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memw1, v) = %buffer.read (1, Np, To) (memw, panel, vi_of pref2);</div>
+<div class="line">                    wb (memw1, uw, v, pref2, kw);</div>
+<div class="line">                con s2 (memB: %mem.M 0, uB: U) =</div>
+<div class="line">                    (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, ro) wb_cell)) (pref, memB, uB, k);</div>
+<div class="line">                con s1 (memA: %mem.M 0, uA: U) =</div>
+<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, %core.nat.add (sd_c, 1))</div>
+<div class="line">                            (range_unroll (r, Sr) U (pd_c, %core.nat.add (pd_c, 1)) at_point)))</div>
+<div class="line">                        (pref, memA, uA, s2);</div>
+<div class="line">                (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)</div>
+<div class="line">                    (range_nest (r, Sr) U (vec_for @U, sd_c, ro) fill)) (pref, mem, u, s1);</div>
+<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, pd_c) at_block) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line"> </div>
+<div class="line">        // REDUCTION-VECTORIZED (`ro ≤ vdim &lt; r`: the schedule names the innermost REDUCTION dim):</div>
+<div class="line">        // the contraction itself runs as the innermost (vector) loop. For a contraction whose</div>
+<div class="line">        // operands store the contracted axis unit-stride per output cell (x·Wᵀ — the fc/linear</div>
+<div class="line">        // layout, where each output neuron folds one weight ROW), both operands stream unit-stride</div>
+<div class="line">        // and the fold is a reduction the backend vectorizes with a horizontal sum (permitted by</div>
+<div class="line">        // its reassociation flags) — where vectorizing an output dim would gather across weight</div>
+<div class="line">        // rows. Here `unroll` names the JAM WIDTH instead of a trailing window (the contraction</div>
+<div class="line">        // cannot be both looped and unrolled): the trailing `unroll` parallel dims — small</div>
+<div class="line">        // strip-mined blocks of output cells, see `dot_schedule_kvec` — are unrolled INTO the</div>
+<div class="line">        // vector body (unroll-and-jam) over a flattened «Sb; To» accumulator panel. The jammed</div>
+<div class="line">        // cells share every load that is invariant in one of the jam dims (the input row across</div>
+<div class="line">        // output neurons, the weight row across batch rows), and each panel cell is an independent</div>
+<div class="line">        // reduction chain that gets its own vector accumulator. Clamps as above: the non-selected</div>
+<div class="line">        // branch is still elaborated, and the jam extents are additionally clamped to 1 (`Sr_rv`)</div>
+<div class="line">        // so the elaborated unrolls stay cheap.</div>
+<div class="line">        let rv_j      = (1, unroll)#(%core.ncmp.le (1, unroll));</div>
+<div class="line">        let rv_bd     = (0, %core.nat.sub (ro, rv_j))#(%core.ncmp.le (rv_j, ro));</div>
+<div class="line">        let rv_vd     = (0, vdim)#(%core.ncmp.l (vdim, r));</div>
+<div class="line">        let redvec_ok = %core.bit2.and_ 2 (%core.ncmp.le (ro, vdim),</div>
+<div class="line">                        %core.bit2.and_ 2 (%core.ncmp.e (%core.nat.add (vdim, 1), r),</div>
+<div class="line">                                           %core.ncmp.le (rv_j, ro)));</div>
+<div class="line">        let Sr_rv     = ‹j: r; let jj  = %core.bitcast Nat j;</div>
+<div class="line">                               let jam = %core.bit2.and_ 2 (%core.ncmp.le (rv_bd, jj), %core.ncmp.l (jj, ro));</div>
+<div class="line">                               (Sr#j, (1, Sr#j)#redvec_ok)#jam›;</div>
+<div class="line">        lam rv_mul (d: Nat, acc: Nat): Nat = %core.nat.mul (acc, Sr_rv#(%core.idx r 0 d));</div>
+<div class="line">        let rv_ds = ‹i: rv_j; %core.nat.add (rv_bd, %core.bitcast Nat i)›;</div>
+<div class="line">        let Sb    = %vec.fold.r @(Nat, Nat) @rv_j rv_mul (rv_ds, 1);</div>
+<div class="line"> </div>
+<div class="line">        con redvec (mem0: %mem.M 0, u0: U, done: Cn [%mem.M 0, U])@tt =</div>
+<div class="line">            // Flatten a loop vector&#39;s jam coordinates into the panel (any per-dim-bounded</div>
+<div class="line">            // linearization is a bijection into «Sb»; the exact order is internal to the panel).</div>
+<div class="line">            lam rv_lin (pref: «r; I32») (d: Nat, acc: I32): I32 =</div>
+<div class="line">                %core.wrap.add 0 (%core.wrap.mul 0 (acc, %core.bitcast I32 (Sr_rv#(%core.idx r 0 d))),</div>
+<div class="line">                                  pref#(%core.idx r 0 d));</div>
+<div class="line">            let bi_of = lm (pref: «r; I32»): Idx Sb =</div>
+<div class="line">                %core.conv.u Sb (%vec.fold.r @(I32, Nat) @rv_j (rv_lin pref) (rv_ds, 0I32));</div>
+<div class="line">            let (mem1, panel) = %buffer.alloc (1, Sb, To) mem0;</div>
+<div class="line">            con at_block (pref: «r; I32», mem: %mem.M 0, u: U, k: Cn [%mem.M 0, U]) =</div>
+<div class="line">                con fill (pref2: «r; I32», memf: %mem.M 0, uf: U, kf: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memf2, panel2) = %buffer.write (1, Sb, To) (memf, panel, bi_of pref2, init);</div>
+<div class="line">                    kf (memf2, uf);</div>
+<div class="line">                con at_point (pref2: «r; I32», memp: %mem.M 0, up: U, kp: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memp1, acc0) = %buffer.read (1, Sb, To) (memp, panel, bi_of pref2);</div>
+<div class="line">                    con after_cell (memp2: %mem.M 0, accn: To) =</div>
+<div class="line">                        let (memp3, panel3) = %buffer.write (1, Sb, To) (memp2, panel, bi_of pref2, accn);</div>
+<div class="line">                        kp (memp3, up);</div>
+<div class="line">                    // `cell` directly — `unroll` names the jam width here, not a trailing window.</div>
+<div class="line">                    cell (memp1, acc0, pref2, after_cell);</div>
+<div class="line">                con wb_cell (pref2: «r; I32», memw: %mem.M 0, uw: U, kw: Cn [%mem.M 0, U]) =</div>
+<div class="line">                    let (memw1, v) = %buffer.read (1, Sb, To) (memw, panel, bi_of pref2);</div>
+<div class="line">                    wb (memw1, uw, v, pref2, kw);</div>
+<div class="line">                con s2 (memB: %mem.M 0, uB: U) =</div>
+<div class="line">                    (range_unroll (r, Sr_rv) U (rv_bd, ro) wb_cell) (pref, memB, uB, k);</div>
+<div class="line">                con s1 (memA: %mem.M 0, uA: U) =</div>
+<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, rv_vd)</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, rv_vd, %core.nat.add (rv_vd, 1))</div>
+<div class="line">                            (range_unroll (r, Sr_rv) U (rv_bd, ro) at_point)))</div>
+<div class="line">                        (pref, memA, uA, s2);</div>
+<div class="line">                (range_unroll (r, Sr_rv) U (rv_bd, ro) fill) (pref, mem, u, s1);</div>
+<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, rv_bd) at_block) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line"> </div>
+<div class="line">        con run (mem0: %mem.M 0, u0: U, done: Cn [%mem.M 0, U])@tt =</div>
+<div class="line">            ((((classic, vectorized)#vec_ok, blocked)#block_ok, redvec)#redvec_ok) (mem0, u0, done);</div>
+<div class="line">        run;</div>
+<div class="line">    nest;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
+%btensor.map_reduce_post</h2>
+<p>The buffer-world counterpart of <span class="tt">%tensor.map_reduce_post</span> and the workhorse behind every operation below: the affine-indexed generalisation of <span class="tt">map_reduce</span> on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>. <span class="tt">So</span>/<span class="tt">Sr</span> are the (logical) output shape and full loop bounds; <span class="tt">acc_out</span>/<span class="tt">accs</span> are affine maps from the <span class="tt">Rn</span> loop vector to the output/input coordinates. As in %tensor.map_reduce_post, the total loop count <span class="tt">Rn</span> is stated instead of the reduction count <span class="tt">Rr = Rn - Ro</span>, so that type inference can pin it from <span class="tt">Sr</span>. The combiner and the <span class="tt">post</span> epilogue (run once per output cell, between the fold and the write) are mem-threaded, unlike their <span class="tt">%tensor.map_reduce_post</span> counterparts. The <span class="tt">nps</span> epilogue inputs <span class="tt">post_is</span> are read once per output cell, at the <span class="tt">post_accs</span>-mapped <em>output-cell</em> coordinates (the write coordinates produced by <span class="tt">acc_out</span>), and fed to <span class="tt">post</span>. <span class="tt">sched</span> IS the op's schedule: a chooser over the target's loop-nest builder (canonically a <span class="tt">%tensor.mk_sched</span> value), selected in the frontend; <span class="tt">%btensor.lower_map_reduce</span> binds it to <span class="tt">%btensor.mr_nest</span> and merely APPLIES the result to the op's decision-free fold step and write-back. </p><div class="fragment"><div class="line">axm %btensor.map_reduce_post: {nis nps: Nat}</div>
+<div class="line">                           → {To Tp: *, Ro Rn: Nat, TSched: □}</div>
+<div class="line">                           → [So: «Ro; Nat», Sr: «Rn; Nat», sched: TSched]</div>
+<div class="line">                           → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»,</div>
+<div class="line">                              Tps: «nps; *», Rps: «j: nps; Nat», Sps: «j: nps; «Rps#j; Nat»»}</div>
+<div class="line">                           → [f: Fn [%mem.M 0, To, «i: nis; Tis#i»] → [%mem.M 0, To], init: To,</div>
+<div class="line">                              post: Fn [%mem.M 0, To, «j: nps; Tps#j»] → [%mem.M 0, Tp]]</div>
+<div class="line">                           → [acc_out: [«Rn; %affine.index»] → «Ro; %affine.index»]</div>
+<div class="line">                           → [accs: «i: nis; ([«Rn; %affine.index»] → «Ris#i; %affine.index»)»,</div>
+<div class="line">                              post_accs: «j: nps; ([«Ro; %affine.index»] → «Rps#j; %affine.index»)»]</div>
+<div class="line">                           → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»,</div>
+<div class="line">                              post_is: «j: nps; %buffer.Buf (Rps#j, Sps#j, Tps#j)»]</div>
+<div class="line">                           → [%mem.M 0, %buffer.Buf (Ro, So, Tp)];</div>
+</div><!-- fragment --><p> The mem-threaded CPS identity (with an empty epilogue-input pack) — the neutral <span class="tt">post</span> epilogue <span class="tt">normalize_map_reduce</span> delegates with. </p><div class="fragment"><div class="line">fun %btensor.id {T: *} (mem: %mem.M 0, x: T, _: [])@tt: [%mem.M 0, T] = return (mem, x);</div>
+</div><!-- fragment --><p> The canonical SCHEDULE value: a chooser over the target's loop-nest builder — pick <span class="tt">vdim</span>, the dim to run innermost as the unit-stride vector loop (a parallel dim runs over a row of accumulators; the innermost REDUCTION dim selects the reduction-vectorized nest, see %btensor.mr_nest; <span class="tt">vdim ≥ Rn</span> means "none"), and <span class="tt">unroll</span>, the number of trailing reduction dims to unroll into straight-line code. %tensor.mk_sched is an alias for this lam: <span class="tt">btensor</span> owns it for the same reason it owns %btensor.Ring. </p><div class="fragment"><div class="line">lam %btensor.mk_sched (vdim unroll: Nat) (N: *) (mk: [vdim unroll: Nat] → N): N = mk (vdim, unroll);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
 %btensor.map_reduce</h2>
-<p>The buffer-world counterpart of %tensor.map_reduce and the workhorse behind every operation below: a reduction fold over an affinely-indexed loop nest on <span class="tt">%buffer.Buf</span> operands, threading <span class="tt">%mem.M</span>.</p>
-<p>The iteration domain and the result shape are stated explicitly:</p><ul>
-<li><span class="tt">Sr</span>: the bounds of the full loop nest of length <span class="tt">Rn</span>. Its leading <span class="tt">Ro</span> dimensions are the parallel output loops; the trailing <span class="tt">Rn - Ro</span> dimensions are the reduction loops that are folded away.</li>
-<li><span class="tt">So</span>: the shape of the result buffer (rank <span class="tt">Ro</span>). It may differ from the leading <span class="tt">Ro</span> bounds of <span class="tt">Sr</span>, which is what lets <span class="tt">map_out</span> write to a re-shaped output (e.g. a transpose).</li>
-</ul>
-<p>The full loop iteration vector <span class="tt">(o…, r…)</span> has length <span class="tt">Rn</span>.</p><ul>
-<li><span class="tt">f</span> folds one element of each input into the accumulator (seeded per output cell with <span class="tt">init</span>); unlike %tensor.map_reduce's <span class="tt">f</span> it is mem-threaded.</li>
-<li><span class="tt">map_out</span> maps the full loop vector to the <span class="tt">Ro</span> write coordinates in the result. As the reduction is folded away before the write, it must depend only on the leading <span class="tt">Ro</span> output indices.</li>
-<li><span class="tt">maps#i</span> maps the full loop vector to the <span class="tt">Ris#i</span> read coordinates of input <span class="tt">i</span>. Transposes, slices and broadcasts are expressed here, by reading the inputs accordingly.</li>
-</ul>
-<p><span class="tt">nis</span>, <span class="tt">Ro</span>, <span class="tt">Rn</span> and the <span class="tt">Ris</span> must be literals before entering the <span class="tt">%btensor.lower_map_reduce</span> phase for the lowering to succeed; the bounds <span class="tt">So</span> and <span class="tt">Sr</span> may be symbolic.</p>
-<div class="fragment"><div class="line">axm %btensor.map_reduce: {nis: Nat}</div>
+<p>%btensor.map_reduce_post without the epilogue and with the neutral schedule — the buffer-world counterpart of %tensor.map_reduce. Its normalizer immediately delegates to %btensor.map_reduce_post with <span class="tt">post = %btensor.id</span> (so <span class="tt">Tp = To</span>), no epilogue inputs (<span class="tt">nps = 0</span>), no vector dim, and no unrolling. Unlike %tensor.map_reduce this cannot be a delegating <span class="tt">lam</span>: applying a lam instantiates its later group domains eagerly, and the <span class="tt">is</span> domain here contains the <em>dependent</em> axm application <span class="tt">%buffer.Buf (Ris#i, Sis#i, Tis#i)</span>, whose signature cannot be checked over the still-unsolved <span class="tt">{Tis, Ris, Sis}</span> holes (the tensor-level counterpart is a plain array and checks structurally). An axm application stays stuck until the checker has solved the holes from the operands. </p><div class="fragment"><div class="line">axm %btensor.map_reduce: {nis: Nat}</div>
 <div class="line">                      → {To: *, Ro Rn: Nat}</div>
 <div class="line">                      → [So: «Ro; Nat», Sr: «Rn; Nat»]</div>
 <div class="line">                      → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}</div>
@@ -221,10 +462,10 @@ Operations</h1>
 <div class="line">                      → [map_out: [«Rn; %affine.index»] → «Ro; %affine.index»]</div>
 <div class="line">                      → [maps: «i: nis; ([«Rn; %affine.index»] → «Ris#i; %affine.index»)»]</div>
 <div class="line">                      → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»]</div>
-<div class="line">                      → [%mem.M 0, %buffer.Buf (Ro, So, To)];</div>
+<div class="line">                      → [%mem.M 0, %buffer.Buf (Ro, So, To)], normalize_map_reduce;</div>
 </div><!-- fragment --><p> <span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. %tensor.proj_map is an alias for this lam. </p><div class="fragment"><div class="line">lam %btensor.proj_map {n r: Nat} (subs: «r; Nat») (o: «n; %affine.index»): «r; %affine.index» =</div>
 <div class="line">    ‹j: r; o#(%core.idx n 0 (subs#j))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
 %btensor.product_2d</h2>
 <p>Computes the matrix product of two 2-dimensional matrices in the ring <span class="tt">R</span> - the buffer-world counterpart of %tensor.product_2d. <span class="tt">[R: %btensor.Ring]</span> is the leading <em>explicit</em> group, as in %tensor.product_2d: a ring cannot be recovered from <span class="tt">R#T</span> by inference.</p>
 <p>Unlike %tensor.product_2d this is a <span class="tt">lam</span> wrapping %btensor.map_reduce directly, not an <span class="tt">axm</span> paired with an <span class="tt">_impl</span> annex and a lowering phase: nothing in this plugin inspects the high-level form - there is no fusion phase over <span class="tt">%btensor.*</span> and the normalizer was a no-op - so the extra staging bought nothing. %btensor.transpose_2d follows the same pattern.</p>
@@ -238,7 +479,7 @@ Operations</h1>
 <div class="line">        (%btensor.proj_map (0, 1))</div>
 <div class="line">        (%btensor.proj_map (0, 2), %btensor.proj_map (2, 1))</div>
 <div class="line">        (mem, (t1, t2));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md205"></a>
 %btensor.transpose_2d</h2>
 <p>Permutes the dimensions of a 2-dimensional matrix - the buffer-world counterpart of %tensor.transpose_2d. As there, the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s, and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>. Like %btensor.product_2d this is a <span class="tt">lam</span> over %btensor.map_reduce rather than an <span class="tt">axm</span>.</p>
 <p>Ignores the (⊥) accumulator and just returns the read value - the mem-threaded counterpart of <span class="tt">tensor_copy</span>.</p>
@@ -253,14 +494,14 @@ Operations</h1>
 <div class="line">        %affine.id</div>
 <div class="line">        (%btensor.proj_map (1, 0),)</div>
 <div class="line">        (mem, input);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md206"></a>
 %btensor.broadcast</h2>
 <p>Expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span> - the buffer-world counterpart of %tensor.broadcast: for all <span class="tt">i</span>, either <span class="tt">s_in#i = s_out#i</span> or <span class="tt">s_in#i = 1</span>, and the size-1 dimensions are expanded to fit <span class="tt">s_out</span>. The input/output buffer shapes (<span class="tt">ri</span>/<span class="tt">si</span>, <span class="tt">ro</span>/<span class="tt">so</span>) are the actual — possibly size-1-folded — buffer shapes and are inferred from the operands; <span class="tt">s_in</span>/<span class="tt">s_out</span> are the logical (unfolded) shapes.</p>
 <div class="fragment"><div class="line">axm %btensor.broadcast: {T: *, ri: Nat, si: «ri; Nat», ro: Nat, so: «ro; Nat», r: Nat}</div>
 <div class="line">                     → [s_in s_out: «r; Nat»]</div>
 <div class="line">                     → [%mem.M 0, input: %buffer.Buf (ri, si, T)]</div>
 <div class="line">                     → [%mem.M 0, %buffer.Buf (ro, so, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md205"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md207"></a>
 %btensor.pad</h2>
 <p>Pads each axis - the buffer-world counterpart of %tensor.pad: <span class="tt">out[…o…] = input[…o−lo…]</span> inside the interior, <span class="tt">value</span> (mode 0, constant) or the clamped edge element (mode ≠ 0, replicate) outside. The groups mirror %tensor.pad (<span class="tt">{T, r}</span> → input shape → pad parameters → operands); unlike there, <span class="tt">s_out</span> cannot be computed here (<span class="tt">pad_shape</span> lives in the <span class="tt">tensor</span> plugin), so it rides along with the parameters. The buffer shapes are stated as the logical shapes; <span class="tt">%buffer.Buf</span> normalizes literal size-1 axes away, so they agree with the folded buffer handles, and the loop generation folds its read/write indices accordingly.</p>
 <div class="fragment"><div class="line">axm %btensor.pad: {T: *, r: Nat}</div>
@@ -268,7 +509,7 @@ Operations</h1>
 <div class="line">              → [s_out: «r; Nat», mode: Nat, lo hi: «r; Nat»]</div>
 <div class="line">              → [%mem.M 0, input: %buffer.Buf (r, s_in, T), value: T]</div>
 <div class="line">              → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md206"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md208"></a>
 %btensor.concat</h2>
 <p>Joins <span class="tt">nis</span> buffers along axis <span class="tt">ax</span> - the buffer-world counterpart of %tensor.concat. <span class="tt">out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]</span>, where <span class="tt">k</span> is the input whose range <span class="tt">o#ax</span> lands in (<span class="tt">off</span> are the prefix sums of the per-input extents along <span class="tt">ax</span>). Unlike %tensor.concat, <span class="tt">s_out</span> (the summed extent along <span class="tt">ax</span>, the shared extents elsewhere) is passed explicitly, since <span class="tt">concat_shape</span> lives in the <span class="tt">tensor</span> plugin.</p>
 <div class="fragment"><div class="line">axm %btensor.concat: {T: *, nis r: Nat}</div>
@@ -277,10 +518,10 @@ Operations</h1>
 <div class="line">                  → [s_out: «r; Nat»]</div>
 <div class="line">                  → [%mem.M 0, is: «i: nis; %buffer.Buf (r, Sis#i, T)»]</div>
 <div class="line">                  → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md207"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md209"></a>
 Phases</h1>
 <ul>
-<li><span class="tt">lower_map_reduce</span>: lowers the buffer-world ops (<span class="tt">%btensor.map_reduce</span>, <span class="tt">%btensor.broadcast</span>, <span class="tt">%btensor.pad</span>, <span class="tt">%btensor.concat</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations. <span class="tt">%btensor.product_2d</span> and <span class="tt">%btensor.transpose_2d</span> need no phase of their own: they are <span class="tt">lam</span>s that reduce to <span class="tt">%btensor.map_reduce</span> at their call site.</li>
+<li><span class="tt">lower_map_reduce</span>: lowers the buffer-world ops (<span class="tt">%btensor.map_reduce_post</span>, <span class="tt">%btensor.broadcast</span>, <span class="tt">%btensor.pad</span>, <span class="tt">%btensor.concat</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">%btensor.mr_nest</span>.</li>
 </ul>
 <div class="fragment"><div class="line">axm %btensor.lower_map_reduce: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->

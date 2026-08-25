@@ -32,6 +32,8 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a65ac63a5b52dcac775dc3c0ee75a3520", null ],
     [ "func_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa27e43c7bfe8e0e3284eadf1fd17060a", null ],
     [ "func_impls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab31bbfcaecd5d6fc4d1e54e1d19716be", null ],
+    [ "loop_md_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ade57e99459d05bbd6fbf968597ba0287", null ],
+    [ "LoopMdBase", "classmim_1_1plug_1_1ll_1_1Emitter.html#a590e2a9569867565716950ffae29cdd3", null ],
     [ "rt_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a7e23ce15d7a02dcda74c2fc997757754", null ],
     [ "rt_module_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a894d2de6157af5afdddb7f644bae9227", null ],
     [ "rt_used_", "classmim_1_1plug_1_1ll_1_1Emitter.html#afb2702775e8afcf83b2cc4f95aef9c91", null ],

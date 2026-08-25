@@ -10,6 +10,7 @@ var classmim_1_1Rewriter =
     [ "map", "classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04", null ],
     [ "map", "classmim_1_1Rewriter.html#ab799239c0c41f5dfa4afb2f9fe3522b9", null ],
     [ "map", "classmim_1_1Rewriter.html#ac2f8ad29b11cf04069145a379cda1c16", null ],
+    [ "map_root", "classmim_1_1Rewriter.html#a8d9865dc4bc2e36f2fc325d42d70e774", null ],
     [ "pop", "classmim_1_1Rewriter.html#a87c9821a28ae231d8e9434ff049dce35", null ],
     [ "push", "classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96", null ],
     [ "reset", "classmim_1_1Rewriter.html#ab7102318660bc8e25e068db6142bf737", null ],

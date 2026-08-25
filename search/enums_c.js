@@ -6,10 +6,15 @@ var searchData=
   ['map_3',['map',['../namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0',1,'mim::plug::affine::map'],['../namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37',1,'mim::plug::tensor::map']]],
   ['map_5fimpl_4',['map_impl',['../namespacemim_1_1plug_1_1tensor.html#a67b1512448efe745b8d5c41337da58f0',1,'mim::plug::tensor']]],
   ['map_5freduce_5',['map_reduce',['../namespacemim_1_1plug_1_1btensor.html#a01e0a1e721ba27474863d45ab94017c3',1,'mim::plug::btensor::map_reduce'],['../namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5',1,'mim::plug::tensor::map_reduce']]],
-  ['mem_5fchecks_6',['mem_checks',['../namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261',1,'mim::plug::gpu']]],
-  ['minus_7',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
-  ['mode_8',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
-  ['mode_9',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core']]],
-  ['mslot_10',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
-  ['mut_11',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim']]]
+  ['map_5freduce_5fpost_6',['map_reduce_post',['../namespacemim_1_1plug_1_1btensor.html#a6fb6d9c0e5f1d87f59af7b27d689f365',1,'mim::plug::btensor::map_reduce_post'],['../namespacemim_1_1plug_1_1tensor.html#aec79c25d65d7e0096f5284f96ff67e87',1,'mim::plug::tensor::map_reduce_post']]],
+  ['materialize_7',['materialize',['../namespacemim_1_1plug_1_1tensor.html#a8bd57a230be0f702ca1f480fdd88b335',1,'mim::plug::tensor']]],
+  ['mem_5fchecks_8',['mem_checks',['../namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261',1,'mim::plug::gpu']]],
+  ['minus_9',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
+  ['mk_5fsched_10',['mk_sched',['../namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14',1,'mim::plug::btensor::mk_sched'],['../namespacemim_1_1plug_1_1tensor.html#abdee0817751019cd76e60c0712581d98',1,'mim::plug::tensor::mk_sched']]],
+  ['mode_11',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
+  ['mode_12',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core']]],
+  ['mr_5fnest_13',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],
+  ['mr_5ftileable_14',['mr_tileable',['../namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8',1,'mim::plug::tensor']]],
+  ['mslot_15',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
+  ['mut_16',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim']]]
 ];

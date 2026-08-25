@@ -133,12 +133,15 @@ $(function(){initNavTree('tensor_8h.html','',''); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">tensor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="world_8h_source.html">mim/world.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;<a class="el" href="lam_8h_source.html">mim/lam.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="world_8h_source.html">mim/world.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="tensor_2autogen_8h_source.html">mim/plug/tensor/autogen.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for tensor.h:</div>
@@ -153,6 +156,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="tensor_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Atensor_3A_3APureRead_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1PureRead" id="r_mim_3A_3Aplug_3A_3Atensor_3A_3APureRead_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1PureRead"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">mim::plug::tensor::PureRead</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1tensor_1_1PureRead"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure re-indexed read: the source tensor, the access map into it (over the read's output coordinates), and the source's element type/rank/shape.  <a href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:mim" id="r_mim"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html">mim</a></td></tr>
@@ -162,9 +170,66 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8c8dd822f6ed249bfef725636586c463" id="r_a8c8dd822f6ed249bfef725636586c463"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463">mim::plug::tensor::is_copy_comb</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *comb)</td></tr>
+<tr class="memdesc:a8c8dd822f6ed249bfef725636586c463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recognizes the (rebuilt) <span class="tt">tensor_copy</span> combiner <span class="tt">(acc, ys) ↦ ys#0</span>: the result is exactly the single input element, so a <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> built on it is a pure re-indexed read of that input.  <br /></td></tr>
+<tr class="memitem:a2c5af7154fdcb4cd3e3a75223d588fd1" id="r_a2c5af7154fdcb4cd3e3a75223d588fd1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1">mim::plug::tensor::is_identity_post</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *post)</td></tr>
+<tr class="memdesc:a2c5af7154fdcb4cd3e3a75223d588fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <span class="tt">post</span> the (rebuilt) CPS identity <span class="tt">tensor.id</span>, i.e.  <br /></td></tr>
+<tr class="memitem:a47e1c62aeb04464a9bad6b284165af85" id="r_a47e1c62aeb04464a9bad6b284165af85"><td class="memItemLeft">std::optional&lt; <a class="el" href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">PureRead</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85">mim::plug::tensor::is_pure_read</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *value)</td></tr>
+<tr class="memdesc:a47e1c62aeb04464a9bad6b284165af85"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> without reduction loops that writes its full loop domain through the identity output map (reshape/transpose/slice/flip/repeat lower to these) — returns its single access map and source.  <br /></td></tr>
 <tr class="memitem:ab81673d70e22003fa65a4736b5e9b08a" id="r_ab81673d70e22003fa65a4736b5e9b08a"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ab81673d70e22003fa65a4736b5e9b08a">mim::plug::tensor::op_get</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *T, const <a class="el" href="classmim_1_1Def.html">Def</a> *r, const <a class="el" href="classmim_1_1Def.html">Def</a> *s, const <a class="el" href="classmim_1_1Def.html">Def</a> *arr, const <a class="el" href="classmim_1_1Def.html">Def</a> *index)</td></tr>
 <tr class="memitem:a3520819e9d3ed4ab46dcd49fdd6d80ab" id="r_a3520819e9d3ed4ab46dcd49fdd6d80ab"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a3520819e9d3ed4ab46dcd49fdd6d80ab">mim::plug::tensor::op_set</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *T, const <a class="el" href="classmim_1_1Def.html">Def</a> *r, const <a class="el" href="classmim_1_1Def.html">Def</a> *s, const <a class="el" href="classmim_1_1Def.html">Def</a> *arr, const <a class="el" href="classmim_1_1Def.html">Def</a> *index, const <a class="el" href="classmim_1_1Def.html">Def</a> *x)</td></tr>
 </table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1plug_1_1tensor_1_1PureRead" id="structmim_1_1plug_1_1tensor_1_1PureRead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1tensor_1_1PureRead">&#9670;&#160;</a></span>mim::plug::tensor::PureRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::tensor::PureRead</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A pure re-indexed read: the source tensor, the access map into it (over the read's output coordinates), and the source's element type/rank/shape. </p>
+
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00032">32</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="af6597e2be81e77563c122c0ee2f3ca49" name="af6597e2be81e77563c122c0ee2f3ca49"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+map = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aab61159bddae08a997706aade85f1be9" name="aab61159bddae08a997706aade85f1be9"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+R = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac125649ee86c5cdcdc19362545ccb8be" name="ac125649ee86c5cdcdc19362545ccb8be"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+S = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aa902f273a90911d24fadef83b085944f" name="aa902f273a90911d24fadef83b085944f"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+src = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a301293d412fd1a577a530753e71be473" name="a301293d412fd1a577a530753e71be473"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+T = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
