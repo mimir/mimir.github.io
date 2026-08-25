@@ -206,7 +206,7 @@ var searchData=
   ['module_203',['module',['../classmim_1_1ast_1_1Import.html#a71dfa10a74b031ecd786f416976b2c4b',1,'mim::ast::Import']]],
   ['move_20out_20of_20the_20node_204',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
   ['move_2earena_205',['Move.arena',['../classmim_1_1World.html#structmim_1_1World_1_1Move_8arena',1,'mim::World']]],
-  ['msg_206',['Msg',['../structmim_1_1Error_1_1Msg.html',1,'mim::Error']]],
+  ['msg_206',['Msg',['../classmim_1_1Error.html#structmim_1_1Error_1_1Msg',1,'mim::Error']]],
   ['msg_207',['msg',['../classmim_1_1Error.html#a2de17924251fc9d7d52e6751f17dcc5a',1,'mim::Error']]],
   ['msgs_208',['msgs',['../classmim_1_1Error.html#a717742335e466f95d4e01880e4120182',1,'mim::Error']]],
   ['mslot_209',['mslot',['../mem.html#autotoc_md342',1,'%mem.mslot'],['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem::mslot']]],

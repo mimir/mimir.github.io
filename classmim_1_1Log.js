@@ -13,7 +13,7 @@ var classmim_1_1Log =
     [ "level", "classmim_1_1Log.html#a56d140e471c99a5737bf1b5f815de975", null ],
     [ "level2acro", "classmim_1_1Log.html#a489724a84829e8b3de2435e186ccfd25", null ],
     [ "level2color", "classmim_1_1Log.html#a57dc689c1ad0a6e5c3d0a3fc2bcae855", null ],
-    [ "log", "classmim_1_1Log.html#ac5821e05395ce4cfb7f64f3ef721698d", null ],
+    [ "log", "classmim_1_1Log.html#a2b0f87bddb1119d0c7c3df6537d416c2", null ],
     [ "log", "classmim_1_1Log.html#ac028e1426981d9aa7a3d40912acca2b0", null ],
     [ "operator bool", "classmim_1_1Log.html#a922a7d38ec807db871706e536009e18d", null ],
     [ "ostream", "classmim_1_1Log.html#a76fece32622255541b97f9674bf57725", null ],

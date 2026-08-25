@@ -6,5 +6,5 @@ var searchData=
   ['merge_3',['Merge',['../classmim_1_1Merge.html',1,'mim']]],
   ['module_4',['Module',['../classmim_1_1ast_1_1Module.html',1,'mim::ast']]],
   ['move_2earena_5',['Move.arena',['../classmim_1_1World.html#structmim_1_1World_1_1Move_8arena',1,'mim::World']]],
-  ['msg_6',['Msg',['../structmim_1_1Error_1_1Msg.html',1,'mim::Error']]]
+  ['msg_6',['Msg',['../classmim_1_1Error.html#structmim_1_1Error_1_1Msg',1,'mim::Error']]]
 ];

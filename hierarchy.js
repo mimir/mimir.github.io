@@ -72,7 +72,7 @@ var hierarchy =
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
     [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", null ],
-    [ "mim::Error::Msg", "structmim_1_1Error_1_1Msg.html", null ],
+    [ "mim::Error::Msg", "classmim_1_1Error.html#structmim_1_1Error_1_1Msg", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],

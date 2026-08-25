@@ -1,6 +1,10 @@
 var classmim_1_1Error =
 [
-    [ "Msg", "structmim_1_1Error_1_1Msg.html", "structmim_1_1Error_1_1Msg" ],
+    [ "Msg", "classmim_1_1Error.html#structmim_1_1Error_1_1Msg", [
+      [ "loc", "classmim_1_1Error.html#aef1765829e8404858ce26d4f8c386333", null ],
+      [ "str", "classmim_1_1Error.html#aaa0aa4ce4f863fa5b91c557d18d263ac", null ],
+      [ "tag", "classmim_1_1Error.html#a48557b999065c7db3a7f8bddde75f0fc", null ]
+    ] ],
     [ "Tag", "classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5", [
       [ "Error", "classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a902b0d55fddef6f8d651fe1035b7d4bd", null ],
       [ "Warn", "classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a56525ae64d370c0b448ac0d60710ef17", null ],

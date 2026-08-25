@@ -2,7 +2,7 @@ var searchData=
 [
   ['abstracted_0',['abstracted',['../classmim_1_1RWBase.html#aaa63653384fc99054468bdf5b4a25e34',1,'mim::RWBase']]],
   ['ack_1',['ack',['../classmim_1_1Error.html#ace5d8cc68846c8b473a277395b3dd980',1,'mim::Error']]],
-  ['add_2',['add',['../classmim_1_1Driver_1_1Imports.html#a9f27127a31a914ab1111add44f28d88f',1,'mim::Driver::Imports::add()'],['../classmim_1_1VarRewriter.html#a03e23a38ed0740d5c601e242529b46b1',1,'mim::VarRewriter::add()']]],
+  ['add_2',['add',['../classmim_1_1Driver_1_1Imports.html#a3fde0d7a351541fed1dcb67aa80189d6',1,'mim::Driver::Imports::add()'],['../classmim_1_1VarRewriter.html#a03e23a38ed0740d5c601e242529b46b1',1,'mim::VarRewriter::add()']]],
   ['add_5farg_3',['add_arg',['../classmim_1_1Driver.html#ae61bdd6efe4bd638f97f58d43c94e6bc',1,'mim::Driver']]],
   ['add_5fimplicit_5fimports_4',['add_implicit_imports',['../classmim_1_1ast_1_1Module.html#ac8f3db4b7f29035a76e6f1461e342a28',1,'mim::ast::Module']]],
   ['add_5fret_5',['add_ret',['../classmim_1_1ast_1_1PiExpr_1_1Dom.html#afb586c305568594703cd48875d8f9b0a',1,'mim::ast::PiExpr::Dom']]],
