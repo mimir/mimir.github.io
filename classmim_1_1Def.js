@@ -63,6 +63,7 @@ var classmim_1_1Def =
     [ "isa_binder", "classmim_1_1Def.html#a6e1ab8dca701f7bbd405cdd925fcd1ce", null ],
     [ "isa_imm", "classmim_1_1Def.html#ae95966891b117e5f8bf7f4bca7b95c64", null ],
     [ "isa_mut", "classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1", null ],
+    [ "isa_type", "classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd", null ],
     [ "judge", "classmim_1_1Def.html#a61e045911e5d1597f8614552668258ff", null ],
     [ "less", "classmim_1_1Def.html#ab1215de2b56ede04a5df0f3d3628bb4c", null ],
     [ "loc", "classmim_1_1Def.html#ababa287f8ec65ff8971c8b379a0afa2f", null ],

@@ -113,8 +113,9 @@ var searchData=
   ['isa_5freturning_110',['isa_returning',['../classmim_1_1Pi.html#afe493c2ca2eb3e7e1d484eceb5138356',1,'mim::Pi::isa_returning()'],['../classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79',1,'mim::Lam::isa_returning()']]],
   ['isa_5fset_111',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
   ['isa_5ftargetspecific_5fintrinsic_112',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab834c3096a2840d77482cd36bcedbf48',1,'mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad',1,'mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()']]],
-  ['isa_5funset_113',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
-  ['isa_5fvar_5fproj_114',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
-  ['iterator_115',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
-  ['its_5fa_5fmatch_116',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
+  ['isa_5ftype_113',['isa_type',['../classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd',1,'mim::Def']]],
+  ['isa_5funset_114',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
+  ['isa_5fvar_5fproj_115',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
+  ['iterator_116',['iterator',['../classmim_1_1Sets_1_1Set_1_1iterator.html#a6411d871b0f0b7c4815fece26f323708',1,'mim::Sets::Set::iterator']]],
+  ['its_5fa_5fmatch_117',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

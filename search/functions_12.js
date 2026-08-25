@@ -47,7 +47,8 @@ var searchData=
   ['type_5finfer_5funiv_44',['type_infer_univ',['../classmim_1_1World.html#abca27ffe5d0a6ffcf366d01f4340ed67',1,'mim::World']]],
   ['type_5fint_45',['type_int',['../classmim_1_1World.html#a1f9cf19f590572d0757180090718f47f',1,'mim::World']]],
   ['type_5fnat_46',['type_nat',['../classmim_1_1World.html#a76a2bc4914920ee550be62ace9403d9f',1,'mim::World']]],
-  ['type_5ftop_47',['type_top',['../classmim_1_1World.html#ab80f3808083473823d0f46dbe958016b',1,'mim::World']]],
-  ['typeexpr_48',['TypeExpr',['../classmim_1_1ast_1_1TypeExpr.html#a3d05c88d48ca18ce64120369a067bc19',1,'mim::ast::TypeExpr']]],
-  ['types_49',['types',['../classmim_1_1ast_1_1UnionExpr.html#abdd762c7edba55246a12105e92aa08e0',1,'mim::ast::UnionExpr']]]
+  ['type_5fof_47',['type_of',['../namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81',1,'mim']]],
+  ['type_5ftop_48',['type_top',['../classmim_1_1World.html#ab80f3808083473823d0f46dbe958016b',1,'mim::World']]],
+  ['typeexpr_49',['TypeExpr',['../classmim_1_1ast_1_1TypeExpr.html#a3d05c88d48ca18ce64120369a067bc19',1,'mim::ast::TypeExpr']]],
+  ['types_50',['types',['../classmim_1_1ast_1_1UnionExpr.html#abdd762c7edba55246a12105e92aa08e0',1,'mim::ast::UnionExpr']]]
 ];

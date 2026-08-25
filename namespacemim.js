@@ -288,6 +288,7 @@ var namespacemim =
     [ "tuple2str", "namespacemim.html#a491928b70e9d5a3cc4bb053cd49bf49e", null ],
     [ "tuple_of_dict", "namespacemim.html#a31108855e962bd3bf8dbf912eb4349b0", null ],
     [ "tuple_of_types", "namespacemim.html#a8edd5d2569579fbdac7077d606a2e2b5", null ],
+    [ "type_of", "namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81", null ],
     [ "Vector", "namespacemim.html#afca0bb4c47e185182e4fc7ad6bcec3a1", null ],
     [ "BitmaskWidth", "namespacemim.html#ad70d80188d4a31ea1ab6199969ce4e63", null ],
     [ "Default_Inlined_Size", "namespacemim.html#a39efaf0b2304223993b837cc3e0bd605", null ],
