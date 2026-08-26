@@ -200,7 +200,7 @@ var searchData=
   ['mimir_2emd_197',['mimir.md',['../mimir_8md.html',1,'']]],
   ['minimal_20examples_198',['Minimal Examples',['../phases.html#autotoc_md104',1,'']]],
   ['minimize_5fdfa_199',['minimize_dfa',['../namespaceautomaton.html#a0a07cb42cd7cc111f81d4f73f00c1bdd',1,'automaton']]],
-  ['mining_200',['Domain transforms: strip-mining',['../tensor.html#autotoc_md429',1,'']]],
+  ['mining_200',['Strip-Mining',['../tensor.html#autotoc_md429',1,'']]],
   ['minor_201',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
   ['minus_202',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
   ['mk_5fphi_203',['mk_phi',['../namespacemim_1_1plug_1_1mem_1_1phase.html#acab92e534d4abc11bd41fcc12136090d',1,'mim::plug::mem::phase']]],

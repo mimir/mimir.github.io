@@ -57,7 +57,7 @@ var searchData=
   ['mimir_20picture_54',['The MimIR picture',['../phases.html#autotoc_md98',1,'']]],
   ['mimir_20vs_20mim_55',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md130',1,'']]],
   ['minimal_20examples_56',['Minimal Examples',['../phases.html#autotoc_md104',1,'']]],
-  ['mining_57',['Domain transforms: strip-mining',['../tensor.html#autotoc_md429',1,'']]],
+  ['mining_57',['Strip-Mining',['../tensor.html#autotoc_md429',1,'']]],
   ['mk_5fsched_58',['%tensor.mk_sched',['../tensor.html#autotoc_md424',1,'']]],
   ['mod_59',['%affine.semiop(mul,ceildiv,floordiv,mod)',['../affine.html#autotoc_md173',1,'']]],
   ['mode_60',['Mode',['../core.html#autotoc_md247',1,'']]],

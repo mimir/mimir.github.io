@@ -181,13 +181,13 @@ $(function(){initNavTree('tensor.html','',''); });
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md428">Scheduling: the <span class="tt">Tileable</span> interface </a>
+    <a href="#autotoc_md428">Tiling </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md429">Domain transforms: strip-mining </a>
+        <a href="#autotoc_md429">Strip-Mining </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md430">Schedules as first-class functions </a>
+        <a href="#autotoc_md430">Schedules </a>
       </li>
       <li class="level2">
         <a href="#autotoc_md431">%tensor.repeat </a>
@@ -351,7 +351,7 @@ Operations</h1>
 <div class="line">        (f, init, %tensor.id @To) map_out (maps, ()) (is, ());</div>
 </div><!-- fragment --><p> <span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. An alias for %btensor.proj_map, which <span class="tt">btensor</span> owns for the same reason it owns %btensor.Ring. </p><div class="fragment"><div class="line">let %tensor.proj_map = %btensor.proj_map;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
-Scheduling: the <span class="tt">Tileable</span> interface</h1>
+Tiling</h1>
 <p>A <span class="tt">Tileable</span> existentially packages a computation over an affinely-indexed iteration domain together with its SCHEDULE (cf. MLIR's TilingInterface) — implemented entirely in the frontend IR, with partial evaluation doing the rewriting; no C++ transformation code:</p><ul>
 <li><span class="tt">Out</span>: the result <em>type constructor</em> — what materializing over a domain with <span class="tt">ro</span> parallel dims of extents <span class="tt">so</span> yields.</li>
 <li>the iteration domain <span class="tt">Sr</span> (leading <span class="tt">Ro</span> parallel dims, trailing <span class="tt">Rr</span> reduction dims) and the result shape <span class="tt">So</span> — MLIR's getIterationDomain + getLoopIteratorTypes.</li>
@@ -430,8 +430,9 @@ Scheduling: the <span class="tt">Tileable</span> interface</h1>
 </div><!-- fragment --></li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
-Domain transforms: strip-mining</h2>
-<p>Strip-mining is a pure DOMAIN transform (cf. TilingInterface's "op[N] → op[N/ts, ts]"): the <span class="tt">retile</span> interface absorbs it entirely — <span class="tt">iota</span> recombines the split loop vector and (for a parallel dim) <span class="tt">omega</span> splits the write coordinate — so the strip-mined computation is an ordinary %tensor.map_reduce_post over a higher-rank domain with composed access maps; the schedule operand and the lowering are untouched. Classic cache tiling is composition: strip-mine, then <span class="tt">interchange</span> the tile loops outward. </p><div class="fragment"></div><!-- fragment --><p> Axis renumbering after inserting a new axis at position <span class="tt">a</span>. </p><div class="fragment"><div class="line">lam shift_ax (a x: Nat): Nat = %core.select (%core.ncmp.l (x, a), x, %core.nat.add (x, 1));</div>
+Strip-Mining</h2>
+<p>Strip-mining is a pure DOMAIN transform (cf. TilingInterface's "op[N] → op[N/ts, ts]"): the <span class="tt">retile</span> interface absorbs it entirely — <span class="tt">iota</span> recombines the split loop vector and (for a parallel dim) <span class="tt">omega</span> splits the write coordinate — so the strip-mined computation is an ordinary %tensor.map_reduce_post over a higher-rank domain with composed access maps; the schedule operand and the lowering are untouched. Classic cache tiling is composition: strip-mine, then <span class="tt">interchange</span> the tile loops outward.</p>
+<p>Axis renumbering after inserting a new axis at position <span class="tt">a</span>. </p><div class="fragment"><div class="line">lam shift_ax (a x: Nat): Nat = %core.select (%core.ncmp.l (x, a), x, %core.nat.add (x, 1));</div>
 </div><!-- fragment --><p> Split bounds vector <span class="tt">v</span> (length n) at dim <span class="tt">d</span> into (nt, ts); the result arity <span class="tt">m</span> (= n+1) is passed explicitly, in the syntactic form the call site's types require (the checker does not re-associate %core.nat.add symbolically). </p><div class="fragment"><div class="line">lam split_bounds (m n: Nat, v: «n; Nat», d ts nt: Nat): «m; Nat» =</div>
 <div class="line">    ‹i: m; let ii = %core.bitcast Nat i;</div>
 <div class="line">           %core.select (%core.ncmp.l (ii, d), v#(%core.idx n 0 ii),</div>
@@ -504,7 +505,7 @@ Domain transforms: strip-mining</h2>
 <div class="line">     split_bounds (ro_n, t#Ro, t#So, a, ts, nt), oax_n,</div>
 <div class="line">     split_bounds (r_n, r, t#Sr, d, ts, nt), vdim_n, t#unroll, retile_n);</div>
 </div><!-- fragment --> <h2 class="doxsection"><a class="anchor" id="autotoc_md430"></a>
-Schedules as first-class functions</h2>
+Schedules</h2>
 <p>A <span class="tt">Schedule</span> is just a Tileable transformer. A SELECTOR inspects an op's parameters at compile time and returns the appropriate schedule — combinator composition, with the dispatch expressed as an extract over thunks so partial evaluation resolves it entirely at compile time. This is where "when is a transformation appropriate" lives: in the IR, next to the op, not in a lowering heuristic. </p><div class="fragment"><div class="line">let Schedule = Tileable → Tileable;</div>
 <div class="line"> </div>
 <div class="line">lam sched_id (t: Tileable): Tileable = t;</div>
