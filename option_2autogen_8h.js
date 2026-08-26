@@ -5,6 +5,7 @@ var option_2autogen_8h =
     [ "mim::plug::option::none", "namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f", null ],
     [ "mim::plug::option::Opt", "namespacemim_1_1plug_1_1option.html#a1b4fe5a188a5e5a070a9a17c8740b798", null ],
     [ "mim::plug::option::some", "namespacemim_1_1plug_1_1option.html#ab6c6d898b0c82f9c3c9a52ed3bb5bfd8", null ],
+    [ "mim::plug::option::some_if", "namespacemim_1_1plug_1_1option.html#ab4a39114347d879f20a6f587fd419f63", null ],
     [ "mim::plug::option::unwrap_or", "namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad", null ],
     [ "mim::plug::option::unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53", null ],
     [ "mim::plug::option::normalize_unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a742c73a0dc42cd460e1622e93ba3b372", null ],
