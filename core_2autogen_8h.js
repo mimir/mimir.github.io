@@ -135,6 +135,7 @@ var core_2autogen_8h =
       [ "mim::plug::core::pe::run", "namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977aa53108f7543b75adbb34afc035d4cdf6", null ],
       [ "mim::plug::core::pe::is_closed", "namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e", null ]
     ] ],
+    [ "mim::plug::core::Select", "namespacemim_1_1plug_1_1core.html#a835876d5284249d5deb8200937d7c564", null ],
     [ "mim::plug::core::select", "namespacemim_1_1plug_1_1core.html#aa90620d89f43753fb2f7907167019bf6", null ],
     [ "mim::plug::core::shr", "namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43", [
       [ "mim::plug::core::shr::a", "namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661", null ],

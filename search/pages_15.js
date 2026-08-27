@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md347',1,'']]],
-  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md337',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md348',1,'']]],
+  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md338',1,'']]],
   ['way_20sum_20type_20in_20one_20machine_20word_2',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['what_20about_20rust_3',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md159',1,'']]],
   ['what_20the_20c_20implementation_20actually_20relies_20on_4',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md143',1,'']]],
@@ -16,11 +16,11 @@ var searchData=
   ['with_20arena_20rollback_13',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md148',1,'']]],
   ['with_20indices_14',['Working with Indices',['../dev.html#autotoc_md40',1,'']]],
   ['with_20subtags_15',['With Subtags',['../dev.html#autotoc_md38',1,'']]],
-  ['with_5fstreams_16',['%gpu.with_streams',['../gpu.html#autotoc_md286',1,'']]],
+  ['with_5fstreams_16',['%gpu.with_streams',['../gpu.html#autotoc_md287',1,'']]],
   ['without_20dominance_17',['without Dominance',['../index.html#autotoc_md129',1,'🪾 SSA without Dominance'],['../phases.html#ssa-without-dominance',1,'SSA without Dominance']]],
   ['without_20subtags_18',['Without Subtags',['../dev.html#autotoc_md37',1,'']]],
   ['word_19',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
-  ['work_20item_20synchronization_20',['Work-Item Synchronization',['../gpu.html#autotoc_md301',1,'']]],
+  ['work_20item_20synchronization_20',['Work-Item Synchronization',['../gpu.html#autotoc_md302',1,'']]],
   ['working_20with_20indices_21',['Working with Indices',['../dev.html#autotoc_md40',1,'']]],
   ['worse_22',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md149',1,'']]],
   ['worse_20not_20better_23',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md162',1,'']]],

@@ -412,6 +412,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac3fee23ea375f73ae6bdb4be1f9c63ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streams <code class="param">str</code>, rendering the <span class="tt"> `code` </span> spans our diagnostics cite in color.  <br /></td></tr>
 <tr class="memitem:a83f7d40900e583112dead0917f4188b2" id="r_a83f7d40900e583112dead0917f4188b2"><td class="memTemplParams" colspan="2">template&lt;size_t I, class T, size_t N&gt; </td></tr>
 <tr class="memitem:a83f7d40900e583112dead0917f4188b2 template"><td class="memItemLeft">constexpr decltype(auto)&#160;</td><td class="memItemRight"><a class="el" href="#a83f7d40900e583112dead0917f4188b2">get</a> (<a class="el" href="classmim_1_1Span.html">Span</a>&lt; T, N &gt; span) noexcept</td></tr>
+<tr class="memitem:a832ee790abbd75d541212bc0cbbd6e84" id="r_a832ee790abbd75d541212bc0cbbd6e84"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a832ee790abbd75d541212bc0cbbd6e84">isa_dim</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a832ee790abbd75d541212bc0cbbd6e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">def</code> a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> that spans exactly one dimension, i.e. one that a rank can be peeled off?  <br /></td></tr>
+<tr class="memitem:a09c6e231d7bdc610a4957da7fa3cddae" id="r_a09c6e231d7bdc610a4957da7fa3cddae"><td class="memItemLeft">static <a class="el" href="classmim_1_1Hole.html">Hole</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a09c6e231d7bdc610a4957da7fa3cddae">isa_flex_rank</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a09c6e231d7bdc610a4957da7fa3cddae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rank of <span class="tt">«s; T»</span> with <span class="tt">s: «r; Nat»</span> is unknown as long as <span class="tt">r</span> is: <a class="el" href="classmim_1_1World.html#a1234349dfc409f6ac1ad98f1190af75a">World::seq</a> cannot un-nest it yet.  <br /></td></tr>
 <tr class="memitem:af13ff5627285a5c96c9df99a12612858" id="r_af13ff5627285a5c96c9df99a12612858"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#af13ff5627285a5c96c9df99a12612858">is_flex</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memitem:aaf1a8484eb0b1963fec744d23a7e28b3" id="r_aaf1a8484eb0b1963fec744d23a7e28b3"><td class="memItemLeft">static constexpr unsigned&#160;</td><td class="memItemRight"><a class="el" href="#aaf1a8484eb0b1963fec744d23a7e28b3">node2dep</a> (<a class="el" href="#afb12dbffaaa27bca46f171517d96256d">Node</a> node, bool mut)</td></tr>
 <tr class="memitem:a2ddc24992d9ddd06ec4c9021ecc37539" id="r_a2ddc24992d9ddd06ec4c9021ecc37539"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
@@ -2211,7 +2215,7 @@ requires (std::is_trivially_copyable_v&lt;S&gt; &amp;&amp; std::is_trivially_cop
 
 <p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00096">96</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00073">cat()</a>, and <a class="el" href="world_8cpp_source.html#l00307">mim::World::sigma()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00073">cat()</a>, and <a class="el" href="world_8cpp_source.html#l00306">mim::World::sigma()</a>.</p>
 
 </div>
 </div>
@@ -2344,7 +2348,7 @@ requires (std::is_trivially_copyable_v&lt;S&gt; &amp;&amp; std::is_trivially_cop
 
 <p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00095">95</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00073">cat()</a>, and <a class="el" href="world_8cpp_source.html#l00317">mim::World::tuple()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00073">cat()</a>, and <a class="el" href="world_8cpp_source.html#l00316">mim::World::tuple()</a>.</p>
 
 </div>
 </div>
@@ -3082,7 +3086,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00187">187</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00204">204</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00114">Hole</a>, <a class="el" href="tuple_8h_source.html#l00016">mim::Prod::isa_node()</a>, <a class="el" href="tuple_8h_source.html#l00081">mim::Seq::isa_node()</a>, <a class="el" href="def_8h_source.html#l00289">mim::Def::node()</a>, <a class="el" href="def_8h_source.html#l00114">Top</a>, and <a class="el" href="def_8h_source.html#l00114">UMax</a>.</p>
 
@@ -3105,7 +3109,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00046">46</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00307">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l01087">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01073">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00306">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l01087">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01073">mim::Def::world()</a>.</p>
 
 </div>
 </div>
@@ -3167,6 +3171,37 @@ template&lt;class Id&gt; </div>
 
 </div>
 </div>
+<a id="a832ee790abbd75d541212bc0cbbd6e84" name="a832ee790abbd75d541212bc0cbbd6e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832ee790abbd75d541212bc0cbbd6e84">&#9670;&#160;</a></span>isa_dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::isa_dim </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">def</code> a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> that spans exactly one dimension, i.e. one that a rank can be peeled off? </p>
+
+<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00187">187</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00552">mim::Def::arity()</a>, <a class="el" href="def_8cpp_source.html#l00411">mim::Def::unfold_type()</a>, and <a class="el" href="check_8cpp_source.html#l00026">mim::Def::zonk_mut()</a>.</p>
+
+</div>
+</div>
 <a id="a67e4f473bae8456d99c9c4ffc043c62b" name="a67e4f473bae8456d99c9c4ffc043c62b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67e4f473bae8456d99c9c4ffc043c62b">&#9670;&#160;</a></span>isa_flattenable()</h2>
 
@@ -3195,6 +3230,38 @@ template&lt;class Id&gt; </div>
 <p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00013">13</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="lam_8h_source.html#l00046">mim::Pi::isa_cn()</a>.</p>
+
+</div>
+</div>
+<a id="a09c6e231d7bdc610a4957da7fa3cddae" name="a09c6e231d7bdc610a4957da7fa3cddae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c6e231d7bdc610a4957da7fa3cddae">&#9670;&#160;</a></span>isa_flex_rank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmim_1_1Hole.html">Hole</a> * mim::isa_flex_rank </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The rank of <span class="tt">«s; T»</span> with <span class="tt">s: «r; Nat»</span> is unknown as long as <span class="tt">r</span> is: <a class="el" href="classmim_1_1World.html#a1234349dfc409f6ac1ad98f1190af75a">World::seq</a> cannot un-nest it yet. </p>
+<dl class="section return"><dt>Returns</dt><dd>the unset <a class="el" href="classmim_1_1Hole.html" title="This node is a hole in the IR that is inferred by its context later on.">Hole</a> standing for <span class="tt">r</span>, or <span class="tt">nullptr</span>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00194">194</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00552">mim::Def::isa_imm()</a>, and <a class="el" href="check_8h_source.html#l00053">mim::Hole::isa_unset()</a>.</p>
 
 </div>
 </div>
@@ -4145,7 +4212,7 @@ template&lt;Vectorlike Vec&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="rule_8cpp_source.html#l00012">12</a> of file <a class="el" href="rule_8cpp_source.html">rule.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="span_8h_source.html#l00119">get()</a>, <a class="el" href="world_8h_source.html#l00348">mim::World::mut_hole()</a>, <a class="el" href="world_8h_source.html#l00350">mim::World::mut_hole_type()</a>, and <a class="el" href="world_8cpp_source.html#l00317">mim::World::tuple()</a>.</p>
+<p class="reference">References <a class="el" href="span_8h_source.html#l00119">get()</a>, <a class="el" href="world_8h_source.html#l00348">mim::World::mut_hole()</a>, <a class="el" href="world_8h_source.html#l00350">mim::World::mut_hole_type()</a>, and <a class="el" href="world_8cpp_source.html#l00316">mim::World::tuple()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="rule_8cpp_source.html#l00116">mim::Rule::replace()</a>.</p>
 
@@ -4202,7 +4269,7 @@ template&lt;Vectorlike Vec&gt; </div>
 
 <p class="reference">References <a class="el" href="def_8cpp_source.html#l00411">mim::Def::unfold_type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00227">mim::World::app()</a>, <a class="el" href="check_8cpp_source.html#l00381">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00362">mim::Def::check()</a>, <a class="el" href="world_8cpp_source.html#l00364">mim::World::extract()</a>, <a class="el" href="world_8cpp_source.html#l00473">mim::World::insert()</a>, <a class="el" href="world_8cpp_source.html#l00642">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l00317">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00130">mim::World::type()</a>, <a class="el" href="world_8cpp_source.html#l00141">mim::World::uinc()</a>, and <a class="el" href="world_8cpp_source.html#l00161">mim::World::umax()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00227">mim::World::app()</a>, <a class="el" href="check_8cpp_source.html#l00442">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00423">mim::Def::check()</a>, <a class="el" href="world_8cpp_source.html#l00363">mim::World::extract()</a>, <a class="el" href="world_8cpp_source.html#l00472">mim::World::insert()</a>, <a class="el" href="world_8cpp_source.html#l00641">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l00316">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00130">mim::World::type()</a>, <a class="el" href="world_8cpp_source.html#l00141">mim::World::uinc()</a>, and <a class="el" href="world_8cpp_source.html#l00161">mim::World::umax()</a>.</p>
 
 </div>
 </div>
