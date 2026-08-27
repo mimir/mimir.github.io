@@ -7,7 +7,7 @@ var searchData=
   ['len_4',['len',['../namespacemim_1_1plug_1_1vec.html#a2e546b5e745df67e338368b87b3ab914',1,'mim::plug::vec']]],
   ['level_5',['Level',['../classmim_1_1Log.html#aab4ab68f72a5d79c8acc1f1cf7c68590',1,'mim::Log']]],
   ['linearize_6',['linearize',['../namespacemim_1_1plug_1_1affine.html#a01c881a9c02bd1a84913d3e114d70da8',1,'mim::plug::affine']]],
-  ['lit_7',['lit',['../namespacemim_1_1plug_1_1regex.html#aeded541d9600938bd2b0f7949ebfe7d9',1,'mim::plug::regex']]],
+  ['lit_7',['lit',['../namespacemim_1_1plug_1_1affine.html#aea1623e42fc49a445f688d2347d61977',1,'mim::plug::affine::lit'],['../namespacemim_1_1plug_1_1buffer.html#a06147b300ea7be68c1ebad95e5bafa42',1,'mim::plug::buffer::lit'],['../namespacemim_1_1plug_1_1regex.html#aeded541d9600938bd2b0f7949ebfe7d9',1,'mim::plug::regex::lit']]],
   ['load_8',['load',['../namespacemim_1_1plug_1_1mem.html#a029144aa6e194281070cc4406fe2268e',1,'mim::plug::mem']]],
   ['localm_9',['LocalM',['../namespacemim_1_1plug_1_1gpu.html#aa6d70dda548aedc0b513d84df80215b3',1,'mim::plug::gpu']]],
   ['localptr_10',['LocalPtr',['../namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d',1,'mim::plug::gpu']]],

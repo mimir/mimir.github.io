@@ -69,7 +69,7 @@ var searchData=
   ['link_5fcut_5ftree_2eh_66',['link_cut_tree.h',['../link__cut__tree_8h.html',1,'']]],
   ['list_67',['List',['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
   ['lit_68',['Lit',['../classmim_1_1Lit.html',1,'mim::Lit'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim::Lit']]],
-  ['lit_69',['lit',['../regex.html#autotoc_md406',1,'%regex.lit'],['../classmim_1_1World.html#a0fc41c2548fa7f8efabaef0a3e7f7854',1,'mim::World::lit()'],['../namespacemim_1_1plug_1_1regex.html#aeded541d9600938bd2b0f7949ebfe7d9',1,'mim::plug::regex::lit']]],
+  ['lit_69',['lit',['../affine.html#autotoc_md170',1,'%affine.lit'],['../buffer.html#autotoc_md218',1,'%buffer.lit'],['../regex.html#autotoc_md406',1,'%regex.lit'],['../classmim_1_1World.html#a0fc41c2548fa7f8efabaef0a3e7f7854',1,'mim::World::lit()'],['../namespacemim_1_1plug_1_1affine.html#aea1623e42fc49a445f688d2347d61977',1,'mim::plug::affine::lit'],['../namespacemim_1_1plug_1_1buffer.html#a06147b300ea7be68c1ebad95e5bafa42',1,'mim::plug::buffer::lit'],['../namespacemim_1_1plug_1_1regex.html#aeded541d9600938bd2b0f7949ebfe7d9',1,'mim::plug::regex::lit']]],
   ['lit_20tests_70',['lit Tests',['../coding.html#autotoc_md3',1,'']]],
   ['lit_5fbool_71',['lit_bool',['../classmim_1_1World.html#ae1bd442c707312f78156eae967229c1d',1,'mim::World']]],
   ['lit_5fc_72',['lit_c',['../classmim_1_1ast_1_1Tok.html#afadef3e0400c7861f10d5fe55f1b66e3',1,'mim::ast::Tok']]],

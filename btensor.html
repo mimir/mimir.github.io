@@ -197,7 +197,7 @@ Dependencies</h1>
 <div class="line">import ll;  // for the %ll.vec loop annotation (declarations only — no module load, no emit phase)</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
 Types</h1>
-<p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">%buffer.Buf</span> type. The element operations (<span class="tt">%buffer.alloc</span> / <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.constant</span> / <span class="tt">%buffer.shape</span>) and their lowering to <span class="tt">%mem.Ptr</span> (<span class="tt">%buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
+<p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">%buffer.Buf</span> type. The element operations (<span class="tt">%buffer.alloc</span> / <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.lit</span> / <span class="tt">%buffer.shape</span>) and their lowering to <span class="tt">%mem.Ptr</span> (<span class="tt">%buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
 %btensor.Ring</h2>
 <p>Represents an <a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">algebraic ring</a>. E.g., <span class="tt">let nat_ring = (Nat, 0, %core.nat.add, %core.nat.mul);</span>.</p>
@@ -444,9 +444,9 @@ Operations</h1>
 <div class="line">                              Tps: «nps; *», Rps: «j: nps; Nat», Sps: «j: nps; «Rps#j; Nat»»}</div>
 <div class="line">                           → [f: Fn [%mem.M 0, To, «i: nis; Tis#i»] → [%mem.M 0, To], init: To,</div>
 <div class="line">                              post: Fn [%mem.M 0, To, «j: nps; Tps#j»] → [%mem.M 0, Tp]]</div>
-<div class="line">                           → [map_out: [«Rn; %affine.index»] → «Ro; %affine.index»]</div>
-<div class="line">                           → [maps: «i: nis; ([«Rn; %affine.index»] → «Ris#i; %affine.index»)»,</div>
-<div class="line">                              post_maps: «j: nps; ([«Ro; %affine.index»] → «Rps#j; %affine.index»)»]</div>
+<div class="line">                           → [map_out: [«Rn; %affine.Idx»] → «Ro; %affine.Idx»]</div>
+<div class="line">                           → [maps: «i: nis; ([«Rn; %affine.Idx»] → «Ris#i; %affine.Idx»)»,</div>
+<div class="line">                              post_maps: «j: nps; ([«Ro; %affine.Idx»] → «Rps#j; %affine.Idx»)»]</div>
 <div class="line">                           → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»,</div>
 <div class="line">                              post_is: «j: nps; %buffer.Buf (Rps#j, Sps#j, Tps#j)»]</div>
 <div class="line">                           → [%mem.M 0, %buffer.Buf (Ro, So, Tp)];</div>
@@ -459,11 +459,11 @@ Operations</h1>
 <div class="line">                      → [So: «Ro; Nat», Sr: «Rn; Nat»]</div>
 <div class="line">                      → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}</div>
 <div class="line">                      → [f: Fn [%mem.M 0, To, «i: nis; Tis#i»] → [%mem.M 0, To], init: To]</div>
-<div class="line">                      → [map_out: [«Rn; %affine.index»] → «Ro; %affine.index»]</div>
-<div class="line">                      → [maps: «i: nis; ([«Rn; %affine.index»] → «Ris#i; %affine.index»)»]</div>
+<div class="line">                      → [map_out: [«Rn; %affine.Idx»] → «Ro; %affine.Idx»]</div>
+<div class="line">                      → [maps: «i: nis; ([«Rn; %affine.Idx»] → «Ris#i; %affine.Idx»)»]</div>
 <div class="line">                      → [%mem.M 0, is: «i: nis; %buffer.Buf (Ris#i, Sis#i, Tis#i)»]</div>
 <div class="line">                      → [%mem.M 0, %buffer.Buf (Ro, So, To)], normalize_map_reduce;</div>
-</div><!-- fragment --><p> <span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. %tensor.proj_map is an alias for this lam. </p><div class="fragment"><div class="line">lam %btensor.proj_map {n r: Nat} (subs: «r; Nat») (o: «n; %affine.index»): «r; %affine.index» =</div>
+</div><!-- fragment --><p> <span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. %tensor.proj_map is an alias for this lam. </p><div class="fragment"><div class="line">lam %btensor.proj_map {n r: Nat} (subs: «r; Nat») (o: «n; %affine.Idx»): «r; %affine.Idx» =</div>
 <div class="line">    ‹j: r; o#(%core.idx n 0 (subs#j))›;</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
 %btensor.product_2d</h2>

@@ -16,7 +16,7 @@ var searchData=
   ['linearize_13',['%affine.linearize',['../affine.html#autotoc_md177',1,'']]],
   ['link_20cut_20tree_20mutates_20in_20place_14',['The link-cut tree mutates in place',['../md_docs_2why-cpp.html#autotoc_md146',1,'']]],
   ['list_15',['List',['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
-  ['lit_16',['%regex.lit',['../regex.html#autotoc_md406',1,'']]],
+  ['lit_16',['lit',['../affine.html#autotoc_md170',1,'%affine.lit'],['../buffer.html#autotoc_md218',1,'%buffer.lit'],['../regex.html#autotoc_md406',1,'%regex.lit']]],
   ['lit_20tests_17',['lit Tests',['../coding.html#autotoc_md3',1,'']]],
   ['literals_18',['Matching Literals',['../dev.html#cast_lit',1,'']]],
   ['literals_20and_20basic_20forms_19',['Literals and Basic Forms',['../langref.html#autotoc_md54',1,'']]],
