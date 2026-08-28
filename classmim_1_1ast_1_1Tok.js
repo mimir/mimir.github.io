@@ -98,6 +98,7 @@ var classmim_1_1ast_1_1Tok =
     [ "dbg", "classmim_1_1ast_1_1Tok.html#a65f548e719e985bfa857bf7ae63b4a1e", null ],
     [ "delim_l2r", "classmim_1_1ast_1_1Tok.html#aa98f85376e99a759ac52dad7c1ac1d0b", null ],
     [ "has_sym", "classmim_1_1ast_1_1Tok.html#a109a9d42fc496ebfe29622a8a5f682a3", null ],
+    [ "is_delim_r", "classmim_1_1ast_1_1Tok.html#a0c140531e5c3eda06a95593608e90d56", null ],
     [ "isa", "classmim_1_1ast_1_1Tok.html#aa8e362d15b5edca914970143cbd966f2", null ],
     [ "lit_c", "classmim_1_1ast_1_1Tok.html#afadef3e0400c7861f10d5fe55f1b66e3", null ],
     [ "lit_i", "classmim_1_1ast_1_1Tok.html#a10cba9eeaf37059b3c986580c85e7c48", null ],

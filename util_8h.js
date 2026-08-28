@@ -3,7 +3,6 @@ var util_8h =
     [ "mim::unique_queue&lt; Set &gt;", "classmim_1_1unique__queue.html", "classmim_1_1unique__queue" ],
     [ "mim::GIDHash&lt; T &gt;", "structmim_1_1GIDHash.html", "structmim_1_1GIDHash" ],
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", "structmim_1_1GIDLt" ],
-    [ "mim::Restore&lt; T &gt;", "classmim_1_1Restore.html", "classmim_1_1Restore" ],
     [ "mim::GIDMap", "namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a", null ],
     [ "mim::GIDNodeMap", "namespacemim.html#ae86bc5c8f900fdf4b341ddd521fd3a7d", null ],
     [ "mim::GIDNodeSet", "namespacemim.html#ac72c144b58d202d61352e52698a65ebe", null ],

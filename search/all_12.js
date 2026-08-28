@@ -28,7 +28,7 @@ var searchData=
   ['scope_25',['Scope',['../classmim_1_1ast_1_1Scopes.html#ab64af275afa2f1825fde3b0fc264f6bd',1,'mim::ast::Scopes']]],
   ['scope_20nesting_26',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md29',1,'']]],
   ['scoped_20substitution_27',['Scoped Substitution',['../rewriting.html#autotoc_md138',1,'']]],
-  ['scopedloc_28',['ScopedLoc',['../classmim_1_1World.html#a91a9c8bf7a320ea48b645725600d4a29',1,'mim::World']]],
+  ['scopedloc_28',['ScopedLoc',['../classmim_1_1World.html#aab7ecab9540c82754523bf9aa523f5d6',1,'mim::World']]],
   ['scopeless_20binders_29',['Scopeless Binders',['../mimir.html#mimir_scopeless',1,'']]],
   ['scopes_30',['Scopes',['../classmim_1_1ast_1_1Scopes.html',1,'mim::ast::Scopes'],['../classmim_1_1ast_1_1Scopes.html#a032e87fb58ed71a9dd7c425284b6514a',1,'mim::ast::Scopes::Scopes()']]],
   ['scoping_31',['Scoping',['../langref.html#autotoc_md65',1,'Scoping'],['../rewriting.html#autotoc_md134',1,'Scoping']]],
