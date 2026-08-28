@@ -1,5 +1,6 @@
 var namespacemim_1_1plug_1_1gpu_1_1phase =
 [
+    [ "LowerMapReduce", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce" ],
     [ "MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks" ],
     [ "RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs" ],
     [ "SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply" ],

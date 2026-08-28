@@ -138,16 +138,16 @@ $(function(){initNavTree('ll_nvptx.html','',''); });
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md312">Dependencies </a>
+    <a href="#autotoc_md315">Dependencies </a>
   </li>
   <li class="level1">
     <a href="#ll_nvptx_cli_args">Command-Line Arguments </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md313">Phases </a>
+    <a href="#autotoc_md316">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md314">%ll_nvptx.emit </a>
+        <a href="#autotoc_md317">%ll_nvptx.emit </a>
       </li>
     </ul>
   </li>
@@ -156,7 +156,7 @@ $(function(){initNavTree('ll_nvptx.html','',''); });
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ll__nvptx"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">mim::plug::ll_nvptx</a></dd></dl>
 <p>An LLVM backend that targets NVIDIA GPUs. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll_nvptx</span>) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world. It writes the host LLVM IR to <span class="tt">&lt;world&gt;.ll</span> and the device LLVM IR (with PTX intrinsics) to <span class="tt">&lt;world&gt;_dev.ll</span>, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR. The output paths and the embedding behavior can be overridden via <span class="tt">-X ll_nvptx:&lt;arg&gt;</span>; see <a class="el" href="#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin gpu;</div>
 <div class="line">plugin nvptx;</div>
@@ -198,9 +198,9 @@ Command-Line Arguments</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">Xfatbinary=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, invoke fatbinary with <span class="tt">&lt;args&gt;</span> (default: none).  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
 %ll_nvptx.emit</h2>
 <p>Emits the LLVM IR with PTX intrinsics for the host and device worlds split from the current world. This phase is spliced into the default pipeline (see <span class="tt">opt</span>) whenever the <span class="tt">ll_nvptx</span> plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %ll_nvptx.emit: %compile.Phase;</div>

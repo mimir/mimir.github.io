@@ -16,5 +16,7 @@ var searchData=
   ['broadcast_5fin_5fdim_13',['broadcast_in_dim',['../namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77',1,'mim::plug::tensor']]],
   ['broadcast_5fin_5fdim_5fimpl_14',['broadcast_in_dim_impl',['../namespacemim_1_1plug_1_1tensor.html#ad569704b20c40f43af9caa1700288ab0',1,'mim::plug::tensor']]],
   ['buf_15',['Buf',['../namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c',1,'mim::plug::buffer']]],
-  ['bufptr_16',['BufPtr',['../namespacemim_1_1plug_1_1clos.html#ac0109814535661c3ccd6d63370f8eec2',1,'mim::plug::clos']]]
+  ['buf_5falloc_5fcopy_16',['buf_alloc_copy',['../namespacemim_1_1plug_1_1gpu.html#a98fcb6c1975bde5384404e51c64ad1e5',1,'mim::plug::gpu']]],
+  ['buf_5fcopy_5fto_5fhost_17',['buf_copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#ab73020ae75736ccf793f6035a7bc23d5',1,'mim::plug::gpu']]],
+  ['bufptr_18',['BufPtr',['../namespacemim_1_1plug_1_1clos.html#ac0109814535661c3ccd6d63370f8eec2',1,'mim::plug::clos']]]
 ];

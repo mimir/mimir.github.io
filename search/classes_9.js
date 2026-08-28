@@ -13,7 +13,7 @@ var searchData=
   ['lowerfor_10',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html',1,'mim::plug::affine::phase']]],
   ['lowergetset_11',['LowerGetSet',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html',1,'mim::plug::tensor::phase']]],
   ['lowerindex_12',['LowerIndex',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html',1,'mim::plug::affine::phase']]],
-  ['lowermapreduce_13',['LowerMapReduce',['../classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::btensor::phase::LowerMapReduce'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::tensor::phase::LowerMapReduce']]],
+  ['lowermapreduce_13',['LowerMapReduce',['../classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::btensor::phase::LowerMapReduce'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::gpu::phase::LowerMapReduce'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::tensor::phase::LowerMapReduce']]],
   ['lowerptr_14',['LowerPtr',['../classmim_1_1plug_1_1buffer_1_1LowerPtr.html',1,'mim::plug::buffer']]],
   ['lowerregex_15',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html',1,'mim::plug::regex']]],
   ['lowertomem_16',['LowerToMem',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html',1,'mim::plug::tensor::phase']]],

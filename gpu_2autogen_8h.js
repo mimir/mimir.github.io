@@ -12,6 +12,8 @@ var gpu_2autogen_8h =
       [ "mim::plug::gpu::alloc_copy::block", "namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09a14511f2f5564650d129ca7cabc333278", null ],
       [ "mim::plug::gpu::alloc_copy::asyn", "namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09acdafd35814cb81a2db371ef99baf6014", null ]
     ] ],
+    [ "mim::plug::gpu::buf_alloc_copy", "namespacemim_1_1plug_1_1gpu.html#a98fcb6c1975bde5384404e51c64ad1e5", null ],
+    [ "mim::plug::gpu::buf_copy_to_host", "namespacemim_1_1plug_1_1gpu.html#ab73020ae75736ccf793f6035a7bc23d5", null ],
     [ "mim::plug::gpu::check_addr_spaces_repl", "namespacemim_1_1plug_1_1gpu.html#a1a3dd6851806a943500d14ecbd0942bf", null ],
     [ "mim::plug::gpu::ConstM", "namespacemim_1_1plug_1_1gpu.html#ae87a3451e525cae8877cf1baf6276a22", null ],
     [ "mim::plug::gpu::ConstPtr", "namespacemim_1_1plug_1_1gpu.html#a555dfadc10ca559592ce1581159b598f", null ],
@@ -38,6 +40,7 @@ var gpu_2autogen_8h =
     [ "mim::plug::gpu::launch", "namespacemim_1_1plug_1_1gpu.html#a773fb7d4ca4880bab4addd6a02fc4c4c", null ],
     [ "mim::plug::gpu::LocalM", "namespacemim_1_1plug_1_1gpu.html#aa6d70dda548aedc0b513d84df80215b3", null ],
     [ "mim::plug::gpu::LocalPtr", "namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d", null ],
+    [ "mim::plug::gpu::lower_btensor_map_reduce", "namespacemim_1_1plug_1_1gpu.html#a53e9bad7fdf76974b2c94fc7e6f26a8a", null ],
     [ "mim::plug::gpu::mem_checks", "namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261", null ],
     [ "mim::plug::gpu::remove_double_syncs", "namespacemim_1_1plug_1_1gpu.html#a53aab38379370b0e8e83083324481d4d", null ],
     [ "mim::plug::gpu::SharedM", "namespacemim_1_1plug_1_1gpu.html#ada4af0be77efab4561c465c2647a9a87", null ],

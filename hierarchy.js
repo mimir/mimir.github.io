@@ -130,6 +130,7 @@ var hierarchy =
           [ "mim::plug::clos::phase::LowerTypedClos", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html", null ],
           [ "mim::plug::clos::phase::LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html", null ],
           [ "mim::plug::cps::Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", null ],
+          [ "mim::plug::gpu::phase::LowerMapReduce", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html", null ],
           [ "mim::plug::gpu::phase::RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", null ],
           [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
           [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
