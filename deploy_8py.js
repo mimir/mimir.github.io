@@ -1,15 +1,15 @@
 var deploy_8py =
 [
-    [ "deploy.commit_and_push", "namespacedeploy.html#af336a106b21d5ec155e57dfc80fff6a4", null ],
-    [ "deploy.copy_children", "namespacedeploy.html#a97d88cb6ecbf70e962c4a600a0a9f8c1", null ],
-    [ "deploy.deploy", "namespacedeploy.html#aed81f46885d5734e93634d834566e5b7", null ],
-    [ "deploy.deploy_root", "namespacedeploy.html#a99e1fcf522ff2986070648618762268f", null ],
-    [ "deploy.deploy_version", "namespacedeploy.html#afead878bbf461e081c7a4029ce7b697a", null ],
-    [ "deploy.git", "namespacedeploy.html#ab568b4018787446eb069e87d9d9176ad", null ],
-    [ "deploy.main", "namespacedeploy.html#a8a447a3ae55f8e98c0f27f597cedbed4", null ],
-    [ "deploy.natural_key", "namespacedeploy.html#a1f0b2098858f10bc91de9952da5bb208", null ],
-    [ "deploy.parse_args", "namespacedeploy.html#adc80dd65b847168034ed499f8f2a77bd", null ],
-    [ "deploy.remove_path", "namespacedeploy.html#ab4fb0d4c585202d90c670be93eed298a", null ],
-    [ "deploy.update_versions", "namespacedeploy.html#abe1ddaa7117a05b93d0fe65d3c81f3bf", null ],
+    [ "deploy.commit_and_push", "namespacedeploy.html#aa7465e3cc28bbf55dee47b0c32b82467", null ],
+    [ "deploy.copy_children", "namespacedeploy.html#a50cbd7ea900872934bb57fa18b3b3265", null ],
+    [ "deploy.deploy", "namespacedeploy.html#aec93779061def57f126e93e52e2eddf4", null ],
+    [ "deploy.deploy_root", "namespacedeploy.html#a7da3bdc90b89dcbe2788127e22eea9ad", null ],
+    [ "deploy.deploy_version", "namespacedeploy.html#a87dfab5c942711fb9ea2bb2a8e3af698", null ],
+    [ "deploy.git", "namespacedeploy.html#acb38204d20e518597be69025ad49086e", null ],
+    [ "deploy.main", "namespacedeploy.html#a7431cb90017e54fe695b23d4190db046", null ],
+    [ "deploy.natural_key", "namespacedeploy.html#aa91210938afd9aa6f35645f64b93680f", null ],
+    [ "deploy.parse_args", "namespacedeploy.html#ac2837808e674ff0116e95ebbb1524244", null ],
+    [ "deploy.remove_path", "namespacedeploy.html#a86dda7502750268e8adddbc480be26ef", null ],
+    [ "deploy.update_versions", "namespacedeploy.html#a732f85f15a31c1539303b21782a9cdf7", null ],
     [ "deploy.VERSION_RE", "namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328", null ]
 ];

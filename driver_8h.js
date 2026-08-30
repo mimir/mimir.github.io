@@ -1,5 +1,6 @@
 var driver_8h =
 [
+    [ "mim::PlainNames", "classmim_1_1PlainNames.html", "classmim_1_1PlainNames" ],
     [ "mim::Driver", "classmim_1_1Driver.html", "classmim_1_1Driver" ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", [
       [ "clashed", "classmim_1_1Driver.html#aa0e3fe9aba97f39b60f8a9eb20428f2d", null ],

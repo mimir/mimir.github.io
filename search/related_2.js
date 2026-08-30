@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['def_0',['Def',['../classmim_1_1DbgKey.html#a7d0ccd272905569dadc33e2286727703',1,'mim::DbgKey']]]
+  ['defkey_0',['DefKey',['../classmim_1_1Def.html#a609b0cf500a2b79faeacb62b1421f069',1,'mim::Def']]]
 ];

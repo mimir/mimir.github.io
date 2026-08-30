@@ -1,18 +1,17 @@
 var searchData=
 [
-  ['r_0',['R',['../structmim_1_1ast_1_1R.html',1,'mim::ast']]],
-  ['rangecompare_1',['RangeCompare',['../structautomaton_1_1RangeCompare.html',1,'automaton']]],
-  ['readthrough_2',['ReadThrough',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough',1,'mim::plug::tensor::phase']]],
-  ['recdecl_3',['RecDecl',['../classmim_1_1ast_1_1RecDecl.html',1,'mim::ast']]],
-  ['reform_4',['Reform',['../classmim_1_1Reform.html',1,'mim']]],
-  ['removedoublesyncs_5',['RemoveDoubleSyncs',['../classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html',1,'mim::plug::gpu::phase']]],
-  ['repl_6',['Repl',['../classmim_1_1Repl.html',1,'mim']]],
-  ['retexpr_7',['RetExpr',['../classmim_1_1ast_1_1RetExpr.html',1,'mim::ast']]],
-  ['retwrap_8',['RetWrap',['../classmim_1_1RetWrap.html',1,'mim']]],
-  ['rewriter_9',['Rewriter',['../classmim_1_1Rewriter.html',1,'mim']]],
-  ['rule_10',['Rule',['../classmim_1_1Rule.html',1,'mim']]],
-  ['ruledecl_11',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html',1,'mim::ast']]],
-  ['ruleexpr_12',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html',1,'mim::ast']]],
-  ['rwbase_13',['RWBase',['../classmim_1_1RWBase.html',1,'mim']]],
-  ['rwphase_14',['RWPhase',['../classmim_1_1RWPhase.html',1,'mim']]]
+  ['pack_0',['Pack',['../classmim_1_1Pack.html',1,'mim']]],
+  ['parser_1',['Parser',['../classmim_1_1ast_1_1Parser.html',1,'mim::ast']]],
+  ['phase_2',['Phase',['../classmim_1_1Phase.html',1,'mim']]],
+  ['phaseman_3',['PhaseMan',['../classmim_1_1PhaseMan.html',1,'mim']]],
+  ['pi_4',['Pi',['../classmim_1_1Pi.html',1,'mim']]],
+  ['piexpr_5',['PiExpr',['../classmim_1_1ast_1_1PiExpr.html',1,'mim::ast']]],
+  ['plainnames_6',['PlainNames',['../classmim_1_1PlainNames.html',1,'mim']]],
+  ['plugin_7',['Plugin',['../structmim_1_1Plugin.html',1,'mim']]],
+  ['pod_8',['POD',['../structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD',1,'mim::World::State']]],
+  ['primaryexpr_9',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
+  ['prod_10',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
+  ['proxy_11',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
+  ['ptrn_12',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]],
+  ['pureread_13',['PureRead',['../namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead',1,'mim::plug::tensor']]]
 ];

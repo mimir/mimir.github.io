@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dlog_0',['DLOG',['../log_8h.html#a87fe05eb8767a6b1abf71eea0bdcfcac',1,'log.h']]]
+  ['get_5ffun_5fptr_0',['GET_FUN_PTR',['../driver_8h.html#ab004995be061e8045533148b21580ed8',1,'driver.h']]]
 ];

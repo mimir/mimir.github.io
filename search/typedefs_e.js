@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['t_0',['T',['../classmim_1_1unique__queue.html#a7c17051d45d02ab47011e82ab1b64fdc',1,'mim::unique_queue']]],
-  ['tag_1',['Tag',['../namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3',1,'mim::ast']]],
-  ['tag_5ft_2',['tag_t',['../namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288',1,'mim']]],
-  ['top_3',['Top',['../namespacemim.html#a8c95db47da2d9514da3e16e015062bf2',1,'mim']]],
-  ['type_4',['type',['../classmim_1_1Axm.html#a7151fc68b556560716e09c5e318d5222',1,'mim::Axm::IsANode::type'],['../namespacestd.html#a6aa6d0b720bc0eed0c69a3c8b6c75bb8',1,'std::tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;::type']]]
+  ['var2var_0',['Var2Var',['../namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06',1,'mim']]],
+  ['varmap_1',['VarMap',['../namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab',1,'mim']]],
+  ['vars_2',['Vars',['../namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4',1,'mim']]],
+  ['vmode_3',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]]
 ];

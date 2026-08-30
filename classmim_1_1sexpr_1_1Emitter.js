@@ -5,7 +5,7 @@ var classmim_1_1sexpr_1_1Emitter =
     [ "direct_style", "classmim_1_1sexpr_1_1Emitter.html#a51e7606647714fbe2f508c882edafd84", null ],
     [ "emit_bb", "classmim_1_1sexpr_1_1Emitter.html#afa59dada1acb942e71ff5789260f6127", null ],
     [ "emit_cons", "classmim_1_1sexpr_1_1Emitter.html#a962bd130f854a76a2a06ea4fd7c4a815", null ],
-    [ "emit_cons_type", "classmim_1_1sexpr_1_1Emitter.html#a5a333c39e85929b5d34b40d9c0e303aa", null ],
+    [ "emit_cons_type", "classmim_1_1sexpr_1_1Emitter.html#ad99ebd9fbbd78bafcd8ed1e88defb322", null ],
     [ "emit_decl", "classmim_1_1sexpr_1_1Emitter.html#a9bbfe1eb5061a54717874b928ce9cb84", null ],
     [ "emit_epilogue", "classmim_1_1sexpr_1_1Emitter.html#afb1e68f7b064f898e78e1b5a9e99251a", null ],
     [ "emit_head", "classmim_1_1sexpr_1_1Emitter.html#aff504ba508ff08891c69d541480dd6f2", null ],

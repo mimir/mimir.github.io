@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['match_0',['Match',['../classmim_1_1Match.html',1,'mim']]],
-  ['matchexpr_1',['MatchExpr',['../classmim_1_1ast_1_1MatchExpr.html',1,'mim::ast']]],
-  ['memchecks_2',['MemChecks',['../classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html',1,'mim::plug::gpu::phase']]],
-  ['merge_3',['Merge',['../classmim_1_1Merge.html',1,'mim']]],
-  ['module_4',['Module',['../classmim_1_1ast_1_1Module.html',1,'mim::ast']]],
-  ['move_2earena_5',['Move.arena',['../classmim_1_1World.html#structmim_1_1World_1_1Move_8arena',1,'mim::World']]],
-  ['msg_6',['Msg',['../classmim_1_1Error.html#structmim_1_1Error_1_1Msg',1,'mim::Error']]]
+  ['lam_0',['Lam',['../classmim_1_1Lam.html',1,'mim']]],
+  ['lamdecl_1',['LamDecl',['../classmim_1_1ast_1_1LamDecl.html',1,'mim::ast']]],
+  ['lamexpr_2',['LamExpr',['../classmim_1_1ast_1_1LamExpr.html',1,'mim::ast']]],
+  ['lamspec_3',['LamSpec',['../classmim_1_1LamSpec.html',1,'mim']]],
+  ['letdecl_4',['LetDecl',['../classmim_1_1ast_1_1LetDecl.html',1,'mim::ast']]],
+  ['lexer_5',['Lexer',['../classmim_1_1ast_1_1Lexer.html',1,'mim::ast']]],
+  ['lit_6',['Lit',['../classmim_1_1Lit.html',1,'mim']]],
+  ['litexpr_7',['LitExpr',['../classmim_1_1ast_1_1LitExpr.html',1,'mim::ast']]],
+  ['lower_8',['Lower',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html',1,'mim::plug::tensor::phase']]],
+  ['lowerfor_9',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html',1,'mim::plug::affine::phase']]],
+  ['lowergetset_10',['LowerGetSet',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html',1,'mim::plug::tensor::phase']]],
+  ['lowerindex_11',['LowerIndex',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html',1,'mim::plug::affine::phase']]],
+  ['lowermapreduce_12',['LowerMapReduce',['../classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::btensor::phase::LowerMapReduce'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::gpu::phase::LowerMapReduce'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html',1,'mim::plug::tensor::phase::LowerMapReduce']]],
+  ['lowerptr_13',['LowerPtr',['../classmim_1_1plug_1_1buffer_1_1LowerPtr.html',1,'mim::plug::buffer']]],
+  ['lowerregex_14',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html',1,'mim::plug::regex']]],
+  ['lowertomem_15',['LowerToMem',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html',1,'mim::plug::tensor::phase']]],
+  ['lowertypedclos_16',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html',1,'mim::plug::clos::phase']]],
+  ['lowertypedclosprep_17',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html',1,'mim::plug::clos::phase']]],
+  ['lt_18',['Lt',['../structautomaton_1_1DFANode_1_1Lt.html',1,'automaton::DFANode::Lt'],['../structautomaton_1_1NFANode_1_1Lt.html',1,'automaton::NFANode::Lt']]]
 ];

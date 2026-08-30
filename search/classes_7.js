@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['hole_0',['Hole',['../classmim_1_1Hole.html',1,'mim']]],
-  ['holeexpr_1',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html',1,'mim::ast']]],
-  ['hostemitter_2',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html',1,'mim::plug::ll_nvptx']]]
+  ['gidhash_0',['GIDHash',['../structmim_1_1GIDHash.html',1,'mim']]],
+  ['gidlt_1',['GIDLt',['../structmim_1_1GIDLt.html',1,'mim']]],
+  ['global_2',['Global',['../classmim_1_1Global.html',1,'mim']]],
+  ['grpptrn_3',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast']]]
 ];

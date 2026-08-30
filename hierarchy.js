@@ -1,10 +1,11 @@
 var hierarchy =
 [
+    [ "mim::World::Move::[struct].arena", "structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html", null ],
+    [ "mim::ast::AnnexInfo::[struct].id", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id", null ],
+    [ "mim::ast::AnnexInfo::[struct].sym", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym", null ],
     [ "mim::Annex", "structmim_1_1Annex.html", null ],
     [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", null ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", null ],
-    [ "mim::ast::AnnexInfo.id", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8id", null ],
-    [ "mim::ast::AnnexInfo.sym", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8sym", null ],
     [ "mim::plug::regex::app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", null ],
     [ "mim::ast::AST", "classmim_1_1ast_1_1AST.html", null ],
     [ "automaton::AutomatonBase&lt; NodeType &gt;", "classautomaton_1_1AutomatonBase.html", null ],
@@ -20,82 +21,41 @@ var hierarchy =
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
     [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
-    [ "mim::Dbg", "structmim_1_1Dbg.html", null ],
-    [ "mim::DbgKey", "classmim_1_1DbgKey.html", null ],
+    [ "mim::DefKey", "structmim_1_1DefKey.html", null ],
     [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
+    [ "fe::Driver", null, [
+      [ "mim::Driver", "classmim_1_1Driver.html", null ]
+    ] ],
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],
     [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", null ],
-    [ "mim::Sets&lt; D, N &gt;::Data::Equal", "structmim_1_1Sets_1_1Data_1_1Equal.html", null ],
-    [ "std::exception", null, [
-      [ "mim::Error", "classmim_1_1Error.html", null ]
-    ] ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", null ],
     [ "mim::Flags", "structmim_1_1Flags.html", null ],
     [ "mim::plug::clos::phase::FreeDefAna", "classmim_1_1plug_1_1clos_1_1phase_1_1FreeDefAna.html", null ],
     [ "mim::GIDHash&lt; T &gt;", "structmim_1_1GIDHash.html", null ],
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", null ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
-    [ "absl::InlinedVector", null, [
-      [ "mim::Vector< const Def * >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< bool >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< Def * >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< Range >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< mim::Dbg >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< size_t >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< mim::Profiler::Span >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< mim::Sets::Set >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< Node * >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< Pending >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< mim::Lam * >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< Phi >", "classmim_1_1Vector.html", null ],
-      [ "mim::Vector< T, N, A >", "classmim_1_1Vector.html", null ]
-    ] ],
-    [ "absl::InlinedVector&lt; std::pair&lt; std::string, uint64_t &gt;, Default_Inlined_Size&lt; std::pair&lt; std::string, uint64_t &gt; &gt;, std::allocator&lt; std::pair&lt; std::string, uint64_t &gt; &gt; &gt;", null, [
-      [ "mim::Vector< std::pair< std::string, uint64_t > >", "classmim_1_1Vector.html", null ]
-    ] ],
-    [ "std::integral_constant", null, [
-      [ "std::tuple_size< mim::Span< T, N > >", "structstd_1_1tuple__size_3_01mim_1_1Span_3_01T_00_01N_01_4_01_4.html", null ]
-    ] ],
     [ "mim::Axm::IsA&lt; Id, D &gt;", "classmim_1_1Axm_1_1IsA.html", null ],
     [ "mim::Axm::IsANode&lt; T &gt;", "classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode", null ],
-    [ "mim::Sets&lt; D, N &gt;::Set::iterator", "classmim_1_1Sets_1_1Set_1_1iterator.html", null ],
     [ "fe::Lexer", null, [
       [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ]
     ] ],
-    [ "mim::Log", "classmim_1_1Log.html", null ],
-    [ "std::logic_error", null, [
-      [ "mim::sys::CmdNotFound", "classmim_1_1sys_1_1CmdNotFound.html", null ]
-    ] ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
-    [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", null ],
-    [ "mim::Error::Msg", "classmim_1_1Error.html#structmim_1_1Error_1_1Msg", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
-    [ "mim::lct::Node&lt; P, K &gt;", "classmim_1_1lct_1_1Node.html", null ],
     [ "mim::Nest::Node", "classmim_1_1Nest_1_1Node.html", null ],
     [ "mim::detail::NullSafeDefGIDLt", null, null ],
-    [ "fe::ostream_formatter", null, [
-      [ "std::formatter< automaton::DFA >", "structstd_1_1formatter_3_01automaton_1_1DFA_01_4.html", null ],
-      [ "std::formatter< automaton::DFA >", "structstd_1_1formatter_3_01automaton_1_1DFA_01_4.html", null ],
-      [ "std::formatter< automaton::NFA >", "structstd_1_1formatter_3_01automaton_1_1NFA_01_4.html", null ],
-      [ "std::formatter< mim::Dump >", "structstd_1_1formatter_3_01mim_1_1Dump_01_4.html", null ],
-      [ "std::formatter< mim::Op >", "structstd_1_1formatter_3_01mim_1_1Op_01_4.html", null ],
-      [ "std::formatter< mim::ast::R< T > >", "structstd_1_1formatter_3_01mim_1_1ast_1_1R_3_01T_01_4_01_4.html", null ],
-      [ "std::formatter< mim::ast::S >", "structstd_1_1formatter_3_01mim_1_1ast_1_1S_01_4.html", null ]
-    ] ],
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
     ] ],
     [ "mim::PlainNames", "classmim_1_1PlainNames.html", null ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
-    [ "mim::Profiler", "classmim_1_1Profiler.html", null ],
     [ "mim::plug::tensor::PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
@@ -275,8 +235,6 @@ var hierarchy =
     [ "mim::Select", "classmim_1_1Select.html", [
       [ "mim::Branch", "classmim_1_1Branch.html", null ]
     ] ],
-    [ "mim::Sets&lt; D, N &gt;::Set", "classmim_1_1Sets_1_1Set.html", null ],
-    [ "mim::Sets&lt; D, N &gt;", "classmim_1_1Sets.html", null ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", null ],
     [ "mim::Setters&lt; App &gt;", "classmim_1_1Setters.html", [
       [ "mim::App", "classmim_1_1App.html", null ]
@@ -379,18 +337,8 @@ var hierarchy =
       [ "mim::Var", "classmim_1_1Var.html", null ]
     ] ],
     [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
-    [ "mim::Profiler::Span", "structmim_1_1Profiler_1_1Span.html", null ],
-    [ "std::span", null, [
-      [ "mim::Span< const T, N >", "classmim_1_1Span.html", null ],
-      [ "mim::Span< T, N >", "classmim_1_1Span.html", null ]
-    ] ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
-    [ "fe::SymPool", null, [
-      [ "mim::Driver", "classmim_1_1Driver.html", null ]
-    ] ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
-    [ "std::tuple_element&lt; I, mim::Span&lt; T, N &gt; &gt;", "namespacestd.html#structstd_1_1tuple__element_3_01I_00_01mim_1_1Span_3_01T_00_01N_01_4_01_4", null ],
-    [ "mim::unique_queue&lt; Set &gt;", "classmim_1_1unique__queue.html", null ],
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],
@@ -413,6 +361,5 @@ var hierarchy =
     [ "int", "namespace_3globalScope_4.html#classint", null ],
     [ "list&lt; DFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01DFANode_01_4", null ],
     [ "list&lt; NFANode &gt;", "namespace_3globalScope_4.html#classstd_1_1list_3_01NFANode_01_4", null ],
-    [ "static constexpr bool", "namespace_3globalScope_4.html#classstatic_01constexpr_01bool", null ],
-    [ "uint32_t", "namespace_3globalScope_4.html#classuint32__t", null ]
+    [ "static constexpr bool", "namespace_3globalScope_4.html#classstatic_01constexpr_01bool", null ]
 ];

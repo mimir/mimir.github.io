@@ -46,20 +46,11 @@ var ast_8h =
     [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", "classmim_1_1ast_1_1RuleDecl" ],
     [ "mim::ast::Import", "classmim_1_1ast_1_1Import.html", "classmim_1_1ast_1_1Import" ],
     [ "mim::ast::Module", "classmim_1_1ast_1_1Module.html", "classmim_1_1ast_1_1Module" ],
-    [ "mim::ast::AnnexInfo.sym", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8sym", [
-      [ "plugin", "namespacemim_1_1ast.html#aa24bcf2198b1b13ad985304483f7f324", null ],
-      [ "tag", "namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5", null ]
-    ] ],
-    [ "mim::ast::AnnexInfo.id", "namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8id", [
-      [ "curry", "namespacemim_1_1ast.html#a6f374060aebf4d4f9a846337dd989c5a", null ],
-      [ "tag", "namespacemim_1_1ast.html#ae4d23e841d8e8804190027bce3180fa5", null ],
-      [ "trip", "namespacemim_1_1ast.html#a7da7993d1249cb28b4e0c3e8524d15d2", null ]
-    ] ],
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a09214c0845d7829eb157e8700b238366", null ],
     [ "mim::ast::Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
     [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed", null ],
     [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a6db5d77581a0ddab4453d88440ffc830", null ],
     [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a75735247d726a0bffe05706d52021f8c", null ],
-    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a5fe7be09bffcd1f540353919cc95ee07", null ],
-    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a96ed66bd50a2f73331220a2a9c2856b5", null ]
+    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a1f3255145f27dd7cf4ef1e6feaf7b918", null ],
+    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#aabb6975424e825ed0e766fcec9e75dc2", null ]
 ];

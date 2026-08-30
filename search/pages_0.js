@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_20four_20way_20sum_20type_20in_20one_20machine_20word_0',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
+  ['a_20four_20way_20sum_20type_20in_20one_20machine_20word_0',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['a_20new_20in_20tree_20plugin_1',['Create a New In-Tree Plugin',['../plugins.html#autotoc_md111',1,'']]],
   ['a_20taste_20of_20mim_2',['✨ A Taste of Mim',['../index.html#autotoc_md122',1,'']]],
   ['a_20third_20party_20plugin_3',['Create a Third-Party Plugin',['../plugins.html#autotoc_md112',1,'']]],

@@ -1,10 +1,10 @@
 var namespaceautomaton =
 [
     [ "AutomatonBase", "classautomaton_1_1AutomatonBase.html", "classautomaton_1_1AutomatonBase" ],
-    [ "DFANode", "classautomaton_1_1DFANode.html", "classautomaton_1_1DFANode" ],
     [ "DFA", "classautomaton_1_1DFA.html", "classautomaton_1_1DFA" ],
-    [ "NFANode", "classautomaton_1_1NFANode.html", "classautomaton_1_1NFANode" ],
+    [ "DFANode", "classautomaton_1_1DFANode.html", "classautomaton_1_1DFANode" ],
     [ "NFA", "classautomaton_1_1NFA.html", "classautomaton_1_1NFA" ],
+    [ "NFANode", "classautomaton_1_1NFANode.html", "classautomaton_1_1NFANode" ],
     [ "RangeCompare", "structautomaton_1_1RangeCompare.html", "structautomaton_1_1RangeCompare" ],
     [ "DFAMap", "namespaceautomaton.html#ac935bb3b7e7cbc4be411a7657f3d693c", null ],
     [ "DFASet", "namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06", null ],

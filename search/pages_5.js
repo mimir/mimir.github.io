@@ -15,7 +15,7 @@ var searchData=
   ['for_12',['%affine.For',['../affine.html#autotoc_md167',1,'']]],
   ['for_20built_20ins_13',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
   ['forms_14',['Literals and Basic Forms',['../langref.html#autotoc_md54',1,'']]],
-  ['four_20way_20sum_20type_20in_20one_20machine_20word_15',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
+  ['four_20way_20sum_20type_20in_20one_20machine_20word_15',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['free_16',['%mem.free',['../mem.html#autotoc_md349',1,'']]],
   ['free_20asyn_17',['%gpu.free(asyn)',['../gpu.html#autotoc_md299',1,'']]],
   ['free_20block_18',['%gpu.free(block)',['../gpu.html#autotoc_md290',1,'']]],

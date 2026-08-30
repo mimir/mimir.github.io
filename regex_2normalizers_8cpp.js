@@ -1,7 +1,7 @@
 var regex_2normalizers_8cpp =
 [
     [ "mim::plug::regex::app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", "structmim_1_1plug_1_1regex_1_1app__range" ],
-    [ "Ranges", "regex_2normalizers_8cpp.html#a89da4931e7b75c7ac81211ba6b410f48", null ],
+    [ "Ranges", "regex_2normalizers_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1", null ],
     [ "mim::plug::regex::any_unwanted_for_not", "namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854", null ],
     [ "mim::plug::regex::compare_re", "namespacemim_1_1plug_1_1regex.html#ae5b509ae2785246a5099b89e294ac2fe", null ],
     [ "mim::plug::regex::equals_any", "namespacemim_1_1plug_1_1regex.html#afe291bf091de248e352dada9e3653c04", null ],

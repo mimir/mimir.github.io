@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🌊_20sea_20of_20nodes_0',['🌊 Sea of Nodes',['../index.html#autotoc_md128',1,'']]]
+  ['✨_20a_20taste_20of_20mim_0',['✨ A Taste of Mim',['../index.html#autotoc_md122',1,'']]]
 ];

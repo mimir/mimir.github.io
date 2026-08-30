@@ -1,8 +1,8 @@
 var namespacemim_1_1plug_1_1ll =
 [
     [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
-    [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
     [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
+    [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
     [ "emit", "namespacemim_1_1plug_1_1ll.html#aa8af5751b0c661fdf794f6c05273f02d", null ],
     [ "vec", "namespacemim_1_1plug_1_1ll.html#aaee9c2cf398a457c5c7805f83765e599", null ],
     [ "find_common_simd_src", "namespacemim_1_1plug_1_1ll.html#a942225172076a1bccd4b46547f3cb1cc", null ],

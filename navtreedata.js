@@ -103,33 +103,31 @@ var NAVTREEINDEX =
 [
 "Mim_8cmake.html",
 "classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641",
-"classmim_1_1Def.html#a410c5c8610d954858bc0c1441ada32fb",
-"classmim_1_1Dispatch.html#aa7398bbb00277dc8358b354d70f54265",
-"classmim_1_1Global.html#a8c515822a19a30f0e15e7b46b13b42a0",
-"classmim_1_1Nat.html#a7e8edb7a2ae2938b9d386c9db45f25bf",
-"classmim_1_1Prod.html#a7d17c70789416483a8f248e2c7e9a5e3",
-"classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee",
-"classmim_1_1UInc.html#ac66dad1fcf36dcf85a0f94b6086dc8c1",
-"classmim_1_1World.html#a52496b60be886875981ca7c81e75eee8",
-"classmim_1_1World.html#ad042699cd6434abf9a9a9c3b8f9e0e53",
-"classmim_1_1ast_1_1AppExpr.html#ab5d05a7f8401ab7c4a1dd7886e33373a",
-"classmim_1_1ast_1_1Import.html#a5bf9eb37b6f0183d91f89b9bf71e5098",
-"classmim_1_1ast_1_1PiExpr_1_1Dom.html#aaa5f5c8110bb64433f4c9ac7551940e7",
-"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a2abb8fa797d7276621a13c4a80726f8d",
-"classmim_1_1lct_1_1Node.html#a24b1d63cfe62c67d4c234645fa32fab4",
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a0553a4b3a37018e2ae31211674d55dd6",
-"clos.html",
-"dl_8cpp_source.html",
-"namespacedeploy.html#a99e1fcf522ff2986070648618762268f",
-"namespacemim.html#afb12dbffaaa27bca46f171517d96256da49e3af09495ea1fbcbde7629c1b4d47b",
-"namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3",
-"namespacemim_1_1plug_1_1math.html",
-"namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c",
-"namespacemim_1_1sys.html#aabf9e272ba0bd6b36223a016499591a6",
-"structmim_1_1Dbg.html#a2ad07eb908e1333ddd7f304693615602",
-"structmim_1_1plug_1_1ll_1_1BB.html#a7acb0b55f26bd76389834909a61653c1"
+"classmim_1_1Def.html#a4f0300a8b362f5ec48447fe4954f3fd0",
+"classmim_1_1Dispatch.html#ad981b662e396e8f8b4676cb56e57fb1c",
+"classmim_1_1InplaceRWPhase.html#a97f40bd5d1a669dc005e7f85bb21fedf",
+"classmim_1_1Pack.html#a7b4bcdf992c21ae83363f25df05b1d25",
+"classmim_1_1RetWrap.html#a77c92d9fbfb483b8b22e8351c5775629",
+"classmim_1_1UInc.html#a7b4bcdf992c21ae83363f25df05b1d25",
+"classmim_1_1World.html#a5c44466087eda53e4b2f11a62fd3dbd8",
+"classmim_1_1World.html#ade141ec63f54f6a72fde808046e0508f",
+"classmim_1_1ast_1_1AxmDecl.html#a5ed6abc0e36ca09ee821fad07fa5632d",
+"classmim_1_1ast_1_1InsertExpr.html#a50c529bed8a5ba486a36e157f6494897",
+"classmim_1_1ast_1_1Ptrn.html",
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a4e9e215aa0e27db0493d465ff6f4f079",
+"classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html#acc9edbbe5aaf6a506a8e6ca4943a5e0d",
+"classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879",
+"def_8cpp.html#a87f559632082486a774f25d565c9b958",
+"gpu_2phase_2lower__map__reduce_8cpp_source.html",
+"namespacemim.html#a2ddc24992d9ddd06ec4c9021ecc37539",
+"namespacemim_1_1plug_1_1buffer.html#a3fb378dcb7592932135a7f5167d12380",
+"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138ac3768fe04ce22117d45f8d401c628de3",
+"namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3aa24ae7cbbb43af91676ca4407a6e86d9",
+"namespacemim_1_1plug_1_1tensor.html#a7bf70e982d7ba65fee50749dc0674655",
+"scalarize_8cpp.html",
+"structmim_1_1ast_1_1AnnexInfo.html#a85bb89003643ce83db9347f08d848dd9"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

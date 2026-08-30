@@ -1,5 +1,14 @@
 var structmim_1_1ast_1_1AnnexInfo =
 [
+    [ "[struct].sym", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym", [
+      [ "plugin", "structmim_1_1ast_1_1AnnexInfo.html#afb2c494ae5ae9057eb651207679f25cf", null ],
+      [ "tag", "structmim_1_1ast_1_1AnnexInfo.html#a76484548df15c4d70fc544f2162e5f0d", null ]
+    ] ],
+    [ "[struct].id", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id", [
+      [ "curry", "structmim_1_1ast_1_1AnnexInfo.html#a0de87a50f04add9c37858ea6f78d287d", null ],
+      [ "tag", "structmim_1_1ast_1_1AnnexInfo.html#af05517c7ddb899fbd9902fa54ee1f8f8", null ],
+      [ "trip", "structmim_1_1ast_1_1AnnexInfo.html#a83a0a2fc0f9e07ec267f1d377a38cc89", null ]
+    ] ],
     [ "AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html#ab8cc641e200304dd6ae29bca74962c8a", null ],
     [ "base", "structmim_1_1ast_1_1AnnexInfo.html#ae25ec452f2ec9cee958dc0605b4455a6", null ],
     [ "plugin_id", "structmim_1_1ast_1_1AnnexInfo.html#a85bb89003643ce83db9347f08d848dd9", null ],

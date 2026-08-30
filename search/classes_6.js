@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['gidhash_0',['GIDHash',['../structmim_1_1GIDHash.html',1,'mim']]],
-  ['gidlt_1',['GIDLt',['../structmim_1_1GIDLt.html',1,'mim']]],
-  ['global_2',['Global',['../classmim_1_1Global.html',1,'mim']]],
-  ['grpptrn_3',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast']]]
+  ['flags_0',['Flags',['../structmim_1_1Flags.html',1,'mim']]],
+  ['freedefana_1',['FreeDefAna',['../classmim_1_1plug_1_1clos_1_1phase_1_1FreeDefAna.html',1,'mim::plug::clos::phase']]],
+  ['fuse_2',['Fuse',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html',1,'mim::plug::tensor::phase']]]
 ];

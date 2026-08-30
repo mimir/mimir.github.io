@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle_0',['Handle',['../structmim_1_1Plugin.html#aeb76fcde7e35346fbfa6b654345b3bab',1,'mim::Plugin']]]
+  ['join_0',['Join',['../namespacemim.html#a56993a288f2c09ca7ec203a365dce3ad',1,'mim']]]
 ];

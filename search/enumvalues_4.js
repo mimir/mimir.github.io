@@ -6,12 +6,11 @@ var searchData=
   ['embed_3',['embed',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc',1,'mim::plug::ll::Emitter']]],
   ['eof_4',['EoF',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aff6620b605642fc8a70795b0ff429afc',1,'mim::ast::Tok']]],
   ['epsilon_5',['EPSILON',['../classautomaton_1_1NFA.html#aa22a4b55ded13c4fc0b6fb4c4fd11d12adf759506847c24ca14d79a8a404e028a',1,'automaton::NFA']]],
-  ['error_6',['Error',['../classmim_1_1Error.html#a8ee893406f4bcec90b9184ed0acf0cc5a902b0d55fddef6f8d651fe1035b7d4bd',1,'mim::Error::Error()'],['../classmim_1_1Log.html#aab4ab68f72a5d79c8acc1f1cf7c68590a902b0d55fddef6f8d651fe1035b7d4bd',1,'mim::Log::Error']]],
-  ['esc_7',['esc',['../namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca3f0e951cdec5a39685cb08fa6edc6094',1,'mim::plug::clos']]],
-  ['exists_8',['exists',['../namespacemim_1_1plug_1_1vec.html#afc4be00d00e10620d57d3d788bec3f03ae087923eb5dd1310f5f25ddd5ae5b580',1,'mim::plug::vec']]],
-  ['exp_9',['exp',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dab0ab0254bd58eb87eaee3172ba49fefb',1,'mim::plug::math']]],
-  ['exp10_10',['exp10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad30f3020a7f0e5899fb8e1ee6afedb4d',1,'mim::plug::math']]],
-  ['exp2_11',['exp2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dae578203a9e0b19048f8868e46958c2ed',1,'mim::plug::math']]],
-  ['ext_12',['ext',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca',1,'mim::plug::ll::Emitter']]],
-  ['extract_13',['Extract',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da97478353818fc5590dc34b57b81a4b23',1,'mim']]]
+  ['esc_6',['esc',['../namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca3f0e951cdec5a39685cb08fa6edc6094',1,'mim::plug::clos']]],
+  ['exists_7',['exists',['../namespacemim_1_1plug_1_1vec.html#afc4be00d00e10620d57d3d788bec3f03ae087923eb5dd1310f5f25ddd5ae5b580',1,'mim::plug::vec']]],
+  ['exp_8',['exp',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dab0ab0254bd58eb87eaee3172ba49fefb',1,'mim::plug::math']]],
+  ['exp10_9',['exp10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad30f3020a7f0e5899fb8e1ee6afedb4d',1,'mim::plug::math']]],
+  ['exp2_10',['exp2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dae578203a9e0b19048f8868e46958c2ed',1,'mim::plug::math']]],
+  ['ext_11',['ext',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca',1,'mim::plug::ll::Emitter']]],
+  ['extract_12',['Extract',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da97478353818fc5590dc34b57b81a4b23',1,'mim']]]
 ];

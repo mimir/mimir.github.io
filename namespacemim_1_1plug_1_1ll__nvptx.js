@@ -1,9 +1,9 @@
 var namespacemim_1_1plug_1_1ll__nvptx =
 [
     [ "DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx_structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags_dup" ],
+    [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ],
     [ "Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", "classmim_1_1plug_1_1ll__nvptx_1_1Emit" ],
     [ "HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter" ],
-    [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ],
     [ "emit", "namespacemim_1_1plug_1_1ll__nvptx.html#a8de38fbeb041ce6fb2295aed0626b8bc", null ],
     [ "emit_device", "namespacemim_1_1plug_1_1ll__nvptx.html#a298c6ec63f9136bd5a745f1b532c0364", null ],
     [ "emit_host", "namespacemim_1_1plug_1_1ll__nvptx.html#a88d9b1b2a50b47e8098cbd3b446269fc", null ],

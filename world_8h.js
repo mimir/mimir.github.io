@@ -19,9 +19,5 @@ var world_8h =
       [ "def", "classmim_1_1World_1_1Annexes.html#a19d160b43b0d5e7d7b596d2194b510a0", null ],
       [ "sym", "classmim_1_1World_1_1Annexes.html#a33c4fb5a895f0c15bae4743eb3b41fb6", null ]
     ] ],
-    [ "mim::World::Move.arena", "classmim_1_1World.html#structmim_1_1World_1_1Move_8arena", [
-      [ "defs", "classmim_1_1World.html#acd8fc2597193b4c938e7ff50062936e3", null ],
-      [ "substs", "classmim_1_1World.html#a4b1bfdc913535dc888b1e9547cd85df2", null ]
-    ] ],
     [ "mim::Enum", "conceptmim_1_1Enum.html", null ]
 ];

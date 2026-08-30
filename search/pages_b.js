@@ -3,7 +3,7 @@ var searchData=
   ['m⁠im_0',['Compilation Pipelines in M⁠im',['../phases.html#autotoc_md105',1,'']]],
   ['m⁠im_20coding_20style_1',['M⁠im Coding Style',['../coding.html#autotoc_md11',1,'']]],
   ['m_2',['%mem.M',['../mem.html#memM',1,'']]],
-  ['machine_20word_3',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
+  ['machine_20word_3',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['malloc_4',['%mem.malloc',['../mem.html#autotoc_md348',1,'']]],
   ['map_5',['%ord.Set / %ord.Map',['../ord.html#autotoc_md374',1,'']]],
   ['map_6',['map',['../affine.html#autotoc_md175',1,'%affine.map'],['../tensor.html#autotoc_md450',1,'%tensor.map']]],

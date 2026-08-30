@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['lam2bb_5f_0',['lam2bb_',['../classmim_1_1Emitter.html#aa9476c69d6885d07cb465861597abc9e',1,'mim::Emitter']]],
-  ['loc_1',['loc',['../classmim_1_1Error.html#aef1765829e8404858ce26d4f8c386333',1,'mim::Error::Msg::loc'],['../classmim_1_1World.html#abdb537c1c783aa4c2b68ed2ad9ec6dc3',1,'mim::World::CurrLoc::loc']]],
-  ['locals_5f_2',['locals_',['../classmim_1_1Emitter.html#a007683bbd60e0aecfac956a405bda869',1,'mim::Emitter']]],
-  ['look_5fahead_3',['Look_Ahead',['../namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29',1,'mim::ast']]],
-  ['loop_5fmd_5f_4',['loop_md_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ade57e99459d05bbd6fbf968597ba0287',1,'mim::plug::ll::Emitter']]],
-  ['loopmdbase_5',['LoopMdBase',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a590e2a9569867565716950ffae29cdd3',1,'mim::plug::ll::Emitter']]]
+  ['major_0',['major',['../structmim_1_1Version.html#a5606f1ee23a51395505198a6728747fb',1,'mim::Version']]],
+  ['map_1',['map',['../namespacemim_1_1plug_1_1tensor.html#af6597e2be81e77563c122c0ee2f3ca49',1,'mim::plug::tensor::PureRead::map'],['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a883dc726cd93accc81c0a2b0ce172150',1,'mim::plug::tensor::phase::ReadThrough::map']]],
+  ['max_2',['max',['../namespacemim.html#a472ea1eba4d59fb1743c2087de458c1b',1,'mim::DotConfig']]],
+  ['max_5ffp_5fiters_3',['max_fp_iters',['../structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d',1,'mim::Flags']]],
+  ['max_5fplugin_5fsize_4',['Max_Plugin_Size',['../structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b',1,'mim::Annex']]],
+  ['minor_5',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]]
 ];

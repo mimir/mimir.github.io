@@ -1,5 +1,6 @@
 var def_8h =
 [
+    [ "mim::DefKey", "structmim_1_1DefKey.html", "structmim_1_1DefKey" ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", "classmim_1_1Setters" ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", [
       [ "all_annexes", "namespacemim.html#a7ee84b1ca3e1d3d0beccc1b0486eb00c", null ],
@@ -29,18 +30,17 @@ var def_8h =
     [ "MIM_PROJ", "def_8h.html#af607f4cede9847484ec49abf7d351932", null ],
     [ "mim::Def2Def", "namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab", null ],
     [ "mim::DefMap", "namespacemim.html#a879f9e518002de13d65d757536033f0e", null ],
-    [ "mim::Defs", "namespacemim.html#a00e263b7dcc231b14adcf75ff1ab1740", null ],
+    [ "mim::Defs", "namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23", null ],
     [ "mim::DefSet", "namespacemim.html#aa55cde5ad8246840d0a046cc728f987d", null ],
-    [ "mim::DefVec", "namespacemim.html#a1433b0566b2cbdbf0c6f74baed22bb52", null ],
+    [ "mim::DefVec", "namespacemim.html#aa432220e1051080319865a2d84b1cdaf", null ],
     [ "mim::Mut2Mut", "namespacemim.html#a9fd6d037a8eb540c32dbe840e32c90e9", null ],
     [ "mim::MutMap", "namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2", null ],
-    [ "mim::Muts", "namespacemim.html#a808d4cab01734432fc4218de6dae0ef2", null ],
+    [ "mim::Muts", "namespacemim.html#a3070529abe78a0713d0203f6b97931ef", null ],
     [ "mim::MutSet", "namespacemim.html#a9cef35a428a391739d168b05bad8dfb2", null ],
     [ "mim::NormalizeFn", "namespacemim.html#ab992e926dce870b1e086b34589849a92", null ],
     [ "mim::Var2Var", "namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06", null ],
     [ "mim::VarMap", "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab", null ],
-    [ "mim::Vars", "namespacemim.html#ac1bc6fc8487a4e7490dcee047b176f7f", null ],
-    [ "mim::VarSet", "namespacemim.html#a69dc278a82313ca3dc770a868a1e57d1", null ],
+    [ "mim::Vars", "namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4", null ],
     [ "mim::Dep", "namespacemim.html#a249738da6a953390b70691dd3fe7132b", [
       [ "mim::Dep::None", "namespacemim.html#a249738da6a953390b70691dd3fe7132ba6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "mim::Dep::Mut", "namespacemim.html#a249738da6a953390b70691dd3fe7132baebb87a770abac0e394d963d20ed574b7", null ],

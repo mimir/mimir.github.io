@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20publications_0',['📖 Publications',['../index.html#autotoc_md133',1,'']]]
+  ['💬_20community_0',['💬 Community',['../index.html#autotoc_md131',1,'']]]
 ];

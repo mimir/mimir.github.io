@@ -1,24 +1,6 @@
 var searchData=
 [
-  ['addmem_0',['AddMem',['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html',1,'mim::plug::mem::phase']]],
-  ['alias_1',['Alias',['../classmim_1_1ast_1_1AxmDecl_1_1Alias.html',1,'mim::ast::AxmDecl']]],
-  ['aliasptrn_2',['AliasPtrn',['../classmim_1_1ast_1_1AliasPtrn.html',1,'mim::ast']]],
-  ['analysis_3',['Analysis',['../classmim_1_1Analysis.html',1,'mim']]],
-  ['annex_4',['Annex',['../structmim_1_1Annex.html',1,'mim']]],
-  ['annexes_5',['Annexes',['../classmim_1_1World_1_1Annexes.html',1,'mim::World']]],
-  ['annexinfo_6',['AnnexInfo',['../structmim_1_1ast_1_1AnnexInfo.html',1,'mim::ast']]],
-  ['annexinfo_2eid_7',['AnnexInfo.id',['../namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8id',1,'mim::ast']]],
-  ['annexinfo_2esym_8',['AnnexInfo.sym',['../namespacemim_1_1ast.html#structmim_1_1ast_1_1AnnexInfo_8sym',1,'mim::ast']]],
-  ['app_9',['App',['../classmim_1_1App.html',1,'mim']]],
-  ['app_5frange_10',['app_range',['../structmim_1_1plug_1_1regex_1_1app__range.html',1,'mim::plug::regex']]],
-  ['appexpr_11',['AppExpr',['../classmim_1_1ast_1_1AppExpr.html',1,'mim::ast']]],
-  ['arm_12',['Arm',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html',1,'mim::ast::MatchExpr']]],
-  ['arr_13',['Arr',['../classmim_1_1Arr.html',1,'mim']]],
-  ['arrowexpr_14',['ArrowExpr',['../classmim_1_1ast_1_1ArrowExpr.html',1,'mim::ast']]],
-  ['ast_15',['AST',['../classmim_1_1ast_1_1AST.html',1,'mim::ast']]],
-  ['automatonbase_16',['AutomatonBase',['../classautomaton_1_1AutomatonBase.html',1,'automaton']]],
-  ['automatonbase_3c_20dfanode_20_3e_17',['AutomatonBase&lt; DFANode &gt;',['../classautomaton_1_1AutomatonBase.html',1,'automaton']]],
-  ['automatonbase_3c_20nfanode_20_3e_18',['AutomatonBase&lt; NFANode &gt;',['../classautomaton_1_1AutomatonBase.html',1,'automaton']]],
-  ['axm_19',['Axm',['../classmim_1_1Axm.html',1,'mim']]],
-  ['axmdecl_20',['AxmDecl',['../classmim_1_1ast_1_1AxmDecl.html',1,'mim::ast']]]
+  ['_5bstruct_5d_2earena_0',['[struct].arena',['../structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html',1,'mim::World::Move']]],
+  ['_5bstruct_5d_2eid_1',['[struct].id',['../structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id',1,'mim::ast::AnnexInfo']]],
+  ['_5bstruct_5d_2esym_2',['[struct].sym',['../structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym',1,'mim::ast::AnnexInfo']]]
 ];

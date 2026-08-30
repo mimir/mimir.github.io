@@ -15,7 +15,7 @@ var searchData=
   ['impure_12',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md151',1,'']]],
   ['in_20c_13',['Why is MimIR implemented in C++?',['../md_docs_2why-cpp.html',1,'']]],
   ['in_20m⁠im_14',['Compilation Pipelines in M⁠im',['../phases.html#autotoc_md105',1,'']]],
-  ['in_20one_20machine_20word_15',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
+  ['in_20one_20machine_20word_15',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['in_20place_16',['The link-cut tree mutates in place',['../md_docs_2why-cpp.html#autotoc_md146',1,'']]],
   ['in_20them_17',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md147',1,'']]],
   ['in_20tree_20plugin_18',['In Tree Plugin',['../plugins.html#autotoc_md111',1,'Create a New In-Tree Plugin'],['../plugins.html#autotoc_md114',1,'Extract an Existing In-Tree Plugin']]],

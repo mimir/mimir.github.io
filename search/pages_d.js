@@ -8,7 +8,7 @@ var searchData=
   ['of_20sigmas_5',['Field Names of Sigmas',['../langref.html#autotoc_md68',1,'']]],
   ['of_20the_20node_6',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
   ['on_7',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md143',1,'']]],
-  ['one_20machine_20word_8',['&lt;span class=&quot;tt&quot;&gt;Sets::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
+  ['one_20machine_20word_8',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]],
   ['op_20add_20sub_9',['%affine.op(add,sub)',['../affine.html#autotoc_md171',1,'']]],
   ['op_20mul_10',['%affine.op.mul',['../affine.html#autotoc_md174',1,'']]],
   ['op_20neg_11',['%affine.op(neg)',['../affine.html#autotoc_md172',1,'']]],

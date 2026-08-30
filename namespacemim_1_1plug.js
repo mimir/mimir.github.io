@@ -5,6 +5,29 @@ var namespacemim_1_1plug =
     [ "btensor", "namespacemim_1_1plug_1_1btensor.html", "namespacemim_1_1plug_1_1btensor" ],
     [ "buffer", "namespacemim_1_1plug_1_1buffer.html", "namespacemim_1_1plug_1_1buffer" ],
     [ "clos", "namespacemim_1_1plug_1_1clos.html", "namespacemim_1_1plug_1_1clos" ],
+    [ "compile", "namespacemim_1_1plug_1_1compile.html", [
+      [ "aggr", "namespacemim_1_1plug_1_1compile.html#a10cabf94630436845a86b8fa9f77feb7", null ],
+      [ "beta_red", "namespacemim_1_1plug_1_1compile.html#ac68b9ddeabbfec213ee407dd20b13975", null ],
+      [ "branch_normalize", "namespacemim_1_1plug_1_1compile.html#a4b0d14f5c672ba3dc0bc2fd6e4e77bec", null ],
+      [ "cleanup", "namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a", null ],
+      [ "cond", "namespacemim_1_1plug_1_1compile.html#aaffcccd734f6667f8fceee27b0c66004", null ],
+      [ "eta_conv", "namespacemim_1_1plug_1_1compile.html#a9640a522372d18247def70de720b623e", null ],
+      [ "is_loaded", "namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515", null ],
+      [ "lam_spec", "namespacemim_1_1plug_1_1compile.html#a0c8162ec5ec9b298bf5f7dddb25ae391", null ],
+      [ "named", "namespacemim_1_1plug_1_1compile.html#ae1149d1839adefdd078f7efbf83e084c", null ],
+      [ "null", "namespacemim_1_1plug_1_1compile.html#a57741844980aa80909fe8481f07c458e", null ],
+      [ "Phase", "namespacemim_1_1plug_1_1compile.html#a9d05b57ff0206aae953c57cbe0ac6b92", null ],
+      [ "phases", "namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a", null ],
+      [ "ret_wrap", "namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34", null ],
+      [ "scalarize", "namespacemim_1_1plug_1_1compile.html#abe7aa45fb16af8ecaf314c3aa23cdef4", null ],
+      [ "static_arg_opt", "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de", null ],
+      [ "unload", "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10", null ],
+      [ "normalize_aggr", "namespacemim_1_1plug_1_1compile.html#aff478d151e97170b9981a93af28468ff", null ],
+      [ "normalize_cond", "namespacemim_1_1plug_1_1compile.html#a1893a8582c67746a61e0449cb10a37ab", null ],
+      [ "normalize_is_loaded", "namespacemim_1_1plug_1_1compile.html#a99c96c2c9e8f4f5320e6c8c2b7f92f0d", null ],
+      [ "register_normalizers", "namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2", null ],
+      [ "Plugin_Id", "namespacemim_1_1plug_1_1compile.html#aef3b98337630972b708d60ed42298eda", null ]
+    ] ],
     [ "core", "namespacemim_1_1plug_1_1core.html", [
       [ "VMode", "namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822", null ],
       [ "abs", "namespacemim_1_1plug_1_1core.html#a465c016f162127abd9c362f9a4f21055", null ],
@@ -194,6 +217,12 @@ var namespacemim_1_1plug =
       [ "Plugin_Id", "namespacemim_1_1plug_1_1core.html#a313da9372a97c5d81ab124e98108345e", null ]
     ] ],
     [ "cps", "namespacemim_1_1plug_1_1cps.html", "namespacemim_1_1plug_1_1cps" ],
+    [ "demo", "namespacemim_1_1plug_1_1demo.html", [
+      [ "const_idx", "namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46", null ],
+      [ "normalize_const", "namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954", null ],
+      [ "register_normalizers", "namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b", null ],
+      [ "Plugin_Id", "namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08", null ]
+    ] ],
     [ "gpu", "namespacemim_1_1plug_1_1gpu.html", "namespacemim_1_1plug_1_1gpu" ],
     [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
     [ "ll_nvptx", "namespacemim_1_1plug_1_1ll__nvptx.html", "namespacemim_1_1plug_1_1ll__nvptx" ],
@@ -389,36 +418,13 @@ var namespacemim_1_1plug =
       [ "Plugin_Id", "namespacemim_1_1plug_1_1math.html#a05ac4b1ef1e0a51c44e4b0622835c4f4", null ]
     ] ],
     [ "mem", "namespacemim_1_1plug_1_1mem.html", "namespacemim_1_1plug_1_1mem" ],
-    [ "regex", "namespacemim_1_1plug_1_1regex.html", "namespacemim_1_1plug_1_1regex" ],
-    [ "tensor", "namespacemim_1_1plug_1_1tensor.html", "namespacemim_1_1plug_1_1tensor" ],
-    [ "compile", "namespacemim_1_1plug_1_1compile.html", [
-      [ "aggr", "namespacemim_1_1plug_1_1compile.html#a10cabf94630436845a86b8fa9f77feb7", null ],
-      [ "beta_red", "namespacemim_1_1plug_1_1compile.html#ac68b9ddeabbfec213ee407dd20b13975", null ],
-      [ "branch_normalize", "namespacemim_1_1plug_1_1compile.html#a4b0d14f5c672ba3dc0bc2fd6e4e77bec", null ],
-      [ "cleanup", "namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a", null ],
-      [ "cond", "namespacemim_1_1plug_1_1compile.html#aaffcccd734f6667f8fceee27b0c66004", null ],
-      [ "eta_conv", "namespacemim_1_1plug_1_1compile.html#a9640a522372d18247def70de720b623e", null ],
-      [ "is_loaded", "namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515", null ],
-      [ "lam_spec", "namespacemim_1_1plug_1_1compile.html#a0c8162ec5ec9b298bf5f7dddb25ae391", null ],
-      [ "named", "namespacemim_1_1plug_1_1compile.html#ae1149d1839adefdd078f7efbf83e084c", null ],
-      [ "null", "namespacemim_1_1plug_1_1compile.html#a57741844980aa80909fe8481f07c458e", null ],
-      [ "Phase", "namespacemim_1_1plug_1_1compile.html#a9d05b57ff0206aae953c57cbe0ac6b92", null ],
-      [ "phases", "namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a", null ],
-      [ "ret_wrap", "namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34", null ],
-      [ "scalarize", "namespacemim_1_1plug_1_1compile.html#abe7aa45fb16af8ecaf314c3aa23cdef4", null ],
-      [ "static_arg_opt", "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de", null ],
-      [ "unload", "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10", null ],
-      [ "normalize_aggr", "namespacemim_1_1plug_1_1compile.html#aff478d151e97170b9981a93af28468ff", null ],
-      [ "normalize_cond", "namespacemim_1_1plug_1_1compile.html#a1893a8582c67746a61e0449cb10a37ab", null ],
-      [ "normalize_is_loaded", "namespacemim_1_1plug_1_1compile.html#a99c96c2c9e8f4f5320e6c8c2b7f92f0d", null ],
-      [ "register_normalizers", "namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2", null ],
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1compile.html#aef3b98337630972b708d60ed42298eda", null ]
+    [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
+      [ "Stream", "namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee", null ],
+      [ "stream_impl_repl", "namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf", null ],
+      [ "Plugin_Id", "namespacemim_1_1plug_1_1nvptx.html#a08e942c03727b7c051996fa7b39aab27", null ]
     ] ],
-    [ "demo", "namespacemim_1_1plug_1_1demo.html", [
-      [ "const_idx", "namespacemim_1_1plug_1_1demo.html#a190324d76d5d13cf2c933c82e381fb46", null ],
-      [ "normalize_const", "namespacemim_1_1plug_1_1demo.html#ab917477fbcc57a3f25e21953c7d70954", null ],
-      [ "register_normalizers", "namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b", null ],
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1demo.html#a8e835071634d3978aea424f632e35d08", null ]
+    [ "opt", "namespacemim_1_1plug_1_1opt.html", [
+      [ "Plugin_Id", "namespacemim_1_1plug_1_1opt.html#a0987aaf63a0209e71b7fcea95c848951", null ]
     ] ],
     [ "option", "namespacemim_1_1plug_1_1option.html", [
       [ "is_some", "namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263", null ],
@@ -504,6 +510,8 @@ var namespacemim_1_1plug =
       [ "register_normalizers", "namespacemim_1_1plug_1_1refly.html#aef69fe712603cff1f76cf43576ea1e55", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1refly.html#a9baeafefe6ccb99821f97f9035d52c62", null ]
     ] ],
+    [ "regex", "namespacemim_1_1plug_1_1regex.html", "namespacemim_1_1plug_1_1regex" ],
+    [ "tensor", "namespacemim_1_1plug_1_1tensor.html", "namespacemim_1_1plug_1_1tensor" ],
     [ "tuple", "namespacemim_1_1plug_1_1tuple.html", [
       [ "append", "namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d", null ],
       [ "cat", "namespacemim_1_1plug_1_1tuple.html#a3e6250caa1e19267b5edccdc28b4428a", null ],
@@ -543,13 +551,5 @@ var namespacemim_1_1plug =
       [ "normalize_zip", "namespacemim_1_1plug_1_1vec.html#ae2df07a23e69b8802ebe4ec5df3ae747", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1vec.html#a0f5ea338a78435939ef48ab0e1111e1b", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1vec.html#ad3b6bd69dddb4ad52e620122c43f9965", null ]
-    ] ],
-    [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
-      [ "Stream", "namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee", null ],
-      [ "stream_impl_repl", "namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf", null ],
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1nvptx.html#a08e942c03727b7c051996fa7b39aab27", null ]
-    ] ],
-    [ "opt", "namespacemim_1_1plug_1_1opt.html", [
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1opt.html#a0987aaf63a0209e71b7fcea95c848951", null ]
     ] ]
 ];
