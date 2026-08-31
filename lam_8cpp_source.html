@@ -223,26 +223,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lam_8cpp_sourc
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">auto</span> C = F-&gt;ret_dom();</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// The type check of codom G = dom F is better handled by the application type checking</span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    world.DLOG(<span class="stringliteral">&quot;compose f (B-&gt;C): {} : {}&quot;</span>, f, F);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    world.DLOG(<span class="stringliteral">&quot;compose g (A-&gt;B): {} : {}&quot;</span>, g, G);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    world.DLOG(<span class="stringliteral">&quot;  A: {}&quot;</span>, A);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    world.DLOG(<span class="stringliteral">&quot;  B: {}&quot;</span>, B);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    world.DLOG(<span class="stringliteral">&quot;  C: {}&quot;</span>, C);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">auto</span> name  = <span class="stringliteral">&quot;comp_&quot;</span>s + f-&gt;sym().str() + <span class="stringliteral">&quot;_&quot;</span> + g-&gt;sym().str();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">auto</span> h     = world.mut_fun(A, C)-&gt;set(name);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">auto</span> hcont = world.mut_con(B)-&gt;set(name + <span class="stringliteral">&quot;_cont&quot;</span>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    h-&gt;app(<span class="keyword">true</span>, g, {h-&gt;var((<a class="code hl_typedef" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>)0), hcont});</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    world.log().d(<span class="stringliteral">&quot;compose f: {}: {}, g: {}: {}&quot;</span>, f, F, g, G);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    world.log().d(<span class="stringliteral">&quot;    A = {}, B = {}, C = {}&quot;</span>, A, B, C);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> name  = <span class="stringliteral">&quot;comp_&quot;</span>s + f-&gt;sym().str() + <span class="stringliteral">&quot;_&quot;</span> + g-&gt;sym().str();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">auto</span> h     = world.mut_fun(A, C)-&gt;set(name);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">auto</span> hcont = world.mut_con(B)-&gt;set(name + <span class="stringliteral">&quot;_cont&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    h-&gt;app(<span class="keyword">true</span>, g, {h-&gt;var((<a class="code hl_typedef" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>)0), hcont});</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">auto</span> hcont_var = hcont-&gt;var(); <span class="comment">// Warning: not var(0) =&gt; only one var =&gt; normalization flattens tuples down here.</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    hcont-&gt;app(<span class="keyword">true</span>, f, {hcont_var, h-&gt;var(1) <span class="comment">/* ret_var */</span>});</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">auto</span> hcont_var = hcont-&gt;var(); <span class="comment">// Warning: not var(0) =&gt; only one var =&gt; normalization flattens tuples down here.</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    hcont-&gt;app(<span class="keyword">true</span>, f, {hcont_var, h-&gt;var(1) <span class="comment">/* ret_var */</span>});</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> h;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> h;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>} <span class="comment">// namespace mim</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>} <span class="comment">// namespace mim</span></div>
 <div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00275">def.h:275</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_a1164a26b23818879edfa4e6b9fe41d97"><div class="ttname"><a href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97">mim::Def::set</a></div><div class="ttdeci">Def * set(size_t i, const Def *)</div><div class="ttdoc">Successively set from left to right.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00189">def.cpp:189</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html_a2d85181e61754391ee525fc255cac90e"><div class="ttname"><a href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">mim::Def::world</a></div><div class="ttdeci">World &amp; world() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01086">def.h:1086</a></div></div>

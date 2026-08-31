@@ -123,7 +123,7 @@ var classmim_1_1World =
     [ "lit_univ", "classmim_1_1World.html#aba1e8e90606f4c43756ee5cb4a5dda41", null ],
     [ "lit_univ_0", "classmim_1_1World.html#a621ad5961def1d0659b279ba88300971", null ],
     [ "lit_univ_1", "classmim_1_1World.html#a6af880f9d61f7fa014e338df3c27413c", null ],
-    [ "log", "classmim_1_1World.html#a8ac0420655b3e3cfacf726f1b50438a6", null ],
+    [ "log", "classmim_1_1World.html#a6805186dd54b22be877a544f77641f8a", null ],
     [ "match", "classmim_1_1World.html#a4647f46eaad8cc510000f88a7f3e543f", null ],
     [ "meet", "classmim_1_1World.html#a0433f7debfbd793528514ac31c92f005", null ],
     [ "merge", "classmim_1_1World.html#ad042699cd6434abf9a9a9c3b8f9e0e53", null ],

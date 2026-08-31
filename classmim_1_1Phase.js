@@ -11,7 +11,7 @@ var classmim_1_1Phase =
     [ "driver", "classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc", null ],
     [ "hook", "classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3", null ],
     [ "invalidate", "classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6", null ],
-    [ "log", "classmim_1_1Phase.html#ad8bf7ee449bdc4b7639b4cf0218140b3", null ],
+    [ "log", "classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28", null ],
     [ "name", "classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a", null ],
     [ "profile_count", "classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6", null ],
     [ "recreate", "classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750", null ],

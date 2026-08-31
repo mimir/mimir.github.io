@@ -658,7 +658,7 @@ Analysis</h2>
 <div class="line">    <span class="keyword">auto</span> cur = lattice(var);</div>
 <div class="line">    <span class="keywordflow">if</span> (!cur) { <span class="comment">// ⊥ ⊔ def = def; lattice(var, def) invalidates, as it inserts a fresh non-⊤ fact</span></div>
 <div class="line">        lattice(var, def);</div>
-<div class="line">        DLOG(<span class="stringliteral">&quot;propagate: {} → {}&quot;</span>, var, def);</div>
+<div class="line">        log().d(<span class="stringliteral">&quot;propagate {} → {}&quot;</span>, var, def);</div>
 <div class="line">        <span class="keywordflow">return</span> def;</div>
 <div class="line">    }</div>
 <div class="line"> </div>

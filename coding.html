@@ -494,10 +494,10 @@ Dumping</h2>
 <div class="line">(gdb) call def-&gt;dump(3)</div>
 <div class="line">(gdb) call world().write(&quot;out.mim&quot;)</div>
 </div><!-- fragment --><p>In particular, note the different output levels of <a class="el" href="classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487" title="mim::Def::dump"><span class="tt">mim::Def::dump</span></a>.</p>
-<p>You can also tweak the output behavior directly from within GDB by changing <a class="el" href="classmim_1_1World.html#a84dc41b987937f59141de186c5a2975e" title="mim::World::flags"><span class="tt">mim::World::flags</span></a> or <a class="el" href="classmim_1_1World.html#a8ac0420655b3e3cfacf726f1b50438a6" title="mim::World::log"><span class="tt">mim::World::log</span></a>:</p>
+<p>You can also tweak the output behavior directly from within GDB by changing <a class="el" href="classmim_1_1World.html#a84dc41b987937f59141de186c5a2975e" title="mim::World::flags"><span class="tt">mim::World::flags</span></a> or <a class="el" href="classmim_1_1World.html#a6805186dd54b22be877a544f77641f8a" title="mim::World::log"><span class="tt">mim::World::log</span></a>:</p>
 <div class="fragment"><div class="line">(gdb) call world().flags().dump_gid = 1</div>
 <div class="line">(gdb) call world().flags().dump_recursive = 1</div>
-<div class="line">(gdb) call world().log().max_level_ = 4</div>
+<div class="line">(gdb) call world().log.max_level_ = 4</div>
 </div><!-- fragment --><p>Another useful trick is to recover a <span class="tt">Def*</span> from a <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid"><span class="tt">mim::Def::gid</span></a> via <a class="el" href="classmim_1_1World.html#a8166ab5122fb1a299072eac68286b3a8" title="mim::World::gid2def"><span class="tt">mim::World::gid2def</span></a>:</p>
 <div class="fragment"><div class="line">(gdb) p world().gid2def(123)</div>
 <div class="line">$1 = ...</div>

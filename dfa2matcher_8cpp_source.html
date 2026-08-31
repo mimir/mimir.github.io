@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfa2matcher_8c
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        std::sort(ranges.begin(), ranges.end(), <a class="code hl_struct" href="structautomaton_1_1RangeCompare.html">RangeCompare</a>{});</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        ranges = <a class="code hl_function" href="namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6">merge_ranges</a>(ranges, [&amp;w](std::string_view msg) { w.DLOG(<span class="stringliteral">&quot;{}&quot;</span>, msg); });</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        ranges = <a class="code hl_function" href="namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6">merge_ranges</a>(ranges, [&amp;w](std::string_view msg) { w.log().d(<span class="stringliteral">&quot;{}&quot;</span>, msg); });</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> state2ranges;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfa2matcher_8c
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895">   95</a></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895">dfa2matcher</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; w, <span class="keyword">const</span> <a class="code hl_class" href="classautomaton_1_1DFA.html">DFA</a>&amp; dfa, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* n) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    w.DLOG(<span class="stringliteral">&quot;dfa to match: {}&quot;</span>, dfa);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    w.log().d(<span class="stringliteral">&quot;DFA to match: {}&quot;</span>, dfa);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">auto</span> states = dfa.<a class="code hl_function" href="classautomaton_1_1AutomatonBase.html#a3e63306c358b3d4904cc6ccbfef2a738">get_reachable_states</a>();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_typedef" href="namespaceautomaton.html#ac935bb3b7e7cbc4be411a7657f3d693c">DFAMap&lt;Lam*&gt;</a> state2matcher;</div>
