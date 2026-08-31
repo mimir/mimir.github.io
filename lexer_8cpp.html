@@ -155,16 +155,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lexer_8cpp.htm
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">lexer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="lexer_8h_source.html">mim/ast/lexer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ast_8h_source.html">mim/ast/ast.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="def_8h_source.html">mim/def.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for lexer.cpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lexer_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lexer_8cpp__incl.svg" width="100%" height="558"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="lexer_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -178,6 +179,11 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a7d12cc9e30e6f91e9135feb7a67bb4df" id="r_a7d12cc9e30e6f91e9135feb7a67bb4df"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7d12cc9e30e6f91e9135feb7a67bb4df">CODE</a>(t,  str)</td></tr>
 <tr class="memitem:a3da30937de6028bf89052b2aba9bc44c" id="r_a3da30937de6028bf89052b2aba9bc44c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a3da30937de6028bf89052b2aba9bc44c">CODE</a>(str,  t)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9ea23a16d9a43617a74f14806e52eadc" id="r_a9ea23a16d9a43617a74f14806e52eadc"><td class="memItemLeft">static <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a9ea23a16d9a43617a74f14806e52eadc">mim::ast::idx_tok</a> (Loc loc, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> mod, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> val)</td></tr>
+<tr class="memdesc:a9ea23a16d9a43617a74f14806e52eadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">As <a class="el" href="classmim_1_1World.html#a5df328e0d219765eb3c0f871a68e4c6a" title="Constructs a Lit of type Idx of size mod.">World::lit_idx_mod</a> but at token level: a <code class="param">mod</code> of <span class="tt">0</span> means 2^64 and wraps nothing.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a3da30937de6028bf89052b2aba9bc44c" name="a3da30937de6028bf89052b2aba9bc44c"></a>
@@ -198,7 +204,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (Tag::t != Tag::Nil) keywords_[ast.sym(str)] = Tag::t;</div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (Tag::t != Tag::Nil) keywords_[driver.sym(str)] = Tag::t;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -220,7 +226,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">keywords_[ast.sym(str)] = Tag::t;</div>
+<b>Value:</b><div class="fragment"><div class="line">keywords_[driver.sym(str)] = Tag::t;</div>
 </div><!-- fragment -->
 </div>
 </div>

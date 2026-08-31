@@ -19,7 +19,7 @@ var searchData=
   ['rem_16',['rem',['../namespacemim.html#a4b886d6d719beecae433602545de678c',1,'mim::rem(float a, float b)'],['../namespacemim.html#abdf57b48740472043af02225a151fc64',1,'mim::rem(double a, double b)'],['../namespacemim.html#ac8e771be2e47e2503c4a1f2a241437fd',1,'mim::rem(long double a, long double b)']]],
   ['remove_5fpath_17',['remove_path',['../namespacedeploy.html#a86dda7502750268e8adddbc480be26ef',1,'deploy']]],
   ['removedoublesyncs_18',['RemoveDoubleSyncs',['../classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ad95a4d4d79664e40743980dbc85de3b3',1,'mim::plug::gpu::phase::RemoveDoubleSyncs']]],
-  ['render_5fplain_19',['render_plain',['../classmim_1_1Driver.html#a78ed6feb81c410cfe9ebf760c29e8141',1,'mim::Driver']]],
+  ['render_19',['render',['../classmim_1_1Diag.html#a4e09e3b271f82a12fe3637956d541b25',1,'mim::Diag']]],
   ['repl_20',['Repl',['../classmim_1_1Repl.html#ad5ec29af334815089ee5155aa1aaa038',1,'mim::Repl']]],
   ['replace_21',['replace',['../classmim_1_1Repl.html#a8ca5d2ad78b41df8e0604778eba97ddc',1,'mim::Repl::replace()'],['../classmim_1_1Rule.html#aadf2fefa889ae1601205a60413c31fd5',1,'mim::Rule::replace()']]],
   ['repr_22',['repr',['../classmim_1_1Analysis.html#af452ff2897eed267ba834654b30fdf14',1,'mim::Analysis']]],

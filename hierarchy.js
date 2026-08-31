@@ -20,6 +20,9 @@ var hierarchy =
     [ "mim::Checker", "classmim_1_1Checker.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
+    [ "fe::CodeDiag", null, [
+      [ "mim::Diag", "classmim_1_1Diag.html", null ]
+    ] ],
     [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
     [ "mim::DefKey", "structmim_1_1DefKey.html", null ],
     [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],

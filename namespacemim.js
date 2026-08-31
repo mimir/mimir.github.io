@@ -17,6 +17,7 @@ var namespacemim =
     [ "ClosedMutPhase", "classmim_1_1ClosedMutPhase.html", "classmim_1_1ClosedMutPhase" ],
     [ "Def", "classmim_1_1Def.html", "classmim_1_1Def" ],
     [ "DefKey", "structmim_1_1DefKey.html", "structmim_1_1DefKey" ],
+    [ "Diag", "classmim_1_1Diag.html", "classmim_1_1Diag" ],
     [ "Dispatch", "classmim_1_1Dispatch.html", "classmim_1_1Dispatch" ],
     [ "DotConfig", "namespacemim.html#structmim_1_1DotConfig", "namespacemim_structmim_1_1DotConfig_dup" ],
     [ "Driver", "classmim_1_1Driver.html", "classmim_1_1Driver" ],

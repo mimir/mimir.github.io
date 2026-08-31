@@ -77,7 +77,7 @@ var searchData=
   ['remove_5fdouble_5fsyncs_2eh_74',['remove_double_syncs.h',['../remove__double__syncs_8h.html',1,'']]],
   ['remove_5fpath_75',['remove_path',['../namespacedeploy.html#a86dda7502750268e8adddbc480be26ef',1,'deploy']]],
   ['removedoublesyncs_76',['RemoveDoubleSyncs',['../classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html',1,'mim::plug::gpu::phase::RemoveDoubleSyncs'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ad95a4d4d79664e40743980dbc85de3b3',1,'mim::plug::gpu::phase::RemoveDoubleSyncs::RemoveDoubleSyncs()']]],
-  ['render_5fplain_77',['render_plain',['../classmim_1_1Driver.html#a78ed6feb81c410cfe9ebf760c29e8141',1,'mim::Driver']]],
+  ['render_77',['render',['../classmim_1_1Diag.html#a4e09e3b271f82a12fe3637956d541b25',1,'mim::Diag']]],
   ['repeat_78',['repeat',['../tensor.html#autotoc_md435',1,'%tensor.repeat'],['../namespacemim_1_1plug_1_1tensor.html#a89b3e1d648dd30edc5982ea2135edfb7',1,'mim::plug::tensor::repeat']]],
   ['repeat_5fimpl_79',['repeat_impl',['../namespacemim_1_1plug_1_1tensor.html#a5814fef73877a1b9809d09fcaaad3b7c',1,'mim::plug::tensor']]],
   ['repl_80',['Repl',['../classmim_1_1Repl.html',1,'mim::Repl'],['../classmim_1_1Repl.html#ad5ec29af334815089ee5155aa1aaa038',1,'mim::Repl::Repl(World &amp;world, flags_t annex)']]],

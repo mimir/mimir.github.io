@@ -33,7 +33,6 @@ var classmim_1_1Driver =
     [ "phases", "classmim_1_1Driver.html#ad255a2786ccfe3ca27450b36940d6bc5", null ],
     [ "profiler", "classmim_1_1Driver.html#ad0f40deb62f2385f196c02555928dcfc", null ],
     [ "profiler", "classmim_1_1Driver.html#a94819cdc2d23c7b56404f9e87aae4d4a", null ],
-    [ "render_plain", "classmim_1_1Driver.html#a78ed6feb81c410cfe9ebf760c29e8141", null ],
     [ "search_paths", "classmim_1_1Driver.html#afd36aa36d224823727e7c4e249874754", null ],
     [ "version", "classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540", null ],
     [ "world", "classmim_1_1Driver.html#a6bb261071b0b8c994cf8dd9c90e78351", null ]
