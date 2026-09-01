@@ -254,6 +254,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s with their plain <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a> instead of <a class="el" href="classmim_1_1Def.html#ae61aa184493aa3f3bf685758d27f982a" title="name + &quot;_&quot; + Def::gid">Def::unique_name</a> while alive.  <a href="classmim_1_1PlainNames.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Plugin" id="r_Plugin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1Plugin.html">Plugin</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic info and registration function pointer to be returned from a specific plugin.  <a href="structmim_1_1Plugin.html#details">More...</a><br /></td></tr>
+<tr class="memitem:PluginArg_5Fstructmim_5F1_5F1PluginArg" id="r_PluginArg_5Fstructmim_5F1_5F1PluginArg"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1PluginArg">PluginArg</a></td></tr>
+<tr class="memdesc:structmim_1_1PluginArg"><td class="mdescLeft">&#160;</td><td class="mdescRight">One <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> understands; see <a class="el" href="cli.html#clipluginargs" title="Arguments">Arguments</a>.  <a href="#structmim_1_1PluginArg">More...</a><br /></td></tr>
 <tr class="memitem:Prod" id="r_Prod"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Prod.html">Prod</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> and <a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a>.  <a href="classmim_1_1Prod.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Proxy" id="r_Proxy"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Proxy.html">Proxy</a></td></tr>
@@ -659,6 +661,39 @@ Maximum recursion depth. </td></tr>
 show_hidden = false</td>
 <td class="fielddoc">
 Render otherwise-transparent detached edges (Var→binder back-edges, shared literals/axioms, type edges) with a visible color. </td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1PluginArg" id="structmim_1_1PluginArg"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1PluginArg">&#9670;&#160;</a></span>mim::PluginArg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::PluginArg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>One <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> understands; see <a class="el" href="cli.html#clipluginargs" title="Arguments">Arguments</a>. </p>
+<p>A <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares these next to the code that picks them apart, so that <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; -h</span> can list them. </p>
+
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00029">29</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a0f1ec4662d46ddc5fe2de1c041729422" name="a0f1ec4662d46ddc5fe2de1c041729422"></a>const char *</td>
+<td class="fieldname">
+descr</td>
+<td class="fielddoc">
+What it does; one sentence, Markdown. </td></tr>
+<tr><td class="fieldtype">
+<a id="ad53acf95ce5df3f7045361671860b6fa" name="ad53acf95ce5df3f7045361671860b6fa"></a>const char *</td>
+<td class="fieldname">
+syntax</td>
+<td class="fielddoc">
+How to spell the argument, e.g. <span class="tt">"o=&lt;file&gt;, output=&lt;file&gt;"</span>. </td></tr>
 </table>
 
 </div>

@@ -70,7 +70,7 @@ var searchData=
   ['install_20optional_67',['📦 Install (Optional)',['../index.html#autotoc_md134',1,'']]],
   ['integer_20operations_68',['Integer Operations',['../core.html#autotoc_md255',1,'']]],
   ['interchange_69',['interchange',['../namespacemim_1_1plug_1_1tensor.html#aa4178525bbb38e740d73de95ee8e2b11',1,'mim::plug::tensor']]],
-  ['interfaces_70',['Interfaces',['../plugins.html#plugin_codegen',1,'Generated Interfaces'],['../cli.html#cligen',1,'Generating Plugin Interfaces']]],
+  ['interfaces_70',['Generated Interfaces',['../plugins.html#plugin_codegen',1,'']]],
   ['internalize_71',['internalize',['../classmim_1_1Def.html#aa73c33fa04415ff69e455ec10193244c',1,'mim::Def::internalize()'],['../classmim_1_1World_1_1Externals.html#a75da2368e94deb77e32af415cc5ce003',1,'mim::World::Externals::internalize()']]],
   ['intro_72',['Intro',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188',1,'mim']]],
   ['invalidate_73',['invalidate',['../classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6',1,'mim::Phase']]],

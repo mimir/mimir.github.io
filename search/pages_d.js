@@ -17,7 +17,7 @@ var searchData=
   ['operations_20w_20side_20effects_14',['Operations w/ Side Effects',['../mem.html#autotoc_md350',1,'']]],
   ['opt_15',['%option.Opt',['../option.html#autotoc_md371',1,'']]],
   ['opt_20plugin_16',['The opt Plugin',['../opt.html',1,'']]],
-  ['optimization_17',['Optimization',['../cli.html#autotoc_md7',1,'']]],
+  ['optimization_17',['Optimization',['../cli.html#autotoc_md6',1,'']]],
   ['option_20is_5fsome_18',['%option.is_some',['../option.html#autotoc_md377',1,'']]],
   ['option_20none_19',['%option.none',['../option.html#autotoc_md374',1,'']]],
   ['option_20opt_20',['%option.Opt',['../option.html#autotoc_md371',1,'']]],
@@ -28,7 +28,7 @@ var searchData=
   ['option_20unwrap_5funsafe_25',['%option.unwrap_unsafe',['../option.html#autotoc_md378',1,'']]],
   ['optional_26',['📦 Install (Optional)',['../index.html#autotoc_md134',1,'']]],
   ['optional_20pre_20analysis_27',['Optional Pre-Analysis',['../phases.html#autotoc_md89',1,'']]],
-  ['options_28',['Options',['../cli.html#autotoc_md8',1,'Developer Options'],['../cli.html#autotoc_md2',1,'Options']]],
+  ['options_28',['Options',['../cli.html#autotoc_md7',1,'Developer Options'],['../cli.html#autotoc_md1',1,'Options']]],
   ['ord_20contains_29',['%ord.contains',['../ord.html#autotoc_md392',1,'']]],
   ['ord_20create_30',['%ord.create',['../ord.html#autotoc_md386',1,'']]],
   ['ord_20get_31',['%ord.get',['../ord.html#autotoc_md391',1,'']]],
@@ -43,7 +43,7 @@ var searchData=
   ['other_20definitions_40',['Other Definitions',['../mimir.html#autotoc_md81',1,'']]],
   ['other_20operations_41',['Other Operations',['../core.html#autotoc_md270',1,'Other Operations'],['../math.html#autotoc_md340',1,'Other Operations']]],
   ['out_20of_20the_20node_42',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md161',1,'']]],
-  ['output_43',['Output',['../cli.html#autotoc_md4',1,'DOT Output'],['../cli.html#autotoc_md3',1,'Output']]],
+  ['output_43',['Output',['../cli.html#autotoc_md3',1,'DOT Output'],['../cli.html#autotoc_md2',1,'Output']]],
   ['over_20the_20program_44',['Iterating over the Program',['../dev.html#autotoc_md55',1,'']]],
   ['overview_45',['Overview',['../phases.html#autotoc_md82',1,'']]]
 ];

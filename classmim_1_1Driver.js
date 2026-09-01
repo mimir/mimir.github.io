@@ -21,6 +21,7 @@ var classmim_1_1Driver =
     [ "imports", "classmim_1_1Driver.html#aa939fca89bce0a05dcb49489a1ad155b", null ],
     [ "imports", "classmim_1_1Driver.html#a1d6b289f7ef74bd4ffee8fb2d7d84589", null ],
     [ "is_loaded", "classmim_1_1Driver.html#a891aace24d98626e56581de6c2598944", null ],
+    [ "known_args", "classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e", null ],
     [ "load", "classmim_1_1Driver.html#ab2a9cb2f89e19b17b632b2d7bf7d4904", null ],
     [ "load", "classmim_1_1Driver.html#a0be4fca042e007d5206f23ccdcc734b3", null ],
     [ "log", "classmim_1_1Driver.html#ad986bcc29d263ac15dd192571454b9b9", null ],

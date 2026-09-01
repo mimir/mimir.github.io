@@ -159,59 +159,70 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cli.html','','
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md0">Usage </a>
+    <a href="#cliusage">Usage </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md1">Arguments </a>
+        <a href="#autotoc_md0">Arguments </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md2">Options </a>
+        <a href="#autotoc_md1">Options </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md3">Output </a>
+        <a href="#autotoc_md2">Output </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md4">DOT Output </a>
+        <a href="#autotoc_md3">DOT Output </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md5">Diagnostics </a>
+        <a href="#autotoc_md4">Diagnostics </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md6">Profiling </a>
+        <a href="#autotoc_md5">Profiling </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md7">Optimization </a>
+        <a href="#autotoc_md6">Optimization </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md8">Developer Options </a>
+        <a href="#autotoc_md7">Developer Options </a>
       </li>
     </ul>
   </li>
   <li class="level1">
-    <a href="#autotoc_md9">Remarks </a>
-  </li>
-  <li class="level1">
-    <a href="#cligen">Generating Plugin Interfaces </a>
-  </li>
-  <li class="level1">
-    <a href="#clipluginargs">Passing Arguments to Plugins </a>
+    <a href="#autotoc_md8">Plugin Arguments </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md10">Known Arguments </a>
+        <a href="#xarg_compile">-X compile:&lt;arg&gt; </a>
+      </li>
+      <li class="level2">
+        <a href="#xarg_ll">-X ll:&lt;arg&gt; </a>
+      </li>
+      <li class="level2">
+        <a href="#xarg_ll_nvptx">-X ll_nvptx:&lt;arg&gt; </a>
       </li>
     </ul>
   </li>
   <li class="level1">
     <a href="#clidiag">Diagnostics </a>
   </li>
+  <li class="level1">
+    <a href="#autotoc_md9">Plugins </a>
+    <ul>
+      <li class="level2">
+        <a href="#autotoc_md10">Search Paths </a>
+      </li>
+      <li class="level2">
+        <a href="#clipluginargs">Arguments </a>
+      </li>
+    </ul>
+  </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2cli"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+<h1 class="doxsection"><a class="anchor" id="cliusage"></a>
 Usage</h1>
 <div class="fragment"><div class="line">mim [options] &lt;file&gt;</div>
 </div><!-- fragment --><p>MimIR is my Intermediate Representation.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 Arguments</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -219,7 +230,7 @@ Arguments</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Input file.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Options</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -249,7 +260,7 @@ Options</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">-a, --ascii</span>  </td><td class="markdownTableBodyNone">Uses ASCII alternatives in output instead of UTF-8.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Output</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -277,7 +288,7 @@ Output</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--dump-recursive</span>  </td><td class="markdownTableBodyNone">Dumps the <a class="el" href="namespaceMim.html">Mim</a> program with a simple recursive algorithm; the result is not readable again but works for broken programs.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 DOT Output</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -293,7 +304,7 @@ DOT Output</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td><td class="markdownTableBodyNone">Renders otherwise-transparent detached edges in DOT output - back-edges from a Var to its binder, shared literals/axioms, and type edges - in a subtle gray.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Diagnostics</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -311,7 +322,7 @@ Diagnostics</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--werror</span>  </td><td class="markdownTableBodyNone">Treats warnings as errors.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Profiling</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -321,7 +332,7 @@ Profiling</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-profile &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Where to write the profiling information.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Optimization</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -333,7 +344,7 @@ Optimization</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--max-fp-iters &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of fixed-point iterations before a phase errors out; guards against non-monotone analyses. [default: <span class="tt">1024</span>]  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Developer Options</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -353,66 +364,60 @@ Developer Options</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--trace-gids</span>  </td><td class="markdownTableBodyNone">Outputs gids during World::unify/insert.  </td></tr>
 </table>
-<p>Every output option accepts "-" to write to stdout.  </p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
-Remarks</h1>
-<dl class="section note"><dt>Note</dt><dd>The <em>Developer Options</em> only exist if MimIR was built with <span class="tt"><a class="el" href="config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b">MIM_ENABLE_CHECKS</a></span>; see the <a class="el" href="coding.html#building" title="Contributor Quick Start">CMake switches</a>.</dd></dl>
-<p>In addition, you can specify more search paths with <span class="tt">-P</span> / <span class="tt">--plugin-path</span> and via the environment variable <span class="tt">MIM_PLUGIN_PATH</span>. <a class="el" href="namespaceMim.html">Mim</a> looks for plugins in this order:</p>
-<ol type="1">
-<li>The current working directory.</li>
-<li>All paths specified via <span class="tt">-P</span> / <span class="tt">--plugin-path</span> (in the given order).</li>
-<li>All paths specified in the environment variable <span class="tt">MIM_PLUGIN_PATH</span> (in the given order).</li>
-<li><span class="tt">path/to/mim.exe/../../lib/mim</span></li>
-<li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
-</ol>
-<h1 class="doxsection"><a class="anchor" id="cligen"></a>
-Generating Plugin Interfaces</h1>
-<p>The switches <span class="tt">--output-h</span>, <span class="tt">--output-py</span>, and <span class="tt">--output-md</span> turn a <span class="tt">&lt;plugin&gt;.<a class="el" href="namespacemim.html">mim</a></span> file into, respectively, a C++ header, a Python <span class="tt">IntEnum</span> module, and a Markdown documentation page. The flag <span class="tt">--bootstrap</span> makes <span class="tt">plugin</span> directives behave as plain <span class="tt">import</span>s instead of <span class="tt">dlopen</span>ing other plugins, which matters when generating these outputs during the build, before the plugin's own shared library even exists. The CMake command <a class="el" href="add_mim_plugin_cmake.html" title="add_mim_plugin"><span class="tt">add_mim_plugin</span></a> runs all three automatically for every plugin as part of the normal build; see <a class="el" href="plugins.html#plugin_codegen" title="Generated Interfaces">Generated Interfaces</a> for a full walkthrough using the <a class="el" href="demo.html" title="The demo Plugin">demo</a> plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="clipluginargs"></a>
-Passing Arguments to Plugins</h1>
-<p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
-<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr=on</div>
-</div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
-<ul>
-<li>The option is repeatable; each occurrence contributes one argument.</li>
-<li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
-<li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-Known Arguments</h2>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Plugin Arguments</h1>
+<h2 class="doxsection"><a class="anchor" id="xarg_compile"></a>
+-X compile:&lt;arg&gt;</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Plugin  </th><th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Effect  </th></tr>
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="compile.html" title="The compile Plugin">compile</a>  </td><td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>; toggles fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
- <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll.html" title="The ll Plugin">ll</a>  </td><td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
- <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the emitted module (self-contained); <span class="tt">extern</span> only <span class="tt">declare</span>s them so the runtime is linked in separately.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
- <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the (host) LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;</span> <br  />
- <span class="tt">output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
- <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> (e.g. <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>): <span class="tt">embed</span> (default) splices their LLVM IR in; <span class="tt">extern</span> only <span class="tt">declare</span>s them.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Don't embed the compiled device binary into the host LLVM IR (embedding is the default on Linux).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the PTX image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the CUBIN image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary, compile the device binary for compute capability sm_<span class="tt">&lt;SM&gt;</span>.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary and if linking libdevice, link against the libdevice NVVM library at <span class="tt">&lt;path&gt;</span> instead of trying to find it via CUDA paths.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a>  </td><td class="markdownTableBodyNone"><span class="tt">X&lt;tool&gt;=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding device binary invoke <span class="tt">&lt;tool&gt;</span> with <span class="tt">&lt;args&gt;</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>, which switches fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage on or off (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>.  </td></tr>
 </table>
+<h2 class="doxsection"><a class="anchor" id="xarg_ll"></a>
+-X ll:&lt;arg&gt;</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;, output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the module; <span class="tt">extern</span> only <span class="tt">declare</span>s them and leaves linking to you.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="xarg_ll_nvptx"></a>
+-X ll_nvptx:&lt;arg&gt;</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;, output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the host LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;, output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> such as <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Doesn't embed the compiled device binary into the host LLVM IR; embedding is the default on Linux.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">When embedding: omits the PTX image from the fat binary (default: both PTX and CUBIN).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">When embedding: omits the CUBIN image from the fat binary (default: both PTX and CUBIN).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: compiles the device binary for compute capability <span class="tt">sm_&lt;SM&gt;</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: uses the NVVM library at <span class="tt">&lt;path&gt;</span> instead of locating it via the CUDA paths.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xlink_llvm=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">link_llvm</span> (default: none).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">Xopt=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">opt</span> (default: <span class="tt">-passes="default&lt;O2&gt;,nvvm-reflect"</span>).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xllc=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">llc</span> (default: none).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">Xptxas=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">ptxas</span> (default: none); also passed to <span class="tt">fatbinary</span> via <span class="tt">--cmdline</span> when the PTX image is embedded.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xfatbinary=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">fatbinary</span> (default: none).  </td></tr>
+</table>
+<p>Every output option accepts "-" to write to stdout.  </p>
+<dl class="section note"><dt>Note</dt><dd>The <em>Developer Options</em> only exist if MimIR was built with <span class="tt"><a class="el" href="config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b">MIM_ENABLE_CHECKS</a></span>; see the <a class="el" href="coding.html#building" title="Contributor Quick Start">CMake switches</a>.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="clidiag"></a>
 Diagnostics</h1>
 <p>Errors and warnings are reported as <span class="tt">&lt;file&gt;:&lt;row&gt;:&lt;col&gt;: error: &lt;message&gt;</span>, followed by the offending source line with a caret underneath and any notes indented below it. Pass <span class="tt">--no-snippet</span> to omit the source line and caret, e.g. when the output is consumed by a script. Use <span class="tt">--loc-style</span> to pick how much of a location that header spells out:</p>
@@ -428,7 +433,30 @@ Diagnostics</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">msvc</span>  </td><td class="markdownTableBodyNone"><span class="tt">path(row,col)</span>  </td></tr>
 </table>
-<p>Color is decided by the terminal and honors <span class="tt">NO_COLOR</span>, <span class="tt">CLICOLOR=0</span>, and <span class="tt">CLICOLOR_FORCE</span>. </p>
+<p>Color is decided by the terminal and honors <span class="tt">NO_COLOR</span>, <span class="tt">CLICOLOR=0</span>, and <span class="tt">CLICOLOR_FORCE</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Plugins</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Search Paths</h2>
+<p>You can specify more search paths with <span class="tt">-P</span> / <span class="tt">--plugin-path</span> and via the environment variable <span class="tt">MIM_PLUGIN_PATH</span>. <a class="el" href="namespaceMim.html">Mim</a> looks for plugins in this order:</p>
+<ol type="1">
+<li>The current working directory.</li>
+<li>All paths specified via <span class="tt">-P</span> / <span class="tt">--plugin-path</span> (in the given order).</li>
+<li>All paths specified in the environment variable <span class="tt">MIM_PLUGIN_PATH</span> (in the given order).</li>
+<li><span class="tt">path/to/mim.exe/../../lib/mim</span></li>
+<li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
+Arguments</h2>
+<p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
+<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr=on</div>
+</div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
+<ul>
+<li>The option is repeatable; each occurrence contributes one argument.</li>
+<li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
+<li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
+</ul>
+<p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

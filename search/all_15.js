@@ -66,7 +66,7 @@ var searchData=
   ['us_63',['Us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca',1,'mim::plug::core']]],
   ['us_64',['uS',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972',1,'mim::plug::core']]],
   ['us_65',['us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2',1,'mim::plug::core']]],
-  ['usage_66',['Usage',['../rewriting.html#autotoc_md146',1,'Typical Usage'],['../rewriting.html#autotoc_md148',1,'Typical Usage'],['../cli.html#autotoc_md0',1,'Usage']]],
+  ['usage_66',['Usage',['../rewriting.html#autotoc_md146',1,'Typical Usage'],['../rewriting.html#autotoc_md148',1,'Typical Usage'],['../cli.html#cliusage',1,'Usage']]],
   ['use_67',['Use',['../classmim_1_1Use.html',1,'mim::Use'],['../classmim_1_1Use.html#ad1bfa5ee84aa2b6d63b9d8b8767fb7e5',1,'mim::Use::Use()'],['../classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954',1,'mim::Use::Use(const Def *def, size_t index)']]],
   ['useeq_68',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
   ['usehash_69',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]],

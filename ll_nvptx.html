@@ -162,9 +162,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ll_nvptx.html'
     <a href="#autotoc_md324">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#ll_nvptx_cli_args">Command-Line Arguments </a>
-  </li>
-  <li class="level1">
     <a href="#autotoc_md325">Phases </a>
     <ul>
       <li class="level2">
@@ -175,51 +172,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ll_nvptx.html'
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ll__nvptx"></a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">mim::plug::ll_nvptx</a></dd></dl>
-<p>An LLVM backend that targets NVIDIA GPUs. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll_nvptx</span>) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world. It writes the host LLVM IR to <span class="tt">&lt;world&gt;.ll</span> and the device LLVM IR (with PTX intrinsics) to <span class="tt">&lt;world&gt;_dev.ll</span>, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR. The output paths and the embedding behavior can be overridden via <span class="tt">-X ll_nvptx:&lt;arg&gt;</span>; see <a class="el" href="#ll_nvptx_cli_args" title="Command-Line Arguments">Command-Line Arguments</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="cli.html#xarg_ll_nvptx" title="-X ll_nvptx:&lt;arg&gt;"><span class="tt">-X ll_nvptx:&lt;arg&gt;</span></a> </dd>
+<dd>
+<a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">mim::plug::ll_nvptx</a></dd></dl>
+<p>An LLVM backend that targets NVIDIA GPUs. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll_nvptx</span>) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world. It writes the host LLVM IR to <span class="tt">&lt;world&gt;.ll</span> and the device LLVM IR (with PTX intrinsics) to <span class="tt">&lt;world&gt;_dev.ll</span>, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR. The output paths and the embedding behavior can be overridden via <a class="el" href="cli.html#xarg_ll_nvptx" title="-X ll_nvptx:&lt;arg&gt;"><span class="tt">-X ll_nvptx:&lt;arg&gt;</span></a>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin gpu;</div>
 <div class="line">plugin nvptx;</div>
 <div class="line">plugin opt;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="ll_nvptx_cli_args"></a>
-Command-Line Arguments</h1>
-<p>This plugin reads the following <a class="el" href="cli.html#clipluginargs" title="Passing Arguments to Plugins">plugin arguments</a> (<span class="tt">-X ll_nvptx:&lt;arg&gt;</span>):</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Effect  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;</span> <br  />
- <span class="tt">output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the (host) LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;</span> <br  />
- <span class="tt">output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Write the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">rt=embed</span> <br  />
- <span class="tt">rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> (e.g. <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>) reach the host module: <span class="tt">embed</span> (default) splices their LLVM IR in; <span class="tt">extern</span> only <span class="tt">declare</span>s them.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Don't embed the compiled device binary into the host LLVM IR (embedding is the default on Linux).  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the PTX image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, don't embed the CUBIN image into the fat binary (default: embed both PTX and CUBIN).  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, compile it for compute capability sm_<span class="tt">&lt;SM&gt;</span>.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary and linking libdevice, link against the libdevice NVVM library at <span class="tt">&lt;path&gt;</span> instead of locating it via CUDA paths.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Xlink_llvm=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary and linking libdevice, invoke link_llvm with <span class="tt">&lt;args&gt;</span> (default: none).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">Xopt=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary and linking libdevice, invoke opt with <span class="tt">&lt;args&gt;</span> (default: <span class="tt">-passes="default&lt;O2&gt;,nvvm-reflect"</span>).  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Xllc=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, invoke llc with <span class="tt">&lt;args&gt;</span> (default: none).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">Xptxas=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, invoke ptxas with <span class="tt">&lt;args&gt;</span> (default: none). Also passed to fatbinary via <span class="tt">--cmdline</span> if embedding the PTX image.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Xfatbinary=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">If embedding the device binary, invoke fatbinary with <span class="tt">&lt;args&gt;</span> (default: none).  </td></tr>
-</table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Phases</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
 %ll_nvptx.emit</h2>

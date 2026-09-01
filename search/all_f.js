@@ -62,7 +62,7 @@ var searchData=
   ['opt_2ecpp_59',['opt.cpp',['../opt_8cpp.html',1,'']]],
   ['opt_2eh_60',['opt.h',['../opt_8h.html',1,'']]],
   ['opt_2emd_61',['opt.md',['../opt_8md.html',1,'']]],
-  ['optimization_62',['Optimization',['../cli.html#autotoc_md7',1,'']]],
+  ['optimization_62',['Optimization',['../cli.html#autotoc_md6',1,'']]],
   ['optimize_63',['optimize',['../namespacemim.html#a60ee93398f76269a406c841b2bb2c306',1,'mim']]],
   ['optimize_2ecpp_64',['optimize.cpp',['../optimize_8cpp.html',1,'']]],
   ['optimize_2eh_65',['optimize.h',['../optimize_8h.html',1,'']]],
@@ -80,7 +80,7 @@ var searchData=
   ['optional_77',['📦 Install (Optional)',['../index.html#autotoc_md134',1,'']]],
   ['optional_78',['optional',['../namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad57c24f3fe52d16e7169b912dd647f0d',1,'mim::plug::regex']]],
   ['optional_20pre_20analysis_79',['Optional Pre-Analysis',['../phases.html#autotoc_md89',1,'']]],
-  ['options_80',['Options',['../cli.html#autotoc_md8',1,'Developer Options'],['../cli.html#autotoc_md2',1,'Options']]],
+  ['options_80',['Options',['../cli.html#autotoc_md7',1,'Developer Options'],['../cli.html#autotoc_md1',1,'Options']]],
   ['or_5f_81',['or_',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205acfc049a17faac959998820e7aaaf4329',1,'mim::plug::core']]],
   ['ord_20contains_82',['%ord.contains',['../ord.html#autotoc_md392',1,'']]],
   ['ord_20create_83',['%ord.create',['../ord.html#autotoc_md386',1,'']]],
@@ -102,7 +102,7 @@ var searchData=
   ['other_20operations_99',['Other Operations',['../core.html#autotoc_md270',1,'Other Operations'],['../math.html#autotoc_md340',1,'Other Operations']]],
   ['out_20of_20the_20node_100',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md161',1,'']]],
   ['outermost_5fbinder_101',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
-  ['output_102',['Output',['../cli.html#autotoc_md4',1,'DOT Output'],['../cli.html#autotoc_md3',1,'Output']]],
+  ['output_102',['Output',['../cli.html#autotoc_md3',1,'DOT Output'],['../cli.html#autotoc_md2',1,'Output']]],
   ['over_20the_20program_103',['Iterating over the Program',['../dev.html#autotoc_md55',1,'']]],
   ['overview_104',['Overview',['../phases.html#autotoc_md82',1,'']]]
 ];

@@ -31,7 +31,7 @@ var searchData=
   ['inspect_28',['Inspect',['../refly.html#autotoc_md401',1,'']]],
   ['install_20optional_29',['📦 Install (Optional)',['../index.html#autotoc_md134',1,'']]],
   ['integer_20operations_30',['Integer Operations',['../core.html#autotoc_md255',1,'']]],
-  ['interfaces_31',['Interfaces',['../plugins.html#plugin_codegen',1,'Generated Interfaces'],['../cli.html#cligen',1,'Generating Plugin Interfaces']]],
+  ['interfaces_31',['Generated Interfaces',['../plugins.html#plugin_codegen',1,'']]],
   ['invalidation_32',['Invalidation',['../dev.html#autotoc_md37',1,'']]],
   ['ir_33',['Matching IR',['../dev.html#autotoc_md40',1,'']]],
   ['ir_20values_34',['Loop nests as first-class IR values',['../btensor.html#autotoc_md209',1,'']]],
