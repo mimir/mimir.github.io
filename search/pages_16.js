@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xtrie_3a_3aset_20—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_0',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md145',1,'']]]
+  ['xtrie_3a_3aset_20—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_0',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md154',1,'']]]
 ];
