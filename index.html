@@ -213,6 +213,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 </ul>
 <p>MimIR is well suited for <a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> compilers, tensor compilers, <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic differentiation</a>, <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a> engines, and other systems that need high-performance code from high-level abstractions.</p>
 <p>MimIR brings two worlds together: typed functional IRs supply the abstractions — polymorphism, dependent types — while sea-of-nodes graphs supply the performance. It has both at once, by extending sea-of-nodes to the Calculus of Constructions. And it pays off in practice: the <a class="el" href="regex.html" title="The regex Plugin">regex</a> plugin is the fastest engine in our evaluation (see the <a href="https://doi.org/10.1145/3704840">POPL'25 paper</a>).</p>
+<dl class="section note"><dt>Note</dt><dd>🆕 <b>New here?</b><ul>
+<li>🧭 Read the <a class="el" href="mimir.html" title="A Tour of MimIR"><b>Tour of MimIR</b></a> — it walks through <a class="el" href="namespaceMim.html">Mim</a>'s syntax and MimIR's plugin architecture.</li>
+<li>📚 Then, read the rest of the <a href="https://mimir.github.io/usergroup0.html">documentation</a>.</li>
+</ul>
+</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
 ✨ A Taste of Mim</h1>
 <p>The following function <span class="tt">sq</span> squares <span class="tt">x</span> — for <b>any</b> type <span class="tt">T</span>, as long as <span class="tt">T</span> comes packaged with its own multiplication. Then, <span class="tt">f</span> instantiates <span class="tt">sq</span> for <span class="tt">Nat</span>:</p>
@@ -273,7 +278,7 @@ The MimIR graph of `f` — the abstraction has evaporated (type edges elided)</d
 📦 Install (Optional)</h2>
 <div class="fragment"><div class="line">cmake -S . -B build -DBUILD_TESTING=ON -DMIM_BUILD_EXAMPLES=ON -DCMAKE_INSTALL_PREFIX=/my/local/install/prefix</div>
 <div class="line">cmake --build build -j$(nproc) --target install</div>
-</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the <a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a> guide. New here? Start with the <a class="el" href="mimir.html" title="A Tour of MimIR">Tour of MimIR</a>.</p>
+</div><!-- fragment --><p>See the full <a class="el" href="coding.html#building" title="Contributor Quick Start">build options</a> in the <a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a> guide.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md135"></a>
 🔥 Key Innovations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md136"></a>
