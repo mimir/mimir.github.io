@@ -38,6 +38,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::product_2d", "namespacemim_1_1plug_1_1tensor.html#a7dc047f0517a725f4106d0382862ccb7", null ],
     [ "mim::plug::tensor::product_2d_impl", "namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d", null ],
     [ "mim::plug::tensor::proj_map", "namespacemim_1_1plug_1_1tensor.html#ac2ee92fd2968762dd2c8939940a99797", null ],
+    [ "mim::plug::tensor::reassoc", "namespacemim_1_1plug_1_1tensor.html#a0c8dd57ca5347d13154e0dc334c68c2a", null ],
     [ "mim::plug::tensor::repeat", "namespacemim_1_1plug_1_1tensor.html#a89b3e1d648dd30edc5982ea2135edfb7", null ],
     [ "mim::plug::tensor::repeat_impl", "namespacemim_1_1plug_1_1tensor.html#a5814fef73877a1b9809d09fcaaad3b7c", null ],
     [ "mim::plug::tensor::reshape", "namespacemim_1_1plug_1_1tensor.html#a7954b221c8c568ad0918b4397d796ad2", null ],

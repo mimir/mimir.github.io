@@ -1011,13 +1011,15 @@ Schedules</h2>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
 Phases</h1>
 <ul>
+<li><span class="tt">reassoc</span>: reassociates chains of %tensor.product_2d to minimize the number of scalar multiplications, using the classic matrix-chain-order dynamic program. Restricted to products whose extents are all literals; a product with more than one consumer stays a chain boundary, as pulling it apart would leave it materialized for its other consumers as well. Reassociation is only exact for an associative ring; on floating-point rings it changes the rounding, just like <span class="tt">-ffast-math</span>.</li>
 <li><span class="tt">lower_tensor</span>: lowers the high-level tensor axioms to the low-level ones (<span class="tt">map_reduce</span>, ...) by re-applying the matching <span class="tt">*_impl</span> annexes.</li>
 <li><span class="tt">lower_map_reduce</span>: lowers the low-level tensor axioms directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, packs, ...).</li>
 <li><span class="tt">lower_get_set</span>: lowers <span class="tt">%tensor.get</span> / <span class="tt">%tensor.set</span> to their underlying primitives (<span class="tt">extract</span>, <span class="tt">insert</span>).</li>
 <li><span class="tt">fuse_tensor</span>: fuses pure producer <span class="tt">map_reduce</span>s into their consumers' access maps. A producer is only fused where the consumer reads it injectively (its access map uses every loop index, possibly strided/shifted), so fusion never recomputes a producer element — strided reads even skip producer elements entirely. In the reverse direction, a trailing elementwise map over a reducing <span class="tt">map_reduce</span> is composed into the producer's <span class="tt">post</span> epilogue (the GEMM-epilogue pattern), provided the map is its only consumer.</li>
 <li><span class="tt">lower_to_mem</span>: Bufferizes the low-level tensor axioms (<span class="tt">get</span>, <span class="tt">set</span>, <span class="tt">map_reduce</span>) onto the <span class="tt">buffer</span> layer: tensor array values become <span class="tt">%buffer.Buf</span> handles and the operations become <span class="tt">%buffer.read</span> / <span class="tt">%buffer.write</span> / <span class="tt">%buffer.alloc</span> (threading <span class="tt">%mem.M</span>). Memory is threaded by <span class="tt">%mem.add_mem</span> (scheduled next in the pipeline); run <span class="tt">%buffer.lower_ptr</span> afterwards to reach <span class="tt">%mem.Ptr</span>.</li>
 </ul>
-<div class="fragment"><div class="line">axm %tensor.lower_tensor:     %compile.Phase;</div>
+<div class="fragment"><div class="line">axm %tensor.reassoc:          %compile.Phase;</div>
+<div class="line">axm %tensor.lower_tensor:     %compile.Phase;</div>
 <div class="line">axm %tensor.lower_map_reduce: %compile.Phase;</div>
 <div class="line">axm %tensor.lower_get_set:    %compile.Phase;</div>
 <div class="line">axm %tensor.fuse_tensor:      %compile.Phase;</div>

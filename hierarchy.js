@@ -104,7 +104,8 @@ var hierarchy =
           [ "mim::plug::tensor::phase::Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", null ],
           [ "mim::plug::tensor::phase::LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", null ],
           [ "mim::plug::tensor::phase::LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", null ],
-          [ "mim::plug::tensor::phase::LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", null ]
+          [ "mim::plug::tensor::phase::LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", null ],
+          [ "mim::plug::tensor::phase::Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", null ]
         ] ]
       ] ],
       [ "mim::VarRewriter", "classmim_1_1VarRewriter.html", null ],
