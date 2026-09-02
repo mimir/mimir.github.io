@@ -76,7 +76,7 @@ var searchData=
   ['graphs_73',['Displaying DOT Graphs',['../coding.html#autotoc_md24',1,'']]],
   ['greater_74',['greater',['../classmim_1_1Def.html#ab53725bf0bb0b66ad322d671f25d7a4a',1,'mim::Def']]],
   ['grpptrn_75',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast::GrpPtrn'],['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn::GrpPtrn()']]],
-  ['gt_76',['gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;']]],
+  ['gt_76',['gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_tensor',1,'-X tensor:&amp;lt;arg&amp;gt;']]],
   ['guard_77',['guard',['../classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251',1,'mim::ast::RuleDecl::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard()']]],
   ['guard_20exists_20at_20all_78',['Why the guard exists at all',['../phases.html#autotoc_md105',1,'']]],
   ['guide_79',['Developer Guide',['../dev.html',1,'']]]

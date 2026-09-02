@@ -60,7 +60,7 @@ var searchData=
   ['are_20values_57',['Types Are Values',['../mimir.html#mimir_dep',1,'']]],
   ['arena_20rollback_58',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md157',1,'']]],
   ['arenas_20and_20how_20defs_20are_20placed_20in_20them_59',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md156',1,'']]],
-  ['arg_20gt_60',['arg gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;']]],
+  ['arg_20gt_60',['arg gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_tensor',1,'-X tensor:&amp;lt;arg&amp;gt;']]],
   ['argument_61',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md163',1,'']]],
   ['arguments_62',['Arguments',['../cli.html#autotoc_md0',1,'Arguments'],['../cli.html#clipluginargs',1,'Arguments'],['../cli.html#autotoc_md8',1,'Plugin Arguments']]],
   ['arith_63',['%math.arith',['../math.html#autotoc_md330',1,'']]],

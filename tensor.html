@@ -275,7 +275,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tensor.html','
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tensor"></a></p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">mim::plug::tensor</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="cli.html#xarg_tensor" title="-X tensor:&lt;arg&gt;"><span class="tt">-X tensor:&lt;arg&gt;</span></a> </dd>
+<dd>
+<a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">mim::plug::tensor</a></dd></dl>
 <p>SSA-world tensor operations: a generic <span class="tt">map_reduce</span> loop-nest abstraction plus derived operations (reshape, slice, convolution, pooling, dot product, ...), lowered via <span class="tt">affine</span> loops and bufferized onto the <span class="tt">buffer</span> layer.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
 Dependencies</h1>
@@ -1011,7 +1013,7 @@ Schedules</h2>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
 Phases</h1>
 <ul>
-<li><span class="tt">reassoc</span>: reassociates chains of %tensor.product_2d to minimize the number of scalar multiplications, using the classic matrix-chain-order dynamic program. Restricted to products whose extents are all literals; a product with more than one consumer stays a chain boundary, as pulling it apart would leave it materialized for its other consumers as well. Reassociation is only exact for an associative ring; on floating-point rings it changes the rounding, just like <span class="tt">-ffast-math</span>.</li>
+<li><span class="tt">reassoc</span>: reassociates chains of %tensor.product_2d to minimize the number of scalar multiplications, using the classic matrix-chain-order dynamic program. Extents need not be literal: a cost is a polynomial in the symbolic extents, ordered by coefficient-wise <span class="tt">≤</span>, which proves <span class="tt">≤</span> for every instantiation because extents are non-negative. That order is only <em>partial</em>, so a chain can have several bracketings that each win for some instantiation - a batch dimension favouring a different one when small than when large. Up to 4 matrices - <span class="tt">-X tensor:reassoc-max=&lt;n&gt;</span>, below <span class="tt">3</span> to switch it off - those survivors are emitted side by side behind a run-time comparison of their costs, so only the winner's thunk runs; a longer chain is only reassociated where one bracketing provably wins for every extent. Common sub-products are hash-consed across the alternatives, so the code growth stays well below <span class="tt">Catalan(n − 1)</span>. A product with more than one consumer stays a chain boundary, as pulling it apart would leave it materialized for its other consumers as well. Reassociation is only exact for an associative ring; on floating-point rings it changes the rounding, just like <span class="tt">-ffast-math</span>.</li>
 <li><span class="tt">lower_tensor</span>: lowers the high-level tensor axioms to the low-level ones (<span class="tt">map_reduce</span>, ...) by re-applying the matching <span class="tt">*_impl</span> annexes.</li>
 <li><span class="tt">lower_map_reduce</span>: lowers the low-level tensor axioms directly to their underlying primitives (loops, <span class="tt">extract</span>, <span class="tt">insert</span>, packs, ...).</li>
 <li><span class="tt">lower_get_set</span>: lowers <span class="tt">%tensor.get</span> / <span class="tt">%tensor.set</span> to their underlying primitives (<span class="tt">extract</span>, <span class="tt">insert</span>).</li>

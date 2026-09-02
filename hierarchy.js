@@ -342,6 +342,7 @@ var hierarchy =
       [ "mim::Var", "classmim_1_1Var.html", null ]
     ] ],
     [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
+    [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "mim::Use", "classmim_1_1Use.html", null ],

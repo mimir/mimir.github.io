@@ -46,7 +46,7 @@ var searchData=
   ['sibldeps_3c_20true_20_3e_43',['SiblDeps&lt; true &gt;',['../structmim_1_1Nest_1_1Node_1_1SiblDeps.html',1,'mim::Nest::Node']]],
   ['sigma_44',['Sigma',['../classmim_1_1Sigma.html',1,'mim']]],
   ['sigmaexpr_45',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html',1,'mim::ast']]],
-  ['split_46',['Split',['../classmim_1_1Split.html',1,'mim']]],
+  ['split_46',['Split',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split',1,'mim::plug::tensor::phase::Split'],['../classmim_1_1Split.html',1,'mim::Split']]],
   ['splitapply_47',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase']]],
   ['splitoffkernels_48',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
   ['state_49',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]],

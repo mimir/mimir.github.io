@@ -39,5 +39,5 @@ var searchData=
   ['lower_5findex_36',['%affine.lower_index',['../affine.html#autotoc_md190',1,'']]],
   ['lower_5fptr_37',['%buffer.lower_ptr',['../buffer.html#autotoc_md231',1,'']]],
   ['lower_5fregex_38',['%regex.lower_regex',['../regex.html#autotoc_md427',1,'']]],
-  ['lt_20arg_20gt_39',['lt arg gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;']]]
+  ['lt_20arg_20gt_39',['lt arg gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_tensor',1,'-X tensor:&amp;lt;arg&amp;gt;']]]
 ];

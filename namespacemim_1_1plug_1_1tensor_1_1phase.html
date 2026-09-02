@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemim_1
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">mim::plug::tensor::phase Namespace Reference</div></div>
 </div><!--header-->
@@ -175,6 +176,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure re-indexed read behind an input: the source tensor, the access map into it (over the producer's output coordinates), and the source's element type/rank/shape.  <a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough">More...</a><br /></td></tr>
 <tr class="memitem:Reassoc" id="r_Reassoc"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html">Reassoc</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reassociates chains of %tensor.product_2d with the classic matrix-chain-order dynamic program, so that a chain is evaluated with the least number of scalar multiplications.  <a href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Split_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1Split" id="r_Split_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1Split"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">Split</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1tensor_1_1phase_1_1Split"><td class="mdescLeft">&#160;</td><td class="mdescRight">One node of a bracketing: <span class="tt"><a class="el" href="#ac879b26331d04ddbd27ca0664cf16cf3">i</a> … <a class="el" href="#a74f639428e135246401d316463e716c1">j</a></span> splits after <span class="tt"><a class="el" href="#ac9514ab15820064bdda1185d8a4b541a">s</a></span>.  <a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9354dd9f12f084b417b3197ce31a4b83" id="r_a9354dd9f12f084b417b3197ce31a4b83"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a9354dd9f12f084b417b3197ce31a4b83">Splits</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">Split</a>&gt;</td></tr>
+<tr class="memdesc:a9354dd9f12f084b417b3197ce31a4b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bracketing of a matrix chain, innermost node first.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -241,6 +249,64 @@ value = nullptr</td>
 <td class="fielddoc">
 </td></tr>
 </table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1tensor_1_1phase_1_1Split" id="structmim_1_1plug_1_1tensor_1_1phase_1_1Split"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">&#9670;&#160;</a></span>mim::plug::tensor::phase::Split</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::tensor::phase::Split</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>One node of a bracketing: <span class="tt"><a class="el" href="#ac879b26331d04ddbd27ca0664cf16cf3">i</a> … <a class="el" href="#a74f639428e135246401d316463e716c1">j</a></span> splits after <span class="tt"><a class="el" href="#ac9514ab15820064bdda1185d8a4b541a">s</a></span>. </p>
+<p>Spelling the fields out keeps <span class="tt">size_t</span> out of the type - it is <em>not</em> <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">mim::u64</a> everywhere. </p>
+
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00011">11</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ac879b26331d04ddbd27ca0664cf16cf3" name="ac879b26331d04ddbd27ca0664cf16cf3"></a><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>
+<td class="fieldname">
+i</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a74f639428e135246401d316463e716c1" name="a74f639428e135246401d316463e716c1"></a><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>
+<td class="fieldname">
+j</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac9514ab15820064bdda1185d8a4b541a" name="ac9514ab15820064bdda1185d8a4b541a"></a><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>
+<td class="fieldname">
+s</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a9354dd9f12f084b417b3197ce31a4b83" name="a9354dd9f12f084b417b3197ce31a4b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9354dd9f12f084b417b3197ce31a4b83">&#9670;&#160;</a></span>Splits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9354dd9f12f084b417b3197ce31a4b83">mim::plug::tensor::phase::Splits</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">Split</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A bracketing of a matrix chain, innermost node first. </p>
+
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00016">16</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
 
 </div>
 </div>

@@ -289,9 +289,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Reassociates chains of %tensor.product_2d with the classic matrix-chain-order dynamic program, so that a chain is evaluated with the least number of scalar multiplications. </p>
-<p>Restricted to %tensor.product_2d whose extents are all <a class="el" href="classmim_1_1Lit.html">Lit</a>erals. </p>
+<p>Extents need not be literal: a cost is kept as a polynomial in the symbolic extents, ordered by coefficient-wise <span class="tt">≤</span>. Since extents are <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span>s and hence non-negative, that order proves <span class="tt">≤</span> under <em>every</em> instantiation - but it is only a <em>partial</em> order, so a chain can have several bracketings that each win for some instantiation (a batch dimension favouring a different one when small than when large). Up to Reassoc::max_dispatch_ matrices those survivors are emitted side by side behind a runtime comparison of their costs; a longer chain is only reassociated where one bracketing provably wins. </p>
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00012">12</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00028">28</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a10173129d843e77881ff84ee1b507bcd" name="a10173129d843e77881ff84ee1b507bcd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10173129d843e77881ff84ee1b507bcd">&#9670;&#160;</a></span>Reassoc()</h2>
@@ -320,7 +320,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00014">14</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00030">30</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00430">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
@@ -350,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8cpp_source.html#l00134">134</a> of file <a class="el" href="reassoc_8cpp_source.html">reassoc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8cpp_source.html#l00351">351</a> of file <a class="el" href="reassoc_8cpp_source.html">reassoc.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>.</p>
 
@@ -383,9 +383,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d">mim::Phase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8cpp_source.html#l00053">53</a> of file <a class="el" href="reassoc_8cpp_source.html">reassoc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8cpp_source.html#l00194">194</a> of file <a class="el" href="reassoc_8cpp_source.html">reassoc.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00450">mim::RWPhase::old_world()</a>, and <a class="el" href="phase_8cpp_source.html#l00192">mim::RWPhase::start()</a>.</p>
+<p class="reference">References <a class="el" href="plugin_8h_source.html#l00055">mim::arg_value()</a>, <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="phase_8h_source.html#l00450">mim::RWPhase::old_world()</a>, and <a class="el" href="phase_8cpp_source.html#l00192">mim::RWPhase::start()</a>.</p>
 
 </div>
 </div>

@@ -36,7 +36,7 @@ var searchData=
   ['gpu_20with_5fstreams_33',['%gpu.with_streams',['../gpu.html#autotoc_md296',1,'']]],
   ['grammar_34',['Grammar',['../langref.html#grammar',1,'']]],
   ['graphs_35',['Displaying DOT Graphs',['../coding.html#autotoc_md24',1,'']]],
-  ['gt_36',['gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;']]],
+  ['gt_36',['gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_tensor',1,'-X tensor:&amp;lt;arg&amp;gt;']]],
   ['guard_20exists_20at_20all_37',['Why the guard exists at all',['../phases.html#autotoc_md105',1,'']]],
   ['guide_38',['Developer Guide',['../dev.html',1,'']]]
 ];
