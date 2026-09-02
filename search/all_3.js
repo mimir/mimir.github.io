@@ -191,7 +191,7 @@ var searchData=
   ['cos_188',['cos',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a4d00d79b6733c9cc066584a02ed03410',1,'mim::plug::math']]],
   ['cosh_189',['cosh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a1a9b5ee12f27e6f4bd9371ec529aa76f',1,'mim::plug::math']]],
   ['costs_190',['Non-performance costs',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],
-  ['counting_5ffor_191',['counting_for',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#aabc3deecc75da8f1b7105c0476a792d8',1,'mim::plug::tensor::phase']]],
+  ['count_5fconsumers_191',['count_consumers',['../namespacemim_1_1plug_1_1tensor.html#ad351e77823c5eb59f8d047e7deaca151',1,'mim::plug::tensor']]],
   ['coverage_192',['Coverage',['../python.html#autotoc_md128',1,'']]],
   ['cps_193',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
   ['cps_20conv_194',['%cps.conv',['../cps.html#autotoc_md279',1,'']]],

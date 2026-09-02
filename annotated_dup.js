@@ -133,8 +133,8 @@ var annotated_dup =
             [ "LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet" ],
             [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
             [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ],
-            [ "ReadThrough", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough_dup" ],
             [ "Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc" ],
+            [ "Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots" ],
             [ "Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1Split_dup" ]
           ] ],
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]

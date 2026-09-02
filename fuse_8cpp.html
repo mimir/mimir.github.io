@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fuse_8cpp.html
 <div class="textblock"><code>#include &quot;<a class="el" href="fuse_8h_source.html">mim/plug/tensor/phase/fuse.h</a>&quot;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;fe/bitset.h&gt;</code><br />
-<code>#include &lt;fe/worklist.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="def_8h_source.html">mim/def.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="lam_8h_source.html">mim/lam.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="tuple_8h_source.html">mim/tuple.h</a>&gt;</code><br />
@@ -182,8 +181,8 @@ Include dependency graph for fuse.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Atensor_3A_3Aphase_3A_3AReadThrough_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1ReadThrough" id="r_mim_3A_3Aplug_3A_3Atensor_3A_3Aphase_3A_3AReadThrough_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1ReadThrough"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough">mim::plug::tensor::phase::ReadThrough</a></td></tr>
-<tr class="memdesc:structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure re-indexed read behind an input: the source tensor, the access map into it (over the producer's output coordinates), and the source's element type/rank/shape.  <a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Atensor_3A_3Aphase_3A_3ASlots" id="r_mim_3A_3Aplug_3A_3Atensor_3A_3Aphase_3A_3ASlots"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html">mim::plug::tensor::phase::Slots</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The five parallel per-slot lists of a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aec79c25d65d7e0096f5284f96ff67e87">map_reduce_post</a></span> input group: element type, rank, shape, access map, and the tensor itself.  <a href="structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -201,62 +200,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae2233eb6c57d715eed03b79f7958a283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> provably reads through <em>every</em> loop index of its domain: its body is the identity, or each result coordinate is an injective read of one loop index (see <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a952e5475e9b27fe3add59987d9380cf3" title="If e reads coordinate var#i injectively, returns i: a plain extract, possibly strided (affine....">injective_coord</a></span>) and together they cover all indices.  <br /></td></tr>
 <tr class="memitem:a09d1835975049dc93906aa3750a07c5b" id="r_a09d1835975049dc93906aa3750a07c5b"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a09d1835975049dc93906aa3750a07c5b">mim::plug::tensor::phase::compose_map</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *inner, const <a class="el" href="classmim_1_1Def.html">Def</a> *outer)</td></tr>
 <tr class="memdesc:a09d1835975049dc93906aa3750a07c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">inner ∘ outer</span>: feeds the outer op's read coordinates for one input into the inner op's access map.  <br /></td></tr>
-<tr class="memitem:af6fbec447d506d456b785de579c0268a" id="r_af6fbec447d506d456b785de579c0268a"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough">ReadThrough</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#af6fbec447d506d456b785de579c0268a">mim::plug::tensor::phase::read_through</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *value, const <a class="el" href="classmim_1_1Def.html">Def</a> *slot_map)</td></tr>
-<tr class="memdesc:af6fbec447d506d456b785de579c0268a"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> (reshape/transpose/slice/ flip/repeat lower to these) or a <span class="tt">tensor.broadcast</span> — returns its source and access map, to be composed behind the consuming slot's map.  <br /></td></tr>
+<tr class="memitem:a87ae2db4a8ae283ef40100742e80a7e0" id="r_a87ae2db4a8ae283ef40100742e80a7e0"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">PureRead</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a87ae2db4a8ae283ef40100742e80a7e0">mim::plug::tensor::phase::read_through</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *value, const <a class="el" href="classmim_1_1Def.html">Def</a> *slot_map)</td></tr>
+<tr class="memdesc:a87ae2db4a8ae283ef40100742e80a7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> (reshape/transpose/slice/ flip/repeat lower to these) or a <span class="tt">tensor.broadcast</span> — returns its source and access map, to be composed behind the consuming slot's map.  <br /></td></tr>
 <tr class="memitem:a90789f0506b7baf4427628463e594443" id="r_a90789f0506b7baf4427628463e594443"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a90789f0506b7baf4427628463e594443">mim::plug::tensor::phase::is_unpack_read</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *map<a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *r_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *r_out, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out)</td></tr>
 <tr class="memdesc:a90789f0506b7baf4427628463e594443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> the row-major reshape read <span class="tt">tensor.reshape_map (s_in, s_out)</span> — the map that reads a PACKED producer (its output strip-mined to <span class="tt">s_in</span>) at the unpacked coordinates <span class="tt">s_out</span>?  <br /></td></tr>
 </table>
-<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
-<a name="structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough" id="structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1ReadThrough">&#9670;&#160;</a></span>mim::plug::tensor::phase::ReadThrough</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct mim::plug::tensor::phase::ReadThrough</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><p>A pure re-indexed read behind an input: the source tensor, the access map into it (over the producer's output coordinates), and the source's element type/rank/shape. </p>
-
-<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00100">100</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
-</div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a883dc726cd93accc81c0a2b0ce172150" name="a883dc726cd93accc81c0a2b0ce172150"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-map = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="abb9ab529ade88c1a24b876d2a2a85c3b" name="abb9ab529ade88c1a24b876d2a2a85c3b"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-R = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a7daaa01cf47b23f5512bb0167023d10e" name="a7daaa01cf47b23f5512bb0167023d10e"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-S = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aa4c250ba0a6a93e3f0f9eaf714ac3fe2" name="aa4c250ba0a6a93e3f0f9eaf714ac3fe2"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-T = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a285671870eb7183de198a735f74131a5" name="a285671870eb7183de198a735f74131a5"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-value = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

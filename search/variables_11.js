@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['t_0',['T',['../namespacemim_1_1plug_1_1tensor.html#a301293d412fd1a577a530753e71be473',1,'mim::plug::tensor::PureRead::T'],['../namespacemim_1_1plug_1_1tensor_1_1phase.html#aa4c250ba0a6a93e3f0f9eaf714ac3fe2',1,'mim::plug::tensor::phase::ReadThrough::T']]],
+  ['t_0',['T',['../namespacemim_1_1plug_1_1tensor.html#a301293d412fd1a577a530753e71be473',1,'mim::plug::tensor::PureRead::T'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a0cb90be518233faa394c58da312f05a4',1,'mim::plug::tensor::phase::Slots::T']]],
   ['tab_1',['tab',['../classmim_1_1Emitter.html#a59ec86ba00b809dae2415fe8d7f702b2',1,'mim::Emitter::tab'],['../structmim_1_1ast_1_1S.html#a54fab320707ca39f7305431cb6c051d4',1,'mim::ast::S::tab'],['../structmim_1_1ast_1_1R.html#a1863b6de85ea7cd8147613900f6e07ad',1,'mim::ast::R::tab']]],
   ['tag_2',['tag',['../classmim_1_1Driver_1_1Imports.html#a77a6d63d306c0c9891b6d4dab3db83f7',1,'mim::Driver::Imports::Entry::tag'],['../structmim_1_1ast_1_1AnnexInfo.html#a76484548df15c4d70fc544f2162e5f0d',1,'mim::ast::AnnexInfo::[struct].sym::tag'],['../structmim_1_1ast_1_1AnnexInfo.html#af05517c7ddb899fbd9902fa54ee1f8f8',1,'mim::ast::AnnexInfo::[struct].id::tag']]],
   ['trace_5fgids_3',['trace_gids',['../structmim_1_1Flags.html#a6751eae1d81d212268261fecba66fa6a',1,'mim::Flags']]],

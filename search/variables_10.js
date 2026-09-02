@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_0',['S',['../namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be',1,'mim::plug::tensor::PureRead::S'],['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a7daaa01cf47b23f5512bb0167023d10e',1,'mim::plug::tensor::phase::ReadThrough::S']]],
+  ['s_0',['S',['../namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be',1,'mim::plug::tensor::PureRead::S'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a94ee9afb668a879fc2c2aa1721cf4575',1,'mim::plug::tensor::phase::Slots::S']]],
   ['s_1',['s',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a',1,'mim::plug::tensor::phase::Split']]],
   ['scalarize_5fthreshold_2',['scalarize_threshold',['../structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7',1,'mim::Flags']]],
   ['schedule_5f_3',['schedule_',['../classmim_1_1Emitter.html#a024a7069ea511418e459905ba3314aae',1,'mim::Emitter']]],

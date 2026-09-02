@@ -119,7 +119,7 @@ var searchData=
   ['pullback_5ftype_116',['pullback_type',['../namespacemim_1_1plug_1_1autodiff.html#aea750f837c2ff1b730c268bf3c88cb26',1,'mim::plug::autodiff']]],
   ['pureread_117',['PureRead',['../namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead',1,'mim::plug::tensor']]],
   ['purpose_118',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
-  ['push_119',['push',['../classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96',1,'mim::Rewriter::push()'],['../classmim_1_1VarRewriter.html#ac29d30f671daec7c01345363249542e7',1,'mim::VarRewriter::push()'],['../classmim_1_1World.html#a530372f1dfadd2f5004fba5692675dab',1,'mim::World::push()'],['../classmim_1_1ast_1_1Scopes.html#a7b66277eef69295c498385f34ad3ca54',1,'mim::ast::Scopes::push()']]],
+  ['push_119',['push',['../classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96',1,'mim::Rewriter::push()'],['../classmim_1_1VarRewriter.html#ac29d30f671daec7c01345363249542e7',1,'mim::VarRewriter::push()'],['../classmim_1_1World.html#a530372f1dfadd2f5004fba5692675dab',1,'mim::World::push()'],['../classmim_1_1ast_1_1Scopes.html#a7b66277eef69295c498385f34ad3ca54',1,'mim::ast::Scopes::push()'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a1813b9263233722195c2ef903c7fee54',1,'mim::plug::tensor::phase::Slots::push()']]],
   ['pxr24_120',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
   ['pxr24_121',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]],
   ['python_20bindings_122',['Python Bindings',['../python.html',1,'']]],

@@ -125,8 +125,8 @@ var NAVTREEINDEX =
 "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a8fa14cdd754f91cc6554c9e71929cce7",
 "namespacemim_1_1plug_1_1math.html#aaa35cfb305025a1cdac738b548baac43",
 "namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc",
-"refly_2autogen_8h_source.html",
-"structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597"
+"regex.html",
+"structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';
