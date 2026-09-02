@@ -49,8 +49,6 @@ var ast_8h =
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a09214c0845d7829eb157e8700b238366", null ],
     [ "mim::ast::Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
     [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed", null ],
-    [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a6db5d77581a0ddab4453d88440ffc830", null ],
-    [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a75735247d726a0bffe05706d52021f8c", null ],
-    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a1f3255145f27dd7cf4ef1e6feaf7b918", null ],
-    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#aabb6975424e825ed0e766fcec9e75dc2", null ]
+    [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a91e7627a30cd8ff68e463c60e633e1a1", null ],
+    [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a66a1aa2d36d5c50e3d3a99d56e32fd97", null ]
 ];

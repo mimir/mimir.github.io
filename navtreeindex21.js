@@ -1,10 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"namespacemim_1_1plug_1_1math.html#acb743982258e08d50f82c8b0dda5501a":[2,0,3,1,12,18],
-"namespacemim_1_1plug_1_1math.html#ad0d483b8c713d41e11fa417fd2c513df":[2,0,3,1,12,31],
-"namespacemim_1_1plug_1_1math.html#ad42e4b21a126c8e91af45fc2a790b4ac":[2,0,3,1,12,17],
-"namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3":[2,0,3,1,12,7],
-"namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a0ba64a0dea00947916dfb6a66866e1ca":[2,0,3,1,12,7,11],
 "namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a0f39d0676cdb8854458f78af54c4f48b":[2,0,3,1,12,7,26],
 "namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a271dc55f9c9a4c5e867ad093ca6a645a":[2,0,3,1,12,7,28],
 "namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a2a0617accf8bb8625c43e2ffeb5b8d5b":[2,0,3,1,12,7,25],
@@ -249,5 +244,10 @@ var NAVTREEINDEX21 =
 "namespacemim_1_1plug_1_1tensor.html#a24478d6a245a774370863390a8998d7e":[2,0,3,1,20,80],
 "namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8":[2,0,3,1,20,32],
 "namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1":[2,0,3,1,20,63],
-"namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8":[2,0,3,1,20,10]
+"namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8":[2,0,3,1,20,10],
+"namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712":[2,0,3,1,20,33],
+"namespacemim_1_1plug_1_1tensor.html#a301293d412fd1a577a530753e71be473":[5,0,3,1,3,20,1,0,4],
+"namespacemim_1_1plug_1_1tensor.html#a31a248e929652643705dd2ba8e0b5709":[2,0,3,1,20,34],
+"namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d":[2,0,3,1,20,37],
+"namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5":[2,0,3,1,20,20]
 };

@@ -15,7 +15,7 @@ var searchData=
   ['get_5felement_5ftype_12',['get_element_type',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a8750cc1811594898bbb25f65eaa14cc6',1,'mim::plug::tensor::phase']]],
   ['get_5fextra_5fflags_13',['get_extra_flags',['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#acad99ab7b7ec21a2538674bb68676849',1,'mim::plug::ll_nvptx::DeviceEmitter']]],
   ['get_5ffun_5fptr_14',['GET_FUN_PTR',['../driver_8h.html#ab004995be061e8045533148b21580ed8',1,'driver.h']]],
-  ['get_5ffun_5fptr_15',['get_fun_ptr',['../classmim_1_1Driver.html#a9b5c4236d3c320dd6ed27681b9702bf2',1,'mim::Driver::get_fun_ptr(Sym plugin, const char *name)'],['../classmim_1_1Driver.html#ac0035b5caca7c54aa2a1ddcaad8445ab',1,'mim::Driver::get_fun_ptr(Sym plugin, const char *name)'],['../classmim_1_1Driver.html#ac9350a2290817ca8f25b72ba85d24032',1,'mim::Driver::get_fun_ptr(const char *plugin, const char *name)']]],
+  ['get_5ffun_5fptr_15',['get_fun_ptr',['../classmim_1_1Driver.html#aca49523948aa7ad5392fdc0b884bad6d',1,'mim::Driver::get_fun_ptr(std::string_view plugin, const char *name)'],['../classmim_1_1Driver.html#a25f86fd34e99f1bb3d6c16e3e245c24d',1,'mim::Driver::get_fun_ptr(std::string_view plugin, const char *name)']]],
   ['get_5floc_16',['get_loc',['../classmim_1_1World.html#a9bd6d16e46909817c454c545ecd86496',1,'mim::World']]],
   ['get_5frange_17',['get_range',['../namespacemim_1_1plug_1_1regex.html#a22ae7a476a9fc4465086b7c5c57c33a7',1,'mim::plug::regex']]],
   ['get_5freachable_5fstates_18',['get_reachable_states',['../classautomaton_1_1AutomatonBase.html#a3e63306c358b3d4904cc6ccbfef2a738',1,'automaton::AutomatonBase']]],

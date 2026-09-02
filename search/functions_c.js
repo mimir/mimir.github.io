@@ -9,7 +9,7 @@ var searchData=
   ['make_5ftruth_5ftable_6',['make_truth_table',['../namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d',1,'mim::plug::core']]],
   ['make_5ftype_7',['make_type',['../classmim_1_1ast_1_1IdPtrn.html#a4532fd0819c1d193a252563c0496ac09',1,'mim::ast::IdPtrn']]],
   ['make_5fvector_5funique_8',['make_vector_unique',['../namespacemim_1_1plug_1_1regex.html#a141ba9d4adefded9ef82563b7909114f',1,'mim::plug::regex']]],
-  ['mangle_9',['mangle',['../structmim_1_1Annex.html#a9899866d4f203e3d28fbe42a1575d44c',1,'mim::Annex']]],
+  ['mangle_9',['mangle',['../structmim_1_1Annex.html#a4b5dd917e3480414d97bc96caf0ca845',1,'mim::Annex']]],
   ['map_10',['map',['../classmim_1_1plug_1_1cps_1_1Conv.html#a8d53dec89f1fd62d6745f9c8b1a62bee',1,'mim::plug::cps::Conv::map()'],['../classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4',1,'mim::Rewriter::map(const Def *old_def, const Def *new_def)'],['../classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04',1,'mim::Rewriter::map(const Def *old_def, Defs new_defs)'],['../classmim_1_1Rewriter.html#ab799239c0c41f5dfa4afb2f9fe3522b9',1,'mim::Rewriter::map(Defs old_defs, const Def *new_def)'],['../classmim_1_1Rewriter.html#ac2f8ad29b11cf04069145a379cda1c16',1,'mim::Rewriter::map(Defs old_defs, Defs new_defs)'],['../classmim_1_1Zonker.html#ac03640caf7a25f32fcfe79c9cd573749',1,'mim::Zonker::map()']]],
   ['map_5froot_11',['map_root',['../classmim_1_1Rewriter.html#a8d9865dc4bc2e36f2fc325d42d70e774',1,'mim::Rewriter']]],
   ['mark_12',['mark',['../classmim_1_1Def.html#a592578e8733989b79ab6649485eae42b',1,'mim::Def']]],

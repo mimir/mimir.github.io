@@ -10,5 +10,8 @@ var plugin_8h =
     [ "MIM_VERSION", "plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2", null ],
     [ "mim::Flags2Phases", "namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd", null ],
     [ "mim::Normalizers", "namespacemim.html#ab875464e5f495601abff7287573e1405", null ],
+    [ "mim::arg_bool", "namespacemim.html#a461795efdebb7a06ccf8b48184cbd78f", null ],
+    [ "mim::arg_flag", "namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3", null ],
+    [ "mim::arg_value", "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33", null ],
     [ "mim::mim_get_plugin", "namespacemim.html#a77f34c28f8418e4828b4684cbc025e52", null ]
 ];

@@ -1,10 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712":[2,0,3,1,20,33],
-"namespacemim_1_1plug_1_1tensor.html#a301293d412fd1a577a530753e71be473":[5,0,3,1,3,20,1,0,4],
-"namespacemim_1_1plug_1_1tensor.html#a31a248e929652643705dd2ba8e0b5709":[2,0,3,1,20,34],
-"namespacemim_1_1plug_1_1tensor.html#a3268cdfc4a871eb96276b69ff039e30d":[2,0,3,1,20,37],
-"namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5":[2,0,3,1,20,20],
 "namespacemim_1_1plug_1_1tensor.html#a3520819e9d3ed4ab46dcd49fdd6d80ab":[2,0,3,1,20,79],
 "namespacemim_1_1plug_1_1tensor.html#a3b1717bb1b6e7f406e6f2e15099407cc":[2,0,3,1,20,72],
 "namespacemim_1_1plug_1_1tensor.html#a3d09af2fd51b0c11677db5e4eaa4d273":[2,0,3,1,20,54],
@@ -249,5 +244,10 @@ var NAVTREEINDEX22 =
 "regex2nfa_8h_source.html":[5,0,3,1,3,19,3],
 "regex_2autogen_8h.html":[5,0,0,1,0,0,19,0],
 "regex_2autogen_8h.html#ab01b9e34d981be56592820d8949b47d5":[5,0,0,1,0,0,19,0,0],
-"regex_2autogen_8h_source.html":[5,0,0,1,0,0,19,0]
+"regex_2autogen_8h_source.html":[5,0,0,1,0,0,19,0],
+"regex_2normalizers_8cpp.html":[5,0,4,1,3,19,2],
+"regex_2normalizers_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1":[5,0,4,1,3,19,2,1],
+"regex_2normalizers_8cpp_source.html":[5,0,4,1,3,19,2],
+"regex_8cpp.html":[5,0,4,1,3,19,3],
+"regex_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a":[5,0,4,1,3,19,3,1]
 };

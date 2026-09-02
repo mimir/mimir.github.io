@@ -164,6 +164,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('plugin_8h.html
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;iosfwd&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;absl/container/flat_hash_map.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">mim/config.h</a>&quot;</code><br />
@@ -199,6 +202,22 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a2f1c22749113d1954fe381a30a0d5bb2" id="r_a2f1c22749113d1954fe381a30a0d5bb2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>&#160;&#160;&#160;Version { <a class="el" href="config_8h.html#aeb0c2d81a9a26003fdbc1b6d37287fc7">MIM_VER_MAJOR</a>, <a class="el" href="config_8h.html#a6b91bd3488a1b181a3e8dad53777db22">MIM_VER_MINOR</a>, <a class="el" href="config_8h.html#a654388ccf586a85da62a6d443b103a9e">MIM_VER_SUFFIX</a>, <a class="el" href="config_8h.html#a92fcfef0dd9a3b4deb53b1a204ff34d5">MIM_GIT_HASH</a> }</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Plugin Argument Lookup</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Picks the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> strings of <a class="el" href="classmim_1_1Driver.html#abc9aacc4bd302c9c9f7ce52285312f79" title="Yields an empty fe::Vector if plugin has none.">Driver::args</a> / <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="Command-line arguments passed to this Phase&#39;s plugin via -X &lt;plugin&gt;:&lt;arg&gt;.">Phase::args</a> apart.</p>
+<p>Each helper matches any of <code class="param">keys</code> - <span class="tt"><a class="el" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33" title="Value of &lt;key&gt;=&lt;value&gt;; std::nullopt if none of keys carries one.">arg_value</a>(args(), "o", "output")</span> - and the last occurrence wins. </p>
+</div></td></tr>
+<tr class="memitem:af50a6cdbd067cfcee49e649ee8247a33" id="r_af50a6cdbd067cfcee49e649ee8247a33"><td class="memTemplParams" colspan="2">template&lt;class... Keys&gt; </td></tr>
+<tr class="memitem:af50a6cdbd067cfcee49e649ee8247a33 template"><td class="memItemLeft">std::optional&lt; std::string_view &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">mim::arg_value</a> (fe::View&lt; std::string &gt; args, Keys... keys)</td></tr>
+<tr class="memdesc:af50a6cdbd067cfcee49e649ee8247a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value of <span class="tt">&lt;key&gt;=&lt;value&gt;</span>; <span class="tt">std::nullopt</span> if none of <code class="param">keys</code> carries one.  <br /></td></tr>
+<tr class="memitem:a461795efdebb7a06ccf8b48184cbd78f" id="r_a461795efdebb7a06ccf8b48184cbd78f"><td class="memTemplParams" colspan="2">template&lt;class... Keys&gt; </td></tr>
+<tr class="memitem:a461795efdebb7a06ccf8b48184cbd78f template"><td class="memItemLeft">std::optional&lt; bool &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a461795efdebb7a06ccf8b48184cbd78f">mim::arg_bool</a> (fe::View&lt; std::string &gt; args, Keys... keys)</td></tr>
+<tr class="memdesc:a461795efdebb7a06ccf8b48184cbd78f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bare <span class="tt">&lt;key&gt;</span> or <span class="tt">&lt;key&gt;=on</span>/<span class="tt">tt</span>/<span class="tt">true</span> ↦ <span class="tt">true</span>, <span class="tt">&lt;key&gt;=off</span>/<span class="tt">ff</span>/<span class="tt">false</span> ↦ <span class="tt">false</span>; <span class="tt">std::nullopt</span> if absent.  <br /></td></tr>
+<tr class="memitem:a18b9a0651a4ea8b0c2658215fd8426e3" id="r_a18b9a0651a4ea8b0c2658215fd8426e3"><td class="memTemplParams" colspan="2">template&lt;class... Keys&gt; </td></tr>
+<tr class="memitem:a18b9a0651a4ea8b0c2658215fd8426e3 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3">mim::arg_flag</a> (fe::View&lt; std::string &gt; args, Keys... keys)</td></tr>
+<tr class="memdesc:a18b9a0651a4ea8b0c2658215fd8426e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like arg_bool but the absence of <code class="param">keys</code> yields <span class="tt">false</span>.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Plugin Interface</h2></td></tr>
 <tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Plugin </dd></dl>
@@ -223,7 +242,7 @@ Plugin Interface</h2></td></tr>
 <div class="textblock"><p>One <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> understands; see <a class="el" href="cli.html#clipluginargs" title="Arguments">Arguments</a>. </p>
 <p>A <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares these next to the code that picks them apart, so that <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; -h</span> can list them. </p>
 
-<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00029">29</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00032">32</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -255,7 +274,7 @@ How to spell the argument, e.g. <span class="tt">"o=&lt;file&gt;, output=&lt;fil
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00061">61</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00111">111</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00070">mim::Driver::Driver()</a>, and <a class="el" href="affine_8cpp_source.html#l00017">mim_get_plugin()</a>.</p>
 
