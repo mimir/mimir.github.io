@@ -20,5 +20,7 @@ var searchData=
   ['append_17',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
   ['arith_18',['arith',['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686',1,'mim::plug::math']]],
   ['assoc_19',['Assoc',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::ast::Assoc'],['../namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::Assoc']]],
-  ['attr_20',['attr',['../namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8c',1,'mim::plug::clos']]]
+  ['attr_20',['attr',['../namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8c',1,'mim::plug::clos']]],
+  ['auto_5fdeinit_21',['auto_deinit',['../namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129',1,'mim::plug::gpu']]],
+  ['auto_5finit_22',['auto_init',['../namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d',1,'mim::plug::gpu']]]
 ];

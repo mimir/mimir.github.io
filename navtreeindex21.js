@@ -1,5 +1,13 @@
 var NAVTREEINDEX21 =
 {
+"namespacemim_1_1plug_1_1math.html#aaa35cfb305025a1cdac738b548baac43":[2,0,3,1,12,54],
+"namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b":[2,0,3,1,12,1],
+"namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0":[2,0,3,1,12,19],
+"namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0a2db95e8e1a9267b7a1188556b2013b33":[2,0,3,1,12,19,1],
+"namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0ae358efa489f58062f10dd7316b65649e":[2,0,3,1,12,19,0],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a":[2,0,3,1,12,28],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33":[2,0,3,1,12,28,1],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4b43b0aee35624cd95b910189b3dc231":[2,0,3,1,12,28,2],
 "namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa8fa14cdd754f91cc6554c9e71929cce7":[2,0,3,1,12,28,0],
 "namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aae358efa489f58062f10dd7316b65649e":[2,0,3,1,12,28,3],
 "namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428c":[2,0,3,1,12,11],
@@ -241,13 +249,5 @@ var NAVTREEINDEX21 =
 "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276":[2,0,3,1,19,3,3],
 "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a8277e0910d750195b448797616e091ad":[2,0,3,1,19,3,0],
 "namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68":[2,0,3,1,19,3,2],
-"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af623e75af30e62bbd73d6df5b50bb7b5":[2,0,3,1,19,3,1],
-"namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc":[2,0,3,1,19,20],
-"namespacemim_1_1plug_1_1regex.html#afbafccea4f72061dbaedab24d1fbcede":[2,0,3,1,19,28],
-"namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854":[2,0,3,1,19,13],
-"namespacemim_1_1plug_1_1regex.html#afe291bf091de248e352dada9e3653c04":[2,0,3,1,19,15],
-"namespacemim_1_1plug_1_1tensor.html":[2,0,3,1,20],
-"namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77":[2,0,3,1,20,7],
-"namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65":[2,0,3,1,20,59],
-"namespacemim_1_1plug_1_1tensor.html#a069b471a87f8931264fc1f0e62988f49":[2,0,3,1,20,51]
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af623e75af30e62bbd73d6df5b50bb7b5":[2,0,3,1,19,3,1]
 };

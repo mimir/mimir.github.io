@@ -12,6 +12,8 @@ var gpu_2autogen_8h =
       [ "mim::plug::gpu::alloc_copy::block", "namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09a14511f2f5564650d129ca7cabc333278", null ],
       [ "mim::plug::gpu::alloc_copy::asyn", "namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09acdafd35814cb81a2db371ef99baf6014", null ]
     ] ],
+    [ "mim::plug::gpu::auto_deinit", "namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129", null ],
+    [ "mim::plug::gpu::auto_init", "namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d", null ],
     [ "mim::plug::gpu::buf_alloc_copy", "namespacemim_1_1plug_1_1gpu.html#a98fcb6c1975bde5384404e51c64ad1e5", null ],
     [ "mim::plug::gpu::buf_copy_to_host", "namespacemim_1_1plug_1_1gpu.html#ab73020ae75736ccf793f6035a7bc23d5", null ],
     [ "mim::plug::gpu::check_addr_spaces_repl", "namespacemim_1_1plug_1_1gpu.html#a1a3dd6851806a943500d14ecbd0942bf", null ],

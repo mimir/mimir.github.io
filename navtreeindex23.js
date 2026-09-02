@@ -1,5 +1,13 @@
 var NAVTREEINDEX23 =
 {
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,18,0],
+"refly_2normalizers_8cpp.html":[5,0,4,1,3,18,0],
+"refly_2normalizers_8cpp_source.html":[5,0,4,1,3,18,0],
+"refly_8cpp.html":[5,0,4,1,3,18,1],
+"refly_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a":[5,0,4,1,3,18,1,1],
+"refly_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,18,1,0],
+"refly_8cpp_source.html":[5,0,4,1,3,18,1],
+"refly_8h.html":[5,0,3,1,3,18,0],
 "refly_8h_source.html":[5,0,3,1,3,18,0],
 "regex.html":[1,19],
 "regex2nfa_8cpp.html":[5,0,4,1,3,19,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX23 =
 "structmim_1_1Version.html#a5606f1ee23a51395505198a6728747fb":[4,0,1,80,4],
 "structmim_1_1Version.html#aac95ca29fa6b86b8d46be8a7b65a489d":[2,0,3,80,0],
 "structmim_1_1Version.html#aac95ca29fa6b86b8d46be8a7b65a489d":[4,0,1,80,0],
-"structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597":[2,0,3,80,3],
-"structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597":[4,0,1,80,3],
-"structmim_1_1Version.html#adab4afd7dcbeb498f4d5631dbf65dcc3":[2,0,3,80,6],
-"structmim_1_1Version.html#adab4afd7dcbeb498f4d5631dbf65dcc3":[4,0,1,80,6],
-"structmim_1_1World_1_1State.html":[2,0,3,81,1],
-"structmim_1_1World_1_1State.html":[4,0,1,81,1],
-"structmim_1_1World_1_1State.html#a22d5dcbcefd078fb05bc965ab3c6ebbc":[2,0,3,81,1,6],
-"structmim_1_1World_1_1State.html#a22d5dcbcefd078fb05bc965ab3c6ebbc":[4,0,1,81,1,6],
-"structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15":[2,0,3,81,1,1]
+"structmim_1_1Version.html#ad55a606c31997f99b7696d0142b05597":[2,0,3,80,3]
 };

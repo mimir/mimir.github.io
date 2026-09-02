@@ -159,13 +159,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ll_nvptx.html'
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
   <li class="level1">
-    <a href="#autotoc_md324">Dependencies </a>
+    <a href="#autotoc_md325">Dependencies </a>
   </li>
   <li class="level1">
-    <a href="#autotoc_md325">Phases </a>
+    <a href="#autotoc_md326">Phases </a>
     <ul>
       <li class="level2">
-        <a href="#autotoc_md326">%ll_nvptx.emit </a>
+        <a href="#autotoc_md327">%ll_nvptx.emit </a>
       </li>
     </ul>
   </li>
@@ -176,15 +176,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ll_nvptx.html'
 <dd>
 <a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">mim::plug::ll_nvptx</a></dd></dl>
 <p>An LLVM backend that targets NVIDIA GPUs. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll_nvptx</span>) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world. It writes the host LLVM IR to <span class="tt">&lt;world&gt;.ll</span> and the device LLVM IR (with PTX intrinsics) to <span class="tt">&lt;world&gt;_dev.ll</span>, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR. The output paths and the embedding behavior can be overridden via <a class="el" href="cli.html#xarg_ll_nvptx" title="-X ll_nvptx:&lt;arg&gt;"><span class="tt">-X ll_nvptx:&lt;arg&gt;</span></a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin gpu;</div>
 <div class="line">plugin nvptx;</div>
 <div class="line">plugin opt;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md327"></a>
 %ll_nvptx.emit</h2>
 <p>Emits the LLVM IR with PTX intrinsics for the host and device worlds split from the current world. This phase is spliced into the default pipeline (see <span class="tt">opt</span>) whenever the <span class="tt">ll_nvptx</span> plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %ll_nvptx.emit: %compile.Phase;</div>

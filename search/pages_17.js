@@ -1,5 +1,5 @@
 var searchData=
 [
   ['zero_0',['%autodiff.zero',['../autodiff.html#autotoc_md197',1,'']]],
-  ['zip_1',['zip',['../tuple.html#autotoc_md471',1,'%tuple.zip'],['../vec.html#autotoc_md475',1,'%vec.zip']]]
+  ['zip_1',['zip',['../tuple.html#autotoc_md472',1,'%tuple.zip'],['../vec.html#autotoc_md476',1,'%vec.zip']]]
 ];
