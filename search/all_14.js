@@ -74,7 +74,7 @@ var searchData=
   ['terminals_71',['Terminals',['../langref.html#autotoc_md60',1,'Pattern Terminals'],['../langref.html#autotoc_md57',1,'Primary Terminals'],['../langref.html#autotoc_md58',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
   ['test_72',['Test',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daaa5569c000160b7a4bfbb24af91c3789b3',1,'mim::Checker']]],
   ['testing_73',['Testing',['../coding.html#testing',1,'Testing'],['../refly.html#autotoc_md406',1,'Testing']]],
-  ['tests_74',['lit Tests',['../coding.html#autotoc_md12',1,'']]],
+  ['tests_74',['Tests',['../coding.html#autotoc_md12',1,'lit Tests'],['../coding.html#autotoc_md13',1,'Unit Tests']]],
   ['text_75',['TExt',['../classmim_1_1TExt.html',1,'mim']]],
   ['text_3c_20false_20_3e_76',['TExt&lt; false &gt;',['../classmim_1_1TExt.html',1,'mim']]],
   ['text_3c_20true_20_3e_77',['TExt&lt; true &gt;',['../classmim_1_1TExt.html',1,'mim']]],

@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('coding.html','
         <a href="#autotoc_md12">lit Tests </a>
       </li>
       <li class="level2">
-        <a href="#autotoc_md13">GoogleTest </a>
+        <a href="#autotoc_md13">Unit Tests </a>
       </li>
     </ul>
   </li>
@@ -323,19 +323,18 @@ lit Tests</h2>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use:</dd></dl>
 <div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
-GoogleTest</h2>
-<p>Run the <a href="https://google.github.io/googletest/">GoogleTest</a> unit tests with:</p>
+Unit Tests</h2>
+<p><span class="tt">test/</span> holds the <a href="https://github.com/doctest/doctest">doctest</a> unit tests, built as <span class="tt">mim-test</span> and <span class="tt">mim-regex-test</span>. A third-party plugin in <span class="tt">extra/X</span> gets its <span class="tt">test/*.cpp</span> picked up automatically and built as <span class="tt">mim-X-test</span>; see <span class="tt">extra/README.md</span>. Run them - and every other CTest test - with:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
 </div><!-- fragment --><p>You can additionally enable <a href="https://valgrind.org/">Valgrind</a> via:</p>
 <div class="fragment"><div class="line">ctest --test-dir build -T memcheck --output-on-failure</div>
-</div><!-- fragment --><p>During debugging, you will usually want to run only a specific test case. You can <a href="https://github.com/google/googletest/blob/main/docs/advanced.md#running-a-subset-of-the-tests">filter</a> tests like this:</p>
-<div class="fragment"><div class="line">build/bin/mim-gtest --gtest_filter=&quot;*Loc*&quot;</div>
-</div><!-- fragment --><p>This command lists all available tests:</p>
-<div class="fragment"><div class="line">build/bin/mim-gtest --gtest_list_tests</div>
-</div><!-- fragment --><p>It can also be useful to turn assertion failures into debugger breakpoints:</p>
-<div class="fragment"><div class="line">build/bin/mim-gtest --gtest_break_on_failure</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific GoogleTest failure, use:</dd></dl>
-<div class="fragment"><div class="line">./scripts/make_gtest_error.sh &quot;mim.World.dependent_extract&quot;</div>
+</div><!-- fragment --><p>During debugging, you will usually want to run only a specific test case or subcase. Both filters accept <span class="tt">*</span> wildcards:</p>
+<div class="fragment"><div class="line">build/bin/mim-test --list-test-cases              # list all test cases</div>
+<div class="line">build/bin/mim-test -tc=&quot;*free vars*&quot;              # run matching test cases</div>
+<div class="line">build/bin/mim-test -tc=&quot;Hole&quot; -sc=&quot;*zonk*&quot;        # narrow down to matching subcases</div>
+</div><!-- fragment --><p>doctest breaks into an attached debugger on a failing assertion; pass <span class="tt">-nb</span> to suppress that.</p>
+<dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific unit-test failure, use:</dd></dl>
+<div class="fragment"><div class="line">./scripts/make_test_error.sh &quot;World: dependent extract&quot;</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Coding Style</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
@@ -379,7 +378,7 @@ Include Style</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">src/mim/cli/...</span>  </td><td class="markdownTableBodyNone">the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> CLI  </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">gtest/...</span>  </td><td class="markdownTableBodyNone">the unit tests  </td><td class="markdownTableBodyNone">-  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">test/...</span>  </td><td class="markdownTableBodyNone">the unit tests  </td><td class="markdownTableBodyNone">-  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">py/bindings/...</span>  </td><td class="markdownTableBodyNone">the Python bindings  </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
@@ -573,7 +572,7 @@ Catching Exceptions</h2>
 Valgrind &amp; GDB</h2>
 <p>If you run into memory-related problems, it can be useful to run the program with <a href="https://valgrind.org/docs/manual/manual-core-adv.html">Valgrind's GDB server</a>.</p>
 <p>Launch the test binary like this:</p>
-<div class="fragment"><div class="line">valgrind --vgdb=yes --vgdb-error=0 build/bin/mim-gtest</div>
+<div class="fragment"><div class="line">valgrind --vgdb=yes --vgdb-error=0 build/bin/mim-test</div>
 </div><!-- fragment --><p>and then follow the instructions printed by Valgrind.</p>
 <h2 class="doxsection"><a class="anchor" id="logging"></a>
 Logging</h2>
@@ -608,7 +607,7 @@ Profiling</h2>
 <div class="fragment"><div class="line">mim test.mim --profile summary                      # Flat table aggregated by phase name, sorted by total time.</div>
 <div class="line">mim test.mim --profile tree                         # Indented tree that preserves phase nesting/order.</div>
 <div class="line">mim test.mim --profile trace --output-profile trace.json</div>
-</div><!-- fragment --><p><span class="tt">--output-profile</span> defaults to <span class="tt">-</span>, <span class="tt">--output-profile</span> without a <span class="tt">&lt;mode&gt;</span> implies <span class="tt">--profile trace</span>, and an unknown <span class="tt">&lt;mode&gt;</span> is an error.</p>
+</div><!-- fragment --><p>Once <span class="tt">--profile</span> has enabled profiling, <span class="tt">--output-profile</span> defaults to <span class="tt">-</span>; conversely, <span class="tt">--output-profile &lt;file&gt;</span> alone implies <span class="tt">--profile trace</span>. An unknown <span class="tt">&lt;mode&gt;</span> is an error.</p>
 <p>The <span class="tt">trace</span> format dumps <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU">Chrome Trace Event Format</a> JSON. Load the resulting file into <span class="tt">chrome://tracing</span> (see the <a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/">official guide</a>), into <a href="https://ui.perfetto.dev/">Perfetto</a>, or into <a href="https://www.speedscope.app/">speedscope</a> to inspect it as a timeline.</p>
 <p>See <span class="tt">fe::Profiler</span> in the <span class="tt">fe</span> submodule for implementation details. </p>
 </div></div><!-- contents -->

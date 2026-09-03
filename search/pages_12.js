@@ -36,7 +36,7 @@ var searchData=
   ['tensor_3a_20lt_20arg_20gt_33',['-X tensor:&amp;lt;arg&amp;gt;',['../cli.html#xarg_tensor',1,'']]],
   ['terminals_34',['Terminals',['../langref.html#autotoc_md60',1,'Pattern Terminals'],['../langref.html#autotoc_md57',1,'Primary Terminals'],['../langref.html#autotoc_md58',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
   ['testing_35',['Testing',['../coding.html#testing',1,'Testing'],['../refly.html#autotoc_md406',1,'Testing']]],
-  ['tests_36',['lit Tests',['../coding.html#autotoc_md12',1,'']]],
+  ['tests_36',['Tests',['../coding.html#autotoc_md12',1,'lit Tests'],['../coding.html#autotoc_md13',1,'Unit Tests']]],
   ['the_20affine_20plugin_37',['The affine Plugin',['../affine.html',1,'']]],
   ['the_20automatic_20differentiation_20plugin_38',['The automatic differentiation Plugin',['../autodiff.html',1,'']]],
   ['the_20bindings_39',['Extending the Bindings',['../python.html#python_extending',1,'']]],
