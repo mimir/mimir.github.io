@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The demo Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,30 +159,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('demo.html','',
   <div class="headertitle"><div class="title">The demo Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md280">Operations </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md281">%demo.const_idx </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2demo"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1demo.html" title="The demo Plugin">mim::plug::demo</a></dd></dl>
 <p>A minimal demo plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md280"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md279"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md281"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md280"></a>
 %demo.const_idx</h2>
 <p>The constant <span class="tt">42</span>, evaluated by a normalizer.</p>
 <div class="fragment"><div class="line">axm %demo.const_idx: [n: Nat] → Idx n, normalize_const;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

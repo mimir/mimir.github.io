@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The refly Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,96 +159,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('refly.html',''
   <div class="headertitle"><div class="title">The refly Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md396">Dependencies </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md397">Types </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md398">%refly.Code </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md399">Reify / Reflect </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md400">%refly.reify </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md401">%refly.reflect </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md402">Inspect </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md403">%refly.type </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md404">%refly.gid </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md405">%refly.dbg </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md406">Testing </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md407">%refly.equiv </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md408">%refly.check_bot </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md409">%refly.check </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md410">Phases </a>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2refly"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1refly.html" title="The refly Plugin">mim::plug::refly</a></dd></dl>
 <p>The refly plugin allows you to <a href="https://en.wikipedia.org/wiki/Reification_(computer_science)">reify</a> and <a href="https://en.wikipedia.org/wiki/Reflective_programming">reflect</a> MimIR's own representation.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md396"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md395"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md397"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md396"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md398"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md397"></a>
 %refly.Code</h2>
 <p>The reified internal representation of a <a class="el" href="namespaceMim.html">Mim</a> expression of type <span class="tt">T</span>.</p>
 <div class="fragment"><div class="line">axm %refly.Code: * → *;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md399"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md398"></a>
 Reify / Reflect</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md400"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md399"></a>
 %refly.reify</h2>
 <p>Yields the internal MimIR representation of a <a class="el" href="namespaceMim.html">Mim</a> expression as <span class="tt">%refly.Code</span>.</p>
 <div class="fragment"><div class="line">axm %refly.reify: {T: *} → T → [%refly.Code T], normalize_reify;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md401"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md400"></a>
 %refly.reflect</h2>
 <p>Converts a <span class="tt">%refly.Code</span> back to a <a class="el" href="namespaceMim.html">Mim</a> expression.</p>
 <div class="fragment"><div class="line">axm %refly.reflect: {T: *} → [%refly.Code T] → T, normalize_reflect;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md402"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md401"></a>
 Inspect</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md403"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md402"></a>
 %refly.type</h2>
 <p>Returns the type of an expression.</p>
 <div class="fragment"><div class="line">axm %refly.type: {T: *} → T → *, normalize_type;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md404"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md403"></a>
 %refly.gid</h2>
 <p>Returns the internal <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">mim::Def::gid</a> of the argument.</p>
 <div class="fragment"><div class="line">axm %refly.gid: {T: *} → T → Nat, normalize_gid;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md405"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md404"></a>
 %refly.dbg</h2>
 <p>Debugs a given expression.</p><ul>
 <li><span class="tt">tmp</span>: Prints debug information of a given expression at construction time and vanishes afterwards.</li>
@@ -258,9 +204,9 @@ Inspect</h1>
 <div class="line">let %refly.debug   = 4;</div>
 <div class="line"> </div>
 <div class="line">axm %refly.dbg(tmp, perm): {T: *} → [Nat, T] → T, normalize_dbg;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md406"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md405"></a>
 Testing</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md407"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md406"></a>
 %refly.equiv</h2>
 <p>Checks for structural / alpha-equivalence. Two bits select the check:</p><ul>
 <li><span class="tt">A</span>lpha: check α-equivalence instead of structural identity</li>
@@ -281,21 +227,28 @@ Testing</h1>
 <div class="fragment"><div class="line">axm %refly.equiv(ae = struc_ne, aE = struc_eq,</div>
 <div class="line">                 Ae = alpha_ne, AE = alpha_eq):</div>
 <div class="line">    {T: *} → [T, T] → T, normalize_equiv;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md408"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md407"></a>
 %refly.check_bot</h2>
 <p>Checks whether the argument is <span class="tt">⊥</span>.</p>
 <div class="fragment"><div class="line">axm %refly.check_bot: {T: *} → T → T, normalize_check_bot;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md409"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md408"></a>
 %refly.check</h2>
 <p>Checks the given condition and emits the error message if it is <span class="tt">ff</span>.</p>
 <div class="fragment"><div class="line">axm %refly.check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md410"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md409"></a>
 Phases</h1>
 <p>Removes the permanent <span class="tt">%refly.dbg</span> markers for code generation.</p>
 <div class="fragment"><div class="line">axm %refly.remove_dbg_repl: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

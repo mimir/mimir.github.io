@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Command-Line Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,70 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cli.html','','
   <div class="headertitle"><div class="title">Command-Line Reference </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#cliusage">Usage </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md0">Arguments </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md1">Options </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md2">Output </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md3">DOT Output </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md4">Diagnostics </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md5">Profiling </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md6">Optimization </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md7">Developer Options </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md8">Plugin Arguments </a>
-    <ul>
-      <li class="level2">
-        <a href="#xarg_compile">-X compile:&lt;arg&gt; </a>
-      </li>
-      <li class="level2">
-        <a href="#xarg_ll">-X ll:&lt;arg&gt; </a>
-      </li>
-      <li class="level2">
-        <a href="#xarg_ll_nvptx">-X ll_nvptx:&lt;arg&gt; </a>
-      </li>
-      <li class="level2">
-        <a href="#xarg_tensor">-X tensor:&lt;arg&gt; </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#clidiag">Diagnostics </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md9">Plugins </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md10">Search Paths </a>
-      </li>
-      <li class="level2">
-        <a href="#clipluginargs">Arguments </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2cli"></a></p>
 <h1 class="doxsection"><a class="anchor" id="cliusage"></a>
 Usage</h1>
@@ -467,10 +406,23 @@ Arguments</h2>
 <li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
 <li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
 </ul>
-<p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations. </p>
-</div></div><!-- contents -->
+<p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations.</p>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="mimir.html" title="A Tour of MimIR">A Tour of MimIR</a>  </td><td class="markdownTableBodyRight"><a class="el" href="langref.html" title="Mim Language Reference">Mim Language Reference</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

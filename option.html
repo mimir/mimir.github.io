@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The option Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,89 +159,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('option.html','
   <div class="headertitle"><div class="title">The option Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md370">Dependencies </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md371">Types </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md372">%option.Opt </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md373">Constructors </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md374">%option.some </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md375">%option.none </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md376">%option.some_if </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md377">Operations </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md378">%option.is_some </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md379">%option.unwrap_unsafe </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md380">%option.unwrap_or </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2option"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1option.html" title="The option Plugin">mim::plug::option</a></dd></dl>
 <p>An optional value type: either a value of type <span class="tt">T</span> or nothing.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
 %option.Opt</h2>
 <p>The option type: <span class="tt">[] ∪ T</span>.</p>
 <div class="fragment"><div class="line">lam %option.Opt (T: *) : * = [] ∪ T;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
 %option.some</h2>
 <p>Wraps a value into an option.</p>
 <div class="fragment"><div class="line">lam %option.some {T: *} (v: T) : %option.Opt T = v inj %option.Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
 %option.none</h2>
 <p>The empty option.</p>
 <div class="fragment"><div class="line">lam %option.none [T: *] : %option.Opt T = () inj %option.Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
 %option.some_if</h2>
 <p>Wraps <span class="tt">v</span> into an option iff <span class="tt">b</span> holds.</p>
 <div class="fragment"><div class="line">lam %option.some_if {T: *} (b: Bool, v: T) : %option.Opt T = (%option.none T, %option.some v)#b;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
 %option.is_some</h2>
 <p>Returns <span class="tt">tt</span> if the option contains a value.</p>
 <div class="fragment"><div class="line">lam %option.is_some {T: *} (o: %option.Opt T) : Bool =</div>
 <div class="line">    match o with</div>
 <div class="line">        | _: T  =&gt; tt</div>
 <div class="line">        | _: [] =&gt; ff;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
 %option.unwrap_unsafe</h2>
 <p>Extracts the value without checking - undefined behavior for <span class="tt">%option.none</span>.</p>
 <div class="fragment"><div class="line">axm %option.unwrap_unsafe: {T: *} → %option.Opt T → T, normalize_unwrap_unsafe;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md380"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
 %option.unwrap_or</h2>
 <p>Extracts the value or returns <span class="tt">default</span>.</p>
 <div class="fragment"><div class="line">lam %option.unwrap_or {T: *} (o: %option.Opt T) (default: T) : T =</div>
@@ -248,6 +208,13 @@ Operations</h1>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

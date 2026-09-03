@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The opt Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,24 +159,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('opt.html','','
   <div class="headertitle"><div class="title">The opt Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md368">Dependencies </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md369">The default pipeline </a>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md368"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
 Dependencies</h1>
 <p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">%compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">%compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
 <div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md368"></a>
 The default pipeline</h1>
 <div class="fragment"><div class="line">lam extern _default_compile (): %compile.Phase =</div>
 <div class="line">    let optimize =</div>
@@ -266,6 +259,13 @@ The default pipeline</h1>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

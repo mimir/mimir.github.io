@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Mim Language Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,109 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('langref.html',
   <div class="headertitle"><div class="title">Mim Language Reference </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md56">Notation </a>
-  </li>
-  <li class="level1">
-    <a href="#lex">Lexical Structure </a>
-    <ul>
-      <li class="level2">
-        <a href="#terminals">Terminals </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md57">Primary Terminals </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md58">Secondary Terminals </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md59">Keywords </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md60">Pattern Terminals </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md61">Comments </a>
-  </li>
-  <li class="level1">
-    <a href="#grammar">Grammar </a>
-    <ul>
-      <li class="level2">
-        <a href="#module">Module </a>
-      </li>
-      <li class="level2">
-        <a href="#decl">Declarations </a>
-      </li>
-      <li class="level2">
-        <a href="#ptrn">Patterns </a>
-      </li>
-      <li class="level2">
-        <a href="#expr">Expressions </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md62">Kinds and Builtin Types </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md63">Literals and Basic Forms </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md64">Functions and Continuations </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md65">Products </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md66">Unions </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md67">Local Declaration Blocks </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md68">Precedence </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md69">Summary: Functions and Types </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md70">Declarations </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md71">Expressions </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md72">Applications </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md73">Function Types </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md74">Scoping </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md75">Underscore </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md76">Annex </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md77">Field Names of Sigmas </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2langref"></a></p>
 <p>This page is the reference for <a class="el" href="namespaceMim.html">Mim</a> surface syntax.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
@@ -602,9 +502,22 @@ Field Names of Sigmas</h2>
 </div><!-- fragment --><p>Use parentheses to force the variable interpretation:</p>
 <div class="fragment"><div class="line">let i = 1_2;</div>
 <div class="line">[i: Nat, j: Nat]::X → f X#(i);</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a>  </td><td class="markdownTableBodyRight"><a class="el" href="coding.html" title="Contributing &amp; Debugging">Contributing &amp; Debugging</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

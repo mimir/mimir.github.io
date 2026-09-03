@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Phases</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,159 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('phases.html','
   <div class="headertitle"><div class="title">Phases </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md82">Overview </a>
-  </li>
-  <li class="level1">
-    <a href="#phases_phase">Phase </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md83">Typical Shape </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_analysis">Analysis </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md84">Lattice API </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md85">Handling of Mutables </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md86">Sparse Fixed-Point Iteration </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md87">Reset Between Iterations </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_rwbase">RWBase </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md88">Execution Model </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md89">Optional Pre-Analysis </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md90">Analysis Results </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md91">Bootstrapping </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md92">Roots </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md93">Deferred Rewrites </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_rwphase">RWPhase </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md94">Cleanup </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md95">Typical Shape </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_inplace_rw_phase">InplaceRWPhase </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md96">Restrictions </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md97">Pruning </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md98">Roots </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md99">Fixed Points </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md100">Typical Shape </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_phase_man">PhaseMan </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md101">Typical Shape </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#phases_closed_mut_phase">ClosedMutPhase </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md102">Typical Shape </a>
-      </li>
-      <li class="level2">
-        <a href="#phases_nest_phase">NestPhase </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md103">Example: SCCP </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md104">Analysis </a>
-      </li>
-      <li class="level2">
-        <a href="#ssa-without-dominance">SSA without Dominance </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md105">Why the guard exists at all </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md106">The classical picture </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md107">The MimIR picture </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md108">Why this is hard elsewhere </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md109">Transformation </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md110">Discussion </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md111">Choosing the Right Base Class </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md112">Recommended Design Pattern </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md113">Minimal Examples </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md114">Compilation Pipelines in M⁠im </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md115">Summary </a>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2phases"></a></p>
 <p>At a high level, a phase is a self-contained compiler transformation or analysis step. Phases are intended to do one thing at a time and compose in a straightforward sequence. See also the <a class="el" href="rewriting.html" title="Rewriting">Rewriting Guide</a>, since several phase families are built directly on top of <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a>.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
@@ -918,11 +768,24 @@ Summary</h1>
 <ul>
 <li>compute facts with <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>,</li>
 <li>store them in <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">Analysis::lattice()</span></a>,</li>
-<li>consume them with <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>. </li>
+<li>consume them with <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>.</li>
 </ul>
-</div></div><!-- contents -->
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="rewriting.html" title="Rewriting">Rewriting</a>  </td><td class="markdownTableBodyRight"><a class="el" href="python.html" title="Python Bindings">Python Bindings</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

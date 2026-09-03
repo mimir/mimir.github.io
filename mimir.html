@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: A Tour of MimIR</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,43 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mimir.html',''
   <div class="headertitle"><div class="title">A Tour of MimIR </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md78">Syntax </a>
-  </li>
-  <li class="level1">
-    <a href="#mimir_plugins">Plugins </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md79">Annexes </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md80">Axioms </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md81">Other Definitions </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#mimir_cps">SSA via CPS </a>
-    <ul>
-      <li class="level2">
-        <a href="#mimir_scopeless">Scopeless Binders </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#mimir_iter">Polymorphic Iteration </a>
-  </li>
-  <li class="level1">
-    <a href="#mimir_dep">Types Are Values </a>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2mimir"></a></p>
 <p>This tour walks through <a class="el" href="namespaceMim.html">Mim</a>'s syntax, MimIR's plugin architecture, then three MimIR programs. These are compiled by the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> <a class="el" href="cli.html" title="Command-Line Reference">CLI</a> and the graphs shown are generated automatically from the source via <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-dot</span>.</p>
 <ol type="1">
@@ -428,10 +394,23 @@ Types Are Values</h1>
 <object type="image/svg+xml" data="dep.svg" style="pointer-events: none;"></object>
 <div class="caption">
 The MimIR graph of `Vec` and `zeros` with type edges shown (type edges are dashed)</div></div>
-<p>The same variable node <span class="tt">n</span> feeds both the array <b>type</b> <span class="tt">«n; Nat»</span> and the array <b>value</b> <span class="tt">‹n; 0›</span> — a type pointing straight at a term. Types are not an earlier, separate phase that has been erased before the IR begins; they are ordinary nodes, hash-consed, normalized, and partially evaluated alongside everything else. This is the foundation the <a class="el" href="tensor.html" title="The tensor Plugin"><span class="tt">%tensor</span></a> plugin builds on: array shapes live in the types and are checked — and optimized — by the very same normalization you have already seen. </p>
-</div></div><!-- contents -->
+<p>The same variable node <span class="tt">n</span> feeds both the array <b>type</b> <span class="tt">«n; Nat»</span> and the array <b>value</b> <span class="tt">‹n; 0›</span> — a type pointing straight at a term. Types are not an earlier, separate phase that has been erased before the IR begins; they are ordinary nodes, hash-consed, normalized, and partially evaluated alongside everything else. This is the foundation the <a class="el" href="tensor.html" title="The tensor Plugin"><span class="tt">%tensor</span></a> plugin builds on: array shapes live in the types and are checked — and optimized — by the very same normalization you have already seen.</p>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="index.html" title="MimIR">Home</a>  </td><td class="markdownTableBodyRight"><a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

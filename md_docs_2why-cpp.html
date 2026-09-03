@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Why is MimIR implemented in C++?</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,12 +159,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md_docs_2why-c
   <div class="headertitle"><div class="title">Why is MimIR implemented in C++? </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md150"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md149"></a></p>
 <p><em>A note on the cost of reimplementing MimIR in OCaml, Scala, or Haskell.</em></p>
 <p>All <span class="tt">sizeof</span>/offset figures were measured against <span class="tt">build-release</span> (<span class="tt">-march=native -O3 -DNDEBUG -std=gnu++23 -DFE_ABSL</span>, gcc). Code is referenced by file and symbol name rather than line number, so the references do not rot.</p>
 <p>This document answers a recurring question: Why not use an academically more acclaimed language?</p>
 <p>The short answer is that MimIR's core data structure is a mutable, hash-consed, cyclic graph of hand-packed 72-byte nodes, and none of those languages has an idiomatic form of that structure.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md151"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md150"></a>
 Ballpark estimates</h1>
 <p>Slowdown and memory growth relative to the current C++ implementation, for a faithful reimplementation of the same architecture. Treat these as ±50%; the ordering is far more robust than the magnitudes.</p>
 <table class="markdownTable">
@@ -176,9 +179,9 @@ Ballpark estimates</h1>
 <td class="markdownTableBodyNone">Haskell (GHC)  </td><td class="markdownTableBodyNone">3.5–6×  </td><td class="markdownTableBodyNone">8–20×, wide error bars  </td><td class="markdownTableBodyNone">3.5–5×  </td></tr>
 </table>
 <p>The <em>imperative subset</em> column assumes mutable records, <span class="tt">IORef</span>s, and mutable hash tables throughout — i.e. writing C++ with a garbage collector. That concedes the entire premise of switching: you pay the full syntactic and tooling cost and collect none of the benefit. The <em>idiomatic</em> column is the honest comparison, and it is much worse.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md151"></a>
 What the C++ implementation actually relies on</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
 <span class="tt">absl::flat_hash_*</span></h2>
 <p><span class="tt">World::unify</span> (<span class="tt"><a class="el" href="world_8h.html">include/mim/world.h</a></span>) probes the sea of nodes on <b>every</b> <span class="tt">Def</span> construction. This is <em>the</em> hot path of the whole compiler.</p>
 <p><span class="tt">absl::flat_hash_set</span> is a SwissTable: one control byte per slot holding 7 hash bits, probed 16-at-a-time with SSE2/NEON, payload stored inline in a flat array. A lookup is typically <b>one cache miss</b>. <span class="tt">GIDHash</span> (<span class="tt"><a class="el" href="gid_8h.html">include/mim/util/gid.h</a></span>) makes it cheaper still — the hash is the already-computed dense <span class="tt">u32</span> gid, so hashing costs nothing.</p>
@@ -190,7 +193,7 @@ What the C++ implementation actually relies on</h1>
 </ul>
 <p>Call it <b>2–4× on the hash-cons probe alone</b>.</p>
 <p>Also lost: <span class="tt">fe::Vector = absl::InlinedVector&lt;T, N&gt;</span> (<span class="tt">submodules/fe/include/fe/vector.h</span>), which keeps small op-vectors in the object with zero heap traffic. None of the three has an equivalent, so every temporary <span class="tt">DefVec</span> becomes a heap allocation.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
 <span class="tt">XTrie::Set</span> — a four-way sum type in one machine word</h2>
 <p><span class="tt">XTrie::Set</span> (<span class="tt">submodules/fe/include/fe/xtrie.h</span>) is a single <span class="tt">uintptr_t</span> with two tag bits: </p><pre class="fragment">Null | Uniq (D* inline) | Data (arena FAM) | Node (trie node)
 </pre><p>Consequences:</p>
@@ -201,11 +204,11 @@ What the C++ implementation actually relies on</h1>
 </ul>
 <p>In OCaml a 4-constructor variant with payloads is 3 boxed blocks plus 1 immediate; in Haskell the same plus a thunk per constructor; on the JVM four classes and a megamorphic call site. Pointer tagging is reachable only via <span class="tt">Obj.magic</span> or <span class="tt">Unsafe</span>, at which point you have left the language.</p>
 <p><span class="tt">XTrie::Data</span> is a <b>C99 flexible array member</b> (<span class="tt">size_t size; D* elems[];</span>) placement-<span class="tt">new</span>ed into <span class="tt">data_arena_</span> — not even portable C++. Elsewhere it becomes a record plus a separate array object: two allocations, an extra hop per element access, and on the JVM a second 16-byte header.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md155"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
 The link-cut tree mutates in place</h2>
 <p><span class="tt">lct::Node</span> (<span class="tt">submodules/fe/include/fe/lct.h</span>) is CRTP-intrusive, embedded directly into the trie <span class="tt">Node</span> by inheritance. <span class="tt">rotate</span> is six pointer stores into memory that already exists. <span class="tt">splay</span>, <span class="tt">expose</span>, <span class="tt">lca</span>, <span class="tt">is_descendant_of</span> are pure in-place pointer surgery with <b>zero allocation</b>.</p>
 <p>This is where a functional formulation loses <em>asymptotically</em> rather than by a constant. A splay tree is amortized O(log n) <b>because it mutates on read</b>: <span class="tt">Set::contains</span> → <span class="tt">LCT::find</span> → <span class="tt">expose</span> → <span class="tt">splay</span>, so a membership test restructures the tree. A persistent splay tree allocates O(depth) nodes <b>per query</b>, and <span class="tt">XTrie::Set::has_intersection</span> calls <span class="tt">find</span> inside a loop over two node-sets.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md155"></a>
 Arenas, and how <span class="tt">Def</span>s are placed in them</h2>
 <p><span class="tt">sizeof(Def)</span> is <b>72 bytes</b> — measured against <span class="tt">build-release</span> (<span class="tt">-march=native -O3 -DNDEBUG -std=gnu++23 -DFE_ABSL</span>); 80 in a Debug build, where <span class="tt">curr_op_</span> is present. The layout has <b>zero padding</b>:</p>
 <table class="markdownTable">
@@ -257,7 +260,7 @@ Arenas, and how <span class="tt">Def</span>s are placed in them</h2>
 </div><!-- fragment --><p>So every subclass is layout-identical — <span class="tt">App</span>, <span class="tt">Lam</span>, <span class="tt">Sigma</span> add methods, never data — and one bump-pointer allocation covers header <em>and</em> operands. <span class="tt">op(i)</span> indexes off <span class="tt">this + 1</span>: no second object, no header, no indirection.</p>
 <p>In OCaml every field is a tagged word and bitfields do not exist; on the JVM sub-word fields cannot be packed at all, and the object header alone is 12–16 bytes before a single field. A faithful port lands around 120–140 bytes per node <em>plus</em> a separate operand array with its own header — roughly 2–2.5× on the node before any allocator or GC effect.</p>
 <p><b>One place where the gap narrows, in fairness.</b> Dispatching by <span class="tt">switch</span> on a 1-byte tag is precisely what an ML pattern match compiles to. By dropping virtual dispatch, MimIR has converged on the functional languages' dispatch strategy rather than C++'s, so this particular optimization is roughly neutral in a port — OCaml and Haskell would get it for free and more legibly. The saving is the <em>vptr</em>, not the dispatch.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
 Speculative construction with arena rollback</h2>
 <p>This one has no counterpart anywhere — <span class="tt">World::unify</span>:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> state = move_.arena.defs.state();</div>
@@ -270,9 +273,9 @@ Speculative construction with arena rollback</h2>
 <p><span class="tt">XTrie::unify</span> does the same for <span class="tt">Data</span>. <span class="tt">XTrie::merge</span> goes further: it allocates the upper bound <span class="tt">d1-&gt;size + d2-&gt;size</span>, merges into it, then returns the unused tail via <span class="tt">unify(data, state, excess)</span>. Shrinking your most recent allocation is a bump-pointer-only move.</p>
 <p>In fairness, a generational nursery handles short-lived garbage well — copying cost is proportional to survivors, so the dead speculative <span class="tt">Def</span> is nearly free to collect. The cost is the <b>compounding</b>: high nursery churn forces frequent minor collections, and each must scan a remembered set that is enormous here, because MimIR constantly mutates old-generation <span class="tt">Def</span>s — <span class="tt">set()</span>, the users set in <span class="tt">muts_</span>, <span class="tt">mark_</span> sweeps in <span class="tt">free_vars()</span>, and lazy <span class="tt">tid_</span> assignment in <span class="tt">XTrie::set_tid</span>, which writes into a nominally-immutable <span class="tt">Def</span> from inside the trie. Every one of those is an old→young pointer write paying <span class="tt">caml_modify</span> or card-marking. High churn × large remembered set is the bad quadrant.</p>
 <p><span class="tt">RWPhase</span>'s world-swap is the same trick at macro scale: drop the whole old <span class="tt">World</span> and its arenas in O(1), with no tracing. A GC has to <em>prove</em> the old world is dead by walking it.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 Why idiomatic style is much worse</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
 Pointers become map lookups</h2>
 <p>An immutable graph cannot have back-edges, and MimIR's IR is cyclic by construction — mutables reference themselves for recursion, and <span class="tt">muts_</span> doubles as the users set. Idiomatic functional style has two answers, both bad here:</p>
 <ul>
@@ -280,16 +283,16 @@ Pointers become map lookups</h2>
 <li><em>Explicit ids into a store</em> (<span class="tt">IntMap Node</span>) is what real functional compilers do. Now <span class="tt">def-&gt;op(0)</span> is a Patricia-trie lookup instead of a pointer dereference: ~5–10 dependent loads replacing 1, on the most executed operation in the compiler. Structural, not tunable.</li>
 </ul>
 <p>And since the store is persistent, every rewrite path-copies it. <span class="tt">RWPhase</span> currently drops an arena in O(1); idiomatically it allocates a new HAMT spine per touched node.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md160"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
 Hash-consing is inherently impure</h2>
 <p>The sea of nodes <em>is</em> a mutable global table. The pure alternatives are a <span class="tt">State World</span> monad threaded through every constructor — so <span class="tt">Def</span> construction returns a new world and the HAMT insert cost lands on every node — or <span class="tt">unsafePerformIO</span> over a global <span class="tt">IORef</span>, which is what actual Haskell hash-consing does and is not idiomatic.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md161"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md160"></a>
 Caches must move out of the node</h2>
 <p><span class="tt">vars_</span>, <span class="tt">muts_</span>, <span class="tt">mark_</span>, <span class="tt">dirty_</span>, and <span class="tt">tid_</span> are mutable memo fields on nominally-immutable <span class="tt">Def</span>s. Idiomatically they become separate memo maps keyed by id — another lookup per access — and the invalidation currently free from <span class="tt">dirty_</span> has to be threaded explicitly.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md161"></a>
 Haskell specifically</h2>
 <p>Laziness and hash-consing are directly opposed: hash-consing requires forcing at construction, so <span class="tt">Def</span> ends up <span class="tt">!</span>-annotated throughout. You would be writing strict Haskell with lazy Haskell's tooling and space-leak failure modes.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
 The empirical argument</h1>
 <p>Every serious compiler written in these languages <b>breaks idiom at exactly the point where MimIR is most demanding</b>:</p>
 <ul>
@@ -299,29 +302,29 @@ The empirical argument</h1>
 <li><b>scalac</b> has a pervasively mutable <span class="tt">Symbol</span> table, and is still slow.</li>
 </ul>
 <p>The pattern is a revealed preference: as soon as a real compiler in these languages needs what MimIR needs, it either abandons idiom or abandons the design.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
 The idiomatic dividend does not apply here</h1>
 <p>The ADT-plus-exhaustive-matching payoff is largest for a <b>tree-shaped, closed-ADT, non-hash-consed</b> IR. MimIR is a <b>graph-shaped, open-node-set, hash-consed</b> IR whose node set is extensible at runtime by <span class="tt">dlopen</span>'d plugins, with terms and types in one graph because dependent types make a closed ADT impossible in the first place. <span class="tt">match d with App (f, a) -&gt; ...</span> buys almost nothing over <span class="tt">if (auto app = d-&gt;isa&lt;App&gt;())</span> when the node set is open anyway. Those are nearly opposite design points: you would pay the full idiomatic tax on a design that collects almost none of the idiomatic dividend.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md165"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
 Non-performance costs</h1>
 <ol type="1">
 <li><b>Plugins.</b> The architecture is <span class="tt">dlopen</span>'d modules exporting <span class="tt"><a class="el" href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a></span>, with normalizers stored as raw function pointers <em>inside the <span class="tt">Def</span> union</em>. JVM classloaders do this well. OCaml's <span class="tt">Dynlink</span> works but is brittle across compiler versions and awkward under flambda. Haskell dynamic loading is painful (ABI tied to exact package hashes); you would realistically abandon <span class="tt">dlopen</span> for static-link-all-plugins, killing the auto-discovered <span class="tt">extra/*</span> third-party story.</li>
 <li><b>LLVM.</b> Neutral today since the <span class="tt">ll</span> backend emits text, but the C++ API is out of reach behind perpetually-stale FFI bindings in all three.</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md166"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md165"></a>
 Two honest caveats</h1>
 <p><b>MimIR's current performance problems are not constant-factor problems.</b> <span class="tt">RWPhase</span> rebuilds the entire world per phase, <span class="tt">PhaseMan</span> iterates to fixpoint, free vars are re-derived via <span class="tt">mark_</span> sweeps. Those are algorithmic, and a 2× language penalty is noise beside traversing the world N times. This is <em>not</em> an argument that the language does not matter — the penalty is multiplicative on top of the algorithmic cost, not an alternative explanation for it. The sharper point is that a tracing GC <b>removes entire classes of fix from the toolbox</b>: when you profile and decide to stop allocating, the fixes you reach for are rollback-on-hit, in-place mutation, and arena-scoped scratch — exactly the three things OCaml, Haskell, and Scala cannot express.</p>
 <p><b>At the idiomatic end the question is arguably ill-posed.</b> Nobody would write <em>MimIR's</em> IR that way; they would write a different IR — tree-structured Core with a <span class="tt">Map</span>-based store — and then the comparison is about IR design, not language throughput. A persistent world does buy real things: free structural sharing across phases, trivially correct speculative rewriting, <span class="tt">RWPhase</span> as a no-op. MimIR obtains those from arena-drop and world-swap instead, at a fraction of the cost.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md167"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md166"></a>
 The escape hatch, and why it defeats the purpose</h1>
 <p>Everything above is recoverable: <span class="tt">Bigarray</span> plus <span class="tt">Obj.magic</span> in OCaml, <span class="tt">MutableByteArray#</span> plus manual offset arithmetic in <span class="tt">IO</span> for Haskell, <span class="tt">sun.misc.Unsafe</span> or Panama <span class="tt">MemorySegment</span> on the JVM. That lands somewhere around <b>1.3–1.5×</b>.</p>
 <p>But look at what you would be writing: manual offset arithmetic into a byte array, hand-rolled pointer tagging, an unsafe-cast class hierarchy, a mutable splay tree in <span class="tt">IO</span>. That is strictly worse ergonomics than the current C++, and you have given up ADTs, exhaustive matching, and type safety — the entire reason to switch.</p>
 <p>MimIR's core is not idiomatic C++ either. It is written in the systems-programming subset: flexible array members, placement new, tag bits, intrusive CRTP, arena rollback, hand-packed layout. Those languages do not have a worse version of that subset; they do not have it at all.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md168"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md167"></a>
 What about Rust?</h1>
 <p>Rust is the only language on the list that offers the same systems-programming subset, so it deserves a separate answer.</p>
 <p><b>The honest reason is historic.</b> MimIR descends from Thorin, which was C++ from the outset, years before Rust 1.0 was a plausible choice for a compiler framework — and the surrounding ecosystem (LLVM, and the C++ literacy of everyone in a compilers group) pointed the same way. That is a perfectly good reason for how we got here. The interesting question is whether the technical case would justify moving, and it does not: the gain is close to zero and the losses are concrete.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md169"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md168"></a>
 Rust would land at roughly performance parity</h2>
 <p>Estimate: <b>1.0–1.3×</b>, i.e. within noise of the C++ — but only via a design that gives up most of what makes the current implementation tight.</p>
 <p>A mutable, cyclic, aliased graph is the one area Rust is <em>known</em> to be awkward at, and the standard advice for graphs in Rust is exactly the workaround: <b>stop using pointers and use arena indices</b>. That advice is not folklore; it is what Rust compilers actually do. <span class="tt">rustc</span> interns types into arenas and threads <span class="tt">&amp;'tcx</span> references and <span class="tt">rustc_index::IndexVec</span> indices everywhere. Cranelift indexes everything through <span class="tt">cranelift-entity</span>. <span class="tt">egg</span> hash-conses e-nodes behind <span class="tt">u32</span> ids and a union-find. None of them builds a pointer-linked mutable graph.</p>
@@ -335,7 +338,7 @@ Rust would land at roughly performance parity</h2>
 <li><b><span class="tt">mutable</span> fields are fine, in fairness.</b> <span class="tt">Cell&lt;u32&gt;</span> for <span class="tt">dbg_</span>, <span class="tt">tid_</span>, <span class="tt">mark_</span> and <span class="tt">Cell&lt;Option&lt;&amp;'a Def&gt;&gt;</span> for <span class="tt">type_</span> are genuinely zero-cost. This one is syntactic noise, not a performance cost, and it would be churlish to claim otherwise.</li>
 </ul>
 <p>The <span class="tt">Rc&lt;RefCell&lt;Def&gt;&gt;</span> design that a newcomer would reach for first is the one option that is clearly worse: refcount cycles leak by construction — and in a sea of nodes with <span class="tt">muts_</span> holding back-edges there is no spanning tree to make <span class="tt">Weak</span>, so there is no principled place to break them — plus a runtime borrow check on every access, whose failure mode is a panic rather than a compile error.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md170"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md169"></a>
 Where Rust genuinely wins</h2>
 <p>Not nothing, and worth stating plainly:</p>
 <ul>
@@ -344,15 +347,15 @@ Where Rust genuinely wins</h2>
 <li><b>Miri</b>, which would check exactly the <span class="tt">unsafe</span> core that a port would produce.</li>
 <li><b><span class="tt">enum</span> plus exhaustive <span class="tt">match</span></b> for the genuinely closed parts, and tooling (rust-analyzer, built-in test harness) that is simply better.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md171"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md170"></a>
 The plugin story is worse, not better</h2>
 <p>This is the decisive practical point, because plugins are core architecture, not a peripheral feature.</p>
 <p>MimIR loads <span class="tt">dlopen</span>'d modules exporting <span class="tt"><a class="el" href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a></span>, which register normalizers as raw function pointers stored inside the <span class="tt">Def</span> union. <b>Rust has no stable ABI.</b> Every plugin would have to be compiled with the exact same rustc version as <span class="tt">libmim</span>, or the entire interface reduced to <span class="tt">extern "C"</span> shims with <span class="tt">#[repr(C)]</span> types on both sides — losing the very type safety that motivated the move. C++ already has friction here (<span class="tt">absl</span> containers must not appear in types that cross the <span class="tt">dlopen</span> boundary), but "keep `absl` out of the interface" is a much smaller constraint than "no stable ABI exists".</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md172"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md171"></a>
 Verdict</h2>
 <p>Roughly performance parity, in exchange for an <span class="tt">unsafe</span> core that reimplements the flexible array member and the tagged pointer by hand, a rollback pattern the borrow checker is specifically designed to reject, and a materially worse plugin ABI story — against real wins in build tooling, future parallelism, and <span class="tt">unsafe</span>-checking.</p>
 <p>For a <em>new</em> project with these requirements the choice would be genuinely close, and the thread-safety argument might well decide it. For an existing, working, tuned implementation, that is not a trade that pays for itself.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md173"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md172"></a>
 Summary</h1>
 <blockquote class="doxtable">
 <p>MimIR's IR is a mutable, hash-consed, cyclic graph of hand-packed 72-byte nodes with zero padding and no vtable pointer. That is not a data structure those languages have an idiomatic form of — and every compiler written in them that needed one wrote imperative code to get it. </p>
@@ -361,6 +364,13 @@ Summary</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

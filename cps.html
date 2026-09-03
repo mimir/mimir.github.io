@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The CPS Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,29 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cps.html','','
   <div class="headertitle"><div class="title">The CPS Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md275">Dependencies </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md276">Operations </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md277">%cps.cps2ds </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md278">Phases </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md279">%cps.conv </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2cps"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1cps.html" title="The CPS Plugin">mim::plug::cps</a></dd></dl>
 <p>This plugin has three jobs:</p><ol type="1">
@@ -186,25 +166,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cps.html','','
 <li>Wrap direct-style functions as CPS functions using an axiom.</li>
 <li>Call CPS functions in direct style using an axiom.</li>
 </ol>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md275"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md274"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md276"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md275"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md277"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md276"></a>
 %cps.cps2ds</h2>
 <p>This axiom lets the user call a CPS function in direct style. The function is not converted; only the call site is changed. <span class="tt">%cps.cps2ds_dep</span> is the dependently-typed general form; <span class="tt">%cps.cps2ds</span> is the non-dependent shorthand.</p>
 <div class="fragment"><div class="line">axm %cps.cps2ds_dep: {T: *} → [U: T → *] → [Fn [t: T] → U t] → [[t: T] → U t], 3;</div>
 <div class="line">lam %cps.cps2ds      {T U: *}           (f: Fn     T  → U  ):  [    T  → U  ] = %cps.cps2ds_dep (λ [T]: * = U) f;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md278"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md277"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md279"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md278"></a>
 %cps.conv</h2>
 <p>Converts direct-style functions and calls to CPS.</p>
 <div class="fragment"><div class="line">axm %cps.conv: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

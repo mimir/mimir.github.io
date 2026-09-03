@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Developer Guide</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,124 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dev.html','','
   <div class="headertitle"><div class="title">Developer Guide </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md29">Basics </a>
-  </li>
-  <li class="level1">
-    <a href="#mut">Immutables vs. Mutables </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md30">Immutables </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md31">Calling Annexes </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md32">Mutables </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md33">Binders </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md34">Partial Evaluation </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md35">Variables </a>
-          </li>
-          <li class="level3">
-            <a href="#free_vars">Free Variables </a>
-            <ul>
-              <li class="level4">
-                <a href="#autotoc_md36">Local vs. Global </a>
-              </li>
-              <li class="level4">
-                <a href="#autotoc_md37">Invalidation </a>
-              </li>
-              <li class="level4">
-                <a href="#autotoc_md38">Scope &amp; Nesting </a>
-              </li>
-              <li class="level4">
-                <a href="#autotoc_md39"><span class="tt">Dep</span> </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md40">Matching IR </a>
-    <ul>
-      <li class="level2">
-        <a href="#cast_builtin">Downcasts for Built-ins </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md41">General Downcast </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md42">Downcast to Immutables </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md43">Downcast to Mutables </a>
-          </li>
-          <li class="level3">
-            <a href="#cast_lit">Matching Literals </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md44">Summary </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md45">Further Casts </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#cast_axm">Matching Axioms </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md46">Without Subtags </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md47">With Subtags </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md48">Summary </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md49">Working with Indices </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md50">Arity </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md51">Projs </a>
-        <ul>
-          <li class="level3">
-            <a href="#autotoc_md52">Thresholded Variants </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md53">Shape </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md54">Summary </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md55">Iterating over the Program </a>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2dev"></a></p>
 <p>This guide summarizes the typical idioms and patterns you will want to use when working with MimIR as a developer. It focuses on the C++ API and IR-building workflow.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
@@ -826,10 +711,23 @@ Iterating over the Program</h1>
 <div class="line">}</div>
 <div class="ttc" id="aclassmim_1_1Def_html_a20e9e09e55fc9b46a6f74423f2c5d35d"><div class="ttname"><a href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">mim::Def::deps</a></div><div class="ttdeci">Defs deps() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00462">def.cpp:462</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00091">def.h:91</a></div></div>
-</div><!-- fragment --><p>In practice, though, you will usually want to use the <a class="el" href="phases.html" title="Phases">phase</a> infrastructure instead. </p>
-</div></div><!-- contents -->
+</div><!-- fragment --><p>In practice, though, you will usually want to use the <a class="el" href="phases.html" title="Phases">phase</a> infrastructure instead.</p>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="plugins.html" title="Plugins">Plugins</a>  </td><td class="markdownTableBodyRight"><a class="el" href="rewriting.html" title="Rewriting">Rewriting</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

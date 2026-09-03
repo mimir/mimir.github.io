@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: The ll_nvptx Plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,41 +159,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ll_nvptx.html'
   <div class="headertitle"><div class="title">The ll_nvptx Plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#autotoc_md325">Dependencies </a>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md326">Phases </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md327">%ll_nvptx.emit </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ll__nvptx"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="cli.html#xarg_ll_nvptx" title="-X ll_nvptx:&lt;arg&gt;"><span class="tt">-X ll_nvptx:&lt;arg&gt;</span></a> </dd>
 <dd>
 <a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">mim::plug::ll_nvptx</a></dd></dl>
 <p>An LLVM backend that targets NVIDIA GPUs. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p ll_nvptx</span>) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world. It writes the host LLVM IR to <span class="tt">&lt;world&gt;.ll</span> and the device LLVM IR (with PTX intrinsics) to <span class="tt">&lt;world&gt;_dev.ll</span>, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR. The output paths and the embedding behavior can be overridden via <a class="el" href="cli.html#xarg_ll_nvptx" title="-X ll_nvptx:&lt;arg&gt;"><span class="tt">-X ll_nvptx:&lt;arg&gt;</span></a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin gpu;</div>
 <div class="line">plugin nvptx;</div>
 <div class="line">plugin opt;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md327"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
 %ll_nvptx.emit</h2>
 <p>Emits the LLVM IR with PTX intrinsics for the host and device worlds split from the current world. This phase is spliced into the default pipeline (see <span class="tt">opt</span>) whenever the <span class="tt">ll_nvptx</span> plugin is loaded.</p>
 <div class="fragment"><div class="line">axm %ll_nvptx.emit: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

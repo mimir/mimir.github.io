@@ -8,16 +8,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MimIR: Contributing &amp; Debugging</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
-    DoxygenAwesomeInteractiveToc.init()
     DoxygenAwesomeParagraphLink.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -47,7 +51,6 @@ window.MathJax = {
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-interactive-toc.js" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
@@ -156,89 +159,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('coding.html','
   <div class="headertitle"><div class="title">Contributing &amp; Debugging </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul>
-  <li class="level1">
-    <a href="#building">Contributor Quick Start </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md11">Dependencies </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#testing">Testing </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md12">lit Tests </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md13">Unit Tests </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md14">Coding Style </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md15">C++ Style </a>
-        <ul>
-          <li class="level3">
-            <a href="#includes">Include Style </a>
-          </li>
-          <li class="level3">
-            <a href="#autotoc_md16">Doxygen Style </a>
-          </li>
-        </ul>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md17">Example </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md18">CMake Style </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md19">Markdown Style </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md20">M⁠im Coding Style </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md21">Syntax Highlighting </a>
-      </li>
-    </ul>
-  </li>
-  <li class="level1">
-    <a href="#autotoc_md22">Debugging </a>
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md23">Dumping </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md24">Displaying DOT Graphs </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md25">Conditional Breakpoints </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md26">Catching Exceptions </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md27">Valgrind &amp; GDB </a>
-      </li>
-      <li class="level2">
-        <a href="#logging">Logging </a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md28">Triggering Breakpoints </a>
-      </li>
-      <li class="level2">
-        <a href="#profiling">Profiling </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div>
 <div class="textblock"><p><a class="anchor" id="md_docs_2coding"></a></p>
 <p>Start here if you want to work on MimIR itself. This page is the contributor entry point for build, test, style, and debugging workflow. For API and IR usage patterns, continue with the <a class="el" href="dev.html" title="Developer Guide">Developer Guide</a>.</p>
 <h1 class="doxsection"><a class="anchor" id="building"></a>
@@ -310,7 +230,9 @@ Dependencies</h2>
 Testing</h1>
 <p>Run every in-tree test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target test-all</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="plugins.html#extra_plugins" title="Third-Party Plugin Discovery">Third-Party Plugin Discovery</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A third-party plugin in <span class="tt">extra/</span> contributes to both suites automatically.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 lit Tests</h2>
 <p>Run the <a href="https://llvm.org/docs/CommandGuide/lit.html">lit</a> test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target lit</div>
@@ -324,7 +246,7 @@ lit Tests</h2>
 <div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Unit Tests</h2>
-<p><span class="tt">test/</span> holds the <a href="https://github.com/doctest/doctest">doctest</a> unit tests, built as <span class="tt">mim-test</span> and <span class="tt">mim-regex-test</span>. A third-party plugin in <span class="tt">extra/X</span> gets its <span class="tt">test/*.cpp</span> picked up automatically and built as <span class="tt">mim-X-test</span>; see <span class="tt">extra/README.md</span>. Run them - and every other CTest test - with:</p>
+<p><span class="tt">test/</span> holds the <a href="https://github.com/doctest/doctest">doctest</a> unit tests, built as <span class="tt">mim-test</span> and <span class="tt">mim-regex-test</span>. Run them - and every other CTest test - with:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
 </div><!-- fragment --><p>You can additionally enable <a href="https://valgrind.org/">Valgrind</a> via:</p>
 <div class="fragment"><div class="line">ctest --test-dir build -T memcheck --output-on-failure</div>
@@ -609,10 +531,23 @@ Profiling</h2>
 <div class="line">mim test.mim --profile trace --output-profile trace.json</div>
 </div><!-- fragment --><p>Once <span class="tt">--profile</span> has enabled profiling, <span class="tt">--output-profile</span> defaults to <span class="tt">-</span>; conversely, <span class="tt">--output-profile &lt;file&gt;</span> alone implies <span class="tt">--profile trace</span>. An unknown <span class="tt">&lt;mode&gt;</span> is an error.</p>
 <p>The <span class="tt">trace</span> format dumps <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU">Chrome Trace Event Format</a> JSON. Load the resulting file into <span class="tt">chrome://tracing</span> (see the <a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/">official guide</a>), into <a href="https://ui.perfetto.dev/">Perfetto</a>, or into <a href="https://www.speedscope.app/">speedscope</a> to inspect it as a timeline.</p>
-<p>See <span class="tt">fe::Profiler</span> in the <span class="tt">fe</span> submodule for implementation details. </p>
-</div></div><!-- contents -->
+<p>See <span class="tt">fe::Profiler</span> in the <span class="tt">fe</span> submodule for implementation details.</p>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="langref.html" title="Mim Language Reference">Mim Language Reference</a>  </td><td class="markdownTableBodyRight"><a class="el" href="plugins.html" title="Plugins">Plugins</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

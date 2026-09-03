@@ -5,7 +5,7 @@ var searchData=
   ['x_20ll_5fnvptx_3a_20lt_20arg_20gt_2',['-X ll_nvptx:&amp;lt;arg&amp;gt;',['../cli.html#xarg_ll_nvptx',1,'']]],
   ['x_20tensor_3a_20lt_20arg_20gt_3',['-X tensor:&amp;lt;arg&amp;gt;',['../cli.html#xarg_tensor',1,'']]],
   ['xor_5f_4',['xor_',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a69def21775f8cfff31d5d7459d09e81c',1,'mim::plug::core']]],
-  ['xtrie_3a_3aset_20—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_5',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md154',1,'']]],
+  ['xtrie_3a_3aset_20—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_5',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
   ['xygle_6',['XYGLE',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673aa6ee9e715fd30e1b8e95843be4b2a9c8',1,'mim::plug::core']]],
   ['xygle_7',['XYGLe',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a5d322f15cb06ab5b8ad60e5923ce2c88',1,'mim::plug::core']]],
   ['xygle_8',['XYGlE',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a4d8a741c45a28690efcf836ff847ab4f',1,'mim::plug::core']]],
