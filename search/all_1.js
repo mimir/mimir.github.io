@@ -136,7 +136,7 @@ var searchData=
   ['arenas_20and_20how_20defs_20are_20placed_20in_20them_133',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md156',1,'']]],
   ['arg_134',['arg',['../classmim_1_1ast_1_1AppExpr.html#ab5d05a7f8401ab7c4a1dd7886e33373a',1,'mim::ast::AppExpr::arg()'],['../classmim_1_1ast_1_1RetExpr.html#a60c2ddd939138201a26faa9428218d70',1,'mim::ast::RetExpr::arg()'],['../classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1',1,'mim::App::arg()'],['../classmim_1_1Branch.html#a9e548fb8b816bee5007ac3456e519cd5',1,'mim::Branch::arg()'],['../classmim_1_1Dispatch.html#a187d53a740ae797c49c89d192bca4f32',1,'mim::Dispatch::arg()']]],
   ['arg_20gt_135',['arg gt',['../cli.html#xarg_compile',1,'-X compile:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll',1,'-X ll:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_ll_nvptx',1,'-X ll_nvptx:&amp;lt;arg&amp;gt;'],['../cli.html#xarg_tensor',1,'-X tensor:&amp;lt;arg&amp;gt;']]],
-  ['arg_5fbool_136',['arg_bool',['../namespacemim.html#a461795efdebb7a06ccf8b48184cbd78f',1,'mim']]],
+  ['arg_5fbool_136',['arg_bool',['../namespacemim.html#ae219e373875516ae10fdaa6f229b65d8',1,'mim']]],
   ['arg_5fflag_137',['arg_flag',['../namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3',1,'mim']]],
   ['arg_5fvalue_138',['arg_value',['../namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33',1,'mim']]],
   ['args_139',['args',['../structmim_1_1Plugin.html#aa1db5972caaf1e7548690a26efb282d0',1,'mim::Plugin::args'],['../classmim_1_1Driver.html#abc9aacc4bd302c9c9f7ce52285312f79',1,'mim::Driver::args()'],['../classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb',1,'mim::Phase::args()']]],

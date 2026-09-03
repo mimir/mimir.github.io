@@ -375,7 +375,9 @@ Plugin Arguments</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">aggr=&lt;bool&gt;</span>  </td><td class="markdownTableBodyNone">Value of <span class="tt">%compile.aggr</span>, which switches fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage on or off (default off). <span class="tt">&lt;bool&gt;</span> is <span class="tt">on</span>/<span class="tt">tt</span>/<span class="tt">true</span> or <span class="tt">off</span>/<span class="tt">ff</span>/<span class="tt">false</span>; a bare <span class="tt">aggr</span> means <span class="tt">on</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">aggr</span>  </td><td class="markdownTableBodyNone">Forces <span class="tt">%compile.aggr</span> to <span class="tt">tt</span>, switching fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage on (off by default).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no-aggr</span>  </td><td class="markdownTableBodyNone">Forces <span class="tt">%compile.aggr</span> to <span class="tt">ff</span>, switching that fixed-point iteration off.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="xarg_ll"></a>
 -X ll:&lt;arg&gt;</h2>
@@ -399,7 +401,7 @@ Plugin Arguments</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> such as <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">no-embed</span>  </td><td class="markdownTableBodyNone">Doesn't embed the compiled device binary into the host LLVM IR; embedding is the default on Linux.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">embed, no-embed</span>  </td><td class="markdownTableBodyNone">Embeds the compiled device binary into the host LLVM IR, or doesn't; the default is <span class="tt">embed</span> on Linux and <span class="tt">no-embed</span> elsewhere.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">When embedding: omits the PTX image from the fat binary (default: both PTX and CUBIN).  </td></tr>
 <tr class="markdownTableRowEven">
@@ -460,7 +462,7 @@ Search Paths</h2>
 <h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
 Arguments</h2>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
-<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr=on</div>
+<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr</div>
 </div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
 <ul>
 <li>The option is repeatable; each occurrence contributes one argument.</li>

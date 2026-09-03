@@ -190,7 +190,7 @@ var namespacemim =
     ] ],
     [ "Prec", "namespacemim.html#afc6cb12ae859bd6554aebf244d2db28a", null ],
     [ "any_free_vars", "namespacemim.html#a2ddc24992d9ddd06ec4c9021ecc37539", null ],
-    [ "arg_bool", "namespacemim.html#a461795efdebb7a06ccf8b48184cbd78f", null ],
+    [ "arg_bool", "namespacemim.html#ae219e373875516ae10fdaa6f229b65d8", null ],
     [ "arg_flag", "namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3", null ],
     [ "arg_value", "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33", null ],
     [ "cat", "namespacemim.html#a639d79a26031657a5241a869b4cefd66", null ],
