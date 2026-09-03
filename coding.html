@@ -605,10 +605,10 @@ Triggering Breakpoints</h2>
 <h2 class="doxsection"><a class="anchor" id="profiling"></a>
 Profiling</h2>
 <p>If a compilation is taking longer than expected, use <span class="tt">--profile</span> to find out which <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> is responsible. It measures wall-clock time spent in each phase and reports it via <span class="tt">--output-profile &lt;file&gt;</span> (or <span class="tt">-</span> for stdout) in one of three formats:</p>
-<div class="fragment"><div class="line">mim test.mim --profile summary --output-profile -   # Flat table aggregated by phase name, sorted by total time.</div>
-<div class="line">mim test.mim --profile tree    --output-profile -   # Indented tree that preserves phase nesting/order.</div>
-<div class="line">mim test.mim --profile trace   --output-profile trace.json</div>
-</div><!-- fragment --><p>Any other <span class="tt">&lt;mode&gt;</span> defaults to <span class="tt">summary</span>, and <span class="tt">--output-profile -</span> on its own implies <span class="tt">--profile summary</span>.</p>
+<div class="fragment"><div class="line">mim test.mim --profile summary                      # Flat table aggregated by phase name, sorted by total time.</div>
+<div class="line">mim test.mim --profile tree                         # Indented tree that preserves phase nesting/order.</div>
+<div class="line">mim test.mim --profile trace --output-profile trace.json</div>
+</div><!-- fragment --><p><span class="tt">--output-profile</span> defaults to <span class="tt">-</span>, <span class="tt">--output-profile</span> without a <span class="tt">&lt;mode&gt;</span> implies <span class="tt">--profile trace</span>, and an unknown <span class="tt">&lt;mode&gt;</span> is an error.</p>
 <p>The <span class="tt">trace</span> format dumps <a href="https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU">Chrome Trace Event Format</a> JSON. Load the resulting file into <span class="tt">chrome://tracing</span> (see the <a href="https://www.chromium.org/developers/how-tos/trace-event-profiling-tool/">official guide</a>), into <a href="https://ui.perfetto.dev/">Perfetto</a>, or into <a href="https://www.speedscope.app/">speedscope</a> to inspect it as a timeline.</p>
 <p>See <span class="tt">fe::Profiler</span> in the <span class="tt">fe</span> submodule for implementation details. </p>
 </div></div><!-- contents -->
