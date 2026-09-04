@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"functions_func_t.html":[4,3,1,18],
+"functions_func_u.html":[4,3,1,19],
 "functions_func_v.html":[4,3,1,20],
 "functions_func_w.html":[4,3,1,21],
 "functions_func_z.html":[4,3,1,22],
@@ -84,6 +86,7 @@ var NAVTREEINDEX17 =
 "ll__nvptx_2autogen_8h.html":[5,0,0,1,0,0,11,0],
 "ll__nvptx_2autogen_8h_source.html":[5,0,0,1,0,0,11,0],
 "ll__nvptx_8cpp.html":[5,0,4,1,3,11,2],
+"ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514":[5,0,4,1,3,11,2,4],
 "ll__nvptx_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,11,2,1],
 "ll__nvptx_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,11,2,2],
 "ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908":[5,0,4,1,3,11,2,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX17 =
 "namespacemembers_func_r.html":[2,1,1,14],
 "namespacemembers_func_s.html":[2,1,1,15],
 "namespacemembers_func_t.html":[2,1,1,16],
-"namespacemembers_func_u.html":[2,1,1,17],
-"namespacemembers_func_z.html":[2,1,1,18],
-"namespacemembers_g.html":[2,1,0,6],
-"namespacemembers_h.html":[2,1,0,7]
+"namespacemembers_func_u.html":[2,1,1,17]
 };

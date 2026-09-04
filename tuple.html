@@ -163,12 +163,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tuple.html',''
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tuple"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tuple.html" title="The tuple Plugin">mim::plug::tuple</a></dd></dl>
 <p>Utility functions for tuples.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
 %tuple.typecat</h2>
 <p>Computes the type of a <span class="tt">%tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="fragment"><div class="line">lam %tuple.typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
 <div class="line">    «i: %core.nat.add (n, m);</div>
@@ -177,7 +177,7 @@ Operations</h1>
 <div class="line">            %core.ncmp.l (nat_i, n),</div>
 <div class="line">            Ts#(%core.bitcast (Idx n) i),</div>
 <div class="line">            Us#(%core.bitcast (Idx m) (%core.nat.sub (nat_i, n))))»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
 %tuple.cat</h2>
 <p>Concatenates an <span class="tt">n</span>-tuple and an <span class="tt">m</span>-tuple to an <span class="tt">n + m</span>-tuple.</p>
 <div class="fragment"><div class="line">axm %tuple.cat: {n m: Nat}</div>
@@ -185,7 +185,7 @@ Operations</h1>
 <div class="line">                 → [«i: n; Ts#i», «i: m; Us#i»]</div>
 <div class="line">                 → %tuple.typecat Ts Us</div>
 <div class="line">                 , normalize_cat;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
 %tuple.append / %tuple.prepend</h2>
 <p>Appends / prepends a single element to a tuple.</p>
 <div class="fragment"><div class="line">lam %tuple.append   {n: Nat}</div>
@@ -199,7 +199,7 @@ Operations</h1>
 <div class="line">                    (a: T, b: «i: m; Us#i»)</div>
 <div class="line">                  : %tuple.typecat T Us</div>
 <div class="line">                  = %tuple.cat (a, b);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
 %tuple.head / %tuple.tail</h2>
 <p>The first element of a tuple / all elements but the first.</p>
 <div class="fragment"><div class="line">lam %tuple.head {n: Nat}</div>
@@ -213,11 +213,11 @@ Operations</h1>
 <div class="line">    [values: «i: n; Ts#i»]</div>
 <div class="line">  : «i: %core.nat.sub (n, 1); Ts#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))»</div>
 <div class="line">  = ‹i: %core.nat.sub (n, 1); values#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
 %tuple.contains</h2>
 <p>Does the tuple contain the given element?</p>
 <div class="fragment"><div class="line">axm %tuple.contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
 %tuple.zip</h2>
 <p><a href="https://en.wikipedia.org/wiki/Zipping_(computer_science)">Zips</a> several tensors. The signature will likely change in the future:</p><ul>
 <li><span class="tt">r</span>: rank of the tensors to zip</li>

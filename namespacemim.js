@@ -49,6 +49,7 @@ var namespacemim =
     [ "PlainNames", "classmim_1_1PlainNames.html", "classmim_1_1PlainNames" ],
     [ "Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
     [ "PluginArg", "namespacemim.html#structmim_1_1PluginArg", "namespacemim_structmim_1_1PluginArg_dup" ],
+    [ "PluginEnv", "namespacemim.html#structmim_1_1PluginEnv", "namespacemim_structmim_1_1PluginEnv_dup" ],
     [ "Prod", "classmim_1_1Prod.html", "classmim_1_1Prod" ],
     [ "Proxy", "classmim_1_1Proxy.html", "classmim_1_1Proxy" ],
     [ "Reform", "classmim_1_1Reform.html", "classmim_1_1Reform" ],

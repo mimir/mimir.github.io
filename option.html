@@ -163,43 +163,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('option.html','
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2option"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1option.html" title="The option Plugin">mim::plug::option</a></dd></dl>
 <p>An optional value type: either a value of type <span class="tt">T</span> or nothing.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
 %option.Opt</h2>
 <p>The option type: <span class="tt">[] ∪ T</span>.</p>
 <div class="fragment"><div class="line">lam %option.Opt (T: *) : * = [] ∪ T;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
 %option.some</h2>
 <p>Wraps a value into an option.</p>
 <div class="fragment"><div class="line">lam %option.some {T: *} (v: T) : %option.Opt T = v inj %option.Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
 %option.none</h2>
 <p>The empty option.</p>
 <div class="fragment"><div class="line">lam %option.none [T: *] : %option.Opt T = () inj %option.Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
 %option.some_if</h2>
 <p>Wraps <span class="tt">v</span> into an option iff <span class="tt">b</span> holds.</p>
 <div class="fragment"><div class="line">lam %option.some_if {T: *} (b: Bool, v: T) : %option.Opt T = (%option.none T, %option.some v)#b;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
 %option.is_some</h2>
 <p>Returns <span class="tt">tt</span> if the option contains a value.</p>
 <div class="fragment"><div class="line">lam %option.is_some {T: *} (o: %option.Opt T) : Bool =</div>
 <div class="line">    match o with</div>
 <div class="line">        | _: T  =&gt; tt</div>
 <div class="line">        | _: [] =&gt; ff;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md380"></a>
 %option.unwrap_unsafe</h2>
 <p>Extracts the value without checking - undefined behavior for <span class="tt">%option.none</span>.</p>
 <div class="fragment"><div class="line">axm %option.unwrap_unsafe: {T: *} → %option.Opt T → T, normalize_unwrap_unsafe;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md381"></a>
 %option.unwrap_or</h2>
 <p>Extracts the value or returns <span class="tt">default</span>.</p>
 <div class="fragment"><div class="line">lam %option.unwrap_or {T: *} (o: %option.Opt T) (default: T) : T =</div>

@@ -1,5 +1,11 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a738a656e8e8ec272ca17cd51e12f558b":[2,0,3,1,6,8,25],
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a74a706f8793c5d160e392c899991556d":[2,0,3,1,6,8,36],
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a7665cfab6c3b34cb3791dc3edb5557b2":[2,0,3,1,6,8,33],
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a76cf56920355319ad148e25a340b0f18":[2,0,3,1,6,8,27],
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a7ccc249988b0ccd2e50d93bd51bc229c":[2,0,3,1,6,8,7],
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a8c1f9e6057ac0b482162e016b3513da3":[2,0,3,1,6,8,9],
 "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a8fa14cdd754f91cc6554c9e71929cce7":[2,0,3,1,6,8,1],
 "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a961398139c7ae3a810df1098163d1062":[2,0,3,1,6,8,4],
 "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a96fba3ee0d996e39a23c8328c93a67d0":[2,0,3,1,6,8,32],
@@ -243,11 +249,5 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eba99db06b0f6fa55d229cf508034a70871":[2,0,3,1,12,8,1],
 "namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71ebac097c68a2820a5bb17fa2d9b3a9fd7ed":[2,0,3,1,12,8,0],
 "namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a":[2,0,3,1,12,0],
-"namespacemim_1_1plug_1_1math.html#a94e9834a9acd4d05f2631888a416fd80":[2,0,3,1,12,43],
-"namespacemim_1_1plug_1_1math.html#a9522911240adb53b1f5a7ad5a1c12f52":[2,0,3,1,12,6],
-"namespacemim_1_1plug_1_1math.html#a9e9096841411beaf74484295212edf6f":[2,0,3,1,12,51],
-"namespacemim_1_1plug_1_1math.html#a9f21132c6f33d36e69565752fff39793":[2,0,3,1,12,38],
-"namespacemim_1_1plug_1_1math.html#a9f9256bc3c1cc75b278560fd4c2f3c0a":[2,0,3,1,12,34],
-"namespacemim_1_1plug_1_1math.html#aa4960fe0b7013ecd6c2a2bd437246212":[2,0,3,1,12,57],
-"namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199":[2,0,3,1,12,21]
+"namespacemim_1_1plug_1_1math.html#a94e9834a9acd4d05f2631888a416fd80":[2,0,3,1,12,43]
 };

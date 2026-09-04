@@ -1,19 +1,11 @@
 var searchData=
 [
-  ['s_0',['S',['../namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be',1,'mim::plug::tensor::PureRead::S'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a94ee9afb668a879fc2c2aa1721cf4575',1,'mim::plug::tensor::phase::Slots::S']]],
-  ['s_1',['s',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a',1,'mim::plug::tensor::phase::Split']]],
-  ['scalarize_5fthreshold_2',['scalarize_threshold',['../structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7',1,'mim::Flags']]],
-  ['schedule_5f_3',['schedule_',['../classmim_1_1Emitter.html#a024a7069ea511418e459905ba3314aae',1,'mim::Emitter']]],
-  ['scheduler_5f_4',['scheduler_',['../classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e',1,'mim::Emitter']]],
-  ['sep_5',['sep',['../structmim_1_1ast_1_1R.html#a35809d559dec171dcc6bfa30a6d8ea21',1,'mim::ast::R']]],
-  ['show_5fhidden_6',['show_hidden',['../namespacemim.html#a9e33595ab8eda7b2df31eccc5176345d',1,'mim::DotConfig']]],
-  ['sigma2sym2idx_7',['sigma2sym2idx',['../classmim_1_1ast_1_1Emitter.html#aa480a2d5ca25fb73a51ef734f569a708',1,'mim::ast::Emitter']]],
-  ['simd_5fphi_5f_8',['simd_phi_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae829eb2d9c43cf8a881c3b7712d26994',1,'mim::plug::ll::Emitter']]],
-  ['src_9',['src',['../classmim_1_1Driver_1_1Imports.html#a1c2e7309c5121367c868196d5b1de0cd',1,'mim::Driver::Imports::Entry::src'],['../namespacemim_1_1plug_1_1tensor.html#aa902f273a90911d24fadef83b085944f',1,'mim::plug::tensor::PureRead::src']]],
-  ['subs_10',['subs',['../structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37',1,'mim::ast::AnnexInfo']]],
-  ['substs_11',['substs',['../structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html#ae4e66f284acb74c8e6d843bc8cd83db4',1,'mim::World::Move::[struct].arena']]],
-  ['suffix_12',['suffix',['../structmim_1_1Version.html#adab4afd7dcbeb498f4d5631dbf65dcc3',1,'mim::Version']]],
-  ['sym_13',['sym',['../structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c',1,'mim::ast::AnnexInfo::sym'],['../classmim_1_1Driver_1_1Imports.html#a6beeb2c9520722f067b2697d6de8fa94',1,'mim::Driver::Imports::Entry::sym'],['../classmim_1_1World_1_1Annexes.html#a33c4fb5a895f0c15bae4743eb3b41fb6',1,'mim::World::Annexes::Entry::sym']]],
-  ['sym2gid_14',['sym2gid',['../classmim_1_1Driver.html#aa30c43e39f9f46e8f5eb20d4f2c324ce',1,'mim::Driver::Names']]],
-  ['syntax_15',['syntax',['../namespacemim.html#ad53acf95ce5df3f7045361671860b6fa',1,'mim::PluginArg']]]
+  ['r_0',['R',['../namespacemim_1_1plug_1_1tensor.html#aab61159bddae08a997706aade85f1be9',1,'mim::plug::tensor::PureRead::R'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a3237d561d84ab09507fcde863be1ad80',1,'mim::plug::tensor::phase::Slots::R']]],
+  ['range_1',['range',['../structmim_1_1ast_1_1R.html#a154b1fdb020d2b86282ac6340b53f41a',1,'mim::ast::R']]],
+  ['reeval_5fbreakpoints_2',['reeval_breakpoints',['../structmim_1_1Flags.html#aa3d3421bf85526b22938b6f5d289af22',1,'mim::Flags']]],
+  ['register_5fnormalizers_3',['register_normalizers',['../structmim_1_1Plugin.html#ac0ac5f34a6a6931800afd5e96409e759',1,'mim::Plugin']]],
+  ['register_5fphases_4',['register_phases',['../structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f',1,'mim::Plugin']]],
+  ['rt_5f_5',['rt_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a7e23ce15d7a02dcda74c2fc997757754',1,'mim::plug::ll::Emitter']]],
+  ['rt_5fmodule_5f_6',['rt_module_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a894d2de6157af5afdddb7f644bae9227',1,'mim::plug::ll::Emitter']]],
+  ['rt_5fused_5f_7',['rt_used_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#afb2702775e8afcf83b2cc4f95aef9c91',1,'mim::plug::ll::Emitter']]]
 ];

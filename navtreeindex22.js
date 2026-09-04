@@ -1,5 +1,11 @@
 var NAVTREEINDEX22 =
 {
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a03c7c0ace395d80182db07ae2c30f034":[2,0,3,1,19,3,4],
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a5dbc98dcc983a70728bd082d1a47546e":[2,0,3,1,19,3,5],
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276":[2,0,3,1,19,3,3],
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a8277e0910d750195b448797616e091ad":[2,0,3,1,19,3,0],
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68":[2,0,3,1,19,3,2],
+"namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af623e75af30e62bbd73d6df5b50bb7b5":[2,0,3,1,19,3,1],
 "namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc":[2,0,3,1,19,20],
 "namespacemim_1_1plug_1_1regex.html#afbafccea4f72061dbaedab24d1fbcede":[2,0,3,1,19,28],
 "namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854":[2,0,3,1,19,13],
@@ -228,7 +234,7 @@ var NAVTREEINDEX22 =
 "plugin_8cpp.html":[5,0,4,1,14],
 "plugin_8cpp_source.html":[5,0,4,1,14],
 "plugin_8h.html":[5,0,3,1,14],
-"plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2":[5,0,3,1,14,4],
+"plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2":[5,0,3,1,14,5],
 "plugin_8h_source.html":[5,0,3,1,14],
 "plugins.html":[0,4],
 "python.html":[0,8],
@@ -243,11 +249,5 @@ var NAVTREEINDEX22 =
 "refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,18,0,0],
 "refly_2autogen_8h_source.html":[5,0,0,1,0,0,18,0],
 "refly_2normalizers_8cpp.html":[5,0,4,1,3,18,0],
-"refly_2normalizers_8cpp_source.html":[5,0,4,1,3,18,0],
-"refly_8cpp.html":[5,0,4,1,3,18,1],
-"refly_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a":[5,0,4,1,3,18,1,1],
-"refly_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,18,1,0],
-"refly_8cpp_source.html":[5,0,4,1,3,18,1],
-"refly_8h.html":[5,0,3,1,3,18,0],
-"refly_8h_source.html":[5,0,3,1,3,18,0]
+"refly_2normalizers_8cpp_source.html":[5,0,4,1,3,18,0]
 };

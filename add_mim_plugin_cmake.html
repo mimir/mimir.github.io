@@ -164,15 +164,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('add_mim_plugin
 <p>Relative to the plugin's <span class="tt">CMakeLists.txt</span>, there should be a file <span class="tt">&lt;plugin-name&gt;.<a class="el" href="namespacemim.html">mim</a></span> containing the plugin's annexes.</p>
 <div class="fragment"><div class="line">add_mim_plugin(&lt;plugin-name&gt;</div>
 <div class="line">    [SOURCES &lt;source&gt;...]</div>
-<div class="line">    [PRIVATE &lt;private-item&gt;...]</div>
-<div class="line">    [INSTALL])</div>
+<div class="line">    [PRIVATE &lt;private-item&gt;...])</div>
 </div><!-- fragment --><p><span class="tt">&lt;plugin-name&gt;</span> may only contain letters, digits, and underscores, and must satisfy MimIR's plugin naming constraints.</p>
 <p>The command creates two targets:</p><ul>
 <li><span class="tt">mim_internal_&lt;plugin-name&gt;</span> bootstraps the plugin, generates <span class="tt">&lt;plugin-name&gt;/autogen.h</span> for the C++ interface used to identify annexes, <span class="tt">&lt;plugin-name&gt;.md</span> for the documentation, and copies <span class="tt">&lt;plugin-name&gt;.<a class="el" href="namespacemim.html">mim</a></span> into the build tree.</li>
 <li><span class="tt">mim_&lt;plugin-name&gt;</span> builds the actual <span class="tt">MODULE</span> library that contains normalizers, passes, and backends. One of the listed source files must export <span class="tt"><a class="el" href="affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a></span>.</li>
 </ul>
 <p><span class="tt">SOURCES</span> lists the source files that are compiled into the loadable plugin. <span class="tt">PRIVATE</span> lists additional private link dependencies.</p>
-<p><span class="tt">INSTALL</span> installs the plugin module, its <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file, and the generated <span class="tt">autogen.h</span>. The export name <span class="tt">mim-targets</span> must be exported accordingly; see CMake's <span class="tt">install(EXPORT ...)</span> documentation.</p>
+<p>The plugin module, its <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file, and the generated <span class="tt">autogen.h</span> are installed. The export name <span class="tt">mim-targets</span> must be exported accordingly; see CMake's <span class="tt">install(EXPORT ...)</span> documentation.</p>
 <p>Additional target properties can be set afterwards, for example: </p><div class="fragment"><div class="line">target_include_directories(mim_&lt;plugin-name&gt; &lt;path&gt;...)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->

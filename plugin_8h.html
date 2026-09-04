@@ -189,6 +189,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:mim_3A_3APluginArg_5Fstructmim_5F1_5F1PluginArg" id="r_mim_3A_3APluginArg_5Fstructmim_5F1_5F1PluginArg"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#structmim_1_1PluginArg">mim::PluginArg</a></td></tr>
 <tr class="memdesc:structmim_1_1PluginArg"><td class="mdescLeft">&#160;</td><td class="mdescRight">One <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> understands; see <a class="el" href="cli.html#clipluginargs" title="Arguments">Arguments</a>.  <a href="namespacemim.html#structmim_1_1PluginArg">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3APluginEnv_5Fstructmim_5F1_5F1PluginEnv" id="r_mim_3A_3APluginEnv_5Fstructmim_5F1_5F1PluginEnv"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#structmim_1_1PluginEnv">mim::PluginEnv</a></td></tr>
+<tr class="memdesc:structmim_1_1PluginEnv"><td class="mdescLeft">&#160;</td><td class="mdescRight">One environment variable a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> reads; see <a class="el" href="cli.html#clipluginenv" title="Environment Variables">Environment Variables</a>.  <a href="namespacemim.html#structmim_1_1PluginEnv">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3AVersion" id="r_mim_3A_3AVersion"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1Version.html">mim::Version</a></td></tr>
 <tr class="memitem:mim_3A_3APlugin" id="r_mim_3A_3APlugin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1Plugin.html">mim::Plugin</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic info and registration function pointer to be returned from a specific plugin.  <a href="structmim_1_1Plugin.html#details">More...</a><br /></td></tr>
@@ -261,6 +263,39 @@ How to spell the argument, e.g. <span class="tt">"o=&lt;file&gt;, output=&lt;fil
 
 </div>
 </div>
+<a name="structmim_1_1PluginEnv" id="structmim_1_1PluginEnv"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1PluginEnv">&#9670;&#160;</a></span>mim::PluginEnv</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::PluginEnv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>One environment variable a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> reads; see <a class="el" href="cli.html#clipluginenv" title="Environment Variables">Environment Variables</a>. </p>
+<p>A <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares these next to the code that reads them, so that <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; -h</span> can list them. </p>
+
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00040">40</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ac7b90f780e11bddea979ae71b81c2ace" name="ac7b90f780e11bddea979ae71b81c2ace"></a>const char *</td>
+<td class="fieldname">
+descr</td>
+<td class="fielddoc">
+What it does; one sentence, Markdown. </td></tr>
+<tr><td class="fieldtype">
+<a id="ac81e38f7fe20dc6057c9ba0678e13fd8" name="ac81e38f7fe20dc6057c9ba0678e13fd8"></a>const char *</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+Name of the variable, e.g. <span class="tt">"CUDA_HOME"</span>. </td></tr>
+</table>
+
+</div>
+</div>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a2f1c22749113d1954fe381a30a0d5bb2" name="a2f1c22749113d1954fe381a30a0d5bb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f1c22749113d1954fe381a30a0d5bb2">&#9670;&#160;</a></span>MIM_VERSION</h2>
@@ -274,7 +309,7 @@ How to spell the argument, e.g. <span class="tt">"o=&lt;file&gt;, output=&lt;fil
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00114">114</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00121">121</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00070">mim::Driver::Driver()</a>, and <a class="el" href="affine_8cpp_source.html#l00017">mim_get_plugin()</a>.</p>
 

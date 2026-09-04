@@ -198,8 +198,6 @@ Options</h2>
 <td class="markdownTableBodyNone"><span class="tt">--bootstrap</span>  </td><td class="markdownTableBodyNone">Bootstrap mode: only read <a class="el" href="namespaceMim.html">Mim</a> AST, don't compile to MimIR.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">-V, --verbose</span>  </td><td class="markdownTableBodyNone">Raises the log level from error to warn, info, verbose, debug, trace; repeatable.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">-a, --ascii</span>  </td><td class="markdownTableBodyNone">Uses ASCII alternatives in output instead of UTF-8.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Output</h2>
@@ -207,7 +205,7 @@ Output</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">-o, --output-mim &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the <a class="el" href="namespaceMim.html">Mim</a> program again.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">-a, --ascii</span>  </td><td class="markdownTableBodyNone">Uses ASCII alternatives in output instead of UTF-8.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-ast &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the AST of the input.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -215,19 +213,21 @@ Output</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-h &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a header file to be used to interface with a plugin in C++.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--output-py &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a Python enum to be used to interface with a plugin in Python.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-md &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the input formatted as Markdown.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-o, --output-mim &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the <a class="el" href="namespaceMim.html">Mim</a> program again.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dump-recursive</span>  </td><td class="markdownTableBodyNone">Dumps the <a class="el" href="namespaceMim.html">Mim</a> program with a simple recursive algorithm; the result is not readable again but works for broken programs.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-nest &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program's nesting tree using Graphviz' DOT language.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-py &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a Python enum to be used to interface with a plugin in Python.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-sexpr &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program as symbolic expression.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--output-sexpr-slotted &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program as symbolic expression that follows the format required by slotted-egraphs.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--sexpr-include-types</span>  </td><td class="markdownTableBodyNone">Wraps each term of a symbolic expression in a type annotation; types themselves stay unwrapped.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--dump-recursive</span>  </td><td class="markdownTableBodyNone">Dumps the <a class="el" href="namespaceMim.html">Mim</a> program with a simple recursive algorithm; the result is not readable again but works for broken programs.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 DOT Output</h2>
@@ -235,13 +235,13 @@ DOT Output</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--dot-follow-types</span>  </td><td class="markdownTableBodyNone">Follows type dependencies in DOT output.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--dot-all-annexes</span>  </td><td class="markdownTableBodyNone">Emits all annexes in DOT output - even unused ones.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--dot-inline-consts</span>  </td><td class="markdownTableBodyNone">Wires up literals, axioms, etc. with normal edges in DOT output instead of detaching them into a separate row; useful for small graphs.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--dot-default-filter</span>  </td><td class="markdownTableBodyNone">Always shows a lambda's filter in DOT output - even if it is the default one (ff for continuations, tt for direct-style functions).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dot-follow-types</span>  </td><td class="markdownTableBodyNone">Follows type dependencies in DOT output.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--dot-inline-consts</span>  </td><td class="markdownTableBodyNone">Wires up literals, axioms, etc. with normal edges in DOT output instead of detaching them into a separate row; useful for small graphs.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td><td class="markdownTableBodyNone">Renders otherwise-transparent detached edges in DOT output - back-edges from a Var to its binder, shared literals/axioms, and type edges - in a subtle gray.  </td></tr>
 </table>
@@ -251,15 +251,15 @@ Diagnostics</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--loc-style &lt;style&gt;</span>  </td><td class="markdownTableBodyNone">How a diagnostic spells out a source location: full (path:row:col-row:col), rowcol (path:row:col), row (path:row), or msvc (path(row,col)).  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">--no-snippet</span>  </td><td class="markdownTableBodyNone">Does not render the offending source line and caret underneath a diagnostic.  </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--gutter &lt;width&gt;</span>  </td><td class="markdownTableBodyNone">Width of a diagnostic's line-number column. [default: <span class="tt">5</span>]  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--loc-style &lt;style&gt;</span>  </td><td class="markdownTableBodyNone">How a diagnostic spells out a source location: full (path:row:col-row:col), rowcol (path:row:col), row (path:row), or msvc (path(row,col)).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--max-errors &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of errors to report before dropping the rest; 0 reports all of them. [default: <span class="tt">0</span>]  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--max-rows &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of rows a diagnostic's snippet renders before eliding its middle; 0 elides nothing. [default: <span class="tt">8</span>]  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--max-errors &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of errors to report before dropping the rest; 0 reports all of them. [default: <span class="tt">0</span>]  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">--no-snippet</span>  </td><td class="markdownTableBodyNone">Does not render the offending source line and caret underneath a diagnostic.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--werror</span>  </td><td class="markdownTableBodyNone">Treats warnings as errors.  </td></tr>
 </table>
@@ -269,9 +269,9 @@ Profiling</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--profile &lt;mode&gt;</span>  </td><td class="markdownTableBodyNone">Measures how long each phase takes; &lt;mode&gt; is summary, tree, or trace (chrome://tracing compatible).  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-profile &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Where to write the profiling information; defaults to stdout and implies --profile trace, if no &lt;mode&gt; is given.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--profile &lt;mode&gt;</span>  </td><td class="markdownTableBodyNone">Measures how long each phase takes; &lt;mode&gt; is summary, tree, or trace (chrome://tracing compatible).  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Optimization</h2>
@@ -281,9 +281,9 @@ Optimization</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--aggr-lam-spec</span>  </td><td class="markdownTableBodyNone">Overrides LamSpec behavior to follow recursive calls.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">--scalarize-threshold &lt;threshold&gt;</span>  </td><td class="markdownTableBodyNone">MimIR will not scalarize tuples/packs/sigmas/arrays with a number of elements greater than or equal this threshold. [default: <span class="tt">32</span>]  </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--max-fp-iters &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of fixed-point iterations before a phase errors out; guards against non-monotone analyses. [default: <span class="tt">1024</span>]  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--scalarize-threshold &lt;threshold&gt;</span>  </td><td class="markdownTableBodyNone">MimIR will not scalarize tuples/packs/sigmas/arrays with a number of elements greater than or equal this threshold. [default: <span class="tt">32</span>]  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Developer Options</h2>
@@ -293,19 +293,33 @@ Developer Options</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-b, --break &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is created.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">-w, --watch &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is set.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--reeval-breakpoints</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint even upon unifying a node that has already been built.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--break-on-alpha</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint as soon as two expressions turn out not to be alpha-equivalent.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--break-on-error</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint on an error log.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--break-on-warn</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint on a warning log.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--reeval-breakpoints</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint even upon unifying a node that has already been built.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--trace-gids</span>  </td><td class="markdownTableBodyNone">Outputs gids during World::unify/insert.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-w, --watch &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is set.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Environment Variables</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">MIM_PLUGIN_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of plugin search paths, searched after those given via -P.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">NO_COLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to a non-empty value; wins over the two below.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">CLICOLOR_FORCE</span>  </td><td class="markdownTableBodyNone">Forces colored output if set to a non-empty value other than 0.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">CLICOLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to 0.  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Plugin Arguments</h1>
 <h2 class="doxsection"><a class="anchor" id="xarg_compile"></a>
 -X compile:&lt;arg&gt;</h2>
@@ -367,6 +381,16 @@ Plugin Arguments</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">reassoc-max=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Longest matrix chain whose bracketings <span class="tt">%tensor.reassoc</span> enumerates (default <span class="tt">4</span>). Where no single bracketing is cheapest for <em>every</em> extent, the survivors are dispatched over at run time; a longer chain is only reassociated where one bracketing provably wins for every extent. The number of bracketings is <span class="tt">Catalan(n − 1)</span>, so raising this gets expensive fast, while anything below <span class="tt">3</span> switches the dispatch off.  </td></tr>
 </table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Plugin Environment Variables</h1>
+<h2 class="doxsection"><a class="anchor" id="env_ll_nvptx"></a>
+ll_nvptx</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">CUDA_HOME</span>  </td><td class="markdownTableBodyNone">Root of the CUDA installation to locate <span class="tt">libdevice</span> in, if the CUDA paths do not yield one.  </td></tr>
+</table>
 <p>Every output option accepts "-" to write to stdout.  </p>
 <dl class="section note"><dt>Note</dt><dd>The <em>Developer Options</em> only exist if MimIR was built with <span class="tt"><a class="el" href="config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b">MIM_ENABLE_CHECKS</a></span>; see the <a class="el" href="coding.html#building" title="Contributor Quick Start">CMake switches</a>.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="clidiag"></a>
@@ -384,12 +408,11 @@ Diagnostics</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">msvc</span>  </td><td class="markdownTableBodyNone"><span class="tt">path(row,col)</span>  </td></tr>
 </table>
-<p>Color is decided by the terminal and honors <span class="tt">NO_COLOR</span>, <span class="tt">CLICOLOR=0</span>, and <span class="tt">CLICOLOR_FORCE</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Plugins</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Search Paths</h2>
-<p>You can specify more search paths with <span class="tt">-P</span> / <span class="tt">--plugin-path</span> and via the environment variable <span class="tt">MIM_PLUGIN_PATH</span>. <a class="el" href="namespaceMim.html">Mim</a> looks for plugins in this order:</p>
+<p><a class="el" href="namespaceMim.html">Mim</a> looks for plugins in this order:</p>
 <ol type="1">
 <li>The current working directory.</li>
 <li>All paths specified via <span class="tt">-P</span> / <span class="tt">--plugin-path</span> (in the given order).</li>
@@ -408,6 +431,9 @@ Arguments</h2>
 <li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
 </ul>
 <p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations.</p>
+<h2 class="doxsection"><a class="anchor" id="clipluginenv"></a>
+Environment Variables</h2>
+<p>A plugin may also read environment variables - typically to locate an external toolchain it shells out to. It declares them as <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="mim::PluginEnv"><span class="tt">mim::PluginEnv</span></a>s next to the code that reads them, so the <em>Plugin Environment Variables</em> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations, just like the <span class="tt">-X</span> tables above. Since a plugin only announces them once it is loaded, <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; --help</span> lists the ones belonging to <span class="tt">&lt;plugin&gt;</span>.</p>
 <div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>

@@ -47,12 +47,13 @@ var searchData=
   ['k_5fwhere_44',['K_where',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a591638235693a00f9ae369606644a290',1,'mim::ast::Tok']]],
   ['k_5fwith_45',['K_with',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8',1,'mim::ast::Tok']]],
   ['keep_46',['keep',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a9d9568a79751fc87a4d230ee37c8a202',1,'mim::plug::mem::phase']]],
-  ['kernel_20launch_47',['Kernel Launch',['../gpu.html#autotoc_md312',1,'']]],
-  ['key_48',['Key',['../ord.html#autotoc_md382',1,'%ord.Key'],['../namespacemim_1_1plug_1_1ord.html#a87a29d8695533c2820227f29d2124532',1,'mim::plug::ord::Key']]],
+  ['kernel_20launch_47',['Kernel Launch',['../gpu.html#autotoc_md314',1,'']]],
+  ['key_48',['Key',['../ord.html#autotoc_md384',1,'%ord.Key'],['../namespacemim_1_1plug_1_1ord.html#a87a29d8695533c2820227f29d2124532',1,'mim::plug::ord::Key']]],
   ['key_49',['key',['../classmim_1_1World.html#ab3cf23206d16cfb2aaadaabb1c32dd92',1,'mim::World::CurrLoc']]],
-  ['key_20innovations_50',['🔥 Key Innovations',['../index.html#autotoc_md134',1,'']]],
-  ['keywords_51',['Keywords',['../langref.html#autotoc_md59',1,'']]],
+  ['key_20innovations_50',['🔥 Key Innovations',['../index.html#autotoc_md136',1,'']]],
+  ['keywords_51',['Keywords',['../langref.html#autotoc_md61',1,'']]],
   ['kind_52',['Kind',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42fafaa5ce425501a5673f4cd7f55c22f97d',1,'mim::UMax']]],
-  ['kinds_20and_20builtin_20types_53',['Kinds and Builtin Types',['../langref.html#autotoc_md62',1,'']]],
-  ['known_5fargs_54',['known_args',['../classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e',1,'mim::Driver::known_args()'],['../compile_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;compile.cpp'],['../ll_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;ll.cpp'],['../ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;ll_nvptx.cpp'],['../tensor_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;tensor.cpp']]]
+  ['kinds_20and_20builtin_20types_53',['Kinds and Builtin Types',['../langref.html#autotoc_md64',1,'']]],
+  ['known_5fargs_54',['known_args',['../classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e',1,'mim::Driver::known_args()'],['../compile_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;compile.cpp'],['../ll_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;ll.cpp'],['../ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;ll_nvptx.cpp'],['../tensor_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908',1,'known_args:&#160;tensor.cpp']]],
+  ['known_5fenvs_55',['known_envs',['../classmim_1_1Driver.html#a00f6fb77429b6f7b353e95d42b2a1bd2',1,'mim::Driver::known_envs()'],['../ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514',1,'known_envs:&#160;ll_nvptx.cpp']]]
 ];

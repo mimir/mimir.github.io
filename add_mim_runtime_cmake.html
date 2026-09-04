@@ -162,8 +162,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('add_mim_runtim
 <div class="contents">
 <div class="textblock"><p>Compiles a plugin's C runtime wrappers into a single LLVM IR module.</p>
 <div class="fragment"><div class="line">add_mim_runtime(&lt;plugin-name&gt;</div>
-<div class="line">    SOURCES &lt;source&gt;...</div>
-<div class="line">    [INSTALL])</div>
+<div class="line">    SOURCES &lt;source&gt;...)</div>
 </div><!-- fragment --><p>All <span class="tt">SOURCES</span> are compiled with <span class="tt">clang</span> and merged into a single textual module <span class="tt">&lt;libdir&gt;/mim/rt/&lt;plugin-name&gt;_rt.ll</span>, next to the plugins. A backend locates that one file via the driver's search paths (see <a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html#a9bef375c0acf34184b55999e1269e878" title="mim.plug.ll.Emitter.load_rt_module">mim.plug.ll.Emitter.load_rt_module</a>) and either embeds it into or links it with its emitted module (see <span class="tt">-X &lt;plugin-name&gt;:rt=embed|extern</span>). Producing a single module keeps the runtime addressable by one well-known name regardless of how many source files it is split into.</p>
 <p>A single source is compiled directly to the module; multiple sources are compiled to bitcode and merged with <span class="tt">llvm-link</span> (which must then be on <span class="tt">PATH</span>).</p>
 <p>If <span class="tt">clang</span> is unavailable (see <span class="tt">MIM_CLANG</span>) or <span class="tt">MIM_BUILD_LL_RUNTIME</span> is off, the command is a no-op; the runtime is simply not built. </p>

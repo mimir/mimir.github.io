@@ -207,18 +207,21 @@ Contributor Quick Start</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt"><a class="el" href="config_8h.html#a654388ccf586a85da62a6d443b103a9e">MIM_VER_SUFFIX</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;suffix&gt;</span>  </td><td class="markdownTableBodyNone"><span class="tt">-dev</span>  </td><td class="markdownTableBodyNone">Suffix appended to the version string; use <span class="tt">""</span> for a release.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">BUILD_TESTING</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build all unit tests and <span class="tt">lit</span> tests.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">MIM_VERIFY_PLUGINS</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, elaborate every plugin's <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> with its plugin library loaded after building it. <br  />
+ <span class="tt">--bootstrap</span> alone never loads the libraries, so it cannot catch errors that need the normalizers.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">BUILD_TESTING</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, build all unit tests and <span class="tt">lit</span> tests.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">MIM_FILECHECK</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;filecheck_cmd&gt;</span>  </td><td class="markdownTableBodyNone">autodetected  </td><td class="markdownTableBodyNone"><span class="tt">FileCheck</span> command used by the <span class="tt">lit</span> tests. <br  />
  (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">MIM_LIT_TIMEOUT</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;timeout_in_sec&gt;</span>  </td><td class="markdownTableBodyNone"><span class="tt">30</span>  </td><td class="markdownTableBodyNone">Timeout for <span class="tt">lit</span> tests. <br  />
- (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">MIM_LIT_TIMEOUT</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;timeout_in_sec&gt;</span>  </td><td class="markdownTableBodyNone"><span class="tt">120</span>  </td><td class="markdownTableBodyNone">Timeout for <span class="tt">lit</span> tests. <br  />
+ (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">MIM_LIT_WITH_VALGRIND</span>  </td><td class="markdownTableBodyNone"><span class="tt">ON</span> | <span class="tt">OFF</span>  </td><td class="markdownTableBodyNone"><span class="tt">OFF</span>  </td><td class="markdownTableBodyNone">If <span class="tt">ON</span>, run the <a class="el" href="namespaceMim.html">Mim</a> CLI in the <span class="tt">lit</span> tests under Valgrind. <br  />
  (requires <span class="tt">BUILD_TESTING=ON</span>).  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Dependencies</h2>
 <p>In addition to the provided <a href="https://github.com/mimir/mimir/tree/master/submodules">submodules</a>, you will need:</p>
 <ul>
@@ -233,7 +236,7 @@ Testing</h1>
 <div class="fragment"><div class="line">cmake --build build --target test-all</div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="plugins.html#extra_plugins" title="Third-Party Plugin Discovery">Third-Party Plugin Discovery</a> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>A third-party plugin in <span class="tt">extra/</span> contributes to both suites automatically.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 lit Tests</h2>
 <p>Run the <a href="https://llvm.org/docs/CommandGuide/lit.html">lit</a> test suite with:</p>
 <div class="fragment"><div class="line">cmake --build build --target lit</div>
@@ -245,7 +248,7 @@ lit Tests</h2>
 <div class="line">../scripts/probe.sh foo.mim</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use:</dd></dl>
 <div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Unit Tests</h2>
 <p><span class="tt">test/</span> holds the <a href="https://github.com/doctest/doctest">doctest</a> unit tests, built as <span class="tt">mim-test</span> and <span class="tt">mim-regex-test</span>. Run them - and every other CTest test - with:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
@@ -258,9 +261,9 @@ Unit Tests</h2>
 </div><!-- fragment --><p>doctest breaks into an attached debugger on a failing assertion; pass <span class="tt">-nb</span> to suppress that.</p>
 <dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific unit-test failure, use:</dd></dl>
 <div class="fragment"><div class="line">./scripts/make_test_error.sh &quot;World: dependent extract&quot;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Coding Style</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 C++ Style</h2>
 <p>Use the following coding conventions:</p>
 <ul>
@@ -325,7 +328,7 @@ Include Style</h3>
 <div class="fragment"><div class="line">./scripts/check_includes.py          # check all sources</div>
 <div class="line">./scripts/check_includes.py --fix    # rewrite offending includes in place</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><span class="tt">--fix</span> only changes <span class="tt">"..."</span> to <span class="tt">&lt;...&gt;</span> and vice versa. Since the two forms belong to different include groups, run <span class="tt">pre-commit run clang-format --files &lt;fixed files&gt;</span> afterwards to regroup them. Only path-qualified includes are checked, so a plain <span class="tt">#include "foo.h"</span> next to the including file is always fine.</dd></dl>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Doxygen Style</h3>
 <ul>
 <li>Use <span class="tt">///</span> for Doxygen comments.</li>
@@ -337,7 +340,7 @@ Doxygen Style</h3>
 <p>To run <span class="tt">clang-format</span> automatically on changed files, install the provided <a href="https://pre-commit.com/">pre-commit</a> hook:</p>
 <div class="fragment"><div class="line">pre-commit install</div>
 </div><!-- fragment --><p>You can also <a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html#disabling-formatting-on-a-piece-of-code">disable clang-format for a piece of code</a> when necessary. Depending on your editor, the <a href="https://clang.llvm.org/docs/ClangFormat.html#vim-integration">Vim integration</a> and similar plugins may also be useful.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 Example</h2>
 <p>Here is a small header that follows the conventions above:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
@@ -364,7 +367,7 @@ Example</h2>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 CMake Style</h2>
 <ul>
 <li>Use 4 spaces for one indentation level.</li>
@@ -372,13 +375,13 @@ CMake Style</h2>
 <li>Use uppercase names for project-specific CMake variables and options such as <span class="tt">MIM_BUILD_DOCS</span> or <span class="tt">MIM_PLUGINS</span>.</li>
 <li>For longer CMake calls, put arguments on separate indented lines instead of cramming everything onto one line.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Markdown Style</h2>
 <ul>
 <li>Use one sentence per line in Markdown prose.</li>
 <li>Do not hard-wrap Markdown text to 80 columns.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 M⁠im Coding Style</h2>
 <ul>
 <li>Prefer the primary UTF-8 surface syntax over ASCII-only spellings when writing <a class="el" href="namespaceMim.html">Mim</a> code and tests.</li>
@@ -391,11 +394,11 @@ M⁠im Coding Style</h2>
 <li>Use <span class="tt">snake_case</span> for value-level names such as functions, lambdas, binders, local lets, and pattern-bound values.</li>
 <li>Use <span class="tt">CamelCase</span> for type-level names such as types and type constructors.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Syntax Highlighting</h2>
 <p><a href="https://github.com/AnyDSL/vim-mim">This</a> Vim plugin provides syntax highlighting for <a class="el" href="namespaceMim.html">Mim</a> files.</p>
 <p>There is also a <a href="https://gitlab.com/amaeble/tree-sitter-mim">tree-sitter grammar</a> for <a class="el" href="namespaceMim.html">Mim</a> files and a <a href="https://github.com/amaebel/helix">Helix fork</a> with highlight and injection queries.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Debugging</h1>
 <p>The <a class="el" href="#testing" title="Testing">Testing</a> section above already provides some debugging tips. This section has more information about this topic.</p>
 <p><b>See also:</b></p>
@@ -405,7 +408,7 @@ Debugging</h1>
 <li><a href="https://interrupt.memfault.com/blog/advanced-gdb">Advanced GDB Usage</a></li>
 <li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb.html/">Debugging with GDB</a></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Dumping</h2>
 <p>You can directly invoke several MimIR dump helpers from within GDB, for example:</p>
 <ul>
@@ -427,7 +430,7 @@ Dumping</h2>
 <div class="fragment"><div class="line">(gdb) p world().gid2def(123)</div>
 <div class="line">$1 = ...</div>
 <div class="line">(gdb) call $1-&gt;dump()</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 Displaying DOT Graphs</h2>
 <p><span class="tt">scripts/xdot.gdb</span> provides custom GDB commands to generate a <a href="https://graphviz.org/">DOT</a> graph and display it with <a href="https://github.com/jrfonseca/xdot.py">xdot</a>.</p>
 <p>To enable it, source <span class="tt">scripts/xdot.gdb</span> from your <span class="tt">~/.gdbinit</span>:</p>
@@ -482,16 +485,16 @@ cgdb session using xdot</div></div>
 <div class="line"> </div>
 <div class="line">Show DOT graph of &#39;world&#39; including types.</div>
 <div class="line">xdotw &amp;def-&gt;world() 1</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 Conditional Breakpoints</h2>
 <p>Often, you will want to inspect a specific <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">mim::Def</span></a> at a particular point in the program. <a href="https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_33.html">Conditional breakpoints</a> are very handy for this.</p>
 <p>For example, the following command breaks if the <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="mim::Def::gid"><span class="tt">mim::Def::gid</span></a> of variable <span class="tt">def</span> is <span class="tt">42</span> at source location <span class="tt">foo.cpp:23</span>:</p>
 <div class="fragment"><div class="line">break foo.cpp:23 if def-&gt;gid() == 42</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
 Catching Exceptions</h2>
 <p>For several things, such as errors in the <a class="el" href="namespaceMim.html">Mim</a> frontend, MimIR uses C++ exceptions for error handling. To stop when an exception is thrown, use:</p>
 <div class="fragment"><div class="line">catch throw</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
 Valgrind &amp; GDB</h2>
 <p>If you run into memory-related problems, it can be useful to run the program with <a href="https://valgrind.org/docs/manual/manual-core-adv.html">Valgrind's GDB server</a>.</p>
 <p>Launch the test binary like this:</p>
@@ -517,7 +520,7 @@ Logging</h2>
 <td class="markdownTableBodyNone"><span class="tt">-VVVVV</span>  </td><td class="markdownTableBodyNone"><span class="tt">Trace</span>  </td></tr>
 </table>
 <p><span class="tt">Debug</span> and <span class="tt">Trace</span> output only exists in a <span class="tt">Debug</span> build.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
 Triggering Breakpoints</h2>
 <p>You can tell <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> to trigger a breakpoint when certain events happen:</p>
 <div class="fragment"><div class="line">mim test.mim -b 1234            # Break if the node with gid 1234 is created.</div>
