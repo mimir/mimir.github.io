@@ -52,6 +52,9 @@ var hierarchy =
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
     [ "mim::Nest::Node", "classmim_1_1Nest_1_1Node.html", null ],
+    [ "absl::node_hash_map", null, [
+      [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
+    ] ],
     [ "mim::detail::NullSafeDefGIDLt", null, null ],
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
@@ -195,11 +198,16 @@ var hierarchy =
           [ "mim::ast::ValDecl", "classmim_1_1ast_1_1ValDecl.html", [
             [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", null ],
             [ "mim::ast::CDecl", "classmim_1_1ast_1_1CDecl.html", null ],
+            [ "mim::ast::Import", "classmim_1_1ast_1_1Import.html", null ],
             [ "mim::ast::LetDecl", "classmim_1_1ast_1_1LetDecl.html", null ],
+            [ "mim::ast::ModDecl", "classmim_1_1ast_1_1ModDecl.html", [
+              [ "mim::ast::File", "classmim_1_1ast_1_1File.html", null ]
+            ] ],
             [ "mim::ast::RecDecl", "classmim_1_1ast_1_1RecDecl.html", [
               [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ]
             ] ],
-            [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", null ]
+            [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", null ],
+            [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", null ]
           ] ]
         ] ],
         [ "mim::ast::Expr", "classmim_1_1ast_1_1Expr.html", [
@@ -209,12 +217,12 @@ var hierarchy =
           [ "mim::ast::ErrorExpr", "classmim_1_1ast_1_1ErrorExpr.html", null ],
           [ "mim::ast::ExtractExpr", "classmim_1_1ast_1_1ExtractExpr.html", null ],
           [ "mim::ast::HoleExpr", "classmim_1_1ast_1_1HoleExpr.html", null ],
-          [ "mim::ast::IdExpr", "classmim_1_1ast_1_1IdExpr.html", null ],
           [ "mim::ast::InjExpr", "classmim_1_1ast_1_1InjExpr.html", null ],
           [ "mim::ast::InsertExpr", "classmim_1_1ast_1_1InsertExpr.html", null ],
           [ "mim::ast::LamExpr", "classmim_1_1ast_1_1LamExpr.html", null ],
           [ "mim::ast::LitExpr", "classmim_1_1ast_1_1LitExpr.html", null ],
           [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", null ],
+          [ "mim::ast::PathExpr", "classmim_1_1ast_1_1PathExpr.html", null ],
           [ "mim::ast::PiExpr", "classmim_1_1ast_1_1PiExpr.html", null ],
           [ "mim::ast::PrimaryExpr", "classmim_1_1ast_1_1PrimaryExpr.html", null ],
           [ "mim::ast::RetExpr", "classmim_1_1ast_1_1RetExpr.html", null ],
@@ -226,9 +234,8 @@ var hierarchy =
           [ "mim::ast::UnionExpr", "classmim_1_1ast_1_1UnionExpr.html", null ],
           [ "mim::ast::UniqExpr", "classmim_1_1ast_1_1UniqExpr.html", null ]
         ] ],
-        [ "mim::ast::Import", "classmim_1_1ast_1_1Import.html", null ],
         [ "mim::ast::MatchExpr::Arm", "classmim_1_1ast_1_1MatchExpr_1_1Arm.html", null ],
-        [ "mim::ast::Module", "classmim_1_1ast_1_1Module.html", null ],
+        [ "mim::ast::Path", "classmim_1_1ast_1_1Path.html", null ],
         [ "mim::ast::PiExpr::Dom", "classmim_1_1ast_1_1PiExpr_1_1Dom.html", [
           [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", null ]
         ] ]

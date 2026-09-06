@@ -1,7 +1,7 @@
 var searchData=
 [
   ['n_0',['N',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4a8d9c307cb7f3c4a32822a51922d1ceaa',1,'mim::ast']]],
-  ['name_1',['name',['../namespacemim.html#ac81e38f7fe20dc6057c9ba0678e13fd8',1,'mim::PluginEnv::name'],['../structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11',1,'mim::Plugin::name'],['../structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6',1,'mim::World::State::POD::name'],['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a',1,'mim::Phase::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
+  ['name_1',['name',['../namespacemim.html#ac81e38f7fe20dc6057c9ba0678e13fd8',1,'mim::PluginEnv::name'],['../structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11',1,'mim::Plugin::name'],['../structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6',1,'mim::World::State::POD::name'],['../classmim_1_1ast_1_1Import.html#a072fa39b9188e5b2945175f0603695a8',1,'mim::ast::Import::name()'],['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a',1,'mim::Phase::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
   ['name2annex_2',['name2annex',['../classmim_1_1ast_1_1AST.html#a53873fe117107e145fa35a1eda8383c7',1,'mim::ast::AST']]],
   ['name_5f_3',['name_',['../classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012',1,'mim::Phase']]],
   ['named_4',['Named',['../classNamed.html',1,'Named'],['../classNamed.html#a9a34c2705a5d47d24c98f59df6dad3b3',1,'Named::Named()']]],

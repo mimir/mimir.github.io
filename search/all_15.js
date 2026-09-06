@@ -69,11 +69,12 @@ var searchData=
   ['us_66',['us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2',1,'mim::plug::core']]],
   ['usage_67',['Usage',['../rewriting.html#autotoc_md147',1,'Typical Usage'],['../rewriting.html#autotoc_md149',1,'Typical Usage'],['../cli.html#cliusage',1,'Usage']]],
   ['use_68',['Use',['../classmim_1_1Use.html',1,'mim::Use'],['../classmim_1_1Use.html#ad1bfa5ee84aa2b6d63b9d8b8767fb7e5',1,'mim::Use::Use()'],['../classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954',1,'mim::Use::Use(const Def *def, size_t index)']]],
-  ['useeq_69',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
-  ['usehash_70',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]],
-  ['users_71',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
-  ['uses_72',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]],
-  ['uses_73',['uses',['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler']]],
-  ['uses_5flibdevice_74',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]],
-  ['utility_75',['Utility',['../compile.html#autotoc_md244',1,'']]]
+  ['usedecl_69',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html',1,'mim::ast::UseDecl'],['../classmim_1_1ast_1_1UseDecl.html#aac62f65b943c3e0b2277d649e0964038',1,'mim::ast::UseDecl::UseDecl()']]],
+  ['useeq_70',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
+  ['usehash_71',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]],
+  ['users_72',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
+  ['uses_73',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]],
+  ['uses_74',['uses',['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler']]],
+  ['uses_5flibdevice_75',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]],
+  ['utility_76',['Utility',['../compile.html#autotoc_md244',1,'']]]
 ];

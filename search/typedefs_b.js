@@ -6,7 +6,7 @@ var searchData=
   ['s8_3',['s8',['../namespacemim.html#ac4e6752bd834d28cb851c128dfa5b8c7',1,'mim']]],
   ['scc_4',['SCC',['../classmim_1_1Nest_1_1Node.html#ae9959bd55ff49d0f1ac66f18aad554db',1,'mim::Nest::Node']]],
   ['schedule_5',['Schedule',['../classmim_1_1Scheduler.html#a3df38c3ac0b5e1b5b2af665af6cb40bf',1,'mim::Scheduler']]],
-  ['scope_6',['Scope',['../classmim_1_1ast_1_1Scopes.html#ab64af275afa2f1825fde3b0fc264f6bd',1,'mim::ast::Scopes']]],
+  ['scope_6',['Scope',['../namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c',1,'mim::ast']]],
   ['scopedloc_7',['ScopedLoc',['../classmim_1_1World.html#aab7ecab9540c82754523bf9aa523f5d6',1,'mim::World']]],
   ['splits_8',['Splits',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83',1,'mim::plug::tensor::phase']]],
   ['sub_5ft_9',['sub_t',['../namespacemim.html#a190fd94a575b212f38ae8be611f1c367',1,'mim']]],

@@ -32,7 +32,7 @@ var searchData=
   ['k_5flam_29',['K_lam',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a27379c42e77c7e30bdc81db7c988058f',1,'mim::ast::Tok']]],
   ['k_5flet_30',['K_let',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5abc3b81567a2120d32858af82e3a5fcea',1,'mim::ast::Tok']]],
   ['k_5fmatch_31',['K_match',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4',1,'mim::ast::Tok']]],
-  ['k_5fmodule_32',['K_module',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ab47f1334f10c60f51233f889228de333',1,'mim::ast::Tok']]],
+  ['k_5fmod_32',['K_mod',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a66afdb85b833d677fc82a5b311ef44e6',1,'mim::ast::Tok']]],
   ['k_5fnat_33',['K_Nat',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aefffde19d56073e2539eb8c5b2d51296',1,'mim::ast::Tok']]],
   ['k_5fnorm_34',['K_norm',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a43bec1de350f6575f696e7f802157c6d',1,'mim::ast::Tok']]],
   ['k_5fplugin_35',['K_plugin',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a16b614bec0670bc8776c90f9d69d2a62',1,'mim::ast::Tok']]],
@@ -43,8 +43,9 @@ var searchData=
   ['k_5ftt_40',['K_tt',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a2879fcb4320671691958f7a455aa82bd',1,'mim::ast::Tok']]],
   ['k_5ftype_41',['K_Type',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a99c9443b98ae3d0847fdcd64f6600e25',1,'mim::ast::Tok']]],
   ['k_5funiv_42',['K_Univ',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a49b3d477647d73a29f5821aad9819448',1,'mim::ast::Tok']]],
-  ['k_5fwhen_43',['K_when',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a668acd5cc353c2620be3912fe9e96f18',1,'mim::ast::Tok']]],
-  ['k_5fwhere_44',['K_where',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a591638235693a00f9ae369606644a290',1,'mim::ast::Tok']]],
-  ['k_5fwith_45',['K_with',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8',1,'mim::ast::Tok']]],
-  ['kind_46',['Kind',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42fafaa5ce425501a5673f4cd7f55c22f97d',1,'mim::UMax']]]
+  ['k_5fuse_43',['K_use',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a90a853fb5546651daef6d67beb6d2ee7',1,'mim::ast::Tok']]],
+  ['k_5fwhen_44',['K_when',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a668acd5cc353c2620be3912fe9e96f18',1,'mim::ast::Tok']]],
+  ['k_5fwhere_45',['K_where',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a591638235693a00f9ae369606644a290',1,'mim::ast::Tok']]],
+  ['k_5fwith_46',['K_with',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8',1,'mim::ast::Tok']]],
+  ['kind_47',['Kind',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42fafaa5ce425501a5673f4cd7f55c22f97d',1,'mim::UMax']]]
 ];

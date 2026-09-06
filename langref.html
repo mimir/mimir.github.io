@@ -185,7 +185,7 @@ Primary Terminals</h3>
 <div class="line">→ =&gt; ⊥ ⊤ * □ λ</div>
 <div class="line">= , ; . : @ $ # | ∪</div>
 <div class="line">&lt;eof&gt;</div>
-</div><!-- fragment --><p><span class="tt">%</span> is only part of annex names and is not a standalone token.</p>
+</div><!-- fragment --><p><span class="tt">%</span> is only part of annex names and is not a standalone token. An annex name <span class="tt">A</span> is a <em>single</em> token: only there may <span class="tt">.</span> occur inside a name, and only there may a component be spelled like a keyword - hence <span class="tt">affine.Idx</span> and <span class="tt">core.nat.mod</span>. Everywhere else <span class="tt">.</span> is the separator of a <a class="el" href="#path" title="Paths and Modules">path</a>.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
 Secondary Terminals</h3>
 <div class="fragment"><div class="line">&lt; &gt; &lt;&lt; &gt;&gt;</div>
@@ -195,10 +195,9 @@ Secondary Terminals</h3>
 Keywords</h3>
 <div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Nat Rule Type Univ</div>
 <div class="line">and as axm ccon cfun cn con end extern ff fn fun</div>
-<div class="line">i1 i8 i16 i32 i64 import inj ins lam let match module</div>
-<div class="line">norm plugin rec ret rule tt when where with</div>
-</div><!-- fragment --><p><span class="tt">module</span> is currently reserved by the lexer even though it does not introduce a surface construct in the grammar below.</p>
-<p>The following names are predefined aliases:</p>
+<div class="line">i1 i8 i16 i32 i64 import inj ins lam let match mod</div>
+<div class="line">norm plugin rec ret rule tt when where with use</div>
+</div><!-- fragment --><p>The following names are predefined aliases:</p>
 <div class="fragment"><div class="line">tt   = 1₂</div>
 <div class="line">ff   = 0₂</div>
 <div class="line">Bool = Idx i1</div>
@@ -216,8 +215,8 @@ Keywords</h3>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 Pattern Terminals</h3>
 <p>The following terminals are defined by lexical patterns.</p>
-<div class="fragment"><div class="line">I      ::= sym</div>
-<div class="line">A      ::= &quot;%&quot; sym &quot;.&quot; sym (&quot;.&quot; sym)?</div>
+<div class="fragment"><div class="line">I      ::= id</div>
+<div class="line">A      ::= &quot;%&quot; id &quot;.&quot; id (&quot;.&quot; id)?</div>
 <div class="line">L      ::= dec+</div>
 <div class="line">         |  &quot;0&quot; [&quot;bB&quot;] bin+</div>
 <div class="line">         |  &quot;0&quot; [&quot;oO&quot;] oct+</div>
@@ -246,7 +245,7 @@ Pattern Terminals</h3>
 <div class="line">eE     ::= [&quot;eE&quot;]</div>
 <div class="line">pP     ::= [&quot;pP&quot;]</div>
 <div class="line">sign   ::= [&quot;+-&quot;]</div>
-<div class="line">sym    ::= [_a-zA-Z] [._0-9a-zA-Z]*</div>
+<div class="line">id     ::= [_a-zA-Z] [_0-9a-zA-Z]*</div>
 <div class="line">esc    ::= one of: \&#39; \&quot; \0 \a \\ \b \f \n \r \t \v</div>
 </div><!-- fragment --><p>Character and string literals only admit ASCII payload characters plus the escapes listed above.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
@@ -254,28 +253,47 @@ Comments</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports <span class="tt">/* ... */</span> multi-line comments, <span class="tt">// ...</span> single-line comments, and <span class="tt">/// ...</span> comments that are forwarded to generated <a href="https://www.doxygen.nl/manual/markdown.html">Markdown</a> output. <span class="tt">/* ... */</span> comments are not nested. For <span class="tt">///</span> comments, a line of the form <span class="tt">/// text</span> contributes <span class="tt">text</span> directly to the Markdown output. Other <span class="tt">///</span> forms are emitted verbatim inside a <a href="https://www.doxygen.nl/manual/markdown.html#md_fenced">fenced code block</a>.</p>
 <h1 class="doxsection"><a class="anchor" id="grammar"></a>
 Grammar</h1>
-<p><a class="el" href="namespaceMim.html">Mim</a> is defined by a <a href="https://en.wikipedia.org/wiki/Context-free_grammar">context-free grammar</a>. Its terminals are the lexical elements defined above. The start symbol is <span class="tt">m</span> for <em>module</em>.</p>
+<p><a class="el" href="namespaceMim.html">Mim</a> is defined by a <a href="https://en.wikipedia.org/wiki/Context-free_grammar">context-free grammar</a>. Its terminals are the lexical elements defined above. The start symbol is <span class="tt">f</span> for <em>file</em>.</p>
 <p>The main nonterminals used below are:</p>
-<div class="fragment"><div class="line">m   module</div>
+<div class="fragment"><div class="line">f   file</div>
 <div class="line">d   declaration</div>
 <div class="line">p   ()-style pattern</div>
 <div class="line">b   []-style pattern</div>
 <div class="line">e   expression</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="module"></a>
-Module</h2>
-<div class="fragment"><div class="line">m   ::= dep* d*</div>
-<div class="line">dep ::= &quot;import&quot; I &quot;;&quot;</div>
-<div class="line">     |  &quot;plugin&quot; I &quot;;&quot;</div>
-</div><!-- fragment --><p>A module consists of zero or more imports or plugins followed by zero or more declarations.</p>
+Files and Imports</h2>
+<div class="fragment"><div class="line">f ::= d*</div>
+</div><!-- fragment --><p>A file is a sequence of declarations, <span class="tt">import</span> and <span class="tt">plugin</span> among them. Each file forms a <a class="el" href="#path" title="Paths and Modules">module</a> of its own that an import binds under a name.</p>
 <ul>
 <li><span class="tt">import foo;</span> resolves the module name <span class="tt">foo</span> through the search path.</li>
+<li><span class="tt">import "some/dir/foo.mim";</span> resolves the path relative to the importing file first, then through the search path.</li>
 <li>If the resolved file name has no extension, <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is appended.</li>
-<li><span class="tt">plugin foo;</span> first loads the plugin <span class="tt">foo</span> and then imports the module with the same name.</li>
+<li><span class="tt">plugin foo;</span> first loads the plugin <span class="tt">foo</span> and then imports the module with the same name. Only <span class="tt">plugin</span> loads a shared object; <span class="tt">import</span> never does.</li>
+<li>The bound name defaults to the file name without its extension and must be an identifier; <span class="tt">as</span> overrides it.</li>
+<li>A file is parsed, bound, and emitted exactly once, no matter how many modules import it. Importing a file that is still being parsed is an error.</li>
+<li>An import is an ordinary declaration, so it may sit wherever declarations may - inside a <span class="tt">mod</span>, a <span class="tt">where</span> block, or a function body - and binds its name in exactly that scope.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="path"></a>
+Paths and Modules</h2>
+<div class="fragment"><div class="line">path ::= I (&quot;.&quot; k)*</div>
+<div class="line">      |  A</div>
+<div class="line">k    ::= I | keyword</div>
+</div><!-- fragment --><p>A path resolves its first component lexically and then walks into that module. A module is either an imported file or a <span class="tt">mod</span> declaration.</p>
+<ul>
+<li>A component after a <span class="tt">.</span> may be spelled like a keyword, as may a tag in an <span class="tt">axm</span> tag list - both positions are unambiguous.</li>
+<li><span class="tt">.</span> never reads a field out of a value; use <span class="tt">#</span> for that.</li>
+<li>An annex name <span class="tt">A</span> is one token and stays a flat, global name: it resolves in the global annex scope regardless of the surrounding modules.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="decl"></a>
 Declarations</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families.</p>
-<div class="fragment"><div class="line">let p = e</div>
+<div class="fragment"><div class="line">import (I | S) [&quot;as&quot; I]</div>
+<div class="line">plugin I [&quot;as&quot; I]</div>
+<div class="line"> </div>
+<div class="line">mod I &quot;{&quot; d* &quot;}&quot;</div>
+<div class="line">use path</div>
+<div class="line"> </div>
+<div class="line">let p = e</div>
 <div class="line">let A = e</div>
 <div class="line"> </div>
 <div class="line">lam|con|fun [extern] n dom+ [: e] = e</div>
@@ -290,6 +308,9 @@ Declarations</h2>
 <div class="line">rule|norm n p : e [when e] =&gt; e</div>
 </div><!-- fragment --><p>Here <span class="tt">n</span> is either an identifier or an annex name.</p>
 <ul>
+<li><span class="tt">import</span> and <span class="tt">plugin</span> bind a file as a module; see <a class="el" href="#module" title="Files and Imports">Files and Imports</a>.</li>
+<li><span class="tt">mod</span> groups declarations under a name; its body also sees the enclosing scope.</li>
+<li><span class="tt">use</span> splices all members of a module into the current scope.</li>
 <li><span class="tt">let</span> introduces a binding pattern.</li>
 <li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations.</li>
 <li><span class="tt">extern</span> may appear on <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declarations.</li>
@@ -488,13 +509,13 @@ Function Types</h2>
 <div class="line">[T: *] → Fn  [T, T] → T</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 Scoping</h1>
-<p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same namespace.</p>
+<p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Annex</h2>
-<p>Annex names live in a separate global namespace.</p>
+<p>Annex names live in a separate global scope that the module structure does not partition.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Field Names of Sigmas</h2>
 <p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of mutable sigma types are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">X</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>

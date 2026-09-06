@@ -8,6 +8,7 @@ var searchData=
   ['univ_5',['Univ',['../classmim_1_1Univ.html',1,'mim']]],
   ['unload_6',['Unload',['../classmim_1_1Unload.html',1,'mim']]],
   ['use_7',['Use',['../classmim_1_1Use.html',1,'mim']]],
-  ['useeq_8',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
-  ['usehash_9',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]]
+  ['usedecl_8',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html',1,'mim::ast']]],
+  ['useeq_9',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
+  ['usehash_10',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]]
 ];

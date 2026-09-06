@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name_0',['name',['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a',1,'mim::Phase::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
+  ['name_0',['name',['../classmim_1_1ast_1_1Import.html#a072fa39b9188e5b2945175f0603695a8',1,'mim::ast::Import::name()'],['../classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d',1,'mim::Nest::Node::name()'],['../classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a',1,'mim::Phase::name()'],['../classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7',1,'mim::World::name()']]],
   ['name2annex_1',['name2annex',['../classmim_1_1ast_1_1AST.html#a53873fe117107e145fa35a1eda8383c7',1,'mim::ast::AST']]],
   ['named_2',['Named',['../classNamed.html#a9a34c2705a5d47d24c98f59df6dad3b3',1,'Named']]],
   ['names_3',['names',['../classmim_1_1Driver.html#a97a7d0745c0466134d1c8f93c880af85',1,'mim::Driver']]],

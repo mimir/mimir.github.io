@@ -3,6 +3,7 @@ var tok_8h =
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", "classmim_1_1ast_1_1Tok" ],
     [ "CODE", "tok_8h.html#a9858c29a6d8cc9ffe286cc134ec56da5", null ],
     [ "CODE", "tok_8h.html#a51828fdbe8ee0be34cb2fa55587be1d7", null ],
+    [ "CODE", "tok_8h.html#a9705ae9902b3940fcfb86f537fd375e7", null ],
     [ "CODE", "tok_8h.html#abef6cfdd2d8604506ef76d0f49a722cb", null ],
     [ "CODE", "tok_8h.html#ad83449f01964b3df7bbc5062921f02f6", null ],
     [ "MIM_KEY", "tok_8h.html#abc9428554ffe51f249e7561d0ccd0a21", null ],

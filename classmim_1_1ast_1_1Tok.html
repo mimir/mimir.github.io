@@ -184,6 +184,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afadef3e0400c7861f10d5fe55f1b66e3" id="r_afadef3e0400c7861f10d5fe55f1b66e3"><td class="memItemLeft">char8_t&#160;</td><td class="memItemRight"><a class="el" href="#afadef3e0400c7861f10d5fe55f1b66e3">lit_c</a> () const</td></tr>
 <tr class="memitem:a972475ec52322b115a2ec24790f06b28" id="r_a972475ec52322b115a2ec24790f06b28"><td class="memItemLeft">uint64_t&#160;</td><td class="memItemRight"><a class="el" href="#a972475ec52322b115a2ec24790f06b28">lit_u</a> () const</td></tr>
 <tr class="memitem:a1614f4001b6ff119534d0d434a80f608" id="r_a1614f4001b6ff119534d0d434a80f608"><td class="memItemLeft">Sym&#160;</td><td class="memItemRight"><a class="el" href="#a1614f4001b6ff119534d0d434a80f608">sym</a> () const</td></tr>
+<tr class="memitem:aeec5f85f1f0f75efb7da3630e7996ddd" id="r_aeec5f85f1f0f75efb7da3630e7996ddd"><td class="memItemLeft">Sym&#160;</td><td class="memItemRight"><a class="el" href="#aeec5f85f1f0f75efb7da3630e7996ddd">key_sym</a> () const</td></tr>
+<tr class="memdesc:aeec5f85f1f0f75efb7da3630e7996ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source spelling of a keyword; null for <span class="tt">λ</span>/<span class="tt">⊥</span>/<span class="tt">⊤</span>, which have no <span class="tt">id</span> spelling.  <br /></td></tr>
 <tr class="memitem:ae63dbe233e7481c8554fb23152a6f1d7" id="r_ae63dbe233e7481c8554fb23152a6f1d7"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae63dbe233e7481c8554fb23152a6f1d7">str</a> () const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
@@ -266,7 +268,7 @@ Tag</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4">K_match</a>
 , <br />
-&#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5ab47f1334f10c60f51233f889228de333">K_module</a>
+&#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a66afdb85b833d677fc82a5b311ef44e6">K_mod</a>
 , <br />
 &#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a43bec1de350f6575f696e7f802157c6d">K_norm</a>
 , <br />
@@ -281,6 +283,8 @@ Tag</h2></td></tr>
 &#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5aff2a75bf90c5a5672c90917fa0464da3">K_Rule</a>
 , <br />
 &#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a2879fcb4320671691958f7a455aa82bd">K_tt</a>
+, <br />
+&#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a90a853fb5546651daef6d67beb6d2ee7">K_use</a>
 , <br />
 &#160;&#160;<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5a668acd5cc353c2620be3912fe9e96f18">K_when</a>
 , <br />
@@ -366,12 +370,14 @@ Tag</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memitem:adfdd06396522bc87762953a716ed2b80" id="r_adfdd06396522bc87762953a716ed2b80"><td class="memItemLeft">static const char *&#160;</td><td class="memItemRight"><a class="el" href="#adfdd06396522bc87762953a716ed2b80">tag2str</a> (<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a>)</td></tr>
+<tr class="memitem:ae3182e40e459fe3145e2d5b29c314b2c" id="r_ae3182e40e459fe3145e2d5b29c314b2c"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ae3182e40e459fe3145e2d5b29c314b2c">is_key</a> (<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tag</a> tag)</td></tr>
+<tr class="memdesc:ae3182e40e459fe3145e2d5b29c314b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">tag</code> something the keyword table yields? MIM_KEY occupies <span class="tt">[1, <a class="el" href="namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9">Num_Keys</a>]</span>; MIM_SUBST adds a few more.  <br /></td></tr>
 <tr class="memitem:aa98f85376e99a759ac52dad7c1ac1d0b" id="r_aa98f85376e99a759ac52dad7c1ac1d0b"><td class="memItemLeft">static constexpr <a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa98f85376e99a759ac52dad7c1ac1d0b">delim_l2r</a> (<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tag</a> tag)</td></tr>
 <tr class="memitem:a0c140531e5c3eda06a95593608e90d56" id="r_a0c140531e5c3eda06a95593608e90d56"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a0c140531e5c3eda06a95593608e90d56">is_delim_r</a> (<a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tag</a> tag)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00166">166</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00167">167</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="aecc76e61c0dea79b166216fe1ef732c5" name="aecc76e61c0dea79b166216fe1ef732c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aecc76e61c0dea79b166216fe1ef732c5">&#9670;&#160;</a></span>Tag</h2>
@@ -429,7 +435,7 @@ Tag</h2></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a27379c42e77c7e30bdc81db7c988058f" name="aecc76e61c0dea79b166216fe1ef732c5a27379c42e77c7e30bdc81db7c988058f"></a>K_lam&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5abc3b81567a2120d32858af82e3a5fcea" name="aecc76e61c0dea79b166216fe1ef732c5abc3b81567a2120d32858af82e3a5fcea"></a>K_let&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4" name="aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4"></a>K_match&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5ab47f1334f10c60f51233f889228de333" name="aecc76e61c0dea79b166216fe1ef732c5ab47f1334f10c60f51233f889228de333"></a>K_module&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a66afdb85b833d677fc82a5b311ef44e6" name="aecc76e61c0dea79b166216fe1ef732c5a66afdb85b833d677fc82a5b311ef44e6"></a>K_mod&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a43bec1de350f6575f696e7f802157c6d" name="aecc76e61c0dea79b166216fe1ef732c5a43bec1de350f6575f696e7f802157c6d"></a>K_norm&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a16b614bec0670bc8776c90f9d69d2a62" name="aecc76e61c0dea79b166216fe1ef732c5a16b614bec0670bc8776c90f9d69d2a62"></a>K_plugin&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5ac89e310d3d2616d226fe13bec22ea52f" name="aecc76e61c0dea79b166216fe1ef732c5ac89e310d3d2616d226fe13bec22ea52f"></a>K_rec&#160;</td><td class="fielddoc"></td></tr>
@@ -437,6 +443,7 @@ Tag</h2></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5afeee51b2d19052818b0ac3f4c387c368" name="aecc76e61c0dea79b166216fe1ef732c5afeee51b2d19052818b0ac3f4c387c368"></a>K_rule&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5aff2a75bf90c5a5672c90917fa0464da3" name="aecc76e61c0dea79b166216fe1ef732c5aff2a75bf90c5a5672c90917fa0464da3"></a>K_Rule&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a2879fcb4320671691958f7a455aa82bd" name="aecc76e61c0dea79b166216fe1ef732c5a2879fcb4320671691958f7a455aa82bd"></a>K_tt&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a90a853fb5546651daef6d67beb6d2ee7" name="aecc76e61c0dea79b166216fe1ef732c5a90a853fb5546651daef6d67beb6d2ee7"></a>K_use&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a668acd5cc353c2620be3912fe9e96f18" name="aecc76e61c0dea79b166216fe1ef732c5a668acd5cc353c2620be3912fe9e96f18"></a>K_when&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a591638235693a00f9ae369606644a290" name="aecc76e61c0dea79b166216fe1ef732c5a591638235693a00f9ae369606644a290"></a>K_where&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8" name="aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8"></a>K_with&#160;</td><td class="fielddoc"></td></tr>
@@ -480,7 +487,7 @@ Tag</h2></td></tr>
 <tr><td class="fieldname"><a id="aecc76e61c0dea79b166216fe1ef732c5ac9b6e7d62e5012f8224ddefc5ddd5804" name="aecc76e61c0dea79b166216fe1ef732c5ac9b6e7d62e5012f8224ddefc5ddd5804"></a>T_pipe&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00170">170</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00171">171</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -508,7 +515,7 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00186">186</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00199">199</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>.</p>
 
@@ -541,9 +548,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00187">187</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00200">200</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>, and <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>, and <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
 
 </div>
 </div>
@@ -574,9 +581,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00190">190</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00203">203</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -607,9 +614,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00194">194</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00207">207</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -640,9 +647,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00198">198</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00211">211</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -673,9 +680,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00202">202</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00215">215</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -713,9 +720,9 @@ Tag</h2></td></tr>
 
 <p><code class="param">size</code> and <code class="param">val</code> of an <a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> literal; <a class="el" href="classmim_1_1World.html#a001a30623468317013224d73f7b3a9ef" title="Constructs a Lit of type Idx of size size.">World::lit_idx</a> makes a <a class="el" href="classmim_1_1Lit.html">Lit</a> of it at emit time. </p>
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00207">207</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00220">220</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -751,9 +758,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00211">211</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00224">224</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00220">has_sym()</a>, <a class="el" href="tok_8h_source.html#l00223">loc()</a>, <a class="el" href="tok_8h_source.html#l00229">sym()</a>, and <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00233">has_sym()</a>, <a class="el" href="tok_8h_source.html#l00180">is_key()</a>, <a class="el" href="tok_8h_source.html#l00236">loc()</a>, <a class="el" href="tok_8h_source.html#l00242">sym()</a>, and <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
 
 </div>
 </div>
@@ -782,9 +789,9 @@ Tag</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>A failed Parser::expect yields a Nil <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a>; its Dbg is anonymous instead of asserting in <a class="el" href="#a1614f4001b6ff119534d0d434a80f608">Tok::sym</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00222">222</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00235">235</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00220">has_sym()</a>, and <a class="el" href="tok_8h_source.html#l00223">loc()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00233">has_sym()</a>, and <a class="el" href="tok_8h_source.html#l00236">loc()</a>.</p>
 
 </div>
 </div>
@@ -811,11 +818,11 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00178">178</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00191">191</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l00305">mim::ast::TuplePtrn::delim_r()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l00319">mim::ast::TuplePtrn::delim_r()</a>.</p>
 
 </div>
 </div>
@@ -842,11 +849,11 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00220">220</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00233">233</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00218">isa()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00231">isa()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00222">dbg()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00229">sym()</a>, and <a class="el" href="tok_8h_source.html#l00211">Tok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00235">dbg()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00242">sym()</a>, and <a class="el" href="tok_8h_source.html#l00224">Tok()</a>.</p>
 
 </div>
 </div>
@@ -873,9 +880,42 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00179">179</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00192">192</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
+
+</div>
+</div>
+<a id="ae3182e40e459fe3145e2d5b29c314b2c" name="ae3182e40e459fe3145e2d5b29c314b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3182e40e459fe3145e2d5b29c314b2c">&#9670;&#160;</a></span>is_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool mim::ast::Tok::is_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aecc76e61c0dea79b166216fe1ef732c5">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">tag</code> something the keyword table yields? MIM_KEY occupies <span class="tt">[1, <a class="el" href="namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9">Num_Keys</a>]</span>; MIM_SUBST adds a few more. </p>
+
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00180">180</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00040">CODE</a>, <a class="el" href="tok_8h_source.html#l00161">MIM_SUBST</a>, <a class="el" href="tok_8h_source.html#l00114">mim::ast::Num_Keys</a>, and <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00244">key_sym()</a>, and <a class="el" href="tok_8h_source.html#l00224">Tok()</a>.</p>
 
 </div>
 </div>
@@ -902,11 +942,42 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00218">218</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00231">231</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00220">has_sym()</a>, <a class="el" href="tok_8h_source.html#l00227">lit_c()</a>, <a class="el" href="tok_8h_source.html#l00226">lit_i()</a>, and <a class="el" href="tok_8h_source.html#l00228">lit_u()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00233">has_sym()</a>, <a class="el" href="tok_8h_source.html#l00240">lit_c()</a>, <a class="el" href="tok_8h_source.html#l00239">lit_i()</a>, and <a class="el" href="tok_8h_source.html#l00241">lit_u()</a>.</p>
+
+</div>
+</div>
+<a id="aeec5f85f1f0f75efb7da3630e7996ddd" name="aeec5f85f1f0f75efb7da3630e7996ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec5f85f1f0f75efb7da3630e7996ddd">&#9670;&#160;</a></span>key_sym()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sym mim::ast::Tok::key_sym </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Source spelling of a keyword; null for <span class="tt">λ</span>/<span class="tt">⊥</span>/<span class="tt">⊤</span>, which have no <span class="tt">id</span> spelling. </p>
+
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00244">244</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00180">is_key()</a>.</p>
 
 </div>
 </div>
@@ -933,9 +1004,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00227">227</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00240">240</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00218">isa()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00231">isa()</a>.</p>
 
 </div>
 </div>
@@ -962,11 +1033,11 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00226">226</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00239">239</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00218">isa()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00231">isa()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00228">mim::ast::LitExpr::emit_()</a>, and <a class="el" href="stream_8cpp_source.html#l00108">mim::ast::LitExpr::stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00231">mim::ast::LitExpr::emit_()</a>, and <a class="el" href="stream_8cpp_source.html#l00119">mim::ast::LitExpr::stream()</a>.</p>
 
 </div>
 </div>
@@ -993,11 +1064,11 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00228">228</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00241">241</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00218">isa()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00231">isa()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00108">mim::ast::LitExpr::stream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00119">mim::ast::LitExpr::stream()</a>.</p>
 
 </div>
 </div>
@@ -1024,9 +1095,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00223">223</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00236">236</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00222">dbg()</a>, <a class="el" href="tok_8h_source.html#l00190">Tok()</a>, <a class="el" href="tok_8h_source.html#l00202">Tok()</a>, <a class="el" href="tok_8h_source.html#l00198">Tok()</a>, <a class="el" href="tok_8h_source.html#l00187">Tok()</a>, <a class="el" href="tok_8h_source.html#l00211">Tok()</a>, <a class="el" href="tok_8h_source.html#l00207">Tok()</a>, and <a class="el" href="tok_8h_source.html#l00194">Tok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00235">dbg()</a>, <a class="el" href="tok_8h_source.html#l00203">Tok()</a>, <a class="el" href="tok_8h_source.html#l00215">Tok()</a>, <a class="el" href="tok_8h_source.html#l00211">Tok()</a>, <a class="el" href="tok_8h_source.html#l00200">Tok()</a>, <a class="el" href="tok_8h_source.html#l00224">Tok()</a>, <a class="el" href="tok_8h_source.html#l00220">Tok()</a>, and <a class="el" href="tok_8h_source.html#l00207">Tok()</a>.</p>
 
 </div>
 </div>
@@ -1053,7 +1124,7 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00224">224</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00237">237</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -1099,11 +1170,11 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00229">229</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00242">242</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00220">has_sym()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00233">has_sym()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, and <a class="el" href="tok_8h_source.html#l00211">Tok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, and <a class="el" href="tok_8h_source.html#l00224">Tok()</a>.</p>
 
 </div>
 </div>
@@ -1130,9 +1201,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00219">219</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00232">232</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00178">delim_l2r()</a>, <a class="el" href="tok_8h_source.html#l00179">is_delim_r()</a>, <a class="el" href="tok_8h_source.html#l00218">isa()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00234">operator&lt;&lt;</a>, <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>, <a class="el" href="tok_8h_source.html#l00187">Tok()</a>, and <a class="el" href="tok_8h_source.html#l00211">Tok()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00191">delim_l2r()</a>, <a class="el" href="tok_8h_source.html#l00192">is_delim_r()</a>, <a class="el" href="tok_8h_source.html#l00180">is_key()</a>, <a class="el" href="tok_8h_source.html#l00231">isa()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00249">operator&lt;&lt;</a>, <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>, <a class="el" href="tok_8h_source.html#l00200">Tok()</a>, and <a class="el" href="tok_8h_source.html#l00224">Tok()</a>.</p>
 
 </div>
 </div>
@@ -1161,9 +1232,9 @@ Tag</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tok_8cpp_source.html#l00010">10</a> of file <a class="el" href="tok_8cpp_source.html">tok.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00040">CODE</a>, <a class="el" href="tok_8h_source.html#l00064">MIM_KEY</a>, <a class="el" href="tok_8h_source.html#l00116">MIM_TOK</a>, and <a class="el" href="tok_8h_source.html#l00219">tag()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00040">CODE</a>, <a class="el" href="tok_8h_source.html#l00064">MIM_KEY</a>, <a class="el" href="tok_8h_source.html#l00117">MIM_TOK</a>, and <a class="el" href="tok_8h_source.html#l00232">tag()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, and <a class="el" href="tok_8h_source.html#l00234">operator&lt;&lt;</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, and <a class="el" href="tok_8h_source.html#l00249">operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1268,7 @@ Tag</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="tok_8cpp_source.html#l00030">30</a> of file <a class="el" href="tok_8cpp_source.html">tok.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00220">has_sym()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00229">sym()</a>, <a class="el" href="tok_8h_source.html#l00219">tag()</a>, <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>, and <a class="el" href="tok_8h_source.html#l00186">Tok()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00233">has_sym()</a>, <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>, <a class="el" href="tok_8h_source.html#l00242">sym()</a>, <a class="el" href="tok_8h_source.html#l00232">tag()</a>, <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>, and <a class="el" href="tok_8h_source.html#l00199">Tok()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00030">operator&lt;&lt;</a>.</p>
 
@@ -1230,9 +1301,9 @@ Tag</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00234">234</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00249">249</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00219">tag()</a>, and <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00232">tag()</a>, and <a class="el" href="tok_8cpp_source.html#l00010">tag2str()</a>.</p>
 
 </div>
 </div>
