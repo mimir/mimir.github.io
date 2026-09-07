@@ -8,6 +8,7 @@ var plugin_8h =
       [ "descr", "namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace", null ],
       [ "name", "namespacemim.html#ac81e38f7fe20dc6057c9ba0678e13fd8", null ]
     ] ],
+    [ "mim::Out", "classmim_1_1Out.html", "classmim_1_1Out" ],
     [ "mim::Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
     [ "mim::Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],

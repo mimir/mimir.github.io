@@ -56,6 +56,7 @@ var hierarchy =
       [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
     ] ],
     [ "mim::detail::NullSafeDefGIDLt", null, null ],
+    [ "mim::Out", "classmim_1_1Out.html", null ],
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
     ] ],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX14 =
 {
+"classmim_1_1ast_1_1TuplePtrn.html#addb36d5269eaf42187157fa96edd7fb9":[4,0,1,0,47,2],
+"classmim_1_1ast_1_1TuplePtrn.html#af54f4797cbc1678819f2cbe5eec0af6c":[2,0,3,0,47,4],
+"classmim_1_1ast_1_1TuplePtrn.html#af54f4797cbc1678819f2cbe5eec0af6c":[4,0,1,0,47,4],
+"classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029":[2,0,3,0,47,8],
+"classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029":[4,0,1,0,47,8],
+"classmim_1_1ast_1_1TypeExpr.html":[2,0,3,0,48],
+"classmim_1_1ast_1_1TypeExpr.html":[4,0,1,0,48],
+"classmim_1_1ast_1_1TypeExpr.html#a089febd16068d10bf8dde6cfaf1f5499":[2,0,3,0,48,2],
+"classmim_1_1ast_1_1TypeExpr.html#a089febd16068d10bf8dde6cfaf1f5499":[4,0,1,0,48,2],
+"classmim_1_1ast_1_1TypeExpr.html#a39453cdf57c2c95c8ca7ce9df3fcada7":[2,0,3,0,48,3],
 "classmim_1_1ast_1_1TypeExpr.html#a39453cdf57c2c95c8ca7ce9df3fcada7":[4,0,1,0,48,3],
 "classmim_1_1ast_1_1TypeExpr.html#a3d05c88d48ca18ce64120369a067bc19":[2,0,3,0,48,0],
 "classmim_1_1ast_1_1TypeExpr.html#a3d05c88d48ca18ce64120369a067bc19":[4,0,1,0,48,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX14 =
 "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html":[4,0,1,1,6,0,2],
 "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#a6841dab577e02244b9496b44c1b70419":[2,0,3,1,9,0,2,0],
 "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#a6841dab577e02244b9496b44c1b70419":[4,0,1,1,6,0,2,0],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ac7479328678ebc6c2e4cd7bdaad3545e":[2,0,3,1,9,0,2,2],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ac7479328678ebc6c2e4cd7bdaad3545e":[4,0,1,1,6,0,2,2],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ad95a4d4d79664e40743980dbc85de3b3":[2,0,3,1,9,0,2,1],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ad95a4d4d79664e40743980dbc85de3b3":[4,0,1,1,6,0,2,1],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html":[2,0,3,1,9,0,3],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html":[4,0,1,1,6,0,3],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#ad73a21a4f3d795b90dd0fd44dead6723":[2,0,3,1,9,0,3,1],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#ad73a21a4f3d795b90dd0fd44dead6723":[4,0,1,1,6,0,3,1],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#afa9aa24b1a7f4b8ea4ec1719054fabf9":[2,0,3,1,9,0,3,0],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#afa9aa24b1a7f4b8ea4ec1719054fabf9":[4,0,1,1,6,0,3,0],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html":[2,0,3,1,9,0,4]
+"classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#ac7479328678ebc6c2e4cd7bdaad3545e":[2,0,3,1,9,0,2,2]
 };

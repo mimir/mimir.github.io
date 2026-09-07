@@ -186,6 +186,7 @@ var annotated_dup =
       [ "Nat", "classmim_1_1Nat.html", "classmim_1_1Nat" ],
       [ "Nest", "classmim_1_1Nest.html", "classmim_1_1Nest" ],
       [ "NestPhase", "classmim_1_1NestPhase.html", "classmim_1_1NestPhase" ],
+      [ "Out", "classmim_1_1Out.html", "classmim_1_1Out" ],
       [ "Pack", "classmim_1_1Pack.html", "classmim_1_1Pack" ],
       [ "Phase", "classmim_1_1Phase.html", "classmim_1_1Phase" ],
       [ "PhaseMan", "classmim_1_1PhaseMan.html", "classmim_1_1PhaseMan" ],

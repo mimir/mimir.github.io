@@ -41,6 +41,8 @@ var searchData=
   ['operator_5b_5d_38',['operator[]',['../structmim_1_1Nest_1_1Node_1_1Children.html#af567525f5ecd5223fee825f6b5e92ffb',1,'mim::Nest::Node::Children::operator[]()'],['../classmim_1_1Nest.html#a5aa4df61ed488a9b7bcda3021274b9a2',1,'mim::Nest::operator[]()'],['../classmim_1_1World_1_1Externals.html#a8382b5eaa8fe649513a2720500fb727b',1,'mim::World::Externals::operator[]()']]],
   ['ops_39',['ops',['../classmim_1_1Def.html#a3e96d1f2d3715f3d059a7396366af7eb',1,'mim::Def']]],
   ['optimize_40',['optimize',['../namespacemim.html#a60ee93398f76269a406c841b2bb2c306',1,'mim']]],
-  ['ostream_41',['ostream',['../classmim_1_1Emitter.html#a614e61750773436c58e728b596c4b19b',1,'mim::Emitter']]],
-  ['outermost_5fbinder_42',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]]
+  ['os_41',['os',['../classmim_1_1Out.html#ac3554854ca351aebf435c0d4ab153a30',1,'mim::Out']]],
+  ['ostream_42',['ostream',['../classmim_1_1Emitter.html#a614e61750773436c58e728b596c4b19b',1,'mim::Emitter']]],
+  ['out_43',['Out',['../classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f',1,'mim::Out::Out()=default'],['../classmim_1_1Out.html#a91b5d8f55b26fd324d0c0c032d3b6141',1,'mim::Out::Out(std::string name)']]],
+  ['outermost_5fbinder_44',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]]
 ];
