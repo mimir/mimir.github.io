@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1pl
 </div><!--header-->
 <div class="contents">
 
-<p>Lowers the buffer-world operations (<span class="tt">btensor.map_reduce_post</span>, <span class="tt">btensor.broadcast</span>, <span class="tt">btensor.pad</span>, <span class="tt">btensor.concat</span>) into <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068">affine.For</a></span> loop nests over <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.alloc</span>, threading <span class="tt">mem.M</span>.  
+<p>Lowers the buffer-world operations (<span class="tt">btensor.map_reduce_post</span>, <span class="tt">btensor.broadcast</span>, <span class="tt">btensor.pad</span>, <span class="tt">btensor.concat</span>, <span class="tt">btensor.gather</span>, <span class="tt">btensor.scatter</span>) into <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068">affine.For</a></span> loop nests over <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.alloc</span>, threading <span class="tt">mem.M</span>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html">mim/plug/btensor/phase/lower_map_reduce.h</a>&gt;</code></p>
@@ -286,10 +286,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abbcbabc35c7bffffb0e01346e248d99f pro_attribs_classmim_1_1Rewriter" id="r_abbcbabc35c7bffffb0e01346e248d99f"><td class="memItemLeft">std::deque&lt; <a class="el" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">old2news_</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Lowers the buffer-world operations (<span class="tt">btensor.map_reduce_post</span>, <span class="tt">btensor.broadcast</span>, <span class="tt">btensor.pad</span>, <span class="tt">btensor.concat</span>) into <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068">affine.For</a></span> loop nests over <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.alloc</span>, threading <span class="tt">mem.M</span>. </p>
+<div class="textblock"><p>Lowers the buffer-world operations (<span class="tt">btensor.map_reduce_post</span>, <span class="tt">btensor.broadcast</span>, <span class="tt">btensor.pad</span>, <span class="tt">btensor.concat</span>, <span class="tt">btensor.gather</span>, <span class="tt">btensor.scatter</span>) into <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068">affine.For</a></span> loop nests over <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.alloc</span>, threading <span class="tt">mem.M</span>. </p>
 <p>These are the buffer-world counterparts of the corresponding <span class="tt">tensor.*</span> ops; the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a></span> plugin's bufferization (<span class="tt">tensor.lower_to_mem</span>) maps the SSA tensor ops onto them. Also lowers <span class="tt">buffer.lit</span> into a fill loop, so a large constant/splat tensor becomes a loop rather than a monolithic <span class="tt">mem.store</span> of a giant literal array (which the LLVM backend cannot digest). </p>
 
-<p class="definition">Definition at line <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00015">15</a> of file <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00016">16</a> of file <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a39a3c85fb7a3c78de9fac54bf2ff4f28" name="a39a3c85fb7a3c78de9fac54bf2ff4f28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39a3c85fb7a3c78de9fac54bf2ff4f28">&#9670;&#160;</a></span>LowerMapReduce()</h2>
@@ -318,7 +318,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">17</a> of file <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00018">18</a> of file <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html">lower_map_reduce.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00430">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 

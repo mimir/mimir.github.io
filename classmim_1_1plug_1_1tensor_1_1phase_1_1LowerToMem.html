@@ -290,11 +290,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bufferizes the low-level tensor axioms onto the shared <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1buffer.html" title="The buffer Plugin">buffer</a></span> layer. </p>
-<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span> become <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span> become their buffer-world <span class="tt">btensor.*</span> counterparts, and tensor array values <span class="tt">«s; T»</span> become <span class="tt">buffer.Buf (r, s, T)</span> handles. Afterwards <span class="tt">buffer.lower_ptr</span> lowers the buffer layer to <span class="tt">mem.Ptr</span> + <span class="tt">mem.lea</span> / <span class="tt">mem.load</span> / <span class="tt">mem.store</span>.</p>
+<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692">get</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a685e27111b7573bf125303d52ad5cf6a">set</a></span> become <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">broadcast</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2f51a190adac88c724989d40385d4712">pad</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a">concat</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59">gather</a></span> / <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a13329b2f740f122721a83a97179509df">scatter</a></span> become their buffer-world <span class="tt">btensor.*</span> counterparts, and tensor array values <span class="tt">«s; T»</span> become <span class="tt">buffer.Buf (r, s, T)</span> handles. Afterwards <span class="tt">buffer.lower_ptr</span> lowers the buffer layer to <span class="tt">mem.Ptr</span> + <span class="tt">mem.lea</span> / <span class="tt">mem.load</span> / <span class="tt">mem.store</span>.</p>
 <p>This phase is <em>conversion-only</em>: it rewrites types and operations but does not thread the <span class="tt">mem.M</span> memory monad itself. Emitted buffer operations consume a <span class="tt">⊥: mem.M 0</span> placeholder (or a short local chain rooted in a LowerToMem::fresh_mem continuation's var), and the SSA value dependencies keep them anchored and ordered. The <span class="tt">mem.add_mem</span> phase (<a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html" title="Threads the mem.M memory monad through the world: mem-extends continuations and rewires every memory ...">mim::plug::mem::phase::AddMem</a>), scheduled right after this one in the pipeline, then mem-extends all continuations and rewires every memory operand to the scheduler-placed current memory — handling returns, error continuations, join points, branch arms, and interleaving with a caller's own memory operations uniformly.</p>
 <p>Which array types denote tensors (as opposed to index/shape arrays that share the <span class="tt"><a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a></span> structure) is determined by <em>role</em>: a pre-pass collects the array operand/result types of the tensor operations, and only those types are rewritten to <span class="tt">Buf</span> — and only at function boundaries, never as a global type rewrite. </p>
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8h_source.html#l00027">27</a> of file <a class="el" href="lower__to__mem_8h_source.html">lower_to_mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8h_source.html#l00028">28</a> of file <a class="el" href="lower__to__mem_8h_source.html">lower_to_mem.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acf11e8b676e634c276f878711bdc8342" name="acf11e8b676e634c276f878711bdc8342"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf11e8b676e634c276f878711bdc8342">&#9670;&#160;</a></span>LowerToMem()</h2>
@@ -323,7 +323,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8h_source.html#l00029">29</a> of file <a class="el" href="lower__to__mem_8h_source.html">lower_to_mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8h_source.html#l00030">30</a> of file <a class="el" href="lower__to__mem_8h_source.html">lower_to_mem.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00430">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
@@ -355,11 +355,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00272">272</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00293">293</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="lower__to__mem_8cpp_source.html#l00361">rewrite_imm_App()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="lower__to__mem_8cpp_source.html#l00382">rewrite_imm_App()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lower__to__mem_8cpp_source.html#l00361">rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lower__to__mem_8cpp_source.html#l00382">rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -386,11 +386,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00361">361</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00382">382</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="lam_8h_source.html#l00046">mim::Pi::isa_cn()</a>, <a class="el" href="def_8h_source.html#l00583">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00272">rewrite()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="lam_8h_source.html#l00046">mim::Pi::isa_cn()</a>, <a class="el" href="def_8h_source.html#l00583">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00293">rewrite()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lower__to__mem_8cpp_source.html#l00272">rewrite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lower__to__mem_8cpp_source.html#l00293">rewrite()</a>.</p>
 
 </div>
 </div>
@@ -417,7 +417,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00314">314</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00335">335</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>.</p>
 
@@ -450,7 +450,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d">mim::Phase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00219">219</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lower__to__mem_8cpp_source.html#l00240">240</a> of file <a class="el" href="lower__to__mem_8cpp_source.html">lower_to_mem.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8cpp_source.html#l00192">mim::RWPhase::start()</a>.</p>
 

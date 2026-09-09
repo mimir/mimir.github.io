@@ -6,7 +6,7 @@ var searchData=
   ['hash_20consing_20is_20inherently_20impure_3',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md161',1,'']]],
   ['haskell_20specifically_4',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md163',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_5',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md168',1,'']]],
-  ['head_20tuple_20tail_6',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md471',1,'']]],
+  ['head_20tuple_20tail_6',['%tuple.head / %tuple.tail',['../tuple.html#autotoc_md475',1,'']]],
   ['header_7',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['helpers_8',['Error Handling Helpers',['../python.html#autotoc_md128',1,'']]],
   ['here_9',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],

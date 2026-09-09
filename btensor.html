@@ -497,10 +497,31 @@ Operations</h1>
 <div class="line">                  → [s_out: «r; Nat»]</div>
 <div class="line">                  → [%mem.M 0, is: «i: nis; %buffer.Buf (r, Sis#i, T)»]</div>
 <div class="line">                  → [%mem.M 0, %buffer.Buf (r, s_out, T)];</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
+%btensor.gather</h2>
+<p>Buffer-world counterpart of %tensor.gather. For each output coordinate <span class="tt">o</span>, reads the source at <span class="tt">o</span> with axis <span class="tt">dim</span> replaced by <span class="tt">index[o]</span>. The index element type proves that selected coordinates are in bounds along <span class="tt">dim</span>.</p>
+<div class="fragment"><div class="line">axm %btensor.gather: {T: *, r: Nat}</div>
+<div class="line">                  → [s_src s_idx: «r; Nat»]</div>
+<div class="line">                  → [dim: Idx r]</div>
+<div class="line">                  → [%mem.M 0,</div>
+<div class="line">                     input: %buffer.Buf (r, s_src, T),</div>
+<div class="line">                     index: %buffer.Buf (r, s_idx, Idx (s_src#dim))]</div>
+<div class="line">                  → [%mem.M 0, %buffer.Buf (r, s_idx, T)];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
+%btensor.scatter</h2>
+<p>Buffer-world counterpart of %tensor.scatter. Starts with a copy of <span class="tt">input</span>, then applies updates in row-major index order; for duplicate destinations, the last update wins.</p>
+<div class="fragment"><div class="line">axm %btensor.scatter: {T: *, r: Nat}</div>
+<div class="line">                   → [s_src s_idx s_updates: «r; Nat»]</div>
+<div class="line">                   → [dim: Idx r]</div>
+<div class="line">                   → [%mem.M 0,</div>
+<div class="line">                      input: %buffer.Buf (r, s_src, T),</div>
+<div class="line">                      index: %buffer.Buf (r, s_idx, Idx (s_src#dim)),</div>
+<div class="line">                      updates: %buffer.Buf (r, s_updates, T)]</div>
+<div class="line">                   → [%mem.M 0, %buffer.Buf (r, s_src, T)];</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
 Phases</h1>
 <ul>
-<li><span class="tt">lower_map_reduce</span>: lowers the buffer-world ops (<span class="tt">%btensor.map_reduce_post</span>, <span class="tt">%btensor.broadcast</span>, <span class="tt">%btensor.pad</span>, <span class="tt">%btensor.concat</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">%btensor.mr_nest</span>.</li>
+<li><span class="tt">lower_map_reduce</span>: lowers the buffer-world ops (<span class="tt">%btensor.map_reduce_post</span>, <span class="tt">%btensor.broadcast</span>, <span class="tt">%btensor.pad</span>, <span class="tt">%btensor.concat</span>, <span class="tt">%btensor.gather</span>, <span class="tt">%btensor.scatter</span>) to <span class="tt">%affine.For</span> loops over <span class="tt">%buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">%btensor.mr_nest</span>.</li>
 </ul>
 <div class="fragment"><div class="line">axm %btensor.lower_map_reduce: %compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
