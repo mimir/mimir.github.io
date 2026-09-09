@@ -208,7 +208,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00032">32</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00033">33</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="tensor_8cpp_source.html#l00027">known_args</a>, <a class="el" href="config_8h_source.html#l00020">MIM_EXPORT</a>, <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin()</a>, <a class="el" href="plugin_8h_source.html#l00149">MIM_VERSION</a>, <a class="el" href="tensor_8cpp_source.html#l00016">mim::plug::tensor::reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3">mim::plug::tensor::register_normalizers()</a>.</p>
 
@@ -235,12 +235,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">                                      = {</div>
-<div class="line">    {<span class="stringliteral">&quot;reassoc-max=&lt;n&gt;&quot;</span>, <span class="stringliteral">&quot;Longest matrix chain whose bracketings `%tensor.reassoc` enumerates (default `4`). Where no single bracketing is cheapest for *every* extent, the survivors are dispatched over at run time; a longer chain is only reassociated where one bracketing provably wins for every extent. The number of bracketings is `Catalan(n − 1)`, so raising this gets expensive fast, while anything below `3` switches the dispatch off.&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;reassoc-max=&lt;n&gt;&quot;</span>, <span class="stringliteral">&quot;Longest matrix chain whose `Catalan(n − 1)` bracketings `%tensor.reassoc` enumerates and, failing one that provably wins for every extent, dispatches over at run time (default `4`; below `3` switches the dispatch off).&quot;</span>},</div>
+<div class="line">    {<span class="stringliteral">&quot;reassoc-vec=&lt;n&gt;&quot;</span>, <span class="stringliteral">&quot;Vector lanes `%tensor.reassoc` pads a product&#39;s vector loop to, so that a bracketing whose intermediates are too narrow to fill a vector is charged for the lanes it leaves idle (`1` … `1024`, default `8`; `1` counts plain scalar multiplications).&quot;</span>},</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00027">27</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00032">mim_get_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00033">mim_get_plugin()</a>.</p>
 
 </div>
 </div>

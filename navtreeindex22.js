@@ -1,5 +1,7 @@
 var NAVTREEINDEX22 =
 {
+"namespacemim_1_1plug_1_1option.html#ab6c6d898b0c82f9c3c9a52ed3bb5bfd8":[2,0,3,1,16,3],
+"namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f":[2,0,3,1,16,1],
 "namespacemim_1_1plug_1_1option.html#af6203c25caf29713dc1dcf66748919cc":[2,0,3,1,16,8],
 "namespacemim_1_1plug_1_1ord.html":[2,0,3,1,17],
 "namespacemim_1_1plug_1_1ord.html#a0a0cd2de80b19c6442cca3a48c25c376":[2,0,3,1,17,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX22 =
 "namespacemim_1_1sexpr.html#aa06bb66d27ebca58fa3e367e63ea7a1b":[2,0,3,2,2],
 "namespacemim_1_1sexpr.html#aecf5b170c35246dc39f51f75b2024339":[2,0,3,2,4],
 "namespaces.html":[2,0],
-"nest_8cpp.html":[5,0,4,1,12],
-"nest_8cpp_source.html":[5,0,4,1,12],
-"nest_8h.html":[5,0,3,1,12]
+"nest_8cpp.html":[5,0,4,1,12]
 };

@@ -16,6 +16,7 @@ var classmim_1_1Lam =
     [ "isa_mut_basicblock", "classmim_1_1Lam.html#a4868f1bfe7fb5cbc7d453c0f83009dbe", null ],
     [ "isa_mut_cn", "classmim_1_1Lam.html#adab8c4822338fe32fb4a7711b7d479c0", null ],
     [ "isa_mut_returning", "classmim_1_1Lam.html#a637291bc1cf994803562402bb0d77909", null ],
+    [ "isa_ret_arg", "classmim_1_1Lam.html#adc6fcde1073943f69eb7eabe421a3adc", null ],
     [ "isa_returning", "classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79", null ],
     [ "reduce", "classmim_1_1Lam.html#ae6b9f93f0a138c3b7534a798e9a6e1ba", null ],
     [ "reduce", "classmim_1_1Lam.html#a515ac0b201a0119dd4afae76ade4bb7e", null ],

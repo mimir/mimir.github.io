@@ -115,11 +115,12 @@ var searchData=
   ['isa_5fmut_5freturning_112',['isa_mut_returning',['../classmim_1_1Lam.html#a637291bc1cf994803562402bb0d77909',1,'mim::Lam']]],
   ['isa_5fnode_113',['isa_node',['../classmim_1_1Bound.html#a9ba6b9cbcb352fe89981871bf81f5c47',1,'mim::Bound::isa_node()'],['../classmim_1_1Ext.html#a361c0f62684795a34470785d9f888058',1,'mim::Ext::isa_node()'],['../classmim_1_1Prod.html#a02b78002f676d4cd0d0a6baaf7949291',1,'mim::Prod::isa_node()'],['../classmim_1_1Seq.html#a8144cb2b5e69f51c6b9ad7496b3b9c5c',1,'mim::Seq::isa_node()']]],
   ['isa_5foptimizable_114',['isa_optimizable',['../namespacemim.html#a4c25bbfc1f84134320947fd7980fbacf',1,'mim']]],
-  ['isa_5freturning_115',['isa_returning',['../classmim_1_1Pi.html#afe493c2ca2eb3e7e1d484eceb5138356',1,'mim::Pi::isa_returning()'],['../classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79',1,'mim::Lam::isa_returning()']]],
-  ['isa_5fset_116',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
-  ['isa_5ftargetspecific_5fintrinsic_117',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab834c3096a2840d77482cd36bcedbf48',1,'mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad',1,'mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()']]],
-  ['isa_5ftype_118',['isa_type',['../classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd',1,'mim::Def']]],
-  ['isa_5funset_119',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
-  ['isa_5fvar_5fproj_120',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
-  ['its_5fa_5fmatch_121',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
+  ['isa_5fret_5farg_115',['isa_ret_arg',['../classmim_1_1Lam.html#adc6fcde1073943f69eb7eabe421a3adc',1,'mim::Lam']]],
+  ['isa_5freturning_116',['isa_returning',['../classmim_1_1Pi.html#afe493c2ca2eb3e7e1d484eceb5138356',1,'mim::Pi::isa_returning()'],['../classmim_1_1Lam.html#a527fd77ec7597902c4cbe37e6c0ccf79',1,'mim::Lam::isa_returning()']]],
+  ['isa_5fset_117',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
+  ['isa_5ftargetspecific_5fintrinsic_118',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab834c3096a2840d77482cd36bcedbf48',1,'mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad',1,'mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()']]],
+  ['isa_5ftype_119',['isa_type',['../classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd',1,'mim::Def']]],
+  ['isa_5funset_120',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
+  ['isa_5fvar_5fproj_121',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
+  ['its_5fa_5fmatch_122',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];
