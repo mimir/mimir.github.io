@@ -10,7 +10,6 @@ var structmim_1_1Annex =
     [ "flags2tag", "structmim_1_1Annex.html#a55390291c63a6d3d6af01f6901cc48e9", null ],
     [ "mangle", "structmim_1_1Annex.html#a4b5dd917e3480414d97bc96caf0ca845", null ],
     [ "num", "structmim_1_1Annex.html#a9b3df34d947a5fa2c9e9491de34f666f", null ],
-    [ "split", "structmim_1_1Annex.html#a2396ad51f7f065120a421a1fbd529d8f", null ],
     [ "Base", "structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698", null ],
     [ "Global_Plugin", "structmim_1_1Annex.html#a3448571d44e72d9078aa9ea5e8e7c0c6", null ],
     [ "Max_Plugin_Size", "structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b", null ],

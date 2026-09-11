@@ -169,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af63c0e340a1dbef41a23238343e1da1f" id="r_af63c0e340a1dbef41a23238343e1da1f"><td class="memItemLeft"><a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af63c0e340a1dbef41a23238343e1da1f">driver</a> ()</td></tr>
 <tr class="memitem:a2784381e0e08286d42a82d1d7e4f579c" id="r_a2784381e0e08286d42a82d1d7e4f579c"><td class="memItemLeft">fe::Error &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2784381e0e08286d42a82d1d7e4f579c">error</a> ()</td></tr>
 <tr class="memitem:a28759c4620302518f452a04423300e0b" id="r_a28759c4620302518f452a04423300e0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a28759c4620302518f452a04423300e0b">attach</a> (<a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *annex, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> sub, Sym name, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
-<tr class="memdesc:a28759c4620302518f452a04423300e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">name</code> is the full syntactic name of <em>this</em> registration (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>).  <br /></td></tr>
+<tr class="memdesc:a28759c4620302518f452a04423300e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">name</code> is <em>this</em> registration's own (unqualified) Dbg::sym; <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8" title="Fully-qualified plugin.tag[.sub] name for own (this decl&#39;s own Dbg::sym), registered for by-name look...">AnnexInfo::qualified</a> turns it into the full <span class="tt">plugin.tag[.sub]</span> name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -206,7 +206,7 @@ Public Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00019">ast()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00041">mim::ast::File::emit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00043">mim::ast::File::emit()</a>.</p>
 
 </div>
 </div>
@@ -277,12 +277,13 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><code class="param">name</code> is the full syntactic name of <em>this</em> registration (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>). </p>
-<p>We must take it from the declaration rather than from <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a>, since hash-consing can make several annexes share a single <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> (e.g. <span class="tt">let foo.bar = 23; let foo.baz = 23;</span>). </p>
+<p><code class="param">name</code> is <em>this</em> registration's own (unqualified) Dbg::sym; <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8" title="Fully-qualified plugin.tag[.sub] name for own (this decl&#39;s own Dbg::sym), registered for by-name look...">AnnexInfo::qualified</a> turns it into the full <span class="tt">plugin.tag[.sub]</span> name. </p>
+<p>We must take it from the declaration rather than from <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a>, since hash-consing can make several annexes share a single <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> (e.g. <span class="tt">mod foo { anx let bar = 23; anx let baz = 23;
+}</span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00027">27</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00028">28</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8h_source.html#l00276">mim::World::annexes()</a>, <a class="el" href="world_8cpp_source.html#l00061">mim::World::Annexes::attach()</a>, <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793">mim::ast::AnnexInfo::id</a>, <a class="el" href="ast_8h_source.html#l00037">mim::ast::AnnexInfo::plugin_id()</a>, and <a class="el" href="emit_8cpp_source.html#l00020">world()</a>.</p>
+<p class="reference">References <a class="el" href="world_8h_source.html#l00280">mim::World::annexes()</a>, <a class="el" href="world_8cpp_source.html#l00061">mim::World::Annexes::attach()</a>, <a class="el" href="emit_8cpp_source.html#l00021">driver()</a>, <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793">mim::ast::AnnexInfo::id</a>, <a class="el" href="ast_8h_source.html#l00056">mim::ast::AnnexInfo::plugin_id()</a>, <a class="el" href="ast_8h_source.html#l00061">mim::ast::AnnexInfo::qualified()</a>, and <a class="el" href="emit_8cpp_source.html#l00020">world()</a>.</p>
 
 </div>
 </div>
@@ -313,7 +314,7 @@ Public Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="world_8h_source.html#l00102">mim::World::driver()</a>, and <a class="el" href="emit_8cpp_source.html#l00020">world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00022">error()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00028">attach()</a>, and <a class="el" href="emit_8cpp_source.html#l00022">error()</a>.</p>
 
 </div>
 </div>
@@ -371,9 +372,9 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00020">20</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00019">ast()</a>, and <a class="el" href="ast_8h_source.html#l00066">mim::ast::AST::world()</a>.</p>
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00019">ast()</a>, and <a class="el" href="ast_8h_source.html#l00091">mim::ast::AST::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00027">attach()</a>, and <a class="el" href="emit_8cpp_source.html#l00021">driver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00028">attach()</a>, and <a class="el" href="emit_8cpp_source.html#l00021">driver()</a>.</p>
 
 </div>
 </div>
@@ -390,7 +391,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00031">31</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00033">33</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 </div>
 </div>

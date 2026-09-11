@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lower__for_8h_
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// Lowers the for axm to actual control flow in CPS.</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// It basically mimics this implementation:</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// con %affine.For_impl</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// con affine.For_impl</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">///     {m n: Nat, Ts: «n; *»}</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">///     (begin: Idx m, end: Idx m, step: Idx m, init: «i: n; Ts#i»,</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">///             body: Cn [iter: Idx m, acc: «i: n; Ts#i», yield: Cn «i: n; Ts#i»],</span></div>
@@ -162,10 +162,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lower__for_8h_
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">///     ) =</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">///     con head(iter: Idx m, acc: «i: n; Ts#i») =</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">///         con new_body() = body (iter, acc, cn acc: «i: n; Ts#i» =</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">///             let iter2 = %core.wrap.add %core.mode.nsuw (iter, step);</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">///             let iter2 = core.wrap.add core.mode.nsuw (iter, step);</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">///             head (iter2, acc));</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">///         con new_exit() = exit (acc);</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">///         (new_exit, new_body)#(%core.icmp.ul (iter, end)) ();</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">///         (new_exit, new_body)#(core.icmp.ul (iter, end)) ();</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">///     head(begin, init);</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// ```</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// However, we merge `init`/`acc` into the signature, as it may contain a `mem`.</span></div>

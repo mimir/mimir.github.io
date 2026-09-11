@@ -12,9 +12,9 @@ var ord_2autogen_8h =
       [ "mim::plug::ord::init::set", "namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3acdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
       [ "mim::plug::ord::init::map", "namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3a1d78dc8ed51214e518b5114fe24490ae", null ]
     ] ],
-    [ "mim::plug::ord::insert", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8f", [
-      [ "mim::plug::ord::insert::set", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8facdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
-      [ "mim::plug::ord::insert::map", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8fa1d78dc8ed51214e518b5114fe24490ae", null ]
+    [ "mim::plug::ord::insertion", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264ae", [
+      [ "mim::plug::ord::insertion::set", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264aeacdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
+      [ "mim::plug::ord::insertion::map", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264aea1d78dc8ed51214e518b5114fe24490ae", null ]
     ] ],
     [ "mim::plug::ord::is_empty_map", "namespacemim_1_1plug_1_1ord.html#a3139291210faabba5130f06c7513a57f", null ],
     [ "mim::plug::ord::is_empty_set", "namespacemim_1_1plug_1_1ord.html#adf40c77e7d3537a42c2423fb1b4e33c5", null ],

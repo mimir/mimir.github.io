@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfa2matcher_8c
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; w = c-&gt;world();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (lo == 0 &amp;&amp; hi == 255) <span class="keywordflow">return</span> w.lit_tt();</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// let in_range     = %core.bit2.and_ 0 (%core.icmp.uge (char, lower),  %core.icmp.ule (char, upper));</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// let in_range     = core.bit2.and_ 0 (core.icmp.uge (char, lower),  core.icmp.ule (char, upper));</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">auto</span> below_hi = w.call(core::icmp::ule, w.tuple({c, w.lit_i8(hi)}));</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">auto</span> above_lo = w.call(core::icmp::uge, w.tuple({c, w.lit_i8(lo)}));</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> w.call(core::bit2::and_, w.lit_nat(2), w.tuple({below_hi, above_lo}));</div>
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfa2matcher_8c
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">auto</span> states = dfa.<a class="code hl_function" href="classautomaton_1_1AutomatonBase.html#a3e63306c358b3d4904cc6ccbfef2a738">get_reachable_states</a>();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_typedef" href="namespaceautomaton.html#ac935bb3b7e7cbc4be411a7657f3d693c">DFAMap&lt;Lam*&gt;</a> state2matcher;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// ((mem: %mem.M 0, string: Str n, pos: Idx n), Cn [%mem.M 0, Bool, Idx n])</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// ((mem: mem.M 0, string: Str n, pos: Idx n), Cn [mem.M 0, Bool, Idx n])</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">auto</span> matcher = w.mut_fun({w.call&lt;mem::M&gt;(0), w.call&lt;mem::Ptr0&gt;(w.arr(n, w.type_i8())), w.type_idx(n)},</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                             {w.call&lt;mem::M&gt;(0), w.type_bool(), w.type_idx(n)});</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    matcher-&gt;debug_prefix(std::string(<span class="stringliteral">&quot;match_regex&quot;</span>));</div>

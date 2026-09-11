@@ -285,7 +285,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase. </p>
 <p>A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> should appear either <b>only</b> in callee position (Known) or not (Unknown). A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> that occurs in an unknown position more than once (Unknown_N) or in both positions (Both) is η-expanded (<span class="tt">g f -&gt; g (λx.f x)</span>); a genuine η-redex <span class="tt">λx.f x</span> whose <span class="tt">f</span> does <b>not</b> want to be expanded is η-reduced.</p>
-<p>The analysis is <b>wrapper-transparent</b>: a use of a wrapper <span class="tt">λx.f x</span> is counted as a use of <span class="tt">f</span> at the same position/multiplicity instead of counting <span class="tt">f</span> as Known (the wrapper's callee). This makes <span class="tt">f</span>'s classification identical whether <span class="tt">f</span> is bare or wrapped, so the canonical η-form is a genuine fixed point - the phase does not fight itself and can share one big <span class="tt">%compile.phases tt</span> fixed-point loop with <a class="el" href="classmim_1_1BetaRed.html" title="Inlines in post-order all Lams that occur exactly once in the program.">BetaRed</a> and %mem.seo without oscillating. </p>
+<p>The analysis is <b>wrapper-transparent</b>: a use of a wrapper <span class="tt">λx.f x</span> is counted as a use of <span class="tt">f</span> at the same position/multiplicity instead of counting <span class="tt">f</span> as Known (the wrapper's callee). This makes <span class="tt">f</span>'s classification identical whether <span class="tt">f</span> is bare or wrapped, so the canonical η-form is a genuine fixed point - the phase does not fight itself and can share one big <span class="tt">compile.phases tt</span> fixed-point loop with <a class="el" href="classmim_1_1BetaRed.html" title="Inlines in post-order all Lams that occur exactly once in the program.">BetaRed</a> and mem.seo without oscillating. </p>
 
 <p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00021">21</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -444,7 +444,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eta__conv_8cpp_source.html#l00078">78</a> of file <a class="el" href="eta__conv_8cpp_source.html">eta_conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00230">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00037">rewrite()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00237">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00037">rewrite()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eta__conv_8cpp_source.html#l00083">83</a> of file <a class="el" href="eta__conv_8cpp_source.html">eta_conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00843">mim::Var::binder()</a>, <a class="el" href="world_8cpp_source.html#l00209">mim::World::var()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00843">mim::Var::binder()</a>, <a class="el" href="world_8cpp_source.html#l00216">mim::World::var()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
 
 </div>
 </div>

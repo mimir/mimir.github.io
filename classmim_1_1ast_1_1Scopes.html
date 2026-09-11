@@ -175,12 +175,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a85ec3251cdad00afc562aa94524e6074"><td class="mdescLeft">&#160;</td><td class="mdescRight">A file must not see the scope of whoever imports it, so its <a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c" title="Maps a name to the Decl introducing it.">Scope</a> becomes the new lookup floor.  <br /></td></tr>
 <tr class="memitem:aa3b9f537467520c67535f9a0e1737787" id="r_aa3b9f537467520c67535f9a0e1737787"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3b9f537467520c67535f9a0e1737787">pop_barrier</a> (size_t old)</td></tr>
 <tr class="memitem:a6c745af337b10780bac0723719281c7c" id="r_a6c745af337b10780bac0723719281c7c"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6c745af337b10780bac0723719281c7c">find</a> (Dbg dbg, bool quiet=false)</td></tr>
+<tr class="memitem:a742c1fa180ef481b50d8813f19606263" id="r_a742c1fa180ef481b50d8813f19606263"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a742c1fa180ef481b50d8813f19606263">find_shadowed_module</a> (Sym sym)</td></tr>
+<tr class="memdesc:a742c1fa180ef481b50d8813f19606263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic-only: is a module named <code class="param">sym</code> reachable, shadowed by whatever <span class="tt"><a class="el" href="#a6c745af337b10780bac0723719281c7c">find</a></span> would actually return?  <br /></td></tr>
 <tr class="memitem:a7d81b2b3a98824998530568847f20112" id="r_a7d81b2b3a98824998530568847f20112"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7d81b2b3a98824998530568847f20112">bind</a> (Dbg dbg, const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a> *decl, bool rebind=false, bool quiet=false)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a4bf3fd8e20960d264c49423b4b1924" id="r_a8a4bf3fd8e20960d264c49423b4b1924"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a8a4bf3fd8e20960d264c49423b4b1924">is_anx</a> (Sym sym)</td></tr>
-<tr class="memdesc:a8a4bf3fd8e20960d264c49423b4b1924"><td class="mdescLeft">&#160;</td><td class="mdescRight">An annex name is global: it lives in one flat table, independent of the module structure.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Annex nesting</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Tracked by <a class="el" href="classmim_1_1ast_1_1ModDecl.html#a2ca3b84e342c6da5333423ef26fc793c">ModDecl::bind</a> so <a class="el" href="classmim_1_1ast_1_1AST.html#ab000cef8ed6166c2c71aa6c43bb1990f">AST::name2annex</a> can derive <span class="tt">tag</span>/<span class="tt">sub</span> from lexical nesting. </p>
+</div></td></tr>
+<tr class="memitem:a80200e24440c4ab909a13e00952ebd5f" id="r_a80200e24440c4ab909a13e00952ebd5f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a80200e24440c4ab909a13e00952ebd5f">push_mod</a> (Sym name)</td></tr>
+<tr class="memitem:a0b4d0945b9e813fec10df99f288f3c72" id="r_a0b4d0945b9e813fec10df99f288f3c72"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b4d0945b9e813fec10df99f288f3c72">pop_mod</a> ()</td></tr>
+<tr class="memitem:ab38f72e924a2ad7840a810009a647a3e" id="r_ab38f72e924a2ad7840a810009a647a3e"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#ab38f72e924a2ad7840a810009a647a3e">mod_depth</a> () const</td></tr>
+<tr class="memitem:a3af69feaff9b24c567edd43b97774c12" id="r_a3af69feaff9b24c567edd43b97774c12"><td class="memItemLeft">Sym&#160;</td><td class="memItemRight"><a class="el" href="#a3af69feaff9b24c567edd43b97774c12">enclosing_mod</a> () const</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -211,9 +215,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00021">21</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00027">ast()</a>, and <a class="el" href="bind_8cpp_source.html#l00035">push()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00027">ast()</a>, and <a class="el" href="bind_8cpp_source.html#l00032">push()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00110">mim::ast::File::bind()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00131">mim::ast::File::bind()</a>.</p>
 
 </div>
 </div>
@@ -284,11 +288,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00071">71</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00086">86</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00028">error()</a>, <a class="el" href="bind_8cpp_source.html#l00033">is_anx()</a>, and <a class="el" href="bind_8cpp_source.html#l00029">top()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00028">error()</a>, <a class="el" href="bind_8cpp_source.html#l00080">find_shadowed_module()</a>, <a class="el" href="ast_8h_source.html#l00212">mim::ast::Decl::scope()</a>, and <a class="el" href="bind_8cpp_source.html#l00029">top()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00054">find()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00062">find()</a>.</p>
 
 </div>
 </div>
@@ -317,7 +321,34 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00030">30</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00054">find()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00062">find()</a>.</p>
+
+</div>
+</div>
+<a id="a3af69feaff9b24c567edd43b97774c12" name="a3af69feaff9b24c567edd43b97774c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af69feaff9b24c567edd43b97774c12">&#9670;&#160;</a></span>enclosing_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sym mim::ast::Scopes::enclosing_mod </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00059">59</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
 </div>
 </div>
@@ -346,9 +377,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00028">28</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00027">ast()</a>, and <a class="el" href="ast_8h_source.html#l00068">mim::ast::AST::error()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00027">ast()</a>, and <a class="el" href="ast_8h_source.html#l00093">mim::ast::AST::error()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00071">bind()</a>, and <a class="el" href="bind_8cpp_source.html#l00054">find()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00086">bind()</a>, and <a class="el" href="bind_8cpp_source.html#l00062">find()</a>.</p>
 
 </div>
 </div>
@@ -379,14 +410,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00054">54</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00062">62</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00071">bind()</a>, <a class="el" href="bind_8cpp_source.html#l00030">dummy()</a>, <a class="el" href="bind_8cpp_source.html#l00028">error()</a>, and <a class="el" href="bind_8cpp_source.html#l00033">is_anx()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00086">bind()</a>, <a class="el" href="bind_8cpp_source.html#l00030">dummy()</a>, and <a class="el" href="bind_8cpp_source.html#l00028">error()</a>.</p>
 
 </div>
 </div>
-<a id="a8a4bf3fd8e20960d264c49423b4b1924" name="a8a4bf3fd8e20960d264c49423b4b1924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a4bf3fd8e20960d264c49423b4b1924">&#9670;&#160;</a></span>is_anx()</h2>
+<a id="a742c1fa180ef481b50d8813f19606263" name="a742c1fa180ef481b50d8813f19606263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742c1fa180ef481b50d8813f19606263">&#9670;&#160;</a></span>find_shadowed_module()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +426,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool mim::ast::Scopes::is_anx </td>
+          <td class="memname">const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a> * mim::ast::Scopes::find_shadowed_module </td>
           <td>(</td>
           <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>sym</em></span></td><td>)</td>
           <td></td>
@@ -403,16 +434,44 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>An annex name is global: it lives in one flat table, independent of the module structure. </p>
+<p>Diagnostic-only: is a module named <code class="param">sym</code> reachable, shadowed by whatever <span class="tt"><a class="el" href="#a6c745af337b10780bac0723719281c7c">find</a></span> would actually return? </p>
+<p>Only <span class="tt"><a class="el" href="classmim_1_1ast_1_1ModDecl.html" title="mod dbg { decls }; also the base of the anonymous File.">ModDecl</a></span>/<span class="tt">Import</span> ever yield a non-null <a class="el" href="classmim_1_1ast_1_1Decl.html#ac6782f42e504ce6653f354df640f3fe1" title="Non-nullptr if this Decl is a module whose members a Path may walk into.">Decl::scope</a>, so this never confuses a value for a module. </p>
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00033">33</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00080">80</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00071">bind()</a>, and <a class="el" href="bind_8cpp_source.html#l00054">find()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00086">bind()</a>.</p>
+
+</div>
+</div>
+<a id="ab38f72e924a2ad7840a810009a647a3e" name="ab38f72e924a2ad7840a810009a647a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38f72e924a2ad7840a810009a647a3e">&#9670;&#160;</a></span>mod_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::ast::Scopes::mod_depth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00058">58</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,9 +498,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00038">38</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00035">35</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00049">pop_barrier()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00048">pop_barrier()</a>.</p>
 
 </div>
 </div>
@@ -468,9 +527,36 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00049">49</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00048">48</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00038">pop()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00035">pop()</a>.</p>
+
+</div>
+</div>
+<a id="a0b4d0945b9e813fec10df99f288f3c72" name="a0b4d0945b9e813fec10df99f288f3c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4d0945b9e813fec10df99f288f3c72">&#9670;&#160;</a></span>pop_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Scopes::pop_mod </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00057">57</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
 </div>
 </div>
@@ -497,9 +583,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00035">35</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00032">32</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00044">push_barrier()</a>, and <a class="el" href="bind_8cpp_source.html#l00021">Scopes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00041">push_barrier()</a>, and <a class="el" href="bind_8cpp_source.html#l00021">Scopes()</a>.</p>
 
 </div>
 </div>
@@ -526,7 +612,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00036">36</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00033">33</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
 </div>
 </div>
@@ -555,9 +641,36 @@ Static Public Member Functions</h2></td></tr>
 
 <p>A file must not see the scope of whoever imports it, so its <a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c" title="Maps a name to the Decl introducing it.">Scope</a> becomes the new lookup floor. </p>
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00044">44</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00041">41</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00035">push()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00032">push()</a>.</p>
+
+</div>
+</div>
+<a id="a80200e24440c4ab909a13e00952ebd5f" name="a80200e24440c4ab909a13e00952ebd5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80200e24440c4ab909a13e00952ebd5f">&#9670;&#160;</a></span>push_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Scopes::push_mod </td>
+          <td>(</td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00056">56</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +699,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00029">29</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00071">bind()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00086">bind()</a>.</p>
 
 </div>
 </div>

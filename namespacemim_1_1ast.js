@@ -1,12 +1,12 @@
 var namespacemim_1_1ast =
 [
+    [ "AliasDecl", "classmim_1_1ast_1_1AliasDecl.html", "classmim_1_1ast_1_1AliasDecl" ],
     [ "AliasPtrn", "classmim_1_1ast_1_1AliasPtrn.html", "classmim_1_1ast_1_1AliasPtrn" ],
     [ "AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", "structmim_1_1ast_1_1AnnexInfo" ],
     [ "AppExpr", "classmim_1_1ast_1_1AppExpr.html", "classmim_1_1ast_1_1AppExpr" ],
     [ "ArrowExpr", "classmim_1_1ast_1_1ArrowExpr.html", "classmim_1_1ast_1_1ArrowExpr" ],
     [ "AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
     [ "AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
-    [ "CDecl", "classmim_1_1ast_1_1CDecl.html", "classmim_1_1ast_1_1CDecl" ],
     [ "Decl", "classmim_1_1ast_1_1Decl.html", "classmim_1_1ast_1_1Decl" ],
     [ "DeclExpr", "classmim_1_1ast_1_1DeclExpr.html", "classmim_1_1ast_1_1DeclExpr" ],
     [ "DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", "classmim_1_1ast_1_1DummyDecl" ],
@@ -19,7 +19,6 @@ var namespacemim_1_1ast =
     [ "GrpPtrn", "classmim_1_1ast_1_1GrpPtrn.html", "classmim_1_1ast_1_1GrpPtrn" ],
     [ "HoleExpr", "classmim_1_1ast_1_1HoleExpr.html", "classmim_1_1ast_1_1HoleExpr" ],
     [ "IdPtrn", "classmim_1_1ast_1_1IdPtrn.html", "classmim_1_1ast_1_1IdPtrn" ],
-    [ "Import", "classmim_1_1ast_1_1Import.html", "classmim_1_1ast_1_1Import" ],
     [ "InjExpr", "classmim_1_1ast_1_1InjExpr.html", "classmim_1_1ast_1_1InjExpr" ],
     [ "InsertExpr", "classmim_1_1ast_1_1InsertExpr.html", "classmim_1_1ast_1_1InsertExpr" ],
     [ "LamDecl", "classmim_1_1ast_1_1LamDecl.html", "classmim_1_1ast_1_1LamDecl" ],
@@ -29,6 +28,7 @@ var namespacemim_1_1ast =
     [ "LitExpr", "classmim_1_1ast_1_1LitExpr.html", "classmim_1_1ast_1_1LitExpr" ],
     [ "MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", "classmim_1_1ast_1_1MatchExpr" ],
     [ "ModDecl", "classmim_1_1ast_1_1ModDecl.html", "classmim_1_1ast_1_1ModDecl" ],
+    [ "Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
     [ "Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
     [ "Parser", "classmim_1_1ast_1_1Parser.html", "classmim_1_1ast_1_1Parser" ],
     [ "Path", "classmim_1_1ast_1_1Path.html", "classmim_1_1ast_1_1Path" ],
@@ -64,6 +64,10 @@ var namespacemim_1_1ast =
       [ "R", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4ae1e1d3d40573127e9ee0480caf1283d6", null ]
     ] ],
     [ "Prec", "namespacemim_1_1ast.html#afc6cb12ae859bd6554aebf244d2db28a", null ],
+    [ "Vis", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3", [
+      [ "Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],
+      [ "Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]
+    ] ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
     [ "idx_tok", "namespacemim_1_1ast.html#a9ea23a16d9a43617a74f14806e52eadc", null ],
     [ "is_id_head", "namespacemim_1_1ast.html#a1c91a1a463b65ce67f3785f044a30dc1", null ],
@@ -73,10 +77,13 @@ var namespacemim_1_1ast =
     [ "isa_math_f", "namespacemim_1_1ast.html#ad2a1c1594048c3494e84b1150fd23576", null ],
     [ "load_plugin", "namespacemim_1_1ast.html#a91e7627a30cd8ff68e463c60e633e1a1", null ],
     [ "load_plugins", "namespacemim_1_1ast.html#a66a1aa2d36d5c50e3d3a99d56e32fd97", null ],
+    [ "negate", "namespacemim_1_1ast.html#abd351741bb825f5c91b5e0314cb0c1d6", null ],
+    [ "operator<<", "namespacemim_1_1ast.html#a1631cb88419d6782f500b090cdb8befc", null ],
     [ "operator<<", "namespacemim_1_1ast.html#ae8647f142657ffe401f0ca6f29c09b74", null ],
     [ "prec_assoc", "namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "should_reduce", "namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890", null ],
     [ "stream_decls", "namespacemim_1_1ast.html#ae58ab7dc41af056390cd546b6e3906d2", null ],
+    [ "vis2str", "namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711", null ],
     [ "Look_Ahead", "namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29", null ],
     [ "Num_Keys", "namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9", null ]
 ];

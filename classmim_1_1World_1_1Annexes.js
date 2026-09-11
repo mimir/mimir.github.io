@@ -7,6 +7,8 @@ var classmim_1_1World_1_1Annexes =
     [ "Annexes", "classmim_1_1World_1_1Annexes.html#a4b60cfebac1120426a0e5caa181660ca", null ],
     [ "attach", "classmim_1_1World_1_1Annexes.html#a5277c302c6bf4542e8dbcb8d638de70c", null ],
     [ "attach", "classmim_1_1World_1_1Annexes.html#a8feea4b5ee385bff36a07da0ec26be46", null ],
+    [ "attach_alias", "classmim_1_1World_1_1Annexes.html#a4fad017e64e0e2b6da01fa5152cd159c", null ],
+    [ "attach_alias", "classmim_1_1World_1_1Annexes.html#aca4b18c92689420cc689b15c39d4dbde", null ],
     [ "begin", "classmim_1_1World_1_1Annexes.html#ac74e9da6b172441e7b81bd08e460065e", null ],
     [ "defs", "classmim_1_1World_1_1Annexes.html#ab68200f1d5a8dd5993379d0eae1167bf", null ],
     [ "driver", "classmim_1_1World_1_1Annexes.html#a1a9ab925719b9b8e18220f8e8523f4b3", null ],

@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conv_8h_source
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// ```</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// f_cps: Cn [a: A, Cn B]</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// and every use of `f` is replaced by `%cps.cps2ds_dep (A, λ a: B) f_cps` to remain type-correct.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// and every use of `f` is replaced by `cps.cps2ds_dep (A, λ a: B) f_cps` to remain type-correct.</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">///</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// Call sites are lifted on the fly:</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// When the recursive rewrite encounters `App (%cps.cps2ds_dep (T, U) k) arg` inside a continuation,</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// When the recursive rewrite encounters `App (cps.cps2ds_dep (T, U) k) arg` inside a continuation,</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// it allocates a fresh continuation `cont` receiving the result, records the pending call `k (arg, cont)`,</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// and uses `cont`&#39;s variable as the value of the App.</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// Once the enclosing Lam is done, the pending calls are wired up in encounter order - which respects</span></div>

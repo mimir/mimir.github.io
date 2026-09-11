@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1as
 </div><!--header-->
 <div class="contents">
 
-<p><span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520">path</a>;</span> - splices all members of the module <code class="param">path</code> denotes into the current scope.  
+<p><span class="tt">import "<a class="el" href="#ae377115ea3cd7f2820d343fa442b7767">file</a>"|name [as alias|*];</span>, <span class="tt">plugin name [as alias|*];</span>, or <span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520" title="Module path of a use; module name of an import/plugin.">path</a> [as alias|*];</span> <span class="tt">as *</span> splices instead of naming; a <span class="tt">use</span> without an <span class="tt">as</span> is sugar for <span class="tt">as *</span>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ast_8h_source.html">mim/ast/ast.h</a>&gt;</code></p>
@@ -173,17 +173,42 @@ Inheritance diagram for mim::ast::UseDecl:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac62f65b943c3e0b2277d649e0964038" id="r_aac62f65b943c3e0b2277d649e0964038"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aac62f65b943c3e0b2277d649e0964038">UseDecl</a> (Loc loc, <a class="el" href="classmim_1_1ast_1_1Path.html">Path</a> &amp;&amp;path)</td></tr>
+<tr class="memitem:ac3628f76750148d75f269138d91a30ae" id="r_ac3628f76750148d75f269138d91a30ae"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac3628f76750148d75f269138d91a30ae">UseDecl</a> (Loc loc, <a class="el" href="structmim_1_1ast_1_1Mods.html">Mods</a> mods, <a class="el" href="classmim_1_1ast_1_1Path.html">Path</a> &amp;&amp;path, Dbg alias)</td></tr>
+<tr class="memdesc:ac3628f76750148d75f269138d91a30ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520" title="Module path of a use; module name of an import/plugin.">path</a> [as alias|*];</span>; no <code class="param">alias</code> means <span class="tt">as *</span>.  <br /></td></tr>
+<tr class="memitem:af072925387d1e8da95a99285970a71b1" id="r_af072925387d1e8da95a99285970a71b1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af072925387d1e8da95a99285970a71b1">UseDecl</a> (Loc loc, <a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a> tag, Dbg name, Sym file_path, Dbg alias, bool splice, const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *file)</td></tr>
+<tr class="memdesc:af072925387d1e8da95a99285970a71b1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">import</span>/<span class="tt">plugin</span>; <code class="param">name</code> is the module name, derived from <code class="param">file_path</code> if there is one.  <br /></td></tr>
+<tr class="memitem:ae8a07e9cbab7272478a5f80d25309a09" id="r_ae8a07e9cbab7272478a5f80d25309a09"><td class="memItemLeft"><a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae8a07e9cbab7272478a5f80d25309a09">tag</a> () const</td></tr>
+<tr class="memdesc:ae8a07e9cbab7272478a5f80d25309a09"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">import</span>, <span class="tt">plugin</span>, or <span class="tt">use</span>.  <br /></td></tr>
+<tr class="memitem:ae89c3aa2066f418b5968107473452ea8" id="r_ae89c3aa2066f418b5968107473452ea8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae89c3aa2066f418b5968107473452ea8">is_import</a> () const</td></tr>
 <tr class="memitem:aedcf51b97a722886d4b304f77cee9520" id="r_aedcf51b97a722886d4b304f77cee9520"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1Path.html">Path</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aedcf51b97a722886d4b304f77cee9520">path</a> () const</td></tr>
+<tr class="memdesc:aedcf51b97a722886d4b304f77cee9520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Module path of a <span class="tt">use</span>; module name of an <span class="tt">import</span>/<span class="tt">plugin</span>.  <br /></td></tr>
+<tr class="memitem:a52da00df9dbbbca55178e2900d7df878" id="r_a52da00df9dbbbca55178e2900d7df878"><td class="memItemLeft">Dbg&#160;</td><td class="memItemRight"><a class="el" href="#a52da00df9dbbbca55178e2900d7df878">alias</a> () const</td></tr>
+<tr class="memdesc:a52da00df9dbbbca55178e2900d7df878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty, unless the source spelled <span class="tt">as I</span>.  <br /></td></tr>
+<tr class="memitem:a740c6db493e659e7a5ca11095a4188fc" id="r_a740c6db493e659e7a5ca11095a4188fc"><td class="memItemLeft">Sym&#160;</td><td class="memItemRight"><a class="el" href="#a740c6db493e659e7a5ca11095a4188fc">file_path</a> () const</td></tr>
+<tr class="memdesc:a740c6db493e659e7a5ca11095a4188fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spelling of an <span class="tt">import "..."</span>; empty otherwise.  <br /></td></tr>
+<tr class="memitem:ac234dafb901a482a15ff0152f5f5d7e1" id="r_ac234dafb901a482a15ff0152f5f5d7e1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac234dafb901a482a15ff0152f5f5d7e1">is_file_path</a> () const</td></tr>
+<tr class="memitem:ae377115ea3cd7f2820d343fa442b7767" id="r_ae377115ea3cd7f2820d343fa442b7767"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae377115ea3cd7f2820d343fa442b7767">file</a> () const</td></tr>
+<tr class="memitem:a33d0026b675806a5c3b422064d9cb4e4" id="r_a33d0026b675806a5c3b422064d9cb4e4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a33d0026b675806a5c3b422064d9cb4e4">is_splice</a> () const</td></tr>
+<tr class="memdesc:a33d0026b675806a5c3b422064d9cb4e4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">as *</span>: splice the module's public members, bind no name.  <br /></td></tr>
+<tr class="memitem:a1761c0adb9821612f0e51b8245d1f528" id="r_a1761c0adb9821612f0e51b8245d1f528"><td class="memItemLeft">Dbg&#160;</td><td class="memItemRight"><a class="el" href="#a1761c0adb9821612f0e51b8245d1f528">dbg</a> () const override</td></tr>
+<tr class="memdesc:a1761c0adb9821612f0e51b8245d1f528"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name this decl introduces; anonymous if it splices instead.  <br /></td></tr>
+<tr class="memitem:a25820873fb9dba0a7dbd33952428c2a3" id="r_a25820873fb9dba0a7dbd33952428c2a3"><td class="memItemLeft">const <a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c">Scope</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a25820873fb9dba0a7dbd33952428c2a3">scope</a> () const override</td></tr>
+<tr class="memdesc:a25820873fb9dba0a7dbd33952428c2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-<span class="tt">nullptr</span> if this <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> is a module whose members a <a class="el" href="classmim_1_1ast_1_1Path.html" title="dbg_0.....dbg_n-1.">Path</a> may walk into.  <br /></td></tr>
 <tr class="memitem:a84d72d86795187647802b2ee4efe0664" id="r_a84d72d86795187647802b2ee4efe0664"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a84d72d86795187647802b2ee4efe0664">bind</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const override</td></tr>
 <tr class="memitem:a2724618519790d7083825652d7ee377f" id="r_a2724618519790d7083825652d7ee377f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2724618519790d7083825652d7ee377f">emit</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const override</td></tr>
 <tr class="memitem:a5bc0ee016c76cc794ddc2f3f89a52027" id="r_a5bc0ee016c76cc794ddc2f3f89a52027"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5bc0ee016c76cc794ddc2f3f89a52027">stream</a> (fe::Tab &amp;, std::ostream &amp;) const override</td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1ast_1_1ValDecl"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1ValDecl.html">mim::ast::ValDecl</a></td></tr>
+<tr class="memitem:a8f90066be3a6bac4176ea9f6b59f4de7 pub_methods_classmim_1_1ast_1_1ValDecl" id="r_a8f90066be3a6bac4176ea9f6b59f4de7"><td class="memItemLeft"><a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3">Vis</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#a8f90066be3a6bac4176ea9f6b59f4de7">vis</a> () const override</td></tr>
+<tr class="memdesc:a8f90066be3a6bac4176ea9f6b59f4de7 pub_methods_classmim_1_1ast_1_1ValDecl"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classmim_1_1ast_1_1ValDecl.html" title="Base class of all declarations that bind values.">ValDecl</a>'s own <a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3" title="Visibility tier of a ValDecl.">Vis</a>; <span class="tt">Pub</span> for anything else (<a class="el" href="classmim_1_1ast_1_1Ptrn.html" title="Base class of all patterns.">Ptrn</a>, Import, ...), which the <span class="tt">priv</span>/<span class="tt">pub</span> system ignores.  <br /></td></tr>
+<tr class="memitem:a81540b02010f2ac0180199fef91cf84a pub_methods_classmim_1_1ast_1_1ValDecl" id="r_a81540b02010f2ac0180199fef91cf84a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#a81540b02010f2ac0180199fef91cf84a">is_extern</a> () const override</td></tr>
+<tr class="memdesc:a81540b02010f2ac0180199fef91cf84a pub_methods_classmim_1_1ast_1_1ValDecl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this decl crosses the Mim/native boundary (<span class="tt">extern</span>); body presence picks which side supplies it.  <br /></td></tr>
+<tr class="memitem:aea50c03f1273feea82ee78d4556d6632 pub_methods_classmim_1_1ast_1_1ValDecl" id="r_aea50c03f1273feea82ee78d4556d6632"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#aea50c03f1273feea82ee78d4556d6632">is_anx</a> () const override</td></tr>
+<tr class="memdesc:aea50c03f1273feea82ee78d4556d6632 pub_methods_classmim_1_1ast_1_1ValDecl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this decl is registered as a compiler-exposed annex (<span class="tt">anx</span>).  <br /></td></tr>
+<tr class="memitem:a55782f87dd48c72e297123925d2fc458 pub_methods_classmim_1_1ast_1_1ValDecl" id="r_a55782f87dd48c72e297123925d2fc458"><td class="memItemLeft">const <a class="el" href="structmim_1_1ast_1_1Mods.html">Mods</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#a55782f87dd48c72e297123925d2fc458">mods</a> () const</td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1ast_1_1Decl"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1Decl.html">mim::ast::Decl</a></td></tr>
 <tr class="memitem:afcde390a7054dfbdfffa25bf97a0e850 pub_methods_classmim_1_1ast_1_1Decl" id="r_afcde390a7054dfbdfffa25bf97a0e850"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#afcde390a7054dfbdfffa25bf97a0e850">def</a> () const</td></tr>
-<tr class="memitem:adf325a336c21fc1490e48c5413d9e093 pub_methods_classmim_1_1ast_1_1Decl" id="r_adf325a336c21fc1490e48c5413d9e093"><td class="memItemLeft">virtual Dbg&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#adf325a336c21fc1490e48c5413d9e093">dbg</a> () const</td></tr>
-<tr class="memdesc:adf325a336c21fc1490e48c5413d9e093 pub_methods_classmim_1_1ast_1_1Decl"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name this <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> introduces; anonymous if it has none.  <br /></td></tr>
-<tr class="memitem:ac6782f42e504ce6653f354df640f3fe1 pub_methods_classmim_1_1ast_1_1Decl" id="r_ac6782f42e504ce6653f354df640f3fe1"><td class="memItemLeft">virtual const <a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c">Scope</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#ac6782f42e504ce6653f354df640f3fe1">scope</a> () const</td></tr>
-<tr class="memdesc:ac6782f42e504ce6653f354df640f3fe1 pub_methods_classmim_1_1ast_1_1Decl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-<span class="tt">nullptr</span> if this <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> is a module whose members a <a class="el" href="classmim_1_1ast_1_1Path.html" title="dbg_0.....dbg_n-1.">Path</a> may walk into.  <br /></td></tr>
+<tr class="memitem:a2b708a1ffafac16fb2ae5ef095b97f2f pub_methods_classmim_1_1ast_1_1Decl" id="r_a2b708a1ffafac16fb2ae5ef095b97f2f"><td class="memItemLeft">virtual std::pair&lt; <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#a2b708a1ffafac16fb2ae5ef095b97f2f">annex_sub</a> () const</td></tr>
+<tr class="memdesc:a2b708a1ffafac16fb2ae5ef095b97f2f pub_methods_classmim_1_1ast_1_1Decl"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <span class="tt">(<a class="el" href="structmim_1_1ast_1_1AnnexInfo.html" title="Bookkeeping of an annex introduced by an AxmDecl.">AnnexInfo</a>, sub)</span> slot this decl registered itself under as an annex; <span class="tt">{nullptr, 0}</span> if it isn't one.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1ast_1_1Node"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1Node.html">mim::ast::Node</a></td></tr>
 <tr class="memitem:abfb47e24f20d0d09e954f6c380f21981 pub_methods_classmim_1_1ast_1_1Node" id="r_abfb47e24f20d0d09e954f6c380f21981"><td class="memItemLeft">Loc&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Node.html#abfb47e24f20d0d09e954f6c380f21981">loc</a> () const</td></tr>
 <tr class="memitem:a9fda52ee802c46d21b8eb6879077bf35 pub_methods_classmim_1_1ast_1_1Node" id="r_a9fda52ee802c46d21b8eb6879077bf35"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35">dump</a> () const</td></tr>
@@ -191,7 +216,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1ast_1_1ValDecl"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1ValDecl.html">mim::ast::ValDecl</a></td></tr>
-<tr class="memitem:ad460925fe022cfcc813578d0fbf02bce pro_methods_classmim_1_1ast_1_1ValDecl" id="r_ad460925fe022cfcc813578d0fbf02bce"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#ad460925fe022cfcc813578d0fbf02bce">ValDecl</a> (Loc loc)</td></tr>
+<tr class="memitem:a43ec10b729b2a7c5a2691a28e95e2ed3 pro_methods_classmim_1_1ast_1_1ValDecl" id="r_a43ec10b729b2a7c5a2691a28e95e2ed3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1ValDecl.html#a43ec10b729b2a7c5a2691a28e95e2ed3">ValDecl</a> (Loc loc, <a class="el" href="structmim_1_1ast_1_1Mods.html">Mods</a> mods={})</td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1ast_1_1Decl"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1Decl.html">mim::ast::Decl</a></td></tr>
 <tr class="memitem:a2eae454589077199dbfa14111e0e88f8 pro_methods_classmim_1_1ast_1_1Decl" id="r_a2eae454589077199dbfa14111e0e88f8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#a2eae454589077199dbfa14111e0e88f8">Decl</a> (Loc loc)</td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1ast_1_1Node"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1Node.html">mim::ast::Node</a></td></tr>
@@ -201,12 +226,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ae3ddbb0016f6130e84f3e7b423144cf2 pro_attribs_classmim_1_1ast_1_1Decl" id="r_ae3ddbb0016f6130e84f3e7b423144cf2"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Decl.html#ae3ddbb0016f6130e84f3e7b423144cf2">def_</a> = nullptr</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520">path</a>;</span> - splices all members of the module <code class="param">path</code> denotes into the current scope. </p>
+<div class="textblock"><p><span class="tt">import "<a class="el" href="#ae377115ea3cd7f2820d343fa442b7767">file</a>"|name [as alias|*];</span>, <span class="tt">plugin name [as alias|*];</span>, or <span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520" title="Module path of a use; module name of an import/plugin.">path</a> [as alias|*];</span> <span class="tt">as *</span> splices instead of naming; a <span class="tt">use</span> without an <span class="tt">as</span> is sugar for <span class="tt">as *</span>. </p>
+<p>Makes another module available here: <span class="tt">import</span>/<span class="tt">plugin</span> pull in a <a class="el" href="classmim_1_1ast_1_1File.html" title="The AST of one source file: an anonymous ModDecl that a UseDecl binds under a name of its own.">File</a>, <span class="tt">use</span> walks a <a class="el" href="classmim_1_1ast_1_1Path.html" title="dbg_0.....dbg_n-1.">Path</a>. Either that module is bound under <a class="el" href="#a1761c0adb9821612f0e51b8245d1f528" title="The name this decl introduces; anonymous if it splices instead.">UseDecl::dbg</a>, or its public members are spliced into the current scope. </p>
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01157">1157</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00955">955</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aac62f65b943c3e0b2277d649e0964038" name="aac62f65b943c3e0b2277d649e0964038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac62f65b943c3e0b2277d649e0964038">&#9670;&#160;</a></span>UseDecl()</h2>
+<a id="ac3628f76750148d75f269138d91a30ae" name="ac3628f76750148d75f269138d91a30ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3628f76750148d75f269138d91a30ae">&#9670;&#160;</a></span>UseDecl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +248,17 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Path.html">Path</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structmim_1_1ast_1_1Mods.html">Mods</a></td>          <td class="paramname"><span class="paramname"><em>mods</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Path.html">Path</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dbg</td>          <td class="paramname"><span class="paramname"><em>alias</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -232,13 +268,109 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01159">1159</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p><span class="tt">use <a class="el" href="#aedcf51b97a722886d4b304f77cee9520" title="Module path of a use; module name of an import/plugin.">path</a> [as alias|*];</span>; no <code class="param">alias</code> means <span class="tt">as *</span>. </p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l00140">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l01163">path()</a>, and <a class="el" href="ast_8h_source.html#l00193">mim::ast::ValDecl::ValDecl()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00958">958</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00979">alias()</a>, <a class="el" href="ast_8h_source.html#l00168">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l00237">mim::ast::ValDecl::mods()</a>, <a class="el" href="ast_8h_source.html#l00978">path()</a>, and <a class="el" href="ast_8h_source.html#l00229">mim::ast::ValDecl::ValDecl()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00546">bind()</a>.</p>
+
+</div>
+</div>
+<a id="af072925387d1e8da95a99285970a71b1" name="af072925387d1e8da95a99285970a71b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af072925387d1e8da95a99285970a71b1">&#9670;&#160;</a></span>UseDecl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::ast::UseDecl::UseDecl </td>
+          <td>(</td>
+          <td class="paramtype">Loc</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dbg</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>file_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dbg</td>          <td class="paramname"><span class="paramname"><em>alias</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>splice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">import</span>/<span class="tt">plugin</span>; <code class="param">name</code> is the module name, derived from <code class="param">file_path</code> if there is one. </p>
+<p>The <a class="el" href="classmim_1_1ast_1_1File.html" title="The AST of one source file: an anonymous ModDecl that a UseDecl binds under a name of its own.">File</a> itself is owned by the <a class="el" href="classmim_1_1ast_1_1AST.html" title="Owns the arena all AST nodes live in as well as the AnnexInfos of all plugins.">AST</a> and shared by all its importers. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00967">967</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00979">alias()</a>, <a class="el" href="ast_8h_source.html#l00982">file()</a>, <a class="el" href="ast_8h_source.html#l00980">file_path()</a>, <a class="el" href="ast_8h_source.html#l00168">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l00976">tag()</a>, and <a class="el" href="ast_8h_source.html#l00229">mim::ast::ValDecl::ValDecl()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a52da00df9dbbbca55178e2900d7df878" name="a52da00df9dbbbca55178e2900d7df878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52da00df9dbbbca55178e2900d7df878">&#9670;&#160;</a></span>alias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dbg mim::ast::UseDecl::alias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty, unless the source spelled <span class="tt">as I</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00979">979</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>, <a class="el" href="ast_8h_source.html#l00958">UseDecl()</a>, and <a class="el" href="ast_8h_source.html#l00967">UseDecl()</a>.</p>
+
+</div>
+</div>
 <a id="a84d72d86795187647802b2ee4efe0664" name="a84d72d86795187647802b2ee4efe0664"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84d72d86795187647802b2ee4efe0664">&#9670;&#160;</a></span>bind()</h2>
 
@@ -264,9 +396,44 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1ast_1_1ValDecl.html#a15a6c3a383aa0faa0581a11621ec2020">mim::ast::ValDecl</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00466">466</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00546">546</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l00140">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l01163">path()</a>, and <a class="el" href="ast_8h_source.html#l00184">mim::ast::Decl::scope()</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00986">dbg()</a>, <a class="el" href="ast_8h_source.html#l00982">file()</a>, <a class="el" href="ast_8h_source.html#l00983">is_splice()</a>, <a class="el" href="ast_8h_source.html#l00168">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l00033">mim::ast::Pub</a>, and <a class="el" href="ast_8h_source.html#l00958">UseDecl()</a>.</p>
+
+</div>
+</div>
+<a id="a1761c0adb9821612f0e51b8245d1f528" name="a1761c0adb9821612f0e51b8245d1f528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1761c0adb9821612f0e51b8245d1f528">&#9670;&#160;</a></span>dbg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dbg mim::ast::UseDecl::dbg </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The name this decl introduces; anonymous if it splices instead. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1ast_1_1Decl.html#adf325a336c21fc1490e48c5413d9e093">mim::ast::Decl</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00986">986</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00983">is_splice()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00546">bind()</a>.</p>
 
 </div>
 </div>
@@ -282,7 +449,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void mim::ast::UseDecl::emit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -295,7 +462,158 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1ast_1_1ValDecl.html#ac87f9974825542bc395b98a693372374">mim::ast::ValDecl</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00498">498</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00058">58</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00043">mim::ast::File::emit()</a>, and <a class="el" href="ast_8h_source.html#l00982">file()</a>.</p>
+
+</div>
+</div>
+<a id="ae377115ea3cd7f2820d343fa442b7767" name="ae377115ea3cd7f2820d343fa442b7767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae377115ea3cd7f2820d343fa442b7767">&#9670;&#160;</a></span>file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> * mim::ast::UseDecl::file </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00982">982</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00546">bind()</a>, <a class="el" href="emit_8cpp_source.html#l00058">emit()</a>, and <a class="el" href="ast_8h_source.html#l00967">UseDecl()</a>.</p>
+
+</div>
+</div>
+<a id="a740c6db493e659e7a5ca11095a4188fc" name="a740c6db493e659e7a5ca11095a4188fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740c6db493e659e7a5ca11095a4188fc">&#9670;&#160;</a></span>file_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sym mim::ast::UseDecl::file_path </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Spelling of an <span class="tt">import "..."</span>; empty otherwise. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00980">980</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>, and <a class="el" href="ast_8h_source.html#l00967">UseDecl()</a>.</p>
+
+</div>
+</div>
+<a id="ac234dafb901a482a15ff0152f5f5d7e1" name="ac234dafb901a482a15ff0152f5f5d7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac234dafb901a482a15ff0152f5f5d7e1">&#9670;&#160;</a></span>is_file_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::ast::UseDecl::is_file_path </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00981">981</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>.</p>
+
+</div>
+</div>
+<a id="ae89c3aa2066f418b5968107473452ea8" name="ae89c3aa2066f418b5968107473452ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89c3aa2066f418b5968107473452ea8">&#9670;&#160;</a></span>is_import()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::ast::UseDecl::is_import </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00977">977</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>.</p>
+
+</div>
+</div>
+<a id="a33d0026b675806a5c3b422064d9cb4e4" name="a33d0026b675806a5c3b422064d9cb4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d0026b675806a5c3b422064d9cb4e4">&#9670;&#160;</a></span>is_splice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::ast::UseDecl::is_splice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">as *</span>: splice the module's public members, bind no name. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00983">983</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00546">bind()</a>, <a class="el" href="ast_8h_source.html#l00986">dbg()</a>, and <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>.</p>
 
 </div>
 </div>
@@ -322,9 +640,42 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01163">1163</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p>Module path of a <span class="tt">use</span>; module name of an <span class="tt">import</span>/<span class="tt">plugin</span>. </p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00466">bind()</a>, <a class="el" href="stream_8cpp_source.html#l00247">stream()</a>, and <a class="el" href="ast_8h_source.html#l01159">UseDecl()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00978">978</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>, and <a class="el" href="ast_8h_source.html#l00958">UseDecl()</a>.</p>
+
+</div>
+</div>
+<a id="a25820873fb9dba0a7dbd33952428c2a3" name="a25820873fb9dba0a7dbd33952428c2a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25820873fb9dba0a7dbd33952428c2a3">&#9670;&#160;</a></span>scope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c">Scope</a> * mim::ast::UseDecl::scope </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Non-<span class="tt">nullptr</span> if this <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> is a module whose members a <a class="el" href="classmim_1_1ast_1_1Path.html" title="dbg_0.....dbg_n-1.">Path</a> may walk into. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1ast_1_1Decl.html#ac6782f42e504ce6653f354df640f3fe1">mim::ast::Decl</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00988">988</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
 </div>
 </div>
@@ -357,9 +708,40 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1ast_1_1Node.html#a0ea77b93860b8d8c5cb46c7d2080d0a6">mim::ast::Node</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="stream_8cpp_source.html#l00247">247</a> of file <a class="el" href="stream_8cpp_source.html">stream.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stream_8cpp_source.html#l00265">265</a> of file <a class="el" href="stream_8cpp_source.html">stream.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l01163">path()</a>, and <a class="el" href="stream_8cpp_source.html#l00011">mim::ast::S::S()</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00979">alias()</a>, <a class="el" href="lexer_8cpp_source.html#l00181">mim::ast::Lexer::escape()</a>, <a class="el" href="ast_8h_source.html#l00980">file_path()</a>, <a class="el" href="ast_8h_source.html#l00981">is_file_path()</a>, <a class="el" href="ast_8h_source.html#l00977">is_import()</a>, <a class="el" href="ast_8h_source.html#l00983">is_splice()</a>, <a class="el" href="ast_8h_source.html#l00237">mim::ast::ValDecl::mods()</a>, <a class="el" href="ast_8h_source.html#l00978">path()</a>, <a class="el" href="stream_8cpp_source.html#l00011">mim::ast::S::S()</a>, and <a class="el" href="ast_8h_source.html#l00976">tag()</a>.</p>
+
+</div>
+</div>
+<a id="ae8a07e9cbab7272478a5f80d25309a09" name="ae8a07e9cbab7272478a5f80d25309a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a07e9cbab7272478a5f80d25309a09">&#9670;&#160;</a></span>tag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a> mim::ast::UseDecl::tag </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">import</span>, <span class="tt">plugin</span>, or <span class="tt">use</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00976">976</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="stream_8cpp_source.html#l00265">stream()</a>, and <a class="el" href="ast_8h_source.html#l00967">UseDecl()</a>.</p>
 
 </div>
 </div>

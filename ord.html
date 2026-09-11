@@ -163,66 +163,74 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ord.html','','
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ord"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ord.html" title="The ord Plugin">mim::plug::ord</a></dd></dl>
 <p>Ordered Set and Map. </p><dl class="section warning"><dt>Warning</dt><dd>This is still WIP!</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md384"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin option;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md385"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md386"></a>
-%ord.Key</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
+ord.Key</h2>
 <p>This existential-style type specifies a type together with a less-than function.</p>
-<div class="fragment"><div class="line">let %ord.Key = [T: *, lt: [T, T] → Bool];</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md387"></a>
-%ord.Set / %ord.Map</h2>
+<div class="fragment"><div class="line">anx let Key = [T: *, lt: [T, T] → Bool];</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
+ord.Set / ord.Map</h2>
 <p>Type constructors for set / map.</p><ul>
-<li>First argument must be of type <span class="tt">%ord.Key</span>.</li>
-<li><span class="tt">%ord.Map</span> needs a second argument: the value type.</li>
+<li>First argument must be of type <span class="tt">ord.Key</span>.</li>
+<li><span class="tt">ord.Map</span> needs a second argument: the value type.</li>
 </ul>
-<div class="fragment"><div class="line">axm %ord.Set: %ord.Key     → *;</div>
-<div class="line">axm %ord.Map: %ord.Key → * → *;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md388"></a>
+<div class="fragment"><div class="line">axm Set: Key     → *;</div>
+<div class="line">axm Map: Key → * → *;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md380"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md389"></a>
-%ord.init</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md381"></a>
+ord.init</h2>
 <p>Creates a set / map from a list of values / key-value pairs.</p>
-<div class="fragment"><div class="line">axm %ord.init(set): [K: %ord.Key] →          {n: Nat} → «n;  K#T    » → %ord.Set K  , normalize_init;</div>
-<div class="line">axm %ord.init(map): [K: %ord.Key] → {V: *} → {n: Nat} → «n; [K#T, V]» → %ord.Map K V, normalize_init;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md390"></a>
-%ord.create</h2>
+<div class="fragment"><div class="line">pub mod init {</div>
+<div class="line">    axm set: [K: Key] →          {n: Nat} → «n;  K#T    » → Set K  , normalize_init;</div>
+<div class="line">    axm map: [K: Key] → {V: *} → {n: Nat} → «n; [K#T, V]» → Map K V, normalize_init;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md382"></a>
+ord.create</h2>
 <p>Creates an empty set / map.</p>
-<div class="fragment"><div class="line">lam %ord.create_set [K: %ord.Key]        : %ord.Set K   = %ord.init.set K    @0 ();</div>
-<div class="line">lam %ord.create_map [K: %ord.Key] (V: *) : %ord.Map K V = %ord.init.map K @V @0 ();</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md391"></a>
+<div class="fragment"><div class="line">anx lam create_set [K: Key]        : Set K   = init.set K    @0 ();</div>
+<div class="line">anx lam create_map [K: Key] (V: *) : Map K V = init.map K @V @0 ();</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md383"></a>
 Capacity</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md392"></a>
-%ord.size</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md384"></a>
+ord.size</h2>
 <p>Yields the number of elements in the container.</p>
-<div class="fragment"><div class="line">axm %ord.size(set): {K: %ord.Key} →          %ord.Set K   → Nat, normalize_size;</div>
-<div class="line">axm %ord.size(map): {K: %ord.Key} → {V: *} → %ord.Map K V → Nat, normalize_size;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md393"></a>
-%ord.is_empty</h2>
+<div class="fragment"><div class="line">pub mod size {</div>
+<div class="line">    axm set: {K: Key} →          Set K   → Nat, normalize_size;</div>
+<div class="line">    axm map: {K: Key} → {V: *} → Map K V → Nat, normalize_size;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md385"></a>
+ord.is_empty</h2>
 <p>Is the container empty?</p>
-<div class="fragment"><div class="line">lam %ord.is_empty_set {K: %ord.Key}        (set: %ord.Set K  ): Bool = %core.ncmp.e (%ord.size.set set, 0);</div>
-<div class="line">lam %ord.is_empty_map {K: %ord.Key} {V: *} (map: %ord.Map K V): Bool = %core.ncmp.e (%ord.size.map map, 0);</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md394"></a>
+<div class="fragment"><div class="line">anx lam is_empty_set {K: Key}        (set: Set K  ): Bool = core.ncmp.e (size.set set, 0);</div>
+<div class="line">anx lam is_empty_map {K: Key} {V: *} (map: Map K V): Bool = core.ncmp.e (size.map map, 0);</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md386"></a>
 Lookup</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md395"></a>
-%ord.get</h2>
-<p>Looks up the given key in the map. Returns an optional value (<span class="tt">%option.Opt V</span>).</p>
-<div class="fragment"><div class="line">axm %ord.get: {K: %ord.Key} → {V: *} → [%ord.Map K V, K#T] → %option.Opt V, normalize_get;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md396"></a>
-%ord.contains</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md387"></a>
+ord.get</h2>
+<p>Looks up the given key in the map. Returns an optional value (<span class="tt">option.Opt V</span>).</p>
+<div class="fragment"><div class="line">axm get: {K: Key} → {V: *} → [Map K V, K#T] → option.Opt V, normalize_get;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md388"></a>
+ord.contains</h2>
 <p>Does the container contain the given key?</p>
-<div class="fragment"><div class="line">axm %ord.contains(set): {K: %ord.Key} →          [%ord.Set K  , K#T] → Bool, normalize_contains;</div>
-<div class="line">axm %ord.contains(map): {K: %ord.Key} → {V: *} → [%ord.Map K V, K#T] → Bool, normalize_contains;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md397"></a>
+<div class="fragment"><div class="line">pub mod contains {</div>
+<div class="line">    axm set: {K: Key} →          [Set K  , K#T] → Bool, normalize_contains;</div>
+<div class="line">    axm map: {K: Key} → {V: *} → [Map K V, K#T] → Bool, normalize_contains;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md389"></a>
 Modifiers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md398"></a>
-%ord.insert</h2>
-<p>Inserts a key / key-value pair into the container.</p>
-<div class="fragment"><div class="line">axm %ord.insert(set): {K: %ord.Key} →          [%ord.Set K  ,  K#T    ] → %ord.Set K  , normalize_insert;</div>
-<div class="line">axm %ord.insert(map): {K: %ord.Key} → {V: *} → [%ord.Map K V, [K#T, V]] → %ord.Map K V, normalize_insert;</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md390"></a>
+ord.insertion</h2>
+<p>Inserts a key / key-value pair into the container. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> <span class="tt">insertion</span>, not <span class="tt">insert</span>: <span class="tt">insert</span> is a reserved ASCII spelling of the <span class="tt">ins</span> keyword.</dd></dl>
+<div class="fragment"><div class="line">pub mod insertion {</div>
+<div class="line">    axm set: {K: Key} →          [Set K  ,  K#T    ] → Set K  , normalize_insert;</div>
+<div class="line">    axm map: {K: Key} → {V: *} → [Map K V, [K#T, V]] → Map K V, normalize_insert;</div>
+<div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

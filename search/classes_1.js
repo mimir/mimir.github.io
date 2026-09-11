@@ -1,7 +1,7 @@
 var searchData=
 [
   ['addmem_0',['AddMem',['../classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html',1,'mim::plug::mem::phase']]],
-  ['alias_1',['Alias',['../classmim_1_1ast_1_1AxmDecl_1_1Alias.html',1,'mim::ast::AxmDecl']]],
+  ['aliasdecl_1',['AliasDecl',['../classmim_1_1ast_1_1AliasDecl.html',1,'mim::ast']]],
   ['aliasptrn_2',['AliasPtrn',['../classmim_1_1ast_1_1AliasPtrn.html',1,'mim::ast']]],
   ['analysis_3',['Analysis',['../classmim_1_1Analysis.html',1,'mim']]],
   ['annex_4',['Annex',['../structmim_1_1Annex.html',1,'mim']]],

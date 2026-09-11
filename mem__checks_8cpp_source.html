@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mem__checks_8c
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        MemFinder mem_finder(kernel_args_t);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">if</span> (mem_finder.next_mem()) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            fe::throwf(<span class="stringliteral">&quot;`%mem.M` must not be passed across device boundaries: `{}` of type `{}` is passed from host to &quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            fe::throwf(<span class="stringliteral">&quot;`mem.M` must not be passed across device boundaries: `{}` of type `{}` is passed from host to &quot;</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                       <span class="stringliteral">&quot;kernel `{}`&quot;</span>,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                       kernel_args, kernel_args_t, kernel);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
@@ -210,14 +210,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mem__checks_8c
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">while</span> (<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a> = intype_mem_finder.next_mem()) {</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">auto</span> addr_space = <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>-&gt;arg();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">Lit::as</a>(addr_space) != 0)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                fe::throwf(<span class="stringliteral">&quot;the `main` function must not take a `%mem.M n` with a non-zero `n` as an argument&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                fe::throwf(<span class="stringliteral">&quot;the `main` function must not take a `mem.M n` with a non-zero `n` as an argument&quot;</span>);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        MemFinder outtype_mem_finder(lam-&gt;type()-&gt;ret_dom());</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">while</span> (<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a> = outtype_mem_finder.next_mem()) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">auto</span> addr_space = <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>-&gt;arg();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">Lit::as</a>(addr_space) != 0)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                fe::throwf(<span class="stringliteral">&quot;the `main` function must not return a `%mem.M n` with a non-zero `n`&quot;</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                fe::throwf(<span class="stringliteral">&quot;the `main` function must not return a `mem.M n` with a non-zero `n`&quot;</span>);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="classmim_1_1Analysis.html#aa7d78ed906cc6531fa13d42e18bc398d">Super::rewrite_external</a>(def);</div>

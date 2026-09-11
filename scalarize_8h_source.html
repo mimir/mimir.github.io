@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('scalarize_8h_s
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/// A Pi is *pinned* (left untouched) if</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// * it is reachable from an annex (normalizers and backends rely on its exact shape),</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// * an Axm application&#39;s signature dictates it - what the Axm consumes and produces,</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">///   plus a *bare* function argument&#39;s type (`%%autodiff.ad f`) - except for subtrees that are</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">///   merely substituted in via (type) arguments (`T` in `%%mem.store T`), which stay flattenable,</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">///   plus a *bare* function argument&#39;s type (`autodiff.ad f`) - except for subtrees that are</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">///   merely substituted in via (type) arguments (`T` in `mem.store T`), which stay flattenable,</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// * it occurs inside an *interface* Lam&#39;s signature (external, annex, or unset declaration) -</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">///   only such a Lam&#39;s own top-level Pi stays flattenable (it may be shared with internal values;</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">///   rewrite_mut_Lam() preserves the interface&#39;s top level by hand),</span></div>
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('scalarize_8h_s
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">///   this is tracked per parameter via a keep-bitmask.</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">///</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/// The phase flattens **one level** of a Pi&#39;s (thresholded) domain per run.</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// Because it is scheduled inside a fixed-point pipeline (`%compile.phases tt (...)`),</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/// Because it is scheduled inside a fixed-point pipeline (`compile.phases tt (...)`),</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/// re-running it converges to a full flatten; each run that peels calls invalidate().</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">///</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/// Flattening respects Flags::scalarize_threshold via the thresholded projection helpers</span></div>

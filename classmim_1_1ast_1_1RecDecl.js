@@ -1,6 +1,7 @@
 var classmim_1_1ast_1_1RecDecl =
 [
-    [ "RecDecl", "classmim_1_1ast_1_1RecDecl.html#a6c7e610a2fc827e33217ad8e7b06c5ff", null ],
+    [ "RecDecl", "classmim_1_1ast_1_1RecDecl.html#a84f62486154aebac0aa153822d396752", null ],
+    [ "annex_sub", "classmim_1_1ast_1_1RecDecl.html#af2fcfe0198c0d0f9328365f30de199ca", null ],
     [ "bind", "classmim_1_1ast_1_1RecDecl.html#adaeee223054b02f9aa44a5d0849b491d", null ],
     [ "bind_body", "classmim_1_1ast_1_1RecDecl.html#a483bc0ba63896033e17f65d40db7d06b", null ],
     [ "bind_decl", "classmim_1_1ast_1_1RecDecl.html#a7d612167a2d17eb82609f2cb00678d37", null ],

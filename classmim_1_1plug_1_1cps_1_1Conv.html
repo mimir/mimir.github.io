@@ -290,8 +290,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Full CPS conversion in one recursive rewrite. </p>
 <p>Each term-level, direct-style function </p><div class="fragment"><div class="line">f: [a: A] → B</div>
 </div><!-- fragment --><p> becomes </p><div class="fragment"><div class="line">f_cps: Cn [a: A, Cn B]</div>
-</div><!-- fragment --><p> and every use of <span class="tt">f</span> is replaced by <span class="tt">cps.cps2ds_dep (A, λ a: B) f_cps</span> to remain type-correct.</p>
-<p>Call sites are lifted on the fly: When the recursive rewrite encounters <span class="tt"><a class="el" href="classmim_1_1App.html">App</a> (cps.cps2ds_dep (T, U) k) arg</span> inside a continuation, it allocates a fresh continuation <span class="tt">cont</span> receiving the result, records the pending call <span class="tt">k (arg, cont)</span>, and uses <span class="tt">cont</span>'s variable as the value of the <a class="el" href="classmim_1_1App.html">App</a>. Once the enclosing <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> is done, the pending calls are wired up in encounter order - which respects data dependencies, because operands are always rewritten before their users: </p><div class="fragment"><div class="line">lam   = k₀ (arg₀, cont₀)</div>
+</div><!-- fragment --><p> and every use of <span class="tt">f</span> is replaced by <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a> (A, λ a: B) f_cps</span> to remain type-correct.</p>
+<p>Call sites are lifted on the fly: When the recursive rewrite encounters <span class="tt"><a class="el" href="classmim_1_1App.html">App</a> (<a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a> (T, U) k) arg</span> inside a continuation, it allocates a fresh continuation <span class="tt">cont</span> receiving the result, records the pending call <span class="tt">k (arg, cont)</span>, and uses <span class="tt">cont</span>'s variable as the value of the <a class="el" href="classmim_1_1App.html">App</a>. Once the enclosing <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> is done, the pending calls are wired up in encounter order - which respects data dependencies, because operands are always rewritten before their users: </p><div class="fragment"><div class="line">lam   = k₀ (arg₀, cont₀)</div>
 <div class="line">cont₀ = k₁ (arg₁, cont₁)</div>
 <div class="line">...</div>
 <div class="line">contₙ = rewritten body of lam</div>
@@ -395,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="conv_8cpp_source.html#l00070">70</a> of file <a class="el" href="conv_8cpp_source.html">conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00230">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00237">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
 
 </div>
 </div>
@@ -424,7 +424,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="conv_8cpp_source.html#l00020">20</a> of file <a class="el" href="conv_8cpp_source.html">conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00126">mim::Lam::body()</a>, <a class="el" href="conv_8cpp_source.html#l00009">mim::plug::cps::convertible()</a>, <a class="el" href="lam_8h_source.html#l00125">mim::Lam::filter()</a>, <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="def_8h_source.html#l00373">mim::Def::is_set()</a>, <a class="el" href="lam_8h_source.html#l00144">mim::Lam::isa_cn()</a>, <a class="el" href="conv_8cpp_source.html#l00015">map()</a>, <a class="el" href="world_8h_source.html#l00397">mim::World::mut_lam()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="lam_8h_source.html#l00133">mim::Lam::type()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00126">mim::Lam::body()</a>, <a class="el" href="conv_8cpp_source.html#l00009">mim::plug::cps::convertible()</a>, <a class="el" href="lam_8h_source.html#l00125">mim::Lam::filter()</a>, <a class="el" href="phase_8h_source.html#l00402">mim::RWBase::is_bootstrapping()</a>, <a class="el" href="def_8h_source.html#l00373">mim::Def::is_set()</a>, <a class="el" href="lam_8h_source.html#l00144">mim::Lam::isa_cn()</a>, <a class="el" href="conv_8cpp_source.html#l00015">map()</a>, <a class="el" href="world_8h_source.html#l00401">mim::World::mut_lam()</a>, <a class="el" href="phase_8h_source.html#l00451">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="lam_8h_source.html#l00133">mim::Lam::type()</a>.</p>
 
 </div>
 </div>

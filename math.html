@@ -162,39 +162,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('math.html','',
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2math"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1math.html" title="The math Plugin">mim::plug::math</a></dd></dl>
-<p>Introduces a type constructor <span class="tt">%math.F</span> for various <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE-754</a> floating-point formats and a set of operations to calculate with instances of these types. All operations with the exception of <span class="tt">%math.conv</span> expect a <span class="tt">Nat</span> just in front of their actual argument. Via this <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="mim::plug::math::Mode">mode</a> you can fine-tune how strictly floating-point transformations must obey IEEE semantics.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md331"></a>
+<p>Introduces a type constructor <span class="tt">math.F</span> for various <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE-754</a> floating-point formats and a set of operations to calculate with instances of these types. All operations with the exception of <span class="tt">math.conv</span> expect a <span class="tt">Nat</span> just in front of their actual argument. Via this <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="mim::plug::math::Mode">mode</a> you can fine-tune how strictly floating-point transformations must obey IEEE semantics.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md323"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md332"></a>
-%math.F</h2>
-<p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="fragment"><div class="line">axm %math.F: «2; Nat» → *;</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
+math.F</h2>
+<p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="fragment"><div class="line">axm F: «2; Nat» → *;</div>
 <div class="line"> </div>
-<div class="line">let %math.f16     = (10,  5);</div>
-<div class="line">let %math.f32     = (23,  8);</div>
-<div class="line">let %math.f64     = (52, 11);</div>
-<div class="line">let %math.bf16    = ( 7,  8);</div>
-<div class="line">let %math.nvtf32  = (10,  8);</div>
-<div class="line">let %math.amdfp24 = (16,  7);</div>
-<div class="line">let %math.pxr24   = (15,  8);</div>
+<div class="line">anx let f16     = (10,  5);</div>
+<div class="line">anx let f32     = (23,  8);</div>
+<div class="line">anx let f64     = (52, 11);</div>
+<div class="line">anx let bf16    = ( 7,  8);</div>
+<div class="line">anx let nvtf32  = (10,  8);</div>
+<div class="line">anx let amdfp24 = (16,  7);</div>
+<div class="line">anx let pxr24   = (15,  8);</div>
 <div class="line"> </div>
-<div class="line">let %math.F16     = %math.F %math.f16;</div>
-<div class="line">let %math.F32     = %math.F %math.f32;</div>
-<div class="line">let %math.F64     = %math.F %math.f64;</div>
-<div class="line">let %math.BF16    = %math.F %math.bf16;</div>
-<div class="line">let %math.NVTF32  = %math.F %math.nvtf32; // actually 19 bits; aligns to 32 bit</div>
-<div class="line">let %math.AMDFP24 = %math.F %math.amdfp24;</div>
-<div class="line">let %math.PXR24   = %math.F %math.pxr24;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md333"></a>
+<div class="line">anx let F16     = F f16;</div>
+<div class="line">anx let F32     = F f32;</div>
+<div class="line">anx let F64     = F f64;</div>
+<div class="line">anx let BF16    = F bf16;</div>
+<div class="line">anx let NVTF32  = F nvtf32; // actually 19 bits; aligns to 32 bit</div>
+<div class="line">anx let AMDFP24 = F amdfp24;</div>
+<div class="line">anx let PXR24   = F pxr24;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Numerical Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md334"></a>
-%math.arith</h2>
-<p>Arithmetic operations. </p><div class="fragment"><div class="line">axm %math.arith(add, sub, mul, div, rem):</div>
-<div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_arith;</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
+math.arith</h2>
+<p>Arithmetic operations. </p><div class="fragment"><div class="line">axm arith.(add, sub, mul, div, rem):</div>
+<div class="line">    {pe: «2; Nat»} → Nat → «2; F pe» → F pe, normalize_arith;</div>
 <div class="line"> </div>
-<div class="line">lam %math.minus {pe: «2; Nat»} (m: Nat) (a: %math.F pe): %math.F pe =</div>
-<div class="line">    %math.arith.sub m (0:(%math.F pe), a);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md335"></a>
-%math.extrema</h2>
+<div class="line">anx lam minus {pe: «2; Nat»} (m: Nat) (a: F pe): F pe =</div>
+<div class="line">    arith.sub m (0:(F pe), a);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md327"></a>
+math.extrema</h2>
 <p>Minimum and maximum:</p><ul>
 <li><span class="tt">m</span>in or <span class="tt">M</span>ax</li>
 <li><span class="tt">i</span>: Follows the behavior of libm's fmin/fmax. If either operand is a NaN, returns the other non-NaN operand. Returns NaN only if both operands are NaN; the returned NaN is always quiet. If the operands compare equal, returns a value that compares equal to both operands. This means that <span class="tt">fmin(+/-0.0, +/-0.0)</span> could return either <span class="tt">-0.0</span> or <span class="tt">0.0</span>.</li>
@@ -212,11 +212,11 @@ Numerical Operations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">IM</span>  </td><td class="markdownTableBodyNone"><span class="tt">ieee754max</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.extrema(im = fmin,       iM = fmax,</div>
-<div class="line">                  Im = ieee754min, IM = ieee754max):</div>
-<div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_extrema;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md336"></a>
-%math.tri</h2>
+<div class="fragment"><div class="line">axm extrema.(im = fmin,       iM = fmax,</div>
+<div class="line">             Im = ieee754min, IM = ieee754max):</div>
+<div class="line">    {pe: «2; Nat»} → Nat → «2; F pe» → F pe, normalize_extrema;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md328"></a>
+math.tri</h2>
 <p><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">Trigonometric</a> and <a href="https://en.wikipedia.org/wiki/Hyperbolic_functions">hypberbolic</a> functions.</p>
 <ul>
 <li><span class="tt">FF</span>: sine, cosine, tangent, <em>unused</em></li>
@@ -259,29 +259,29 @@ Numerical Operations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">AHFF</span>  </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">-  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.tri(ahff =  sin     , ahfF =  cos , ahFf =  tan , ahFF,</div>
-<div class="line">              aHff =  sinh = h, aHfF =  cosh, aHFf =  tanh, aHFF,</div>
-<div class="line">              Ahff = asin  = a, AhfF = acos , AhFf = atan , AhFF,</div>
-<div class="line">              AHff = asinh    , AHfF = acosh, AHFf = atanh, AHFF):</div>
-<div class="line">    {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_tri;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md337"></a>
-%math.pow</h2>
+<div class="fragment"><div class="line">axm tri.(ahff =  sin     , ahfF =  cos , ahFf =  tan , ahFF,</div>
+<div class="line">         aHff =  sinh = h, aHfF =  cosh, aHFf =  tanh, aHFF,</div>
+<div class="line">         Ahff = asin  = a, AhfF = acos , AhFf = atan , AhFF,</div>
+<div class="line">         AHff = asinh    , AHfF = acosh, AHFf = atanh, AHFF):</div>
+<div class="line">    {pe: «2; Nat»} → Nat → F pe → F pe, normalize_tri;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md329"></a>
+math.pow</h2>
 <p>Power function: \(x^y\)</p>
-<div class="fragment"><div class="line">axm %math.pow: {pe: «2; Nat»} → Nat → «2; %math.F pe» → %math.F pe, normalize_pow;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md338"></a>
-%math.rt</h2>
+<div class="fragment"><div class="line">axm pow: {pe: «2; Nat»} → Nat → «2; F pe» → F pe, normalize_pow;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md330"></a>
+math.rt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Square_root">Square</a> and <a href="https://en.wikipedia.org/wiki/Cube_root">cube root</a>:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">%math.rt.sq</span>  </td><td class="markdownTableBodyNone">square root  </td><td class="markdownTableBodyNone">\(\sqrt{x}\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.rt.sq</span>  </td><td class="markdownTableBodyNone">square root  </td><td class="markdownTableBodyNone">\(\sqrt{x}\)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">%math.rt.cb</span>  </td><td class="markdownTableBodyNone">cube root  </td><td class="markdownTableBodyNone">\(\sqrt[3]{x}\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.rt.cb</span>  </td><td class="markdownTableBodyNone">cube root  </td><td class="markdownTableBodyNone">\(\sqrt[3]{x}\)  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.rt(sq, cb): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_rt;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md339"></a>
-%math.exp</h2>
+<div class="fragment"><div class="line">axm rt.(sq, cb): {pe: «2; Nat»} → Nat → F pe → F pe, normalize_rt;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md331"></a>
+math.exp</h2>
 <p><a href="https://en.wikipedia.org/wiki/Exponential_function">Exponential function</a> and <a href="https://en.wikipedia.org/wiki/Logarithm">logarithm</a>:</p><ul>
 <li><span class="tt">L</span>ogarithm</li>
 <li><span class="tt">BB</span>: natural, binary, decimal, <em>unused</em></li>
@@ -306,39 +306,39 @@ Numerical Operations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">LBB</span>  </td><td class="markdownTableBodyNone"><em>unused</em>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">xx  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone"><em>unused</em>  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.exp(lbb = exp, lbB = exp2 = bin, lBb = exp10 = dec, lBB,</div>
-<div class="line">              Lbb = log, LbB = log2      , LBb = log10      , LBB):</div>
-<div class="line">    {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_exp;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md340"></a>
-%math.er</h2>
+<div class="fragment"><div class="line">axm exp.(lbb = exp, lbB = exp2 = bin, lBb = exp10 = dec, lBB,</div>
+<div class="line">         Lbb = log, LbB = log2      , LBb = log10      , LBB):</div>
+<div class="line">    {pe: «2; Nat»} → Nat → F pe → F pe, normalize_exp;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md332"></a>
+math.er</h2>
 <p><a href="https://en.wikipedia.org/wiki/Error_function">Error</a> and <a href="https://en.wikipedia.org/wiki/Error_function#Complementary_error_function">complementary error function</a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">%math.er.f</span>  </td><td class="markdownTableBodyNone">error function  </td><td class="markdownTableBodyNone">\(\frac{2}{\sqrt\pi}\int_0^x e^{-t^2}\,dt\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.er.f</span>  </td><td class="markdownTableBodyNone">error function  </td><td class="markdownTableBodyNone">\(\frac{2}{\sqrt\pi}\int_0^x e^{-t^2}\,dt\)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">%math.er.fc</span>  </td><td class="markdownTableBodyNone">complementary error function  </td><td class="markdownTableBodyNone">\(\frac{2}{\sqrt\pi}\int_x^\infty e^{-t^2}\,dt = 1 - \textrm{erf}(x)\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.er.fc</span>  </td><td class="markdownTableBodyNone">complementary error function  </td><td class="markdownTableBodyNone">\(\frac{2}{\sqrt\pi}\int_x^\infty e^{-t^2}\,dt = 1 - \textrm{erf}(x)\)  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.er(f, fc): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_er;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md341"></a>
-%math.gamma</h2>
+<div class="fragment"><div class="line">axm er.(f, fc): {pe: «2; Nat»} → Nat → F pe → F pe, normalize_er;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md333"></a>
+math.gamma</h2>
 <p><a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a> and its natural <a href="https://en.wikipedia.org/wiki/Gamma_function#The_log-gamma_function">logarithm</a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">%math.gamma.t</span>  </td><td class="markdownTableBodyNone">gamma function  </td><td class="markdownTableBodyNone">\(\Gamma(x) = \int_0^\infty t^{x-1} e^{-t}\,dt\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.gamma.t</span>  </td><td class="markdownTableBodyNone">gamma function  </td><td class="markdownTableBodyNone">\(\Gamma(x) = \int_0^\infty t^{x-1} e^{-t}\,dt\)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">%math.gamma.l</span>  </td><td class="markdownTableBodyNone">natural logarithm of gamma function  </td><td class="markdownTableBodyNone">\(\ln \mid \int_0^\infty t^{x-1} e^{-t}\,dt \mid\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.gamma.l</span>  </td><td class="markdownTableBodyNone">natural logarithm of gamma function  </td><td class="markdownTableBodyNone">\(\ln \mid \int_0^\infty t^{x-1} e^{-t}\,dt \mid\)  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.gamma(t, l): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_gamma;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md342"></a>
-%math.abs</h2>
+<div class="fragment"><div class="line">axm gamma.(t, l): {pe: «2; Nat»} → Nat → F pe → F pe, normalize_gamma;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md334"></a>
+math.abs</h2>
 <p><a href="https://en.wikipedia.org/wiki/Absolute_value">Absolute value</a> of a floating-point number.</p>
-<div class="fragment"><div class="line">axm %math.abs: {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_abs;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md343"></a>
-%math.round</h2>
+<div class="fragment"><div class="line">axm abs: {pe: «2; Nat»} → Nat → F pe → F pe, normalize_abs;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md335"></a>
+math.round</h2>
 <p>Common rounding operations for floating-point numbers:</p><ul>
 <li><span class="tt">f</span>loor</li>
 <li><span class="tt">c</span>eil</li>
@@ -349,19 +349,19 @@ Numerical Operations</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name  </th><th class="markdownTableHeadNone">Meaning  </th><th class="markdownTableHeadNone">Semantics  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">%math.round.f</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_down">round down</a>  </td><td class="markdownTableBodyNone">\(\lfloor x \rfloor \)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.round.f</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_down">round down</a>  </td><td class="markdownTableBodyNone">\(\lfloor x \rfloor \)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">%math.round.c</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_up">round up</a>  </td><td class="markdownTableBodyNone">\(\lceil x \rceil \)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.round.c</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_up">round up</a>  </td><td class="markdownTableBodyNone">\(\lceil x \rceil \)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">%math.round.r</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_to_the_nearest_integer">round to nearest integer</a>  </td><td class="markdownTableBodyNone">\(round (x)\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.round.r</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_to_the_nearest_integer">round to nearest integer</a>  </td><td class="markdownTableBodyNone">\(round (x)\)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">%math.round.t</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_toward_zero">round towards zero</a>  </td><td class="markdownTableBodyNone">\(trunc (x)\)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">math.round.t</span>  </td><td class="markdownTableBodyNone"><a href="https://en.wikipedia.org/wiki/Rounding#Rounding_toward_zero">round towards zero</a>  </td><td class="markdownTableBodyNone">\(trunc (x)\)  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.round(f,c,r,t): {pe: «2; Nat»} → Nat → %math.F pe → %math.F pe, normalize_round;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md344"></a>
+<div class="fragment"><div class="line">axm round.(f,c,r,t): {pe: «2; Nat»} → Nat → F pe → F pe, normalize_round;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md336"></a>
 Other Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md345"></a>
-%math.cmp</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md337"></a>
+math.cmp</h2>
 <p>Floating-point comparison is composed of 4 disjoint relations:</p><ul>
 <li><span class="tt">U</span>nordered (yields true if either operand is a QNaN)</li>
 <li><span class="tt">G</span>reater</li>
@@ -404,34 +404,38 @@ Other Operations</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">UGLE</span>  </td><td class="markdownTableBodyNone"><span class="tt">t</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">always true  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm %math.cmp(ugle =   f, uglE =   e, ugLe =   l, ugLE =  le,</div>
-<div class="line">              uGle =   g, uGlE =  ge, uGLe =  ne, uGLE =   o,</div>
-<div class="line">              Ugle =   u, UglE =  ue, UgLe =  ul, UgLE = ule,</div>
-<div class="line">              UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):</div>
-<div class="line">    {pe: «2; Nat»} → Nat → «2; %math.F pe» → Bool, normalize_cmp;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md346"></a>
-%math.is_finite</h2>
+<div class="fragment"><div class="line">axm cmp.(ugle =   f, uglE =   e, ugLe =   l, ugLE =  le,</div>
+<div class="line">         uGle =   g, uGlE =  ge, uGLe =  ne, uGLE =   o,</div>
+<div class="line">         Ugle =   u, UglE =  ue, UgLe =  ul, UgLE = ule,</div>
+<div class="line">         UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):</div>
+<div class="line">    {pe: «2; Nat»} → Nat → «2; F pe» → Bool, normalize_cmp;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md338"></a>
+math.is_finite</h2>
 <p>Returns <span class="tt">tt</span> if the float is finite and <span class="tt">ff</span> if not (i.e. if it is ±∞ or NaN).</p>
-<div class="fragment"><div class="line">axm %math.is_finite: {pe: «2; Nat»} → Nat → %math.F pe → Bool;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md347"></a>
-%math.conv</h2>
+<div class="fragment"><div class="line">axm is_finite: {pe: «2; Nat»} → Nat → F pe → Bool;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md339"></a>
+math.conv</h2>
 <p>Conversion between floating-point and index types - both signed and unsigned - of different sizes.</p>
-<div class="fragment"><div class="line">axm %math.conv(s2f, u2f): { ss:     Nat } → [dpe: «2; Nat»] →     Idx  ss → %math.F dpe, normalize_conv;</div>
-<div class="line">axm %math.conv(f2s, f2u): {spe: «2; Nat»} → [ ds:     Nat ] → %math.F spe →     Idx  ds, normalize_conv;</div>
-<div class="line">axm %math.conv(f2f):      {spe: «2; Nat»} → [dpe: «2; Nat»] → %math.F spe → %math.F dpe, normalize_conv;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md348"></a>
-%math.slf</h2>
+<div class="fragment"><div class="line">pub mod conv {</div>
+<div class="line">    axm s2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;</div>
+<div class="line">    axm u2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;</div>
+<div class="line">    axm f2s: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;</div>
+<div class="line">    axm f2u: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;</div>
+<div class="line">    axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md340"></a>
+math.slf</h2>
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating-point number ( \(\textrm{slf}(x) = \frac{1}{1+e^{-x}}\))</p>
-<div class="fragment"><div class="line">lam %math.slf {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
-<div class="line">    %math.arith.div m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.arith.add m ((%math.conv.f2f pe 1.0:(%math.F64)), %math.exp.exp m (%math.minus m x)));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md349"></a>
-%math.sgn</h2>
-<p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="fragment"><div class="line">lam %math.sgn {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
-<div class="line">    ((%math.conv.f2f pe -1.0:(%math.F64)), ((%math.conv.f2f pe 0.0:(%math.F64)), (%math.conv.f2f pe 1.0:(%math.F64)))#(%math.cmp.g m (x,(%math.conv.f2f pe 0.0:(%math.F64)))))#(%math.cmp.ge m (x, (%math.conv.f2f pe 0.0:(%math.F64))));</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md350"></a>
-%math.rrt</h2>
-<p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( \(\textrm{rrt}(x) = \frac{1}{\sqrt{x}}\)) </p><div class="fragment"><div class="line">lam %math.rrt {pe: «2; Nat»} (m: Nat) (x: %math.F pe): %math.F pe =</div>
-<div class="line">    %math.arith.div m (%math.conv.f2f pe 1.0:(%math.F64), %math.rt.sq m x);</div>
+<div class="fragment"><div class="line">anx lam slf {pe: «2; Nat»} (m: Nat) (x: F pe): F pe =</div>
+<div class="line">    arith.div m ((conv.f2f pe 1.0:(F64)), arith.add m ((conv.f2f pe 1.0:(F64)), exp.exp m (minus m x)));</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md341"></a>
+math.sgn</h2>
+<p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="fragment"><div class="line">anx lam sgn {pe: «2; Nat»} (m: Nat) (x: F pe): F pe =</div>
+<div class="line">    ((conv.f2f pe (-1.0:(F64))), ((conv.f2f pe 0.0:(F64)), (conv.f2f pe 1.0:(F64)))#(cmp.g m (x,(conv.f2f pe 0.0:(F64)))))#(cmp.ge m (x, (conv.f2f pe 0.0:(F64))));</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md342"></a>
+math.rrt</h2>
+<p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( \(\textrm{rrt}(x) = \frac{1}{\sqrt{x}}\)) </p><div class="fragment"><div class="line">anx lam rrt {pe: «2; Nat»} (m: Nat) (x: F pe): F pe =</div>
+<div class="line">    arith.div m (conv.f2f pe 1.0:(F64), rt.sq m x);</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

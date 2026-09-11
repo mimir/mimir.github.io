@@ -163,50 +163,50 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('regex.html',''
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2regex"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim::plug::regex</a></dd></dl>
 <p>A normalizing regex plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md414"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md406"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">import compile;</div>
 <div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
 <div class="line">plugin cps;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md415"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md407"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md416"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md408"></a>
 RE</h2>
-<p>Char and string types: </p><div class="fragment"><div class="line">let Char = I8;</div>
-<div class="line">lam Str(n: Nat): * = %mem.Ptr0 «n; Char»;</div>
-</div><!-- fragment --><p> <span class="tt">Res n</span> is a match result: the memory, a success flag, and the new position. </p><div class="fragment"><div class="line">lam Res (n: Nat): * = [%mem.M 0, Bool, Idx n];</div>
-</div><!-- fragment --><p> <span class="tt">RE</span> is the matcher itself: it takes the memory, the string, and the current position. </p><div class="fragment"><div class="line">let RE = {n: Nat} → [%mem.M 0, Str n, Idx n] → Res n;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md417"></a>
+<p>Char and string types: </p><div class="fragment"><div class="line">pub let Char = I8;</div>
+<div class="line">lam Str(n: Nat): * = mem.Ptr0 «n; Char»;</div>
+</div><!-- fragment --><p> <span class="tt">Res n</span> is a match result: the memory, a success flag, and the new position. </p><div class="fragment"><div class="line">lam Res (n: Nat): * = [mem.M 0, Bool, Idx n];</div>
+</div><!-- fragment --><p> <span class="tt">RE</span> is the matcher itself: it takes the memory, the string, and the current position. </p><div class="fragment"><div class="line">let RE = {n: Nat} → [mem.M 0, Str n, Idx n] → Res n;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md409"></a>
 Meta</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md418"></a>
-%regex.conj</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md410"></a>
+regex.conj</h2>
 <p>A sequence of REs. <br  />
- E.g., <span class="tt">\d\d\d</span> matches 3 digits: <span class="tt">%regex.conj (%regex.cls.d, %regex.cls.d, %regex.cls.d)</span>. </p><div class="fragment"><div class="line">axm %regex.conj: {n: Nat} → «n; RE» → RE, normalize_conj, 2;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
-%regex.disj</h2>
+ E.g., <span class="tt">\d\d\d</span> matches 3 digits: <span class="tt">regex.conj (regex.cls.d, regex.cls.d, regex.cls.d)</span>. </p><div class="fragment"><div class="line">axm conj: {n: Nat} → «n; RE» → RE, normalize_conj, 2;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md411"></a>
+regex.disj</h2>
 <p>Matches any of the sub-expressions, e.g. <span class="tt">[0123456789]</span>.</p>
-<div class="fragment"><div class="line">axm %regex.disj: {n: Nat} → «n; RE» → RE, normalize_disj, 2;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
+<div class="fragment"><div class="line">axm disj: {n: Nat} → «n; RE» → RE, normalize_disj, 2;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md412"></a>
 Values</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
-%regex.range</h2>
-<p>Wraps a range of literals. E.g., use <span class="tt">%regex.range ('a', 'z')</span> to match all lower-case letters.</p>
-<div class="fragment"><div class="line">axm %regex.range: «2; Char» → RE, normalize_range, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
-%regex.lit</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md413"></a>
+regex.range</h2>
+<p>Wraps a range of literals. E.g., use <span class="tt">regex.range ('a', 'z')</span> to match all lower-case letters.</p>
+<div class="fragment"><div class="line">axm range: «2; Char» → RE, normalize_range, 1;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md414"></a>
+regex.lit</h2>
 <p>Wraps a literal.</p>
-<div class="fragment"><div class="line">lam %regex.lit(val: Char) = %regex.range (val, val);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
-%regex.not_</h2>
-<p>Matches anything but the ranges in the parameter - the parameter must only contain <span class="tt">%regex.disj</span>s and <span class="tt">%regex.range</span>s.</p>
-<div class="fragment"><div class="line">axm %regex.not_: RE → RE, normalize_not, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md424"></a>
-%regex.neg_lookahead</h2>
+<div class="fragment"><div class="line">anx lam lit(val: Char) = range (val, val);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md415"></a>
+regex.not_</h2>
+<p>Matches anything but the ranges in the parameter - the parameter must only contain <span class="tt">regex.disj</span>s and <span class="tt">regex.range</span>s.</p>
+<div class="fragment"><div class="line">axm not_: RE → RE, normalize_not, 1;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md416"></a>
+regex.neg_lookahead</h2>
 <p>Succeeds iff the parameter does <em>not</em> match, without consuming input.</p>
-<div class="fragment"><div class="line">axm %regex.neg_lookahead: RE → RE, 1;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md425"></a>
-%regex.cls.*</h2>
+<div class="fragment"><div class="line">axm neg_lookahead: RE → RE, 1;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md417"></a>
+regex.cls.*</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Matches  </th></tr>
@@ -223,36 +223,38 @@ Values</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">S</span>  </td><td class="markdownTableBodyNone">No whitespace  </td></tr>
 </table>
-<div class="fragment"><div class="line">let %regex.cls.d = %regex.range (&#39;0&#39;, &#39;9&#39;);</div>
-<div class="line">let %regex.cls.D = %regex.not_ %regex.cls.d;</div>
-<div class="line">let %regex.cls.w = %regex.disj (%regex.range (&#39;0&#39;, &#39;9&#39;), %regex.range (&#39;a&#39;, &#39;z&#39;), %regex.range (&#39;A&#39;, &#39;Z&#39;), %regex.lit &#39;_&#39;);</div>
-<div class="line">let %regex.cls.W = %regex.not_ %regex.cls.w;</div>
-<div class="line">let %regex.cls.s = %regex.disj (%regex.range (&#39;\t&#39;, &#39;\n&#39;), %regex.lit &#39;\r&#39;, %regex.lit &#39; &#39;);</div>
-<div class="line">let %regex.cls.S = %regex.not_ %regex.cls.s;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md426"></a>
-%regex.any</h2>
+<div class="fragment"><div class="line">pub mod cls {</div>
+<div class="line">    anx let d = range (&#39;0&#39;, &#39;9&#39;);</div>
+<div class="line">    anx let D = not_ d;</div>
+<div class="line">    anx let w = disj (range (&#39;0&#39;, &#39;9&#39;), range (&#39;a&#39;, &#39;z&#39;), range (&#39;A&#39;, &#39;Z&#39;), lit &#39;_&#39;);</div>
+<div class="line">    anx let W = not_ w;</div>
+<div class="line">    anx let s = disj (range (&#39;\t&#39;, &#39;\n&#39;), lit &#39;\r&#39;, lit &#39; &#39;);</div>
+<div class="line">    anx let S = not_ s;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md418"></a>
+regex.any</h2>
 <p>Matches any character.</p>
-<div class="fragment"><div class="line">axm %regex.any: RE, 0;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md427"></a>
-%regex.empty</h2>
+<div class="fragment"><div class="line">axm any: RE, 0;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
+regex.empty</h2>
 <p>Matches the empty string.</p>
-<div class="fragment"><div class="line">axm %regex.empty: RE, 0;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
+<div class="fragment"><div class="line">axm empty: RE, 0;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
 Quantifiers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
-%regex.quant.*</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
+regex.quant.*</h2>
 <p>The usual quantifiers:</p><ul>
 <li><span class="tt">optional</span>: <span class="tt">?</span> - zero or one</li>
 <li><span class="tt">star</span>: <span class="tt">*</span> - zero or more</li>
 <li><span class="tt">plus</span>: <span class="tt">+</span> - one or more</li>
 </ul>
-<div class="fragment"><div class="line">axm %regex.quant(optional,star,plus): RE → RE, normalize_quant, 1;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md430"></a>
+<div class="fragment"><div class="line">axm quant.(optional,star,plus): RE → RE, normalize_quant, 1;</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md431"></a>
-%regex.lower_regex</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
+regex.lower_regex</h2>
 <p>Compiles the regex combinators into an executable matcher (via a DFA).</p>
-<div class="fragment"><div class="line">axm %regex.lower_regex: %compile.Phase;</div>
+<div class="fragment"><div class="line">axm lower_regex: compile.Phase;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -163,62 +163,62 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tuple.html',''
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tuple"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1tuple.html" title="The tuple Plugin">mim::plug::tuple</a></dd></dl>
 <p>Utility functions for tuples.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
 Dependencies</h1>
 <div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
-%tuple.typecat</h2>
-<p>Computes the type of a <span class="tt">%tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="fragment"><div class="line">lam %tuple.typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
-<div class="line">    «i: %core.nat.add (n, m);</div>
-<div class="line">        let nat_i = %core.bitcast Nat i;</div>
-<div class="line">        %core.Select (</div>
-<div class="line">            %core.ncmp.l (nat_i, n),</div>
-<div class="line">            Ts#(%core.bitcast (Idx n) i),</div>
-<div class="line">            Us#(%core.bitcast (Idx m) (%core.nat.sub (nat_i, n))))»;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
-%tuple.cat</h2>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
+tuple.typecat</h2>
+<p>Computes the type of a <span class="tt">tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="fragment"><div class="line">anx lam typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
+<div class="line">    «i: core.nat.add (n, m);</div>
+<div class="line">        let nat_i = core.bitcast Nat i;</div>
+<div class="line">        core.Select (</div>
+<div class="line">            core.ncmp.l (nat_i, n),</div>
+<div class="line">            Ts#(core.bitcast (Idx n) i),</div>
+<div class="line">            Us#(core.bitcast (Idx m) (core.nat.sub (nat_i, n))))»;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
+tuple.cat</h2>
 <p>Concatenates an <span class="tt">n</span>-tuple and an <span class="tt">m</span>-tuple to an <span class="tt">n + m</span>-tuple.</p>
-<div class="fragment"><div class="line">axm %tuple.cat: {n m: Nat}</div>
-<div class="line">                 → {Ts: «n; *», Us: «m; *»}</div>
-<div class="line">                 → [«i: n; Ts#i», «i: m; Us#i»]</div>
-<div class="line">                 → %tuple.typecat Ts Us</div>
-<div class="line">                 , normalize_cat;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md474"></a>
-%tuple.append / %tuple.prepend</h2>
+<div class="fragment"><div class="line">axm cat: {n m: Nat}</div>
+<div class="line">          → {Ts: «n; *», Us: «m; *»}</div>
+<div class="line">          → [«i: n; Ts#i», «i: m; Us#i»]</div>
+<div class="line">          → typecat Ts Us</div>
+<div class="line">          , normalize_cat;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
+tuple.append / tuple.prepend</h2>
 <p>Appends / prepends a single element to a tuple.</p>
-<div class="fragment"><div class="line">lam %tuple.append   {n: Nat}</div>
-<div class="line">                    {Ts: «n; *», U: *}</div>
-<div class="line">                    (a: «i: n; Ts#i», b: U)</div>
-<div class="line">                  : %tuple.typecat Ts U</div>
-<div class="line">                  = %tuple.cat (a, b);</div>
+<div class="fragment"><div class="line">anx lam append   {n: Nat}</div>
+<div class="line">                 {Ts: «n; *», U: *}</div>
+<div class="line">                 (a: «i: n; Ts#i», b: U)</div>
+<div class="line">               : typecat Ts U</div>
+<div class="line">               = cat (a, b);</div>
 <div class="line"> </div>
-<div class="line">lam %tuple.prepend  {m: Nat}</div>
-<div class="line">                    {T: *, Us: «m; *»}</div>
-<div class="line">                    (a: T, b: «i: m; Us#i»)</div>
-<div class="line">                  : %tuple.typecat T Us</div>
-<div class="line">                  = %tuple.cat (a, b);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md475"></a>
-%tuple.head / %tuple.tail</h2>
+<div class="line">anx lam prepend  {m: Nat}</div>
+<div class="line">                 {T: *, Us: «m; *»}</div>
+<div class="line">                 (a: T, b: «i: m; Us#i»)</div>
+<div class="line">               : typecat T Us</div>
+<div class="line">               = cat (a, b);</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
+tuple.head / tuple.tail</h2>
 <p>The first element of a tuple / all elements but the first.</p>
-<div class="fragment"><div class="line">lam %tuple.head {n: Nat}</div>
+<div class="fragment"><div class="line">anx lam head {n: Nat}</div>
 <div class="line">    {Ts: «n; *»}</div>
 <div class="line">    [values: «i: n; Ts#i»]</div>
-<div class="line">  : [Ts#(%core.idx n %core.mode.US 0)]</div>
-<div class="line">  = values#(%core.idx n %core.mode.US 0);</div>
+<div class="line">  : [Ts#(core.idx n core.mode.US 0)]</div>
+<div class="line">  = values#(core.idx n core.mode.US 0);</div>
 <div class="line"> </div>
-<div class="line">lam %tuple.tail {n: Nat}</div>
+<div class="line">anx lam tail {n: Nat}</div>
 <div class="line">    {Ts: «n; *»}</div>
 <div class="line">    [values: «i: n; Ts#i»]</div>
-<div class="line">  : «i: %core.nat.sub (n, 1); Ts#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))»</div>
-<div class="line">  = ‹i: %core.nat.sub (n, 1); values#(%core.bitcast (Idx n) (%core.nat.add (%core.bitcast Nat i, 1)))›;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md476"></a>
-%tuple.contains</h2>
+<div class="line">  : «i: core.nat.sub (n, 1); Ts#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))»</div>
+<div class="line">  = ‹i: core.nat.sub (n, 1); values#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))›;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
+tuple.contains</h2>
 <p>Does the tuple contain the given element?</p>
-<div class="fragment"><div class="line">axm %tuple.contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md477"></a>
-%tuple.zip</h2>
+<div class="fragment"><div class="line">axm contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
+tuple.zip</h2>
 <p><a href="https://en.wikipedia.org/wiki/Zipping_(computer_science)">Zips</a> several tensors. The signature will likely change in the future:</p><ul>
 <li><span class="tt">r</span>: rank of the tensors to zip</li>
 <li><span class="tt">s</span>: shape of the tensors to zip</li>
@@ -229,10 +229,10 @@ Operations</h1>
 <li><span class="tt">f</span>: zipping function that expects an <span class="tt">n_i</span>-tuple whose elements correspond to <span class="tt">Is</span> and yields an <span class="tt">n_o</span>-tuple whose element types correspond to <span class="tt">Os</span></li>
 <li><span class="tt">is</span>: the actual input tensors</li>
 </ul>
-<div class="fragment"><div class="line">axm %tuple.zip: [r: Nat, s: «r; Nat»]</div>
-<div class="line">              → [n_i: Nat, Is: «n_i; *», n_o: Nat, Os: «n_o; *», f: «i: n_i; Is#i» → «o: n_o; Os#o»]</div>
-<div class="line">              → «i: n_i; «s; Is#i»»</div>
-<div class="line">              → «o: n_o; «s; Os#o»», normalize_zip;</div>
+<div class="fragment"><div class="line">axm zip: [r: Nat, s: «r; Nat»]</div>
+<div class="line">       → [n_i: Nat, Is: «n_i; *», n_o: Nat, Os: «n_o; *», f: «i: n_i; Is#i» → «o: n_o; Os#o»]</div>
+<div class="line">       → «i: n_i; «s; Is#i»»</div>
+<div class="line">       → «o: n_o; «s; Os#o»», normalize_zip;</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

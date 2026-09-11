@@ -48,6 +48,7 @@ var hierarchy =
     ] ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
+    [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
@@ -187,7 +188,6 @@ var hierarchy =
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
-          [ "mim::ast::AxmDecl::Alias", "classmim_1_1ast_1_1AxmDecl_1_1Alias.html", null ],
           [ "mim::ast::DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", null ],
           [ "mim::ast::Ptrn", "classmim_1_1ast_1_1Ptrn.html", [
             [ "mim::ast::AliasPtrn", "classmim_1_1ast_1_1AliasPtrn.html", null ],
@@ -197,9 +197,9 @@ var hierarchy =
             [ "mim::ast::TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html", null ]
           ] ],
           [ "mim::ast::ValDecl", "classmim_1_1ast_1_1ValDecl.html", [
+            [ "mim::ast::AliasDecl", "classmim_1_1ast_1_1AliasDecl.html", null ],
             [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", null ],
-            [ "mim::ast::CDecl", "classmim_1_1ast_1_1CDecl.html", null ],
-            [ "mim::ast::Import", "classmim_1_1ast_1_1Import.html", null ],
+            [ "mim::ast::AxmDecl::Sibling", "classmim_1_1ast_1_1AxmDecl_1_1Sibling.html", null ],
             [ "mim::ast::LetDecl", "classmim_1_1ast_1_1LetDecl.html", null ],
             [ "mim::ast::ModDecl", "classmim_1_1ast_1_1ModDecl.html", [
               [ "mim::ast::File", "classmim_1_1ast_1_1File.html", null ]

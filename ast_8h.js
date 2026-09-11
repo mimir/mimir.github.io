@@ -1,5 +1,6 @@
 var ast_8h =
 [
+    [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", "structmim_1_1ast_1_1AnnexInfo" ],
     [ "mim::ast::AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
     [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
@@ -37,22 +38,25 @@ var ast_8h =
     [ "mim::ast::ExtractExpr", "classmim_1_1ast_1_1ExtractExpr.html", "classmim_1_1ast_1_1ExtractExpr" ],
     [ "mim::ast::InsertExpr", "classmim_1_1ast_1_1InsertExpr.html", "classmim_1_1ast_1_1InsertExpr" ],
     [ "mim::ast::UniqExpr", "classmim_1_1ast_1_1UniqExpr.html", "classmim_1_1ast_1_1UniqExpr" ],
+    [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
     [ "mim::ast::LetDecl", "classmim_1_1ast_1_1LetDecl.html", "classmim_1_1ast_1_1LetDecl" ],
     [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
-    [ "mim::ast::AxmDecl::Alias", "classmim_1_1ast_1_1AxmDecl_1_1Alias.html", "classmim_1_1ast_1_1AxmDecl_1_1Alias" ],
+    [ "mim::ast::AxmDecl::Sibling", "classmim_1_1ast_1_1AxmDecl_1_1Sibling.html", "classmim_1_1ast_1_1AxmDecl_1_1Sibling" ],
     [ "mim::ast::RecDecl", "classmim_1_1ast_1_1RecDecl.html", "classmim_1_1ast_1_1RecDecl" ],
     [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", "classmim_1_1ast_1_1LamDecl" ],
     [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
-    [ "mim::ast::CDecl", "classmim_1_1ast_1_1CDecl.html", "classmim_1_1ast_1_1CDecl" ],
+    [ "mim::ast::AliasDecl", "classmim_1_1ast_1_1AliasDecl.html", "classmim_1_1ast_1_1AliasDecl" ],
     [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", "classmim_1_1ast_1_1RuleDecl" ],
     [ "mim::ast::ModDecl", "classmim_1_1ast_1_1ModDecl.html", "classmim_1_1ast_1_1ModDecl" ],
-    [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
-    [ "mim::ast::Import", "classmim_1_1ast_1_1Import.html", "classmim_1_1ast_1_1Import" ],
     [ "mim::ast::File", "classmim_1_1ast_1_1File.html", "classmim_1_1ast_1_1File" ],
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "mim::ast::Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
     [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed", null ],
     [ "mim::ast::Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
+    [ "mim::ast::Vis", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3", [
+      [ "mim::ast::Vis::Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],
+      [ "mim::ast::Vis::Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]
+    ] ],
     [ "mim::ast::load_plugin", "namespacemim_1_1ast.html#a91e7627a30cd8ff68e463c60e633e1a1", null ],
     [ "mim::ast::load_plugins", "namespacemim_1_1ast.html#a66a1aa2d36d5c50e3d3a99d56e32fd97", null ]
 ];

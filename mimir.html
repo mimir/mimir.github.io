@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mimir.html',''
 <li>A demonstration of MimIR's defining trait: <b>types are ordinary values</b>, computed in the same graph as terms — the basis for <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent types</b></a>.</li>
 </ol>
 <p>Under the hood, MimIR is not a list of instructions but a <b>graph</b>. The <span class="tt">let</span> bindings in the examples below are pure surface sugar — they only name subexpressions. Inlining them or adding more yields the <b>exact same graph</b>, because in MimIR the graph <em>is</em> the program.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Syntax</h1>
 <p>Before we dive in, here is just enough <a class="el" href="namespaceMim.html">Mim</a> syntax to read the examples. Much of it is merely <b>syntactic sugar</b> over that graph:</p>
 <ul>
@@ -210,17 +210,17 @@ Plugins</h1>
 <li>a shared library that registers their runtime behavior: normalizers and plugin-specific compiler <a class="el" href="phases.html" title="Phases">phases</a>.</li>
 </ul>
 <p>The examples below use the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin throughout, hence the <span class="tt">plugin core;</span> at the top of each file.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Annexes</h2>
-<p>An <b>annex</b> is any entity a plugin exports; you reference it with the <span class="tt">%plugin.path</span> syntax, such as <span class="tt">%core.wrap.add</span> or <span class="tt">%core.select</span> from the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin. Annexes come in two flavors: Axioms and other definitions.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+<p>An <b>annex</b> is any entity a plugin exports; you reference it with the <span class="tt">plugin.path</span> syntax, such as <span class="tt">core.wrap.add</span> or <span class="tt">core.select</span> from the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin. Annexes come in two flavors: Axioms and other definitions.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 Axioms</h3>
-<p>These are opaque primitives with <em>no</em> <a class="el" href="namespaceMim.html">Mim</a> definition. Their meaning comes from the plugin's C++ side (see below), not from any <a class="el" href="namespaceMim.html">Mim</a> code. <span class="tt">%core.wrap.add</span> (machine addition) and <span class="tt">%core.pe.is_closed</span> (which checks whether an expression contains no free variables) are treated as axioms.</p>
-<p>Axioms get their behavior from <b>normalizers</b>: small C++ functions that live <em>inside</em> the plugin's shared library, each attached to an axiom. Whenever a node is constructed, MimIR fires the matching normalizer <b>eagerly, on the fly</b> — so the simplified node is the only one that ever exists. <a href="https://en.wikipedia.org/wiki/Constant_folding">Constant folding</a> and <a href="https://en.wikipedia.org/wiki/Peephole_optimization">peephole</a> rewrites such as <span class="tt">x + 0 → x</span> are implemented exactly this way: you never build <span class="tt">%core.wrap.add (x, 0)</span> and optimize it away later — it collapses to <span class="tt">x</span> at construction time.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+<p>These are opaque primitives with <em>no</em> <a class="el" href="namespaceMim.html">Mim</a> definition. Their meaning comes from the plugin's C++ side (see below), not from any <a class="el" href="namespaceMim.html">Mim</a> code. <span class="tt">core.wrap.add</span> (machine addition) and <span class="tt">core.pe.is_closed</span> (which checks whether an expression contains no free variables) are treated as axioms.</p>
+<p>Axioms get their behavior from <b>normalizers</b>: small C++ functions that live <em>inside</em> the plugin's shared library, each attached to an axiom. Whenever a node is constructed, MimIR fires the matching normalizer <b>eagerly, on the fly</b> — so the simplified node is the only one that ever exists. <a href="https://en.wikipedia.org/wiki/Constant_folding">Constant folding</a> and <a href="https://en.wikipedia.org/wiki/Peephole_optimization">peephole</a> rewrites such as <span class="tt">x + 0 → x</span> are implemented exactly this way: you never build <span class="tt">core.wrap.add (x, 0)</span> and optimize it away later — it collapses to <span class="tt">x</span> at construction time.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 Other Definitions</h3>
-<p>These are ordinary <a class="el" href="namespaceMim.html">Mim</a> values, written as plain <a class="el" href="namespaceMim.html">Mim</a>. <span class="tt">%core.select</span>, for instance, is just </p><div class="fragment"><div class="line">lam %core.select {T: *} (cond, t, f): T = (f, t)#cond;</div>
-</div><!-- fragment --><p> Being a direct-style function, it carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a>, which tells MimIR to <b>β-reduce its applications eagerly during graph construction</b>. So a call <span class="tt">%core.select (a, b, c)</span> is inlined on the spot, collapsing to the indexed read <span class="tt">(c, b)#a</span> — the <span class="tt">select</span> itself never appears in the graph.</p>
+<p>These are ordinary <a class="el" href="namespaceMim.html">Mim</a> values, written as plain <a class="el" href="namespaceMim.html">Mim</a>. <span class="tt">core.select</span>, for instance, is just </p><div class="fragment"><div class="line">lam core.select {T: *} (cond, t, f): T = (f, t)#cond;</div>
+</div><!-- fragment --><p> Being a direct-style function, it carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a>, which tells MimIR to <b>β-reduce its applications eagerly during graph construction</b>. So a call <span class="tt">core.select (a, b, c)</span> is inlined on the spot, collapsing to the indexed read <span class="tt">(c, b)#a</span> — the <span class="tt">select</span> itself never appears in the graph.</p>
 <h1 class="doxsection"><a class="anchor" id="mimir_cps"></a>
 SSA via CPS</h1>
 <p>Let's start with a plain counting loop. In C, summing <span class="tt">0 + 1 + … + (n-1)</span> looks like this:</p>
@@ -252,16 +252,16 @@ SSA via CPS</h1>
 <div class="fragment"><div class="line">// RUN: %mim -p ll %s</div>
 <div class="line">plugin core;</div>
 <div class="line"> </div>
-<div class="line">fun extern count(n: I32): I32 =</div>
+<div class="line">extern fun count(n: I32): I32 =</div>
 <div class="line">    loop (0I32, 0I32)</div>
 <div class="line">    where</div>
 <div class="line">        con loop (i acc: I32) =</div>
-<div class="line">            let cond = %core.icmp.ul (i, n);</div>
-<div class="line">            %core.select (cond, body, exit) ()</div>
+<div class="line">            let cond = core.icmp.ul (i, n);</div>
+<div class="line">            core.select (cond, body, exit) ()</div>
 <div class="line">            where</div>
 <div class="line">                con body() =</div>
-<div class="line">                    let next = %core.wrap.add 0 (i, 1I32);</div>
-<div class="line">                    let sum  = %core.wrap.add 0 (acc, i);</div>
+<div class="line">                    let next = core.wrap.add 0 (i, 1I32);</div>
+<div class="line">                    let sum  = core.wrap.add 0 (acc, i);</div>
 <div class="line">                    loop (next, sum);</div>
 <div class="line">                con exit() = return acc;</div>
 <div class="line">            end;</div>
@@ -279,11 +279,11 @@ SSA via CPS</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">br label loop</span> (goto)  </td><td class="markdownTableBodyNone">tail call <span class="tt">loop (next, sum)</span>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">br i1 cond, body, exit</span> (branch)  </td><td class="markdownTableBodyNone"><span class="tt">%core.select (cond, body, exit) ()</span> — pick the target, then apply  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">br i1 cond, body, exit</span> (branch)  </td><td class="markdownTableBodyNone"><span class="tt">core.select (cond, body, exit) ()</span> — pick the target, then apply  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">ret i32 acc</span> (return)  </td><td class="markdownTableBodyNone"><span class="tt">return acc</span> — call the function's return continuation  </td></tr>
 </table>
-<p>The function <span class="tt">count</span> itself is written with <span class="tt">fun</span> / <span class="tt">return</span>: sugar that threads an explicit return continuation through, so it reads like an ordinary function even though it is CPS underneath. As explained in the <a class="el" href="#mimir_plugins" title="Plugins">Plugins</a> section above, the <em>annex</em> <span class="tt">%core.select</span> is an ordinary direct-style lambda, so its <span class="tt">tt</span> filter makes the branch <span class="tt">%core.select (cond, body, exit)</span> collapse to the indexed read <span class="tt">(exit, body)#cond</span> during construction — no <span class="tt">select</span> node survives. That is what the graph below actually shows.</p>
+<p>The function <span class="tt">count</span> itself is written with <span class="tt">fun</span> / <span class="tt">return</span>: sugar that threads an explicit return continuation through, so it reads like an ordinary function even though it is CPS underneath. As explained in the <a class="el" href="#mimir_plugins" title="Plugins">Plugins</a> section above, the <em>annex</em> <span class="tt">core.select</span> is an ordinary direct-style lambda, so its <span class="tt">tt</span> filter makes the branch <span class="tt">core.select (cond, body, exit)</span> collapse to the indexed read <span class="tt">(exit, body)#cond</span> during construction — no <span class="tt">select</span> node survives. That is what the graph below actually shows.</p>
 <p>CPS makes three pieces of SSA folklore explicit:</p>
 <ul>
 <li><p class="startli"><b>φ-uses live at the <em>end</em> of a block, not its head.</b></p>
@@ -335,27 +335,27 @@ Scopeless Binders</h2>
 <h1 class="doxsection"><a class="anchor" id="mimir_iter"></a>
 Polymorphic Iteration</h1>
 <p>CPS is not the only option. MimIR equally supports <b>direct-style</b> functions that simply return a value, and these compose with higher-order functions and polymorphism. The two styles even mix within one curried function: the outer arguments can be direct-style while the final one is a continuation, as in <span class="tt">con {T: *} (x: T) = …</span>.</p>
-<p>The function <span class="tt">iter f (n, x)</span> applies <span class="tt">f</span> to <span class="tt">x</span> exactly <span class="tt">n</span> times. It is <a href="https://en.wikipedia.org/wiki/Parametric_polymorphism"><b>polymorphic</b></a> — the element type <span class="tt">T</span> is just another argument, passed implicitly in <span class="tt">{}</span> — and recursive. The <span class="tt">@(%core.pe.is_closed n)</span> filter is a <a href="https://en.wikipedia.org/wiki/Partial_evaluation"><b>partial-evaluation</b></a> directive: whenever <span class="tt">n</span> is a constant, MimIR unrolls the recursion away at compile time:</p>
+<p>The function <span class="tt">iter f (n, x)</span> applies <span class="tt">f</span> to <span class="tt">x</span> exactly <span class="tt">n</span> times. It is <a href="https://en.wikipedia.org/wiki/Parametric_polymorphism"><b>polymorphic</b></a> — the element type <span class="tt">T</span> is just another argument, passed implicitly in <span class="tt">{}</span> — and recursive. The <span class="tt">@(core.pe.is_closed n)</span> filter is a <a href="https://en.wikipedia.org/wiki/Partial_evaluation"><b>partial-evaluation</b></a> directive: whenever <span class="tt">n</span> is a constant, MimIR unrolls the recursion away at compile time:</p>
 <div class="fragment"><div class="line">// RUN: %mim %s</div>
 <div class="line">plugin core;</div>
 <div class="line">plugin refly;</div>
 <div class="line"> </div>
-<div class="line">lam extern iter {T: *} (f: T → T) (n: Nat, x: T)@(%core.pe.is_closed n): T =</div>
-<div class="line">    let cond = %core.ncmp.le (n, 0);</div>
-<div class="line">    (%core.select (cond, cons, alt)) () where</div>
+<div class="line">extern lam iter {T: *} (f: T → T) (n: Nat, x: T)@(core.pe.is_closed n): T =</div>
+<div class="line">    let cond = core.ncmp.le (n, 0);</div>
+<div class="line">    (core.select (cond, cons, alt)) () where</div>
 <div class="line">        lam cons(): T =</div>
 <div class="line">            x;</div>
 <div class="line">        lam alt(): T =</div>
-<div class="line">            let m = %core.nat.sub (n, 1);</div>
+<div class="line">            let m = core.nat.sub (n, 1);</div>
 <div class="line">            let y = f x;</div>
 <div class="line">            iter @T f (m, y);</div>
 <div class="line">    end;</div>
 <div class="line"> </div>
-<div class="line">lam succ (x: Nat): Nat = %core.nat.add (x, 1);</div>
+<div class="line">lam succ (x: Nat): Nat = core.nat.add (x, 1);</div>
 <div class="line">lam add  (x: Nat) (y: Nat): Nat = iter succ (x, y);</div>
 <div class="line">lam mul  (x: Nat) (y: Nat): Nat = iter (add x) (y, 0);</div>
 <div class="line">lam pow  (x: Nat) (y: Nat): Nat = iter (mul x) (y, 1);</div>
-<div class="line">let _ = %refly.equiv.struc_eq (pow 3 5, 243);</div>
+<div class="line">let _ = refly.equiv.struc_eq (pow 3 5, 243);</div>
 </div><!-- fragment --><p>The rest of the file puts <span class="tt">iter</span> to work, building a small tower of arithmetic purely by <a href="https://en.wikipedia.org/wiki/Partial_application"><b>partial application</b></a>:</p>
 <ul>
 <li><span class="tt">succ</span> adds one;</li>
@@ -364,8 +364,8 @@ Polymorphic Iteration</h1>
 <li><span class="tt">pow x y</span> iterates <span class="tt">mul x</span> — <span class="tt">y</span> times, starting from <span class="tt">1</span>.</li>
 </ul>
 <p>Each step hands a <em>partially applied</em> function — <span class="tt">add x</span>, <span class="tt">mul x</span> — to <span class="tt">iter</span>'s higher-order parameter <span class="tt">f</span>. The final line is a <b>compile-time assertion</b>:</p>
-<div class="fragment"><div class="line">let _ = %refly.equiv.struc_eq (pow 3 5, 243);</div>
-</div><!-- fragment --><p>Because <span class="tt">iter</span> carries the <span class="tt">@(%core.pe.is_closed n)</span> <a href="https://en.wikipedia.org/wiki/Partial_evaluation">partial-evaluation</a> filter — and every function in the tower is direct-style with the default <span class="tt">tt</span> filter — MimIR evaluates <span class="tt">pow 3 5</span> <b>completely during graph construction</b>: the whole tower unrolls to the literal <span class="tt">243</span>, and <span class="tt">%refly.equiv.struc_eq</span> statically checks it. A mismatch would fail the build.</p>
+<div class="fragment"><div class="line">let _ = refly.equiv.struc_eq (pow 3 5, 243);</div>
+</div><!-- fragment --><p>Because <span class="tt">iter</span> carries the <span class="tt">@(core.pe.is_closed n)</span> <a href="https://en.wikipedia.org/wiki/Partial_evaluation">partial-evaluation</a> filter — and every function in the tower is direct-style with the default <span class="tt">tt</span> filter — MimIR evaluates <span class="tt">pow 3 5</span> <b>completely during graph construction</b>: the whole tower unrolls to the literal <span class="tt">243</span>, and <span class="tt">refly.equiv.struc_eq</span> statically checks it. A mismatch would fail the build.</p>
 <p>Now notice what <em>survives</em>. Only <span class="tt">iter</span> is <span class="tt">extern</span>, hence the sole <a class="el" href="classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855" title="mim::World::roots">root</a>. <span class="tt">succ</span>, <span class="tt">add</span>, <span class="tt">mul</span>, <span class="tt">pow</span>, and the assertion are all unreachable from the roots, so <a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> prunes them. The graph MimIR keeps is therefore just <span class="tt">iter</span> itself:</p>
 <div class="image">
 <object type="image/svg+xml" data="iter.svg" style="pointer-events: none;"></object>
@@ -378,19 +378,18 @@ The MimIR graph of `iter` — only the `extern` root survives (type edges elided
 Types Are Values</h1>
 <p>So far you have seen higher-order, polymorphic, partially evaluated code in both CPS and direct style. MimIR's defining feature ties all of that together: <b>types live in the same graph as terms</b>, built and normalized by the same machinery. So a type can be computed by an ordinary function, depend on a runtime value, and be partially evaluated — all for free. Watch a <em>type</em> come out of an ordinary function:</p>
 <div class="fragment"><div class="line">// RUN: %mim %s</div>
-<div class="line">plugin core;</div>
 <div class="line">plugin refly;</div>
 <div class="line"> </div>
 <div class="line">// `Vec` is an ordinary `lam` — but it returns a *type*: it is a function `Nat → *`.</div>
-<div class="line">lam extern Vec (n: Nat): * = «n; Nat»;</div>
+<div class="line">extern lam Vec (n: Nat): * = «n; Nat»;</div>
 <div class="line"> </div>
 <div class="line">// `zeros n` builds a length-`n` array of zeros.</div>
 <div class="line">// Its return *type* `Vec n` mentions the *value* `n`: a dependent function type.</div>
-<div class="line">lam extern zeros (n: Nat): Vec n = ‹n; 0›;</div>
+<div class="line">extern lam zeros (n: Nat): Vec n = ‹n; 0›;</div>
 <div class="line"> </div>
 <div class="line">// `zeros 3` is partial-evaluated to `‹3; 0›` during graph construction; assert it statically.</div>
-<div class="line">let _ = %refly.equiv.struc_eq (zeros 3, ‹3; 0›);</div>
-</div><!-- fragment --><p><span class="tt">Vec</span> is just a <span class="tt">lam</span> — but it returns <span class="tt">*</span>, the type of types, so it is a function <span class="tt">Nat → *</span>: a <a href="https://en.wikipedia.org/wiki/Type_constructor">type constructor</a>. <span class="tt">zeros</span> then has a <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent function type</b></a>: its return type <span class="tt">Vec n</span> mentions the <em>value</em> <span class="tt">n</span> of its argument. Nothing special happens to make this work — <span class="tt">Vec n</span> is β-reduced to <span class="tt">«n; Nat»</span> during construction exactly like <span class="tt">%core.select</span> above, even though the result is a <em>type</em> — and <span class="tt">%refly.equiv.struc_eq</span> statically checks that <span class="tt">zeros 3</span> evaluates to <span class="tt">‹3; 0›</span>.</p>
+<div class="line">let _ = refly.equiv.struc_eq (zeros 3, ‹3; 0›);</div>
+</div><!-- fragment --><p><span class="tt">Vec</span> is just a <span class="tt">lam</span> — but it returns <span class="tt">*</span>, the type of types, so it is a function <span class="tt">Nat → *</span>: a <a href="https://en.wikipedia.org/wiki/Type_constructor">type constructor</a>. <span class="tt">zeros</span> then has a <a href="https://en.wikipedia.org/wiki/Dependent_type"><b>dependent function type</b></a>: its return type <span class="tt">Vec n</span> mentions the <em>value</em> <span class="tt">n</span> of its argument. Nothing special happens to make this work — <span class="tt">Vec n</span> is β-reduced to <span class="tt">«n; Nat»</span> during construction exactly like <span class="tt">core.select</span> above, even though the result is a <em>type</em> — and <span class="tt">refly.equiv.struc_eq</span> statically checks that <span class="tt">zeros 3</span> evaluates to <span class="tt">‹3; 0›</span>.</p>
 <div class="image">
 <object type="image/svg+xml" data="dep.svg" style="pointer-events: none;"></object>
 <div class="caption">

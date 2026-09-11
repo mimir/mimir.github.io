@@ -10,7 +10,7 @@ var searchData=
   ['materialize_7',['materialize',['../namespacemim_1_1plug_1_1tensor.html#a8bd57a230be0f702ca1f480fdd88b335',1,'mim::plug::tensor']]],
   ['mem_5fchecks_8',['mem_checks',['../namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261',1,'mim::plug::gpu']]],
   ['minus_9',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
-  ['mk_5fsched_10',['mk_sched',['../namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14',1,'mim::plug::btensor::mk_sched'],['../namespacemim_1_1plug_1_1tensor.html#abdee0817751019cd76e60c0712581d98',1,'mim::plug::tensor::mk_sched']]],
+  ['mk_5fsched_10',['mk_sched',['../namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14',1,'mim::plug::btensor']]],
   ['mode_11',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
   ['mode_12',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core']]],
   ['mr_5fnest_13',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],

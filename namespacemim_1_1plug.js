@@ -134,10 +134,10 @@ var namespacemim_1_1plug =
       [ "mode", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e", [
         [ "us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2", null ],
         [ "uS", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972", null ],
-        [ "Us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca", null ],
-        [ "US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
         [ "nsw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3", null ],
+        [ "Us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca", null ],
         [ "nuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea1cb6ecf47d175b4055a768fee5f76e97", null ],
+        [ "US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
         [ "nsuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
       ] ],
       [ "nat", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566", [
@@ -145,7 +145,7 @@ var namespacemim_1_1plug =
         [ "sub", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a8a68dc3e925eacf92633be230722a140", null ],
         [ "mul", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a353942263d1bedfbe06b7bfa78226253", null ],
         [ "div", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a", null ],
-        [ "mod", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566aad148a3ca8bd0ef3b48c52454c493ec5", null ]
+        [ "rem", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a5cadb523cb6909f92350f70f124adfb8", null ]
       ] ],
       [ "ncmp", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985e", [
         [ "gle", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea6044f05aa3ccdbb9313c6a26b30036b6", null ],
@@ -450,9 +450,9 @@ var namespacemim_1_1plug =
         [ "set", "namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3acdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
         [ "map", "namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3a1d78dc8ed51214e518b5114fe24490ae", null ]
       ] ],
-      [ "insert", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8f", [
-        [ "set", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8facdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
-        [ "map", "namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8fa1d78dc8ed51214e518b5114fe24490ae", null ]
+      [ "insertion", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264ae", [
+        [ "set", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264aeacdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
+        [ "map", "namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264aea1d78dc8ed51214e518b5114fe24490ae", null ]
       ] ],
       [ "is_empty_map", "namespacemim_1_1plug_1_1ord.html#a3139291210faabba5130f06c7513a57f", null ],
       [ "is_empty_set", "namespacemim_1_1plug_1_1ord.html#adf40c77e7d3537a42c2423fb1b4e33c5", null ],

@@ -15,7 +15,7 @@ var searchData=
   ['reshape_5fimpl_12',['reshape_impl',['../namespacemim_1_1plug_1_1tensor.html#ab50f852fce42de48377c115841616c7a',1,'mim::plug::tensor']]],
   ['reshape_5fmap_13',['reshape_map',['../namespacemim_1_1plug_1_1tensor.html#a5846df9fb3d27c6dc67f0b23ac630b15',1,'mim::plug::tensor']]],
   ['ret_5fwrap_14',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
-  ['ring_15',['Ring',['../namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87',1,'mim::plug::btensor::Ring'],['../namespacemim_1_1plug_1_1tensor.html#abecc7fce757ef7e21552b6ed0d30448b',1,'mim::plug::tensor::Ring']]],
+  ['ring_15',['Ring',['../namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87',1,'mim::plug::btensor']]],
   ['round_16',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
   ['rrt_17',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
   ['rt_18',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],

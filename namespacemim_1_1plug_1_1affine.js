@@ -4,7 +4,7 @@ var namespacemim_1_1plug_1_1affine =
     [ "delinearize", "namespacemim_1_1plug_1_1affine.html#a45aa1b8d1a89a8f0aead5b9e194001b7", null ],
     [ "For", "namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068", null ],
     [ "id", "namespacemim_1_1plug_1_1affine.html#a4f69da5b055e491948c3adc97f1e0386", null ],
-    [ "Idx", "namespacemim_1_1plug_1_1affine.html#a2ab548b54deeb361b517a1b67c46c17c", null ],
+    [ "Index", "namespacemim_1_1plug_1_1affine.html#ac0e4826be60027e1f02ab710ae4171d4", null ],
     [ "linearize", "namespacemim_1_1plug_1_1affine.html#a01c881a9c02bd1a84913d3e114d70da8", null ],
     [ "lit", "namespacemim_1_1plug_1_1affine.html#aea1623e42fc49a445f688d2347d61977", null ],
     [ "lower_for", "namespacemim_1_1plug_1_1affine.html#a5093f750e1eed7e945cceda1dc6d801b", null ],
@@ -20,7 +20,7 @@ var namespacemim_1_1plug_1_1affine =
       [ "mul", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea353942263d1bedfbe06b7bfa78226253", null ],
       [ "ceildiv", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea6ebca5886947a1e1b1bab29fe3db1ca4", null ],
       [ "floordiv", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70eae61e8ab8beab2f144c8bbf6e4143436c", null ],
-      [ "mod", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70eaad148a3ca8bd0ef3b48c52454c493ec5", null ]
+      [ "rem", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea5cadb523cb6909f92350f70f124adfb8", null ]
     ] ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1affine.html#ad7c8f6316983dab0fe34c1c97dd6322e", null ]
 ];

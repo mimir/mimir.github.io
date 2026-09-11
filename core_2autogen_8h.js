@@ -99,10 +99,10 @@ var core_2autogen_8h =
     [ "mim::plug::core::mode", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e", [
       [ "mim::plug::core::mode::us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2", null ],
       [ "mim::plug::core::mode::uS", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972", null ],
-      [ "mim::plug::core::mode::Us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca", null ],
-      [ "mim::plug::core::mode::US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
       [ "mim::plug::core::mode::nsw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eac3768fe04ce22117d45f8d401c628de3", null ],
+      [ "mim::plug::core::mode::Us", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca", null ],
       [ "mim::plug::core::mode::nuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea1cb6ecf47d175b4055a768fee5f76e97", null ],
+      [ "mim::plug::core::mode::US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
       [ "mim::plug::core::mode::nsuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
     ] ],
     [ "mim::plug::core::nat", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566", [
@@ -110,7 +110,7 @@ var core_2autogen_8h =
       [ "mim::plug::core::nat::sub", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a8a68dc3e925eacf92633be230722a140", null ],
       [ "mim::plug::core::nat::mul", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a353942263d1bedfbe06b7bfa78226253", null ],
       [ "mim::plug::core::nat::div", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a", null ],
-      [ "mim::plug::core::nat::mod", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566aad148a3ca8bd0ef3b48c52454c493ec5", null ]
+      [ "mim::plug::core::nat::rem", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a5cadb523cb6909f92350f70f124adfb8", null ]
     ] ],
     [ "mim::plug::core::ncmp", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985e", [
       [ "mim::plug::core::ncmp::gle", "namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea6044f05aa3ccdbb9313c6a26b30036b6", null ],

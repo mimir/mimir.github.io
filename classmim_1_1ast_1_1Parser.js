@@ -8,5 +8,5 @@ var classmim_1_1ast_1_1Parser =
     [ "import", "classmim_1_1ast_1_1Parser.html#acc9ef3f660bc55ec00e87c0f5cb741dc", null ],
     [ "import", "classmim_1_1ast_1_1Parser.html#a5016474856e950b74ba6031180961b4f", null ],
     [ "import_main", "classmim_1_1ast_1_1Parser.html#a064a1fb859a32dfdc0ac059858167cfb", null ],
-    [ "import_plugins", "classmim_1_1ast_1_1Parser.html#ae5e071c22fd088756b0a31b9fcd5d051", null ]
+    [ "import_plugins", "classmim_1_1ast_1_1Parser.html#a5efaad3864c4254b4114b5789ce88a67", null ]
 ];

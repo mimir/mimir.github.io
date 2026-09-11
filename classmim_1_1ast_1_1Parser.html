@@ -181,8 +181,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf6f4f9b357ee92501cefb033afb117d" id="r_aaf6f4f9b357ee92501cefb033afb117d"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aaf6f4f9b357ee92501cefb033afb117d">import</a> (Dbg, bool is_path, <a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a> tag=Tok::Tag::K_import, std::ostream *md=nullptr, bool record=true)</td></tr>
 <tr class="memdesc:aaf6f4f9b357ee92501cefb033afb117d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">is_path</code> selects the <span class="tt"><a class="el" href="#a5016474856e950b74ba6031180961b4f">import</a> "some/path.mim"</span> form over the search-path lookup by name.  <br /></td></tr>
 <tr class="memitem:a72ab360625c6e606fea26118f6f22bd8" id="r_a72ab360625c6e606fea26118f6f22bd8"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a72ab360625c6e606fea26118f6f22bd8">import</a> (const fe::Src &amp;, std::ostream *md=nullptr, Loc={})</td></tr>
-<tr class="memitem:ae5e071c22fd088756b0a31b9fcd5d051" id="r_ae5e071c22fd088756b0a31b9fcd5d051"><td class="memItemLeft"><a class="el" href="namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed">Ptrs</a>&lt; <a class="el" href="classmim_1_1ast_1_1Import.html">Import</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae5e071c22fd088756b0a31b9fcd5d051">import_plugins</a> (fe::View&lt; std::string &gt; plugins, <a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a>)</td></tr>
-<tr class="memdesc:ae5e071c22fd088756b0a31b9fcd5d051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports the <code class="param">plugins</code> the <a class="el" href="classmim_1_1Driver.html" title="Some &quot;global&quot; variables needed all over the place.">Driver</a> was told about via <span class="tt">-p</span> as anonymous, unaliased <a class="el" href="classmim_1_1ast_1_1Import.html" title="import &quot;path&quot; [as alias];, import name [as alias];, or plugin name [as alias]; Binds Import::dbg as a...">Import</a>s.  <br /></td></tr>
+<tr class="memitem:a5efaad3864c4254b4114b5789ce88a67" id="r_a5efaad3864c4254b4114b5789ce88a67"><td class="memItemLeft"><a class="el" href="namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed">Ptrs</a>&lt; <a class="el" href="classmim_1_1ast_1_1UseDecl.html">UseDecl</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5efaad3864c4254b4114b5789ce88a67">import_plugins</a> (fe::View&lt; std::string &gt; plugins, <a class="el" href="classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5">Tok::Tag</a>)</td></tr>
+<tr class="memdesc:a5efaad3864c4254b4114b5789ce88a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports the <code class="param">plugins</code> the <a class="el" href="classmim_1_1Driver.html" title="Some &quot;global&quot; variables needed all over the place.">Driver</a> was told about via <span class="tt">-p</span> as anonymous, unaliased <a class="el" href="classmim_1_1ast_1_1UseDecl.html" title="import &quot;file&quot;|name [as alias|*];, plugin name [as alias|*];, or use path [as alias|*]; as * splices i...">UseDecl</a>s.  <br /></td></tr>
 <tr class="memitem:acc9ef3f660bc55ec00e87c0f5cb741dc" id="r_acc9ef3f660bc55ec00e87c0f5cb741dc"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *&#160;</td><td class="memItemRight"><a class="el" href="#acc9ef3f660bc55ec00e87c0f5cb741dc">import</a> (std::istream &amp;is, fs::path path, Loc={}, std::ostream *md=nullptr)</td></tr>
 <tr class="memdesc:acc9ef3f660bc55ec00e87c0f5cb741dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slurps <code class="param">is</code>, registers it in Driver::src under <code class="param">path</code>, and parses it.  <br /></td></tr>
 <tr class="memitem:a064a1fb859a32dfdc0ac059858167cfb" id="r_a064a1fb859a32dfdc0ac059858167cfb"><td class="memItemLeft">const <a class="el" href="classmim_1_1ast_1_1File.html">File</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a064a1fb859a32dfdc0ac059858167cfb">import_main</a> (std::string_view input, fe::View&lt; std::string &gt; plugins, std::ostream *md=nullptr)</td></tr>
@@ -232,7 +232,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="parser_8h_source.html#l00037">ast()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_8cpp_source.html#l00249">mim::ast::load_plugins()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_8cpp_source.html#l00214">mim::ast::load_plugins()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="parser_8h_source.html#l00037">37</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8h_source.html#l00038">driver()</a>, <a class="el" href="parser_8cpp_source.html#l00084">import()</a>, <a class="el" href="parser_8cpp_source.html#l00105">import_plugins()</a>, and <a class="el" href="parser_8h_source.html#l00034">Parser()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8h_source.html#l00038">driver()</a>, <a class="el" href="parser_8cpp_source.html#l00086">import()</a>, <a class="el" href="parser_8cpp_source.html#l00107">import_plugins()</a>, and <a class="el" href="parser_8h_source.html#l00034">Parser()</a>.</p>
 
 </div>
 </div>
@@ -293,9 +293,9 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="parser_8h_source.html#l00038">38</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 
-<p class="reference">References <a class="el" href="parser_8h_source.html#l00037">ast()</a>, and <a class="el" href="ast_8h_source.html#l00067">mim::ast::AST::driver()</a>.</p>
+<p class="reference">References <a class="el" href="parser_8h_source.html#l00037">ast()</a>, and <a class="el" href="ast_8h_source.html#l00092">mim::ast::AST::driver()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00084">import()</a>, <a class="el" href="parser_8cpp_source.html#l00029">import()</a>, <a class="el" href="parser_8cpp_source.html#l00075">import()</a>, <a class="el" href="parser_8h_source.html#l00039">import()</a>, <a class="el" href="parser_8cpp_source.html#l00115">import_main()</a>, and <a class="el" href="parser_8cpp_source.html#l00105">import_plugins()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00086">import()</a>, <a class="el" href="parser_8cpp_source.html#l00031">import()</a>, <a class="el" href="parser_8cpp_source.html#l00077">import()</a>, <a class="el" href="parser_8h_source.html#l00039">import()</a>, <a class="el" href="parser_8cpp_source.html#l00117">import_main()</a>, and <a class="el" href="parser_8cpp_source.html#l00107">import_plugins()</a>.</p>
 
 </div>
 </div>
@@ -323,7 +323,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00084">84</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00086">86</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="parser_8h_source.html#l00037">ast()</a>, <a class="el" href="parser_8h_source.html#l00038">driver()</a>, <a class="el" href="ast_8cpp_source.html#l00023">mim::ast::AST::file()</a>, <a class="el" href="lexer_8h_source.html#l00018">mim::ast::Lexer::Lexer()</a>, and <a class="el" href="driver_8h_source.html#l00075">mim::Driver::log()</a>.</p>
 
@@ -366,7 +366,7 @@ Public Member Functions</h2></td></tr>
 <p><code class="param">is_path</code> selects the <span class="tt"><a class="el" href="#a5016474856e950b74ba6031180961b4f">import</a> "some/path.mim"</span> form over the search-path lookup by name. </p>
 <p><code class="param">record</code> is <span class="tt">false</span> for the compilation root: it is not a directive that a dump should reproduce. </p>
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00029">29</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00031">31</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="driver_8cpp_source.html#l00053">mim::Driver::Imports::add()</a>, <a class="el" href="parser_8h_source.html#l00038">driver()</a>, <a class="el" href="driver_8h_source.html#l00140">mim::Driver::imports()</a>, <a class="el" href="driver_8cpp_source.html#l00090">mim::Driver::load()</a>, and <a class="el" href="driver_8h_source.html#l00075">mim::Driver::log()</a>.</p>
 
@@ -403,7 +403,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Slurps <code class="param">is</code>, registers it in Driver::src under <code class="param">path</code>, and parses it. </p>
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00075">75</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00077">77</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="parser_8h_source.html#l00038">driver()</a>.</p>
 
@@ -466,20 +466,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00115">115</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00117">117</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="parser_8h_source.html#l00038">driver()</a>, and <a class="el" href="parser_8cpp_source.html#l00105">import_plugins()</a>.</p>
+<p class="reference">References <a class="el" href="parser_8h_source.html#l00038">driver()</a>, and <a class="el" href="parser_8cpp_source.html#l00107">import_plugins()</a>.</p>
 
 </div>
 </div>
-<a id="ae5e071c22fd088756b0a31b9fcd5d051" name="ae5e071c22fd088756b0a31b9fcd5d051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5e071c22fd088756b0a31b9fcd5d051">&#9670;&#160;</a></span>import_plugins()</h2>
+<a id="a5efaad3864c4254b4114b5789ce88a67" name="a5efaad3864c4254b4114b5789ce88a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5efaad3864c4254b4114b5789ce88a67">&#9670;&#160;</a></span>import_plugins()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed">Ptrs</a>&lt; <a class="el" href="classmim_1_1ast_1_1Import.html">Import</a> &gt; mim::ast::Parser::import_plugins </td>
+          <td class="memname"><a class="el" href="namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed">Ptrs</a>&lt; <a class="el" href="classmim_1_1ast_1_1UseDecl.html">UseDecl</a> &gt; mim::ast::Parser::import_plugins </td>
           <td>(</td>
           <td class="paramtype">fe::View&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>plugins</em></span>, </td>
         </tr>
@@ -491,13 +491,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Imports the <code class="param">plugins</code> the <a class="el" href="classmim_1_1Driver.html" title="Some &quot;global&quot; variables needed all over the place.">Driver</a> was told about via <span class="tt">-p</span> as anonymous, unaliased <a class="el" href="classmim_1_1ast_1_1Import.html" title="import &quot;path&quot; [as alias];, import name [as alias];, or plugin name [as alias]; Binds Import::dbg as a...">Import</a>s. </p>
+<p>Imports the <code class="param">plugins</code> the <a class="el" href="classmim_1_1Driver.html" title="Some &quot;global&quot; variables needed all over the place.">Driver</a> was told about via <span class="tt">-p</span> as anonymous, unaliased <a class="el" href="classmim_1_1ast_1_1UseDecl.html" title="import &quot;file&quot;|name [as alias|*];, plugin name [as alias|*];, or use path [as alias|*]; as * splices i...">UseDecl</a>s. </p>
 
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00105">105</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00107">107</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="parser_8h_source.html#l00037">ast()</a>, and <a class="el" href="parser_8h_source.html#l00038">driver()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00115">import_main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00117">import_main()</a>.</p>
 
 </div>
 </div>
