@@ -13,7 +13,7 @@ var searchData=
   ['level_10',['level',['../classmim_1_1ast_1_1TypeExpr.html#a39453cdf57c2c95c8ca7ce9df3fcada7',1,'mim::ast::TypeExpr::level()'],['../classmim_1_1Type.html#ad08cbde7c9801e27a6181ff0cf633fc8',1,'mim::Type::level()'],['../classmim_1_1Nest_1_1Node.html#a5ca8a41842e20f1ccf3a9ecb40630546',1,'mim::Nest::Node::level()']]],
   ['lex_11',['lex',['../classmim_1_1ast_1_1Lexer.html#a90fea1e1e499fa571bac95fb0d3afdc0',1,'mim::ast::Lexer']]],
   ['lexer_12',['Lexer',['../classmim_1_1ast_1_1Lexer.html#a7fe2d007d10c6a45d984cae9b2248b14',1,'mim::ast::Lexer::Lexer(fe::Driver &amp;driver, const fe::Src &amp;src, std::ostream *md=nullptr)'],['../classmim_1_1ast_1_1Lexer.html#a4fd6270fae798219ea8a36c2c7524449',1,'mim::ast::Lexer::Lexer(fe::Driver &amp;driver, std::string_view buf, std::ostream *md=nullptr)']]],
-  ['lhs_13',['lhs',['../classmim_1_1ast_1_1RuleDecl.html#ac753ab2f9274d165bbd1062c9b18ca87',1,'mim::ast::RuleDecl::lhs()'],['../classmim_1_1Rule.html#a346c86633a327932e6edcdb4a6c310de',1,'mim::Rule::lhs()']]],
+  ['lhs_13',['lhs',['../classmim_1_1ast_1_1InfixExpr.html#aa2329ea07c701514afe7ffb1043b52be',1,'mim::ast::InfixExpr::lhs()'],['../classmim_1_1ast_1_1RuleDecl.html#ac753ab2f9274d165bbd1062c9b18ca87',1,'mim::ast::RuleDecl::lhs()'],['../classmim_1_1Rule.html#a346c86633a327932e6edcdb4a6c310de',1,'mim::Rule::lhs()']]],
   ['lit_14',['lit',['../classmim_1_1World.html#a0fc41c2548fa7f8efabaef0a3e7f7854',1,'mim::World']]],
   ['lit_5fbool_15',['lit_bool',['../classmim_1_1World.html#ae1bd442c707312f78156eae967229c1d',1,'mim::World']]],
   ['lit_5fc_16',['lit_c',['../classmim_1_1ast_1_1Tok.html#afadef3e0400c7861f10d5fe55f1b66e3',1,'mim::ast::Tok']]],

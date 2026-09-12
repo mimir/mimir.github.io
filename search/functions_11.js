@@ -53,7 +53,7 @@ var searchData=
   ['rewrite_5froot_50',['rewrite_root',['../classmim_1_1RWBase.html#aa4dcfd5d28f6c97f001357bdf3d01bb9',1,'mim::RWBase::rewrite_root()'],['../classmim_1_1EtaConv.html#ac2e3d7e0d9d4f7f1915295ae682670a3',1,'mim::EtaConv::rewrite_root()']]],
   ['rewrite_5fstub_51',['rewrite_stub',['../classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd',1,'mim::Rewriter']]],
   ['rewriter_52',['Rewriter',['../classmim_1_1Rewriter.html#acbd0fb347253ef6deb7846de430ace8e',1,'mim::Rewriter::Rewriter(std::unique_ptr&lt; World &gt; &amp;&amp;ptr)'],['../classmim_1_1Rewriter.html#a91e2e9a8aac307e43309ce8458e74d91',1,'mim::Rewriter::Rewriter(World &amp;world)']]],
-  ['rhs_53',['rhs',['../classmim_1_1ast_1_1RuleDecl.html#ac3998bb2935420c2a2244bf2fe56724d',1,'mim::ast::RuleDecl::rhs()'],['../classmim_1_1Rule.html#ac2225d65a41229b955e97eb9c1ffe1f8',1,'mim::Rule::rhs()']]],
+  ['rhs_53',['rhs',['../classmim_1_1ast_1_1InfixExpr.html#a7795d203e8b561cb7d3f7b7d9847ffe7',1,'mim::ast::InfixExpr::rhs()'],['../classmim_1_1ast_1_1RuleDecl.html#ac3998bb2935420c2a2244bf2fe56724d',1,'mim::ast::RuleDecl::rhs()'],['../classmim_1_1Rule.html#ac2225d65a41229b955e97eb9c1ffe1f8',1,'mim::Rule::rhs()']]],
   ['root_54',['root',['../classmim_1_1Nest.html#ac099472ee5301d183779c4c70d2b7ef3',1,'mim::Nest::root()'],['../classmim_1_1ClosedMutPhase.html#a06b703ae1027080726991949ee0deec5',1,'mim::ClosedMutPhase::root()'],['../classmim_1_1Scheduler.html#a0f91a1a8a83f0dd1da306d524eaaaf3b',1,'mim::Scheduler::root()']]],
   ['roots_55',['roots',['../classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855',1,'mim::World']]],
   ['rt_5fmode_56',['rt_mode',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a716f42495d52bea72d6f34ce9f708aef',1,'mim::plug::ll::Emitter']]],

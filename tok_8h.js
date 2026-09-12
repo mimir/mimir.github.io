@@ -9,6 +9,8 @@ var tok_8h =
     [ "CODE", "tok_8h.html#a3c57b75753cfae05d8c682db1f9b834c", null ],
     [ "CODE", "tok_8h.html#a529782885f98bb3480e7e8b936f53119", null ],
     [ "MIM_INFIX", "tok_8h.html#a9faa60cb9fd07632f300867e46be87ba", null ],
+    [ "MIM_INFIX_CORE", "tok_8h.html#ad55e859f438aa92a4d04d1e6687c00b5", null ],
+    [ "MIM_INFIX_SUGAR", "tok_8h.html#ace266857a25399a5d53719b8831d2fe6", null ],
     [ "MIM_KEY", "tok_8h.html#abc9428554ffe51f249e7561d0ccd0a21", null ],
     [ "MIM_PREC", "tok_8h.html#a32e8a0f4fc6b215d64ce26d0b3139aac", null ],
     [ "MIM_SUBST", "tok_8h.html#a6db46bc72a5da9001ba48cbe37741e8d", null ],

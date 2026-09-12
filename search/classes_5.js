@@ -11,6 +11,5 @@ var searchData=
   ['expr_8',['Expr',['../classmim_1_1ast_1_1Expr.html',1,'mim::ast']]],
   ['ext_9',['Ext',['../classmim_1_1Ext.html',1,'mim']]],
   ['externals_10',['Externals',['../classmim_1_1World_1_1Externals.html',1,'mim::World']]],
-  ['extract_11',['Extract',['../classmim_1_1Extract.html',1,'mim']]],
-  ['extractexpr_12',['ExtractExpr',['../classmim_1_1ast_1_1ExtractExpr.html',1,'mim::ast']]]
+  ['extract_11',['Extract',['../classmim_1_1Extract.html',1,'mim']]]
 ];

@@ -201,14 +201,17 @@ Macros</h2></td></tr>
 <tr class="memitem:a529782885f98bb3480e7e8b936f53119" id="r_a529782885f98bb3480e7e8b936f53119"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a529782885f98bb3480e7e8b936f53119">CODE</a>(t,  str,  prec)</td></tr>
 <tr class="memitem:a3c57b75753cfae05d8c682db1f9b834c" id="r_a3c57b75753cfae05d8c682db1f9b834c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a3c57b75753cfae05d8c682db1f9b834c">CODE</a>(t,  str,  prec)</td></tr>
 <tr id="define-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Precedence Table</div></td></tr>
-<tr><td colspan="2" class="ititle"><div class="groupText"><p>X-macro listing all expression precedences from lowest to highest.</p>
-<p>Each entry is <span class="tt">m(name, assoc)</span> where <code class="param">assoc</code> is <span class="tt">L</span>, <span class="tt">R</span>, or <span class="tt">N</span>. </p>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>X-macro listing all expression precedences from lowest to highest as <span class="tt">m(name, assoc)</span>.</p>
+<p><code class="param">assoc</code> is <span class="tt">L</span>eft-, <span class="tt">R</span>ight-, or <span class="tt">N</span>on-associative; <span class="tt">a op b op c</span> is an error for an <span class="tt">N</span> level. Only a level named by MIM_INFIX or by an entry below is an actual operator: <span class="tt">Err</span>, <span class="tt">Bot</span>, <span class="tt">Pi</span>, and <span class="tt">Lit</span> merely serve as a <span class="tt">curr_prec</span> bound while parsing. Application binds tighter than every operator - only <span class="tt">Extract</span> and <span class="tt">Lit</span> bind tighter still. </p>
 </div></td></tr>
 <tr class="memitem:a32e8a0f4fc6b215d64ce26d0b3139aac" id="r_a32e8a0f4fc6b215d64ce26d0b3139aac"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a32e8a0f4fc6b215d64ce26d0b3139aac">MIM_PREC</a>(m)</td></tr>
 <tr id="define-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Infix Operator Table</div></td></tr>
-<tr><td colspan="2" class="ititle"><div class="groupText"><p>X-macro listing all infix operators as <span class="tt">m(tag, str, prec)</span>.</p>
-<p><span class="tt">a str b</span> is sugar for <span class="tt"> `str (a, b) </span>; what <span class="tt"> `str </span> means is up to whatever the user binds it to. </p>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>X-macros listing all infix operators as <span class="tt">m(tag, str, prec)</span>. </p>
 </div></td></tr>
+<tr class="memitem:ace266857a25399a5d53719b8831d2fe6" id="r_ace266857a25399a5d53719b8831d2fe6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ace266857a25399a5d53719b8831d2fe6">MIM_INFIX_SUGAR</a>(m)</td></tr>
+<tr class="memdesc:ace266857a25399a5d53719b8831d2fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">a str b</span> is sugar for <span class="tt"> `str (a, b) </span>; what <span class="tt"> `str </span> means is up to whatever the user binds it to.  <br /></td></tr>
+<tr class="memitem:ad55e859f438aa92a4d04d1e6687c00b5" id="r_ad55e859f438aa92a4d04d1e6687c00b5"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad55e859f438aa92a4d04d1e6687c00b5">MIM_INFIX_CORE</a>(m)</td></tr>
+<tr class="memdesc:ad55e859f438aa92a4d04d1e6687c00b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">These have a meaning of their own; InfixExpr::emit_ dispatches on the tag.  <br /></td></tr>
 <tr class="memitem:a9faa60cb9fd07632f300867e46be87ba" id="r_a9faa60cb9fd07632f300867e46be87ba"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9faa60cb9fd07632f300867e46be87ba">MIM_INFIX</a>(m)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -236,7 +239,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab4b52dbb4d1c2d76a66fbdd47af52ea9" id="r_ab4b52dbb4d1c2d76a66fbdd47af52ea9"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9">mim::ast::Num_Keys</a> = size_t(0) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1)</td></tr>
+<tr class="memitem:ab4b52dbb4d1c2d76a66fbdd47af52ea9" id="r_ab4b52dbb4d1c2d76a66fbdd47af52ea9"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9">mim::ast::Num_Keys</a> = size_t(0) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1) + size_t(1)</td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a9858c29a6d8cc9ffe286cc134ec56da5" name="a9858c29a6d8cc9ffe286cc134ec56da5"></a>
@@ -259,7 +262,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> Prec::name: <span class="keywordflow">return</span> Assoc::assoc;</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -283,9 +286,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">name,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00217">mim::ast::Tok::infix_prec()</a>, <a class="el" href="tok_8h_source.html#l00227">mim::ast::Tok::infix_sym()</a>, <a class="el" href="tok_8h_source.html#l00205">mim::ast::Tok::is_key()</a>, <a class="el" href="def_8h_source.html#l00819">mim::Def::judge()</a>, <a class="el" href="def_8cpp_source.html#l00453">mim::Def::node_name()</a>, <a class="el" href="tok_8h_source.html#l00051">mim::ast::prec_assoc()</a>, and <a class="el" href="tok_8cpp_source.html#l00010">mim::ast::Tok::tag2str()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00246">mim::ast::Tok::infix_prec()</a>, <a class="el" href="tok_8h_source.html#l00256">mim::ast::Tok::infix_sym()</a>, <a class="el" href="tok_8h_source.html#l00234">mim::ast::Tok::is_key()</a>, <a class="el" href="def_8h_source.html#l00819">mim::Def::judge()</a>, <a class="el" href="def_8cpp_source.html#l00453">mim::Def::node_name()</a>, <a class="el" href="tok_8h_source.html#l00057">mim::ast::prec_assoc()</a>, and <a class="el" href="tok_8cpp_source.html#l00010">mim::ast::Tok::tag2str()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +312,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> Tag::t:</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -333,7 +336,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">t,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -357,7 +360,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">+ size_t(1)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -386,7 +389,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> Tag::t: <span class="keywordflow">return</span> <span class="stringliteral">&quot;`&quot;</span> str;</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -415,7 +418,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> Tag::t: <span class="keywordflow">return</span> Prec::prec;</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00045">45</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00051">51</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 </div>
 </div>
@@ -433,17 +436,76 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">m(T_eq,   <span class="stringliteral">&quot;==&quot;</span>, Eq )  \</div>
-<div class="line">m(T_ne,   <span class="stringliteral">&quot;!=&quot;</span>, Eq )  \</div>
-<div class="line">m(T_add,  <span class="stringliteral">&quot;+&quot;</span>,  Add)  \</div>
-<div class="line">m(T_sub,  <span class="stringliteral">&quot;-&quot;</span>,  Add)  \</div>
-<div class="line">m(T_star, <span class="stringliteral">&quot;*&quot;</span>,  Mul)  \</div>
-<div class="line">m(T_div,  <span class="stringliteral">&quot;/&quot;</span>,  Mul)  \</div>
-<div class="line">m(T_rem,  <span class="stringliteral">&quot;%&quot;</span>,  Mul)</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ace266857a25399a5d53719b8831d2fe6">MIM_INFIX_SUGAR</a>(m) <a class="code hl_define" href="#ad55e859f438aa92a4d04d1e6687c00b5">MIM_INFIX_CORE</a>(m)</div>
+<div class="ttc" id="atok_8h_html_ace266857a25399a5d53719b8831d2fe6"><div class="ttname"><a href="#ace266857a25399a5d53719b8831d2fe6">MIM_INFIX_SUGAR</a></div><div class="ttdeci">#define MIM_INFIX_SUGAR(m)</div><div class="ttdoc">a str b is sugar for  `str (a, b) ; what  `str  means is up to whatever the user binds it to.</div><div class="ttdef"><b>Definition</b> <a href="tok_8h_source.html#l00189">tok.h:189</a></div></div>
+<div class="ttc" id="atok_8h_html_ad55e859f438aa92a4d04d1e6687c00b5"><div class="ttname"><a href="#ad55e859f438aa92a4d04d1e6687c00b5">MIM_INFIX_CORE</a></div><div class="ttdeci">#define MIM_INFIX_CORE(m)</div><div class="ttdoc">These have a meaning of their own; InfixExpr::emit_ dispatches on the tag.</div><div class="ttdef"><b>Definition</b> <a href="tok_8h_source.html#l00205">tok.h:205</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00176">176</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00213">213</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00217">mim::ast::Tok::infix_prec()</a>, and <a class="el" href="tok_8h_source.html#l00227">mim::ast::Tok::infix_sym()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00246">mim::ast::Tok::infix_prec()</a>.</p>
+
+</div>
+</div>
+<a id="ad55e859f438aa92a4d04d1e6687c00b5" name="ad55e859f438aa92a4d04d1e6687c00b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55e859f438aa92a4d04d1e6687c00b5">&#9670;&#160;</a></span>MIM_INFIX_CORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_INFIX_CORE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">m(T_extract, <span class="stringliteral">&quot;#&quot;</span>,   Extract) \</div>
+<div class="line">m(T_union,   <span class="stringliteral">&quot;∪&quot;</span>,   Union  ) \</div>
+<div class="line">m(K_inj,     <span class="stringliteral">&quot;inj&quot;</span>, Inj    ) \</div>
+<div class="line">m(T_arrow_r, <span class="stringliteral">&quot;→&quot;</span>,   Arrow  ) \</div>
+<div class="line">m(T_arrow_l, <span class="stringliteral">&quot;←&quot;</span>,   Ins    ) \</div>
+<div class="line">m(T_at,      <span class="stringliteral">&quot;@&quot;</span>,   App    )</div>
+</div><!-- fragment -->
+<p>These have a meaning of their own; InfixExpr::emit_ dispatches on the tag. </p>
+
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00205">205</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+
+</div>
+</div>
+<a id="ace266857a25399a5d53719b8831d2fe6" name="ace266857a25399a5d53719b8831d2fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace266857a25399a5d53719b8831d2fe6">&#9670;&#160;</a></span>MIM_INFIX_SUGAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_INFIX_SUGAR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>m</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">m(T_eq,   <span class="stringliteral">&quot;==&quot;</span>, Eq   )  \</div>
+<div class="line">m(T_ne,   <span class="stringliteral">&quot;!=&quot;</span>, Eq   )  \</div>
+<div class="line">m(T_lt,   <span class="stringliteral">&quot;&lt;&quot;</span>,  Rel  )  \</div>
+<div class="line">m(T_le,   <span class="stringliteral">&quot;&lt;=&quot;</span>, Rel  )  \</div>
+<div class="line">m(T_gt,   <span class="stringliteral">&quot;&gt;&quot;</span>,  Rel  )  \</div>
+<div class="line">m(T_ge,   <span class="stringliteral">&quot;&gt;=&quot;</span>, Rel  )  \</div>
+<div class="line">m(T_shl,  <span class="stringliteral">&quot;&lt;&lt;&quot;</span>, Shift)  \</div>
+<div class="line">m(T_shr,  <span class="stringliteral">&quot;&gt;&gt;&quot;</span>, Shift)  \</div>
+<div class="line">m(T_add,  <span class="stringliteral">&quot;+&quot;</span>,  Add  )  \</div>
+<div class="line">m(T_sub,  <span class="stringliteral">&quot;-&quot;</span>,  Add  )  \</div>
+<div class="line">m(T_star, <span class="stringliteral">&quot;*&quot;</span>,  Mul  )  \</div>
+<div class="line">m(T_div,  <span class="stringliteral">&quot;/&quot;</span>,  Mul  )  \</div>
+<div class="line">m(T_rem,  <span class="stringliteral">&quot;%&quot;</span>,  Mul  )</div>
+</div><!-- fragment -->
+<p><span class="tt">a str b</span> is sugar for <span class="tt"> `str (a, b) </span>; what <span class="tt"> `str </span> means is up to whatever the user binds it to. </p>
+
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00189">189</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00256">mim::ast::Tok::infix_sym()</a>.</p>
 
 </div>
 </div>
@@ -462,7 +524,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00069">69</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00075">75</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00010">mim::ast::Tok::tag2str()</a>.</p>
 
@@ -485,20 +547,23 @@ Variables</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">m(Err,     N)       \</div>
 <div class="line">m(Bot,     N)       \</div>
 <div class="line">m(Where,   L)       \</div>
+<div class="line">m(Ins,     R)       \</div>
+<div class="line">m(Inj,     R)       \</div>
+<div class="line">m(Union,   L)       \</div>
 <div class="line">m(Arrow,   R)       \</div>
 <div class="line">m(Pi,      N)       \</div>
-<div class="line">m(Inj,     R)       \</div>
-<div class="line">m(Eq,      L)       \</div>
+<div class="line">m(Eq,      N)       \</div>
+<div class="line">m(Rel,     N)       \</div>
 <div class="line">m(Add,     L)       \</div>
 <div class="line">m(Mul,     L)       \</div>
+<div class="line">m(Shift,   L)       \</div>
 <div class="line">m(App,     L)       \</div>
-<div class="line">m(Union,   L)       \</div>
 <div class="line">m(Extract, L)       \</div>
 <div class="line">m(Lit,     N)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00023">23</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00026">26</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00051">mim::ast::prec_assoc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00057">mim::ast::prec_assoc()</a>.</p>
 
 </div>
 </div>
@@ -519,11 +584,10 @@ Variables</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">m(<span class="stringliteral">&quot;lm&quot;</span>,     T_lm   )              \</div>
 <div class="line">m(<span class="stringliteral">&quot;bot&quot;</span>,    T_bot  )              \</div>
 <div class="line">m(<span class="stringliteral">&quot;top&quot;</span>,    T_top  )              \</div>
-<div class="line">m(<span class="stringliteral">&quot;insert&quot;</span>, K_ins  )              \</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00186">186</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00216">216</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00205">mim::ast::Tok::is_key()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tok_8h_source.html#l00234">mim::ast::Tok::is_key()</a>.</p>
 
 </div>
 </div>
@@ -542,7 +606,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00123">123</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tok_8h_source.html#l00128">128</a> of file <a class="el" href="tok_8h_source.html">tok.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tok_8cpp_source.html#l00010">mim::ast::Tok::tag2str()</a>.</p>
 
