@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -166,10 +172,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('opt.html','','
 <h1 class="doxsection"><a class="anchor" id="autotoc_md362"></a>
 Dependencies</h1>
 <p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
-<div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md363"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin compile;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md363"></a>
 The default pipeline</h1>
-<div class="fragment"><div class="line">extern lam _default_compile (): compile.Phase =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">extern lam _default_compile (): compile.Phase =</div>
 <div class="line">    let optimize =</div>
 <div class="line">        // fixed-point iteration off by default; enable with `-X compile:aggr`</div>
 <div class="line">        compile.phases (compile.aggr ff) (</div>
@@ -256,7 +262,7 @@ The default pipeline</h1>
 <div class="line">        compile.named &quot;ll.emit&quot;,</div>
 <div class="line">        compile.named &quot;ll_nvptx.emit&quot;,</div>
 <div class="line">    );</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

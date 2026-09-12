@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -165,47 +171,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('refly.html',''
 <p>The refly plugin allows you to <a href="https://en.wikipedia.org/wiki/Reification_(computer_science)">reify</a> and <a href="https://en.wikipedia.org/wiki/Reflective_programming">reflect</a> MimIR's own representation.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md390"></a>
 Dependencies</h1>
-<div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md391"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">import compile;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md391"></a>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md392"></a>
 refly.Code</h2>
 <p>The reified internal representation of a <a class="el" href="namespaceMim.html">Mim</a> expression of type <span class="tt">T</span>.</p>
-<div class="fragment"><div class="line">axm Code: * → *;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md393"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Code: * → *;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md393"></a>
 Reify / Reflect</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md394"></a>
 refly.reify</h2>
 <p>Yields the internal MimIR representation of a <a class="el" href="namespaceMim.html">Mim</a> expression as <span class="tt">refly.Code</span>.</p>
-<div class="fragment"><div class="line">axm reify: {T: *} → T → [Code T], normalize_reify;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md395"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reify: {T: *} → T → [Code T], normalize_reify;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md395"></a>
 refly.reflect</h2>
 <p>Converts a <span class="tt">refly.Code</span> back to a <a class="el" href="namespaceMim.html">Mim</a> expression.</p>
-<div class="fragment"><div class="line">axm reflect: {T: *} → [Code T] → T, normalize_reflect;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md396"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reflect: {T: *} → [Code T] → T, normalize_reflect;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md396"></a>
 Inspect</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md397"></a>
 refly.type</h2>
 <p>Returns the type of an expression.</p>
-<div class="fragment"><div class="line">axm type: {T: *} → T → *, normalize_type;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md398"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm type: {T: *} → T → *, normalize_type;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md398"></a>
 refly.gid</h2>
 <p>Returns the internal <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">mim::Def::gid</a> of the argument.</p>
-<div class="fragment"><div class="line">axm gid: {T: *} → T → Nat, normalize_gid;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md399"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gid: {T: *} → T → Nat, normalize_gid;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md399"></a>
 refly.dbg</h2>
 <p>Debugs a given expression.</p><ul>
 <li><span class="tt">tmp</span>: Prints debug information of a given expression at construction time and vanishes afterwards.</li>
 <li><span class="tt">perm</span>: Permanently debugs at every construction. Gets removed at codegen preparation in mim::plug::refly::RemoveDbgPerm.</li>
 </ul>
-<div class="fragment"><div class="line">anx let error   = 0;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let error   = 0;</div>
 <div class="line">anx let warn    = 1;</div>
 <div class="line">anx let info    = 2;</div>
 <div class="line">anx let verbose = 3;</div>
 <div class="line">anx let debug   = 4;</div>
 <div class="line"> </div>
 <div class="line">axm dbg.(tmp, perm): {T: *} → [Nat, T] → T, normalize_dbg;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md400"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md400"></a>
 Testing</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md401"></a>
 refly.equiv</h2>
@@ -225,22 +231,22 @@ refly.equiv</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">AE</span>  </td><td class="markdownTableBodyNone"><span class="tt">alpha_eq</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">assert alpha-equivalent  </td></tr>
 </table>
-<div class="fragment"><div class="line">axm equiv.(ae = struc_ne, aE = struc_eq,</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm equiv.(ae = struc_ne, aE = struc_eq,</div>
 <div class="line">           Ae = alpha_ne, AE = alpha_eq):</div>
 <div class="line">    {T: *} → [T, T] → T, normalize_equiv;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md402"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md402"></a>
 refly.check_bot</h2>
 <p>Checks whether the argument is <span class="tt">⊥</span>.</p>
-<div class="fragment"><div class="line">axm check_bot: {T: *} → T → T, normalize_check_bot;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md403"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check_bot: {T: *} → T → T, normalize_check_bot;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md403"></a>
 refly.check</h2>
 <p>Checks the given condition and emits the error message if it is <span class="tt">ff</span>.</p>
-<div class="fragment"><div class="line">axm check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md404"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md404"></a>
 Phases</h1>
 <p>Removes the permanent <span class="tt">refly.dbg</span> markers for code generation.</p>
-<div class="fragment"><div class="line">axm remove_dbg_repl: compile.Phase;</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm remove_dbg_repl: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

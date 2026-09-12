@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -165,48 +171,48 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('option.html','
 <p>An optional value type: either a value of type <span class="tt">T</span> or nothing.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md364"></a>
 Dependencies</h1>
-<div class="fragment"><div class="line">plugin core;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md365"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md365"></a>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md366"></a>
 option.Opt</h2>
 <p>The option type: <span class="tt">[] ∪ T</span>.</p>
-<div class="fragment"><div class="line">anx lam Opt (T: *) : * = [] ∪ T;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam Opt (T: *) : * = [] ∪ T;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
 Constructors</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md368"></a>
 option.some</h2>
 <p>Wraps a value into an option.</p>
-<div class="fragment"><div class="line">anx lam some {T: *} (v: T) : Opt T = v inj Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam some {T: *} (v: T) : Opt T = v inj Opt T;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
 option.none</h2>
 <p>The empty option.</p>
-<div class="fragment"><div class="line">anx lam none [T: *] : Opt T = () inj Opt T;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam none [T: *] : Opt T = () inj Opt T;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
 option.some_if</h2>
 <p>Wraps <span class="tt">v</span> into an option iff <span class="tt">b</span> holds.</p>
-<div class="fragment"><div class="line">anx lam some_if {T: *} (b: Bool, v: T) : Opt T = (none T, some v)#b;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam some_if {T: *} (b: Bool, v: T) : Opt T = (none T, some v)#b;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
 option.is_some</h2>
 <p>Returns <span class="tt">tt</span> if the option contains a value.</p>
-<div class="fragment"><div class="line">anx lam is_some {T: *} (o: Opt T) : Bool =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam is_some {T: *} (o: Opt T) : Bool =</div>
 <div class="line">    match o with</div>
 <div class="line">        | _: T  =&gt; tt</div>
 <div class="line">        | _: [] =&gt; ff;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
 option.unwrap_unsafe</h2>
 <p>Extracts the value without checking - undefined behavior for <span class="tt">option.none</span>.</p>
-<div class="fragment"><div class="line">axm unwrap_unsafe: {T: *} → Opt T → T, normalize_unwrap_unsafe;</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm unwrap_unsafe: {T: *} → Opt T → T, normalize_unwrap_unsafe;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
 option.unwrap_or</h2>
 <p>Extracts the value or returns <span class="tt">default</span>.</p>
-<div class="fragment"><div class="line">anx lam unwrap_or {T: *} (o: Opt T) (default: T) : T =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam unwrap_or {T: *} (o: Opt T) (default: T) : T =</div>
 <div class="line">    match o with</div>
 <div class="line">        | x: T  =&gt; x</div>
 <div class="line">        | _: [] =&gt; default;</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

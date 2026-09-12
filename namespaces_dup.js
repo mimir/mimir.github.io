@@ -16,5 +16,10 @@ var namespaces_dup =
       [ "VERSION_RE", "namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328", null ]
     ] ],
     [ "Mim", "namespaceMim.html", null ],
-    [ "mim", "namespacemim.html", "namespacemim" ]
+    [ "mim", "namespacemim.html", "namespacemim" ],
+    [ "mim_fences", "namespacemim__fences.html", [
+      [ "main", "namespacemim__fences.html#a51af30a60f9f02777c6396b8247e356f", null ],
+      [ "wrap", "namespacemim__fences.html#a1860a2c3ee82830834e0390e285a4e0b", null ],
+      [ "WRAP", "namespacemim__fences.html#a640a60a20203c94e76febbc8ea0f9982", null ]
+    ] ]
 ];

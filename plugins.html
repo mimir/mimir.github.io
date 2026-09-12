@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -180,7 +186,7 @@ Example: demo Plugin</h1>
 <div class="line">        normalizers.cpp</div>
 <div class="line">)</div>
 </div><!-- fragment --><p><b><span class="tt">demo.mim</span></b>:</p>
-<div class="fragment"><div class="line">/// # The demo Plugin {#demo}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">/// # The demo Plugin {#demo}</div>
 <div class="line">///</div>
 <div class="line">/// @see mim::plug::demo</div>
 <div class="line">///</div>
@@ -195,7 +201,7 @@ Example: demo Plugin</h1>
 <div class="line">/// The constant `42`, evaluated by a normalizer.</div>
 <div class="line">///</div>
 <div class="line">axm const_idx: [n: Nat] → Idx n, normalize_const;</div>
-</div><!-- fragment --><p>Doc comments (<span class="tt">///</span>) are ordinary Doxygen-flavored Markdown (headings, <span class="tt">[TOC]</span>, <span class="tt">@see</span>, ...); everything else is plain <a class="el" href="namespaceMim.html">Mim</a> syntax declaring the annex itself. Here <span class="tt">demo.const_idx</span> is a single axiom with no subtags, and <span class="tt">normalize_const</span> names the C++ function that evaluates it. Building the plugin auto-generates a C++ header and a Python module from this very file, and turns its doc comments into the plugin's Doxygen page — see <a class="el" href="#plugin_codegen" title="Generated Interfaces">Generated Interfaces</a> below, since this applies to every plugin, not just <span class="tt">demo</span>.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>Doc comments (<span class="tt">///</span>) are ordinary Doxygen-flavored Markdown (headings, <span class="tt">[TOC]</span>, <span class="tt">@see</span>, ...); everything else is plain <a class="el" href="namespaceMim.html">Mim</a> syntax declaring the annex itself. Here <span class="tt">demo.const_idx</span> is a single axiom with no subtags, and <span class="tt">normalize_const</span> names the C++ function that evaluates it. Building the plugin auto-generates a C++ header and a Python module from this very file, and turns its doc comments into the plugin's Doxygen page — see <a class="el" href="#plugin_codegen" title="Generated Interfaces">Generated Interfaces</a> below, since this applies to every plugin, not just <span class="tt">demo</span>.</p>
 <p><a class="anchor" id="demo_h"></a><b><span class="tt"><a class="el" href="demo_8h.html">demo.h</a></span></b>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
@@ -334,7 +340,7 @@ The result for </span>demo.mim<span class="tt"> is written to </span><a class="e
 <div class="line"> </div>
 <div class="line">The constant `42`, evaluated by a normalizer.</div>
 <div class="line"> </div>
-<div class="line">```</div>
+<div class="line">```mim</div>
 <div class="line">axm const_idx: [n: Nat] → Idx n, normalize_const;</div>
 <div class="line"> </div>
 <div class="line">```</div>

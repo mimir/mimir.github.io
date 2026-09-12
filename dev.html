@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -232,13 +238,13 @@ Basics</h1>
 <p>Now we can build actual code.</p>
 <p><a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> is the base class for <b>all</b> nodes/expressions in MimIR. Each <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> is a node in a graph managed by the <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>. You can think of the <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> as a giant hash set that owns all <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span>s</a> and provides factory methods to create them.</p>
 <p>In this example, we construct the <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> function. In direct style, its type looks like this:</p>
-<div class="fragment"><div class="line">[mem.M 0, I32, mem.Ptr (I32, 0)] -&gt; [mem.M 0, I32]</div>
-</div><!-- fragment --><p>In <a href="https://en.wikipedia.org/wiki/Continuation-passing_style">continuation-passing style (CPS)</a>, the same type looks like this:</p>
-<div class="fragment"><div class="line">Cn [mem.M 0, I32, mem.Ptr (I32, 0), Cn [mem.M 0, I32]]</div>
-</div><!-- fragment --><p>The type <span class="tt">mem.M 0</span> tracks side effects. Since <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> introduces <a class="el" href="classmim_1_1Var.html" title="mim::Var">variables</a>, we must create it as a <b>mutable</b> <a class="el" href="classmim_1_1Lam.html" title="mim::Lam">lambda</a>; see <a class="el" href="#mut" title="Immutables vs. Mutables">Immutables vs. Mutables</a>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">[mem.M 0, I32, mem.Ptr (I32, 0)] -&gt; [mem.M 0, I32]</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>In <a href="https://en.wikipedia.org/wiki/Continuation-passing_style">continuation-passing style (CPS)</a>, the same type looks like this:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">Cn [mem.M 0, I32, mem.Ptr (I32, 0), Cn [mem.M 0, I32]]</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The type <span class="tt">mem.M 0</span> tracks side effects. Since <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> introduces <a class="el" href="classmim_1_1Var.html" title="mim::Var">variables</a>, we must create it as a <b>mutable</b> <a class="el" href="classmim_1_1Lam.html" title="mim::Lam">lambda</a>; see <a class="el" href="#mut" title="Immutables vs. Mutables">Immutables vs. Mutables</a>.</p>
 <p>The body of <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> is simple: it invokes the return continuation <span class="tt">ret</span> with <span class="tt">mem</span> and <span class="tt">argc</span>:</p>
-<div class="fragment"><div class="line">ret (mem, argc)</div>
-</div><!-- fragment --><p>It is also important to mark <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> as <a class="el" href="classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0" title="mim::Def::externalize">external</a>. Otherwise, MimIR may remove it as dead code.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">ret (mem, argc)</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>It is also important to mark <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> as <a class="el" href="classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0" title="mim::Def::externalize">external</a>. Otherwise, MimIR may remove it as dead code.</p>
 <p>Finally, we <a class="el" href="namespacemim.html#a60ee93398f76269a406c841b2bb2c306" title="mim::optimize"><span class="tt">optimize</span></a> the program, emit an <a href="https://llvm.org/docs/LangRef.html">LLVM assembly file</a>, compile it via <span class="tt">clang</span>, and execute the generated binary with <span class="tt">./hello a b c</span> - both through <span class="tt">fe::sys::system</span>. We then print its exit code, which should be <span class="tt">4</span>.</p>
 <h1 class="doxsection"><a class="anchor" id="mut"></a>
 Immutables vs. Mutables</h1>
@@ -298,8 +304,8 @@ Mutables</h2>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
 Binders</h2>
 <p>As a more intricate example, we build a polymorphic identity function using MimIR's C++ API.</p>
-<div class="fragment"><div class="line">λ {T: *} (x: T): T = x</div>
-</div><!-- fragment --><p>This example illustrates how mutables and immutables interact. All binders must be created as mutables in order to access the <a class="el" href="classmim_1_1Var.html" title="mim::Var">variable</a> they introduce. All other nodes can remain immutable.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">λ {T: *} (x: T): T = x</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>This example illustrates how mutables and immutables interact. All binders must be created as mutables in order to access the <a class="el" href="classmim_1_1Var.html" title="mim::Var">variable</a> they introduce. All other nodes can remain immutable.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="world_8h.html">mim/world.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a>;</div>
@@ -561,10 +567,10 @@ Matching Axioms</h2>
 </ul>
 <p>The result is a <span class="tt"><a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">mim::Axm::isa</a>&lt;Id, D&gt;</span>, which wraps a <span class="tt">const D*</span>. Here, <span class="tt">Id</span> is the enum corresponding to the <a class="el" href="classmim_1_1Axm.html#anatomy" title="anatomy">matched axiom tag</a>, and <span class="tt">D</span> is usually an <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a>, because most <a class="el" href="classmim_1_1Axm.html" title="mim::Axm">axioms</a> inhabit a <a class="el" href="classmim_1_1Pi.html" title="mim::Pi">function type</a>. In other cases, it may wrap a plain <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> or some other subclass.</p>
 <p>By default, MimIR assumes that an <a class="el" href="classmim_1_1Axm.html" title="mim::Axm">axiom</a> becomes "active" when its final curried argument is applied. For example, <a class="el" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338" title="mim::Axm::isa">matching</a> <span class="tt">mem.load</span> only succeeds on the final <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> of the curried call</p>
-<div class="fragment"><div class="line">mem.load (T, as) (mem, ptr)</div>
-</div><!-- fragment --><p>whereas</p>
-<div class="fragment"><div class="line">mem.load (T, as)</div>
-</div><!-- fragment --><p>does <b>not</b> match.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mem.load (T, as) (mem, ptr)</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>whereas</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mem.load (T, as)</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>does <b>not</b> match.</p>
 <p>In this example, the wrapped <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> refers to the final application, so:</p>
 <ul>
 <li><a class="el" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1" title="mim::App::arg"><span class="tt">mim::App::arg</span></a> is <span class="tt">(mem, ptr)</span>, and</li>

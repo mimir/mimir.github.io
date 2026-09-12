@@ -38,7 +38,8 @@ var searchData=
   ['worse_35',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md156',1,'']]],
   ['worse_20not_20better_36',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md169',1,'']]],
   ['would_20land_20at_20roughly_20performance_20parity_37',['Rust would land at roughly performance parity',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
-  ['wrap_38',['wrap',['../core.html#autotoc_md262',1,'core.wrap'],['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef',1,'mim::plug::core::wrap']]],
-  ['wrappers_39',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
-  ['write_40',['write',['../buffer.html#autotoc_md225',1,'buffer.write'],['../classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc',1,'mim::Def::write(int max) const'],['../classmim_1_1Def.html#a36961f437b85d16c096ee7c43cc9fa33',1,'mim::Def::write(int max, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write']]]
+  ['wrap_38',['WRAP',['../namespacemim__fences.html#a640a60a20203c94e76febbc8ea0f9982',1,'mim_fences']]],
+  ['wrap_39',['wrap',['../core.html#autotoc_md262',1,'core.wrap'],['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef',1,'mim::plug::core::wrap'],['../namespacemim__fences.html#a1860a2c3ee82830834e0390e285a4e0b',1,'mim_fences.wrap()']]],
+  ['wrappers_40',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
+  ['write_41',['write',['../buffer.html#autotoc_md225',1,'buffer.write'],['../classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc',1,'mim::Def::write(int max) const'],['../classmim_1_1Def.html#a36961f437b85d16c096ee7c43cc9fa33',1,'mim::Def::write(int max, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write']]]
 ];

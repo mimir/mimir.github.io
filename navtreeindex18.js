@@ -23,6 +23,8 @@ var NAVTREEINDEX18 =
 "mim__cuda__rt_8c.html":[5,0,4,1,3,11,1,0],
 "mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874":[5,0,4,1,3,11,1,0,0],
 "mim__cuda__rt_8c_source.html":[5,0,4,1,3,11,1,0],
+"mim__fences_8py.html":[5,0,2,1],
+"mim__fences_8py_source.html":[5,0,2,1],
 "mim__rt_8c.html":[5,0,4,1,3,10,0,0],
 "mim__rt_8c.html#ace4a0e80be08cf4828e5651b30de2a9c":[5,0,4,1,3,10,0,0,0],
 "mim__rt_8c_source.html":[5,0,4,1,3,10,0,0],
@@ -109,7 +111,8 @@ var NAVTREEINDEX18 =
 "namespacemembers_func_t.html":[2,1,1,16],
 "namespacemembers_func_u.html":[2,1,1,17],
 "namespacemembers_func_v.html":[2,1,1,18],
-"namespacemembers_func_z.html":[2,1,1,19],
+"namespacemembers_func_w.html":[2,1,1,19],
+"namespacemembers_func_z.html":[2,1,1,20],
 "namespacemembers_g.html":[2,1,0,6],
 "namespacemembers_h.html":[2,1,0,7],
 "namespacemembers_i.html":[2,1,0,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX18 =
 "namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4":[2,0,3,88],
 "namespacemim.html#ad70d80188d4a31ea1ab6199969ce4e63":[2,0,3,208],
 "namespacemim.html#ad7c402b5f8955bcf0e7aabb44621a8a2":[2,0,3,156],
-"namespacemim.html#ad8bae182cdb06699fc07a348105f193c":[2,0,3,128],
-"namespacemim.html#ada5cb760897eaa1e558552b65009fa67":[2,0,3,199],
-"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293":[2,0,3,139],
-"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188":[2,0,3,139,1]
+"namespacemim.html#ad8bae182cdb06699fc07a348105f193c":[2,0,3,128]
 };

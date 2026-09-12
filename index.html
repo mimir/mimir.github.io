@@ -19,10 +19,14 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -55,6 +59,8 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- https://tholman.com/github-corners/ -->
@@ -181,14 +187,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <h1 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
 ✨ A Taste of Mim</h1>
 <p>The following function <span class="tt">sq</span> squares <span class="tt">x</span> — for <b>any</b> type <span class="tt">T</span>, as long as you hand it a multiplication on <span class="tt">T</span>. Then, <span class="tt">f</span> instantiates <span class="tt">sq</span> for <span class="tt">Nat</span>:</p>
-<div class="fragment"><div class="line">// RUN: %mim %s</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// RUN: %mim %s</div>
 <div class="line">plugin core as *;</div>
 <div class="line"> </div>
 <div class="line">lam sq {T: *} (`*: [T, T] → T) (x: T): T = x * x;</div>
 <div class="line"> </div>
 <div class="line">extern fun f(x: Nat): Nat =</div>
 <div class="line">    return (sq nat.mul x);</div>
-</div><!-- fragment --><p>The type <span class="tt">T</span> sits in <span class="tt">{}</span> and is therefore an <b>implicit</b> argument: <span class="tt">f</span> just writes <span class="tt">sq nat.mul</span>, and MimIR infers <span class="tt">T = Nat</span> from the type of <span class="tt">nat.mul</span>. The remaining parameter is named <span class="tt"> `* </span> — the <a class="el" href="langref.html#infix" title="Infix Operators">infix operator</a> <span class="tt">*</span> escaped into an ordinary identifier — so the body's <span class="tt">x * x</span> is nothing but an application of that very parameter. Its type <span class="tt">[T, T] → T</span> mentions <span class="tt">T</span>, which makes <span class="tt">sq</span> a <a href="https://en.wikipedia.org/wiki/Dependent_type#%CE%A0_type"><b>dependent function</b></a>. In MimIR, types are ordinary <a href="https://en.wikipedia.org/wiki/First-class_citizen"><b>first-class values</b></a>: <span class="tt">T</span> and <span class="tt"> `* </span> are just arguments, so polymorphism, <a href="https://en.wikipedia.org/wiki/Type_constructor">type operators</a>, and dependent types all fall out of the same mechanism. (<span class="tt">plugin core as *</span> splices <span class="tt">core</span>'s annexes into the top-level scope, which is why <span class="tt">nat.mul</span> needs no <span class="tt">core.</span> prefix.)</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The type <span class="tt">T</span> sits in <span class="tt">{}</span> and is therefore an <b>implicit</b> argument: <span class="tt">f</span> just writes <span class="tt">sq nat.mul</span>, and MimIR infers <span class="tt">T = Nat</span> from the type of <span class="tt">nat.mul</span>. The remaining parameter is named <span class="tt"> `* </span> — the <a class="el" href="langref.html#infix" title="Infix Operators">infix operator</a> <span class="tt">*</span> escaped into an ordinary identifier — so the body's <span class="tt">x * x</span> is nothing but an application of that very parameter. Its type <span class="tt">[T, T] → T</span> mentions <span class="tt">T</span>, which makes <span class="tt">sq</span> a <a href="https://en.wikipedia.org/wiki/Dependent_type#%CE%A0_type"><b>dependent function</b></a>. In MimIR, types are ordinary <a href="https://en.wikipedia.org/wiki/First-class_citizen"><b>first-class values</b></a>: <span class="tt">T</span> and <span class="tt"> `* </span> are just arguments, so polymorphism, <a href="https://en.wikipedia.org/wiki/Type_constructor">type operators</a>, and dependent types all fall out of the same mechanism. (<span class="tt">plugin core as *</span> splices <span class="tt">core</span>'s annexes into the top-level scope, which is why <span class="tt">nat.mul</span> needs no <span class="tt">core.</span> prefix.)</p>
 <p>And under the hood, MimIR is not a list of instructions but a <b>graph</b> — and that graph <em>is</em> the program. The graph is also <b>complete</b>: it holds everything needed to make sense of the program, with no auxiliary side structure. Contrast a traditional instruction list, which is meaningless on its own and only becomes intelligible once you pair it with a separately maintained <a href="https://en.wikipedia.org/wiki/Control-flow_graph">control-flow graph</a>.</p>
 <p>Watch what happens to <span class="tt">sq</span>. When <span class="tt">f</span> applies <span class="tt">sq nat.mul</span>, that application is <a href="https://en.wikipedia.org/wiki/Lambda_calculus">β-reduced</a> <b>on the fly, during graph construction</b> — not in any later pass. This is permitted because <span class="tt">sq</span> carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a> that every direct-style function gets, which greenlights inlining. What remains is the bare <span class="tt">x * x</span>, with <b>no trace</b> of <span class="tt">sq</span> or its abstraction over <span class="tt">T</span> and <span class="tt"> `* </span>. The original <span class="tt">sq</span> lambda is now simply unreachable from the world's <a class="el" href="classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855" title="mim::World::roots">roots</a> (<span class="tt">sq</span> is not <span class="tt">extern</span>), so traversing the graph never reaches it; a <a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> phase later drops it for good:</p>
 <div class="image">
@@ -244,9 +250,9 @@ The MimIR graph of `f` — the abstraction has evaporated (type edges elided)</d
 <h2 class="doxsection"><a class="anchor" id="autotoc_md134"></a>
 🧩 Plugins</h2>
 <p>Declare new types, operations, and normalizers in a single <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file. For example, the <a class="el" href="demo.html" title="The demo Plugin"><span class="tt">demo</span></a> plugin declares one axiom and wires it to a C++ normalizer:</p>
-<div class="fragment"><div class="line">/// the 42 constant, folded by the `normalize_const` C++ normalizer</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">/// the 42 constant, folded by the `normalize_const` C++ normalizer</div>
 <div class="line">axm demo.const_idx: [n: Nat] → Idx n, normalize_const;</div>
-</div><!-- fragment --><p>The matching shared library implements <span class="tt">normalize_const</span> and any lowering or <a class="el" href="phases.html" title="Phases">phases</a>; C++ does the heavy lifting of optimization, lowering, and code generation.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The matching shared library implements <span class="tt">normalize_const</span> and any lowering or <a class="el" href="phases.html" title="Phases">phases</a>; C++ does the heavy lifting of optimization, lowering, and code generation.</p>
 <p>Explore the <a href="https://mimir.github.io/plugins">Plugin Registry</a> to discover and share community-developed plugins.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md135"></a>
 🌊 Sea of Nodes</h2>
