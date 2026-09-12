@@ -186,33 +186,33 @@ RE</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md410"></a>
 Meta</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md411"></a>
-regex.conj</h2>
+conj</h2>
 <p>A sequence of REs. <br  />
  E.g., <span class="tt">\d\d\d</span> matches 3 digits: <span class="tt">regex.conj (regex.cls.d, regex.cls.d, regex.cls.d)</span>. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm conj: {n: Nat} → «n; RE» → RE, normalize_conj, 2;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md412"></a>
-regex.disj</h2>
+disj</h2>
 <p>Matches any of the sub-expressions, e.g. <span class="tt">[0123456789]</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm disj: {n: Nat} → «n; RE» → RE, normalize_disj, 2;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md413"></a>
 Values</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md414"></a>
-regex.range</h2>
+range</h2>
 <p>Wraps a range of literals. E.g., use <span class="tt">regex.range ('a', 'z')</span> to match all lower-case letters.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm range: «2; Char» → RE, normalize_range, 1;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md415"></a>
-regex.lit</h2>
+lit</h2>
 <p>Wraps a literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam lit(val: Char) = range (val, val);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md416"></a>
-regex.not_</h2>
+not_</h2>
 <p>Matches anything but the ranges in the parameter - the parameter must only contain <span class="tt">regex.disj</span>s and <span class="tt">regex.range</span>s.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm not_: RE → RE, normalize_not, 1;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md417"></a>
-regex.neg_lookahead</h2>
+neg_lookahead</h2>
 <p>Succeeds iff the parameter does <em>not</em> match, without consuming input.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm neg_lookahead: RE → RE, 1;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md418"></a>
-regex.cls.*</h2>
+cls.*</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Matches  </th></tr>
@@ -238,17 +238,17 @@ regex.cls.*</h2>
 <div class="line">    anx let S = not_ s;</div>
 <div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
-regex.any</h2>
+any</h2>
 <p>Matches any character.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm any: RE, 0;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
-regex.empty</h2>
+empty</h2>
 <p>Matches the empty string.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm empty: RE, 0;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
 Quantifiers</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
-regex.quant.*</h2>
+quant.*</h2>
 <p>The usual quantifiers:</p><ul>
 <li><span class="tt">optional</span>: <span class="tt">?</span> - zero or one</li>
 <li><span class="tt">star</span>: <span class="tt">*</span> - zero or more</li>
@@ -258,7 +258,7 @@ regex.quant.*</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
 Phases</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md424"></a>
-regex.lower_regex</h2>
+lower_regex</h2>
 <p>Compiles the regex combinators into an executable matcher (via a DFA).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_regex: compile.Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->

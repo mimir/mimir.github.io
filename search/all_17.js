@@ -25,7 +25,7 @@ var searchData=
   ['with_20arena_20rollback_22',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
   ['with_20indices_23',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_24',['With Subtags',['../dev.html#autotoc_md49',1,'']]],
-  ['with_5fstreams_25',['with_streams',['../gpu.html#autotoc_md296',1,'gpu.with_streams'],['../namespacemim_1_1plug_1_1gpu.html#a61f52df38e41a50271cc9396d3ee917b',1,'mim::plug::gpu::with_streams']]],
+  ['with_5fstreams_25',['with_streams',['../namespacemim_1_1plug_1_1gpu.html#a61f52df38e41a50271cc9396d3ee917b',1,'mim::plug::gpu::with_streams'],['../gpu.html#autotoc_md296',1,'with_streams']]],
   ['without_20dominance_26',['without Dominance',['../index.html#autotoc_md134',1,'🪾 SSA without Dominance'],['../phases.html#ssa-without-dominance',1,'SSA without Dominance']]],
   ['without_20subtags_27',['Without Subtags',['../dev.html#autotoc_md48',1,'']]],
   ['word_28',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md150',1,'']]],
@@ -39,7 +39,7 @@ var searchData=
   ['worse_20not_20better_36',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
   ['would_20land_20at_20roughly_20performance_20parity_37',['Rust would land at roughly performance parity',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],
   ['wrap_38',['WRAP',['../namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c',1,'fences']]],
-  ['wrap_39',['wrap',['../core.html#autotoc_md260',1,'core.wrap'],['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef',1,'mim::plug::core::wrap'],['../namespacefences.html#a1860a2c3ee82830834e0390e285a4e0b',1,'fences.wrap()']]],
+  ['wrap_39',['wrap',['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef',1,'mim::plug::core::wrap'],['../namespacefences.html#a1860a2c3ee82830834e0390e285a4e0b',1,'fences.wrap()'],['../core.html#autotoc_md260',1,'wrap']]],
   ['wrappers_40',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
-  ['write_41',['write',['../buffer.html#autotoc_md223',1,'buffer.write'],['../classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc',1,'mim::Def::write(int max) const'],['../classmim_1_1Def.html#a36961f437b85d16c096ee7c43cc9fa33',1,'mim::Def::write(int max, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write']]]
+  ['write_41',['write',['../classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc',1,'mim::Def::write(int max) const'],['../classmim_1_1Def.html#a36961f437b85d16c096ee7c43cc9fa33',1,'mim::Def::write(int max, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write'],['../buffer.html#autotoc_md223',1,'write']]]
 ];

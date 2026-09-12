@@ -16,7 +16,7 @@ var searchData=
   ['with_20arena_20rollback_13',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
   ['with_20indices_14',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_15',['With Subtags',['../dev.html#autotoc_md49',1,'']]],
-  ['with_5fstreams_16',['gpu.with_streams',['../gpu.html#autotoc_md296',1,'']]],
+  ['with_5fstreams_16',['with_streams',['../gpu.html#autotoc_md296',1,'']]],
   ['without_20dominance_17',['without Dominance',['../index.html#autotoc_md134',1,'🪾 SSA without Dominance'],['../phases.html#ssa-without-dominance',1,'SSA without Dominance']]],
   ['without_20subtags_18',['Without Subtags',['../dev.html#autotoc_md48',1,'']]],
   ['word_19',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md150',1,'']]],
@@ -25,7 +25,7 @@ var searchData=
   ['worse_22',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md154',1,'']]],
   ['worse_20not_20better_23',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
   ['would_20land_20at_20roughly_20performance_20parity_24',['Rust would land at roughly performance parity',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],
-  ['wrap_25',['core.wrap',['../core.html#autotoc_md260',1,'']]],
+  ['wrap_25',['wrap',['../core.html#autotoc_md260',1,'']]],
   ['wrappers_26',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
-  ['write_27',['buffer.write',['../buffer.html#autotoc_md223',1,'']]]
+  ['write_27',['write',['../buffer.html#autotoc_md223',1,'']]]
 ];

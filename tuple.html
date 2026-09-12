@@ -175,7 +175,7 @@ Dependencies</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
 Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
-tuple.typecat</h2>
+typecat</h2>
 <p>Computes the type of a <span class="tt">tuple.cat</span> with an <span class="tt">n</span>- and an <span class="tt">m</span>-tuple. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i &lt; n , Ts#i, Us#(i - n))»</div>
 <div class="line">    «i: core.nat.add (n, m);</div>
 <div class="line">        let nat_i = core.bitcast Nat i;</div>
@@ -184,7 +184,7 @@ tuple.typecat</h2>
 <div class="line">            Ts#(core.bitcast (Idx n) i),</div>
 <div class="line">            Us#(core.bitcast (Idx m) (core.nat.sub (nat_i, n))))»;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
-tuple.cat</h2>
+cat</h2>
 <p>Concatenates an <span class="tt">n</span>-tuple and an <span class="tt">m</span>-tuple to an <span class="tt">n + m</span>-tuple.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cat: {n m: Nat}</div>
 <div class="line">          → {Ts: «n; *», Us: «m; *»}</div>
@@ -192,7 +192,7 @@ tuple.cat</h2>
 <div class="line">          → typecat Ts Us</div>
 <div class="line">          , normalize_cat;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
-tuple.append / tuple.prepend</h2>
+append / prepend</h2>
 <p>Appends / prepends a single element to a tuple.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam append   {n: Nat}</div>
 <div class="line">                 {Ts: «n; *», U: *}</div>
@@ -206,7 +206,7 @@ tuple.append / tuple.prepend</h2>
 <div class="line">               : typecat T Us</div>
 <div class="line">               = cat (a, b);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
-tuple.head / tuple.tail</h2>
+head / tail</h2>
 <p>The first element of a tuple / all elements but the first.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam head {n: Nat}</div>
 <div class="line">    {Ts: «n; *»}</div>
@@ -220,11 +220,11 @@ tuple.head / tuple.tail</h2>
 <div class="line">  : «i: core.nat.sub (n, 1); Ts#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))»</div>
 <div class="line">  = ‹i: core.nat.sub (n, 1); values#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
-tuple.contains</h2>
+contains</h2>
 <p>Does the tuple contain the given element?</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
-tuple.zip</h2>
+zip</h2>
 <p><a href="https://en.wikipedia.org/wiki/Zipping_(computer_science)">Zips</a> several tensors. The signature will likely change in the future:</p><ul>
 <li><span class="tt">r</span>: rank of the tensors to zip</li>
 <li><span class="tt">s</span>: shape of the tensors to zip</li>

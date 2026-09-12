@@ -178,13 +178,13 @@ Dependencies</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
 Phases</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
-ll.emit</h2>
+emit</h2>
 <p>Emits the LLVM IR of the current world to <span class="tt">&lt;world&gt;.ll</span> (or to the path given via <span class="tt">-X ll:o=&lt;file&gt;</span>). This phase is spliced into the default pipeline (see <span class="tt">opt</span>) whenever the <span class="tt">ll</span> plugin is loaded.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm emit: compile.Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
 Annotations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
-ll.vec</h2>
+vec</h2>
 <p>The identity, used as a vectorization annotation on loops; it has no normalizer and is an opaque op to every phase. At the surface, wrapping a <span class="tt">affine.For</span>'s BODY nominates that loop as a schedule's vector loop while keeping the <span class="tt">For</span> application's shape intact for every matcher (see <span class="tt">vec_for</span> in the matrix plugin). <span class="tt">affine.lower_for</span> moves the wrapper from the body onto the loop's EXIT CONDITION — unique per loop, since the condition reads the header's own variable — but only when this plugin's module is loaded (otherwise the annotation is dropped). The emitter then attaches <span class="tt">llvm.loop.vectorize.enable</span> metadata to the branches into the annotated loop's header, which on the latch lifts LLVM's tiny-trip-count (&lt; 16) bailout. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm vec: {T: *} → T → T;</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->

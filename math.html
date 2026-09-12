@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('math.html','',
 <h1 class="doxsection"><a class="anchor" id="autotoc_md321"></a>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md322"></a>
-math.F</h2>
+F</h2>
 <p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm F: «2; Nat» → *;</div>
 <div class="line"> </div>
 <div class="line">anx let f16     = (10,  5);</div>
@@ -193,7 +193,7 @@ math.F</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md323"></a>
 Mode</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md324"></a>
-math.mode</h2>
+mode</h2>
 <p>Fine-tunes how strictly a floating-point operation must obey IEEE semantics - see <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="Allowed optimizations for a specific operation.">mim::plug::math::Mode</a>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod mode {</div>
 <div class="line">    pub anx let none     = 0b0000000; // no optimizations allowed</div>
@@ -211,14 +211,14 @@ math.mode</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md325"></a>
 Numerical Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
-math.arith</h2>
+arith</h2>
 <p>Arithmetic operations. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm arith.(add, sub, mul, div, rem):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_arith;</div>
 <div class="line"> </div>
 <div class="line">anx lam minus (m: Nat) {pe: «2; Nat»} (a: F pe): F pe =</div>
 <div class="line">    arith.sub m (0:(F pe), a);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md327"></a>
-math.extrema</h2>
+extrema</h2>
 <p>Minimum and maximum:</p><ul>
 <li><span class="tt">m</span>in or <span class="tt">M</span>ax</li>
 <li><span class="tt">i</span>: Follows the behavior of libm's fmin/fmax. If either operand is a NaN, returns the other non-NaN operand. Returns NaN only if both operands are NaN; the returned NaN is always quiet. If the operands compare equal, returns a value that compares equal to both operands. This means that <span class="tt">fmin(+/-0.0, +/-0.0)</span> could return either <span class="tt">-0.0</span> or <span class="tt">0.0</span>.</li>
@@ -240,7 +240,7 @@ math.extrema</h2>
 <div class="line">             Im = ieee754min, IM = ieee754max):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_extrema;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md328"></a>
-math.tri</h2>
+tri</h2>
 <p><a href="https://en.wikipedia.org/wiki/Trigonometric_functions">Trigonometric</a> and <a href="https://en.wikipedia.org/wiki/Hyperbolic_functions">hypberbolic</a> functions.</p>
 <ul>
 <li><span class="tt">FF</span>: sine, cosine, tangent, <em>unused</em></li>
@@ -289,11 +289,11 @@ math.tri</h2>
 <div class="line">         AHff = asinh    , AHfF = acosh, AHFf = atanh, AHFF):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → F pe → F pe, normalize_tri;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md329"></a>
-math.pow</h2>
+pow</h2>
 <p>Power function: \(x^y\)</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm pow: Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_pow;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md330"></a>
-math.rt</h2>
+rt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Square_root">Square</a> and <a href="https://en.wikipedia.org/wiki/Cube_root">cube root</a>:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -305,7 +305,7 @@ math.rt</h2>
 </table>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm rt.(sq, cb): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_rt;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md331"></a>
-math.exp</h2>
+exp</h2>
 <p><a href="https://en.wikipedia.org/wiki/Exponential_function">Exponential function</a> and <a href="https://en.wikipedia.org/wiki/Logarithm">logarithm</a>:</p><ul>
 <li><span class="tt">L</span>ogarithm</li>
 <li><span class="tt">BB</span>: natural, binary, decimal, <em>unused</em></li>
@@ -334,7 +334,7 @@ math.exp</h2>
 <div class="line">         Lbb = log, LbB = log2      , LBb = log10      , LBB):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → F pe → F pe, normalize_exp;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md332"></a>
-math.er</h2>
+er</h2>
 <p><a href="https://en.wikipedia.org/wiki/Error_function">Error</a> and <a href="https://en.wikipedia.org/wiki/Error_function#Complementary_error_function">complementary error function</a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -346,7 +346,7 @@ math.er</h2>
 </table>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm er.(f, fc): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_er;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md333"></a>
-math.gamma</h2>
+gamma</h2>
 <p><a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a> and its natural <a href="https://en.wikipedia.org/wiki/Gamma_function#The_log-gamma_function">logarithm</a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -358,11 +358,11 @@ math.gamma</h2>
 </table>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gamma.(t, l): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_gamma;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md334"></a>
-math.abs</h2>
+abs</h2>
 <p><a href="https://en.wikipedia.org/wiki/Absolute_value">Absolute value</a> of a floating-point number.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm abs: Nat → {pe: «2; Nat»} → F pe → F pe, normalize_abs;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md335"></a>
-math.round</h2>
+round</h2>
 <p>Common rounding operations for floating-point numbers:</p><ul>
 <li><span class="tt">f</span>loor</li>
 <li><span class="tt">c</span>eil</li>
@@ -385,7 +385,7 @@ math.round</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md336"></a>
 Other Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md337"></a>
-math.cmp</h2>
+cmp</h2>
 <p>Floating-point comparison is composed of 4 disjoint relations:</p><ul>
 <li><span class="tt">U</span>nordered (yields true if either operand is a QNaN)</li>
 <li><span class="tt">G</span>reater</li>
@@ -434,11 +434,11 @@ math.cmp</h2>
 <div class="line">         UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → «2; F pe» → Bool, normalize_cmp;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md338"></a>
-math.is_finite</h2>
+is_finite</h2>
 <p>Returns <span class="tt">tt</span> if the float is finite and <span class="tt">ff</span> if not (i.e. if it is ±∞ or NaN).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm is_finite: Nat → {pe: «2; Nat»} → F pe → Bool;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md339"></a>
-math.conv</h2>
+conv</h2>
 <p>Conversion between floating-point and index types - both signed and unsigned - of different sizes.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod conv {</div>
 <div class="line">    axm s2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;</div>
@@ -448,16 +448,16 @@ math.conv</h2>
 <div class="line">    axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;</div>
 <div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md340"></a>
-math.slf</h2>
+slf</h2>
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating-point number ( \(\textrm{slf}(x) = \frac{1}{1+e^{-x}}\))</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam slf (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    arith.div m ((conv.f2f pe 1.0:(F64)), arith.add m ((conv.f2f pe 1.0:(F64)), exp.exp m (minus m x)));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md341"></a>
-math.sgn</h2>
+sgn</h2>
 <p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a> </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam sgn (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    ((conv.f2f pe (-1.0:(F64))), ((conv.f2f pe 0.0:(F64)), (conv.f2f pe 1.0:(F64)))#(cmp.g m (x,(conv.f2f pe 0.0:(F64)))))#(cmp.ge m (x, (conv.f2f pe 0.0:(F64))));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md342"></a>
-math.rrt</h2>
+rrt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( \(\textrm{rrt}(x) = \frac{1}{\sqrt{x}}\)) </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam rrt (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    arith.div m (conv.f2f pe 1.0:(F64), rt.sq m x);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md343"></a>

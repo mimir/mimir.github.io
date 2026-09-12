@@ -49,7 +49,7 @@ var searchData=
   ['k_5fwith_46',['K_with',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7522a1371cb8dd5a576463eee40d66e8',1,'mim::ast::Tok']]],
   ['keep_47',['keep',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a9d9568a79751fc87a4d230ee37c8a202',1,'mim::plug::mem::phase']]],
   ['kernel_20launch_48',['Kernel Launch',['../gpu.html#autotoc_md306',1,'']]],
-  ['key_49',['Key',['../namespacemim_1_1plug_1_1ord.html#a87a29d8695533c2820227f29d2124532',1,'mim::plug::ord::Key'],['../ord.html#autotoc_md379',1,'ord.Key']]],
+  ['key_49',['Key',['../namespacemim_1_1plug_1_1ord.html#a87a29d8695533c2820227f29d2124532',1,'mim::plug::ord::Key'],['../ord.html#autotoc_md379',1,'Key']]],
   ['key_50',['key',['../classmim_1_1World.html#ab3cf23206d16cfb2aaadaabb1c32dd92',1,'mim::World::CurrLoc']]],
   ['key_20innovations_51',['🔥 Key Innovations',['../index.html#autotoc_md131',1,'']]],
   ['keywords_52',['Keywords',['../langref.html#autotoc_md61',1,'']]],
