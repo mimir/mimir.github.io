@@ -15,11 +15,11 @@ var namespaces_dup =
       [ "update_versions", "namespacedeploy.html#a732f85f15a31c1539303b21782a9cdf7", null ],
       [ "VERSION_RE", "namespacedeploy.html#a8efe508dabbcec7740b35e2cc8cc6328", null ]
     ] ],
+    [ "fences", "namespacefences.html", [
+      [ "main", "namespacefences.html#a51af30a60f9f02777c6396b8247e356f", null ],
+      [ "wrap", "namespacefences.html#a1860a2c3ee82830834e0390e285a4e0b", null ],
+      [ "WRAP", "namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c", null ]
+    ] ],
     [ "Mim", "namespaceMim.html", null ],
-    [ "mim", "namespacemim.html", "namespacemim" ],
-    [ "mim_fences", "namespacemim__fences.html", [
-      [ "main", "namespacemim__fences.html#a51af30a60f9f02777c6396b8247e356f", null ],
-      [ "wrap", "namespacemim__fences.html#a1860a2c3ee82830834e0390e285a4e0b", null ],
-      [ "WRAP", "namespacemim__fences.html#a640a60a20203c94e76febbc8ea0f9982", null ]
-    ] ]
+    [ "mim", "namespacemim.html", "namespacemim" ]
 ];

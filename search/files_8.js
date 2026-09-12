@@ -11,7 +11,6 @@ var searchData=
   ['mem_5fchecks_2eh_8',['mem_checks.h',['../mem__checks_8h.html',1,'']]],
   ['mim_2ecmake_9',['Mim.cmake',['../Mim_8cmake.html',1,'']]],
   ['mim_5fcuda_5frt_2ec_10',['mim_cuda_rt.c',['../mim__cuda__rt_8c.html',1,'']]],
-  ['mim_5ffences_2epy_11',['mim_fences.py',['../mim__fences_8py.html',1,'']]],
-  ['mim_5frt_2ec_12',['mim_rt.c',['../mim__rt_8c.html',1,'']]],
-  ['mimir_2emd_13',['mimir.md',['../mimir_8md.html',1,'']]]
+  ['mim_5frt_2ec_11',['mim_rt.c',['../mim__rt_8c.html',1,'']]],
+  ['mimir_2emd_12',['mimir.md',['../mimir_8md.html',1,'']]]
 ];

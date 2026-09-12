@@ -244,7 +244,7 @@ Keywords</h3>
 </div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 Pattern Terminals</h3>
 <p>The following terminals are defined by lexical patterns.</p>
-<div class="fragment"><div class="line">I      ::= id</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">I      ::= id</div>
 <div class="line">        |  &quot;`&quot; op</div>
 <div class="line">L      ::= dec+</div>
 <div class="line">        |  &quot;0&quot; (&quot;b&quot; | &quot;B&quot;) bin+</div>
@@ -261,9 +261,9 @@ Pattern Terminals</h3>
 <div class="line">        |  dec+ (&quot;i&quot; | &quot;I&quot;) dec+</div>
 <div class="line">C      ::= &quot;&#39;&quot; (ascii_char | esc) &quot;&#39;&quot;</div>
 <div class="line">S      ::= &quot;\&quot;&quot; (ascii_string_char | esc)* &quot;\&quot;&quot;</div>
-</div><!-- fragment --><p>Here <span class="tt">I</span> is an identifier, <span class="tt">L</span> is a numeric literal, <span class="tt">X_n</span> is an index literal of type <span class="tt">Idx n</span>, <span class="tt">C</span> is a character literal, and <span class="tt">S</span> is a string literal. The third form of <span class="tt">X_n</span> spells a bit width instead of <span class="tt">n</span> itself, so <span class="tt">23I32</span> is <span class="tt">23:I32</span>. A literal never carries a sign; <span class="tt">-23</span> is the <a class="el" href="#lit" title="Literals and Basic Forms">signed literal</a> expression instead. <span class="tt"> ` </span> escapes an <a class="el" href="#infix" title="Infix Operators">infix operator</a> into an ordinary identifier, e.g. <span class="tt"> `+ </span>.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>Here <span class="tt">I</span> is an identifier, <span class="tt">L</span> is a numeric literal, <span class="tt">X_n</span> is an index literal of type <span class="tt">Idx n</span>, <span class="tt">C</span> is a character literal, and <span class="tt">S</span> is a string literal. The third form of <span class="tt">X_n</span> spells a bit width instead of <span class="tt">n</span> itself, so <span class="tt">23I32</span> is <span class="tt">23:I32</span>. A literal never carries a sign; <span class="tt">-23</span> is the <a class="el" href="#lit" title="Literals and Basic Forms">signed literal</a> expression instead. <span class="tt"> ` </span> escapes an <a class="el" href="#infix" title="Infix Operators">infix operator</a> into an ordinary identifier, e.g. <span class="tt"> `+ </span>.</p>
 <p>The shorthand symbols used above are:</p>
-<div class="fragment"><div class="line">bin    ::= [0-1]</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">bin    ::= [0-1]</div>
 <div class="line">oct    ::= [0-7]</div>
 <div class="line">dec    ::= [0-9]</div>
 <div class="line">sub    ::= [₀-₉]</div>
@@ -275,7 +275,7 @@ Pattern Terminals</h3>
 <div class="line">op     ::= &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot;</div>
 <div class="line">esc    ::= &quot;\&#39;&quot; | &quot;\&quot;&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\\&quot; | &quot;\b&quot;</div>
 <div class="line">        |  &quot;\f&quot; | &quot;\n&quot; | &quot;\r&quot; | &quot;\t&quot; | &quot;\v&quot;</div>
-</div><!-- fragment --><p>Character and string literals only admit ASCII payload characters plus the escapes listed above.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>Character and string literals only admit ASCII payload characters plus the escapes listed above.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Comments</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports <span class="tt">/* ... */</span> multi-line comments, <span class="tt">// ...</span> single-line comments, and <span class="tt">/// ...</span> comments that are forwarded to generated <a href="https://www.doxygen.nl/manual/markdown.html">Markdown</a> output. <span class="tt">/* ... */</span> comments are not nested. For <span class="tt">///</span> comments, a line of the form <span class="tt">/// text</span> contributes <span class="tt">text</span> directly to the Markdown output. Other <span class="tt">///</span> forms are emitted verbatim inside a <a href="https://www.doxygen.nl/manual/markdown.html#md_fenced">fenced code block</a>.</p>
@@ -299,8 +299,8 @@ Grammar</h1>
 </table>
 <h2 class="doxsection"><a class="anchor" id="module"></a>
 Files and Imports</h2>
-<div class="fragment"><div class="line">f ::= d*</div>
-</div><!-- fragment --><p>A file is a sequence of declarations. Each file forms a <a class="el" href="#path" title="Paths and Modules">module</a> of its own that an import binds under a name.</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">f ::= d*</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>A file is a sequence of declarations. Each file forms a <a class="el" href="#path" title="Paths and Modules">module</a> of its own that an import binds under a name.</p>
 <ul>
 <li><span class="tt">import foo;</span> resolves the module name <span class="tt">foo</span> through the search path.</li>
 <li><span class="tt">import "some/dir/foo.mim";</span> resolves the path relative to the importing file first, then through the search path.</li>
@@ -313,8 +313,8 @@ Files and Imports</h2>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="path"></a>
 Paths and Modules</h2>
-<div class="fragment"><div class="line">path ::= I (&quot;.&quot; I)*</div>
-</div><!-- fragment --><p>A path resolves its first component lexically and then walks into that module. A module is either an imported file or a <span class="tt">mod</span> declaration.</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">path ::= I (&quot;.&quot; I)*</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>A path resolves its first component lexically and then walks into that module. A module is either an imported file or a <span class="tt">mod</span> declaration.</p>
 <ul>
 <li>A component after a <span class="tt">.</span> may be spelled like a keyword, as may a tag in an <span class="tt">axm</span> tag list - both positions are unambiguous.</li>
 <li><span class="tt">.</span> never reads a field out of a value; use <span class="tt">#</span> for that.</li>
@@ -323,7 +323,7 @@ Paths and Modules</h2>
 <h2 class="doxsection"><a class="anchor" id="decl"></a>
 Declarations</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families. Most of them may be prefixed with any combination of three independent modifiers: a visibility (<span class="tt">priv</span> or <span class="tt">pub</span>), <span class="tt">extern</span>, and <span class="tt">anx</span>. Visibility is a Mim-only, purely lexical fact - it has no effect on backend linkage or compiler registration. <span class="tt">extern</span> and <span class="tt">anx</span> are each independent of visibility and of each other; either one nudges the default visibility to <span class="tt">pub</span> (instead of the usual <span class="tt">priv</span> default) unless <span class="tt">priv</span>/<span class="tt">pub</span> is given explicitly, so e.g. <span class="tt">priv anx</span> and <span class="tt">priv extern</span> are legal and meaningful, while <span class="tt">extern anx</span> on the same declaration is a static error.</p>
-<div class="fragment"><div class="line">d      ::= &quot;import&quot; (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">d      ::= &quot;import&quot; (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  &quot;plugin&quot; I (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;mod&quot; I &quot;{&quot; d* &quot;}&quot;</div>
 <div class="line">        |  &quot;use&quot; path (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
@@ -344,7 +344,7 @@ Declarations</h2>
 <div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)* &quot;,&quot;?)? &quot;)&quot; &quot;:&quot; e tail</div>
 <div class="line">tag    ::= I (&quot;=&quot; I)*</div>
 <div class="line">tail   ::= (&quot;,&quot; I)? (&quot;,&quot; L (&quot;,&quot; L)?)?</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
 <li><span class="tt">pub</span> lifts that restriction, so a path from outside the enclosing <span class="tt">mod</span> may reach the declaration.</li>
 <li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
@@ -366,7 +366,7 @@ Declarations</h2>
 <h2 class="doxsection"><a class="anchor" id="ptrn"></a>
 Patterns</h2>
 <p>Patterns decompose values and describe binders.</p>
-<div class="fragment"><div class="line">p   ::= I (&quot;:&quot; e)?</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">p   ::= I (&quot;:&quot; e)?</div>
 <div class="line">     |  &quot;(&quot; (pg (&quot;,&quot; pg)* &quot;,&quot;?)? &quot;)&quot;</div>
 <div class="line">     |  b</div>
 <div class="line">     |  p &quot;as&quot; I</div>
@@ -383,7 +383,7 @@ Patterns</h2>
 <div class="line">     |  g</div>
 <div class="line"> </div>
 <div class="line">g   ::= I+ &quot;:&quot; e</div>
-</div><!-- fragment --><p>There are two pattern families.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>There are two pattern families.</p>
 <ul>
 <li><span class="tt">p</span> is the ordinary parenthesized binder syntax.</li>
 <li><span class="tt">b</span> is the bracketed syntax used for sigma binders and Pi domains.</li>
@@ -408,7 +408,7 @@ Patterns</h2>
 Expressions</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 Kinds and Builtin Types</h3>
-<div class="fragment"><div class="line">e     ::= &quot;Univ&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;Univ&quot;</div>
 <div class="line">       |  &quot;Type&quot; e</div>
 <div class="line">       |  &quot;*&quot;</div>
 <div class="line">       |  &quot;□&quot;</div>
@@ -420,7 +420,7 @@ Kinds and Builtin Types</h3>
 <div class="line">alias ::= &quot;Bool&quot;</div>
 <div class="line">       |  &quot;I1&quot; | &quot;I8&quot; | &quot;I16&quot; | &quot;I32&quot; | &quot;I64&quot;</div>
 <div class="line">       |  &quot;i1&quot; | &quot;i8&quot; | &quot;i16&quot; | &quot;i32&quot; | &quot;i64&quot;</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">Univ</span> is the universe of type levels.</li>
 <li><span class="tt">Type e</span> is the type at level <span class="tt">e</span>.</li>
 <li><span class="tt">*</span> abbreviates <span class="tt">Type (0:Univ)</span>.</li>
@@ -432,7 +432,7 @@ Kinds and Builtin Types</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="lit"></a>
 Literals and Basic Forms</h3>
-<div class="fragment"><div class="line">e   ::= sign? L (&quot;:&quot; e)?</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= sign? L (&quot;:&quot; e)?</div>
 <div class="line">     |  sign? X_n</div>
 <div class="line">     |  &quot;ff&quot;</div>
 <div class="line">     |  &quot;tt&quot;</div>
@@ -443,7 +443,7 @@ Literals and Basic Forms</h3>
 <div class="line">     |  path</div>
 <div class="line">     |  d+ e</div>
 <div class="line">     |  &quot;⦃&quot; e &quot;⦄&quot;</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li>A numeric, character, string, <span class="tt">⊥</span>, or <span class="tt">⊤</span> literal may carry an explicit type ascription.</li>
 <li>A <span class="tt">+</span>/<span class="tt">-</span> sign is part of the literal expression, not of the literal token, and only a numeric literal accepts one. Because <span class="tt">+</span> and <span class="tt">-</span> are <a class="el" href="#infix" title="Infix Operators">infix operators</a> everywhere else, <span class="tt">f -23</span> subtracts; pass a negative argument as <span class="tt">f (-23)</span>.</li>
 <li>Without an explicit type, numeric literals default to <span class="tt">Nat</span>.</li>
@@ -453,7 +453,7 @@ Literals and Basic Forms</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 Functions and Continuations</h3>
-<div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
 <div class="line">     |  b &quot;→&quot; e</div>
 <div class="line">     |  &quot;Cn&quot; b</div>
 <div class="line">     |  &quot;Fn&quot; b &quot;→&quot; e</div>
@@ -463,7 +463,7 @@ Functions and Continuations</h3>
 <div class="line">     |  e e</div>
 <div class="line">     |  e &quot;@&quot; e</div>
 <div class="line">     |  &quot;ret&quot; p &quot;=&quot; e &quot;$&quot; e &quot;;&quot; e</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">e → e</span> is the ordinary arrow type.</li>
 <li><span class="tt">b → e</span>, <span class="tt">Cn b</span>, and <span class="tt">Fn b → e</span> are dependent function forms whose domain is described by a bracket-style pattern.</li>
 <li><span class="tt">λ</span>, <span class="tt">cn</span>, and <span class="tt">fn</span> are the expression forms corresponding to <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span>.</li>
@@ -473,7 +473,7 @@ Functions and Continuations</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Products</h3>
-<div class="fragment"><div class="line">e     ::= &quot;[&quot; (bg (&quot;,&quot; bg)* &quot;,&quot;?)? &quot;]&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;[&quot; (bg (&quot;,&quot; bg)* &quot;,&quot;?)? &quot;]&quot;</div>
 <div class="line">       |  &quot;(&quot; (e (&quot;,&quot; e)* &quot;,&quot;?)? &quot;)&quot;</div>
 <div class="line">       |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
 <div class="line">       |  &quot;‹&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;›&quot;</div>
@@ -484,7 +484,7 @@ Products</h3>
 <div class="line"> </div>
 <div class="line">arity ::= e</div>
 <div class="line">       |  I &quot;:&quot; e</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">[ ... ]</span> is a sigma expression unless it is immediately followed by <span class="tt">as</span> or <span class="tt">→</span>, in which case it is parsed as the domain of a dependent function type.</li>
 <li><span class="tt">( ... )</span> is a tuple expression.</li>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
@@ -497,17 +497,17 @@ Products</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Unions</h3>
-<div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
 <div class="line">     |  e &quot;inj&quot; e</div>
 <div class="line">     |  &quot;match&quot; e &quot;with&quot; (&quot;|&quot;? p &quot;=&gt;&quot; e)+</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">e ∪ e</span> forms a union type.</li>
 <li><span class="tt">e inj e</span> injects a value into a union type.</li>
 <li><span class="tt">match e with | p =&gt; e | ...</span> eliminates a union value.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="infix"></a>
 Infix Operators</h3>
-<div class="fragment"><div class="line">e   ::= e &quot;==&quot; e</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;==&quot; e</div>
 <div class="line">     |  e &quot;!=&quot; e</div>
 <div class="line">     |  e &quot;&lt;&quot; e</div>
 <div class="line">     |  e &quot;&lt;=&quot; e</div>
@@ -520,7 +520,7 @@ Infix Operators</h3>
 <div class="line">     |  e &quot;*&quot; e</div>
 <div class="line">     |  e &quot;/&quot; e</div>
 <div class="line">     |  e &quot;%&quot; e</div>
-</div><!-- fragment --><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">a op b</span> is sugar for <span class="tt"> `op (a, b) </span>, so <span class="tt">a + b</span> is <span class="tt"> `+ (a, b) </span>.</li>
 <li><p class="startli"><a class="el" href="namespaceMim.html">Mim</a> doesn't give the operators a meaning of their own; whatever <span class="tt"> `op </span> is bound to is what they mean: </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">let `+ = core.nat.add;</div>
 <div class="line">let x = 2 + 3;</div>
@@ -529,8 +529,8 @@ Infix Operators</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Local Declaration Blocks</h3>
-<div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
-</div><!-- fragment --><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
 <h2 class="doxsection"><a class="anchor" id="prec"></a>
 Precedence</h2>
 <p>Parser and dumper share one ladder of precedence levels, listed here from strongest to weakest binding. <em>Assoc</em> is left-, right-, or non-associative; chaining a non-associative operator, as in <span class="tt">a == b == c</span>, is an error - parenthesize one side. <span class="tt">Pi</span>, <span class="tt">Bot</span>, and <span class="tt">Err</span> are <em>pseudo levels</em>: they name no syntax at all and only ever bound how far a nested expression may extend.</p>
