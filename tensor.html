@@ -202,7 +202,7 @@ set</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
 splat</h2>
 <p>Constructs a tensor whose every element is <span class="tt">value</span>. Keeping this operation explicit lets bufferization select a fill operation without first building an index lambda or a monolithic nested-array literal.</p>
-<p>Python: </p><div class="fragment"><div class="line">output = empty(s_out)</div>
+<div class="fragment"><div class="line">output = empty(s_out)</div>
 <div class="line"><span class="keywordflow">for</span> index <span class="keywordflow">in</span> ndindex(s_out):</div>
 <div class="line">    output[index] = value</div>
 <div class="line"><span class="keywordflow">return</span> output</div>
@@ -909,7 +909,7 @@ select</h2>
 gather</h2>
 <p>Reads one source element for every index element. The output coordinate is also the index coordinate, except on <span class="tt">dim</span>, where the value loaded from <span class="tt">index</span> selects the source coordinate. For every <span class="tt">d != dim</span>, <span class="tt">s_idx#d &lt;=
 s_src#d</span> is required. <span class="tt">dim: Idx r</span> and the index element type encode the axis and indexed-source bounds in the type.</p>
-<p>Python: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> out_index <span class="keywordflow">in</span> ndindex(s_idx):</div>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> out_index <span class="keywordflow">in</span> ndindex(s_idx):</div>
 <div class="line">    selected = index[out_index]</div>
 <div class="line">    source_index = tuple(</div>
 <div class="line">        selected <span class="keywordflow">if</span> d == dim <span class="keywordflow">else</span> out_index[d]</div>
@@ -936,7 +936,7 @@ s_src#d</span> is required. <span class="tt">dim: Idx r</span> and the index ele
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md459"></a>
 scatter</h2>
 <p>Starts with <span class="tt">input</span> and visits <span class="tt">index</span> in row-major order. Each corresponding <span class="tt">updates</span> element is stored at the input coordinate selected by <span class="tt">index</span> on <span class="tt">dim</span>. Duplicate destinations use the last visited update. For <span class="tt">d != dim</span>, <span class="tt">s_idx#d &lt;= s_src#d</span>; on every axis, <span class="tt">s_idx#d &lt;= s_updates#d</span>.</p>
-<p>Python: </p><div class="fragment"><div class="line">output = input.copy()</div>
+<div class="fragment"><div class="line">output = input.copy()</div>
 <div class="line"><span class="keywordflow">for</span> update_coord <span class="keywordflow">in</span> ndindex(s_idx):</div>
 <div class="line">    selected = index[update_coord]</div>
 <div class="line">    destination = tuple(</div>

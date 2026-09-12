@@ -188,8 +188,9 @@ Syntax</h1>
 <li><span class="tt">con</span> is just sugar for a <span class="tt">lam</span> whose return type is <span class="tt">⊥</span> — a function that never returns.</li>
 <li>Equivalently, <span class="tt">Cn A</span> is sugar for <span class="tt">A → ⊥</span>; this matters in the <a class="el" href="#mimir_cps" title="SSA via CPS">CPS section</a> below.</li>
 <li><span class="tt">fun</span> / <span class="tt">return</span> is sugar for threading an explicit return continuation, so a CPS function still reads like an ordinary one.</li>
-<li><span class="tt">{}</span> carries implicit arguments — usually types — as in <div class="fragment"><div class="line">lam id {T: *} (x: T): T = x</div>
-</div><!-- fragment --> where <span class="tt">T</span> is inferred at the call site (<span class="tt">id 23</span>).</li>
+<li><p class="startli"><span class="tt">{}</span> carries implicit arguments — usually types — as in </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam id {T: *} (x: T): T = x</div>
+</div><!-- fragment --></div><div class="mim-code"> </div><p> where <span class="tt">T</span> is inferred at the call site (<span class="tt">id 23</span>).</p>
+</li>
 </ul>
 </li>
 <li><b>Tuples</b><ul>
@@ -321,19 +322,19 @@ Scopeless Binders</h2>
 <p>This is where MimIR diverges from other functional IRs. In a scoped IR a binder lives at a specific point in the nesting, and transformations must keep every variable properly scoped — so the compiler spends real effort moving binders around. MimIR has no scopes: nothing has to move, and there is no lexical scoping to preserve. Two classic chores simply vanish:</p>
 <ul>
 <li><p class="startli"><b>β-reduction.</b></p>
-<p class="startli">In the following example <span class="tt">g</span> does not depend on <span class="tt">x</span>. Yet, <span class="tt">g</span> is nested inside <span class="tt">f</span>. For this reason, a naive β-reduction would superfluously duplicate <span class="tt">g</span> as well. </p><div class="fragment"><div class="line">let f x =</div>
-<div class="line">    let g y = y + 1 in</div>
-<div class="line">    g (x + 2)</div>
-</div><!-- fragment --><p> Scoped IRs therefore typically <em>block-float</em> functions independent from the substitution outward before β-reduction to avoid this problem.</p>
+<p class="startli">In the following example <span class="tt">g</span> does not depend on <span class="tt">x</span>. Yet, <span class="tt">g</span> is nested inside <span class="tt">f</span>. For this reason, a naive β-reduction would superfluously duplicate <span class="tt">g</span> as well. </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam f (x: Nat): Nat =</div>
+<div class="line">    lam g (y: Nat): Nat = y + 1;</div>
+<div class="line">    g (x + 2);</div>
+</div><!-- fragment --></div><div class="mim-code"> </div><p> Scoped IRs therefore typically <em>block-float</em> functions independent from the substitution outward before β-reduction to avoid this problem.</p>
 <p class="startli">MimIR, on the other hand, just β-reduces on the spot. And this is not special to β-reduction: substitution in MimIR is a graph traversal that automatically skips any subgraph not depending on the substituted variables — unrelated binders are left untouched and shared — with no scopes to keep consistent.</p>
 </li>
 <li><p class="startli"><b>Specialization.</b></p>
-<p class="startli">In the following example, we want to specialize <span class="tt">f</span> for <span class="tt">z</span>. </p><div class="fragment"><div class="line">let f x y = x + y in</div>
-<div class="line">let g z = (f z 1) + (f z 2)</div>
-</div><!-- fragment --><p> However, we need to <em>block-sink</em> the specialization <span class="tt">fz</span> inside <span class="tt">g</span> such that <span class="tt">fz</span>'s free variable <span class="tt">z</span> is now properly scoped: </p><div class="fragment"><div class="line">let g z =</div>
-<div class="line">  let fz y = z + y in</div>
+<p class="startli">In the following example, we want to specialize <span class="tt">f</span> for <span class="tt">z</span>. </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam f (x y: Nat): Nat = x + y;</div>
+<div class="line">lam g (z: Nat): Nat = (f z 1) + (f z 2);</div>
+</div><!-- fragment --></div><div class="mim-code"> </div><p> However, we need to <em>block-sink</em> the specialization <span class="tt">fz</span> inside <span class="tt">g</span> such that <span class="tt">fz</span>'s free variable <span class="tt">z</span> is now properly scoped: </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam g (z: Nat) =</div>
+<div class="line">  lam fz (y: Nat): Nat = z + y;</div>
 <div class="line">  (fz 1) + (fz 2)</div>
-</div><!-- fragment --><p> MimIR, on the other hand, does not need block-sinking: a binder simply refers to whatever it refers to, wherever it sits.</p>
+</div><!-- fragment --></div><div class="mim-code"> </div><p> MimIR, on the other hand, does not need block-sinking: a binder simply refers to whatever it refers to, wherever it sits.</p>
 </li>
 </ul>
 <p>And this is not limited to continuations: in MimIR <b>every</b> binder is scopeless — direct-style functions, dependent tuple types, and the rest.</p>
