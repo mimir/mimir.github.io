@@ -8,7 +8,6 @@ var classmim_1_1ast_1_1IdPtrn =
     [ "emit_value", "classmim_1_1ast_1_1IdPtrn.html#ac42da49ebbef65a1567a9592debea706", null ],
     [ "is_anx", "classmim_1_1ast_1_1IdPtrn.html#aebc75fdc2b6186bb7330797b02f465a9", null ],
     [ "make_id", "classmim_1_1ast_1_1IdPtrn.html#a840de34d3af2a12ece8a6e8b96354149", null ],
-    [ "make_type", "classmim_1_1ast_1_1IdPtrn.html#a4532fd0819c1d193a252563c0496ac09", null ],
     [ "stream", "classmim_1_1ast_1_1IdPtrn.html#a0baa026abe3065e5c34e74e6aeac2cb5", null ],
     [ "type", "classmim_1_1ast_1_1IdPtrn.html#aeba3daa186e84e2f857bcc3e40e8a2fc", null ],
     [ "vis", "classmim_1_1ast_1_1IdPtrn.html#a062cb91f42b1f3135144e9e6fd83d52b", null ],

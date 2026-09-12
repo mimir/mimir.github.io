@@ -318,9 +318,9 @@ Grammar</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">d</span>  </td><td class="markdownTableBodyNone">declaration  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">p</span>  </td><td class="markdownTableBodyNone"><span class="tt">()</span>-style pattern  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">p</span>  </td><td class="markdownTableBodyNone">pattern  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">b</span>  </td><td class="markdownTableBodyNone"><span class="tt">[]</span>-style pattern  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">t</span>  </td><td class="markdownTableBodyNone">telescope  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">e</span>  </td><td class="markdownTableBodyNone">expression  </td></tr>
 </table>
@@ -357,7 +357,7 @@ Declarations</h2>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;let&quot; p &quot;=&quot; e</div>
 <div class="line">        |  vis? &quot;anx&quot; I &quot;=&quot; path</div>
 <div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e and*</div>
-<div class="line">        |  vis? &quot;extern&quot; lam I dom+ (&quot;:&quot; e)? &quot;;&quot;</div>
+<div class="line">        |  vis? &quot;extern&quot; lam I fwd+ (&quot;:&quot; e)? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I (&quot;:&quot; e)? &quot;=&quot; e and*</div>
 <div class="line">        |  vis? &quot;axm&quot; axm</div>
 <div class="line">        |  (&quot;rule&quot; | &quot;norm&quot;) I p &quot;:&quot; e (&quot;when&quot; e)? &quot;=&gt;&quot; e</div>
@@ -367,6 +367,7 @@ Declarations</h2>
 <div class="line">vis    ::= &quot;priv&quot; | &quot;pub&quot;</div>
 <div class="line">lam    ::= &quot;lam&quot; | &quot;con&quot; | &quot;fun&quot;</div>
 <div class="line">dom    ::= p (&quot;@&quot; e)?</div>
+<div class="line">fwd    ::= (p | t) (&quot;@&quot; e)?</div>
 <div class="line">axm    ::= I &quot;:&quot; e tail</div>
 <div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)* &quot;,&quot;?)? &quot;)&quot; &quot;:&quot; e tail</div>
 <div class="line">tag    ::= I (&quot;=&quot; I)*</div>
@@ -392,34 +393,32 @@ Declarations</h2>
 <li><span class="tt">norm</span> is the normalizing variant of <span class="tt">rule</span>.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="ptrn"></a>
-Patterns</h2>
-<p>Patterns decompose values and describe binders.</p>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">p   ::= I (&quot;:&quot; e)?</div>
-<div class="line">     |  &quot;(&quot; (pg (&quot;,&quot; pg)* &quot;,&quot;?)? &quot;)&quot;</div>
-<div class="line">     |  b</div>
-<div class="line">     |  p &quot;as&quot; I</div>
+Patterns and Telescopes</h2>
+<p>A pattern decomposes a value; a telescope describes a type.</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">p     ::= I (&quot;:&quot; e)?</div>
+<div class="line">       |  &quot;(&quot; plist? &quot;)&quot;</div>
+<div class="line">       |  p &quot;as&quot; I</div>
 <div class="line"> </div>
-<div class="line">pg  ::= p</div>
-<div class="line">     |  g</div>
+<div class="line">t     ::= I (&quot;:&quot; e)?</div>
+<div class="line">       |  &quot;[&quot; tlist? &quot;]&quot;</div>
+<div class="line">       |  t &quot;as&quot; I</div>
+<div class="line">       |  e</div>
 <div class="line"> </div>
-<div class="line">b   ::= I (&quot;:&quot; e)?</div>
-<div class="line">     |  &quot;[&quot; (bg (&quot;,&quot; bg)* &quot;,&quot;?)? &quot;]&quot;</div>
-<div class="line">     |  b &quot;as&quot; I</div>
-<div class="line">     |  e</div>
-<div class="line"> </div>
-<div class="line">bg  ::= b</div>
-<div class="line">     |  g</div>
-<div class="line"> </div>
-<div class="line">g   ::= I+ &quot;:&quot; e</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p>There are two pattern families.</p>
+<div class="line">plist ::= (p | g) (&quot;,&quot; (p | g))* &quot;,&quot;?</div>
+<div class="line">tlist ::= (t | g) (&quot;,&quot; (t | g))* &quot;,&quot;?</div>
+<div class="line">g     ::= I+ &quot;:&quot; e</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>These are two different things, not two spellings of one thing.</p>
 <ul>
-<li><span class="tt">p</span> is the ordinary parenthesized binder syntax.</li>
-<li><span class="tt">b</span> is the bracketed syntax used for sigma binders and Pi domains.</li>
-<li>Roughly speaking, <span class="tt">(a, b, c)</span> binds tuple components with inferred types, while <span class="tt">[a, b, c]</span> binds components whose types are described by the bracket entries.</li>
-<li>When all component types are written explicitly, <span class="tt">(a: A, b: B)</span> and <span class="tt">[a: A, b: B]</span> coincide.</li>
-<li>Tuple patterns support grouped bindings such as <span class="tt">(a b c: Nat, d e: Bool)</span> and <span class="tt">[a b c: Nat, d e: Bool]</span>; both forms distribute the annotated type over the listed names.</li>
-<li>Bracket-style patterns may also contain general expressions, which is what makes forms such as <span class="tt">[T: *] → T</span> and <span class="tt">Cn [mem: mem.M 0, I32]</span> legal.</li>
+<li>A <b>pattern</b> <span class="tt">p</span> destructs a value into names that a body uses, so it only appears where a body exists.</li>
+<li>A <b>telescope</b> <span class="tt">t</span> describes a type and names a component only so that later components or the codomain may depend on it.</li>
+<li>The two grammars are identical except that a telescope additionally admits a bare <span class="tt">e</span>. Hence the whole difference: <b>an unnamed element is a binder in <span class="tt">(...)</span> and a type in <span class="tt">[...]</span></b>. <span class="tt">(a, b, c)</span> binds three components with inferred types; <span class="tt">[A, B, C]</span> describes three unnamed components of those types.</li>
+<li>A <b>group</b> <span class="tt">g</span> distributes one annotated type over several names, as in <span class="tt">(a b c: Nat, d e: Bool)</span> or <span class="tt">[a b c: Nat, d e: Bool]</span>. It is only ever an element of a <span class="tt">plist</span>/<span class="tt">tlist</span>, never a <span class="tt">p</span>/<span class="tt">t</span> of its own.</li>
+<li>Only a telescope may contain general expressions, which is what makes <span class="tt">[T: *] → T</span> and <span class="tt">Cn [mem: mem.M 0, I32]</span> legal.</li>
+<li><span class="tt">[...]</span> never binds for a body: a declaration or <span class="tt">λ</span>/<span class="tt">cn</span>/<span class="tt">fn</span> <b>with</b> a body must spell its domain as a <span class="tt">(...)</span> pattern, and writes an unnamed component as <span class="tt">_: T</span>. A bodyless <span class="tt">extern</span> declaration accepts either, since nothing binds there anyway.</li>
 </ul>
+<p>A telescope name is visible only to what stands to its right - later components, and the codomain after a <span class="tt">→</span>. <span class="tt">Cn X</span> abbreviates <span class="tt">X → ⊥</span> and so has no codomain at all, which makes every name in <span class="tt">Cn [x y: I32]</span> erased: it is the very same type as <span class="tt">Cn [I32, I32]</span>.</p>
+<p>A telescope is not a form of its own but the finite end of one construct. <span class="tt">[...]</span> is a <a class="el" href="#prod" title="Products">sigma</a>, and a sigma whose components are all the same <em>is</em> an <a class="el" href="#prod" title="Products">array</a>: <span class="tt">[Nat, Nat, Nat]</span> and <span class="tt">«3; Nat»</span> denote one and the same type. A sigma names a component so that later components may depend on it; an array names its index so that the element type may depend on that. <span class="tt">«i: n; T i»</span> is therefore the very same dependency, taken over an arity that need not be a literal.</p>
+<p>The term level mirrors the type level: <span class="tt">(...)</span> is a tuple, <span class="tt">‹n; e›</span> a pack, and a tuple of <span class="tt">n</span> equal elements <em>is</em> that pack - <span class="tt">(0, 0, 0)</span> and <span class="tt">‹3; 0›</span> are the same value, while <span class="tt">(23, 42, 66)</span> stays a tuple. <span class="tt">#</span> extracts from all four alike. Hence <span class="tt">[n: Nat, «n; T»]</span> describes a function whose number of arguments is a runtime value - a telescope of its own could never spell that, since it fixes its length syntactically.</p>
 <p>An alias pattern wraps another pattern and additionally binds the whole value:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (a, b, c) as abc = (1, 2, 3);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>This binds <span class="tt">a</span>, <span class="tt">b</span>, and <span class="tt">c</span> to the tuple elements and <span class="tt">abc</span> to the whole tuple.</p>
@@ -478,9 +477,9 @@ Literals and Basic Forms</h3>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 Functions and Continuations</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
-<div class="line">     |  b &quot;→&quot; e</div>
-<div class="line">     |  &quot;Cn&quot; b</div>
-<div class="line">     |  &quot;Fn&quot; b &quot;→&quot; e</div>
+<div class="line">     |  t &quot;→&quot; e</div>
+<div class="line">     |  &quot;Cn&quot; t</div>
+<div class="line">     |  &quot;Fn&quot; t &quot;→&quot; e</div>
 <div class="line">     |  &quot;λ&quot; p+ (&quot;:&quot; e)? &quot;=&quot; e</div>
 <div class="line">     |  &quot;cn&quot; p+ (&quot;:&quot; e)? &quot;=&quot; e</div>
 <div class="line">     |  &quot;fn&quot; p+ (&quot;:&quot; e)? &quot;=&quot; e</div>
@@ -489,15 +488,15 @@ Functions and Continuations</h3>
 <div class="line">     |  &quot;ret&quot; p &quot;=&quot; e &quot;$&quot; e &quot;;&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">e → e</span> is the ordinary arrow type.</li>
-<li><span class="tt">b → e</span>, <span class="tt">Cn b</span>, and <span class="tt">Fn b → e</span> are dependent function forms whose domain is described by a bracket-style pattern.</li>
+<li><span class="tt">t → e</span>, <span class="tt">Cn t</span>, and <span class="tt">Fn t → e</span> are dependent function forms whose domain is described by a telescope.</li>
 <li><span class="tt">λ</span>, <span class="tt">cn</span>, and <span class="tt">fn</span> are the expression forms corresponding to <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span>.</li>
 <li>Application is written by juxtaposition.</li>
 <li><span class="tt">e @ e</span> passes an explicit implicit argument.</li>
 <li><span class="tt">ret p = callee $ arg; body</span> binds the result of a continuation-style call and continues with <span class="tt">body</span>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+<h3 class="doxsection"><a class="anchor" id="prod"></a>
 Products</h3>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;[&quot; (bg (&quot;,&quot; bg)* &quot;,&quot;?)? &quot;]&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;[&quot; tlist? &quot;]&quot;</div>
 <div class="line">       |  &quot;(&quot; (e (&quot;,&quot; e)* &quot;,&quot;?)? &quot;)&quot;</div>
 <div class="line">       |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
 <div class="line">       |  &quot;‹&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;›&quot;</div>
@@ -519,7 +518,7 @@ Products</h3>
 <li><span class="tt">e ← value</span> without a <span class="tt">#</span> leaves the index implicit: <span class="tt">e</span> is its own sole component, so this is <span class="tt">e#0₁ ← value</span> and hence <span class="tt">value</span>. An <span class="tt">e</span> of arity other than 1 is an error, just as <span class="tt">e#0₁</span> would be.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Unions</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
 <div class="line">     |  e &quot;inj&quot; e</div>
@@ -551,7 +550,7 @@ Infix Operators</h3>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
 <li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Univ)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Local Declaration Blocks</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
@@ -578,7 +577,7 @@ Precedence</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">8  </td><td class="markdownTableBodyNone"><span class="tt">Eq</span>  </td><td class="markdownTableBodyCenter">none  </td><td class="markdownTableBodyNone"><span class="tt">e == e</span>, <span class="tt">e != e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">9  </td><td class="markdownTableBodyNone"><span class="tt">Pi</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Bounds the domain of a <span class="tt">λ</span>/<span class="tt">Fn</span>/<span class="tt">b → e</span> binder so it stops before the <span class="tt">→</span>. A <span class="tt">Cn</span>-style binder has no <span class="tt">→</span> and uses <span class="tt">Bot</span> instead.  </td></tr>
+<td class="markdownTableBodyRight">9  </td><td class="markdownTableBodyNone"><span class="tt">Pi</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Bounds the domain of a <span class="tt">λ</span>/<span class="tt">Fn</span>/<span class="tt">t → e</span> binder so it stops before the <span class="tt">→</span>. A <span class="tt">Cn</span>-style binder has no <span class="tt">→</span> and uses <span class="tt">Bot</span> instead.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">10  </td><td class="markdownTableBodyNone"><span class="tt">Arrow</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e → e</span>  </td><td class="markdownTableBodyNone">Also bounds the codomain after a <span class="tt">→</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -594,7 +593,7 @@ Precedence</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Summary: Functions and Types</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses different surface syntax for declarations, expressions, and types:</p>
 <table class="markdownTable">
@@ -607,35 +606,35 @@ Summary: Functions and Types</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">fun</span>  </td><td class="markdownTableBodyNone"><span class="tt">fn</span>  </td><td class="markdownTableBodyNone"><span class="tt">Fn</span>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">con f (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">fun f (T: *)  (x y: T): T                    = return x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f = fn (T: *)  (x y: T): T                    = return x;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Applications</h2>
 <p>The following applications of <span class="tt">f</span> are equivalent, where <span class="tt">g</span> is a continuation that consumes the result:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">f Nat ((23, 42), cn res: Nat = g res)</div>
 <div class="line">ret res = f Nat $ (23, 42); g res</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">[T: *] →    [[T, T], T → ⊥] → ⊥</div>
 <div class="line">[T: *] → Cn [[T, T], Cn T]</div>
 <div class="line">[T: *] → Fn  [T, T] → T</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
 <h2 class="doxsection"><a class="anchor" id="annex"></a>

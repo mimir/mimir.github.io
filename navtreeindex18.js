@@ -1,7 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"math_2normalizers_8cpp.html#a48da5e6acc28b0cfe9f3402f29ae9a1c":[5,0,4,1,3,12,1,1],
-"math_2normalizers_8cpp.html#af6be01806f24236e9a6add4259a7a0f3":[5,0,4,1,3,12,1,0],
 "math_2normalizers_8cpp_source.html":[5,0,4,1,3,12,1],
 "math_8cpp.html":[5,0,4,1,3,12,0],
 "math_8cpp.html#a35bb34350e93d508e52544f4abd50e59":[5,0,4,1,3,12,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX18 =
 "namespacemim.html#acc7b1158f83b80e637de1a63f56d514c":[2,0,4,162],
 "namespacemim.html#ace9968a67fd836075490bf9fe9b62457":[2,0,4,116],
 "namespacemim.html#ad0b148caad3b040f944f32bc4fa9a966":[2,0,4,136],
-"namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d":[2,0,4,140]
+"namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d":[2,0,4,140],
+"namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08dada9470e1aa5be1858e667318254dcb4b":[2,0,4,140,1],
+"namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08daebb87a770abac0e394d963d20ed574b7":[2,0,4,140,0]
 };
