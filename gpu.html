@@ -241,8 +241,7 @@ with_streams</h2>
 <div class="line">            loop (m0, m1, 0)</div>
 <div class="line">            where</div>
 <div class="line">                con loop (m0: mem.M 0, m1: GlobalM, i: Nat) =</div>
-<div class="line">                    let cond = core.ncmp.l (i, n);</div>
-<div class="line">                    (run, body)#cond (m0, m1)</div>
+<div class="line">                    (run, body)#(core.ncmp.l (i, n)) (m0, m1)</div>
 <div class="line">                    where</div>
 <div class="line">                        con body (m0: mem.M 0, m1: GlobalM) =</div>
 <div class="line">                            let lea = mem.lea (streams_ptr, core.bitcast (Idx n) i);</div>
@@ -260,8 +259,7 @@ with_streams</h2>
 <div class="line">            loop (m0, m1, 0)</div>
 <div class="line">            where</div>
 <div class="line">                con loop (m0: mem.M 0, m1: GlobalM, i: Nat) =</div>
-<div class="line">                    let cond = core.ncmp.l (i, n);</div>
-<div class="line">                    (return, body)#cond (m0, m1)</div>
+<div class="line">                    (return, body)#(core.ncmp.l (i, n)) (m0, m1)</div>
 <div class="line">                    where</div>
 <div class="line">                        con body (m0: mem.M 0, m1: GlobalM) =</div>
 <div class="line">                            let idx = core.bitcast (Idx n) i;</div>

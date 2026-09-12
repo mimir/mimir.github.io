@@ -265,8 +265,7 @@ SSA via CPS</h1>
 <div class="line">    loop (0I32, 0I32)</div>
 <div class="line">    where</div>
 <div class="line">        con loop (i acc: I32) =</div>
-<div class="line">            let cond = i &lt; n;</div>
-<div class="line">            core.select (cond, body, exit) ()</div>
+<div class="line">            core.select ((i &lt; n), body, exit) ()</div>
 <div class="line">            where</div>
 <div class="line">                con body() =</div>
 <div class="line">                    loop (i + 1I32, acc + i);</div>
@@ -350,8 +349,7 @@ Polymorphic Iteration</h1>
 <div class="line">use core.ops.n;</div>
 <div class="line"> </div>
 <div class="line">extern lam iter {T: *} (f: T → T) (n: Nat, x: T)@(core.pe.is_closed n): T =</div>
-<div class="line">    let cond = n &lt;= 0;</div>
-<div class="line">    (core.select (cond, cons, alt)) () where</div>
+<div class="line">    (core.select ((n &lt;= 0), cons, alt)) () where</div>
 <div class="line">        lam cons(): T =</div>
 <div class="line">            x;</div>
 <div class="line">        lam alt(): T =</div>
