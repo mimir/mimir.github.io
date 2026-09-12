@@ -183,6 +183,8 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a571873e4a9e7056f40eb481caad760b8" id="r_a571873e4a9e7056f40eb481caad760b8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a571873e4a9e7056f40eb481caad760b8">claim</a> (const <a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;, Sym sym, uint32_t gid)</td></tr>
 <tr class="memdesc:a571873e4a9e7056f40eb481caad760b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers that <code class="param">gid</code> renders as <code class="param">sym</code> and reports whether the plain <code class="param">sym</code> may be used.  <br /></td></tr>
+<tr class="memitem:a6fa600849470af5acf7caeef5e0b43c8" id="r_a6fa600849470af5acf7caeef5e0b43c8"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a6fa600849470af5acf7caeef5e0b43c8">active</a> (const <a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;)</td></tr>
+<tr class="memdesc:a6fa600849470af5acf7caeef5e0b43c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is a diagnostic being formatted on <code class="param">driver</code> right now?  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Renders <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s with their plain <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a> instead of <a class="el" href="classmim_1_1Def.html#ae61aa184493aa3f3bf685758d27f982a" title="name + &quot;_&quot; + Def::gid">Def::unique_name</a> while alive. </p>
@@ -217,7 +219,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00151">151</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00175">mim::Diag::render()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00177">mim::Diag::render()</a>.</p>
 
 </div>
 </div>
@@ -241,6 +243,37 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a6fa600849470af5acf7caeef5e0b43c8" name="a6fa600849470af5acf7caeef5e0b43c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa600849470af5acf7caeef5e0b43c8">&#9670;&#160;</a></span>active()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::PlainNames::active </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>driver</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is a diagnostic being formatted on <code class="param">driver</code> right now? </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00168">168</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00091">mim::Driver::Names::depth</a>, and <a class="el" href="driver_8h_source.html#l00096">mim::Driver::names()</a>.</p>
+
+</div>
+</div>
 <a id="a571873e4a9e7056f40eb481caad760b8" name="a571873e4a9e7056f40eb481caad760b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a571873e4a9e7056f40eb481caad760b8">&#9670;&#160;</a></span>claim()</h2>
 
@@ -276,9 +309,9 @@ Static Public Member Functions</h2></td></tr>
 <p>Registers that <code class="param">gid</code> renders as <code class="param">sym</code> and reports whether the plain <code class="param">sym</code> may be used. </p>
 <p>Sets the clash flag - but still answers <span class="tt">true</span> - if another gid already claimed <code class="param">sym</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00168">168</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00170">170</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="driver_8h_source.html#l00089">mim::Driver::Names::clashed</a>, and <a class="el" href="driver_8h_source.html#l00093">mim::Driver::names()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00092">mim::Driver::Names::clashed</a>, and <a class="el" href="driver_8h_source.html#l00096">mim::Driver::names()</a>.</p>
 
 </div>
 </div>

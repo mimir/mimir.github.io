@@ -417,6 +417,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae6cd84c77b8ffb7880404d77c28f1d81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96" title="Yields the type of this Def and builds a new Type (UInc n) if necessary.">Def::unfold_type</a> of <code class="param">def</code> for a diagnostic - <a class="el" href="classmim_1_1Univ.html">Univ</a> is the one <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> that has no type at all.  <br /></td></tr>
 <tr class="memitem:a60ee93398f76269a406c841b2bb2c306" id="r_a60ee93398f76269a406c841b2bb2c306"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a60ee93398f76269a406c841b2bb2c306">optimize</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;)</td></tr>
 <tr class="memdesc:a60ee93398f76269a406c841b2bb2c306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs <span class="tt">_compile</span> or <span class="tt">_default_compile</span>, if available (in this order).  <br /></td></tr>
+<tr class="memitem:a9f53ccab4a4384a4f30e9edf77d9d2eb" id="r_a9f53ccab4a4384a4f30e9edf77d9d2eb"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a9f53ccab4a4384a4f30e9edf77d9d2eb">cite</a> (std::string_view str)</td></tr>
+<tr class="memdesc:a9f53ccab4a4384a4f30e9edf77d9d2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escapes each <span class="tt"> ` </span> of <code class="param">str</code> as <span class="tt"> \` </span>, which is how a diagnostic spells one that must not cite.  <br /></td></tr>
 <tr class="memitem:a832ee790abbd75d541212bc0cbbd6e84" id="r_a832ee790abbd75d541212bc0cbbd6e84"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a832ee790abbd75d541212bc0cbbd6e84">isa_dim</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:a832ee790abbd75d541212bc0cbbd6e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">def</code> a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> that spans exactly one dimension, i.e. one that a rank can be peeled off?  <br /></td></tr>
 <tr class="memitem:a09c6e231d7bdc610a4957da7fa3cddae" id="r_a09c6e231d7bdc610a4957da7fa3cddae"><td class="memItemLeft">static <a class="el" href="classmim_1_1Hole.html">Hole</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a09c6e231d7bdc610a4957da7fa3cddae">isa_flex_rank</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
@@ -2319,6 +2321,39 @@ template&lt;class... Keys&gt; </div>
 
 </div>
 </div>
+<a id="a9f53ccab4a4384a4f30e9edf77d9d2eb" name="a9f53ccab4a4384a4f30e9edf77d9d2eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f53ccab4a4384a4f30e9edf77d9d2eb">&#9670;&#160;</a></span>cite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::cite </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escapes each <span class="tt"> ` </span> of <code class="param">str</code> as <span class="tt"> \` </span>, which is how a diagnostic spells one that must not cite. </p>
+
+<p class="definition">Definition at line <a class="el" href="dbg_8h_source.html#l00021">21</a> of file <a class="el" href="dbg_8h_source.html">dbg.h</a>.</p>
+
+<p class="reference">References <a class="el" href="dbg_8h_source.html#l00021">cite()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00393">mim::ast::AliasDecl::bind()</a>, <a class="el" href="bind_8cpp_source.html#l00359">mim::ast::AxmDecl::bind()</a>, <a class="el" href="bind_8cpp_source.html#l00175">mim::ast::Path::bind()</a>, <a class="el" href="bind_8cpp_source.html#l00086">mim::ast::Scopes::bind()</a>, <a class="el" href="dbg_8h_source.html#l00021">cite()</a>, <a class="el" href="emit_8cpp_source.html#l00160">mim::ast::PathExpr::emit_()</a>, <a class="el" href="bind_8cpp_source.html#l00062">mim::ast::Scopes::find()</a>, and <a class="el" href="bind_8cpp_source.html#l00316">mim::ast::AST::name2annex()</a>.</p>
+
+</div>
+</div>
 <a id="a14e875ff9d37fba52618767b032ed91d" name="a14e875ff9d37fba52618767b032ed91d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14e875ff9d37fba52618767b032ed91d">&#9670;&#160;</a></span>collect()</h2>
 
@@ -3486,7 +3521,7 @@ template&lt;class Id&gt; </div>
 <p>This will stream <code class="param">def</code> as an operand. </p>
 <p>This is usually <span class="tt">id(def)</span> unless it can be displayed Inline. </p>
 
-<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l00544">544</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l00549">549</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
 
 </div>
 </div>
@@ -3509,7 +3544,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="optimize_8cpp_source.html#l00008">8</a> of file <a class="el" href="optimize_8cpp_source.html">optimize.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00037">mim::Phase::apply()</a>, <a class="el" href="phase_8h_source.html#l00563">mim::Cleanup::Cleanup()</a>, <a class="el" href="world_8h_source.html#l00102">mim::World::driver()</a>, <a class="el" href="world_8h_source.html#l00277">mim::World::externals()</a>, <a class="el" href="def_8cpp_source.html#l00602">mim::Def::internalize()</a>, <a class="el" href="world_8cpp_source.html#l00129">mim::World::log()</a>, <a class="el" href="world_8h_source.html#l00181">mim::World::Externals::mutate()</a>, <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>, <a class="el" href="driver_8h_source.html#l00163">mim::Driver::phase()</a>, <a class="el" href="world_8cpp_source.html#l00133">mim::World::sym()</a>, <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00326">mim::App::uncurry_callee()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00037">mim::Phase::apply()</a>, <a class="el" href="phase_8h_source.html#l00563">mim::Cleanup::Cleanup()</a>, <a class="el" href="world_8h_source.html#l00102">mim::World::driver()</a>, <a class="el" href="world_8h_source.html#l00277">mim::World::externals()</a>, <a class="el" href="def_8cpp_source.html#l00602">mim::Def::internalize()</a>, <a class="el" href="world_8cpp_source.html#l00129">mim::World::log()</a>, <a class="el" href="world_8h_source.html#l00181">mim::World::Externals::mutate()</a>, <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>, <a class="el" href="driver_8h_source.html#l00166">mim::Driver::phase()</a>, <a class="el" href="world_8cpp_source.html#l00133">mim::World::sym()</a>, <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00326">mim::App::uncurry_callee()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>.</p>
 

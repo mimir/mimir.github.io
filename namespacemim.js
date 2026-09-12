@@ -207,6 +207,7 @@ var namespacemim =
     [ "cat_tuple", "namespacemim.html#ad7c402b5f8955bcf0e7aabb44621a8a2", null ],
     [ "cat_tuple", "namespacemim.html#a213c0f00c3278ceee24bcd47bcdcd364", null ],
     [ "cat_tuple", "namespacemim.html#a8ba5c71eb98c1f9313de052e38fa1f58", null ],
+    [ "cite", "namespacemim.html#a9f53ccab4a4384a4f30e9edf77d9d2eb", null ],
     [ "collect", "namespacemim.html#a14e875ff9d37fba52618767b032ed91d", null ],
     [ "compose_cn", "namespacemim.html#aab8bd049eb0b9bf7561a602f62ce7ebd", null ],
     [ "flatten_umax", "namespacemim.html#acc7b1158f83b80e637de1a63f56d514c", null ],
