@@ -221,7 +221,7 @@ Integer Operations</h1>
 <p>Concretely, a value \(x : \mathrm{Idx}\;s\) is considered non-negative iff \( x \le \lfloor (s-1)/2 \rfloor \), and negative otherwise. Hence the signed range is \( \big[ -\lfloor s/2 \rfloor,\; \lceil s/2 \rceil - 1 \big] \). For powers of two, i.e. \( s = 2^w \), this coincides exactly with the usual \(w\)-bit two's-complement interpretation.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md254"></a>
 Mode</h2>
-<p>A common problem when dealing with integer operations is <a href="https://en.wikipedia.org/wiki/Integer_overflow">overflow</a>. All operations that may overflow have an additional parameter <span class="tt">m</span> - <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138" title="mim::plug::core::Mode">mode</a> - of type <span class="tt">Nat</span> that determines the exact desired behavior in the case of an overflow.</p>
+<p>A common problem when dealing with integer operations is <a href="https://en.wikipedia.org/wiki/Integer_overflow">overflow</a>. All operations that may overflow take a leading parameter <span class="tt">m</span> - <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138" title="mim::plug::core::Mode">mode</a> - of type <span class="tt">Nat</span> that determines the exact desired behavior in the case of an overflow. It comes first so that currying it - <span class="tt">core.wrap.add 0</span> - still yields a value polymorphic in <span class="tt">s</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod mode {</div>
 <div class="line">    anx let us = 0b00; // wrap around - both signed and unsigned</div>
 <div class="line">    anx let uS = 0b01; // no   signed wrap around</div>
@@ -234,7 +234,7 @@ Mode</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md255"></a>
 core.idx</h2>
 <p>Creates a literal of type <span class="tt">Idx s</span> from <span class="tt">l</span> while obeying mode <span class="tt">m</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm idx: [s: Nat] → [m: Nat] → [l: Nat] → Idx s, normalize_idx;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm idx: [m: Nat] → [s: Nat] → [l: Nat] → Idx s, normalize_idx;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md256"></a>
 core.idx_unsafe</h2>
 <p>Creates a literal of type <span class="tt">Idx ⊤</span>.</p>
@@ -255,7 +255,7 @@ core.bit1</h2>
 <td class="markdownTableBodyNone">t  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">always true  </td></tr>
 </table>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>Add type constraint that <span class="tt">bit1</span> is only allowed for powers of two.</dd></dl>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm bit1.(f, neg, id, t): {s: Nat} → [m: Nat] → Idx s → Idx s, normalize_bit1;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm bit1.(f, neg, id, t): [m: Nat] → {s: Nat} → Idx s → Idx s, normalize_bit1;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
 core.bit2</h2>
 <p>These <em>binary</em> bitwise operations offer all <a href="https://en.wikipedia.org/wiki/Truth_table#Truth_table_for_all_binary_logical_operators">16 possible operations</a> as summarized in the following table:</p>
@@ -298,7 +298,7 @@ core.bit2</h2>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>Add type constraint that <span class="tt">bit2</span> is only allowed for powers of two.</dd></dl>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm bit2.( f,      nor, nciff, nfst, niff, nsnd, xor_, nand,</div>
 <div class="line">           and_,  nxor,   snd,  iff,  fst, ciff,  or_,    t):</div>
-<div class="line">    {s: Nat} → [m: Nat] → «2; Idx s» → Idx s , normalize_bit2;</div>
+<div class="line">    [m: Nat] → {s: Nat} → «2; Idx s» → Idx s , normalize_bit2;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
 core.shr</h2>
 <p>Shift right:</p><ul>
@@ -312,11 +312,11 @@ core.shr</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm shr.(a, l): {s: Nat} → «2; Idx s» → Idx s, normalize_shr;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
 core.wrap</h2>
-<p>Integer operations that may overflow. You can specify the desired behavior in the case of an overflow with the curried argument just in front of the actual argument by providing a <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138">mim::plug::core::Mode</a> as <span class="tt">Nat</span>.</p>
+<p>Integer operations that may overflow. You can specify the desired behavior in the case of an overflow with the leading curried argument by providing a <a class="el" href="namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138">mim::plug::core::Mode</a> as <span class="tt">Nat</span>.</p>
 <p><span class="tt">shl</span> uses the same shift-count rule as <span class="tt">core.shr</span>. It multiplies the unsigned representative by <span class="tt">2^b</span> and then wraps modulo <span class="tt">s</span>. <span class="tt">nuw</span> and <span class="tt">nsw</span> check the unwrapped unsigned and signed results, respectively.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm wrap.(add, sub, mul, shl): {s: Nat} → [m: Nat] → «2; Idx s» → Idx s, normalize_wrap;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm wrap.(add, sub, mul, shl): [m: Nat] → {s: Nat} → «2; Idx s» → Idx s, normalize_wrap;</div>
 <div class="line"> </div>
-<div class="line">anx lam minus {s: Nat} (m: Nat) (a: Idx s): Idx s = wrap.sub m (0:(Idx s), a);</div>
+<div class="line">anx lam minus (m: Nat) {s: Nat} (a: Idx s): Idx s = wrap.sub m (0:(Idx s), a);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md261"></a>
 core.div</h2>
 <p>Signed and unsigned integer division/remainder.</p>
@@ -484,6 +484,102 @@ core.select</h2>
 core.Select</h2>
 <p>core.select one level up, to select between types.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam Select {T: □} (cond: Bool, t f: T): T = (f, t)#cond;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md273"></a>
+ops</h1>
+<p>Bindings for the infix operators, which are sugar for an application of the escaped name. <span class="tt">use</span> the module matching the domain at hand:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Module  </th><th class="markdownTableHeadNone">Domain  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">core.ops.n</span>  </td><td class="markdownTableBodyNone"><span class="tt">Nat</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">core.ops.s.w</span>  </td><td class="markdownTableBodyNone">signed <span class="tt">Idx s</span>, wrap around  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">core.ops.s.nw</span>  </td><td class="markdownTableBodyNone">signed <span class="tt">Idx s</span>, <span class="tt">core.mode.nsw</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">core.ops.u.w</span>  </td><td class="markdownTableBodyNone">unsigned <span class="tt">Idx s</span>, wrap around  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">core.ops.u.nw</span>  </td><td class="markdownTableBodyNone">unsigned <span class="tt">Idx s</span>, <span class="tt">core.mode.nuw</span>  </td></tr>
+</table>
+<p><span class="tt">core.ops.s</span>/<span class="tt">core.ops.u</span> offer only those operators that don't depend on the mode. <span class="tt">Idx s</span> has no <span class="tt">/</span> and <span class="tt">%</span>, since core.div expects a <span class="tt">mem.M</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod ops {</div>
+<div class="line">    pub mod n {</div>
+<div class="line">        pub let `+  =  nat.add;</div>
+<div class="line">        pub let `-  =  nat.sub;</div>
+<div class="line">        pub let `*  =  nat.mul;</div>
+<div class="line">        pub let `/  =  nat.div;</div>
+<div class="line">        pub let `%  =  nat.rem;</div>
+<div class="line">        pub let `== = ncmp.e;</div>
+<div class="line">        pub let `!= = ncmp.ne;</div>
+<div class="line">        pub let `&lt;  = ncmp.l;</div>
+<div class="line">        pub let `&lt;= = ncmp.le;</div>
+<div class="line">        pub let `&gt;  = ncmp.g;</div>
+<div class="line">        pub let `&gt;= = ncmp.ge;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    mod eq {</div>
+<div class="line">        pub let `== = icmp.e;</div>
+<div class="line">        pub let `!= = icmp.ne;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    mod signed {</div>
+<div class="line">        use eq;</div>
+<div class="line">        pub let `&gt;&gt; = shr.a;</div>
+<div class="line">        pub let `&lt;  = icmp.sl;</div>
+<div class="line">        pub let `&lt;= = icmp.sle;</div>
+<div class="line">        pub let `&gt;  = icmp.sg;</div>
+<div class="line">        pub let `&gt;= = icmp.sge;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    mod unsigned {</div>
+<div class="line">        use eq;</div>
+<div class="line">        pub let `&gt;&gt; = shr.l;</div>
+<div class="line">        pub let `&lt;  = icmp.ul;</div>
+<div class="line">        pub let `&lt;= = icmp.ule;</div>
+<div class="line">        pub let `&gt;  = icmp.ug;</div>
+<div class="line">        pub let `&gt;= = icmp.uge;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    pub mod s {</div>
+<div class="line">        use signed;</div>
+<div class="line"> </div>
+<div class="line">        pub mod w {</div>
+<div class="line">            use signed;</div>
+<div class="line">            pub let `+  = wrap.add mode.us;</div>
+<div class="line">            pub let `-  = wrap.sub mode.us;</div>
+<div class="line">            pub let `*  = wrap.mul mode.us;</div>
+<div class="line">            pub let `&lt;&lt; = wrap.shl mode.us;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        pub mod nw {</div>
+<div class="line">            use signed;</div>
+<div class="line">            pub let `+  = wrap.add mode.nsw;</div>
+<div class="line">            pub let `-  = wrap.sub mode.nsw;</div>
+<div class="line">            pub let `*  = wrap.mul mode.nsw;</div>
+<div class="line">            pub let `&lt;&lt; = wrap.shl mode.nsw;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    pub mod u {</div>
+<div class="line">        use unsigned;</div>
+<div class="line"> </div>
+<div class="line">        pub mod w {</div>
+<div class="line">            use unsigned;</div>
+<div class="line">            pub let `+  = wrap.add mode.us;</div>
+<div class="line">            pub let `-  = wrap.sub mode.us;</div>
+<div class="line">            pub let `*  = wrap.mul mode.us;</div>
+<div class="line">            pub let `&lt;&lt; = wrap.shl mode.us;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        pub mod nw {</div>
+<div class="line">            use unsigned;</div>
+<div class="line">            pub let `+  = wrap.add mode.nuw;</div>
+<div class="line">            pub let `-  = wrap.sub mode.nuw;</div>
+<div class="line">            pub let `*  = wrap.mul mode.nuw;</div>
+<div class="line">            pub let `&lt;&lt; = wrap.shl mode.nuw;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

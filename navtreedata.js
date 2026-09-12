@@ -124,10 +124,10 @@ var NAVTREEINDEX =
 "namespacemim.html#ad53acf95ce5df3f7045361671860b6fa",
 "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10",
 "namespacemim_1_1plug_1_1gpu_1_1phase.html",
-"namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3",
-"namespacemim_1_1plug_1_1tuple.html#a4a5ac0ade39e76f6e910b0b5af8284bd",
-"structmim_1_1Annex.html#adc889bc17746e7afdd83e53d55ae344b",
-"structmim_1_1plug_1_1ll_1_1BB.html#a696c92baef3b9c271c61f3922d178864"
+"namespacemim_1_1plug_1_1mem.html#a8cedca0dc21ce4001f0f3b87655b6a29",
+"namespacemim_1_1plug_1_1tensor_1_1phase.html#ab0b82072033318bba711b20587c5865c",
+"structmim_1_1Annex.html#a596c047a68129d48ea1adf08987b2633",
+"structmim_1_1ast_1_1S.html#ae8dfc330f52aaf22f73a44b973b6ef12"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

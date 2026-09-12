@@ -5,7 +5,7 @@ var searchData=
   ['ceildiv_2',['ceildiv',['../namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea6ebca5886947a1e1b1bab29fe3db1ca4',1,'mim::plug::affine']]],
   ['check_3',['Check',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daaa80fdeecdc4bd0801ed72c1a2f1c55da7',1,'mim::Checker']]],
   ['ciff_4',['ciff',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a870ac2c5fac99933ec00d76e9c6ab759',1,'mim::plug::core']]],
-  ['contract_5',['contract',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math']]],
+  ['contract_5',['contract',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract']]],
   ['core_5ficmp_5fxygle_6',['core_icmp_xYgLE',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a3e1c7c0cb0758565df59b2b4acf8d6ff',1,'mim::plug::autodiff']]],
   ['core_5fwrap_5fadd_7',['core_wrap_add',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a48f6bbd0b74b75043761bdd3c24bce20',1,'mim::plug::autodiff']]],
   ['core_5fwrap_5fmul_8',['core_wrap_mul',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2abd92a780b9468178527f7bc8c1260c99',1,'mim::plug::autodiff']]],

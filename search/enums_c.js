@@ -12,7 +12,7 @@ var searchData=
   ['minus_9',['minus',['../namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313',1,'mim::plug::core::minus'],['../namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199',1,'mim::plug::math::minus']]],
   ['mk_5fsched_10',['mk_sched',['../namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14',1,'mim::plug::btensor']]],
   ['mode_11',['Mode',['../classmim_1_1Checker.html#a4c49a3e1dc4178b217f6922a36cc1daa',1,'mim::Checker::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
-  ['mode_12',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core']]],
+  ['mode_12',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core::mode'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91',1,'mim::plug::math::mode']]],
   ['mr_5fnest_13',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],
   ['mr_5ftileable_14',['mr_tileable',['../namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8',1,'mim::plug::tensor']]],
   ['mslot_15',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],

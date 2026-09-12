@@ -341,6 +341,19 @@ var namespacemim_1_1plug =
         [ "fast", "namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a31d4541b8e926a24f0c9b835b68cfdf3", null ],
         [ "bot", "namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91afabcaa97871555b68aa095335975e613", null ]
       ] ],
+      [ "mode", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91", [
+        [ "none", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
+        [ "nnan", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a8d4e062f52a20018f38b08a87940fc07", null ],
+        [ "ninf", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a4feafbe2844085aa42e95fb6d9ea3de8", null ],
+        [ "nsz", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a83ad537246c68235c2ff05142fd9c91c", null ],
+        [ "arcp", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a1e53eb7993b8fa102e59ad895d7acc68", null ],
+        [ "contract", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a800c327aefb3f9241513cbf551abbfda", null ],
+        [ "afn", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a4a213301f5c3ec47247c98af6410dea5", null ],
+        [ "reassoc", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a748044e1daee345447d03f12edd6d7a3", null ],
+        [ "finite", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91af08d9f9dd085b62425e34097fc724a5f", null ],
+        [ "unsafe", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a64c823fad1d87e0df1ef3cdeb8ac684f", null ],
+        [ "fast", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a31d4541b8e926a24f0c9b835b68cfdf3", null ]
+      ] ],
       [ "NVTF32", "namespacemim_1_1plug_1_1math.html#a1a6f22c3b750ca37462e91f209d66fa7", null ],
       [ "nvtf32", "namespacemim_1_1plug_1_1math.html#a4b6b6615eaa73ce27195a4a716c8e199", null ],
       [ "pow", "namespacemim_1_1plug_1_1math.html#a638f19e14b30d84e0a57f808645bc3d7", null ],

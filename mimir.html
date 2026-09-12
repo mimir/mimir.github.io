@@ -259,17 +259,17 @@ SSA via CPS</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// RUN: %mim -p ll %s</div>
 <div class="line">plugin core;</div>
 <div class="line"> </div>
+<div class="line">use core.ops.u.w;</div>
+<div class="line"> </div>
 <div class="line">extern fun count(n: I32): I32 =</div>
 <div class="line">    loop (0I32, 0I32)</div>
 <div class="line">    where</div>
 <div class="line">        con loop (i acc: I32) =</div>
-<div class="line">            let cond = core.icmp.ul (i, n);</div>
+<div class="line">            let cond = i &lt; n;</div>
 <div class="line">            core.select (cond, body, exit) ()</div>
 <div class="line">            where</div>
 <div class="line">                con body() =</div>
-<div class="line">                    let next = core.wrap.add 0 (i, 1I32);</div>
-<div class="line">                    let sum  = core.wrap.add 0 (acc, i);</div>
-<div class="line">                    loop (next, sum);</div>
+<div class="line">                    loop (i + 1I32, acc + i);</div>
 <div class="line">                con exit() = return acc;</div>
 <div class="line">            end;</div>
 <div class="line">    end;</div>
@@ -347,18 +347,20 @@ Polymorphic Iteration</h1>
 <div class="line">plugin core;</div>
 <div class="line">plugin refly;</div>
 <div class="line"> </div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
 <div class="line">extern lam iter {T: *} (f: T → T) (n: Nat, x: T)@(core.pe.is_closed n): T =</div>
-<div class="line">    let cond = core.ncmp.le (n, 0);</div>
+<div class="line">    let cond = n &lt;= 0;</div>
 <div class="line">    (core.select (cond, cons, alt)) () where</div>
 <div class="line">        lam cons(): T =</div>
 <div class="line">            x;</div>
 <div class="line">        lam alt(): T =</div>
-<div class="line">            let m = core.nat.sub (n, 1);</div>
+<div class="line">            let m = n - 1;</div>
 <div class="line">            let y = f x;</div>
 <div class="line">            iter @T f (m, y);</div>
 <div class="line">    end;</div>
 <div class="line"> </div>
-<div class="line">lam succ (x: Nat): Nat = core.nat.add (x, 1);</div>
+<div class="line">lam succ (x: Nat): Nat = x + 1;</div>
 <div class="line">lam add  (x: Nat) (y: Nat): Nat = iter succ (x, y);</div>
 <div class="line">lam mul  (x: Nat) (y: Nat): Nat = iter (add x) (y, 0);</div>
 <div class="line">lam pow  (x: Nat) (y: Nat): Nat = iter (mul x) (y, 1);</div>

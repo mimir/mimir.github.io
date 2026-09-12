@@ -7,7 +7,7 @@ var searchData=
   ['nat_20operations_4',['Nat Operations',['../core.html#autotoc_md250',1,'']]],
   ['ncmp_5',['core.ncmp',['../core.html#autotoc_md252',1,'']]],
   ['neg_6',['affine.op(neg)',['../affine.html#autotoc_md177',1,'']]],
-  ['neg_5flookahead_7',['regex.neg_lookahead',['../regex.html#autotoc_md413',1,'']]],
+  ['neg_5flookahead_7',['regex.neg_lookahead',['../regex.html#autotoc_md417',1,'']]],
   ['nesting_8',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md40',1,'']]],
   ['nestphase_9',['NestPhase',['../phases.html#phases_nest_phase',1,'']]],
   ['nests_20as_20first_20class_20ir_20values_10',['Loop nests as first-class IR values',['../btensor.html#autotoc_md205',1,'']]],
@@ -15,11 +15,11 @@ var searchData=
   ['node_12',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md157',1,'']]],
   ['nodes_13',['🌊 Sea of Nodes',['../index.html#autotoc_md133',1,'']]],
   ['non_20performance_20costs_14',['Non-performance costs',['../md_docs_2why-cpp.html#autotoc_md161',1,'']]],
-  ['none_15',['option.none',['../option.html#autotoc_md367',1,'']]],
+  ['none_15',['option.none',['../option.html#autotoc_md371',1,'']]],
   ['not_20apply_20here_16',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md160',1,'']]],
   ['not_20better_17',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
-  ['not_5f_18',['regex.not_',['../regex.html#autotoc_md412',1,'']]],
+  ['not_5f_18',['regex.not_',['../regex.html#autotoc_md416',1,'']]],
   ['notation_19',['Notation',['../langref.html#autotoc_md58',1,'']]],
-  ['numerical_20operations_20',['Numerical Operations',['../math.html#autotoc_md322',1,'']]],
+  ['numerical_20operations_20',['Numerical Operations',['../math.html#autotoc_md325',1,'']]],
   ['nvptx_20plugin_21',['The nvptx Plugin',['../nvptx.html',1,'']]]
 ];
