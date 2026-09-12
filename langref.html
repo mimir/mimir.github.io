@@ -170,15 +170,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('langref.html',
 <p>This page is the reference for <a class="el" href="namespaceMim.html">Mim</a> surface syntax.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
 Notation</h1>
-<p>This document uses a lightweight <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>-style notation. A terminal is shaded, a nonterminal is not, and the <a class="el" href="#terminals" title="Terminals">lexical terminals</a> <span class="tt">I</span>, <span class="tt">L</span>, <span class="tt">X_n</span>, <span class="tt">C</span>, and <span class="tt">S</span> have a colour of their own. Clicking a nonterminal or a lexical terminal traces its occurrences across the page. The meta-symbols are: </p><div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">x ::= y  // defines the nonterminal `x` as `y`.</div>
-<div class="line">x | y    // is either `x` or `y`.</div>
+<p>This document uses a lightweight <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>-style notation. A terminal is shaded, a nonterminal is not, and the <a class="el" href="#terminals" title="Terminals">lexical terminals</a> <span class="tt">I</span>, <span class="tt">L</span>, <span class="tt">X_n</span>, <span class="tt">C</span>, and <span class="tt">S</span> have a colour of their own. Clicking a nonterminal or a lexical terminal traces its occurrences across the page. The meta-symbols are:</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">x ::= y  // defines the nonterminal x as y</div>
+<div class="line">x | y    // either x or y</div>
 <div class="line">(x y)    // grouping</div>
-<div class="line">x*       // zero or more `x`</div>
-<div class="line">x+       // one or more `x`</div>
-<div class="line">x?       // an optional `x`</div>
-<div class="line">[a-c]    // character range from `a` to `c`</div>
+<div class="line">x*       // zero or more x</div>
+<div class="line">x+       // one or more x</div>
+<div class="line">x?       // an optional x</div>
+<div class="line">[a-c]    // character range from a to c</div>
 <div class="line">[a-cx-z] // combines several ranges</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p> For example, <span class="tt">x ("," x)* ","?</span> is a comma-separated list of one or more <span class="tt">x</span> with an optional trailing comma. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1">Ranges</a> only occur in the <a class="el" href="#terminals" title="Terminals">lexical rules</a>.</dd></dl>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>For example, <span class="tt">x ("," x)* ","?</span> is a comma-separated list of one or more <span class="tt">x</span> with an optional trailing comma. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1">Ranges</a> only occur in the rules of the <a class="el" href="#terminals" title="Terminals">lexical terminals</a>.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="lex"></a>
 Lexical Structure</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> source files are <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoded and are <a href="https://en.wikipedia.org/wiki/Lexical_analysis">lexed</a> from left to right. The lexer uses <a href="https://en.wikipedia.org/wiki/Maximal_munch">maximal munch</a>, so ambiguities are resolved by taking the longest matching token. For example, <span class="tt">&gt;&gt;=</span> is tokenized as <span class="tt">&gt;&gt;</span> followed by <span class="tt">=</span>. </p><dl class="section note"><dt>Note</dt><dd><span class="tt">&lt;-</span> is therefore a single token: <span class="tt">x &lt;- 1</span> is an insert, and a comparison against a negative literal has to be written <span class="tt">x &lt; (-1)</span>.</dd></dl>
@@ -227,23 +228,40 @@ Keywords</h3>
 <div class="line">i1 i8 i16 i32 i64 import inj lam let match mod</div>
 <div class="line">norm plugin priv pub rec ret rule tt use when where with</div>
 </div><!-- fragment --></div><div class="ebnf-terminals"></div><p>The following names are predefined aliases:</p>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">&quot;tt&quot;   = &quot;1₂&quot;</div>
-<div class="line">&quot;ff&quot;   = &quot;0₂&quot;</div>
-<div class="line">&quot;Bool&quot; = &quot;Idx i1&quot;</div>
-<div class="line">&quot;I1&quot;   = &quot;Idx i1&quot;</div>
-<div class="line">&quot;I8&quot;   = &quot;Idx i8&quot;</div>
-<div class="line">&quot;I16&quot;  = &quot;Idx i16&quot;</div>
-<div class="line">&quot;I32&quot;  = &quot;Idx i32&quot;</div>
-<div class="line">&quot;I64&quot;  = &quot;Idx i64&quot;</div>
-<div class="line"> </div>
-<div class="line">&quot;i1&quot;   = &quot;2&quot;</div>
-<div class="line">&quot;i8&quot;   = &quot;0x100&quot;</div>
-<div class="line">&quot;i16&quot;  = &quot;0x1&#39;0000&quot;</div>
-<div class="line">&quot;i32&quot;  = &quot;0x1&#39;0000&#39;0000&quot;</div>
-<div class="line">&quot;i64&quot;  = &quot;0&quot;</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
-Pattern Terminals</h3>
-<p>The following terminals are defined by lexical patterns.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">Expansion  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">tt</span>  </td><td class="markdownTableBodyNone"><span class="tt">1₂</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ff</span>  </td><td class="markdownTableBodyNone"><span class="tt">0₂</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Bool</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i1</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">I1</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i1</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">I8</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i8</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">I16</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i16</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">I32</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i32</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">I64</span>  </td><td class="markdownTableBodyNone"><span class="tt">Idx i64</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">i1</span>  </td><td class="markdownTableBodyNone"><span class="tt">2</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">i8</span>  </td><td class="markdownTableBodyNone"><span class="tt">0x100</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">i16</span>  </td><td class="markdownTableBodyNone"><span class="tt">0x1'0000</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">i32</span>  </td><td class="markdownTableBodyNone"><span class="tt">0x1'0000'0000</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">i64</span>  </td><td class="markdownTableBodyNone"><span class="tt">0</span>  </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>2⁶⁴ doesn't fit into a <span class="tt">Nat</span>, so <span class="tt">i64</span> is <span class="tt">0</span>, which <span class="tt">Idx</span> reads as 2⁶⁴.</dd></dl>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+Lexical Terminals</h3>
+<p>The following terminals are defined by lexical rules.</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">I      ::= id</div>
 <div class="line">        |  &quot;`&quot; op</div>
 <div class="line">L      ::= dec+</div>
@@ -273,16 +291,19 @@ Pattern Terminals</h3>
 <div class="line">sign   ::= &quot;+&quot; | &quot;-&quot;</div>
 <div class="line">id     ::= (&quot;_&quot; | [a-zA-Z]) (&quot;_&quot; | [0-9a-zA-Z])*</div>
 <div class="line">op     ::= &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;%&quot;</div>
-<div class="line">esc    ::= &quot;\&#39;&quot; | &quot;\&quot;&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\\&quot; | &quot;\b&quot;</div>
+<div class="line">        |  &quot;==&quot; | &quot;!=&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot;</div>
+<div class="line">        |  &quot;&lt;&lt;&quot; | &quot;&gt;&gt;&quot;</div>
+<div class="line">esc    ::= &quot;\&#39;&quot; | &quot;\\&quot; | &quot;\&quot;&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\b&quot;</div>
 <div class="line">        |  &quot;\f&quot; | &quot;\n&quot; | &quot;\r&quot; | &quot;\t&quot; | &quot;\v&quot;</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p>Character and string literals only admit ASCII payload characters plus the escapes listed above.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">ascii_char</span> is any ASCII character except <span class="tt">\</span>, <span class="tt">ascii_string_char</span> is any ASCII character except <span class="tt">\</span> and <span class="tt">"</span>, and a non-ASCII payload character is an error.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Comments</h2>
-<p>Supported comments: </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">/* multi-line comment */</div>
+<p>Supported comments:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">/* multi-line comment */</div>
 <div class="line">// single-line comment</div>
 <div class="line">/// doc-comment</div>
 </div><!-- fragment --></div><div class="mim-code"></div><ul>
-<li><span class="tt">/* ... */</span> comments are not nested.</li>
+<li><span class="tt">/* ... */</span> comments do not nest.</li>
 <li>doc-comments are forwarded to generated <a href="https://www.doxygen.nl/manual/markdown.html">Markdown</a> output. A line of the form <span class="tt">/// text</span> contributes <span class="tt">text</span> directly to the Markdown output. Other <span class="tt">///</span> forms are emitted verbatim inside a <a href="https://www.doxygen.nl/manual/markdown.html#md_fenced">fenced code block</a>.</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="grammar"></a>
@@ -322,13 +343,13 @@ Paths and Modules</h2>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">path ::= I (&quot;.&quot; I)*</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p>A path resolves its first component lexically and then walks into that module. A module is either an imported file or a <span class="tt">mod</span> declaration.</p>
 <ul>
-<li>A component after a <span class="tt">.</span> may be spelled like a keyword, as may a tag in an <span class="tt">axm</span> tag list - both positions are unambiguous.</li>
+<li>Every component of a path is an identifier; a keyword is not allowed, not even after a <span class="tt">.</span>.</li>
 <li><span class="tt">.</span> never reads a field out of a value; use <span class="tt">#</span> for that.</li>
 <li>An <span class="tt">anx</span> declaration is an ordinary member of its enclosing module and is found by the same path resolution as any other member; see <a class="el" href="#annex" title="Annex">Annex</a> for what additionally makes it an annex.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="decl"></a>
 Declarations</h2>
-<p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families. Most of them may be prefixed with any combination of three independent modifiers: a visibility (<span class="tt">priv</span> or <span class="tt">pub</span>), <span class="tt">extern</span>, and <span class="tt">anx</span>. Visibility is a Mim-only, purely lexical fact - it has no effect on backend linkage or compiler registration. <span class="tt">extern</span> and <span class="tt">anx</span> are each independent of visibility and of each other; either one nudges the default visibility to <span class="tt">pub</span> (instead of the usual <span class="tt">priv</span> default) unless <span class="tt">priv</span>/<span class="tt">pub</span> is given explicitly, so e.g. <span class="tt">priv anx</span> and <span class="tt">priv extern</span> are legal and meaningful, while <span class="tt">extern anx</span> on the same declaration is a static error.</p>
+<p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families. Most of them may be prefixed with a visibility (<span class="tt">priv</span> or <span class="tt">pub</span>), <span class="tt">extern</span>, and <span class="tt">anx</span>. These modifiers may be written in any order; the productions below only spell out which of them a declaration accepts at all. Visibility is a Mim-only, purely lexical fact - it has no effect on backend linkage or compiler registration. <span class="tt">extern</span> and <span class="tt">anx</span> are each independent of visibility, but not of each other: <span class="tt">extern anx</span> on the same declaration is a static error. Either one nudges the default visibility to <span class="tt">pub</span> (instead of the usual <span class="tt">priv</span> default) unless <span class="tt">priv</span>/<span class="tt">pub</span> is given explicitly, so e.g. <span class="tt">priv anx</span> and <span class="tt">priv extern</span> are legal and meaningful.</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">d      ::= &quot;import&quot; (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  &quot;plugin&quot; I (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;mod&quot; I &quot;{&quot; d* &quot;}&quot;</div>
@@ -350,7 +371,8 @@ Declarations</h2>
 <div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)* &quot;,&quot;?)? &quot;)&quot; &quot;:&quot; e tail</div>
 <div class="line">tag    ::= I (&quot;=&quot; I)*</div>
 <div class="line">tail   ::= (&quot;,&quot; I)? (&quot;,&quot; L (&quot;,&quot; L)?)?</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
+</div><!-- fragment --></div><div class="ebnf-code"></div><dl class="section note"><dt>Note</dt><dd>A declaration may be followed by a <span class="tt">;</span>, as all examples on this page do; stray semicolons between declarations are skipped.</dd></dl>
+<ul>
 <li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
 <li><span class="tt">pub</span> lifts that restriction, so a path from outside the enclosing <span class="tt">mod</span> may reach the declaration.</li>
 <li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
@@ -395,22 +417,18 @@ Patterns</h2>
 <li><span class="tt">b</span> is the bracketed syntax used for sigma binders and Pi domains.</li>
 <li>Roughly speaking, <span class="tt">(a, b, c)</span> binds tuple components with inferred types, while <span class="tt">[a, b, c]</span> binds components whose types are described by the bracket entries.</li>
 <li>When all component types are written explicitly, <span class="tt">(a: A, b: B)</span> and <span class="tt">[a: A, b: B]</span> coincide.</li>
-<li>Tuple patterns support grouped bindings such as <span class="tt">(a b c: Nat, d e: Bool)</span> and <span class="tt">[a b c: Nat, d e: Bool]</span>.</li>
-<li>Both forms distribute the annotated type over the listed names.</li>
-<li>Patterns may be wrapped in an alias pattern.</li>
+<li>Tuple patterns support grouped bindings such as <span class="tt">(a b c: Nat, d e: Bool)</span> and <span class="tt">[a b c: Nat, d e: Bool]</span>; both forms distribute the annotated type over the listed names.</li>
+<li>Bracket-style patterns may also contain general expressions, which is what makes forms such as <span class="tt">[T: *] → T</span> and <span class="tt">Cn [mem: mem.M 0, I32]</span> legal.</li>
 </ul>
+<p>An alias pattern wraps another pattern and additionally binds the whole value:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (a, b, c) as abc = (1, 2, 3);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>This binds <span class="tt">a</span>, <span class="tt">b</span>, and <span class="tt">c</span> to the tuple elements and <span class="tt">abc</span> to the whole tuple.</p>
-<ul>
-<li>Bracket-style patterns may also contain general expressions.</li>
-<li>This is what makes forms such as <span class="tt">[T: *] → T</span> and <span class="tt">Cn [mem: mem.M 0, I32]</span> legal.</li>
-<li><span class="tt">let</span> and <span class="tt">ret</span> allow rebinding of an existing name.</li>
-</ul>
-<p>This is especially useful for state-threading style code:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (mem, ptr) = mem.alloc (I32, 0) mem;</div>
-<div class="line">let mem        = mem.store (mem, ptr, 23:I32);</div>
-<div class="line">let (mem, val) = mem.load (mem, ptr);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="expr"></a>
+<p><span class="tt">let</span> and <span class="tt">ret</span> allow rebinding of an existing name, which is especially useful for state-threading style code:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (m, ptr) = mem.alloc (I32, 0) m;</div>
+<div class="line">let m        = mem.store (m, ptr, 23:I32);</div>
+<div class="line">let (m, val) = mem.load (m, ptr);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><dl class="section note"><dt>Note</dt><dd>Don't name such a value <span class="tt">mem</span>: it would shadow the module <span class="tt">mem</span>, and the <span class="tt">mem.store</span> on the next line would no longer resolve.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="expr"></a>
 Expressions</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 Kinds and Builtin Types</h3>
@@ -496,7 +514,7 @@ Products</h3>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
 <li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
-<li><span class="tt">e#i</span> or <span class="tt">e#e</span> extracts a component.</li>
+<li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>.</li>
 <li><span class="tt">e ← value</span> without a <span class="tt">#</span> leaves the index implicit: <span class="tt">e</span> is its own sole component, so this is <span class="tt">e#0₁ ← value</span> and hence <span class="tt">value</span>. An <span class="tt">e</span> of arity other than 1 is an error, just as <span class="tt">e#0₁</span> would be.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
@@ -531,7 +549,7 @@ Infix Operators</h3>
 <li><p class="startli"><a class="el" href="namespaceMim.html">Mim</a> doesn't give the operators a meaning of their own; whatever <span class="tt"> `op </span> is bound to is what they mean: </p><div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">let `+ = core.nat.add;</div>
 <div class="line">let x = 2 + 3;</div>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
-<li><span class="tt">*</span> doubles as the abbreviation of <span class="tt">Type (0:Univ)</span>, which is why <span class="tt">f *</span> is a multiplication and not an application; write <span class="tt">f (*)</span> for the latter.</li>
+<li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Univ)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Local Declaration Blocks</h3>
@@ -592,22 +610,22 @@ Summary: Functions and Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f(T: *)((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
-<div class="line">con f(T: *)((x y: T), return: Cn T)        = return x;</div>
-<div class="line">fun f(T: *) (x y: T): T                    = return x;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>Partial-evaluation filters default to <span class="tt">tt</span>, except for <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, and <span class="tt">fn</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
+<div class="line">con f (T: *) ((x y: T), return: Cn T)        = return x;</div>
+<div class="line">fun f (T: *)  (x y: T): T                    = return x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
-<div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)   : ⊥ = return x;</div>
+<div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f = fn (T: *)  (x y: T): T                    = return x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Applications</h2>
-<p>The following applications of <span class="tt">f</span> are equivalent:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">f Nat ((23, 42), cn res: Nat = use(res))</div>
-<div class="line">ret res = f Nat $ (23, 42); use(res)</div>
+<p>The following applications of <span class="tt">f</span> are equivalent, where <span class="tt">g</span> is a continuation that consumes the result:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">f Nat ((23, 42), cn res: Nat = g res)</div>
+<div class="line">ret res = f Nat $ (23, 42); g res</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
@@ -623,7 +641,7 @@ Underscore</h2>
 <h2 class="doxsection"><a class="anchor" id="annex"></a>
 Annex</h2>
 <p>An <span class="tt">anx</span> declaration is an ordinary member of its enclosing module, found by the same path resolution as any other member. Its plugin-qualified name (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>, derived from <span class="tt">mod</span> nesting) is additionally registered in a global by-name table (<a class="el" href="structmim_1_1Annex.html" title="mim::Annex">mim::Annex</a>) that tools such as <span class="tt">compile.named</span> and plugin bootstrap use to look an annex up directly by that name, independent of the surrounding modules.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h2 class="doxsection"><a class="anchor" id="field"></a>
 Field Names of Sigmas</h2>
 <p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of mutable sigma types are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">S</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1_2;</div>
