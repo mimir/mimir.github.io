@@ -12,6 +12,6 @@ var classmim_1_1ast_1_1LamDecl =
     [ "emit_decl", "classmim_1_1ast_1_1LamDecl.html#a704e0a20d94538e29421f8c126a49456", null ],
     [ "is_external", "classmim_1_1ast_1_1LamDecl.html#a1ba2b16bba501d452a62e34db4784d1b", null ],
     [ "num_doms", "classmim_1_1ast_1_1LamDecl.html#a881316eb2679ff3f4fca2cd5d7590ea4", null ],
-    [ "stream", "classmim_1_1ast_1_1LamDecl.html#ae4ba692d2d6cf27c4509c166eba85a4b", null ],
+    [ "stream_", "classmim_1_1ast_1_1LamDecl.html#ae69a1af244e76b86c6e82be9ee6c35b3", null ],
     [ "tag", "classmim_1_1ast_1_1LamDecl.html#a0bafa724cc44805a8e98494ac987896b", null ]
 ];

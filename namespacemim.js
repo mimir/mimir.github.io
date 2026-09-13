@@ -210,6 +210,7 @@ var namespacemim =
     [ "cite", "namespacemim.html#a9f53ccab4a4384a4f30e9edf77d9d2eb", null ],
     [ "collect", "namespacemim.html#a14e875ff9d37fba52618767b032ed91d", null ],
     [ "compose_cn", "namespacemim.html#aab8bd049eb0b9bf7561a602f62ce7ebd", null ],
+    [ "drop_self", "namespacemim.html#a243a2a51c74ad154125a9a0a79ef0955", null ],
     [ "flatten_umax", "namespacemim.html#acc7b1158f83b80e637de1a63f56d514c", null ],
     [ "is_associative", "namespacemim.html#abe80f437b1eb4a8af99d7a4e6fff1fe3", null ],
     [ "is_associative", "namespacemim.html#a18ea687fca3cafcb3ae2e8afacdb6a43", null ],

@@ -350,11 +350,11 @@ Declarations</h2>
 <div class="line">        |  vis? &quot;anx&quot; I &quot;=&quot; path</div>
 <div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e and*</div>
 <div class="line">        |  vis? &quot;extern&quot; lam I fwd+ (&quot;:&quot; e)? &quot;;&quot;</div>
-<div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I (&quot;:&quot; e)? &quot;=&quot; e and*</div>
+<div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I &quot;=&quot; e and*</div>
 <div class="line">        |  vis? &quot;axm&quot; axm</div>
 <div class="line">        |  (&quot;rule&quot; | &quot;norm&quot;) I p &quot;:&quot; e (&quot;when&quot; e)? &quot;=&gt;&quot; e</div>
 <div class="line"> </div>
-<div class="line">and    ::= &quot;and&quot; I (&quot;:&quot; e)? &quot;=&quot; e</div>
+<div class="line">and    ::= &quot;and&quot; I &quot;=&quot; e</div>
 <div class="line">        |  &quot;and&quot; lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e</div>
 <div class="line">vis    ::= &quot;priv&quot; | &quot;pub&quot;</div>
 <div class="line">lam    ::= &quot;lam&quot; | &quot;con&quot; | &quot;fun&quot;</div>
@@ -377,7 +377,7 @@ Declarations</h2>
 <li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations.</li>
 <li><span class="tt">extern</span> makes a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span> and is visible to backends; with the body omitted (just <span class="tt">;</span>), its implementation lives in a native translation unit instead. Currently, <span class="tt">extern</span> is only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration.</li>
 <li>The <span class="tt">@</span> of a <span class="tt">dom</span> introduces its partial-evaluation filter.</li>
-<li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group.</li>
+<li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
 <li>After <span class="tt">and</span>, the next declaration may be another <span class="tt">rec</span>-style binding or an explicit <span class="tt">lam</span>, <span class="tt">con</span>, or <span class="tt">fun</span> declaration; an <span class="tt">and</span>-continuation doesn't accept its own modifiers.</li>
 <li><span class="tt">axm</span> declares an axiom. A <span class="tt">tag</span> list declares several axioms of the same type at once, and each <span class="tt">= I</span> adds another name for that tag. Prefixed with a name as in <span class="tt">axm nat.(add, sub): ...</span>, the tags become members of a module of that name.</li>
 <li>An <span class="tt">axm</span>'s <span class="tt">tail</span> is the normalizer, the curry counter, and the trip count, in that order; a trip count requires a curry counter.</li>
@@ -636,11 +636,11 @@ Annex</h2>
 Field Names of Sigmas</h2>
 <p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of mutable sigma types are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">S</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1_2;</div>
-<div class="line">rec S: * = [i: Nat, j: Nat];</div>
+<div class="line">rec S = [i: Nat, j: Nat];</div>
 <div class="line">lam f (x: S): Nat = x#i;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Use parentheses to force the variable interpretation:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1_2;</div>
-<div class="line">rec S: * = [i: Nat, j: Nat];</div>
+<div class="line">rec S = [i: Nat, j: Nat];</div>
 <div class="line">lam f (x: S): Nat = x#(i);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">

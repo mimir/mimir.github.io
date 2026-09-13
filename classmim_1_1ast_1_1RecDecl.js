@@ -1,6 +1,6 @@
 var classmim_1_1ast_1_1RecDecl =
 [
-    [ "RecDecl", "classmim_1_1ast_1_1RecDecl.html#a84f62486154aebac0aa153822d396752", null ],
+    [ "RecDecl", "classmim_1_1ast_1_1RecDecl.html#a671e83ec377991326e2017a15e1e8b9a", null ],
     [ "annex_sub", "classmim_1_1ast_1_1RecDecl.html#af2fcfe0198c0d0f9328365f30de199ca", null ],
     [ "bind", "classmim_1_1ast_1_1RecDecl.html#adaeee223054b02f9aa44a5d0849b491d", null ],
     [ "bind_body", "classmim_1_1ast_1_1RecDecl.html#a483bc0ba63896033e17f65d40db7d06b", null ],
@@ -12,5 +12,5 @@ var classmim_1_1ast_1_1RecDecl =
     [ "emit_decl", "classmim_1_1ast_1_1RecDecl.html#a603da42132febe4a8dfb79c8b2a0dbaa", null ],
     [ "next", "classmim_1_1ast_1_1RecDecl.html#ac7c21cf066f7dbb313f5408b392d49f3", null ],
     [ "stream", "classmim_1_1ast_1_1RecDecl.html#a2b2abade33c01a8318083fa41979c2c5", null ],
-    [ "type", "classmim_1_1ast_1_1RecDecl.html#a9c5240fe4f12c5ac6e5fa6532b97880e", null ]
+    [ "stream_", "classmim_1_1ast_1_1RecDecl.html#a9888bd51e46c1a8fb19bd52e7e5ea85b", null ]
 ];

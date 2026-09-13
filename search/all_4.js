@@ -134,11 +134,12 @@ var searchData=
   ['driver_131',['driver',['../classmim_1_1ast_1_1AST.html#ab7db82503c10c6293ddc26085b2bbbed',1,'mim::ast::AST::driver()'],['../classmim_1_1ast_1_1Lexer.html#adcdf247f528bbbe25309a6586de838af',1,'mim::ast::Lexer::driver()'],['../classmim_1_1ast_1_1Parser.html#ae57f08577b857b2be1363390044f8d91',1,'mim::ast::Parser::driver()'],['../classmim_1_1Def.html#ad1fcdfa6ab0c56b444a715a9f789f58c',1,'mim::Def::driver()'],['../classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc',1,'mim::Phase::driver()'],['../classmim_1_1World.html#a2a0347862f33d964457e4c9b64e75625',1,'mim::World::driver()'],['../classmim_1_1World.html#a32187bcd87365e3a8d712b373ceaa0d5',1,'mim::World::driver() const'],['../classmim_1_1World_1_1Annexes.html#a1a9ab925719b9b8e18220f8e8523f4b3',1,'mim::World::Annexes::driver()'],['../classmim_1_1ast_1_1Emitter.html#af63c0e340a1dbef41a23238343e1da1f',1,'mim::ast::Emitter::driver()']]],
   ['driver_2ecpp_132',['driver.cpp',['../driver_8cpp.html',1,'']]],
   ['driver_2eh_133',['driver.h',['../driver_8h.html',1,'']]],
-  ['dsl_134',['Embedded Python DSL',['../python.html#autotoc_md125',1,'']]],
-  ['dummy_135',['dummy',['../classmim_1_1ast_1_1Scopes.html#a1ccec7fa48ba733643d462600ceef56b',1,'mim::ast::Scopes']]],
-  ['dummydecl_136',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast::DummyDecl'],['../classmim_1_1ast_1_1DummyDecl.html#ae579aa4faf836624b1c210a93664754a',1,'mim::ast::DummyDecl::DummyDecl()']]],
-  ['dump_137',['dump',['../classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35',1,'mim::ast::Node::dump()'],['../classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487',1,'mim::Def::dump() const'],['../classmim_1_1Def.html#aa042dd90667f6f3e6950166b478ec694',1,'mim::Def::dump(int max) const'],['../classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f',1,'mim::World::dump(std::ostream &amp;os)'],['../classmim_1_1World.html#a6948f411fa7465945b028dc5d8b2831e',1,'mim::World::dump()']]],
-  ['dump_2ecpp_138',['dump.cpp',['../dump_8cpp.html',1,'']]],
-  ['dump_5frecursive_139',['dump_recursive',['../structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506',1,'mim::Flags']]],
-  ['dumping_140',['Dumping',['../coding.html#autotoc_md25',1,'']]]
+  ['drop_5fself_134',['drop_self',['../namespacemim.html#a243a2a51c74ad154125a9a0a79ef0955',1,'mim']]],
+  ['dsl_135',['Embedded Python DSL',['../python.html#autotoc_md125',1,'']]],
+  ['dummy_136',['dummy',['../classmim_1_1ast_1_1Scopes.html#a1ccec7fa48ba733643d462600ceef56b',1,'mim::ast::Scopes']]],
+  ['dummydecl_137',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast::DummyDecl'],['../classmim_1_1ast_1_1DummyDecl.html#ae579aa4faf836624b1c210a93664754a',1,'mim::ast::DummyDecl::DummyDecl()']]],
+  ['dump_138',['dump',['../classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35',1,'mim::ast::Node::dump()'],['../classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487',1,'mim::Def::dump() const'],['../classmim_1_1Def.html#aa042dd90667f6f3e6950166b478ec694',1,'mim::Def::dump(int max) const'],['../classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f',1,'mim::World::dump(std::ostream &amp;os)'],['../classmim_1_1World.html#a6948f411fa7465945b028dc5d8b2831e',1,'mim::World::dump()']]],
+  ['dump_2ecpp_139',['dump.cpp',['../dump_8cpp.html',1,'']]],
+  ['dump_5frecursive_140',['dump_recursive',['../structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506',1,'mim::Flags']]],
+  ['dumping_141',['Dumping',['../coding.html#autotoc_md25',1,'']]]
 ];
