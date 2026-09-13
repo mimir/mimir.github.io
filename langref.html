@@ -366,16 +366,12 @@ Declarations</h2>
 <div class="line">tail   ::= (&quot;,&quot; I)? (&quot;,&quot; L (&quot;,&quot; L)?)?</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><dl class="section note"><dt>Note</dt><dd>A declaration may be followed by a <span class="tt">;</span>, as all examples on this page do; stray semicolons between declarations are skipped.</dd></dl>
 <ul>
-<li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
-<li><span class="tt">pub</span> lifts that restriction, so a path from outside the enclosing <span class="tt">mod</span> may reach the declaration.</li>
-<li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
 <li><span class="tt">import</span> and <span class="tt">plugin</span> bind a file as a module, or splice its public members into the current scope; see <a class="el" href="#module" title="Files and Imports">Files and Imports</a>.</li>
 <li><span class="tt">mod</span> groups declarations under a name; its body also sees the enclosing scope. Neither <span class="tt">extern</span> nor <span class="tt">anx</span> apply to it.</li>
 <li><span class="tt">use path as I</span> introduces <span class="tt">I</span> as another name for the module <span class="tt">path</span> denotes; <span class="tt">use path as *</span> splices that module's public members into the current scope instead, and a plain <span class="tt">use path</span> is sugar for the latter.</li>
 <li><span class="tt">let</span> introduces a binding pattern.</li>
 <li><span class="tt">anx I = path</span> declares <span class="tt">I</span> as an alias for the annex denoted by <span class="tt">path</span>.</li>
 <li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations. The declared name is already in scope inside its own body, so such a declaration is recursive. <span class="tt">and</span> extends the group to mutual recursion; a forward reference without <span class="tt">and</span> does not resolve. The corresponding <a class="el" href="#expr" title="Expressions">expression forms</a> are anonymous and cannot refer to themselves.</li>
-<li><span class="tt">extern</span> makes a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span> and is visible to backends; with the body omitted (just <span class="tt">;</span>), its implementation lives in a native translation unit instead. Currently, <span class="tt">extern</span> is only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration.</li>
 <li>The <span class="tt">@</span> of a <span class="tt">dom</span> introduces its partial-evaluation filter.</li>
 <li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
 <li>After <span class="tt">and</span>, the next declaration may be another <span class="tt">rec</span>-style binding or an explicit <span class="tt">lam</span>, <span class="tt">con</span>, or <span class="tt">fun</span> declaration; an <span class="tt">and</span>-continuation doesn't accept its own modifiers.</li>
@@ -383,6 +379,18 @@ Declarations</h2>
 <li>An <span class="tt">axm</span>'s <span class="tt">tail</span> is the normalizer, the curry counter, and the trip count, in that order; a trip count requires a curry counter.</li>
 <li><span class="tt">rule</span> and <span class="tt">norm</span> declare rewrite rules.</li>
 <li><span class="tt">norm</span> is the normalizing variant of <span class="tt">rule</span>.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+Modifiers</h3>
+<ul>
+<li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
+<li><span class="tt">extern</span> makes a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span> and is visible to backends; with the body omitted (just <span class="tt">;</span>), its implementation lives in a native translation unit instead. Currently, <span class="tt">extern</span> is only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration.</li>
+</ul>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+Visibility</h4>
+<ul>
+<li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
+<li><span class="tt">pub</span> lifts that restriction, so a path from outside the enclosing <span class="tt">mod</span> may reach the declaration.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="ptrn"></a>
 Patterns and Telescopes</h2>
@@ -421,7 +429,7 @@ Patterns and Telescopes</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><dl class="section note"><dt>Note</dt><dd>Don't name such a value <span class="tt">mem</span>: it would shadow the module <span class="tt">mem</span>, and the <span class="tt">mem.store</span> on the next line would no longer resolve.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="expr"></a>
 Expressions</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Kinds and Builtin Types</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;Univ&quot;</div>
 <div class="line">       |  &quot;Type&quot; e</div>
@@ -466,7 +474,7 @@ Literals and Basic Forms</h3>
 <li><span class="tt">d+ e</span> is a declaration expression: one or more declarations followed by a final expression <span class="tt">e</span>, which is the result. It is not delimited by any brackets; it simply starts with a declaration keyword such as <span class="tt">let</span>.</li>
 <li><span class="tt">⦃ e ⦄</span> is a singleton type.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Functions and Continuations</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
 <div class="line">     |  t &quot;→&quot; e</div>
@@ -500,16 +508,21 @@ Products</h3>
 <div class="line">       |  I &quot;:&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">[ ... ]</span> is a sigma expression unless it is immediately followed by <span class="tt">as</span> or <span class="tt">→</span>, in which case it is parsed as the domain of a dependent function type.</li>
-<li><span class="tt">( ... )</span> is a tuple expression.</li>
+<li><span class="tt">( ... )</span> is a tuple expression. <dl class="section note"><dt>Note</dt><dd>There are no parenthesized/grouping expressions in <a class="el" href="namespaceMim.html">Mim</a>. Instead, you use a 1-tuple. A 1-tuple always degrades to its sole element, giving the effect of a parenthesized expression.</dd></dl>
+</li>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
 <li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
 <li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
-<li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. The path extends leftward through <span class="tt">#</span> and stops at the first expression that is not itself a <span class="tt">#</span>, so <span class="tt">(t#i)#j ← v</span> denotes <span class="tt">t#i</span> instead. <span class="tt">( ... )</span> builds a tuple and does not merely group, so it ends a path even though a one-element tuple denotes its element. A <span class="tt">let</span> ends a path the same way: <span class="tt">let row = t#i; row#j ← v</span> also denotes <span class="tt">t#i</span>.</li>
+<li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. The path extends leftward through <span class="tt">#</span> and stops at the first expression that is not itself a <span class="tt">#</span>.<ul>
+<li><span class="tt">( ... )</span> builds a tuple (see above), so it ends a path. Thus, <span class="tt">(t#i)#j ← v</span> denotes <span class="tt">t#i</span> instead.</li>
+<li>A <span class="tt">let</span> ends a path the same way: <span class="tt">let row = t#i; row#j ← v</span> also denotes <span class="tt">t#i</span>.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Unions</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
 <div class="line">     |  e &quot;inj&quot; e</div>
@@ -541,7 +554,7 @@ Infix Operators</h3>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
 <li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Univ)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Local Declaration Blocks</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
@@ -584,7 +597,7 @@ Precedence</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Summary: Functions and Types</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses different surface syntax for declarations, expressions, and types:</p>
 <table class="markdownTable">
@@ -597,35 +610,35 @@ Summary: Functions and Types</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">fun</span>  </td><td class="markdownTableBodyNone"><span class="tt">fn</span>  </td><td class="markdownTableBodyNone"><span class="tt">Fn</span>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">con f (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">fun f (T: *)  (x y: T): T                    = return x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above - except that <span class="tt">f</span> is <em>not</em> in scope inside the body, so they cannot recurse:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f = fn (T: *)  (x y: T): T                    = return x;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 Applications</h2>
 <p>The following applications of <span class="tt">f</span> are equivalent, where <span class="tt">g</span> is a continuation that consumes the result:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">f Nat ((23, 42), cn res: Nat = g res)</div>
 <div class="line">ret res = f Nat $ (23, 42); g res</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">[T: *] →    [[T, T], T → ⊥] → ⊥</div>
 <div class="line">[T: *] → Cn [[T, T], Cn T]</div>
 <div class="line">[T: *] → Fn  [T, T] → T</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
 <h2 class="doxsection"><a class="anchor" id="annex"></a>
