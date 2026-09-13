@@ -190,7 +190,7 @@ Terminals</h2>
 Primary Terminals</h3>
 <div class="ebnf-terminals"></div><div class="ebnf-terminals"><div class="fragment"><div class="line">( ) [ ] { } ⦃ ⦄</div>
 <div class="line">‹ › « »</div>
-<div class="line">→ ← =&gt; ⊥ ⊤ * □ λ</div>
+<div class="line">→ ← ⇐ =&gt; ⊥ ⊤ * □ λ</div>
 <div class="line">= , ; . : @ $ # | ∪</div>
 <div class="line">+ - / % == != &lt; &lt;= &gt; &gt;= &lt;&lt; &gt;&gt;</div>
 <div class="line">&lt;eof&gt;</div>
@@ -205,12 +205,14 @@ Secondary Terminals</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">←</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;-</span>  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">⇐</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;==</span>  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">λ</span>  </td><td class="markdownTableBodyNone"><span class="tt">lm</span>  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">⊥</span>  </td><td class="markdownTableBodyNone"><span class="tt">bot</span>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">⊤</span>  </td><td class="markdownTableBodyNone"><span class="tt">top</span>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">⊥</span>  </td><td class="markdownTableBodyNone"><span class="tt">bot</span>  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">⊤</span>  </td><td class="markdownTableBodyNone"><span class="tt">top</span>  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">*</span>  </td><td class="markdownTableBodyNone"><span class="tt">★</span>  </td></tr>
 </table>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
@@ -495,7 +497,7 @@ Products</h3>
 <div class="line">       |  e &quot;#&quot; e</div>
 <div class="line">       |  e &quot;#&quot; I</div>
 <div class="line">       |  e &quot;#&quot; e &quot;←&quot; e</div>
-<div class="line">       |  e &quot;←&quot; e</div>
+<div class="line">       |  e (&quot;#&quot; e)+ &quot;⇐&quot; e</div>
 <div class="line"> </div>
 <div class="line">arity ::= e</div>
 <div class="line">       |  I &quot;:&quot; e</div>
@@ -506,8 +508,8 @@ Products</h3>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
 <li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
 <li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
-<li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>.</li>
-<li><span class="tt">e ← value</span> without a <span class="tt">#</span> leaves the index implicit: <span class="tt">e</span> is its own sole component, so this is <span class="tt">e#0₁ ← value</span> and hence <span class="tt">value</span>. An <span class="tt">e</span> of arity other than 1 is an error, just as <span class="tt">e#0₁</span> would be.</li>
+<li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
+<li><span class="tt">tuple#i#j#k ⇐ value</span> updates the component at the <em>whole</em> path, so it denotes the outer aggregate. It is sugar for the nested <span class="tt">←</span> chain and coincides with <span class="tt">←</span> when the path has a single <span class="tt">#</span>.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
@@ -577,7 +579,7 @@ Precedence</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">12  </td><td class="markdownTableBodyNone"><span class="tt">Inj</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e inj e</span>  </td><td class="markdownTableBodyNone">Weaker than <span class="tt">∪</span>, so <span class="tt">x inj A ∪ B</span> is <span class="tt">x inj (A ∪ B)</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e#e ← e</span>, <span class="tt">e ← e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
+<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e#e ← e</span>, <span class="tt">e#e ⇐ e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyRight">14  </td><td class="markdownTableBodyNone"><span class="tt">Where</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e where d* end</span>  </td><td class="markdownTableBodyNone">The loosest surface operator.  </td></tr>
 <tr class="markdownTableRowOdd">

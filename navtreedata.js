@@ -116,18 +116,18 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1InfixExpr.html#a3a75aedcd09330c85269918a17e52bed",
 "classmim_1_1ast_1_1PiExpr.html#a2bb61e1fb1fbe74ab8282a97f6bde84c",
 "classmim_1_1ast_1_1Tok.html#a9d235ba4a8cb78a9696058e20f496079",
-"classmim_1_1ast_1_1TuplePtrn.html#a476e1d760d91776c97d8a87c5d0322c5",
-"classmim_1_1plug_1_1cps_1_1Conv.html#a2a74ec57bc411c401697c1e01520aa21",
-"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#ab1d57a1c8c46425baa93f59c92727b01",
-"dir_893c614dfc26359ef9972db39f5999c1.html",
-"lower__to__mem_8cpp_source.html",
-"namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd",
-"namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cacecd0f2415ba21a6a908010576282c6d",
-"namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09",
-"namespacemim_1_1plug_1_1math.html#affa2e23bf7486738df24d3d3f1ce79da",
-"namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692",
-"structautomaton_1_1NFANode_1_1Lt.html#ade5f33b8cf5bcb60dcaf1a923d57ff57",
-"structmim_1_1ast_1_1Mods.html#aa837616535d540de2a3473fc83e6a8de"
+"classmim_1_1ast_1_1TuplePtrn.html#a45e9dbd1449e0e581ccc9a6ecef06f02",
+"classmim_1_1plug_1_1cps_1_1Conv.html#a1af1c6c1055719c757fee55165d1c0bf",
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a8fbd11ed3a18be75ac5e3b972486cae6",
+"dir_8409f09d45f1a00c4a643cf80cc8701b.html",
+"lower__regex_8h_source.html",
+"namespacemim.html#ab0305325717f16fe2bbfff566fb85d7a",
+"namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca71f262d796bed1ab30e8a2d5a8ddee6f",
+"namespacemim_1_1plug_1_1gpu.html#a7b5c13b8666020d7b84dd230475d3261",
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895",
+"namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632",
+"structautomaton_1_1NFANode_1_1Lt.html",
+"structmim_1_1ast_1_1Mods.html#aa4abd95d916b211bb1257a2af0a93339"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

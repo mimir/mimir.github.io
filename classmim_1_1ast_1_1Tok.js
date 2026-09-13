@@ -87,6 +87,7 @@ var classmim_1_1ast_1_1Tok =
       [ "T_ge", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a6a96b9b8e34459c6c66bc19b1dcd1b53", null ],
       [ "T_gt", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a8ec64bc43c1e9469016e9c89c5b8bd90", null ],
       [ "T_arrow_l", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a3134cb0a7cd517805c3780f858c70ccb", null ],
+      [ "T_darrow_l", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a42eb323536e649b127ad01646bcd2948", null ],
       [ "T_le", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7c36bdfc9f63010b3bdffe605466e484", null ],
       [ "T_lm", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aef24a45c736c5c5aca00490b376cc0ae", null ],
       [ "T_lt", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5af17eccc778b98c4e490dc0770c6014c7", null ],
