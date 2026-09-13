@@ -35,7 +35,7 @@ var searchData=
   ['bitcast_32',['bitcast',['../namespacemim_1_1plug_1_1core.html#aed6032a690b0654e14fdf971993025f5',1,'mim::plug::core::bitcast'],['../core.html#autotoc_md267',1,'bitcast']]],
   ['bitmaskwidth_33',['BitmaskWidth',['../namespacemim.html#ad70d80188d4a31ea1ab6199969ce4e63',1,'mim']]],
   ['bitwidth2size_34',['bitwidth2size',['../classmim_1_1Idx.html#a752a4648753c26f9d618a451fdf3b703',1,'mim::Idx']]],
-  ['blame_35',['blame',['../classmim_1_1Def.html#a958dc65488abd4222d67436ef30810d1',1,'mim::Def']]],
+  ['blame_35',['blame',['../classmim_1_1Def.html#a9e1e3b97e1c54f80e0d4256d5a041947',1,'mim::Def']]],
   ['block_36',['block',['../namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36a14511f2f5564650d129ca7cabc333278',1,'mim::plug::gpu::block'],['../namespacemim_1_1plug_1_1gpu.html#a984ce474f7a834df9bc48a3851e28650a14511f2f5564650d129ca7cabc333278',1,'mim::plug::gpu::block'],['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3ea14511f2f5564650d129ca7cabc333278',1,'mim::plug::gpu::block'],['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056a14511f2f5564650d129ca7cabc333278',1,'mim::plug::gpu::block'],['../namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09a14511f2f5564650d129ca7cabc333278',1,'mim::plug::gpu::block']]],
   ['block_20alloc_20asyn_37',['alloc(block) / alloc(asyn)',['../gpu.html#autotoc_md298',1,'']]],
   ['block_20alloc_5fcopy_20asyn_38',['alloc_copy(block) / alloc_copy(asyn)',['../gpu.html#autotoc_md302',1,'']]],
