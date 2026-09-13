@@ -195,7 +195,11 @@ Options</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-p, --plugin &lt;plugin&gt;</span>  </td><td class="markdownTableBodyNone">Dynamically loads a plugin.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">-P, --plugin-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for plugins.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">-P, --plugin-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for plugins; also searched for imports.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-I, --import-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for imports.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--prefix-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Install prefix to derive plugin, import, and runtime directories from.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-X, --plugin-arg &lt;plugin:arg&gt;</span>  </td><td class="markdownTableBodyNone">Passes an argument to a plugin/phase, e.g. <span class="tt">-X ll:o=output.ll</span>. Repeatable.  </td></tr>
 <tr class="markdownTableRowEven">
@@ -319,6 +323,10 @@ Environment Variables</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">MIM_PLUGIN_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of plugin search paths, searched after those given via <span class="tt">-P</span>.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">MIM_IMPORT_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of import search paths, searched after those given via <span class="tt">-I</span>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">MIM_PREFIX_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of install prefixes, searched after those given via <span class="tt">--prefix-path</span>.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">NO_COLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to a non-empty value; wins over the two below.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">CLICOLOR_FORCE</span>  </td><td class="markdownTableBodyNone">Forces colored output if set to a non-empty value other than 0.  </td></tr>
@@ -420,14 +428,20 @@ Diagnostics</h1>
 Plugins</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Search Paths</h2>
-<p><a class="el" href="namespaceMim.html">Mim</a> looks for plugins in this order:</p>
-<ol type="1">
-<li>The current working directory.</li>
-<li>All paths specified via <span class="tt">-P</span> / <span class="tt">--plugin-path</span> (in the given order).</li>
-<li>All paths specified in the environment variable <span class="tt">MIM_PLUGIN_PATH</span> (in the given order).</li>
-<li><span class="tt">path/to/mim.exe/../../lib/mim</span></li>
-<li><span class="tt">CMAKE_INSTALL_PREFIX/lib/mim</span></li>
-</ol>
+<p><a class="el" href="namespaceMim.html">Mim</a> keeps three separate lookups, because the artifacts they find are different in kind: a plugin library is host-native code, a <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is portable source, and a backend runtime belongs to the target.</p>
+<p>Two kinds of entry feed them. A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span> / <span class="tt">-I</span> and their environment variables add. A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself; <span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add one, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Looking for  </th><th class="markdownTableHeadNone">Order  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">libmim_&lt;name&gt;</span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">lib/mim</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-I</span>, <span class="tt">MIM_IMPORT_PATH</span>, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">share/mim</span> and <span class="tt">lib/mim</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">runtime modules  </td><td class="markdownTableBodyNone">cwd <span class="tt">rt</span>, <span class="tt">-P</span> and <span class="tt">MIM_PLUGIN_PATH</span> each with <span class="tt">rt</span>, then each root's <span class="tt">lib/mim/rt</span>  </td></tr>
+</table>
+<p>Plugin directories are searched for imports too, since a plugin ships both of its halves together. <span class="tt"><a class="el" href="namespacemim.html">mim</a> -l</span> prints all three lists fully resolved.</p>
+<p>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories. A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</p>
 <h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
 Arguments</h2>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>

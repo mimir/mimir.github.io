@@ -1,5 +1,6 @@
 var config_8h =
 [
+    [ "MIM_DATADIR", "config_8h.html#a8249fb78f7714e1be90d5cd245e24f16", null ],
     [ "MIM_ENABLE_CHECKS", "config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b", null ],
     [ "MIM_EXPORT", "config_8h.html#acf14f602e3976ff8653bb419a1d77a7f", null ],
     [ "MIM_GIT_HASH", "config_8h.html#a92fcfef0dd9a3b4deb53b1a204ff34d5", null ],

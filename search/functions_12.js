@@ -8,7 +8,7 @@ var searchData=
   ['scope_5',['scope',['../classmim_1_1ast_1_1Decl.html#ac6782f42e504ce6653f354df640f3fe1',1,'mim::ast::Decl::scope()'],['../classmim_1_1ast_1_1UseDecl.html#a25820873fb9dba0a7dbd33952428c2a3',1,'mim::ast::UseDecl::scope()'],['../classmim_1_1ast_1_1ModDecl.html#ac42b6e32048beb19d3687aaf5caaa03d',1,'mim::ast::ModDecl::scope()']]],
   ['scopes_6',['Scopes',['../classmim_1_1ast_1_1Scopes.html#a032e87fb58ed71a9dd7c425284b6514a',1,'mim::ast::Scopes']]],
   ['scrutinee_7',['scrutinee',['../classmim_1_1ast_1_1MatchExpr.html#a7c5b8ee7abcb2b8488ca7d8118648a97',1,'mim::ast::MatchExpr::scrutinee()'],['../classmim_1_1Match.html#a4f6522e1cd09634efd3121fc12d4f29e',1,'mim::Match::scrutinee()']]],
-  ['search_5fpaths_8',['search_paths',['../classmim_1_1Driver.html#afd36aa36d224823727e7c4e249874754',1,'mim::Driver']]],
+  ['seal_8',['seal',['../classmim_1_1Driver_1_1Paths.html#a50512a4d558d0910cc20b21e45b6b29e',1,'mim::Driver::Paths']]],
   ['select_9',['Select',['../classmim_1_1Select.html#adecd4a9de9d7c246d7c4db943b6959da',1,'mim::Select']]],
   ['select_10',['select',['../classmim_1_1World.html#ae336d8df53ea40e63899b84c41d91ab0',1,'mim::World']]],
   ['seo_11',['SEO',['../classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html#ad748469d44b2e3dbe8a54f3f4e4b06ae',1,'mim::plug::mem::phase::SEO']]],

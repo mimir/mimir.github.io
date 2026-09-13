@@ -173,7 +173,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('math.html','',
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md322"></a>
 F</h2>
-<p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm F: «2; Nat» → *;</div>
+<p>A floating-point type with <span class="tt">p</span> bits of precision and <span class="tt">e</span> exponent bits. The sign bit is neither included in <span class="tt">p</span> nor in <span class="tt">e</span>. Thus, the total number of bits occupied by a value of this type is <span class="tt">p + e + 1</span>. Current constant folding only supports IEEE binary16/binary32/binary64 literals, subject to host <span class="tt">f16</span> support.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm F: «2; Nat» → *;</div>
 <div class="line"> </div>
 <div class="line">anx let f16     = (10,  5);</div>
 <div class="line">anx let f32     = (23,  8);</div>
@@ -212,7 +213,8 @@ mode</h2>
 Numerical Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md326"></a>
 arith</h2>
-<p>Arithmetic operations. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm arith.(add, sub, mul, div, rem):</div>
+<p>Arithmetic operations.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm arith.(add, sub, mul, div, rem):</div>
 <div class="line">    Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_arith;</div>
 <div class="line"> </div>
 <div class="line">anx lam minus (m: Nat) {pe: «2; Nat»} (a: F pe): F pe =</div>
@@ -475,7 +477,10 @@ ops</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">math.ops.fast</span>  </td><td class="markdownTableBodyNone"><span class="tt">math.mode.fast</span>  </td></tr>
 </table>
-<p><span class="tt">!=</span> is math.cmp.une - the exact complement of <span class="tt">==</span> - and hence <span class="tt">tt</span> if an operand is a NaN. All other comparisons are ordered and thus <span class="tt">ff</span> in that case.</p>
+<ul>
+<li><span class="tt">!=</span> is math.cmp.une - the exact complement of <span class="tt">==</span> - and hence <span class="tt">tt</span> if an operand is a NaN.</li>
+<li>All other comparisons are ordered and thus <span class="tt">ff</span> in that case.</li>
+</ul>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod ops {</div>
 <div class="line">    pub mod none {</div>
 <div class="line">        pub let `+  = arith.add mode.none;</div>

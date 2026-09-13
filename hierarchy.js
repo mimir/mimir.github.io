@@ -61,6 +61,7 @@ var hierarchy =
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
     ] ],
+    [ "mim::Driver::Paths", "classmim_1_1Driver_1_1Paths.html", null ],
     [ "mim::PlainNames", "classmim_1_1PlainNames.html", null ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::PluginArg", "namespacemim.html#structmim_1_1PluginArg", null ],

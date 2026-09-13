@@ -250,202 +250,203 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Mim_8cmake_sou
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    set(OUT_PLUGIN_MIM  ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/${PLUGIN}.mim)</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    set(PLUGIN_MD       ${CMAKE_BINARY_DIR}/docs/plug/${PLUGIN}.md)</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    set(AUTOGEN_H       ${CMAKE_BINARY_DIR}/include/mim/plug/${PLUGIN}/autogen.h)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    set(AUTOGEN_PY      ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/${PLUGIN}.py)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    set(AUTOGEN_PY      ${CMAKE_BINARY_DIR}/py/mim/_plugins/${PLUGIN}.py)</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    file(</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        MAKE_DIRECTORY</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            ${CMAKE_BINARY_DIR}/docs/plug/</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            ${CMAKE_BINARY_DIR}/include/mim/plug/${PLUGIN}</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    )</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    set(PLUGIN_ROOTS <span class="stringliteral">&quot;${CMAKE_SOURCE_DIR}/src/mim/plug&quot;</span> <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/..&quot;</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    mim_transitive_imports(<span class="stringliteral">&quot;${PLUGIN_MIM}&quot;</span> <span class="stringliteral">&quot;${PLUGIN_ROOTS}&quot;</span> PLUGIN_IMPORTS)</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    add_custom_command(</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        OUTPUT</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            ${AUTOGEN_H}</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            ${AUTOGEN_PY}</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            ${PLUGIN_MD}</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        COMMAND $&lt;TARGET_FILE:${MIM_TARGET_NAMESPACE}mim&gt; ${PLUGIN_MIM} -P <span class="stringliteral">&quot;${CMAKE_SOURCE_DIR}/src/mim/plug&quot;</span> -P <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/..&quot;</span> --bootstrap</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            --output-h ${AUTOGEN_H}</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            --output-md ${PLUGIN_MD}</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            --output-py ${AUTOGEN_PY}</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        MAIN_DEPENDENCY ${PLUGIN_MIM}</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        DEPENDS ${MIM_TARGET_NAMESPACE}mim ${PLUGIN_IMPORTS}</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        COMMENT <span class="stringliteral">&quot;Bootstrapping MimIR plugin &#39;${PLUGIN_MIM}&#39;&quot;</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        VERBATIM</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    )</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    add_custom_command(</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        OUTPUT  ${OUT_PLUGIN_MIM}</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PLUGIN_MIM} ${OUT_PLUGIN_MIM}</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        DEPENDS ${PLUGIN_MIM}</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        COMMENT <span class="stringliteral">&quot;Copy &#39;${PLUGIN_MIM}&#39; to &#39;${OUT_PLUGIN_MIM}&#39;&quot;</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    )</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    add_custom_target(mim_internal_${PLUGIN}</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        DEPENDS</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            ${AUTOGEN_H}</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            ${AUTOGEN_PY}</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            ${PLUGIN_MD}</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            ${OUT_PLUGIN_MIM}</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    )</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    if(PLUGIN IN_LIST MIM_PLUGIN_LIST)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        message(FATAL_ERROR <span class="stringliteral">&quot;Mim plugin &#39;${PLUGIN}&#39; is already registered&quot;</span>)</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    endif()</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    list(APPEND MIM_PLUGIN_LIST <span class="stringliteral">&quot;${PLUGIN}&quot;</span>)</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    string(APPEND MIM_PLUGIN_LAYOUT <span class="stringliteral">&quot;&lt;tab type=\&quot;user\&quot; url=\&quot;@ref ${PLUGIN}\&quot; title=\&quot;${PLUGIN}\&quot;/&gt;&quot;</span>)</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    set(MIM_PLUGIN_LIST   <span class="stringliteral">&quot;${MIM_PLUGIN_LIST}&quot;</span>   CACHE INTERNAL <span class="stringliteral">&quot;MIM_PLUGIN_LIST&quot;</span>)</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    set(MIM_PLUGIN_LAYOUT <span class="stringliteral">&quot;${MIM_PLUGIN_LAYOUT}&quot;</span> CACHE INTERNAL <span class="stringliteral">&quot;MIM_PLUGIN_LAYOUT&quot;</span>)</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    add_library(mim_${PLUGIN} MODULE)</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    add_dependencies(mim_${PLUGIN} mim_internal_${PLUGIN})</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    target_sources(mim_${PLUGIN}</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        PRIVATE</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            ${PARSED_SOURCES}</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    )</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    target_include_directories(mim_${PLUGIN}</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        PUBLIC</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            $&lt;BUILD_INTERFACE:${CMAKE_BINARY_DIR}/include&gt; <span class="comment"># for autogen.h</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    )</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    if(EXISTS <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span>)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        target_include_directories(mim_${PLUGIN}</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            PRIVATE</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        )</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    endif()</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    target_link_libraries(mim_${PLUGIN}</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        PRIVATE</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            ${PARSED_PRIVATE}</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            ${MIM_TARGET_NAMESPACE}libmim</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    )</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    set_target_properties(mim_${PLUGIN}</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        PROPERTIES</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            CXX_VISIBILITY_PRESET hidden</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            VISIBILITY_INLINES_HIDDEN 1</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            WINDOWS_EXPORT_ALL_SYMBOLS OFF</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            PREFIX <span class="stringliteral">&quot;lib&quot;</span> <span class="comment"># always use &quot;lib&quot; as prefix regardless of OS/compiler</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    )</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    install(</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        TARGETS</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            mim_${PLUGIN}</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        EXPORT mim-targets</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mim</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    )</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    install(</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        FILES ${OUT_PLUGIN_MIM}</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    )</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    install(</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        FILES ${AUTOGEN_H}</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mim/plug/${PLUGIN}</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    )</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    if(EXISTS <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span>)</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        install(</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            DIRECTORY <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include/&quot;</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        )</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    endif()</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>endfunction()</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">## \page add_mim_runtime_cmake add_mim_runtime</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">## \brief Compiles a plugin&#39;s C runtime wrappers into a single LLVM IR module.</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">##</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">## \code{.cmake}</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">## add_mim_runtime(&lt;plugin-name&gt;</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">##     SOURCES &lt;source&gt;...)</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">## \endcode</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">##</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">## All `SOURCES` are compiled with `clang` and merged into a single textual module</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">## `&lt;libdir&gt;/mim/rt/&lt;plugin-name&gt;_rt.ll`, next to the plugins. A backend locates</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">## that one file via the driver&#39;s search paths (see</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">## \ref mim::plug::ll::Emitter::load_rt_module) and either embeds it into or links</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">## it with its emitted module (see `-X &lt;plugin-name&gt;:rt=embed|extern`). Producing a</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">## single module keeps the runtime addressable by one well-known name regardless of</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">## how many source files it is split into.</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">##</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">## A single source is compiled directly to the module; multiple sources are compiled</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">## to bitcode and merged with `llvm-link` (which must then be on `PATH`).</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">##</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">## If `clang` is unavailable (see `MIM_CLANG`) or `MIM_BUILD_LL_RUNTIME` is off,</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">## the command is a no-op; the runtime is simply not built.</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>function(add_mim_runtime)</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    set(PLUGIN ${ARGV0})</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    cmake_parse_arguments(</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        PARSE_ARGV 1        <span class="comment"># skip first arg</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        PARSED              <span class="comment"># prefix of output variables</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="stringliteral">&quot;&quot;</span>                  <span class="comment"># options (none)</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="stringliteral">&quot;&quot;</span>                  <span class="comment"># one-value keywords (none)</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="stringliteral">&quot;SOURCES&quot;</span>           <span class="comment"># multi-value keywords</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    )</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    if(NOT MIM_BUILD_LL_RUNTIME OR NOT MIM_CLANG)</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        return()</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    endif()</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    set(RT_DIR ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/rt)</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    file(MAKE_DIRECTORY ${RT_DIR})</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    set(RT_LL ${RT_DIR}/${PLUGIN}_rt.ll)</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    set(RT_SOURCES ${PARSED_SOURCES})</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    list(TRANSFORM RT_SOURCES PREPEND ${CMAKE_CURRENT_LIST_DIR}/)</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    list(LENGTH RT_SOURCES N_SOURCES)</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    if(N_SOURCES EQUAL 1)</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        add_custom_command(</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            OUTPUT  ${RT_LL}</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            COMMAND ${MIM_CLANG} -S -emit-llvm -O2 ${RT_SOURCES} -o ${RT_LL}</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            DEPENDS ${RT_SOURCES}</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            COMMENT <span class="stringliteral">&quot;Compiling MimIR runtime &#39;${PLUGIN}&#39; to LLVM IR&quot;</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            VERBATIM</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        )</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    else()</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        find_program(MIM_LLVM_LINK NAMES llvm-link)</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        if(NOT MIM_LLVM_LINK)</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            message(FATAL_ERROR</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                <span class="stringliteral">&quot;add_mim_runtime(${PLUGIN}) with multiple SOURCES needs llvm-link to merge them&quot;</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            )</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        endif()</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        set(RT_BCS <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        foreach(src IN LISTS RT_SOURCES)</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            cmake_path(GET src STEM stem)</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            set(bc ${RT_DIR}/${PLUGIN}_${stem}.bc)</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            add_custom_command(</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                OUTPUT  ${bc}</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                COMMAND ${MIM_CLANG} -emit-llvm -O2 -c ${src} -o ${bc}</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                DEPENDS ${src}</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                COMMENT <span class="stringliteral">&quot;Compiling MimIR runtime source &#39;${stem}&#39; to LLVM bitcode&quot;</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                VERBATIM</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            )</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            list(APPEND RT_BCS ${bc})</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        endforeach()</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        add_custom_command(</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            OUTPUT  ${RT_LL}</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            COMMAND ${MIM_LLVM_LINK} -S ${RT_BCS} -o ${RT_LL}</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            DEPENDS ${RT_BCS}</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            COMMENT <span class="stringliteral">&quot;Linking MimIR runtime &#39;${PLUGIN}&#39; into a single LLVM IR module&quot;</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            VERBATIM</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        )</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    endif()</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    add_custom_target(mim_runtime_${PLUGIN} ALL DEPENDS ${RT_LL})</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    if(TARGET mim_${PLUGIN})</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        add_dependencies(mim_${PLUGIN} mim_runtime_${PLUGIN})</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    endif()</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    install(</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        FILES ${RT_LL}</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim/rt</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    )</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>endfunction()</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            ${CMAKE_BINARY_DIR}/py/mim/_plugins/</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    )</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    set(PLUGIN_ROOTS <span class="stringliteral">&quot;${CMAKE_SOURCE_DIR}/src/mim/plug&quot;</span> <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/..&quot;</span>)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    mim_transitive_imports(<span class="stringliteral">&quot;${PLUGIN_MIM}&quot;</span> <span class="stringliteral">&quot;${PLUGIN_ROOTS}&quot;</span> PLUGIN_IMPORTS)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    add_custom_command(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        OUTPUT</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            ${AUTOGEN_H}</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            ${AUTOGEN_PY}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            ${PLUGIN_MD}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        COMMAND $&lt;TARGET_FILE:${MIM_TARGET_NAMESPACE}mim&gt; ${PLUGIN_MIM} -I <span class="stringliteral">&quot;${CMAKE_SOURCE_DIR}/src/mim/plug&quot;</span> -I <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/..&quot;</span> --bootstrap</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            --output-h ${AUTOGEN_H}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            --output-md ${PLUGIN_MD}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            --output-py ${AUTOGEN_PY}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        MAIN_DEPENDENCY ${PLUGIN_MIM}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        DEPENDS ${MIM_TARGET_NAMESPACE}mim ${PLUGIN_IMPORTS}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        COMMENT <span class="stringliteral">&quot;Bootstrapping MimIR plugin &#39;${PLUGIN_MIM}&#39;&quot;</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        VERBATIM</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    )</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    add_custom_command(</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        OUTPUT  ${OUT_PLUGIN_MIM}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PLUGIN_MIM} ${OUT_PLUGIN_MIM}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        DEPENDS ${PLUGIN_MIM}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        COMMENT <span class="stringliteral">&quot;Copy &#39;${PLUGIN_MIM}&#39; to &#39;${OUT_PLUGIN_MIM}&#39;&quot;</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    )</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    add_custom_target(mim_internal_${PLUGIN}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        DEPENDS</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            ${AUTOGEN_H}</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            ${AUTOGEN_PY}</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            ${PLUGIN_MD}</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            ${OUT_PLUGIN_MIM}</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    )</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    if(PLUGIN IN_LIST MIM_PLUGIN_LIST)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        message(FATAL_ERROR <span class="stringliteral">&quot;Mim plugin &#39;${PLUGIN}&#39; is already registered&quot;</span>)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    endif()</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    list(APPEND MIM_PLUGIN_LIST <span class="stringliteral">&quot;${PLUGIN}&quot;</span>)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    string(APPEND MIM_PLUGIN_LAYOUT <span class="stringliteral">&quot;&lt;tab type=\&quot;user\&quot; url=\&quot;@ref ${PLUGIN}\&quot; title=\&quot;${PLUGIN}\&quot;/&gt;&quot;</span>)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    set(MIM_PLUGIN_LIST   <span class="stringliteral">&quot;${MIM_PLUGIN_LIST}&quot;</span>   CACHE INTERNAL <span class="stringliteral">&quot;MIM_PLUGIN_LIST&quot;</span>)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    set(MIM_PLUGIN_LAYOUT <span class="stringliteral">&quot;${MIM_PLUGIN_LAYOUT}&quot;</span> CACHE INTERNAL <span class="stringliteral">&quot;MIM_PLUGIN_LAYOUT&quot;</span>)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    add_library(mim_${PLUGIN} MODULE)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    add_dependencies(mim_${PLUGIN} mim_internal_${PLUGIN})</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    target_sources(mim_${PLUGIN}</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        PRIVATE</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            ${PARSED_SOURCES}</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    )</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    target_include_directories(mim_${PLUGIN}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        PUBLIC</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            $&lt;BUILD_INTERFACE:${CMAKE_BINARY_DIR}/include&gt; <span class="comment"># for autogen.h</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    )</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    if(EXISTS <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span>)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        target_include_directories(mim_${PLUGIN}</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            PRIVATE</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        )</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    endif()</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    target_link_libraries(mim_${PLUGIN}</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        PRIVATE</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            ${PARSED_PRIVATE}</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            ${MIM_TARGET_NAMESPACE}libmim</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    )</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    set_target_properties(mim_${PLUGIN}</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        PROPERTIES</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            CXX_VISIBILITY_PRESET hidden</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            VISIBILITY_INLINES_HIDDEN 1</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            WINDOWS_EXPORT_ALL_SYMBOLS OFF</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            PREFIX <span class="stringliteral">&quot;lib&quot;</span> <span class="comment"># always use &quot;lib&quot; as prefix regardless of OS/compiler</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    )</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    install(</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        TARGETS</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            mim_${PLUGIN}</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        EXPORT mim-targets</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        RUNTIME DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mim</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    )</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    install(</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        FILES ${OUT_PLUGIN_MIM}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    )</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    install(</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        FILES ${AUTOGEN_H}</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/mim/plug/${PLUGIN}</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    )</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    if(EXISTS <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include&quot;</span>)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        install(</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            DIRECTORY <span class="stringliteral">&quot;${CMAKE_CURRENT_LIST_DIR}/include/&quot;</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        )</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    endif()</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>endfunction()</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">## \page add_mim_runtime_cmake add_mim_runtime</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">## \brief Compiles a plugin&#39;s C runtime wrappers into a single LLVM IR module.</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">##</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">## \code{.cmake}</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">## add_mim_runtime(&lt;plugin-name&gt;</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">##     SOURCES &lt;source&gt;...)</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">## \endcode</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">##</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">## All `SOURCES` are compiled with `clang` and merged into a single textual module</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">## `&lt;libdir&gt;/mim/rt/&lt;plugin-name&gt;_rt.ll`, next to the plugins. A backend locates</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">## that one file via the driver&#39;s search paths (see</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">## \ref mim::plug::ll::Emitter::load_rt_module) and either embeds it into or links</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">## it with its emitted module (see `-X &lt;plugin-name&gt;:rt=embed|extern`). Producing a</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">## single module keeps the runtime addressable by one well-known name regardless of</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">## how many source files it is split into.</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">##</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">## A single source is compiled directly to the module; multiple sources are compiled</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">## to bitcode and merged with `llvm-link` (which must then be on `PATH`).</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">##</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">## If `clang` is unavailable (see `MIM_CLANG`) or `MIM_BUILD_LL_RUNTIME` is off,</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">## the command is a no-op; the runtime is simply not built.</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>function(add_mim_runtime)</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    set(PLUGIN ${ARGV0})</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    cmake_parse_arguments(</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        PARSE_ARGV 1        <span class="comment"># skip first arg</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        PARSED              <span class="comment"># prefix of output variables</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="stringliteral">&quot;&quot;</span>                  <span class="comment"># options (none)</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="stringliteral">&quot;&quot;</span>                  <span class="comment"># one-value keywords (none)</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="stringliteral">&quot;SOURCES&quot;</span>           <span class="comment"># multi-value keywords</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    )</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    if(NOT MIM_BUILD_LL_RUNTIME OR NOT MIM_CLANG)</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        return()</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    endif()</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    set(RT_DIR ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim/rt)</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    file(MAKE_DIRECTORY ${RT_DIR})</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    set(RT_LL ${RT_DIR}/${PLUGIN}_rt.ll)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    set(RT_SOURCES ${PARSED_SOURCES})</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    list(TRANSFORM RT_SOURCES PREPEND ${CMAKE_CURRENT_LIST_DIR}/)</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    list(LENGTH RT_SOURCES N_SOURCES)</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    if(N_SOURCES EQUAL 1)</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        add_custom_command(</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            OUTPUT  ${RT_LL}</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            COMMAND ${MIM_CLANG} -S -emit-llvm -O2 ${RT_SOURCES} -o ${RT_LL}</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            DEPENDS ${RT_SOURCES}</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            COMMENT <span class="stringliteral">&quot;Compiling MimIR runtime &#39;${PLUGIN}&#39; to LLVM IR&quot;</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            VERBATIM</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        )</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    else()</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        find_program(MIM_LLVM_LINK NAMES llvm-link)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        if(NOT MIM_LLVM_LINK)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            message(FATAL_ERROR</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                <span class="stringliteral">&quot;add_mim_runtime(${PLUGIN}) with multiple SOURCES needs llvm-link to merge them&quot;</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            )</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        endif()</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        set(RT_BCS <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        foreach(src IN LISTS RT_SOURCES)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            cmake_path(GET src STEM stem)</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            set(bc ${RT_DIR}/${PLUGIN}_${stem}.bc)</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            add_custom_command(</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                OUTPUT  ${bc}</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                COMMAND ${MIM_CLANG} -emit-llvm -O2 -c ${src} -o ${bc}</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                DEPENDS ${src}</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                COMMENT <span class="stringliteral">&quot;Compiling MimIR runtime source &#39;${stem}&#39; to LLVM bitcode&quot;</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                VERBATIM</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            )</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            list(APPEND RT_BCS ${bc})</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        endforeach()</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        add_custom_command(</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            OUTPUT  ${RT_LL}</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            COMMAND ${MIM_LLVM_LINK} -S ${RT_BCS} -o ${RT_LL}</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            DEPENDS ${RT_BCS}</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            COMMENT <span class="stringliteral">&quot;Linking MimIR runtime &#39;${PLUGIN}&#39; into a single LLVM IR module&quot;</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            VERBATIM</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        )</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    endif()</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    add_custom_target(mim_runtime_${PLUGIN} ALL DEPENDS ${RT_LL})</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    if(TARGET mim_${PLUGIN})</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        add_dependencies(mim_${PLUGIN} mim_runtime_${PLUGIN})</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    endif()</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    install(</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        FILES ${RT_LL}</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        DESTINATION ${CMAKE_INSTALL_LIBDIR}/mim/rt</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    )</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>endfunction()</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

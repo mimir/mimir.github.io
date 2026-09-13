@@ -210,7 +210,7 @@ First Steps</h1>
 </div><!-- fragment --><p>So the Python surface follows the same “named IR handle” model as the C++ API rather than copying nodes into Python-owned objects.</p>
 <h1 class="doxsection"><a class="anchor" id="pyplugins"></a>
 Loading Plugins</h1>
-<p>Runtime plugins are still discovered the same way as in C++. <span class="tt">Driver()</span> usually picks up the in-tree plugin build directory automatically, including from the editable Python package. Use <span class="tt">add_search_path(...)</span> only when you want to load plugins from an extra directory:</p>
+<p>Runtime plugins are still discovered the same way as in C++. <span class="tt">Driver()</span> usually picks up the in-tree plugin build directory automatically, including from the editable Python package. Use <span class="tt">add_plugin_path(...)</span> only when you want to load plugins from an extra directory; <span class="tt">add_import_path(...)</span> and <span class="tt">add_prefix_path(...)</span> add an import directory and an install prefix respectively:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
 <div class="line"> </div>
 <div class="line">driver = <a class="code hl_class" href="classmim_1_1Driver.html">mim.Driver</a>()</div>

@@ -8,6 +8,7 @@ var driver_8h =
       [ "depth", "classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695", null ],
       [ "sym2gid", "classmim_1_1Driver.html#aa30c43e39f9f46e8f5eb20d4f2c324ce", null ]
     ] ],
+    [ "mim::Driver::Paths", "classmim_1_1Driver_1_1Paths.html", "classmim_1_1Driver_1_1Paths" ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", "classmim_1_1Driver_1_1Imports" ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", [
       [ "path", "classmim_1_1Driver_1_1Imports.html#ad991196f5703893cde292feaba80a8b0", null ],
