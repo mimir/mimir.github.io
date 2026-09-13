@@ -374,7 +374,7 @@ Declarations</h2>
 <li><span class="tt">use path as I</span> introduces <span class="tt">I</span> as another name for the module <span class="tt">path</span> denotes; <span class="tt">use path as *</span> splices that module's public members into the current scope instead, and a plain <span class="tt">use path</span> is sugar for the latter.</li>
 <li><span class="tt">let</span> introduces a binding pattern.</li>
 <li><span class="tt">anx I = path</span> declares <span class="tt">I</span> as an alias for the annex denoted by <span class="tt">path</span>.</li>
-<li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations.</li>
+<li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations. The declared name is already in scope inside its own body, so such a declaration is recursive. <span class="tt">and</span> extends the group to mutual recursion; a forward reference without <span class="tt">and</span> does not resolve. The corresponding <a class="el" href="#expr" title="Expressions">expression forms</a> are anonymous and cannot refer to themselves.</li>
 <li><span class="tt">extern</span> makes a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span> and is visible to backends; with the body omitted (just <span class="tt">;</span>), its implementation lives in a native translation unit instead. Currently, <span class="tt">extern</span> is only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration.</li>
 <li>The <span class="tt">@</span> of a <span class="tt">dom</span> introduces its partial-evaluation filter.</li>
 <li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
@@ -481,7 +481,7 @@ Functions and Continuations</h3>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">e → e</span> is the ordinary arrow type.</li>
 <li><span class="tt">t → e</span>, <span class="tt">Cn t</span>, and <span class="tt">Fn t → e</span> are dependent function forms whose domain is described by a telescope.</li>
-<li><span class="tt">λ</span>, <span class="tt">cn</span>, and <span class="tt">fn</span> are the expression forms corresponding to <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span>.</li>
+<li><span class="tt">λ</span>, <span class="tt">cn</span>, and <span class="tt">fn</span> are the expression forms corresponding to <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span>. They are anonymous, so they cannot call themselves; use a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> <a class="el" href="#decl" title="Declarations">declaration</a> to recurse.</li>
 <li>Application is written by juxtaposition.</li>
 <li><span class="tt">e @ e</span> passes an explicit implicit argument.</li>
 <li><span class="tt">ret p = callee $ arg; body</span> binds the result of a continuation-style call and continues with <span class="tt">body</span>.</li>
@@ -506,7 +506,7 @@ Products</h3>
 <li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
 <li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
-<li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. Parentheses cut the path short: <span class="tt">(t#i)#j ← v</span> denotes <span class="tt">t#i</span> instead.</li>
+<li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. The path extends leftward through <span class="tt">#</span> and stops at the first expression that is not itself a <span class="tt">#</span>, so <span class="tt">(t#i)#j ← v</span> denotes <span class="tt">t#i</span> instead. <span class="tt">( ... )</span> builds a tuple and does not merely group, so it ends a path even though a one-element tuple denotes its element. A <span class="tt">let</span> ends a path the same way: <span class="tt">let row = t#i; row#j ← v</span> also denotes <span class="tt">t#i</span>.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
@@ -606,7 +606,7 @@ Declarations</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Expressions</h2>
-<p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above:</p>
+<p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above - except that <span class="tt">f</span> is <em>not</em> in scope inside the body, so they cannot recurse:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
