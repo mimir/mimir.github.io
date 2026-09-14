@@ -1,7 +1,7 @@
 var classmim_1_1ast_1_1UseDecl =
 [
-    [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html#ac3628f76750148d75f269138d91a30ae", null ],
-    [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html#af072925387d1e8da95a99285970a71b1", null ],
+    [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5", null ],
+    [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html#a8514a7dd3617e20d06b90adf07291a6a", null ],
     [ "alias", "classmim_1_1ast_1_1UseDecl.html#a52da00df9dbbbca55178e2900d7df878", null ],
     [ "bind", "classmim_1_1ast_1_1UseDecl.html#a84d72d86795187647802b2ee4efe0664", null ],
     [ "dbg", "classmim_1_1ast_1_1UseDecl.html#a1761c0adb9821612f0e51b8245d1f528", null ],

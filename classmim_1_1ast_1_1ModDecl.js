@@ -1,10 +1,10 @@
 var classmim_1_1ast_1_1ModDecl =
 [
-    [ "ModDecl", "classmim_1_1ast_1_1ModDecl.html#ad41076d8491a419b53927881017487d2", null ],
+    [ "ModDecl", "classmim_1_1ast_1_1ModDecl.html#a7042aae59f05548a9f8225907436532e", null ],
     [ "bind", "classmim_1_1ast_1_1ModDecl.html#a2ca3b84e342c6da5333423ef26fc793c", null ],
     [ "bind_decls", "classmim_1_1ast_1_1ModDecl.html#a0e193825913217e882c826b013ed5b74", null ],
     [ "dbg", "classmim_1_1ast_1_1ModDecl.html#ae58e859d9114cca850ef7ce0ac921b29", null ],
-    [ "decls", "classmim_1_1ast_1_1ModDecl.html#a3a39b90fe063c56a80529e52616a3798", null ],
+    [ "decls", "classmim_1_1ast_1_1ModDecl.html#abbf0151a2f5e5e8bbc62d92aa667be3b", null ],
     [ "emit", "classmim_1_1ast_1_1ModDecl.html#a5fdb123e0a4cb15ad5e0183c6e415212", null ],
     [ "emit_decls", "classmim_1_1ast_1_1ModDecl.html#a3e076f3728c64a17f6987a0283e212f7", null ],
     [ "members", "classmim_1_1ast_1_1ModDecl.html#aba3ae531a6b22b731287f11f58ab0dd4", null ],

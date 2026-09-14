@@ -1,6 +1,7 @@
 var classmim_1_1ast_1_1TuplePtrn =
 [
-    [ "TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html#ad3a44ead35967850158cb1224293fe38", null ],
+    [ "VLA_Types", "classmim_1_1ast_1_1TuplePtrn.html#a4094a7af05d2ef8c8da92f788bdfc47b", null ],
+    [ "TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html#a80c1422394816b1a2cc7f994e3f3aeb6", null ],
     [ "bind", "classmim_1_1ast_1_1TuplePtrn.html#a10b70c20f1f8111732f3eb741695ccf0", null ],
     [ "delim_l", "classmim_1_1ast_1_1TuplePtrn.html#addb36d5269eaf42187157fa96edd7fb9", null ],
     [ "delim_r", "classmim_1_1ast_1_1TuplePtrn.html#a45e9dbd1449e0e581ccc9a6ecef06f02", null ],
@@ -13,6 +14,6 @@ var classmim_1_1ast_1_1TuplePtrn =
     [ "is_paren", "classmim_1_1ast_1_1TuplePtrn.html#a1176d6f6f64281b96a02177112d56d0e", null ],
     [ "num_ptrns", "classmim_1_1ast_1_1TuplePtrn.html#aba0c50821ac158c7c324c0c4f30677a0", null ],
     [ "ptrn", "classmim_1_1ast_1_1TuplePtrn.html#a288df728e2c1cb2d0744d774c35863e1", null ],
-    [ "ptrns", "classmim_1_1ast_1_1TuplePtrn.html#aa97fc0d065d8f1b6d4e13605277e2a0f", null ],
+    [ "ptrns", "classmim_1_1ast_1_1TuplePtrn.html#a61c16e7b4effdd112f34b53aa777b1f3", null ],
     [ "stream", "classmim_1_1ast_1_1TuplePtrn.html#a57f8b983b78d33663dca27871a89cf21", null ]
 ];

@@ -50,7 +50,7 @@ var namespacemim_1_1ast =
     [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
     [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
     [ "Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
-    [ "Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
+    [ "Ptr", "namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599", null ],
     [ "Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
     [ "Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
     [ "Tag", "namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3", null ],
@@ -66,9 +66,6 @@ var namespacemim_1_1ast =
     ] ],
     [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
-    [ "idx_tok", "namespacemim_1_1ast.html#a9ea23a16d9a43617a74f14806e52eadc", null ],
-    [ "is_id_head", "namespacemim_1_1ast.html#a1c91a1a463b65ce67f3785f044a30dc1", null ],
-    [ "is_id_tail", "namespacemim_1_1ast.html#abfd69fba1423df454554e0b46af9d1c8", null ],
     [ "is_lassoc", "namespacemim_1_1ast.html#a1eb898857b7ca5ba98b77ffc52ada0b7", null ],
     [ "is_rassoc", "namespacemim_1_1ast.html#a50e9195843afe95df3aa715f91e1b32b", null ],
     [ "isa_math_f", "namespacemim_1_1ast.html#ad2a1c1594048c3494e84b1150fd23576", null ],
@@ -79,8 +76,9 @@ var namespacemim_1_1ast =
     [ "operator<<", "namespacemim_1_1ast.html#ae8647f142657ffe401f0ca6f29c09b74", null ],
     [ "prec_assoc", "namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "should_reduce", "namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890", null ],
-    [ "stream_decls", "namespacemim_1_1ast.html#ae58ab7dc41af056390cd546b6e3906d2", null ],
+    [ "stream_decls", "namespacemim_1_1ast.html#aad64423039b4c33c1e1de7db11285a53", null ],
     [ "vis2str", "namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711", null ],
     [ "Look_Ahead", "namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29", null ],
-    [ "Num_Keys", "namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9", null ]
+    [ "Num_Keys", "namespacemim_1_1ast.html#ab4b52dbb4d1c2d76a66fbdd47af52ea9", null ],
+    [ "Num_Subst", "namespacemim_1_1ast.html#a6b5ba7d04cb805affa9f9e4a286f0539", null ]
 ];

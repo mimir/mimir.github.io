@@ -33,9 +33,10 @@ var searchData=
   ['vis2str_30',['vis2str',['../namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711',1,'mim::ast']]],
   ['visibility_31',['Visibility',['../langref.html#autotoc_md65',1,'']]],
   ['visit_32',['visit',['../classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c',1,'mim::Emitter::visit()'],['../classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e',1,'mim::ClosedMutPhase::visit()'],['../classmim_1_1NestPhase.html#a101203cdf21e91486513e9cd7e4b0396',1,'mim::NestPhase::visit(const Nest &amp;)=0'],['../classmim_1_1NestPhase.html#a860c4a5255f84d1ace66073ee698c799',1,'mim::NestPhase::visit(M *mut) final']]],
-  ['vmode_33',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
-  ['vs_20global_34',['Local vs. Global',['../dev.html#autotoc_md38',1,'']]],
-  ['vs_20mim_35',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md137',1,'']]],
-  ['vs_20mutables_36',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
-  ['vs_20varrewriter_37',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md147',1,'']]]
+  ['vla_5ftypes_33',['VLA_Types',['../classmim_1_1ast_1_1TuplePtrn.html#a4094a7af05d2ef8c8da92f788bdfc47b',1,'mim::ast::TuplePtrn::VLA_Types'],['../classmim_1_1ast_1_1Path.html#a3ed91b577811b65e639930e2ea381f4b',1,'mim::ast::Path::VLA_Types'],['../classmim_1_1ast_1_1DeclExpr.html#aafbbb7842758fdffb18b79f2ca61cc39',1,'mim::ast::DeclExpr::VLA_Types'],['../classmim_1_1ast_1_1MatchExpr.html#a7c0b55a67e67f7cb23a944615b328c68',1,'mim::ast::MatchExpr::VLA_Types'],['../classmim_1_1ast_1_1TupleExpr.html#aeb83399c93fe35f592b9f7e49f2e4e76',1,'mim::ast::TupleExpr::VLA_Types'],['../classmim_1_1ast_1_1LamDecl.html#a52e53855e7a377c77bcc46110c6c5488',1,'mim::ast::LamDecl::VLA_Types']]],
+  ['vmode_34',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]],
+  ['vs_20global_35',['Local vs. Global',['../dev.html#autotoc_md38',1,'']]],
+  ['vs_20mim_36',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md137',1,'']]],
+  ['vs_20mutables_37',['Immutables vs. Mutables',['../dev.html#mut',1,'']]],
+  ['vs_20varrewriter_38',['Rewriter vs. VarRewriter',['../rewriting.html#autotoc_md147',1,'']]]
 ];

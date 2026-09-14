@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['range_0',['Range',['../namespaceautomaton.html#aa7f4b5c4276e92cf0d3d5a53ea55d921',1,'automaton::Range'],['../dfa2matcher_8cpp.html#a929a326a16b0a4c9d2e277325e556017',1,'Range:&#160;dfa2matcher.cpp']]],
-  ['ranges_1',['Ranges',['../dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1',1,'Ranges:&#160;dfa2matcher.cpp'],['../regex_2normalizers_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1',1,'Ranges:&#160;normalizers.cpp']]]
+  ['phases_0',['Phases',['../namespacemim.html#ace9968a67fd836075490bf9fe9b62457',1,'mim']]],
+  ['plugin_5ft_1',['plugin_t',['../namespacemim.html#abb3c4d87d349db095756fced097d8ac8',1,'mim']]],
+  ['ptr_2',['Ptr',['../namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599',1,'mim::ast']]],
+  ['ptrs_3',['Ptrs',['../namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482',1,'mim::ast']]]
 ];

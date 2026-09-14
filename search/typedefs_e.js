@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['var2var_0',['Var2Var',['../namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06',1,'mim']]],
-  ['varmap_1',['VarMap',['../namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab',1,'mim']]],
-  ['vars_2',['Vars',['../namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4',1,'mim']]],
-  ['vmode_3',['VMode',['../namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822',1,'mim::plug::core::VMode'],['../namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a',1,'mim::plug::math::VMode']]]
+  ['u1_0',['u1',['../namespacemim.html#ac5dd027fef8a0cc98781eb4780fa1669',1,'mim']]],
+  ['u16_1',['u16',['../namespacemim.html#aff8d8623bee4fa802d053b352bc3518e',1,'mim']]],
+  ['u32_2',['u32',['../namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0',1,'mim']]],
+  ['u64_3',['u64',['../namespacemim.html#ad8bae182cdb06699fc07a348105f193c',1,'mim']]],
+  ['u8_4',['u8',['../namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7',1,'mim']]],
+  ['uses_5',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]]
 ];

@@ -16,5 +16,6 @@ var driver_8h =
       [ "sym", "classmim_1_1Driver_1_1Imports.html#a6beeb2c9520722f067b2697d6de8fa94", null ],
       [ "tag", "classmim_1_1Driver_1_1Imports.html#a77a6d63d306c0c9891b6d4dab3db83f7", null ]
     ] ],
-    [ "GET_FUN_PTR", "driver_8h.html#ab004995be061e8045533148b21580ed8", null ]
+    [ "GET_FUN_PTR", "driver_8h.html#ab004995be061e8045533148b21580ed8", null ],
+    [ "mim::Keys", "namespacemim.html#ac41e9fa118277e50afd6c79f4d8e5665", null ]
 ];

@@ -355,6 +355,14 @@ var hierarchy =
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],
     [ "mim::Version", "structmim_1_1Version.html", null ],
+    [ "fe::VLA", null, [
+      [ "mim::ast::DeclExpr", "classmim_1_1ast_1_1DeclExpr.html", null ],
+      [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ],
+      [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", null ],
+      [ "mim::ast::Path", "classmim_1_1ast_1_1Path.html", null ],
+      [ "mim::ast::TupleExpr", "classmim_1_1ast_1_1TupleExpr.html", null ],
+      [ "mim::ast::TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html", null ]
+    ] ],
     [ "mim::detail::w2f_&lt; int &gt;", null, null ],
     [ "mim::detail::w2s_&lt; int &gt;", null, null ],
     [ "mim::detail::w2s_&lt; 1 &gt;", null, null ],
