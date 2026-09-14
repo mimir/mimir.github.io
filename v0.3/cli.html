@@ -1,0 +1,483 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: Command-Line Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('cli.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Command-Line Reference </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_docs_2cli"></a></p>
+<h1 class="doxsection"><a class="anchor" id="cliusage"></a>
+Usage</h1>
+<div class="fragment"><div class="line">mim [options] &lt;file&gt;</div>
+</div><!-- fragment --><p>MimIR is my Intermediate Representation.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+Arguments</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Input file.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Options</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-h, --help</span>  </td><td class="markdownTableBodyNone">Display this help and exit.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--help-md</span>  </td><td class="markdownTableBodyNone">Displays this help as Markdown and exits.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-v, --version</span>  </td><td class="markdownTableBodyNone">Displays version info and exits.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-l, --list-search-paths</span>  </td><td class="markdownTableBodyNone">Lists the search paths in order and exits.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-p, --plugin &lt;plugin&gt;</span>  </td><td class="markdownTableBodyNone">Dynamically loads a plugin.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-P, --plugin-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for plugins; also searched for imports.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-I, --import-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for imports.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-R, --prefix-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Install prefix/root to derive plugin, import, and runtime directories from.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-X, --plugin-arg &lt;plugin:arg&gt;</span>  </td><td class="markdownTableBodyNone">Passes an argument to a plugin/phase, e.g. <span class="tt">-X ll:o=output.ll</span>. Repeatable.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--force-load</span>  </td><td class="markdownTableBodyNone">Loads plugins even on version mismatch.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--bootstrap</span>  </td><td class="markdownTableBodyNone">Bootstrap mode: only read <a class="el" href="namespaceMim.html">Mim</a> AST, don't compile to MimIR.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-V, --verbose</span>  </td><td class="markdownTableBodyNone">Raises the log level from error to warn, info, verbose, debug, trace; repeatable.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Output</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-a, --ascii</span>  </td><td class="markdownTableBodyNone">Uses ASCII alternatives in output instead of UTF-8.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--output-ast &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the AST of the input.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-dot &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the <a class="el" href="namespaceMim.html">Mim</a> program as a MimIR graph using Graphviz' DOT language.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--output-h &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a header file to be used to interface with a plugin in C++.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-md &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the input formatted as Markdown.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">-o, --output-mim &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the <a class="el" href="namespaceMim.html">Mim</a> program again.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dump-recursive</span>  </td><td class="markdownTableBodyNone">Dumps the <a class="el" href="namespaceMim.html">Mim</a> program with a simple recursive algorithm; the result is not readable again but works for broken programs.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--output-nest &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program's nesting tree using Graphviz' DOT language.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-py &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a Python enum to be used to interface with a plugin in Python.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--output-sexpr &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program as symbolic expression.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-sexpr-slotted &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program as symbolic expression that follows the format required by slotted-egraphs.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--sexpr-include-types</span>  </td><td class="markdownTableBodyNone">Wraps each term of a symbolic expression in a type annotation; types themselves stay unwrapped.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+DOT Output</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dot-all-annexes</span>  </td><td class="markdownTableBodyNone">Emits all annexes in DOT output - even unused ones.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--dot-default-filter</span>  </td><td class="markdownTableBodyNone">Always shows a lambda's filter in DOT output - even if it is the default one (<span class="tt">ff</span> for continuations, <span class="tt">tt</span> for direct-style functions).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dot-follow-types</span>  </td><td class="markdownTableBodyNone">Follows type dependencies in DOT output.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--dot-inline-consts</span>  </td><td class="markdownTableBodyNone">Wires up literals, axioms, etc. with normal edges in DOT output instead of detaching them into a separate row; useful for small graphs.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td><td class="markdownTableBodyNone">Renders otherwise-transparent detached edges in DOT output - back-edges from a Var to its binder, shared literals/axioms, and type edges - in a subtle gray.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Diagnostics</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--gutter &lt;width&gt;</span>  </td><td class="markdownTableBodyNone">Width of a diagnostic's line-number column. [default: <span class="tt">5</span>]  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--loc-style &lt;style&gt;</span>  </td><td class="markdownTableBodyNone">How a diagnostic spells out a source location: <span class="tt">full</span> (<span class="tt">path:row:col-row:col</span>), <span class="tt">rowcol</span> (<span class="tt">path:row:col</span>), <span class="tt">row</span> (<span class="tt">path:row</span>), or <span class="tt">msvc</span> (<span class="tt">path(row,col)</span>).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--max-errors &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of errors to report before dropping the rest; 0 reports all of them. [default: <span class="tt">0</span>]  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--max-rows &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of rows a diagnostic's snippet renders before eliding its middle; 0 elides nothing. [default: <span class="tt">8</span>]  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--no-snippet</span>  </td><td class="markdownTableBodyNone">Does not render the offending source line and caret underneath a diagnostic.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--werror</span>  </td><td class="markdownTableBodyNone">Treats warnings as errors.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Profiling</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--output-profile &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Where to write the profiling information; defaults to stdout and implies --profile trace, if no <span class="tt">&lt;mode&gt;</span> is given.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--profile &lt;mode&gt;</span>  </td><td class="markdownTableBodyNone">Measures how long each phase takes; <span class="tt">&lt;mode&gt;</span> is <span class="tt">summary</span>, <span class="tt">tree</span>, or <span class="tt">trace</span> (<span class="tt">chrome://tracing</span> compatible).  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Optimization</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--aggr-lam-spec</span>  </td><td class="markdownTableBodyNone">Overrides LamSpec behavior to follow recursive calls.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--max-fp-iters &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of fixed-point iterations before a phase errors out; guards against non-monotone analyses. [default: <span class="tt">1024</span>]  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--scalarize-threshold &lt;threshold&gt;</span>  </td><td class="markdownTableBodyNone">MimIR will not scalarize tuples/packs/sigmas/arrays with a number of elements greater than or equal this threshold. [default: <span class="tt">32</span>]  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Developer Options</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-b, --break &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is created.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--break-on-alpha</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint as soon as two expressions turn out not to be alpha-equivalent.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--break-on-error</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint on an error log.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--break-on-warn</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint on a warning log.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--reeval-breakpoints</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint even upon unifying a node that has already been built.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--trace-gids</span>  </td><td class="markdownTableBodyNone">Outputs gids during <span class="tt">World::unify</span>/<span class="tt">insert</span>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">-w, --watch &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is set.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Environment Variables</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">MIM_PLUGIN_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of plugin search paths, searched after those given via <span class="tt">-P</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">MIM_IMPORT_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of import search paths, searched after those given via <span class="tt">-I</span>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">MIM_PREFIX_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of install prefixes, searched after those given via <span class="tt">--prefix-path</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">NO_COLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to a non-empty value; wins over the two below.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">CLICOLOR_FORCE</span>  </td><td class="markdownTableBodyNone">Forces colored output if set to a non-empty value other than 0.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">CLICOLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to 0.  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Plugin Arguments</h1>
+<h2 class="doxsection"><a class="anchor" id="xarg_compile"></a>
+compile</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">aggr</span>  </td><td class="markdownTableBodyNone">Forces <span class="tt">compile.aggr</span> to <span class="tt">tt</span>, switching fixed-point iteration of the <span class="tt">opt</span> pipeline's <span class="tt">optimize</span> stage on (off by default).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no-aggr</span>  </td><td class="markdownTableBodyNone">Forces <span class="tt">compile.aggr</span> to <span class="tt">ff</span>, switching that fixed-point iteration off.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="xarg_ll"></a>
+ll</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;, output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>; <span class="tt">&lt;file&gt;</span> may be <span class="tt">-</span> for stdout.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the module; <span class="tt">extern</span> only <span class="tt">declare</span>s them and leaves linking to you.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="xarg_ll_nvptx"></a>
+ll_nvptx</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;, output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the host LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>; <span class="tt">&lt;file&gt;</span> may be <span class="tt">-</span> for stdout.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;, output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>; <span class="tt">&lt;file&gt;</span> may be <span class="tt">-</span> for stdout.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> such as <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">embed, no-embed</span>  </td><td class="markdownTableBodyNone">Embeds the compiled device binary into the host LLVM IR, or doesn't; the default is <span class="tt">embed</span> on Linux and <span class="tt">no-embed</span> elsewhere.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">no-ptx-embed</span>  </td><td class="markdownTableBodyNone">When embedding: omits the PTX image from the fat binary (default: both PTX and CUBIN).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no-cubin-embed</span>  </td><td class="markdownTableBodyNone">When embedding: omits the CUBIN image from the fat binary (default: both PTX and CUBIN).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">sm=&lt;SM&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: compiles the device binary for compute capability <span class="tt">sm_&lt;SM&gt;</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">libdevice=&lt;path&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: uses the NVVM library at <span class="tt">&lt;path&gt;</span> instead of locating it via the CUDA paths.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xlink_llvm=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">link_llvm</span> (default: none).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">Xopt=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding and linking libdevice: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">opt</span> (default: <span class="tt">-passes="default&lt;O2&gt;,nvvm-reflect"</span>).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xllc=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">llc</span> (default: none).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">Xptxas=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">ptxas</span> (default: none); also passed to <span class="tt">fatbinary</span> via <span class="tt">--cmdline</span> when the PTX image is embedded.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">Xfatbinary=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">fatbinary</span> (default: none).  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="xarg_tensor"></a>
+tensor</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">reassoc-max=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Longest matrix chain whose <span class="tt">Catalan(n − 1)</span> bracketings <span class="tt">tensor.reassoc</span> enumerates and, failing one that provably wins for every extent, dispatches over at run time (default <span class="tt">4</span>; below <span class="tt">3</span> switches the dispatch off).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">reassoc-vec=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Vector lanes <span class="tt">tensor.reassoc</span> pads a product's vector loop to, so that a bracketing whose intermediates are too narrow to fill a vector is charged for the lanes it leaves idle (<span class="tt">1</span> … <span class="tt">1024</span>, default <span class="tt">8</span>; <span class="tt">1</span> counts plain scalar multiplications).  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Plugin Environment Variables</h1>
+<h2 class="doxsection"><a class="anchor" id="env_ll_nvptx"></a>
+ll_nvptx</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">CUDA_HOME</span>  </td><td class="markdownTableBodyNone">Root of the CUDA installation to locate <span class="tt">libdevice</span> in, if the CUDA paths do not yield one.  </td></tr>
+</table>
+<p>Every output option accepts "-" to write to stdout.  </p>
+<dl class="section note"><dt>Note</dt><dd>The <em>Developer Options</em> only exist if MimIR was built with <span class="tt"><a class="el" href="config_8h.html#a979b2da1f38b6abc74d13463cdd08a2b">MIM_ENABLE_CHECKS</a></span>; see the <a class="el" href="coding.html#building" title="Contributor Quick Start">CMake switches</a>.</dd></dl>
+<h1 class="doxsection"><a class="anchor" id="clidiag"></a>
+Diagnostics</h1>
+<p>Errors and warnings are reported as <span class="tt">&lt;file&gt;:&lt;row&gt;:&lt;col&gt;: error: &lt;message&gt;</span>, followed by the offending source line with a caret underneath and any notes indented below it. Pass <span class="tt">--no-snippet</span> to omit the source line and caret, e.g. when the output is consumed by a script. Use <span class="tt">--loc-style</span> to pick how much of a location that header spells out:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone"><span class="tt">&lt;style&gt;</span>  </th><th class="markdownTableHeadNone">Renders as  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">full</span>  </td><td class="markdownTableBodyNone"><span class="tt">path:row:col-row:col</span> (default)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">rowcol</span>  </td><td class="markdownTableBodyNone"><span class="tt">path:row:col</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">row</span>  </td><td class="markdownTableBodyNone"><span class="tt">path:row</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">msvc</span>  </td><td class="markdownTableBodyNone"><span class="tt">path(row,col)</span>  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Plugins</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Search Paths</h2>
+<p><a class="el" href="namespaceMim.html">Mim</a> keeps three separate lookups, because the artifacts they find are different in kind: a plugin library is host-native code, a <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is portable source, and a backend runtime belongs to the target.</p>
+<p>Two kinds of entry feed them. A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span> / <span class="tt">-I</span> and their environment variables add. A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself; <span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add one, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Looking for  </th><th class="markdownTableHeadNone">Order  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">libmim_&lt;name&gt;</span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">lib/mim</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-I</span>, <span class="tt">MIM_IMPORT_PATH</span>, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">share/mim</span> and <span class="tt">lib/mim</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">runtime modules  </td><td class="markdownTableBodyNone">cwd <span class="tt">rt</span>, <span class="tt">-P</span> and <span class="tt">MIM_PLUGIN_PATH</span> each with <span class="tt">rt</span>, then each root's <span class="tt">lib/mim/rt</span>  </td></tr>
+</table>
+<p>Plugin directories are searched for imports too, since a plugin ships both of its halves together. <span class="tt"><a class="el" href="namespacemim.html">mim</a> -l</span> prints all three lists fully resolved.</p>
+<p>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories. A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</p>
+<h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
+Arguments</h2>
+<p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
+<div class="fragment"><div class="line">mim foo.mim -p ll -X ll:o=out.ll -X compile:aggr</div>
+</div><!-- fragment --><p>The syntax is <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>:</p>
+<ul>
+<li>The option is repeatable; each occurrence contributes one argument.</li>
+<li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
+<li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
+</ul>
+<p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations.</p>
+<h2 class="doxsection"><a class="anchor" id="clipluginenv"></a>
+Environment Variables</h2>
+<p>A plugin may also read environment variables - typically to locate an external toolchain it shells out to. It declares them as <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="mim::PluginEnv"><span class="tt">mim::PluginEnv</span></a>s next to the code that reads them, so the <em>Plugin Environment Variables</em> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations, just like the <span class="tt">-X</span> tables above. Since a plugin only announces them once it is loaded, <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; --help</span> lists the ones belonging to <span class="tt">&lt;plugin&gt;</span>.</p>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="mimir.html" title="A Tour of MimIR">A Tour of MimIR</a>  </td><td class="markdownTableBodyRight"><a class="el" href="langref.html" title="Mim Language Reference">Mim Language Reference</a>  </td></tr>
+</table>
+</div><div class="section_buttons"></div> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

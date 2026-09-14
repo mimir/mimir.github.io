@@ -1,0 +1,484 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/plug/ll_nvptx/ll_nvptx.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('ll__nvptx_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ll_nvptx.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ll__nvptx_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="phase_2ll__nvptx_8h.html">mim/plug/ll_nvptx/phase/ll_nvptx.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;fe/sys.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="driver_8h.html">mim/driver.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="plugin_8h.html">mim/plugin.h</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="gpu_8h.html">mim/plug/gpu/gpu.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="ll__nvptx_8h.html">mim/plug/ll_nvptx/ll_nvptx.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std::string_literals;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std::string_view_literals;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1ll__nvptx.html">mim::plug::ll_nvptx</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct </span>NvptxCompileArgs {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::string host_ll_name, dev_ll_name, dev_ptx_name, dev_cubin_name, dev_fatbin_name, dev_bc_raw_name,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        dev_bc_opt_name;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifdef __linux__</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> embed_device_code = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> embed_device_code = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> embed_ptx   = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">bool</span> embed_cubin = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::string compute_cap, libdevice_path;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::string link_llvm_args, opt_args = R<span class="stringliteral">&quot;(-passes=&quot;default&lt;O2&gt;,nvvm-reflect&quot;)&quot;, llc_args, ptxas_args,</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="stringliteral">                                fatbinary_args;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="stringliteral">};</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="stringliteral"></span><span class="keyword">constexpr</span> <span class="keyword">auto</span> Default_Compute_Cap = <span class="stringliteral">&quot;75&quot;</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>std::string get_compute_capability() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">auto</span> nvidia_smi = fe::sys::require_cmd(<span class="stringliteral">&quot;nvidia-smi&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">auto</span> out        = fe::sys::exec(std::format(<span class="stringliteral">&quot;{} --query-gpu=compute_cap --format=csv,noheader&quot;</span>, nvidia_smi));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::erase_if(out, ::isspace);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// out should now have form &quot;7.5&quot; referencing the compute capability &quot;sm_75&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> dot_pos = out.find(<span class="charliteral">&#39;.&#39;</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (dot_pos == std::string::npos) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        std::println(std::cerr, <span class="stringliteral">&quot;Could not determine compute capability, continuing with default: &#39;{}&#39;.&quot;</span>,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                     Default_Compute_Cap);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> Default_Compute_Cap;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; out.size(); ++i) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (i == dot_pos) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (!std::isdigit(out[i])) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            std::println(std::cerr, <span class="stringliteral">&quot;Could not determine compute capability, continuing with default: &#39;{}&#39;.&quot;</span>,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                         Default_Compute_Cap);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span> Default_Compute_Cap;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">auto</span> compute_cap = std::format(<span class="stringliteral">&quot;{}{}&quot;</span>, out.substr(0, dot_pos), out.substr(dot_pos + 1));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::println(std::cout, <span class="stringliteral">&quot;Determined compute capability to be &#39;{}&#39;&quot;</span>, compute_cap);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> compute_cap;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">constexpr</span> <span class="keyword">auto</span> Libdevice_Name = <span class="stringliteral">&quot;libdevice.10.bc&quot;</span>sv;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>std::optional&lt;std::filesystem::path&gt; parse_nvcc_profile(<span class="keyword">const</span> std::filesystem::path&amp; cuda_bin_path) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> profile_path = cuda_bin_path / <span class="stringliteral">&quot;nvcc.profile&quot;</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!std::filesystem::exists(profile_path)) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    std::ifstream file(profile_path);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (!file.is_open()) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::string line, top_dir, lib_dir;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">while</span> (std::getline(file, line)) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        std::erase_if(line, ::isspace);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (line.starts_with(<span class="stringliteral">&quot;TOP=&quot;</span>)) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keyword">auto</span> macro_pos = line.find(<span class="stringliteral">&quot;$(_HERE_)/&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">if</span> (macro_pos == std::string::npos) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            top_dir = line.substr(macro_pos + 10);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span> (line.starts_with(<span class="stringliteral">&quot;NVVMIR_LIBRARY_DIR=&quot;</span>)) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keyword">auto</span> macro_pos = line.find(<span class="stringliteral">&quot;$(TOP)/&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span> (macro_pos == std::string::npos) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            lib_dir = line.substr(macro_pos + 7);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (top_dir.empty() || lib_dir.empty()) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">auto</span> path          = cuda_bin_path / top_dir / lib_dir / Libdevice_Name;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">auto</span> resolved_path = path.lexically_normal();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (!std::filesystem::exists(resolved_path)) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> resolved_path;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>std::string find_libdevice() {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">auto</span> nvcc = fe::sys::find_cmd(<span class="stringliteral">&quot;nvcc&quot;</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (std::filesystem::exists(nvcc)) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">auto</span> nvcc_path     = std::filesystem::canonical(nvcc);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">auto</span> cuda_bin_path = nvcc_path.parent_path();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> libdevice_path = parse_nvcc_profile(cuda_bin_path)) <span class="keywordflow">return</span> libdevice_path-&gt;string();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* cuda_home_env = std::getenv(<span class="stringliteral">&quot;CUDA_HOME&quot;</span>)) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">auto</span> libdevice_path = std::filesystem::path(cuda_home_env) / <span class="stringliteral">&quot;nvvm&quot;</span> / <span class="stringliteral">&quot;libdevice&quot;</span> / Libdevice_Name;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (std::filesystem::exists(libdevice_path)) <span class="keywordflow">return</span> libdevice_path.string();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">auto</span> debian_fallback = std::filesystem::path(<span class="stringliteral">&quot;/usr/lib/nvidia-cuda-toolkit/libdevice/&quot;</span>) / Libdevice_Name;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (std::filesystem::exists(debian_fallback)) <span class="keywordflow">return</span> debian_fallback.string();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    fe::throwf&lt;fe::sys::CmdNotFound&gt;(</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_define" href="phase_2ll__nvptx_8h.html#a97d312aa61571e4a3463ec50223fc816">MIM_LL_NVPTX_BE</a> <span class="stringliteral">&quot;unable to find `{}`; try setting the `CUDA_HOME` environment variable&quot;</span>, Libdevice_Name);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> link_libdevice(<span class="keyword">const</span> NvptxCompileArgs&amp; c) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (!std::filesystem::exists(<a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.libdevice_path))</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        fe::throwf(<a class="code hl_define" href="phase_2ll__nvptx_8h.html#a97d312aa61571e4a3463ec50223fc816">MIM_LL_NVPTX_BE</a> <span class="stringliteral">&quot;libdevice path does not exist: `{}`&quot;</span>, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.libdevice_path);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">auto</span> llvm_link = fe::sys::require_cmd(<span class="stringliteral">&quot;llvm-link&quot;</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    fe::sys::require_run(std::format(<span class="stringliteral">&quot;{} {} {} {} -o {}&quot;</span>, llvm_link, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.link_llvm_args, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_ll_name, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.libdevice_path,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                     <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_bc_raw_name));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> optimize_bytecode(<span class="keyword">const</span> NvptxCompileArgs&amp; c) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">auto</span> opt = fe::sys::require_cmd(<span class="stringliteral">&quot;opt&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    fe::sys::require_run(std::format(<span class="stringliteral">&quot;{} {} {} -o {}&quot;</span>, opt, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.opt_args, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_bc_raw_name, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_bc_opt_name));</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">void</span> compile2ptx(<span class="keyword">const</span> NvptxCompileArgs&amp; c, <span class="keywordtype">bool</span> uses_libdevice) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">auto</span> compile_input = uses_libdevice ? <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_bc_opt_name : <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_ll_name;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">auto</span> llc           = fe::sys::require_cmd(<span class="stringliteral">&quot;llc&quot;</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    fe::sys::require_run(std::format(<span class="stringliteral">&quot;{} -march=nvptx64 -mcpu=sm_{} {} {} -o {}&quot;</span>, llc, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.compute_cap, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.llc_args,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                                     compile_input, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_ptx_name));</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keywordtype">void</span> compile2cubin(<span class="keyword">const</span> NvptxCompileArgs&amp; c) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">auto</span> ptxas = fe::sys::require_cmd(<span class="stringliteral">&quot;ptxas&quot;</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    fe::sys::require_run(std::format(<span class="stringliteral">&quot;{} -arch=sm_{} {} {} -o {}&quot;</span>, ptxas, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.compute_cap, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.ptxas_args, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_ptx_name,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                     <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_cubin_name));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keywordtype">void</span> compile2fatbin(<span class="keyword">const</span> NvptxCompileArgs&amp; c) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">auto</span> fatbinary = fe::sys::require_cmd(<span class="stringliteral">&quot;fatbinary&quot;</span>);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">auto</span> ptx_args  = <span class="stringliteral">&quot;&quot;</span><a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712aa03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.embed_ptx) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        ptx_args = std::format(<span class="stringliteral">&quot;--image3=kind=ptx,sm={},file={}&quot;</span>, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.compute_cap, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_ptx_name);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">if</span> (!<a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.ptxas_args.empty()) ptx_args += std::format(<span class="stringliteral">&quot; --cmdline={}&quot;</span>, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.ptxas_args);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">auto</span> cubin_args = <span class="stringliteral">&quot;&quot;</span><a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712aa03c7c0ace395d80182db07ae2c30f034">s</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.embed_cubin) cubin_args = std::format(<span class="stringliteral">&quot;--image3=kind=elf,sm={},file={}&quot;</span>, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.compute_cap, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_cubin_name);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    fe::sys::require_run(std::format(<span class="stringliteral">&quot;{} --create={} -64 {} {} {}&quot;</span>, fatbinary, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.dev_fatbin_name, <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a>.fatbinary_args,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                                     ptx_args, cubin_args));</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>} <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="};">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html">  153</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884">Emit</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884">  155</a></span>    <a class="code hl_function" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884">Emit</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        : <a class="code hl_function" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a>(<a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>) {}</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb">  158</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb">start</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keyword">auto</span> <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> = <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7">name</a>() ? <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7">name</a>().str() : <span class="stringliteral">&quot;a&quot;</span>s;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keyword">auto</span> c            = NvptxCompileArgs{};</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        c.host_ll_name    = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;.ll&quot;</span>s;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        c.dev_ll_name     = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev.ll&quot;</span>s;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        c.dev_ptx_name    = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev.ptx&quot;</span>s;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        c.dev_cubin_name  = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev.cubin&quot;</span>s;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        c.dev_fatbin_name = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev.fatbin&quot;</span>s;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        c.dev_bc_raw_name = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev_raw.bc&quot;</span>s;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        c.dev_bc_opt_name = <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> + <span class="stringliteral">&quot;_dev_opt.bc&quot;</span>s;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1World.html#a6805186dd54b22be877a544f77641f8a">log</a>().d(<span class="stringliteral">&quot;ll_nvptx backend args: {}&quot;</span>, fe::Join(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>()));</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;o&quot;</span>, <span class="stringliteral">&quot;output&quot;</span>))          c.host_ll_name   = *v;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;o-dev&quot;</span>, <span class="stringliteral">&quot;output-dev&quot;</span>))  c.dev_ll_name    = *v;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;sm&quot;</span>))                   c.compute_cap    = *v;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;libdevice&quot;</span>))            c.libdevice_path = *v;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;Xlink_llvm&quot;</span>))           c.link_llvm_args = *v;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;Xopt&quot;</span>))                 c.opt_args       = *v;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;Xllc&quot;</span>))                 c.llc_args       = *v;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;Xptxas&quot;</span>))               c.ptxas_args     = *v;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> v = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;Xfatbinary&quot;</span>))           c.fatbinary_args = *v;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> b = <a class="code hl_function" href="namespacemim.html#ae219e373875516ae10fdaa6f229b65d8">arg_bool</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), {<span class="stringliteral">&quot;embed&quot;</span>}, {<span class="stringliteral">&quot;no-embed&quot;</span>})) c.embed_device_code = *b;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3">arg_flag</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;no-ptx-embed&quot;</span>))                   c.embed_ptx         = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3">arg_flag</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;no-cubin-embed&quot;</span>))                 c.embed_cubin       = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keyword">auto</span> rt = <a class="code hl_function" href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">arg_value</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>(), <span class="stringliteral">&quot;rt&quot;</span>) == <span class="stringliteral">&quot;extern&quot;</span> ? <a class="code hl_enumvalue" href="classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca">ll::Emitter::Rt::ext</a> : <a class="code hl_enumvalue" href="classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc">ll::Emitter::Rt::embed</a>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">auto</span> split_apply_phase = <a class="code hl_function" href="classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00">Phase::create</a>(<a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc">driver</a>().phases(), <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex&lt;gpu::split_apply&gt;</a>());</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keyword">auto</span> setup_phase</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            = split_apply_phase.get()-&gt;expect&lt;<a class="code hl_class" href="classmim_1_1RWPhase.html">RWPhase</a>&gt;(<span class="stringliteral">&quot;the phase for `%gpu.split_apply` to be an `RWPhase`&quot;</span>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        setup_phase-&gt;<a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">run</a>();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_struct" href="namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags">DeviceEmitFlags</a> device_flags;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keyword">auto</span> dev_out = <a class="code hl_function" href="classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f">Out</a>(c.dev_ll_name);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            device_flags = <a class="code hl_function" href="namespacemim_1_1plug_1_1ll__nvptx.html#a298c6ec63f9136bd5a745f1b532c0364">emit_device</a>(setup_phase-&gt;new_world(), *dev_out.os());</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">if</span> (c.embed_device_code) {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <span class="keywordflow">if</span> (!c.embed_ptx &amp;&amp; !c.embed_cubin)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                fe::throwf(<a class="code hl_define" href="phase_2ll__nvptx_8h.html#a97d312aa61571e4a3463ec50223fc816">MIM_LL_NVPTX_BE</a> <span class="stringliteral">&quot;embedding requested with no images (neither PTX nor CUBIN)&quot;</span>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                <span class="keywordflow">if</span> (c.compute_cap.empty()) c.compute_cap = get_compute_capability();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                <span class="keywordflow">if</span> (device_flags.<a class="code hl_variable" href="namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25">uses_libdevice</a>) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                    <span class="keywordflow">if</span> (c.libdevice_path.empty()) c.libdevice_path = find_libdevice();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    link_libdevice(c);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    optimize_bytecode(c);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                compile2ptx(c, device_flags.<a class="code hl_variable" href="namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25">uses_libdevice</a>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                compile2cubin(c);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                compile2fatbin(c);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            } <span class="keywordflow">catch</span> (<span class="keyword">const</span> fe::sys::CmdNotFound&amp; e) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().w(<span class="stringliteral">&quot;{}; not embedding device code&quot;</span>, e.what());</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                c.embed_device_code = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keyword">auto</span> device_fatbin_file = c.embed_device_code ? std::optional(c.dev_fatbin_name) : std::nullopt;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keyword">auto</span> host_out           = <a class="code hl_function" href="classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f">Out</a>(c.host_ll_name);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <a class="code hl_function" href="namespacemim_1_1plug_1_1ll__nvptx.html#a88d9b1b2a50b47e8098cbd3b446269fc">emit_host</a>(setup_phase-&gt;old_world(), *host_out.os(), device_fatbin_file, rt);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">if</span> (c.embed_device_code) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            std::println(std::cout, <span class="stringliteral">&quot;Unified (Fat) LLVM IR written to {}&quot;</span>, c.host_ll_name);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            std::println(std::cout, <span class="stringliteral">&quot;Host-only LLVM IR written to {}&quot;</span>, c.host_ll_name);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            std::println(std::cout, <span class="stringliteral">&quot;Device-only LLVM IR written to {}&quot;</span>, c.dev_ll_name);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    }</div>
+</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>};</div>
+</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>} <span class="comment">// namespace mim::plug::ll_nvptx</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="ll__nvptx_8cpp.html#a8abebad40345a2355ec701aaea26d9a4">  234</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a>(<a class="code hl_typedef" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a>&amp; phases) { <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;plug::ll_nvptx::emit, plug::ll_nvptx::Emit&gt;</a>(phases); }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">// clang-format off</span></div>
+<div class="foldopen" id="foldopen00237" data-start="{" data-end="};">
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908">  237</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="namespacemim.html#structmim_1_1PluginArg">PluginArg</a> <a class="code hl_variable" href="ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908">known_args</a>[] = {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    {<span class="stringliteral">&quot;o=&lt;file&gt;, output=&lt;file&gt;&quot;</span>,         <span class="stringliteral">&quot;Writes the host LLVM IR to `&lt;file&gt;` instead of the default `&lt;world&gt;.ll`/`a.ll`; `&lt;file&gt;` may be `-` for stdout.&quot;</span>},</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    {<span class="stringliteral">&quot;o-dev=&lt;file&gt;, output-dev=&lt;file&gt;&quot;</span>, <span class="stringliteral">&quot;Writes the device LLVM IR to `&lt;file&gt;` instead of the default `&lt;world&gt;_dev.ll`/`a_dev.ll`; `&lt;file&gt;` may be `-` for stdout.&quot;</span>},</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {<span class="stringliteral">&quot;rt=embed, rt=extern&quot;</span>,             <span class="stringliteral">&quot;Like `ll`&#39;s `rt`, but for the host module&#39;s C [runtime wrappers](@ref plugin_runtime) such as `@mim_cu_check`.&quot;</span>},</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    {<span class="stringliteral">&quot;embed, no-embed&quot;</span>,                 <span class="stringliteral">&quot;Embeds the compiled device binary into the host LLVM IR, or doesn&#39;t; the default is `embed` on Linux and `no-embed` elsewhere.&quot;</span>},</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    {<span class="stringliteral">&quot;no-ptx-embed&quot;</span>,                    <span class="stringliteral">&quot;When embedding: omits the PTX image from the fat binary (default: both PTX and CUBIN).&quot;</span>},</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    {<span class="stringliteral">&quot;no-cubin-embed&quot;</span>,                  <span class="stringliteral">&quot;When embedding: omits the CUBIN image from the fat binary (default: both PTX and CUBIN).&quot;</span>},</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    {<span class="stringliteral">&quot;sm=&lt;SM&gt;&quot;</span>,                         <span class="stringliteral">&quot;When embedding: compiles the device binary for compute capability `sm_&lt;SM&gt;`.&quot;</span>},</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    {<span class="stringliteral">&quot;libdevice=&lt;path&gt;&quot;</span>,                <span class="stringliteral">&quot;When embedding and linking libdevice: uses the NVVM library at `&lt;path&gt;` instead of locating it via the CUDA paths.&quot;</span>},</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    {<span class="stringliteral">&quot;Xlink_llvm=&lt;args&gt;&quot;</span>,               <span class="stringliteral">&quot;When embedding and linking libdevice: passes `&lt;args&gt;` to `link_llvm` (default: none).&quot;</span>},</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    {<span class="stringliteral">&quot;Xopt=&lt;args&gt;&quot;</span>,                     <span class="stringliteral">&quot;When embedding and linking libdevice: passes `&lt;args&gt;` to `opt` (default: `-passes=\&quot;default&lt;O2&gt;,nvvm-reflect\&quot;`).&quot;</span>},</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    {<span class="stringliteral">&quot;Xllc=&lt;args&gt;&quot;</span>,                     <span class="stringliteral">&quot;When embedding: passes `&lt;args&gt;` to `llc` (default: none).&quot;</span>},</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    {<span class="stringliteral">&quot;Xptxas=&lt;args&gt;&quot;</span>,                   <span class="stringliteral">&quot;When embedding: passes `&lt;args&gt;` to `ptxas` (default: none); also passed to `fatbinary` via `--cmdline` when the PTX image is embedded.&quot;</span>},</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    {<span class="stringliteral">&quot;Xfatbinary=&lt;args&gt;&quot;</span>,               <span class="stringliteral">&quot;When embedding: passes `&lt;args&gt;` to `fatbinary` (default: none).&quot;</span>},</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>};</div>
+</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="};">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514">  253</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="namespacemim.html#structmim_1_1PluginEnv">PluginEnv</a> <a class="code hl_variable" href="ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514">known_envs</a>[] = {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    {<span class="stringliteral">&quot;CUDA_HOME&quot;</span>, <span class="stringliteral">&quot;Root of the CUDA installation to locate `libdevice` in, if the CUDA paths do not yield one.&quot;</span>},</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>};</div>
+</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="foldopen" id="foldopen00258" data-start="{" data-end="}">
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="ll__nvptx_8cpp.html#a35bb34350e93d508e52544f4abd50e59">  258</a></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code hl_define" href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a> <a class="code hl_struct" href="structmim_1_1Plugin.html">Plugin</a> <a class="code hl_function" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim_get_plugin</a>() {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> {<span class="stringliteral">&quot;ll_nvptx&quot;</span>, <a class="code hl_define" href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>,           {},         <a class="code hl_function" href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a>,</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <a class="code hl_variable" href="ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908">known_args</a>, std::size(<a class="code hl_variable" href="ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908">known_args</a>), <a class="code hl_variable" href="ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514">known_envs</a>, std::size(<a class="code hl_variable" href="ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514">known_envs</a>)};</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
+</div>
+<div class="ttc" id="aaffine_8cpp_html_a1eac1e88e03dcfc2f038c5c0d3a7d88a"><div class="ttname"><a href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a></div><div class="ttdeci">void reg_phases(Flags2Phases &amp;phases)</div><div class="ttdef"><b>Definition</b> <a href="affine_8cpp_source.html#l00012">affine.cpp:12</a></div></div>
+<div class="ttc" id="aclassmim_1_1Out_html_a4751adbd2da31dad1081dbb2d10ac25f"><div class="ttname"><a href="classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f">mim::Out::Out</a></div><div class="ttdeci">Out()=default</div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a19df66aeb259f2d7208c70f4484ab7c3"><div class="ttname"><a href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">mim::Phase::hook</a></div><div class="ttdeci">static void hook(Flags2Phases &amp;phases)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00070">phase.h:70</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00081">phase.h:81</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00079">phase.h:79</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a5c9e1cb4322b15d946feaaabcc057260"><div class="ttname"><a href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">mim::Phase::Phase</a></div><div class="ttdeci">Phase(World &amp;world, std::string name)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00029">phase.h:29</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a74fd3fbe230a281748348317b8e2be00"><div class="ttname"><a href="classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00">mim::Phase::create</a></div><div class="ttdeci">static std::unique_ptr&lt; Phase &gt; create(const Flags2Phases &amp;phases, const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00050">phase.h:50</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ab1744c9a213b3ba696051d73fadb0afc"><div class="ttname"><a href="classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc">mim::Phase::driver</a></div><div class="ttdeci">Driver &amp; driver()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00078">phase.h:78</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ab1bbf65a4a0593a5343758ac5a82fdfb"><div class="ttname"><a href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">mim::Phase::args</a></div><div class="ttdeci">const fe::Vector&lt; std::string &gt; &amp; args()</div><div class="ttdoc">Command-line arguments passed to this Phase&#39;s plugin via -X &lt;plugin&gt;:&lt;arg&gt;.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00023">phase.cpp:23</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_aba635c81bd49841a563dc533e5ae347f"><div class="ttname"><a href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdoc">Entry point and generates some debug output; invokes Phase::start.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00032">phase.cpp:32</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ac3a0b91d02e7086abfa1e5e69c40260a"><div class="ttname"><a href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">mim::Phase::name</a></div><div class="ttdeci">std::string_view name() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00080">phase.h:80</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_afeae25f4ecab3e3812e9607f630a506f"><div class="ttname"><a href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">mim::Phase::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00077">phase.h:77</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00426">phase.h:426</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00039">world.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a64e913f4ed33daa7e3a6192cd714e4e7"><div class="ttname"><a href="classmim_1_1World.html#a64e913f4ed33daa7e3a6192cd714e4e7">mim::World::name</a></div><div class="ttdeci">Sym name() const</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00108">world.h:108</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a6805186dd54b22be877a544f77641f8a"><div class="ttname"><a href="classmim_1_1World.html#a6805186dd54b22be877a544f77641f8a">mim::World::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdoc">Log via log().e(&quot;...&quot;, args) etc.; owned by the Driver.</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00129">world.cpp:129</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1ll_1_1Emitter_html_ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc"><div class="ttname"><a href="classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc">mim::plug::ll::Emitter::Rt::embed</a></div><div class="ttdeci">@ embed</div><div class="ttdoc">Splice the wrapper IR into the emitted module so it is self-contained.</div><div class="ttdef"><b>Definition</b> <a href="ll_8h_source.html#l00166">ll.h:166</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1ll_1_1Emitter_html_ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca"><div class="ttname"><a href="classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca">mim::plug::ll::Emitter::Rt::ext</a></div><div class="ttdeci">@ ext</div><div class="ttdoc">Only declare the wrappers; the runtime is linked in externally.</div><div class="ttdef"><b>Definition</b> <a href="ll_8h_source.html#l00167">ll.h:167</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1ll__nvptx_1_1Emit_html_a28060e311cb0b7593e987ea7737fbadb"><div class="ttname"><a href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#a28060e311cb0b7593e987ea7737fbadb">mim::plug::ll_nvptx::Emit::start</a></div><div class="ttdeci">void start() override</div><div class="ttdoc">Actual entry.</div><div class="ttdef"><b>Definition</b> <a href="#l00158">ll_nvptx.cpp:158</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1ll__nvptx_1_1Emit_html_af039d961c808825c62d7f9f9fdab7884"><div class="ttname"><a href="classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884">mim::plug::ll_nvptx::Emit::Emit</a></div><div class="ttdeci">Emit(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="#l00155">ll_nvptx.cpp:155</a></div></div>
+<div class="ttc" id="aconfig_8h_html_acf14f602e3976ff8653bb419a1d77a7f"><div class="ttname"><a href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a></div><div class="ttdeci">#define MIM_EXPORT</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00021">config.h:21</a></div></div>
+<div class="ttc" id="adriver_8h_html"><div class="ttname"><a href="driver_8h.html">driver.h</a></div></div>
+<div class="ttc" id="agpu_8h_html"><div class="ttname"><a href="gpu_8h.html">gpu.h</a></div></div>
+<div class="ttc" id="all__nvptx_8cpp_html_a218bf114799e937e274a3165f5984514"><div class="ttname"><a href="ll__nvptx_8cpp.html#a218bf114799e937e274a3165f5984514">known_envs</a></div><div class="ttdeci">static constexpr PluginEnv known_envs[]</div><div class="ttdef"><b>Definition</b> <a href="#l00253">ll_nvptx.cpp:253</a></div></div>
+<div class="ttc" id="all__nvptx_8cpp_html_ab41c3ad0befed5678e957c6d09ef9908"><div class="ttname"><a href="ll__nvptx_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908">known_args</a></div><div class="ttdeci">static constexpr PluginArg known_args[]</div><div class="ttdef"><b>Definition</b> <a href="#l00237">ll_nvptx.cpp:237</a></div></div>
+<div class="ttc" id="all__nvptx_8h_html"><div class="ttname"><a href="ll__nvptx_8h.html">ll_nvptx.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1core_html_a42b1555ce3001847c5543dd01ebc712aa03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712aa03c7c0ace395d80182db07ae2c30f034">mim::plug::core::conv::s</a></div><div class="ttdeci">@ s</div><div class="ttdef"><b>Definition</b> <a href="core_2autogen_8h_source.html#l00253">autogen.h:253</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ll__nvptx_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1ll__nvptx.html">mim::plug::ll_nvptx</a></div><div class="ttdoc">The ll_nvptx Plugin</div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8h_source.html#l00012">ll_nvptx.h:12</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ll__nvptx_html_a263c25c30333c2a3c5cddc0772ad2b25"><div class="ttname"><a href="namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25">mim::plug::ll_nvptx::DeviceEmitFlags::uses_libdevice</a></div><div class="ttdeci">bool uses_libdevice</div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8h_source.html#l00020">ll_nvptx.h:20</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ll__nvptx_html_a298c6ec63f9136bd5a745f1b532c0364"><div class="ttname"><a href="namespacemim_1_1plug_1_1ll__nvptx.html#a298c6ec63f9136bd5a745f1b532c0364">mim::plug::ll_nvptx::emit_device</a></div><div class="ttdeci">DeviceEmitFlags emit_device(World &amp;, std::ostream &amp;)</div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8cpp_source.html#l00664">ll_nvptx.cpp:664</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ll__nvptx_html_a88d9b1b2a50b47e8098cbd3b446269fc"><div class="ttname"><a href="namespacemim_1_1plug_1_1ll__nvptx.html#a88d9b1b2a50b47e8098cbd3b446269fc">mim::plug::ll_nvptx::emit_host</a></div><div class="ttdeci">void emit_host(World &amp;, std::ostream &amp;, std::optional&lt; std::string &gt;, ll::Emitter::Rt rt=ll::Emitter::Rt::embed)</div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8cpp_source.html#l00656">ll_nvptx.cpp:656</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ll__nvptx_html_structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags"><div class="ttname"><a href="namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags">mim::plug::ll_nvptx::DeviceEmitFlags</a></div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8h_source.html#l00019">ll_nvptx.h:19</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1math_html_aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">mim::plug::math::round::c</a></div><div class="ttdeci">@ c</div><div class="ttdef"><b>Definition</b> <a href="math_2autogen_8h_source.html#l00297">autogen.h:297</a></div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
+<div class="ttc" id="anamespacemim_html_a18b9a0651a4ea8b0c2658215fd8426e3"><div class="ttname"><a href="namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3">mim::arg_flag</a></div><div class="ttdeci">bool arg_flag(fe::View&lt; std::string &gt; args, Keys... keys)</div><div class="ttdoc">Whether any of keys occurs.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00088">plugin.h:88</a></div></div>
+<div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
+<div class="ttc" id="anamespacemim_html_a3d2264dd6b663f00df3b5630b12451bd"><div class="ttname"><a href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">mim::Flags2Phases</a></div><div class="ttdeci">absl::flat_hash_map&lt; flags_t, std::function&lt; std::unique_ptr&lt; Phase &gt;(World &amp;)&gt; &gt; Flags2Phases</div><div class="ttdoc">Maps an axiom of a Phase to a function that creates one.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00030">plugin.h:30</a></div></div>
+<div class="ttc" id="anamespacemim_html_a77f34c28f8418e4828b4684cbc025e52"><div class="ttname"><a href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin</a></div><div class="ttdeci">mim::Plugin mim_get_plugin()</div></div>
+<div class="ttc" id="anamespacemim_html_ae219e373875516ae10fdaa6f229b65d8"><div class="ttname"><a href="namespacemim.html#ae219e373875516ae10fdaa6f229b65d8">mim::arg_bool</a></div><div class="ttdeci">std::optional&lt; bool &gt; arg_bool(fe::View&lt; std::string &gt; args, std::initializer_list&lt; std::string_view &gt; on, std::initializer_list&lt; std::string_view &gt; off)</div><div class="ttdoc">An on key ↦ true, an off key ↦ false; std::nullopt if neither occurs.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00073">plugin.h:73</a></div></div>
+<div class="ttc" id="anamespacemim_html_af50a6cdbd067cfcee49e649ee8247a33"><div class="ttname"><a href="namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33">mim::arg_value</a></div><div class="ttdeci">std::optional&lt; std::string_view &gt; arg_value(fe::View&lt; std::string &gt; args, Keys... keys)</div><div class="ttdoc">Value of &lt;key&gt;=&lt;value&gt;; std::nullopt if none of keys carries one.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00064">plugin.h:64</a></div></div>
+<div class="ttc" id="anamespacemim_html_structmim_1_1PluginArg"><div class="ttname"><a href="namespacemim.html#structmim_1_1PluginArg">mim::PluginArg</a></div><div class="ttdoc">One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00034">plugin.h:34</a></div></div>
+<div class="ttc" id="anamespacemim_html_structmim_1_1PluginEnv"><div class="ttname"><a href="namespacemim.html#structmim_1_1PluginEnv">mim::PluginEnv</a></div><div class="ttdoc">One environment variable a Plugin reads; see Environment Variables.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00041">plugin.h:41</a></div></div>
+<div class="ttc" id="aphase_2ll__nvptx_8h_html"><div class="ttname"><a href="phase_2ll__nvptx_8h.html">ll_nvptx.h</a></div></div>
+<div class="ttc" id="aphase_2ll__nvptx_8h_html_a97d312aa61571e4a3463ec50223fc816"><div class="ttname"><a href="phase_2ll__nvptx_8h.html#a97d312aa61571e4a3463ec50223fc816">MIM_LL_NVPTX_BE</a></div><div class="ttdeci">#define MIM_LL_NVPTX_BE</div><div class="ttdoc">Prefix for this backend&#39;s fe::throwf messages; see MIM_LL_BE.</div><div class="ttdef"><b>Definition</b> <a href="phase_2ll__nvptx_8h_source.html#l00015">ll_nvptx.h:15</a></div></div>
+<div class="ttc" id="aplugin_8h_html"><div class="ttname"><a href="plugin_8h.html">plugin.h</a></div></div>
+<div class="ttc" id="aplugin_8h_html_a2f1c22749113d1954fe381a30a0d5bb2"><div class="ttname"><a href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a></div><div class="ttdeci">#define MIM_VERSION</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00149">plugin.h:149</a></div></div>
+<div class="ttc" id="astructmim_1_1Plugin_html"><div class="ttname"><a href="structmim_1_1Plugin.html">mim::Plugin</a></div><div class="ttdoc">Basic info and registration function pointer to be returned from a specific plugin.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00154">plugin.h:154</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_07110a8747d2517ee97007224f1d2994.html">plug</a></li><li class="navelem"><a href="dir_280d97f7735006b39bfb9f15d715921e.html">ll_nvptx</a></li><li class="navelem"><a href="ll__nvptx_8cpp.html">ll_nvptx.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

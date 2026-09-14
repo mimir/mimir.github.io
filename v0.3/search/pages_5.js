@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['f_0',['F',['../math.html#autotoc_md324',1,'']]],
+  ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md438',1,'']]],
+  ['field_20names_20of_20sigmas_2',['Field Names of Sigmas',['../langref.html#field',1,'']]],
+  ['files_20and_20imports_3',['Files and Imports',['../langref.html#module',1,'']]],
+  ['first_20class_20ir_20values_4',['Loop nests as first-class IR values',['../btensor.html#autotoc_md207',1,'']]],
+  ['first_20last_5',['first / last',['../vec.html#autotoc_md479',1,'']]],
+  ['first_20steps_6',['First Steps',['../python.html#autotoc_md124',1,'']]],
+  ['fixed_20point_20iteration_7',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md85',1,'']]],
+  ['fixed_20points_8',['Fixed Points',['../phases.html#autotoc_md98',1,'']]],
+  ['flip_9',['flip',['../tensor.html#autotoc_md446',1,'']]],
+  ['floordiv_20rem_10',['semiop(mul,ceildiv,floordiv,rem)',['../affine.html#autotoc_md180',1,'']]],
+  ['fold_11',['fold',['../vec.html#autotoc_md475',1,'']]],
+  ['for_12',['For',['../affine.html#autotoc_md174',1,'']]],
+  ['for_20built_20ins_13',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
+  ['forms_14',['Literals and Basic Forms',['../langref.html#lit',1,'']]],
+  ['four_20way_20sum_20type_20in_20one_20machine_20word_15',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
+  ['free_16',['free',['../mem.html#autotoc_md357',1,'']]],
+  ['free_20asyn_17',['free(block) / free(asyn)',['../gpu.html#autotoc_md301',1,'']]],
+  ['free_20block_20free_20asyn_18',['free(block) / free(asyn)',['../gpu.html#autotoc_md301',1,'']]],
+  ['free_20variables_19',['Free Variables',['../dev.html#free_vars',1,'']]],
+  ['fresh_20',['fresh',['../mem.html#autotoc_md353',1,'']]],
+  ['function_20types_21',['Function Types',['../langref.html#autotoc_md74',1,'']]],
+  ['functions_20and_20continuations_22',['Functions and Continuations',['../langref.html#autotoc_md67',1,'']]],
+  ['functions_20and_20types_23',['Summary: Functions and Types',['../langref.html#autotoc_md70',1,'']]],
+  ['further_20casts_24',['Further Casts',['../dev.html#autotoc_md47',1,'']]]
+];

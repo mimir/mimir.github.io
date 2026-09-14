@@ -1,0 +1,1540 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::plug::ll::Emitter Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1plug_1_1ll_1_1Emitter.html','','classmim_1_1plug_1_1ll_1_1Emitter-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::plug::ll::Emitter Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ll_8h_source.html">mim/plug/ll/ll.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mim::plug::ll::Emitter:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="classmim_1_1plug_1_1ll_1_1Emitter__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab365ba41671e10ee6a0f56f59a831b64" id="r_ab365ba41671e10ee6a0f56f59a831b64"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">Rt</a> { <br />
+&#160;&#160;<a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc">embed</a>
+, <br />
+&#160;&#160;<a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca">ext</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ab365ba41671e10ee6a0f56f59a831b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">How the C runtime wrappers (compiled to a <span class="tt">&lt;<a class="el" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a>&gt;.<a class="el" href="namespacemim_1_1plug_1_1ll.html" title="The ll Plugin">ll</a></span> via <span class="tt">add_mim_runtime</span>) reach the output.  <a href="#ab365ba41671e10ee6a0f56f59a831b64">More...</a><br /></td></tr>
+<tr class="memitem:ab56b18760592b2d57a48d3032dedd33d" id="r_ab56b18760592b2d57a48d3032dedd33d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ab56b18760592b2d57a48d3032dedd33d">Super</a> = <a class="el" href="classmim_1_1Emitter.html">mim::Emitter</a>&lt;std::string, std::string, <a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a>, <a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a>&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a18da2834ff9f5fd902b0a0b7118a2e79" id="r_a18da2834ff9f5fd902b0a0b7118a2e79"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name, std::ostream &amp;ostream)</td></tr>
+<tr class="memitem:a68c770c0945b284bd2211a593e54523a" id="r_a68c770c0945b284bd2211a593e54523a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a68c770c0945b284bd2211a593e54523a">is_valid</a> (std::string_view s)</td></tr>
+<tr class="memitem:ac0f9e4889a963e8dccc382090d247357" id="r_ac0f9e4889a963e8dccc382090d247357"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac0f9e4889a963e8dccc382090d247357">start</a> () override</td></tr>
+<tr class="memdesc:ac0f9e4889a963e8dccc382090d247357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
+<tr class="memitem:a21fc75b1b6035deeecddf5f30f652ee5" id="r_a21fc75b1b6035deeecddf5f30f652ee5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a21fc75b1b6035deeecddf5f30f652ee5">emit_imported</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *)</td></tr>
+<tr class="memitem:a0553a4b3a37018e2ae31211674d55dd6" id="r_a0553a4b3a37018e2ae31211674d55dd6"><td class="memItemLeft">virtual std::string&#160;</td><td class="memItemRight"><a class="el" href="#a0553a4b3a37018e2ae31211674d55dd6">prepare</a> ()</td></tr>
+<tr class="memitem:adb599525bac3039cb5adbf91ed3035dd" id="r_adb599525bac3039cb5adbf91ed3035dd"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#adb599525bac3039cb5adbf91ed3035dd">emit_epilogue</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
+<tr class="memitem:a620e3fd2fa2748dac7c20f62b2f2defa" id="r_a620e3fd2fa2748dac7c20f62b2f2defa"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a620e3fd2fa2748dac7c20f62b2f2defa">finalize</a> ()</td></tr>
+<tr class="memitem:ae2260be08319fc64acdbe86eb946ac61" id="r_ae2260be08319fc64acdbe86eb946ac61"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae2260be08319fc64acdbe86eb946ac61">emit_bb</a> (<a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;bb, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memitem:a1b6340836cebcce5c39aa39f74bdb597" id="r_a1b6340836cebcce5c39aa39f74bdb597"><td class="memItemLeft">virtual std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1b6340836cebcce5c39aa39f74bdb597">isa_targetspecific_intrinsic</a> (<a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a9b788582fce25ed9f6ff3c67b7fe3d6c" id="r_a9b788582fce25ed9f6ff3c67b7fe3d6c"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a9b788582fce25ed9f6ff3c67b7fe3d6c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9b788582fce25ed9f6ff3c67b7fe3d6c">declare</a> (std::format_string&lt; Args... &gt; s, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:a716f42495d52bea72d6f34ce9f708aef" id="r_a716f42495d52bea72d6f34ce9f708aef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a716f42495d52bea72d6f34ce9f708aef">rt_mode</a> (<a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">Rt</a> rt)</td></tr>
+<tr class="memitem:a028ef63fb02d2876ccfe254f2f6aab80" id="r_a028ef63fb02d2876ccfe254f2f6aab80"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a028ef63fb02d2876ccfe254f2f6aab80">rt_module</a> (std::string ll)</td></tr>
+<tr class="memdesc:a028ef63fb02d2876ccfe254f2f6aab80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the textual LLVM IR of the runtime module to splice in <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" title="Splice the wrapper IR into the emitted module so it is self-contained.">Rt::embed</a></span> mode.  <br /></td></tr>
+<tr class="memitem:a9bef375c0acf34184b55999e1269e878" id="r_a9bef375c0acf34184b55999e1269e878"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9bef375c0acf34184b55999e1269e878">load_rt_module</a> (std::string_view filename)</td></tr>
+<tr class="memdesc:a9bef375c0acf34184b55999e1269e878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locates the runtime module <span class="tt">rt/&lt;filename&gt;</span> (produced by <span class="tt">add_mim_runtime</span>) in the driver's search paths, reads it, and stores it for <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" title="Splice the wrapper IR into the emitted module so it is self-contained.">Rt::embed</a></span> splicing.  <br /></td></tr>
+<tr class="memitem:aa7f8831b6671a290b85713952a92b8f6" id="r_aa7f8831b6671a290b85713952a92b8f6"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:aa7f8831b6671a290b85713952a92b8f6 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa7f8831b6671a290b85713952a92b8f6">declare_rt</a> (std::format_string&lt; Args... &gt; sig, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aa7f8831b6671a290b85713952a92b8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declares a runtime wrapper <code class="param">sig</code> (implemented in a C runtime, see <span class="tt">add_mim_runtime</span>) and records that the runtime is required by this module.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1NestPhase"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1NestPhase.html">mim::NestPhase&lt; Lam &gt;</a></td></tr>
+<tr class="memitem:aa10dc01891c0b3f39a1175e0345318b4 pub_methods_classmim_1_1NestPhase" id="r_aa10dc01891c0b3f39a1175e0345318b4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1NestPhase.html#aa10dc01891c0b3f39a1175e0345318b4">NestPhase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name, bool elide_empty, bool schedule=false)</td></tr>
+<tr class="memitem:a522f99e02ecca1b57c3ef45f11e00a93 pub_methods_classmim_1_1NestPhase" id="r_a522f99e02ecca1b57c3ef45f11e00a93"><td class="memItemLeft">const <a class="el" href="classmim_1_1Nest.html">Nest</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1NestPhase.html#a522f99e02ecca1b57c3ef45f11e00a93">nest</a> () const</td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1ClosedMutPhase"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase&lt; Lam &gt;</a></td></tr>
+<tr class="memitem:ae5c46ade842883f9b90878a92c3f9c6b pub_methods_classmim_1_1ClosedMutPhase" id="r_ae5c46ade842883f9b90878a92c3f9c6b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ClosedMutPhase.html#ae5c46ade842883f9b90878a92c3f9c6b">ClosedMutPhase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name, bool elide_empty, bool schedule=false)</td></tr>
+<tr class="memitem:a9405d6627f8ac683802b7c9674a1ed32 pub_methods_classmim_1_1ClosedMutPhase" id="r_a9405d6627f8ac683802b7c9674a1ed32"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ClosedMutPhase.html#a9405d6627f8ac683802b7c9674a1ed32">elide_empty</a> () const</td></tr>
+<tr class="memitem:a6adb5759576e3f34d34a8a052fd6de83 pub_methods_classmim_1_1ClosedMutPhase" id="r_a6adb5759576e3f34d34a8a052fd6de83"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ClosedMutPhase.html#a6adb5759576e3f34d34a8a052fd6de83">schedule</a> () const</td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1Phase"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:a5c9e1cb4322b15d946feaaabcc057260 pub_methods_classmim_1_1Phase" id="r_a5c9e1cb4322b15d946feaaabcc057260"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name)</td></tr>
+<tr class="memitem:aa2ac27ba5ea35a77e6d86665ffbb7707 pub_methods_classmim_1_1Phase" id="r_aa2ac27ba5ea35a77e6d86665ffbb7707"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> annex)</td></tr>
+<tr class="memitem:af1ee1aba228756a429741fd748f1cf7c pub_methods_classmim_1_1Phase" id="r_af1ee1aba228756a429741fd748f1cf7c"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#af1ee1aba228756a429741fd748f1cf7c">~Phase</a> ()=default</td></tr>
+<tr class="memitem:a0a303da72b9a80aaeb79f00755572750 pub_methods_classmim_1_1Phase" id="r_a0a303da72b9a80aaeb79f00755572750"><td class="memItemLeft">virtual std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750">recreate</a> ()</td></tr>
+<tr class="memdesc:a0a303da72b9a80aaeb79f00755572750 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance; needed by a fixed-point <a class="el" href="classmim_1_1PhaseMan.html" title="Organizes several Phases into a pipeline.">PhaseMan</a>.  <br /></td></tr>
+<tr class="memitem:ae53d7b9cecc27b16e8bec12c4e6e2e87 pub_methods_classmim_1_1Phase" id="r_ae53d7b9cecc27b16e8bec12c4e6e2e87"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87">apply</a> (const <a class="el" href="classmim_1_1App.html">App</a> *)</td></tr>
+<tr class="memdesc:ae53d7b9cecc27b16e8bec12c4e6e2e87 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked if your <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> has additional args.  <br /></td></tr>
+<tr class="memitem:aae46baa7ff0775b46c1fc4b1bed9ef54 pub_methods_classmim_1_1Phase" id="r_aae46baa7ff0775b46c1fc4b1bed9ef54"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aae46baa7ff0775b46c1fc4b1bed9ef54">apply</a> (<a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &amp;)</td></tr>
+<tr class="memdesc:aae46baa7ff0775b46c1fc4b1bed9ef54 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dito, but invoked by <a class="el" href="classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750" title="Creates a new instance; needed by a fixed-point PhaseMan.">Phase::recreate</a>.  <br /></td></tr>
+<tr class="memitem:ae6352de218de18f9ddba804f583a9e21 pub_methods_classmim_1_1Phase" id="r_ae6352de218de18f9ddba804f583a9e21"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ae6352de218de18f9ddba804f583a9e21">redirects</a> () const</td></tr>
+<tr class="memdesc:ae6352de218de18f9ddba804f583a9e21 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">true</span>, <a class="el" href="classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00">Phase::create</a> uses <a class="el" href="classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6" title="The Phase to use instead; nullptr means elide.">take_resolved()</a>.  <br /></td></tr>
+<tr class="memitem:a90a56ecbd675f91124b8e2514df57fa6 pub_methods_classmim_1_1Phase" id="r_a90a56ecbd675f91124b8e2514df57fa6"><td class="memItemLeft">virtual std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6">take_resolved</a> ()</td></tr>
+<tr class="memdesc:a90a56ecbd675f91124b8e2514df57fa6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> to use instead; <span class="tt">nullptr</span> means <em>elide</em>.  <br /></td></tr>
+<tr class="memitem:afeae25f4ecab3e3812e9607f630a506f pub_methods_classmim_1_1Phase" id="r_afeae25f4ecab3e3812e9607f630a506f"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a> ()</td></tr>
+<tr class="memitem:ab1744c9a213b3ba696051d73fadb0afc pub_methods_classmim_1_1Phase" id="r_ab1744c9a213b3ba696051d73fadb0afc"><td class="memItemLeft"><a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc">driver</a> ()</td></tr>
+<tr class="memitem:a59afca1f7558ed31d2cd0497befa7e28 pub_methods_classmim_1_1Phase" id="r_a59afca1f7558ed31d2cd0497befa7e28"><td class="memItemLeft">const fe::Log &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a> () const</td></tr>
+<tr class="memitem:ac3a0b91d02e7086abfa1e5e69c40260a pub_methods_classmim_1_1Phase" id="r_ac3a0b91d02e7086abfa1e5e69c40260a"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> () const</td></tr>
+<tr class="memitem:a2f84cd002f509749f1fcfc6a9be0bfd1 pub_methods_classmim_1_1Phase" id="r_a2f84cd002f509749f1fcfc6a9be0bfd1"><td class="memItemLeft"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a> () const</td></tr>
+<tr class="memitem:ab1bbf65a4a0593a5343758ac5a82fdfb pub_methods_classmim_1_1Phase" id="r_ab1bbf65a4a0593a5343758ac5a82fdfb"><td class="memItemLeft">const fe::Vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a> ()</td></tr>
+<tr class="memdesc:ab1bbf65a4a0593a5343758ac5a82fdfb pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command-line arguments passed to this <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a>'s plugin via <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>.  <br /></td></tr>
+<tr class="memitem:ac2bba54939517aaceb9c371c02db97b8 pub_methods_classmim_1_1Phase" id="r_ac2bba54939517aaceb9c371c02db97b8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> () const</td></tr>
+<tr class="memitem:a28a39b288a2f2de29cb8d7db113d99d6 pub_methods_classmim_1_1Phase" id="r_a28a39b288a2f2de29cb8d7db113d99d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a> (bool todo=true)</td></tr>
+<tr class="memdesc:a28a39b288a2f2de29cb8d7db113d99d6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that another round of fixed-point iteration is required, either as part of.  <br /></td></tr>
+<tr class="memitem:aba635c81bd49841a563dc533e5ae347f pub_methods_classmim_1_1Phase" id="r_aba635c81bd49841a563dc533e5ae347f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">run</a> ()</td></tr>
+<tr class="memdesc:aba635c81bd49841a563dc533e5ae347f pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point and generates some debug output; invokes <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d" title="Actual entry.">Phase::start</a>.  <br /></td></tr>
+<tr class="memitem:a856fff2fdf7482d4a48fb0de3f1f43b6 pub_methods_classmim_1_1Phase" id="r_a856fff2fdf7482d4a48fb0de3f1f43b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a> (std::string_view key, uint64_t n=1)</td></tr>
+<tr class="memdesc:a856fff2fdf7482d4a48fb0de3f1f43b6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds <code class="param">n</code> to the custom fe::Profiler counter <code class="param">key</code> of the current run; no-op unless profiling is enabled.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa7b0c48aeb683107867c68a55d7c1240" id="r_aa7b0c48aeb683107867c68a55d7c1240"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa7b0c48aeb683107867c68a55d7c1240">id</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, bool force_bb=false) const</td></tr>
+<tr class="memitem:ae1cb1a4b934957ebfa6bada2eaef279d" id="r_ae1cb1a4b934957ebfa6bada2eaef279d"><td class="memItemLeft">virtual std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae1cb1a4b934957ebfa6bada2eaef279d">convert</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *type, bool simd=true)</td></tr>
+<tr class="memitem:a82fcc166141b236eae4b6c4c21c92780" id="r_a82fcc166141b236eae4b6c4c21c92780"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a82fcc166141b236eae4b6c4c21c92780">convert_ret_pi</a> (const <a class="el" href="classmim_1_1Pi.html">Pi</a> *)</td></tr>
+<tr class="memitem:a8485a95a73caae753cbdf5f02296d6f3" id="r_a8485a95a73caae753cbdf5f02296d6f3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8485a95a73caae753cbdf5f02296d6f3">emit_phi</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *callee, const <a class="el" href="classmim_1_1Def.html">Def</a> *phi, std::string arg, <a class="el" href="classmim_1_1Lam.html">Lam</a> *pred)</td></tr>
+<tr class="memdesc:a8485a95a73caae753cbdf5f02296d6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers <code class="param">arg</code> as an incoming phi value for <code class="param">phi</code> in <code class="param">callee</code>, coming from predecessor <code class="param">pred</code>.  <br /></td></tr>
+<tr class="memitem:a01a2f380587e18eb8b102928bd069b7a" id="r_a01a2f380587e18eb8b102928bd069b7a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a01a2f380587e18eb8b102928bd069b7a">emit_phi_args</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *callee, const <a class="el" href="classmim_1_1App.html">App</a> *app, <a class="el" href="classmim_1_1Lam.html">Lam</a> *pred)</td></tr>
+<tr class="memdesc:a01a2f380587e18eb8b102928bd069b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wires all non-<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> arguments of <code class="param">app</code> into <code class="param">callee's</code> phis, coming from predecessor <code class="param">pred</code>.  <br /></td></tr>
+<tr class="memitem:aae8c6a6b31d1c13a3637dff26549eb48" id="r_aae8c6a6b31d1c13a3637dff26549eb48"><td class="memItemLeft">virtual std::string&#160;</td><td class="memItemRight"><a class="el" href="#aae8c6a6b31d1c13a3637dff26549eb48">emit_slot</a> (<a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;bb, const <a class="el" href="classmim_1_1App.html">App</a> *app, const <a class="el" href="classmim_1_1Def.html">Def</a> *pointee, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memdesc:aae8c6a6b31d1c13a3637dff26549eb48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emits the storage backing a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4">mem.slot</a></span> of type <code class="param">pointee</code> and yields the pointer value.  <br /></td></tr>
+<tr class="inherit_header pro_methods_classmim_1_1Emitter"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1Emitter.html">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;</a></td></tr>
+<tr class="memitem:a6913a5941377e68f2c8210ff98ffc70a pro_methods_classmim_1_1Emitter" id="r_a6913a5941377e68f2c8210ff98ffc70a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a6913a5941377e68f2c8210ff98ffc70a">Emitter</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name, std::ostream &amp;ostream, bool schedule=false)</td></tr>
+<tr class="memitem:a48bb4bd0e25affe798480c41c06dc032 pro_methods_classmim_1_1Emitter" id="r_a48bb4bd0e25affe798480c41c06dc032"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a48bb4bd0e25affe798480c41c06dc032">direct_style</a> ()</td></tr>
+<tr class="memitem:a614e61750773436c58e728b596c4b19b pro_methods_classmim_1_1Emitter" id="r_a614e61750773436c58e728b596c4b19b"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a614e61750773436c58e728b596c4b19b">ostream</a> () const</td></tr>
+<tr class="memitem:a2bcf71afb2c89408e62c247e80cf6061 pro_methods_classmim_1_1Emitter" id="r_a2bcf71afb2c89408e62c247e80cf6061"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a2bcf71afb2c89408e62c247e80cf6061">emit</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a2bcf71afb2c89408e62c247e80cf6061 pro_methods_classmim_1_1Emitter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively emits code.  <br /></td></tr>
+<tr class="memitem:a75baacb814d981cf6b912267ba5cda90 pro_methods_classmim_1_1Emitter" id="r_a75baacb814d981cf6b912267ba5cda90"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a75baacb814d981cf6b912267ba5cda90">emit_unsafe</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:a75baacb814d981cf6b912267ba5cda90 pro_methods_classmim_1_1Emitter"><td class="mdescLeft">&#160;</td><td class="mdescRight">As above but returning <span class="tt">!child().is_valid(value)</span> is permitted.  <br /></td></tr>
+<tr class="memitem:aadf52c65867f33786a2359b96806b67c pro_methods_classmim_1_1Emitter" id="r_aadf52c65867f33786a2359b96806b67c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c">visit</a> (const <a class="el" href="classmim_1_1Nest.html">Nest</a> &amp;nest) override</td></tr>
+<tr class="memitem:a22b7632c2cb2812d59ac99e55980dd8e pro_methods_classmim_1_1Emitter" id="r_a22b7632c2cb2812d59ac99e55980dd8e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Scheduler.html#a3df38c3ac0b5e1b5b2af665af6cb40bf">Scheduler::Schedule</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a22b7632c2cb2812d59ac99e55980dd8e">schedule</a> () const</td></tr>
+<tr class="memdesc:a22b7632c2cb2812d59ac99e55980dd8e pro_methods_classmim_1_1Emitter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmim_1_1Scheduler.html#a880651081ca75a55266ff3018354827b">Scheduler::schedule</a> of the function currently being emitted; see <a class="el" href="classmim_1_1Emitter.html#aadf52c65867f33786a2359b96806b67c">Emitter::visit</a>.  <br /></td></tr>
+<tr class="inherit_header pro_methods_classmim_1_1ClosedMutPhase"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase&lt; Lam &gt;</a></td></tr>
+<tr class="memitem:ad472ea7c10d353cbd478faa84708322e pro_methods_classmim_1_1ClosedMutPhase" id="r_ad472ea7c10d353cbd478faa84708322e"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e">visit</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *)=0</td></tr>
+<tr class="memitem:a06b703ae1027080726991949ee0deec5 pro_methods_classmim_1_1ClosedMutPhase" id="r_a06b703ae1027080726991949ee0deec5"><td class="memItemLeft"><a class="el" href="classmim_1_1Lam.html">Lam</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ClosedMutPhase.html#a06b703ae1027080726991949ee0deec5">root</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a65ac63a5b52dcac775dc3c0ee75a3520" id="r_a65ac63a5b52dcac775dc3c0ee75a3520"><td class="memItemLeft">absl::btree_set&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a65ac63a5b52dcac775dc3c0ee75a3520">decls_</a></td></tr>
+<tr class="memitem:ae8113f780ec9bcf7062e75de81e85879" id="r_ae8113f780ec9bcf7062e75de81e85879"><td class="memItemLeft">std::ostringstream&#160;</td><td class="memItemRight"><a class="el" href="#ae8113f780ec9bcf7062e75de81e85879">type_decls_</a></td></tr>
+<tr class="memitem:aaff1b1d0552221ddf170ccd92af7bd9a" id="r_aaff1b1d0552221ddf170ccd92af7bd9a"><td class="memItemLeft">std::ostringstream&#160;</td><td class="memItemRight"><a class="el" href="#aaff1b1d0552221ddf170ccd92af7bd9a">vars_decls_</a></td></tr>
+<tr class="memitem:aa27e43c7bfe8e0e3284eadf1fd17060a" id="r_aa27e43c7bfe8e0e3284eadf1fd17060a"><td class="memItemLeft">std::ostringstream&#160;</td><td class="memItemRight"><a class="el" href="#aa27e43c7bfe8e0e3284eadf1fd17060a">func_decls_</a></td></tr>
+<tr class="memitem:ab31bbfcaecd5d6fc4d1e54e1d19716be" id="r_ab31bbfcaecd5d6fc4d1e54e1d19716be"><td class="memItemLeft">std::ostringstream&#160;</td><td class="memItemRight"><a class="el" href="#ab31bbfcaecd5d6fc4d1e54e1d19716be">func_impls_</a></td></tr>
+<tr class="memitem:ae829eb2d9c43cf8a881c3b7712d26994" id="r_ae829eb2d9c43cf8a881c3b7712d26994"><td class="memItemLeft"><a class="el" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap</a>&lt; const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae829eb2d9c43cf8a881c3b7712d26994">simd_phi_</a></td></tr>
+<tr class="memitem:ade57e99459d05bbd6fbf968597ba0287" id="r_ade57e99459d05bbd6fbf968597ba0287"><td class="memItemLeft"><a class="el" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap</a>&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ade57e99459d05bbd6fbf968597ba0287">loop_md_</a></td></tr>
+<tr class="memitem:a7e23ce15d7a02dcda74c2fc997757754" id="r_a7e23ce15d7a02dcda74c2fc997757754"><td class="memItemLeft"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">Rt</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7e23ce15d7a02dcda74c2fc997757754">rt_</a> = <a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc">Rt::embed</a></td></tr>
+<tr class="memitem:afb2702775e8afcf83b2cc4f95aef9c91" id="r_afb2702775e8afcf83b2cc4f95aef9c91"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#afb2702775e8afcf83b2cc4f95aef9c91">rt_used_</a> = false</td></tr>
+<tr class="memitem:a894d2de6157af5afdddb7f644bae9227" id="r_a894d2de6157af5afdddb7f644bae9227"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a894d2de6157af5afdddb7f644bae9227">rt_module_</a></td></tr>
+<tr class="inherit_header pro_attribs_classmim_1_1Emitter"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Emitter.html">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;</a></td></tr>
+<tr class="memitem:a94ea0cd6b7bbbe32e1c25868317b463d pro_attribs_classmim_1_1Emitter" id="r_a94ea0cd6b7bbbe32e1c25868317b463d"><td class="memItemLeft"><a class="el" href="classmim_1_1Lam.html">Lam</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a94ea0cd6b7bbbe32e1c25868317b463d">curr_lam_</a></td></tr>
+<tr class="memitem:ac9a7870415e93fea2fc6e439b482d3d8 pro_attribs_classmim_1_1Emitter" id="r_ac9a7870415e93fea2fc6e439b482d3d8"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#ac9a7870415e93fea2fc6e439b482d3d8">ostream_</a></td></tr>
+<tr class="memitem:a72c81f8a9a595799a52976d5de381f4e pro_attribs_classmim_1_1Emitter" id="r_a72c81f8a9a595799a52976d5de381f4e"><td class="memItemLeft"><a class="el" href="classmim_1_1Scheduler.html">Scheduler</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e">scheduler_</a></td></tr>
+<tr class="memitem:a024a7069ea511418e459905ba3314aae pro_attribs_classmim_1_1Emitter" id="r_a024a7069ea511418e459905ba3314aae"><td class="memItemLeft"><a class="el" href="classmim_1_1Scheduler.html#a3df38c3ac0b5e1b5b2af665af6cb40bf">Scheduler::Schedule</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a024a7069ea511418e459905ba3314aae">schedule_</a></td></tr>
+<tr class="memitem:a007683bbd60e0aecfac956a405bda869 pro_attribs_classmim_1_1Emitter" id="r_a007683bbd60e0aecfac956a405bda869"><td class="memItemLeft"><a class="el" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a007683bbd60e0aecfac956a405bda869">locals_</a></td></tr>
+<tr class="memitem:a7d0b553a4044743805c79a473b7deb9c pro_attribs_classmim_1_1Emitter" id="r_a7d0b553a4044743805c79a473b7deb9c"><td class="memItemLeft"><a class="el" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a7d0b553a4044743805c79a473b7deb9c">globals_</a></td></tr>
+<tr class="memitem:a95c0ebfac75b42f41dd1bb134059c1f4 pro_attribs_classmim_1_1Emitter" id="r_a95c0ebfac75b42f41dd1bb134059c1f4"><td class="memItemLeft"><a class="el" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a95c0ebfac75b42f41dd1bb134059c1f4">types_</a></td></tr>
+<tr class="memitem:aa9476c69d6885d07cb465861597abc9e pro_attribs_classmim_1_1Emitter" id="r_aa9476c69d6885d07cb465861597abc9e"><td class="memItemLeft"><a class="el" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap</a>&lt; BB &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#aa9476c69d6885d07cb465861597abc9e">lam2bb_</a></td></tr>
+<tr class="inherit_header pro_attribs_classmim_1_1Phase"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:a0c13c41b1a3d729d9319fd38507be012 pro_attribs_classmim_1_1Phase" id="r_a0c13c41b1a3d729d9319fd38507be012"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012">name_</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-attribs" class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a590e2a9569867565716950ffae29cdd3" id="r_a590e2a9569867565716950ffae29cdd3"><td class="memItemLeft">static constexpr <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a>&#160;</td><td class="memItemRight"><a class="el" href="#a590e2a9569867565716950ffae29cdd3">LoopMdBase</a> = 1000</td></tr>
+<tr class="memdesc:a590e2a9569867565716950ffae29cdd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loop-metadata node id per <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1ll.html#aaee9c2cf398a457c5c7805f83765e599">ll.vec</a></span>-annotated loop header (see <span class="tt">emit_epilogue_impl</span>); numbered from <span class="tt"><a class="el" href="#a590e2a9569867565716950ffae29cdd3" title="Loop-metadata node id per ll.vec-annotated loop header (see emit_epilogue_impl); numbered from LoopMd...">LoopMdBase</a> + 1</span> to stay clear of the ids the embedded runtime module brings along.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a785c96819fab5e5c2021f7718285d32b" id="r_a785c96819fab5e5c2021f7718285d32b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a785c96819fab5e5c2021f7718285d32b">mim_ll_convert</a> (<a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;e, const <a class="el" href="classmim_1_1Def.html">Def</a> *type, bool simd, std::string &amp;res)</td></tr>
+<tr class="memdesc:a785c96819fab5e5c2021f7718285d32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The heavy, target-independent emitter methods are compiled once into <span class="tt">libmim_ll</span> (see <a class="el" href="ll_8cpp.html">ll.cpp</a>).  <br /></td></tr>
+<tr class="memitem:adf2801a80435ad15c5b708e43739f5f7" id="r_adf2801a80435ad15c5b708e43739f5f7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adf2801a80435ad15c5b708e43739f5f7">mim_ll_finalize</a> (<a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;e)</td></tr>
+<tr class="memitem:afbea4d68ef229cede396edd88b9a6e35" id="r_afbea4d68ef229cede396edd88b9a6e35"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afbea4d68ef229cede396edd88b9a6e35">mim_ll_emit_epilogue</a> (<a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;e, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
+<tr class="memitem:af5d5ecfe6ed2528530e067e675e7d6bc" id="r_af5d5ecfe6ed2528530e067e675e7d6bc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af5d5ecfe6ed2528530e067e675e7d6bc">mim_ll_emit_bb</a> (<a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;e, <a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;bb, const <a class="el" href="classmim_1_1Def.html">Def</a> *def, std::string &amp;res)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classmim_1_1Phase"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:a74fd3fbe230a281748348317b8e2be00 pub_static_methods_classmim_1_1Phase" id="r_a74fd3fbe230a281748348317b8e2be00"><td class="memItemLeft">static std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00">create</a> (const <a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memitem:a19df66aeb259f2d7208c70f4484ab7c3 pub_static_methods_classmim_1_1Phase" id="r_a19df66aeb259f2d7208c70f4484ab7c3"><td class="memTemplParams" colspan="2">template&lt;class A, class P&gt; </td></tr>
+<tr class="memitem:a19df66aeb259f2d7208c70f4484ab7c3 pub_static_methods_classmim_1_1Phase template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">hook</a> (<a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases)</td></tr>
+<tr class="memitem:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase" id="r_a688656a879e35a05d8f41924f1d9df0a"><td class="memTemplParams" colspan="2">template&lt;class P, class... Args&gt; </td></tr>
+<tr class="memitem:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a">run</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a single <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a>.  <br /></td></tr>
+<tr class="inherit_header pub_attribs_classmim_1_1Emitter"><td colspan="2">Public Attributes inherited from <a class="el" href="classmim_1_1Emitter.html">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;</a></td></tr>
+<tr class="memitem:a59ec86ba00b809dae2415fe8d7f702b2 pub_attribs_classmim_1_1Emitter" id="r_a59ec86ba00b809dae2415fe8d7f702b2"><td class="memItemLeft">fe::Tab&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Emitter.html#a59ec86ba00b809dae2415fe8d7f702b2">tab</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00124">124</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="ab56b18760592b2d57a48d3032dedd33d" name="ab56b18760592b2d57a48d3032dedd33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56b18760592b2d57a48d3032dedd33d">&#9670;&#160;</a></span>Super</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ab56b18760592b2d57a48d3032dedd33d">mim::plug::ll::Emitter::Super</a> = <a class="el" href="classmim_1_1Emitter.html">mim::Emitter</a>&lt;std::string, std::string, <a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a>, <a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00126">126</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="ab365ba41671e10ee6a0f56f59a831b64" name="ab365ba41671e10ee6a0f56f59a831b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab365ba41671e10ee6a0f56f59a831b64">&#9670;&#160;</a></span>Rt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">mim::plug::ll::Emitter::Rt</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How the C runtime wrappers (compiled to a <span class="tt">&lt;<a class="el" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a>&gt;.<a class="el" href="namespacemim_1_1plug_1_1ll.html" title="The ll Plugin">ll</a></span> via <span class="tt">add_mim_runtime</span>) reach the output. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" name="ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc"></a>embed&#160;</td><td class="fielddoc"><p>Splice the wrapper IR into the emitted module so it is self-contained. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca" name="ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca"></a>ext&#160;</td><td class="fielddoc"><p>Only <span class="tt"><a class="el" href="#a9b788582fce25ed9f6ff3c67b7fe3d6c">declare</a></span> the wrappers; the runtime is linked in externally. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00165">165</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a18da2834ff9f5fd902b0a0b7118a2e79" name="a18da2834ff9f5fd902b0a0b7118a2e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18da2834ff9f5fd902b0a0b7118a2e79">&#9670;&#160;</a></span>Emitter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::plug::ll::Emitter::Emitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>ostream</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00128">128</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00078">mim::Phase::driver()</a>, <a class="el" href="world_8h_source.html#l00102">mim::World::driver()</a>, <a class="el" href="driver_8h_source.html#l00173">mim::Driver::is_loaded()</a>, <a class="el" href="driver_8cpp_source.html#l00117">mim::Driver::load()</a>, <a class="el" href="ll_8cpp_source.html#l01134">mim_ll_convert</a>, <a class="el" href="ll_8cpp_source.html#l01139">mim_ll_emit_bb</a>, <a class="el" href="ll_8cpp_source.html#l01138">mim_ll_emit_epilogue</a>, <a class="el" href="ll_8cpp_source.html#l01137">mim_ll_finalize</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="emitter_8h_source.html#l00033">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::ostream()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::Phase::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8cpp_source.html#l01134">mim_ll_convert</a>, <a class="el" href="ll_8cpp_source.html#l01139">mim_ll_emit_bb</a>, <a class="el" href="ll_8cpp_source.html#l01138">mim_ll_emit_epilogue</a>, <a class="el" href="ll_8cpp_source.html#l01137">mim_ll_finalize</a>, and <a class="el" href="ll_8cpp_source.html#l00032">mim::plug::ll::Emit::start()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae1cb1a4b934957ebfa6bada2eaef279d" name="ae1cb1a4b934957ebfa6bada2eaef279d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1cb1a4b934957ebfa6bada2eaef279d">&#9670;&#160;</a></span>convert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string mim::plug::ll::Emitter::convert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>simd</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ad2cf7af160a64f55b9d2941059241b05">mim::plug::ll_nvptx::DeviceEmitter</a>, and <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#af12399837914588ff18354bef7e1d1c1">mim::plug::ll_nvptx::HostEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00194">194</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00083">mim::plug::ll_nvptx::DeviceEmitter::convert()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00288">mim::plug::ll_nvptx::HostEmitter::convert()</a>, <a class="el" href="ll_8h_source.html#l00332">convert_ret_pi()</a>, <a class="el" href="ll_8h_source.html#l00383">emit_imported()</a>, <a class="el" href="ll_8h_source.html#l00222">emit_slot()</a>, and <a class="el" href="ll_8h_source.html#l00397">prepare()</a>.</p>
+
+</div>
+</div>
+<a id="a82fcc166141b236eae4b6c4c21c92780" name="a82fcc166141b236eae4b6c4c21c92780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82fcc166141b236eae4b6c4c21c92780">&#9670;&#160;</a></span>convert_ret_pi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::plug::ll::Emitter::convert_ret_pi </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Pi.html">Pi</a> *</td>          <td class="paramname"><span class="paramname"><em>pi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00332">332</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00194">convert()</a>, <a class="el" href="lam_8h_source.html#l00035">mim::Pi::dom()</a>, <a class="el" href="mem_8h_source.html#l00058">mim::plug::mem::strip_mem_ty()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::Phase::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00383">emit_imported()</a>, <a class="el" href="ll_8h_source.html#l00397">prepare()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>.</p>
+
+</div>
+</div>
+<a id="a9b788582fce25ed9f6ff3c67b7fe3d6c" name="a9b788582fce25ed9f6ff3c67b7fe3d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b788582fce25ed9f6ff3c67b7fe3d6c">&#9670;&#160;</a></span>declare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::declare </td>
+          <td>(</td>
+          <td class="paramtype">std::format_string&lt; Args... &gt;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00157">157</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>, and <a class="el" href="ll_8h_source.html#l00228">decls_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00187">declare_rt()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00592">mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00300">mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>.</p>
+
+</div>
+</div>
+<a id="aa7f8831b6671a290b85713952a92b8f6" name="aa7f8831b6671a290b85713952a92b8f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f8831b6671a290b85713952a92b8f6">&#9670;&#160;</a></span>declare_rt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::declare_rt </td>
+          <td>(</td>
+          <td class="paramtype">std::format_string&lt; Args... &gt;</td>          <td class="paramname"><span class="paramname"><em>sig</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Declares a runtime wrapper <code class="param">sig</code> (implemented in a C runtime, see <span class="tt">add_mim_runtime</span>) and records that the runtime is required by this module. </p>
+<p>In <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64aabf77184f55403d75b9d51d79162a7ca" title="Only declare the wrappers; the runtime is linked in externally.">Rt::ext</a></span> mode the declaration is emitted like any other <span class="tt"><a class="el" href="#a9b788582fce25ed9f6ff3c67b7fe3d6c">declare</a></span>. In <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" title="Splice the wrapper IR into the emitted module so it is self-contained.">Rt::embed</a></span> mode the wrapper's <em>definition</em> is spliced into the output, so emitting a <span class="tt"><a class="el" href="#a9b788582fce25ed9f6ff3c67b7fe3d6c">declare</a></span> as well would be a redefinition — hence it is suppressed here. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00187">187</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>, <a class="el" href="ll_8h_source.html#l00157">declare()</a>, <a class="el" href="ll_8h_source.html#l00167">ext</a>, <a class="el" href="ll_8h_source.html#l00241">rt_</a>, and <a class="el" href="ll_8h_source.html#l00242">rt_used_</a>.</p>
+
+</div>
+</div>
+<a id="ae2260be08319fc64acdbe86eb946ac61" name="ae2260be08319fc64acdbe86eb946ac61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2260be08319fc64acdbe86eb946ac61">&#9670;&#160;</a></span>emit_bb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::plug::ll::Emitter::emit_bb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00148">148</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a id="adb599525bac3039cb5adbf91ed3035dd" name="adb599525bac3039cb5adbf91ed3035dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb599525bac3039cb5adbf91ed3035dd">&#9670;&#160;</a></span>emit_epilogue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mim::plug::ll::Emitter::emit_epilogue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#a26bcf601c6edabfea339b3ab30e13c4a">mim::plug::ll_nvptx::HostEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00146">146</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00278">mim::plug::ll_nvptx::HostEmitter::emit_epilogue()</a>.</p>
+
+</div>
+</div>
+<a id="a21fc75b1b6035deeecddf5f30f652ee5" name="a21fc75b1b6035deeecddf5f30f652ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fc75b1b6035deeecddf5f30f652ee5">&#9670;&#160;</a></span>emit_imported()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::emit_imported </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00383">383</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00194">convert()</a>, <a class="el" href="ll_8h_source.html#l00332">convert_ret_pi()</a>, <a class="el" href="ll_8h_source.html#l00231">func_decls_</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="lam_8cpp_source.html#l00013">mim::Pi::ret_pi()</a>, and <a class="el" href="lam_8h_source.html#l00133">mim::Lam::type()</a>.</p>
+
+</div>
+</div>
+<a id="a8485a95a73caae753cbdf5f02296d6f3" name="a8485a95a73caae753cbdf5f02296d6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8485a95a73caae753cbdf5f02296d6f3">&#9670;&#160;</a></span>emit_phi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::emit_phi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>callee</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>phi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>pred</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers <code class="param">arg</code> as an incoming phi value for <code class="param">phi</code> in <code class="param">callee</code>, coming from predecessor <code class="param">pred</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00202">202</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00318">id()</a>, <a class="el" href="emitter_8h_source.html#l00103">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::lam2bb_</a>, and <a class="el" href="emitter_8h_source.html#l00100">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::locals_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00208">emit_phi_args()</a>.</p>
+
+</div>
+</div>
+<a id="a01a2f380587e18eb8b102928bd069b7a" name="a01a2f380587e18eb8b102928bd069b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a2f380587e18eb8b102928bd069b7a">&#9670;&#160;</a></span>emit_phi_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::emit_phi_args </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>callee</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>pred</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wires all non-<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> arguments of <code class="param">app</code> into <code class="param">callee's</code> phis, coming from predecessor <code class="param">pred</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00208">208</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="ll_8h_source.html#l00202">emit_phi()</a>, <a class="el" href="emitter_8h_source.html#l00045">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::emit_unsafe()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00482">mim::Def::num_tvars()</a>, and <a class="el" href="def_8h_source.html#l00482">mim::Def::var()</a>.</p>
+
+</div>
+</div>
+<a id="aae8c6a6b31d1c13a3637dff26549eb48" name="aae8c6a6b31d1c13a3637dff26549eb48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8c6a6b31d1c13a3637dff26549eb48">&#9670;&#160;</a></span>emit_slot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string mim::plug::ll::Emitter::emit_slot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>pointee</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emits the storage backing a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4">mem.slot</a></span> of type <code class="param">pointee</code> and yields the pointer value. </p>
+<p>The generic backend allocates on the stack; targets may override (e.g. a global in a specific address space). Kept inline on purpose so <span class="tt"><a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html">Emitter</a></span> retains no vtable key function (else its vtable would live in a single module and break derived backends loaded from a separate plugin). </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af80226a259c172237e9cb0c25374773a">mim::plug::ll_nvptx::DeviceEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00222">222</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00086">mim::plug::ll::BB::body()</a>, <a class="el" href="ll_8h_source.html#l00194">convert()</a>, and <a class="el" href="def_8cpp_source.html#l00610">mim::Def::unique_name()</a>.</p>
+
+</div>
+</div>
+<a id="a620e3fd2fa2748dac7c20f62b2f2defa" name="a620e3fd2fa2748dac7c20f62b2f2defa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620e3fd2fa2748dac7c20f62b2f2defa">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00147">147</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a id="aa7b0c48aeb683107867c68a55d7c1240" name="aa7b0c48aeb683107867c68a55d7c1240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b0c48aeb683107867c68a55d7c1240">&#9670;&#160;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::plug::ll::Emitter::id </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>force_bb</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00318">318</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00583">mim::Def::isa_mut()</a>, and <a class="el" href="def_8cpp_source.html#l00610">mim::Def::unique_name()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00202">emit_phi()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00592">mim::plug::ll_nvptx::DeviceEmitter::isa_targetspecific_intrinsic()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00300">mim::plug::ll_nvptx::HostEmitter::isa_targetspecific_intrinsic()</a>, <a class="el" href="ll_8h_source.html#l00397">prepare()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00115">mim::plug::ll_nvptx::HostEmitter::start()</a>.</p>
+
+</div>
+</div>
+<a id="a68c770c0945b284bd2211a593e54523a" name="a68c770c0945b284bd2211a593e54523a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c770c0945b284bd2211a593e54523a">&#9670;&#160;</a></span>is_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::ll::Emitter::is_valid </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00140">140</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b6340836cebcce5c39aa39f74bdb597" name="a1b6340836cebcce5c39aa39f74bdb597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b6340836cebcce5c39aa39f74bdb597">&#9670;&#160;</a></span>isa_targetspecific_intrinsic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::optional&lt; std::string &gt; mim::plug::ll::Emitter::isa_targetspecific_intrinsic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad">mim::plug::ll_nvptx::DeviceEmitter</a>, and <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab834c3096a2840d77482cd36bcedbf48">mim::plug::ll_nvptx::HostEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00154">154</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a id="a9bef375c0acf34184b55999e1269e878" name="a9bef375c0acf34184b55999e1269e878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bef375c0acf34184b55999e1269e878">&#9670;&#160;</a></span>load_rt_module()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::ll::Emitter::load_rt_module </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locates the runtime module <span class="tt">rt/&lt;filename&gt;</span> (produced by <span class="tt">add_mim_runtime</span>) in the driver's search paths, reads it, and stores it for <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" title="Splice the wrapper IR into the emitted module so it is self-contained.">Rt::embed</a></span> splicing. </p>
+<p>Backends share this instead of duplicating the lookup: <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1ll.html" title="The ll Plugin">ll</a></span> loads <span class="tt">ll_rt.ll</span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1ll__nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a></span> loads <span class="tt">ll_nvptx_rt.ll</span>, and so on — one merged module per plugin. </p><dl class="section return"><dt>Returns</dt><dd>whether the module was found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00369">369</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00078">mim::Phase::driver()</a>, <a class="el" href="world_8cpp_source.html#l00129">mim::World::log()</a>, <a class="el" href="ll_8h_source.html#l00243">rt_module_</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::Phase::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00656">mim::plug::ll_nvptx::emit_host()</a>.</p>
+
+</div>
+</div>
+<a id="a0553a4b3a37018e2ae31211674d55dd6" name="a0553a4b3a37018e2ae31211674d55dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0553a4b3a37018e2ae31211674d55dd6">&#9670;&#160;</a></span>prepare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::plug::ll::Emitter::prepare </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af83ee2502ac2f5af0a83210be6e9114e">mim::plug::ll_nvptx::DeviceEmitter</a>, and <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#aed0a0ad6c6660eb2ab838d4f49d0dfbb">mim::plug::ll_nvptx::HostEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00397">397</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00194">convert()</a>, <a class="el" href="ll_8h_source.html#l00332">convert_ret_pi()</a>, <a class="el" href="ll_8h_source.html#l00232">func_impls_</a>, <a class="el" href="ll_8h_source.html#l00318">id()</a>, <a class="el" href="def_8h_source.html#l00556">mim::Def::is_external()</a>, <a class="el" href="ll_8h_source.html#l00277">mim::plug::ll::is_simd()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="emitter_8h_source.html#l00100">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::locals_</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="def_8h_source.html#l00355">mim::Def::num_ops()</a>, <a class="el" href="phase_8h_source.html#l00623">mim::ClosedMutPhase&lt; Lam &gt;::root()</a>, <a class="el" href="def_8cpp_source.html#l00610">mim::Def::unique_name()</a>, and <a class="el" href="def_8h_source.html#l00482">mim::Def::vars()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00271">mim::plug::ll_nvptx::HostEmitter::prepare()</a>.</p>
+
+</div>
+</div>
+<a id="a716f42495d52bea72d6f34ce9f708aef" name="a716f42495d52bea72d6f34ce9f708aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a716f42495d52bea72d6f34ce9f708aef">&#9670;&#160;</a></span>rt_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::rt_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">Rt</a></td>          <td class="paramname"><span class="paramname"><em>rt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00170">170</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00241">rt_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00656">mim::plug::ll_nvptx::emit_host()</a>.</p>
+
+</div>
+</div>
+<a id="a028ef63fb02d2876ccfe254f2f6aab80" name="a028ef63fb02d2876ccfe254f2f6aab80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028ef63fb02d2876ccfe254f2f6aab80">&#9670;&#160;</a></span>rt_module()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::rt_module </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>ll</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides the textual LLVM IR of the runtime module to splice in <span class="tt"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc" title="Splice the wrapper IR into the emitted module so it is self-contained.">Rt::embed</a></span> mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00172">172</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00243">rt_module_</a>.</p>
+
+</div>
+</div>
+<a id="ac0f9e4889a963e8dccc382090d247357" name="ac0f9e4889a963e8dccc382090d247357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f9e4889a963e8dccc382090d247357">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::ll::Emitter::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actual entry. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1ClosedMutPhase.html#a26a7a4b7283d2218eee8d361fb3b7738">mim::ClosedMutPhase&lt; Lam &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#a8e3dbd1e92dfa67a01d07a37b6b886d8">mim::plug::ll_nvptx::HostEmitter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00342">342</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00228">decls_</a>, <a class="el" href="ll_8h_source.html#l00166">embed</a>, <a class="el" href="ll_8h_source.html#l00231">func_decls_</a>, <a class="el" href="ll_8h_source.html#l00232">func_impls_</a>, <a class="el" href="ll_8h_source.html#l00239">loop_md_</a>, <a class="el" href="ll_8h_source.html#l00238">LoopMdBase</a>, <a class="el" href="ll_8h_source.html#l00043">MIM_LL_BE</a>, <a class="el" href="emitter_8h_source.html#l00033">mim::Emitter&lt; std::string, std::string, BB, Emitter &gt;::ostream()</a>, <a class="el" href="ll_8h_source.html#l00241">rt_</a>, <a class="el" href="ll_8h_source.html#l00243">rt_module_</a>, <a class="el" href="ll_8h_source.html#l00242">rt_used_</a>, <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d">mim::Phase::start()</a>, <a class="el" href="ll_8h_source.html#l00229">type_decls_</a>, and <a class="el" href="ll_8h_source.html#l00230">vars_decls_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00526">mim::plug::ll_nvptx::DeviceEmitter::start()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00115">mim::plug::ll_nvptx::HostEmitter::start()</a>.</p>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a785c96819fab5e5c2021f7718285d32b" name="a785c96819fab5e5c2021f7718285d32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785c96819fab5e5c2021f7718285d32b">&#9670;&#160;</a></span>mim_ll_convert</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim_ll_convert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>simd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The heavy, target-independent emitter methods are compiled once into <span class="tt">libmim_ll</span> (see <a class="el" href="ll_8cpp.html">ll.cpp</a>). </p>
+<p><span class="tt">libmim_ll_nvptx</span> reaches them through these <span class="tt">extern "C"</span> shims instead of recompiling the bodies; <a class="el" href="classmim_1_1plug_1_1ll_1_1Emitter.html">Emitter</a> caches the pointers via <span class="tt"><a class="el" href="driver_8h.html#ab004995be061e8045533148b21580ed8">GET_FUN_PTR</a></span> in its constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8cpp_source.html#l01134">1134</a> of file <a class="el" href="ll_8cpp_source.html">ll.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, <a class="el" href="config_8h_source.html#l00021">MIM_EXPORT</a>, and <a class="el" href="ll_8cpp_source.html#l01134">mim_ll_convert</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, and <a class="el" href="ll_8cpp_source.html#l01134">mim_ll_convert</a>.</p>
+
+</div>
+</div>
+<a id="af5d5ecfe6ed2528530e067e675e7d6bc" name="af5d5ecfe6ed2528530e067e675e7d6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d5ecfe6ed2528530e067e675e7d6bc">&#9670;&#160;</a></span>mim_ll_emit_bb</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim_ll_emit_bb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmim_1_1plug_1_1ll_1_1BB.html">BB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8cpp_source.html#l01139">1139</a> of file <a class="el" href="ll_8cpp_source.html">ll.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, <a class="el" href="config_8h_source.html#l00021">MIM_EXPORT</a>, and <a class="el" href="ll_8cpp_source.html#l01139">mim_ll_emit_bb</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, and <a class="el" href="ll_8cpp_source.html#l01139">mim_ll_emit_bb</a>.</p>
+
+</div>
+</div>
+<a id="afbea4d68ef229cede396edd88b9a6e35" name="afbea4d68ef229cede396edd88b9a6e35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbea4d68ef229cede396edd88b9a6e35">&#9670;&#160;</a></span>mim_ll_emit_epilogue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim_ll_emit_epilogue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8cpp_source.html#l01138">1138</a> of file <a class="el" href="ll_8cpp_source.html">ll.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, <a class="el" href="config_8h_source.html#l00021">MIM_EXPORT</a>, and <a class="el" href="ll_8cpp_source.html#l01138">mim_ll_emit_epilogue</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, and <a class="el" href="ll_8cpp_source.html#l01138">mim_ll_emit_epilogue</a>.</p>
+
+</div>
+</div>
+<a id="adf2801a80435ad15c5b708e43739f5f7" name="adf2801a80435ad15c5b708e43739f5f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2801a80435ad15c5b708e43739f5f7">&#9670;&#160;</a></span>mim_ll_finalize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim_ll_finalize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a18da2834ff9f5fd902b0a0b7118a2e79">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8cpp_source.html#l01137">1137</a> of file <a class="el" href="ll_8cpp_source.html">ll.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, <a class="el" href="config_8h_source.html#l00021">MIM_EXPORT</a>, and <a class="el" href="ll_8cpp_source.html#l01137">mim_ll_finalize</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">Emitter()</a>, and <a class="el" href="ll_8cpp_source.html#l01137">mim_ll_finalize</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a65ac63a5b52dcac775dc3c0ee75a3520" name="a65ac63a5b52dcac775dc3c0ee75a3520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ac63a5b52dcac775dc3c0ee75a3520">&#9670;&#160;</a></span>decls_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">absl::btree_set&lt;std::string&gt; mim::plug::ll::Emitter::decls_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00228">228</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00157">declare()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="aa27e43c7bfe8e0e3284eadf1fd17060a" name="aa27e43c7bfe8e0e3284eadf1fd17060a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27e43c7bfe8e0e3284eadf1fd17060a">&#9670;&#160;</a></span>func_decls_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostringstream mim::plug::ll::Emitter::func_decls_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00231">231</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00383">emit_imported()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="ab31bbfcaecd5d6fc4d1e54e1d19716be" name="ab31bbfcaecd5d6fc4d1e54e1d19716be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab31bbfcaecd5d6fc4d1e54e1d19716be">&#9670;&#160;</a></span>func_impls_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostringstream mim::plug::ll::Emitter::func_impls_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00232">232</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00397">prepare()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="ade57e99459d05bbd6fbf968597ba0287" name="ade57e99459d05bbd6fbf968597ba0287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade57e99459d05bbd6fbf968597ba0287">&#9670;&#160;</a></span>loop_md_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap</a>&lt;<a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a>&gt; mim::plug::ll::Emitter::loop_md_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00239">239</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="a590e2a9569867565716950ffae29cdd3" name="a590e2a9569867565716950ffae29cdd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590e2a9569867565716950ffae29cdd3">&#9670;&#160;</a></span>LoopMdBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> mim::plug::ll::Emitter::LoopMdBase = 1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loop-metadata node id per <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1ll.html#aaee9c2cf398a457c5c7805f83765e599">ll.vec</a></span>-annotated loop header (see <span class="tt">emit_epilogue_impl</span>); numbered from <span class="tt"><a class="el" href="#a590e2a9569867565716950ffae29cdd3" title="Loop-metadata node id per ll.vec-annotated loop header (see emit_epilogue_impl); numbered from LoopMd...">LoopMdBase</a> + 1</span> to stay clear of the ids the embedded runtime module brings along. </p>
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00238">238</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="a7e23ce15d7a02dcda74c2fc997757754" name="a7e23ce15d7a02dcda74c2fc997757754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e23ce15d7a02dcda74c2fc997757754">&#9670;&#160;</a></span>rt_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64">Rt</a> mim::plug::ll::Emitter::rt_ = <a class="el" href="#ab365ba41671e10ee6a0f56f59a831b64a269605d45c104f12cbcdc8fb71434acc">Rt::embed</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00241">241</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00187">declare_rt()</a>, <a class="el" href="ll_8h_source.html#l00170">rt_mode()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="a894d2de6157af5afdddb7f644bae9227" name="a894d2de6157af5afdddb7f644bae9227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a894d2de6157af5afdddb7f644bae9227">&#9670;&#160;</a></span>rt_module_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::plug::ll::Emitter::rt_module_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00243">243</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00369">load_rt_module()</a>, <a class="el" href="ll_8h_source.html#l00172">rt_module()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="afb2702775e8afcf83b2cc4f95aef9c91" name="afb2702775e8afcf83b2cc4f95aef9c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2702775e8afcf83b2cc4f95aef9c91">&#9670;&#160;</a></span>rt_used_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::ll::Emitter::rt_used_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00242">242</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00187">declare_rt()</a>, and <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="ae829eb2d9c43cf8a881c3b7712d26994" name="ae829eb2d9c43cf8a881c3b7712d26994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae829eb2d9c43cf8a881c3b7712d26994">&#9670;&#160;</a></span>simd_phi_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap</a>&lt;const <a class="el" href="classmim_1_1Def.html">Def</a>*&gt; mim::plug::ll::Emitter::simd_phi_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00233">233</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8113f780ec9bcf7062e75de81e85879" name="ae8113f780ec9bcf7062e75de81e85879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8113f780ec9bcf7062e75de81e85879">&#9670;&#160;</a></span>type_decls_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostringstream mim::plug::ll::Emitter::type_decls_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00229">229</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00342">start()</a>.</p>
+
+</div>
+</div>
+<a id="aaff1b1d0552221ddf170ccd92af7bd9a" name="aaff1b1d0552221ddf170ccd92af7bd9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff1b1d0552221ddf170ccd92af7bd9a">&#9670;&#160;</a></span>vars_decls_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostringstream mim::plug::ll::Emitter::vars_decls_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ll_8h_source.html#l00230">230</a> of file <a class="el" href="ll_8h_source.html">ll.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00089">mim::plug::ll_nvptx::DeviceEmitter::emit_slot()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>, <a class="el" href="ll_8h_source.html#l00342">start()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00115">mim::plug::ll_nvptx::HostEmitter::start()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/mim/plug/ll/<a class="el" href="ll_8h_source.html">ll.h</a></li>
+<li>src/mim/plug/ll/<a class="el" href="ll_8cpp_source.html">ll.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="namespacemim_1_1plug.html">plug</a></li><li class="navelem"><a href="namespacemim_1_1plug_1_1ll.html">ll</a></li><li class="navelem"><a href="classmim_1_1plug_1_1ll_1_1Emitter.html">Emitter</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/plug/clos/clos.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('clos_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">clos.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="clos_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="clos_8h.html">mim/plug/clos/clos.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">mim/config.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="branch__clos__elim_8h.html">mim/plug/clos/phase/branch_clos_elim.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="clos2sjlj_8h.html">mim/plug/clos/phase/clos2sjlj.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="clos__conv_8h.html">mim/plug/clos/phase/clos_conv.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="clos__conv__prep_8h.html">mim/plug/clos/phase/clos_conv_prep.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="lower__typed__clos_8h.html">mim/plug/clos/phase/lower_typed_clos.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="lower__typed__clos__prep_8h.html">mim/plug/clos/phase/lower_typed_clos_prep.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug.html">mim::plug</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="clos_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a>(<a class="code hl_typedef" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a>&amp; phases) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::clos_conv_prep,        clos::phase::ClosConvPrep      &gt;</a>(phases);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::clos_conv,             clos::phase::ClosConv          &gt;</a>(phases);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::branch_clos,           clos::phase::BranchClosElim    &gt;</a>(phases);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::lower_typed_clos_prep, clos::phase::LowerTypedClosPrep&gt;</a>(phases);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::clos2sjlj,             clos::phase::Clos2SJLJ         &gt;</a>(phases);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">Phase::hook&lt;clos::lower_typed_clos,      clos::phase::LowerTypedClos    &gt;</a>(phases);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="clos_8cpp.html#a35bb34350e93d508e52544f4abd50e59">   27</a></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code hl_define" href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a> <a class="code hl_struct" href="structmim_1_1Plugin.html">Plugin</a> <a class="code hl_function" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim_get_plugin</a>() {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> {<span class="stringliteral">&quot;clos&quot;</span>, <a class="code hl_define" href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>, <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a16d3c86f0515a0b9c2d5653f412f58d0">clos::register_normalizers</a>, <a class="code hl_function" href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a>, {}, {}, {}, {}};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1clos.html">mim::plug::clos</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * ClosLit</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#af04a4ee3ff8bc40ea39061f90c097f07">   37</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#af04a4ee3ff8bc40ea39061f90c097f07">ClosLit::env</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::get&lt;2&gt;(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">clos_unpack</a>(def_)); }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">   39</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">ClosLit::fnc</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::get&lt;1&gt;(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">clos_unpack</a>(def_)); }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a6400eb739e14e39b60624f13bb39d703">   41</a></span><a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a6400eb739e14e39b60624f13bb39d703">ClosLit::fnc_as_lam</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">auto</span> f = <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">fnc</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> a = <a class="code hl_function" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">Axm::isa&lt;attr&gt;</a>(f)) f = a-&gt;arg();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> f-&gt;isa_mut&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aace20dc4a0e54f897f9d2a2242e2b48c">   47</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aace20dc4a0e54f897f9d2a2242e2b48c">ClosLit::env_var</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">auto</span> lam = <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a6400eb739e14e39b60624f13bb39d703">fnc_as_lam</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> lam-&gt;var(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(lam-&gt;type()-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;()));</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aef73f27b67cfcb475627cfcb782c1b05">   52</a></span>ClosLit <a class="code hl_friend" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aef73f27b67cfcb475627cfcb782c1b05">isa_clos_lit</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def, <span class="keywordtype">bool</span> fn_isa_lam) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> tpl = def-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Tuple.html">Tuple</a>&gt;(); tpl &amp;&amp; <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">isa_clos_type</a>(def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>())) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">auto</span> <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">fnc</a> = std::get&lt;1&gt;(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">clos_unpack</a>(tpl));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> fa = <a class="code hl_function" href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">Axm::isa&lt;attr&gt;</a>(<a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">fnc</a>)) <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">fnc</a> = fa-&gt;arg();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (!fn_isa_lam || <a class="code hl_function" href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">fnc</a>-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;()) <span class="keywordflow">return</span> ClosLit(tpl);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> ClosLit(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#ac1ebc28bb550c21607c7980b5a65ce1e">   61</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ac1ebc28bb550c21607c7980b5a65ce1e">clos_pack</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* env, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* fn, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* ct) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    assert(env &amp;&amp; fn);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    assert(!ct || <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">isa_clos_type</a>(ct));</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">auto</span>&amp; w = env-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">auto</span> pi = fn-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>()-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> ep = <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(pi);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    assert(env-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>() == pi-&gt;dom(ep));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    ct = ct ? ct : <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa">clos_type</a>(w.cn(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">clos_remove_env</a>(ep, pi-&gt;<a class="code hl_function" href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">dom</a>())));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> w.tuple(ct, {env-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>(), fn, env})-&gt;as&lt;Tuple&gt;();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">   72</a></span>std::tuple&lt;const Def*, const Def*, const Def*&gt; <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">clos_unpack</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* c) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    assert(c &amp;&amp; <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">isa_clos_type</a>(c-&gt;type()));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">auto</span> [env_type, fn, env] = c-&gt;projs&lt;3&gt;();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> {env_type, fn, env};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac">   78</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac">clos_apply</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* closure, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* args) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">auto</span>&amp; w           = closure-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">auto</span> [_, fn, env] = <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">clos_unpack</a>(closure);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">auto</span> pi           = fn-&gt;type()-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">auto</span> ep           = <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(pi);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> w.app(fn, <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(pi-&gt;num_doms(), [&amp;](<span class="keyword">auto</span> i) { return clos_insert_env(ep, i, env, args); }));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"> * closure types</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">   90</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">isa_clos_type</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">auto</span>&amp; w  = def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">auto</span> sig = def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">isa_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (!sig || sig-&gt;num_ops() &lt; 3 || sig-&gt;op(0_u64) != w.type()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">auto</span> var = sig-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">var</a>(0_u64);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (sig-&gt;op(2_u64) != var) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">auto</span> pi = sig-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a67a94030742a4217fe19bb739990f73e">op</a>(1_u64)-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (!pi || !<a class="code hl_function" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61">Pi::isa_cn</a>(pi) || pi-&gt;num_ops() &lt;= 1_u64) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> (pi-&gt;dom(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(pi)) == var) ? sig : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa">  101</a></span><a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa">clos_type</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>* pi) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">auto</span>&amp; w   = pi-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">auto</span> doms = pi-&gt;doms();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">ctype</a>(w, doms, <span class="keyword">nullptr</span>)-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792">as_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a908c7bfdc816d89e4a7ebb16c1d7ee03">  107</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a908c7bfdc816d89e4a7ebb16c1d7ee03">clos_type_to_pi</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* ct, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* new_env_type) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    assert(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">isa_clos_type</a>(ct));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">auto</span>&amp; w      = ct-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">auto</span> pi      = ct-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a67a94030742a4217fe19bb739990f73e">op</a>(1_u64)-&gt;as&lt;<a class="code hl_class" href="classmim_1_1Pi.html">Pi</a>&gt;();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">auto</span> ep      = <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(pi);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">auto</span> new_dom = new_env_type ? <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a1b5b83d63a39b52193e05f4e8e88dad6">clos_sub_env</a>(ep, pi-&gt;<a class="code hl_function" href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">dom</a>(), new_env_type) : <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">clos_remove_env</a>(ep, pi-&gt;<a class="code hl_function" href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">dom</a>());</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> w.cn(new_dom);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"> * closure environments</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d">  120</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d">clos_insert_env</a>(<span class="keywordtype">size_t</span> ep, <span class="keywordtype">size_t</span> i, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* env, std::function&lt;<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*(<span class="keywordtype">size_t</span>)&gt; f) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> (i == ep) ? env : f(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a50b8b1bc3c13d8035fc3db8cf4c70772">shift_env</a>(ep, i));</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">  124</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">clos_remove_env</a>(<span class="keywordtype">size_t</span> ep, <span class="keywordtype">size_t</span> i, std::function&lt;<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*(<span class="keywordtype">size_t</span>)&gt; f) { <span class="keywordflow">return</span> f(<a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#aba47885b5f553af0dacae464a463675b">skip_env</a>(ep, i)); }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">  126</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">ctype</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; w, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> doms, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* env_type) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">auto</span> ep = <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">env_param</a>(doms);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (!env_type) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">auto</span> sigma = w.mut_sigma(w.type(), 3_u64)-&gt;set(<span class="stringliteral">&quot;Clos&quot;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        sigma-&gt;set(0_u64, w.type());</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        sigma-&gt;set(1_u64, <a class="code hl_function" href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">ctype</a>(w, doms, sigma-&gt;var(0_u64)));</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        sigma-&gt;set(2_u64, sigma-&gt;var(0_u64));</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> sigma;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> w.cn(<a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(doms.size() + 1,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                       [&amp;](<span class="keyword">auto</span> i) { return clos_insert_env(ep, i, env_type, [&amp;](auto j) { return doms[j]; }); }));</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>} <span class="comment">// namespace mim::plug::clos</span></div>
+<div class="ttc" id="aaffine_8cpp_html_a1eac1e88e03dcfc2f038c5c0d3a7d88a"><div class="ttname"><a href="affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a></div><div class="ttdeci">void reg_phases(Flags2Phases &amp;phases)</div><div class="ttdef"><b>Definition</b> <a href="affine_8cpp_source.html#l00012">affine.cpp:12</a></div></div>
+<div class="ttc" id="abranch__clos__elim_8h_html"><div class="ttname"><a href="branch__clos__elim_8h.html">branch_clos_elim.h</a></div></div>
+<div class="ttc" id="aclassmim_1_1Axm_html_a606d1a978089ad57ff1369cb233f6338"><div class="ttname"><a href="classmim_1_1Axm.html#a606d1a978089ad57ff1369cb233f6338">mim::Axm::isa</a></div><div class="ttdeci">static auto isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="axm_8h_source.html#l00112">axm.h:112</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00275">def.h:275</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a18c97ca601e090eed9bcbc9369c2c792"><div class="ttname"><a href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792">mim::Def::as_mut</a></div><div class="ttdeci">T * as_mut() const</div><div class="ttdoc">Asserts that this is a mutable, casts constness away and performs a static_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00592">def.h:592</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a2d85181e61754391ee525fc255cac90e"><div class="ttname"><a href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">mim::Def::world</a></div><div class="ttdeci">World &amp; world() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01101">def.h:1101</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00583">def.h:583</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a67a94030742a4217fe19bb739990f73e"><div class="ttname"><a href="classmim_1_1Def.html#a67a94030742a4217fe19bb739990f73e">mim::Def::op</a></div><div class="ttdeci">const Def * op(size_t i) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00354">def.h:354</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a6e757a3ae8e52ee5b9ebdaea32c6abd8"><div class="ttname"><a href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">mim::Def::var</a></div><div class="ttdeci">const Def * var(nat_t a, nat_t i) noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00482">def.h:482</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a9ab6cb5c35d630f631fd365cf7fa8f0c"><div class="ttname"><a href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">mim::Def::type</a></div><div class="ttdeci">const Def * type() const noexcept</div><div class="ttdoc">Yields the &quot;raw&quot; type of this Def (maybe nullptr).</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01115">def.h:1115</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00113">lam.h:113</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a19df66aeb259f2d7208c70f4484ab7c3"><div class="ttname"><a href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">mim::Phase::hook</a></div><div class="ttdeci">static void hook(Flags2Phases &amp;phases)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00070">phase.h:70</a></div></div>
+<div class="ttc" id="aclassmim_1_1Pi_html"><div class="ttname"><a href="classmim_1_1Pi.html">mim::Pi</a></div><div class="ttdoc">A dependent function type.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00014">lam.h:14</a></div></div>
+<div class="ttc" id="aclassmim_1_1Pi_html_a60c2d05d18e618930742433ce71e0a61"><div class="ttname"><a href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61">mim::Pi::isa_cn</a></div><div class="ttdeci">static const Pi * isa_cn(const Def *d)</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00046">lam.h:46</a></div></div>
+<div class="ttc" id="aclassmim_1_1Pi_html_a7941d7dac71f378682c9303de3e45e27"><div class="ttname"><a href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">mim::Pi::dom</a></div><div class="ttdeci">const Def * dom() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00035">lam.h:35</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sigma_html"><div class="ttname"><a href="classmim_1_1Sigma.html">mim::Sigma</a></div><div class="ttdoc">A dependent tuple type.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00023">tuple.h:23</a></div></div>
+<div class="ttc" id="aclassmim_1_1Tuple_html"><div class="ttname"><a href="classmim_1_1Tuple.html">mim::Tuple</a></div><div class="ttdoc">Data constructor for a Sigma.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00061">tuple.h:61</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00039">world.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1clos_1_1ClosLit_html_a54e6c4c4b189bc7faa9b2240354b2fca"><div class="ttname"><a href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a54e6c4c4b189bc7faa9b2240354b2fca">mim::plug::clos::ClosLit::fnc</a></div><div class="ttdeci">const Def * fnc() const</div><div class="ttdef"><b>Definition</b> <a href="#l00039">clos.cpp:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1clos_1_1ClosLit_html_a6400eb739e14e39b60624f13bb39d703"><div class="ttname"><a href="classmim_1_1plug_1_1clos_1_1ClosLit.html#a6400eb739e14e39b60624f13bb39d703">mim::plug::clos::ClosLit::fnc_as_lam</a></div><div class="ttdeci">Lam * fnc_as_lam() const</div><div class="ttdef"><b>Definition</b> <a href="#l00041">clos.cpp:41</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1clos_1_1ClosLit_html_aace20dc4a0e54f897f9d2a2242e2b48c"><div class="ttname"><a href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aace20dc4a0e54f897f9d2a2242e2b48c">mim::plug::clos::ClosLit::env_var</a></div><div class="ttdeci">const Def * env_var() const</div><div class="ttdef"><b>Definition</b> <a href="#l00047">clos.cpp:47</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1clos_1_1ClosLit_html_aef73f27b67cfcb475627cfcb782c1b05"><div class="ttname"><a href="classmim_1_1plug_1_1clos_1_1ClosLit.html#aef73f27b67cfcb475627cfcb782c1b05">mim::plug::clos::ClosLit::isa_clos_lit</a></div><div class="ttdeci">friend ClosLit isa_clos_lit(const Def *, bool)</div><div class="ttdoc">Tries to match a closure literal.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">clos.cpp:52</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1clos_1_1ClosLit_html_af04a4ee3ff8bc40ea39061f90c097f07"><div class="ttname"><a href="classmim_1_1plug_1_1clos_1_1ClosLit.html#af04a4ee3ff8bc40ea39061f90c097f07">mim::plug::clos::ClosLit::env</a></div><div class="ttdeci">const Def * env() const</div><div class="ttdef"><b>Definition</b> <a href="#l00037">clos.cpp:37</a></div></div>
+<div class="ttc" id="aclos2sjlj_8h_html"><div class="ttname"><a href="clos2sjlj_8h.html">clos2sjlj.h</a></div></div>
+<div class="ttc" id="aclos_8h_html"><div class="ttname"><a href="clos_8h.html">clos.h</a></div></div>
+<div class="ttc" id="aclos__conv_8h_html"><div class="ttname"><a href="clos__conv_8h.html">clos_conv.h</a></div></div>
+<div class="ttc" id="aclos__conv__prep_8h_html"><div class="ttname"><a href="clos__conv__prep_8h.html">clos_conv_prep.h</a></div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="aconfig_8h_html_acf14f602e3976ff8653bb419a1d77a7f"><div class="ttname"><a href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a></div><div class="ttdeci">#define MIM_EXPORT</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00021">config.h:21</a></div></div>
+<div class="ttc" id="alower__typed__clos_8h_html"><div class="ttname"><a href="lower__typed__clos_8h.html">lower_typed_clos.h</a></div></div>
+<div class="ttc" id="alower__typed__clos__prep_8h_html"><div class="ttname"><a href="lower__typed__clos__prep_8h.html">lower_typed_clos_prep.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html">mim::plug::clos</a></div><div class="ttdoc">The clos Plugin</div><div class="ttdef"><b>Definition</b> <a href="clos_8h_source.html#l00009">clos.h:9</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a16d3c86f0515a0b9c2d5653f412f58d0"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a16d3c86f0515a0b9c2d5653f412f58d0">mim::plug::clos::register_normalizers</a></div><div class="ttdeci">void register_normalizers(Normalizers &amp;normalizers)</div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a1b5b83d63a39b52193e05f4e8e88dad6"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a1b5b83d63a39b52193e05f4e8e88dad6">mim::plug::clos::clos_sub_env</a></div><div class="ttdeci">const Def * clos_sub_env(size_t ep, const Def *tup_or_sig, const Def *new_env)</div><div class="ttdef"><b>Definition</b> <a href="clos_8h_source.html#l00136">clos.h:136</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a3f40a4012ea8c2b93e631b3c2d7c8542"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542">mim::plug::clos::clos_remove_env</a></div><div class="ttdeci">const Def * clos_remove_env(size_t ep, size_t i, std::function&lt; const Def *(size_t)&gt; f)</div><div class="ttdef"><b>Definition</b> <a href="#l00124">clos.cpp:124</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a445010ea2e9ae83528351bbdd60b3daa"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa">mim::plug::clos::clos_type</a></div><div class="ttdeci">Sigma * clos_type(const Pi *pi)</div><div class="ttdoc">Creates a typed closure type from pi.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">clos.cpp:101</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a50b8b1bc3c13d8035fc3db8cf4c70772"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a50b8b1bc3c13d8035fc3db8cf4c70772">mim::plug::clos::shift_env</a></div><div class="ttdeci">size_t shift_env(size_t ep, size_t i)</div><div class="ttdoc">Adjust the index of an argument to account for the env param.</div><div class="ttdef"><b>Definition</b> <a href="clos_8h_source.html#l00105">clos.h:105</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a7820bb02f38dcb275393c75227c85114"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114">mim::plug::clos::ctype</a></div><div class="ttdeci">const Def * ctype(World &amp;w, Defs doms, const Def *env_type=nullptr)</div><div class="ttdoc">Builds a closure type from the domains doms of a Cn.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">clos.cpp:126</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a83e143af89ac230140aca29f6674ba5d"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d">mim::plug::clos::clos_insert_env</a></div><div class="ttdeci">const Def * clos_insert_env(size_t ep, size_t i, const Def *env, std::function&lt; const Def *(size_t)&gt; f)</div><div class="ttdef"><b>Definition</b> <a href="#l00120">clos.cpp:120</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a908c7bfdc816d89e4a7ebb16c1d7ee03"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a908c7bfdc816d89e4a7ebb16c1d7ee03">mim::plug::clos::clos_type_to_pi</a></div><div class="ttdeci">const Pi * clos_type_to_pi(const Def *ct, const Def *new_env_type=nullptr)</div><div class="ttdoc">Convert a closure type to a Pi, where the environment type has been removed or replaced by new_env_ty...</div><div class="ttdef"><b>Definition</b> <a href="#l00107">clos.cpp:107</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_a9e0c77c2d7c17c5092792342a7fe9497"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#a9e0c77c2d7c17c5092792342a7fe9497">mim::plug::clos::clos_unpack</a></div><div class="ttdeci">std::tuple&lt; const Def *, const Def *, const Def * &gt; clos_unpack(const Def *c)</div><div class="ttdoc">Deconstruct a closure into (env_type, function, env).</div><div class="ttdef"><b>Definition</b> <a href="#l00072">clos.cpp:72</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_aba47885b5f553af0dacae464a463675b"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#aba47885b5f553af0dacae464a463675b">mim::plug::clos::skip_env</a></div><div class="ttdeci">size_t skip_env(size_t ep, size_t i)</div><div class="ttdoc">Same as shift_env, but skips the env param instead.</div><div class="ttdef"><b>Definition</b> <a href="clos_8h_source.html#l00108">clos.h:108</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_ac1ebc28bb550c21607c7980b5a65ce1e"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#ac1ebc28bb550c21607c7980b5a65ce1e">mim::plug::clos::clos_pack</a></div><div class="ttdeci">const Def * clos_pack(const Def *env, const Def *fn, const Def *ct=nullptr)</div><div class="ttdoc">Pack a typed closure.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">clos.cpp:61</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_ac8edb2eb6faca8f7fef791659bf332ac"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#ac8edb2eb6faca8f7fef791659bf332ac">mim::plug::clos::clos_apply</a></div><div class="ttdeci">const Def * clos_apply(const Def *closure, const Def *args)</div><div class="ttdoc">Apply a closure to arguments.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">clos.cpp:78</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_ae10a86ed5dc2d90d8365cec5ca883d19"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19">mim::plug::clos::isa_clos_type</a></div><div class="ttdeci">const Sigma * isa_clos_type(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="#l00090">clos.cpp:90</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1clos_html_ae5fdb7afb6a9b96d4cc21ae5472d58c6"><div class="ttname"><a href="namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6">mim::plug::clos::env_param</a></div><div class="ttdeci">size_t env_param(Defs doms)</div><div class="ttdoc">Describes where the environment is placed in the argument list: right after a leading mem....</div><div class="ttdef"><b>Definition</b> <a href="clos_8h_source.html#l00101">clos.h:101</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_html"><div class="ttname"><a href="namespacemim_1_1plug.html">mim::plug</a></div><div class="ttdef"><b>Definition</b> <a href="lower__for_8h_source.html#l00005">lower_for.h:5</a></div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00014">ast.h:14</a></div></div>
+<div class="ttc" id="anamespacemim_html_a3d2264dd6b663f00df3b5630b12451bd"><div class="ttname"><a href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">mim::Flags2Phases</a></div><div class="ttdeci">absl::flat_hash_map&lt; flags_t, std::function&lt; std::unique_ptr&lt; Phase &gt;(World &amp;)&gt; &gt; Flags2Phases</div><div class="ttdoc">Maps an axiom of a Phase to a function that creates one.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00030">plugin.h:30</a></div></div>
+<div class="ttc" id="anamespacemim_html_a413c339cd397df7ea6a0d5913a45ee23"><div class="ttname"><a href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">mim::Defs</a></div><div class="ttdeci">fe::View&lt; const Def * &gt; Defs</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
+<div class="ttc" id="anamespacemim_html_a77f34c28f8418e4828b4684cbc025e52"><div class="ttname"><a href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin</a></div><div class="ttdeci">mim::Plugin mim_get_plugin()</div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00095">def.h:95</a></div></div>
+<div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
+<div class="ttc" id="aplugin_8h_html_a2f1c22749113d1954fe381a30a0d5bb2"><div class="ttname"><a href="plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a></div><div class="ttdeci">#define MIM_VERSION</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00149">plugin.h:149</a></div></div>
+<div class="ttc" id="astructmim_1_1Plugin_html"><div class="ttname"><a href="structmim_1_1Plugin.html">mim::Plugin</a></div><div class="ttdoc">Basic info and registration function pointer to be returned from a specific plugin.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00154">plugin.h:154</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_07110a8747d2517ee97007224f1d2994.html">plug</a></li><li class="navelem"><a href="dir_a5f6124a4b526271d12e46c048dc5e78.html">clos</a></li><li class="navelem"><a href="clos_8cpp.html">clos.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

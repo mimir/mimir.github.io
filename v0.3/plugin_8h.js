@@ -1,0 +1,22 @@
+var plugin_8h =
+[
+    [ "mim::PluginArg", "namespacemim.html#structmim_1_1PluginArg", [
+      [ "descr", "namespacemim.html#a0f1ec4662d46ddc5fe2de1c041729422", null ],
+      [ "syntax", "namespacemim.html#ad53acf95ce5df3f7045361671860b6fa", null ]
+    ] ],
+    [ "mim::PluginEnv", "namespacemim.html#structmim_1_1PluginEnv", [
+      [ "descr", "namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace", null ],
+      [ "name", "namespacemim.html#ac81e38f7fe20dc6057c9ba0678e13fd8", null ]
+    ] ],
+    [ "mim::Out", "classmim_1_1Out.html", "classmim_1_1Out" ],
+    [ "mim::Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
+    [ "mim::Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
+    [ "mim::Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
+    [ "MIM_VERSION", "plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2", null ],
+    [ "mim::Flags2Phases", "namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd", null ],
+    [ "mim::Normalizers", "namespacemim.html#ab875464e5f495601abff7287573e1405", null ],
+    [ "mim::arg_bool", "namespacemim.html#ae219e373875516ae10fdaa6f229b65d8", null ],
+    [ "mim::arg_flag", "namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3", null ],
+    [ "mim::arg_value", "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33", null ],
+    [ "mim::mim_get_plugin", "namespacemim.html#a77f34c28f8418e4828b4684cbc025e52", null ]
+];

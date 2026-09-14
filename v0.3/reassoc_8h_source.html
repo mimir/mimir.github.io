@@ -1,0 +1,273 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/plug/tensor/phase/reassoc.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('reassoc_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">reassoc.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="reassoc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1tensor_1_1phase.html">mim::plug::tensor::phase</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// One node of a bracketing: `i … j` splits after `s`.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// Spelling the fields out keeps `size_t` out of the type - it is *not* mim::u64 everywhere.</span></div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1tensor_1_1phase.html">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">Split</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#ac879b26331d04ddbd27ca0664cf16cf3">   12</a></span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#ac879b26331d04ddbd27ca0664cf16cf3">i</a>, <a class="code hl_variable" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a">s</a>, <a class="code hl_variable" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a74f639428e135246401d316463e716c1">j</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// A bracketing of a matrix chain, innermost node first.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83">   16</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83">Splits</a> = fe::Vector&lt;Split&gt;;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// Reassociates chains of tensor.product_2d with the classic matrix-chain-order dynamic program,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// so that a chain is evaluated with the least number of vector-lane slots.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">///</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// Extents need not be literal: a cost is kept as a polynomial in the symbolic extents, ordered by</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// coefficient-wise `≤`.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// Since extents are `Nat`s and hence non-negative, that order proves `≤` under *every* instantiation -</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// but it is only a *partial* order, so a chain can have several bracketings that each win for some</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// instantiation (a batch dimension favouring a different one when small than when large).</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/// Up to Reassoc::max_dispatch_ matrices those survivors are emitted side by side behind a runtime</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// comparison of their costs; a longer chain is only reassociated where one bracketing provably wins.</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a10173129d843e77881ff84ee1b507bcd">Reassoc</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a10173129d843e77881ff84ee1b507bcd">   30</a></span>    <a class="code hl_function" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a10173129d843e77881ff84ee1b507bcd">Reassoc</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; <a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        : <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a>(<a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>) {}</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> Default_max_dispatch = 4;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> Default_vec          = 8;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"></span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    /// One `tensor.product_2d` of a chain: `«m, k» · «k, l»`.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">struct </span>Link {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* app;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* m;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* k;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* l;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a42feffa3d9d376bb73df0693942a08c9">start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a2aee0650b9db40197c2a4d3a2b41e696">rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1tensor.html#a0c8dd57ca5347d13154e0dc334c68c2a">reassoc</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::optional&lt;Link&gt; isa_link(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* ring) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    /// Appends the chain&#39;s leaves to @p mats, each leaf&#39;s *row* extent to @p dims, and the bracketing as</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">    /// written to @p orig; the caller appends the chain&#39;s trailing column extent and its own split.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> flatten(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* ring, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* rows, <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; mats, <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; dims, <a class="code hl_typedef" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83">Splits</a>&amp; orig);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    /// Rebuilds `mats[i … j]` in the new world, parenthesized according to @p split (indexed `i * n + j`).</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* build(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* head, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> mats, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> dims, fe::View&lt;u64&gt; split, <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> i, <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> j);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"></span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    /// Emits every bracketing in @p cands as a thunk and selects the cheapest one by comparing their costs</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    /// at run time.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* dispatch(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* head, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* res_ty, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> mats, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> dims, fe::View&lt;Splits&gt; cands);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"></span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">    /// The number of lane slots @p splits costs, as a `Nat` expression in the new world.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* cost_expr(<a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> mats, <a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> dims, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83">Splits</a>&amp; splits);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    /// Old-world consumer count per `product_2d` app, attributed through tuple wrappers.</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;u64&gt;</a> consumers_;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    /// Longest chain whose bracketings are enumerated - and, failing a unique winner, dispatched over.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    /// The number of bracketings is `Catalan(n − 1)`, so this cannot grow much.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    /// Set with `-X tensor:reassoc-max=&lt;n&gt;`; below `3` nothing is ever dispatched.</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> max_dispatch_ = Default_max_dispatch;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    /// Lanes of the vector loop, which `dot_schedule` runs over each product&#39;s trailing extent - or,</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">    /// for a transposed operand, `dot_schedule_kvec` over its contraction.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    /// A literal extent is charged rounded up to a whole number of these, so a bracketing whose</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">    /// intermediates are too narrow to fill a vector pays for the lanes it leaves idle.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    /// Set with `-X tensor:reassoc-vec=&lt;n&gt;`; `1` counts plain scalar multiplications again.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> vec_ = Default_vec;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <span class="comment">// namespace mim::plug::tensor::phase</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00224">lam.h:224</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00275">def.h:275</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00081">phase.h:81</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00430">phase.h:430</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_ab2f627b52ee66162e8dcf2249f67ed3e"><div class="ttname"><a href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world</a></div><div class="ttdeci">World &amp; world()=delete</div><div class="ttdoc">Hides both and forbids direct access.</div></div>
+<div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00039">world.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc_html_a10173129d843e77881ff84ee1b507bcd"><div class="ttname"><a href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a10173129d843e77881ff84ee1b507bcd">mim::plug::tensor::phase::Reassoc::Reassoc</a></div><div class="ttdeci">Reassoc(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">reassoc.h:30</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc_html_a2aee0650b9db40197c2a4d3a2b41e696"><div class="ttname"><a href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a2aee0650b9db40197c2a4d3a2b41e696">mim::plug::tensor::phase::Reassoc::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="reassoc_8cpp_source.html#l00381">reassoc.cpp:381</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc_html_a42feffa3d9d376bb73df0693942a08c9"><div class="ttname"><a href="classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html#a42feffa3d9d376bb73df0693942a08c9">mim::plug::tensor::phase::Reassoc::start</a></div><div class="ttdeci">void start() override</div><div class="ttdoc">Actual entry.</div><div class="ttdef"><b>Definition</b> <a href="reassoc_8cpp_source.html#l00214">reassoc.cpp:214</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html">mim::plug::tensor::phase</a></div><div class="ttdef"><b>Definition</b> <a href="constraints_8h_source.html#l00005">constraints.h:5</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html_a74f639428e135246401d316463e716c1"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a74f639428e135246401d316463e716c1">mim::plug::tensor::phase::Split::j</a></div><div class="ttdeci">u64 j</div><div class="ttdef"><b>Definition</b> <a href="#l00012">reassoc.h:12</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html_a9354dd9f12f084b417b3197ce31a4b83"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83">mim::plug::tensor::phase::Splits</a></div><div class="ttdeci">fe::Vector&lt; Split &gt; Splits</div><div class="ttdoc">A bracketing of a matrix chain, innermost node first.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">reassoc.h:16</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html_ac879b26331d04ddbd27ca0664cf16cf3"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#ac879b26331d04ddbd27ca0664cf16cf3">mim::plug::tensor::phase::Split::i</a></div><div class="ttdeci">u64 i</div><div class="ttdef"><b>Definition</b> <a href="#l00012">reassoc.h:12</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html_ac9514ab15820064bdda1185d8a4b541a"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a">mim::plug::tensor::phase::Split::s</a></div><div class="ttdeci">u64 s</div><div class="ttdef"><b>Definition</b> <a href="#l00012">reassoc.h:12</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_1_1phase_html_structmim_1_1plug_1_1tensor_1_1phase_1_1Split"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">mim::plug::tensor::phase::Split</a></div><div class="ttdoc">One node of a bracketing: i … j splits after s.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">reassoc.h:11</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1tensor_html_a0c8dd57ca5347d13154e0dc334c68c2a"><div class="ttname"><a href="namespacemim_1_1plug_1_1tensor.html#a0c8dd57ca5347d13154e0dc334c68c2a">mim::plug::tensor::reassoc</a></div><div class="ttdeci">reassoc</div><div class="ttdef"><b>Definition</b> <a href="tensor_2autogen_8h_source.html#l00405">autogen.h:405</a></div></div>
+<div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
+<div class="ttc" id="anamespacemim_html_a413c339cd397df7ea6a0d5913a45ee23"><div class="ttname"><a href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">mim::Defs</a></div><div class="ttdeci">fe::View&lt; const Def * &gt; Defs</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
+<div class="ttc" id="anamespacemim_html_a879f9e518002de13d65d757536033f0e"><div class="ttname"><a href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a></div><div class="ttdeci">GIDMap&lt; const Def *, To &gt; DefMap</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00090">def.h:90</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00095">def.h:95</a></div></div>
+<div class="ttc" id="anamespacemim_html_ad8bae182cdb06699fc07a348105f193c"><div class="ttname"><a href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">mim::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00027">types.h:27</a></div></div>
+<div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html">plug</a></li><li class="navelem"><a href="dir_ada027ebbdae7290fb3fc4861fecbcab.html">tensor</a></li><li class="navelem"><a href="dir_c73add9d4fc2f956e343dd89fc53e73a.html">phase</a></li><li class="navelem"><a href="reassoc_8h.html">reassoc.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1285 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::Driver Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    MimEbnf.init()
+    MimCode.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.3</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1Driver.html','','classmim_1_1Driver-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::Driver Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Some "global" variables needed all over the place.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="driver_8h_source.html">mim/driver.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mim::Driver:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classmim_1_1Driver__inherit__graph.svg" width="111" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Names_5Fstructmim_5F1_5F1Driver_5F1_5F1Names" id="r_Names_5Fstructmim_5F1_5F1Driver_5F1_5F1Names"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1Driver_1_1Names">Names</a></td></tr>
+<tr class="memitem:Paths" id="r_Paths"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Driver_1_1Paths.html">Paths</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An ordered list of directories.  <a href="classmim_1_1Driver_1_1Paths.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Imports" id="r_Imports"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Driver_1_1Imports.html">Imports</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Construction</div></td></tr>
+<tr class="memitem:a2603c3be2ca42597fdb3b3a16fca4330" id="r_a2603c3be2ca42597fdb3b3a16fca4330"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2603c3be2ca42597fdb3b3a16fca4330">Driver</a> (std::string name={})</td></tr>
+<tr class="memitem:aab01142c53929ece60b610a25bf0809f" id="r_aab01142c53929ece60b610a25bf0809f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aab01142c53929ece60b610a25bf0809f">Driver</a> (const Driver &amp;)=delete</td></tr>
+<tr class="memitem:af9b87b0d6995a419184f6bab396a816f" id="r_af9b87b0d6995a419184f6bab396a816f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af9b87b0d6995a419184f6bab396a816f">Driver</a> (Driver &amp;&amp;)=delete</td></tr>
+<tr class="memitem:a916332ec561f680e7b66004a1de23325" id="r_a916332ec561f680e7b66004a1de23325"><td class="memItemLeft"><a class="el" href="#a2603c3be2ca42597fdb3b3a16fca4330">Driver</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a916332ec561f680e7b66004a1de23325">operator=</a> (<a class="el" href="#a2603c3be2ca42597fdb3b3a16fca4330">Driver</a>)=delete</td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
+<tr class="memitem:ab9bfcad7e7aa1cbbd7a8678dd5864e3c" id="r_ab9bfcad7e7aa1cbbd7a8678dd5864e3c"><td class="memItemLeft"><a class="el" href="structmim_1_1Flags.html">Flags</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab9bfcad7e7aa1cbbd7a8678dd5864e3c">flags</a> ()</td></tr>
+<tr class="memitem:a78b10fb4e8109c0ebe30d86b7cac7d28" id="r_a78b10fb4e8109c0ebe30d86b7cac7d28"><td class="memItemLeft">const <a class="el" href="structmim_1_1Flags.html">Flags</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a78b10fb4e8109c0ebe30d86b7cac7d28">flags</a> () const</td></tr>
+<tr class="memitem:ad986bcc29d263ac15dd192571454b9b9" id="r_ad986bcc29d263ac15dd192571454b9b9"><td class="memItemLeft">fe::Log &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad986bcc29d263ac15dd192571454b9b9">log</a> ()</td></tr>
+<tr class="memitem:aef4e29a363eb7440c7fa8231f2435deb" id="r_aef4e29a363eb7440c7fa8231f2435deb"><td class="memItemLeft">const fe::Log &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aef4e29a363eb7440c7fa8231f2435deb">log</a> () const</td></tr>
+<tr class="memitem:ad0f40deb62f2385f196c02555928dcfc" id="r_ad0f40deb62f2385f196c02555928dcfc"><td class="memItemLeft">fe::Profiler &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad0f40deb62f2385f196c02555928dcfc">profiler</a> ()</td></tr>
+<tr class="memitem:a94819cdc2d23c7b56404f9e87aae4d4a" id="r_a94819cdc2d23c7b56404f9e87aae4d4a"><td class="memItemLeft">const fe::Profiler &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a94819cdc2d23c7b56404f9e87aae4d4a">profiler</a> () const</td></tr>
+<tr class="memitem:a6bb261071b0b8c994cf8dd9c90e78351" id="r_a6bb261071b0b8c994cf8dd9c90e78351"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6bb261071b0b8c994cf8dd9c90e78351">world</a> ()</td></tr>
+<tr class="memitem:a5e7d9604187e806e3a156717bcfba540" id="r_a5e7d9604187e806e3a156717bcfba540"><td class="memItemLeft">const <a class="el" href="structmim_1_1Version.html">Version</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5e7d9604187e806e3a156717bcfba540">version</a> () const</td></tr>
+<tr class="memdesc:a5e7d9604187e806e3a156717bcfba540"><td class="mdescLeft">&#160;</td><td class="mdescRight">MimIR <a class="el" href="structmim_1_1Version.html">Version</a>.  <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Diagnostic Naming</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Scratch state for <a class="el" href="classmim_1_1PlainNames.html" title="Renders Defs with their plain Def::sym instead of Def::unique_name while alive.">PlainNames</a>: which plain <a class="el" href="classmim_1_1Def.html#acd076ce85473d3ea5dee55259338951c">Def::sym</a> each gid claimed while one message is formatted.</p>
+<p>It lives here - not in a global - so that concurrent <a class="el" href="classmim_1_1Driver.html" title="Some &quot;global&quot; variables needed all over the place.">Driver</a>s never share it. </p>
+</div></td></tr>
+<tr class="memitem:a97a7d0745c0466134d1c8f93c880af85" id="r_a97a7d0745c0466134d1c8f93c880af85"><td class="memItemLeft"><a class="el" href="#structmim_1_1Driver_1_1Names">Names</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a97a7d0745c0466134d1c8f93c880af85">names</a> () const</td></tr>
+<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Manage Search Paths</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>A <em>plain directory</em> is probed as-is; a <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/&lt;libdir&gt;/mim</span> (plugins), <span class="tt">&lt;root&gt;/&lt;datadir&gt;/mim</span> (imports), and <span class="tt">&lt;root&gt;/&lt;libdir&gt;/mim/rt</span> (runtimes).</p>
+<p>Each lookup starts with the empty path, which probes the current working directory without an absolute path. Within a list, paths added first are searched first; CLI paths precede the environment and derived ones. </p>
+</div></td></tr>
+<tr class="memitem:ac47270fcb2f828c1be0d779b6eeb309f" id="r_ac47270fcb2f828c1be0d779b6eeb309f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac47270fcb2f828c1be0d779b6eeb309f">add_plugin_path</a> (fs::path path)</td></tr>
+<tr class="memitem:a39c6df2df5a91019c7a804a7761e9605" id="r_a39c6df2df5a91019c7a804a7761e9605"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a39c6df2df5a91019c7a804a7761e9605">add_import_path</a> (fs::path path)</td></tr>
+<tr class="memitem:a17868d8293a80170ba076ab7f40d02b8" id="r_a17868d8293a80170ba076ab7f40d02b8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a17868d8293a80170ba076ab7f40d02b8">add_prefix_path</a> (fs::path path)</td></tr>
+<tr class="memitem:ac598c78c88c5e6180c6461e915bb8da7" id="r_ac598c78c88c5e6180c6461e915bb8da7"><td class="memItemLeft">fe::Vector&lt; fs::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac598c78c88c5e6180c6461e915bb8da7">plugin_paths</a> () const</td></tr>
+<tr class="memdesc:ac598c78c88c5e6180c6461e915bb8da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where <a class="el" href="#a50225b299e048c90bc2cdedd7fb82128">Driver::load</a> looks for <span class="tt">libmim_&lt;name&gt;</span>.  <br /></td></tr>
+<tr class="memitem:a79dfb782a931255f203bd44873d229e1" id="r_a79dfb782a931255f203bd44873d229e1"><td class="memItemLeft">fe::Vector&lt; fs::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a79dfb782a931255f203bd44873d229e1">import_paths</a> () const</td></tr>
+<tr class="memdesc:a79dfb782a931255f203bd44873d229e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where <a class="el" href="classmim_1_1ast_1_1Parser.html" title="Parses Mim code as AST.">ast::Parser</a> looks for <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>; plugin directories are included, as a plugin ships both halves.  <br /></td></tr>
+<tr class="memitem:a9df26aec8d1f56990f363ef28723f648" id="r_a9df26aec8d1f56990f363ef28723f648"><td class="memItemLeft">fe::Vector&lt; fs::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9df26aec8d1f56990f363ef28723f648">rt_paths</a> () const</td></tr>
+<tr class="memdesc:a9df26aec8d1f56990f363ef28723f648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where a backend looks for its runtime modules.  <br /></td></tr>
+<tr id="pub-methods-4" class="groupHeader"><td colspan="2"><div class="groupHeader">Manage Imports</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Tracks the distinct import or plugin directives that <a class="el" href="classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f" title="Dump to os.">World::dump</a> should emit again later. </p>
+</div></td></tr>
+<tr class="memitem:a1d6b289f7ef74bd4ffee8fb2d7d84589" id="r_a1d6b289f7ef74bd4ffee8fb2d7d84589"><td class="memItemLeft">const <a class="el" href="classmim_1_1Driver_1_1Imports.html">Imports</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1d6b289f7ef74bd4ffee8fb2d7d84589">imports</a> () const</td></tr>
+<tr class="memitem:aa939fca89bce0a05dcb49489a1ad155b" id="r_aa939fca89bce0a05dcb49489a1ad155b"><td class="memItemLeft"><a class="el" href="classmim_1_1Driver_1_1Imports.html">Imports</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa939fca89bce0a05dcb49489a1ad155b">imports</a> ()</td></tr>
+<tr id="pub-methods-5" class="groupHeader"><td colspan="2"><div class="groupHeader">Load Plugin</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Finds and loads a shared object file that implements the MimIR <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> <code class="param">name</code>.</p>
+<p>If <em class="arg">name</em> is an absolute path to a <span class="tt">.so</span>/<span class="tt">.dll</span> file, this is used. Otherwise, "name", "libmim_name.so" (Linux, Mac), "mim_name.dll" (Win) are searched for in Driver::search_paths(). </p>
+</div></td></tr>
+<tr class="memitem:a50225b299e048c90bc2cdedd7fb82128" id="r_a50225b299e048c90bc2cdedd7fb82128"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a50225b299e048c90bc2cdedd7fb82128">load</a> (std::string_view name)</td></tr>
+<tr class="memitem:a885fd383bee5d9bb4a1ec63e809f275a" id="r_a885fd383bee5d9bb4a1ec63e809f275a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a885fd383bee5d9bb4a1ec63e809f275a">is_loaded</a> (std::string_view name) const</td></tr>
+<tr class="memitem:a94da18730e496f4180590a2a6ff68f10" id="r_a94da18730e496f4180590a2a6ff68f10"><td class="memItemLeft">const fs::path *&#160;</td><td class="memItemRight"><a class="el" href="#a94da18730e496f4180590a2a6ff68f10">plugin_dir</a> (std::string_view name) const</td></tr>
+<tr class="memdesc:a94da18730e496f4180590a2a6ff68f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directory <span class="tt">libmim_&lt;name&gt;</span> was loaded from, so that its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> half cannot come from elsewhere.  <br /></td></tr>
+<tr class="memitem:aca49523948aa7ad5392fdc0b884bad6d" id="r_aca49523948aa7ad5392fdc0b884bad6d"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#aca49523948aa7ad5392fdc0b884bad6d">get_fun_ptr</a> (std::string_view plugin, const char *name)</td></tr>
+<tr class="memitem:a25f86fd34e99f1bb3d6c16e3e245c24d" id="r_a25f86fd34e99f1bb3d6c16e3e245c24d"><td class="memTemplParams" colspan="2">template&lt;class F&gt; </td></tr>
+<tr class="memitem:a25f86fd34e99f1bb3d6c16e3e245c24d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a25f86fd34e99f1bb3d6c16e3e245c24d">get_fun_ptr</a> (std::string_view plugin, const char *name)</td></tr>
+<tr id="pub-methods-6" class="groupHeader"><td colspan="2"><div class="groupHeader">Manage Plugins</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>All these lookups yield <span class="tt">nullptr</span> if the key has not been found. </p>
+</div></td></tr>
+<tr class="memitem:ae98e9444e90210ce6ab197daec6c56fb" id="r_ae98e9444e90210ce6ab197daec6c56fb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae98e9444e90210ce6ab197daec6c56fb">phase</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> flags)</td></tr>
+<tr class="memitem:ad255a2786ccfe3ca27450b36940d6bc5" id="r_ad255a2786ccfe3ca27450b36940d6bc5"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad255a2786ccfe3ca27450b36940d6bc5">phases</a> () const</td></tr>
+<tr class="memitem:a9da4ca3384f62706a603bacad94e98e6" id="r_a9da4ca3384f62706a603bacad94e98e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9da4ca3384f62706a603bacad94e98e6">normalizer</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> flags) const</td></tr>
+<tr class="memitem:a66bee8d7f5f315deb200c65bf3ea0bff" id="r_a66bee8d7f5f315deb200c65bf3ea0bff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66bee8d7f5f315deb200c65bf3ea0bff">normalizer</a> (<a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a> d, <a class="el" href="namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288">tag_t</a> t, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> s) const</td></tr>
+<tr id="pub-methods-7" class="groupHeader"><td colspan="2"><div class="groupHeader">Plugin/Phase Arguments</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Freeform command-line arguments addressed to a plugin/phase (<span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>).</p>
+<p>A <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> reads its own arguments via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="Command-line arguments passed to this Phase&#39;s plugin via -X &lt;plugin&gt;:&lt;arg&gt;.">Phase::args()</a>. </p>
+</div></td></tr>
+<tr class="memitem:a9b37e4f106cdfda15ffc8a3d70b952b5" id="r_a9b37e4f106cdfda15ffc8a3d70b952b5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9b37e4f106cdfda15ffc8a3d70b952b5">add_arg</a> (std::string_view plugin, std::string arg)</td></tr>
+<tr class="memitem:abc9aacc4bd302c9c9f7ce52285312f79" id="r_abc9aacc4bd302c9c9f7ce52285312f79"><td class="memItemLeft">const fe::Vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abc9aacc4bd302c9c9f7ce52285312f79">args</a> (std::string_view plugin) const</td></tr>
+<tr class="memdesc:abc9aacc4bd302c9c9f7ce52285312f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields an empty fe::Vector if <code class="param">plugin</code> has none.  <br /></td></tr>
+<tr class="memitem:a5f7e5ef39e1ffaf2f857528fdee91e1e" id="r_a5f7e5ef39e1ffaf2f857528fdee91e1e"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5f7e5ef39e1ffaf2f857528fdee91e1e">known_args</a> () const</td></tr>
+<tr class="memdesc:a5f7e5ef39e1ffaf2f857528fdee91e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>.  <br /></td></tr>
+<tr class="memitem:a00f6fb77429b6f7b353e95d42b2a1bd2" id="r_a00f6fb77429b6f7b353e95d42b2a1bd2"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a00f6fb77429b6f7b353e95d42b2a1bd2">known_envs</a> () const</td></tr>
+<tr class="memdesc:a00f6fb77429b6f7b353e95d42b2a1bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Some "global" variables needed all over the place. </p>
+<p>Well, there are not really global - that's the point of this class. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00060">60</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+</div><hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1Driver_1_1Names" id="structmim_1_1Driver_1_1Names"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1Driver_1_1Names">&#9670;&#160;</a></span>mim::Driver::Names</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::Driver::Names</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00087">87</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="aa0e3fe9aba97f39b60f8a9eb20428f2d" name="aa0e3fe9aba97f39b60f8a9eb20428f2d"></a>bool</td>
+<td class="fieldname">
+clashed = false</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac5bf487026a200547023dbf745350695" name="ac5bf487026a200547023dbf745350695"></a>size_t</td>
+<td class="fieldname">
+depth = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aa30c43e39f9f46e8f5eb20d4f2c324ce" name="aa30c43e39f9f46e8f5eb20d4f2c324ce"></a>flat_hash_map&lt; Sym, <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a> &gt;</td>
+<td class="fieldname">
+sym2gid</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2603c3be2ca42597fdb3b3a16fca4330" name="a2603c3be2ca42597fdb3b3a16fca4330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2603c3be2ca42597fdb3b3a16fca4330">&#9670;&#160;</a></span>Driver() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Driver::Driver </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00052">52</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00121">add_import_path()</a>, <a class="el" href="driver_8h_source.html#l00120">add_plugin_path()</a>, <a class="el" href="driver_8h_source.html#l00122">add_prefix_path()</a>, <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>, <a class="el" href="config_8h_source.html#l00012">MIM_INSTALL_PREFIX</a>, and <a class="el" href="plugin_8h_source.html#l00149">MIM_VERSION</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#aab01142c53929ece60b610a25bf0809f">Driver()</a>, <a class="el" href="#af9b87b0d6995a419184f6bab396a816f">Driver()</a>, <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>, and <a class="el" href="#a916332ec561f680e7b66004a1de23325">operator=()</a>.</p>
+
+</div>
+</div>
+<a id="aab01142c53929ece60b610a25bf0809f" name="aab01142c53929ece60b610a25bf0809f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab01142c53929ece60b610a25bf0809f">&#9670;&#160;</a></span>Driver() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Driver::Driver </td>
+          <td>(</td>
+          <td class="paramtype">const Driver &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>.</p>
+
+</div>
+</div>
+<a id="af9b87b0d6995a419184f6bab396a816f" name="af9b87b0d6995a419184f6bab396a816f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b87b0d6995a419184f6bab396a816f">&#9670;&#160;</a></span>Driver() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Driver::Driver </td>
+          <td>(</td>
+          <td class="paramtype">Driver &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a9b37e4f106cdfda15ffc8a3d70b952b5" name="a9b37e4f106cdfda15ffc8a3d70b952b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b37e4f106cdfda15ffc8a3d70b952b5">&#9670;&#160;</a></span>add_arg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::add_arg </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00197">197</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="a39c6df2df5a91019c7a804a7761e9605" name="a39c6df2df5a91019c7a804a7761e9605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c6df2df5a91019c7a804a7761e9605">&#9670;&#160;</a></span>add_import_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::add_import_path </td>
+          <td>(</td>
+          <td class="paramtype">fs::path</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00121">121</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="ac47270fcb2f828c1be0d779b6eeb309f" name="ac47270fcb2f828c1be0d779b6eeb309f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47270fcb2f828c1be0d779b6eeb309f">&#9670;&#160;</a></span>add_plugin_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::add_plugin_path </td>
+          <td>(</td>
+          <td class="paramtype">fs::path</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00120">120</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="a17868d8293a80170ba076ab7f40d02b8" name="a17868d8293a80170ba076ab7f40d02b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17868d8293a80170ba076ab7f40d02b8">&#9670;&#160;</a></span>add_prefix_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::add_prefix_path </td>
+          <td>(</td>
+          <td class="paramtype">fs::path</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00122">122</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="abc9aacc4bd302c9c9f7ce52285312f79" name="abc9aacc4bd302c9c9f7ce52285312f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9aacc4bd302c9c9f7ce52285312f79">&#9670;&#160;</a></span>args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const fe::Vector&lt; std::string &gt; &amp; mim::Driver::args </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yields an empty fe::Vector if <code class="param">plugin</code> has none. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00176">176</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>.</p>
+
+</div>
+</div>
+<a id="ab9bfcad7e7aa1cbbd7a8678dd5864e3c" name="ab9bfcad7e7aa1cbbd7a8678dd5864e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bfcad7e7aa1cbbd7a8678dd5864e3c">&#9670;&#160;</a></span>flags() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmim_1_1Flags.html">Flags</a> &amp; mim::Driver::flags </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00073">73</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00130">mim::World::flags()</a>, <a class="el" href="driver_8cpp_source.html#l00117">load()</a>, <a class="el" href="ast_8cpp_source.html#l00214">mim::ast::load_plugins()</a>, <a class="el" href="main_8cpp_source.html#l00131">main()</a>, <a class="el" href="driver_8h_source.html#l00189">normalizer()</a>, <a class="el" href="driver_8h_source.html#l00187">phase()</a>, <a class="el" href="phase_8cpp_source.html#l00032">mim::Phase::run()</a>, <a class="el" href="phase_8cpp_source.html#l00283">mim::PhaseMan::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00150">mim::RWBase::start()</a>.</p>
+
+</div>
+</div>
+<a id="a78b10fb4e8109c0ebe30d86b7cac7d28" name="a78b10fb4e8109c0ebe30d86b7cac7d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b10fb4e8109c0ebe30d86b7cac7d28">&#9670;&#160;</a></span>flags() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmim_1_1Flags.html">Flags</a> &amp; mim::Driver::flags </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00074">74</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a25f86fd34e99f1bb3d6c16e3e245c24d" name="a25f86fd34e99f1bb3d6c16e3e245c24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f86fd34e99f1bb3d6c16e3e245c24d">&#9670;&#160;</a></span>get_fun_ptr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mim::Driver::get_fun_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00179">179</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00171">get_fun_ptr()</a>.</p>
+
+</div>
+</div>
+<a id="aca49523948aa7ad5392fdc0b884bad6d" name="aca49523948aa7ad5392fdc0b884bad6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca49523948aa7ad5392fdc0b884bad6d">&#9670;&#160;</a></span>get_fun_ptr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * mim::Driver::get_fun_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00171">171</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8h_source.html#l00179">get_fun_ptr()</a>.</p>
+
+</div>
+</div>
+<a id="a79dfb782a931255f203bd44873d229e1" name="a79dfb782a931255f203bd44873d229e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79dfb782a931255f203bd44873d229e1">&#9670;&#160;</a></span>import_paths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Vector&lt; fs::path &gt; mim::Driver::import_paths </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Where <a class="el" href="classmim_1_1ast_1_1Parser.html" title="Parses Mim code as AST.">ast::Parser</a> looks for <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>; plugin directories are included, as a plugin ships both halves. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00093">93</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="config_8h_source.html#l00014">MIM_DATADIR</a>, and <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="aa939fca89bce0a05dcb49489a1ad155b" name="aa939fca89bce0a05dcb49489a1ad155b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa939fca89bce0a05dcb49489a1ad155b">&#9670;&#160;</a></span>imports() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmim_1_1Driver_1_1Imports.html">Imports</a> &amp; mim::Driver::imports </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00163">163</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d6b289f7ef74bd4ffee8fb2d7d84589" name="a1d6b289f7ef74bd4ffee8fb2d7d84589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6b289f7ef74bd4ffee8fb2d7d84589">&#9670;&#160;</a></span>imports() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Driver_1_1Imports.html">Imports</a> &amp; mim::Driver::imports </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00162">162</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>.</p>
+
+</div>
+</div>
+<a id="a885fd383bee5d9bb4a1ec63e809f275a" name="a885fd383bee5d9bb4a1ec63e809f275a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885fd383bee5d9bb4a1ec63e809f275a">&#9670;&#160;</a></span>is_loaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Driver::is_loaded </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00173">173</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">mim::plug::ll::Emitter::Emitter()</a>, and <a class="el" href="driver_8cpp_source.html#l00117">load()</a>.</p>
+
+</div>
+</div>
+<a id="a5f7e5ef39e1ffaf2f857528fdee91e1e" name="a5f7e5ef39e1ffaf2f857528fdee91e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f7e5ef39e1ffaf2f857528fdee91e1e">&#9670;&#160;</a></span>known_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; mim::Driver::known_args </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00202">202</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a00f6fb77429b6f7b353e95d42b2a1bd2" name="a00f6fb77429b6f7b353e95d42b2a1bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f6fb77429b6f7b353e95d42b2a1bd2">&#9670;&#160;</a></span>known_envs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; mim::Driver::known_envs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00205">205</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a50225b299e048c90bc2cdedd7fb82128" name="a50225b299e048c90bc2cdedd7fb82128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50225b299e048c90bc2cdedd7fb82128">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Driver::load </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00117">117</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00073">flags()</a>, <a class="el" href="driver_8h_source.html#l00173">is_loaded()</a>, <a class="el" href="driver_8h_source.html#l00075">log()</a>, <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin()</a>, <a class="el" href="driver_8cpp_source.html#l00083">plugin_paths()</a>, and <a class="el" href="driver_8h_source.html#l00080">version()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00128">mim::plug::ll::Emitter::Emitter()</a>, and <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>.</p>
+
+</div>
+</div>
+<a id="ad986bcc29d263ac15dd192571454b9b9" name="ad986bcc29d263ac15dd192571454b9b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad986bcc29d263ac15dd192571454b9b9">&#9670;&#160;</a></span>log() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Log &amp; mim::Driver::log </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00075">75</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00061">mim::World::Annexes::attach()</a>, <a class="el" href="parser_8cpp_source.html#l00095">mim::ast::Parser::import()</a>, <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>, <a class="el" href="driver_8cpp_source.html#l00117">load()</a>, <a class="el" href="world_8cpp_source.html#l00129">mim::World::log()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="aef4e29a363eb7440c7fa8231f2435deb" name="aef4e29a363eb7440c7fa8231f2435deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef4e29a363eb7440c7fa8231f2435deb">&#9670;&#160;</a></span>log() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const fe::Log &amp; mim::Driver::log </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00076">76</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a97a7d0745c0466134d1c8f93c880af85" name="a97a7d0745c0466134d1c8f93c880af85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a7d0745c0466134d1c8f93c880af85">&#9670;&#160;</a></span>names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structmim_1_1Driver_1_1Names">Names</a> &amp; mim::Driver::names </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00093">93</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00199">mim::PlainNames::claim()</a>.</p>
+
+</div>
+</div>
+<a id="a9da4ca3384f62706a603bacad94e98e6" name="a9da4ca3384f62706a603bacad94e98e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da4ca3384f62706a603bacad94e98e6">&#9670;&#160;</a></span>normalizer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mim::Driver::normalizer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00189">189</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00073">flags()</a>.</p>
+
+</div>
+</div>
+<a id="a66bee8d7f5f315deb200c65bf3ea0bff" name="a66bee8d7f5f315deb200c65bf3ea0bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66bee8d7f5f315deb200c65bf3ea0bff">&#9670;&#160;</a></span>normalizer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mim::Driver::normalizer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a></td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288">tag_t</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00190">190</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">References <a class="el" href="plugin_8h_source.html#l00240">mim::Annex::flags()</a>, and <a class="el" href="driver_8h_source.html#l00190">normalizer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8h_source.html#l00190">normalizer()</a>.</p>
+
+</div>
+</div>
+<a id="a916332ec561f680e7b66004a1de23325" name="a916332ec561f680e7b66004a1de23325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916332ec561f680e7b66004a1de23325">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2603c3be2ca42597fdb3b3a16fca4330">Driver</a> &amp; mim::Driver::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2603c3be2ca42597fdb3b3a16fca4330">Driver</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00052">Driver()</a>.</p>
+
+</div>
+</div>
+<a id="ae98e9444e90210ce6ab197daec6c56fb" name="ae98e9444e90210ce6ab197daec6c56fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98e9444e90210ce6ab197daec6c56fb">&#9670;&#160;</a></span>phase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto mim::Driver::phase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00187">187</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00073">flags()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="optimize_8cpp_source.html#l00008">mim::optimize()</a>, <a class="el" href="phase_8cpp_source.html#l00025">mim::Phase::recreate()</a>, and <a class="el" href="split__apply_8cpp_source.html#l00008">mim::plug::gpu::phase::run_stage()</a>.</p>
+
+</div>
+</div>
+<a id="ad255a2786ccfe3ca27450b36940d6bc5" name="ad255a2786ccfe3ca27450b36940d6bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad255a2786ccfe3ca27450b36940d6bc5">&#9670;&#160;</a></span>phases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; mim::Driver::phases </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00188">188</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a94da18730e496f4180590a2a6ff68f10" name="a94da18730e496f4180590a2a6ff68f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94da18730e496f4180590a2a6ff68f10">&#9670;&#160;</a></span>plugin_dir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const fs::path * mim::Driver::plugin_dir </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Directory <span class="tt">libmim_&lt;name&gt;</span> was loaded from, so that its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> half cannot come from elsewhere. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00175">175</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="ac598c78c88c5e6180c6461e915bb8da7" name="ac598c78c88c5e6180c6461e915bb8da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac598c78c88c5e6180c6461e915bb8da7">&#9670;&#160;</a></span>plugin_paths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Vector&lt; fs::path &gt; mim::Driver::plugin_paths </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Where <a class="el" href="#a50225b299e048c90bc2cdedd7fb82128">Driver::load</a> looks for <span class="tt">libmim_&lt;name&gt;</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00083">83</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00117">load()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad0f40deb62f2385f196c02555928dcfc" name="ad0f40deb62f2385f196c02555928dcfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f40deb62f2385f196c02555928dcfc">&#9670;&#160;</a></span>profiler() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Profiler &amp; mim::Driver::profiler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00077">77</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, and <a class="el" href="phase_8cpp_source.html#l00032">mim::Phase::run()</a>.</p>
+
+</div>
+</div>
+<a id="a94819cdc2d23c7b56404f9e87aae4d4a" name="a94819cdc2d23c7b56404f9e87aae4d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94819cdc2d23c7b56404f9e87aae4d4a">&#9670;&#160;</a></span>profiler() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const fe::Profiler &amp; mim::Driver::profiler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00078">78</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+</div>
+</div>
+<a id="a9df26aec8d1f56990f363ef28723f648" name="a9df26aec8d1f56990f363ef28723f648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df26aec8d1f56990f363ef28723f648">&#9670;&#160;</a></span>rt_paths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Vector&lt; fs::path &gt; mim::Driver::rt_paths </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Where a backend looks for its runtime modules. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00107">107</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="a5e7d9604187e806e3a156717bcfba540" name="a5e7d9604187e806e3a156717bcfba540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7d9604187e806e3a156717bcfba540">&#9670;&#160;</a></span>version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmim_1_1Version.html">Version</a> &amp; mim::Driver::version </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>MimIR <a class="el" href="structmim_1_1Version.html">Version</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00080">80</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00117">load()</a>, and <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<a id="a6bb261071b0b8c994cf8dd9c90e78351" name="a6bb261071b0b8c994cf8dd9c90e78351"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb261071b0b8c994cf8dd9c90e78351">&#9670;&#160;</a></span>world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmim_1_1World.html">World</a> &amp; mim::Driver::world </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00079">79</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00131">main()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/mim/<a class="el" href="driver_8h_source.html">driver.h</a></li>
+<li>src/mim/<a class="el" href="driver_8cpp_source.html">driver.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="classmim_1_1Driver.html">Driver</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

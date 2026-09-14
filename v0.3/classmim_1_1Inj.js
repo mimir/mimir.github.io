@@ -1,0 +1,7 @@
+var classmim_1_1Inj =
+[
+    [ "value", "classmim_1_1Inj.html#a167ba717f47e477c876a09252e6e19f3", null ],
+    [ "World", "classmim_1_1Inj.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],
+    [ "Node", "classmim_1_1Inj.html#a0169bbf1c61bbc7d5313f5d1df390cbd", null ],
+    [ "Num_Ops", "classmim_1_1Inj.html#ae23ff531f0f8e595ff83863c4a616d3b", null ]
+];
