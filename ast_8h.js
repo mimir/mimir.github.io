@@ -47,7 +47,7 @@ var ast_8h =
     [ "mim::ast::File", "classmim_1_1ast_1_1File.html", "classmim_1_1ast_1_1File" ],
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "mim::ast::Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
-    [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed", null ],
+    [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
     [ "mim::ast::Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
     [ "mim::ast::Vis", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3", [
       [ "mim::ast::Vis::Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],

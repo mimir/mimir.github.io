@@ -215,7 +215,7 @@ var searchData=
   ['style_20is_20much_20worse_212',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md156',1,'']]],
   ['sub_213',['sub',['../affine.html#autotoc_md178',1,'op(add,sub)'],['../classmim_1_1Axm.html#a88cf29bedcbf5bd9a32346390b66bcd6',1,'mim::Axm::sub()'],['../classmim_1_1Axm_1_1IsA.html#a1a373fd0b00f248e059ee4c3e075d5cf',1,'mim::Axm::IsA::sub()'],['../namespacemim_1_1plug_1_1affine.html#a207279532fb5b73280711baa550e32c6a8a68dc3e925eacf92633be230722a140',1,'mim::plug::affine::sub'],['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a8a68dc3e925eacf92633be230722a140',1,'mim::plug::core::sub'],['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa8a68dc3e925eacf92633be230722a140',1,'mim::plug::core::sub'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a8a68dc3e925eacf92633be230722a140',1,'mim::plug::math::sub']]],
   ['sub_5ft_214',['sub_t',['../namespacemim.html#a190fd94a575b212f38ae8be611f1c367',1,'mim']]],
-  ['subs_215',['subs',['../structmim_1_1ast_1_1AnnexInfo.html#a19900005d8eccaaccb42a2f81510ac37',1,'mim::ast::AnnexInfo']]],
+  ['subs_215',['subs',['../structmim_1_1ast_1_1AnnexInfo.html#afbf00ed72fef69f6ea539e5ed98214f4',1,'mim::ast::AnnexInfo']]],
   ['substitution_216',['Scoped Substitution',['../rewriting.html#autotoc_md145',1,'']]],
   ['substs_217',['substs',['../structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html#ae4e66f284acb74c8e6d843bc8cd83db4',1,'mim::World::Move::[struct].arena']]],
   ['subtags_218',['Subtags',['../dev.html#autotoc_md49',1,'With Subtags'],['../dev.html#autotoc_md48',1,'Without Subtags']]],

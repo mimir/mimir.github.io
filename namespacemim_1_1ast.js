@@ -51,7 +51,7 @@ var namespacemim_1_1ast =
     [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
     [ "Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "Ptr", "namespacemim_1_1ast.html#a1aaebd33278034584fdc66d510f4302b", null ],
-    [ "Ptrs", "namespacemim_1_1ast.html#ac169bb8395ee9296baedc7c8cf4a5eed", null ],
+    [ "Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
     [ "Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
     [ "Tag", "namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3", null ],
     [ "Assoc", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4", [
