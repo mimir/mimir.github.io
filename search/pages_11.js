@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['scan_0',['scan',['../vec.html#autotoc_md478',1,'']]],
-  ['scanning_1',['Scanning',['../vec.html#autotoc_md477',1,'']]],
+  ['scan_0',['scan',['../vec.html#autotoc_md479',1,'']]],
+  ['scanning_1',['Scanning',['../vec.html#autotoc_md478',1,'']]],
   ['scatter_2',['scatter',['../btensor.html#autotoc_md217',1,'scatter'],['../tensor.html#autotoc_md463',1,'scatter']]],
   ['sccp_3',['Example: SCCP',['../phases.html#autotoc_md102',1,'']]],
   ['schedules_4',['Schedules',['../tensor.html#autotoc_md442',1,'']]],

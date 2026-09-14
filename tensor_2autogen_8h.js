@@ -19,6 +19,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::fuse_tensor", "namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c", null ],
     [ "mim::plug::tensor::gather", "namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59", null ],
     [ "mim::plug::tensor::gather_pointwise_elem_impl", "namespacemim_1_1plug_1_1tensor.html#a6a7a2d3951d8c63bb4a735edd4a5c143", null ],
+    [ "mim::plug::tensor::generate", "namespacemim_1_1plug_1_1tensor.html#a0d1b5850e2bdc481d26c9cc5a189e7c2", null ],
     [ "mim::plug::tensor::get", "namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692", null ],
     [ "mim::plug::tensor::id", "namespacemim_1_1plug_1_1tensor.html#a8edcd430d409375d96f02982da7ddd7e", null ],
     [ "mim::plug::tensor::if_static", "namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5", null ],

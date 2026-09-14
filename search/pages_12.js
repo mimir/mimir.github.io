@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tail_0',['head / tail',['../tuple.html#autotoc_md470',1,'']]],
+  ['tail_0',['head / tail',['../tuple.html#autotoc_md471',1,'']]],
   ['tangent_1',['Tangent',['../autodiff.html#autotoc_md191',1,'']]],
   ['taste_20of_20mim_2',['✨ A Taste of Mim',['../index.html#autotoc_md129',1,'']]],
   ['telescopes_3',['Patterns and Telescopes',['../langref.html#ptrn',1,'']]],
@@ -71,7 +71,7 @@ var searchData=
   ['two_20honest_20caveats_68',['Two honest caveats',['../md_docs_2why-cpp.html#autotoc_md164',1,'']]],
   ['type_69',['type',['../refly.html#autotoc_md401',1,'']]],
   ['type_20in_20one_20machine_20word_70',['&lt;span class=&quot;tt&quot;&gt;XTrie::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
-  ['typecat_71',['typecat',['../tuple.html#autotoc_md467',1,'']]],
+  ['typecat_71',['typecat',['../tuple.html#autotoc_md468',1,'']]],
   ['types_72',['Types',['../python.html#python_bindable',1,'Bindable Types'],['../langref.html#autotoc_md74',1,'Function Types'],['../langref.html#autotoc_md66',1,'Kinds and Builtin Types'],['../gpu.html#autotoc_md286',1,'Memory Types'],['../gpu.html#autotoc_md287',1,'Pointer Types'],['../langref.html#autotoc_md70',1,'Summary: Functions and Types'],['../autodiff.html#autotoc_md190',1,'Types'],['../btensor.html#autotoc_md205',1,'Types'],['../buffer.html#autotoc_md220',1,'Types'],['../compile.html#autotoc_md241',1,'Types'],['../gpu.html#autotoc_md284',1,'Types'],['../math.html#autotoc_md323',1,'Types'],['../mem.html#autotoc_md347',1,'Types'],['../nvptx.html#autotoc_md363',1,'Types'],['../option.html#autotoc_md369',1,'Types'],['../ord.html#autotoc_md380',1,'Types'],['../refly.html#autotoc_md395',1,'Types'],['../regex.html#autotoc_md410',1,'Types'],['../tensor.html#autotoc_md428',1,'Types']]],
   ['types_20are_20values_73',['Types Are Values',['../mimir.html#mimir_dep',1,'']]],
   ['typical_20shape_74',['Typical Shape',['../phases.html#autotoc_md82',1,'Typical Shape'],['../phases.html#autotoc_md94',1,'Typical Shape'],['../phases.html#autotoc_md99',1,'Typical Shape'],['../phases.html#autotoc_md100',1,'Typical Shape'],['../phases.html#autotoc_md101',1,'Typical Shape']]],

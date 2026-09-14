@@ -117,7 +117,7 @@ var searchData=
   ['app_114',['app',['../classmim_1_1Lam.html#aa5c1c1fa53947444e053016d9254830f',1,'mim::Lam::app(Filter filter, const Def *callee, const Def *arg)'],['../classmim_1_1Lam.html#aeb1b28bd416cc50f801312fe6d34e967',1,'mim::Lam::app(Filter filter, const Def *callee, Defs args)'],['../classmim_1_1Branch.html#a900ff0e894cfe0147f7e5bf17cac2d3b',1,'mim::Branch::app()'],['../classmim_1_1Dispatch.html#abd7c512730a69e5464c6f1ab8ef6f3b8',1,'mim::Dispatch::app()'],['../classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6',1,'mim::World::app(const Def *callee, const Def *arg)'],['../classmim_1_1World.html#a93a98b93cc3a2bf64432ca28a53668b7',1,'mim::World::app(const Def *callee, Defs args)']]],
   ['app_5frange_115',['app_range',['../structmim_1_1plug_1_1regex_1_1app__range.html',1,'mim::plug::regex']]],
   ['append_116',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
-  ['append_20prepend_117',['append / prepend',['../tuple.html#autotoc_md469',1,'']]],
+  ['append_20prepend_117',['append / prepend',['../tuple.html#autotoc_md470',1,'']]],
   ['append_5fsuffix_118',['append_suffix',['../classmim_1_1World.html#aaec8ce547395bdcc185851bc38fe0452',1,'mim::World']]],
   ['appexpr_119',['AppExpr',['../classmim_1_1ast_1_1AppExpr.html',1,'mim::ast::AppExpr'],['../classmim_1_1ast_1_1AppExpr.html#a40124658e891de322532569a38c24e97',1,'mim::ast::AppExpr::AppExpr()']]],
   ['applications_120',['Applications',['../langref.html#autotoc_md73',1,'']]],

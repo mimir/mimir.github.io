@@ -150,7 +150,7 @@ var searchData=
   ['is_5fterm_147',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5ftop_148',['is_top',['../classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab',1,'mim::Analysis']]],
   ['is_5funiform_149',['is_uniform',['../classmim_1_1Checker.html#a169a88c923419cfcfb6d15a14d1cfa4b',1,'mim::Checker']]],
-  ['is_5funique_150',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique'],['../vec.html#autotoc_md481',1,'is_unique']]],
+  ['is_5funique_150',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique'],['../vec.html#autotoc_md482',1,'is_unique']]],
   ['is_5funit_151',['is_unit',['../namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8',1,'mim']]],
   ['is_5funpack_5fread_152',['is_unpack_read',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a90789f0506b7baf4427628463e594443',1,'mim::plug::tensor::phase']]],
   ['is_5fusing_5flibdevice_153',['is_using_libdevice',['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a217d389870f78878e620b8d1ddeaaf56',1,'mim::plug::ll_nvptx::DeviceEmitter']]],
@@ -197,6 +197,6 @@ var searchData=
   ['iterating_20over_20the_20program_194',['Iterating over the Program',['../dev.html#autotoc_md57',1,'']]],
   ['iteration_195',['Iteration',['../mimir.html#mimir_iter',1,'Polymorphic Iteration'],['../phases.html#autotoc_md85',1,'Sparse Fixed-Point Iteration']]],
   ['iterations_196',['Reset Between Iterations',['../phases.html#autotoc_md86',1,'']]],
-  ['iterators_197',['Iterators',['../vec.html#autotoc_md474',1,'']]],
+  ['iterators_197',['Iterators',['../vec.html#autotoc_md475',1,'']]],
   ['its_5fa_5fmatch_198',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

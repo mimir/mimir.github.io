@@ -20,6 +20,7 @@ var namespacemim_1_1plug_1_1tensor =
     [ "fuse_tensor", "namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c", null ],
     [ "gather", "namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59", null ],
     [ "gather_pointwise_elem_impl", "namespacemim_1_1plug_1_1tensor.html#a6a7a2d3951d8c63bb4a735edd4a5c143", null ],
+    [ "generate", "namespacemim_1_1plug_1_1tensor.html#a0d1b5850e2bdc481d26c9cc5a189e7c2", null ],
     [ "get", "namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692", null ],
     [ "id", "namespacemim_1_1plug_1_1tensor.html#a8edcd430d409375d96f02982da7ddd7e", null ],
     [ "if_static", "namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5", null ],
