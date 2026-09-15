@@ -115,19 +115,19 @@ var NAVTREEINDEX =
 "classmim_1_1ast_1_1AliasDecl.html#a811194e5be24f2825491f082905e0a8e",
 "classmim_1_1ast_1_1IdPtrn.html#aebc75fdc2b6186bb7330797b02f465a9",
 "classmim_1_1ast_1_1PathExpr.html#ade5ad88b3947abfcfe3e7b6850bca958",
-"classmim_1_1ast_1_1Tok.html#a972475ec52322b115a2ec24790f06b28",
-"classmim_1_1ast_1_1TuplePtrn.html#a288df728e2c1cb2d0744d774c35863e1",
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#aef9ae9e1a7f2727c89e146320918db60",
-"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a480cdad4144ad3661ce7f994ee9bc0b9",
-"dir_78d50f5e9392a83b0326955836e457eb.html",
-"lower__ptr_8h_source.html",
-"namespacemim.html#aac405a8032b1f45706d85f2c1271afbe",
-"namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca167a77939d6d79814e846ff5885b63b9",
-"namespacemim_1_1plug_1_1gpu.html#a773fb7d4ca4880bab4addd6a02fc4c4c",
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dae578203a9e0b19048f8868e46958c2ed",
-"namespacemim_1_1plug_1_1tensor.html#ab81673d70e22003fa65a4736b5e9b08a",
-"structautomaton_1_1DFANode_1_1Lt.html#a96ef0a9ea74d7fa46eb32090989d95cc",
-"structmim_1_1ast_1_1Mods.html#aa837616535d540de2a3473fc83e6a8de"
+"classmim_1_1ast_1_1Tok.html#a9183c9bc35c812b5d121b1300ad7c07c",
+"classmim_1_1ast_1_1TuplePtrn.html#a1176d6f6f64281b96a02177112d56d0e",
+"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#ad2ffb7ebdf8e7331bfc7631de9be1d58",
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html",
+"dir_712ca5f1616261472fee79278e88ee05.html",
+"lower__ptr_8cpp_source.html",
+"namespacemim.html#aaabd11fa56b1d4815c409ba3eba2d5c8",
+"namespacemim_1_1plug_1_1clos.html#a908c7bfdc816d89e4a7ebb16c1d7ee03",
+"namespacemim_1_1plug_1_1gpu.html#a60b2d54940be560945911cc9eb21cd73",
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad30f3020a7f0e5899fb8e1ee6afedb4d",
+"namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47",
+"static__arg__opt_8h_source.html",
+"structmim_1_1ast_1_1Mods.html#a6abc01da3acae8a4dc5b090e168dcec4"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

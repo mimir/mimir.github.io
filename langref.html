@@ -327,6 +327,7 @@ Files and Imports</h2>
 <li><span class="tt">plugin foo;</span> first loads the plugin <span class="tt">foo</span> and then imports the module with the same name. Only <span class="tt">plugin</span> loads a shared object; <span class="tt">import</span> never does.</li>
 <li>The bound name defaults to the file name without its extension and must be an identifier; <span class="tt">as</span> overrides it.</li>
 <li><span class="tt">import foo as *;</span> splices <span class="tt">foo</span>'s public members into the current scope like a following <span class="tt">use foo;</span> would - except that <span class="tt">foo</span> itself is never bound; the same goes for <span class="tt">plugin foo as *;</span>. Since no name is needed, this form also accepts a file name that isn't an identifier.</li>
+<li>An import is <span class="tt">priv</span> unless declared <span class="tt">pub</span>: <span class="tt">import foo;</span> binds <span class="tt">foo</span> privately, while <span class="tt">pub import foo;</span> re-exports it, and <span class="tt">pub import foo as *;</span> re-exports every spliced member.</li>
 <li>A file is parsed, bound, and emitted exactly once, no matter how many modules import it. Importing a file that is still being parsed is an error.</li>
 <li>An import is an ordinary declaration, so it may sit wherever declarations may - inside a <span class="tt">mod</span>, a <span class="tt">where</span> block, or a function body - and binds its name in exactly that scope.</li>
 </ul>
@@ -342,10 +343,10 @@ Paths and Modules</h2>
 <h2 class="doxsection"><a class="anchor" id="decl"></a>
 Declarations</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families. Most of them may be prefixed with a visibility (<span class="tt">priv</span> or <span class="tt">pub</span>), <span class="tt">extern</span>, and <span class="tt">anx</span>. These modifiers may be written in any order; the productions below only spell out which of them a declaration accepts at all. Visibility is a Mim-only, purely lexical fact - it has no effect on backend linkage or compiler registration. <span class="tt">extern</span> and <span class="tt">anx</span> are each independent of visibility, but not of each other: <span class="tt">extern anx</span> on the same declaration is a static error. Either one nudges the default visibility to <span class="tt">pub</span> (instead of the usual <span class="tt">priv</span> default) unless <span class="tt">priv</span>/<span class="tt">pub</span> is given explicitly, so e.g. <span class="tt">priv anx</span> and <span class="tt">priv extern</span> are legal and meaningful.</p>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">d      ::= &quot;import&quot; (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
-<div class="line">        |  &quot;plugin&quot; I (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">d      ::= vis? &quot;import&quot; (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
+<div class="line">        |  vis? &quot;plugin&quot; I       (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
+<div class="line">        |  vis? &quot;use&quot; path       (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;mod&quot; I &quot;{&quot; d* &quot;}&quot;</div>
-<div class="line">        |  &quot;use&quot; path (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;let&quot; p &quot;=&quot; e</div>
 <div class="line">        |  vis? &quot;anx&quot; I &quot;=&quot; path</div>
 <div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e and*</div>
@@ -391,6 +392,7 @@ Visibility</h4>
 <ul>
 <li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
 <li><span class="tt">pub</span> lifts that restriction, so a path from outside the enclosing <span class="tt">mod</span> may reach the declaration.</li>
+<li>Visibility belongs to the <em>binding</em>, not to the declaration it names: an <span class="tt">import</span>/<span class="tt">plugin</span>/<span class="tt">use</span> that splices <span class="tt">as *</span> re-binds someone else's declarations under its own visibility, so only a <span class="tt">pub</span> splice re-exports them, no matter how public they were in their own module.</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="ptrn"></a>
 Patterns and Telescopes</h2>

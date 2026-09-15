@@ -190,6 +190,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aast_3A_3ABind_5Fstructmim_5F1_5F1ast_5F1_5F1Bind" id="r_mim_3A_3Aast_3A_3ABind_5Fstructmim_5F1_5F1ast_5F1_5F1Bind"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind">mim::ast::Bind</a></td></tr>
+<tr class="memdesc:structmim_1_1ast_1_1Bind"><td class="mdescLeft">&#160;</td><td class="mdescRight">One name in a <a class="el" href="namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659" title="Maps a name to the Binding introducing it.">Scope</a>: the <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> it introduces and the <a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3" title="Visibility tier of a ValDecl.">Vis</a> of <em>this</em> binding.  <a href="namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aast_3A_3AMods" id="r_mim_3A_3Aast_3A_3AMods"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1ast_1_1Mods.html">mim::ast::Mods</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw, unvalidated combination of <span class="tt">priv</span>/<span class="tt">pub</span>/<span class="tt">extern</span>/<span class="tt">anx</span> modifiers written before a declaration.  <a href="structmim_1_1ast_1_1Mods.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aast_3A_3AAnnexInfo" id="r_mim_3A_3Aast_3A_3AAnnexInfo"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">mim::ast::AnnexInfo</a></td></tr>
@@ -291,8 +293,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a8be9b934808970bc31a9c2b313db0599" id="r_a8be9b934808970bc31a9c2b313db0599"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a8be9b934808970bc31a9c2b313db0599 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599">mim::ast::Ptr</a> = fe::Arena::Ref&lt;const T&gt;</td></tr>
 <tr class="memdesc:a8be9b934808970bc31a9c2b313db0599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodes live in the <a class="el" href="classmim_1_1ast_1_1AST.html" title="Owns the arena all AST nodes live in as well as the AnnexInfos of all plugins.">AST</a>'s Arena and are never destroyed, so this merely points at one.  <br /></td></tr>
-<tr class="memitem:a35c96fdd56061976ea68a0ddfc65ba4c" id="r_a35c96fdd56061976ea68a0ddfc65ba4c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c">mim::ast::Scope</a> = fe::SymMap&lt;const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a>*&gt;</td></tr>
-<tr class="memdesc:a35c96fdd56061976ea68a0ddfc65ba4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a name to the <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> introducing it.  <br /></td></tr>
+<tr class="memitem:a093ff4664a025c66f9bfdfe42f971659" id="r_a093ff4664a025c66f9bfdfe42f971659"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659">mim::ast::Scope</a> = fe::SymMap&lt;<a class="el" href="namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind">Bind</a>&gt;</td></tr>
+<tr class="memdesc:a093ff4664a025c66f9bfdfe42f971659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a name to the Binding introducing it.  <br /></td></tr>
 <tr id="typedef-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Ptrs/Dbgs</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>Scratch buffers the <a class="el" href="classmim_1_1ast_1_1Parser.html" title="Parses Mim code as AST.">Parser</a> fills before it creates a node; a node keeps its own lists right behind itself - see fe::VLA - and hands them out as a fe::View. </p>
 </div></td></tr>
@@ -315,6 +317,40 @@ Functions</h2></td></tr>
 <tr class="memitem:a66a1aa2d36d5c50e3d3a99d56e32fd97" id="r_a66a1aa2d36d5c50e3d3a99d56e32fd97"><td class="memItemLeft"><a class="el" href="classmim_1_1ast_1_1AST.html">AST</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a66a1aa2d36d5c50e3d3a99d56e32fd97">mim::ast::load_plugins</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;, fe::View&lt; std::string &gt;)</td></tr>
 <tr class="memitem:a91e7627a30cd8ff68e463c60e633e1a1" id="r_a91e7627a30cd8ff68e463c60e633e1a1"><td class="memItemLeft"><a class="el" href="classmim_1_1ast_1_1AST.html">AST</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a91e7627a30cd8ff68e463c60e633e1a1">mim::ast::load_plugin</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, std::string_view plugin)</td></tr>
 </table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1ast_1_1Bind" id="structmim_1_1ast_1_1Bind"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1ast_1_1Bind">&#9670;&#160;</a></span>mim::ast::Bind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::ast::Bind</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>One name in a <a class="el" href="namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659" title="Maps a name to the Binding introducing it.">Scope</a>: the <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> it introduces and the <a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3" title="Visibility tier of a ValDecl.">Vis</a> of <em>this</em> binding. </p>
+<p>A splicing <a class="el" href="classmim_1_1ast_1_1UseDecl.html" title="import &quot;file&quot;|name [as alias|*];, plugin name [as alias|*];, or use path [as alias|*]; as * splices i...">UseDecl</a> re-binds someone else's <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a> under its own <a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3" title="Visibility tier of a ValDecl.">Vis</a>, so <a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3" title="Visibility tier of a ValDecl.">Vis</a> belongs here and not to the <a class="el" href="classmim_1_1ast_1_1Decl.html" title="Base class of all declarations; caches the emitted Decl::def.">Decl</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l00045">45</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="abfae0e29b5aef45e7ba56d79a69e9e72" name="abfae0e29b5aef45e7ba56d79a69e9e72"></a>const <a class="el" href="classmim_1_1ast_1_1Decl.html">Decl</a> *</td>
+<td class="fieldname">
+decl</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a0c989d12411538968bbc979f1a81974f" name="a0c989d12411538968bbc979f1a81974f"></a><a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3">Vis</a></td>
+<td class="fieldname">
+vis</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

@@ -6,6 +6,7 @@ var namespacemim_1_1ast =
     [ "AppExpr", "classmim_1_1ast_1_1AppExpr.html", "classmim_1_1ast_1_1AppExpr" ],
     [ "AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
     [ "AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
+    [ "Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", "namespacemim_1_1ast_structmim_1_1ast_1_1Bind_dup" ],
     [ "Decl", "classmim_1_1ast_1_1Decl.html", "classmim_1_1ast_1_1Decl" ],
     [ "DeclExpr", "classmim_1_1ast_1_1DeclExpr.html", "classmim_1_1ast_1_1DeclExpr" ],
     [ "DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", "classmim_1_1ast_1_1DummyDecl" ],
@@ -52,7 +53,7 @@ var namespacemim_1_1ast =
     [ "Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "Ptr", "namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599", null ],
     [ "Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
-    [ "Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
+    [ "Scope", "namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659", null ],
     [ "Tag", "namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3", null ],
     [ "Assoc", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4", [
       [ "N", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4a8d9c307cb7f3c4a32822a51922d1ceaa", null ],

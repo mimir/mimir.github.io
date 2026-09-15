@@ -26,7 +26,7 @@ var searchData=
   ['debugging_23',['Debugging',['../coding.html',1,'Contributing &amp; Debugging'],['../coding.html#autotoc_md24',1,'Debugging']]],
   ['dec_24',['dec',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da1feea25ecb958229287f885aebe7c49b',1,'mim::plug::math']]],
   ['decl_25',['Decl',['../classmim_1_1ast_1_1Decl.html',1,'mim::ast::Decl'],['../classmim_1_1ast_1_1Decl.html#a2eae454589077199dbfa14111e0e88f8',1,'mim::ast::Decl::Decl()']]],
-  ['decl_26',['decl',['../classmim_1_1ast_1_1Path.html#a758a9e9689237ca1d3e0a0d8925af23f',1,'mim::ast::Path::decl()'],['../classmim_1_1ast_1_1PathExpr.html#afa418d216f2dd87430275e0c22674e0d',1,'mim::ast::PathExpr::decl()']]],
+  ['decl_26',['decl',['../namespacemim_1_1ast.html#abfae0e29b5aef45e7ba56d79a69e9e72',1,'mim::ast::Bind::decl'],['../classmim_1_1ast_1_1Path.html#a758a9e9689237ca1d3e0a0d8925af23f',1,'mim::ast::Path::decl()'],['../classmim_1_1ast_1_1PathExpr.html#afa418d216f2dd87430275e0c22674e0d',1,'mim::ast::PathExpr::decl()']]],
   ['decl_5f_27',['decl_',['../classmim_1_1ast_1_1PiExpr_1_1Dom.html#a954b3c0d5f681e3de453ec60d1331b6d',1,'mim::ast::PiExpr::Dom']]],
   ['declaration_20blocks_28',['Local Declaration Blocks',['../langref.html#autotoc_md69',1,'']]],
   ['declarations_29',['Declarations',['../langref.html#decl',1,'Declarations'],['../langref.html#autotoc_md71',1,'Declarations']]],

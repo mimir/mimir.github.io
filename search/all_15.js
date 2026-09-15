@@ -68,7 +68,7 @@ var searchData=
   ['us_65',['us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2',1,'mim::plug::core']]],
   ['usage_66',['Usage',['../rewriting.html#autotoc_md144',1,'Typical Usage'],['../rewriting.html#autotoc_md146',1,'Typical Usage'],['../cli.html#cliusage',1,'Usage']]],
   ['use_67',['Use',['../classmim_1_1Use.html',1,'mim::Use'],['../classmim_1_1Use.html#ad1bfa5ee84aa2b6d63b9d8b8767fb7e5',1,'mim::Use::Use()'],['../classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954',1,'mim::Use::Use(const Def *def, size_t index)']]],
-  ['usedecl_68',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html',1,'mim::ast::UseDecl'],['../classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Ptr&lt; Path &gt; path, Dbg alias)'],['../classmim_1_1ast_1_1UseDecl.html#a8514a7dd3617e20d06b90adf07291a6a',1,'mim::ast::UseDecl::UseDecl(Loc loc, Tok::Tag tag, Ptr&lt; Path &gt; path, Sym file_path, Dbg alias, bool splice, const File *file)']]],
+  ['usedecl_68',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html',1,'mim::ast::UseDecl'],['../classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Ptr&lt; Path &gt; path, Dbg alias)'],['../classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Tok::Tag tag, Ptr&lt; Path &gt; path, Sym file_path, Dbg alias, bool splice, const File *file)']]],
   ['useeq_69',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
   ['usehash_70',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]],
   ['users_71',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],

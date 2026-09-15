@@ -1,5 +1,9 @@
 var ast_8h =
 [
+    [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", [
+      [ "decl", "namespacemim_1_1ast.html#abfae0e29b5aef45e7ba56d79a69e9e72", null ],
+      [ "vis", "namespacemim_1_1ast.html#a0c989d12411538968bbc979f1a81974f", null ]
+    ] ],
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", "structmim_1_1ast_1_1AnnexInfo" ],
     [ "mim::ast::AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
@@ -48,7 +52,7 @@ var ast_8h =
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "mim::ast::Ptr", "namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599", null ],
     [ "mim::ast::Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
-    [ "mim::ast::Scope", "namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c", null ],
+    [ "mim::ast::Scope", "namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659", null ],
     [ "mim::ast::Vis", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3", [
       [ "mim::ast::Vis::Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],
       [ "mim::ast::Vis::Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]

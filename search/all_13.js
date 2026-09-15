@@ -27,7 +27,7 @@ var searchData=
   ['scheduler_24',['Scheduler',['../classmim_1_1Scheduler.html',1,'mim::Scheduler'],['../classmim_1_1Scheduler.html#ae3d6947e30fb089dc9f4e9ac87c97dd8',1,'mim::Scheduler::Scheduler()=default'],['../classmim_1_1Scheduler.html#a184a374363795e63584d8badf032eb43',1,'mim::Scheduler::Scheduler(const Nest &amp;)'],['../classmim_1_1Scheduler.html#a352685d4f36711c66a983a88530d54ef',1,'mim::Scheduler::Scheduler(const Scheduler &amp;)=delete'],['../classmim_1_1Scheduler.html#a183f3cbdb7f45508a2edfc79bbdce8c8',1,'mim::Scheduler::Scheduler(Scheduler &amp;&amp;other) noexcept']]],
   ['scheduler_5f_25',['scheduler_',['../classmim_1_1Emitter.html#a72c81f8a9a595799a52976d5de381f4e',1,'mim::Emitter']]],
   ['schedules_26',['Schedules',['../tensor.html#autotoc_md441',1,'']]],
-  ['scope_27',['Scope',['../namespacemim_1_1ast.html#a35c96fdd56061976ea68a0ddfc65ba4c',1,'mim::ast']]],
+  ['scope_27',['Scope',['../namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659',1,'mim::ast']]],
   ['scope_28',['scope',['../classmim_1_1ast_1_1AST.html#a00cfa82dbb0b12ac5df6d9a35bf5aaa1',1,'mim::ast::AST::scope()'],['../classmim_1_1ast_1_1Decl.html#ac6782f42e504ce6653f354df640f3fe1',1,'mim::ast::Decl::scope()'],['../classmim_1_1ast_1_1UseDecl.html#a25820873fb9dba0a7dbd33952428c2a3',1,'mim::ast::UseDecl::scope()'],['../classmim_1_1ast_1_1ModDecl.html#ac42b6e32048beb19d3687aaf5caaa03d',1,'mim::ast::ModDecl::scope()']]],
   ['scope_20nesting_29',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md40',1,'']]],
   ['scoped_20substitution_30',['Scoped Substitution',['../rewriting.html#autotoc_md145',1,'']]],

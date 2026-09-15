@@ -3,6 +3,7 @@ var classmim_1_1ast_1_1Scopes =
     [ "Scopes", "classmim_1_1ast_1_1Scopes.html#a032e87fb58ed71a9dd7c425284b6514a", null ],
     [ "ast", "classmim_1_1ast_1_1Scopes.html#a175875a7b364f06b6d3bcec018b953ff", null ],
     [ "bind", "classmim_1_1ast_1_1Scopes.html#a7d81b2b3a98824998530568847f20112", null ],
+    [ "bind", "classmim_1_1ast_1_1Scopes.html#a7bbc80713307fa025da008099e7af1d1", null ],
     [ "dummy", "classmim_1_1ast_1_1Scopes.html#a1ccec7fa48ba733643d462600ceef56b", null ],
     [ "enclosing_mod", "classmim_1_1ast_1_1Scopes.html#a3af69feaff9b24c567edd43b97774c12", null ],
     [ "error", "classmim_1_1ast_1_1Scopes.html#acf753fc74cea0b62c619b7a0625d28e8", null ],

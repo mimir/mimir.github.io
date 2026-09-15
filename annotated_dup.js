@@ -16,6 +16,7 @@ var annotated_dup =
         [ "AppExpr", "classmim_1_1ast_1_1AppExpr.html", "classmim_1_1ast_1_1AppExpr" ],
         [ "AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
         [ "AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
+        [ "Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", "namespacemim_1_1ast_structmim_1_1ast_1_1Bind_dup" ],
         [ "Decl", "classmim_1_1ast_1_1Decl.html", "classmim_1_1ast_1_1Decl" ],
         [ "DeclExpr", "classmim_1_1ast_1_1DeclExpr.html", "classmim_1_1ast_1_1DeclExpr" ],
         [ "DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", "classmim_1_1ast_1_1DummyDecl" ],
