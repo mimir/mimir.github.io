@@ -1,7 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#ad2ffb7ebdf8e7331bfc7631de9be1d58":[4,0,1,1,4,0,6,2],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#aef9ae9e1a7f2727c89e146320918db60":[2,0,4,1,4,0,6,1],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#aef9ae9e1a7f2727c89e146320918db60":[4,0,1,1,4,0,6,1],
 "classmim_1_1plug_1_1cps_1_1Conv.html":[2,0,4,1,7,0],
 "classmim_1_1plug_1_1cps_1_1Conv.html":[4,0,1,1,5,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX15 =
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#a49130aa931fe2a8924532c29b62c02f8":[4,0,1,1,11,0,3,1],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1":[2,0,4,1,20,0,3,0],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1":[4,0,1,1,11,0,3,0],
-"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html":[2,0,4,1,20,0,4]
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html":[2,0,4,1,20,0,4],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html":[4,0,1,1,11,0,4],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a480cdad4144ad3661ce7f994ee9bc0b9":[2,0,4,1,20,0,4,3]
 };

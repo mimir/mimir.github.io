@@ -309,12 +309,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Due to MimIR's sea of node structure a number of other optimizations kick in such as arithmetic simplifications and code motion.</p>
 <p>Lattice per <a class="el" href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">Lam::var</a>: </p><div class="fragment"><div class="line"> ⊤      ← Keep as is</div>
 <div class="line"> |</div>
-<div class="line">Bundle  ← <a class="code hl_typedef" href="namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4">Vars</a> that (horizontally) behave the same build a single congruence <span class="keyword">class</span></div>
+<div class="line">Bundle  ← <a class="code hl_typedef" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> that (horizontally) behave the same build a single congruence <span class="keyword">class</span></div>
 <div class="line"> |</div>
 <div class="line">Expr    ← Whole expression is propagated (vertically) through var</div>
 <div class="line"> |</div>
 <div class="line"> ⊥</div>
-<div class="ttc" id="anamespacemim_html_a219a5909beed6997339d4ee73d8a3ed4"><div class="ttname"><a href="namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4">mim::Vars</a></div><div class="ttdeci">fe::XTrie&lt; const Var, DefKey &gt;::Set Vars</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00114">def.h:114</a></div></div>
+<div class="ttc" id="anamespacemim_html_aaa812145285556e31140df683b2367f7"><div class="ttname"><a href="namespacemim.html#aaa812145285556e31140df683b2367f7">mim::Vars</a></div><div class="ttdeci">fe::Patricia&lt; const Var, DefKey &gt;::Set Vars</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00112">def.h:112</a></div></div>
 </div><!-- fragment --><p> A var that has reached ⊤ for propagation but still awaits GVN bundling is marked with a dedicated <a class="el" href="classmim_1_1Proxy.html" title="Used as intermediate value during optimizatinos such as Analysis.">Proxy</a> sentinel. </p>
 
 <p class="definition">Definition at line <a class="el" href="seo_8h_source.html#l00041">41</a> of file <a class="el" href="seo_8h_source.html">seo.h</a>.</p>
@@ -412,7 +412,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00470">470</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00382">mim::RWBase::abstracted()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="def_8h_source.html#l00592">mim::Def::as_mut()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="rewrite_8h_source.html#l00096">mim::Rewriter::curr_mut()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00583">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="rewrite_8h_source.html#l00047">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00452">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00482">mim::Def::num_tvars()</a>, <a class="el" href="mem_8h_source.html#l00140">mim::plug::mem::op_slot()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="mem_8h_source.html#l00150">mim::plug::mem::split_slot()</a>, <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>, and <a class="el" href="world_8cpp_source.html#l00326">mim::World::tuple()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00382">mim::RWBase::abstracted()</a>, <a class="el" href="lam_8h_source.html#l00284">mim::App::arg()</a>, <a class="el" href="def_8h_source.html#l00589">mim::Def::as_mut()</a>, <a class="el" href="lam_8h_source.html#l00275">mim::App::callee()</a>, <a class="el" href="rewrite_8h_source.html#l00096">mim::Rewriter::curr_mut()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00580">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="rewrite_8h_source.html#l00047">mim::Rewriter::map()</a>, <a class="el" href="phase_8h_source.html#l00452">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00479">mim::Def::num_tvars()</a>, <a class="el" href="mem_8h_source.html#l00140">mim::plug::mem::op_slot()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="mem_8h_source.html#l00150">mim::plug::mem::split_slot()</a>, <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>, and <a class="el" href="world_8cpp_source.html#l00326">mim::World::tuple()</a>.</p>
 
 </div>
 </div>
@@ -441,7 +441,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00534">534</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00843">mim::Var::binder()</a>, <a class="el" href="def_8h_source.html#l00583">mim::Def::isa_mut()</a>, and <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00835">mim::Var::binder()</a>, <a class="el" href="def_8h_source.html#l00580">mim::Def::isa_mut()</a>, and <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
 
 </div>
 </div>

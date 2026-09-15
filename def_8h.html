@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('def_8h.html','
 <code>#include &lt;fe/cast.h&gt;</code><br />
 <code>#include &lt;fe/container.h&gt;</code><br />
 <code>#include &lt;fe/enum.h&gt;</code><br />
+<code>#include &lt;fe/patricia.h&gt;</code><br />
 <code>#include &lt;fe/vector.h&gt;</code><br />
-<code>#include &lt;fe/xtrie.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">mim/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dbg_8h_source.html">mim/util/dbg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gid_8h_source.html">mim/util/gid.h</a>&quot;</code><br />
@@ -200,7 +200,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:mim_3A_3ADefKey" id="r_mim_3A_3ADefKey"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1DefKey.html">mim::DefKey</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grants fe::XTrie access to Def::gid_ and Def::tid_.  <a href="structmim_1_1DefKey.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grants fe::Patricia access to Def::gid_.  <a href="structmim_1_1DefKey.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3ASetters_3C_20P_2C_20D_20_3E" id="r_mim_3A_3ASetters_3C_20P_2C_20D_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Setters.html">mim::Setters&lt; P, D &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRTP-based mixin to declare setters for <a class="el" href="classmim_1_1Def.html#ababa287f8ec65ff8971c8b379a0afa2f">Def::loc</a> &amp; Def::name using a <em>covariant</em> return type.  <a href="classmim_1_1Setters.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3ADotConfig_5Fstructmim_5F1_5F1DotConfig" id="r_mim_3A_3ADotConfig_5Fstructmim_5F1_5F1DotConfig"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#structmim_1_1DotConfig">mim::DotConfig</a></td></tr>
@@ -252,14 +252,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:afccd5f832a8d98e22ada5860ea24afd2 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2">mim::MutMap</a> = <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a>&lt;<a class="el" href="classmim_1_1Def.html">Def</a>*, To&gt;</td></tr>
 <tr class="memitem:a9cef35a428a391739d168b05bad8dfb2" id="r_a9cef35a428a391739d168b05bad8dfb2"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a9cef35a428a391739d168b05bad8dfb2">mim::MutSet</a> = <a class="el" href="namespacemim.html#aed213d360936f015062f16dd7a3210d4">GIDSet</a>&lt;<a class="el" href="classmim_1_1Def.html">Def</a>*&gt;</td></tr>
 <tr class="memitem:a9fd6d037a8eb540c32dbe840e32c90e9" id="r_a9fd6d037a8eb540c32dbe840e32c90e9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a9fd6d037a8eb540c32dbe840e32c90e9">mim::Mut2Mut</a> = <a class="el" href="namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2">MutMap</a>&lt;<a class="el" href="classmim_1_1Def.html">Def</a>*&gt;</td></tr>
-<tr class="memitem:a3070529abe78a0713d0203f6b97931ef" id="r_a3070529abe78a0713d0203f6b97931ef"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a3070529abe78a0713d0203f6b97931ef">mim::Muts</a> = fe::XTrie&lt;<a class="el" href="classmim_1_1Def.html">Def</a>, <a class="el" href="structmim_1_1DefKey.html">DefKey</a>&gt;::Set</td></tr>
+<tr class="memitem:ad4c992fea8e04600ea865ce24206d8b0" id="r_ad4c992fea8e04600ea865ce24206d8b0"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0">mim::Muts</a> = fe::Patricia&lt;<a class="el" href="classmim_1_1Def.html">Def</a>, <a class="el" href="structmim_1_1DefKey.html">DefKey</a>&gt;::Set</td></tr>
 <tr id="typedef-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Var</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p><a class="el" href="namespacemim.html#aed213d360936f015062f16dd7a3210d4">GIDSet</a> / <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a> keyed by <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">Var::gid</a> of <span class="tt">const Var*</span>. </p>
 </div></td></tr>
 <tr class="memitem:a71e90dca4edd9dfdf7b1199a44faf1ab" id="r_a71e90dca4edd9dfdf7b1199a44faf1ab"><td class="memTemplParams" colspan="2">template&lt;class To&gt; </td></tr>
 <tr class="memitem:a71e90dca4edd9dfdf7b1199a44faf1ab template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab">mim::VarMap</a> = <a class="el" href="namespacemim.html#a617d61602e2cccc365ac714cb6fcf46a">GIDMap</a>&lt;const <a class="el" href="classmim_1_1Var.html">Var</a>*, To&gt;</td></tr>
 <tr class="memitem:afe12e59f7ee4253d3b71cd8c0db61d06" id="r_afe12e59f7ee4253d3b71cd8c0db61d06"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06">mim::Var2Var</a> = <a class="el" href="namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab">VarMap</a>&lt;const <a class="el" href="classmim_1_1Var.html">Var</a>*&gt;</td></tr>
-<tr class="memitem:a219a5909beed6997339d4ee73d8a3ed4" id="r_a219a5909beed6997339d4ee73d8a3ed4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a219a5909beed6997339d4ee73d8a3ed4">mim::Vars</a> = fe::XTrie&lt;const <a class="el" href="classmim_1_1Var.html">Var</a>, <a class="el" href="structmim_1_1DefKey.html">DefKey</a>&gt;::Set</td></tr>
+<tr class="memitem:aaa812145285556e31140df683b2367f7" id="r_aaa812145285556e31140df683b2367f7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">mim::Vars</a> = fe::Patricia&lt;const <a class="el" href="classmim_1_1Var.html">Var</a>, <a class="el" href="structmim_1_1DefKey.html">DefKey</a>&gt;::Set</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -387,7 +387,7 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 <div class="textblock"><p>Options for <a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a> and <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a>. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a> and <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a> honor <a class="el" href="namespacemim.html#a472ea1eba4d59fb1743c2087de458c1b" title="Maximum recursion depth.">DotConfig::max</a>; <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a> also honors <a class="el" href="namespacemim.html#a7ee84b1ca3e1d3d0beccc1b0486eb00c" title="Include all annexes - even if unused (World::dot only).">DotConfig::all_annexes</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00231">231</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00229">229</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -451,7 +451,7 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">+size_t(1)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00123">123</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00121">121</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -475,7 +475,7 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">node,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00123">123</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00121">121</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -499,7 +499,7 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">judge,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00123">123</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00121">121</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -598,7 +598,7 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00026">26</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00819">mim::Def::judge()</a>, and <a class="el" href="def_8cpp_source.html#l00461">mim::Def::node_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00811">mim::Def::judge()</a>, and <a class="el" href="def_8cpp_source.html#l00459">mim::Def::node_name()</a>.</p>
 
 </div>
 </div>
@@ -651,9 +651,9 @@ Render otherwise-transparent detached edges (Var→binder back-edges, shared lit
 </div><!-- fragment -->
 <p>Use as mixin to wrap all kind of Def::proj and Def::projs variants. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00177">177</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00175">175</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00482">mim::Def::num_tvars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00479">mim::Def::num_tvars()</a>.</p>
 
 </div>
 </div>
