@@ -180,6 +180,7 @@ Dependencies</h1>
 <div class="line">plugin mem;</div>
 <div class="line">import ll;  // for the ll.vec loop annotation (declarations only — no module load, no emit phase)</div>
 <div class="line">import compile;</div>
+<div class="line">use core.ops.n;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
 Types</h1>
 <p>Matrices are n-dimensional dependent arrays, represented by the shared <span class="tt">buffer.Buf</span> type. The element operations (<span class="tt">buffer.alloc</span> / <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.lit</span> / <span class="tt">buffer.shape</span>) and their lowering to <span class="tt">mem.Ptr</span> (<span class="tt">buffer.lower_ptr</span>) live in the <span class="tt">buffer</span> plugin.</p>
@@ -216,14 +217,14 @@ Loop nests as first-class IR values</h1>
 <div class="line">            loop lbody lexit (0I32, core.bitcast I32 (Sr#(core.idx 0 r d)), 1I32, (m, acc))</div>
 <div class="line">            where</div>
 <div class="line">                con lbody (iv: I32, macc: [mem.M 0, A], yield: Cn [mem.M 0, A]) =</div>
-<div class="line">                    let pref2 = ‹j: r; core.select (core.ncmp.e (core.bitcast Nat j, d), iv, pref#j)›;</div>
+<div class="line">                    let pref2 = ‹j: r; core.select (core.bitcast Nat j == d, iv, pref#j)›;</div>
 <div class="line">                    w (pref2, macc#0_2, macc#1_2, yield);</div>
 <div class="line">                con lexit (macc: [mem.M 0, A]) = k macc;</div>
 <div class="line">            end;</div>
 <div class="line">        level;</div>
-<div class="line">    let m  = core.nat.sub (hi, lo);</div>
-<div class="line">    let ds = ‹i: m; core.nat.add (lo, core.bitcast Nat i)›;</div>
-<div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m wrap (ds, inner);</div>
+<div class="line">    let m = hi - lo;</div>
+<div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
+<div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p> Like <span class="tt">range_nest</span>, but every dim in the range is fully UNROLLED: the inner continuation is chained once per iteration point by a right fold over the dim's (compile-time) extent — straight-line code with constant coordinates, no loops, and structurally terminating (no recursion, no PE filters: the fold itself unfolds once the extent is a literal). </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)</div>
 <div class="line">                 (inner: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])</div>
 <div class="line">               : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =</div>
@@ -232,28 +233,26 @@ Loop nests as first-class IR values</h1>
 <div class="line">        con level (pref: «r; I32», m: mem.M 0, acc: A, k: Cn [mem.M 0, A]) =</div>
 <div class="line">            lam step (i: Nat, kk: Cn [mem.M 0, A]): Cn [mem.M 0, A] =</div>
 <div class="line">                con at (m2: mem.M 0, a2: A) =</div>
-<div class="line">                    let pref2 = ‹j: r; core.select (core.ncmp.e (core.bitcast Nat j, d),</div>
-<div class="line">                                                     core.bitcast I32 i, pref#j)›;</div>
+<div class="line">                    let pref2 = ‹j: r; core.select (core.bitcast Nat j == d, core.bitcast I32 i, pref#j)›;</div>
 <div class="line">                    w (pref2, m2, a2, kk);</div>
 <div class="line">                at;</div>
-<div class="line">            let t  = Sr#(core.idx 0 r d);</div>
-<div class="line">            let ks = ‹i: t; core.bitcast Nat i›;</div>
-<div class="line">            (vec.fold.r @(Cn [mem.M 0, A], Nat) @t step (ks, k)) (m, acc);</div>
+<div class="line">            let t = Sr#(core.idx 0 r d);</div>
+<div class="line">            (vec.fold.r @(Cn [mem.M 0, A], Nat) @t step (‹i: t; core.bitcast Nat i›, k)) (m, acc);</div>
 <div class="line">        level;</div>
-<div class="line">    let m  = core.nat.sub (hi, lo);</div>
-<div class="line">    let ds = ‹i: m; core.nat.add (lo, core.bitcast Nat i)›;</div>
-<div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m wrap (ds, inner);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The type of scheduled loop nests for a map_reduce over the domain <span class="tt">Sr</span> (<span class="tt">ro</span> leading parallel dims, <span class="tt">rr</span> trailing reduction dims, fold element type <span class="tt">To</span>): given the fold seed <span class="tt">init</span>, the per-point fold step <span class="tt">cell</span> (fold the elements at one loop vector into the accumulator) and the per-cell write-back <span class="tt">wb</span> (consume one folded value at its output coordinates), run the nest. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam NestT (ro rr: Nat, Sr: «core.nat.add (ro, rr); Nat», To U: *): * =</div>
+<div class="line">    let m = hi - lo;</div>
+<div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
+<div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p> The type of scheduled loop nests for a map_reduce over the domain <span class="tt">Sr</span> (<span class="tt">ro</span> leading parallel dims, <span class="tt">rr</span> trailing reduction dims, fold element type <span class="tt">To</span>): given the fold seed <span class="tt">init</span>, the per-point fold step <span class="tt">cell</span> (fold the elements at one loop vector into the accumulator) and the per-cell write-back <span class="tt">wb</span> (consume one folded value at its output coordinates), run the nest. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam NestT (ro rr: Nat, Sr: «ro + rr; Nat», To U: *): * =</div>
 <div class="line">      [init: To,</div>
-<div class="line">       cell: Cn [mem.M 0, To, «core.nat.add (ro, rr); I32», Cn [mem.M 0, To]],</div>
-<div class="line">       wb:   Cn [mem.M 0, U, To, «core.nat.add (ro, rr); I32», Cn [mem.M 0, U]]]</div>
+<div class="line">       cell: Cn [mem.M 0, To, «ro + rr; I32», Cn [mem.M 0, To]],</div>
+<div class="line">       wb:   Cn [mem.M 0, U, To, «ro + rr; I32», Cn [mem.M 0, U]]]</div>
 <div class="line">    → Cn [mem.M 0, U, Cn [mem.M 0, U]];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The scheduled nest builder: <span class="tt">unroll</span> trailing reduction dims run as compile-time-unrolled straight-line code; a valid <span class="tt">vdim</span> (a parallel dim, currently the last one, of extent ≠ 1) runs as the innermost loop, inside the reduction loops, over a row-accumulator buffer — the unit-stride vectorization dim. A <span class="tt">vdim</span> naming the innermost REDUCTION dim instead selects the reduction-vectorized nest (see the <span class="tt">redvec</span> branch below): the contraction runs as the vector loop with the last parallel dim unroll-and-jammed into its body. Per-cell fold order is untouched by any of these transforms. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam mr_nest (ro rr: Nat, Sr: «core.nat.add (ro, rr); Nat», To U: *) (vdim unroll: Nat)</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p> The scheduled nest builder: <span class="tt">unroll</span> trailing reduction dims run as compile-time-unrolled straight-line code; a valid <span class="tt">vdim</span> (a parallel dim, currently the last one, of extent ≠ 1) runs as the innermost loop, inside the reduction loops, over a row-accumulator buffer — the unit-stride vectorization dim. A <span class="tt">vdim</span> naming the innermost REDUCTION dim instead selects the reduction-vectorized nest (see the <span class="tt">redvec</span> branch below): the contraction runs as the vector loop with the last parallel dim unroll-and-jammed into its body. Per-cell fold order is untouched by any of these transforms. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam mr_nest (ro rr: Nat, Sr: «ro + rr; Nat», To U: *) (vdim unroll: Nat)</div>
 <div class="line">                   : NestT (ro, rr, Sr, To, U) =</div>
-<div class="line">    let r    = core.nat.add (ro, rr);</div>
+<div class="line">    let r    = ro + rr;</div>
 <div class="line">    // The unroll window must stay within the reduction dims.</div>
-<div class="line">    let u_lo = core.nat.sub (r, unroll);</div>
-<div class="line">    let u_lo = (ro, u_lo)#(core.ncmp.le (ro, u_lo));</div>
+<div class="line">    let u_lo = r - unroll;</div>
+<div class="line">    let u_lo = (ro, u_lo)#(ro &lt;= u_lo);</div>
 <div class="line">    lam nest (init: To,</div>
 <div class="line">              cell: Cn [mem.M 0, To, «r; I32», Cn [mem.M 0, To]],</div>
 <div class="line">              wb:   Cn [mem.M 0, U, To, «r; I32», Cn [mem.M 0, U]])</div>
@@ -264,8 +263,7 @@ Loop nests as first-class IR values</h1>
 <div class="line">        let win = range_unroll (r, Sr) To (u_lo, r) cell_at;</div>
 <div class="line">        // `vd` is `vdim` clamped through the dispatch condition: the non-selected branch is still</div>
 <div class="line">        // ELABORATED, so its body must be type-sane even when `vdim` is the out-of-range sentinel.</div>
-<div class="line">        let vec_ok = core.bit2.and_ 2 (core.ncmp.e (core.nat.add (vdim, 1), ro),</div>
-<div class="line">                                        core.ncmp.ne (Sr#(core.idx 0 r ((0, vdim)#(core.ncmp.l (vdim, r)))), 1));</div>
+<div class="line">        let vec_ok = core.bit2.and_ 2 (vdim + 1 == ro, Sr#(core.idx 0 r ((0, vdim)#(vdim &lt; r))) != 1);</div>
 <div class="line">        let vd = (0, vdim)#vec_ok;</div>
 <div class="line"> </div>
 <div class="line">        // CLASSIC: reduction loops inside all output loops, one accumulator cell at a time; the</div>
@@ -297,12 +295,12 @@ Loop nests as first-class IR values</h1>
 <div class="line">                    let (memw1, v) = buffer.read (1, Sv, To) (memw, row, vi_of pref2);</div>
 <div class="line">                    wb (memw1, uw, v, pref2, kw);</div>
 <div class="line">                con s2 (memB: mem.M 0, uB: U) =</div>
-<div class="line">                    (range_nest (r, Sr) U (vec_for @U, vd, core.nat.add (vd, 1)) wb_cell) (pref, memB, uB, k);</div>
+<div class="line">                    (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) wb_cell) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
 <div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
-<div class="line">                        (range_nest (r, Sr) U (vec_for @U, vd, core.nat.add (vd, 1)) at_point))</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) at_point))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
-<div class="line">                (range_nest (r, Sr) U (vec_for @U, vd, core.nat.add (vd, 1)) fill) (pref, m, u, s1);</div>
+<div class="line">                (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) fill) (pref, m, u, s1);</div>
 <div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, vd) at_row) (‹r; 0I32›, mem1, u0, done);</div>
 <div class="line"> </div>
 <div class="line">        // BLOCKED (`vdim = ro − 2`): the two trailing parallel dims are sunk inside the reduction</div>
@@ -312,17 +310,16 @@ Loop nests as first-class IR values</h1>
 <div class="line">        // hoisted out of the vector loop (a conv&#39;s window weights) now serve every row of the</div>
 <div class="line">        // block, and adjacent rows&#39; overlapping reads sit in the same loop body. Clamps as above:</div>
 <div class="line">        // the non-selected branch is still elaborated.</div>
-<div class="line">        let pd_c    = (0, vdim)#(core.ncmp.l (vdim, r));</div>
-<div class="line">        let sd_r    = core.nat.add (vdim, 1);</div>
-<div class="line">        let sd_c    = (0, sd_r)#(core.ncmp.l (sd_r, r));</div>
-<div class="line">        let block_ok = core.bit2.and_ 2 (core.ncmp.e (core.nat.add (vdim, 2), ro),</div>
-<div class="line">                      core.bit2.and_ 2 (core.ncmp.ne (Sr#(core.idx 0 r pd_c), 1),</div>
-<div class="line">                                         core.ncmp.ne (Sr#(core.idx 0 r sd_c), 1)));</div>
+<div class="line">        let pd_c    = (0, vdim)#(vdim &lt; r);</div>
+<div class="line">        let sd_r    = vdim + 1;</div>
+<div class="line">        let sd_c    = (0, sd_r)#(sd_r &lt; r);</div>
+<div class="line">        let block_ok = core.bit2.and_ 2 (vdim + 2 == ro,</div>
+<div class="line">                       core.bit2.and_ 2 (Sr#(core.idx 0 r pd_c) != 1, Sr#(core.idx 0 r sd_c) != 1));</div>
 <div class="line"> </div>
 <div class="line">        con blocked (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =</div>
 <div class="line">            let Sp = Sr#(core.idx 0 r pd_c);</div>
 <div class="line">            let Sv = Sr#(core.idx 0 r sd_c);</div>
-<div class="line">            let Np = core.nat.mul (Sp, Sv);</div>
+<div class="line">            let Np = Sp * Sv;</div>
 <div class="line">            let vi_of = lm (pref: «r; I32»): Idx Np =</div>
 <div class="line">                core.conv.u Np (core.wrap.add 0</div>
 <div class="line">                    (core.wrap.mul 0 (pref#(core.idx 0 r pd_c), core.bitcast I32 Sv),</div>
@@ -346,8 +343,8 @@ Loop nests as first-class IR values</h1>
 <div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, ro) wb_cell)) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
 <div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
-<div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, core.nat.add (sd_c, 1))</div>
-<div class="line">                            (range_unroll (r, Sr) U (pd_c, core.nat.add (pd_c, 1)) at_point)))</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, sd_c + 1)</div>
+<div class="line">                            (range_unroll (r, Sr) U (pd_c, pd_c + 1) at_point)))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
 <div class="line">                (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)</div>
 <div class="line">                    (range_nest (r, Sr) U (vec_for @U, sd_c, ro) fill)) (pref, m, u, s1);</div>
@@ -368,17 +365,14 @@ Loop nests as first-class IR values</h1>
 <div class="line">        // reduction chain that gets its own vector accumulator. Clamps as above: the non-selected</div>
 <div class="line">        // branch is still elaborated, and the jam extents are additionally clamped to 1 (`Sr_rv`)</div>
 <div class="line">        // so the elaborated unrolls stay cheap.</div>
-<div class="line">        let rv_j      = (1, unroll)#(core.ncmp.le (1, unroll));</div>
-<div class="line">        let rv_bd     = (0, core.nat.sub (ro, rv_j))#(core.ncmp.le (rv_j, ro));</div>
-<div class="line">        let rv_vd     = (0, vdim)#(core.ncmp.l (vdim, r));</div>
-<div class="line">        let redvec_ok = core.bit2.and_ 2 (core.ncmp.le (ro, vdim),</div>
-<div class="line">                        core.bit2.and_ 2 (core.ncmp.e (core.nat.add (vdim, 1), r),</div>
-<div class="line">                                           core.ncmp.le (rv_j, ro)));</div>
-<div class="line">        let Sr_rv     = ‹j: r; let jj  = core.bitcast Nat j;</div>
-<div class="line">                               let jam = core.bit2.and_ 2 (core.ncmp.le (rv_bd, jj), core.ncmp.l (jj, ro));</div>
-<div class="line">                               (Sr#j, (1, Sr#j)#redvec_ok)#jam›;</div>
-<div class="line">        lam rv_mul (d: Nat, acc: Nat): Nat = core.nat.mul (acc, Sr_rv#(core.idx 0 r d));</div>
-<div class="line">        let rv_ds = ‹i: rv_j; core.nat.add (rv_bd, core.bitcast Nat i)›;</div>
+<div class="line">        let rv_j      = (1, unroll)#(1 &lt;= unroll);</div>
+<div class="line">        let rv_bd     = (0, ro - rv_j)#(rv_j &lt;= ro);</div>
+<div class="line">        let rv_vd     = (0, vdim)#(vdim &lt; r);</div>
+<div class="line">        let redvec_ok = core.bit2.and_ 2 (ro &lt;= vdim, core.bit2.and_ 2 (vdim + 1 == r, rv_j &lt;= ro));</div>
+<div class="line">        let Sr_rv     = ‹j: r; let jj = core.bitcast Nat j;</div>
+<div class="line">                               (Sr#j, (1, Sr#j)#redvec_ok)#(core.bit2.and_ 2 (rv_bd &lt;= jj, jj &lt; ro))›;</div>
+<div class="line">        lam rv_mul (d: Nat, acc: Nat): Nat = acc * Sr_rv#(core.idx 0 r d);</div>
+<div class="line">        let rv_ds = ‹i: rv_j; rv_bd + core.bitcast Nat i›;</div>
 <div class="line">        let Sb    = vec.fold.r @(Nat, Nat) @rv_j rv_mul (rv_ds, 1);</div>
 <div class="line"> </div>
 <div class="line">        con redvec (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =</div>
@@ -408,7 +402,7 @@ Loop nests as first-class IR values</h1>
 <div class="line">                    (range_unroll (r, Sr_rv) U (rv_bd, ro) wb_cell) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
 <div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, rv_vd)</div>
-<div class="line">                        (range_nest (r, Sr) U (vec_for @U, rv_vd, core.nat.add (rv_vd, 1))</div>
+<div class="line">                        (range_nest (r, Sr) U (vec_for @U, rv_vd, rv_vd + 1)</div>
 <div class="line">                            (range_unroll (r, Sr_rv) U (rv_bd, ro) at_point)))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
 <div class="line">                (range_unroll (r, Sr_rv) U (rv_bd, ro) fill) (pref, m, u, s1);</div>
