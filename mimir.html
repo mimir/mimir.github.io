@@ -216,10 +216,10 @@ Plugins</h1>
 <li>a <b><span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> file</b> that declares the plugin's <b>annexes</b>, and</li>
 <li>a shared library that registers their runtime behavior: normalizers and plugin-specific compiler <a class="el" href="phases.html" title="Phases">phases</a>.</li>
 </ul>
-<p>The examples below use the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin throughout, hence the <span class="tt">plugin core;</span> at the top of each file.</p>
+<p>The examples below use the <a class="el" href="core.html" title="The core Plugin"><span class="tt">core</span></a> plugin throughout, hence the <span class="tt">plugin core;</span> at the top of each file.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Annexes</h2>
-<p>An <b>annex</b> is any entity a plugin exports; you reference it with the <span class="tt">plugin.path</span> syntax, such as <span class="tt">core.wrap.add</span> or <span class="tt">core.select</span> from the <a class="el" href="core.html" title="The core Plugin"><span class="tt">%core</span></a> plugin. Annexes come in two flavors: Axioms and other definitions.</p>
+<p>An <b>annex</b> is any entity a plugin exports; you reference it with the <span class="tt">plugin.path</span> syntax, such as <span class="tt">core.wrap.add</span> or <span class="tt">core.select</span> from the <a class="el" href="core.html" title="The core Plugin"><span class="tt">core</span></a> plugin. Annexes come in two flavors: Axioms and other definitions.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Axioms</h3>
 <p>These are opaque primitives with <em>no</em> <a class="el" href="namespaceMim.html">Mim</a> definition. Their meaning comes from the plugin's C++ side (see below), not from any <a class="el" href="namespaceMim.html">Mim</a> code. <span class="tt">core.wrap.add</span> (machine addition) and <span class="tt">core.pe.is_closed</span> (which checks whether an expression contains no free variables) are treated as axioms.</p>
@@ -401,7 +401,7 @@ Types Are Values</h1>
 <object type="image/svg+xml" data="dep.svg" style="pointer-events: none;"></object>
 <div class="caption">
 The MimIR graph of `Vec` and `zeros` with type edges shown (type edges are dashed)</div></div>
-<p>The same variable node <span class="tt">n</span> feeds both the array <b>type</b> <span class="tt">«n; Nat»</span> and the array <b>value</b> <span class="tt">‹n; 0›</span> — a type pointing straight at a term. Types are not an earlier, separate phase that has been erased before the IR begins; they are ordinary nodes, hash-consed, normalized, and partially evaluated alongside everything else. This is the foundation the <a class="el" href="tensor.html" title="The tensor Plugin"><span class="tt">%tensor</span></a> plugin builds on: array shapes live in the types and are checked — and optimized — by the very same normalization you have already seen.</p>
+<p>The same variable node <span class="tt">n</span> feeds both the array <b>type</b> <span class="tt">«n; Nat»</span> and the array <b>value</b> <span class="tt">‹n; 0›</span> — a type pointing straight at a term. Types are not an earlier, separate phase that has been erased before the IR begins; they are ordinary nodes, hash-consed, normalized, and partially evaluated alongside everything else. This is the foundation the <a class="el" href="tensor.html" title="The tensor Plugin"><span class="tt">tensor</span></a> plugin builds on: array shapes live in the types and are checked — and optimized — by the very same normalization you have already seen.</p>
 <div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
