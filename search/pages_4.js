@@ -1,19 +1,19 @@
 var searchData=
 [
-  ['effects_0',['Effects',['../mem.html#autotoc_md380',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md390',1,'Operations w/o Side Effects']]],
-  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md491',1,'']]],
+  ['effects_0',['Effects',['../mem.html#autotoc_md386',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md396',1,'Operations w/o Side Effects']]],
+  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md502',1,'']]],
   ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md107',1,'']]],
   ['embedded_20python_20dsl_3',['Embedded Python DSL',['../python.html#autotoc_md127',1,'']]],
-  ['emit_4',['emit',['../ll.html#autotoc_md348',1,'emit'],['../ll_nvptx.html#autotoc_md353',1,'emit']]],
+  ['emit_4',['emit',['../ll.html#autotoc_md354',1,'emit'],['../ll_nvptx.html#autotoc_md359',1,'emit']]],
   ['empirical_20argument_5',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md160',1,'']]],
-  ['empty_6',['empty',['../regex.html#autotoc_md459',1,'']]],
+  ['empty_6',['empty',['../regex.html#autotoc_md465',1,'']]],
   ['environment_20variables_7',['Environment Variables',['../cli.html#autotoc_md8',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../cli.html#autotoc_md10',1,'Plugin Environment Variables']]],
-  ['equiv_8',['equiv',['../refly.html#autotoc_md441',1,'']]],
-  ['er_9',['er',['../math.html#autotoc_md365',1,'']]],
+  ['equiv_8',['equiv',['../refly.html#autotoc_md447',1,'']]],
+  ['er_9',['er',['../math.html#autotoc_md371',1,'']]],
   ['error_20handling_20helpers_10',['Error Handling Helpers',['../python.html#autotoc_md125',1,'']]],
   ['escape_20hatch_20and_20why_20it_20defeats_20the_20purpose_11',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md164',1,'']]],
   ['estimates_12',['Ballpark estimates',['../md_docs_2why-cpp.html#autotoc_md149',1,'']]],
-  ['eta_5fconv_13',['eta_conv',['../compile.html#autotoc_md269',1,'']]],
+  ['eta_5fconv_13',['eta_conv',['../compile.html#autotoc_md275',1,'']]],
   ['eval_14',['eval',['../autodiff.html#autotoc_md198',1,'']]],
   ['evaluation_15',['Partial Evaluation',['../dev.html#autotoc_md36',1,'']]],
   ['example_16',['Example',['../coding.html#autotoc_md19',1,'']]],
@@ -24,9 +24,9 @@ var searchData=
   ['execution_20model_21',['Execution Model',['../phases.html#autotoc_md87',1,'']]],
   ['existing_20in_20tree_20plugin_22',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md121',1,'']]],
   ['exists_20at_20all_23',['Why the guard exists at all',['../phases.html#autotoc_md104',1,'']]],
-  ['exp_24',['exp',['../math.html#autotoc_md364',1,'']]],
+  ['exp_24',['exp',['../math.html#autotoc_md370',1,'']]],
   ['expressions_25',['Expressions',['../langref.html#expr',1,'Expressions'],['../langref.html#autotoc_md72',1,'Expressions']]],
   ['extending_20the_20bindings_26',['Extending the Bindings',['../python.html#python_extending',1,'']]],
   ['extract_20an_20existing_20in_20tree_20plugin_27',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md121',1,'']]],
-  ['extrema_28',['extrema',['../core.html#autotoc_md290',1,'extrema'],['../math.html#autotoc_md360',1,'extrema']]]
+  ['extrema_28',['extrema',['../core.html#autotoc_md296',1,'extrema'],['../math.html#autotoc_md366',1,'extrema']]]
 ];

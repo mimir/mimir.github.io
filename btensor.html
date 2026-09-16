@@ -272,11 +272,13 @@ pad</h2>
 <div class="line">       → [mem.M 0, input: buffer.Buf (r, s_in, T), value: T]</div>
 <div class="line">       → [mem.M 0, buffer.Buf (r, s_out, T)];</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md217"></a>
-transpose_2d</h2>
-<p>Permutes the dimensions of a 2-dimensional matrix. As there, the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>; like <span class="tt">product_2d</span> this is a <span class="tt">lam</span> over <span class="tt">map_reduce</span> rather than an <span class="tt">axm</span>.</p>
+btensor_copy</h2>
 <p>Ignores the (⊥) accumulator and just returns the read value — the mem-threaded counterpart of <span class="tt">tensor_copy</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun btensor_copy {T: *} (m: mem.M 0, acc: T, y: «1; T»)@tt: [mem.M 0, T] = return (m, y#0_1);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>Transpose a matrix by reading the input at the swapped loop variables; there is no reduction loop.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
+transpose_2d</h2>
+<p>Permutes the dimensions of a 2-dimensional matrix. As there, the shape is a single <span class="tt">«2; Nat»</span> vector instead of two separate <span class="tt">Nat</span>s and <span class="tt">{T}</span> precedes <span class="tt">{s}</span>; like <span class="tt">product_2d</span> this is a <span class="tt">lam</span> over <span class="tt">map_reduce</span> rather than an <span class="tt">axm</span>.</p>
+<p>Transpose a matrix by reading the input at the swapped loop variables; there is no reduction loop.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam transpose_2d {T: *} {s: «2; Nat»}</div>
 <div class="line">                         (m: mem.M 0, input: buffer.Buf (2, s, T))</div>
 <div class="line">                       : [mem.M 0, buffer.Buf (2, (s#tt, s#ff), T)] =</div>
@@ -286,16 +288,17 @@ transpose_2d</h2>
 <div class="line">        affine.id</div>
 <div class="line">        (proj_map (1, 0),)</div>
 <div class="line">        (m, input);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
 Reductions</h1>
 <p>Operations that fold a reduction dim away.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
-product_2d</h2>
-<p>Computes the matrix product of two 2-dimensional matrices in the ring <span class="tt">R</span>. <span class="tt">[R: Ring]</span> is the leading <em>explicit</em> group, as there: a ring cannot be recovered from <span class="tt">R#T</span> by inference.</p>
-<p>Unlike <span class="tt">tensor.product_2d</span> this is a <span class="tt">lam</span> wrapping <span class="tt">map_reduce</span> directly, not an <span class="tt">axm</span> paired with an <span class="tt">_impl</span> annex and a lowering phase: nothing in this plugin inspects the high-level form — no fusion phase over <span class="tt">*</span>, and the normalizer was a no-op — so the extra staging bought nothing. <span class="tt">transpose_2d</span> follows the same pattern.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
+product_2d_fun</h2>
 <p>Fused multiply-add over the ring <span class="tt">R</span>; <span class="tt">ab#0</span> is the <span class="tt">t1</span> element, <span class="tt">ab#1</span> the <span class="tt">t2</span> element. The mem-threaded counterpart of the <span class="tt">tensor</span> plugin's <span class="tt">conv_fun</span>. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun product_2d_fun (R: Ring) (m: mem.M 0, acc: R#T, ab: «2; R#T»)@tt: [mem.M 0, R#T] =</div>
 <div class="line">    return (m, R#add (acc, R#mul (ab#0_2, ab#1_2)));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The loop vector is <span class="tt">(i, j, k)</span> and follows the principle <span class="tt">ij ← ik, kj</span> (<span class="tt">out[i, j] = Σ_k t1[i, k] · t2[k, j]</span>), so <span class="tt">k</span> is the single reduction loop. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam product_2d (R: Ring) {m k l: Nat}</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
+product_2d</h2>
+<p>Computes the matrix product of two 2-dimensional matrices in the ring <span class="tt">R</span>. <span class="tt">[R: Ring]</span> is the leading <em>explicit</em> group, as there: a ring cannot be recovered from <span class="tt">R#T</span> by inference.</p>
+<p>Unlike <span class="tt">tensor.product_2d</span> this is a <span class="tt">lam</span> wrapping <span class="tt">map_reduce</span> directly, not an <span class="tt">axm</span> paired with an <span class="tt">_impl</span> annex and a lowering phase: nothing in this plugin inspects the high-level form — no fusion phase over <span class="tt">*</span>, and the normalizer was a no-op — so the extra staging bought nothing. <span class="tt">transpose_2d</span> follows the same pattern. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p> The loop vector is <span class="tt">(i, j, k)</span> and follows the principle <span class="tt">ij ← ik, kj</span> ( \(\mathit{out}_{i,j} = \sum_k \mathit{t1}_{i,k} \cdot \mathit{t2}_{k,j}\)), so <span class="tt">k</span> is the single reduction loop. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam product_2d (R: Ring) {m k l: Nat}</div>
 <div class="line">                       (mm: mem.M 0, t1: buffer.Buf (2, (m, k), R#T), t2: buffer.Buf (2, (k, l), R#T))</div>
 <div class="line">                     : [mem.M 0, buffer.Buf (2, (m, l), R#T)] =</div>
 <div class="line">    map_reduce ((m, l), (m, l, k))</div>
@@ -303,10 +306,10 @@ product_2d</h2>
 <div class="line">        (proj_map (0, 1))</div>
 <div class="line">        (proj_map (0, 2), proj_map (2, 1))</div>
 <div class="line">        (mm, (t1, t2));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
 Indexing</h1>
 <p>Data-dependent access: an <span class="tt">index</span> buffer picks the coordinate along <span class="tt">dim</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
 gather</h2>
 <p>For each output coordinate <span class="tt">o</span>, reads the source at <span class="tt">o</span> with axis <span class="tt">dim</span> replaced by <span class="tt">index[o]</span>. The index element type proves that selected coordinates are in bounds along <span class="tt">dim</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gather: {T: *, r: Nat}</div>
@@ -316,7 +319,7 @@ gather</h2>
 <div class="line">             input: buffer.Buf (r, s_src, T),</div>
 <div class="line">             index: buffer.Buf (r, s_idx, Idx (s_src#dim))]</div>
 <div class="line">          → [mem.M 0, buffer.Buf (r, s_idx, T)];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
 scatter</h2>
 <p>Starts with a copy of <span class="tt">input</span>, then applies updates in row-major index order; for duplicate destinations, the last update wins.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scatter: {T: *, r: Nat}</div>
@@ -327,26 +330,30 @@ scatter</h2>
 <div class="line">              index: buffer.Buf (r, s_idx, Idx (s_src#dim)),</div>
 <div class="line">              updates: buffer.Buf (r, s_updates, T)]</div>
 <div class="line">           → [mem.M 0, buffer.Buf (r, s_src, T)];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
 Loop Nests</h1>
 <p>Loop nests are first-class IR values here: the schedule of a <span class="tt">map_reduce_post</span> is not data interpreted by a lowering — it is a chooser over the target's loop-nest builder (see <span class="tt">tensor.mk_sched</span>), carried as an operand; <span class="tt">lower_map_reduce</span> binds it to <span class="tt">mr_nest</span> and merely <em>applies</em> the result. The builders below construct every loop structure in the frontend IR (loop-implementation policies, window unrolling, the row-accumulator interchange); partial evaluation unfolds them once the ranks are known.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
 ForT</h2>
 <p>The type of anything with <span class="tt">affine.For</span>'s calling convention over <span class="tt">[mem, A]</span> accumulators — a "loop implementation" policy value. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam ForT (A: *): * =</div>
 <div class="line">      [Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]]]</div>
 <div class="line">    → [Cn [mem.M 0, A]]</div>
 <div class="line">    → Cn [I32, I32, I32, [mem.M 0, A]];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The default loop implementation: affine.For itself, eta-wrapped. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">con affine_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
+affine_for</h3>
+<p>The default loop implementation: affine.For itself, eta-wrapped. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">con affine_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])</div>
 <div class="line">               (exit: Cn [mem.M 0, A])</div>
 <div class="line">               (begin stop step: I32, init: [mem.M 0, A])@tt =</div>
 <div class="line">    affine.For body exit (begin, stop, step, init);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The loop implementation for a schedule's <b>vector</b> dim: the same <span class="tt">affine.For</span>, its body wrapped in the identity annotation <span class="tt">ll.vec</span> — the nomination to run this loop as the innermost unit-stride vectorized loop. <span class="tt">affine.lower_for</span> moves the wrapper onto the loop's exit condition for the backend (and drops it when the ll module is not loaded). </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">con vec_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md228"></a>
+vec_for</h3>
+<p>The loop implementation for a schedule's <b>vector</b> dim: the same <span class="tt">affine.For</span>, its body wrapped in the identity annotation <span class="tt">ll.vec</span> — the nomination to run this loop as the innermost unit-stride vectorized loop. <span class="tt">affine.lower_for</span> moves the wrapper onto the loop's exit condition for the backend (and drops it when the ll module is not loaded). </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">con vec_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])</div>
 <div class="line">            (exit: Cn [mem.M 0, A])</div>
 <div class="line">            (begin stop step: I32, init: [mem.M 0, A])@tt =</div>
 <div class="line">    affine.For (ll.vec body) exit (begin, stop, step, init);</div>
-</div><!-- fragment --></div><div class="mim-code"></div> <h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
+</div><!-- fragment --></div><div class="mim-code"></div> <h2 class="doxsection"><a class="anchor" id="autotoc_md229"></a>
 range_nest</h2>
-<p>One nest of <span class="tt">loop</span>-implemented loops over the dim range <span class="tt">[lo, hi)</span> of the bounds <span class="tt">Sr</span>, threading an accumulator <span class="tt">A</span> and the shared «r; I32» loop-vector prefix; calls <span class="tt">inner</span> at the bottom with the prefix updated at the range's positions. Composed by a right fold — no recursion, and the flat I32 prefix avoids dependently-typed loop-variable tuples. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_nest (r: Nat, Sr: «r; Nat») (A: *) (loop: ForT A, lo hi: Nat)</div>
+<p>One nest of <span class="tt">loop</span>-implemented loops over the dim range <span class="tt">[lo, hi)</span> of the bounds <span class="tt">Sr</span>, threading an accumulator <span class="tt">A</span> and the shared <span class="tt">«r; I32»</span> loop-vector prefix; calls <span class="tt">inner</span> at the bottom with the prefix updated at the range's positions. Composed by a right fold — no recursion, and the flat I32 prefix avoids dependently-typed loop-variable tuples. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_nest (r: Nat, Sr: «r; Nat») (A: *) (loop: ForT A, lo hi: Nat)</div>
 <div class="line">               (inner: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])</div>
 <div class="line">             : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =</div>
 <div class="line">    lam wrap (d: Nat, w: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])</div>
@@ -363,7 +370,9 @@ range_nest</h2>
 <div class="line">    let m = hi - lo;</div>
 <div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
 <div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> Like <span class="tt">range_nest</span>, but every dim in the range is fully <b>unrolled</b>: the inner continuation is chained once per iteration point by a right fold over the dim's (compile-time) extent — straight-line code with constant coordinates, no loops, and structurally terminating (no recursion, no PE filters: the fold itself unfolds once the extent is a literal). </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md230"></a>
+range_unroll</h3>
+<p>Like <span class="tt">range_nest</span>, but every dim in the range is fully <b>unrolled</b>: the inner continuation is chained once per iteration point by a right fold over the dim's (compile-time) extent — straight-line code with constant coordinates, no loops, and structurally terminating (no recursion, no PE filters: the fold itself unfolds once the extent is a literal). </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)</div>
 <div class="line">                 (inner: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])</div>
 <div class="line">               : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =</div>
 <div class="line">    lam wrap (d: Nat, w: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])</div>
@@ -380,14 +389,16 @@ range_nest</h2>
 <div class="line">    let m = hi - lo;</div>
 <div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
 <div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
-</div><!-- fragment --></div><div class="mim-code"></div> <h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
-mr_nest</h2>
+</div><!-- fragment --></div><div class="mim-code"></div> <h2 class="doxsection"><a class="anchor" id="autotoc_md231"></a>
+NestT</h2>
 <p>The type of scheduled loop nests for a <span class="tt">map_reduce</span> over the domain <span class="tt">Sr</span> (<span class="tt">ro</span> leading parallel dims, <span class="tt">rr</span> trailing reduction dims, fold element type <span class="tt">To</span>): given the fold seed <span class="tt">init</span>, the per-point fold step <span class="tt">cell</span> (fold the elements at one loop vector into the accumulator) and the per-cell write-back <span class="tt">wb</span> (consume one folded value at its output coordinates), run the nest. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam NestT (ro rr: Nat, Sr: «ro + rr; Nat», To U: *): * =</div>
 <div class="line">      [init: To,</div>
 <div class="line">       cell: Cn [mem.M 0, To, «ro + rr; I32», Cn [mem.M 0, To]],</div>
 <div class="line">       wb:   Cn [mem.M 0, U, To, «ro + rr; I32», Cn [mem.M 0, U]]]</div>
 <div class="line">    → Cn [mem.M 0, U, Cn [mem.M 0, U]];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p> The scheduled nest builder, selecting one of the four nests below from the schedule:</p><ul>
+</div><!-- fragment --></div><div class="mim-code"></div> <h2 class="doxsection"><a class="anchor" id="autotoc_md232"></a>
+mr_nest</h2>
+<p>The scheduled nest builder, selecting one of the four nests below from the schedule:</p><ul>
 <li><span class="tt">unroll</span> trailing reduction dims always run as compile-time-unrolled straight-line code.</li>
 <li>a <span class="tt">vdim</span> naming a parallel dim (currently the last one) of extent ≠ 1 runs it as the innermost loop, inside the reduction loops, over a row-accumulator buffer — the unit-stride vectorization dim.</li>
 <li>a <span class="tt">vdim</span> naming the innermost <b>reduction</b> dim selects the reduction-vectorized nest (<span class="tt">redvec</span> below): the contraction runs as the vector loop with the last parallel dim unroll-and-jammed into its body.</li>
@@ -557,9 +568,9 @@ mr_nest</h2>
 <div class="line">            ((((classic, vectorized)#vec_ok, blocked)#block_ok, redvec)#redvec_ok) (mem0, u0, done);</div>
 <div class="line">        run;</div>
 <div class="line">    nest;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md233"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md228"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md234"></a>
 lower_map_reduce</h2>
 <p>Lowers every operation of this plugin to <span class="tt">affine.For</span> loops over <span class="tt">buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">mr_nest</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_map_reduce: compile.Phase;</div>
