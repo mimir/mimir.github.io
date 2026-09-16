@@ -1,13 +1,13 @@
 var searchData=
 [
   ['valgrind_20gdb_0',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md29',1,'']]],
-  ['values_1',['Values',['../mimir.html#mimir_dep',1,'Types Are Values'],['../regex.html#autotoc_md453',1,'Values']]],
+  ['values_1',['Values',['../mimir.html#mimir_dep',1,'Types Are Values'],['../regex.html#autotoc_md452',1,'Values']]],
   ['variables_2',['Variables',['../cli.html#autotoc_md8',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../dev.html#free_vars',1,'Free Variables'],['../cli.html#autotoc_md10',1,'Plugin Environment Variables'],['../dev.html#autotoc_md37',1,'Variables']]],
   ['variants_3',['Thresholded Variants',['../dev.html#autotoc_md54',1,'']]],
   ['varrewriter_4',['VarRewriter',['../rewriting.html#autotoc_md147',1,'Rewriter vs. VarRewriter'],['../rewriting.html#varrewriter',1,'VarRewriter']]],
-  ['vec_5',['vec',['../ll.html#autotoc_md351',1,'']]],
+  ['vec_5',['vec',['../ll.html#autotoc_md350',1,'']]],
   ['vec_20plugin_6',['The vec Plugin',['../vec.html',1,'']]],
-  ['vectorize_7',['vectorize',['../tensor.html#autotoc_md515',1,'']]],
+  ['vectorize_7',['vectorize',['../tensor.html#autotoc_md514',1,'']]],
   ['verdict_8',['Verdict',['../md_docs_2why-cpp.html#autotoc_md169',1,'']]],
   ['via_20cps_9',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
   ['visibility_10',['Visibility',['../langref.html#autotoc_md65',1,'']]],

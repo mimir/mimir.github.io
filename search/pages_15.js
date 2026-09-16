@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md391',1,'']]],
-  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md381',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md390',1,'']]],
+  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md380',1,'']]],
   ['way_20sum_20type_20in_20one_20machine_20word_2',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
   ['what_20about_20rust_3',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],
   ['what_20the_20c_20implementation_20actually_20relies_20on_4',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md150',1,'']]],
@@ -13,20 +13,20 @@ var searchData=
   ['why_20the_20guard_20exists_20at_20all_10',['Why the guard exists at all',['../phases.html#autotoc_md104',1,'']]],
   ['why_20this_20is_20hard_20elsewhere_11',['Why this is hard elsewhere',['../phases.html#autotoc_md107',1,'']]],
   ['wins_12',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
-  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md492',1,'']]],
+  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md491',1,'']]],
   ['with_20arena_20rollback_14',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md154',1,'']]],
   ['with_20indices_15',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_16',['With Subtags',['../dev.html#autotoc_md49',1,'']]],
-  ['with_5fstreams_17',['with_streams',['../gpu.html#autotoc_md324',1,'']]],
+  ['with_5fstreams_17',['with_streams',['../gpu.html#autotoc_md323',1,'']]],
   ['without_20dominance_18',['without Dominance',['../index.html#autotoc_md136',1,'🪾 SSA without Dominance'],['../phases.html#ssa-without-dominance',1,'SSA without Dominance']]],
   ['without_20subtags_19',['Without Subtags',['../dev.html#autotoc_md48',1,'']]],
   ['word_20',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
-  ['work_20item_20synchronization_21',['Work-Item Synchronization',['../gpu.html#autotoc_md336',1,'']]],
+  ['work_20item_20synchronization_21',['Work-Item Synchronization',['../gpu.html#autotoc_md335',1,'']]],
   ['working_20with_20indices_22',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['worse_23',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md155',1,'']]],
   ['worse_20not_20better_24',['The plugin story is worse, not better',['../md_docs_2why-cpp.html#autotoc_md168',1,'']]],
   ['would_20land_20at_20roughly_20performance_20parity_25',['Rust would land at roughly performance parity',['../md_docs_2why-cpp.html#autotoc_md166',1,'']]],
-  ['wrap_26',['wrap',['../core.html#autotoc_md288',1,'']]],
+  ['wrap_26',['wrap',['../core.html#autotoc_md287',1,'']]],
   ['wrappers_27',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
-  ['write_28',['write',['../buffer.html#autotoc_md236',1,'']]]
+  ['write_28',['write',['../buffer.html#autotoc_md235',1,'']]]
 ];
