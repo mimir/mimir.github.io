@@ -174,6 +174,7 @@ var classmim_1_1World =
     [ "raw_app", "classmim_1_1World.html#abcd10262c0fd72a56ca0257ad088b51d", null ],
     [ "raw_app", "classmim_1_1World.html#aa9647c5c7e5972427b919fb8c9079449", null ],
     [ "reduce", "classmim_1_1World.html#adf5034511304a897ca995a3ef4daf14a", null ],
+    [ "reduce", "classmim_1_1World.html#a93fc1a9412f55d29add436609f289e16", null ],
     [ "reform", "classmim_1_1World.html#a6af2068ef4e7e65397126093ea729673", null ],
     [ "roots", "classmim_1_1World.html#af1e0d0ab4dcf2ce1b5a8a34306801855", null ],
     [ "rule", "classmim_1_1World.html#ae85cfc1eabbdbd5589cf812dcc7cc3d1", null ],

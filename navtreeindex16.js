@@ -1,5 +1,7 @@
 var NAVTREEINDEX16 =
 {
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1":[4,0,1,1,11,0,3,0],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html":[2,0,4,1,20,0,4],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html":[4,0,1,1,11,0,4],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a480cdad4144ad3661ce7f994ee9bc0b9":[2,0,4,1,20,0,4,3],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a480cdad4144ad3661ce7f994ee9bc0b9":[4,0,1,1,11,0,4,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX16 =
 "dir_668a0f825cfe857b14c8faca47414cea.html":[5,0,3,1,3,21],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[5,0,4],
 "dir_69ba85f735980b66d1164d5a11ffa261.html":[5,0,4,1,3,2,0],
-"dir_6df9798d5523acbd305987e046221a33.html":[5,0,4,1,3,1,0],
-"dir_70d9fef2f2f39648191fdbe3b0353a1a.html":[5,0,4,1,3,4,0],
-"dir_70eb597625031d72d7b41bd0b2e0f0d3.html":[5,0,3,1,3,10]
+"dir_6df9798d5523acbd305987e046221a33.html":[5,0,4,1,3,1,0]
 };

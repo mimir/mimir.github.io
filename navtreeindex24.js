@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"static__arg__opt_8cpp_source.html":[5,0,4,1,2,7],
+"static__arg__opt_8h.html":[5,0,3,1,2,7],
 "static__arg__opt_8h_source.html":[5,0,3,1,2,7],
 "stream_8cpp.html":[5,0,4,1,0,6],
 "stream_8cpp_source.html":[5,0,4,1,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym":[4,0,1,0,2,0],
 "structmim_1_1ast_1_1Mods.html":[2,0,4,0,26],
 "structmim_1_1ast_1_1Mods.html":[4,0,1,0,26],
-"structmim_1_1ast_1_1Mods.html#a2207ef7132b8fa55a32950da88c14265":[2,0,4,0,26,2],
-"structmim_1_1ast_1_1Mods.html#a2207ef7132b8fa55a32950da88c14265":[4,0,1,0,26,2],
-"structmim_1_1ast_1_1Mods.html#a6abc01da3acae8a4dc5b090e168dcec4":[2,0,4,0,26,1]
+"structmim_1_1ast_1_1Mods.html#a2207ef7132b8fa55a32950da88c14265":[2,0,4,0,26,2]
 };
