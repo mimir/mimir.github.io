@@ -264,11 +264,9 @@ SSA via CPS</h1>
 <div class="line">extern fun count(n: I32): I32 =</div>
 <div class="line">    loop (0I32, 0I32)</div>
 <div class="line">    where</div>
-<div class="line">        con loop (i acc: I32) =</div>
-<div class="line">            core.select ((i &lt; n), body, exit) ()</div>
+<div class="line">        con loop (i acc: I32) = core.select (i &lt; n, body, exit) ()</div>
 <div class="line">            where</div>
-<div class="line">                con body() =</div>
-<div class="line">                    loop (i + 1I32, acc + i);</div>
+<div class="line">                con body() = loop (i + 1I32, acc + i);</div>
 <div class="line">                con exit() = return acc;</div>
 <div class="line">            end;</div>
 <div class="line">    end;</div>
