@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['unary_0',['unary',['../tensor.html#autotoc_md507',1,'']]],
-  ['unary_5fimpl_1',['unary_impl',['../tensor.html#autotoc_md578',1,'']]],
+  ['unary_0',['unary',['../tensor.html#autotoc_md505',1,'']]],
+  ['unary_5fimpl_1',['unary_impl',['../tensor.html#autotoc_md576',1,'']]],
   ['underscore_2',['Underscore',['../langref.html#autotoc_md76',1,'']]],
   ['unions_3',['Unions',['../langref.html#autotoc_md68',1,'']]],
   ['unit_20tests_4',['Unit Tests',['../coding.html#autotoc_md15',1,'']]],
   ['unload_5',['unload',['../compile.html#autotoc_md282',1,'']]],
-  ['unroll_5fbudget_6',['unroll_budget',['../tensor.html#autotoc_md541',1,'']]],
-  ['unroll_5ftrailing_7',['unroll_trailing',['../tensor.html#autotoc_md528',1,'']]],
-  ['unwrap_5for_8',['unwrap_or',['../option.html#autotoc_md421',1,'']]],
-  ['unwrap_5funsafe_9',['unwrap_unsafe',['../option.html#autotoc_md420',1,'']]],
+  ['unroll_5fbudget_6',['unroll_budget',['../tensor.html#autotoc_md539',1,'']]],
+  ['unroll_5ftrailing_7',['unroll_trailing',['../tensor.html#autotoc_md526',1,'']]],
+  ['unwrap_5for_8',['unwrap_or',['../option.html#autotoc_md419',1,'']]],
+  ['unwrap_5funsafe_9',['unwrap_unsafe',['../option.html#autotoc_md418',1,'']]],
   ['usage_10',['Usage',['../rewriting.html#autotoc_md144',1,'Typical Usage'],['../rewriting.html#autotoc_md146',1,'Typical Usage'],['../cli.html#cliusage',1,'Usage']]]
 ];

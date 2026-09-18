@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md397',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md396',1,'']]],
   ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md387',1,'']]],
   ['way_20sum_20type_20in_20one_20machine_20word_2',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
   ['what_20about_20rust_3',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md166',1,'']]],
@@ -13,7 +13,7 @@ var searchData=
   ['why_20the_20guard_20exists_20at_20all_10',['Why the guard exists at all',['../phases.html#autotoc_md104',1,'']]],
   ['why_20this_20is_20hard_20elsewhere_11',['Why this is hard elsewhere',['../phases.html#autotoc_md107',1,'']]],
   ['wins_12',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md168',1,'']]],
-  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md503',1,'']]],
+  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md501',1,'']]],
   ['with_20arena_20rollback_14',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md155',1,'']]],
   ['with_20indices_15',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_16',['With Subtags',['../dev.html#autotoc_md49',1,'']]],

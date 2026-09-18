@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md397',1,'']]],
+  ['o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md396',1,'']]],
   ['ocaml_20s_20patricia_20tree_1',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; measured against OCaml&apos;s &lt;span class=&quot;tt&quot;&gt;patricia-tree&lt;/span&gt;',['../md_docs_2why-cpp.html#autotoc_md153',1,'']]],
   ['of_20mim_2',['✨ A Taste of Mim',['../index.html#autotoc_md129',1,'']]],
   ['of_20mimir_3',['A Tour of MimIR',['../mimir.html',1,'']]],
@@ -12,11 +12,11 @@ var searchData=
   ['one_20machine_20word_9',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md152',1,'']]],
   ['op_20add_20sub_10',['op(add,sub)',['../affine.html#autotoc_md178',1,'']]],
   ['op_20neg_11',['op(neg)',['../affine.html#autotoc_md179',1,'']]],
-  ['operations_12',['Operations',['../affine.html#autotoc_md175',1,'Affine Index Operations'],['../gpu.html#autotoc_md331',1,'Blocking / Async Memory Operations'],['../gpu.html#autotoc_md337',1,'Buffer Operations'],['../tensor.html#autotoc_md503',1,'Element-wise Operations'],['../core.html#autotoc_md287',1,'Integer Operations'],['../core.html#autotoc_md284',1,'Nat Operations'],['../math.html#autotoc_md365',1,'Numerical Operations'],['../affine.html#autotoc_md173',1,'Operations'],['../autodiff.html#autotoc_md191',1,'Operations'],['../buffer.html#autotoc_md239',1,'Operations'],['../clos.html#autotoc_md250',1,'Operations'],['../compile.html#autotoc_md266',1,'Operations'],['../cps.html#autotoc_md309',1,'Operations'],['../demo.html#autotoc_md313',1,'Operations'],['../gpu.html#autotoc_md321',1,'Operations'],['../option.html#autotoc_md418',1,'Operations'],['../tuple.html#autotoc_md587',1,'Operations'],['../core.html#autotoc_md302',1,'Other Operations'],['../math.html#autotoc_md376',1,'Other Operations'],['../btensor.html#autotoc_md214',1,'Shape Operations'],['../tensor.html#autotoc_md488',1,'Shape Operations']]],
-  ['operations_20w_20o_20side_20effects_13',['Operations w/o Side Effects',['../mem.html#autotoc_md397',1,'']]],
+  ['operations_12',['Operations',['../affine.html#autotoc_md175',1,'Affine Index Operations'],['../gpu.html#autotoc_md331',1,'Blocking / Async Memory Operations'],['../gpu.html#autotoc_md337',1,'Buffer Operations'],['../tensor.html#autotoc_md501',1,'Element-wise Operations'],['../core.html#autotoc_md287',1,'Integer Operations'],['../core.html#autotoc_md284',1,'Nat Operations'],['../math.html#autotoc_md365',1,'Numerical Operations'],['../affine.html#autotoc_md173',1,'Operations'],['../autodiff.html#autotoc_md191',1,'Operations'],['../buffer.html#autotoc_md239',1,'Operations'],['../clos.html#autotoc_md250',1,'Operations'],['../compile.html#autotoc_md266',1,'Operations'],['../cps.html#autotoc_md309',1,'Operations'],['../demo.html#autotoc_md313',1,'Operations'],['../gpu.html#autotoc_md321',1,'Operations'],['../option.html#autotoc_md416',1,'Operations'],['../tuple.html#autotoc_md585',1,'Operations'],['../core.html#autotoc_md302',1,'Other Operations'],['../math.html#autotoc_md376',1,'Other Operations'],['../btensor.html#autotoc_md214',1,'Shape Operations'],['../tensor.html#autotoc_md486',1,'Shape Operations']]],
+  ['operations_20w_20o_20side_20effects_13',['Operations w/o Side Effects',['../mem.html#autotoc_md396',1,'']]],
   ['operations_20w_20side_20effects_14',['Operations w/ Side Effects',['../mem.html#autotoc_md387',1,'']]],
   ['operators_15',['Operators',['../langref.html#infix',1,'Infix Operators'],['../core.html#autotoc_md307',1,'Operators'],['../math.html#autotoc_md383',1,'Operators']]],
-  ['opt_16',['Opt',['../option.html#autotoc_md413',1,'']]],
+  ['opt_16',['Opt',['../option.html#autotoc_md411',1,'']]],
   ['opt_20plugin_17',['The opt Plugin',['../opt.html',1,'']]],
   ['optimization_18',['Optimization',['../cli.html#autotoc_md6',1,'']]],
   ['option_20plugin_19',['The option Plugin',['../option.html',1,'']]],

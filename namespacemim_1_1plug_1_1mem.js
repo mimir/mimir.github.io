@@ -13,8 +13,6 @@ var namespacemim_1_1plug_1_1mem =
     [ "mslot", "namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9", null ],
     [ "Ptr", "namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06", null ],
     [ "Ptr0", "namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3", null ],
-    [ "remem", "namespacemim_1_1plug_1_1mem.html#a94b7e75543b6cd09a1ff0c3fa3ac1502", null ],
-    [ "remem_repl", "namespacemim_1_1plug_1_1mem.html#ad9d89e9549e0e2492fa7f2f4ae29a230", null ],
     [ "seo", "namespacemim_1_1plug_1_1mem.html#a145c0289fe1e8b476c2753d14eb16010", null ],
     [ "slot", "namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4", null ],
     [ "store", "namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c", null ],

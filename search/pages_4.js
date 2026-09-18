@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['effects_0',['Effects',['../mem.html#autotoc_md387',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md397',1,'Operations w/o Side Effects']]],
-  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md503',1,'']]],
+  ['effects_0',['Effects',['../mem.html#autotoc_md387',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md396',1,'Operations w/o Side Effects']]],
+  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md501',1,'']]],
   ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md107',1,'']]],
   ['embedded_20python_20dsl_3',['Embedded Python DSL',['../python.html#autotoc_md127',1,'']]],
   ['emit_4',['emit',['../ll.html#autotoc_md355',1,'emit'],['../ll_nvptx.html#autotoc_md360',1,'emit']]],
   ['empirical_20argument_5',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md161',1,'']]],
-  ['empty_6',['empty',['../regex.html#autotoc_md466',1,'']]],
+  ['empty_6',['empty',['../regex.html#autotoc_md464',1,'']]],
   ['environment_20variables_7',['Environment Variables',['../cli.html#autotoc_md8',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../cli.html#autotoc_md10',1,'Plugin Environment Variables']]],
-  ['equiv_8',['equiv',['../refly.html#autotoc_md448',1,'']]],
+  ['equiv_8',['equiv',['../refly.html#autotoc_md446',1,'']]],
   ['er_9',['er',['../math.html#autotoc_md372',1,'']]],
   ['error_20handling_20helpers_10',['Error Handling Helpers',['../python.html#autotoc_md125',1,'']]],
   ['escape_20hatch_20and_20why_20it_20defeats_20the_20purpose_11',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md165',1,'']]],
