@@ -21,5 +21,6 @@ var namespaces_dup =
       [ "WRAP", "namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c", null ]
     ] ],
     [ "Mim", "namespaceMim.html", null ],
-    [ "mim", "namespacemim.html", "namespacemim" ]
+    [ "mim", "namespacemim.html", "namespacemim" ],
+    [ "run-logged", "namespacerun-logged.html", null ]
 ];

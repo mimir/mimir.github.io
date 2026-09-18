@@ -78,6 +78,7 @@ var NAVTREEINDEX23 =
 "namespacemim_1_1sexpr.html#a76b142a2b0513e5df05224cebe318807":[2,0,4,2,5],
 "namespacemim_1_1sexpr.html#aa06bb66d27ebca58fa3e367e63ea7a1b":[2,0,4,2,2],
 "namespacemim_1_1sexpr.html#aecf5b170c35246dc39f51f75b2024339":[2,0,4,2,4],
+"namespacerun-logged.html":[2,0,5],
 "namespaces.html":[2,0],
 "nest_8cpp.html":[5,0,4,1,12],
 "nest_8cpp_source.html":[5,0,4,1,12],
@@ -223,6 +224,8 @@ var NAVTREEINDEX23 =
 "rule_8cpp_source.html":[5,0,4,1,16],
 "rule_8h.html":[5,0,3,1,16],
 "rule_8h_source.html":[5,0,3,1,16],
+"run-logged_8cmake.html":[5,0,1,1],
+"run-logged_8cmake_source.html":[5,0,1,1],
 "scalarize_8cpp.html":[5,0,4,1,2,6],
 "scalarize_8cpp_source.html":[5,0,4,1,2,6],
 "scalarize_8h.html":[5,0,3,1,2,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX23 =
 "split__off__kernels_8cpp.html":[5,0,4,1,3,9,0,4],
 "split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,4],
 "split__off__kernels_8h.html":[5,0,3,1,3,9,0,4],
-"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4],
-"static__arg__opt_8cpp.html":[5,0,4,1,2,7],
-"static__arg__opt_8cpp_source.html":[5,0,4,1,2,7],
-"static__arg__opt_8h.html":[5,0,3,1,2,7]
+"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4]
 };

@@ -1,4 +1,5 @@
 var dir_a5bdbfbbaa7895161d62825676df7980 =
 [
-    [ "Mim.cmake", "Mim_8cmake.html", null ]
+    [ "Mim.cmake", "Mim_8cmake.html", null ],
+    [ "run-logged.cmake", "run-logged_8cmake.html", null ]
 ];

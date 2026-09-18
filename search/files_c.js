@@ -20,5 +20,6 @@ var searchData=
   ['rewrite_2eh_17',['rewrite.h',['../rewrite_8h.html',1,'']]],
   ['rewriting_2emd_18',['rewriting.md',['../rewriting_8md.html',1,'']]],
   ['rule_2ecpp_19',['rule.cpp',['../rule_8cpp.html',1,'']]],
-  ['rule_2eh_20',['rule.h',['../rule_8h.html',1,'']]]
+  ['rule_2eh_20',['rule.h',['../rule_8h.html',1,'']]],
+  ['run_2dlogged_2ecmake_21',['run-logged.cmake',['../run-logged_8cmake.html',1,'']]]
 ];
