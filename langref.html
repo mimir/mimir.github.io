@@ -179,7 +179,9 @@ Notation</h1>
 <div class="line">x?       // an optional x</div>
 <div class="line">[a-c]    // character range from a to c</div>
 <div class="line">[a-cx-z] // combines several ranges</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p>For example, <span class="tt">x ("," x)* ","?</span> is a comma-separated list of one or more <span class="tt">x</span> with an optional trailing comma. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1">Ranges</a> only occur in the rules of the <a class="el" href="#terminals" title="Terminals">lexical terminals</a>.</dd></dl>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>For example, <span class="tt">x ("," x)*</span> is a comma-separated list of one or more <span class="tt">x</span>. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1">Ranges</a> only occur in the rules of the <a class="el" href="#terminals" title="Terminals">lexical terminals</a>. </dd>
+<dd>
+Every comma-separated list additionally accepts a trailing <span class="tt">,</span>, as in <span class="tt">(e, e, e,)</span>. The rules below don't spell this out.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="lex"></a>
 Lexical Structure</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> source files are <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoded and are <a href="https://en.wikipedia.org/wiki/Lexical_analysis">lexed</a> from left to right. The lexer uses <a href="https://en.wikipedia.org/wiki/Maximal_munch">maximal munch</a>, so ambiguities are resolved by taking the longest matching token. For example, <span class="tt">&gt;&gt;=</span> is tokenized as <span class="tt">&gt;&gt;</span> followed by <span class="tt">=</span>. </p><dl class="section note"><dt>Note</dt><dd><span class="tt">&lt;-</span> is therefore a single token: <span class="tt">x &lt;- 1</span> is an insert, and a comparison against a negative literal has to be written <span class="tt">x &lt; (-1)</span>.</dd></dl>
@@ -365,7 +367,7 @@ Declarations</h2>
 <div class="line">dom    ::= p (&quot;@&quot; e)?</div>
 <div class="line">fwd    ::= (p | t) (&quot;@&quot; e)?</div>
 <div class="line">axm    ::= I &quot;:&quot; e tail</div>
-<div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)* &quot;,&quot;?)? &quot;)&quot; &quot;:&quot; e tail</div>
+<div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)*)? &quot;)&quot; &quot;:&quot; e tail</div>
 <div class="line">tag    ::= I (&quot;=&quot; I)*</div>
 <div class="line">tail   ::= (&quot;,&quot; I)? (&quot;,&quot; L (&quot;,&quot; L)?)?</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><dl class="section note"><dt>Note</dt><dd>A declaration may be followed by a <span class="tt">;</span>, as all examples on this page do; stray semicolons between declarations are skipped.</dd></dl>
@@ -409,8 +411,8 @@ Patterns and Telescopes</h2>
 <div class="line">       |  t &quot;as&quot; I</div>
 <div class="line">       |  e</div>
 <div class="line"> </div>
-<div class="line">plist ::= (p | g) (&quot;,&quot; (p | g))* &quot;,&quot;?</div>
-<div class="line">tlist ::= (t | g) (&quot;,&quot; (t | g))* &quot;,&quot;?</div>
+<div class="line">plist ::= (p | g) (&quot;,&quot; (p | g))*</div>
+<div class="line">tlist ::= (t | g) (&quot;,&quot; (t | g))*</div>
 <div class="line">g     ::= I+ &quot;:&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p>These are two different things, not two spellings of one thing.</p>
 <ul>
@@ -502,7 +504,7 @@ Functions and Continuations</h3>
 <h3 class="doxsection"><a class="anchor" id="prod"></a>
 Products</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;[&quot; tlist? &quot;]&quot;</div>
-<div class="line">       |  &quot;(&quot; (e (&quot;,&quot; e)* &quot;,&quot;?)? &quot;)&quot;</div>
+<div class="line">       |  &quot;(&quot; (e (&quot;,&quot; e)*)? &quot;)&quot;</div>
 <div class="line">       |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
 <div class="line">       |  &quot;‹&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;›&quot;</div>
 <div class="line">       |  e &quot;#&quot; e</div>
