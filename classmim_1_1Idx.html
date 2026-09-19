@@ -189,9 +189,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a752a4648753c26f9d618a451fdf3b703" id="r_a752a4648753c26f9d618a451fdf3b703"><td class="memItemLeft">static constexpr <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a752a4648753c26f9d618a451fdf3b703">bitwidth2size</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> n)</td></tr>
 <tr class="memitem:a445658b6d8a1922d7fc9fb33235417ff" id="r_a445658b6d8a1922d7fc9fb33235417ff"><td class="memItemLeft">static constexpr <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a445658b6d8a1922d7fc9fb33235417ff">size2bitwidth</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> n)</td></tr>
 <tr class="memitem:a476bd0b41bda503d46dac1584823e1e1" id="r_a476bd0b41bda503d46dac1584823e1e1"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a476bd0b41bda503d46dac1584823e1e1">size2bitwidth</a> (const Def *size)</td></tr>
-<tr class="memitem:a9714d21ad12c168c16d1de07dc7500f2" id="r_a9714d21ad12c168c16d1de07dc7500f2"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a9714d21ad12c168c16d1de07dc7500f2 template"><td class="memItemLeft">static <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9714d21ad12c168c16d1de07dc7500f2">expect_bitwidth</a> (const Def *type, std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a9714d21ad12c168c16d1de07dc7500f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields the bit width of the <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> <code class="param">type</code> or throws a formatted mim::error - instead of yielding std::nullopt or dereferencing an unchecked std::optional - if <code class="param">type</code> is not an <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> of statically known size; see Def::expect.  <br /></td></tr>
+<tr class="memitem:af571bc3aa9b5ba62983206eedded2b71" id="r_af571bc3aa9b5ba62983206eedded2b71"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:af571bc3aa9b5ba62983206eedded2b71 template"><td class="memItemLeft">static <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#af571bc3aa9b5ba62983206eedded2b71">expect_bitwidth</a> (const Def *type, fe::cite_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:af571bc3aa9b5ba62983206eedded2b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields the bit width of the <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> <code class="param">type</code> or throws via fe::throwf - instead of yielding std::nullopt or dereferencing an unchecked std::optional - if <code class="param">type</code> is not an <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> of statically known size; see Def::expect.  <br /></td></tr>
 <tr class="inherit_header pub_static_methods_classmim_1_1Def"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classmim_1_1Def.html">mim::Def</a></td></tr>
 <tr class="memitem:ad05a164140ecb2c8ce14e3faf9bf38ac pub_static_methods_classmim_1_1Def" id="r_ad05a164140ecb2c8ce14e3faf9bf38ac"><td class="memItemLeft">static <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#ad05a164140ecb2c8ce14e3faf9bf38ac">zonk</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> defs)</td></tr>
 <tr class="memdesc:ad05a164140ecb2c8ce14e3faf9bf38ac pub_static_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">zonks all <code class="param">defs</code> and returns a new <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>.  <br /></td></tr>
@@ -366,9 +366,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a18c97ca601e090eed9bcbc9369c2c792 pub_methods_classmim_1_1Def" id="r_a18c97ca601e090eed9bcbc9369c2c792"><td class="memTemplParams" colspan="2">template&lt;class T = Def, bool invert = false&gt; </td></tr>
 <tr class="memitem:a18c97ca601e090eed9bcbc9369c2c792 pub_methods_classmim_1_1Def template"><td class="memItemLeft">T *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792">as_mut</a> () const</td></tr>
 <tr class="memdesc:a18c97ca601e090eed9bcbc9369c2c792 pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asserts that <span class="tt">this</span> is a <em>mutable</em>, casts <span class="tt">const</span>ness away and performs a <span class="tt">static_cast</span> to <code class="param">T</code>.  <br /></td></tr>
-<tr class="memitem:a7d36a16bdd367893e96f4f3fa0851b7e pub_methods_classmim_1_1Def" id="r_a7d36a16bdd367893e96f4f3fa0851b7e"><td class="memTemplParams" colspan="2">template&lt;class T = Def, class... Args&gt; </td></tr>
-<tr class="memitem:a7d36a16bdd367893e96f4f3fa0851b7e pub_methods_classmim_1_1Def template"><td class="memItemLeft">T *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a7d36a16bdd367893e96f4f3fa0851b7e">expect_mut</a> (std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args) const</td></tr>
-<tr class="memdesc:a7d36a16bdd367893e96f4f3fa0851b7e pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792" title="Asserts that this is a mutable, casts constness away and performs a static_cast to T.">Def::as_mut</a> but - instead of merely asserting in <span class="tt">Debug</span> builds - throws via fe::throwf when the cast fails; the mutable counterpart of fe::RuntimeCast::expect (which <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> inherits for the general case).  <br /></td></tr>
+<tr class="memitem:ab44953c34f8433633c97268bc2098c73 pub_methods_classmim_1_1Def" id="r_ab44953c34f8433633c97268bc2098c73"><td class="memTemplParams" colspan="2">template&lt;class T = Def, class... Args&gt; </td></tr>
+<tr class="memitem:ab44953c34f8433633c97268bc2098c73 pub_methods_classmim_1_1Def template"><td class="memItemLeft">T *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#ab44953c34f8433633c97268bc2098c73">expect_mut</a> (fe::cite_string&lt; Args... &gt; fmt, Args &amp;&amp;... args) const</td></tr>
+<tr class="memdesc:ab44953c34f8433633c97268bc2098c73 pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="classmim_1_1Def.html#a18c97ca601e090eed9bcbc9369c2c792" title="Asserts that this is a mutable, casts constness away and performs a static_cast to T.">Def::as_mut</a> but - instead of merely asserting in <span class="tt">Debug</span> builds - throws via fe::throwf when the cast fails; the mutable counterpart of fe::RuntimeCast::expect (which <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> inherits for the general case).  <br /></td></tr>
 <tr class="memitem:aefa7b1a57b3a67d30070c9aa9d3b20b3 pub_methods_classmim_1_1Def" id="r_aefa7b1a57b3a67d30070c9aa9d3b20b3"><td class="memItemLeft">Dbg&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#aefa7b1a57b3a67d30070c9aa9d3b20b3">dbg</a> () const</td></tr>
 <tr class="memdesc:aefa7b1a57b3a67d30070c9aa9d3b20b3 pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up Def::dbg_ in Driver::dbg.  <br /></td></tr>
 <tr class="memitem:a6c19d4a2aa950438bc27e389dbd20e17 pub_methods_classmim_1_1Def" id="r_a6c19d4a2aa950438bc27e389dbd20e17"><td class="memItemLeft">DbgKey&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a6c19d4a2aa950438bc27e389dbd20e17">dbg_key</a> () const</td></tr>
@@ -489,7 +489,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00989">989</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00646">isa()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00647">isa()</a>.</p>
 
 </div>
 </div>
@@ -518,7 +518,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00995">995</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00654">isa_lit()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00655">isa_lit()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00376">mim::World::extract()</a>.</p>
 
@@ -553,8 +553,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9714d21ad12c168c16d1de07dc7500f2" name="a9714d21ad12c168c16d1de07dc7500f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9714d21ad12c168c16d1de07dc7500f2">&#9670;&#160;</a></span>expect_bitwidth()</h2>
+<a id="af571bc3aa9b5ba62983206eedded2b71" name="af571bc3aa9b5ba62983206eedded2b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af571bc3aa9b5ba62983206eedded2b71">&#9670;&#160;</a></span>expect_bitwidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,7 +572,7 @@ template&lt;class... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::format_string&lt; Args... &gt;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+          <td class="paramtype">fe::cite_string&lt; Args... &gt;</td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -587,11 +587,11 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Yields the bit width of the <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> <code class="param">type</code> or throws a formatted mim::error - instead of yielding std::nullopt or dereferencing an unchecked std::optional - if <code class="param">type</code> is not an <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> of statically known size; see Def::expect. </p>
+<p>Yields the bit width of the <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> <code class="param">type</code> or throws via fe::throwf - instead of yielding std::nullopt or dereferencing an unchecked std::optional - if <code class="param">type</code> is not an <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> of statically known size; see Def::expect. </p>
 
 <p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01014">1014</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00646">isa()</a>, <a class="el" href="def_8h_source.html#l01006">size2bitwidth()</a>, and <a class="el" href="def_8h_source.html#l01111">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00647">isa()</a>, <a class="el" href="def_8h_source.html#l01006">size2bitwidth()</a>, and <a class="el" href="def_8h_source.html#l01111">mim::Def::type()</a>.</p>
 
 </div>
 </div>
@@ -620,9 +620,9 @@ template&lt;class... Args&gt; </div>
 
 <p>Checks if <code class="param">def</code> is a <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> s</span> and returns <span class="tt">s</span> or <span class="tt">nullptr</span> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00646">646</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00647">647</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00989">as()</a>, <a class="el" href="autodiff_8cpp_source.html#l00105">mim::plug::autodiff::autodiff_type_fun()</a>, <a class="el" href="sexpr_8cpp_source.html#l00833">mim::sexpr::Emitter::emit_bb()</a>, <a class="el" href="sexpr_8cpp_source.html#l00584">mim::sexpr::Emitter::emit_type()</a>, <a class="el" href="def_8h_source.html#l01014">expect_bitwidth()</a>, <a class="el" href="world_8cpp_source.html#l00376">mim::World::extract()</a>, <a class="el" href="world_8cpp_source.html#l00484">mim::World::insert()</a>, <a class="el" href="ll_8h_source.html#l00277">mim::plug::ll::is_simd()</a>, <a class="el" href="ll_8h_source.html#l00287">mim::plug::ll::is_simd_aggregate()</a>, <a class="el" href="def_8cpp_source.html#l00654">isa_lit()</a>, <a class="el" href="world_8cpp_source.html#l00566">mim::World::lit()</a>, <a class="el" href="autodiff_2normalizers_8cpp_source.html#l00030">mim::plug::autodiff::normalize_add()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00926">mim::plug::core::normalize_bitcast()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00736">mim::plug::core::normalize_idx()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00756">mim::plug::core::normalize_shr()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00949">mim::plug::core::normalize_trait()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00788">mim::plug::core::normalize_wrap()</a>, <a class="el" href="world_8cpp_source.html#l00219">mim::World::var()</a>, and <a class="el" href="autodiff_8cpp_source.html#l00130">mim::plug::autodiff::zero_def()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00989">as()</a>, <a class="el" href="autodiff_8cpp_source.html#l00105">mim::plug::autodiff::autodiff_type_fun()</a>, <a class="el" href="sexpr_8cpp_source.html#l00833">mim::sexpr::Emitter::emit_bb()</a>, <a class="el" href="sexpr_8cpp_source.html#l00584">mim::sexpr::Emitter::emit_type()</a>, <a class="el" href="def_8h_source.html#l01014">expect_bitwidth()</a>, <a class="el" href="world_8cpp_source.html#l00376">mim::World::extract()</a>, <a class="el" href="world_8cpp_source.html#l00484">mim::World::insert()</a>, <a class="el" href="ll_8h_source.html#l00277">mim::plug::ll::is_simd()</a>, <a class="el" href="ll_8h_source.html#l00287">mim::plug::ll::is_simd_aggregate()</a>, <a class="el" href="def_8cpp_source.html#l00655">isa_lit()</a>, <a class="el" href="world_8cpp_source.html#l00566">mim::World::lit()</a>, <a class="el" href="autodiff_2normalizers_8cpp_source.html#l00030">mim::plug::autodiff::normalize_add()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00926">mim::plug::core::normalize_bitcast()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00736">mim::plug::core::normalize_idx()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00756">mim::plug::core::normalize_shr()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00949">mim::plug::core::normalize_trait()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00788">mim::plug::core::normalize_wrap()</a>, <a class="el" href="world_8cpp_source.html#l00219">mim::World::var()</a>, and <a class="el" href="autodiff_8cpp_source.html#l00130">mim::plug::autodiff::zero_def()</a>.</p>
 
 </div>
 </div>
@@ -649,9 +649,9 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00654">654</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00655">655</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00646">isa()</a>, and <a class="el" href="def_8h_source.html#l00937">mim::Lit::isa()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00647">isa()</a>, and <a class="el" href="def_8h_source.html#l00937">mim::Lit::isa()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00995">as_lit()</a>, and <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00535">mim::plug::ll_nvptx::DeviceEmitter::prepare()</a>.</p>
 
@@ -680,7 +680,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00660">660</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00661">661</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00937">mim::Lit::isa()</a>, and <a class="el" href="def_8h_source.html#l01006">size2bitwidth()</a>.</p>
 
@@ -711,7 +711,7 @@ template&lt;class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01006">1006</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="sexpr_8cpp_source.html#l00833">mim::sexpr::Emitter::emit_bb()</a>, <a class="el" href="sexpr_8cpp_source.html#l00584">mim::sexpr::Emitter::emit_type()</a>, <a class="el" href="def_8h_source.html#l01014">expect_bitwidth()</a>, <a class="el" href="math_2normalizers_8cpp_source.html#l00492">mim::plug::math::normalize_conv()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00949">mim::plug::core::normalize_trait()</a>, and <a class="el" href="def_8cpp_source.html#l00660">size2bitwidth()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sexpr_8cpp_source.html#l00833">mim::sexpr::Emitter::emit_bb()</a>, <a class="el" href="sexpr_8cpp_source.html#l00584">mim::sexpr::Emitter::emit_type()</a>, <a class="el" href="def_8h_source.html#l01014">expect_bitwidth()</a>, <a class="el" href="math_2normalizers_8cpp_source.html#l00492">mim::plug::math::normalize_conv()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00949">mim::plug::core::normalize_trait()</a>, and <a class="el" href="def_8cpp_source.html#l00661">size2bitwidth()</a>.</p>
 
 </div>
 </div>

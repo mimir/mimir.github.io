@@ -33,7 +33,7 @@ var classmim_1_1Def =
     [ "dump", "classmim_1_1Def.html#aa042dd90667f6f3e6950166b478ec694", null ],
     [ "err_loc", "classmim_1_1Def.html#a07e164d0f4a14ae5c83312675fbcd330", null ],
     [ "error", "classmim_1_1Def.html#a3b3855428d7b5b33f6245dc88a8568c1", null ],
-    [ "expect_mut", "classmim_1_1Def.html#a7d36a16bdd367893e96f4f3fa0851b7e", null ],
+    [ "expect_mut", "classmim_1_1Def.html#ab44953c34f8433633c97268bc2098c73", null ],
     [ "externalize", "classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0", null ],
     [ "flags", "classmim_1_1Def.html#a41c6630a112450ceaa0398079203ee7f", null ],
     [ "free_vars", "classmim_1_1Def.html#a55751862df2e7aab0d76521dd77fadb9", null ],
