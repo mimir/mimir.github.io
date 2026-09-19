@@ -169,7 +169,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('regex_8cpp.htm
 <div class="textblock"><code>#include &quot;<a class="el" href="regex_8h_source.html">mim/plug/regex/regex.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="dfa2matcher_8h_source.html">mim/plug/regex/dfa2matcher.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lower__regex_8h_source.html">mim/plug/regex/phase/lower_regex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="regex2nfa_8h_source.html">mim/plug/regex/regex2nfa.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for regex.cpp:</div>
 <div class="dyncontent">
@@ -180,36 +182,43 @@ Include dependency graph for regex.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1eac1e88e03dcfc2f038c5c0d3a7d88a" id="r_a1eac1e88e03dcfc2f038c5c0d3a7d88a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">reg_phases</a> (<a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases)</td></tr>
-<tr class="memitem:a35bb34350e93d508e52544f4abd50e59" id="r_a35bb34350e93d508e52544f4abd50e59"><td class="memItemLeft"><a class="el" href="structmim_1_1Plugin.html">Plugin</a>&#160;</td><td class="memItemRight"><a class="el" href="#a35bb34350e93d508e52544f4abd50e59">mim_get_plugin</a> ()</td></tr>
+<tr class="memitem:a8abebad40345a2355ec701aaea26d9a4" id="r_a8abebad40345a2355ec701aaea26d9a4"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8abebad40345a2355ec701aaea26d9a4">reg_phases</a> (<a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">Flags2Phases</a> &amp;phases)</td></tr>
+<tr class="memitem:a80d6bd13de673ff0ab7d0200e02de5f2" id="r_a80d6bd13de673ff0ab7d0200e02de5f2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a80d6bd13de673ff0ab7d0200e02de5f2">MIM_PLUGIN_ENTRY</a> (<a class="el" href="namespacemim_1_1plug_1_1regex.html">regex</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a32913a9d0d0f5f5186410c360f723967" id="r_a32913a9d0d0f5f5186410c360f723967"><td class="memItemLeft">static const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a>&#160;</td><td class="memItemRight"><a class="el" href="#a32913a9d0d0f5f5186410c360f723967">known_syms</a> []</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a35bb34350e93d508e52544f4abd50e59" name="a35bb34350e93d508e52544f4abd50e59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35bb34350e93d508e52544f4abd50e59">&#9670;&#160;</a></span>mim_get_plugin()</h2>
+<a id="a80d6bd13de673ff0ab7d0200e02de5f2" name="a80d6bd13de673ff0ab7d0200e02de5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80d6bd13de673ff0ab7d0200e02de5f2">&#9670;&#160;</a></span>MIM_PLUGIN_ENTRY()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmim_1_1Plugin.html">Plugin</a> <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim_get_plugin</a> </td>
+          <td class="memname">MIM_PLUGIN_ENTRY </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespacemim_1_1plug_1_1regex.html">regex</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="regex_8cpp_source.html#l00013">13</a> of file <a class="el" href="regex_8cpp_source.html">regex.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="regex_8cpp_source.html#l00020">20</a> of file <a class="el" href="regex_8cpp_source.html">regex.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="config_8h_source.html#l00021">MIM_EXPORT</a>, <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin()</a>, <a class="el" href="plugin_8h_source.html#l00149">MIM_VERSION</a>, <a class="el" href="affine_8cpp_source.html#l00012">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943">mim::plug::regex::register_normalizers()</a>.</p>
+<p class="reference">References <a class="el" href="regex_8cpp_source.html#l00015">known_syms</a>, <a class="el" href="plugin_8h_source.html#l00206">MIM_PLUGIN_ENTRY</a>, <a class="el" href="regex_8cpp_source.html#l00013">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943">mim::plug::regex::register_normalizers()</a>.</p>
 
 </div>
 </div>
-<a id="a1eac1e88e03dcfc2f038c5c0d3a7d88a" name="a1eac1e88e03dcfc2f038c5c0d3a7d88a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eac1e88e03dcfc2f038c5c0d3a7d88a">&#9670;&#160;</a></span>reg_phases()</h2>
+<a id="a8abebad40345a2355ec701aaea26d9a4" name="a8abebad40345a2355ec701aaea26d9a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8abebad40345a2355ec701aaea26d9a4">&#9670;&#160;</a></span>reg_phases()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void reg_phases </td>
@@ -218,11 +227,52 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="regex_8cpp_source.html#l00011">11</a> of file <a class="el" href="regex_8cpp_source.html">regex.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="regex_8cpp_source.html#l00013">13</a> of file <a class="el" href="regex_8cpp_source.html">regex.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00070">mim::Phase::hook()</a>, and <a class="el" href="affine_8cpp_source.html#l00012">reg_phases()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00070">mim::Phase::hook()</a>, and <a class="el" href="regex_8cpp_source.html#l00013">reg_phases()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="regex_8cpp_source.html#l00020">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="regex_8cpp_source.html#l00013">reg_phases()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a32913a9d0d0f5f5186410c360f723967" name="a32913a9d0d0f5f5186410c360f723967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32913a9d0d0f5f5186410c360f723967">&#9670;&#160;</a></span>known_syms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a> known_syms[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                  = {</div>
+<div class="line">    <a class="code hl_define" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="code hl_function" href="regex2nfa_8h.html#a71e2159aa38b79d054f3548cd4a97201">regex2nfa</a>),</div>
+<div class="line">    <a class="code hl_define" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="code hl_function" href="dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895">dfa2matcher</a>),</div>
+<div class="line">}</div>
+<div class="ttc" id="adfa2matcher_8h_html_a1e0e672715b88560268b38e30500f895"><div class="ttname"><a href="dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895">dfa2matcher</a></div><div class="ttdeci">const mim::Def * dfa2matcher(mim::World &amp;, const automaton::DFA &amp;, const mim::Def *)</div><div class="ttdoc">You can fe::dl::get this function.</div><div class="ttdef"><b>Definition</b> <a href="dfa2matcher_8cpp_source.html#l00095">dfa2matcher.cpp:95</a></div></div>
+<div class="ttc" id="aplugin_8h_html_ae823dbd90013953aa434dd05f1433754"><div class="ttname"><a href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a></div><div class="ttdeci">#define MIM_PLUGIN_SYM(f)</div><div class="ttdoc">Builds a PluginSym for f, so name and address cannot drift apart.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00054">plugin.h:54</a></div></div>
+<div class="ttc" id="aregex2nfa_8h_html_a71e2159aa38b79d054f3548cd4a97201"><div class="ttname"><a href="regex2nfa_8h.html#a71e2159aa38b79d054f3548cd4a97201">regex2nfa</a></div><div class="ttdeci">automaton::NFA * regex2nfa(const mim::Def *regex)</div><div class="ttdoc">You can fe::dl::get this function.</div><div class="ttdef"><b>Definition</b> <a href="regex2nfa_8cpp_source.html#l00144">regex2nfa.cpp:144</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="regex_8cpp_source.html#l00015">15</a> of file <a class="el" href="regex_8cpp_source.html">regex.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="regex_8cpp_source.html#l00020">MIM_PLUGIN_ENTRY()</a>.</p>
 
 </div>
 </div>

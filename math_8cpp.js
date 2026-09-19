@@ -1,4 +1,4 @@
 var math_8cpp =
 [
-    [ "mim_get_plugin", "math_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ]
+    [ "MIM_PLUGIN_ENTRY", "math_8cpp.html#a4c0458e752b73345765464ca3a56df97", null ]
 ];

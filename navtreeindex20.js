@@ -1,5 +1,12 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim_1_1plug_1_1clos.html#a4ea291e12c94ea52f42e8ed0ee635d50":[2,0,4,1,4,7],
+"namespacemim_1_1plug_1_1clos.html#a50b8b1bc3c13d8035fc3db8cf4c70772":[2,0,4,1,4,34],
+"namespacemim_1_1plug_1_1clos.html#a50fb21a769f1d76c02cda8de30e2e861":[2,0,4,1,4,32],
+"namespacemim_1_1plug_1_1clos.html#a5289fbf3ff1c99e6fda2d6a8cac883ce":[2,0,4,1,4,27],
+"namespacemim_1_1plug_1_1clos.html#a5efb167297223d7d3a3e2f41539a6a84":[2,0,4,1,4,12],
+"namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0":[2,0,4,1,4,2],
+"namespacemim_1_1plug_1_1clos.html#a709cb0f1e09b05e1d18e305e93a64e27":[2,0,4,1,4,10],
 "namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114":[2,0,4,1,4,26],
 "namespacemim_1_1plug_1_1clos.html#a83d7cfb21645bf5a8bfb54c54cd921cf":[2,0,4,1,4,15],
 "namespacemim_1_1plug_1_1clos.html#a83e143af89ac230140aca29f6674ba5d":[2,0,4,1,4,17],
@@ -242,12 +249,5 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1gpu.html#a3b801190a370e486190970bb75a71fd4":[2,0,4,1,9,4],
 "namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36":[2,0,4,1,9,5],
 "namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36a14511f2f5564650d129ca7cabc333278":[2,0,4,1,9,5,0],
-"namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36acdafd35814cb81a2db371ef99baf6014":[2,0,4,1,9,5,1],
-"namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d":[2,0,4,1,9,8],
-"namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac":[2,0,4,1,9,38],
-"namespacemim_1_1plug_1_1gpu.html#a4e7ca3a0a6541b974f26ac2b2fd1cd51":[2,0,4,1,9,18],
-"namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056":[2,0,4,1,9,15],
-"namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056a14511f2f5564650d129ca7cabc333278":[2,0,4,1,9,15,0],
-"namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056acdafd35814cb81a2db371ef99baf6014":[2,0,4,1,9,15,1],
-"namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129":[2,0,4,1,9,7]
+"namespacemim_1_1plug_1_1gpu.html#a442efb84f5e1d35523d7ffc42b983b36acdafd35814cb81a2db371ef99baf6014":[2,0,4,1,9,5,1]
 };

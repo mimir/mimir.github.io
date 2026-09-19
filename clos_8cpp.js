@@ -10,6 +10,6 @@ var clos_8cpp =
     [ "mim::plug::clos::ctype", "namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114", null ],
     [ "mim::plug::clos::isa_clos_lit", "namespacemim_1_1plug_1_1clos.html#a08e2dd10f68834ee59b63662b9a63c06", null ],
     [ "mim::plug::clos::isa_clos_type", "namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19", null ],
-    [ "mim_get_plugin", "clos_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "reg_phases", "clos_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a", null ]
+    [ "MIM_PLUGIN_ENTRY", "clos_8cpp.html#a14e66814d96ad293d14973fa4a1cd34e", null ],
+    [ "reg_phases", "clos_8cpp.html#a8abebad40345a2355ec701aaea26d9a4", null ]
 ];

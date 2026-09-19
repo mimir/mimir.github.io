@@ -198,6 +198,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:structmim_1_1PluginArg"><td class="mdescLeft">&#160;</td><td class="mdescRight">One <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> understands; see <a class="el" href="cli.html#clipluginargs" title="Arguments">Arguments</a>.  <a href="namespacemim.html#structmim_1_1PluginArg">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3APluginEnv_5Fstructmim_5F1_5F1PluginEnv" id="r_mim_3A_3APluginEnv_5Fstructmim_5F1_5F1PluginEnv"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#structmim_1_1PluginEnv">mim::PluginEnv</a></td></tr>
 <tr class="memdesc:structmim_1_1PluginEnv"><td class="mdescLeft">&#160;</td><td class="mdescRight">One environment variable a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> reads; see <a class="el" href="cli.html#clipluginenv" title="Environment Variables">Environment Variables</a>.  <a href="namespacemim.html#structmim_1_1PluginEnv">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3APluginSym_5Fstructmim_5F1_5F1PluginSym" id="r_mim_3A_3APluginSym_5Fstructmim_5F1_5F1PluginSym"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#structmim_1_1PluginSym">mim::PluginSym</a></td></tr>
+<tr class="memdesc:structmim_1_1PluginSym"><td class="mdescLeft">&#160;</td><td class="mdescRight">One symbol a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> offers to other <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a>s; see <a class="el" href="classmim_1_1Driver.html#aca49523948aa7ad5392fdc0b884bad6d">Driver::get_fun_ptr</a>.  <a href="namespacemim.html#structmim_1_1PluginSym">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3AOut" id="r_mim_3A_3AOut"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Out.html">mim::Out</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A file name from the command line and the stream to write to;.  <a href="classmim_1_1Out.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3AVersion" id="r_mim_3A_3AVersion"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1Version.html">mim::Version</a></td></tr>
@@ -213,6 +215,9 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a2f1c22749113d1954fe381a30a0d5bb2" id="r_a2f1c22749113d1954fe381a30a0d5bb2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>&#160;&#160;&#160;Version { <a class="el" href="config_8h.html#aeb0c2d81a9a26003fdbc1b6d37287fc7">MIM_VER_MAJOR</a>, <a class="el" href="config_8h.html#a6b91bd3488a1b181a3e8dad53777db22">MIM_VER_MINOR</a>, <a class="el" href="config_8h.html#a654388ccf586a85da62a6d443b103a9e">MIM_VER_SUFFIX</a>, <a class="el" href="config_8h.html#a92fcfef0dd9a3b4deb53b1a204ff34d5">MIM_GIT_HASH</a> }</td></tr>
+<tr class="memitem:aaca199ef34b62db8a436e8f98ccfbbf4" id="r_aaca199ef34b62db8a436e8f98ccfbbf4"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aaca199ef34b62db8a436e8f98ccfbbf4">MIM_PLUGIN_ENTRY_NAME</a>(p)</td></tr>
+<tr class="memitem:aea38a65eb5bcdbc6a7d10bb54cda7283" id="r_aea38a65eb5bcdbc6a7d10bb54cda7283"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aea38a65eb5bcdbc6a7d10bb54cda7283">MIM_PLUGIN_ENTRY</a>(p)</td></tr>
+<tr class="memdesc:aea38a65eb5bcdbc6a7d10bb54cda7283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a Plugin's entry point; the body fills in the <span class="tt">plugin</span> handed to it, as in <span class="tt"><a class="el" href="#aea38a65eb5bcdbc6a7d10bb54cda7283" title="Defines a Plugin&#39;s entry point; the body fills in the plugin handed to it, as in MIM_PLUGIN_ENTRY(dem...">MIM_PLUGIN_ENTRY(demo)</a> { plugin.register_normalizers = demo::register_normalizers; }</span>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -233,6 +238,8 @@ Functions</h2></td></tr>
 Plugin Interface</h2></td></tr>
 <tr><td class="ititle" colspan="2"><dl class="section see"><dt>See also</dt><dd>Plugin </dd></dl>
 </td></tr>
+<tr class="memitem:ae823dbd90013953aa434dd05f1433754" id="r_ae823dbd90013953aa434dd05f1433754"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(f)</td></tr>
+<tr class="memdesc:ae823dbd90013953aa434dd05f1433754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a PluginSym for <code class="param">f</code>, so name and address cannot drift apart.  <br /></td></tr>
 <tr class="memitem:ab875464e5f495601abff7287573e1405" id="r_ab875464e5f495601abff7287573e1405"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#ab875464e5f495601abff7287573e1405">mim::Normalizers</a> = absl::flat_hash_map&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, <a class="el" href="namespacemim.html#ab992e926dce870b1e086b34589849a92">NormalizeFn</a>&gt;</td></tr>
 <tr class="memitem:a3d2264dd6b663f00df3b5630b12451bd" id="r_a3d2264dd6b663f00df3b5630b12451bd"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd">mim::Flags2Phases</a> = absl::flat_hash_map&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, std::function&lt;std::unique_ptr&lt;<a class="el" href="classmim_1_1Phase.html">Phase</a>&gt;(<a class="el" href="classmim_1_1World.html">World</a>&amp;)&gt;&gt;</td></tr>
 <tr class="memdesc:a3d2264dd6b663f00df3b5630b12451bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps an axiom of a <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> to a function that creates one.  <br /></td></tr>
@@ -305,7 +312,120 @@ Name of the variable, e.g. <span class="tt">"CUDA_HOME"</span>. </td></tr>
 
 </div>
 </div>
+<a name="structmim_1_1PluginSym" id="structmim_1_1PluginSym"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1PluginSym">&#9670;&#160;</a></span>mim::PluginSym</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::PluginSym</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>One symbol a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> offers to other <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a>s; see <a class="el" href="classmim_1_1Driver.html#aca49523948aa7ad5392fdc0b884bad6d">Driver::get_fun_ptr</a>. </p>
+<p>A statically linked <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> has no shared object to look it up in. </p>
+
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00048">48</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="aa050a8716e90b3b741a2549f36166ad4" name="aa050a8716e90b3b741a2549f36166ad4"></a>const char *</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+Name of the symbol, e.g. <span class="tt">"mim_ll_convert"</span>. </td></tr>
+<tr><td class="fieldtype">
+<a id="acf8bf5f6405d6823faa4699fe46240ce" name="acf8bf5f6405d6823faa4699fe46240ce"></a>void *</td>
+<td class="fieldname">
+ptr</td>
+<td class="fielddoc">
+Address of the symbol. </td></tr>
+</table>
+
+</div>
+</div>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="aea38a65eb5bcdbc6a7d10bb54cda7283" name="aea38a65eb5bcdbc6a7d10bb54cda7283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea38a65eb5bcdbc6a7d10bb54cda7283">&#9670;&#160;</a></span>MIM_PLUGIN_ENTRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_PLUGIN_ENTRY</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> mim_plugin_##p(<a class="code hl_struct" href="structmim_1_1Plugin.html">mim::Plugin</a>&amp;);                      \</div>
+<div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code hl_define" href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a> <a class="code hl_struct" href="structmim_1_1Plugin.html">mim::Plugin</a> <a class="code hl_define" href="#aaca199ef34b62db8a436e8f98ccfbbf4">MIM_PLUGIN_ENTRY_NAME</a>(p)() { \</div>
+<div class="line">    <span class="keyword">auto</span> plugin    = <a class="code hl_struct" href="structmim_1_1Plugin.html">mim::Plugin</a>{};                            \</div>
+<div class="line">    plugin.<a class="code hl_variable" href="structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11">name</a>    = #p;                                       \</div>
+<div class="line">    plugin.version = <a class="code hl_define" href="#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a>;                              \</div>
+<div class="line">    mim_plugin_##p(plugin);                                    \</div>
+<div class="line">    <span class="keywordflow">return</span> plugin;                                             \</div>
+<div class="line">}                                                              \</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> mim_plugin_##p([[maybe_unused]] mim::Plugin&amp; plugin)</div>
+<div class="ttc" id="aconfig_8h_html_acf14f602e3976ff8653bb419a1d77a7f"><div class="ttname"><a href="config_8h.html#acf14f602e3976ff8653bb419a1d77a7f">MIM_EXPORT</a></div><div class="ttdeci">#define MIM_EXPORT</div><div class="ttdef"><b>Definition</b> <a href="config_8h_source.html#l00021">config.h:21</a></div></div>
+<div class="ttc" id="aplugin_8h_html_a2f1c22749113d1954fe381a30a0d5bb2"><div class="ttname"><a href="#a2f1c22749113d1954fe381a30a0d5bb2">MIM_VERSION</a></div><div class="ttdeci">#define MIM_VERSION</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00160">plugin.h:160</a></div></div>
+<div class="ttc" id="aplugin_8h_html_aaca199ef34b62db8a436e8f98ccfbbf4"><div class="ttname"><a href="#aaca199ef34b62db8a436e8f98ccfbbf4">MIM_PLUGIN_ENTRY_NAME</a></div><div class="ttdeci">#define MIM_PLUGIN_ENTRY_NAME(p)</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00199">plugin.h:199</a></div></div>
+<div class="ttc" id="astructmim_1_1Plugin_html"><div class="ttname"><a href="structmim_1_1Plugin.html">mim::Plugin</a></div><div class="ttdoc">Basic info and registration function pointer to be returned from a specific plugin.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00165">plugin.h:165</a></div></div>
+<div class="ttc" id="astructmim_1_1Plugin_html_aeced31f7b2cab59f9fbc5aff27c6db11"><div class="ttname"><a href="structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11">mim::Plugin::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Name of the Plugin.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00168">plugin.h:168</a></div></div>
+</div><!-- fragment -->
+<p>Defines a Plugin's entry point; the body fills in the <span class="tt">plugin</span> handed to it, as in <span class="tt"><a class="el" href="#aea38a65eb5bcdbc6a7d10bb54cda7283" title="Defines a Plugin&#39;s entry point; the body fills in the plugin handed to it, as in MIM_PLUGIN_ENTRY(dem...">MIM_PLUGIN_ENTRY(demo)</a> { plugin.register_normalizers = demo::register_normalizers; }</span>. </p>
+<p>Plugin::name and Plugin::version are already set, and every other field is zeroed. <code class="param">p</code> must be the Plugin's name: a <span class="tt">MIM_STATIC_PLUGINS</span> build needs one entry point per Plugin. </p>
+
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00206">206</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="affine_8cpp_source.html#l00017">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="autodiff_8cpp_source.html#l00025">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="btensor_8cpp_source.html#l00016">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="buffer_8cpp_source.html#l00014">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="clos_8cpp_source.html#l00027">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="compile_8cpp_source.html#l00078">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="core_8cpp_source.html#l00009">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="cps_8cpp_source.html#l00012">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="demo_8cpp_source.html#l00009">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="gpu_8cpp_source.html#l00072">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="ll_8cpp_source.html#l01164">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="ll__nvptx_8cpp_source.html#l00258">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="math_8cpp_source.html#l00008">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="mem_8cpp_source.html#l00033">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="nvptx_8cpp_source.html#l00019">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="opt_8cpp_source.html#l00005">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="option_8cpp_source.html#l00009">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="ord_8cpp_source.html#l00008">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="refly_8cpp_source.html#l00021">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="regex_8cpp_source.html#l00020">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="tensor_8cpp_source.html#l00033">MIM_PLUGIN_ENTRY()</a>, <a class="el" href="plug_2tuple_2tuple_8cpp_source.html#l00008">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="vec_8cpp_source.html#l00008">MIM_PLUGIN_ENTRY()</a>.</p>
+
+</div>
+</div>
+<a id="aaca199ef34b62db8a436e8f98ccfbbf4" name="aaca199ef34b62db8a436e8f98ccfbbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca199ef34b62db8a436e8f98ccfbbf4">&#9670;&#160;</a></span>MIM_PLUGIN_ENTRY_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_PLUGIN_ENTRY_NAME</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">mim_get_plugin</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00199">199</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+
+</div>
+</div>
+<a id="ae823dbd90013953aa434dd05f1433754" name="ae823dbd90013953aa434dd05f1433754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae823dbd90013953aa434dd05f1433754">&#9670;&#160;</a></span>MIM_PLUGIN_SYM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_PLUGIN_SYM</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">PluginSym { #f, (<span class="keywordtype">void</span>*)&amp;f }</div>
+</div><!-- fragment -->
+<p>Builds a PluginSym for <code class="param">f</code>, so name and address cannot drift apart. </p>
+
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00054">54</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+
+</div>
+</div>
 <a id="a2f1c22749113d1954fe381a30a0d5bb2" name="a2f1c22749113d1954fe381a30a0d5bb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f1c22749113d1954fe381a30a0d5bb2">&#9670;&#160;</a></span>MIM_VERSION</h2>
 
@@ -318,9 +438,9 @@ Name of the variable, e.g. <span class="tt">"CUDA_HOME"</span>. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00149">149</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plugin_8h_source.html#l00160">160</a> of file <a class="el" href="plugin_8h_source.html">plugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00052">mim::Driver::Driver()</a>, and <a class="el" href="affine_8cpp_source.html#l00017">mim_get_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00060">mim::Driver::Driver()</a>.</p>
 
 </div>
 </div>

@@ -33,7 +33,8 @@ var menudata={children:[
 {text:"Developer Guide",url:"dev.html"},
 {text:"Rewriting",url:"rewriting.html"},
 {text:"Phases",url:"phases.html"},
-{text:"Python Bindings",url:"python.html"}]},
+{text:"Python Bindings",url:"python.html"},
+{text:"Playground",url:"playground.html"}]},
 {text:"🧩 Plugins",url:"usergroup1.html",children:[
 {text:"affine",url:"affine.html"},
 {text:"autodiff",url:"autodiff.html"},
@@ -111,6 +112,7 @@ var menudata={children:[
 {text:"Variables",url:"namespacemembers_vars.html",children:[
 {text:"b",url:"namespacemembers_vars.html#index_b"},
 {text:"c",url:"namespacemembers_vars.html#index_c"},
+{text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"i",url:"namespacemembers_vars.html#index_i"},
 {text:"l",url:"namespacemembers_vars.html#index_l"},
 {text:"n",url:"namespacemembers_vars.html#index_n"},

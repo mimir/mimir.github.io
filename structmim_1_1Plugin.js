@@ -6,7 +6,9 @@ var structmim_1_1Plugin =
     [ "name", "structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11", null ],
     [ "num_args", "structmim_1_1Plugin.html#a7a829bd617bc2ca4a454ef710be24d52", null ],
     [ "num_envs", "structmim_1_1Plugin.html#a3f6c543ceaa41380539d1a3fdf66e7b0", null ],
+    [ "num_syms", "structmim_1_1Plugin.html#a3409c74588ff82ce8c50662fd2ceba21", null ],
     [ "register_normalizers", "structmim_1_1Plugin.html#ac0ac5f34a6a6931800afd5e96409e759", null ],
     [ "register_phases", "structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f", null ],
+    [ "syms", "structmim_1_1Plugin.html#a9694d18d0c739a254a97cf3091cecb28", null ],
     [ "version", "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251", null ]
 ];

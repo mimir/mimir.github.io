@@ -1,4 +1,4 @@
 var vec_8cpp =
 [
-    [ "mim_get_plugin", "vec_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ]
+    [ "MIM_PLUGIN_ENTRY", "vec_8cpp.html#a246238100182aeb6772d66aba3ad719d", null ]
 ];

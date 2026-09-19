@@ -1,5 +1,5 @@
 var mem_8cpp =
 [
-    [ "mim_get_plugin", "mem_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "reg_phases", "mem_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a", null ]
+    [ "MIM_PLUGIN_ENTRY", "mem_8cpp.html#acc1d709cfa85f09c7a0e0cfc603b9d75", null ],
+    [ "reg_phases", "mem_8cpp.html#a8abebad40345a2355ec701aaea26d9a4", null ]
 ];

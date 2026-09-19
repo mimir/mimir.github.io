@@ -1,5 +1,5 @@
 var buffer_8cpp =
 [
-    [ "mim_get_plugin", "buffer_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "mim::plug::buffer::reg_phases", "namespacemim_1_1plug_1_1buffer.html#ae10753950f548d6b4c264a05c3f04149", null ]
+    [ "MIM_PLUGIN_ENTRY", "buffer_8cpp.html#af812788ae9cf637040b7dbc5c5db25de", null ],
+    [ "mim::plug::buffer::reg_phases", "namespacemim_1_1plug_1_1buffer.html#a3be8da324d9e541248b0c17222613b3e", null ]
 ];

@@ -30,7 +30,7 @@ var searchData=
   ['cn_27',['cn',['../classmim_1_1World.html#a0efd9d34965cd245c2a1efa7059fda13',1,'mim::World::cn()'],['../classmim_1_1World.html#a1f0bb95ad857931b61264c0471ac2b9e',1,'mim::World::cn(const Def *dom, bool implicit=false)'],['../classmim_1_1World.html#a68176f2f91337dd7424f8cfed7d800b3',1,'mim::World::cn(Defs dom, bool implicit=false)']]],
   ['codom_28',['codom',['../classmim_1_1ast_1_1LamDecl.html#a4fbcba316e2f2af7cb8669cd3610ba69',1,'mim::ast::LamDecl::codom()'],['../classmim_1_1Pi.html#a826161c3dae157a2aa1c273f71f0a8c2',1,'mim::Pi::codom()'],['../classmim_1_1Lam.html#afe57c9c0e30c3c94239efae40e4dea26',1,'mim::Lam::codom()']]],
   ['collect_29',['collect',['../namespacemim.html#a14e875ff9d37fba52618767b032ed91d',1,'mim']]],
-  ['commit_5fand_5fpush_30',['commit_and_push',['../namespacedeploy.html#aa7465e3cc28bbf55dee47b0c32b82467',1,'deploy']]],
+  ['commit_5fand_5fpush_30',['commit_and_push',['../namespacedeploy.html#ad85620aca5e6550c7e9da47e623b63e4',1,'deploy']]],
   ['compare_5fre_31',['compare_re',['../namespacemim_1_1plug_1_1regex.html#ae5b509ae2785246a5099b89e294ac2fe',1,'mim::plug::regex']]],
   ['compile_32',['compile',['../classmim_1_1ast_1_1File.html#a628d1716988eb3c623a3f5bcc49e79ab',1,'mim::ast::File']]],
   ['compose_5fcn_33',['compose_cn',['../namespacemim.html#aab8bd049eb0b9bf7561a602f62ce7ebd',1,'mim']]],

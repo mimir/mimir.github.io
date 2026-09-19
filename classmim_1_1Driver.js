@@ -14,6 +14,7 @@ var classmim_1_1Driver =
     [ "add_import_path", "classmim_1_1Driver.html#a39c6df2df5a91019c7a804a7761e9605", null ],
     [ "add_plugin_path", "classmim_1_1Driver.html#ac47270fcb2f828c1be0d779b6eeb309f", null ],
     [ "add_prefix_path", "classmim_1_1Driver.html#a17868d8293a80170ba076ab7f40d02b8", null ],
+    [ "add_static_plugin", "classmim_1_1Driver.html#aa9fc0bfeca894b1562759eb80c7ae510", null ],
     [ "args", "classmim_1_1Driver.html#abc9aacc4bd302c9c9f7ce52285312f79", null ],
     [ "flags", "classmim_1_1Driver.html#ab9bfcad7e7aa1cbbd7a8678dd5864e3c", null ],
     [ "flags", "classmim_1_1Driver.html#a78b10fb4e8109c0ebe30d86b7cac7d28", null ],

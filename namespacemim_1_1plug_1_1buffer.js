@@ -20,7 +20,7 @@ var namespacemim_1_1plug_1_1buffer =
     [ "op_lit", "namespacemim_1_1plug_1_1buffer.html#aa5fbef610620dbc9247aed725c22f2ba", null ],
     [ "op_read", "namespacemim_1_1plug_1_1buffer.html#abcbe876c1da1e47b6e1ce84d634d28f1", null ],
     [ "op_write", "namespacemim_1_1plug_1_1buffer.html#a3b41cd78cfb6f80fe4c1dd11e55e1e0b", null ],
-    [ "reg_phases", "namespacemim_1_1plug_1_1buffer.html#ae10753950f548d6b4c264a05c3f04149", null ],
+    [ "reg_phases", "namespacemim_1_1plug_1_1buffer.html#a3be8da324d9e541248b0c17222613b3e", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1buffer.html#a6ab03f26d35d2317310583cd1f361cad", null ],
     [ "type_buf", "namespacemim_1_1plug_1_1buffer.html#a0620f0531bd572b2baeb94cc4a706f40", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1buffer.html#a43a9ef56aed96ce6f6ac6fc73469cd4c", null ]

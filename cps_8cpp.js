@@ -1,5 +1,5 @@
 var cps_8cpp =
 [
-    [ "mim_get_plugin", "cps_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "reg_phases", "cps_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a", null ]
+    [ "MIM_PLUGIN_ENTRY", "cps_8cpp.html#ae45c0d0ab9993a2417145b2cfe983a16", null ],
+    [ "reg_phases", "cps_8cpp.html#a8abebad40345a2355ec701aaea26d9a4", null ]
 ];

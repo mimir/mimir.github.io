@@ -1,5 +1,5 @@
 var affine_8cpp =
 [
-    [ "mim_get_plugin", "affine_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "reg_phases", "affine_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a", null ]
+    [ "MIM_PLUGIN_ENTRY", "affine_8cpp.html#aa9bee6cb4f6946eddf30e7de343e5b3e", null ],
+    [ "reg_phases", "affine_8cpp.html#a8abebad40345a2355ec701aaea26d9a4", null ]
 ];

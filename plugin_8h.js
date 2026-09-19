@@ -8,10 +8,17 @@ var plugin_8h =
       [ "descr", "namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace", null ],
       [ "name", "namespacemim.html#ac81e38f7fe20dc6057c9ba0678e13fd8", null ]
     ] ],
+    [ "mim::PluginSym", "namespacemim.html#structmim_1_1PluginSym", [
+      [ "name", "namespacemim.html#aa050a8716e90b3b741a2549f36166ad4", null ],
+      [ "ptr", "namespacemim.html#acf8bf5f6405d6823faa4699fe46240ce", null ]
+    ] ],
     [ "mim::Out", "classmim_1_1Out.html", "classmim_1_1Out" ],
     [ "mim::Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", "structmim_1_1Plugin" ],
     [ "mim::Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
+    [ "MIM_PLUGIN_ENTRY", "plugin_8h.html#aea38a65eb5bcdbc6a7d10bb54cda7283", null ],
+    [ "MIM_PLUGIN_ENTRY_NAME", "plugin_8h.html#aaca199ef34b62db8a436e8f98ccfbbf4", null ],
+    [ "MIM_PLUGIN_SYM", "plugin_8h.html#ae823dbd90013953aa434dd05f1433754", null ],
     [ "MIM_VERSION", "plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2", null ],
     [ "mim::Flags2Phases", "namespacemim.html#a3d2264dd6b663f00df3b5630b12451bd", null ],
     [ "mim::Normalizers", "namespacemim.html#ab875464e5f495601abff7287573e1405", null ],

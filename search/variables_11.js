@@ -15,5 +15,6 @@ var searchData=
   ['suffix_12',['suffix',['../structmim_1_1Version.html#adab4afd7dcbeb498f4d5631dbf65dcc3',1,'mim::Version']]],
   ['sym_13',['sym',['../structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c',1,'mim::ast::AnnexInfo::sym'],['../classmim_1_1Driver_1_1Imports.html#a6beeb2c9520722f067b2697d6de8fa94',1,'mim::Driver::Imports::Entry::sym'],['../classmim_1_1World_1_1Annexes.html#a33c4fb5a895f0c15bae4743eb3b41fb6',1,'mim::World::Annexes::Entry::sym']]],
   ['sym2gid_14',['sym2gid',['../classmim_1_1Driver.html#aa30c43e39f9f46e8f5eb20d4f2c324ce',1,'mim::Driver::Names']]],
-  ['syntax_15',['syntax',['../namespacemim.html#ad53acf95ce5df3f7045361671860b6fa',1,'mim::PluginArg']]]
+  ['syms_15',['syms',['../structmim_1_1Plugin.html#a9694d18d0c739a254a97cf3091cecb28',1,'mim::Plugin']]],
+  ['syntax_16',['syntax',['../namespacemim.html#ad53acf95ce5df3f7045361671860b6fa',1,'mim::PluginArg']]]
 ];

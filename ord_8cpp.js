@@ -1,4 +1,4 @@
 var ord_8cpp =
 [
-    [ "mim_get_plugin", "ord_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ]
+    [ "MIM_PLUGIN_ENTRY", "ord_8cpp.html#acda3ce425181f696cc284d1a5af9309b", null ]
 ];

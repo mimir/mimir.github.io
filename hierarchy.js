@@ -67,6 +67,7 @@ var hierarchy =
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::PluginArg", "namespacemim.html#structmim_1_1PluginArg", null ],
     [ "mim::PluginEnv", "namespacemim.html#structmim_1_1PluginEnv", null ],
+    [ "mim::PluginSym", "namespacemim.html#structmim_1_1PluginSym", null ],
     [ "mim::World::State::POD", "structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD", null ],
     [ "mim::plug::tensor::PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],

@@ -1,4 +1,4 @@
 var opt_8cpp =
 [
-    [ "mim_get_plugin", "opt_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ]
+    [ "MIM_PLUGIN_ENTRY", "opt_8cpp.html#aeec121dc4e18277883c2da2afb30f763", null ]
 ];

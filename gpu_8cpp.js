@@ -1,5 +1,5 @@
 var gpu_8cpp =
 [
-    [ "mim_get_plugin", "gpu_8cpp.html#a35bb34350e93d508e52544f4abd50e59", null ],
-    [ "reg_phases", "gpu_8cpp.html#a1eac1e88e03dcfc2f038c5c0d3a7d88a", null ]
+    [ "MIM_PLUGIN_ENTRY", "gpu_8cpp.html#a5a816022348f0adbbf5cd1c7f05246e8", null ],
+    [ "reg_phases", "gpu_8cpp.html#a8abebad40345a2355ec701aaea26d9a4", null ]
 ];
