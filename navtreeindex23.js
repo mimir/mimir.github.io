@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"namespacemim_1_1plug_1_1tensor.html#aa902f273a90911d24fadef83b085944f":[5,0,3,1,3,20,1,0,3],
+"namespacemim_1_1plug_1_1tensor.html#aa971e5f824d29e615d2427a7b6f44462":[2,0,4,1,20,72],
 "namespacemim_1_1plug_1_1tensor.html#aaa0644a4e639f6682b0e95d95eb32c47":[2,0,4,1,20,57],
 "namespacemim_1_1plug_1_1tensor.html#aab61159bddae08a997706aade85f1be9":[5,0,3,1,3,20,1,0,1],
 "namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba":[2,0,4,1,20,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "split__apply_8h.html":[5,0,3,1,3,9,0,3],
 "split__apply_8h_source.html":[5,0,3,1,3,9,0,3],
 "split__off__kernels_8cpp.html":[5,0,4,1,3,9,0,4],
-"split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,4],
-"split__off__kernels_8h.html":[5,0,3,1,3,9,0,4],
-"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4]
+"split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,4]
 };

@@ -36,6 +36,7 @@ var classmim_1_1Driver =
     [ "phase", "classmim_1_1Driver.html#ae98e9444e90210ce6ab197daec6c56fb", null ],
     [ "phases", "classmim_1_1Driver.html#ad255a2786ccfe3ca27450b36940d6bc5", null ],
     [ "plugin_dir", "classmim_1_1Driver.html#a94da18730e496f4180590a2a6ff68f10", null ],
+    [ "plugin_name", "classmim_1_1Driver.html#a2f9018915c1c33d61432b8f968d27f36", null ],
     [ "plugin_paths", "classmim_1_1Driver.html#ac598c78c88c5e6180c6461e915bb8da7", null ],
     [ "profiler", "classmim_1_1Driver.html#ad0f40deb62f2385f196c02555928dcfc", null ],
     [ "profiler", "classmim_1_1Driver.html#a94819cdc2d23c7b56404f9e87aae4d4a", null ],

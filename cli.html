@@ -193,7 +193,7 @@ Options</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">-l, --list-search-paths</span>  </td><td class="markdownTableBodyNone">Lists the search paths in order and exits.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">-p, --plugin &lt;plugin&gt;</span>  </td><td class="markdownTableBodyNone">Dynamically loads a plugin.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">-p, --plugin &lt;plugin&gt;</span>  </td><td class="markdownTableBodyNone">Dynamically loads a plugin; <span class="tt">foo/bar</span> finds <span class="tt">libmim_bar</span> in each search path's <span class="tt">foo</span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">-P, --plugin-path &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Path to search for plugins; also searched for imports.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -293,6 +293,8 @@ Optimization</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--max-fp-iters &lt;num&gt;</span>  </td><td class="markdownTableBodyNone">Maximum number of fixed-point iterations before a phase errors out; guards against non-monotone analyses. [default: <span class="tt">1024</span>]  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--no-opt</span>  </td><td class="markdownTableBodyNone">Elaborates the input but skips the optimization pipeline, so no backend runs; <span class="tt">--output-*</span> still works.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--scalarize-threshold &lt;threshold&gt;</span>  </td><td class="markdownTableBodyNone">MimIR will not scalarize tuples/packs/sigmas/arrays with a number of elements greater than or equal this threshold. [default: <span class="tt">32</span>]  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
@@ -441,7 +443,7 @@ Search Paths</h2>
 <td class="markdownTableBodyNone">runtime modules  </td><td class="markdownTableBodyNone">cwd <span class="tt">rt</span>, <span class="tt">-P</span> and <span class="tt">MIM_PLUGIN_PATH</span> each with <span class="tt">rt</span>, then each root's <span class="tt">lib/mim/rt</span>  </td></tr>
 </table>
 <p>Plugin directories are searched for imports too, since a plugin ships both of its halves together. <span class="tt"><a class="el" href="namespacemim.html">mim</a> -l</span> prints all three lists fully resolved.</p>
-<p>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories. A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</p>
+<p>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories. A plugin may also be spelled as a path - <span class="tt">plugin "foo/bar";</span> or <span class="tt">-p foo/bar</span> - which looks for <span class="tt">libmim_bar</span> in the <span class="tt">foo</span> below each entry of the table above. A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</p>
 <h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
 Arguments</h2>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
