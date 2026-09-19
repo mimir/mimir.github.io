@@ -30,7 +30,7 @@ var searchData=
   ['innovations_27',['🔥 Key Innovations',['../index.html#autotoc_md133',1,'']]],
   ['inplacerwphase_28',['InplaceRWPhase',['../phases.html#phases_inplace_rw_phase',1,'']]],
   ['ins_29',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
-  ['insertion_30',['insertion',['../ord.html#autotoc_md434',1,'']]],
+  ['insert_30',['insert',['../ord.html#autotoc_md434',1,'']]],
   ['inspect_31',['Inspect',['../refly.html#autotoc_md441',1,'']]],
   ['install_20optional_32',['📦 Install (Optional)',['../index.html#autotoc_md132',1,'']]],
   ['integer_20operations_33',['Integer Operations',['../core.html#autotoc_md287',1,'']]],

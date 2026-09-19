@@ -8,7 +8,7 @@ var searchData=
   ['index_5',['Index',['../namespacemim_1_1plug_1_1affine.html#ac0e4826be60027e1f02ab710ae4171d4',1,'mim::plug::affine']]],
   ['info_6',['info',['../namespacemim_1_1plug_1_1refly.html#aa892e670a3611c79d730ddfe61bea1b8',1,'mim::plug::refly']]],
   ['init_7',['init',['../namespacemim_1_1plug_1_1buffer.html#a510dfa839a89984f2c6d54ab2295657d',1,'mim::plug::buffer::init'],['../namespacemim_1_1plug_1_1gpu.html#a60b2d54940be560945911cc9eb21cd73',1,'mim::plug::gpu::init'],['../namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3',1,'mim::plug::ord::init']]],
-  ['insertion_8',['insertion',['../namespacemim_1_1plug_1_1ord.html#a51e01af501390778e2019257d45264ae',1,'mim::plug::ord']]],
+  ['insert_8',['insert',['../namespacemim_1_1plug_1_1ord.html#ac5fab58f9ff10ed939f498f4418d5a8f',1,'mim::plug::ord']]],
   ['interchange_9',['interchange',['../namespacemim_1_1plug_1_1tensor.html#aa4178525bbb38e740d73de95ee8e2b11',1,'mim::plug::tensor']]],
   ['is_5fempty_5fmap_10',['is_empty_map',['../namespacemim_1_1plug_1_1ord.html#a3139291210faabba5130f06c7513a57f',1,'mim::plug::ord']]],
   ['is_5fempty_5fset_11',['is_empty_set',['../namespacemim_1_1plug_1_1ord.html#adf40c77e7d3537a42c2423fb1b4e33c5',1,'mim::plug::ord']]],
