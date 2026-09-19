@@ -181,11 +181,11 @@ Phase</h1>
 <li>a <a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f" title="mim::Phase::run"><span class="tt">run()</span></a> wrapper for logging and verification,</li>
 <li>a <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8" title="mim::Phase::todo"><span class="tt">todo()</span></a> accessor backed by the internal <span class="tt">todo_</span> flag for fixed-point iteration.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>A phase requests another round by calling <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate()</span></a>.<ul>
+<dl class="section note"><dt>Note</dt><dd>A phase requests another round by calling <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate()</span></a>.</dd></dl>
+<ul>
 <li><a class="el" href="classmim_1_1PhaseMan.html" title="mim::PhaseMan"><span class="tt">PhaseMan</span></a> uses this to drive fixed-point pipelines.</li>
 <li><a class="el" href="classmim_1_1RWBase.html" title="mim::RWBase"><span class="tt">RWBase</span></a> uses this to drive its optional pre-analysis to a fixed point.</li>
 </ul>
-</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Typical Shape</h2>
 <p>A custom phase usually derives from <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">Phase</span></a> and implements <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d" title="mim::Phase::start"><span class="tt">start()</span></a>:</p>
@@ -319,11 +319,11 @@ RWPhase</h1>
 <li><a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f" title="mim::Phase::world"><span class="tt">Phase::world</span></a> is the <b>old</b> world,</li>
 <li><a class="el" href="classmim_1_1Rewriter.html#a5fdd3ce8c4bd5220007469a503338854" title="mim::Rewriter::world"><span class="tt">Rewriter::world</span></a> is the <b>new</b> world.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>To avoid confusion, direct <span class="tt">world()</span> access is deleted. Use:<ul>
+<dl class="section note"><dt>Note</dt><dd>To avoid confusion, direct <span class="tt">world()</span> access is deleted. Use:</dd></dl>
+<ul>
 <li><a class="el" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3" title="mim::RWPhase::old_world"><span class="tt">old_world()</span></a> to inspect existing IR,</li>
 <li><a class="el" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19" title="mim::RWPhase::new_world"><span class="tt">new_world()</span></a> to build rewritten IR.</li>
 </ul>
-</dd></dl>
 <p>After the final swap, the rewritten world becomes the current one.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
 Cleanup</h2>
