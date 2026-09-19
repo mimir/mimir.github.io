@@ -1,0 +1,4547 @@
+/// # The affine Plugin {#affine}
+///
+/// @see mim::plug::affine
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+import mem;
+import core;
+import compile;
+plugin refly;
+///
+/// ## Operations
+///
+/// ### For
+///
+/// This operation ranges from (including) `begin` to (excluding) `end` using `step` as stride.
+/// In addition, this loop manages `n` loop accumulators whose initial values `init` must be given.
+/// On each iteration, the given `body` is invoked and receives
+/// * the current iteration index,
+/// * the current values of the loop accumulators `acc`, and
+/// * a `yield` continuation to continue with the next iteration, passing the new accumulator values.
+///
+/// After termination of the loop, `exit` is invoked with the final accumulator values.
+axm For: {m n: Nat, Ts: «n; *»}
+       → [Cn [iter: Idx m, acc: «i: n; Ts#i», yield: Cn «i: n; Ts#i»]] // body
+       → [Cn «i: n; Ts#i»]                                             // exit
+       → Cn [begin _end step: Idx m, init: «i: n; Ts#i»];
+///
+/// A `For` whose **body** is wrapped in the identity annotation `ll.vec` is a schedule's nominated
+/// vector loop; `affine.lower_for` strips the wrapper and re-attaches it to the loop's exit
+/// condition for the backend (when the ll plugin is loaded — otherwise it is dropped).
+///
+/// ## Affine Index Operations
+///
+/// ### Index
+/// The affine index type is an opaque type that can only be manipulated through the following operations.
+///
+axm Index: *;
+///
+/// ### lit
+/// Constructs an affine index from a constant natural number.
+///
+axm lit: Nat → Index;
+///
+/// ### op(add,sub)
+/// Performs addition and subtraction on affine indices.
+///
+/// ### op(neg)
+/// Negates an affine index.
+///
+axm semiop.(mul,ceildiv,floordiv,rem): [Index, Nat] → Index;
+///
+/// ### semiop(mul,ceildiv,floordiv,rem)
+/// Performs semi-linear operations on affine indices.
+/// The second argument is a natural number that must be constant with regard to the indices.
+/// - affine.op.mul
+///   Performs multiplication of an affine index with a constant natural number.
+///   The second argument must be a *closed* constant - a stronger requirement than affine.semiop imposes - which is enforced via refly.check.
+///
+pub mod op {
+    axm (add, sub): [Index, Index] → Index;
+    axm neg: Index → Index;
+    anx lam mul (d : Index, c : Nat): Index =
+        semiop.mul(d, refly.check (core.pe.is_closed(c), c, "The second argument of affine.op.mul must be a constant."));
+}
+///
+/// ### map
+/// Maps a function over a list of affine indices.
+/// Any captured variables of the function must be closed over the entire list of indices, i.e. they must not depend on the iteration index.
+/// The moduli are per-element: each input index `i` carries its own modulus `sin#i` and each output index `j` its own `sout#j`.
+///
+axm map: {m n: Nat}
+       → {sin: «n; Nat», sout: «m; Nat»}
+       → ([«n; Index»] → «m; Index»)
+       → «i: n; Idx (sin#i)»
+       → {a: Nat}
+       → (mem.M a)
+       → [(mem.M a), «i: m; Idx (sout#i)»];
+///
+/// ### id
+/// The identity map on affine indices.
+///
+anx lam id {r: Nat} (o: «r; Index»): «r; Index» = o;
+///
+/// ### linearize
+/// Row-major flattening of a multi-index: `linearize(idxs, s) = Σ_k idxs#k · (∏_{j>k} s#j)`.
+/// `s` is the (row-major) shape; only its rank `n` need be a literal.
+///
+axm linearize: {n: Nat} → [idxs: «n; Index», s: «n; Nat»] → Index;
+///
+/// ### delinearize
+/// Row-major unflattening: `delinearize(lin, s)#d = (lin floordiv (∏_{j>d} s#j)) mod s#d`.
+/// The inverse of affine.linearize; only the rank `m` of `s` need be a literal.
+///
+axm delinearize: {m: Nat} → [lin: Index, s: «m; Nat»] → «m; Index»;
+///
+/// ## Phases
+///
+/// ### lower_for
+///
+/// Lowers the affine.For operation to recursive function calls.
+///
+axm lower_for: compile.Phase;
+///
+/// ### lower_index
+///
+/// Lowers the affine index algebra (affine.Index, affine.lit, affine.op, affine.semiop, affine.map) to core arithmetic.
+///
+axm lower_index: compile.Phase;
+/// # The automatic differentiation Plugin {#autodiff}
+///
+/// @see mim::plug::autodiff
+///
+/// [TOC]
+///
+/// This plugin provides *reverse-mode automatic differentiation*: `autodiff.ad f` yields the augmented
+/// function `f' = λ args. (f args, f*)` that returns the result together with its pullback.
+/// The actual differentiation is performed by the mim::plug::autodiff::Eval phase.
+///
+/// ## Dependencies
+///
+plugin mem;
+import compile;
+plugin core; // for derivatives
+///
+/// ## Types
+///
+/// ### Tangent
+///
+/// The tangent type of a type `T` (currently the identity).
+axm Tangent: * → *, normalize_Tangent;
+///
+/// ## Operations
+///
+/// ### AD
+///
+/// Computes the augmented type of a function type: `(T → U) => (T → U × (U → T))`.
+///
+axm AD: * → *, normalize_AD;
+///
+/// ### ad
+///
+/// Yields the augmented term of a closed term (function, operator, higher-order argument, registered axiom, etc.).
+/// The augmented term `f'` returns the result together with the pullback:
+/// `autodiff f = f' = λ args. (f args, f*)`
+///
+axm ad: {T: *} → T → AD T, normalize_ad;
+///
+/// ### zero
+///
+/// Represents universal zero such that `(zero T) +_T t = t`.
+///
+axm zero: [T: *] → T, normalize_zero;
+///
+/// ### add
+///
+/// A universal addition that consumes zeros and defaults to normal addition for scalar types.
+/// It lifts addition over structured types and special-cases types that do not allow addition.
+///
+axm add: {T: *} → [T, T] → T, normalize_add;
+///
+/// ### sum
+///
+/// Performs autodiff.add over a list of terms.
+///
+axm sum: [n: Nat, T: *] → «n; T» → T, normalize_sum;
+///
+/// ## Phases
+///
+/// ### zero_repl
+///
+/// Replaces `autodiff.zero T` with the zero element of `T`, where one exists.
+///
+axm zero_repl: compile.Phase;
+///
+/// ### eval
+///
+/// The heart of AD: replaces an `autodiff.ad` call with the differentiated function
+/// (mim::plug::autodiff::phase::Eval).
+///
+axm eval: compile.Phase;
+///
+/// ## Registered translations
+///
+/// In this section, we define translations for axioms of other plugins.
+/// This would best be done using a register mechanism in a third plugin or at least in a separate file.
+///
+/// The general concept is that a call to an axiom is replaced with a call to the augmented axiom.
+/// The augmented axiom needs a wrapper for meta arguments (a higher-order function).
+/// Appropriate cps2ds wrappers are introduced to handle that the augmented axioms are in CPS whereas the original axioms are in direct style.
+/// Example:
+/// ```
+/// mul' => args → result*pullback
+/// call: r    = mul  (m,w) (a,b)
+/// res : r,r* = mul' (m,w) (a,b)
+/// ```
+/// The types (with `Int` for `(Int w)`) are:
+/// ```
+/// mul : [m:Nat,w:Nat] → [a:Int,b:Int] → Int
+/// r   : Int
+/// r*  : cn[Int,cn[Int,Int]]
+/// ```
+/// The pullback has to be in cps for compliance.
+/// ```
+/// mul* := λ s. (s*b,s*a)
+/// mul'_cps : [m:Nat,w:Nat] → cn[[Int,Int],cn[Int,   cn[Int,cn[Int,Int]]]]
+/// r,r* = (cps2ds (mul'_cps (m,w))) (a,b)
+/// ```
+///
+/// The pullback is the derivative with respect to the input (weighted with the output tangent).
+/// For arithmetic operations, `s` is simply multiplied onto each input tangent:
+/// `∂_i f(x1,...,xn) * s`
+/// It follows that the applied partial pullback needs to be:
+/// `sum x_i*(∂_i f(x1,...,xn) * s) = sum x_i*(•)` with `•` as the formula from above.
+/// This is a direct result of the chain-rule composition with the partial pullback of a tuple.
+/// The tuple pullback transports the partial pullbacks of the operands and handles the sums.
+/// By its nature the pullback of a tuple needs to be a sum.
+///
+/// ### diff
+///
+/// The derivative of the axiom `plugin.tag.sub` is the annex `autodiff.diff.plugin_tag_sub`, i.e. the axiom's name
+/// with all `.`s replaced by `_`s;
+/// this is how mim::plug::autodiff::phase::Eval looks a derivative up.
+/// Being annexes, they are roots of the World and hence survive until mim::plug::autodiff::phase::Eval has consumed
+/// them.
+/// But - unlike externals - they are invisible to the backends and a `compile.unload "autodiff"` nukes them along
+/// with all the other annexes of this plugin.
+///
+mod diff {
+    ///
+    /// #### autodiff.diff.core_icmp_xYgLE
+    ///
+    /// The derivative of core.icmp.xYgLE (eq).
+    /// The comparison pullback exists formally but is not used.
+    ///
+    anx fun core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =
+        return (core.icmp.sle ab, fn (_: Bool)@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);
+    ///
+    /// #### autodiff.diff.core_wrap_add
+    ///
+    /// The derivative of core.wrap.add:
+    /// s ↦ (s, s)
+    ///
+    anx fun core_wrap_add (m: Nat) {s: Nat} (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =
+        return (core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);
+    ///
+    /// #### autodiff.diff.core_wrap_mul
+    ///
+    /// The derivative of core.wrap.mul:
+    /// s ↦ (s*b, s*a)
+    ///
+    anx fun core_wrap_mul (m: Nat) {s: Nat} (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =
+        return (core.wrap.mul m ab, fn (i: Idx s)@tt: «2; Idx s» = return (core.wrap.mul m (i, b), core.wrap.mul m (i, a)));
+}
+/// # The btensor Plugin {#btensor}
+///
+/// @see mim::plug::btensor
+///
+/// [TOC]
+///
+/// Bufferized tensor operations: a generic `map_reduce` loop-nest abstraction plus derived operations
+/// (matrix product, transpose, pad, concat, ...), lowered to `affine.For` loop nests over `buffer` element
+/// operations.
+///
+/// This is the bufferized mirror of the `tensor` plugin: every op here is the `buffer.Buf` counterpart of a
+/// `tensor.*` op, takes the same groups in the same order, and threads `mem.M` on top.
+/// `tensor.lower_to_mem` bufferizes the SSA-world `tensor.*` ops onto these.
+/// Only the differences from that counterpart are documented below, and shapes are stated as the
+/// *logical* ones — `buffer.Buf` normalizes literal size-1 axes away and the loop generation folds its
+/// read/write indices to match.
+///
+/// ## Dependencies
+///
+plugin core;
+plugin cps; // for cps.cps2ds
+plugin affine;
+plugin buffer;
+plugin vec; // for vec.fold
+plugin mem;
+import ll;  // for the ll.vec loop annotation (declarations only — no module load, no emit phase)
+import compile;
+
+use core.ops.n;
+///
+/// ## Types
+///
+/// Matrices are n-dimensional dependent arrays, represented by the shared `buffer.Buf` type.
+/// The element operations (`buffer.alloc` / `buffer.read` / `buffer.write` / `buffer.lit` /
+/// `buffer.shape`) and their lowering to `mem.Ptr` (`buffer.lower_ptr`) live in the `buffer` plugin.
+///
+/// ### Ring
+///
+/// Represents an [algebraic ring](https://en.wikipedia.org/wiki/Ring_(mathematics)).
+/// E.g., `let nat_ring = (Nat, 0, core.nat.add, core.nat.mul);`.
+///
+/// `tensor.Ring` is an alias for this type: `tensor` bufferizes onto `*`, so `btensor` is the lower of the
+/// two layers and owns the definition.
+anx let Ring = [
+    T: *,
+    _0: T,
+    add: [T, T] → T,
+    mul: [T, T] → T,
+];
+///
+/// ## Map-Reduce
+///
+/// The loop-nest core every other operation is lowered onto: `product_2d` and `transpose_2d` are plain
+/// `lam`s over `map_reduce`, the remaining axioms are expanded by `lower_map_reduce` directly.
+///
+/// ### id
+///
+/// The mem-threaded CPS identity (with an empty epilogue-input pack) — the neutral `post` epilogue
+/// `normalize_map_reduce` delegates with.
+anx fun id {T: *} (m: mem.M 0, x: T, _: [])@tt: [mem.M 0, T] = return (m, x);
+///
+/// ### map_reduce
+///
+/// `map_reduce_post` without the epilogue and with the neutral schedule — the buffer-world counterpart
+/// of `tensor.map_reduce`.
+/// Its normalizer delegates to `map_reduce_post` with `post = id` (so `Tp = To`), no epilogue inputs
+/// (`nps = 0`), no vector dim, and no unrolling.
+///
+/// Unlike `tensor.map_reduce` this cannot be a delegating `lam`: applying a lam instantiates its later
+/// group domains eagerly, and the `is` domain here contains the *dependent* axm application
+/// `buffer.Buf (Ris#i, Sis#i, Tis#i)`, whose signature cannot be checked over the still-unsolved
+/// `{Tis, Ris, Sis}` holes — the tensor-level counterpart is a plain array and checks structurally.
+/// An axm application, in contrast, stays stuck until the checker has solved the holes from the
+/// operands.
+axm map_reduce: {nis: Nat}
+              → {To: *, Ro Rn: Nat}
+              → [So: «Ro; Nat», Sr: «Rn; Nat»]
+              → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}
+              → [f: Fn [mem.M 0, To, «i: nis; Tis#i»] → [mem.M 0, To], init: To]
+              → [map_out: [«Rn; affine.Index»] → «Ro; affine.Index»]
+              → [maps: «i: nis; ([«Rn; affine.Index»] → «Ris#i; affine.Index»)»]
+              → [mem.M 0, is: «i: nis; buffer.Buf (Ris#i, Sis#i, Tis#i)»]
+              → [mem.M 0, buffer.Buf (Ro, So, To)], normalize_map_reduce;
+///
+/// ### map_reduce_post
+///
+/// The buffer-world counterpart of `tensor.map_reduce_post` and the workhorse behind every operation
+/// below: the affine-indexed generalisation of `map_reduce` on `buffer.Buf` operands, threading
+/// `mem.M`.
+/// Same groups in the same order as there, so only the differences:
+/// * `f` and the `post` epilogue are mem-threaded.
+/// * `sched` **is** the op's schedule — a chooser over the target's loop-nest builder (canonically a
+///   `tensor.mk_sched` value) selected in the frontend; `lower_map_reduce` binds it to `mr_nest` and
+///   merely **applies** the result to the op's decision-free fold step and write-back.
+/// * `So`/`Sr` are the *logical* output shape and loop bounds, while the `buffer.Buf` handles may have
+///   size-1 axes folded away.
+axm map_reduce_post: {nis nps: Nat}
+                   → {To Tp: *, Ro Rn: Nat, TSched: □}
+                   → [So: «Ro; Nat», Sr: «Rn; Nat», sched: TSched]
+                   → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»,
+                      Tps: «nps; *», Rps: «j: nps; Nat», Sps: «j: nps; «Rps#j; Nat»»}
+                   → [f: Fn [mem.M 0, To, «i: nis; Tis#i»] → [mem.M 0, To], init: To,
+                      post: Fn [mem.M 0, To, «j: nps; Tps#j»] → [mem.M 0, Tp]]
+                   → [map_out: [«Rn; affine.Index»] → «Ro; affine.Index»]
+                   → [maps: «i: nis; ([«Rn; affine.Index»] → «Ris#i; affine.Index»)»,
+                      post_maps: «j: nps; ([«Ro; affine.Index»] → «Rps#j; affine.Index»)»]
+                   → [mem.M 0, is: «i: nis; buffer.Buf (Ris#i, Sis#i, Tis#i)»,
+                      post_is: «j: nps; buffer.Buf (Rps#j, Sps#j, Tps#j)»]
+                   → [mem.M 0, buffer.Buf (Ro, So, Tp)];
+///
+/// ### mk_sched
+///
+/// The canonical **schedule** value: a chooser over the target's loop-nest builder, picking
+/// * `vdim`, the dim to run innermost as the unit-stride vector loop — a parallel dim runs over a row
+///   of accumulators, the innermost **reduction** dim selects the reduction-vectorized nest (see
+///   `mr_nest`), and `vdim ≥ Rn` means "none";
+/// * `unroll`, the number of trailing reduction dims to unroll into straight-line code.
+///
+/// `tensor.mk_sched` is an alias for this lam: `btensor` owns it for the same reason it owns `Ring`.
+anx lam mk_sched (vdim unroll: Nat) (N: *) (mk: [vdim unroll: Nat] → N): N = mk (vdim, unroll);
+///
+/// ### proj_map
+///
+/// `subs ↦ λ o. ‹j; o#(subs#j)›`: the access map that reads input axis `j` at loop variable `subs#j`,
+/// e.g. `((0, 2), (2, 1))` for the two inputs of a matrix product.
+/// `tensor.proj_map` is an alias for this lam.
+anx lam proj_map {n r: Nat} (subs: «r; Nat») (o: «n; affine.Index»): «r; affine.Index» =
+    ‹j: r; o#(core.idx 0 n (subs#j))›;
+///
+/// ## Shape Operations
+///
+/// Pure re-indexing: every element of the result is one element of an input, so the operation lives
+/// entirely in the access map.
+///
+/// ### broadcast
+///
+/// Expands the dimensions of `input` to fit `s_out`: for all `i`, either `s_in#i = s_out#i` or
+/// `s_in#i = 1`, and the size-1 dimensions are expanded.
+/// The exception to the rule above: `ri`/`si` and `ro`/`so` are the actual — possibly size-1-folded —
+/// buffer shapes, inferred from the operands, while `s_in`/`s_out` are the logical ones.
+///
+axm broadcast: {T: *, ri: Nat, si: «ri; Nat», ro: Nat, so: «ro; Nat», r: Nat}
+             → [s_in s_out: «r; Nat»]
+             → [mem.M 0, input: buffer.Buf (ri, si, T)]
+             → [mem.M 0, buffer.Buf (ro, so, T)];
+///
+/// ### concat
+///
+/// Joins `nis` buffers along axis `ax`: `out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]`, where `k` is
+/// the input whose range `o#ax` lands in and `off` are the prefix sums of the per-input extents along
+/// `ax`.
+/// `s_out` — the summed extent along `ax`, the shared extents elsewhere — is passed explicitly, since
+/// `concat_shape` lives in the `tensor` plugin.
+///
+axm concat: {T: *, nis r: Nat}
+          → [ax: Idx r]
+          → {Sis: «i: nis; «r; Nat»»}
+          → [s_out: «r; Nat»]
+          → [mem.M 0, is: «i: nis; buffer.Buf (r, Sis#i, T)»]
+          → [mem.M 0, buffer.Buf (r, s_out, T)];
+///
+/// ### pad
+///
+/// Pads each axis: `out[…o…] = input[…o−lo…]` inside the interior, `value` (mode 0, constant) or the
+/// clamped edge element (mode ≠ 0, replicate) outside.
+/// `s_out` cannot be computed here — `pad_shape` lives in the `tensor` plugin — so it is passed as its
+/// own group in front of the operands, as in `concat`.
+///
+axm pad: {T: *, r: Nat}
+       → [s_in: «r; Nat»]
+       → [mode: Nat, lo hi: «r; Nat»]
+       → [s_out: «r; Nat»]
+       → [mem.M 0, input: buffer.Buf (r, s_in, T), value: T]
+       → [mem.M 0, buffer.Buf (r, s_out, T)];
+///
+/// ### btensor_copy
+///
+/// Ignores the (⊥) accumulator and just returns the read value — the mem-threaded counterpart of `tensor_copy`.
+///
+fun btensor_copy {T: *} (m: mem.M 0, acc: T, y: «1; T»)@tt: [mem.M 0, T] = return (m, y#0_1);
+///
+/// ### transpose_2d
+///
+/// Permutes the dimensions of a 2-dimensional matrix.
+/// As there, the shape is a single `«2; Nat»` vector instead of two separate `Nat`s and `{T}` precedes
+/// `{s}`; like `product_2d` this is a `lam` over `map_reduce` rather than an `axm`.
+///
+/// Transpose a matrix by reading the input at the swapped loop variables; there is no reduction loop.
+///
+anx lam transpose_2d {T: *} {s: «2; Nat»}
+                         (m: mem.M 0, input: buffer.Buf (2, s, T))
+                       : [mem.M 0, buffer.Buf (2, (s#tt, s#ff), T)] =
+    let s_out = (s#tt, s#ff);
+    map_reduce (s_out, s_out)
+        (btensor_copy, ⊥:T)
+        affine.id
+        (proj_map (1, 0),)
+        (m, input);
+///
+/// ## Reductions
+///
+/// Operations that fold a reduction dim away.
+///
+/// ### product_2d_fun
+///
+/// Fused multiply-add over the ring `R`; `ab#0` is the `t1` element, `ab#1` the `t2` element.
+/// The mem-threaded counterpart of the `tensor` plugin's `conv_fun`.
+fun product_2d_fun (R: Ring) (m: mem.M 0, acc: R#T, ab: «2; R#T»)@tt: [mem.M 0, R#T] =
+    return (m, R#add (acc, R#mul (ab#0_2, ab#1_2)));
+///
+/// ### product_2d
+///
+/// Computes the matrix product of two 2-dimensional matrices in the ring `R`.
+/// `[R: Ring]` is the leading *explicit* group, as there: a ring cannot be recovered from `R#T` by
+/// inference.
+///
+/// Unlike `tensor.product_2d` this is a `lam` wrapping `map_reduce` directly, not an `axm` paired with
+/// an `_impl` annex and a lowering phase: nothing in this plugin inspects the high-level form — no
+/// fusion phase over `*`, and the normalizer was a no-op — so the extra staging bought nothing.
+/// `transpose_2d` follows the same pattern.
+
+/// The loop vector is `(i, j, k)` and follows the principle `ij ← ik, kj`
+/// (\f$\mathit{out}_{i,j} = \sum_k \mathit{t1}_{i,k} \cdot \mathit{t2}_{k,j}\f$), so `k` is the single reduction loop.
+anx lam product_2d (R: Ring) {m k l: Nat}
+                       (mm: mem.M 0, t1: buffer.Buf (2, (m, k), R#T), t2: buffer.Buf (2, (k, l), R#T))
+                     : [mem.M 0, buffer.Buf (2, (m, l), R#T)] =
+    map_reduce ((m, l), (m, l, k))
+        (product_2d_fun R, R#_0)
+        (proj_map (0, 1))
+        (proj_map (0, 2), proj_map (2, 1))
+        (mm, (t1, t2));
+///
+/// ## Indexing
+///
+/// Data-dependent access: an `index` buffer picks the coordinate along `dim`.
+///
+/// ### gather
+///
+/// For each output coordinate `o`, reads the source at `o` with axis `dim` replaced by `index[o]`.
+/// The index element type proves that selected coordinates are in bounds along `dim`.
+///
+axm gather: {T: *, r: Nat}
+          → [s_src s_idx: «r; Nat»]
+          → [dim: Idx r]
+          → [mem.M 0,
+             input: buffer.Buf (r, s_src, T),
+             index: buffer.Buf (r, s_idx, Idx (s_src#dim))]
+          → [mem.M 0, buffer.Buf (r, s_idx, T)];
+///
+/// ### scatter
+///
+/// Starts with a copy of `input`, then applies updates in row-major index order; for duplicate
+/// destinations, the last update wins.
+///
+axm scatter: {T: *, r: Nat}
+           → [s_src s_idx s_updates: «r; Nat»]
+           → [dim: Idx r]
+           → [mem.M 0,
+              input: buffer.Buf (r, s_src, T),
+              index: buffer.Buf (r, s_idx, Idx (s_src#dim)),
+              updates: buffer.Buf (r, s_updates, T)]
+           → [mem.M 0, buffer.Buf (r, s_src, T)];
+///
+/// ## Loop Nests
+///
+/// Loop nests are first-class IR values here: the schedule of a `map_reduce_post` is not data
+/// interpreted by a lowering — it is a chooser over the target's loop-nest builder (see
+/// `tensor.mk_sched`), carried as an operand; `lower_map_reduce` binds it to `mr_nest` and merely
+/// *applies* the result.
+/// The builders below construct every loop structure in the frontend IR (loop-implementation
+/// policies, window unrolling, the row-accumulator interchange); partial evaluation unfolds them
+/// once the ranks are known.
+///
+/// ### ForT
+///
+/// The type of anything with `affine.For`'s calling convention over `[mem, A]` accumulators — a
+/// "loop implementation" policy value.
+lam ForT (A: *): * =
+      [Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]]]
+    → [Cn [mem.M 0, A]]
+    → Cn [I32, I32, I32, [mem.M 0, A]];
+///
+/// #### affine_for
+///
+/// The default loop implementation: affine.For itself, eta-wrapped.
+con affine_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])
+               (exit: Cn [mem.M 0, A])
+               (begin stop step: I32, init: [mem.M 0, A])@tt =
+    affine.For body exit (begin, stop, step, init);
+///
+/// #### vec_for
+///
+/// The loop implementation for a schedule's **vector** dim: the same `affine.For`, its body wrapped
+/// in the identity annotation `ll.vec` — the nomination to run this loop as the innermost
+/// unit-stride vectorized loop. `affine.lower_for` moves the wrapper onto the loop's exit
+/// condition for the backend (and drops it when the ll module is not loaded).
+con vec_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])
+            (exit: Cn [mem.M 0, A])
+            (begin stop step: I32, init: [mem.M 0, A])@tt =
+    affine.For (ll.vec body) exit (begin, stop, step, init);
+
+/// ### range_nest
+///
+/// One nest of `loop`-implemented loops over the dim range `[lo, hi)` of the bounds `Sr`, threading
+/// an accumulator `A` and the shared `«r; I32»` loop-vector prefix; calls `inner` at the bottom with
+/// the prefix updated at the range's positions. Composed by a right fold — no recursion, and the
+/// flat I32 prefix avoids dependently-typed loop-variable tuples.
+lam range_nest (r: Nat, Sr: «r; Nat») (A: *) (loop: ForT A, lo hi: Nat)
+               (inner: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])
+             : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =
+    lam wrap (d: Nat, w: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])
+           : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =
+        con level (pref: «r; I32», m: mem.M 0, acc: A, k: Cn [mem.M 0, A]) =
+            loop lbody lexit (0I32, core.bitcast I32 (Sr#(core.idx 0 r d)), 1I32, (m, acc))
+            where
+                con lbody (iv: I32, macc: [mem.M 0, A], yield: Cn [mem.M 0, A]) =
+                    let pref2 = ‹j: r; core.select (core.bitcast Nat j == d, iv, pref#j)›;
+                    w (pref2, macc#0_2, macc#1_2, yield);
+                con lexit (macc: [mem.M 0, A]) = k macc;
+            end;
+        level;
+    let m = hi - lo;
+    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m
+        wrap (‹i: m; lo + core.bitcast Nat i›, inner);
+///
+/// #### range_unroll
+///
+/// Like `range_nest`, but every dim in the range is fully **unrolled**: the inner continuation is
+/// chained once per iteration point by a right fold over the dim's (compile-time) extent —
+/// straight-line code with constant coordinates, no loops, and structurally terminating (no
+/// recursion, no PE filters: the fold itself unfolds once the extent is a literal).
+lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)
+                 (inner: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])
+               : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =
+    lam wrap (d: Nat, w: Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]])
+           : Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]] =
+        con level (pref: «r; I32», m: mem.M 0, acc: A, k: Cn [mem.M 0, A]) =
+            lam step (i: Nat, kk: Cn [mem.M 0, A]): Cn [mem.M 0, A] =
+                con at (m2: mem.M 0, a2: A) =
+                    let pref2 = ‹j: r; core.select (core.bitcast Nat j == d, core.bitcast I32 i, pref#j)›;
+                    w (pref2, m2, a2, kk);
+                at;
+            let t = Sr#(core.idx 0 r d);
+            (vec.fold.r @(Cn [mem.M 0, A], Nat) @t step (‹i: t; core.bitcast Nat i›, k)) (m, acc);
+        level;
+    let m = hi - lo;
+    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m
+        wrap (‹i: m; lo + core.bitcast Nat i›, inner);
+
+/// ### NestT
+///
+/// The type of scheduled loop nests for a `map_reduce` over the domain `Sr` (`ro` leading parallel
+/// dims, `rr` trailing reduction dims, fold element type `To`): given the fold seed `init`, the
+/// per-point fold step `cell` (fold the elements at one loop vector into the accumulator) and the
+/// per-cell write-back `wb` (consume one folded value at its output coordinates), run the nest.
+anx lam NestT (ro rr: Nat, Sr: «ro + rr; Nat», To U: *): * =
+      [init: To,
+       cell: Cn [mem.M 0, To, «ro + rr; I32», Cn [mem.M 0, To]],
+       wb:   Cn [mem.M 0, U, To, «ro + rr; I32», Cn [mem.M 0, U]]]
+    → Cn [mem.M 0, U, Cn [mem.M 0, U]];
+
+/// ### mr_nest
+///
+/// The scheduled nest builder, selecting one of the four nests below from the schedule:
+/// * `unroll` trailing reduction dims always run as compile-time-unrolled straight-line code.
+/// * a `vdim` naming a parallel dim (currently the last one) of extent ≠ 1 runs it as the innermost
+///   loop, inside the reduction loops, over a row-accumulator buffer — the unit-stride vectorization
+///   dim.
+/// * a `vdim` naming the innermost **reduction** dim selects the reduction-vectorized nest (`redvec`
+///   below): the contraction runs as the vector loop with the last parallel dim unroll-and-jammed
+///   into its body.
+///
+/// Per-cell fold order is untouched by any of these transforms.
+anx lam mr_nest (ro rr: Nat, Sr: «ro + rr; Nat», To U: *) (vdim unroll: Nat)
+                   : NestT (ro, rr, Sr, To, U) =
+    let r    = ro + rr;
+    // The unroll window must stay within the reduction dims.
+    let u_lo = r - unroll;
+    let u_lo = (ro, u_lo)#(ro <= u_lo);
+    lam nest (init: To,
+              cell: Cn [mem.M 0, To, «r; I32», Cn [mem.M 0, To]],
+              wb:   Cn [mem.M 0, U, To, «r; I32», Cn [mem.M 0, U]])
+            : Cn [mem.M 0, U, Cn [mem.M 0, U]] =
+        con cell_at (pref: «r; I32», m: mem.M 0, acc: To, k: Cn [mem.M 0, To]) =
+            cell (m, acc, pref, k);
+        // The fully unrolled trailing window around the fold step.
+        let win = range_unroll (r, Sr) To (u_lo, r) cell_at;
+        // `vd` is `vdim` clamped through the dispatch condition: the non-selected branch is still
+        // ELABORATED, so its body must be type-sane even when `vdim` is the out-of-range sentinel.
+        let vec_ok = core.bit2.and_ 2 (vdim + 1 == ro, Sr#(core.idx 0 r ((0, vdim)#(vdim < r))) != 1);
+        let vd = (0, vdim)#vec_ok;
+
+        // CLASSIC: reduction loops inside all output loops, one accumulator cell at a time; the
+        // write-back target `U` is threaded through the output loops like any loop accumulator.
+        con classic (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =
+            con at_cell (pref: «r; I32», m: mem.M 0, u: U, k: Cn [mem.M 0, U]) =
+                con folded (mem2: mem.M 0, v: To) =
+                    wb (mem2, u, v, pref, k);
+                (range_nest (r, Sr) To (affine_for @To, ro, u_lo) win) (pref, m, init, folded);
+            (range_nest (r, Sr) U (affine_for @U, 0, ro) at_cell) (‹r; 0I32›, mem0, u0, done);
+
+        // VECTORIZED: the vector dim as the innermost loop over a row of accumulators — refill the
+        // row per output row, fold whole rows in lockstep, then write the row back cell by cell.
+        con vectorized (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =
+            let Sv = Sr#(core.idx 0 r vd);
+            let vi_of = lm (pref: «r; I32»): Idx Sv = core.conv.u Sv (pref#(core.idx 0 r vd));
+            let (mem1, row) = buffer.alloc (1, Sv, To) mem0;
+            con at_row (pref: «r; I32», m: mem.M 0, u: U, k: Cn [mem.M 0, U]) =
+                con fill (pref2: «r; I32», memf: mem.M 0, uf: U, kf: Cn [mem.M 0, U]) =
+                    let (memf2, row2) = buffer.write (1, Sv, To) (memf, row, vi_of pref2, init);
+                    kf (memf2, uf);
+                con at_point (pref2: «r; I32», memp: mem.M 0, up: U, kp: Cn [mem.M 0, U]) =
+                    let (memp1, acc0) = buffer.read (1, Sv, To) (memp, row, vi_of pref2);
+                    con after_win (memp2: mem.M 0, accn: To) =
+                        let (memp3, row3) = buffer.write (1, Sv, To) (memp2, row, vi_of pref2, accn);
+                        kp (memp3, up);
+                    win (pref2, memp1, acc0, after_win);
+                con wb_cell (pref2: «r; I32», memw: mem.M 0, uw: U, kw: Cn [mem.M 0, U]) =
+                    let (memw1, v) = buffer.read (1, Sv, To) (memw, row, vi_of pref2);
+                    wb (memw1, uw, v, pref2, kw);
+                con s2 (memB: mem.M 0, uB: U) =
+                    (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) wb_cell) (pref, memB, uB, k);
+                con s1 (memA: mem.M 0, uA: U) =
+                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)
+                        (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) at_point))
+                        (pref, memA, uA, s2);
+                (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) fill) (pref, m, u, s1);
+            (range_nest (r, Sr) U (affine_for @U, 0, vd) at_row) (‹r; 0I32›, mem1, u0, done);
+
+        // BLOCKED (`vdim = ro − 2`): the two trailing parallel dims are sunk inside the reduction
+        // loops — the last dim runs as the vector loop and the BLOCK dim before it (any extent Sp;
+        // a strip-mined row block) is unrolled into its body (unroll-and-jam), so one pass over the
+        // row folds the whole block through a flattened «Sp·Sv; To» accumulator panel. Values
+        // hoisted out of the vector loop (a conv's window weights) now serve every row of the
+        // block, and adjacent rows' overlapping reads sit in the same loop body. Clamps as above:
+        // the non-selected branch is still elaborated.
+        let pd_c    = (0, vdim)#(vdim < r);
+        let sd_r    = vdim + 1;
+        let sd_c    = (0, sd_r)#(sd_r < r);
+        let block_ok = core.bit2.and_ 2 (vdim + 2 == ro,
+                       core.bit2.and_ 2 (Sr#(core.idx 0 r pd_c) != 1, Sr#(core.idx 0 r sd_c) != 1));
+
+        con blocked (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =
+            let Sp = Sr#(core.idx 0 r pd_c);
+            let Sv = Sr#(core.idx 0 r sd_c);
+            let Np = Sp * Sv;
+            let vi_of = lm (pref: «r; I32»): Idx Np =
+                core.conv.u Np (core.wrap.add 0
+                    (core.wrap.mul 0 (pref#(core.idx 0 r pd_c), core.bitcast I32 Sv),
+                     pref#(core.idx 0 r sd_c)));
+            let (mem1, panel) = buffer.alloc (1, Np, To) mem0;
+            con at_block (pref: «r; I32», m: mem.M 0, u: U, k: Cn [mem.M 0, U]) =
+                con fill (pref2: «r; I32», memf: mem.M 0, uf: U, kf: Cn [mem.M 0, U]) =
+                    let (memf2, panel2) = buffer.write (1, Np, To) (memf, panel, vi_of pref2, init);
+                    kf (memf2, uf);
+                con at_point (pref2: «r; I32», memp: mem.M 0, up: U, kp: Cn [mem.M 0, U]) =
+                    let (memp1, acc0) = buffer.read (1, Np, To) (memp, panel, vi_of pref2);
+                    con after_win (memp2: mem.M 0, accn: To) =
+                        let (memp3, panel3) = buffer.write (1, Np, To) (memp2, panel, vi_of pref2, accn);
+                        kp (memp3, up);
+                    win (pref2, memp1, acc0, after_win);
+                con wb_cell (pref2: «r; I32», memw: mem.M 0, uw: U, kw: Cn [mem.M 0, U]) =
+                    let (memw1, v) = buffer.read (1, Np, To) (memw, panel, vi_of pref2);
+                    wb (memw1, uw, v, pref2, kw);
+                con s2 (memB: mem.M 0, uB: U) =
+                    (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)
+                        (range_nest (r, Sr) U (vec_for @U, sd_c, ro) wb_cell)) (pref, memB, uB, k);
+                con s1 (memA: mem.M 0, uA: U) =
+                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)
+                        (range_nest (r, Sr) U (vec_for @U, sd_c, sd_c + 1)
+                            (range_unroll (r, Sr) U (pd_c, pd_c + 1) at_point)))
+                        (pref, memA, uA, s2);
+                (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)
+                    (range_nest (r, Sr) U (vec_for @U, sd_c, ro) fill)) (pref, m, u, s1);
+            (range_nest (r, Sr) U (affine_for @U, 0, pd_c) at_block) (‹r; 0I32›, mem1, u0, done);
+
+        // REDUCTION-VECTORIZED (`ro ≤ vdim < r`: the schedule names the innermost REDUCTION dim):
+        // the contraction itself runs as the innermost (vector) loop. For a contraction whose
+        // operands store the contracted axis unit-stride per output cell (x·Wᵀ — the fc/linear
+        // layout, where each output neuron folds one weight ROW), both operands stream unit-stride
+        // and the fold is a reduction the backend vectorizes with a horizontal sum (permitted by
+        // its reassociation flags) — where vectorizing an output dim would gather across weight
+        // rows. Here `unroll` names the JAM WIDTH instead of a trailing window (the contraction
+        // cannot be both looped and unrolled): the trailing `unroll` parallel dims — small
+        // strip-mined blocks of output cells, see `dot_schedule_kvec` — are unrolled INTO the
+        // vector body (unroll-and-jam) over a flattened «Sb; To» accumulator panel. The jammed
+        // cells share every load that is invariant in one of the jam dims (the input row across
+        // output neurons, the weight row across batch rows), and each panel cell is an independent
+        // reduction chain that gets its own vector accumulator. Clamps as above: the non-selected
+        // branch is still elaborated, and the jam extents are additionally clamped to 1 (`Sr_rv`)
+        // so the elaborated unrolls stay cheap.
+        let rv_j      = (1, unroll)#(1 <= unroll);
+        let rv_bd     = (0, ro - rv_j)#(rv_j <= ro);
+        let rv_vd     = (0, vdim)#(vdim < r);
+        let redvec_ok = core.bit2.and_ 2 (ro <= vdim, core.bit2.and_ 2 (vdim + 1 == r, rv_j <= ro));
+        let Sr_rv     = ‹j: r; let jj = core.bitcast Nat j;
+                               (Sr#j, (1, Sr#j)#redvec_ok)#(core.bit2.and_ 2 (rv_bd <= jj, jj < ro))›;
+        lam rv_mul (d: Nat, acc: Nat): Nat = acc * Sr_rv#(core.idx 0 r d);
+        let rv_ds = ‹i: rv_j; rv_bd + core.bitcast Nat i›;
+        let Sb    = vec.fold.r @(Nat, Nat) @rv_j rv_mul (rv_ds, 1);
+
+        con redvec (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =
+            // Flatten a loop vector's jam coordinates into the panel (any per-dim-bounded
+            // linearization is a bijection into «Sb»; the exact order is internal to the panel).
+            lam rv_lin (pref: «r; I32») (d: Nat, acc: I32): I32 =
+                core.wrap.add 0 (core.wrap.mul 0 (acc, core.bitcast I32 (Sr_rv#(core.idx 0 r d))),
+                                  pref#(core.idx 0 r d));
+            let bi_of = lm (pref: «r; I32»): Idx Sb =
+                core.conv.u Sb (vec.fold.r @(I32, Nat) @rv_j (rv_lin pref) (rv_ds, 0I32));
+            let (mem1, panel) = buffer.alloc (1, Sb, To) mem0;
+            con at_block (pref: «r; I32», m: mem.M 0, u: U, k: Cn [mem.M 0, U]) =
+                con fill (pref2: «r; I32», memf: mem.M 0, uf: U, kf: Cn [mem.M 0, U]) =
+                    let (memf2, panel2) = buffer.write (1, Sb, To) (memf, panel, bi_of pref2, init);
+                    kf (memf2, uf);
+                con at_point (pref2: «r; I32», memp: mem.M 0, up: U, kp: Cn [mem.M 0, U]) =
+                    let (memp1, acc0) = buffer.read (1, Sb, To) (memp, panel, bi_of pref2);
+                    con after_cell (memp2: mem.M 0, accn: To) =
+                        let (memp3, panel3) = buffer.write (1, Sb, To) (memp2, panel, bi_of pref2, accn);
+                        kp (memp3, up);
+                    // `cell` directly — `unroll` names the jam width here, not a trailing window.
+                    cell (memp1, acc0, pref2, after_cell);
+                con wb_cell (pref2: «r; I32», memw: mem.M 0, uw: U, kw: Cn [mem.M 0, U]) =
+                    let (memw1, v) = buffer.read (1, Sb, To) (memw, panel, bi_of pref2);
+                    wb (memw1, uw, v, pref2, kw);
+                con s2 (memB: mem.M 0, uB: U) =
+                    (range_unroll (r, Sr_rv) U (rv_bd, ro) wb_cell) (pref, memB, uB, k);
+                con s1 (memA: mem.M 0, uA: U) =
+                    (range_nest (r, Sr) U (affine_for @U, ro, rv_vd)
+                        (range_nest (r, Sr) U (vec_for @U, rv_vd, rv_vd + 1)
+                            (range_unroll (r, Sr_rv) U (rv_bd, ro) at_point)))
+                        (pref, memA, uA, s2);
+                (range_unroll (r, Sr_rv) U (rv_bd, ro) fill) (pref, m, u, s1);
+            (range_nest (r, Sr) U (affine_for @U, 0, rv_bd) at_block) (‹r; 0I32›, mem1, u0, done);
+
+        con run (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =
+            ((((classic, vectorized)#vec_ok, blocked)#block_ok, redvec)#redvec_ok) (mem0, u0, done);
+        run;
+    nest;
+///
+/// ## Phases
+///
+/// ### lower_map_reduce
+///
+/// Lowers every operation of this plugin to `affine.For` loops over `buffer` element operations,
+/// binding each op's `sched` chooser to `mr_nest`.
+///
+axm lower_map_reduce: compile.Phase;
+/// # The buffer Plugin {#buffer}
+///
+/// @see mim::plug::buffer
+///
+/// [TOC]
+///
+/// A shared, low-level buffer abstraction.
+/// A `buffer.Buf (r, s, T)` is a dependent array of rank `r` and shape `s` holding elements of type `T`, but backed by real memory.
+/// Elements are accessed via `buffer.read` / `buffer.write` and buffers are created via `buffer.alloc`, all threading the `mem.M` memory monad.
+/// The `buffer.lower_ptr` phase lowers this layer to `mem.Ptr` + `mem.lea` / `mem.load` / `mem.store`.
+/// Both the `tensor` and `btensor` plugins bufferize their operations onto this layer.
+///
+/// ## Dependencies
+///
+import mem;
+import core;
+import compile;
+///
+/// ## Types
+///
+/// ### Buf
+///
+/// A buffer of rank `r`, shape `s`, holding elements of type `T`.
+/// Equivalent to the dependent array `«s; T»` but backed by memory.
+/// Literal size-1 axes are normalized away (`buffer.Buf (2, (3, 1), T)` ≡ `buffer.Buf (1, 3, T)`),
+/// mirroring the folding of the corresponding array types (`«3, 1; T»` ≡ `«3; T»`), so buffer types
+/// derived from logical shapes agree with the (folded) boundary types.
+///
+axm Buf: [r: Nat, s: «r; Nat», T: *] → *, normalize_Buf;
+///
+/// ## Operations
+///
+/// ### alloc
+///
+/// Allocate a fresh (uninitialized) buffer.
+///
+axm alloc: [r: Nat, s: «r; Nat», T: *] as rsT → mem.M 0 → [mem.M 0, Buf rsT];
+///
+/// ### read
+///
+/// Read the element at `idx`.
+///
+axm read: [r: Nat, s: «r; Nat», T: *] as rsT
+        → [mem.M 0, Buf rsT, idx: «i: r; Idx s#i»] → [mem.M 0, T], normalize_read;
+///
+/// ### write
+///
+/// Write `val` at `idx` in place and return the same buffer.
+///
+axm write: [r: Nat, s: «r; Nat», T: *] as rsT
+         → [mem.M 0, Buf rsT, idx: «i: r; Idx s#i», val: T] → [mem.M 0, Buf rsT], normalize_write;
+///
+/// ### init
+///
+/// A buffer initialized with the contents of the SSA array value `val`.
+/// This is the boundary conversion from the value world into the buffer world.
+///
+axm init: [r: Nat, s: «r; Nat», T: *] as rsT → [mem.M 0, val: «s; T»] → [mem.M 0, Buf rsT];
+///
+/// ### lit
+///
+/// A buffer initialized with a constant value in every element.
+///
+axm lit: [r: Nat, s: «r; Nat», T: *] as rsT → [mem.M 0, T] → [mem.M 0, Buf rsT];
+///
+/// ### shape
+///
+/// Yields the size of the buffer along dimension `i` (resolved from the type).
+///
+axm shape: [r: Nat, s: «r; Nat», T: *] as rsT → [Buf rsT, i: Idx r] → Nat, normalize_shape;
+///
+/// ### copy
+///
+/// Copy the whole contents of `src` into `dst` and return the updated memory.
+///
+axm copy: [r: Nat, s: «r; Nat», T: *] as rsT
+        → [mem.M 0, dst src: Buf rsT] → mem.M 0;
+///
+/// ## Phases
+///
+/// ### lower_ptr
+///
+/// Lowers `Buf` / `alloc` / `read` / `write` to `mem.Ptr` + `mem.lea` / `mem.load` / `mem.store`.
+///
+axm lower_ptr: compile.Phase;
+/// # The clos Plugin {#clos}
+///
+/// @see mim::plug::clos
+///
+/// [TOC]
+///
+/// This plugin performs *typed closure conversion*: it turns functions that capture free variables into
+/// self-contained *closures* - a pair of a *code pointer* and an *environment* holding the captured values - so
+/// that every function becomes closed and can be lifted to the top level.
+/// Later it lowers these typed closures to untyped `(code-ptr, env-ptr)` pairs and turns exception-like basic
+/// blocks into `setjmp`/`longjmp`.
+/// The transformation is a pipeline of @ref phases (see below); the C++ implementation lives in mim::plug::clos.
+///
+/// ## Dependencies
+///
+plugin core;
+plugin mem;
+import compile;
+///
+/// ## Operations
+///
+/// mim::plug::clos::phase::Clos2SJLJ lowers exception-like basic-block closures to these operations.
+///
+/// ### BufPtr
+///
+/// An opaque pointer to a C `jmp_buf`; its size in bytes is provided by the runtime.
+anx let BufPtr = mem.Ptr0 I8;
+///
+/// ### alloc_jmpbuf
+///
+/// Allocates a fresh `jmp_buf` and yields a pointer to it.
+axm alloc_jmpbuf: mem.M 0 → [mem.M 0, BufPtr];
+///
+/// ### setjmp
+///
+/// Saves the current execution context into the `jmp_buf` (like C `setjmp`).
+/// Yields `0` on the initial call and the non-zero tag passed to `clos.longjmp` when jumped to.
+axm setjmp: [mem.M 0, BufPtr] → [mem.M 0, I32];
+///
+/// ### longjmp
+///
+/// Restores the context saved in the `jmp_buf`, resuming right after the corresponding `clos.setjmp` and making
+/// it yield the given tag (like C `longjmp`).
+axm longjmp: Cn [mem.M 0, BufPtr, I32];
+///
+/// ## Closure Attribute
+///
+/// ### attr
+///
+/// A marker wrapped around a `Lam` (or a use of it) that classifies how it is used.
+/// mim::plug::clos::phase::ClosConvPrep introduces these so that mim::plug::clos::phase::ClosConv sees a canonical
+/// program and can treat each kind of continuation appropriately:
+/// * `returning`: a *returning continuation* ("function"); fully closure converted.
+/// * `free_bb`: an ordinary basic block referenced from an enclosing scope (see mim::Lam::isa_basicblock).
+/// * `fstclass_bb`: a basic block used as a first-class value (passed around) rather than only called.
+/// * `esc`: a closure whose environment escapes its parent scope, so it is heap- instead of stack-allocated
+///   (introduced by mim::plug::clos::phase::LowerTypedClosPrep).
+/// * `bottom`: no special use; this is the identity marker and is normalized away by `normalize_clos`.
+axm attr.(returning, free_bb, fstclass_bb, esc, bottom): {T: *} → T → T, normalize_clos;
+///
+/// ## Phases
+///
+/// The `opt` pipeline runs these in the order below, reusing `clos.branch_clos` as a repeated cleanup after
+/// the passes that introduce branch closures.
+///
+/// ### clos_conv_prep
+///
+/// Prepares for closure conversion by wrapping operands with the `clos.attr` markers above and
+/// eta-expanding branches and continuations (mim::plug::clos::phase::ClosConvPrep).
+///
+axm clos_conv_prep: compile.Phase;
+///
+/// ### clos_conv
+///
+/// The actual *typed closure conversion* (mim::plug::clos::phase::ClosConv).
+///
+axm clos_conv: compile.Phase;
+///
+/// ### branch_clos
+///
+/// Flattens a branch over closure literals back into a direct branch over the underlying `Lam`s,
+/// inlining their environments (mim::plug::clos::phase::BranchClosElim).
+///
+axm branch_clos: compile.Phase;
+///
+/// ### lower_typed_clos_prep
+///
+/// Escape analysis; marks closures whose environment escapes with `clos.attr.esc`
+/// (mim::plug::clos::phase::LowerTypedClosPrep).
+///
+axm lower_typed_clos_prep: compile.Phase;
+///
+/// ### clos2sjlj
+///
+/// Lowers exception-like basic-block closures to `setjmp`/`longjmp` (mim::plug::clos::phase::Clos2SJLJ).
+///
+axm clos2sjlj: compile.Phase;
+///
+/// ### lower_typed_clos
+///
+/// Lowers *typed* closures to untyped `(code-ptr, env-ptr)` pairs, boxing or unboxing the environment
+/// (mim::plug::clos::phase::LowerTypedClos).
+///
+axm lower_typed_clos: compile.Phase;
+/// # The compile Plugin {#compile}
+///
+/// @see [`-X compile:<arg>`](@ref xarg_compile)
+/// @see mim::plug::compile
+///
+/// [TOC]
+///
+/// This plugin provides the building blocks for MimIR's optimization pipeline: its axioms denote mim::Phase%s and the combinators that assemble them into a pipeline.
+/// Invoke the pipeline by defining a function `_compile: [] → compile.Phase`
+/// (or rely on a plugin-provided `_default_compile` such as the one in the `opt` plugin).
+///
+/// ## Types
+///
+/// ### Phase
+///
+/// The type of compilation phases.
+///
+axm Phase: *;
+///
+/// ## Operations
+///
+/// ### aggr
+///
+/// Makes a fixed-point flag switchable from the command line.
+/// `compile.aggr fallback` yields `tt` if `-X compile:aggr` was passed, `ff` if `-X compile:no-aggr` was passed,
+/// and otherwise the given `fallback`.
+/// Use it as the Bool of a `compile.phases` to make that pipeline's fixed-point iteration switchable via the CLI.
+///
+axm aggr: Bool → Bool, normalize_aggr;
+///
+/// ### cond
+///
+/// Yields `phase` if the named plugin is loaded, otherwise `compile.null`.
+/// Used to gate whole sub-pipelines on a plugin without importing it.
+///
+axm cond: {n: Nat} → «n; I8» → Phase → Phase, normalize_cond;
+///
+/// ### is_loaded
+///
+/// Checks whether the given plugin is loaded.
+///
+axm is_loaded: {n: Nat} → «n; I8» → Bool, normalize_is_loaded;
+///
+/// ### named
+///
+/// Resolves to the `compile.Phase` annex with the given fully-qualified name (e.g. `"clos.clos_conv"`).
+/// Resolution is deferred until the phase pipeline is built so that the referenced plugin's `.mim` file does not
+/// have to be imported by users of this axm.
+/// If the named annex is missing at pipeline build time (its plugin is not loaded), it is silently elided, i.e. the
+/// enclosing `compile.phases` simply skips it.
+///
+axm named: {n: Nat} → «n; I8» → Phase;
+///
+/// ### phases
+///
+/// Bundles `n` phases into one pipeline (a mim::PhaseMan).
+/// The Bool selects fixed-point iteration:
+/// `tt` reruns the pipeline until no phase requests another round, `ff` runs it once.
+///
+axm phases: {n: Nat} → Bool → «n; Phase» → Phase;
+///
+/// ## Phases
+///
+/// The phases this plugin itself registers; every other one is contributed by the plugin that
+/// implements it.
+///
+/// ### beta_red
+///
+/// β-reduction; inlines Lam%s that occur exactly once in the program (mim::BetaRed).
+///
+axm beta_red: Phase;
+///
+/// ### branch_normalize
+///
+/// η-expands non-Lam branch targets so both sides of a branch are Lam%s (mim::BranchNormalize).
+///
+axm branch_normalize: Phase;
+///
+/// ### cleanup
+///
+/// Removes dead and unreachable code by rebuilding the World (mim::Cleanup).
+///
+axm cleanup: Phase;
+///
+/// ### eta_conv
+///
+/// Combined, idempotent η-reduction/η-expansion (mim::EtaConv).
+///
+axm eta_conv: Phase;
+///
+/// ### lam_spec
+///
+/// Specializes a Lam at its call site by inlining higher-order arguments (mim::LamSpec).
+///
+axm lam_spec: Phase;
+///
+/// ### null
+///
+/// Does nothing; useful as an elided placeholder.
+///
+axm null: Phase;
+///
+/// ### ret_wrap
+///
+/// Prepares return continuations for the backend (mim::RetWrap).
+///
+axm ret_wrap: Phase;
+///
+/// ### scalarize
+///
+/// Flattens function signatures (mim::Scalarize).
+///
+axm scalarize: Phase;
+///
+/// ### static_arg_opt
+///
+/// Drops params that recursive calls merely forward, turning them into loops (mim::StaticArgOpt).
+///
+axm static_arg_opt: Phase;
+///
+/// ### unload
+///
+/// Unloads a plugin and nukes its annexes on the next World swap.
+///
+axm unload: {n: Nat} → «n; I8» → Phase;
+/// # The core Plugin {#core}
+///
+/// @see mim::plug::core
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin mem;
+///
+/// ## Nat Operations
+///
+/// ### nat
+///
+/// Standard arithmetic operations on `Nat`s:
+/// - `core.nat.sub (a, b)` yields `0` if `a < b`.
+/// - `core.nat.div (a, b)` yields `0` if `b` is `0`.
+/// - `core.nat.rem (a, b)` yields `a` if `b` is `0`.
+///   This holds both statically (literal folding) and dynamically (runtime lowering).
+///
+axm nat.(add, sub, mul, div, rem): «2; Nat» → Nat, normalize_nat;
+///
+/// ### ncmp
+///
+/// Nat comparison is composed of 3 disjoint relations:
+/// * `G`reater
+/// * `L`ess
+/// * `E`qual
+///
+/// | Subtag | Alias | G | L | E | Meaning          |
+/// |--------|-------|---|---|---|------------------|
+/// | `gle`  | `f`   | o | o | o | always false     |
+/// | `glE`  | `e`   | o | o | x | equal            |
+/// | `gLe`  | `l`   | o | x | o | less             |
+/// | `gLE`  | `le`  | o | x | x | less or equal    |
+/// | `Gle`  | `g`   | x | o | o | greater          |
+/// | `GlE`  | `ge`  | x | o | x | greater or equal |
+/// | `GLe`  | `ne`  | x | x | o | not equal        |
+/// | `GLE`  | `t`   | x | x | x | always true      |
+///
+axm ncmp.(gle = f, glE =  e, gLe =  l, gLE = le,
+          Gle = g, GlE = ge, GLe = ne, GLE =  t):
+    «2; Nat» → Bool, normalize_ncmp;
+///
+/// ## Integer Operations
+///
+/// Integer operations use `Idx s` as type.
+/// This is per se neither signed nor unsigned.
+/// Instead, the operations themselves exhibit signed or unsigned behavior.
+///
+/// For `Idx s`,
+/// - **unsigned** interpretation is the canonical carrier order on the finite set \f$ \{ 0, \dots, s-1 \} \f$.
+/// - **signed** interpretation is defined by choosing, for each residue class modulo \f$s\f$, its canonical signed representative.
+///
+/// Concretely, a value \f$x : \mathrm{Idx}\;s\f$ is considered non-negative iff \f$ x \le \lfloor (s-1)/2 \rfloor \f$, and negative otherwise.
+/// Hence the signed range is
+/// \f$ \big[ -\lfloor s/2 \rfloor,\; \lceil s/2 \rceil - 1 \big] \f$.
+/// For powers of two, i.e. \f$ s = 2^w \f$, this coincides exactly with the usual
+/// \f$w\f$-bit two's-complement interpretation.
+///
+/// ### Mode
+///
+/// A common problem when dealing with integer operations is [overflow](https://en.wikipedia.org/wiki/Integer_overflow).
+/// All operations that may overflow take a leading parameter `m` - [mode](@ref mim::plug::core::Mode) - of type `Nat` that determines the exact desired behavior in the case of an overflow.
+/// It comes first so that currying it - `core.wrap.add 0` - still yields a value polymorphic in `s`.
+///
+pub mod mode {
+    anx let us = 0b00; // wrap around - both signed and unsigned
+    anx let uS = 0b01; // no   signed wrap around
+    anx let Us = 0b10; // no unsigned wrap around
+    anx let US = 0b11; // neither signed nor unsigned wrap around
+    anx nsw  = uS;
+    anx nuw  = Us;
+    anx nsuw = US;
+}
+///
+/// ### idx
+///
+/// Creates a literal of type `Idx s` from `l` while obeying mode `m`.
+///
+axm idx: [m: Nat] → [s: Nat] → [l: Nat] → Idx s, normalize_idx;
+///
+/// ### idx_unsafe
+///
+/// Creates a literal of type `Idx ⊤`.
+///
+axm idx_unsafe: Nat → Idx ⊤:Nat, normalize_idx_unsafe;
+///
+/// ### bit1
+///
+/// These *unary* bitwise operations offer all [4 possible operations](https://en.wikipedia.org/wiki/Truth_table#Unary_operations) as summarized in the following table:
+///
+/// | Subtag | A | a | Comment                      |
+/// |--------|---|---|------------------------------|
+/// | f      | o | o | always false                 |
+/// | neg    | o | x | negate                       |
+/// | id     | x | o | identity                     |
+/// | t      | x | x | always true                  |
+///
+/// @todo Add type constraint that `bit1` is only allowed for powers of two.
+///
+axm bit1.(f, neg, id, t): [m: Nat] → {s: Nat} → Idx s → Idx s, normalize_bit1;
+///
+/// ### bit2
+///
+/// These *binary* bitwise operations offer all [16 possible operations](https://en.wikipedia.org/wiki/Truth_table#Truth_table_for_all_binary_logical_operators) as summarized in the following table:
+///
+/// | Subtag | AB | Ab | aB | ab | Comment                      |
+/// |--------|----|----|----|----|------------------------------|
+/// | f      |  o |  o |  o |  o | always false                 |
+/// | nor    |  o |  o |  o |  x | not or                       |
+/// | nciff  |  o |  o |  x |  o | not converse implication     |
+/// | nfst   |  o |  o |  x |  x | not first argument           |
+/// | niff   |  o |  x |  o |  o | not implication              |
+/// | nsnd   |  o |  x |  o |  x | not second argument          |
+/// | xor_   |  o |  x |  x |  o | exclusive or                 |
+/// | nand   |  o |  x |  x |  x | not and                      |
+/// | and_   |  x |  o |  o |  o | and                          |
+/// | nxor   |  x |  o |  o |  x | not exclusive or             |
+/// | snd    |  x |  o |  x |  o | second argument              |
+/// | iff    |  x |  o |  x |  x | implication (if and only if) |
+/// | fst    |  x |  x |  o |  o | first argument               |
+/// | ciff   |  x |  x |  o |  x | converse implication         |
+/// | or_    |  x |  x |  x |  o | or                           |
+/// | t      |  x |  x |  x |  x | always true                  |
+///
+/// @todo Add type constraint that `bit2` is only allowed for powers of two.
+///
+axm bit2.( f,      nor, nciff, nfst, niff, nsnd, xor_, nand,
+           and_,  nxor,   snd,  iff,  fst, ciff,  or_,    t):
+    [m: Nat] → {s: Nat} → «2; Idx s» → Idx s , normalize_bit2;
+///
+/// ### shr
+///
+/// Shift right:
+/// * [`a`rithmetic shift right](https://en.wikipedia.org/wiki/Arithmetic_shift)
+/// * [`l`ogical shift right](https://en.wikipedia.org/wiki/Logical_shift)
+///
+/// For `Idx s`, the shift count must be smaller than the minimal bit width needed to encode the carrier.
+/// For `Idx ⊤`, this width is `64`; otherwise it is `max(1, ceil(log2(s)))`.
+/// Larger counts are undefined behavior.
+/// * `shr.l` divides the unsigned representative by `2^b`.
+/// * `shr.a` divides the signed representative by `2^b`, rounding toward `-∞`.
+///
+axm shr.(a, l): {s: Nat} → «2; Idx s» → Idx s, normalize_shr;
+///
+/// ### wrap
+///
+/// Integer operations that may overflow.
+/// You can specify the desired behavior in the case of an overflow with the leading curried argument by providing a mim::plug::core::Mode as `Nat`.
+///
+/// `shl` uses the same shift-count rule as `core.shr`.
+/// It multiplies the unsigned representative by `2^b` and then wraps modulo `s`.
+/// `nuw` and `nsw` check the unwrapped unsigned and signed results, respectively.
+///
+axm wrap.(add, sub, mul, shl): [m: Nat] → {s: Nat} → «2; Idx s» → Idx s, normalize_wrap;
+
+anx lam minus (m: Nat) {s: Nat} (a: Idx s): Idx s = wrap.sub m (0:(Idx s), a);
+///
+/// ### div
+///
+/// Signed and unsigned integer division/remainder.
+///
+/// @warning Division by zero is *undefined behavior* and a visible side effect.
+/// For this reason, these axioms expect a `mem.M`.
+///
+axm div.(sdiv, udiv, srem, urem):
+    {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], normalize_div;
+///
+/// ### icmp
+///
+/// Integer comparison is composed of 5 disjoint relations:
+/// * `X`: first operand plus, second minus
+/// * `Y`: first operand minus, second plus
+/// * `G`: greater with same sign
+/// * `L`: less with same sign
+/// * `E`: equal
+///
+/// Here is the complete picture for `core.icmp.xygle x, y` for 3 bit wide integers:
+///
+/// |        | x        |        |       |       |       | y     |       |       |       |       |
+/// |--------|----------|--------|-------|-------|-------|-------|-------|-------|-------|-------|
+/// | binary |          |        |  000  |  001  |  010  |  011  |  100  |  101  |  110  |  111  |
+/// |        | unsigned |        |  0    |  1    |  2    |  3    |   4   |   5   |   6   |   7   |
+/// |        |          | signed |  0    |  1    |  2    |  3    |  -4   |  -3   |  -2   |  -1   |
+/// |  000   |  0       |   0    | `E`   | `L`   | `L`   | `L`   | `X`   | `X`   |  `X`  |  `X`  |
+/// |  001   |  1       |   1    | `G`   | `E`   | `L`   | `L`   | `X`   | `X`   |  `X`  |  `X`  |
+/// |  010   |  2       |   2    | `G`   | `G`   | `E`   | `L`   | `X`   | `X`   |  `X`  |  `X`  |
+/// |  011   |  3       |   3    | `G`   | `G`   | `G`   | `E`   | `X`   | `X`   |  `X`  |  `X`  |
+/// |  100   |  4       |  -4    | `Y`   | `Y`   | `Y`   | `Y`   | `E`   | `L`   |  `L`  |  `L`  |
+/// |  101   |  5       |  -3    | `Y`   | `Y`   | `Y`   | `Y`   | `G`   | `E`   |  `L`  |  `L`  |
+/// |  110   |  6       |  -2    | `Y`   | `Y`   | `Y`   | `Y`   | `G`   | `G`   |  `E`  |  `L`  |
+/// |  111   |  7       |  -1    | `Y`   | `Y`   | `Y`   | `Y`   | `G`   | `G`   |  `G`  |  `E`  |
+///
+/// And here is the overview of all possible combinations of relations.
+/// Note the aliases you can use for the common integer comparisons front-ends typically want to use:
+///
+/// | Subtag  | Alias  | X | Y | G | L | E | Meaning                                         |
+/// |---------|--------|---|---|---|---|---|-------------------------------------------------|
+/// | `xygle` |  `f`   | o | o | o | o | o | always false                                    |
+/// | `xyglE` |  `e`   | o | o | o | o | x | equal                                           |
+/// | `xygLe` |        | o | o | o | x | o | less (same sign)                                |
+/// | `xygLE` |        | o | o | o | x | x | less or equal                                   |
+/// | `xyGle` |        | o | o | x | o | o | greater (same sign)                             |
+/// | `xyGlE` |        | o | o | x | o | x | greater or equal                                |
+/// | `xyGLe` |        | o | o | x | x | o | greater or less                                 |
+/// | `xyGLE` |        | o | o | x | x | x | greater or less or equal == same sign           |
+/// | `xYgle` |        | o | x | o | o | o | minus plus                                      |
+/// | `xYglE` |        | o | x | o | o | x | minus plus or equal                             |
+/// | `xYgLe` |  `sl`  | o | x | o | x | o | signed less                                     |
+/// | `xYgLE` |  `sle` | o | x | o | x | x | signed less or equal                            |
+/// | `xYGle` |  `ug`  | o | x | x | o | o | unsigned greater                                |
+/// | `xYGlE` |  `uge` | o | x | x | o | x | unsigned greater or equal                       |
+/// | `xYGLe` |        | o | x | x | x | o | minus plus or greater or less                   |
+/// | `xYGLE` |        | o | x | x | x | x | not plus minus                                  |
+/// | `Xygle` |        | x | o | o | o | o | plus minus                                      |
+/// | `XyglE` |        | x | o | o | o | x | plus minus or equal                             |
+/// | `XygLe` |  `ul`  | x | o | o | x | o | unsigned less                                   |
+/// | `XygLE` |  `ule` | x | o | o | x | x | unsigned less or equal                          |
+/// | `XyGle` |  `sg`  | x | o | x | o | o | signed greater                                  |
+/// | `XyGlE` |  `sge` | x | o | x | o | x | signed greater or equal                         |
+/// | `XyGLe` |        | x | o | x | x | o | greater or less or plus minus                   |
+/// | `XyGLE` |        | x | o | x | x | x | not minus plus                                  |
+/// | `XYgle` |        | x | x | o | o | o | different sign                                  |
+/// | `XYglE` |        | x | x | o | o | x | different sign or equal                         |
+/// | `XYgLe` |        | x | x | o | x | o | signed or unsigned less                         |
+/// | `XYgLE` |        | x | x | o | x | x | signed or unsigned less or equal == not greater |
+/// | `XYGle` |        | x | x | x | o | o | signed or unsigned greater                      |
+/// | `XYGlE` |        | x | x | x | o | x | signed or unsigned greater or equal == not less |
+/// | `XYGLe` |  `ne`  | x | x | x | x | o | not equal                                       |
+/// | `XYGLE` |  `t`   | x | x | x | x | x | always true                                     |
+///
+axm icmp.(xygle = f,  xyglE = e,   xygLe,      xygLE,
+          xyGle,      xyGlE,       xyGLe,      xyGLE,
+          xYgle,      xYglE,       xYgLe = sl, xYgLE = sle,
+          xYGle = ug, xYGlE = uge, xYGLe,      xYGLE,
+          Xygle,      XyglE,       XygLe = ul, XygLE = ule,
+          XyGle = sg, XyGlE = sge, XyGLe,      XyGLE,
+          XYgle,      XYglE,       XYgLe,      XYgLE,
+          XYGle,      XYGlE,       XYGLe = ne, XYGLE = t):
+    {s: Nat} → «2; Idx s» → Bool , normalize_icmp;
+///
+/// ### extrema
+///
+/// Minimum and maximum of two integers:
+/// - un`s`igned or `S`igned
+/// - `m`inimum or `M`aximum
+///
+axm extrema.(sm=umin, sM=umax, Sm=smin, SM=smax): {s: Nat} → «2; Idx s» → Idx s, normalize_extrema;
+///
+/// ### abs
+///
+/// Absolute value of an integer.
+///
+/// @warning Computing the absolute value of the lowest possible value leads to *undefined behavior*, which is why this axiom expects a `mem.M`.
+///
+axm abs: {s a: Nat} → [mem.M a, Idx s] → [mem.M a, Idx s], normalize_abs;
+///
+/// ## Conversions
+///
+/// ### conv
+///
+/// Conversion between index types - both signed and unsigned - of different sizes.
+/// - `conv.u` preserves the unsigned representative modulo the destination carrier.
+/// - `conv.s` preserves the signed representative modulo the destination carrier.
+///
+axm conv.(s, u): {ss: Nat} → [ds: Nat] → Idx ss → Idx ds, normalize_conv;
+///
+/// ### bitcast
+///
+/// Bitcast to reinterpret a value as another type.
+/// Can be used for pointer / integer conversions as well as integer / nat conversions.
+///
+axm bitcast: {S: *} → [D: *] → S → D, normalize_bitcast;
+///
+/// ## Other Operations
+///
+/// ### trait
+///
+/// Yields the size or align of a type.
+///
+axm trait.(size, align): * → Nat, normalize_trait;
+///
+/// ### pe
+///
+/// Steers the partial evaluator.
+///
+pub mod pe {
+    axm hlt:       {T: *} → T → T, normalize_pe;
+    axm run:       {T: *} → T → T, normalize_pe;
+    axm is_closed: {T: *} → T → Bool, normalize_pe;
+}
+///
+/// ### select
+///
+/// More readable shorthand to create a select/if:
+///
+anx lam select {T: *} (cond: Bool, t f: T): T = (f, t)#cond;
+///
+/// ### Select
+///
+/// core.select one level up, to select between types.
+///
+anx lam Select {T: □} (cond: Bool, t f: T): T = (f, t)#cond;
+///
+/// ## Operators
+///
+/// Bindings for the infix operators, which are sugar for an application of the escaped name.
+/// `use` the module matching the domain at hand:
+///
+/// | Module          | Domain                                     |
+/// |-----------------|--------------------------------------------|
+/// | `core.ops.n`    | `Nat`                                      |
+/// | `core.ops.s.w`  | signed `Idx s`, wrap around                |
+/// | `core.ops.s.nw` | signed `Idx s`, `core.mode.nsw`            |
+/// | `core.ops.u.w`  | unsigned `Idx s`, wrap around              |
+/// | `core.ops.u.nw` | unsigned `Idx s`, `core.mode.nuw`          |
+///
+/// `core.ops.s`/`core.ops.u` offer only those operators that don't depend on the mode.
+/// `Idx s` has no `/` and `%`, since core.div expects a `mem.M`.
+///
+pub mod ops {
+    pub mod n {
+        pub let `+  =  nat.add;
+        pub let `-  =  nat.sub;
+        pub let `*  =  nat.mul;
+        pub let `/  =  nat.div;
+        pub let `%  =  nat.rem;
+        pub let `== = ncmp.e;
+        pub let `!= = ncmp.ne;
+        pub let `<  = ncmp.l;
+        pub let `<= = ncmp.le;
+        pub let `>  = ncmp.g;
+        pub let `>= = ncmp.ge;
+    }
+
+    mod eq {
+        pub let `== = icmp.e;
+        pub let `!= = icmp.ne;
+    }
+
+    mod signed {
+        pub use eq;
+        pub let `>> = shr.a;
+        pub let `<  = icmp.sl;
+        pub let `<= = icmp.sle;
+        pub let `>  = icmp.sg;
+        pub let `>= = icmp.sge;
+    }
+
+    mod unsigned {
+        pub use eq;
+        pub let `>> = shr.l;
+        pub let `<  = icmp.ul;
+        pub let `<= = icmp.ule;
+        pub let `>  = icmp.ug;
+        pub let `>= = icmp.uge;
+    }
+
+    pub mod s {
+        pub use signed;
+
+        pub mod w {
+            pub use signed;
+            pub let `+  = wrap.add mode.us;
+            pub let `-  = wrap.sub mode.us;
+            pub let `*  = wrap.mul mode.us;
+            pub let `<< = wrap.shl mode.us;
+        }
+
+        pub mod nw {
+            pub use signed;
+            pub let `+  = wrap.add mode.nsw;
+            pub let `-  = wrap.sub mode.nsw;
+            pub let `*  = wrap.mul mode.nsw;
+            pub let `<< = wrap.shl mode.nsw;
+        }
+    }
+
+    pub mod u {
+        pub use unsigned;
+
+        pub mod w {
+            pub use unsigned;
+            pub let `+  = wrap.add mode.us;
+            pub let `-  = wrap.sub mode.us;
+            pub let `*  = wrap.mul mode.us;
+            pub let `<< = wrap.shl mode.us;
+        }
+
+        pub mod nw {
+            pub use unsigned;
+            pub let `+  = wrap.add mode.nuw;
+            pub let `-  = wrap.sub mode.nuw;
+            pub let `*  = wrap.mul mode.nuw;
+            pub let `<< = wrap.shl mode.nuw;
+        }
+    }
+}
+/// # The CPS Plugin {#cps}
+///
+/// @see mim::plug::cps
+///
+/// [TOC]
+///
+/// This plugin has three jobs:
+/// 1. Convert direct-style calls (and the functions they call) to CPS.
+/// 2. Wrap direct-style functions as CPS functions using an axiom.
+/// 3. Call CPS functions in direct style using an axiom.
+///
+/// ## Dependencies
+///
+import compile;
+///
+/// ## Operations
+///
+/// ### cps2ds
+///
+/// This axiom lets the user call a CPS function in direct style.
+/// The function is not converted; only the call site is changed.
+/// `cps.cps2ds_dep` is the dependently-typed general form; `cps.cps2ds` is the non-dependent shorthand.
+///
+axm cps2ds_dep: {T: *} → [U: T → *] → [Fn [t: T] → U t] → [[t: T] → U t], 3;
+anx lam cps2ds       {T U: *}           (f: Fn     T  → U  ):  [    T  → U  ] = cps2ds_dep (λ (_: T): * = U) f;
+///
+/// ## Phases
+///
+/// ### conv
+///
+/// Converts direct-style functions and calls to CPS.
+///
+axm conv: compile.Phase;
+/// # The demo Plugin {#demo}
+///
+/// @see mim::plug::demo
+///
+/// A minimal demo plugin.
+///
+/// [TOC]
+///
+/// ## Operations
+///
+/// ### const_idx
+///
+/// The constant `42`, evaluated by a normalizer.
+///
+axm const_idx: [n: Nat] → Idx n, normalize_const;
+/// # The gpu Plugin {#gpu}
+///
+/// @see mim::plug::gpu
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin core;
+plugin mem;
+plugin buffer;
+import compile;
+///
+/// ## Types
+///
+/// ### Address Spaces
+///
+/// Address space numbers correlate to the ones used by LLVM.
+/// @see
+/// * [User Guide for NVPTX Back-end](https://llvm.org/docs/NVPTXUsage.html#address-spaces)
+/// * [User Guide for AMDGPU Backend](https://llvm.org/docs/AMDGPUUsage.html#address-spaces)
+///
+anx let addr_space_global = 1;
+anx let addr_space_shared = 3;
+anx let addr_space_const  = 4;
+anx let addr_space_local  = 5;
+///
+/// ### Memory Types
+///
+anx let GlobalM = mem.M addr_space_global;
+anx let SharedM = mem.M addr_space_shared;
+anx let ConstM  = mem.M addr_space_const;
+anx let LocalM  = mem.M addr_space_local;
+///
+/// ### Pointer Types
+///
+anx lam GlobalPtr(T: *): * = mem.Ptr (T, addr_space_global);
+anx lam SharedPtr(T: *): * = mem.Ptr (T, addr_space_shared);
+anx lam ConstPtr(T: *): *  = mem.Ptr (T, addr_space_const);
+anx lam LocalPtr(T: *): *  = mem.Ptr (T, addr_space_local);
+///
+/// ### Streams
+///
+axm Stream: *;
+axm default_stream: Stream;
+///
+/// ## Operations
+///
+/// ### Context
+///
+/// #### init
+///
+/// Initializes the GPU runtime.
+// TODO: consider allowing multiple contexts and configuration of device number or context flags
+axm init: mem.M 0 → [mem.M 0, GlobalM, ConstM];
+///
+/// #### deinit
+///
+/// Deinitializes the GPU runtime.
+axm deinit: [mem.M 0, GlobalM, ConstM] → mem.M 0;
+///
+/// #### auto_init / auto_deinit
+///
+/// The compiler-inserted counterparts of gpu.init / gpu.deinit.
+/// gpu.lower_btensor_map_reduce uses these instead of calling gpu.init / gpu.deinit directly, so a
+/// backend can recognize and collapse the sessions it creates without touching one that the user opened by hand.
+axm auto_init: mem.M 0 → [mem.M 0, GlobalM, ConstM];
+axm auto_deinit: [mem.M 0, GlobalM, ConstM] → mem.M 0;
+///
+/// ### Streams
+///
+/// #### stream_init
+///
+/// Initializes a stream.
+axm stream_init: [mem.M 0, GlobalM, mem.Ptr0 Stream] → [mem.M 0, GlobalM];
+///
+/// #### stream_deinit
+///
+/// Deinitializes a stream.
+axm stream_deinit: [mem.M 0, GlobalM, Stream] → [mem.M 0, GlobalM];
+///
+/// #### stream_sync
+///
+/// Waits for a stream to finish all its work.
+axm stream_sync: [mem.M 0, GlobalM, Stream] → [mem.M 0, GlobalM];
+///
+/// ### with_streams
+///
+/// Provides `n` streams to `func` for executing asynchronous GPU operations, managing their initialization and teardown.
+anx fun with_streams (n: Nat, func: Fn [mem.M 0, GlobalM, «n; Stream»] → [mem.M 0, GlobalM])
+                     (m0: mem.M 0, m1: GlobalM)
+                   : [mem.M 0, GlobalM] =
+    let (m0, streams_ptr) = mem.alloc («n; Stream», 0) m0;
+    init (m0, m1)
+    where
+        con init (m0: mem.M 0, m1: GlobalM) =
+            loop (m0, m1, 0)
+            where
+                con loop (m0: mem.M 0, m1: GlobalM, i: Nat) =
+                    (run, body)#(core.ncmp.l (i, n)) (m0, m1)
+                    where
+                        con body (m0: mem.M 0, m1: GlobalM) =
+                            let lea = mem.lea (streams_ptr, core.bitcast (Idx n) i);
+                            let (m0, m1) = stream_init (m0, m1, lea);
+                            let inc = core.nat.add (i, 1);
+                            loop (m0, m1, inc);
+                    end;
+            end;
+        con run (m0: mem.M 0, m1: GlobalM) =
+            let (m0, streams) = mem.load (m0, streams_ptr);
+            ret (m0, m1) = func $ (m0, m1, streams);
+            deinit (m0, m1);
+        con deinit (m0: mem.M 0, m1: GlobalM) =
+            let (m0, streams) = mem.load (m0, streams_ptr);
+            loop (m0, m1, 0)
+            where
+                con loop (m0: mem.M 0, m1: GlobalM, i: Nat) =
+                    (return, body)#(core.ncmp.l (i, n)) (m0, m1)
+                    where
+                        con body (m0: mem.M 0, m1: GlobalM) =
+                            let idx = core.bitcast (Idx n) i;
+                            let (m0, m1) = stream_deinit (m0, m1, streams#idx);
+                            let inc = core.nat.add (i, 1);
+                            loop (m0, m1, inc);
+                    end;
+            end;
+    end;
+///
+/// ### Blocking / Async Memory Operations
+///
+/// #### alloc(block) / alloc(asyn)
+///
+/// Allocates memory on the device (in global address space), synchronously (`block`) or asynchronously
+/// against a stream (`asyn`).
+mod alloc {
+    axm block: [T: *] → GlobalM → [GlobalM, GlobalPtr T];
+    axm asyn:  [T: *] → [GlobalM, Stream] → [GlobalM, GlobalPtr T];
+}
+///
+/// #### free(block) / free(asyn)
+///
+/// Frees memory on the device (in global address space), synchronously (`block`) or asynchronously
+/// against a stream (`asyn`).
+pub mod free {
+    axm block: {T: *} → [GlobalM, GlobalPtr T] → GlobalM;
+    axm asyn:  {T: *} → [GlobalM, GlobalPtr T, Stream] → GlobalM;
+}
+///
+/// #### copy_to_device(block) / copy_to_device(asyn)
+///
+/// Copies data from host memory to device memory, synchronously (`block`) or asynchronously against a
+/// stream (`asyn`).
+pub mod copy_to_device {
+    axm block: {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T] → [mem.M 0, GlobalM];
+    axm asyn:  {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T, Stream] → [mem.M 0, GlobalM];
+}
+///
+/// #### copy_to_host(block) / copy_to_host(asyn)
+///
+/// Copies data from device memory to host memory, synchronously (`block`) or asynchronously against a
+/// stream (`asyn`).
+pub mod copy_to_host {
+    axm block: {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T] → [mem.M 0, GlobalM];
+    axm asyn:  {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T, Stream] → [mem.M 0, GlobalM];
+}
+///
+/// #### alloc_copy(block) / alloc_copy(asyn)
+///
+/// Allocates memory on the device (in global address space) for the provided host data and copies the
+/// host data to that memory, synchronously (`block`) or asynchronously against a stream (`asyn`).
+pub mod alloc_copy {
+    anx let block = lm {T: *}
+                       (m0: mem.M 0, m1: GlobalM, ptr: mem.Ptr0 T)
+                     : [mem.M 0, GlobalM, GlobalPtr T] =
+        let (m1, d_ptr) = alloc.block T m1;
+        let (m0, m1) = copy_to_device.block (m0, m1, ptr, d_ptr);
+        (m0, m1, d_ptr);
+
+    anx let asyn = lm {T: *}
+                       (m0: mem.M 0, m1: GlobalM, ptr: mem.Ptr0 T, stream: Stream)
+                     : [mem.M 0, GlobalM, GlobalPtr T] =
+        let (m1, d_ptr) = alloc.asyn T (m1, stream);
+        let (m0, m1) = copy_to_device.asyn (m0, m1, ptr, d_ptr, stream);
+        (m0, m1, d_ptr);
+}
+///
+/// ### Buffer Operations
+///
+/// #### buf_alloc_copy
+///
+/// Placeholder for copying a host-side `buffer.Buf` to the device.
+/// Unlike `gpu.alloc_copy(block)`, this operates directly on the still-abstract `buffer.Buf`
+axm buf_alloc_copy: {r: Nat, s: «r; Nat», T: *}
+                  → [mem.M 0, GlobalM, buffer.Buf (r, s, T)]
+                  → [mem.M 0, GlobalM, GlobalPtr «s; T»];
+///
+/// #### buf_copy_to_host
+///
+/// Placeholder for copying device data to a host-side `buffer.Buf`.
+/// Unlike `gpu.copy_to_host(block)`, this operates directly on the still-abstract `buffer.Buf`
+axm buf_copy_to_host: {r: Nat, s: «r; Nat», T: *}
+                  → [mem.M 0, GlobalM, GlobalPtr «s; T», buffer.Buf (r, s, T)]
+                  → [mem.M 0, GlobalM];
+///
+/// ### Kernel Launch
+///
+/// #### launch
+///
+/// Launches a kernel function on the device with dynamic shared memory and module symbols.
+// TODO: refactor to {n m: N, Ts: «n; *»} as soon as type inference bug is fixed
+axm launch: {n: Nat, Ts: «n; *»}
+          → [n_groups n_items: Nat, Stream, m: Bool, MT: «core.bitcast Nat m; *»]
+          → Cn [GlobalM, SharedM, ConstM, LocalM, Idx n_groups, Idx n_items,
+                «i: core.bitcast Nat m; SharedPtr MT#i», «i: n; Ts#i»,
+                Cn [GlobalM, SharedM, ConstM, LocalM]]
+          → «i: n; Ts#i»
+          → Fn [mem.M 0, GlobalM, ConstM]
+          → [mem.M 0, GlobalM, ConstM];
+///
+/// ### Work-Item Synchronization
+///
+/// #### sync_work_items
+///
+/// Low-level operation to synchronize all work-items in the same work-group.
+axm sync_work_items: [GlobalM, SharedM] → [GlobalM, SharedM];
+///
+/// #### synced_scope
+///
+/// Runs `scope` bracketed by work-item synchronization: syncs, runs `scope`, and syncs again.
+// TODO: consider variadic arguments and returns values for the scope
+anx lam synced_scope (m1: GlobalM, m3: SharedM,
+                      scope: [GlobalM, SharedM] → [GlobalM, SharedM])
+                   : [GlobalM, SharedM] =
+    let (m1, m3) = sync_work_items (m1, m3);
+    let (m1, m3) = scope (m1, m3);
+    let (m1, m3) = sync_work_items (m1, m3);
+    (m1, m3);
+///
+/// ## Phases
+///
+/// ### check_addr_spaces_repl
+///
+/// Rejects address-space misuse: `mem.malloc` / `mem.free` outside the global address space,
+/// `mem.mslot` in the global or const one, and `mem.store` into the const one.
+///
+axm check_addr_spaces_repl: compile.Phase;
+///
+/// ### host_malloc2gpualloc_repl
+///
+/// Rewrites `mem.malloc` / `mem.free` in the global address space into `gpu.alloc` / `gpu.free`.
+///
+axm host_malloc2gpualloc_repl: compile.Phase;
+///
+/// ### mem_checks
+///
+/// Rejects `mem.M` crossing a device boundary — passed to a `gpu.launch` kernel, or taken/returned
+/// by `main` with a non-zero address space.
+///
+axm mem_checks: compile.Phase;
+///
+/// ### remove_double_syncs
+///
+/// Drops a `sync_work_items` whose memories come from the immediately preceding sync or from the
+/// kernel entry.
+///
+axm remove_double_syncs: compile.Phase;
+///
+/// ### split_apply
+///
+/// Splits the kernels off into a device world, then runs `host_specific_phases` on the host world and
+/// `device_specific_phases` on the device world.
+///
+axm split_apply: compile.Phase;
+///
+/// ### lower_btensor_map_reduce
+///
+/// Lowers `btensor.map_reduce_post` to a kernel launch; skipped if the program already contains an
+/// explicit `init`.
+///
+axm lower_btensor_map_reduce: compile.Phase;
+///
+/// ### Pipelines
+///
+/// The two sub-pipelines `split_apply` runs on the worlds it has just split apart; override them to
+/// plug target-specific phases into either side.
+///
+anx lam host_specific_phases () = host_malloc2gpualloc_repl;
+anx lam device_specific_phases () = remove_double_syncs;
+/// # The ll Plugin {#ll}
+///
+/// @see [`-X ll:<arg>`](@ref xarg_ll)
+/// @see mim::plug::ll
+///
+/// [TOC]
+///
+/// The LLVM backend.
+/// Loading this plugin (`mim foo.mim -p ll`) appends an emission phase to the compilation pipeline that writes the LLVM IR of the fully lowered program to `<world>.ll` (or `a.ll` if the world is unnamed).
+/// The output path can be overridden via the `-X ll:o=<file>` command-line argument.
+/// Some intrinsics are lowered to calls into a small C [runtime](@ref plugin_runtime) (`rt/mim_rt.c`) whose LLVM IR is embedded into or linked with the output, controlled via `-X ll:rt=embed`/`extern`.
+///
+/// ## Dependencies
+///
+plugin opt;
+import compile;
+///
+/// ## Phases
+///
+/// ### emit
+///
+/// Emits the LLVM IR of the current world to `<world>.ll` (or to the path given via `-X ll:o=<file>`).
+/// This phase is spliced into the default pipeline (see `opt`) whenever the `ll` plugin is loaded.
+///
+axm emit: compile.Phase;
+///
+/// ## Annotations
+///
+/// ### vec
+///
+/// The identity, used as a vectorization annotation on loops; it has no normalizer and is an
+/// opaque op to every phase.
+/// At the surface, wrapping a `affine.For`'s **body** nominates that loop as a schedule's vector
+/// loop while keeping the `For` application's shape intact for every matcher (see `vec_for` in
+/// the `btensor` plugin).
+/// `affine.lower_for` moves the wrapper from the body onto the loop's **exit condition** — unique
+/// per loop, since the condition reads the header's own variable — but only when this plugin's
+/// module is loaded (otherwise the annotation is dropped).
+/// The emitter then attaches `llvm.loop.vectorize.enable` metadata to the branches into the
+/// annotated loop's header, which on the latch lifts LLVM's tiny-trip-count (< 16) bailout.
+axm vec: {T: *} → T → T;
+/// # The ll_nvptx Plugin {#ll_nvptx}
+///
+/// @see [`-X ll_nvptx:<arg>`](@ref xarg_ll_nvptx)
+/// @see mim::plug::ll_nvptx
+///
+/// An LLVM backend that targets NVIDIA GPUs.
+/// Loading this plugin (`mim foo.mim -p ll_nvptx`) appends an emission phase to the compilation pipeline that splits the fully lowered program into a host world and a device world.
+/// It writes the host LLVM IR to `<world>.ll` and the device LLVM IR (with PTX intrinsics) to `<world>_dev.ll`, and — on Linux by default — compiles and embeds the device binary into the host LLVM IR.
+/// The output paths and the embedding behavior can be overridden via [`-X ll_nvptx:<arg>`](@ref xarg_ll_nvptx).
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin gpu;
+plugin nvptx;
+plugin opt;
+import compile;
+///
+/// ## Phases
+///
+/// ### emit
+///
+/// Emits the LLVM IR with PTX intrinsics for the host and device worlds split from the current world.
+/// This phase is spliced into the default pipeline (see `opt`) whenever the `ll_nvptx` plugin is loaded.
+///
+axm emit: compile.Phase;
+/// # The math Plugin {#math}
+///
+/// @see mim::plug::math
+///
+/// Introduces a type constructor `math.F` for various [IEEE-754](https://en.wikipedia.org/wiki/IEEE_754) floating-point formats and a set of operations to calculate with instances of these types.
+/// All operations with the exception of `math.conv` expect a `Nat` as their very first argument.
+/// Via this [mode](@ref mim::plug::math::Mode) you can fine-tune how strictly floating-point transformations must obey IEEE semantics.
+/// It comes before the implicit `pe` so that currying it - `math.arith.add 0` - still yields a value polymorphic in `pe`.
+///
+/// [TOC]
+///
+/// ## Types
+///
+/// ### F
+///
+/// A floating-point type with `p` bits of precision and `e` exponent bits.
+/// The sign bit is neither included in `p` nor in `e`.
+/// Thus, the total number of bits occupied by a value of this type is `p + e + 1`.
+/// Current constant folding only supports IEEE binary16/binary32/binary64 literals,
+/// subject to host `f16` support.
+///
+axm F: «2; Nat» → *;
+
+anx let f16     = (10,  5);
+anx let f32     = (23,  8);
+anx let f64     = (52, 11);
+anx let bf16    = ( 7,  8);
+anx let nvtf32  = (10,  8);
+anx let amdfp24 = (16,  7);
+anx let pxr24   = (15,  8);
+
+anx let F16     = F f16;
+anx let F32     = F f32;
+anx let F64     = F f64;
+anx let BF16    = F bf16;
+anx let NVTF32  = F nvtf32; // actually 19 bits; aligns to 32 bit
+anx let AMDFP24 = F amdfp24;
+anx let PXR24   = F pxr24;
+///
+/// ## Mode
+///
+/// ### mode
+///
+/// Fine-tunes how strictly a floating-point operation must obey IEEE semantics - see mim::plug::math::Mode.
+///
+pub mod mode {
+    pub anx let none     = 0b0000000; // no optimizations allowed
+    pub anx let nnan     = 0b0000001; // no NaNs
+    pub anx let ninf     = 0b0000010; // no Infs
+    pub anx let nsz      = 0b0000100; // no signed zeros
+    pub anx let arcp     = 0b0001000; // allow reciprocal instead of division
+    pub anx let contract = 0b0010000; // allow contraction, e.g. fused multiply-add
+    pub anx let afn      = 0b0100000; // allow approximate functions
+    pub anx let reassoc  = 0b1000000; // allow reassociation
+    pub anx let finite   = 0b0000011; // nnan | ninf
+    pub anx let unsafe   = 0b1001100; // nsz | arcp | reassoc
+    pub anx let fast     = 0b1111111; // everything above
+}
+///
+/// ## Numerical Operations
+///
+/// ### arith
+///
+/// Arithmetic operations.
+///
+axm arith.(add, sub, mul, div, rem):
+    Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_arith;
+
+anx lam minus (m: Nat) {pe: «2; Nat»} (a: F pe): F pe =
+    arith.sub m (0:(F pe), a);
+///
+/// ### extrema
+///
+/// Minimum and maximum:
+/// * `m`in or `M`ax
+/// * `i`:
+///   Follows the behavior of libm's fmin/fmax.
+///   If either operand is a NaN, returns the other non-NaN operand.
+///   Returns NaN only if both operands are NaN; the returned NaN is always quiet.
+///   If the operands compare equal, returns a value that compares equal to both operands.
+///   This means that `fmin(+/-0.0, +/-0.0)` could return either `-0.0` or `0.0`.
+/// * `I`:
+///   Follows the semantics of `minNum`/`maxNum` specified in the draft of IEEE 754-2018.
+///   If either operand is a NaN, returns NaN.
+///   Otherwise, returns the lesser of the two arguments.
+///   `-0.0` is considered to be less than `+0.0` for this intrinsic.
+///
+/// | Subtag | Alias        | I | M |
+/// |--------|--------------|---|---|
+/// | `im`   | `fmin`       | o | o |
+/// | `iM`   | `fmax`       | o | x |
+/// | `Im`   | `ieee754min` | x | o |
+/// | `IM`   | `ieee754max` | x | x |
+///
+axm extrema.(im = fmin,       iM = fmax,
+             Im = ieee754min, IM = ieee754max):
+    Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_extrema;
+///
+/// ### tri
+///
+/// [Trigonometric](https://en.wikipedia.org/wiki/Trigonometric_functions) and [hypberbolic](https://en.wikipedia.org/wiki/Hyperbolic_functions) functions.
+///
+/// * `FF`: sine, cosine, tangent, *unused*
+/// * `H`yperbolic counterpart
+/// * `A`rcus/`A`rea counterpart (inverse)
+///
+/// | Subtag | Alias        | A | H | FF | Meaning                   | Semantics               |
+/// |--------|--------------|---|---|----|---------------------------|-------------------------|
+/// | `ahff` |  `sin`       | o | o | oo | sine                      | \f$\sin x\f$            |
+/// | `ahfF` |  `cos`       | o | o | xo | cosine                    | \f$\cos x\f$            |
+/// | `ahFf` |  `tan`       | o | o | ox | tangent                   | \f$\tan x\f$            |
+/// | `ahFF` |              | o | o | xx | *unused*                  | -                       |
+/// | `aHff` |  `sinh`, `h` | o | x | oo | hyperbolic sine           | \f$\sinh x\f$           |
+/// | `aHfF` |  `cosh`      | o | x | xo | hyperbolic cosine         | \f$\cosh x\f$           |
+/// | `aHFf` |  `tanh`      | o | x | ox | hyperbolic tangent        | \f$\tanh x\f$           |
+/// | `aHFF` |              | o | x | xx | *unused*                  | -                       |
+/// | `Ahff` | `asin` , `a` | x | o | oo | arcus sine                | \f$\textrm{asin}\,x\f$  |
+/// | `AhfF` | `acos`       | x | o | xo | arcus cosine              | \f$\textrm{acos}\,x\f$  |
+/// | `AhFf` | `atan`       | x | o | ox | arcus tangent             | \f$\textrm{atan}\,x\f$  |
+/// | `AhFF` |              | x | o | xx | *unused*                  | -                       |
+/// | `AHff` | `asinh`      | x | x | oo | area hyperbolic sine      | \f$\textrm{asinh}\,x\f$ |
+/// | `AHfF` | `acosh`      | x | x | xo | area hyperbolic cosine    | \f$\textrm{acosh}\,x\f$ |
+/// | `AHFf` | `atanh`      | x | x | ox | area hyperbolic tangent   | \f$\textrm{atanh}\,x\f$ |
+/// | `AHFF` |              | x | x | xx | *unused*                  | -                       |
+///
+axm tri.(ahff =  sin     , ahfF =  cos , ahFf =  tan , ahFF,
+         aHff =  sinh = h, aHfF =  cosh, aHFf =  tanh, aHFF,
+         Ahff = asin  = a, AhfF = acos , AhFf = atan , AhFF,
+         AHff = asinh    , AHfF = acosh, AHFf = atanh, AHFF):
+    Nat → {pe: «2; Nat»} → F pe → F pe, normalize_tri;
+///
+/// ### pow
+///
+/// Power function: \f$x^y\f$
+///
+axm pow: Nat → {pe: «2; Nat»} → «2; F pe» → F pe, normalize_pow;
+///
+/// ### rt
+///
+/// [Square](https://en.wikipedia.org/wiki/Square_root) and [cube root](https://en.wikipedia.org/wiki/Cube_root):
+///
+/// | Name         | Meaning     | Semantics          |
+/// |--------------|-------------|--------------------|
+/// | `math.rt.sq` | square root | \f$\sqrt{x}\f$     |
+/// | `math.rt.cb` | cube root   | \f$\sqrt[3]{x}\f$  |
+///
+axm rt.(sq, cb): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_rt;
+///
+/// ### exp
+///
+/// [Exponential function](https://en.wikipedia.org/wiki/Exponential_function) and [logarithm](https://en.wikipedia.org/wiki/Logarithm):
+/// * `L`ogarithm
+/// * `BB`: natural, binary, decimal, *unused*
+///
+/// | Subtag | Alias          | L | BB | Meaning                  | Semantics         |
+/// |--------|----------------|---|----|--------------------------|-------------------|
+/// | `lbb`  | `exp`          | o | oo | natural exponential      | \f$e^x\f$         |
+/// | `lbB`  | `exp2`, `bin`  | o | ox | exponential with base 2  | \f$2^x\f$         |
+/// | `lBb`  | `exp10`, `dec` | o | xo | exponential with base 10 | \f$10^x\f$        |
+/// | `lBB`  | *unused*       | o | xx | -                        | *unused*          |
+/// | `Lbb`  | `log`          | x | oo | natural logarithm        | \f$\ln x\f$       |
+/// | `LbB`  | `log2`         | x | ox | logarithm with base 2    | \f$\log_2 x\f$    |
+/// | `LBb`  | `log10`        | x | xo | logarithm with base 10   | \f$\log_{10} x\f$ |
+/// | `LBB`  | *unused*       | x | xx | -                        | *unused*          |
+///
+axm exp.(lbb = exp, lbB = exp2 = bin, lBb = exp10 = dec, lBB,
+         Lbb = log, LbB = log2      , LBb = log10      , LBB):
+    Nat → {pe: «2; Nat»} → F pe → F pe, normalize_exp;
+///
+/// ### er
+///
+/// [Error](https://en.wikipedia.org/wiki/Error_function) and [complementary error function](https://en.wikipedia.org/wiki/Error_function#Complementary_error_function).
+///
+/// | Name          | Meaning                      | Semantics                                                                |
+/// |---------------|------------------------------|--------------------------------------------------------------------------|
+/// | `math.er.f`   | error function               | \f$\frac{2}{\sqrt\pi}\int_0^x e^{-t^2}\,dt\f$                            |
+/// | `math.er.fc`  | complementary error function | \f$\frac{2}{\sqrt\pi}\int_x^\infty e^{-t^2}\,dt = 1 - \textrm{erf}(x)\f$ |
+///
+axm er.(f, fc): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_er;
+///
+/// ### gamma
+///
+/// [Gamma function](https://en.wikipedia.org/wiki/Gamma_function) and its natural [logarithm](https://en.wikipedia.org/wiki/Gamma_function#The_log-gamma_function).
+///
+/// | Name              | Meaning                             | Semantics                                                        |
+/// |-------------------|-------------------------------------|------------------------------------------------------------------|
+/// | `math.gamma.t`    | gamma function                      | \f$\Gamma(x) = \int_0^\infty t^{x-1} e^{-t}\,dt\f$               |
+/// | `math.gamma.l`    | natural logarithm of gamma function | \f$\ln \mid \int_0^\infty t^{x-1} e^{-t}\,dt \mid\f$ |
+///
+axm gamma.(t, l): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_gamma;
+///
+/// ### abs
+///
+/// [Absolute value](https://en.wikipedia.org/wiki/Absolute_value) of a floating-point number.
+///
+axm abs: Nat → {pe: «2; Nat»} → F pe → F pe, normalize_abs;
+///
+/// ### round
+///
+/// Common rounding operations for floating-point numbers:
+/// - `f`loor
+/// - `c`eil
+/// - `r`ound
+/// - `t`runcate
+///
+/// | Name             | Meaning                                                                                            | Semantics                |
+/// |------------------|-----------------------------------------------------------------------------------------------------|-------------------------|
+/// | `math.round.f`   | [round down](https://en.wikipedia.org/wiki/Rounding#Rounding_down)                                 | \f$\lfloor x \rfloor \f$ |
+/// | `math.round.c`   | [round up](https://en.wikipedia.org/wiki/Rounding#Rounding_up)                                     | \f$\lceil x \rceil \f$   |
+/// | `math.round.r`   | [round to nearest integer](https://en.wikipedia.org/wiki/Rounding#Rounding_to_the_nearest_integer) | \f$round (x)\f$          |
+/// | `math.round.t`   | [round towards zero](https://en.wikipedia.org/wiki/Rounding#Rounding_toward_zero)                  | \f$trunc (x)\f$          |
+///
+axm round.(f,c,r,t): Nat → {pe: «2; Nat»} → F pe → F pe, normalize_round;
+///
+/// ## Other Operations
+///
+/// ### cmp
+///
+/// Floating-point comparison is composed of 4 disjoint relations:
+/// - `U`nordered (yields true if either operand is a QNaN)
+/// - `G`reater
+/// - `L`ess
+/// - `E`qual
+///
+/// | Subtag | Alias | U | G | L | E | Meaning                      |
+/// |--------|-------|---|---|---|---|------------------------------|
+/// | `ugle` |   `f` | o | o | o | o | always false                 |
+/// | `uglE` |   `e` | o | o | o | x | ordered and equal            |
+/// | `ugLe` |   `l` | o | o | x | o | ordered and less             |
+/// | `ugLE` |  `le` | o | o | x | x | ordered and less or equal    |
+/// | `uGle` |   `g` | o | x | o | o | ordered and greater          |
+/// | `uGlE` |  `ge` | o | x | o | x | ordered and greater or equal |
+/// | `uGLe` |  `ne` | o | x | x | o | ordered and not equal        |
+/// | `uGLE` |   `o` | o | x | x | x | ordered (no NaNs)            |
+/// | `Ugle` |   `u` | x | o | o | o | unordered (either is NaN)   |
+/// | `UglE` |  `ue` | x | o | o | x | unordered or equal           |
+/// | `UgLe` |  `ul` | x | o | x | o | unordered or less            |
+/// | `UgLE` | `ule` | x | o | x | x | unordered or less or equal   |
+/// | `UGle` |  `ug` | x | x | o | o | unordered or greater         |
+/// | `UGlE` | `uge` | x | x | o | x | unordered or greater or equal |
+/// | `UGLe` | `une` | x | x | x | o | unordered or not equal       |
+/// | `UGLE` |   `t` | x | x | x | x | always true                  |
+///
+axm cmp.(ugle =   f, uglE =   e, ugLe =   l, ugLE =  le,
+         uGle =   g, uGlE =  ge, uGLe =  ne, uGLE =   o,
+         Ugle =   u, UglE =  ue, UgLe =  ul, UgLE = ule,
+         UGle =  ug, UGlE = uge, UGLe = une, UGLE =   t):
+    Nat → {pe: «2; Nat»} → «2; F pe» → Bool, normalize_cmp;
+///
+/// ### is_finite
+///
+/// Returns `tt` if the float is finite and `ff` if not (i.e. if it is ±∞ or NaN).
+///
+axm is_finite: Nat → {pe: «2; Nat»} → F pe → Bool;
+///
+/// ### conv
+///
+/// Conversion between floating-point and index types - both signed and unsigned - of different sizes.
+///
+pub mod conv {
+    axm s2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;
+    axm u2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;
+    axm f2s: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;
+    axm f2u: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;
+    axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;
+}
+///
+/// ### slf
+/// [Standard logistic function](https://en.wikipedia.org/wiki/Logistic_function) of a floating-point number (\f$\textrm{slf}(x) = \frac{1}{1+e^{-x}}\f$)
+///
+anx lam slf (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =
+    arith.div m ((conv.f2f pe 1.0:(F64)), arith.add m ((conv.f2f pe 1.0:(F64)), exp.exp m (minus m x)));
+///
+/// ### sgn
+/// [Sign function](https://en.wikipedia.org/wiki/Sign_function)
+anx lam sgn (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =
+    ((conv.f2f pe (-1.0:(F64))), ((conv.f2f pe 0.0:(F64)), (conv.f2f pe 1.0:(F64)))#(cmp.g m (x,(conv.f2f pe 0.0:(F64)))))#(cmp.ge m (x, (conv.f2f pe 0.0:(F64))));
+///
+/// ### rrt
+/// [Reciprocal](https://en.wikipedia.org/wiki/Multiplicative_inverse) of the [square root](https://en.wikipedia.org/wiki/Square_root) (\f$\textrm{rrt}(x) = \frac{1}{\sqrt{x}}\f$)
+anx lam rrt (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =
+    arith.div m (conv.f2f pe 1.0:(F64), rt.sq m x);
+///
+/// ## Operators
+///
+/// Bindings for the infix operators, which are sugar for an application of the escaped name.
+/// `use` the module whose math.mode matches the accuracy you are willing to trade:
+///
+/// | Module            | Mode               |
+/// |-------------------|--------------------|
+/// | `math.ops.none`   | `math.mode.none`   |
+/// | `math.ops.finite` | `math.mode.finite` |
+/// | `math.ops.unsafe` | `math.mode.unsafe` |
+/// | `math.ops.fast`   | `math.mode.fast`   |
+///
+/// - `!=` is math.cmp.une - the exact complement of `==` - and hence `tt` if an operand is a NaN.
+/// - All other comparisons are ordered and thus `ff` in that case.
+///
+pub mod ops {
+    pub mod none {
+        pub let `+  = arith.add mode.none;
+        pub let `-  = arith.sub mode.none;
+        pub let `*  = arith.mul mode.none;
+        pub let `/  = arith.div mode.none;
+        pub let `%  = arith.rem mode.none;
+        pub let `== =   cmp.e   mode.none;
+        pub let `!= =   cmp.une mode.none;
+        pub let `<  =   cmp.l   mode.none;
+        pub let `<= =   cmp.le  mode.none;
+        pub let `>  =   cmp.g   mode.none;
+        pub let `>= =   cmp.ge  mode.none;
+    }
+
+    pub mod finite {
+        pub let `+  = arith.add mode.finite;
+        pub let `-  = arith.sub mode.finite;
+        pub let `*  = arith.mul mode.finite;
+        pub let `/  = arith.div mode.finite;
+        pub let `%  = arith.rem mode.finite;
+        pub let `== =   cmp.e   mode.finite;
+        pub let `!= =   cmp.une mode.finite;
+        pub let `<  =   cmp.l   mode.finite;
+        pub let `<= =   cmp.le  mode.finite;
+        pub let `>  =   cmp.g   mode.finite;
+        pub let `>= =   cmp.ge  mode.finite;
+    }
+
+    pub mod unsafe {
+        pub let `+  = arith.add mode.unsafe;
+        pub let `-  = arith.sub mode.unsafe;
+        pub let `*  = arith.mul mode.unsafe;
+        pub let `/  = arith.div mode.unsafe;
+        pub let `%  = arith.rem mode.unsafe;
+        pub let `== =   cmp.e   mode.unsafe;
+        pub let `!= =   cmp.une mode.unsafe;
+        pub let `<  =   cmp.l   mode.unsafe;
+        pub let `<= =   cmp.le  mode.unsafe;
+        pub let `>  =   cmp.g   mode.unsafe;
+        pub let `>= =   cmp.ge  mode.unsafe;
+    }
+
+    pub mod fast {
+        pub let `+  = arith.add mode.fast;
+        pub let `-  = arith.sub mode.fast;
+        pub let `*  = arith.mul mode.fast;
+        pub let `/  = arith.div mode.fast;
+        pub let `%  = arith.rem mode.fast;
+        pub let `== =   cmp.e   mode.fast;
+        pub let `!= =   cmp.une mode.fast;
+        pub let `<  =   cmp.l   mode.fast;
+        pub let `<= =   cmp.le  mode.fast;
+        pub let `>  =   cmp.g   mode.fast;
+        pub let `>= =   cmp.ge  mode.fast;
+    }
+}
+/// # The mem Plugin {#mem}
+///
+/// @see mim::plug::mem
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+import compile;
+///
+/// ## Types
+///
+/// ### M {#memM}
+///
+/// This type tracks all kinds of side effects in the given address space.
+axm M: Nat → *;
+///
+/// ### Ptr
+///
+/// Pointer type with *pointee* type `T` and *address space* `a`.
+/// At the moment, the *address space* is not really used and serves as a placeholder for future work.
+axm Ptr: [*, Nat] → *;
+
+anx lam Ptr0(T: *): * = Ptr (T, 0);
+///
+/// ## Operations w/ Side Effects
+///
+/// The following operations have side effects.
+/// For this reason, they consume a `mem.M a` and yield a new `mem.M a`.
+///
+/// ### load
+///
+/// Loads the pointee of type `T` from a pointer of type `mem.Ptr (T, a)`.
+axm load: {T: *, a: Nat} as Ta → [M a, Ptr Ta] → [M a, T], normalize_load;
+///
+/// ### store
+///
+/// Stores a value of type `T` to the location pointed to by a pointer of type `mem.Ptr (T, a)`.
+axm store: {T: *, a: Nat} as Ta → [M a, Ptr Ta, T] → M a, normalize_store;
+///
+/// ### fresh
+///
+/// Passes a *fresh* `mem.M a` for address space `a` to its return continuation: `ret mem = mem.fresh $ 0`.
+/// Conversion-only phases (e.g. `tensor.lower_to_mem`) emit memory operations before memory has been threaded.
+/// Each call site's return continuation is a distinct mutable, so the received memories are distinct by construction -
+/// hash-consing cannot collapse two otherwise identical memory operations into one.
+/// `mem.add_mem` resolves each call by jumping to the continuation with the memory that is current at that point.
+axm fresh: Fn [a: Nat] → M a;
+///
+/// ### alloc
+///
+/// Allocates memory of type `T` in address space `a`.
+axm alloc: [*, a: Nat] as Ta → [M a] → [M a, Ptr Ta];
+///
+/// ### slot
+///
+/// Reserves a stack slot for type `T` in address space `a`.
+/// The slot is passed to the continuation and its lifetime is scoped to that continuation.
+axm slot: [*, a: Nat] as Ta → Fn M a → [M a, Ptr Ta];
+///
+/// ### malloc
+///
+/// Allocates memory of type `T` in address space `a`.
+/// The difference to `mem.alloc` is that the size is passed explicitly (in bytes) instead of being derived from `T`.
+axm malloc: [*, a: Nat] as Ta → [M a, Nat] → [M a, Ptr Ta];
+///
+/// ### free
+///
+/// Frees memory of type `T` in address space `a`.
+axm free: {*, a: Nat} as Ta → [M a, Ptr Ta] → M a;
+///
+/// ### mslot
+///
+/// Reserves a stack slot for type `T` in address space `a`.
+/// The reserved slot will be `size` bytes large.
+/// The slot is passed to the continuation and its lifetime is scoped to that continuation.
+axm mslot: [*, a: Nat] as Ta → Fn [M a, size: Nat] → [M a, Ptr Ta];
+///
+/// ## Operations w/o Side Effects
+///
+/// ### lea
+///
+/// Load effective address.
+/// Performs address computation by offsetting the passed pointer with index `i`.
+axm lea: {n: Nat, Ts: «n; *», a: Nat} → [Ptr («j: n; Ts#j», a), i: Idx n] → Ptr (Ts#i, a), normalize_lea;
+///
+/// ## Phases
+///
+/// ### add_mem
+///
+/// Threads `mem.M` through functions that lack it.
+///
+axm add_mem: compile.Phase;
+///
+/// ### seo
+///
+/// Symbolic Expression Optimization — SSA construction, expression propagation, and GVN in one fixed
+/// point (see mim::plug::mem::phase::SEO).
+///
+axm seo: compile.Phase;
+///
+/// ### alloc2malloc_repl
+///
+/// Rewrites `mem.alloc` / `mem.slot` into `mem.malloc` / `mem.mslot`.
+///
+axm alloc2malloc_repl: compile.Phase;
+/// # The nvptx Plugin {#nvptx}
+///
+/// @see mim::plug::nvptx
+///
+/// A plugin for NVIDIA PTX intrinsics.
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin gpu;
+import compile;
+import mem;
+///
+/// ## Types
+///
+/// ### Streams
+///
+anx let Stream = mem.Ptr0 I8;
+///
+/// ## Phases
+///
+/// ### stream_impl_repl
+///
+/// Replaces the abstract `gpu.Stream` with this plugin's PTX stream representation `nvptx.Stream`.
+///
+axm stream_impl_repl: compile.Phase;
+/// # The opt Plugin {#opt}
+///
+/// @see mim::plug::opt
+///
+/// [TOC]
+///
+/// Manages the default compilation pipeline of Mim programs using plugins.
+///
+/// ## Dependencies
+///
+/// `opt` only depends on `compile`.
+/// Every other plugin is referenced *by name* through `compile.named` (which resolves to the plugin's
+/// annex iff it is loaded) and `compile.cond` (which gates a whole sub-pipeline on a plugin being loaded).
+/// This way the default pipeline does not have to import any of the optional plugins.
+///
+plugin compile;
+///
+/// ## The default pipeline
+///
+extern lam _default_compile (): compile.Phase =
+    let optimize =
+        // fixed-point iteration off by default; enable with `-X compile:aggr`
+        compile.phases (compile.aggr ff) (
+            compile.scalarize,
+            compile.phases tt (
+                compile.beta_red,
+                compile.eta_conv,
+            ),
+            compile.named "mem.seo",
+            compile.static_arg_opt,
+        );
+
+    compile.phases ff (
+        optimize,
+        // regex
+        compile.named "regex.lower_regex",
+        compile.unload "regex",
+
+        // tensor
+        compile.named "tensor.reassoc",
+        compile.named "tensor.lower_tensor",
+        compile.named "tensor.fuse_tensor",
+        compile.named "tensor.lower_to_mem",
+        compile.unload "tensor",
+        // Only run add_mem if the tensor plugin is loaded: tensor bufferization emits mem.M placeholders that must be stitched into a global mem chain.
+        compile.cond "tensor" (compile.named "mem.add_mem"),
+
+        // btensor
+        compile.named "gpu.lower_btensor_map_reduce",
+        compile.named "btensor.lower_map_reduce",
+        compile.unload "btensor",
+
+        // gpu
+        compile.named "gpu.mem_checks",
+
+        // autodiff
+        compile.named "autodiff.eval",
+        compile.named "autodiff.zero_repl",
+        compile.unload "autodiff",
+
+        // buffer
+        compile.named "buffer.lower_ptr",
+        compile.unload "buffer",
+
+        // affine + cps
+        compile.named "affine.lower_index",
+        compile.named "cps.conv",
+        compile.unload "cps",
+        compile.named "affine.lower_for",
+        compile.unload "affine",
+
+        // clos conv
+        let clos_opt_phases =
+            compile.phases ff (
+                compile.scalarize,
+                compile.named "clos.branch_clos",
+                compile.named "mem.seo",
+            );
+        compile.cond "clos" (
+            compile.phases ff (
+                compile.named "clos.clos_conv_prep",
+                compile.named "clos.clos_conv",
+                clos_opt_phases,
+                compile.named "clos.lower_typed_clos_prep",
+                compile.named "clos.clos2sjlj",
+                // clos2sjlj introduces new branch closures; clean them up again
+                clos_opt_phases,
+                compile.named "clos.lower_typed_clos",
+            )
+        ),
+
+        compile.lam_spec, // replace with lam-lifting
+
+        // CodeGenPrep
+        optimize,
+        compile.branch_normalize,
+        compile.ret_wrap,
+        compile.named "nvptx.stream_impl_repl",
+        compile.named "mem.alloc2malloc_repl",
+        compile.named "refly.remove_dbg_repl",
+        compile.unload "refly",
+        compile.named "gpu.check_addr_spaces_repl",
+        compile.named "ll.emit",
+        compile.named "ll_nvptx.emit",
+    );
+/// # The option Plugin {#option}
+///
+/// @see mim::plug::option
+///
+/// An optional value type: either a value of type `T` or nothing.
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin core;
+///
+/// ## Types
+///
+/// ### Opt
+///
+/// The option type: `[] ∪ T`.
+///
+///
+anx lam Opt (T: *) : * = [] ∪ T;
+///
+/// ## Constructors
+///
+/// ### some
+///
+/// Wraps a value into an option.
+///
+anx lam some {T: *} (v: T) : Opt T = v inj Opt T;
+///
+/// ### none
+///
+/// The empty option.
+///
+anx lam none (T: *) : Opt T = () inj Opt T;
+///
+/// ### some_if
+///
+/// Wraps `v` into an option iff `b` holds.
+///
+anx lam some_if {T: *} (b: Bool, v: T) : Opt T = (none T, some v)#b;
+///
+/// ## Operations
+///
+/// ### is_some
+///
+/// Returns `tt` if the option contains a value.
+///
+anx lam is_some {T: *} (o: Opt T) : Bool =
+    match o with
+        | _: T  => tt
+        | _: [] => ff;
+///
+/// ### unwrap_unsafe
+///
+/// Extracts the value without checking - undefined behavior for `option.none`.
+///
+axm unwrap_unsafe: {T: *} → Opt T → T, normalize_unwrap_unsafe;
+///
+/// ### unwrap_or
+///
+/// Extracts the value or returns `default`.
+///
+anx lam unwrap_or {T: *} (o: Opt T) (default: T) : T =
+    match o with
+        | x: T  => x
+        | _: [] => default;
+/// # The ord Plugin {#ord}
+///
+/// @see mim::plug::ord
+///
+/// Ordered Set and Map.
+/// @warning This is still WIP!
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin core;
+plugin option;
+///
+/// ## Types
+///
+/// ### Key
+///
+/// This existential-style type specifies a type together with a less-than function.
+///
+anx let Key = [T: *, lt: [T, T] → Bool];
+///
+/// ### Set / Map
+///
+/// Type constructors for set / map.
+/// * First argument must be of type `ord.Key`.
+/// * `ord.Map` needs a second argument: the value type.
+///
+axm Set: Key     → *;
+axm Map: Key → * → *;
+///
+/// ## Constructors
+///
+/// ### init
+///
+/// Creates a set / map from a list of values / key-value pairs.
+///
+pub mod init {
+    axm set: [K: Key] →          {n: Nat} → «n;  K#T    » → Set K  , normalize_init;
+    axm map: [K: Key] → {V: *} → {n: Nat} → «n; [K#T, V]» → Map K V, normalize_init;
+}
+///
+/// ### create
+///
+/// Creates an empty set / map.
+///
+anx lam create_set (K: Key)        : Set K   = init.set K    @0 ();
+anx lam create_map (K: Key) (V: *) : Map K V = init.map K @V @0 ();
+///
+/// ## Capacity
+///
+/// ### size
+///
+/// Yields the number of elements in the container.
+///
+pub mod size {
+    axm set: {K: Key} →          Set K   → Nat, normalize_size;
+    axm map: {K: Key} → {V: *} → Map K V → Nat, normalize_size;
+}
+///
+/// ### is_empty
+///
+/// Is the container empty?
+///
+anx lam is_empty_set {K: Key}        (set: Set K  ): Bool = core.ncmp.e (size.set set, 0);
+anx lam is_empty_map {K: Key} {V: *} (map: Map K V): Bool = core.ncmp.e (size.map map, 0);
+///
+/// ## Lookup
+///
+/// ### get
+///
+/// Looks up the given key in the map.
+/// Returns an optional value (`option.Opt V`).
+///
+axm get: {K: Key} → {V: *} → [Map K V, K#T] → option.Opt V, normalize_get;
+///
+/// ### contains
+///
+/// Does the container contain the given key?
+///
+pub mod contains {
+    axm set: {K: Key} →          [Set K  , K#T] → Bool, normalize_contains;
+    axm map: {K: Key} → {V: *} → [Map K V, K#T] → Bool, normalize_contains;
+}
+///
+/// ## Modifiers
+///
+/// ### insert
+///
+/// Inserts a key / key-value pair into the container.
+///
+pub mod insert {
+    axm set: {K: Key} →          [Set K  ,  K#T    ] → Set K  , normalize_insert;
+    axm map: {K: Key} → {V: *} → [Map K V, [K#T, V]] → Map K V, normalize_insert;
+}
+/// # The refly Plugin {#refly}
+///
+/// @see mim::plug::refly
+///
+/// The refly plugin allows you to [reify](https://en.wikipedia.org/wiki/Reification_(computer_science)) and [reflect](https://en.wikipedia.org/wiki/Reflective_programming) MimIR's own representation.
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+import compile;
+///
+/// ## Types
+///
+/// ### Code
+///
+/// The reified internal representation of a Mim expression of type `T`.
+///
+axm Code: * → *;
+///
+/// ## Reify / Reflect
+///
+/// ### reify
+///
+/// Yields the internal MimIR representation of a Mim expression as `refly.Code`.
+///
+axm reify: {T: *} → T → [Code T], normalize_reify;
+///
+/// ### reflect
+///
+/// Converts a `refly.Code` back to a Mim expression.
+///
+axm reflect: {T: *} → [Code T] → T, normalize_reflect;
+///
+/// ## Inspect
+///
+/// ### type
+///
+/// Returns the type of an expression.
+///
+axm type: {T: *} → T → *, normalize_type;
+///
+/// ### gid
+///
+/// Returns the internal mim::Def::gid of the argument.
+///
+axm gid: {T: *} → T → Nat, normalize_gid;
+///
+/// ### dbg
+///
+/// Debugs a given expression.
+/// * `tmp`: Prints debug information of a given expression at construction time and vanishes afterwards.
+/// * `perm`: Permanently debugs at every construction.
+///   Gets removed at codegen preparation in mim::plug::refly::RemoveDbgPerm.
+///
+anx let error   = 0;
+anx let warn    = 1;
+anx let info    = 2;
+anx let verbose = 3;
+anx let debug   = 4;
+
+axm dbg.(tmp, perm): {T: *} → [Nat, T] → T, normalize_dbg;
+///
+/// ## Testing
+///
+/// ### equiv
+///
+/// Checks for structural / alpha-equivalence.
+/// Two bits select the check:
+/// * `A`lpha: check α-equivalence instead of structural identity
+/// * `E`qual: assert equivalence instead of inequivalence
+///
+/// | Subtag | Alias      | A | E | Meaning                                    |
+/// |--------|------------|---|---|--------------------------------------------|
+/// | `ae`   | `struc_ne` | o | o | assert **not** structurally equivalent     |
+/// | `aE`   | `struc_eq` | o | x | assert structurally equivalent             |
+/// | `Ae`   | `alpha_ne` | x | o | assert **not** alpha-equivalent            |
+/// | `AE`   | `alpha_eq` | x | x | assert alpha-equivalent                    |
+///
+axm equiv.(ae = struc_ne, aE = struc_eq,
+           Ae = alpha_ne, AE = alpha_eq):
+    {T: *} → [T, T] → T, normalize_equiv;
+///
+/// ### check_bot
+///
+/// Checks whether the argument is `⊥`.
+///
+axm check_bot: {T: *} → T → T, normalize_check_bot;
+///
+/// ### check
+///
+/// Checks the given condition and emits the error message if it is `ff`.
+///
+axm check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;
+///
+/// ## Phases
+///
+/// ### remove_dbg_repl
+///
+/// Removes the permanent `refly.dbg` markers for code generation.
+///
+axm remove_dbg_repl: compile.Phase;
+/// # The regex Plugin {#regex}
+///
+/// @see mim::plug::regex
+///
+/// [TOC]
+///
+/// A normalizing regex plugin.
+///
+/// ## Dependencies
+///
+import compile;
+plugin core;
+plugin mem;
+plugin cps;
+///
+/// ## Types
+///
+/// ### RE
+///
+/// Char and string types:
+pub let Char = I8;
+lam Str(n: Nat): * = mem.Ptr0 «n; Char»;
+/// `Res n` is a match result: the memory, a success flag, and the new position.
+lam Res (n: Nat): * = [mem.M 0, Bool, Idx n];
+/// `RE` is the matcher itself: it takes the memory, the string, and the current position.
+let RE = {n: Nat} → [mem.M 0, Str n, Idx n] → Res n;
+///
+/// ## Meta
+///
+/// ### conj
+///
+/// A sequence of REs. <br>
+/// E.g., `\d\d\d` matches 3 digits: `regex.conj (regex.cls.d, regex.cls.d, regex.cls.d)`.
+axm conj: {n: Nat} → «n; RE» → RE, normalize_conj, 2;
+///
+/// ### disj
+///
+/// Matches any of the sub-expressions, e.g. `[0123456789]`.
+///
+axm disj: {n: Nat} → «n; RE» → RE, normalize_disj, 2;
+///
+/// ## Values
+///
+/// ### range
+///
+/// Wraps a range of literals.
+/// E.g., use `regex.range ('a', 'z')` to match all lower-case letters.
+///
+axm range: «2; Char» → RE, normalize_range, 1;
+///
+/// ### lit
+///
+/// Wraps a literal.
+///
+anx lam lit(val: Char) = range (val, val);
+///
+/// ### not_
+///
+/// Matches anything but the ranges in the parameter - the parameter must only contain `regex.disj`s and `regex.range`s.
+///
+axm not_: RE → RE, normalize_not, 1;
+///
+/// ### neg_lookahead
+///
+/// Succeeds iff the parameter does *not* match, without consuming input.
+///
+axm neg_lookahead: RE → RE, 1;
+///
+/// ### cls.*
+///
+/// | Subtag | Matches                        |
+/// |--------|--------------------------------|
+/// | `d`    | digits `[0-9]`                 |
+/// | `D`    | No digits                      |
+/// | `w`    | word characters `[a-zA-Z_0-9]` |
+/// | `W`    | No word characters             |
+/// | `s`    | whitespace `[ \t\r\n]`         |
+/// | `S`    | No whitespace                  |
+///
+pub mod cls {
+    anx let d = range ('0', '9');
+    anx let D = not_ d;
+    anx let w = disj (range ('0', '9'), range ('a', 'z'), range ('A', 'Z'), lit '_');
+    anx let W = not_ w;
+    anx let s = disj (range ('\t', '\n'), lit '\r', lit ' ');
+    anx let S = not_ s;
+}
+///
+/// ### any
+///
+/// Matches any character.
+///
+axm any: RE, 0;
+///
+/// ### empty
+///
+/// Matches the empty string.
+///
+axm empty: RE, 0;
+///
+/// ## Quantifiers
+///
+/// ### quant.*
+///
+/// The usual quantifiers:
+/// * `optional`: `?` - zero or one
+/// * `star`: `*` - zero or more
+/// * `plus`: `+` - one or more
+///
+axm quant.(optional,star,plus): RE → RE, normalize_quant, 1;
+///
+/// ## Phases
+///
+/// ### lower_regex
+///
+/// Compiles the regex combinators into an executable matcher (via a DFA).
+///
+axm lower_regex: compile.Phase;
+; ModuleID = '/home/runner/work/mimir/mimir/src/mim/plug/ll_nvptx/rt/mim_cuda_rt.c'
+source_filename = "/home/runner/work/mimir/mimir/src/mim/plug/ll_nvptx/rt/mim_cuda_rt.c"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+@stderr = external local_unnamed_addr global ptr, align 8
+@.str = private unnamed_addr constant [39 x i8] c"MimIR: CUDA driver error: CUresult %d\0A\00", align 1
+
+; Function Attrs: nounwind uwtable
+define dso_local void @mim_cu_check(i32 noundef %0) local_unnamed_addr #0 {
+  %2 = icmp eq i32 %0, 0
+  br i1 %2, label %6, label %3
+
+3:                                                ; preds = %1
+  %4 = load ptr, ptr @stderr, align 8, !tbaa !5
+  %5 = tail call i32 (ptr, ptr, ...) @fprintf(ptr noundef %4, ptr noundef nonnull @.str, i32 noundef %0) #3
+  tail call void @abort() #4
+  unreachable
+
+6:                                                ; preds = %1
+  ret void
+}
+
+; Function Attrs: nofree nounwind
+declare noundef i32 @fprintf(ptr nocapture noundef, ptr nocapture noundef readonly, ...) local_unnamed_addr #1
+
+; Function Attrs: noreturn nounwind
+declare void @abort() local_unnamed_addr #2
+
+attributes #0 = { nounwind uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #1 = { nofree nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #2 = { noreturn nounwind "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #3 = { cold }
+attributes #4 = { noreturn nounwind }
+
+!llvm.module.flags = !{!0, !1, !2, !3}
+!llvm.ident = !{!4}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{i32 8, !"PIC Level", i32 2}
+!2 = !{i32 7, !"PIE Level", i32 2}
+!3 = !{i32 7, !"uwtable", i32 2}
+!4 = !{!"Ubuntu clang version 18.1.3 (1ubuntu1)"}
+!5 = !{!6, !6, i64 0}
+!6 = !{!"any pointer", !7, i64 0}
+!7 = !{!"omnipotent char", !8, i64 0}
+!8 = !{!"Simple C/C++ TBAA"}
+; ModuleID = '/home/runner/work/mimir/mimir/src/mim/plug/ll/rt/mim_rt.c'
+source_filename = "/home/runner/work/mimir/mimir/src/mim/plug/ll/rt/mim_rt.c"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu"
+
+; Function Attrs: mustprogress nofree norecurse nosync nounwind willreturn memory(none) uwtable
+define dso_local noundef i64 @mim_jmpbuf_size() local_unnamed_addr #0 {
+  ret i64 200
+}
+
+attributes #0 = { mustprogress nofree norecurse nosync nounwind willreturn memory(none) uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+
+!llvm.module.flags = !{!0, !1, !2, !3}
+!llvm.ident = !{!4}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{i32 8, !"PIC Level", i32 2}
+!2 = !{i32 7, !"PIE Level", i32 2}
+!3 = !{i32 7, !"uwtable", i32 2}
+!4 = !{!"Ubuntu clang version 18.1.3 (1ubuntu1)"}
+/// # The tensor Plugin {#tensor}
+///
+/// @see [`-X tensor:<arg>`](@ref xarg_tensor)
+/// @see mim::plug::tensor
+///
+/// [TOC]
+///
+/// SSA-world tensor operations: a generic `map_reduce` loop-nest abstraction plus derived operations
+/// (reshape, slice, convolution, pooling, dot product, ...), lowered via `affine` loops and bufferized
+/// onto the `buffer` layer.
+///
+/// ## Dependencies
+///
+plugin tuple;
+plugin refly;
+plugin core;
+import compile;
+plugin option;
+plugin vec;
+plugin cps;
+plugin affine;
+plugin buffer;
+plugin btensor;
+
+use core.ops.n;
+///
+/// ## Types
+///
+/// ### Ring
+///
+/// Represents an [algebraic ring](https://en.wikipedia.org/wiki/Ring_(mathematics)).
+/// E.g., `let nat_ring = (Nat, 0, core.nat.add, core.nat.mul);`.
+///
+/// An alias for `btensor.Ring`.
+/// The buffer-world `btensor` plugin sits *below* `tensor` — `lower_to_mem` bufferizes onto `btensor.*` ops -
+/// so the definition lives there and both layers share one notion of a ring.
+anx Ring = btensor.Ring;
+///
+/// ## Constructors
+///
+/// Build a tensor from nothing but its shape.
+///
+/// ### generate
+///
+/// Constructs a tensor by evaluating `body` once for every logical output coordinate.
+/// Coordinates use `I64` so the body can do ordinary scalar arithmetic before converting them to bounded tensor indices.
+///
+/// ```python
+/// output = empty(s_out)
+/// for index in ndindex(s_out):
+///     output[index] = body(index)
+/// return output
+/// ```
+///
+axm generate: {T: *, r: Nat}
+            → [s_out: «r; Nat»]
+            → [body: [«r; I64»] → T]
+            → «s_out; T»;
+///
+/// ### splat
+///
+/// Constructs a tensor whose every element is `value`.
+/// Keeping this explicit lets bufferization pick a fill operation instead of first building an index
+/// lambda or a monolithic nested-array literal.
+///
+/// ```python
+/// output = empty(s_out)
+/// for index in ndindex(s_out):
+///     output[index] = value
+/// return output
+/// ```
+axm splat: {T: *, r: Nat}
+         → [s_out: «r; Nat», value: T]
+         → «s_out; T»;
+///
+/// ## Accessors
+///
+/// Element access and shape reflection.
+///
+/// ### get
+///
+/// Extracts the element at `index` from `arr`: `get ((a, b, c), arr)` ≡ `arr#a#b#c`.
+///
+/// `index` precedes `arr` so that `{r, s}` can be inferred: `index: «i: r; Idx (s#i)»` pins the rank
+/// *and* every extent, after which `arr: «s; T»` peels off exactly that many levels of its nested
+/// array type.
+/// The other way round `arr` would be checked while `r` is still unknown and the peeling depth would
+/// be ambiguous.
+axm get: {T: *, r: Nat, s: «r; Nat»} → [index: «i: r; Idx (s#i)», arr: «s; T»] → T, normalize_get;
+///
+/// ### set
+///
+/// Inserts the element `x` in `arr` at `index`:
+/// `set ((a, b, c), arr, x)` ≡ `Insert arr a (Insert (arr#a) b (Insert (arr#a#b) c x))`.
+///
+/// `index` precedes `arr` for the same reason as in get.
+axm set: {T: *, r: Nat, s: «r; Nat»} → [index: «i: r; Idx (s#i)», arr: «s; T», x: T] → «s; T», normalize_set;
+///
+/// ### shape
+///
+/// Returns the shape of `arr` as a rank-`r` array of Nats: `(s#0, …, s#(r-1))`.
+///
+/// The rank `r` is explicit: `normalize_shape` peels `r` levels off the nested array type, which
+/// inference cannot do backwards since `«s; T»` does not reverse-unify.
+/// Size-1 axes collapse out of the type, so `arr` must have no literal-1 dims among the first `r`.
+///
+axm shape: {A: *} → [r: Nat] → [arr: A] → «r; Nat», normalize_shape;
+///
+/// ## Map-Reduce
+///
+/// The loop-nest core every other operation is lowered onto: `lower_tensor` re-applies the matching
+/// annex from Implementations, while `broadcast`, `concat`, `gather`, `pad` and `scatter` are expanded
+/// by `lower_map_reduce` directly.
+///
+/// ### id
+///
+/// The CPS identity (with an empty epilogue-input pack) — the neutral `post` epilogue.
+anx fun id {T: *} (x: T, _: [])@tt: T = return x;
+///
+/// ### map_reduce_post
+///
+/// The workhorse behind every tensor operation: a reduction fold over an affinely-indexed loop nest.
+/// The loop vector `(o…, r…)` has length `Rn`; its leading `Ro` dims are the parallel output loops,
+/// the trailing ones the reduction loops that are folded away.
+///
+/// * `Sr`, `So`: the full loop bounds and the result shape (rank `Ro`).
+///   `So` may differ from the leading `Ro` bounds of `Sr` — that is what lets `map_out` write to a
+///   re-shaped output, e.g. a transpose.
+/// * `f`: folds one element of each input into the accumulator, seeded per output cell with `init`.
+/// * `post`: maps the folded accumulator, plus one element of each of the `nps` *epilogue inputs*
+///   `post_is`, to the stored element.
+///   It runs once per output cell, between fold and write-back — the slot `fuse_tensor` composes
+///   trailing elementwise maps into (bias + activation after a convolution or matrix product).
+/// * `map_out`: full loop vector ↦ the `Ro` write coordinates in `«So»`.
+///   The reduction is folded away before the write, so it may only depend on the leading `Ro` indices.
+/// * `maps#i`: full loop vector ↦ the `Ris#i` read coordinates of input `i`.
+///   Transposes, slices and broadcasts are expressed here.
+/// * `post_maps#j`: the `Ro` *output-cell* coordinates (the write coordinates `map_out` produces) ↦
+///   the read coordinates of epilogue input `j`; epilogue inputs are read once per output cell, not
+///   per loop iteration.
+/// * `sched`: the op's **schedule**, selected in the frontend via the `Tileable` machinery below and
+///   carried as an ordinary operand through fusion — a target-agnostic chooser (canonically a
+///   `mk_sched` value) that, handed the target's loop-nest builder, returns the nest to run.
+///   The lowering only binds it and **applies** the result to the op's decision-free fold step and
+///   write-back, so unrolling, interchange and vectorization are plain IR, not lowering behavior.
+///
+/// The total loop count `Rn` is stated instead of the reduction count `Rr = Rn - Ro`: a
+/// `core.nat.add (Ro, Rr)` in the domain cannot be inverted by type inference and every call site
+/// would have to pass the whole meta group explicitly with `@`, whereas `Sr` pins `Rn` structurally.
+///
+/// `nis`, `nps`, `Ro`, `Rn`, `Ris` and `Rps` must be literals before the `tensor::Lower` phase; the
+/// bounds `So` and `Sr` may stay symbolic.
+///
+axm map_reduce_post: {nis nps: Nat}
+                   → {To Tp: *, Ro Rn: Nat, TSched: □}
+                   → [So: «Ro; Nat», Sr: «Rn; Nat», sched: TSched]
+                   → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»,
+                      Tps: «nps; *», Rps: «j: nps; Nat», Sps: «j: nps; «Rps#j; Nat»»}
+                   → [f: Fn [To, «i: nis; Tis#i»] → To, init: To, post: Fn [To, «j: nps; Tps#j»] → Tp]
+                   → [map_out: «Rn; affine.Index» → «Ro; affine.Index»]
+                   → [     maps: «i: nis; «Rn; affine.Index» → «Ris#i; affine.Index»»,
+                      post_maps: «j: nps; «Ro; affine.Index» → «Rps#j; affine.Index»»]
+                   → [is: «i: nis; «Sis#i; Tis#i»», post_is: «j: nps; «Sps#j; Tps#j»»]
+                   → «So; Tp»;
+///
+/// ### SchedT
+///
+/// The type of a **schedule** value: a chooser over the target's loop-nest builder — for whatever nest
+/// type `N` the lowering instantiates, it is handed the target's builder `mk` and returns the nest
+/// to run.
+let SchedT = [N: *] → ([vdim unroll: Nat] → N) → N;
+///
+/// ### mk_sched
+///
+/// The canonical schedule, picking
+/// * `vdim`, the dim to run innermost as the unit-stride vector loop — a parallel dim runs over a row
+///   of accumulators, the innermost **reduction** dim selects the reduction-vectorized nest (see
+///   `btensor.mr_nest`), and `vdim ≥ Rn` means "none";
+/// * `unroll`, the number of trailing reduction dims to unroll into straight-line code.
+///
+/// An alias for `btensor.mk_sched`, which `btensor` owns for the same reason it owns `btensor.Ring`.
+anx mk_sched = btensor.mk_sched;
+///
+/// ### map_reduce
+///
+/// `map_reduce_post` without the epilogue and with the neutral schedule: delegates with `post = id`
+/// (so `Tp = To`), no epilogue inputs (`nps = 0`), no vector dim (`vdim = Rn`, the out-of-range
+/// sentinel), and no unrolling.
+/// `Rn` is stated instead of `Rr` for the same reason as there.
+anx lam map_reduce {nis: Nat} {To: *, Ro Rn: Nat}
+                   (So: «Ro; Nat», Sr: «Rn; Nat»)
+                   {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}
+                   (f: Fn [To, «i: nis; Tis#i»] → To, init: To)
+                   (map_out: [«Rn; affine.Index»] → «Ro; affine.Index»)
+                   (maps: «i: nis; ([«Rn; affine.Index»] → «Ris#i; affine.Index»)»)
+                   (is: «i: nis; «Sis#i; Tis#i»»): «So; To» =
+    map_reduce_post
+        (So, Sr, mk_sched (Rn, 0))
+        (f, init, id @To) map_out (maps, ()) (is, ());
+///
+/// ### proj_map
+///
+/// `subs ↦ λ o. ‹j; o#(subs#j)›`: the access map that reads input axis `j` at loop variable `subs#j`,
+/// e.g. `((0, 2), (2, 1))` for the two inputs of a matrix product.
+/// An alias for `btensor.proj_map`, which `btensor` owns for the same reason it owns `btensor.Ring`.
+anx proj_map = btensor.proj_map;
+///
+/// ## Shape Operations
+///
+/// Pure re-indexing: every element of the result is one element of an input, so the operation lives
+/// entirely in the access map.
+///
+/// ### broadcast
+///
+/// Expands the dimensions of `input` to fit `s_out`:
+/// for all `i`, either `s_in#i = s_out#i` or `s_in#i = 1`, and the size-1 dimensions are expanded to fit `s_out`.
+///
+/// Lowered directly to packs by the `LowerMapReduce` phase (`lower_broadcast`): a size-1 axis broadcast to `n`
+/// becomes a `‹n; …›` pack rather than a materialized/looped copy, which `map_reduce` cannot express.
+axm broadcast: {T: *, r: Nat}
+             → [s_in s_out: «r; Nat», input: «s_in; T»]
+             → «s_out; T», normalize_broadcast;
+///
+/// ### broadcast_in_dim
+///
+/// Transposes and expands the dimensions of `input` to fit `s_out`.
+/// Each input dimension is mapped to the output dimension given by `index`; the holes are filled by broadcasting.
+///
+/// @todo We could probably implement this in terms of `broadcast` and `transpose` directly.
+///
+axm broadcast_in_dim: {T: *, r_in r_out: Nat}
+                    → [s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»]
+                    → «s_out; T», normalize_broadcast_in_dim;
+///
+/// ### concat_acc
+///
+/// Accumulator for the axis-sum: adds `row#ax` to the running total.
+lam concat_acc {r: Nat} (ax: Idx r) (acc: Nat, row: «r; Nat»): Nat = acc + row#ax;
+///
+/// ### concat_shape
+///
+/// `(ax, Sis) ↦ s_out`: sums the inputs' extents along `ax`, keeps the shared extents on every other
+/// axis.
+lam concat_shape {nis r: Nat} (ax: Idx r, Sis: «nis; «r; Nat»»): «r; Nat» =
+    let sum_ax = vec.fold.l (concat_acc ax) (0, Sis);
+    let row_0  = Sis#(core.idx 0 nis 0);
+    ‹d: r; core.select (core.icmp.e (d, ax), sum_ax, row_0#d)›;
+///
+/// ### concat
+///
+/// Joins `nis` inputs along axis `ax`. All inputs share rank `r` and agree on every axis except `ax`;
+/// the output extent along `ax` is the sum of the inputs' extents there (`s_out#ax = Σ_i Sis#i#ax`).
+/// `out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]`, where `k` is the input whose range `o#ax` lands
+/// in (`off` are the prefix sums of the per-input extents along `ax`).
+///
+/// The output shape is deduced from `ax` and the per-input shapes `Sis` (see `concat_shape`), so it is
+/// not passed explicitly.
+
+axm concat: {T: *, nis r: Nat}
+          → [ax: Idx r]
+          → {Sis: «i: nis; «r; Nat»»}
+          → [is: «i: nis; «Sis#i; T»»]
+          → «concat_shape (ax, Sis); T», normalize_concat;
+///
+/// ### flip
+///
+/// Reverses every axis: `out[…d…] = input[… (s_in#d − 1) − d …]`.
+///
+axm flip: {T: *, r: Nat}
+        → [s_in: «r; Nat»]
+        → [input: «s_in; T»]
+        → «s_in; T», normalize_flip;
+///
+/// ### pad_shape
+///
+lam pad_shape {r: Nat} (lo s_in hi: «r; Nat»): «r; Nat» =
+    ‹d: r; lo#d + s_in#d + hi#d›;
+///
+/// ### pad
+///
+/// Pads each axis: `s_out#d = lo#d + s_in#d + hi#d`, rank preserved.
+/// `out[…d…] = input[… o#d − lo#d …]` whenever every axis lands inside the input region;
+/// otherwise the value depends on `mode`:
+///
+/// * `mode = 0` (constant): out-of-region cells take the scalar `value`.
+/// * `mode = 1` (replicate): out-of-region cells take the nearest edge element (the read index is
+///   clamped to `[0, s_in#d − 1]` per axis); `value` is ignored.
+///
+/// The output shape is deduced from `lo`, `s_in` and `hi` (see `pad_shape`), so it is not passed explicitly.
+
+// `(lo, s_in, hi) ↦ ‹d; lo#d + s_in#d + hi#d›`: the padded shape.
+
+axm pad: {T: *, r: Nat}
+       → [s_in: «r; Nat»]
+       → [mode: Nat, lo hi: «r; Nat»]
+       → [input: «s_in; T», value: T]
+       → «pad_shape (lo, s_in, hi); T», normalize_pad;
+///
+/// ### repeat
+///
+/// Tiles `input` to the larger shape `s_out` (each `s_out#d` must be a multiple of `s_in#d`): `out[…d…] = input[… d mod s_in#d …]`.
+///
+axm repeat: {T: *, r: Nat}
+          → [s_in: «r; Nat»]
+          → [s_out: «r; Nat»]
+          → [input: «s_in; T»]
+          → «s_out; T», normalize_repeat;
+///
+/// ### reshape
+///
+/// Row-major reshape: `prod(s_in)` must equal `prod(s_out)`. Loops over the result and reads the input at the
+/// delinearized linear index, so it works for arbitrary rank changes (e.g. flatten/unflatten).
+///
+/// `s_in` is explicit because `s_out` has a different rank and so cannot pin the input's
+/// rank/element-type during inference.
+axm reshape: {T: *, r_in r_out: Nat}
+           → [s_in: «r_in; Nat»]
+           → [s_out: «r_out; Nat»]
+           → [input: «s_in; T»]
+           → «s_out; T», normalize_reshape;
+///
+/// ### slice
+///
+/// Strided slice / narrow: `out[…d…] = input[… start#d + step#d · d …]`. Same rank in/out; `s_out` gives the sliced
+/// extents (the caller must ensure `start#d + step#d · (s_out#d − 1) < s_in#d`).
+///
+axm slice: {T: *, r: Nat}
+         → [s_in: «r; Nat»]
+         → [start step s_out: «r; Nat»]
+         → [input: «s_in; T»]
+         → «s_out; T», normalize_slice;
+///
+/// ### transpose_shape
+///
+/// `(s, permutation) ↦ ‹i; s#(permutation⁻¹#i)›`: the permuted shape.
+lam transpose_shape {r: Nat} (s: «r; Nat», permutation: «r; Idx r»): «r; Nat» =
+  let shape_permutation = ‹i: r; option.unwrap_unsafe (vec.first core.icmp.e (permutation, i))›;
+  ‹i: r; s#(shape_permutation#i)›;
+///
+/// ### transpose
+///
+/// Permutes the dimensions of `input` according to `permutation`.
+///
+/// `permutation` precedes `input`, and `{s}` is a *separate* implicit group introduced after it, so that `{T, r, s}`
+/// can be inferred: `permutation: «r; Idx r»` pins the rank `r`, and only then is the `{s}` Hole created — with the
+/// now-literal type `«r; Nat»`, which lets `input: «s; T»` peel off exactly `r` levels of its nested array type.
+/// Merging the two groups would not do: the domain `«s; T»` is built once, while `r` is still unknown.
+axm transpose: {T: *, r: Nat}
+             → [permutation: «r; Idx r»]
+             → {s: «r; Nat»}
+             → [input: «s; T»]
+             → «transpose_shape (s, permutation); T»;
+///
+/// ### transpose_2d
+///
+/// Permutes the dimensions of a 2-dimensional tensor.
+///
+axm transpose_2d: {T: *}
+                → {s: «2; Nat»}
+                → [input: «s; T»]
+                → «s#tt, s#ff; T»;
+///
+/// ## Element-wise Operations
+///
+/// Apply a scalar function at every coordinate.
+///
+/// ### binary
+///
+/// Maps a binary function over a pair of tensors.
+///
+axm binary: {Ti1 Ti2 To: *}
+          → [app: [Ti1, Ti2] → To]
+          → {r: Nat, s: «r; Nat»}
+          → [is: [«s; Ti1», «s; Ti2»]]
+          → «s; To»;
+///
+/// ### map
+///
+/// Maps a function over a collection of tensors.
+///
+axm map: {T: *, ni: Nat, Is: «ni; *»}
+       → [app: «i: ni; Is#i» → T]
+       → {r: Nat, s: «r; Nat»}
+       → [is: «i: ni; «s; Is#i»»]
+       → «s; T»;
+///
+/// ### select
+///
+/// Maps `core.select` over tensors.
+///
+axm select: {T: *}
+          → {r: Nat, s: «r; Nat»}
+          → [is: [«s; Bool», «s; T», «s; T»]]
+          → «s; T»;
+///
+/// ### unary
+///
+/// Maps a unary function over a tensor.
+///
+axm unary: {Ti To: *}
+         → [app: Ti → To]
+         → {r: Nat, s: «r; Nat»}
+         → [i: «s; Ti»]
+         → «s; To»;
+///
+/// ## Reductions
+///
+/// Operations that fold one or more reduction dims away.
+///
+/// ### bmm
+///
+/// Computes the batch matrix multiplication (BMM) of two 3-dimensional tensors — a special case of `dot_product`.
+///
+axm bmm: [R: Ring]
+       → {B M K N: Nat}
+       → [t1: «B, M, K; R#T», t2: «B, K, N; R#T»]
+       → «B, M, N; R#T»;
+///
+/// ### conv_shape
+///
+/// `(n, cout, (H, W), (KH, KW), stride, dilation, padding) ↦ (n, cout, OH, OW)`, where
+/// \f$O_d = (s_d + 2 \cdot \mathit{padding}_d - (\mathit{dilation}_d \cdot (k_d - 1) + 1)) / \mathit{stride}_d + 1\f$:
+/// the NCHW output shape.
+pub lam conv_shape (n cout: Nat, s k stride dilation padding: «2; Nat»): «4; Nat» =
+    let hw = ‹d: 2; (s#d + 2 * padding#d - (dilation#d * (k#d - 1) + 1)) / stride#d + 1›;
+    (n, cout, hw#0_2, hw#1_2);
+///
+/// ### conv
+///
+/// 2-D convolution (cross-correlation) in the ring `R`, `groups = 1`, no bias:
+/// \f[
+///     \mathit{out}_{n,co,oh,ow} = \sum_{ci,kh,kw} \mathit{padded}_{n,ci,ih,iw} \cdot \mathit{weight}_{co,ci,kh,kw},
+///     \qquad ih = \mathit{stride}_0 \cdot oh + \mathit{dilation}_0 \cdot kh,
+///     \qquad iw = \mathit{stride}_1 \cdot ow + \mathit{dilation}_1 \cdot kw
+/// \f]
+///
+/// * Layout: `input: «N, Cin, H, W; R#T»`, `weight: «Cout, Cin, KH, KW; R#T»`,
+///   `output: «N, Cout, OH, OW; R#T»`.
+/// * `padding` zero-pads the spatial axes (composed via `pad`), so the windowed read is a pure affine
+///   map.
+/// * The output shape follows from the extents and window parameters (see `conv_shape`) and is not
+///   passed explicitly.
+
+axm conv: [R: Ring]
+        → {n cin cout h w kh kw: Nat}
+        → [stride dilation padding: «2; Nat»]
+        → [input: «n, cin, h, w; R#T», weight: «cout, cin, kh, kw; R#T»]
+        → «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T»;
+///
+/// ### dot_general_shape
+///
+/// The result shape: the batching extents, then the left operand's free extents, then the right
+/// operand's; the batching and contracting extents are checked to agree.
+lam dot_general_shape {r1 r2: Nat} {nc nb: Nat}
+  (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)
+  (s1: «r1; Nat», s2: «r2; Nat») =
+      let bs_check = ‹i: nb; refly.check (s1#(b1#i) == s2#(b2#i), s1#(b1#i), "batching dims don't match")›;
+      let cs_check = ‹i: nc; refly.check (s1#(c1#i) == s2#(c2#i), s1#(c1#i), "contracting dims don't match")›;
+      let bs       = ‹i: nb; s1#(b1#i)›;
+      let bc_1     = vec.cat (b1, c1);
+      let s1_res   = vec.diff (s1, bc_1);
+      let bc_2     = vec.cat (b2, c2);
+      let s2_res   = vec.diff (s2, bc_2);
+      let s12_res  = vec.cat (s1_res, s2_res);
+      let s_out    = vec.cat (bs, s12_res);
+      s_out;
+///
+/// ### dot_product
+///
+/// Returns the [generalized dot product](https://openxla.org/stablehlo/spec#dot_general) of `a` and `b`:
+/// * `R`: the ring in which the dot product is performed
+/// * `r1`/`r2`: the ranks of the two inputs
+/// * `nc`/`nb`: the number of contracting/batching dimensions
+/// * `c1`/`c2`: the contracting dimensions of the left/right input
+/// * `b1`/`b2`: the batching dimensions of the left/right input
+/// * `s1`/`s2`: the shape of the left/right input
+/// * `a`/`b`: the left/right input
+///
+axm dot_product: [R: Ring]
+               → {r1 r2: Nat}
+               → {nc nb: Nat}
+               → [c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»]
+               → {s1: «r1; Nat», s2: «r2; Nat»}
+               → [a: «s1; R#T», b: «s2; R#T»]
+               → «dot_general_shape (c1, c2, b1, b2) (s1, s2); R#T»;
+///
+/// ### pool
+///
+/// 2-D pooling: reduces each `(kernel#0, kernel#1)` window of `input: «N, C, H, W; T»` with the fold
+/// `g` seeded by `init` to `output: «N, C, OH, OW; T»`, each channel independently.
+/// * `padding` pads the spatial axes with `init` (composed via `pad`), so padded cells are inert.
+/// * Max-pooling is `g = max, init = −∞`; sum-/average-pooling is `g = +, init = 0` — divide by the
+///   window size afterwards for the average.
+/// * Unlike `conv` there is no weight, so the window size `kernel` is an explicit operand, and the
+///   output spatial size `s_out = (OH, OW)` is passed explicitly (no `Nat` division to compute it).
+
+axm pool: {T: *}
+        → [g: [T, T] → T, init: T]
+        → {n c h w: Nat}
+        → [kernel stride dilation padding s_out: «2; Nat»]
+        → [input: «n, c, h, w; T»]
+        → «n, c, s_out#0_2, s_out#1_2; T»;
+///
+/// ### product_2d
+///
+/// Computes the matrix product of two 2-dimensional tensors — a special case of `dot_product`.
+///
+axm product_2d: [R: Ring]
+              → {m k l: Nat}
+              → [t1: «m, k; R#T», t2: «k, l; R#T»]
+              → «m, l; R#T»;
+///
+/// ## Indexing
+///
+/// Data-dependent access: an `index` tensor picks the coordinate along `dim`.
+///
+/// ### gather
+///
+/// Reads one source element for every index element:
+/// * the output coordinate is also the index coordinate, except on `dim`, where the value loaded from
+///   `index` selects the source coordinate;
+/// * `s_idx#d <= s_src#d` is required for every `d != dim`;
+/// * `dim: Idx r` and the index element type encode the axis and the indexed-source bounds in the type.
+///
+/// ```python
+/// for out_index in ndindex(s_idx):
+///     selected = index[out_index]
+///     source_index = tuple(
+///         selected if d == dim else out_index[d]
+///         for d in range(r)
+///     )
+///     output[out_index] = input[source_index]
+/// ```
+axm gather: {T: *, r: Nat}
+          → [s_src: «r; Nat», s_idx: «r; Nat»]
+          → [dim: Idx r]
+          → [input: «s_src; T», index: «s_idx; Idx (s_src#dim)»]
+          → «s_idx; T»;
+///
+/// ### scatter
+///
+/// Starts with `input` and visits `index` in row-major order.
+/// Each corresponding `updates` element is stored at the input coordinate selected by `index` on `dim`.
+/// Duplicate destinations use the last visited update. For `d != dim`, `s_idx#d <= s_src#d`; on every axis, `s_idx#d <= s_updates#d`.
+///
+/// ```python
+/// output = input.copy()
+/// for update_coord in ndindex(s_idx):
+///     selected = index[update_coord]
+///     destination = tuple(
+///         selected if d == dim else update_coord[d]
+///         for d in range(r)
+///     )
+///     output[destination] = updates[update_coord]
+/// ```
+axm scatter: {T: *, r: Nat}
+           → [s_src: «r; Nat», s_idx: «r; Nat», s_updates: «r; Nat»]
+           → [dim: Idx r]
+           → [input: «s_src; T», index: «s_idx; Idx (s_src#dim)», updates: «s_updates; T»]
+           → «s_src; T»;
+///
+/// ## Reflection
+///
+/// Compile-time queries about an operand that a schedule selector (see Tiling) branches on.
+///
+/// ### fastest_axis
+///
+/// Layout reflection for schedule selectors: which axis of the rank-`r` tensor `t` is the
+/// fastest-varying (unit-stride) axis of the tensor **actually** read, once `fuse_tensor`'s
+/// read-through has absorbed a pure re-indexed read behind `t` — behind a transpose the source's
+/// trailing axis maps back to a different axis of `t`.
+/// * a plain tensor (anything that is not such a read, a still-symbolic operand included): its own
+///   last axis `r − 1`.
+/// * an undecidable read (composed arithmetic like `reshape`, a nested read chain): the sentinel `r`.
+///
+/// This reflects only operand structure the frontend cannot inspect itself; the schedule **decision**
+/// built on the answer stays in the IR next to the op (see `dot_product_impl`).
+/// `tensor::Lower` applies it where the op's operands are concrete.
+///
+axm fastest_axis: {T: *} → [r: Nat, t: T] → Nat, normalize_fastest_axis;
+///
+/// ### if_static
+///
+/// Binding-time dispatch for schedule selectors, so that one selector serves compile-time and
+/// runtime extents without staging annotations at the call site:
+/// * `k` a literal: the normalizer picks `s`.
+/// * `k` symbolic: stays stuck, keeping the choice open until instantiation.
+/// * still stuck at lowering time: the lowerings residualize to `d`, since an undecided `k` is then a
+///   runtime value.
+axm if_static: {T: *} → [k: Nat, s d: T] → T, normalize_if_static;
+///
+/// ## Tiling
+///
+/// Tiling, strip-mining and schedule selection are implemented entirely in the frontend IR, with
+/// partial evaluation doing the rewriting; no C++ transformation code.
+///
+/// ### Tileable
+///
+/// A `Tileable` existentially packages a computation over an affinely-indexed iteration domain
+/// together with its **schedule** (cf. MLIR's TilingInterface):
+/// * `Out`: the result *type constructor* — what materializing over a domain with `ro` parallel
+///   dims of extents `so` yields.
+/// * the iteration domain `Sr` (leading `Ro` parallel dims, trailing `Rr` reduction dims) and the
+///   result shape `So` — MLIR's getIterationDomain + getLoopIteratorTypes.
+/// * `oax`: which output axis each parallel dim writes — the piece of the write map the domain
+///   transforms need (`strip_mine_par` splits the output along `oax#d`).
+/// * the schedule `vdim`/`unroll` (see `mk_sched`): the chooser `retile` packs into the op.
+/// * `retile`: rebuild the computation over a *reindexed* domain, given the new domain and
+///   schedule, `iota` (maps new loop vectors to old loop vectors) and `omega` (maps (old output
+///   coordinates, new loop vector) to new output coordinates).
+///
+/// The op's internals (combiner, init, epilogue, inputs, access maps) stay hidden in the closure.
+let Tileable = [
+    Out: [ro: Nat, so: «ro; Nat»] → *,
+    Ro: Nat, Rr: Nat,
+    So: «Ro; Nat»,
+    oax: «Ro; Nat»,
+    Sr: «Ro + Rr; Nat»,
+    vdim: Nat, unroll: Nat,
+    retile: [Ro_n Rr_n: Nat]
+          → [So_n: «Ro_n; Nat», Sr_n: «Ro_n + Rr_n; Nat», vdim_n unroll_n: Nat]
+          → [iota:  «Ro_n + Rr_n; affine.Index» → «Ro + Rr; affine.Index»,
+             omega: [«Ro; affine.Index», «Ro_n + Rr_n; affine.Index»] → «Ro_n; affine.Index»]
+          → Out (Ro_n, So_n),
+];
+///
+/// #### comp_map
+///
+/// Composition helper for access maps: (m ∘ g).
+///
+lam comp_map {A B C: *} (m: B → C, g: A → B) (o: A): C = m (g o);
+///
+/// #### interchange
+///
+/// Permute the loop dims — new loop `j` iterates old dim `perm#j`. Loop order and write
+/// position are decoupled by the write map, so So is untouched. The permutation must keep parallel
+/// dims parallel (`perm#j < Ro` iff `j < Ro`), enforced at compile time; the schedule's `vdim` moves to
+/// its new position.
+anx lam interchange (t: Tileable, perm: «t#Ro + t#Rr; Nat»): Tileable =
+    let r = t#Ro + t#Rr;
+    let perm_ok = ‹j: r; let jj = core.bitcast Nat j;
+                         refly.check (core.icmp.e @2 (jj < t#Ro, perm#j < t#Ro),
+                                       perm#j,
+                                       "interchange: permutation must not mix parallel and reduction dims")›;
+    let sr_n   = ‹i: r; t#Sr#(core.idx 0 r (perm_ok#i))›;
+    let vdim_n = match vec.first `== (perm_ok, t#vdim) with
+                     | j: Idx r => core.bitcast Nat j
+                     | _: []    => t#vdim;
+    // The parallel dims permute among themselves (checked above), so the new dim j writes the
+    // output axis its old dim perm#j wrote.
+    let oax_n = ‹j: t#Ro; t#oax#(core.idx 0 (t#Ro) (perm_ok#(core.idx 0 r (core.bitcast Nat j))))›;
+    // iota: old dim i is found at the new position j with perm#j = i.
+    lam iota_p (o: «r; affine.Index»): «r; affine.Index» =
+        ‹i: r; o#(option.unwrap_unsafe (vec.first `== (perm_ok, core.bitcast Nat i)))›;
+    lam retile_n (ro_m rr_m: Nat)
+                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», vdim_m unroll_m: Nat)
+                 (iota:  «ro_m + rr_m; affine.Index» → «r; affine.Index»,
+                  omega: [«t#Ro; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)
+               : t#Out (ro_m, so_m) =
+        t#retile (ro_m, rr_m) (so_m, sr_m, vdim_m, unroll_m) (comp_map (iota_p, iota), omega);
+    (t#Out, t#Ro, t#Rr, t#So, oax_n, sr_n, vdim_n, t#unroll, retile_n);
+///
+/// #### materialize
+///
+/// Materialize a `Tileable` over its current domain and schedule (identity reindexing).
+anx lam materialize (t: Tileable): t#Out (t#Ro, t#So) =
+    lam id_i (o: «t#Ro + t#Rr; affine.Index»): «t#Ro + t#Rr; affine.Index» = o;
+    lam id_o (oo: «t#Ro; affine.Index», o: «t#Ro + t#Rr; affine.Index»): «t#Ro; affine.Index» = oo;
+    t#retile (t#Ro, t#Rr) (t#So, t#Sr, t#vdim, t#unroll) (id_i, id_o);
+///
+/// #### mr_tileable
+///
+/// The `map_reduce_post` instance, the SSA analog of MLIR's getTiledImplementation: `retile` rebuilds
+/// the same op over the new domain, composing the access maps with `iota` and the write map with
+/// `omega`.
+/// * No extract/insert_slice machinery — the tiled reads hit the original inputs through the
+///   reindexed access maps.
+/// * Epilogue-free (`nps = 0`): impls build raw ops and the epilogue arrives later via `fuse_tensor`,
+///   because epilogue-input access maps take output-cell coordinates, whose rank a domain transform
+///   may change.
+/// * `oax` states which output axis `map_out` writes each parallel dim to — the identity for the
+///   impls' projection write maps.
+anx lam mr_tileable
+                {nis: Nat}
+                {Ro Rr: Nat}
+                {To Tp: *}
+                (So: «Ro; Nat», oax: «Ro; Nat», Sr: «Ro + Rr; Nat»)
+                {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}
+                (f: Fn [To, «i: nis; Tis#i»] → To, init: To, post: Fn [To, []] → Tp)
+                (map_out: [«Ro + Rr; affine.Index»] → «Ro; affine.Index»)
+                (maps: «i: nis; ([«Ro + Rr; affine.Index»] → «Ris#i; affine.Index»)»)
+                (is: «i: nis; «Sis#i; Tis#i»»)
+              : Tileable =
+    lam out_t (ro: Nat, so: «ro; Nat»): * = «so; Tp»;
+    lam retile (Ro_n Rr_n: Nat)
+               (So_n: «Ro_n; Nat», Sr_n: «Ro_n + Rr_n; Nat», vdim_n unroll_n: Nat)
+               (iota:  «Ro_n + Rr_n; affine.Index» → «Ro + Rr; affine.Index»,
+                omega: [«Ro; affine.Index», «Ro_n + Rr_n; affine.Index»] → «Ro_n; affine.Index»)
+             : «So_n; Tp» =
+        lam map_out_n (o: «Ro_n + Rr_n; affine.Index»): «Ro_n; affine.Index» =
+            omega (map_out (iota o), o);
+        map_reduce_post @(nis, 0) @(To, Tp, Ro_n, Ro_n + Rr_n, SchedT)
+            (So_n, Sr_n, mk_sched (vdim_n, unroll_n))
+            @(Tis, Ris, Sis, (), (), ()) (f, init, post)
+            map_out_n
+            (‹i: nis; comp_map (maps#i, iota)›, ())
+            (is, ());
+    (out_t, Ro, Rr, So, oax, Sr, Ro + Rr, 0, retile);
+///
+/// #### unroll_trailing
+///
+/// Fully unroll the trailing `d` reduction dims into the loop body — e.g. a
+/// convolution's kh·kw window (`d = 2`). Their trip counts must be literals at lowering time.
+lam unroll_trailing (t: Tileable, d: Nat): Tileable =
+    (t#Out, t#Ro, t#Rr, t#So, t#oax, t#Sr, t#vdim, d, t#retile);
+///
+/// #### vectorize
+///
+/// Run dim `d` as the innermost, unit-stride vector loop (per-cell fold order is
+/// unchanged). A parallel `d` runs inside the reduction loops over a row of accumulators; the
+/// innermost reduction dim as `d` selects `btensor.mr_nest`'s reduction-vectorized nest instead.
+lam vectorize (t: Tileable, d: Nat): Tileable =
+    (t#Out, t#Ro, t#Rr, t#So, t#oax, t#Sr, d, t#unroll, t#retile);
+///
+/// ### Strip-Mining
+///
+/// Strip-mining is a pure **domain** transform (cf. TilingInterface's `op[N] → op[N/ts, ts]`) that
+/// `retile` absorbs entirely: `iota` recombines the split loop vector, and for a parallel dim `omega`
+/// splits the write coordinate.
+/// The result is an ordinary `map_reduce_post` over a higher-rank domain with composed access maps —
+/// schedule operand and lowering untouched.
+/// Classic cache tiling is composition: strip-mine, then `interchange` the tile loops outward.
+///
+/// #### check_div
+///
+/// Checks that `ts` exactly divides the extent `sd` (discharges symbolically for factored extents).
+lam check_div (sd ts: Nat): Nat =
+    refly.check (sd / ts * ts == sd, sd, "strip_mine: tile size must divide the extent");
+///
+/// #### shift_ax
+///
+/// Axis renumbering after inserting a new axis at position `a`.
+lam shift_ax (a x: Nat): Nat = core.select (x < a, x, x + 1);
+///
+/// #### split_bounds
+///
+/// Split bounds vector `v` (length `n`) at dim `d` into `(nt, ts)`; the result arity `m` (`= n+1`) is
+/// passed explicitly, in the syntactic form the call site's types require (the checker does not
+/// re-associate `core.nat.add` symbolically).
+lam split_bounds (m n: Nat, v: «n; Nat», d ts nt: Nat): «m; Nat» =
+    ‹i: m; let ii = core.bitcast Nat i;
+           core.select (ii < d, v#(core.idx 0 n ii),
+           core.select (ii == d, nt,
+           core.select (ii == d + 1, ts,
+           v#(core.idx 0 n (ii - 1)))))›;
+///
+/// #### split_iota
+///
+/// Recombine a split loop vector (`m = n+1`): `old#d = new#d · ts + new#(d+1)`.
+lam split_iota (m n d ts: Nat) (o: «m; affine.Index»): «n; affine.Index» =
+    ‹j: n; let jj = core.bitcast Nat j;
+           core.select (jj < d, o#(core.idx 0 m jj),
+           core.select (jj == d,
+                         affine.op.add (affine.semiop.mul (o#(core.idx 0 m d), ts),
+                                         o#(core.idx 0 m (d + 1))),
+           o#(core.idx 0 m (jj + 1))))›;
+///
+/// #### split_omega
+///
+/// Split an output coordinate vector (`m = n+1`): `new#a = old#a ⌊/⌋ ts`, `new#(a+1) = old#a mod ts`.
+lam split_omega (m n a ts: Nat) (oc: «n; affine.Index»): «m; affine.Index» =
+    ‹j: m; let jj = core.bitcast Nat j;
+           core.select (jj < a, oc#(core.idx 0 n jj),
+           core.select (jj == a, affine.semiop.floordiv (oc#(core.idx 0 n a), ts),
+           core.select (jj == a + 1, affine.semiop.rem (oc#(core.idx 0 n a), ts),
+           oc#(core.idx 0 n (jj - 1)))))›;
+///
+/// #### strip_mine_par
+///
+/// Split parallel dim `d` (d < Ro) into two adjacent parallel dims. The result
+/// shape splits along the output axis `d` writes (`oax#d`), so the materialized tensor is *packed*
+/// (`«…, N/ts, ts, …»` along that axis); a row-major `reshape` restores the original shape — and in a
+/// fused graph `fuse_tensor`'s read-through absorbs it into the consumers' access maps.
+anx lam strip_mine_par (t: Tileable, d ts: Nat): Tileable =
+    let r    = t#Ro + t#Rr;
+    let ro_n = t#Ro + 1;
+    let r_n  = t#Ro + 1 + t#Rr;
+    let a    = t#oax#(core.idx 0 (t#Ro) d);
+    let sd   = refly.check (t#So#(core.idx 0 (t#Ro) a) == t#Sr#(core.idx 0 r d),
+                             t#Sr#(core.idx 0 r d),
+                             "strip_mine_par: output extent (at oax#d) must match domain extent");
+    let nt   = check_div (sd, ts) / ts;
+    // The split dim writes the split axis pair; all other dims write their old axis, renumbered
+    // around the insertion at `a`. The unit-stride half is the inner one: a vdim at `d` moves to
+    // `d + 1`.
+    let oax_n = ‹j: ro_n; let jj = core.bitcast Nat j;
+                          core.select (jj < d, shift_ax (a, t#oax#(core.idx 0 (t#Ro) jj)),
+                          core.select (jj == d, a,
+                          core.select (jj == d + 1, a + 1,
+                          shift_ax (a, t#oax#(core.idx 0 (t#Ro) (jj - 1))))))›;
+    let vdim_n = core.select (t#vdim < t#Ro, core.select (t#vdim < d, t#vdim, t#vdim + 1), r_n);
+    lam retile_n (ro_m rr_m: Nat)
+                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», vdim_m unroll_m: Nat)
+                 (iota:  «ro_m + rr_m; affine.Index» → «r_n; affine.Index»,
+                  omega: [«ro_n; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)
+               : t#Out (ro_m, so_m) =
+        lam iota_c  (o: «ro_m + rr_m; affine.Index»): «r; affine.Index» =
+            split_iota (r_n, r, d, ts) (iota o);
+        lam omega_c (oo: «t#Ro; affine.Index», ov: «ro_m + rr_m; affine.Index»): «ro_m; affine.Index» =
+            omega (split_omega (ro_n, t#Ro, a, ts) oo, ov);
+        t#retile (ro_m, rr_m) (so_m, sr_m, vdim_m, unroll_m) (iota_c, omega_c);
+    (t#Out, ro_n, t#Rr,
+     split_bounds (ro_n, t#Ro, t#So, a, ts, nt), oax_n,
+     split_bounds (r_n, r, t#Sr, d, ts, nt), vdim_n, t#unroll, retile_n);
+///
+/// #### strip_mine_red
+///
+/// Split reduction dim `d` (Ro ≤ d < Ro + Rr) of extent N into two adjacent
+/// reduction dims (N/ts, ts). If the split lands inside the trailing unroll window, both halves
+/// unroll — the tap count is unchanged.
+anx lam strip_mine_red (t: Tileable, d ts: Nat): Tileable =
+    let r   = t#Ro + t#Rr;
+    let r_n = t#Ro + (t#Rr + 1);
+    let nt  = check_div (t#Sr#(core.idx 0 r d), ts) / ts;
+    let vdim_n   = core.select (t#vdim < t#Ro, t#vdim, r_n);
+    let unroll_n = core.select (d < r - t#unroll, t#unroll, t#unroll + 1);
+    lam retile_n (ro_m rr_m: Nat)
+                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», vdim_m unroll_m: Nat)
+                 (iota:  «ro_m + rr_m; affine.Index» → «r_n; affine.Index»,
+                  omega: [«t#Ro; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)
+               : t#Out (ro_m, so_m) =
+        t#retile (ro_m, rr_m) (so_m, sr_m, vdim_m, unroll_m)
+                 (comp_map (split_iota (r_n, r, d, ts), iota), omega);
+    (t#Out, t#Ro, t#Rr + 1, t#So, t#oax,
+     split_bounds (r_n, r, t#Sr, d, ts, nt), vdim_n, unroll_n, retile_n);
+
+/// ### Schedules
+///
+/// A `Schedule` is just a `Tileable` transformer, a **selector** a compile-time inspection of an op's
+/// parameters returning the appropriate one — combinator composition, dispatched as an extract over
+/// thunks so that partial evaluation resolves it entirely.
+/// This is where "when is a transformation appropriate" lives: in the IR next to the op, not in a
+/// lowering heuristic.
+///
+/// #### Schedule
+///
+/// A transformer of `Tileable`s.
+let Schedule = Tileable → Tileable;
+///
+/// #### sched_id
+///
+lam sched_id (t: Tileable): Tileable = t;
+///
+/// #### unroll_budget
+///
+/// The greedy trailing-suffix unroll scan (the old lowering's budget scan): the number of trailing
+/// reduction dims whose tap product stays within `budget`. Folded innermost-first over the
+/// reduction dims with state (count, taps, alive); a dim whose extent is still open at lowering
+/// time stops the scan (`if_static` residualizes its step to "over budget").
+lam unroll_budget (t: Tileable, budget: Nat): Nat =
+    let r = t#Ro + t#Rr;
+    lam step (d: Nat, st: «3; Nat»): «3; Nat» =
+        let taps  = st#1_3 * t#Sr#(core.idx 0 r d);
+        let alive = st#2_3 * if_static (taps, (0, 1)#(taps <= budget), 0);
+        (st#0_3 + alive, core.select (alive == 1, taps, st#1_3), alive);
+    (vec.fold.r @(«3; Nat», Nat) @(t#Rr) step (‹i: t#Rr; t#Ro + core.bitcast Nat i›, (0, 1, 1)))#0_3;
+///
+/// #### vectorize_if
+///
+/// Vectorize the parallel dim `d` only when `cond` holds; otherwise the sentinel "no vector dim".
+lam vectorize_if (t: Tileable, cond: Bool, d: Nat): Tileable =
+    vectorize (t, (t#Ro + t#Rr, d)#cond);
+///
+/// #### conv_schedule
+///
+/// The convolution schedule, selected from the op's parameters — the old lowering's heuristics,
+/// now plain IR next to the op:
+/// * unroll the trailing reduction dims greedily while their tap product fits the register budget
+///   (the kh·kw window; a small cin joins it) — constant tap offsets, no window loops;
+/// * run `ow` (parallel dim 3) innermost with unit stride over a row of accumulators iff it beats
+///   the innermost *remaining* reduction dim on unit-stride/broadcast reads: ow reads the padded
+///   input at stride_w and is broadcast in the weight (score [stride_w = 1] + 1); an un-unrolled
+///   kw reads the input at dilation_w and the weight at unit stride ([dilation_w = 1] + 1 — the
+///   classic nest is already unit-stride, so vectorizing buys nothing); kh/cin score 0; with the
+///   whole reduction unrolled there is nothing to beat.
+///
+/// Open extents/strides residualize to no unrolling and no vector dim (`if_static`).
+lam conv_schedule (stride dilation: «2; Nat») (t: Tileable): Tileable =
+    let u     = unroll_budget (t, 32);
+    let s_ow  = (0, 1)#(stride#1_2 == 1) + 1;
+    let s_red = core.select (u == 0, (0, 1)#(dilation#1_2 == 1) + 1, core.select (u < t#Rr, 0, s_ow));
+    let ow    = t#Sr#(core.idx 0 (t#Ro + t#Rr) 3);
+    let vec   = if_static (stride#1_2 * dilation#1_2 * ow, s_red < s_ow, ff);
+    // Rows too short for the vectorizer (ow < 16) are processed in BLOCKS: strip-mine oh by the
+    // largest block size ≤ 4 that divides it and sink both halves (vdim = ro − 2 selects mr_nest's
+    // blocked branch, which jams the block dim into the vector body — one reduction pass folds the
+    // whole row block, sharing the hoisted window weights). Otherwise the split is the neutral
+    // ts = 1 (its size-1 axis folds away), so one code path serves every case and no divisibility
+    // check fires on an untaken choice.
+    let oh    = t#Sr#(core.idx 0 (t#Ro + t#Rr) 2);
+    lam divides (d: Nat): Bool = oh / d * d == oh;
+    let bs    = ((1, 2)#(divides 2), 4)#(divides 4);
+    let block = if_static (oh * ow, core.bit2.and_ 2 (vec, core.bit2.and_ 2 (ow < 16, bs != 1)), ff);
+    unroll_trailing (vectorize_if (strip_mine_par (t, 2, (1, bs)#block), vec, (4, 3)#block), u);
+///
+/// #### dot_schedule
+///
+/// The dot-product schedule for a contraction whose right operand stores the last output dim
+/// unit-stride (\f$A \cdot B\f$): that dim is invariant in the left operand, so it runs innermost over a row of
+/// accumulators (GEMM-style vectorization) and the innermost contraction is register-blocked —
+/// strip-mined by 4, the tile unrolled.
+/// * Blocking only needs the **divisibility** decided, which is weaker than a literal extent: a
+///   factored extent (`«(n+3)/4*4, …»`, say a padded row) folds the guard to `tt` under a symbolic
+///   `n`, because `core.nat` cancels `(c*x)/c`.
+/// * `if_static` therefore gates on the tile size rather than on `K` — a tile that folded to a
+///   literal is decided, no matter which kind of extent decided it.
+/// * An undecided divisibility takes the neutral tile (`ts = 1`), so one selector serves static,
+///   symbolic and runtime shapes.
+lam dot_schedule (r_out: Nat) (t: Tileable): Tileable =
+    let r   = t#Ro + t#Rr;
+    let d   = r - 1;
+    let K   = t#Sr#(core.idx 0 r d);
+    let ts0 = (1, 4)#(K / 4 * 4 == K);
+    let ts  = if_static (ts0, ts0, 1);
+    unroll_trailing (strip_mine_red (vectorize (t, r_out - 1), d, ts), 1);
+///
+/// #### dot_schedule_kvec
+///
+/// The dot-product schedule for a contraction whose right operand stores the **contraction**
+/// unit-stride per output cell (\f$x \cdot W^T\f$ — the fc/linear layout, where `fuse_tensor`'s read-through
+/// absorbs the weight transpose into the access map).
+/// Vectorizing the last output dim would read a different weight row per lane (gathers), so instead
+/// * the contraction itself runs as the vector loop — unit-stride in both the input row and each
+///   weight row, folded with a horizontal sum (see `btensor.mr_nest`'s reduction-vectorized branch,
+///   selected by a `vdim` naming the innermost reduction dim, where `unroll` names the jam width);
+/// * a 2-D block of output cells is unroll-and-jammed into its body over independent vector
+///   accumulators: the last output dim strip-mined by the largest divisor ≤ 4 (jammed lanes share the
+///   input-row loads) × the second-to-last by 2 (jammed rows share the weight-row loads — without
+///   this the whole weight matrix re-streams once per batch row).
+///
+/// An extent still open at lowering time, an indivisible one, and the missing row dim of a rank-1
+/// output all take the neutral split (`1`), whose size-1 jam dim folds away.
+lam dot_schedule_kvec (r_out: Nat) (t: Tileable): Tileable =
+    // A block counts only when it divides AND leaves a non-trivial outer dim (`b < k`): an exact
+    // split's leading size-1 axis would type-collapse the packed output («1; T» ≡ T).
+    lam blk_by (k b: Nat): Bool = core.bit2.and_ 2 (k / b * b == k, b < k);
+    let d   = r_out - 1;
+    let n   = t#So#(core.idx 0 (t#Ro) d);
+    let bs  = if_static (n, ((1, 2)#(blk_by (n, 2)), 4)#(blk_by (n, 4)), 1);
+    let t2  = strip_mine_par (t, d, bs);
+    let d2  = r_out - 2;
+    let m   = t#So#(core.idx 0 (t#Ro) d2);
+    let ms  = (1, if_static (m, (1, 2)#(blk_by (m, 2)), 1))#(2 <= r_out);
+    let t3  = strip_mine_par (t2, d2, ms);
+    // Dims now (…, m/ms, ms, n/bs, bs | red): swap ms ↔ n/bs so both jam dims are the trailing
+    // parallel pair. Identity for a rank-1 output, where the neutral split already sits next to
+    // `bs` ((n/bs, 1, bs | red)). `r3` is spelled from t3's own (positional) fields so the pack's
+    // length is definitionally the «t#Ro + t#Rr» the dependent `interchange` domain expects —
+    // `core.nat.add` does not reassociate an equivalent spelling.
+    let r3   = t3#1_9 + t3#2_9;
+    let swap = 2 <= r_out;
+    let pa   = r_out - 1;
+    let pb   = r_out;
+    let perm = ‹j: r3; let jj = core.bitcast Nat j;
+                       core.select (core.bit2.and_ 2 (swap, jj == pa), pb,
+                       core.select (core.bit2.and_ 2 (swap, jj == pb), pa, jj))›;
+    unroll_trailing (vectorize (interchange (t3, perm), r3 - 1), 2);
+///
+/// #### pool_schedule
+///
+/// The pooling schedule: unroll the window while it stays within budget. Pooling reads its single
+/// input in every loop dim (no broadcast operand), so `ow` scores [stride_w = 1] against an
+/// un-unrolled kw's [dilation_w = 1] — the row accumulator never wins and the nest stays classic.
+lam pool_schedule (stride dilation: «2; Nat») (t: Tileable): Tileable =
+    let u     = unroll_budget (t, 32);
+    let s_ow  = (0, 1)#(stride#1_2 == 1);
+    let s_red = core.select (u == 0, (0, 1)#(dilation#1_2 == 1), core.select (u < t#Rr, 0, s_ow));
+    let ow    = t#Sr#(core.idx 0 (t#Ro + t#Rr) 3);
+    let vec   = if_static (stride#1_2 * dilation#1_2 * ow, s_red < s_ow, ff);
+    unroll_trailing (vectorize_if (t, vec, 3), u);
+///
+/// ## Implementations
+///
+/// The `_impl` annexes `lower_tensor` re-applies to expand the derived operations above, together
+/// with the fold steps and access maps they read through.
+/// Most are a single `map_reduce` over a copy step — the operation itself lives in the access map.
+///
+/// The declaration order is load-bearing beyond the usual definition-before-use: `lower_tensor`
+/// resolves an `_impl` in the world it is *building*, so an impl must be declared before any annex
+/// whose body applies the axiom it implements — `reshape_impl` before `conv_impl` and
+/// `dot_product_impl`, which reshape their packed results.
+///
+/// ### tensor_copy
+///
+/// Ignores the (⊥) accumulator and returns the read element — the fold step of every pure
+/// re-indexing operation below.
+fun tensor_copy {T: *} (acc: T, y: «1; T»)@tt: T = return (y#0_1);
+///
+/// ### bid_map
+///
+/// `o ↦ (o#(index#i) · [s_in#i ≠ 1])_i`: input axis `i` reads output-loop var `o#(index#i)` (the transpose), unless
+/// it is a broadcast axis (`s_in#i = 1`), which reads index 0.
+lam bid_map {r_in r_out: Nat} (s_in: «r_in; Nat», index: «r_in; Idx r_out»)
+            (o: «r_out; affine.Index»): «r_in; affine.Index» =
+    ‹i: r_in; affine.semiop.mul (o#(index#i), core.select (s_in#i == 1, 0, 1))›;
+///
+/// ### broadcast_in_dim_impl
+
+anx lam broadcast_in_dim_impl {T: *, r_in r_out: Nat}
+    (s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»): «s_out; T» =
+    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)
+        affine.id (bid_map (s_in, index),) input;
+///
+/// ### flip_map
+///
+/// `o ↦ ((s_in#d − 1) − o#d)_d`: the reverse read map.
+lam flip_map {r: Nat} (s_in: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =
+    ‹d: r; affine.op.sub (affine.lit (s_in#d - 1), o#d)›;
+///
+/// ### flip_impl
+
+anx lam flip_impl {T: *, r: Nat} (s_in: «r; Nat») (input: «s_in; T»): «s_in; T» =
+    map_reduce (s_in, s_in) (tensor_copy, ⊥: T)
+        affine.id (flip_map s_in,) input;
+///
+/// ### gather_pointwise_elem_impl
+///
+/// One output element: reads `index` at the output coordinate, then the source at that coordinate
+/// with axis `dim` replaced by the loaded value.
+anx lam gather_pointwise_elem_impl {T: *, r: Nat}
+                                   (s_src: «r; Nat», s_idx: «r; Nat»)
+                                   (dim: Idx r)
+                                   (out_indices: «r; I64»)
+                                   (input: «s_src; T», index: «s_idx; Idx (s_src#dim)»): T =
+    let index_coords = ‹d: r; core.conv.u (s_idx#d) (out_indices#d)›;
+    let source_axis_index = core.bitcast I64 (get (index_coords, index));
+    let source_coords = ‹d: r;
+        let coordinate = core.select (core.icmp.e @r (d, dim), source_axis_index, out_indices#d);
+        core.conv.u (s_src#d) coordinate›;
+    get (source_coords, input);
+///
+/// ### map_impl
+///
+/// A `map_reduce` whose fold step drops the accumulator and applies `app` to the element tuple.
+anx lam map_impl {T: *, ni: Nat, Is: «ni; *»}
+                     (app: «i: ni; Is#i» → T)
+                     {r: Nat, s: «r; Nat»}
+                     (is: «i: ni; «s; Is#i» »)
+                     : «s; T» =
+  fun app_mr (x: T, y: «i: ni; Is#i»)@tt = return (app y);
+  // The `{Tis, Ris, Sis}` group stays explicit: with a *symbolic* `ni`, solving `Sis#i ≡ s` for all `i`
+  // (i.e. `Sis := ‹ni; s›`) is Miller pattern unification. Adding that rule to `Checker::alpha_impl_` was tried
+  // and reverted — even with an occurs check it fires inside `tuple`'s machinery and commits a wrong solution.
+  map_reduce (s, s) @(Is, ‹ni; r›, ‹ni; s›) (app_mr, ⊥: T)
+      // `‹ni; …›` builds the pack bottom-up, so there is no expected type to drive implicit insertion for the
+      // element; `affine.id` needs its rank here.
+      affine.id ‹ni; affine.id @r› is;
+///
+/// ### pool_fun
+///
+/// Wraps a binary fold `g` as a `map_reduce` reduction `Fn [T, «1; T»] → T`.
+pub fun pool_fun {T: *} (g: [T, T] → T) (acc: T, y: «1; T»)@tt: T = return (g (acc, y#0_1));
+///
+/// ### pool2d_in_map
+///
+/// Windowed input read over the loop vector `(n, c, oh, ow, kh, kw)`:
+/// `(n, c, stride#0·oh + dilation#0·kh, stride#1·ow + dilation#1·kw)`.
+lam pool2d_in_map (stride dilation: «2; Nat») (o: «6; affine.Index»): «4; affine.Index» =
+    (o#0_6, o#1_6,
+     affine.op.add (affine.semiop.mul (o#2_6, stride#0_2), affine.semiop.mul (o#4_6, dilation#0_2)),
+     affine.op.add (affine.semiop.mul (o#3_6, stride#1_2), affine.semiop.mul (o#5_6, dilation#1_2)));
+///
+/// ### pool_impl
+
+anx lam pool_impl {T: *} (g: [T, T] → T, init: T) {n c h w: Nat}
+                      (kernel stride dilation padding s_out: «2; Nat»)
+                      (input: «n, c, h, w; T»)
+                    : «n, c, s_out#0_2, s_out#1_2; T» =
+    let s_in     = (n, c, h, w);
+    let pad_lohi = (0, 0, padding#0_2, padding#1_2);
+    let padded   = pad s_in (0, pad_lohi, pad_lohi) (input, init);
+    let s_padded = shape 4 padded;
+
+    // Schedule (frontend, selected from the parameters — see `pool_schedule`).
+    materialize (pool_schedule (stride, dilation) (
+        mr_tileable @1 @(4, 2)
+            ((n, c, s_out#0_2, s_out#1_2), (0, 1, 2, 3), (n, c, s_out#0_2, s_out#1_2, kernel#0_2, kernel#1_2))
+            @(T, 4, s_padded)
+            (pool_fun g, init, id @T)
+            (proj_map @(6, 4) (0, 1, 2, 3))
+            (pool2d_in_map (stride, dilation),)
+            padded));
+///
+/// ### repeat_map
+///
+/// `o ↦ (o#d mod s_in#d)_d`: the wrap-around (tiling) read map.
+lam repeat_map {r: Nat} (s_in: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =
+    ‹d: r; affine.semiop.rem (o#d, s_in#d)›;
+///
+/// ### repeat_impl
+
+anx lam repeat_impl {T: *, r: Nat} (s_in: «r; Nat») (s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =
+    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)
+        affine.id (repeat_map s_in,) input;
+///
+/// ### reshape_map
+///
+/// `o ↦ delinearize(linearize(o, s_out), s_in)`: the row-major output→input index map.
+anx lam reshape_map {r_in r_out: Nat} (s_in: «r_in; Nat», s_out: «r_out; Nat»)
+                (o: «r_out; affine.Index»): «r_in; affine.Index» =
+    affine.delinearize (affine.linearize (o, s_out), s_in);
+///
+/// ### reshape_impl
+
+anx lam reshape_impl {T: *, r_in r_out: Nat}
+                         (s_in: «r_in; Nat») (s_out: «r_out; Nat») (input: «s_in; T»): «s_out; T» =
+    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)
+        affine.id (reshape_map (s_in, s_out),) input;
+///
+/// ### conv_fun
+///
+/// Fused multiply-add over the ring `R`; `ab#0` is the padded-input element, `ab#1` the weight.
+fun conv_fun (R: Ring) (acc: R#T, ab: «2; R#T»)@tt: R#T = return (R#add (acc, R#mul (ab#0_2, ab#1_2)));
+///
+/// ### conv2d_in_map
+///
+/// The `«7; affine.Index»` loop vector is `o = (n, co, oh, ow, ci, kh, kw)`, so the weight read map
+/// `(co, ci, kh, kw)` and the output write map `(n, co, oh, ow)` are `proj_map` projections of it;
+/// only this padded-input read needs arithmetic:
+/// `(n, ci, stride#0·oh + dilation#0·kh, stride#1·ow + dilation#1·kw)`.
+lam conv2d_in_map (stride dilation: «2; Nat») (o: «7; affine.Index»): «4; affine.Index» =
+    (o#0_7, o#4_7,
+     affine.op.add (affine.semiop.mul (o#2_7, stride#0_2), affine.semiop.mul (o#5_7, dilation#0_2)),
+     affine.op.add (affine.semiop.mul (o#3_7, stride#1_2), affine.semiop.mul (o#6_7, dilation#1_2)));
+///
+/// ### conv_impl
+
+anx lam conv_impl (R: Ring) {n cin cout h w kh kw: Nat}
+                      (stride dilation padding: «2; Nat»)
+                      (input: «n, cin, h, w; R#T», weight: «cout, cin, kh, kw; R#T»)
+                    : «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T» =
+    // Zero-pad only the spatial axes (lo = hi = (0, 0, pad_h, pad_w)); the pad value is the ring zero.
+    let s_in     = (n, cin, h, w);
+    let pad_lohi = (0, 0, padding#0_2, padding#1_2);
+    let padded   = pad s_in (0, pad_lohi, pad_lohi) (input, R#_0);
+    let s_padded = shape 4 padded;
+    let s_out    = conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding);
+    let oh       = s_out#2_4;
+    let ow       = s_out#3_4;
+
+    // The SCHEDULE, selected in the frontend from the parameters (see `conv_schedule`): unroll the
+    // kh·kw window into the loop body (constant tap offsets) when it fits the budget, and run `ow`
+    // as the innermost, unit-stride loop — for a fixed tap, adjacent output pixels read adjacent
+    // input pixels, so the vectorizer emits contiguous vector loads instead of gathers. The
+    // schedule may strip-mine `oh` (row blocking), packing the materialized tensor along that axis;
+    // the row-major `reshape` restores `s_out` (an identity for the neutral split, and absorbed into
+    // the consumers' access maps by `fuse_tensor`'s read-through in a fused graph).
+    let sched = conv_schedule (stride, dilation) (
+        mr_tileable @2 @(4, 3)
+            ((n, cout, oh, ow), (0, 1, 2, 3), (n, cout, oh, ow, cin, kh, kw))
+            @((R#T, R#T), (4, 4), (s_padded, (cout, cin, kh, kw)))
+            (conv_fun R, R#_0, id @(R#T))
+            (proj_map @(7, 4) (0, 1, 2, 3))
+            (conv2d_in_map (stride, dilation), proj_map @(7, 4) (1, 4, 5, 6))
+            (padded, weight));
+    // `sched#3_9` is the scheduled Tileable's (possibly packed) output shape `So`.
+    reshape (sched#3_9) s_out (materialize sched);
+///
+/// ### dot_general_fun
+///
+/// The fold step: a fused multiply-add in the ring `R`.
+pub fun dot_general_fun (R: Ring) (x: R#T, (y z: R#T))@tt: R#T = return (R#add (x, (R#mul (y, z))));
+///
+/// ### dot_general_pick
+///
+/// Sends input axis `i` to the loop id it reads — batching dims first, then the contractions, then
+/// the remaining free axes.
+pub lam dot_general_pick {n: Nat} {na nb nc: Nat} (a: «na; Idx n», b: «nb; Idx n», c: «nc; Idx n») (off_1 off_2: Nat) (i: Idx n): Nat =
+  match vec.first core.icmp.e (b, i) with
+      | bi: Idx nb => core.bitcast Nat bi
+      | _:  []     => match vec.first core.icmp.e (c, i) with
+          | ci: Idx nc => off_2 + core.bitcast Nat ci
+          | _:  []     => match vec.first core.icmp.e (a, i) with
+              | ai: Idx na => off_1 + core.bitcast Nat ai
+              | _:  []     => 0;
+///
+/// ### dot_product_impl
+///
+/// `r1`/`r2` are an *explicit* group here, unlike in the `dot_product` axiom: they must be literals
+/// already when this `lam` is β-reduced, since the subscript rows are built with `vec.diff`/`vec.fold.l`,
+/// whose normalizers decline to fold over a non-literal rank, and nothing re-normalizes the body once a
+/// Hole is resolved later.
+/// `{s1 s2}` has no such problem and stays implicit.
+///
+/// `tensor::Lower` re-applies the axiom's groups positionally, so the two curry shapes still match —
+/// except for the leading `fastest_2`, which has no axiom counterpart: it is `fastest_axis` of the
+/// right operand, pre-applied by `Lower` where that operand is concrete.
+/// The schedule **decision** built on it lives in the body:
+/// * a contracted fastest axis (\f$x \cdot W^T\f$, e.g. behind a weight transpose the read-through absorbs) selects
+///   `dot_schedule_kvec`, anything else `dot_schedule`;
+/// * the selected schedule may strip-mine an output dim (row/output-cell blocking), packing the
+///   materialized tensor along that axis, whereupon the row-major `reshape` restores `s_out` — the
+///   identity for the neutral split, and absorbed into the consumers' access maps by `fuse_tensor`'s
+///   read-through in a fused graph.
+
+anx lam dot_product_impl
+  (fastest_2: Nat)
+  (R: Ring) (r1 r2: Nat) {nc nb: Nat}
+  (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)
+  {s1: «r1; Nat», s2: «r2; Nat»} (a: «s1; R#T», b: «s2; R#T»)
+    : let s_out = dot_general_shape (c1, c2, b1, b2) (s1, s2);
+      «s_out; R#T»
+    = let s_out    = dot_general_shape (c1, c2, b1, b2) (s1, s2);
+      let bc_1     = vec.cat (b1, c1);
+      let s1_res   = vec.diff (s1, bc_1);
+      let n_s1_res = vec.len s1_res;
+      let bc_2     = vec.cat (b2, c2);
+      let f        = dot_general_fun R;
+      let r_out    = vec.len s_out;
+      let a1       = vec.diff (‹i: r1; i›, bc_1);
+      let a2       = vec.diff (‹i: r2; i›, bc_2);
+      let subs_1   = ‹i: r1; dot_general_pick (a1, b1, c1) (nb, r_out) i›;
+      let subs_2   = ‹i: r2; dot_general_pick (a2, b2, c2) (nb + n_s1_res, r_out) i›;
+      // The subscript rows use consecutive loop ids: 0 … r_out−1 are the output loops
+      // and r_out … r_out+nc−1 the contractions, whose bounds are the contracting extents of `a`.
+      let s_red    = ‹i: nc; s1#(c1#i)›;
+      let s_full   = vec.cat (s_out, s_red);
+      let n_loops  = r_out + nc;
+      let t        = mr_tileable @2 @(r_out, nc)
+                         (s_out, ‹i: r_out; core.bitcast Nat i›, s_full)
+                         @((R#T, R#T), (r1, r2), (s1, s2))
+                         (f, R#_0, id @(R#T))
+                         (proj_map @(n_loops, r_out) ‹i: r_out; core.bitcast Nat i›)
+                         (proj_map @(n_loops, r1) subs_1, proj_map @(n_loops, r2) subs_2)
+                         (a, b);
+      // Schedule (frontend, selected from the parameters — see `dot_schedule`/`dot_schedule_kvec`):
+      // vectorize the contraction iff it is the right operand's effective fastest axis (x·Wᵀ);
+      // otherwise the last output dim is unit-stride in that operand (A·B) and runs as the vector
+      // loop. Dispatched as an extract over thunks, each materializing its own concretely-scheduled
+      // Tileable: behind a stuck extract the record's `Out` field would not reduce, so the
+      // reshape's input could not be checked. `sched#3_9` is the scheduled Tileable's (possibly
+      // packed) output shape `So`.
+      let kvec = option.is_some (vec.first `== (‹i: nc; core.bitcast Nat (c2#i)›, fastest_2));
+      lam go_n    (u: []): «s_out; R#T» =
+          let sched = dot_schedule r_out t;
+          reshape (sched#3_9) s_out (materialize sched);
+      lam go_kvec (u: []): «s_out; R#T» =
+          let sched = dot_schedule_kvec r_out t;
+          reshape (sched#3_9) s_out (materialize sched);
+      (go_n, go_kvec)#kvec ();
+///
+/// ### bmm_impl
+///
+/// The `{r1 r2}`/`{s1 s2}` groups are explicit for the same reason as in `product_2d_impl`.
+anx lam bmm_impl (fastest_2: Nat) (R: Ring) {B M K N: Nat} (t1: «B, M, K; R#T», t2: «B, K, N; R#T»): «B, M, N; R#T»
+        = dot_product_impl fastest_2 R (3, 3) (2_3, 1_3, 0_3, 0_3) (t1, t2);
+///
+/// ### product_2d_impl
+///
+/// The `{r1 r2}` and `{s1 s2}` groups are passed explicitly — not because inference fails, but because
+/// of *when* it succeeds: `dot_product_impl` is a curried `lam`, so applying it to a group β-reduces
+/// the body right away.
+/// With the ranks still unsolved Holes the `vec.diff`/`vec.fold.l` subscript machinery is built over
+/// non-literals, its normalizers decline to fold, and nothing re-normalizes the body once the Hole%s
+/// are resolved: the result type-checks but carries the whole `vec.*` scaffolding inside its access
+/// maps (`refly.equiv.struc_eq` in `lit/tensor/dot_product.mim` pins this down).
+/// Passing literals up front folds it away.
+anx lam product_2d_impl (fastest_2: Nat) (R: Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»
+        = dot_product_impl fastest_2 R (2, 2) (1_2, 0_2, (), ()) (t1, t2);
+///
+/// ### scatter_step_impl
+///
+/// One update: reads `index` and `updates` at the visited coordinate and `set`s the element into the
+/// accumulated tensor at the destination it selects.
+anx lam scatter_step_impl {T: *, r: Nat}
+                          (s_src: «r; Nat», s_idx: «r; Nat», s_updates: «r; Nat»)
+                          (dim: Idx r)
+                          (visit_indices: «r; I64»)
+                          (acc: «s_src; T», index: «s_idx; Idx (s_src#dim)», updates: «s_updates; T»): «s_src; T» =
+    let index_coords = ‹d: r; core.conv.u (s_idx#d) (visit_indices#d)›;
+    let update_coords = ‹d: r; core.conv.u (s_updates#d) (visit_indices#d)›;
+    let destination_axis_index = core.bitcast I64 (get (index_coords, index));
+    let update = get (update_coords, updates);
+    let destination_coords = ‹d: r;
+        let coordinate = core.select (core.icmp.e @r (d, dim), destination_axis_index, visit_indices#d);
+        core.conv.u (s_src#d) coordinate›;
+    set (destination_coords, acc, update);
+///
+/// ### slice_map
+///
+/// `o ↦ (start#d + step#d · o#d)_d`: the strided read map.
+lam slice_map {r: Nat} (start step: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =
+    ‹d: r; affine.op.add (affine.semiop.mul (o#d, step#d), affine.lit (start#d))›;
+///
+/// ### slice_impl
+
+anx lam slice_impl {T: *, r: Nat} (s_in: «r; Nat»)
+                       (start step s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =
+    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)
+        affine.id (slice_map (start, step),) input;
+///
+/// ### transpose_map
+///
+/// `o ↦ (o#(perm#0), …, o#(perm#(r−1)))`: input axis `j` reads output-loop var `o#(perm#j)`.
+lam transpose_map {r: Nat} (perm: «r; Idx r») (o: «r; affine.Index»): «r; affine.Index» = ‹j: r; o#(perm#j)›;
+///
+/// ### transpose_impl
+
+anx lam transpose_impl {T: *, r: Nat}
+                           (permutation: «r; Idx r») {s: «r; Nat»} (input: «s; T»)
+                         : «transpose_shape (s, permutation); T»
+                         = let out_s = transpose_shape (s, permutation);
+                           map_reduce (out_s, out_s) (tensor_copy, ⊥: T)
+                               affine.id (transpose_map permutation,) input;
+///
+/// ### transpose_2d_impl
+///
+/// `transpose_impl` at the swap permutation.
+anx lam transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =
+  transpose_impl (tt, ff) input;
+///
+/// ### binary_impl
+///
+/// `map_impl` over two tensors.
+anx lam binary_impl {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat, s: «r; Nat»} (is: [«s; Ti1», «s; Ti2»]): «s; To» =
+  map_impl app is;
+///
+/// ### select_impl
+///
+/// `map_impl` of `core.select` over three tensors.
+anx lam select_impl {T: *} {r: Nat, s: «r; Nat»} (is: [«s; Bool», «s; T», «s; T»]): «s; T» =
+  map_impl core.select is;
+///
+/// ### unary_impl
+///
+/// `map_impl` over one tensor.
+anx lam unary_impl {Ti To : *} (app: Ti → To) {r: Nat, s: «r; Nat»} (i: «s; Ti»): «s; To» =
+  map_impl app i;
+///
+/// ## Phases
+///
+/// ### reassoc
+///
+/// Reassociates chains of `product_2d` with the classic matrix-chain-order dynamic program — but
+/// minimizing vector-lane slots instead of scalar multiplications.
+/// * The vector loop runs over a product's trailing extent (`dot_schedule`) or, for a transposed
+///   operand, over its contraction (`dot_schedule_kvec`), and a literal extent is charged rounded up
+///   to whole lanes — `-X tensor:reassoc-vec=<n>`, `1` to count plain scalar multiplications.
+///   A bracketing whose intermediates are too narrow to fill a vector thus pays for the lanes it
+///   leaves idle, which is exactly what the multiplication count misses.
+/// * Extents need not be literal: a cost is a polynomial in the symbolic extents, ordered by
+///   coefficient-wise `≤`, which proves `≤` for every instantiation because extents are non-negative.
+/// * That order is only *partial*, so a chain can have several bracketings that each win for some
+///   instantiation — a batch dimension favouring a different one when small than when large.
+///   Up to 4 matrices — `-X tensor:reassoc-max=<n>`, below `3` to switch it off — those survivors are
+///   emitted side by side behind a run-time comparison of their costs, so only the winner's thunk
+///   runs; a longer chain is only reassociated where one bracketing provably wins for every extent.
+/// * Common sub-products are hash-consed across the alternatives, so the code growth stays well below
+///   \f$\mathit{Catalan}(n-1)\f$.
+/// * A product with more than one consumer stays a chain boundary, as pulling it apart would leave it
+///   materialized for its other consumers as well.
+/// * Reassociation is only exact for an associative ring; on floating-point rings it changes the
+///   rounding, just like `-ffast-math`.
+///
+axm reassoc: compile.Phase;
+///
+/// ### lower_tensor
+///
+/// Lowers the derived operations to the core ones by re-applying the matching `_impl` annexes.
+///
+axm lower_tensor: compile.Phase;
+///
+/// ### lower_map_reduce
+///
+/// Lowers the core operations, `generate` included, to their underlying primitives: loops, `extract`,
+/// `insert`, packs, ...
+///
+axm lower_map_reduce: compile.Phase;
+///
+/// ### lower_get_set
+///
+/// Lowers `get` / `set` to `extract` / `insert`.
+///
+axm lower_get_set: compile.Phase;
+///
+/// ### fuse_tensor
+///
+/// Fuses pure producer `map_reduce`s into their consumers' access maps.
+/// * A producer is only fused where the consumer reads it injectively — its access map uses every
+///   loop index, possibly strided/shifted — so fusion never recomputes a producer element; strided
+///   reads even skip producer elements entirely.
+/// * In the reverse direction, a trailing elementwise map over a reducing `map_reduce` is composed
+///   into the producer's `post` epilogue (the GEMM-epilogue pattern), provided the map is its only
+///   consumer.
+///
+axm fuse_tensor: compile.Phase;
+///
+/// ### lower_to_mem
+///
+/// Bufferizes the core operations onto the `buffer` layer: tensor values become `buffer.Buf` handles,
+/// `get` / `set` / `generate` / `map_reduce` become `buffer.read` / `buffer.write` / `buffer.alloc`
+/// threading `mem.M`.
+/// `mem.add_mem` (scheduled next in the pipeline) threads the memory; run `buffer.lower_ptr`
+/// afterwards to reach `mem.Ptr`.
+///
+axm lower_to_mem: compile.Phase;
+/// # The tuple Plugin {#tuple}
+///
+/// @see mim::plug::tuple
+///
+/// Utility functions for tuples.
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin core;
+///
+/// ## Operations
+///
+/// ### typecat
+///
+/// Computes the type of a `tuple.cat` with an `n`- and an `m`-tuple.
+anx lam typecat {n m: Nat} (Ts: «n; *») (Us: «m; *») : * = // «i: n + m; select(i < n , Ts#i, Us#(i - n))»
+    «i: core.nat.add (n, m);
+        let nat_i = core.bitcast Nat i;
+        core.Select (
+            core.ncmp.l (nat_i, n),
+            Ts#(core.bitcast (Idx n) i),
+            Us#(core.bitcast (Idx m) (core.nat.sub (nat_i, n))))»;
+///
+/// ### cat
+///
+/// Concatenates an `n`-tuple and an `m`-tuple to an `n + m`-tuple.
+///
+axm cat: {n m: Nat}
+          → {Ts: «n; *», Us: «m; *»}
+          → [«i: n; Ts#i», «i: m; Us#i»]
+          → typecat Ts Us
+          , normalize_cat;
+
+///
+/// ### append / prepend
+///
+/// Appends / prepends a single element to a tuple.
+///
+anx lam append   {n: Nat}
+                 {Ts: «n; *», U: *}
+                 (a: «i: n; Ts#i», b: U)
+               : typecat Ts U
+               = cat (a, b);
+
+anx lam prepend  {m: Nat}
+                 {T: *, Us: «m; *»}
+                 (a: T, b: «i: m; Us#i»)
+               : typecat T Us
+               = cat (a, b);
+
+///
+/// ### head / tail
+///
+/// The first element of a tuple / all elements but the first.
+///
+anx lam head {n: Nat}
+    {Ts: «n; *»}
+    (values: «i: n; Ts#i»)
+  : [Ts#(core.idx core.mode.US n 0)]
+  = values#(core.idx core.mode.US n 0);
+
+anx lam tail {n: Nat}
+    {Ts: «n; *»}
+    (values: «i: n; Ts#i»)
+  : «i: core.nat.sub (n, 1); Ts#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))»
+  = ‹i: core.nat.sub (n, 1); values#(core.bitcast (Idx n) (core.nat.add (core.bitcast Nat i, 1)))›;
+
+///
+/// ### contains
+///
+/// Does the tuple contain the given element?
+///
+axm contains: {n: Nat} → {Ts: «n; *», U: *} → [«i: n; Ts#i», U] → Bool, normalize_contains;
+///
+/// ### zip
+///
+/// [Zips](https://en.wikipedia.org/wiki/Zipping_(computer_science)) several tensors.
+/// The signature will likely change in the future:
+/// * `r`: rank of the tensors to zip
+/// * `s`: shape of the tensors to zip
+/// * `n_i`: number of inputs
+/// * `n_o`: number of outputs
+/// * `Is`: tuple with `n_i` many elements that describe the element types of the inputs
+/// * `Os`: tuple with `n_o` many elements that describe the element types of the outputs
+/// * `f`: zipping function that expects an `n_i`-tuple whose elements correspond to `Is` and yields an `n_o`-tuple whose element types correspond to `Os`
+/// * `is`: the actual input tensors
+///
+axm zip: [r: Nat, s: «r; Nat»]
+       → [n_i: Nat, Is: «n_i; *», n_o: Nat, Os: «n_o; *», f: «i: n_i; Is#i» → «o: n_o; Os#o»]
+       → «i: n_i; «s; Is#i»»
+       → «o: n_o; «s; Os#o»», normalize_zip;
+/// # The vec Plugin {#vec}
+///
+/// @see mim::plug::vec
+///
+/// Utility functions that make arrays behave like vectors in other languages.
+///
+/// [TOC]
+///
+/// ## Dependencies
+///
+plugin core;
+plugin option;
+plugin refly;
+///
+/// ## Iterators
+///
+/// ### fold
+///
+/// [Fold aka Reduction](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) of the vector with `f`:
+/// * `vec.fold.l f (init, (e1, ..., en))` is `f (... (f (f (init, e1), e2)) ..., en)`.
+/// * `vec.fold.r f ((e1, ..., en), init)` is `f (e1, f (e2, ... (f (en, init) ...)))`.
+///
+/// | `vec.fold.l`                                                                                   | `vec.fold.r`                                                                                      |
+/// |------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+/// | ![Left Fold](https://upload.wikimedia.org/wikipedia/commons/5/5a/Left-fold-transformation.png) | ![Right Fold](https://upload.wikimedia.org/wikipedia/commons/3/3e/Right-fold-transformation.png) |
+///
+pub mod fold {
+    axm l: {A E: *} → {n: Nat} → [f: [A, E] → A] → [A, «n; E»] → A, normalize_fold;
+    axm r: {A E: *} → {n: Nat} → [f: [E, A] → A] → [«n; E», A] → A, normalize_fold;
+}
+///
+/// ### zip
+///
+/// [Combines](https://en.wikipedia.org/wiki/Zipping_(computer_science)) multiple vectors element-wise using the provided function.
+/// Given `ni` vectors of length `n`, and a function `f` that takes one element from each vector,
+/// `vec.zip` produces a new vector of length `n` where each element is the result of applying `f`.
+///
+axm zip: {ni n: Nat} → {Is: «ni; *», R: *} → [f: «i: ni; Is#i» → R] → [«i: ni; «n; Is#i»»] → «n; R», normalize_zip;
+///
+/// ## Scanning
+///
+/// ### scan
+///
+/// Does the given predicate hold for all elements/at least one element?
+///
+axm scan.(for_all, exists): {E: *} → {n: Nat} → [p: E → Bool] → «n; E» → Bool, normalize_scan;
+///
+/// ### first / last
+///
+/// Yields the index of the first/last occurrence of the given element, or option.none if it does not occur.
+///
+lam f_first    {E: *} {n: Nat} (eq: [E, E] → Bool) (x: E) ((b: Bool, i: Idx n), y: E): [Bool, Idx n] = (((ff, core.wrap.add 0 (i, core.idx 0 n 1)), (tt, i))#(eq (x, y)), (b, i))#b;
+lam f_last     {E: *} {n: Nat} (eq: [E, E] → Bool) (x: E) (y: E, (b: Bool, i: Idx n)): [Bool, Idx n] = f_first eq x ((b, i), y);
+anx lam first {E: *} {n: Nat} (eq: [E, E] → Bool) (v: «n; E», x: E): option.Opt (Idx n) = option.some_if (fold.l (f_first eq x) ((ff, core.idx 0 n 0), v));
+anx lam last  {E: *} {n: Nat} (eq: [E, E] → Bool) (v: «n; E», x: E): option.Opt (Idx n) = option.some_if (fold.r (f_last  eq x) (v, (ff, core.idx 0 n 0)));
+///
+/// ### len
+///
+/// Yields the length of the vector.
+///
+anx lam len {n: Nat} {T: *} (_: «n; T»): Nat = n;
+///
+/// ### is_unique
+///
+/// Checks whether all elements in the given vector are distinct from each other (using structural equivalence).
+///
+axm is_unique: {T: *} → {n: Nat} → «n; T» → Bool, normalize_is_unique;
+///
+/// ## Modifiers
+///
+/// ### cat
+///
+/// Concatenates an `n`-vector and an `m`-vector to an `n + m`-vector.
+///
+axm cat: {n m: Nat}
+       → {T: *}
+       → [«n; T», «m; T»]
+       → «core.nat.add (n, m); T», normalize_cat;
+///
+/// ### diff
+///
+/// Removes the elements at the given indices from the vector; the indices must be distinct (checked via vec.is_unique).
+///
+axm diff: {T: *}
+        → {n m: Nat}
+        → [«n; T», is: «m; Idx n»]
+        → «refly.check (is_unique is, core.nat.sub (n, m), "given indices are not distinct"); T», normalize_diff;
