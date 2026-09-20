@@ -19,14 +19,15 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
 <script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
 <script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
-    MimEbnf.init()
-    MimCode.init()
+    Code.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -59,6 +60,7 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
 <link href="ebnf.css" rel="stylesheet" type="text/css"/>
 <link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -180,7 +182,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('playground.htm
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">mim-worker.js</span>  </td><td class="markdownTableBodyNone">Runs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> in a Worker, so a program that never terminates can be killed.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">mim-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/mim.js</span>, staged; the page and the docs colour <a class="el" href="namespaceMim.html">Mim</a> with the very same lexer.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/code.js</span>, staged; the lexer machinery the page and the docs share.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">mim-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/mim.js</span>, staged; the <a class="el" href="namespaceMim.html">Mim</a> lexer, renamed out of Emscripten's <span class="tt">mim.js</span> way.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">llvm-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/llvm.js</span>, staged; the LLVM lexer of the <b>LLVM</b> tab.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">examples/*.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lit/docs/*.<a class="el" href="namespacemim.html">mim</a></span>, staged; the examples are the ones the lit suite covers.  </td></tr>
 <tr class="markdownTableRowOdd">

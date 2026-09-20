@@ -19,14 +19,15 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
 <script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
 <script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
-    MimEbnf.init()
-    MimCode.init()
+    Code.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -59,6 +60,7 @@ window.MathJax = {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
 <link href="ebnf.css" rel="stylesheet" type="text/css"/>
 <link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -174,12 +176,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad1843e29affe6d30a6695f7b68e25f7c" id="r_ad1843e29affe6d30a6695f7b68e25f7c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad1843e29affe6d30a6695f7b68e25f7c">WRAP</a> = re.compile(r'^([ \t]*)(?:```(<a class="el" href="namespacemim.html">mim</a>|ebnf)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(<a class="el" href="namespacemim.html">mim</a>)&quot;)$', re.M | re.S)</td></tr>
+<tr class="memitem:ad1843e29affe6d30a6695f7b68e25f7c" id="r_ad1843e29affe6d30a6695f7b68e25f7c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad1843e29affe6d30a6695f7b68e25f7c">WRAP</a> = re.compile(r'^([ \t]*)(?:```(<a class="el" href="namespacemim.html">mim</a>|ebnf|llvm)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(<a class="el" href="namespacemim.html">mim</a>)&quot;)$', re.M | re.S)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Doxygen input filter: wraps every Mim and EBNF listing in a `&lt;lang&gt;-code` div.
+<div class="textblock"><pre class="fragment">Doxygen input filter: wraps every Mim, EBNF, and LLVM listing in a `&lt;lang&gt;-code` div.
 
-Doxygen discards the language of a fenced code block, so `docs/mim.js` and `docs/ebnf.js` need the wrapper to tell such a listing from any other verbatim block.
+Doxygen discards the language of a fenced code block, so the lexers of `docs/code.js` need the wrapper to tell such a listing from any other verbatim block.
 </pre> </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a51af30a60f9f02777c6396b8247e356f" name="a51af30a60f9f02777c6396b8247e356f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51af30a60f9f02777c6396b8247e356f">&#9670;&#160;</a></span>main()</h2>
@@ -231,7 +233,7 @@ Doxygen discards the language of a fenced code block, so `docs/mim.js` and `docs
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">fences.WRAP = re.compile(r'^([ \t]*)(?:```(<a class="el" href="namespacemim.html">mim</a>|ebnf)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(<a class="el" href="namespacemim.html">mim</a>)&quot;)$', re.M | re.S)</td>
+          <td class="memname">fences.WRAP = re.compile(r'^([ \t]*)(?:```(<a class="el" href="namespacemim.html">mim</a>|ebnf|llvm)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(<a class="el" href="namespacemim.html">mim</a>)&quot;)$', re.M | re.S)</td>
         </tr>
       </table>
 </div><div class="memdoc">

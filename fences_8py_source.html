@@ -19,14 +19,15 @@ window.$ = (() => {
 <script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
 <script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
 <script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
 <script type="text/javascript" src="mim.js"></script>
 <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
     DoxygenAwesomeFragmentCopyButton.init()
     DoxygenAwesomeParagraphLink.init()
-    MimEbnf.init()
-    MimCode.init()
+    Code.init()
 </script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -43,6 +44,7 @@ window.$ = (() => {
 <link href="version-switcher.css" rel="stylesheet" type="text/css"/>
 <link href="dotgraph.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
 <link href="ebnf.css" rel="stylesheet" type="text/css"/>
 <link href="mim.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -152,15 +154,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('fences_8py_sou
 <div class="contents">
 <a href="fences_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacefences.html">    1</a></span><span class="comment">#!/usr/bin/env python3</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="stringliteral">&quot;&quot;&quot;Doxygen input filter: wraps every Mim and EBNF listing in a `&lt;lang&gt;-code` div.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="stringliteral">&quot;&quot;&quot;Doxygen input filter: wraps every Mim, EBNF, and LLVM listing in a `&lt;lang&gt;-code` div.</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">Doxygen discards the language of a fenced code block, so `docs/mim.js` and `docs/ebnf.js` need the wrapper to tell such a listing from any other verbatim block.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">Doxygen discards the language of a fenced code block, so the lexers of `docs/code.js` need the wrapper to tell such a listing from any other verbatim block.</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> re</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> sys</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c">   11</a></span>WRAP = re.compile(<span class="stringliteral">r&#39;^([ \t]*)(?:```(mim|ebnf)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(mim)&quot;)$&#39;</span>, re.M | re.S)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c">   11</a></span>WRAP = re.compile(<span class="stringliteral">r&#39;^([ \t]*)(?:```(mim|ebnf|llvm)\n.*?^[ \t]*```|\\include &quot;[^&quot;]*\.(mim)&quot;)$&#39;</span>, re.M | re.S)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="foldopen" id="foldopen00014" data-start="" data-end="">
