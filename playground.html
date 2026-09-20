@@ -229,24 +229,27 @@ Running</h1>
 <dl class="section note"><dt>Note</dt><dd>The browser caches <span class="tt">mim.wasm</span> aggressively. If a freshly built compiler seems to behave like the old one, reload while bypassing the cache (<span class="tt">Ctrl-Shift-R</span>).</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
 Using it</h1>
-<p>The editor compiles on every keystroke, half a second after you stop typing; <b>Run</b> turns into <b>Stop</b> while a run is in flight and kills a program that does not terminate. <em>optimize</em> runs the <a class="el" href="opt.html" title="The opt Plugin">opt</a> pipeline and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> backend; without it the program is only parsed and emitted again.</p>
+<p>The editor compiles on every keystroke, half a second after you stop typing; <b>Run</b> turns into <b>Stop</b> while a run is in flight and kills a program that does not terminate. <em>optimize</em> runs the <a class="el" href="opt.html" title="The opt Plugin">opt</a> pipeline and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> backend; without it the program is only parsed and emitted again. The <b><a class="el" href="namespaceMim.html">Mim</a></b> tab's <em>ASCII</em> box is <span class="tt">-a</span>, which is a global flag rather than a Mim-only one: it swaps the UTF-8 spellings out of every output, the graph's labels included.</p>
 <p>A <span class="tt">?src=</span> query parameter loads code instead of the first example, so a link can carry a whole program — <a href="https://mimir.github.io/playground/?src=plugin%20core%3B%0Ause%20core.ops.u.w%3B%0A%0Aextern%20fun%20inc%20(x%3A%20I32)%3A%20I32%20%3D%20return%20(x%20%2B%201I32)%3B%0A">this one</a> increments an <span class="tt">I32</span>. Percent-encode it — <span class="tt">encodeURIComponent</span> in the browser's console produces exactly what the page expects; a <span class="tt">+</span> stands for itself and is <em>not</em> a space. The picker keeps such a program under <em>(custom)</em>, so loading an example does not lose it. Every <a class="el" href="namespaceMim.html">Mim</a> snippet in these docs is a link of that kind: hover it and the ▶ button next to the copy button opens it here.</p>
 <p>The <b>Graph</b> tab lays out <span class="tt">--output-dot</span> with <a href="https://graphviz.org/">Graphviz</a>, and its checkboxes are exactly the CLI's <span class="tt">--dot-*</span> switches:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Checkbox  </th><th class="markdownTableHeadNone">Flag  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">all annexes  </td><td class="markdownTableBodyNone"><span class="tt">--dot-all-annexes</span>  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">default filter  </td><td class="markdownTableBodyNone"><span class="tt">--dot-default-filter</span>  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">type edges  </td><td class="markdownTableBodyNone"><span class="tt">--dot-follow-types</span>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">inline consts  </td><td class="markdownTableBodyNone"><span class="tt">--dot-inline-consts</span>  </td></tr>
+<td class="markdownTableBodyNone">type edges  </td><td class="markdownTableBodyNone"><span class="tt">--dot-follow-types</span>  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">inline consts  </td><td class="markdownTableBodyNone"><span class="tt">--dot-inline-consts</span>  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">hidden edges  </td><td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">no tooltips  </td><td class="markdownTableBodyNone"><span class="tt">--dot-no-tooltip</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">lean labels  </td><td class="markdownTableBodyNone"><span class="tt">--dot-lean-labels</span>  </td></tr>
 </table>
-<p>See <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a> for what each one does. Since they are compile-time flags, toggling one re-runs the compiler. Layout happens on the page, so a graph beyond 512 KB of DOT is refused rather than attempted — <span class="tt">--dot-all-annexes</span> reaches that on anything but a small program.</p>
+<p>See <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a> for what each one does. Since they are compile-time flags, toggling one re-runs the compiler. <span class="tt">--dot-all-annexes</span> has no checkbox: it buries any program of this size in the annexes it pulls in.</p>
+<p>Layout happens on the page, so a graph beyond 512 KB of DOT is refused rather than attempted. The last two checkboxes are the ones that buy room — on an optimized <span class="tt">ackermann.mim</span> the tooltips are two fifths of the file and the labels another third, and the two together take it from 30 KB to 7 KB. They are what a refused graph needs; the price is the hover text and the ports an edge docks at.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
 Navigating</h2>
 <p>Drag to pan and turn the wheel to zoom at the pointer; <b>Fit</b>, a double-click, or <span class="tt">0</span> frames the whole graph again, and <span class="tt">+</span>/<span class="tt">-</span> zoom from the keyboard. A re-run keeps the current view: the editor recompiles on every pause in typing, so re-framing each time would leave no way to stay zoomed in on one spot.</p>
