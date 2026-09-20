@@ -1,0 +1,24 @@
+// RUN: rm -f %{s:stem}.ll
+// RUN: %mim -p opt %s -p ll -o -
+// RUN: clang %{s:stem}.ll -o %t -Wno-override-module
+// RUN: %t ; test $? -eq 0
+// RUN: %t 1 2 3 ; test $? -eq 6
+
+plugin core;
+plugin mem;
+
+use core.ops.u.w;
+
+extern fun main(m: mem.M 0, argc: I32, argv: mem.Ptr0 (mem.Ptr0 I8)): [mem.M 0, I32] =
+    loop (m, 0I32, 0I32)
+    where
+        con loop(m: mem.M 0, i acc: I32) =
+            (exit, body)#(i < argc) m
+            where
+                con body m: mem.M 0 =
+                    let inc = 1I32 + i;
+                    let acc = i + acc;
+                    loop (m, inc, acc);
+                con exit(m: mem.M 0) = return (m, acc);
+            end
+    end
