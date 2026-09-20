@@ -189,8 +189,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('playground.htm
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">llvm-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/llvm.js</span>, staged; the LLVM lexer of the <b>LLVM</b> tab.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">examples/*.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lit/docs/*.<a class="el" href="namespacemim.html">mim</a></span>, staged; the examples are the ones the lit suite covers.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">darkmode-toggle.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">doxygen-awesome-darkmode-toggle.js</span>, staged; the very toggle these docs use.  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">examples/*.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lit/docs/*.<a class="el" href="namespacemim.html">mim</a></span>, staged; the examples are the ones the lit suite covers.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a>.{js,wasm,data}</span>  </td><td class="markdownTableBodyNone">Emscripten's output; <span class="tt">mim.data</span> carries the plugins' <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> halves and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> runtime.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
@@ -245,7 +247,14 @@ Using it</h1>
 <td class="markdownTableBodyNone">hidden edges  </td><td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td></tr>
 </table>
 <p>See <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a> for what each one does. Since they are compile-time flags, toggling one re-runs the compiler. Layout happens on the page, so a graph beyond 512 KB of DOT is refused rather than attempted — <span class="tt">--dot-all-annexes</span> reaches that on anything but a small program.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+Navigating</h2>
+<p>Drag to pan and turn the wheel to zoom at the pointer; <b>Fit</b>, a double-click, or <span class="tt">0</span> frames the whole graph again, and <span class="tt">+</span>/<span class="tt">-</span> zoom from the keyboard. A re-run keeps the current view: the editor recompiles on every pause in typing, so re-framing each time would leave no way to stay zoomed in on one spot.</p>
+<p>Hovering a node dims everything but that node, its direct neighbours and the edges between them; a click pins that focus, and a click elsewhere or <span class="tt">Esc</span> releases it. The highlight paints detached edges too, so it shows per node what <em>hidden edges</em> shows for the whole graph — without a recompile.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+Dark mode</h2>
+<p>The toggle in the header is the <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome</a> one these docs use, staged from the submodule, so both offer the same control and — served from one origin — share the stored preference. The graph's colors are baked by the compiler rather than applied by CSS, so flipping the theme re-runs it with <span class="tt">--dot-dark</span>, which drops the white backdrop and lightens the edges.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
 CI</h1>
 <p><span class="tt">.github/workflows/playground.yml</span> does all of the above on every push, compiles a program with the binary it just built — a wasm-only regression such as the one behind <span class="tt">Def::ops_ptr</span> fails there instead of silently shipping — and uploads <span class="tt">build-wasm/playground/</span> as an artifact.</p>
 <p>A push to <span class="tt">master</span> also deploys that directory into <span class="tt">playground/</span> of the <a href="https://github.com/mimir/mimir.github.io">site repository</a>, next to the Doxygen output, via <span class="tt"><a class="el" href="deploy_8py.html">docs/deploy.py</a> --subdir playground</span>. The docs deploy sweeps the site root, so <span class="tt">playground/</span> only survives by being listed in that script's <span class="tt">FOREIGN_DIRS</span>. Both workflows push to the same repository from their own concurrency group and rely on the script's rebase retry; they never write the same paths. </p>
