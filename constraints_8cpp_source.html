@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('constraints_8c
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (d != *dim_l) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keyword">auto</span> lhs = idx_shape-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592">proj</a>(*rank_l, d);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keyword">auto</span> rhs = src_shape-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592">proj</a>(*rank_l, d);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">if</span> (statically_violates(lhs, rhs)) fe::throwf(<span class="stringliteral">&quot;gather idx shape exceeds input shape at axis {}&quot;</span>, d);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">if</span> (statically_violates(lhs, rhs)) fe::throwf(<span class="stringliteral">&quot;gather index shape exceeds input shape at axis {}&quot;</span>, d);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            proven &amp;= statically_le(lhs, rhs);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> proven;</div>
