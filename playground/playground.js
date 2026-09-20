@@ -73,6 +73,7 @@ async function run() {
     const args = ['/in.mim', '-P', '/mim', '--output-dot', '/out.dot', '-o', '/out.mim'];
     for (const box of document.querySelectorAll('#dot-opts input:checked')) args.push(`--dot-${box.dataset.dot}`);
     if (dark) args.push('--dot-dark');
+    if ($('ascii').checked) args.push('-a');
     if ($('optimize').checked) args.push('-p', 'opt', '-p', 'll', '-X', 'll:o=/out.ll');
     else args.push('--no-opt');
 
@@ -250,11 +251,11 @@ function pan(e) {
         dragging = false;
     };
 
-    graph.setPointerCapture(e.pointerId);
     graph.classList.add('grabbing');
     graph.addEventListener('pointermove', move);
     graph.addEventListener('pointerup', drop, { once: true });
     graph.addEventListener('pointercancel', drop, { once: true });
+    graph.setPointerCapture(e.pointerId); // last: it only extends the drag past the pane's edge
 }
 
 // A notch is 120 px; Firefox reports lines instead, where 3 lines are that same notch.
@@ -447,6 +448,7 @@ $('run').onclick = () => { if (running) { queued = false; abort('stopped'); } el
 $('share').onclick = share;
 $('optimize').onchange = run;
 $('dot-opts').onchange = run;
+$('mim-opts').onchange = run;
 $('graph-nav').onclick = e => {
     const how = e.target.dataset.zoom;
     if (!view || !how) return;
