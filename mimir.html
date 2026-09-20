@@ -228,7 +228,8 @@ Axioms</h3>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 Other Definitions</h3>
 <p>These are ordinary <a class="el" href="namespaceMim.html">Mim</a> values, written as plain <a class="el" href="namespaceMim.html">Mim</a>. <span class="tt">core.select</span>, for instance, is just</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam core.select {T: *} (cond, t, f): T = (f, t)#cond;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// inside core.mim</div>
+<div class="line">anx lam select {T: *} (cond: Bool, t f: T): T = (f, t)#cond;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Being a direct-style function, it carries the default <span class="tt">tt</span> <a class="el" href="classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521" title="mim::Lam::filter"><span class="tt">filter</span></a>, which tells MimIR to <b>β-reduce its applications eagerly during graph construction</b>. So a call <span class="tt">core.select (a, b, c)</span> is inlined on the spot, collapsing to the indexed read <span class="tt">(c, b)#a</span> — the <span class="tt">select</span> itself never appears in the graph.</p>
 <h1 class="doxsection"><a class="anchor" id="mimir_cps"></a>
 SSA via CPS</h1>
@@ -322,7 +323,10 @@ Scopeless Binders</h2>
 <ul>
 <li><p class="startli"><b>β-reduction.</b></p>
 <p class="startli">In the following example <span class="tt">g</span> does not depend on <span class="tt">x</span>. Yet, <span class="tt">g</span> is nested inside <span class="tt">f</span>. For this reason, a naive β-reduction would superfluously duplicate <span class="tt">g</span> as well.</p>
-<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam f (x: Nat): Nat =</div>
+<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">plugin core;</div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
+<div class="line">lam f (x: Nat): Nat =</div>
 <div class="line">    lam g (y: Nat): Nat = y + 1;</div>
 <div class="line">    g (x + 2);</div>
 </div><!-- fragment --></div><div class="mim-code"> </div><p class="startli">Scoped IRs therefore typically <em>block-float</em> functions independent from the substitution outward before β-reduction to avoid this problem.</p>
@@ -330,10 +334,16 @@ Scopeless Binders</h2>
 </li>
 <li><p class="startli"><b>Specialization.</b></p>
 <p class="startli">In the following example, we want to specialize <span class="tt">f</span> for <span class="tt">z</span>.</p>
-<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam f (x y: Nat): Nat = x + y;</div>
+<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">plugin core;</div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
+<div class="line">lam f (x y: Nat): Nat = x + y;</div>
 <div class="line">lam g (z: Nat): Nat = (f z 1) + (f z 2);</div>
 </div><!-- fragment --></div><div class="mim-code"> </div><p class="startli">However, we need to <em>block-sink</em> the specialization <span class="tt">fz</span> inside <span class="tt">g</span> such that <span class="tt">fz</span>'s free variable <span class="tt">z</span> is now properly scoped:</p>
-<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">lam g (z: Nat) =</div>
+<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">plugin core;</div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
+<div class="line">lam g (z: Nat) =</div>
 <div class="line">  lam fz (y: Nat): Nat = z + y;</div>
 <div class="line">  (fz 1) + (fz 2)</div>
 </div><!-- fragment --></div><div class="mim-code"> </div><p class="startli">MimIR, on the other hand, does not need block-sinking: a binder simply refers to whatever it refers to, wherever it sits.</p>
