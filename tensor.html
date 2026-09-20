@@ -436,8 +436,8 @@ bmm</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md515"></a>
 conv_shape</h2>
 <p><span class="tt">(n, cout, (H, W), (KH, KW), stride, dilation, padding) ↦ (n, cout, OH, OW)</span>, where \(O_d = (s_d + 2 \cdot \mathit{padding}_d - (\mathit{dilation}_d \cdot (k_d - 1) + 1)) / \mathit{stride}_d + 1\): the NCHW output shape. </p><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam conv_shape (n cout: Nat, s k stride dilation padding: «2; Nat»): «4; Nat» =</div>
-<div class="line">    let hw = ‹d: 2; (s#d + 2 * padding#d - (dilation#d * (k#d - 1) + 1)) / stride#d + 1›;</div>
-<div class="line">    (n, cout, hw#0_2, hw#1_2);</div>
+<div class="line">    let (hwx, hwy) = ‹d: 2; (s#d + 2 * padding#d - (dilation#d * (k#d - 1) + 1)) / stride#d + 1›;</div>
+<div class="line">    (n, cout, hwx, hwy);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md516"></a>
 conv</h2>
 <p>2-D convolution (cross-correlation) in the ring <span class="tt">R</span>, <span class="tt">groups = 1</span>, no bias:     </p><p class="formulaDsp">
@@ -501,7 +501,7 @@ pool</h2>
 <div class="line">        → {n c h w: Nat}</div>
 <div class="line">        → [kernel stride dilation padding s_out: «2; Nat»]</div>
 <div class="line">        → [input: «n, c, h, w; T»]</div>
-<div class="line">        → «n, c, s_out#0_2, s_out#1_2; T»;</div>
+<div class="line">        → «n, c, s_out#0₂, s_out#1₂; T»;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md520"></a>
 product_2d</h2>
 <p>Computes the matrix product of two 2-dimensional tensors — a special case of <span class="tt">dot_product</span>.</p>
