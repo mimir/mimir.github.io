@@ -14,5 +14,6 @@ var searchData=
   ['split_5foff_5fkernels_2eh_11',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
   ['static_5farg_5fopt_2ecpp_12',['static_arg_opt.cpp',['../static__arg__opt_8cpp.html',1,'']]],
   ['static_5farg_5fopt_2eh_13',['static_arg_opt.h',['../static__arg__opt_8h.html',1,'']]],
-  ['stream_2ecpp_14',['stream.cpp',['../stream_8cpp.html',1,'']]]
+  ['stream_2ecpp_14',['stream.cpp',['../stream_8cpp.html',1,'']]],
+  ['svg_2dcolor_2dscheme_2ecmake_15',['svg-color-scheme.cmake',['../svg-color-scheme_8cmake.html',1,'']]]
 ];

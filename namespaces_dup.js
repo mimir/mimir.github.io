@@ -23,5 +23,6 @@ var namespaces_dup =
     ] ],
     [ "Mim", "namespaceMim.html", null ],
     [ "mim", "namespacemim.html", "namespacemim" ],
-    [ "run-logged", "namespacerun-logged.html", null ]
+    [ "run-logged", "namespacerun-logged.html", null ],
+    [ "svg-color-scheme", "namespacesvg-color-scheme.html", null ]
 ];

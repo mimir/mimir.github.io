@@ -93,6 +93,7 @@ var NAVTREEINDEX23 =
 "namespacemim_1_1sexpr.html#aecf5b170c35246dc39f51f75b2024339":[2,0,4,2,4],
 "namespacerun-logged.html":[2,0,5],
 "namespaces.html":[2,0],
+"namespacesvg-color-scheme.html":[2,0,6],
 "nest_8cpp.html":[5,0,4,1,12],
 "nest_8cpp_source.html":[5,0,4,1,12],
 "nest_8h.html":[5,0,3,1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "scalarize_8cpp_source.html":[5,0,4,1,2,6],
 "scalarize_8h.html":[5,0,3,1,2,6],
 "scalarize_8h_source.html":[5,0,3,1,2,6],
-"schedule_8cpp.html":[5,0,4,1,17],
-"schedule_8cpp_source.html":[5,0,4,1,17]
+"schedule_8cpp.html":[5,0,4,1,17]
 };
