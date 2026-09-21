@@ -55,12 +55,11 @@ var searchData=
   ['loop_5fdepth_52',['loop_depth',['../classmim_1_1Nest_1_1Node.html#aeba233c5d375cdc2f9e8c07708c09bbc',1,'mim::Nest::Node']]],
   ['lower_53',['Lower',['../classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#ae47e809c16e08f53c99d4bdc42818660',1,'mim::plug::tensor::phase::Lower']]],
   ['lowerfor_54',['LowerFor',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html#a6796f282a28efaf49f4709fbc2eacb42',1,'mim::plug::affine::phase::LowerFor']]],
-  ['lowergetset_55',['LowerGetSet',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html#a87e9fc4a8174fe3481965f76251b0114',1,'mim::plug::tensor::phase::LowerGetSet']]],
-  ['lowerindex_56',['LowerIndex',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html#a0612c81ee600e5eadde9664bb04669ab',1,'mim::plug::affine::phase::LowerIndex']]],
-  ['lowermapreduce_57',['LowerMapReduce',['../classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html#a39a3c85fb7a3c78de9fac54bf2ff4f28',1,'mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#a556021e7599486204b40ed6868569813',1,'mim::plug::gpu::phase::LowerMapReduce::LowerMapReduce()'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1',1,'mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()']]],
-  ['lowerptr_58',['LowerPtr',['../classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a00bbff21a1c4cea0592cf5137c5352bc',1,'mim::plug::buffer::LowerPtr']]],
-  ['lowerregex_59',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html#a189d2ca5397617bf4a0e9cccd00d45fb',1,'mim::plug::regex::LowerRegex']]],
-  ['lowertomem_60',['LowerToMem',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#acf11e8b676e634c276f878711bdc8342',1,'mim::plug::tensor::phase::LowerToMem']]],
-  ['lowertypedclos_61',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a4a71222e2295b2975b11e09eb955a105',1,'mim::plug::clos::phase::LowerTypedClos']]],
-  ['lowertypedclosprep_62',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#a282ffaced0abad29a22d450cac612b68',1,'mim::plug::clos::phase::LowerTypedClosPrep']]]
+  ['lowerindex_55',['LowerIndex',['../classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html#a0612c81ee600e5eadde9664bb04669ab',1,'mim::plug::affine::phase::LowerIndex']]],
+  ['lowermapreduce_56',['LowerMapReduce',['../classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html#a39a3c85fb7a3c78de9fac54bf2ff4f28',1,'mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#a556021e7599486204b40ed6868569813',1,'mim::plug::gpu::phase::LowerMapReduce::LowerMapReduce()'],['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#ae784d563e4baf1faee47b2d7597b6ed1',1,'mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()']]],
+  ['lowerptr_57',['LowerPtr',['../classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a00bbff21a1c4cea0592cf5137c5352bc',1,'mim::plug::buffer::LowerPtr']]],
+  ['lowerregex_58',['LowerRegex',['../classmim_1_1plug_1_1regex_1_1LowerRegex.html#a189d2ca5397617bf4a0e9cccd00d45fb',1,'mim::plug::regex::LowerRegex']]],
+  ['lowertomem_59',['LowerToMem',['../classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#acf11e8b676e634c276f878711bdc8342',1,'mim::plug::tensor::phase::LowerToMem']]],
+  ['lowertypedclos_60',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a4a71222e2295b2975b11e09eb955a105',1,'mim::plug::clos::phase::LowerTypedClos']]],
+  ['lowertypedclosprep_61',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#a282ffaced0abad29a22d450cac612b68',1,'mim::plug::clos::phase::LowerTypedClosPrep']]]
 ];

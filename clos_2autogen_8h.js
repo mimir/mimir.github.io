@@ -2,12 +2,12 @@ var clos_2autogen_8h =
 [
     [ "MIM_clos_NORMALIZER_IMPL", "clos_2autogen_8h.html#a11c51dfad6a0499cc05680ebf19a190f", null ],
     [ "mim::plug::clos::alloc_jmpbuf", "namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0", null ],
-    [ "mim::plug::clos::attr", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8c", [
-      [ "mim::plug::clos::attr::returning", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca167a77939d6d79814e846ff5885b63b9", null ],
-      [ "mim::plug::clos::attr::free_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cacecd0f2415ba21a6a908010576282c6d", null ],
-      [ "mim::plug::clos::attr::fstclass_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8caae0d060ff580e732d2ef22e37a765c23", null ],
-      [ "mim::plug::clos::attr::esc", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca3f0e951cdec5a39685cb08fa6edc6094", null ],
-      [ "mim::plug::clos::attr::bottom", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca71f262d796bed1ab30e8a2d5a8ddee6f", null ]
+    [ "mim::plug::clos::anno", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8ba", [
+      [ "mim::plug::clos::anno::returning", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa167a77939d6d79814e846ff5885b63b9", null ],
+      [ "mim::plug::clos::anno::free_bb", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baacecd0f2415ba21a6a908010576282c6d", null ],
+      [ "mim::plug::clos::anno::fstclass_bb", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baaae0d060ff580e732d2ef22e37a765c23", null ],
+      [ "mim::plug::clos::anno::esc", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa3f0e951cdec5a39685cb08fa6edc6094", null ],
+      [ "mim::plug::clos::anno::bottom", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa71f262d796bed1ab30e8a2d5a8ddee6f", null ]
     ] ],
     [ "mim::plug::clos::branch_clos", "namespacemim_1_1plug_1_1clos.html#a2fbd9107d09c1de8bc95ebc59b44db46", null ],
     [ "mim::plug::clos::BufPtr", "namespacemim_1_1plug_1_1clos.html#ac0109814535661c3ccd6d63370f8eec2", null ],

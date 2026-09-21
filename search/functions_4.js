@@ -1,7 +1,7 @@
 var searchData=
 [
   ['early_0',['early',['../classmim_1_1Scheduler.html#ad10717b4926fa028518162c4ec32f3c9',1,'mim::Scheduler']]],
-  ['elem_1',['elem',['../classmim_1_1ast_1_1TupleExpr.html#a49f65d12bc809ef73363148b8d3e98df',1,'mim::ast::TupleExpr']]],
+  ['elem_1',['elem',['../classmim_1_1ast_1_1TupleExpr.html#a49f65d12bc809ef73363148b8d3e98df',1,'mim::ast::TupleExpr::elem()'],['../classmim_1_1Seq.html#ad9de0d1ebcf8a7d0578849bac5ff8d5c',1,'mim::Seq::elem()']]],
   ['elems_2',['elems',['../classmim_1_1ast_1_1TupleExpr.html#a1a779f3d672da639983ab58d678c9699',1,'mim::ast::TupleExpr']]],
   ['elide_5fempty_3',['elide_empty',['../classmim_1_1ClosedMutPhase.html#a9405d6627f8ac683802b7c9674a1ed32',1,'mim::ClosedMutPhase']]],
   ['emit_4',['Emit',['../classmim_1_1plug_1_1ll_1_1Emit.html#a7c226103b6f0e83ed425b41001fc37b4',1,'mim::plug::ll::Emit::Emit()'],['../classmim_1_1plug_1_1ll__nvptx_1_1Emit.html#af039d961c808825c62d7f9f9fdab7884',1,'mim::plug::ll_nvptx::Emit::Emit()']]],
@@ -62,8 +62,9 @@ var searchData=
   ['expr_59',['expr',['../classmim_1_1ast_1_1DeclExpr.html#a04b577239bdd8ea9575e104b32a74433',1,'mim::ast::DeclExpr']]],
   ['ext_60',['Ext',['../classmim_1_1Ext.html#a24479573059b13ed3da740da9bc929e8',1,'mim::Ext']]],
   ['ext_61',['ext',['../classmim_1_1World.html#aae3cfee47850ad9fc89aedf2fbf2738b',1,'mim::World']]],
-  ['externalize_62',['externalize',['../classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0',1,'mim::Def::externalize()'],['../classmim_1_1World_1_1Externals.html#ad3c7320844019590673434b83efde33b',1,'mim::World::Externals::externalize()']]],
-  ['externals_63',['externals',['../classmim_1_1World.html#ac5b0195c62710ec975a71944002a53b5',1,'mim::World::externals() const'],['../classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a',1,'mim::World::externals()']]],
-  ['extract_64',['extract',['../classmim_1_1Select.html#acd6f707e03ae65b86daa85ca70c575ab',1,'mim::Select::extract()'],['../classmim_1_1Dispatch.html#abb08763f50ed35fa01b26e61287a3bae',1,'mim::Dispatch::extract()'],['../classmim_1_1World.html#a9799c99593056d7d6d47b1993de4ee33',1,'mim::World::extract(const Def *d, const Def *i)'],['../classmim_1_1World.html#a1903b151f4eae823761959c4d816f2a0',1,'mim::World::extract(const Def *d, u64 a, u64 i)'],['../classmim_1_1World.html#a8b068b0c79a1c0cae408007c4ace7180',1,'mim::World::extract(const Def *d, u64 i)']]],
-  ['extract_5funsafe_65',['extract_unsafe',['../namespacemim_1_1plug_1_1core.html#a04b2bc63f2900e9c6e2d745d3f3419d4',1,'mim::plug::core::extract_unsafe(const Def *d, const Def *i)'],['../namespacemim_1_1plug_1_1core.html#a9a65a10d9e296d08c1a4f393d4c17881',1,'mim::plug::core::extract_unsafe(const Def *d, u64 i)']]]
+  ['extent_62',['extent',['../classmim_1_1Shape.html#a53f6b0ea6977bab35b12cf4e8ac7c329',1,'mim::Shape']]],
+  ['externalize_63',['externalize',['../classmim_1_1Def.html#a63ab063b609e964b0c90c5ca651ca5e0',1,'mim::Def::externalize()'],['../classmim_1_1World_1_1Externals.html#ad3c7320844019590673434b83efde33b',1,'mim::World::Externals::externalize()']]],
+  ['externals_64',['externals',['../classmim_1_1World.html#ac5b0195c62710ec975a71944002a53b5',1,'mim::World::externals() const'],['../classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a',1,'mim::World::externals()']]],
+  ['extract_65',['extract',['../classmim_1_1Select.html#acd6f707e03ae65b86daa85ca70c575ab',1,'mim::Select::extract()'],['../classmim_1_1Dispatch.html#abb08763f50ed35fa01b26e61287a3bae',1,'mim::Dispatch::extract()'],['../classmim_1_1World.html#a9799c99593056d7d6d47b1993de4ee33',1,'mim::World::extract(const Def *d, const Def *i)'],['../classmim_1_1World.html#a1903b151f4eae823761959c4d816f2a0',1,'mim::World::extract(const Def *d, u64 a, u64 i)'],['../classmim_1_1World.html#a8b068b0c79a1c0cae408007c4ace7180',1,'mim::World::extract(const Def *d, u64 i)']]],
+  ['extract_5funsafe_66',['extract_unsafe',['../namespacemim_1_1plug_1_1core.html#a04b2bc63f2900e9c6e2d745d3f3419d4',1,'mim::plug::core::extract_unsafe(const Def *d, const Def *i)'],['../namespacemim_1_1plug_1_1core.html#a9a65a10d9e296d08c1a4f393d4c17881',1,'mim::plug::core::extract_unsafe(const Def *d, u64 i)']]]
 ];

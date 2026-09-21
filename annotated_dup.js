@@ -130,7 +130,6 @@ var annotated_dup =
           [ "phase", "namespacemim_1_1plug_1_1tensor_1_1phase.html", [
             [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
             [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
-            [ "LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet" ],
             [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
             [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ],
             [ "Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc" ],
@@ -207,6 +206,7 @@ var annotated_dup =
       [ "Select", "classmim_1_1Select.html", "classmim_1_1Select" ],
       [ "Seq", "classmim_1_1Seq.html", "classmim_1_1Seq" ],
       [ "Setters", "classmim_1_1Setters.html", "classmim_1_1Setters" ],
+      [ "Shape", "classmim_1_1Shape.html", "classmim_1_1Shape" ],
       [ "Sigma", "classmim_1_1Sigma.html", "classmim_1_1Sigma" ],
       [ "Split", "classmim_1_1Split.html", "classmim_1_1Split" ],
       [ "StaticArgOpt", "classmim_1_1StaticArgOpt.html", "classmim_1_1StaticArgOpt" ],

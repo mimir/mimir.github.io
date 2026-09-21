@@ -10,7 +10,5 @@ var tensor_8h =
     [ "mim::plug::tensor::count_consumers", "namespacemim_1_1plug_1_1tensor.html#ad351e77823c5eb59f8d047e7deaca151", null ],
     [ "mim::plug::tensor::is_copy_comb", "namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463", null ],
     [ "mim::plug::tensor::is_identity_post", "namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1", null ],
-    [ "mim::plug::tensor::is_pure_read", "namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85", null ],
-    [ "mim::plug::tensor::op_get", "namespacemim_1_1plug_1_1tensor.html#ab81673d70e22003fa65a4736b5e9b08a", null ],
-    [ "mim::plug::tensor::op_set", "namespacemim_1_1plug_1_1tensor.html#a3520819e9d3ed4ab46dcd49fdd6d80ab", null ]
+    [ "mim::plug::tensor::is_pure_read", "namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85", null ]
 ];

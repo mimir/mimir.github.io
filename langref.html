@@ -358,7 +358,7 @@ Declarations</h2>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;let&quot; p &quot;=&quot; e</div>
 <div class="line">        |  vis? &quot;anx&quot; I &quot;=&quot; path</div>
 <div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e and*</div>
-<div class="line">        |  vis?  &quot;extern&quot;           lam I fwd+ (&quot;:&quot; e)? &quot;;&quot;</div>
+<div class="line">        |  vis?  &quot;extern&quot;          lam I fwd+ (&quot;:&quot; e)? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I &quot;=&quot; e and*</div>
 <div class="line">        |  vis? &quot;axm&quot; axm</div>
 <div class="line">        |  (&quot;rule&quot; | &quot;norm&quot;) I p &quot;:&quot; e (&quot;when&quot; e)? &quot;=&gt;&quot; e</div>
@@ -428,7 +428,7 @@ Patterns and Telescopes</h2>
 <li><span class="tt">[...]</span> never binds for a body: a declaration or <span class="tt">λ</span>/<span class="tt">cn</span>/<span class="tt">fn</span> <b>with</b> a body must spell its domain as a <span class="tt">(...)</span> pattern, and writes an unnamed component as <span class="tt">_: T</span>. A bodyless <span class="tt">extern</span> declaration accepts either, since nothing binds there anyway.</li>
 </ul>
 <p>A telescope name is visible only to what stands to its right - later components, and the codomain after a <span class="tt">→</span>. <span class="tt">Cn X</span> abbreviates <span class="tt">X → ⊥</span> and so has no codomain at all, which makes every name in <span class="tt">Cn [x y: I32]</span> erased: it is the very same type as <span class="tt">Cn [I32, I32]</span>.</p>
-<p>A telescope is not a form of its own but the finite end of one construct. <span class="tt">[...]</span> is a <a class="el" href="#prod" title="Products">sigma</a>, and a sigma whose components are all the same <em>is</em> an <a class="el" href="#prod" title="Products">array</a>: <span class="tt">[Nat, Nat, Nat]</span> and <span class="tt">«3; Nat»</span> denote one and the same type. A sigma names a component so that later components may depend on it; an array names its index so that the element type may depend on that. <span class="tt">«i: n; T i»</span> is therefore the very same dependency, taken over an arity that need not be a literal.</p>
+<p>A telescope is not a form of its own but the finite end of one construct. <span class="tt">[...]</span> is a <a class="el" href="#prod" title="Products">sigma</a>, and a sigma whose components are all the same <em>is</em> an <a class="el" href="#prod" title="Products">array</a>: <span class="tt">[Nat, Nat, Nat]</span> and <span class="tt">«3; Nat»</span> denote one and the same type. The same compression applies once more to a nest of arrays: <span class="tt">«2; «3; T»»</span> and <span class="tt">«2, 3; T»</span> denote one and the same type, and an array carries all of its axes as one <em>shape</em>. <span class="tt">#</span> follows suit - <span class="tt">t#i#j</span> and <span class="tt">t#(i, j)</span> are the same Extract - so an index has exactly as many components as the shape it indexes into. The sole exception is a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component. A sigma names a component so that later components may depend on it; an array names its index so that the element type may depend on that. <span class="tt">«i: n; T i»</span> is therefore the very same dependency, taken over an arity that need not be a literal.</p>
 <p>The term level mirrors the type level: <span class="tt">(...)</span> is a tuple, <span class="tt">‹n; e›</span> a pack, and a tuple of <span class="tt">n</span> equal elements <em>is</em> that pack - <span class="tt">(0, 0, 0)</span> and <span class="tt">‹3; 0›</span> are the same value, while <span class="tt">(23, 42, 66)</span> stays a tuple. <span class="tt">#</span> extracts from all four alike. Hence <span class="tt">[n: Nat, «n; T»]</span> describes a function whose number of arguments is a runtime value - a telescope of its own could never spell that, since it fixes its length syntactically.</p>
 <p>An alias pattern wraps another pattern and additionally binds the whole value:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (a, b, c) as abc = (1, 2, 3);</div>
@@ -509,12 +509,13 @@ Functions and Continuations</h3>
 Products</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;[&quot; tlist? &quot;]&quot;</div>
 <div class="line">       |  &quot;(&quot; (e (&quot;,&quot; e)*)? &quot;)&quot;</div>
-<div class="line">       |  &quot;«&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;»&quot;</div>
-<div class="line">       |  &quot;‹&quot; arity (&quot;,&quot; arity)* &quot;;&quot; e &quot;›&quot;</div>
+<div class="line">       |  &quot;«&quot; shape &quot;;&quot; e &quot;»&quot;</div>
+<div class="line">       |  &quot;‹&quot; shape &quot;;&quot; e &quot;›&quot;</div>
 <div class="line">       |  e &quot;#&quot; e</div>
 <div class="line">       |  e &quot;#&quot; I</div>
 <div class="line">       |  e (&quot;#&quot; e)+ &quot;←&quot; e</div>
 <div class="line"> </div>
+<div class="line">shape ::= arity (&quot;,&quot; arity)*</div>
 <div class="line">arity ::= e</div>
 <div class="line">       |  I &quot;:&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
@@ -523,7 +524,7 @@ Products</h3>
 </li>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
-<li>An array or pack may have several comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named.</li>
+<li>A <span class="tt">shape</span> lists one or more comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named. All of them fuse into <b>one</b> array of shape <span class="tt">(m, n)</span>, whose index binds every axis at once, so <span class="tt">t#i#j</span> and <span class="tt">t#(i, j)</span> are the same Extract - except through a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component. The exception is a dimension whose extent depends on an earlier index, as in <span class="tt">«i: n, j: s#i; body»</span>: a shape lists extents, not functions of preceding indices, so such a nest stays one array per axis.</li>
 <li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
 <li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. The path extends leftward through <span class="tt">#</span> and stops at the first expression that is not itself a <span class="tt">#</span>.<ul>
@@ -531,6 +532,25 @@ Products</h3>
 <li>A <span class="tt">let</span> ends a path the same way: <span class="tt">let row = t#i; row#j ← v</span> also denotes <span class="tt">t#i</span>.</li>
 <li><span class="tt">←</span> binds weaker than application, so <span class="tt">f t#i ← v</span> is <span class="tt">(f t#i) ← v</span> - write <span class="tt">f (t#i ← v)</span>.</li>
 </ul>
+</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="mutsigma"></a>
+Dependent Tuple Types</h3>
+<p>A sigma is a <b>dependent tuple type</b> as soon as one of its components mentions a name to its left:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">[n: Nat, «n; Nat»]</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The components refer to that name through a var of the sigma itself, so such a sigma is a <em>mutable</em>: it is built empty and filled in afterwards. Where no component uses that var, the sigma is the structural one after all and its names are erased - <span class="tt">[i: Nat, j: Nat]</span> is the very same type as <span class="tt">«2; Nat»</span>.</p>
+<p>A <span class="tt">rec</span> declaration additionally puts the declared name in scope inside the body, which is the only way for a type to mention itself:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec Node = [val: I32, next: mem.Ptr0 Node];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">rec</span> also keeps the sigma mutable unconditionally, so it is how a layout that nothing depends on keeps its component names.</p>
+<dl class="section note"><dt>Note</dt><dd>"mutable" says how such a sigma is constructed, not that anything about it may be changed later. A mutable is not hash-consed, so every occurrence is a node of its own, but it is still checked structurally: a second declaration of the same layout is alpha-equivalent to the first, and the two are interchangeable.</dd></dl>
+<p>Two things follow for the surface language.</p>
+<ul>
+<li>Its components may be addressed by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>, which a structural sigma has no room for.</li>
+<li><p class="startli">A mutable sigma of exactly one component stays a genuine 1-tuple; only <span class="tt">rec</span> builds one, since a lone component has nothing to its left to depend on. Everywhere else a one-element aggregate degrades to its sole element - <span class="tt">[T]</span> and <span class="tt">«1; T»</span> are <span class="tt">T</span>, and <span class="tt">(x)</span> is <span class="tt">x</span> - which makes <span class="tt">#0₁</span> a no-op. Here it is a real Extract, and that is the one exception to <span class="tt">t#i#j</span> ≡ <span class="tt">t#(i, j)</span>: a fused index folds its size-1 axes away, while the <span class="tt">#</span>-chain keeps them.</p>
+<div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">rec One = [x: Nat];</div>
+<div class="line">lam f (t: «2; One»): Nat = t#1₂#0₁;    // a real Extract: reads `x` out of the 1-tuple</div>
+<div class="line">lam g (t: «2; One»): One = t#(1₂, 0₁); // the `0₁` axis folds away, so this is just `t#1₂`</div>
+</div><!-- fragment --></div><div class="mim-code"> </div><p class="startli"><span class="tt">←</span> is unaffected: writing the component rebuilds the whole 1-tuple either way, so <span class="tt">t#(1₂, 0₁) ← v</span> and <span class="tt">t#1₂#0₁ ← v</span> do agree.</p>
 </li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
@@ -658,7 +678,7 @@ Annex</h2>
 <p>An <span class="tt">anx</span> declaration is an ordinary member of its enclosing module, found by the same path resolution as any other member. Its plugin-qualified name (<span class="tt">plugin.tag</span> or <span class="tt">plugin.tag.sub</span>, derived from <span class="tt">mod</span> nesting) is additionally registered in a global by-name table (<a class="el" href="structmim_1_1Annex.html" title="mim::Annex">mim::Annex</a>) that tools such as <span class="tt">compile.named</span> and plugin bootstrap use to look an annex up directly by that name, independent of the surrounding modules.</p>
 <h2 class="doxsection"><a class="anchor" id="field"></a>
 Field Names of Sigmas</h2>
-<p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of mutable sigma types are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">S</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>
+<p><a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> elements of a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> - a dependent tuple type, or any sigma declared with <span class="tt">rec</span> - are available for extracts and inserts. </p><dl class="section note"><dt>Note</dt><dd>These names take precedence over ordinary lexical names. In the example below, <span class="tt">i</span> refers to the field name of <span class="tt">S</span>, not the <span class="tt">let</span>-bound variable:</dd></dl>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1₂;</div>
 <div class="line">rec S = [i j: Nat];</div>
 <div class="line">lam f (x: S): Nat = x#i;</div>
@@ -666,7 +686,74 @@ Field Names of Sigmas</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1₂;</div>
 <div class="line">rec S = [i j: Nat];</div>
 <div class="line">lam f (x: S): Nat = x#(i);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="normalization"></a>
+Normalizations</h1>
+<p><a class="el" href="namespaceMim.html">Mim</a> nodes are hash-consed and normalized while they are built, so the left-hand sides below never reach the IR - <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-mim</span> prints the right-hand side. Every argument is <a class="el" href="classmim_1_1Zonker.html" title="mim::Zonker">zonked</a> first, so a resolved <span class="tt">Hole</span> normalizes like the term it stands for. A <em>mutable</em> node is built empty and filled in afterwards and is therefore never normalized; only its body is. While the <span class="tt">World</span> is frozen, a rule that would have to build a new node bails out instead.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+Aggregates</h2>
+<ul>
+<li><span class="tt">(e)</span> -&gt; <span class="tt">e</span>, <span class="tt">[T]</span> -&gt; <span class="tt">T</span> - a one-element aggregate degrades to its element; the sole exception is a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component</li>
+<li><span class="tt">(e, e, e)</span> -&gt; <span class="tt">‹3; e›</span>, <span class="tt">[T, T, T]</span> -&gt; <span class="tt">«3; T»</span> - uniform elements compress into a pack/array</li>
+<li><span class="tt">(t#0, t#1, t#2)</span> -&gt; <span class="tt">t</span> - η for tuples, provided <span class="tt">t</span> has the ascribed type</li>
+<li><span class="tt">⊥:[T, U]</span> -&gt; <span class="tt">(⊥:T, ⊥:U)</span>, <span class="tt">⊥:«n; T»</span> -&gt; <span class="tt">‹n; ⊥:T›</span> - <span class="tt">⊥</span>/<span class="tt">⊤</span> are pushed into aggregates</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+Shapes</h2>
+<ul>
+<li><span class="tt">«1; T»</span> -&gt; <span class="tt">T</span> - a literal size-1 axis folds out of a shape</li>
+<li><span class="tt">«2, 0, 3; T»</span> -&gt; <span class="tt">«2; []»</span> - a literal <span class="tt">0</span> extent empties everything below it</li>
+<li><span class="tt">«a; «b; T»»</span> -&gt; <span class="tt">«a, b; T»</span> - a nest of the same kind fuses into one shape, unless the inner extents depend on the outer index</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+Extract</h2>
+<ul>
+<li><span class="tt">d#(i, 0₁, k)</span> -&gt; <span class="tt">d#(i, k)</span> - a literal size-1 axis folds out of an index, mirroring the shape rule</li>
+<li><span class="tt">d#i</span> -&gt; <span class="tt">d</span> if <span class="tt">i: Idx 1</span> and <span class="tt">d</span>'s type is not a mutable sigma of one component</li>
+<li><span class="tt">d#()</span> -&gt; <span class="tt">d</span> - an index that folded away entirely</li>
+<li><span class="tt">‹i: n; e›#j</span> -&gt; <span class="tt">[i ↦ j]e</span>, <span class="tt">(a, b, c)#1</span> -&gt; <span class="tt">b</span></li>
+<li><span class="tt">t#i#j</span> -&gt; <span class="tt">t#(i, j)</span> - the maximal-rank fused Extract is the normal form, as far as <span class="tt">t</span>'s own shape reaches</li>
+<li><span class="tt">t#(i, j)</span> -&gt; <span class="tt">t#i#j</span> - conversely, for an index reaching past <span class="tt">t</span>'s own shape into its element type</li>
+<li><span class="tt">(d#i ← v)#i</span> -&gt; <span class="tt">v</span></li>
+<li><span class="tt">(d#j ← v)#i</span> -&gt; <span class="tt">d#i</span> for literal <span class="tt">i ≠ j</span></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+Insert</h2>
+<ul>
+<li><span class="tt">d#() ← v</span> -&gt; <span class="tt">v</span>, and likewise for an index of <span class="tt">Idx 1</span> - the write replaces all of <span class="tt">d</span></li>
+<li><span class="tt">(a, b, c)#1 ← x</span> -&gt; <span class="tt">(a, x, c)</span></li>
+<li><span class="tt">‹4; x›#2 ← y</span> -&gt; <span class="tt">(x, x, y, x)</span> - only for a literal arity below <span class="tt">--scalarize-threshold</span></li>
+<li><span class="tt">d#(i, j) ← v</span> -&gt; <span class="tt">d#i ← ((d#i)#j ← v)</span> - if the outer write rebuilds an aggregate by the two rules above, or if the index reaches past <span class="tt">d</span>'s own shape</li>
+<li><span class="tt">d#i ← ((d#i)#j ← v)</span> -&gt; <span class="tt">d#(i, j) ← v</span> - otherwise, the dual of Extract fusion: a read-modify-write chain stays a <em>single</em> write</li>
+<li><span class="tt">d#i ← d#i</span> -&gt; <span class="tt">d</span></li>
+<li><span class="tt">(d#i ← y)#i ← v</span> -&gt; <span class="tt">d#i ← v</span></li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+Application</h2>
+<ul>
+<li><span class="tt">(λ (_: T) = e) a</span> -&gt; <span class="tt">e</span> - an immutable <span class="tt">λ</span> binds no var, so it always β-reduces</li>
+<li><span class="tt">f x</span> -&gt; body of <span class="tt">f</span> if <span class="tt">x</span> is <span class="tt">f</span>'s own var - substituting a var by itself is the identity</li>
+<li><span class="tt">f x</span> -&gt; <span class="tt">[var ↦ x]</span>body of <span class="tt">f</span> if <span class="tt">f</span>'s <a class="el" href="#decl" title="Declarations">filter</a> evaluates to <span class="tt">tt</span> for <span class="tt">x</span>; nothing is reduced if the filter is <span class="tt">ff</span></li>
+<li>an application of an <a class="el" href="#decl" title="Declarations">axiom</a> runs its normalizer once the curry counter hits <span class="tt">0</span></li>
+<li>an application of a <span class="tt">[T: *] → e</span> with implicit domains inserts a <span class="tt">Hole</span> per implicit argument</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+Lattices</h2>
+<ul>
+<li><span class="tt">T ∪ ⊥</span> -&gt; <span class="tt">T</span>, <span class="tt">T ∩ ⊤</span> -&gt; <span class="tt">T</span> - the unit of a join/meet is dropped</li>
+<li><span class="tt">T ∪ ⊤</span> -&gt; <span class="tt">⊤</span>, <span class="tt">T ∩ ⊥</span> -&gt; <span class="tt">⊥</span></li>
+<li><span class="tt">A ∪ A</span> -&gt; <span class="tt">A</span>; the operands are sorted, so <span class="tt">∪</span>/<span class="tt">∩</span> are commutative, associative, and idempotent</li>
+<li>an empty join is <span class="tt">⊥</span>, an empty meet is <span class="tt">⊤</span>, and a one-element one is its operand</li>
+<li><span class="tt">x inj T</span> -&gt; <span class="tt">x</span> if <span class="tt">T</span> is not a union type</li>
+<li><span class="tt">match (T inj x) with ...</span> -&gt; the arm whose domain is <span class="tt">T</span> - a constructor fixes the active case</li>
+<li>the arms of a <span class="tt">match</span> are sorted by their domain</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+Universes</h2>
+<ul>
+<li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, and a <span class="tt">UMax</span> flattens nested maxima, folds their literals into one, and sorts and deduplicates the rest</li>
+<li>the var of a mutable whose var type is <span class="tt">Idx 1</span> -&gt; <span class="tt">0₁</span>, and one whose var type is <span class="tt">[]</span> -&gt; <span class="tt">()</span></li>
+</ul>
+<div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
 <tr class="markdownTableRowOdd">

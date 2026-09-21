@@ -110,7 +110,6 @@ var hierarchy =
           [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
           [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],
           [ "mim::plug::tensor::phase::Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", null ],
-          [ "mim::plug::tensor::phase::LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", null ],
           [ "mim::plug::tensor::phase::LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", null ],
           [ "mim::plug::tensor::phase::LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", null ],
           [ "mim::plug::tensor::phase::Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", null ]
@@ -348,6 +347,7 @@ var hierarchy =
     [ "mim::Setters&lt; Var &gt;", "classmim_1_1Setters.html", [
       [ "mim::Var", "classmim_1_1Var.html", null ]
     ] ],
+    [ "mim::Shape", "classmim_1_1Shape.html", null ],
     [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
     [ "mim::plug::tensor::phase::Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", null ],
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],

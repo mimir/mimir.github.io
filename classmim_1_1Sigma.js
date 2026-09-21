@@ -1,5 +1,7 @@
 var classmim_1_1Sigma =
 [
+    [ "cat", "classmim_1_1Sigma.html#aff3e6f8852a892c87006d79dd34866ee", null ],
+    [ "cat", "classmim_1_1Sigma.html#a416a2a57e6815558052758f33b5d57fb", null ],
     [ "infer", "classmim_1_1Sigma.html#ac101a5c579a2520fc1d87e6a6ad0b4fd", null ],
     [ "set", "classmim_1_1Sigma.html#a355c4dc6af38c2b3b33d1188dbf840ec", null ],
     [ "set", "classmim_1_1Sigma.html#af303ed83c517d378142e368dccc6f9f1", null ],

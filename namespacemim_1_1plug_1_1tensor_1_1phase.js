@@ -2,7 +2,6 @@ var namespacemim_1_1plug_1_1tensor_1_1phase =
 [
     [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
     [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
-    [ "LowerGetSet", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerGetSet" ],
     [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
     [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ],
     [ "Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc" ],

@@ -15,6 +15,7 @@ var classmim_1_1Axm =
     [ "isa", "classmim_1_1Axm.html#a67bb672c5feae845d6ec8557c3c302df", null ],
     [ "next", "classmim_1_1Axm.html#a53ff494f0c47c403919d1b1c891ce296", null ],
     [ "normalizer", "classmim_1_1Axm.html#a86709d59d9d1dec24da36a52db1177f4", null ],
+    [ "peel", "classmim_1_1Axm.html#a1962bb2193fdde2003bce69e4783111b", null ],
     [ "plugin", "classmim_1_1Axm.html#ab2b2aa0913ed4f534e755d9a7954b6e1", null ],
     [ "sub", "classmim_1_1Axm.html#a88cf29bedcbf5bd9a32346390b66bcd6", null ],
     [ "tag", "classmim_1_1Axm.html#a254211ef8b211456690206f2ea890589", null ],

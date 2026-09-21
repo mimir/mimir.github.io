@@ -3,12 +3,12 @@ var namespacemim_1_1plug_1_1clos =
     [ "phase", "namespacemim_1_1plug_1_1clos_1_1phase.html", "namespacemim_1_1plug_1_1clos_1_1phase" ],
     [ "ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", "classmim_1_1plug_1_1clos_1_1ClosLit" ],
     [ "alloc_jmpbuf", "namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0", null ],
-    [ "attr", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8c", [
-      [ "returning", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca167a77939d6d79814e846ff5885b63b9", null ],
-      [ "free_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8cacecd0f2415ba21a6a908010576282c6d", null ],
-      [ "fstclass_bb", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8caae0d060ff580e732d2ef22e37a765c23", null ],
-      [ "esc", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca3f0e951cdec5a39685cb08fa6edc6094", null ],
-      [ "bottom", "namespacemim_1_1plug_1_1clos.html#aa5eccb7b54e55d02648912c6dad52e8ca71f262d796bed1ab30e8a2d5a8ddee6f", null ]
+    [ "anno", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8ba", [
+      [ "returning", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa167a77939d6d79814e846ff5885b63b9", null ],
+      [ "free_bb", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baacecd0f2415ba21a6a908010576282c6d", null ],
+      [ "fstclass_bb", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baaae0d060ff580e732d2ef22e37a765c23", null ],
+      [ "esc", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa3f0e951cdec5a39685cb08fa6edc6094", null ],
+      [ "bottom", "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa71f262d796bed1ab30e8a2d5a8ddee6f", null ]
     ] ],
     [ "branch_clos", "namespacemim_1_1plug_1_1clos.html#a2fbd9107d09c1de8bc95ebc59b44db46", null ],
     [ "BufPtr", "namespacemim_1_1plug_1_1clos.html#ac0109814535661c3ccd6d63370f8eec2", null ],

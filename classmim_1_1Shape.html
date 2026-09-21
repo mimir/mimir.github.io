@@ -1,0 +1,872 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::Shape Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1Shape.html','','classmim_1_1Shape-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::Shape Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The extents of a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a>'s axes: a plain <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> for a single axis, an aggregate of them for several.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="tuple_8h_source.html">mim/tuple.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af53511e53908e89e254155b34b0a5af5" id="r_af53511e53908e89e254155b34b0a5af5"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> () noexcept=default</td></tr>
+<tr class="memitem:a7ff8d4218b8e1d648866785afe583a4e" id="r_a7ff8d4218b8e1d648866785afe583a4e"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a7ff8d4218b8e1d648866785afe583a4e">Shape</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) noexcept</td></tr>
+<tr class="memitem:a1a719ef96e2e4dd3abcc0ba479d45e0e" id="r_a1a719ef96e2e4dd3abcc0ba479d45e0e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1a719ef96e2e4dd3abcc0ba479d45e0e">Shape</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> shape)</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
+<tr class="memitem:ad9616d65ff5d94de7376c5f1355270fb" id="r_ad9616d65ff5d94de7376c5f1355270fb"><td class="memItemLeft">constexpr const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad9616d65ff5d94de7376c5f1355270fb">operator*</a> () const noexcept</td></tr>
+<tr class="memitem:a92fbe17bd7bdeefdc735972b4d5fdddb" id="r_a92fbe17bd7bdeefdc735972b4d5fdddb"><td class="memItemLeft">constexpr const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a92fbe17bd7bdeefdc735972b4d5fdddb">operator-&gt;</a> () const noexcept</td></tr>
+<tr class="memitem:ac8ed9e3653ce718c3bb9462ce6e83deb" id="r_ac8ed9e3653ce718c3bb9462ce6e83deb"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ac8ed9e3653ce718c3bb9462ce6e83deb">operator bool</a> () const noexcept</td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Transform</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Each of these needs <a class="el" href="#a1d568c89b4828bc1e7e24f4ac310f7b3" title="Number of axes; std::nullopt if not statically known.">Shape::rank</a> and yields a null <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a> without it. </p>
+</div></td></tr>
+<tr class="memitem:ab16434def629eb5f009b3aa6fce0084e" id="r_ab16434def629eb5f009b3aa6fce0084e"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab16434def629eb5f009b3aa6fce0084e">slice</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> begin, <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> end) const</td></tr>
+<tr class="memdesc:ab16434def629eb5f009b3aa6fce0084e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The axes <span class="tt">[begin, end)</span>.  <br /></td></tr>
+<tr class="memitem:ae4c5c2cb411b4cee0a6da5bf56a985a9" id="r_ae4c5c2cb411b4cee0a6da5bf56a985a9"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae4c5c2cb411b4cee0a6da5bf56a985a9">take</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> n) const</td></tr>
+<tr class="memdesc:ae4c5c2cb411b4cee0a6da5bf56a985a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The leading <code class="param">n</code> axes.  <br /></td></tr>
+<tr class="memitem:ad2caa3773ed203e9c2c8e8700fa982e6" id="r_ad2caa3773ed203e9c2c8e8700fa982e6"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad2caa3773ed203e9c2c8e8700fa982e6">drop</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> n) const</td></tr>
+<tr class="memdesc:ad2caa3773ed203e9c2c8e8700fa982e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">All but the leading <code class="param">n</code> axes.  <br /></td></tr>
+<tr class="memitem:a61e2eba0383d5fc9d93dfc053db68fe4" id="r_a61e2eba0383d5fc9d93dfc053db68fe4"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#a61e2eba0383d5fc9d93dfc053db68fe4">operator+</a> (<a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>) const</td></tr>
+<tr class="memdesc:a61e2eba0383d5fc9d93dfc053db68fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenation - what fuses <span class="tt">«a; «b; T»»</span> into <span class="tt">«a, b; T»</span>.  <br /></td></tr>
+<tr class="memitem:a0fc2e1a074003918bb60a590b4c47e52" id="r_a0fc2e1a074003918bb60a590b4c47e52"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0fc2e1a074003918bb60a590b4c47e52">zonk</a> () const</td></tr>
+<tr class="memdesc:a0fc2e1a074003918bb60a590b4c47e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps <a class="el" href="classmim_1_1Def.html#a29019dd6f96db3881b604f0b16cba29a" title="If Holes have been filled, reconstruct the program without them.">Def::zonk()</a>;.  <br /></td></tr>
+<tr class="memitem:ae25bc3b2d32d793c8024fa6f11c086c3" id="r_ae25bc3b2d32d793c8024fa6f11c086c3"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae25bc3b2d32d793c8024fa6f11c086c3">filter</a> (auto keep) const</td></tr>
+<tr class="memdesc:ae25bc3b2d32d793c8024fa6f11c086c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a> with only the axes <code class="param">keep</code> accepts; <span class="tt">*this</span>, if it accepts all of them or the rank is dynamic.  <br /></td></tr>
+<tr class="memitem:ab53dbf293c89db9757ae6035e6f8e5b4" id="r_ab53dbf293c89db9757ae6035e6f8e5b4"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab53dbf293c89db9757ae6035e6f8e5b4">fold</a> () const</td></tr>
+<tr class="memdesc:ab53dbf293c89db9757ae6035e6f8e5b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops every literal size-1 axis, mirroring <span class="tt">«1; T»</span> ≡ <span class="tt">T</span>; all of them folded away leaves rank <span class="tt">0</span>.  <br /></td></tr>
+<tr class="memitem:a313311963e39f6b96e212dc38a73bbb8" id="r_a313311963e39f6b96e212dc38a73bbb8"><td class="memItemLeft"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a>&#160;</td><td class="memItemRight"><a class="el" href="#a313311963e39f6b96e212dc38a73bbb8">fold</a> (<a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> shape) const</td></tr>
+<tr class="memdesc:a313311963e39f6b96e212dc38a73bbb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">As above but driven by <code class="param">shape:</code> drops the axes <em>it</em> has as literal <span class="tt">1</span>, whatever this one's own extents are - a broadcast reads a size-1 input axis at the <em>output</em>'s loop index.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Type Checking</div></td></tr>
+<tr class="memitem:acd43c836c29aa1aa991c3370c5e20767" id="r_acd43c836c29aa1aa991c3370c5e20767"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#acd43c836c29aa1aa991c3370c5e20767">isa_extents</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memdesc:acd43c836c29aa1aa991c3370c5e20767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">type</code> <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> - or an aggregate of <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span>s, i.e. a shape?  <br /></td></tr>
+<tr class="memitem:afcf07cdfd06129e0a4f57c2823f60e46" id="r_afcf07cdfd06129e0a4f57c2823f60e46"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#afcf07cdfd06129e0a4f57c2823f60e46">isa_indices</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memdesc:afcf07cdfd06129e0a4f57c2823f60e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">type</code> <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> - or an aggregate of <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span>s, i.e. a fused index?  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Axes</h2></td></tr>
+<tr class="memitem:a7a01136b0de98a5d7b26a4627e2f37d4" id="r_a7a01136b0de98a5d7b26a4627e2f37d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7a01136b0de98a5d7b26a4627e2f37d4">is_dim</a> () const</td></tr>
+<tr class="memdesc:a7a01136b0de98a5d7b26a4627e2f37d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a <em>single</em> axis - a <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span>/<span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> rather than an aggregate of them?  <br /></td></tr>
+<tr class="memitem:a36f39c865870bc0ac18b38f3e331ba61" id="r_a36f39c865870bc0ac18b38f3e331ba61"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a36f39c865870bc0ac18b38f3e331ba61">is_fused</a> () const</td></tr>
+<tr class="memdesc:a36f39c865870bc0ac18b38f3e331ba61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does this span several axes? Also <span class="tt">true</span> for a dynamic rank.  <br /></td></tr>
+<tr class="memitem:a1d568c89b4828bc1e7e24f4ac310f7b3" id="r_a1d568c89b4828bc1e7e24f4ac310f7b3"><td class="memItemLeft">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1d568c89b4828bc1e7e24f4ac310f7b3">rank</a> () const</td></tr>
+<tr class="memdesc:a1d568c89b4828bc1e7e24f4ac310f7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of axes; <span class="tt">std::nullopt</span> if not statically known.  <br /></td></tr>
+<tr class="memitem:ac802d07bcef6001f5e4dd5c5be338ca1" id="r_ac802d07bcef6001f5e4dd5c5be338ca1"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ac802d07bcef6001f5e4dd5c5be338ca1">operator[]</a> (<a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> i) const</td></tr>
+<tr class="memdesc:ac802d07bcef6001f5e4dd5c5be338ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code class="param">i</code> th axis.  <br /></td></tr>
+<tr class="memitem:a5ada497c2c9ae88799aa1a55b82d2138" id="r_a5ada497c2c9ae88799aa1a55b82d2138"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a5ada497c2c9ae88799aa1a55b82d2138">front</a> () const</td></tr>
+<tr class="memdesc:a5ada497c2c9ae88799aa1a55b82d2138"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outermost axis - the <a class="el" href="classmim_1_1Def.html#ae51857d275509b1b70aa8f696cee3a0a" title="Number of elements available to Extract / Insert (may be dynamic).">Def::arity</a> of the <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> this shape describes; null for a null <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a>.  <br /></td></tr>
+<tr class="memitem:a53f6b0ea6977bab35b12cf4e8ac7c329" id="r_a53f6b0ea6977bab35b12cf4e8ac7c329"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a53f6b0ea6977bab35b12cf4e8ac7c329">extent</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *axis)</td></tr>
+<tr class="memdesc:a53f6b0ea6977bab35b12cf4e8ac7c329"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extent of <code class="param">axis:</code> the axis itself for a shape, its <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> size for an index.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The extents of a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a>'s axes: a plain <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> for a single axis, an aggregate of them for several. </p>
+<p>A multi-dimensional <em>index</em> into a <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> has the very same structure - one component per axis, <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> instead of <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> - so it uses this view as well. </p><dl class="section note"><dt>Note</dt><dd>A <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a> is a non-owning view over a <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> and may be null; <a class="el" href="#ad9616d65ff5d94de7376c5f1355270fb">Shape::operator*</a> hands the <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> back. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00106">106</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af53511e53908e89e254155b34b0a5af5" name="af53511e53908e89e254155b34b0a5af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53511e53908e89e254155b34b0a5af5">&#9670;&#160;</a></span>Shape() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Shape::Shape </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel default">default</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00589">mim::Def::arity()</a>, <a class="el" href="tuple_8cpp_source.html#l00062">drop()</a>, <a class="el" href="tuple_8h_source.html#l00154">filter()</a>, <a class="el" href="tuple_8cpp_source.html#l00072">fold()</a>, <a class="el" href="tuple_8cpp_source.html#l00077">fold()</a>, <a class="el" href="tuple_8cpp_source.html#l00067">operator+()</a>, <a class="el" href="world_8cpp_source.html#l00481">mim::World::peel()</a>, <a class="el" href="lower_8cpp_source.html#l00057">mim::plug::tensor::phase::Lower::rewrite_imm_Extract()</a>, <a class="el" href="tuple_8h_source.html#l00109">Shape()</a>, <a class="el" href="tuple_8cpp_source.html#l00013">Shape()</a>, <a class="el" href="tuple_8cpp_source.html#l00055">slice()</a>, <a class="el" href="tuple_8h_source.html#l00148">take()</a>, and <a class="el" href="tuple_8h_source.html#l00151">zonk()</a>.</p>
+
+</div>
+</div>
+<a id="a7ff8d4218b8e1d648866785afe583a4e" name="a7ff8d4218b8e1d648866785afe583a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff8d4218b8e1d648866785afe583a4e">&#9670;&#160;</a></span>Shape() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Shape::Shape </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00109">109</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<a id="a1a719ef96e2e4dd3abcc0ba479d45e0e" name="a1a719ef96e2e4dd3abcc0ba479d45e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a719ef96e2e4dd3abcc0ba479d45e0e">&#9670;&#160;</a></span>Shape() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Shape::Shape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a></td>          <td class="paramname"><span class="paramname"><em>shape</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00013">13</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad2caa3773ed203e9c2c8e8700fa982e6" name="ad2caa3773ed203e9c2c8e8700fa982e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2caa3773ed203e9c2c8e8700fa982e6">&#9670;&#160;</a></span>drop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::drop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>All but the leading <code class="param">n</code> axes. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00062">62</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>, <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>, and <a class="el" href="tuple_8cpp_source.html#l00055">slice()</a>.</p>
+
+</div>
+</div>
+<a id="a53f6b0ea6977bab35b12cf4e8ac7c329" name="a53f6b0ea6977bab35b12cf4e8ac7c329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f6b0ea6977bab35b12cf4e8ac7c329">&#9670;&#160;</a></span>extent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt; mim::Shape::extent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>axis</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The extent of <code class="param">axis:</code> the axis itself for a shape, its <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> size for an index. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00033">33</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00642">mim::Idx::isa()</a>, <a class="el" href="def_8h_source.html#l00946">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00453">mim::Def::unfold_type()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00072">fold()</a>, <a class="el" href="tuple_8cpp_source.html#l00077">fold()</a>, and <a class="el" href="world_8cpp_source.html#l00718">mim::World::seq()</a>.</p>
+
+</div>
+</div>
+<a id="ae25bc3b2d32d793c8024fa6f11c086c3" name="ae25bc3b2d32d793c8024fa6f11c086c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25bc3b2d32d793c8024fa6f11c086c3">&#9670;&#160;</a></span>filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::filter </td>
+          <td>(</td>
+          <td class="paramtype">auto</td>          <td class="paramname"><span class="paramname"><em>keep</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a> with only the axes <code class="param">keep</code> accepts; <span class="tt">*this</span>, if it accepts all of them or the rank is dynamic. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00154">154</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>, and <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00072">fold()</a>, and <a class="el" href="tuple_8cpp_source.html#l00077">fold()</a>.</p>
+
+</div>
+</div>
+<a id="ab53dbf293c89db9757ae6035e6f8e5b4" name="ab53dbf293c89db9757ae6035e6f8e5b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53dbf293c89db9757ae6035e6f8e5b4">&#9670;&#160;</a></span>fold() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::fold </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drops every literal size-1 axis, mirroring <span class="tt">«1; T»</span> ≡ <span class="tt">T</span>; all of them folded away leaves rank <span class="tt">0</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00072">72</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00033">extent()</a>, <a class="el" href="tuple_8h_source.html#l00154">filter()</a>, <a class="el" href="tuple_8cpp_source.html#l00016">is_dim()</a>, and <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<a id="a313311963e39f6b96e212dc38a73bbb8" name="a313311963e39f6b96e212dc38a73bbb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313311963e39f6b96e212dc38a73bbb8">&#9670;&#160;</a></span>fold() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::fold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a></td>          <td class="paramname"><span class="paramname"><em>shape</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>As above but driven by <code class="param">shape:</code> drops the axes <em>it</em> has as literal <span class="tt">1</span>, whatever this one's own extents are - a broadcast reads a size-1 input axis at the <em>output</em>'s loop index. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00077">77</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00033">extent()</a>, <a class="el" href="tuple_8h_source.html#l00154">filter()</a>, <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>, and <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<a id="a5ada497c2c9ae88799aa1a55b82d2138" name="a5ada497c2c9ae88799aa1a55b82d2138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ada497c2c9ae88799aa1a55b82d2138">&#9670;&#160;</a></span>front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Shape::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The outermost axis - the <a class="el" href="classmim_1_1Def.html#ae51857d275509b1b70aa8f696cee3a0a" title="Number of elements available to Extract / Insert (may be dynamic).">Def::arity</a> of the <a class="el" href="classmim_1_1Seq.html" title="Base class for Arr and Pack.">Seq</a> this shape describes; null for a null <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00025">25</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00016">is_dim()</a>, <a class="el" href="def_8cpp_source.html#l00618">mim::Def::proj()</a>, and <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>.</p>
+
+</div>
+</div>
+<a id="a7a01136b0de98a5d7b26a4627e2f37d4" name="a7a01136b0de98a5d7b26a4627e2f37d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a01136b0de98a5d7b26a4627e2f37d4">&#9670;&#160;</a></span>is_dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Shape::is_dim </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Is this a <em>single</em> axis - a <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span>/<span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> rather than an aggregate of them? </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00016">16</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00642">mim::Idx::isa()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00072">fold()</a>, <a class="el" href="tuple_8cpp_source.html#l00025">front()</a>, and <a class="el" href="tuple_8h_source.html#l00123">is_fused()</a>.</p>
+
+</div>
+</div>
+<a id="a36f39c865870bc0ac18b38f3e331ba61" name="a36f39c865870bc0ac18b38f3e331ba61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f39c865870bc0ac18b38f3e331ba61">&#9670;&#160;</a></span>is_fused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Shape::is_fused </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does this span several axes? Also <span class="tt">true</span> for a dynamic rank. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00123">123</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00016">is_dim()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00083">mim::Seq::elem()</a>, <a class="el" href="ll_8h_source.html#l00275">mim::plug::ll::is_simd()</a>, <a class="el" href="vec_2normalizers_8cpp_source.html#l00014">mim::plug::vec::normalize_fold()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00238">mim::Rewriter::rewrite_mut_Seq()</a>.</p>
+
+</div>
+</div>
+<a id="acd43c836c29aa1aa991c3370c5e20767" name="acd43c836c29aa1aa991c3370c5e20767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd43c836c29aa1aa991c3370c5e20767">&#9670;&#160;</a></span>isa_extents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Shape::isa_extents </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">type</code> <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> - or an aggregate of <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span>s, i.e. a shape? </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00047">47</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00039">mim::isa_axes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00718">mim::World::seq()</a>.</p>
+
+</div>
+</div>
+<a id="afcf07cdfd06129e0a4f57c2823f60e46" name="afcf07cdfd06129e0a4f57c2823f60e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf07cdfd06129e0a4f57c2823f60e46">&#9670;&#160;</a></span>isa_indices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Shape::isa_indices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">type</code> <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span> - or an aggregate of <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a></span>s, i.e. a fused index? </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00051">51</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00642">mim::Idx::isa()</a>, and <a class="el" href="tuple_8cpp_source.html#l00039">mim::isa_axes()</a>.</p>
+
+</div>
+</div>
+<a id="ac8ed9e3653ce718c3bb9462ce6e83deb" name="ac8ed9e3653ce718c3bb9462ce6e83deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ed9e3653ce718c3bb9462ce6e83deb">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Shape::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00117">117</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+</div>
+</div>
+<a id="ad9616d65ff5d94de7376c5f1355270fb" name="ad9616d65ff5d94de7376c5f1355270fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9616d65ff5d94de7376c5f1355270fb">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Shape::operator* </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00115">115</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+</div>
+</div>
+<a id="a61e2eba0383d5fc9d93dfc053db68fe4" name="a61e2eba0383d5fc9d93dfc053db68fe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e2eba0383d5fc9d93dfc053db68fe4">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a></td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Concatenation - what fuses <span class="tt">«a; «b; T»»</span> into <span class="tt">«a, b; T»</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00067">67</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00089">mim::Tuple::cat()</a>, and <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<a id="a92fbe17bd7bdeefdc735972b4d5fdddb" name="a92fbe17bd7bdeefdc735972b4d5fdddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fbe17bd7bdeefdc735972b4d5fdddb">&#9670;&#160;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Shape::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00116">116</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+</div>
+</div>
+<a id="ac802d07bcef6001f5e4dd5c5be338ca1" name="ac802d07bcef6001f5e4dd5c5be338ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac802d07bcef6001f5e4dd5c5be338ca1">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Shape::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a></td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <code class="param">i</code> th axis. </p>
+<dl class="section note"><dt>Note</dt><dd>Needs <a class="el" href="#a1d568c89b4828bc1e7e24f4ac310f7b3" title="Number of axes; std::nullopt if not statically known.">Shape::rank</a>: <a class="el" href="classmim_1_1Def.html#ad531ece40a890922a7deb83e3d8de8ea" title="Yields Def::arity(), if it is a Lit, or 1 otherwise.">Def::num_projs</a> would silently read a dynamic rank as <span class="tt">1</span> and hand back the <a class="el" href="classmim_1_1Shape.html" title="The extents of a Seq&#39;s axes: a plain Nat for a single axis, an aggregate of them for several.">Shape</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00127">127</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>.</p>
+
+</div>
+</div>
+<a id="a1d568c89b4828bc1e7e24f4ac310f7b3" name="a1d568c89b4828bc1e7e24f4ac310f7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d568c89b4828bc1e7e24f4ac310f7b3">&#9670;&#160;</a></span>rank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt; mim::Shape::rank </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of axes; <span class="tt">std::nullopt</span> if not statically known. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00023">23</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00946">mim::Lit::isa()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00062">drop()</a>, <a class="el" href="tuple_8h_source.html#l00154">filter()</a>, <a class="el" href="tuple_8cpp_source.html#l00077">fold()</a>, <a class="el" href="tuple_8cpp_source.html#l00025">front()</a>, <a class="el" href="tuple_8h_source.html#l00127">operator[]()</a>, and <a class="el" href="tuple_8cpp_source.html#l00055">slice()</a>.</p>
+
+</div>
+</div>
+<a id="ab16434def629eb5f009b3aa6fce0084e" name="ab16434def629eb5f009b3aa6fce0084e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16434def629eb5f009b3aa6fce0084e">&#9670;&#160;</a></span>slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::slice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a></td>          <td class="paramname"><span class="paramname"><em>begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a></td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The axes <span class="tt">[begin, end)</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00055">55</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00023">rank()</a>, and <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00062">drop()</a>, and <a class="el" href="tuple_8h_source.html#l00148">take()</a>.</p>
+
+</div>
+</div>
+<a id="ae4c5c2cb411b4cee0a6da5bf56a985a9" name="ae4c5c2cb411b4cee0a6da5bf56a985a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c5c2cb411b4cee0a6da5bf56a985a9">&#9670;&#160;</a></span>take()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::take </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The leading <code class="param">n</code> axes. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00148">148</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>, and <a class="el" href="tuple_8cpp_source.html#l00055">slice()</a>.</p>
+
+</div>
+</div>
+<a id="a0fc2e1a074003918bb60a590b4c47e52" name="a0fc2e1a074003918bb60a590b4c47e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc2e1a074003918bb60a590b4c47e52">&#9670;&#160;</a></span>zonk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape</a> mim::Shape::zonk </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wraps <a class="el" href="classmim_1_1Def.html#a29019dd6f96db3881b604f0b16cba29a" title="If Holes have been filled, reconstruct the program without them.">Def::zonk()</a>;. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00151">151</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="#af53511e53908e89e254155b34b0a5af5">Shape()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/mim/<a class="el" href="tuple_8h_source.html">tuple.h</a></li>
+<li>src/mim/<a class="el" href="tuple_8cpp_source.html">tuple.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="classmim_1_1Shape.html">Shape</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>
