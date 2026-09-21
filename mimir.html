@@ -345,7 +345,7 @@ Scopeless Binders</h2>
 <div class="line">use core.ops.n;</div>
 <div class="line"> </div>
 <div class="line">lam f (x y: Nat): Nat = x + y;</div>
-<div class="line">lam g (z: Nat): Nat = (f z 1) + (f z 2);</div>
+<div class="line">lam g (z: Nat): Nat = f (z, 1) + f (z, 2);</div>
 </div><!-- fragment --></div><div class="mim-code"> </div><p class="startli">However, we need to <em>block-sink</em> the specialization <span class="tt">fz</span> inside <span class="tt">g</span> such that <span class="tt">fz</span>'s free variable <span class="tt">z</span> is now properly scoped:</p>
 <div class="mim-code"></div><div class="mim-code"> <div class="fragment"><div class="line">plugin core;</div>
 <div class="line">use core.ops.n;</div>
