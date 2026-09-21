@@ -1107,12 +1107,13 @@ axm ret_wrap: Phase;
 ///
 axm scalarize: Phase;
 ///
-/// ### single_elim
+/// ### single_erasure
 ///
-/// Eliminates all singleton types so that none reaches a backend (mim::SingleElim).
-/// Within a Sigma the component is dropped; elsewhere `«e»` degrades to `[]` and `‹e›` to `()`.
+/// Eliminates all types with exactly one inhabitant so that none reaches a backend (mim::SingleErasure).
+/// Within an aggregate the component is dropped; elsewhere `«e»` degrades to `[]` and `‹e›` to `()`.
+/// Besides `«e»` this also catches `[]` and `Idx 1`.
 ///
-axm single_elim: Phase;
+axm single_erasure: Phase;
 ///
 /// ### static_arg_opt
 ///
@@ -2509,8 +2510,10 @@ extern lam _default_compile (): compile.Phase =
 
         compile.lam_spec, // replace with lam-lifting
 
-        // CodeGenPrep
-        compile.single_elim,
+        // type legalization
+        compile.single_erasure,
+
+        //  prepare codegen
         optimize,
         compile.branch_normalize,
         compile.ret_wrap,
