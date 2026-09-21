@@ -6,5 +6,7 @@ var searchData=
   ['max_3',['max',['../namespacemim.html#a472ea1eba4d59fb1743c2087de458c1b',1,'mim::DotConfig']]],
   ['max_5ffp_5fiters_4',['max_fp_iters',['../structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d',1,'mim::Flags']]],
   ['max_5fplugin_5fsize_5',['Max_Plugin_Size',['../structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b',1,'mim::Annex']]],
-  ['minor_6',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]]
+  ['mim_5flocal_6',['mim_local',['../structmim_1_1Flags.html#a02b769c888db2f4ec9686f339c4fd57b',1,'mim::Flags']]],
+  ['mim_5ftyped_5flet_7',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
+  ['minor_8',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]]
 ];

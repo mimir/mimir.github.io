@@ -81,7 +81,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
@@ -122,14 +122,14 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1ll_1_1Emitter.html#a894d2de6157af5afdddb7f644bae9227",
 "conceptmim_1_1Enum.html",
 "family_8h.html#a8a9929a1b403cf35b5ace8161e787074",
-"namespacemembers_enum_c.html",
-"namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4a8d9c307cb7f3c4a32822a51922d1ceaa",
-"namespacemim_1_1plug_1_1core.html#a575026d448ef9d70a812313e27440ad2",
-"namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a7a2f9fdee766386ef801cc2d5a985be4",
-"namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3acdaeeeba9b4a4c5ebf042c0215a7bb0e",
-"option_2autogen_8h.html",
-"structmim_1_1Nest_1_1Node_1_1Children.html#a41cde5894303b7317a2c403220f88a8b",
-"structmim_1_1sexpr_1_1BB.html#a9ae14ec73a96611611b81274d9487fe3"
+"namespacedeploy.html#a7da3bdc90b89dcbe2788127e22eea9ad",
+"namespacemim.html#afb12dbffaaa27bca46f171517d96256daa4ffdcf0dc1f31b9acaf295d75b51d00",
+"namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712aa7b774effe4a349c6dd82ad4f4f21d34c",
+"namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059",
+"namespacemim_1_1plug_1_1ord.html#a2f8d1f32c6daa846d3673454db617c38",
+"nvptx.html",
+"structmim_1_1Flags.html#ab215ed00a54cbe6b05280568ac1a6f7b",
+"structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#aa8c5c952160b4286771b3bf3cc331171"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

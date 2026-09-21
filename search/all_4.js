@@ -148,6 +148,5 @@ var searchData=
   ['dump_145',['Dump',['../classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71',1,'mim::Def']]],
   ['dump_146',['dump',['../classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35',1,'mim::ast::Node::dump()'],['../classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487',1,'mim::Def::dump() const'],['../classmim_1_1Def.html#af353554bacfd7eee416e6f1a734335bd',1,'mim::Def::dump(Dump) const'],['../classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f',1,'mim::World::dump(std::ostream &amp;os)'],['../classmim_1_1World.html#a6948f411fa7465945b028dc5d8b2831e',1,'mim::World::dump()']]],
   ['dump_2ecpp_147',['dump.cpp',['../dump_8cpp.html',1,'']]],
-  ['dump_5flocal_148',['dump_local',['../structmim_1_1Flags.html#ac1c9bfc3b0680a37740ba47ac1da90da',1,'mim::Flags']]],
-  ['dumping_149',['Dumping',['../coding.html#autotoc_md25',1,'']]]
+  ['dumping_148',['Dumping',['../coding.html#autotoc_md25',1,'']]]
 ];
