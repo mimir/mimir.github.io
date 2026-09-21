@@ -334,6 +334,7 @@ Cleanup</h2>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
 Reshaping Aggregates</h2>
 <p>A phase that drops or reorders the components of a mutable <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a> changes its number of ops, so it needs the index-mapping overload of <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub</span></a> together with <a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> - see <a class="el" href="rewriting.html" title="Rewriting">Reshaping Aggregates</a> in the Rewriting Guide. <a class="el" href="classmim_1_1SingleErasure.html" title="mim::SingleErasure"><span class="tt">SingleErasure</span></a> is the canonical user.</p>
+<p><a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> is useful on its own, though: dropping the parameters of a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> changes its <em>type</em> rather than its ops, so the SCCP transformation below only uses <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">gather</span></a> and <a class="el" href="classmim_1_1Sieve.html#a972de8bcd87a06fb1cb346aa0b5fa963" title="mim::Sieve::operator[]"><span class="tt">operator[]</span></a>.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Typical Shape</h2>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyRWPhase : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1RWPhase.html">mim::RWPhase</a> {</div>
@@ -624,52 +625,28 @@ Transformation</h2>
 <div class="line">        <span class="keywordflow">if</span> (<span class="keyword">auto</span> l = lattice(old_lam-&gt;var()); l &amp;&amp; l != old_lam-&gt;var()) {</div>
 <div class="line">            invalidate();</div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordtype">size_t</span> num_old = old_lam-&gt;num_tvars();</div>
+<div class="line">            <span class="keyword">auto</span> old_vars = old_lam-&gt;tvars();</div>
+<div class="line">            <span class="keyword">auto</span> keep     = <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(old_vars, [<span class="keyword">this</span>](<span class="keyword">const</span> Def* var) { <span class="keywordflow">return</span> lattice(var) == var; });</div>
+<div class="line"> </div>
 <div class="line">            Lam* new_lam;</div>
 <div class="line">            <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = lam2lam_.find(old_lam); i != lam2lam_.end())</div>
 <div class="line">                new_lam = i-&gt;second;</div>
 <div class="line">            <span class="keywordflow">else</span> {</div>
-<div class="line">                <span class="comment">// build new dom</span></div>
-<div class="line">                <span class="keyword">auto</span> new_doms = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>();</div>
-<div class="line">                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i != num_old; ++i) {</div>
-<div class="line">                    <span class="keyword">auto</span> old_var = old_lam-&gt;var(num_old, i);</div>
-<div class="line">                    <span class="keyword">auto</span> abstr   = lattice(old_var);</div>
-<div class="line">                    <span class="keywordflow">if</span> (old_var == abstr) new_doms.emplace_back(rewrite(old_lam-&gt;dom(num_old, i)));</div>
-<div class="line">                }</div>
-<div class="line"> </div>
-<div class="line">                <span class="comment">// build new lam</span></div>
-<div class="line">                <span class="keywordtype">size_t</span> num_new    = new_doms.size();</div>
-<div class="line">                <span class="keyword">auto</span> new_vars     = absl::FixedArray&lt;const Def*&gt;(num_old);</div>
+<div class="line">                <span class="keyword">auto</span> new_doms     = rewrite(keep.gather(old_lam-&gt;doms(keep.num_old())));</div>
 <div class="line">                new_lam           = new_world().mut_lam(new_doms, rewrite(old_lam-&gt;codom()))-&gt;set(old_lam-&gt;dbg());</div>
 <div class="line">                lam2lam_[old_lam] = new_lam;</div>
 <div class="line"> </div>
-<div class="line">                <span class="comment">// build new var</span></div>
-<div class="line">                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0, j = 0; i != num_old; ++i) {</div>
-<div class="line">                    <span class="keyword">auto</span> old_var = old_lam-&gt;var(num_old, i);</div>
-<div class="line">                    <span class="keyword">auto</span> abstr   = lattice(old_var);</div>
+<div class="line">                <span class="keyword">auto</span> new_vars = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(keep.num_old(), [&amp;](<span class="keywordtype">size_t</span> i) {</div>
+<div class="line">                    auto j = keep[i];</div>
+<div class="line">                    return j == Sieve::Gone ? rewrite(lattice(old_vars[i])) <span class="comment">// SCCP propagate</span></div>
+<div class="line">                                            : new_lam-&gt;var(keep.num_new(), j);</div>
+<div class="line">                });</div>
 <div class="line"> </div>
-<div class="line">                    <span class="keywordflow">if</span> (old_var == abstr) {</div>
-<div class="line">                        <span class="keyword">auto</span> v      = new_lam-&gt;var(num_new, j++);</div>
-<div class="line">                        new_vars[i] = v;</div>
-<div class="line">                    } <span class="keywordflow">else</span> {</div>
-<div class="line">                        new_vars[i] = rewrite(abstr); <span class="comment">// SCCP propagate</span></div>
-<div class="line">                    }</div>
-<div class="line">                }</div>
-<div class="line"> </div>
-<div class="line">                <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">map</a>(old_lam-&gt;var(), new_vars);</div>
+<div class="line">                map(old_lam-&gt;var(), new_vars);</div>
 <div class="line">                new_lam-&gt;set(rewrite(old_lam-&gt;filter()), rewrite(old_lam-&gt;body()));</div>
 <div class="line">            }</div>
 <div class="line"> </div>
-<div class="line">            <span class="comment">// build new app</span></div>
-<div class="line">            <span class="keywordtype">size_t</span> num_new = new_lam-&gt;num_vars();</div>
-<div class="line">            <span class="keyword">auto</span> new_args  = absl::FixedArray&lt;const Def*&gt;(num_new);</div>
-<div class="line">            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0, j = 0; i != num_old; ++i) {</div>
-<div class="line">                <span class="keyword">auto</span> old_var = old_lam-&gt;var(num_old, i);</div>
-<div class="line">                <span class="keyword">auto</span> abstr   = lattice(old_var);</div>
-<div class="line">                <span class="keywordflow">if</span> (old_var == abstr) new_args[j++] = rewrite(old_app-&gt;targ(i));</div>
-<div class="line">            }</div>
-<div class="line"> </div>
-<div class="line">            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">map</a>(old_app, new_world().app(new_lam, new_args));</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">map</a>(old_app, new_world().app(new_lam, rewrite(keep.gather(old_app-&gt;targs()))));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -677,6 +654,7 @@ Transformation</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00120">tuple.h:120</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1affine_html_a667c8ee6bbd08791a3f99dd6c17c13b0"><div class="ttname"><a href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">mim::plug::affine::map</a></div><div class="ttdeci">map</div><div class="ttdef"><b>Definition</b> <a href="affine_2autogen_8h_source.html#l00057">autogen.h:57</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
 </div><!-- fragment --><p>Once the lattice is stable, the outer SCCP phase starts rewriting. During rewriting, it can query abstract values for old-world definitions through <a class="el" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6" title="mim::RWBase::lattice"><span class="tt">RWBase::lattice()</span></a>.</p>
@@ -687,6 +665,7 @@ Transformation</h2>
 <li>the lambda body is rewritten with the propagated values substituted,</li>
 <li>the call site is rebuilt with only the remaining arguments.</li>
 </ul>
+<p>Which parameters survive is stated once as a <a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> over the old <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span>s</a>, and all three rebuilds read it back: <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">gather</span></a> picks the surviving domains and arguments, while <a class="el" href="classmim_1_1Sieve.html#a972de8bcd87a06fb1cb346aa0b5fa963" title="mim::Sieve::operator[]"><span class="tt">operator[]</span></a> maps each old parameter either to its new <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a> or - on <a class="el" href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb" title="mim::Sieve::Gone"><span class="tt">Gone</span></a> - to its propagated value.</p>
 <p>So SCCP follows the standard <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> pattern:</p>
 <ol type="1">
 <li>analyze the old world,</li>
@@ -703,7 +682,7 @@ Discussion</h2>
 <li>the handoff from analysis to rewrite is explicit through <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">Analysis::lattice()</span></a> and <a class="el" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6" title="mim::RWBase::lattice"><span class="tt">RWBase::lattice()</span></a>.</li>
 </ul>
 <p>This separation is the main design pattern to follow for nontrivial optimizations.</p>
-<dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 150 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 130 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
 Choosing the Right Base Class</h1>
 <p>A useful rule of thumb is:</p>
