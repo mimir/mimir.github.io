@@ -8,12 +8,10 @@ var searchData=
   ['d_5fbrace_5fr_5',['D_brace_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a9ce34fa305fe754b53b83132fa7f6755',1,'mim::ast::Tok']]],
   ['d_5fbrckt_5fl_6',['D_brckt_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a54736d35195c3aa2a7159d1cdbe3f872',1,'mim::ast::Tok']]],
   ['d_5fbrckt_5fr_7',['D_brckt_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aeea124ed662462016d9034366aa0e2d5',1,'mim::ast::Tok']]],
-  ['d_5fcurly_5fl_8',['D_curly_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ad77624ed000707b7dc21aca4da80eeac',1,'mim::ast::Tok']]],
-  ['d_5fcurly_5fr_9',['D_curly_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a78b0cd5fcd191157f38b58fc10cdc174',1,'mim::ast::Tok']]],
-  ['d_5fparen_5fl_10',['D_paren_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5acd04ba93e71e6eb0d2a73e17a67a90cf',1,'mim::ast::Tok']]],
-  ['d_5fparen_5fr_11',['D_paren_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee4f36d19b140744668c52ea6444ef44',1,'mim::ast::Tok']]],
-  ['d_5fquote_5fl_12',['D_quote_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a5be9fecd8fb8ece5f3217942ae9f6c4a',1,'mim::ast::Tok']]],
-  ['d_5fquote_5fr_13',['D_quote_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5add7e7307bb61b436ebfaff2f7f0e0e29',1,'mim::ast::Tok']]],
-  ['dec_14',['dec',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da1feea25ecb958229287f885aebe7c49b',1,'mim::plug::math']]],
-  ['div_15',['div',['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]]
+  ['d_5fparen_5fl_8',['D_paren_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5acd04ba93e71e6eb0d2a73e17a67a90cf',1,'mim::ast::Tok']]],
+  ['d_5fparen_5fr_9',['D_paren_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee4f36d19b140744668c52ea6444ef44',1,'mim::ast::Tok']]],
+  ['d_5fquote_5fl_10',['D_quote_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a5be9fecd8fb8ece5f3217942ae9f6c4a',1,'mim::ast::Tok']]],
+  ['d_5fquote_5fr_11',['D_quote_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5add7e7307bb61b436ebfaff2f7f0e0e29',1,'mim::ast::Tok']]],
+  ['dec_12',['dec',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da1feea25ecb958229287f885aebe7c49b',1,'mim::plug::math']]],
+  ['div_13',['div',['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]]
 ];

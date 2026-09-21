@@ -88,6 +88,7 @@ var hierarchy =
           [ "mim::Repl", "classmim_1_1Repl.html", null ],
           [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
           [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
+          [ "mim::SingleElim", "classmim_1_1SingleElim.html", null ],
           [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],
           [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
           [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
@@ -155,13 +156,14 @@ var hierarchy =
           [ "mim::Arr", "classmim_1_1Arr.html", null ],
           [ "mim::Pack", "classmim_1_1Pack.html", null ]
         ] ],
+        [ "mim::Single", "classmim_1_1Single.html", null ],
         [ "mim::Split", "classmim_1_1Split.html", null ],
         [ "mim::Type", "classmim_1_1Type.html", null ],
         [ "mim::UInc", "classmim_1_1UInc.html", null ],
         [ "mim::UMax", "classmim_1_1UMax.html", null ],
-        [ "mim::Uniq", "classmim_1_1Uniq.html", null ],
         [ "mim::Univ", "classmim_1_1Univ.html", null ],
-        [ "mim::Var", "classmim_1_1Var.html", null ]
+        [ "mim::Var", "classmim_1_1Var.html", null ],
+        [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
       ] ],
       [ "mim::Phase", "classmim_1_1Phase.html", [
         [ "mim::ClosedMutPhase< Lam >", "classmim_1_1ClosedMutPhase.html", [
@@ -224,14 +226,15 @@ var hierarchy =
           [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", null ],
           [ "mim::ast::PathExpr", "classmim_1_1ast_1_1PathExpr.html", null ],
           [ "mim::ast::PiExpr", "classmim_1_1ast_1_1PiExpr.html", null ],
+          [ "mim::ast::PrefixExpr", "classmim_1_1ast_1_1PrefixExpr.html", null ],
           [ "mim::ast::PrimaryExpr", "classmim_1_1ast_1_1PrimaryExpr.html", null ],
           [ "mim::ast::RetExpr", "classmim_1_1ast_1_1RetExpr.html", null ],
           [ "mim::ast::RuleExpr", "classmim_1_1ast_1_1RuleExpr.html", null ],
           [ "mim::ast::SeqExpr", "classmim_1_1ast_1_1SeqExpr.html", null ],
           [ "mim::ast::SigmaExpr", "classmim_1_1ast_1_1SigmaExpr.html", null ],
+          [ "mim::ast::SingleExpr", "classmim_1_1ast_1_1SingleExpr.html", null ],
           [ "mim::ast::TupleExpr", "classmim_1_1ast_1_1TupleExpr.html", null ],
-          [ "mim::ast::TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", null ],
-          [ "mim::ast::UniqExpr", "classmim_1_1ast_1_1UniqExpr.html", null ]
+          [ "mim::ast::TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", null ]
         ] ],
         [ "mim::ast::MatchExpr::Arm", "classmim_1_1ast_1_1MatchExpr_1_1Arm.html", null ],
         [ "mim::ast::Path", "classmim_1_1ast_1_1Path.html", null ],
@@ -313,6 +316,9 @@ var hierarchy =
     [ "mim::Setters&lt; Sigma &gt;", "classmim_1_1Setters.html", [
       [ "mim::Sigma", "classmim_1_1Sigma.html", null ]
     ] ],
+    [ "mim::Setters&lt; Single &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Single", "classmim_1_1Single.html", null ]
+    ] ],
     [ "mim::Setters&lt; Split &gt;", "classmim_1_1Setters.html", [
       [ "mim::Split", "classmim_1_1Split.html", null ]
     ] ],
@@ -338,14 +344,14 @@ var hierarchy =
     [ "mim::Setters&lt; UMax &gt;", "classmim_1_1Setters.html", [
       [ "mim::UMax", "classmim_1_1UMax.html", null ]
     ] ],
-    [ "mim::Setters&lt; Uniq &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Uniq", "classmim_1_1Uniq.html", null ]
-    ] ],
     [ "mim::Setters&lt; Univ &gt;", "classmim_1_1Setters.html", [
       [ "mim::Univ", "classmim_1_1Univ.html", null ]
     ] ],
     [ "mim::Setters&lt; Var &gt;", "classmim_1_1Setters.html", [
       [ "mim::Var", "classmim_1_1Var.html", null ]
+    ] ],
+    [ "mim::Setters&lt; Wrap &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
     ] ],
     [ "mim::Shape", "classmim_1_1Shape.html", null ],
     [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],

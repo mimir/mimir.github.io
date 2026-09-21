@@ -8,12 +8,14 @@ var searchData=
   ['seo_2eh_5',['seo.h',['../seo_8h.html',1,'']]],
   ['sexpr_2ecpp_6',['sexpr.cpp',['../sexpr_8cpp.html',1,'']]],
   ['sexpr_2eh_7',['sexpr.h',['../sexpr_8h.html',1,'']]],
-  ['split_5fapply_2ecpp_8',['split_apply.cpp',['../split__apply_8cpp.html',1,'']]],
-  ['split_5fapply_2eh_9',['split_apply.h',['../split__apply_8h.html',1,'']]],
-  ['split_5foff_5fkernels_2ecpp_10',['split_off_kernels.cpp',['../split__off__kernels_8cpp.html',1,'']]],
-  ['split_5foff_5fkernels_2eh_11',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
-  ['static_5farg_5fopt_2ecpp_12',['static_arg_opt.cpp',['../static__arg__opt_8cpp.html',1,'']]],
-  ['static_5farg_5fopt_2eh_13',['static_arg_opt.h',['../static__arg__opt_8h.html',1,'']]],
-  ['stream_2ecpp_14',['stream.cpp',['../stream_8cpp.html',1,'']]],
-  ['svg_2dcolor_2dscheme_2ecmake_15',['svg-color-scheme.cmake',['../svg-color-scheme_8cmake.html',1,'']]]
+  ['single_5felim_2ecpp_8',['single_elim.cpp',['../single__elim_8cpp.html',1,'']]],
+  ['single_5felim_2eh_9',['single_elim.h',['../single__elim_8h.html',1,'']]],
+  ['split_5fapply_2ecpp_10',['split_apply.cpp',['../split__apply_8cpp.html',1,'']]],
+  ['split_5fapply_2eh_11',['split_apply.h',['../split__apply_8h.html',1,'']]],
+  ['split_5foff_5fkernels_2ecpp_12',['split_off_kernels.cpp',['../split__off__kernels_8cpp.html',1,'']]],
+  ['split_5foff_5fkernels_2eh_13',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
+  ['static_5farg_5fopt_2ecpp_14',['static_arg_opt.cpp',['../static__arg__opt_8cpp.html',1,'']]],
+  ['static_5farg_5fopt_2eh_15',['static_arg_opt.h',['../static__arg__opt_8h.html',1,'']]],
+  ['stream_2ecpp_16',['stream.cpp',['../stream_8cpp.html',1,'']]],
+  ['svg_2dcolor_2dscheme_2ecmake_17',['svg-color-scheme.cmake',['../svg-color-scheme_8cmake.html',1,'']]]
 ];

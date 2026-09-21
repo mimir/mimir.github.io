@@ -193,7 +193,7 @@ Terminals</h2>
 <p>The grammar refers to <em>primary terminals</em>. Some tokens have a second spelling - an ASCII-only one or a Unicode variant - that denotes the very same lexical token; these are the <em>secondary terminals</em>.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
 Primary Terminals</h3>
-<div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">( ) [ ] { } ⦃ ⦄</div>
+<div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">( ) [ ] { }</div>
 <div class="line">‹ › « »</div>
 <div class="line">→ ← =&gt; ⊥ ⊤ * □ λ</div>
 <div class="line">= , ; . : @ $ # | ∪</div>
@@ -202,6 +202,7 @@ Primary Terminals</h3>
 </div><!-- fragment --></div><div class="terminals-code"></div><ul>
 <li><span class="tt">.</span> is the separator of a <a class="el" href="#path" title="Paths and Modules">path</a>, e.g. <span class="tt">affine.Idx</span> or <span class="tt">core.nat.rem</span>.</li>
 <li><span class="tt">+</span>, <span class="tt">-</span>, <span class="tt">*</span>, <span class="tt">/</span>, <span class="tt">%</span>, <span class="tt">==</span>, <span class="tt">!=</span>, <span class="tt">&lt;</span>, <span class="tt">&lt;=</span>, <span class="tt">&gt;</span>, <span class="tt">&gt;=</span>, <span class="tt">&lt;&lt;</span>, and <span class="tt">&gt;&gt;</span> are <a class="el" href="#infix" title="Infix Operators">infix operators</a>.</li>
+<li><span class="tt">#</span> is an infix operator after an expression and a prefix one everywhere else; see <a class="el" href="#single" title="Singletons">Singletons</a>.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
 Secondary Terminals</h3>
@@ -476,14 +477,12 @@ Literals and Basic Forms</h3>
 <div class="line">     |  &quot;⊤&quot; (&quot;:&quot; e)?</div>
 <div class="line">     |  path</div>
 <div class="line">     |  d+ e</div>
-<div class="line">     |  &quot;⦃&quot; e &quot;⦄&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li>A numeric, character, string, <span class="tt">⊥</span>, or <span class="tt">⊤</span> literal may carry an explicit type ascription.</li>
 <li>A <span class="tt">+</span>/<span class="tt">-</span> sign is part of the literal expression, not of the literal token, and only a numeric literal accepts one. Because <span class="tt">+</span> and <span class="tt">-</span> are <a class="el" href="#infix" title="Infix Operators">infix operators</a> everywhere else, <span class="tt">f -23</span> subtracts; pass a negative argument as <span class="tt">f (-23)</span>.</li>
 <li>Without an explicit type, numeric literals default to <span class="tt">Nat</span>.</li>
 <li>Without an explicit type, <span class="tt">⊥</span> and <span class="tt">⊤</span> default to <span class="tt">*</span>.</li>
 <li><span class="tt">d+ e</span> is a declaration expression: one or more declarations followed by a final expression <span class="tt">e</span>, which is the result. It is not delimited by any brackets; it simply starts with a declaration keyword such as <span class="tt">let</span>.</li>
-<li><span class="tt">⦃ e ⦄</span> is a singleton type.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Functions and Continuations</h3>
@@ -523,7 +522,7 @@ Products</h3>
 <li><span class="tt">( ... )</span> is a tuple expression. <dl class="section note"><dt>Note</dt><dd>There are no parenthesized/grouping expressions in <a class="el" href="namespaceMim.html">Mim</a>. Instead, you use a 1-tuple. A 1-tuple always degrades to its sole element, giving the effect of a parenthesized expression.</dd></dl>
 </li>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
-<li><span class="tt">‹ ... ; ... ›</span> builds a pack.</li>
+<li><span class="tt">‹ ... ; ... ›</span> builds a pack. Without the <span class="tt">;</span> both are a <a class="el" href="#single" title="Singletons">singleton</a> instead.</li>
 <li>A <span class="tt">shape</span> lists one or more comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named. All of them fuse into <b>one</b> array of shape <span class="tt">(m, n)</span>, whose index binds every axis at once, so <span class="tt">t#i#j</span> and <span class="tt">t#(i, j)</span> are the same Extract - except through a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component. The exception is a dimension whose extent depends on an earlier index, as in <span class="tt">«i: n, j: s#i; body»</span>: a shape lists extents, not functions of preceding indices, so such a nest stays one array per axis.</li>
 <li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
@@ -563,6 +562,18 @@ Unions</h3>
 <li><span class="tt">e inj e</span> injects a value into a union type.</li>
 <li><span class="tt">match e with | p =&gt; e | ...</span> eliminates a union value.</li>
 </ul>
+<h3 class="doxsection"><a class="anchor" id="single"></a>
+Singletons</h3>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;«&quot; e &quot;»&quot;</div>
+<div class="line">     |  &quot;‹&quot; e &quot;›&quot;</div>
+<div class="line">     |  &quot;#&quot; e</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
+<li><span class="tt">« e »</span> is the singleton type whose sole inhabitant is <span class="tt">e</span>. It sits one level above <span class="tt">e</span>, so <span class="tt">«23»</span> is a type and <span class="tt">«Nat»</span> a kind; <span class="tt">«Univ»</span> does not exist.</li>
+<li><span class="tt">‹ e ›</span> introduces a value of that type and the prefix <span class="tt">#</span> eliminates it again, so <span class="tt">#‹e›</span> is <span class="tt">e</span>.</li>
+<li><span class="tt">#</span> recovers the inhabitant from the type alone: <span class="tt">#x</span> is <span class="tt">e</span> for every <span class="tt">x: «e»</span>.</li>
+<li>The <span class="tt">;</span> is what tells an <a class="el" href="#prod" title="Products">array or pack</a> from a singleton - <span class="tt">«n; T»</span> is an array, <span class="tt">«T»</span> a singleton.</li>
+<li>Because <span class="tt">#</span> is also the <a class="el" href="#prod" title="Products">Extract</a> operator, it is a prefix only where an expression starts: <span class="tt">f #x</span> extracts rather than applies, so pass a singleton as <span class="tt">f (#x)</span>.</li>
+</ul>
 <h3 class="doxsection"><a class="anchor" id="infix"></a>
 Infix Operators</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;==&quot; e</div>
@@ -592,7 +603,7 @@ Local Declaration Blocks</h3>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
 <h2 class="doxsection"><a class="anchor" id="prec"></a>
 Precedence</h2>
-<p>Parser and dumper share one ladder of precedence levels, listed here from strongest to weakest binding. <em>Assoc</em> is left-, right-, or non-associative; chaining a non-associative operator, as in <span class="tt">a == b == c</span>, is an error - parenthesize one side. <span class="tt">Pi</span>, <span class="tt">Bot</span>, and <span class="tt">Err</span> are <em>pseudo levels</em>: they name no syntax at all and only ever bound how far a nested expression may extend.</p>
+<p>Parser and dumper share one ladder of precedence levels, listed here from strongest to weakest binding. <em>Assoc</em> is left-, right-, or non-associative; chaining a non-associative operator, as in <span class="tt">a == b == c</span>, is an error - parenthesize one side. <span class="tt">Pi</span>, <span class="tt">Bot</span>, and <span class="tt">Err</span> are <em>pseudo levels</em>: they name no syntax at all and only ever bound how far a nested expression may extend. A <span class="tt">+</span>/<span class="tt">-</span> sign is part of the <a class="el" href="#lit" title="Literals and Basic Forms">literal</a> rather than an operator and so has no level of its own.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadRight">#  </th><th class="markdownTableHeadNone">Level  </th><th class="markdownTableHeadCenter">Assoc  </th><th class="markdownTableHeadNone">Operators  </th><th class="markdownTableHeadNone">Notes  </th></tr>
@@ -603,31 +614,33 @@ Precedence</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">3  </td><td class="markdownTableBodyNone"><span class="tt">App</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e e</span>, <span class="tt">e @ e</span>  </td><td class="markdownTableBodyNone">Application binds tighter than every operator. Also bounds the <span class="tt">e</span> in <span class="tt">Type e</span> and <span class="tt">Rule e</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">4  </td><td class="markdownTableBodyNone"><span class="tt">Shift</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e &lt;&lt; e</span>, <span class="tt">e &gt;&gt; e</span>  </td><td class="markdownTableBodyNone">Tighter than <span class="tt">*</span>, as in Lean and OCaml - not the C position.  </td></tr>
+<td class="markdownTableBodyRight">4  </td><td class="markdownTableBodyNone"><span class="tt">Prefix</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><span class="tt">#e</span>  </td><td class="markdownTableBodyNone">The only prefix level. Looser than application, so <span class="tt">#f x</span> is <span class="tt">#(f x)</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">5  </td><td class="markdownTableBodyNone"><span class="tt">Mul</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e * e</span>, <span class="tt">e / e</span>, <span class="tt">e % e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">5  </td><td class="markdownTableBodyNone"><span class="tt">Shift</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e &lt;&lt; e</span>, <span class="tt">e &gt;&gt; e</span>  </td><td class="markdownTableBodyNone">Tighter than <span class="tt">*</span>, as in Lean and OCaml - not the C position.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">6  </td><td class="markdownTableBodyNone"><span class="tt">Add</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e + e</span>, <span class="tt">e - e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">6  </td><td class="markdownTableBodyNone"><span class="tt">Mul</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e * e</span>, <span class="tt">e / e</span>, <span class="tt">e % e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">7  </td><td class="markdownTableBodyNone"><span class="tt">Rel</span>  </td><td class="markdownTableBodyCenter">none  </td><td class="markdownTableBodyNone"><span class="tt">e &lt; e</span>, <span class="tt">e &lt;= e</span>, <span class="tt">e &gt; e</span>, <span class="tt">e &gt;= e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">7  </td><td class="markdownTableBodyNone"><span class="tt">Add</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e + e</span>, <span class="tt">e - e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">8  </td><td class="markdownTableBodyNone"><span class="tt">Eq</span>  </td><td class="markdownTableBodyCenter">none  </td><td class="markdownTableBodyNone"><span class="tt">e == e</span>, <span class="tt">e != e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">8  </td><td class="markdownTableBodyNone"><span class="tt">Rel</span>  </td><td class="markdownTableBodyCenter">none  </td><td class="markdownTableBodyNone"><span class="tt">e &lt; e</span>, <span class="tt">e &lt;= e</span>, <span class="tt">e &gt; e</span>, <span class="tt">e &gt;= e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">9  </td><td class="markdownTableBodyNone"><span class="tt">Pi</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Bounds the domain of a <span class="tt">λ</span>/<span class="tt">Fn</span>/<span class="tt">t → e</span> binder so it stops before the <span class="tt">→</span>. A <span class="tt">Cn</span>-style binder has no <span class="tt">→</span> and uses <span class="tt">Bot</span> instead.  </td></tr>
+<td class="markdownTableBodyRight">9  </td><td class="markdownTableBodyNone"><span class="tt">Eq</span>  </td><td class="markdownTableBodyCenter">none  </td><td class="markdownTableBodyNone"><span class="tt">e == e</span>, <span class="tt">e != e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">10  </td><td class="markdownTableBodyNone"><span class="tt">Arrow</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e → e</span>  </td><td class="markdownTableBodyNone">Also bounds the codomain after a <span class="tt">→</span>.  </td></tr>
+<td class="markdownTableBodyRight">10  </td><td class="markdownTableBodyNone"><span class="tt">Pi</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Bounds the domain of a <span class="tt">λ</span>/<span class="tt">Fn</span>/<span class="tt">t → e</span> binder so it stops before the <span class="tt">→</span>. A <span class="tt">Cn</span>-style binder has no <span class="tt">→</span> and uses <span class="tt">Bot</span> instead.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">11  </td><td class="markdownTableBodyNone"><span class="tt">Union</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e ∪ e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">11  </td><td class="markdownTableBodyNone"><span class="tt">Arrow</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e → e</span>  </td><td class="markdownTableBodyNone">Also bounds the codomain after a <span class="tt">→</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">12  </td><td class="markdownTableBodyNone"><span class="tt">Inj</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e inj e</span>  </td><td class="markdownTableBodyNone">Weaker than <span class="tt">∪</span>, so <span class="tt">x inj A ∪ B</span> is <span class="tt">x inj (A ∪ B)</span>.  </td></tr>
+<td class="markdownTableBodyRight">12  </td><td class="markdownTableBodyNone"><span class="tt">Union</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e ∪ e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e("#"e)+ ← e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
+<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Inj</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e inj e</span>  </td><td class="markdownTableBodyNone">Weaker than <span class="tt">∪</span>, so <span class="tt">x inj A ∪ B</span> is <span class="tt">x inj (A ∪ B)</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">14  </td><td class="markdownTableBodyNone"><span class="tt">Where</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e where d* end</span>  </td><td class="markdownTableBodyNone">The loosest surface operator.  </td></tr>
+<td class="markdownTableBodyRight">14  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e("#"e)+ ← e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">15  </td><td class="markdownTableBodyNone"><span class="tt">Bot</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">A complete expression; the default bound, and the only one a trailing <span class="tt">where</span> fits into.  </td></tr>
+<td class="markdownTableBodyRight">15  </td><td class="markdownTableBodyNone"><span class="tt">Where</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e where d* end</span>  </td><td class="markdownTableBodyNone">The loosest surface operator.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
+<td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Bot</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">A complete expression; the default bound, and the only one a trailing <span class="tt">where</span> fits into.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">17  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Summary: Functions and Types</h1>
