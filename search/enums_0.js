@@ -14,13 +14,14 @@ var searchData=
   ['alloc2malloc_5frepl_11',['alloc2malloc_repl',['../namespacemim_1_1plug_1_1mem.html#a4af6c0a89b26ab2719c93fa85a18d9fc',1,'mim::plug::mem']]],
   ['alloc_5fcopy_12',['alloc_copy',['../namespacemim_1_1plug_1_1gpu.html#a8476e60060d96c0c2c5f2283f0fc8d09',1,'mim::plug::gpu']]],
   ['alloc_5fjmpbuf_13',['alloc_jmpbuf',['../namespacemim_1_1plug_1_1clos.html#a6df3c001bef9450a90c0a1588c81edf0',1,'mim::plug::clos']]],
-  ['amdfp24_14',['AMDFP24',['../namespacemim_1_1plug_1_1math.html#a077df15a1553e043b52846fafeaf6b55',1,'mim::plug::math']]],
-  ['amdfp24_15',['amdfp24',['../namespacemim_1_1plug_1_1math.html#a07302efd65b6f40937aad847fef4f24b',1,'mim::plug::math']]],
-  ['anno_16',['anno',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8ba',1,'mim::plug::clos']]],
-  ['any_17',['any',['../namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49',1,'mim::plug::regex']]],
-  ['append_18',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
-  ['arith_19',['arith',['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686',1,'mim::plug::math']]],
-  ['assoc_20',['Assoc',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::ast::Assoc'],['../namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::Assoc']]],
-  ['auto_5fdeinit_21',['auto_deinit',['../namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129',1,'mim::plug::gpu']]],
-  ['auto_5finit_22',['auto_init',['../namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d',1,'mim::plug::gpu']]]
+  ['alpha_14',['alpha',['../namespacemim_1_1plug_1_1refly.html#a5c9630531d3975dc4e1a8d38f7b66838',1,'mim::plug::refly']]],
+  ['amdfp24_15',['AMDFP24',['../namespacemim_1_1plug_1_1math.html#a077df15a1553e043b52846fafeaf6b55',1,'mim::plug::math']]],
+  ['amdfp24_16',['amdfp24',['../namespacemim_1_1plug_1_1math.html#a07302efd65b6f40937aad847fef4f24b',1,'mim::plug::math']]],
+  ['anno_17',['anno',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8ba',1,'mim::plug::clos']]],
+  ['any_18',['any',['../namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49',1,'mim::plug::regex']]],
+  ['append_19',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
+  ['arith_20',['arith',['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686',1,'mim::plug::math']]],
+  ['assoc_21',['Assoc',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::ast::Assoc'],['../namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::Assoc']]],
+  ['auto_5fdeinit_22',['auto_deinit',['../namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129',1,'mim::plug::gpu']]],
+  ['auto_5finit_23',['auto_init',['../namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d',1,'mim::plug::gpu']]]
 ];

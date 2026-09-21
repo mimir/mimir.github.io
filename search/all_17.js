@@ -22,7 +22,7 @@ var searchData=
   ['why_20this_20is_20hard_20elsewhere_19',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['why_2dcpp_2emd_20',['why-cpp.md',['../why-cpp_8md.html',1,'']]],
   ['wins_21',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md184',1,'']]],
-  ['wise_20operations_22',['Element-wise Operations',['../tensor.html#autotoc_md517',1,'']]],
+  ['wise_20operations_22',['Element-wise Operations',['../tensor.html#autotoc_md518',1,'']]],
   ['with_20arena_20rollback_23',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]],
   ['with_20indices_24',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_25',['With Subtags',['../dev.html#autotoc_md49',1,'']]],
@@ -42,5 +42,5 @@ var searchData=
   ['wrap_39',['WRAP',['../namespacefences.html#ad1843e29affe6d30a6695f7b68e25f7c',1,'fences']]],
   ['wrap_40',['wrap',['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef',1,'mim::plug::core::wrap'],['../namespacefences.html#a1860a2c3ee82830834e0390e285a4e0b',1,'fences.wrap()'],['../core.html#autotoc_md310',1,'wrap']]],
   ['wrappers_41',['Runtime Wrappers',['../plugins.html#plugin_runtime',1,'']]],
-  ['write_42',['write',['../classmim_1_1Def.html#abbd73d56c3fb9d78a28ca119ca2583fc',1,'mim::Def::write(int max) const'],['../classmim_1_1Def.html#a36961f437b85d16c096ee7c43cc9fa33',1,'mim::Def::write(int max, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write'],['../buffer.html#autotoc_md258',1,'write']]]
+  ['write_42',['write',['../classmim_1_1Def.html#a8ee240b97c2e986a7188be1fbbc29d1f',1,'mim::Def::write(Dump) const'],['../classmim_1_1Def.html#ac01ae8367c715f7d6ab21d035e968f05',1,'mim::Def::write(Dump, const char *file) const'],['../classmim_1_1World.html#aada6df5fabc3554f7dab128f1f6b3deb',1,'mim::World::write(const char *file)'],['../classmim_1_1World.html#a6c0a289376552934ff442e317dc95acd',1,'mim::World::write()'],['../namespacemim_1_1plug_1_1buffer.html#a4f8c356c98af14437f26c5b1846e7886',1,'mim::plug::buffer::write'],['../buffer.html#autotoc_md258',1,'write']]]
 ];

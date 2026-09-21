@@ -36,7 +36,8 @@ var searchData=
   ['stream_5fsync_33',['stream_sync',['../namespacemim_1_1plug_1_1gpu.html#ad487f5418b04c412b0e522aa43b93f1b',1,'mim::plug::gpu']]],
   ['strip_5fmine_5fpar_34',['strip_mine_par',['../namespacemim_1_1plug_1_1tensor.html#ab511548cbf48ece2876c0cd008cf7a8b',1,'mim::plug::tensor']]],
   ['strip_5fmine_5fred_35',['strip_mine_red',['../namespacemim_1_1plug_1_1tensor.html#a3d09af2fd51b0c11677db5e4eaa4d273',1,'mim::plug::tensor']]],
-  ['sum_36',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
-  ['sync_5fwork_5fitems_37',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
-  ['synced_5fscope_38',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
+  ['struc_36',['struc',['../namespacemim_1_1plug_1_1refly.html#ae6c4717cdfdd622ee492f7c91e23f39f',1,'mim::plug::refly']]],
+  ['sum_37',['sum',['../namespacemim_1_1plug_1_1autodiff.html#a27536fa48373a84728e55704e659a420',1,'mim::plug::autodiff']]],
+  ['sync_5fwork_5fitems_38',['sync_work_items',['../namespacemim_1_1plug_1_1gpu.html#a4e1f493b77f1caf8d6e78b3a66ddd4ac',1,'mim::plug::gpu']]],
+  ['synced_5fscope_39',['synced_scope',['../namespacemim_1_1plug_1_1gpu.html#ac67c3e71bf23be9ae2cd1000bbeb2103',1,'mim::plug::gpu']]]
 ];

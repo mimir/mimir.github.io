@@ -19,7 +19,8 @@ var searchData=
   ['lbb_16',['lbb',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895',1,'mim::plug::math']]],
   ['le_17',['le',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ead9180594744f870aeefb086982e980bb',1,'mim::plug::core::le'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3ad9180594744f870aeefb086982e980bb',1,'mim::plug::math::le']]],
   ['lit_18',['Lit',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim']]],
-  ['log_19',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
-  ['log10_20',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
-  ['log2_21',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]]
+  ['local_19',['Local',['../classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a509820290d57f333403f490dde7316f4',1,'mim::Def']]],
+  ['log_20',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
+  ['log10_21',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
+  ['log2_22',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]]
 ];

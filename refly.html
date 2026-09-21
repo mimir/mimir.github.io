@@ -217,37 +217,24 @@ dbg</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md461"></a>
 Testing</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
-equiv</h2>
-<p>Checks for structural / alpha-equivalence. Two bits select the check:</p><ul>
-<li><span class="tt">A</span>lpha: check α-equivalence instead of structural identity</li>
-<li><span class="tt">E</span>qual: assert equivalence instead of inequivalence</li>
-</ul>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">Alias  </th><th class="markdownTableHeadNone">A  </th><th class="markdownTableHeadNone">E  </th><th class="markdownTableHeadNone">Meaning  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">ae</span>  </td><td class="markdownTableBodyNone"><span class="tt">struc_ne</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">assert <b>not</b> structurally equivalent  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">aE</span>  </td><td class="markdownTableBodyNone"><span class="tt">struc_eq</span>  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">assert structurally equivalent  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">Ae</span>  </td><td class="markdownTableBodyNone"><span class="tt">alpha_ne</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">o  </td><td class="markdownTableBodyNone">assert <b>not</b> alpha-equivalent  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">AE</span>  </td><td class="markdownTableBodyNone"><span class="tt">alpha_eq</span>  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">x  </td><td class="markdownTableBodyNone">assert alpha-equivalent  </td></tr>
-</table>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm equiv.(ae = struc_ne, aE = struc_eq,</div>
-<div class="line">           Ae = alpha_ne, AE = alpha_eq):</div>
-<div class="line">    {T: *} → [T, T] → T, normalize_equiv;</div>
+struc</h2>
+<p>Asserts structural identity (<span class="tt">e</span>) or non-identity (<span class="tt">ne</span>) of both arguments.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm struc.(ne, e): {T: *} → [T, T] → T, normalize_struc;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
+alpha</h2>
+<p>Asserts α-equivalence (<span class="tt">e</span>) or α-inequivalence (<span class="tt">ne</span>) of both arguments.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm alpha.(ne, e): {T: *} → [T, T] → T, normalize_alpha;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
 check_bot</h2>
 <p>Checks whether the argument is <span class="tt">⊥</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check_bot: {T: *} → T → T, normalize_check_bot;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
 check</h2>
 <p>Checks the given condition and emits the error message if it is <span class="tt">ff</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
 remove_dbg_repl</h2>
 <p>Removes the permanent <span class="tt">refly.dbg</span> markers for code generation.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm remove_dbg_repl: compile.Phase;</div>

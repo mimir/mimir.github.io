@@ -96,6 +96,7 @@ var def_8h =
       [ "mim::Node::Nat", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da07f2a27c6e5ee8afd08991e64dd5c136", null ],
       [ "mim::Node::Idx", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da3c81cbbd361d97d7021798df6ff50939", null ]
     ] ],
+    [ "mim::post_order", "namespacemim.html#a7d4fdbd5ca356d5fbe3a24f2bc23827c", null ],
     [ "mim::type_of", "namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81", null ],
     [ "mim::Num_Nodes", "namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd", null ]
 ];

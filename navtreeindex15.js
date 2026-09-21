@@ -1,5 +1,15 @@
 var NAVTREEINDEX15 =
 {
+"classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a00bbff21a1c4cea0592cf5137c5352bc":[4,0,1,1,3,0,0],
+"classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a5060f6a97c20cb7aad13814ff329f804":[2,0,4,1,3,0,1],
+"classmim_1_1plug_1_1buffer_1_1LowerPtr.html#a5060f6a97c20cb7aad13814ff329f804":[4,0,1,1,3,0,1],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html":[2,0,4,1,4,1],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html":[4,0,1,1,4,1],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html#a09863d669dfe1095e6ced028c244956e":[2,0,4,1,4,1,12],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html#a09863d669dfe1095e6ced028c244956e":[4,0,1,1,4,1,12],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html#a19f6518d356a4102167cad9fdcd0fbdb":[2,0,4,1,4,1,8],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html#a19f6518d356a4102167cad9fdcd0fbdb":[4,0,1,1,4,1,8],
+"classmim_1_1plug_1_1clos_1_1ClosLit.html#a2b35d6de94553cf5510fa3292769cf9f":[2,0,4,1,4,1,11],
 "classmim_1_1plug_1_1clos_1_1ClosLit.html#a2b35d6de94553cf5510fa3292769cf9f":[4,0,1,1,4,1,11],
 "classmim_1_1plug_1_1clos_1_1ClosLit.html#a3b5b700bc445781d67e985e42af0224c":[2,0,4,1,4,1,9],
 "classmim_1_1plug_1_1clos_1_1ClosLit.html#a3b5b700bc445781d67e985e42af0224c":[4,0,1,1,4,1,9],
@@ -239,15 +249,5 @@ var NAVTREEINDEX15 =
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html":[4,0,1,1,8,1],
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a217d389870f78878e620b8d1ddeaaf56":[2,0,4,1,11,1,5],
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a217d389870f78878e620b8d1ddeaaf56":[4,0,1,1,8,1,5],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a2ee0d360083c55e77484c1691bce7f6b":[2,0,4,1,11,1,0],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a2ee0d360083c55e77484c1691bce7f6b":[4,0,1,1,8,1,0],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad":[2,0,4,1,11,1,6],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ab55ff338ce897cea7d4c42a5dfd325ad":[4,0,1,1,8,1,6],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#acad99ab7b7ec21a2538674bb68676849":[2,0,4,1,11,1,4],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#acad99ab7b7ec21a2538674bb68676849":[4,0,1,1,8,1,4],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ad2cf7af160a64f55b9d2941059241b05":[2,0,4,1,11,1,2],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ad2cf7af160a64f55b9d2941059241b05":[4,0,1,1,8,1,2],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ae0abab79b267cce03122665e0119103c":[2,0,4,1,11,1,8],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ae0abab79b267cce03122665e0119103c":[4,0,1,1,8,1,8],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#aea261e4899dea47658f94745fc66254d":[2,0,4,1,11,1,1]
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a2ee0d360083c55e77484c1691bce7f6b":[2,0,4,1,11,1,0]
 };

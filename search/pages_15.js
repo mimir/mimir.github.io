@@ -13,7 +13,7 @@ var searchData=
   ['why_20the_20guard_20exists_20at_20all_10',['Why the guard exists at all',['../phases.html#autotoc_md111',1,'']]],
   ['why_20this_20is_20hard_20elsewhere_11',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['wins_12',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md184',1,'']]],
-  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md517',1,'']]],
+  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md518',1,'']]],
   ['with_20arena_20rollback_14',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]],
   ['with_20indices_15',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_16',['With Subtags',['../dev.html#autotoc_md49',1,'']]],

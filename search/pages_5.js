@@ -1,19 +1,19 @@
 var searchData=
 [
   ['f_0',['F',['../math.html#autotoc_md378',1,'']]],
-  ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md534',1,'']]],
+  ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md535',1,'']]],
   ['field_20names_20of_20sigmas_2',['Field Names of Sigmas',['../langref.html#field',1,'']]],
   ['files_20and_20imports_3',['Files and Imports',['../langref.html#module',1,'']]],
   ['first_4',['A native &lt;span class=&quot;tt&quot;&gt;mim&lt;/span&gt; first',['../playground.html#autotoc_md124',1,'']]],
-  ['first_20last_5',['first / last',['../vec.html#autotoc_md613',1,'']]],
+  ['first_20last_5',['first / last',['../vec.html#autotoc_md614',1,'']]],
   ['first_20steps_6',['First Steps',['../python.html#autotoc_md140',1,'']]],
   ['fixed_20point_20iteration_7',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md92',1,'']]],
   ['fixed_20points_8',['Fixed Points',['../phases.html#autotoc_md105',1,'']]],
-  ['flip_9',['flip',['../tensor.html#autotoc_md508',1,'']]],
-  ['flip_5fimpl_10',['flip_impl',['../tensor.html#autotoc_md566',1,'']]],
-  ['flip_5fmap_11',['flip_map',['../tensor.html#autotoc_md565',1,'']]],
+  ['flip_9',['flip',['../tensor.html#autotoc_md509',1,'']]],
+  ['flip_5fimpl_10',['flip_impl',['../tensor.html#autotoc_md567',1,'']]],
+  ['flip_5fmap_11',['flip_map',['../tensor.html#autotoc_md566',1,'']]],
   ['floordiv_20rem_12',['semiop(mul,ceildiv,floordiv,rem)',['../affine.html#autotoc_md196',1,'']]],
-  ['fold_13',['fold',['../vec.html#autotoc_md609',1,'']]],
+  ['fold_13',['fold',['../vec.html#autotoc_md610',1,'']]],
   ['for_14',['For',['../affine.html#autotoc_md190',1,'']]],
   ['for_20built_20ins_15',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
   ['forms_16',['Literals and Basic Forms',['../langref.html#lit',1,'']]],
@@ -28,5 +28,5 @@ var searchData=
   ['functions_20and_20continuations_25',['Functions and Continuations',['../langref.html#autotoc_md67',1,'']]],
   ['functions_20and_20types_26',['Summary: Functions and Types',['../langref.html#autotoc_md70',1,'']]],
   ['further_20casts_27',['Further Casts',['../dev.html#autotoc_md47',1,'']]],
-  ['fuse_5ftensor_28',['fuse_tensor',['../tensor.html#autotoc_md597',1,'']]]
+  ['fuse_5ftensor_28',['fuse_tensor',['../tensor.html#autotoc_md598',1,'']]]
 ];

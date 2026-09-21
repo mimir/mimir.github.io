@@ -10,5 +10,5 @@ var searchData=
   ['defs_7',['defs',['../structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html#abba8965421cfe50ba1f95f3048ffa870',1,'mim::World::Move::[struct].arena']]],
   ['depth_8',['depth',['../classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695',1,'mim::Driver::Names']]],
   ['descr_9',['descr',['../namespacemim.html#a0f1ec4662d46ddc5fe2de1c041729422',1,'mim::PluginArg::descr'],['../namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace',1,'mim::PluginEnv::descr']]],
-  ['dump_5frecursive_10',['dump_recursive',['../structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506',1,'mim::Flags']]]
+  ['dump_5flocal_10',['dump_local',['../structmim_1_1Flags.html#ac1c9bfc3b0680a37740ba47ac1da90da',1,'mim::Flags']]]
 ];

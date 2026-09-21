@@ -46,5 +46,5 @@ var searchData=
   ['drop_5fself_43',['drop_self',['../namespacemim.html#a243a2a51c74ad154125a9a0a79ef0955',1,'mim']]],
   ['dummy_44',['dummy',['../classmim_1_1ast_1_1Scopes.html#a1ccec7fa48ba733643d462600ceef56b',1,'mim::ast::Scopes']]],
   ['dummydecl_45',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html#ae579aa4faf836624b1c210a93664754a',1,'mim::ast::DummyDecl']]],
-  ['dump_46',['dump',['../classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35',1,'mim::ast::Node::dump()'],['../classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487',1,'mim::Def::dump() const'],['../classmim_1_1Def.html#aa042dd90667f6f3e6950166b478ec694',1,'mim::Def::dump(int max) const'],['../classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f',1,'mim::World::dump(std::ostream &amp;os)'],['../classmim_1_1World.html#a6948f411fa7465945b028dc5d8b2831e',1,'mim::World::dump()']]]
+  ['dump_46',['dump',['../classmim_1_1ast_1_1Node.html#a9fda52ee802c46d21b8eb6879077bf35',1,'mim::ast::Node::dump()'],['../classmim_1_1Def.html#a19ea1717cc86d4f2f5751f2d57b3f487',1,'mim::Def::dump() const'],['../classmim_1_1Def.html#af353554bacfd7eee416e6f1a734335bd',1,'mim::Def::dump(Dump) const'],['../classmim_1_1World.html#ae302b97de79c9c2516e265df6fa5104f',1,'mim::World::dump(std::ostream &amp;os)'],['../classmim_1_1World.html#a6948f411fa7465945b028dc5d8b2831e',1,'mim::World::dump()']]]
 ];

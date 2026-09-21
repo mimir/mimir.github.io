@@ -12,7 +12,7 @@ var structmim_1_1Flags =
     [ "break_on_alpha", "structmim_1_1Flags.html#aecd8da1c3713216fee4463e6b7c76fe8", null ],
     [ "break_on_error", "structmim_1_1Flags.html#a815524784f39e99f0d5929c8ef950552", null ],
     [ "break_on_warn", "structmim_1_1Flags.html#accee3d68c6800853cbb887679212d540", null ],
-    [ "dump_recursive", "structmim_1_1Flags.html#afc6c15ed47123ead7dae5a3c7b5e8506", null ],
+    [ "dump_local", "structmim_1_1Flags.html#ac1c9bfc3b0680a37740ba47ac1da90da", null ],
     [ "force_load", "structmim_1_1Flags.html#ac51779de7dc26d692adab99bcc8a9a39", null ],
     [ "max_fp_iters", "structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d", null ],
     [ "profile", "structmim_1_1Flags.html#afc1f0ccd205ffa9e1c9a760997c9ddfc", null ],
