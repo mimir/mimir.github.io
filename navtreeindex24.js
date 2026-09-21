@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8":[2,0,4,1,22,4],
+"namespacemim_1_1plug_1_1vec.html#a0f5ea338a78435939ef48ab0e1111e1b":[2,0,4,1,22,15],
 "namespacemim_1_1plug_1_1vec.html#a2e32f89440fc8e5beac96559a98f4303":[2,0,4,1,22,8],
 "namespacemim_1_1plug_1_1vec.html#a2e546b5e745df67e338368b87b3ab914":[2,0,4,1,22,6],
 "namespacemim_1_1plug_1_1vec.html#a33960430a521324a04b3eae57f4c837d":[2,0,4,1,22,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658":[2,0,4,4,1],
 "structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658":[4,0,1,4,1],
 "structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698":[2,0,4,4,10],
-"structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698":[4,0,1,4,10],
-"structmim_1_1Annex.html#adc889bc17746e7afdd83e53d55ae344b":[2,0,4,4,4],
-"structmim_1_1Annex.html#adc889bc17746e7afdd83e53d55ae344b":[4,0,1,4,4]
+"structmim_1_1Annex.html#ac6aa4113e5e94cd7420ced85036ae698":[4,0,1,4,10]
 };

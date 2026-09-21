@@ -65,7 +65,7 @@ var searchData=
   ['memory_20types_62',['Memory Types',['../gpu.html#autotoc_md338',1,'']]],
   ['merge_63',['Merge',['../classmim_1_1Merge.html',1,'mim::Merge'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da68be4837f6c739877233e527a996dd00',1,'mim::Merge']]],
   ['merge_64',['merge',['../classmim_1_1World.html#ad042699cd6434abf9a9a9c3b8f9e0e53',1,'mim::World::merge(const Def *type, Defs ops)'],['../classmim_1_1World.html#acf00d26c993b5eed84f76b572d2c476b',1,'mim::World::merge(Defs ops)']]],
-  ['merge_5franges_65',['merge_ranges',['../namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6',1,'automaton::merge_ranges(Range a, Range b) noexcept'],['../namespaceautomaton.html#a8e2baf2bef29fed4ef52471c06d0d421',1,'automaton::merge_ranges(const Vec &amp;old_ranges, LogF &amp;&amp;log)'],['../namespaceautomaton.html#a3ce290eb201e318c6e9716f0b35bc539',1,'automaton::merge_ranges(const Vec &amp;old_ranges)'],['../namespacemim_1_1plug_1_1regex.html#a0f11dcb5b9b55f3624a6bcd966b4dcd5',1,'mim::plug::regex::merge_ranges()']]],
+  ['merge_5franges_65',['merge_ranges',['../namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6',1,'automaton::merge_ranges(Range a, Range b) noexcept'],['../namespaceautomaton.html#ae087d7e9d3842e594cac74a961ee0d77',1,'automaton::merge_ranges(const Vec &amp;old_ranges, std::invocable&lt; std::string_view &gt; auto log)'],['../namespaceautomaton.html#a3ce290eb201e318c6e9716f0b35bc539',1,'automaton::merge_ranges(const Vec &amp;old_ranges)'],['../namespacemim_1_1plug_1_1regex.html#a0f11dcb5b9b55f3624a6bcd966b4dcd5',1,'mim::plug::regex::merge_ranges()']]],
   ['meta_66',['Meta',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9',1,'mim::Meta'],['../regex.html#autotoc_md475',1,'Meta']]],
   ['metadata_67',['Preserving Metadata',['../rewriting.html#autotoc_md162',1,'']]],
   ['mim_68',['Mim',['../index.html#autotoc_md146',1,'✨ A Taste of Mim'],['../index.html#autotoc_md154',1,'🐉 Naming: MimIR vs. Mim'],['../namespaceMim.html',1,'Mim']]],
@@ -225,7 +225,8 @@ var searchData=
   ['mutables_222',['Mutables',['../dev.html#autotoc_md45',1,'Downcast to Mutables'],['../phases.html#autotoc_md91',1,'Handling of Mutables'],['../dev.html#mut',1,'Immutables vs. Mutables'],['../dev.html#autotoc_md34',1,'Mutables']]],
   ['mutate_223',['mutate',['../classmim_1_1World_1_1Externals.html#aab875d17e2cfc7fc27b64cfadce4905b',1,'mim::World::Externals']]],
   ['mutmap_224',['MutMap',['../namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2',1,'mim']]],
-  ['muts_225',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
-  ['muts_226',['muts',['../structmim_1_1Nest_1_1Node_1_1Children.html#a362340ee16c9969fe8b87e5d055b76f4',1,'mim::Nest::Node::Children::muts()'],['../classmim_1_1Nest.html#aaf12b333534fe887264a7abb4317a66b',1,'mim::Nest::muts()'],['../classmim_1_1World_1_1Externals.html#ac1b577682e6553faf40ae1ade97f6d7e',1,'mim::World::Externals::muts()'],['../classmim_1_1World.html#a1ab828141bfcd0c0bdc3608ac24ec358',1,'mim::World::muts()'],['../classmim_1_1World.html#a52b5c22ff4c01fdfa5b1c18412f38a6f',1,'mim::World::muts() const']]],
-  ['mutset_227',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]]
+  ['mutpred_225',['MutPred',['../conceptmim_1_1MutPred.html',1,'mim']]],
+  ['muts_226',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
+  ['muts_227',['muts',['../structmim_1_1Nest_1_1Node_1_1Children.html#a362340ee16c9969fe8b87e5d055b76f4',1,'mim::Nest::Node::Children::muts()'],['../classmim_1_1Nest.html#aaf12b333534fe887264a7abb4317a66b',1,'mim::Nest::muts()'],['../classmim_1_1World_1_1Externals.html#ac1b577682e6553faf40ae1ade97f6d7e',1,'mim::World::Externals::muts()'],['../classmim_1_1World.html#a1ab828141bfcd0c0bdc3608ac24ec358',1,'mim::World::muts()'],['../classmim_1_1World.html#a52b5c22ff4c01fdfa5b1c18412f38a6f',1,'mim::World::muts() const']]],
+  ['mutset_228',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]]
 ];

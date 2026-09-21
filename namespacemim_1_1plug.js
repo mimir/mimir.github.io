@@ -407,7 +407,7 @@ var namespacemim_1_1plug =
       ] ],
       [ "isa_f", "namespacemim_1_1plug_1_1math.html#a9f9256bc3c1cc75b278560fd4c2f3c0a", null ],
       [ "lit_f", "namespacemim_1_1plug_1_1math.html#a0ac6940e5fc2baa2a025f12066c91db2", null ],
-      [ "lit_f", "namespacemim_1_1plug_1_1math.html#a1794e4909a2ecb334c836a3dd927ac68", null ],
+      [ "lit_f", "namespacemim_1_1plug_1_1math.html#a9391b28e90d68f497dd4a78650d6c5ba", null ],
       [ "match_f", "namespacemim_1_1plug_1_1math.html#a6997da1ee16a8a8176042a524ae02dae", null ],
       [ "match_f16", "namespacemim_1_1plug_1_1math.html#a9f21132c6f33d36e69565752fff39793", null ],
       [ "match_f32", "namespacemim_1_1plug_1_1math.html#affa2e23bf7486738df24d3d3f1ce79da", null ],

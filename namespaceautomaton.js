@@ -13,11 +13,9 @@ var namespaceautomaton =
     [ "epsilonClosure", "namespaceautomaton.html#a7000edaccafa021522bb90cc1df27308", null ],
     [ "epsilonClosure", "namespaceautomaton.html#a3f0975bd6f204729e1f8d87808c49fc1", null ],
     [ "merge_ranges", "namespaceautomaton.html#a3ce290eb201e318c6e9716f0b35bc539", null ],
-    [ "merge_ranges", "namespaceautomaton.html#a8e2baf2bef29fed4ef52471c06d0d421", null ],
+    [ "merge_ranges", "namespaceautomaton.html#ae087d7e9d3842e594cac74a961ee0d77", null ],
     [ "merge_ranges", "namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6", null ],
     [ "minimize_dfa", "namespaceautomaton.html#a0a07cb42cd7cc111f81d4f73f00c1bdd", null ],
     [ "nfa2dfa", "namespaceautomaton.html#a4fc3c2d91804e47cc25903b2939720ee", null ],
-    [ "operator<<", "namespaceautomaton.html#a7ca24e1facadd447f3e80389505c35ec", null ],
-    [ "operator<<", "namespaceautomaton.html#a6c227f457f5f8920b592bc255fc9582e", null ],
-    [ "print_node", "namespaceautomaton.html#ab8673e0658e5b031357bc29c86647de1", null ]
+    [ "print_node", "namespaceautomaton.html#af971d6c6b26bcd61f5452f27289cb34b", null ]
 ];

@@ -61,7 +61,7 @@ var namespacemim_1_1plug_1_1tensor =
     [ "transpose_impl", "namespacemim_1_1plug_1_1tensor.html#a975b1b3baf6d3029a2bc229d5ac1e319", null ],
     [ "unary", "namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65", null ],
     [ "unary_impl", "namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd", null ],
-    [ "count_consumers", "namespacemim_1_1plug_1_1tensor.html#ad351e77823c5eb59f8d047e7deaca151", null ],
+    [ "count_consumers", "namespacemim_1_1plug_1_1tensor.html#a3c0df2efe3b69a9722d83fed404e81cc", null ],
     [ "is_copy_comb", "namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463", null ],
     [ "is_identity_post", "namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1", null ],
     [ "is_pure_read", "namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85", null ],
