@@ -3,6 +3,7 @@ var tuple_8h =
     [ "mim::Prod", "classmim_1_1Prod.html", "classmim_1_1Prod" ],
     [ "mim::Sigma", "classmim_1_1Sigma.html", "classmim_1_1Sigma" ],
     [ "mim::Tuple", "classmim_1_1Tuple.html", "classmim_1_1Tuple" ],
+    [ "mim::Sieve", "classmim_1_1Sieve.html", "classmim_1_1Sieve" ],
     [ "mim::Shape", "classmim_1_1Shape.html", "classmim_1_1Shape" ],
     [ "mim::Seq", "classmim_1_1Seq.html", "classmim_1_1Seq" ],
     [ "mim::Arr", "classmim_1_1Arr.html", "classmim_1_1Arr" ],

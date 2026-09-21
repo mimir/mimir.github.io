@@ -211,6 +211,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aed2afef37f09545f262d8a8ce5471954 pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps.  <br /></td></tr>
 <tr class="memitem:abe4950e5b3e1591ed5a956b5e0cdc0bb pub_methods_classmim_1_1Rewriter" id="r_abe4950e5b3e1591ed5a956b5e0cdc0bb"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb">rewrite_imm</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:a82d16f0f2d9cc130004428a547920ffd pub_methods_classmim_1_1Rewriter" id="r_a82d16f0f2d9cc130004428a547920ffd"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd">rewrite_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *, <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a53b074ec43d29eb4e104ee5f1e4fa1ef pub_methods_classmim_1_1Rewriter" id="r_a53b074ec43d29eb4e104ee5f1e4fa1ef"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a53b074ec43d29eb4e104ee5f1e4fa1ef">rewrite_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut, fe::View&lt; size_t &gt; new2old)</td></tr>
+<tr class="memdesc:a53b074ec43d29eb4e104ee5f1e4fa1ef pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like above, but <code class="param">new_mut</code> may have a <em>different</em> number of ops than <code class="param">old_mut:</code> <span class="tt">new_mut-&gt;op(i)</span> is rewritten from <span class="tt">old_mut-&gt;op(new2old[i])</span>.  <br /></td></tr>
 <tr class="memitem:a4f5ba9e51337c7981fb93e3c7476d2cf pub_methods_classmim_1_1Rewriter" id="r_a4f5ba9e51337c7981fb93e3c7476d2cf"><td class="memItemLeft">virtual <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a4f5ba9e51337c7981fb93e3c7476d2cf">rewrite</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a>)</td></tr>
 <tr class="memitem:a2a27820f2a968a37e4024cdba81a870c pub_methods_classmim_1_1Rewriter" id="r_a2a27820f2a968a37e4024cdba81a870c"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a2a27820f2a968a37e4024cdba81a870c">rewrite_imm_Seq</a> (const <a class="el" href="classmim_1_1Seq.html">Seq</a> *seq)</td></tr>
 <tr class="memitem:a509aa94f5f2daf12f190a684001dd58d pub_methods_classmim_1_1Rewriter" id="r_a509aa94f5f2daf12f190a684001dd58d"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d">rewrite_mut_Seq</a> (<a class="el" href="classmim_1_1Seq.html">Seq</a> *seq)</td></tr>
@@ -224,6 +226,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1Rewriter"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
 <tr class="memitem:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter" id="r_ae09f7a8bb555ce521cf0355fd77a79af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae09f7a8bb555ce521cf0355fd77a79af">enter</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
 <tr class="memdesc:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> to <code class="param">new_mut</code> and restores it at the end of the scope.  <br /></td></tr>
+<tr class="memitem:ac3568f817807984c3252d8c05417491c pro_methods_classmim_1_1Rewriter" id="r_ac3568f817807984c3252d8c05417491c"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac3568f817807984c3252d8c05417491c">seal_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
+<tr class="memdesc:ac3568f817807984c3252d8c05417491c pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tail of rewrite_stub: immutabilizes <code class="param">new_mut</code> in hindsight, as rewriting may have made it vacuous.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_classmim_1_1Rewriter"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
 <tr class="memitem:abbcbabc35c7bffffb0e01346e248d99f pro_attribs_classmim_1_1Rewriter" id="r_abbcbabc35c7bffffb0e01346e248d99f"><td class="memItemLeft">std::deque&lt; <a class="el" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f">old2news_</a></td></tr>
 </table>
@@ -231,7 +235,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Extends <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> for variable substitution. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="rewriting.html#rewriter" title="Rewriter">Rewriter</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00114">114</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00122">122</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad5fa9305f338f599b3c16c5c7fe0998d" name="ad5fa9305f338f599b3c16c5c7fe0998d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5fa9305f338f599b3c16c5c7fe0998d">&#9670;&#160;</a></span>VarRewriter() <span class="overload">[1/2]</span></h2>
@@ -256,11 +260,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00118">118</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00126">126</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="rewrite_8h_source.html#l00035">mim::Rewriter::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00126">add()</a>, <a class="el" href="world_8cpp_source.html#l00301">mim::World::app()</a>, <a class="el" href="emit_8cpp_source.html#l00458">mim::ast::SeqExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00628">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="cps_8h_source.html#l00016">mim::plug::cps::op_cps2ds_dep()</a>, <a class="el" href="world_8cpp_source.html#l00928">mim::World::reduce()</a>, <a class="el" href="world_8cpp_source.html#l00953">mim::World::reduce()</a>, <a class="el" href="rule_8cpp_source.html#l00116">mim::Rule::replace()</a>, <a class="el" href="add__mem_8cpp_source.html#l00068">mim::plug::mem::phase::AddMem::rewrite_imm_Pi()</a>, <a class="el" href="rewrite_8h_source.html#l00145">swap</a>, and <a class="el" href="check_8cpp_source.html#l00082">mim::Hole::tuplefy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00134">add()</a>, <a class="el" href="world_8cpp_source.html#l00301">mim::World::app()</a>, <a class="el" href="emit_8cpp_source.html#l00458">mim::ast::SeqExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00628">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="cps_8h_source.html#l00016">mim::plug::cps::op_cps2ds_dep()</a>, <a class="el" href="world_8cpp_source.html#l00928">mim::World::reduce()</a>, <a class="el" href="world_8cpp_source.html#l00953">mim::World::reduce()</a>, <a class="el" href="rule_8cpp_source.html#l00116">mim::Rule::replace()</a>, <a class="el" href="add__mem_8cpp_source.html#l00068">mim::plug::mem::phase::AddMem::rewrite_imm_Pi()</a>, <a class="el" href="rewrite_8h_source.html#l00153">swap</a>, and <a class="el" href="check_8cpp_source.html#l00082">mim::Hole::tuplefy()</a>.</p>
 
 </div>
 </div>
@@ -291,9 +295,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00120">120</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00128">128</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00126">add()</a>, <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="rewrite_8h_source.html#l00035">mim::Rewriter::world()</a>.</p>
+<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00134">add()</a>, <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="rewrite_8h_source.html#l00035">mim::Rewriter::world()</a>.</p>
 
 </div>
 </div>
@@ -325,11 +329,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00126">126</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00134">134</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00047">mim::Rewriter::map()</a>, and <a class="el" href="rewrite_8h_source.html#l00118">VarRewriter()</a>.</p>
+<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00047">mim::Rewriter::map()</a>, and <a class="el" href="rewrite_8h_source.html#l00126">VarRewriter()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00120">VarRewriter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00128">VarRewriter()</a>.</p>
 
 </div>
 </div>
@@ -358,7 +362,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a87c9821a28ae231d8e9434ff049dce35">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00136">136</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00144">144</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8h_source.html#l00041">mim::Rewriter::pop()</a>.</p>
 
@@ -389,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00135">135</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00143">143</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8h_source.html#l00040">mim::Rewriter::push()</a>.</p>
 
@@ -420,9 +424,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8cpp_source.html#l00287">287</a> of file <a class="el" href="rewrite_8cpp_source.html">rewrite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8cpp_source.html#l00300">300</a> of file <a class="el" href="rewrite_8cpp_source.html">rewrite.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00615">mim::Def::dbg_key()</a>, <a class="el" href="def_8h_source.html#l00585">mim::Def::isa_mut()</a>, <a class="el" href="def_8h_source.html#l00512">mim::Def::local_muts()</a>, <a class="el" href="def_8h_source.html#l00519">mim::Def::local_vars()</a>, <a class="el" href="rewrite_8h_source.html#l00062">mim::Rewriter::lookup()</a>, <a class="el" href="rewrite_8cpp_source.html#l00067">mim::Rewriter::rewrite_imm()</a>, <a class="el" href="rewrite_8cpp_source.html#l00298">rewrite_mut()</a>, and <a class="el" href="def_8cpp_source.html#l00198">mim::Def::set()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00615">mim::Def::dbg_key()</a>, <a class="el" href="def_8h_source.html#l00585">mim::Def::isa_mut()</a>, <a class="el" href="def_8h_source.html#l00512">mim::Def::local_muts()</a>, <a class="el" href="def_8h_source.html#l00519">mim::Def::local_vars()</a>, <a class="el" href="rewrite_8h_source.html#l00062">mim::Rewriter::lookup()</a>, <a class="el" href="rewrite_8cpp_source.html#l00067">mim::Rewriter::rewrite_imm()</a>, <a class="el" href="rewrite_8cpp_source.html#l00311">rewrite_mut()</a>, and <a class="el" href="def_8cpp_source.html#l00198">mim::Def::set()</a>.</p>
 
 </div>
 </div>
@@ -451,11 +455,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8cpp_source.html#l00298">298</a> of file <a class="el" href="rewrite_8cpp_source.html">rewrite.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8cpp_source.html#l00311">311</a> of file <a class="el" href="rewrite_8cpp_source.html">rewrite.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00488">mim::Def::has_var()</a>, <a class="el" href="rewrite_8cpp_source.html#l00076">mim::Rewriter::rewrite_mut()</a>, <a class="el" href="world_8h_source.html#l00717">mim::World::vars()</a>, and <a class="el" href="rewrite_8h_source.html#l00035">mim::Rewriter::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rewrite_8cpp_source.html#l00287">rewrite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rewrite_8cpp_source.html#l00300">rewrite()</a>.</p>
 
 </div>
 </div>
@@ -487,11 +491,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00145">145</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rewrite_8h_source.html#l00153">153</a> of file <a class="el" href="rewrite_8h_source.html">rewrite.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, <a class="el" href="rewrite_8h_source.html#l00145">swap</a>, and <a class="el" href="rewrite_8h_source.html#l00118">VarRewriter()</a>.</p>
+<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, <a class="el" href="rewrite_8h_source.html#l00153">swap</a>, and <a class="el" href="rewrite_8h_source.html#l00126">VarRewriter()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00145">swap</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rewrite_8h_source.html#l00153">swap</a>.</p>
 
 </div>
 </div>

@@ -16,7 +16,7 @@ var searchData=
   ['sharedm_13',['SharedM',['../namespacemim_1_1plug_1_1gpu.html#ada4af0be77efab4561c465c2647a9a87',1,'mim::plug::gpu']]],
   ['sharedptr_14',['SharedPtr',['../namespacemim_1_1plug_1_1gpu.html#a75350d6f235da51cb4a186a7b04cd738',1,'mim::plug::gpu']]],
   ['shr_15',['shr',['../namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43',1,'mim::plug::core']]],
-  ['single_5felim_16',['single_elim',['../namespacemim_1_1plug_1_1compile.html#a7f395a8802b4c9ee6ae43aa30b356c81',1,'mim::plug::compile']]],
+  ['single_5ferasure_16',['single_erasure',['../namespacemim_1_1plug_1_1compile.html#a41b6aeb6d6ea2197e71fa5ffcff951d9',1,'mim::plug::compile']]],
   ['size_17',['size',['../namespacemim_1_1plug_1_1ord.html#a2f8d1f32c6daa846d3673454db617c38',1,'mim::plug::ord']]],
   ['slf_18',['slf',['../namespacemim_1_1plug_1_1math.html#a4a71342608a0eb0a27c7763b0cb54693',1,'mim::plug::math']]],
   ['slice_19',['slice',['../namespacemim_1_1plug_1_1tensor.html#a9f32ad37dd66f405ca71286aa92bfe07',1,'mim::plug::tensor']]],

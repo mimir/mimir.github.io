@@ -22,6 +22,8 @@ var classmim_1_1Rewriter =
     [ "rewrite_mut", "classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112", null ],
     [ "rewrite_mut_Seq", "classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d", null ],
     [ "rewrite_stub", "classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd", null ],
+    [ "rewrite_stub", "classmim_1_1Rewriter.html#a53b074ec43d29eb4e104ee5f1e4fa1ef", null ],
+    [ "seal_stub", "classmim_1_1Rewriter.html#ac3568f817807984c3252d8c05417491c", null ],
     [ "world", "classmim_1_1Rewriter.html#a5fdd3ce8c4bd5220007469a503338854", null ],
     [ "swap", "classmim_1_1Rewriter.html#a173bf3b3d9deeef3e89e07419b61934e", null ],
     [ "old2news_", "classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f", null ]
