@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"mem_2normalizers_8cpp.html":[5,0,4,1,3,13,2],
+"mem_2normalizers_8cpp_source.html":[5,0,4,1,3,13,2],
 "mem_8cpp.html":[5,0,4,1,3,13,1],
 "mem_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,13,1,1],
 "mem_8cpp.html#acc1d709cfa85f09c7a0e0cfc603b9d75":[5,0,4,1,3,13,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e":[2,0,4,147,0],
 "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ae46a61588776648a5513d415ba6de279":[2,0,4,147,2],
 "namespacemim.html#add322dac68393a6b179d1243a52cf9a1":[2,0,4,191],
-"namespacemim.html#ae219e373875516ae10fdaa6f229b65d8":[2,0,4,152],
-"namespacemim.html#ae4993d8ec478d9b21be0d34df1047d50":[2,0,4,163],
-"namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81":[2,0,4,206]
+"namespacemim.html#ae219e373875516ae10fdaa6f229b65d8":[2,0,4,152]
 };
