@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('phase_8cpp_sou
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;absl/container/fixed_array.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;fe/bitset.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="driver_8h.html">mim/driver.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="flags_8h.html">mim/flags.h</a>&quot;</span></div>
@@ -480,49 +480,48 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('phase_8cpp_sou
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keyword">auto</span> n         = <a class="code hl_function" href="classmim_1_1PhaseMan.html#a17deb6d65290de8e24955b7432d63046">phases</a>().size();</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="comment">// A phase&#39;s run is a deterministic function of the World&#39;s content.</span></div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="comment">// So a phase only needs to run (again) if the World (may have) changed since its last quiet run.</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keyword">auto</span> stale = absl::FixedArray&lt;bool&gt;(n, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keyword">auto</span> ran   = absl::FixedArray&lt;bool&gt;(n, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keyword">auto</span> any_stale = [&amp;stale]() { <span class="keywordflow">return</span> std::ranges::any_of(stale, [](<span class="keywordtype">bool</span> b) { <span class="keywordflow">return</span> b; }); };</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">for</span> (uint32_t iter = 0; any_stale(); ++iter) {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">if</span> (iter &gt;= max_iters)</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            fe::throwf(<span class="stringliteral">&quot;phase `{}` did not reach a fixed point after {} iterations&quot;</span>, <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a>(), max_iters);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>()) <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().v(<span class="stringliteral">&quot;🔄 fixed-point iteration {}&quot;</span>, iter);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i != n; ++i) {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keyword">auto</span>&amp; phase = <a class="code hl_function" href="classmim_1_1PhaseMan.html#a17deb6d65290de8e24955b7432d63046">phases</a>()[i];</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">if</span> (!stale[i]) {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().v(<span class="stringliteral">&quot;skip `{}`: World unchanged since its last quiet run&quot;</span>, phase-&gt;name());</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                <a class="code hl_function" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a>(<span class="stringliteral">&quot;phases.skipped&quot;</span>);</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            <span class="keywordflow">if</span> (ran[i]) { <span class="comment">// re-runs need a fresh instance</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                <span class="keyword">auto</span> new_phase = std::unique_ptr&lt;Phase&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_function" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a>*<span class="keyword">&gt;</span>(phase-&gt;recreate().release()));</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                swap(new_phase, phase);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            phase-&gt;run();</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            ran[i]   = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            stale[i] = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            <span class="keywordflow">if</span> (phase-&gt;todo()) {</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                <span class="comment">// The World changed: everyone - including this phase itself - gets another look.</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                std::ranges::fill(stale, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            }</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> &amp;= <a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>();</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <a class="code hl_function" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>);</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>()) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keyword">auto</span> all   = fe::Bitset(n, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keyword">auto</span> stale = all;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keyword">auto</span> ran   = fe::Bitset(n, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">for</span> (uint32_t iter = 0; stale.any(); ++iter) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="keywordflow">if</span> (iter &gt;= max_iters)</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            fe::throwf(<span class="stringliteral">&quot;phase `{}` did not reach a fixed point after {} iterations&quot;</span>, <a class="code hl_function" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a>(), max_iters);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>()) <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().v(<span class="stringliteral">&quot;🔄 fixed-point iteration {}&quot;</span>, iter);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i != n; ++i) {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keyword">auto</span>&amp; phase = <a class="code hl_function" href="classmim_1_1PhaseMan.html#a17deb6d65290de8e24955b7432d63046">phases</a>()[i];</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>            <span class="keywordflow">if</span> (!stale.test(i)) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().v(<span class="stringliteral">&quot;skip `{}`: World unchanged since its last quiet run&quot;</span>, phase-&gt;name());</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                <a class="code hl_function" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a>(<span class="stringliteral">&quot;phases.skipped&quot;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="keywordflow">if</span> (ran.test(i)) { <span class="comment">// re-runs need a fresh instance</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                <span class="keyword">auto</span> new_phase = std::unique_ptr&lt;Phase&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_function" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a>*<span class="keyword">&gt;</span>(phase-&gt;recreate().release()));</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                swap(new_phase, phase);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            phase-&gt;run();</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            ran.set(i);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            stale.clear(i);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            <span class="keywordflow">if</span> (phase-&gt;todo()) {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                <span class="comment">// The World changed: everyone - including this phase itself - gets another look.</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                stale = all;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> &amp;= <a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>();</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <a class="code hl_function" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a>(<a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmim_1_1PhaseMan.html#a08d715b5201488d69e1c200ce99b9a57">fixed_point</a>()) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>}</div>
 </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>} <span class="comment">// namespace mim</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>} <span class="comment">// namespace mim</span></div>
 <div class="ttc" id="aclassmim_1_1Analysis_html_a066ffcf7433a84ba859331ea5b199f4f"><div class="ttname"><a href="classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f">mim::Analysis::prepare</a></div><div class="ttdeci">virtual void prepare()</div><div class="ttdoc">Run before the main analysis.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00285">phase.h:285</a></div></div>
 <div class="ttc" id="aclassmim_1_1Analysis_html_a1c5cd105ce8fad4292146bcb3d98cc04"><div class="ttname"><a href="classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04">mim::Analysis::start</a></div><div class="ttdeci">void start() override</div><div class="ttdoc">Actual entry.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">phase.cpp:57</a></div></div>
 <div class="ttc" id="aclassmim_1_1Analysis_html_a32c57f40fd50d9936c29384d21214bde"><div class="ttname"><a href="classmim_1_1Analysis.html#a32c57f40fd50d9936c29384d21214bde">mim::Analysis::rewrite</a></div><div class="ttdeci">const Def * rewrite(const Def *) override</div><div class="ttdoc">Rewrites def and then maps the result to its repr().</div><div class="ttdef"><b>Definition</b> <a href="#l00121">phase.cpp:121</a></div></div>
