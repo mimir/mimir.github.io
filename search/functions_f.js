@@ -38,7 +38,7 @@ var searchData=
   ['profile_5fcount_35',['profile_count',['../classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6',1,'mim::Phase']]],
   ['profiler_36',['profiler',['../classmim_1_1Driver.html#ad0f40deb62f2385f196c02555928dcfc',1,'mim::Driver::profiler()'],['../classmim_1_1Driver.html#a94819cdc2d23c7b56404f9e87aae4d4a',1,'mim::Driver::profiler() const']]],
   ['proj_37',['proj',['../classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592',1,'mim::Def']]],
-  ['projs_38',['projs',['../classmim_1_1Def.html#a77a2d17816449bbdd98765161b433eec',1,'mim::Def::projs(F f) const'],['../classmim_1_1Def.html#a3a4ff7026ecdb5fbe7d361f1882f49be',1,'mim::Def::projs(nat_t a, F f) const'],['../classmim_1_1Def.html#a229cd5ecfe0a9116449acbee70fedb5b',1,'mim::Def::projs() const'],['../classmim_1_1Def.html#a5d7e27c33828e4829363b3932fed229a',1,'mim::Def::projs(nat_t a) const']]],
+  ['projs_38',['projs',['../classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e',1,'mim::Def::projs(Projector auto f) const'],['../classmim_1_1Def.html#afcdc9ed197367c9ef8404cd4a914355c',1,'mim::Def::projs(nat_t a, Projector auto f) const'],['../classmim_1_1Def.html#a229cd5ecfe0a9116449acbee70fedb5b',1,'mim::Def::projs() const'],['../classmim_1_1Def.html#a5d7e27c33828e4829363b3932fed229a',1,'mim::Def::projs(nat_t a) const']]],
   ['proxy_39',['proxy',['../classmim_1_1World.html#a341fb44cab26f77ad8bc9211f25db154',1,'mim::World']]],
   ['ptr_40',['ptr',['../classmim_1_1ast_1_1AST.html#a2f9bbf195db6ddc9f0ada8b71cefa90c',1,'mim::ast::AST']]],
   ['ptrn_41',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html#aa9d27b4b7957b4d14d0edc1ba61c5c47',1,'mim::ast::Ptrn']]],

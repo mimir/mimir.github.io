@@ -24,6 +24,7 @@ var def_8h =
     [ "mim::Idx", "classmim_1_1Idx.html", "classmim_1_1Idx" ],
     [ "mim::Proxy", "classmim_1_1Proxy.html", "classmim_1_1Proxy" ],
     [ "mim::Global", "classmim_1_1Global.html", "classmim_1_1Global" ],
+    [ "mim::Projector", "conceptmim_1_1Projector.html", null ],
     [ "CODE", "def_8h.html#ae11043c18f943e34ebc2d917fb1fa63a", null ],
     [ "CODE", "def_8h.html#a87f559632082486a774f25d565c9b958", null ],
     [ "CODE", "def_8h.html#a368e02e4fbe54a3c33989ead53b4f2a1", null ],

@@ -179,21 +179,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1Si
 Public Member Functions</h2></td></tr>
 <tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Construction</div></td></tr>
 <tr class="memitem:a1e3e35760b97939dbf258de323afe441" id="r_a1e3e35760b97939dbf258de323afe441"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1e3e35760b97939dbf258de323afe441">Sieve</a> (size_t num)</td></tr>
+<tr class="memitem:aeda26aa0fda64fbd25ce3dfb19d968b5" id="r_aeda26aa0fda64fbd25ce3dfb19d968b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeda26aa0fda64fbd25ce3dfb19d968b5">Sieve</a> (size_t num, std::predicate&lt; size_t &gt; auto pred)</td></tr>
+<tr class="memdesc:aeda26aa0fda64fbd25ce3dfb19d968b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps those of <code class="param">num</code> candidates that satisfy <code class="param">pred</code>.  <br /></td></tr>
 <tr class="memitem:a533dea9bd67441290965671db10f6523" id="r_a533dea9bd67441290965671db10f6523"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a533dea9bd67441290965671db10f6523">Sieve</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> ops, std::predicate&lt; const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt; auto pred)</td></tr>
 <tr class="memdesc:a533dea9bd67441290965671db10f6523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps those <code class="param">ops</code> that satisfy <code class="param">pred</code>.  <br /></td></tr>
-<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Concat</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Candidates the rewrite <em>adds</em>; they have no old counterpart and simply continue the candidate indices. </p>
+</div></td></tr>
+<tr class="memitem:a2558195d1ad99d8f4b84b33ccfd7543d" id="r_a2558195d1ad99d8f4b84b33ccfd7543d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2558195d1ad99d8f4b84b33ccfd7543d">cat</a> (size_t num, std::predicate&lt; size_t &gt; auto pred)</td></tr>
+<tr class="memitem:a08a34221e7c70c9edaeb8588ed215702" id="r_a08a34221e7c70c9edaeb8588ed215702"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a08a34221e7c70c9edaeb8588ed215702">num_cat</a> () const</td></tr>
+<tr class="memdesc:a08a34221e7c70c9edaeb8588ed215702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of concat'ed candidates.  <br /></td></tr>
+<tr class="memitem:a237283709ebe8b27b21efded2763c042" id="r_a237283709ebe8b27b21efded2763c042"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a237283709ebe8b27b21efded2763c042">cat</a> (size_t i) const</td></tr>
+<tr class="memdesc:a237283709ebe8b27b21efded2763c042"><td class="mdescLeft">&#160;</td><td class="mdescRight">As <a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the candidate i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> but for concat'ed <code class="param">i</code>.  <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
 <tr class="memitem:a82dd15b60c541ed43faf042c31513f3c" id="r_a82dd15b60c541ed43faf042c31513f3c"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a82dd15b60c541ed43faf042c31513f3c">num_old</a> () const</td></tr>
 <tr class="memdesc:a82dd15b60c541ed43faf042c31513f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of old components.  <br /></td></tr>
 <tr class="memitem:a7bfcfc8ab2479e2f4c683bc3d88c8a9f" id="r_a7bfcfc8ab2479e2f4c683bc3d88c8a9f"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a7bfcfc8ab2479e2f4c683bc3d88c8a9f">num_new</a> () const</td></tr>
 <tr class="memdesc:a7bfcfc8ab2479e2f4c683bc3d88c8a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of survivors.  <br /></td></tr>
 <tr class="memitem:ad9548910eeb55f1b9bba6a3e115d9f0c" id="r_ad9548910eeb55f1b9bba6a3e115d9f0c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad9548910eeb55f1b9bba6a3e115d9f0c">all</a> () const</td></tr>
-<tr class="memdesc:ad9548910eeb55f1b9bba6a3e115d9f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does everything survive?  <br /></td></tr>
+<tr class="memdesc:ad9548910eeb55f1b9bba6a3e115d9f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the new aggregate the old one - nothing dropped and nothing concat'ed?  <br /></td></tr>
 <tr class="memitem:a757b87f677e5c314ebe7e586ef27edcb" id="r_a757b87f677e5c314ebe7e586ef27edcb"><td class="memItemLeft">fe::View&lt; size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a757b87f677e5c314ebe7e586ef27edcb">new2old</a> () const</td></tr>
 <tr class="memdesc:a757b87f677e5c314ebe7e586ef27edcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The old index of the <code class="param">i</code> th survivor; this is what <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd">Rewriter::rewrite_stub</a> expects.  <br /></td></tr>
 <tr class="memitem:a972de8bcd87a06fb1cb346aa0b5fa963" id="r_a972de8bcd87a06fb1cb346aa0b5fa963"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963">operator[]</a> (size_t i) const</td></tr>
-<tr class="memdesc:a972de8bcd87a06fb1cb346aa0b5fa963"><td class="mdescLeft">&#160;</td><td class="mdescRight">The new index of the old component <code class="param">i</code> - or <a class="el" href="#aa7aa4c594865cac1864c249963570aeb">Sieve::Gone</a>, if it didn't survive.  <br /></td></tr>
+<tr class="memdesc:a972de8bcd87a06fb1cb346aa0b5fa963"><td class="mdescLeft">&#160;</td><td class="mdescRight">The new index of the candidate <code class="param">i</code> - or <a class="el" href="#aa7aa4c594865cac1864c249963570aeb">Sieve::Gone</a>, if it didn't survive.  <br /></td></tr>
 <tr class="memitem:a416e8b9f24579f6b02b4e2be766cdbcb" id="r_a416e8b9f24579f6b02b4e2be766cdbcb"><td class="memItemLeft"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="#a416e8b9f24579f6b02b4e2be766cdbcb">gather</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> ops) const</td></tr>
-<tr class="memdesc:a416e8b9f24579f6b02b4e2be766cdbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The surviving components of <code class="param">ops</code>.  <br /></td></tr>
+<tr class="memdesc:a416e8b9f24579f6b02b4e2be766cdbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The surviving components of <code class="param">ops</code> - one per candidate, concat'ed ones included.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -202,16 +212,17 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Filters the components of an aggregate and keeps track of where the survivors end up. </p>
 <p>This is what a <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> needs that <em>drops</em> components of a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> - or the parameters of a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>:</p><ul>
-<li><a class="el" href="#a416e8b9f24579f6b02b4e2be766cdbcb" title="The surviving components of ops.">Sieve::gather</a> rebuilds an immutable aggregate,</li>
+<li><a class="el" href="#a416e8b9f24579f6b02b4e2be766cdbcb" title="The surviving components of ops - one per candidate, concat&#39;ed ones included.">Sieve::gather</a> rebuilds an immutable aggregate,</li>
 <li><a class="el" href="#a757b87f677e5c314ebe7e586ef27edcb" title="The old index of the i th survivor; this is what Rewriter::rewrite_stub expects.">Sieve::new2old</a> rebuilds a mutable one via <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd">Rewriter::rewrite_stub</a>, and</li>
-<li><a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the old component i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> adjusts the index of every <a class="el" href="classmim_1_1Extract.html" title="Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.">Extract</a> / <a class="el" href="classmim_1_1Insert.html" title="Creates a new Tuple / Pack by inserting Insert::value at position Insert::index into Insert::tuple.">Insert</a> into it.</li>
+<li><a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the candidate i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> adjusts the index of every <a class="el" href="classmim_1_1Extract.html" title="Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.">Extract</a> / <a class="el" href="classmim_1_1Insert.html" title="Creates a new Tuple / Pack by inserting Insert::value at position Insert::index into Insert::tuple.">Insert</a> into it.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>Only a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> ever needs that last adjustment: an <a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a>'s components all share one type - so it is dropped as a whole - and World::extract_fused splits a fused index at the <a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a> boundary, which leaves a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a>'s index scalar. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> ever needs that last adjustment: an <a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a>'s components all share one type - so it is dropped as a whole - and World::extract_fused splits a fused index at the <a class="el" href="classmim_1_1Arr.html" title="A (possibly paramterized) Array.">Arr</a> boundary, which leaves a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a>'s index scalar.</dd></dl>
+<p>A rewrite that also <em>adds</em> components - <span class="tt">mem::SEO</span> threads fresh φs through a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> - <a class="el" href="#a2558195d1ad99d8f4b84b33ccfd7543d">Sieve::cat</a>s them as further candidates: they extend the very same index space, so one <a class="el" href="classmim_1_1Sieve.html" title="Filters the components of an aggregate and keeps track of where the survivors end up.">Sieve</a> still answers the whole new layout. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00113">113</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00116">116</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1e3e35760b97939dbf258de323afe441" name="a1e3e35760b97939dbf258de323afe441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e3e35760b97939dbf258de323afe441">&#9670;&#160;</a></span>Sieve() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e3e35760b97939dbf258de323afe441">&#9670;&#160;</a></span>Sieve() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,12 +245,47 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Keeps all <code class="param">num</code> components. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00120">120</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00123">123</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00136">Sieve()</a>.</p>
+
+</div>
+</div>
+<a id="aeda26aa0fda64fbd25ce3dfb19d968b5" name="aeda26aa0fda64fbd25ce3dfb19d968b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda26aa0fda64fbd25ce3dfb19d968b5">&#9670;&#160;</a></span>Sieve() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Sieve::Sieve </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::predicate&lt; size_t &gt; auto</td>          <td class="paramname"><span class="paramname"><em>pred</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Keeps those of <code class="param">num</code> candidates that satisfy <code class="param">pred</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00128">128</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
 </div>
 </div>
 <a id="a533dea9bd67441290965671db10f6523" name="a533dea9bd67441290965671db10f6523"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a533dea9bd67441290965671db10f6523">&#9670;&#160;</a></span>Sieve() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a533dea9bd67441290965671db10f6523">&#9670;&#160;</a></span>Sieve() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +313,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Keeps those <code class="param">ops</code> that satisfy <code class="param">pred</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00125">125</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00136">136</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00123">Sieve()</a>.</p>
 
 </div>
 </div>
@@ -295,11 +343,74 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Does everything survive? </p>
+<p>Is the new aggregate the old one - nothing dropped and nothing concat'ed? </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00137">137</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00165">165</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8h_source.html#l00136">num_new()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00163">num_new()</a>, and <a class="el" href="tuple_8h_source.html#l00162">num_old()</a>.</p>
+
+</div>
+</div>
+<a id="a237283709ebe8b27b21efded2763c042" name="a237283709ebe8b27b21efded2763c042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a237283709ebe8b27b21efded2763c042">&#9670;&#160;</a></span>cat() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Sieve::cat </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>As <a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the candidate i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> but for concat'ed <code class="param">i</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00157">157</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00162">num_old()</a>.</p>
+
+</div>
+</div>
+<a id="a2558195d1ad99d8f4b84b33ccfd7543d" name="a2558195d1ad99d8f4b84b33ccfd7543d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2558195d1ad99d8f4b84b33ccfd7543d">&#9670;&#160;</a></span>cat() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Sieve::cat </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>num</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::predicate&lt; size_t &gt; auto</td>          <td class="paramname"><span class="paramname"><em>pred</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Concats <code class="param">num</code> candidates behind the old ones and keeps those that satisfy <code class="param">pred</code>. </p><dl class="section note"><dt>Note</dt><dd>A concat'ed component has no old op to rewrite from, so this rules out <a class="el" href="#a757b87f677e5c314ebe7e586ef27edcb" title="The old index of the i th survivor; this is what Rewriter::rewrite_stub expects.">Sieve::new2old</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00145">145</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
 </div>
 </div>
@@ -326,11 +437,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The surviving components of <code class="param">ops</code>. </p>
+<p>The surviving components of <code class="param">ops</code> - one per candidate, concat'ed ones included. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00146">146</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00177">177</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8h_source.html#l00136">num_new()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00163">num_new()</a>.</p>
 
 </div>
 </div>
@@ -359,7 +470,36 @@ Static Public Attributes</h2></td></tr>
 
 <p>The old index of the <code class="param">i</code> th survivor; this is what <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd">Rewriter::rewrite_stub</a> expects. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00139">139</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00167">167</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+</div>
+</div>
+<a id="a08a34221e7c70c9edaeb8588ed215702" name="a08a34221e7c70c9edaeb8588ed215702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a34221e7c70c9edaeb8588ed215702">&#9670;&#160;</a></span>num_cat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Sieve::num_cat </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of concat'ed candidates. </p>
+
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00156">156</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
 </div>
 </div>
@@ -388,9 +528,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Number of survivors. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00136">136</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00163">163</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00137">all()</a>, and <a class="el" href="tuple_8h_source.html#l00146">gather()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00165">all()</a>, and <a class="el" href="tuple_8h_source.html#l00177">gather()</a>.</p>
 
 </div>
 </div>
@@ -419,7 +559,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Number of old components. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00135">135</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00162">162</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00165">all()</a>, and <a class="el" href="tuple_8h_source.html#l00157">cat()</a>.</p>
 
 </div>
 </div>
@@ -446,11 +588,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The new index of the old component <code class="param">i</code> - or <a class="el" href="#aa7aa4c594865cac1864c249963570aeb">Sieve::Gone</a>, if it didn't survive. </p>
+<p>The new index of the candidate <code class="param">i</code> - or <a class="el" href="#aa7aa4c594865cac1864c249963570aeb">Sieve::Gone</a>, if it didn't survive. </p>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00141">141</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00172">172</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8h_source.html#l00115">Gone</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00118">Gone</a>.</p>
 
 </div>
 </div>
@@ -474,11 +616,11 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the old component i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a972de8bcd87a06fb1cb346aa0b5fa963" title="The new index of the candidate i - or Sieve::Gone, if it didn&#39;t survive.">Sieve::operator[]</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00115">115</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tuple_8h_source.html#l00118">118</a> of file <a class="el" href="tuple_8h_source.html">tuple.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00141">operator[]()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tuple_8h_source.html#l00172">operator[]()</a>.</p>
 
 </div>
 </div>

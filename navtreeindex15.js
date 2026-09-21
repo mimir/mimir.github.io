@@ -1,5 +1,13 @@
 var NAVTREEINDEX15 =
 {
+"classmim_1_1ast_1_1UseDecl.html#a5bc0ee016c76cc794ddc2f3f89a52027":[4,0,1,0,49,13],
+"classmim_1_1ast_1_1UseDecl.html#a740c6db493e659e7a5ca11095a4188fc":[2,0,4,0,49,7],
+"classmim_1_1ast_1_1UseDecl.html#a740c6db493e659e7a5ca11095a4188fc":[4,0,1,0,49,7],
+"classmim_1_1ast_1_1UseDecl.html#a84d72d86795187647802b2ee4efe0664":[2,0,4,0,49,3],
+"classmim_1_1ast_1_1UseDecl.html#a84d72d86795187647802b2ee4efe0664":[4,0,1,0,49,3],
+"classmim_1_1ast_1_1UseDecl.html#ac234dafb901a482a15ff0152f5f5d7e1":[2,0,4,0,49,8],
+"classmim_1_1ast_1_1UseDecl.html#ac234dafb901a482a15ff0152f5f5d7e1":[4,0,1,0,49,8],
+"classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62":[2,0,4,0,49,1],
 "classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62":[4,0,1,0,49,1],
 "classmim_1_1ast_1_1UseDecl.html#ae377115ea3cd7f2820d343fa442b7767":[2,0,4,0,49,6],
 "classmim_1_1ast_1_1UseDecl.html#ae377115ea3cd7f2820d343fa442b7767":[4,0,1,0,49,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX15 =
 "classmim_1_1plug_1_1ll_1_1Emit.html#a52a313d92a860bf2ba6ca4a96f166c12":[4,0,1,1,7,1,1],
 "classmim_1_1plug_1_1ll_1_1Emit.html#a7c226103b6f0e83ed425b41001fc37b4":[2,0,4,1,10,1,0],
 "classmim_1_1plug_1_1ll_1_1Emit.html#a7c226103b6f0e83ed425b41001fc37b4":[4,0,1,1,7,1,0],
-"classmim_1_1plug_1_1ll_1_1Emitter.html":[2,0,4,1,10,2],
-"classmim_1_1plug_1_1ll_1_1Emitter.html":[4,0,1,1,7,2],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a01a2f380587e18eb8b102928bd069b7a":[2,0,4,1,10,2,11],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a01a2f380587e18eb8b102928bd069b7a":[4,0,1,1,7,2,11],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a028ef63fb02d2876ccfe254f2f6aab80":[2,0,4,1,10,2,20],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a028ef63fb02d2876ccfe254f2f6aab80":[4,0,1,1,7,2,20],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a0553a4b3a37018e2ae31211674d55dd6":[2,0,4,1,10,2,18],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a0553a4b3a37018e2ae31211674d55dd6":[4,0,1,1,7,2,18],
-"classmim_1_1plug_1_1ll_1_1Emitter.html#a18da2834ff9f5fd902b0a0b7118a2e79":[2,0,4,1,10,2,2]
+"classmim_1_1plug_1_1ll_1_1Emitter.html":[2,0,4,1,10,2]
 };

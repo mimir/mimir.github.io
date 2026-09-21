@@ -38,7 +38,7 @@ var searchData=
   ['should_5freduce_35',['should_reduce',['../namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890',1,'mim::ast']]],
   ['sibl_5fdeps_36',['sibl_deps',['../classmim_1_1Nest_1_1Node.html#a2a29ed570ed6ad81039fa1ad52a9b784',1,'mim::Nest::Node::sibl_deps()'],['../classmim_1_1Nest_1_1Node.html#a42cacaae58788b53f4aeaea495b1293e',1,'mim::Nest::Node::sibl_deps() const']]],
   ['sibling_37',['Sibling',['../classmim_1_1ast_1_1AxmDecl_1_1Sibling.html#a0cc1e871c945dc0cc33c3ab8fb93ab6e',1,'mim::ast::AxmDecl::Sibling']]],
-  ['sieve_38',['Sieve',['../classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441',1,'mim::Sieve::Sieve(size_t num)'],['../classmim_1_1Sieve.html#a533dea9bd67441290965671db10f6523',1,'mim::Sieve::Sieve(Defs ops, std::predicate&lt; const Def * &gt; auto pred)']]],
+  ['sieve_38',['Sieve',['../classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441',1,'mim::Sieve::Sieve(size_t num)'],['../classmim_1_1Sieve.html#aeda26aa0fda64fbd25ce3dfb19d968b5',1,'mim::Sieve::Sieve(size_t num, std::predicate&lt; size_t &gt; auto pred)'],['../classmim_1_1Sieve.html#a533dea9bd67441290965671db10f6523',1,'mim::Sieve::Sieve(Defs ops, std::predicate&lt; const Def * &gt; auto pred)']]],
   ['sigma_39',['sigma',['../classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856',1,'mim::World::sigma(Defs ops)'],['../classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0',1,'mim::World::sigma()']]],
   ['sigmaexpr_40',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html#af4aa536aa2e8c456f558b02ad414b8a2',1,'mim::ast::SigmaExpr']]],
   ['single_41',['single',['../classmim_1_1World.html#a5e620e5a10d2c813bd89e043ae57dc4a',1,'mim::World']]],

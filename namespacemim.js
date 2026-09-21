@@ -93,6 +93,7 @@ var namespacemim =
     [ "annex_with_subs", "conceptmim_1_1annex__with__subs.html", null ],
     [ "annex_without_subs", "conceptmim_1_1annex__without__subs.html", null ],
     [ "Enum", "conceptmim_1_1Enum.html", null ],
+    [ "Projector", "conceptmim_1_1Projector.html", null ],
     [ "Bot", "namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4", null ],
     [ "Def2Def", "namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab", null ],
     [ "DefMap", "namespacemim.html#a879f9e518002de13d65d757536033f0e", null ],
