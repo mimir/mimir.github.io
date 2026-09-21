@@ -44,7 +44,7 @@ var searchData=
   ['single_41',['single',['../classmim_1_1World.html#a5e620e5a10d2c813bd89e043ae57dc4a',1,'mim::World']]],
   ['singleerasure_42',['SingleErasure',['../classmim_1_1SingleErasure.html#ac77051f84d2cf2c225a550dcbc08c396',1,'mim::SingleErasure::SingleErasure(World &amp;world, std::string name)'],['../classmim_1_1SingleErasure.html#a0ea1dff7b37f6f933b153db649492222',1,'mim::SingleErasure::SingleErasure(World &amp;world, flags_t annex)']]],
   ['singleexpr_43',['SingleExpr',['../classmim_1_1ast_1_1SingleExpr.html#a6fd81dcd2492a2cd9e3f796a26576086',1,'mim::ast::SingleExpr']]],
-  ['size_44',['size',['../classmim_1_1Sieve.html#a0ee0474eb1c9dbb3338feb9d6a42f707',1,'mim::Sieve::size()'],['../classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7',1,'mim::World::Externals::size()'],['../classmim_1_1World_1_1Annexes.html#a72e019414dcca26b5c4674ce4734bddb',1,'mim::World::Annexes::size()']]],
+  ['size_44',['size',['../classmim_1_1World_1_1Externals.html#a65175ec05cf7532abdd80e225ba6f4f7',1,'mim::World::Externals::size()'],['../classmim_1_1World_1_1Annexes.html#a72e019414dcca26b5c4674ce4734bddb',1,'mim::World::Annexes::size()']]],
   ['size2bitwidth_45',['size2bitwidth',['../classmim_1_1Idx.html#a445658b6d8a1922d7fc9fb33235417ff',1,'mim::Idx::size2bitwidth(nat_t n)'],['../classmim_1_1Idx.html#a476bd0b41bda503d46dac1584823e1e1',1,'mim::Idx::size2bitwidth(const Def *size)']]],
   ['skip_5fenv_46',['skip_env',['../namespacemim_1_1plug_1_1clos.html#aba47885b5f553af0dacae464a463675b',1,'mim::plug::clos']]],
   ['slice_47',['slice',['../classmim_1_1Shape.html#ab16434def629eb5f009b3aa6fce0084e',1,'mim::Shape']]],
