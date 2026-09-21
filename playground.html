@@ -177,22 +177,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('playground.htm
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">index.html</span>  </td><td class="markdownTableBodyNone">The page: editor on the left, tabbed output on the right.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">graph.html</span>  </td><td class="markdownTableBodyNone">The pop-out window: the graph, and nothing else.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">playground.css</span>  </td><td class="markdownTableBodyNone">Styling, including the light/dark palette and the log's terminal colors.  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">playground.js</span>  </td><td class="markdownTableBodyNone">Editor, tabs, run loop, Graphviz layout.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">graphview.js</span>  </td><td class="markdownTableBodyNone">Pan, zoom and highlight over a laid-out graph; the <b>Graph</b> tab and the pop-out share one.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">popout.js</span>  </td><td class="markdownTableBodyNone">The pop-out's glue: it renders the SVG the page sends over.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">mim-worker.js</span>  </td><td class="markdownTableBodyNone">Runs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> in a Worker, so a program that never terminates can be killed.  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/code.js</span>, staged; the lexer machinery the page and the docs share.  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">mim-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/mim.js</span>, staged; the <a class="el" href="namespaceMim.html">Mim</a> lexer, renamed out of Emscripten's <span class="tt">mim.js</span> way.  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">llvm-code.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">docs/llvm.js</span>, staged; the LLVM lexer of the <b>LLVM</b> tab.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">darkmode-toggle.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">doxygen-awesome-darkmode-toggle.js</span>, staged; the very toggle these docs use.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">examples/*.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lit/docs/*.<a class="el" href="namespacemim.html">mim</a></span>, staged; the examples are the ones the lit suite covers.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">darkmode-toggle.js</span>  </td><td class="markdownTableBodyNone"><span class="tt">doxygen-awesome-darkmode-toggle.js</span>, staged; the very toggle these docs use.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">examples/*.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lit/docs/*.<a class="el" href="namespacemim.html">mim</a></span>, staged; the examples are the ones the lit suite covers.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a>.{js,wasm,data}</span>  </td><td class="markdownTableBodyNone">Emscripten's output; <span class="tt">mim.data</span> carries the plugins' <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> halves and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> runtime.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
@@ -255,6 +261,7 @@ Using it</h1>
 Navigating</h2>
 <p>Drag to pan and turn the wheel to zoom at the pointer; <b>Fit</b>, a double-click, or <span class="tt">0</span> frames the whole graph again, and <span class="tt">+</span>/<span class="tt">-</span> zoom from the keyboard. A re-run keeps the current view: the editor recompiles on every pause in typing, so re-framing each time would leave no way to stay zoomed in on one spot.</p>
 <p>Hovering a node dims everything but that node, its direct neighbours and the edges between them; a click pins that focus, and a click elsewhere or <span class="tt">Esc</span> releases it. The highlight paints detached edges too, so it shows per node what <em>hidden edges</em> shows for the whole graph — without a recompile.</p>
+<p>The button left of the zoom controls opens the graph in a window of its own, with the same controls and nothing else. The page lays the DOT out and sends the SVG over, so the pop-out needs neither Graphviz nor the compiler and follows every re-run — including while the <b>Graph</b> tab itself is down, which leaves the whole page for the editor and the other tabs.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
 Dark mode</h2>
 <p>The toggle in the header is the <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome</a> one these docs use, staged from the submodule, so both offer the same control and — served from one origin — share the stored preference. The graph's colors are baked by the compiler rather than applied by CSS, so flipping the theme re-runs it with <span class="tt">--dot-dark</span>, which drops the white backdrop and lightens the edges.</p>
