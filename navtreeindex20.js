@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim_1_1plug_1_1clos.html#a24c1a6ea036d884bf71164d796f03830":[2,0,4,1,4,8],
 "namespacemim_1_1plug_1_1clos.html#a2fbd9107d09c1de8bc95ebc59b44db46":[2,0,4,1,4,4],
 "namespacemim_1_1plug_1_1clos.html#a3f40a4012ea8c2b93e631b3c2d7c8542":[2,0,4,1,4,21],
 "namespacemim_1_1plug_1_1clos.html#a445010ea2e9ae83528351bbdd60b3daa":[2,0,4,1,4,23],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1gpu.html#a1a3dd6851806a943500d14ecbd0942bf":[2,0,4,1,9,11],
 "namespacemim_1_1plug_1_1gpu.html#a1d166cfad60b6a084479058b8280d9c4":[2,0,4,1,9,3],
 "namespacemim_1_1plug_1_1gpu.html#a2162f02e855e9e68704a27f5879e2f7b":[2,0,4,1,9,2],
-"namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b":[2,0,4,1,9,36],
-"namespacemim_1_1plug_1_1gpu.html#a3b801190a370e486190970bb75a71fd4":[2,0,4,1,9,4]
+"namespacemim_1_1plug_1_1gpu.html#a261e68790d9b5de4d41450261cec1f3b":[2,0,4,1,9,36]
 };

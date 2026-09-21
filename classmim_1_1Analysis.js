@@ -23,6 +23,7 @@ var classmim_1_1Analysis =
     [ "rewrite_mut", "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7", null ],
     [ "start", "classmim_1_1Analysis.html#a1c5cd105ce8fad4292146bcb3d98cc04", null ],
     [ "taint", "classmim_1_1Analysis.html#a69aa191fb0bc0c08851bb7c92f35879c", null ],
+    [ "touch", "classmim_1_1Analysis.html#a7ef44bd3020205c3c53e4226e6696677", null ],
     [ "version", "classmim_1_1Analysis.html#a07b16850f29a35f1f7311aa861302c40", null ],
     [ "world", "classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f", null ]
 ];

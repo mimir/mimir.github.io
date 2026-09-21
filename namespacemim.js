@@ -259,6 +259,5 @@ var namespacemim =
     [ "tuple_of_dict", "namespacemim.html#a31108855e962bd3bf8dbf912eb4349b0", null ],
     [ "tuple_of_types", "namespacemim.html#a8edd5d2569579fbdac7077d606a2e2b5", null ],
     [ "type_of", "namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81", null ],
-    [ "BitmaskWidth", "namespacemim.html#ad70d80188d4a31ea1ab6199969ce4e63", null ],
     [ "Num_Nodes", "namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd", null ]
 ];
