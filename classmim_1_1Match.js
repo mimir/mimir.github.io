@@ -1,7 +1,9 @@
 var classmim_1_1Match =
 [
+    [ "accepts", "classmim_1_1Match.html#a396dfa8906de2038fed412cd71cafe45", null ],
     [ "arm", "classmim_1_1Match.html#ad4c29afb6b4f08aa1b875927ac75eec0", null ],
     [ "arms", "classmim_1_1Match.html#adb497360682457521954de1ccdff45db", null ],
+    [ "cases", "classmim_1_1Match.html#a465239aad75762ca1a37df24a2e153c7", null ],
     [ "num_arms", "classmim_1_1Match.html#a5caec35b0215ea47ba9ee9166c0ef662", null ],
     [ "scrutinee", "classmim_1_1Match.html#a4f6522e1cd09634efd3121fc12d4f29e", null ],
     [ "World", "classmim_1_1Match.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],

@@ -766,11 +766,13 @@ Lattices</h2>
 <ul>
 <li><span class="tt">T ∪ ⊥</span> -&gt; <span class="tt">T</span>, <span class="tt">T ∩ ⊤</span> -&gt; <span class="tt">T</span> - the unit of a join/meet is dropped</li>
 <li><span class="tt">T ∪ ⊤</span> -&gt; <span class="tt">⊤</span>, <span class="tt">T ∩ ⊥</span> -&gt; <span class="tt">⊥</span></li>
-<li><span class="tt">A ∪ A</span> -&gt; <span class="tt">A</span>; the operands are sorted, so <span class="tt">∪</span>/<span class="tt">∩</span> are commutative, associative, and idempotent</li>
+<li><span class="tt">A ∪ A</span> -&gt; <span class="tt">A</span>; the operands are flattened and sorted, so <span class="tt">∪</span>/<span class="tt">∩</span> are commutative, associative, and idempotent</li>
 <li>an empty join is <span class="tt">⊥</span>, an empty meet is <span class="tt">⊤</span>, and a one-element one is its operand</li>
 <li><span class="tt">x inj T</span> -&gt; <span class="tt">x</span> if <span class="tt">T</span> is not a union type</li>
-<li><span class="tt">match (T inj x) with ...</span> -&gt; the arm whose domain is <span class="tt">T</span> - a constructor fixes the active case</li>
-<li>the arms of a <span class="tt">match</span> are sorted by their domain</li>
+<li><span class="tt">match (T inj x) with ...</span> -&gt; the arm handling <span class="tt">T</span> - a constructor fixes the active case</li>
+<li>each case is handled by the <b>first</b> arm accepting it, so the arms are <em>not</em> sorted; an arm accepts a case if its domain is that case, or a union containing it</li>
+<li>a <span class="tt">match</span> whose scrutinee is not a union is the degenerate one-case union and reduces right away</li>
+<li>an arm handling no case is dropped; a case handled by no arm is an error</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 Singletons</h2>
