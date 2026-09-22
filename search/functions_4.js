@@ -55,7 +55,7 @@ var searchData=
   ['eta_5freduce_52',['eta_reduce',['../classmim_1_1Lam.html#a7f8009af756ca53c9a6e833f0f17b1ba',1,'mim::Lam']]],
   ['etaconv_53',['EtaConv',['../classmim_1_1EtaConv.html#a0e3f042fe6f92ea15d3546451318b0b6',1,'mim::EtaConv::EtaConv(World &amp;world)'],['../classmim_1_1EtaConv.html#aaf6217e113c5c0840bf6c8788146cd26',1,'mim::EtaConv::EtaConv(World &amp;world, flags_t annex)']]],
   ['eval_54',['Eval',['../classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html#ab0b460aaad8add6a798f0b32608ac00d',1,'mim::plug::autodiff::phase::Eval']]],
-  ['expect_55',['expect',['../classmim_1_1Axm.html#ac3bdea1f04444e847469fde62a31154d',1,'mim::Axm::expect()'],['../classmim_1_1Lit.html#aef5b27b8a336adee46b68b4b22c21606',1,'mim::Lit::expect()']]],
+  ['expect_55',['expect',['../classmim_1_1Axm.html#ac3bdea1f04444e847469fde62a31154d',1,'mim::Axm::expect()'],['../classmim_1_1Def.html#a228489db93dc188d031c62355a989bed',1,'mim::Def::expect(fe::cite_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)'],['../classmim_1_1Def.html#aa3eeb67282aa8e469ddc12f1b378b34c',1,'mim::Def::expect(fe::cite_string&lt; Args... &gt; fmt, Args &amp;&amp;... args) const'],['../classmim_1_1Lit.html#aef5b27b8a336adee46b68b4b22c21606',1,'mim::Lit::expect()']]],
   ['expect_5fbitwidth_56',['expect_bitwidth',['../classmim_1_1Idx.html#af571bc3aa9b5ba62983206eedded2b71',1,'mim::Idx']]],
   ['expect_5fmut_57',['expect_mut',['../classmim_1_1Def.html#ab44953c34f8433633c97268bc2098c73',1,'mim::Def']]],
   ['expr_58',['Expr',['../classmim_1_1ast_1_1Expr.html#a7fde5916e51e7be2077bad53e814f05a',1,'mim::ast::Expr']]],
