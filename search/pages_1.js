@@ -46,6 +46,5 @@ var searchData=
   ['building_43',['Building',['../playground.html#autotoc_md122',1,'']]],
   ['builds_44',['Standalone Third-Party Builds',['../plugins.html#autotoc_md138',1,'']]],
   ['built_20ins_45',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
-  ['builtin_20types_46',['Kinds and Builtin Types',['../langref.html#autotoc_md64',1,'']]],
-  ['builtin_20types_47',['Kinds and builtin types',['../tutorial.html#autotoc_md192',1,'']]]
+  ['builtin_20types_46',['Builtin Types',['../langref.html#autotoc_md64',1,'Kinds and Builtin Types'],['../tutorial.html#autotoc_md192',1,'Kinds and Builtin Types']]]
 ];

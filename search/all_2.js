@@ -95,6 +95,5 @@ var searchData=
   ['building_92',['Building',['../playground.html#autotoc_md122',1,'']]],
   ['builds_93',['Standalone Third-Party Builds',['../plugins.html#autotoc_md138',1,'']]],
   ['built_20ins_94',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
-  ['builtin_20types_95',['Kinds and Builtin Types',['../langref.html#autotoc_md64',1,'']]],
-  ['builtin_20types_96',['Kinds and builtin types',['../tutorial.html#autotoc_md192',1,'']]]
+  ['builtin_20types_95',['Builtin Types',['../langref.html#autotoc_md64',1,'Kinds and Builtin Types'],['../tutorial.html#autotoc_md192',1,'Kinds and Builtin Types']]]
 ];

@@ -396,7 +396,11 @@ Declarations</h2>
 Modifiers</h3>
 <ul>
 <li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
-<li><span class="tt">extern</span> makes a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span> and is visible to backends; with the body omitted (just <span class="tt">;</span>), its implementation lives in a native translation unit instead. Currently, <span class="tt">extern</span> is only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration.</li>
+<li><span class="tt">extern</span> is currently only meaningful on a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> declaration and makes it<ul>
+<li><b>with a body</b> a root of the <span class="tt">World</span> that stays reachable through <span class="tt">Cleanup</span>. Backends emit it under its source name with external linkage, so other translation units can call it, whereas a non-<span class="tt">extern</span> function gets a mangled name and internal linkage.</li>
+<li><b>without a body</b> (just <span class="tt">;</span>) a declaration for another translation unit. Contrary to its <span class="tt">extern</span> annotation, such a stub is not <a class="el" href="classmim_1_1Def.html#aa3519178f6136b088a41d1bfa0cab603" title="mim::Def::is_external">external</a> in the IR sense and, if unused, is removed like any other unreachable <span class="tt">Def</span>.</li>
+</ul>
+</li>
 </ul>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Visibility</h4>

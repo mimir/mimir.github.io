@@ -1,7 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"dir_ed99f5753030233661c0389c82bd4677.html":[5,0,3,1,3,4],
-"dir_edfc8cae14c2c67d6108018a1c8f591e.html":[5,0,0,0,0],
 "dir_ee2a4a2601494bea7a20dde94d733d1b.html":[5,0,3,1,3,3],
 "dir_f27c3cea558b2952ab52904eeb2c410a.html":[5,0,0,1,0,0,9],
 "dir_f7a39434aeaa7bf3486d2539feba5ab1.html":[5,0,4,1,3,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX18 =
 "math_2normalizers_8cpp_source.html":[5,0,4,1,3,12,1],
 "math_8cpp.html":[5,0,4,1,3,12,0],
 "math_8cpp.html#a4c0458e752b73345765464ca3a56df97":[5,0,4,1,3,12,0,0],
-"math_8cpp_source.html":[5,0,4,1,3,12,0]
+"math_8cpp_source.html":[5,0,4,1,3,12,0],
+"math_8h.html":[5,0,3,1,3,12,0],
+"math_8h_source.html":[5,0,3,1,3,12,0]
 };

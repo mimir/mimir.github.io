@@ -1,7 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"namespacemim_1_1plug_1_1tuple.html#aa0f626efa11e91488ddf98be2d80ec8a":[2,0,4,1,21,5],
-"namespacemim_1_1plug_1_1tuple.html#ac27303d7e38479898972453b4e58f1f2":[2,0,4,1,21,4],
 "namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d":[2,0,4,1,21,0],
 "namespacemim_1_1plug_1_1vec.html":[2,0,4,1,22],
 "namespacemim_1_1plug_1_1vec.html#a009bb0ca6ee61eaae893c94c8e145e13":[2,0,4,1,22,13],
@@ -249,5 +247,7 @@ var NAVTREEINDEX24 =
 "structmim_1_1Annex.html#a596c047a68129d48ea1adf08987b2633":[2,0,4,4,6],
 "structmim_1_1Annex.html#a596c047a68129d48ea1adf08987b2633":[4,0,1,4,6],
 "structmim_1_1Annex.html#a77a3df48afdd813f04c126f32f7de554":[2,0,4,4,5],
-"structmim_1_1Annex.html#a77a3df48afdd813f04c126f32f7de554":[4,0,1,4,5]
+"structmim_1_1Annex.html#a77a3df48afdd813f04c126f32f7de554":[4,0,1,4,5],
+"structmim_1_1Annex.html#a9b3df34d947a5fa2c9e9491de34f666f":[2,0,4,4,9],
+"structmim_1_1Annex.html#a9b3df34d947a5fa2c9e9491de34f666f":[4,0,1,4,9]
 };

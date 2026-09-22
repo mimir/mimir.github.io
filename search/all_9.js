@@ -108,7 +108,7 @@ var searchData=
   ['is_5fempty_5fset_105',['is_empty_set',['../namespacemim_1_1plug_1_1ord.html#adf40c77e7d3537a42c2423fb1b4e33c5',1,'mim::plug::ord']]],
   ['is_5ferroring_106',['is_erroring',['../classautomaton_1_1DFANode.html#adae8e83f4bb5815e86e75adbfa5ca46b',1,'automaton::DFANode::is_erroring()'],['../classautomaton_1_1NFANode.html#a3e6c9bd74a2c391c9acff45cc92c9593',1,'automaton::NFANode::is_erroring()']]],
   ['is_5fextern_107',['is_extern',['../structmim_1_1ast_1_1Mods.html#aa4abd95d916b211bb1257a2af0a93339',1,'mim::ast::Mods::is_extern'],['../classmim_1_1ast_1_1Decl.html#a71db72c3d974ac0249a6dfe9bf923989',1,'mim::ast::Decl::is_extern()'],['../classmim_1_1ast_1_1ValDecl.html#a81540b02010f2ac0180199fef91cf84a',1,'mim::ast::ValDecl::is_extern()']]],
-  ['is_5fexternal_108',['is_external',['../classmim_1_1ast_1_1LamDecl.html#a1ba2b16bba501d452a62e34db4784d1b',1,'mim::ast::LamDecl::is_external()'],['../classmim_1_1Def.html#aa3519178f6136b088a41d1bfa0cab603',1,'mim::Def::is_external()']]],
+  ['is_5fexternal_108',['is_external',['../classmim_1_1Def.html#aa3519178f6136b088a41d1bfa0cab603',1,'mim::Def']]],
   ['is_5ffile_5fpath_109',['is_file_path',['../classmim_1_1ast_1_1UseDecl.html#ac234dafb901a482a15ff0152f5f5d7e1',1,'mim::ast::UseDecl']]],
   ['is_5ffinite_110',['is_finite',['../namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059',1,'mim::plug::math::is_finite'],['../math.html#autotoc_md409',1,'is_finite']]],
   ['is_5fflex_111',['is_flex',['../namespacemim.html#af13ff5627285a5c96c9df99a12612858',1,'mim']]],
