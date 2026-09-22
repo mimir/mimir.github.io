@@ -193,26 +193,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('main_8cpp_sour
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        driver.<a class="code hl_function" href="classmim_1_1Driver.html#a50225b299e048c90bc2cdedd7fb82128">load</a>(plugin);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (!driver.<a class="code hl_function" href="classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e">known_args</a>().empty()) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        cli.section(<span class="stringliteral">&quot;Plugin Arguments&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        cli.section(md ? <span class="stringliteral">&quot;Plugin Arguments {#xargs}&quot;</span> : <span class="stringliteral">&quot;Plugin Arguments&quot;</span>);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [plugin, args] : driver.<a class="code hl_function" href="classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e">known_args</a>()) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">auto</span> rows = fe::Cli::Rows();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; arg : args)</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                rows.emplace_back(arg.syntax, arg.descr);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="comment">// The Markdown gets an anchor, so that a plugin&#39;s own page can link to its table.</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keyword">auto</span> title = md ? std::format(<span class="stringliteral">&quot;{0} {{#xarg_{0}}}&quot;</span>, plugin) : plugin;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="comment">// The Markdown links back to the plugin&#39;s page and carries the anchor that page links to.</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keyword">auto</span> title = md ? std::format(<span class="stringliteral">&quot;[{0}](@ref {0}) {{#xarg_{0}}}&quot;</span>, plugin) : plugin;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            cli.section(std::move(title), <span class="stringliteral">&quot;Argument&quot;</span>, std::move(rows));</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (!driver.<a class="code hl_function" href="classmim_1_1Driver.html#a00f6fb77429b6f7b353e95d42b2a1bd2">known_envs</a>().empty()) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        cli.section(<span class="stringliteral">&quot;Plugin Environment Variables&quot;</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        cli.section(md ? <span class="stringliteral">&quot;Plugin Environment Variables {#envs}&quot;</span> : <span class="stringliteral">&quot;Plugin Environment Variables&quot;</span>);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [plugin, envs] : driver.<a class="code hl_function" href="classmim_1_1Driver.html#a00f6fb77429b6f7b353e95d42b2a1bd2">known_envs</a>()) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">auto</span> rows = fe::Cli::Rows();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; env : envs)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                rows.emplace_back(env.name, env.descr);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// The Markdown gets an anchor, so that a plugin&#39;s own page can link to its table.</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keyword">auto</span> title = md ? std::format(<span class="stringliteral">&quot;{0} {{#env_{0}}}&quot;</span>, plugin) : std::string(plugin);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// Ditto.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keyword">auto</span> title = md ? std::format(<span class="stringliteral">&quot;[{0}](@ref {0}) {{#env_{0}}}&quot;</span>, plugin) : std::string(plugin);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            cli.section(std::move(title), <span class="stringliteral">&quot;Variable&quot;</span>, std::move(rows));</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>

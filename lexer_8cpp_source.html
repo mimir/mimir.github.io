@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lexer_8cpp_sou
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span> (accept(utf8::EoF)) {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">if</span> (fenced_) {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                md_flush();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                *md_ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keywordflow">if</span> (md_nls_ == 0) md_emit(<span class="stringliteral">&quot;\n&quot;</span>); <span class="comment">// the buffer may end without one</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                md_close();</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">return</span> tok(Tag::EoF);</div>
@@ -574,23 +574,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lexer_8cpp_sou
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <span class="keywordflow">if</span> (!start_of_file) {</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        md_flush();</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        md_close();</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    }</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i != 3; ++i)</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            next();</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        accept(<span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        md_skip();</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>        accept_while([](<span class="keywordtype">char32_t</span> c) { <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a> != <span class="charliteral">&#39;\n&#39;</span>; });</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        accept(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        md_flush();</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    } <span class="keywordflow">while</span> (start_md());</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    <span class="keywordflow">if</span> (ahead() != utf8::EoF) md_open();</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>}</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>} <span class="comment">// namespace mim::ast</span></div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        md_blank();</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    }</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i != 3; ++i)</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            next();</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        accept(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        md_skip();</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        accept_while([](<span class="keywordtype">char32_t</span> c) { <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33">c</a> != <span class="charliteral">&#39;\n&#39;</span>; });</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        accept(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        md_flush();</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    } <span class="keywordflow">while</span> (start_md());</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keywordflow">if</span> (ahead() != utf8::EoF) md_open();</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>} <span class="comment">// namespace mim::ast</span></div>
 <div class="ttc" id="aclassmim_1_1ast_1_1Lexer_html_a42e53c5a004d50e720671ff63abeb7dc"><div class="ttname"><a href="classmim_1_1ast_1_1Lexer.html#a42e53c5a004d50e720671ff63abeb7dc">mim::ast::Lexer::driver</a></div><div class="ttdeci">Driver &amp; driver()</div><div class="ttdoc">fe::Lexer&#39;s default diagnostics go to its Driver::error.</div><div class="ttdef"><b>Definition</b> <a href="lexer_8h_source.html#l00025">lexer.h:25</a></div></div>
 <div class="ttc" id="aclassmim_1_1ast_1_1Lexer_html_a51d2760ce21f1917efa248596f147e0d"><div class="ttname"><a href="classmim_1_1ast_1_1Lexer.html#a51d2760ce21f1917efa248596f147e0d">mim::ast::Lexer::is_id</a></div><div class="ttdeci">static bool is_id(std::string_view str)</div><div class="ttdoc">Does str match the id production - the same rule Lexer::lex_id applies to the input?</div><div class="ttdef"><b>Definition</b> <a href="#l00219">lexer.cpp:219</a></div></div>
 <div class="ttc" id="aclassmim_1_1ast_1_1Lexer_html_a90fea1e1e499fa571bac95fb0d3afdc0"><div class="ttname"><a href="classmim_1_1ast_1_1Lexer.html#a90fea1e1e499fa571bac95fb0d3afdc0">mim::ast::Lexer::lex</a></div><div class="ttdeci">Tok lex()</div><div class="ttdef"><b>Definition</b> <a href="#l00050">lexer.cpp:50</a></div></div>

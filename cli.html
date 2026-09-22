@@ -346,10 +346,10 @@ Environment Variables</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">CLICOLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to 0.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h1 class="doxsection"><a class="anchor" id="xargs"></a>
 Plugin Arguments</h1>
 <h2 class="doxsection"><a class="anchor" id="xarg_compile"></a>
-compile</h2>
+<a class="el" href="compile.html" title="The compile Plugin">compile</a></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
@@ -359,17 +359,17 @@ compile</h2>
 <td class="markdownTableBodyNone"><span class="tt">no-aggr</span>  </td><td class="markdownTableBodyNone">Forces <span class="tt">compile.aggr</span> to <span class="tt">ff</span>, switching that fixed-point iteration off.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="xarg_ll"></a>
-ll</h2>
+<a class="el" href="ll.html" title="The ll Plugin">ll</a></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">o=&lt;file&gt;, output=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;.ll</span>/<span class="tt">a.ll</span>; <span class="tt">&lt;file&gt;</span> may be <span class="tt">-</span> for stdout.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">How the C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the module; <span class="tt">extern</span> only <span class="tt">declare</span>s them and leaves linking to you.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">How the C runtime wrappers reach the output: <span class="tt">embed</span> (default) splices their LLVM IR into the module; <span class="tt">extern</span> only <span class="tt">declare</span>s them and leaves linking to you.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="xarg_ll_nvptx"></a>
-ll_nvptx</h2>
+<a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
@@ -378,7 +378,7 @@ ll_nvptx</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">o-dev=&lt;file&gt;, output-dev=&lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Writes the device LLVM IR to <span class="tt">&lt;file&gt;</span> instead of the default <span class="tt">&lt;world&gt;_dev.ll</span>/<span class="tt">a_dev.ll</span>; <span class="tt">&lt;file&gt;</span> may be <span class="tt">-</span> for stdout.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C <a class="el" href="plugins.html#plugin_runtime" title="Runtime Wrappers">runtime wrappers</a> such as <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">rt=embed, rt=extern</span>  </td><td class="markdownTableBodyNone">Like <span class="tt">ll</span>'s <span class="tt">rt</span>, but for the host module's C runtime wrappers such as <span class="tt">@<a class="el" href="mim__cuda__rt_8c.html#a8996182d925287d2f68080ff521a6874" title="Aborts the program if a CUDA Driver API call returned a non-zero CUresult.">mim_cu_check</a></span>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">embed, no-embed</span>  </td><td class="markdownTableBodyNone">Embeds the compiled device binary into the host LLVM IR, or doesn't; the default is <span class="tt">embed</span> on Linux and <span class="tt">no-embed</span> elsewhere.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -401,7 +401,7 @@ ll_nvptx</h2>
 <td class="markdownTableBodyNone"><span class="tt">Xfatbinary=&lt;args&gt;</span>  </td><td class="markdownTableBodyNone">When embedding: passes <span class="tt">&lt;args&gt;</span> to <span class="tt">fatbinary</span> (default: none).  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="xarg_tensor"></a>
-tensor</h2>
+<a class="el" href="tensor.html" title="The tensor Plugin">tensor</a></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Argument  </th><th class="markdownTableHeadNone">Description  </th></tr>
@@ -410,10 +410,10 @@ tensor</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">reassoc-vec=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Vector lanes <span class="tt">tensor.reassoc</span> pads a product's vector loop to, so that a bracketing whose intermediates are too narrow to fill a vector is charged for the lanes it leaves idle (<span class="tt">1</span> … <span class="tt">1024</span>, default <span class="tt">8</span>; <span class="tt">1</span> counts plain scalar multiplications).  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h1 class="doxsection"><a class="anchor" id="envs"></a>
 Plugin Environment Variables</h1>
 <h2 class="doxsection"><a class="anchor" id="env_ll_nvptx"></a>
-ll_nvptx</h2>
+<a class="el" href="ll_nvptx.html" title="The ll_nvptx Plugin">ll_nvptx</a></h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
@@ -437,9 +437,9 @@ Diagnostics</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">msvc</span>  </td><td class="markdownTableBodyNone"><span class="tt">path(row,col)</span>  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Plugins</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Search Paths</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> keeps three separate lookups, because the artifacts they find are different in kind: a plugin library is host-native code, a <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is portable source, and a backend runtime belongs to the target.</p>
 <p>Two kinds of entry feed them. A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span> / <span class="tt">-I</span> and their environment variables add. A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself; <span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add one, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>
@@ -465,15 +465,15 @@ Arguments</h2>
 <li>Only the <em>first</em> <span class="tt">:</span> separates <span class="tt">&lt;plugin&gt;</span> from <span class="tt">&lt;arg&gt;</span>, so <span class="tt">&lt;arg&gt;</span> may itself contain <span class="tt">:</span> or <span class="tt">=</span> (e.g. Windows paths or <span class="tt">key=value</span> pairs).</li>
 <li>Arguments are keyed by plugin name and collected on the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">mim::Driver</span></a>. A <a class="el" href="classmim_1_1Phase.html" title="mim::Phase"><span class="tt">mim::Phase</span></a> reads the arguments addressed to its own plugin via <a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb" title="mim::Phase::args"><span class="tt">mim::Phase::args</span></a>; the interpretation of each <span class="tt">&lt;arg&gt;</span> is up to the plugin.</li>
 </ul>
-<p>Each plugin declares the arguments it understands right next to the code that reads them, so the <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations.</p>
+<p>Each plugin declares the arguments it understands as <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="mim::PluginArg"><span class="tt">mim::PluginArg</span></a>s right next to the code that reads them, so the <a class="el" href="#xargs" title="Plugin Arguments"><span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span> tables</a> under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations. A table is titled with a link to the plugin it belongs to - <a class="el" href="#xarg_ll" title="@ref ll &quot;ll&quot;">ll</a>, say - and that plugin's page links back to it.</p>
 <h2 class="doxsection"><a class="anchor" id="clipluginenv"></a>
 Environment Variables</h2>
-<p>A plugin may also read environment variables - typically to locate an external toolchain it shells out to. It declares them as <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="mim::PluginEnv"><span class="tt">mim::PluginEnv</span></a>s next to the code that reads them, so the <em>Plugin Environment Variables</em> tables under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated from those declarations, just like the <span class="tt">-X</span> tables above. Since a plugin only announces them once it is loaded, <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; --help</span> lists the ones belonging to <span class="tt">&lt;plugin&gt;</span>.</p>
+<p>A plugin may also read environment variables - typically to locate an external toolchain it shells out to. It declares them as <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="mim::PluginEnv"><span class="tt">mim::PluginEnv</span></a>s next to the code that reads them, so the <a class="el" href="#envs" title="Plugin Environment Variables"><em>Plugin Environment Variables</em> tables</a> under <a class="el" href="#cliusage" title="Usage">Usage</a> are generated - and cross-linked with the plugin pages - just like the <span class="tt">-X</span> tables above; <a class="el" href="#env_ll_nvptx" title="@ref ll_nvptx &quot;ll_nvptx&quot;">ll_nvptx</a> is one. Since a plugin only announces them once it is loaded, <span class="tt"><a class="el" href="namespacemim.html">mim</a> -p &lt;plugin&gt; --help</span> lists the ones belonging to <span class="tt">&lt;plugin&gt;</span>.</p>
 <div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="mimir.html" title="A Tour of MimIR">A Tour of MimIR</a>  </td><td class="markdownTableBodyRight"><a class="el" href="langref.html" title="Mim Language Reference">Mim Language Reference</a>  </td></tr>
+<td class="markdownTableBodyLeft"><a class="el" href="tutorial.html" title="Tutorial">Tutorial</a>  </td><td class="markdownTableBodyRight"><a class="el" href="langref.html" title="Mim Language Reference">Mim Language Reference</a>  </td></tr>
 </table>
 </div><div class="section_buttons"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->

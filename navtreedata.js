@@ -27,6 +27,7 @@ var NAVTREE =
   [ "MimIR", "index.html", [
     [ "📚 Documentation", "usergroup0.html", [
       [ "A Tour of MimIR", "mimir.html", null ],
+      [ "Tutorial", "tutorial.html", null ],
       [ "Mim Command-Line Reference", "cli.html", null ],
       [ "Mim Language Reference", "langref.html", null ],
       [ "Contributing & Debugging", "coding.html", null ],

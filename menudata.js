@@ -26,6 +26,7 @@ var menudata={children:[
 {text:"Main Page",url:"index.html"},
 {text:"📚 Documentation",url:"usergroup0.html",children:[
 {text:"A Tour of MimIR",url:"mimir.html"},
+{text:"Tutorial",url:"tutorial.html"},
 {text:"Mim Command-Line Reference",url:"cli.html"},
 {text:"Mim Language Reference",url:"langref.html"},
 {text:"Contributing & Debugging",url:"coding.html"},

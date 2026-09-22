@@ -172,7 +172,7 @@ var NAVTREEINDEX18 =
 "lam__spec_8cpp_source.html":[5,0,4,1,2,3],
 "lam__spec_8h.html":[5,0,3,1,2,3],
 "lam__spec_8h_source.html":[5,0,3,1,2,3],
-"langref.html":[0,2],
+"langref.html":[0,3],
 "lattice_8cpp.html":[5,0,4,1,11],
 "lattice_8cpp_source.html":[5,0,4,1,11],
 "lattice_8h.html":[5,0,3,1,11],

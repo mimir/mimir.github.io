@@ -8,5 +8,6 @@ var searchData=
   ['tuple_2ecpp_5',['tuple.cpp',['../plug_2tuple_2tuple_8cpp.html',1,'(Global Namespace)'],['../tuple_8cpp.html',1,'(Global Namespace)']]],
   ['tuple_2eh_6',['tuple.h',['../plug_2tuple_2tuple_8h.html',1,'(Global Namespace)'],['../tuple_8h.html',1,'(Global Namespace)']]],
   ['tuple_2emd_7',['tuple.md',['../tuple_8md.html',1,'']]],
-  ['types_2eh_8',['types.h',['../types_8h.html',1,'']]]
+  ['tutorial_2emd_8',['tutorial.md',['../tutorial_8md.html',1,'']]],
+  ['types_2eh_9',['types.h',['../types_8h.html',1,'']]]
 ];
