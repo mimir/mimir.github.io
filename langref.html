@@ -170,7 +170,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('langref.html',
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_docs_2langref"></a></p>
-<p>This page is the reference for <a class="el" href="namespaceMim.html">Mim</a> surface syntax. Every construct it defines also appears in <span class="tt">lit/docs/tutorial.mim</span>, one annotated file that tours the whole surface syntax and asserts what it shows with <a class="el" href="refly.html" title="The refly Plugin">refly</a>, so the test suite keeps it honest. It is the <a class="el" href="playground.html" title="Playground">playground</a>'s landing example - open it there to run and edit the tour in the browser.</p>
+<p>This page is the reference for <a class="el" href="namespaceMim.html">Mim</a> surface syntax.</p>
+<dl class="section note"><dt>Note</dt><dd>Every construct it defines also appears in <span class="tt">lit/docs/tutorial.mim</span>, one annotated file that tours the whole surface syntax and asserts what it shows with <a class="el" href="refly.html" title="The refly Plugin">refly</a>, so the test suite keeps it honest. It is the <a class="el" href="playground.html" title="Playground">playground</a>'s landing example - open it there to run and edit the tour in the browser.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
 Notation</h1>
 <p>This document uses a lightweight <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>-style notation. A terminal is shaded, a nonterminal is not, and the <a class="el" href="#terminals" title="Terminals">lexical terminals</a> <span class="tt">I</span>, <span class="tt">L</span>, <span class="tt">X_n</span>, <span class="tt">C</span>, and <span class="tt">S</span> have a colour of their own. Clicking a nonterminal or a lexical terminal traces its occurrences across the page. The meta-symbols are:</p>
@@ -438,8 +439,7 @@ Patterns and Telescopes</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (m, ptr) = mem.alloc (I32, 0) m;</div>
 <div class="line">let m        = mem.store (m, ptr, 23:I32);</div>
 <div class="line">let (m, val) = mem.load (m, ptr);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><dl class="section note"><dt>Note</dt><dd>Don't name such a value <span class="tt">mem</span>: it would shadow the module <span class="tt">mem</span>, and the <span class="tt">mem.store</span> on the next line would no longer resolve.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="expr"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="expr"></a>
 Expressions</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Kinds and Builtin Types</h3>
@@ -769,6 +769,12 @@ Lattices</h2>
 <li>the arms of a <span class="tt">match</span> are sorted by their domain</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+Singletons</h2>
+<ul>
+<li><span class="tt">#x</span> -&gt; <span class="tt">e</span> for every <span class="tt">x: «e»</span> - the inhabitant is read off the <em>type</em>, so the var of a <span class="tt">λ (x: «e»)</span> never occurs in the body</li>
+<li><span class="tt">#‹e›</span> -&gt; <span class="tt">e</span> - a special case of the above; a singleton elimination is therefore never built</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 Universes</h2>
 <ul>
 <li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, and a <span class="tt">UMax</span> flattens nested maxima, folds their literals into one, and sorts and deduplicates the rest</li>
