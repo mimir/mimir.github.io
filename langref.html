@@ -385,7 +385,7 @@ Declarations</h2>
 <li><span class="tt">anx I = path</span> declares <span class="tt">I</span> as an alias for the annex denoted by <span class="tt">path</span>.</li>
 <li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations. The declared name is already in scope inside its own body, so such a declaration is recursive. <span class="tt">and</span> extends the group to mutual recursion; a forward reference without <span class="tt">and</span> does not resolve. The corresponding <a class="el" href="#expr" title="Expressions">expression forms</a> are anonymous and cannot refer to themselves.</li>
 <li>The <span class="tt">@</span> of a <span class="tt">dom</span> introduces its partial-evaluation filter.</li>
-<li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
+<li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma, a <a class="el" href="#variant" title="Variants">variant</a>, or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
 <li>After <span class="tt">and</span>, the next declaration may be another <span class="tt">rec</span>-style binding or an explicit <span class="tt">lam</span>, <span class="tt">con</span>, or <span class="tt">fun</span> declaration; an <span class="tt">and</span>-continuation doesn't accept its own modifiers.</li>
 <li><span class="tt">axm</span> declares an axiom. A <span class="tt">tag</span> list declares several axioms of the same type at once, and each <span class="tt">= I</span> adds another name for that tag. Prefixed with a name as in <span class="tt">axm nat.(add, sub): ...</span>, the tags become members of a module of that name.</li>
 <li>An <span class="tt">axm</span>'s <span class="tt">tail</span> is the normalizer, the curry counter, and the trip count, in that order; a trip count requires a curry counter.</li>
@@ -566,7 +566,29 @@ Unions</h3>
 <li><span class="tt">e inj e</span> injects a value into a union type.</li>
 <li><span class="tt">match e with | p =&gt; e | ...</span> eliminates a union value.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="single"></a>
+<h3 class="doxsection"><a class="anchor" id="variant"></a>
+Variants</h3>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;|&quot; (I (&quot;:&quot; e)? (&quot;|&quot; I (&quot;:&quot; e)?)*)?</div>
+<div class="line">arm ::= I p? &quot;=&gt;&quot; e</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
+<li><span class="tt">| I₀: e₀ | ... | Iₙ₋₁: eₙ₋₁</span> forms a variant type: a sum whose cases are <em>positional</em>. A constructor without <span class="tt">: e</span> carries <span class="tt">[]</span>, and a lone <span class="tt">|</span> is the empty variant.</li>
+<li>Unlike <span class="tt">∪</span>, nothing is sorted, deduplicated, or flattened: <span class="tt">| A | B | C</span> has three cases where <span class="tt">[] ∪ [] ∪ []</span> is just <span class="tt">[]</span>, and <span class="tt">| A: Nat | B: Nat</span> keeps both.</li>
+<li>A variant is a type like any other and may be anonymous; <span class="tt">rec</span> makes it recursive, and <span class="tt">and</span> mutually recursive.</li>
+<li>Its last payload extends as far right as it can, and <span class="tt">|</span> never starts an application argument: write <span class="tt">f (| A | B)</span>, and parenthesize a variant inside a <span class="tt">match</span> arm.</li>
+<li><span class="tt">T#I</span> or <span class="tt">T#n</span> on a variant type <span class="tt">T</span> selects a case by constructor name or by index, counting from <span class="tt">0</span>. That is a value for a <span class="tt">[]</span> payload, and a function from the payload into <span class="tt">T</span> otherwise.</li>
+<li>In a <span class="tt">match</span> on a variant, each arm names a constructor, optionally followed by a pattern for its payload. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>
+<li>Constructor names are looked up in the scrutinee's <em>type</em>, so any scrutinee works, not just an annotated variable. Variants are structural, so two of the same shape are the same type; where they put a name at different positions, it is ambiguous and needs an index.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec List = | Nil | Cons: [Nat, List];</div>
+<div class="line"> </div>
+<div class="line">lam len (l: List): Nat =</div>
+<div class="line">    match l with</div>
+<div class="line">        | Nil         =&gt; 0</div>
+<div class="line">        | Cons (_, t) =&gt; core.nat.add (1, len t);</div>
+<div class="line"> </div>
+<div class="line">let xs = List#Cons (1, List#Nil);</div>
+<div class="line">let ys = List#1 (2, xs); // the same constructor, by index</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="single"></a>
 Singletons</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;«&quot; e &quot;»&quot;</div>
 <div class="line">     |  &quot;‹&quot; e &quot;›&quot;</div>
@@ -711,7 +733,8 @@ Field Names of Sigmas</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let i = 1₂;</div>
 <div class="line">rec S = [i j: Nat];</div>
 <div class="line">lam f (x: S): Nat = x#(i);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="normalization"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The constructor names of a <a class="el" href="#variant" title="Variants">variant</a> behave the same way after <span class="tt">#</span>, as in <span class="tt">T#Red</span>. Unlike field names, they also work for an immutable - that is, anonymous and non-recursive - variant.</p>
+<h1 class="doxsection"><a class="anchor" id="normalization"></a>
 Normalizations</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> nodes are hash-consed and normalized while they are built, so the left-hand sides below never reach the IR - <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-mim</span> prints the right-hand side. Every argument is <a class="el" href="classmim_1_1Zonker.html" title="mim::Zonker">zonked</a> first, so a resolved <span class="tt">Hole</span> normalizes like the term it stands for. A <em>mutable</em> node is built empty and filled in afterwards and is therefore never normalized; only its body is. While the <span class="tt">World</span> is frozen, a rule that would have to build a new node bails out instead.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
@@ -775,12 +798,19 @@ Lattices</h2>
 <li>an arm handling no case is dropped; a case handled by no arm is an error</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+Variants</h2>
+<ul>
+<li>a variant is never sorted, deduplicated, or flattened; an empty or one-case variant stays a variant</li>
+<li><span class="tt">match (T#i x) with ...</span> -&gt; the arm for case <span class="tt">i</span></li>
+<li>the arms of a <span class="tt">match</span> on a variant are in the order of its cases, one each</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Singletons</h2>
 <ul>
 <li><span class="tt">#x</span> -&gt; <span class="tt">e</span> for every <span class="tt">x: «e»</span> - the inhabitant is read off the <em>type</em>, so the var of a <span class="tt">λ (x: «e»)</span> never occurs in the body</li>
 <li><span class="tt">#‹e›</span> -&gt; <span class="tt">e</span> - a special case of the above; a singleton elimination is therefore never built</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 Universes</h2>
 <ul>
 <li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, and a <span class="tt">UMax</span> flattens nested maxima, folds their literals into one, and sorts and deduplicates the rest</li>

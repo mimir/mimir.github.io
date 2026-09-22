@@ -47,9 +47,13 @@ var searchData=
   ['copy_5fchildren_44',['copy_children',['../namespacedeploy.html#a50cbd7ea900872934bb57fa18b3b3265',1,'deploy']]],
   ['count_5fconsumers_45',['count_consumers',['../namespacemim_1_1plug_1_1tensor.html#a3c0df2efe3b69a9722d83fed404e81cc',1,'mim::plug::tensor']]],
   ['create_46',['create',['../classmim_1_1Phase.html#a74fd3fbe230a281748348317b8e2be00',1,'mim::Phase']]],
-  ['ctype_47',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
-  ['curr_5fgid_48',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
-  ['curr_5fmut_49',['curr_mut',['../classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70',1,'mim::Rewriter']]],
-  ['curr_5frun_50',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
-  ['curry_51',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
+  ['ctor_47',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html#af2c26faa2fa5ce6549519849253685b3',1,'mim::ast::VariantExpr::Ctor']]],
+  ['ctor_48',['ctor',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#ab872be9e169493211b471b9dd1564060',1,'mim::ast::MatchExpr::Arm::ctor()'],['../classmim_1_1ast_1_1VariantExpr.html#a6b7d11a3e72240250254fc914f52e40f',1,'mim::ast::VariantExpr::ctor()'],['../classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb',1,'mim::ast::Emitter::ctor(const Def *variant, Dbg dbg)']]],
+  ['ctor_5fnames_49',['ctor_names',['../classmim_1_1ast_1_1Emitter.html#aeeedbc29e166c6755c4ccb18f9d348e5',1,'mim::ast::Emitter']]],
+  ['ctors_50',['ctors',['../classmim_1_1ast_1_1VariantExpr.html#a3d9d66cd043fc9ddaf7d17be53c7f971',1,'mim::ast::VariantExpr']]],
+  ['ctype_51',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],
+  ['curr_5fgid_52',['curr_gid',['../classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685',1,'mim::World']]],
+  ['curr_5fmut_53',['curr_mut',['../classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70',1,'mim::Rewriter']]],
+  ['curr_5frun_54',['curr_run',['../classmim_1_1World.html#aeb6530d705b35411f9378cbd4b0f59d3',1,'mim::World']]],
+  ['curry_55',['curry',['../classmim_1_1ast_1_1AxmDecl.html#a745f13618ada33bad73d6f6cb5218650',1,'mim::ast::AxmDecl::curry()'],['../classmim_1_1Axm.html#aec7f0dbaadfa263bd4d845a36217deba',1,'mim::Axm::curry()'],['../classmim_1_1App.html#a441e99ff855d60119f0f665ea3e3ed99',1,'mim::App::curry()']]]
 ];

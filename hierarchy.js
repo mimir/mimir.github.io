@@ -163,6 +163,7 @@ var hierarchy =
         [ "mim::UMax", "classmim_1_1UMax.html", null ],
         [ "mim::Univ", "classmim_1_1Univ.html", null ],
         [ "mim::Var", "classmim_1_1Var.html", null ],
+        [ "mim::Variant", "classmim_1_1Variant.html", null ],
         [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
       ] ],
       [ "mim::Phase", "classmim_1_1Phase.html", [
@@ -234,13 +235,15 @@ var hierarchy =
           [ "mim::ast::SigmaExpr", "classmim_1_1ast_1_1SigmaExpr.html", null ],
           [ "mim::ast::SingleExpr", "classmim_1_1ast_1_1SingleExpr.html", null ],
           [ "mim::ast::TupleExpr", "classmim_1_1ast_1_1TupleExpr.html", null ],
-          [ "mim::ast::TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", null ]
+          [ "mim::ast::TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", null ],
+          [ "mim::ast::VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", null ]
         ] ],
         [ "mim::ast::MatchExpr::Arm", "classmim_1_1ast_1_1MatchExpr_1_1Arm.html", null ],
         [ "mim::ast::Path", "classmim_1_1ast_1_1Path.html", null ],
         [ "mim::ast::PiExpr::Dom", "classmim_1_1ast_1_1PiExpr_1_1Dom.html", [
           [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", null ]
-        ] ]
+        ] ],
+        [ "mim::ast::VariantExpr::Ctor", "classmim_1_1ast_1_1VariantExpr_1_1Ctor.html", null ]
       ] ]
     ] ],
     [ "mim::ast::S", "structmim_1_1ast_1_1S.html", null ],
@@ -350,6 +353,9 @@ var hierarchy =
     [ "mim::Setters&lt; Var &gt;", "classmim_1_1Setters.html", [
       [ "mim::Var", "classmim_1_1Var.html", null ]
     ] ],
+    [ "mim::Setters&lt; Variant &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Variant", "classmim_1_1Variant.html", null ]
+    ] ],
     [ "mim::Setters&lt; Wrap &gt;", "classmim_1_1Setters.html", [
       [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
     ] ],
@@ -370,7 +376,8 @@ var hierarchy =
       [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", null ],
       [ "mim::ast::Path", "classmim_1_1ast_1_1Path.html", null ],
       [ "mim::ast::TupleExpr", "classmim_1_1ast_1_1TupleExpr.html", null ],
-      [ "mim::ast::TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html", null ]
+      [ "mim::ast::TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html", null ],
+      [ "mim::ast::VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", null ]
     ] ],
     [ "mim::detail::w2f_&lt; int &gt;", null, null ],
     [ "mim::detail::w2s_&lt; int &gt;", null, null ],

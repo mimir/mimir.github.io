@@ -30,6 +30,8 @@ var ast_8h =
     [ "mim::ast::InfixExpr", "classmim_1_1ast_1_1InfixExpr.html", "classmim_1_1ast_1_1InfixExpr" ],
     [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", "classmim_1_1ast_1_1MatchExpr" ],
     [ "mim::ast::MatchExpr::Arm", "classmim_1_1ast_1_1MatchExpr_1_1Arm.html", "classmim_1_1ast_1_1MatchExpr_1_1Arm" ],
+    [ "mim::ast::VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", "classmim_1_1ast_1_1VariantExpr" ],
+    [ "mim::ast::VariantExpr::Ctor", "classmim_1_1ast_1_1VariantExpr_1_1Ctor.html", "classmim_1_1ast_1_1VariantExpr_1_1Ctor" ],
     [ "mim::ast::PiExpr", "classmim_1_1ast_1_1PiExpr.html", "classmim_1_1ast_1_1PiExpr" ],
     [ "mim::ast::PiExpr::Dom", "classmim_1_1ast_1_1PiExpr_1_1Dom.html", "classmim_1_1ast_1_1PiExpr_1_1Dom" ],
     [ "mim::ast::LamExpr", "classmim_1_1ast_1_1LamExpr.html", "classmim_1_1ast_1_1LamExpr" ],

@@ -1,5 +1,6 @@
 var classmim_1_1Inj =
 [
+    [ "index", "classmim_1_1Inj.html#a6d60e1eb68e6eafd0ff75416da8a13bc", null ],
     [ "value", "classmim_1_1Inj.html#a167ba717f47e477c876a09252e6e19f3", null ],
     [ "World", "classmim_1_1Inj.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],
     [ "Node", "classmim_1_1Inj.html#a0169bbf1c61bbc7d5313f5d1df390cbd", null ],

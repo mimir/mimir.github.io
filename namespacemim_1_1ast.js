@@ -51,6 +51,7 @@ var namespacemim_1_1ast =
     [ "TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", "classmim_1_1ast_1_1TypeExpr" ],
     [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
     [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
+    [ "VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", "classmim_1_1ast_1_1VariantExpr" ],
     [ "Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],
     [ "Ptr", "namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599", null ],
     [ "Ptrs", "namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482", null ],
@@ -66,6 +67,7 @@ var namespacemim_1_1ast =
       [ "Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],
       [ "Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]
     ] ],
+    [ "emit_ctor", "namespacemim_1_1ast.html#a020b751ee66665044aa55d37ab58ae72", null ],
     [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
     [ "is_lassoc", "namespacemim_1_1ast.html#a1eb898857b7ca5ba98b77ffc52ada0b7", null ],

@@ -92,6 +92,7 @@ var def_8h =
       [ "mim::Node::Merge", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da68be4837f6c739877233e527a996dd00", null ],
       [ "mim::Node::Split", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da8a9e64d86ed12ad40de129bc7f4683b2", null ],
       [ "mim::Node::Bot", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da1448e86d90e0feb307c2894c24e87767", null ],
+      [ "mim::Node::Variant", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a", null ],
       [ "mim::Node::Reform", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da6e2c2a9c1daec19b013ee0c41341a2cd", null ],
       [ "mim::Node::Rule", "namespacemim.html#afb12dbffaaa27bca46f171517d96256daab7a485ebe75b6dd7243ad719f23c7de", null ],
       [ "mim::Node::Single", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da66ba162102bbf6ae31b522aec561735e", null ],

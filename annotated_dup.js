@@ -60,7 +60,8 @@ var annotated_dup =
         [ "TuplePtrn", "classmim_1_1ast_1_1TuplePtrn.html", "classmim_1_1ast_1_1TuplePtrn" ],
         [ "TypeExpr", "classmim_1_1ast_1_1TypeExpr.html", "classmim_1_1ast_1_1TypeExpr" ],
         [ "UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
-        [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ]
+        [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
+        [ "VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", "classmim_1_1ast_1_1VariantExpr" ]
       ] ],
       [ "plug", "namespacemim_1_1plug.html", [
         [ "affine", "namespacemim_1_1plug_1_1affine.html", [
@@ -226,6 +227,7 @@ var annotated_dup =
       [ "UseEq", "structmim_1_1UseEq.html", "structmim_1_1UseEq" ],
       [ "UseHash", "structmim_1_1UseHash.html", "structmim_1_1UseHash" ],
       [ "Var", "classmim_1_1Var.html", "classmim_1_1Var" ],
+      [ "Variant", "classmim_1_1Variant.html", "classmim_1_1Variant" ],
       [ "VarRewriter", "classmim_1_1VarRewriter.html", "classmim_1_1VarRewriter" ],
       [ "Version", "structmim_1_1Version.html", "structmim_1_1Version" ],
       [ "World", "classmim_1_1World.html", "classmim_1_1World" ],

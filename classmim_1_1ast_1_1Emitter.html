@@ -179,6 +179,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2784381e0e08286d42a82d1d7e4f579c" id="r_a2784381e0e08286d42a82d1d7e4f579c"><td class="memItemLeft">fe::Error &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2784381e0e08286d42a82d1d7e4f579c">error</a> ()</td></tr>
 <tr class="memitem:a28759c4620302518f452a04423300e0b" id="r_a28759c4620302518f452a04423300e0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a28759c4620302518f452a04423300e0b">attach</a> (<a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *annex, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> sub, Sym name, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:a28759c4620302518f452a04423300e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">name</code> is <em>this</em> registration's own (unqualified) Dbg::sym; <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8" title="Fully-qualified plugin.tag[.sub] name for own (this decl&#39;s own Dbg::sym), registered for by-name look...">AnnexInfo::qualified</a> turns it into the full <span class="tt">plugin.tag[.sub]</span> name.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Variant Constructors</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Names live on the <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>, so same-shaped <a class="el" href="classmim_1_1ast_1_1VariantExpr.html" title="| ctor_0: type_0 | ... | ctor_n-1: type_n-1; a constructor without a type carries [].">VariantExpr</a>s share one table. </p>
+</div></td></tr>
+<tr class="memitem:a250db3d74a8854d867267be2d44d0c2a" id="r_a250db3d74a8854d867267be2d44d0c2a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a250db3d74a8854d867267be2d44d0c2a">add_ctors</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, const <a class="el" href="classmim_1_1ast_1_1VariantExpr.html">VariantExpr</a> *expr)</td></tr>
+<tr class="memitem:ad46292f406ab335ce1b802d9b70f828e" id="r_ad46292f406ab335ce1b802d9b70f828e"><td class="memItemLeft">std::optional&lt; size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad46292f406ab335ce1b802d9b70f828e">find_ctor</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, Dbg dbg)</td></tr>
+<tr class="memitem:aea0c644551fb2b8f73a9d8bcd62e03fb" id="r_aea0c644551fb2b8f73a9d8bcd62e03fb"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#aea0c644551fb2b8f73a9d8bcd62e03fb">ctor</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, Dbg dbg)</td></tr>
+<tr class="memitem:aeeedbc29e166c6755c4ccb18f9d348e5" id="r_aeeedbc29e166c6755c4ccb18f9d348e5"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aeeedbc29e166c6755c4ccb18f9d348e5">ctor_names</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, size_t i)</td></tr>
+<tr class="memdesc:aeeedbc29e166c6755c4ccb18f9d348e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every name case <code class="param">i</code> goes by, sorted for a deterministic diagnostic; <span class="tt">#i</span> if it has none.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -215,11 +223,44 @@ Public Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00019">ast()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00043">mim::ast::File::emit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00090">mim::ast::File::emit()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a250db3d74a8854d867267be2d44d0c2a" name="a250db3d74a8854d867267be2d44d0c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250db3d74a8854d867267be2d44d0c2a">&#9670;&#160;</a></span>add_ctors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::add_ctors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>variant</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1ast_1_1VariantExpr.html">VariantExpr</a> *</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00038">38</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00732">mim::ast::VariantExpr::ctor()</a>, <a class="el" href="ast_8h_source.html#l00716">mim::ast::VariantExpr::Ctor::dbg()</a>, <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, and <a class="el" href="ast_8h_source.html#l00733">mim::ast::VariantExpr::num_ctors()</a>.</p>
+
+</div>
+</div>
 <a id="a2f9b94cf6c3b3a065893050cfdf3b8f7" name="a2f9b94cf6c3b3a065893050cfdf3b8f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f9b94cf6c3b3a065893050cfdf3b8f7">&#9670;&#160;</a></span>ast()</h2>
 
@@ -296,6 +337,72 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aea0c644551fb2b8f73a9d8bcd62e03fb" name="aea0c644551fb2b8f73a9d8bcd62e03fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0c644551fb2b8f73a9d8bcd62e03fb">&#9670;&#160;</a></span>ctor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::ast::Emitter::ctor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>variant</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dbg</td>          <td class="paramname"><span class="paramname"><em>dbg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00062">62</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, and <a class="el" href="emit_8cpp_source.html#l00048">find_ctor()</a>.</p>
+
+</div>
+</div>
+<a id="aeeedbc29e166c6755c4ccb18f9d348e5" name="aeeedbc29e166c6755c4ccb18f9d348e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeedbc29e166c6755c4ccb18f9d348e5">&#9670;&#160;</a></span>ctor_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string mim::ast::Emitter::ctor_names </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>variant</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Every name case <code class="param">i</code> goes by, sorted for a deterministic diagnostic; <span class="tt">#i</span> if it has none. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00068">68</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+</div>
+</div>
 <a id="af63c0e340a1dbef41a23238343e1da1f" name="af63c0e340a1dbef41a23238343e1da1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af63c0e340a1dbef41a23238343e1da1f">&#9670;&#160;</a></span>driver()</h2>
 
@@ -353,6 +460,43 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00022">22</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00021">driver()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00038">add_ctors()</a>, <a class="el" href="emit_8cpp_source.html#l00062">ctor()</a>, and <a class="el" href="emit_8cpp_source.html#l00048">find_ctor()</a>.</p>
+
+</div>
+</div>
+<a id="ad46292f406ab335ce1b802d9b70f828e" name="ad46292f406ab335ce1b802d9b70f828e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad46292f406ab335ce1b802d9b70f828e">&#9670;&#160;</a></span>find_ctor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; size_t &gt; mim::ast::Emitter::find_ctor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>variant</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dbg</td>          <td class="paramname"><span class="paramname"><em>dbg</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00048">48</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00062">ctor()</a>.</p>
 
 </div>
 </div>
