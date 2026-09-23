@@ -73,6 +73,7 @@ var namespacemim_1_1ast =
     [ "emit_var", "namespacemim_1_1ast.html#a54b0669593d64574a33b773fcac7ae37", null ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
     [ "escape_char", "namespacemim_1_1ast.html#a68ae1f1917eb119bcf6ac2a5af99fbf4", null ],
+    [ "is_block", "namespacemim_1_1ast.html#a639ae4844956cf41c798a7c33e19c40c", null ],
     [ "is_lassoc", "namespacemim_1_1ast.html#a1eb898857b7ca5ba98b77ffc52ada0b7", null ],
     [ "is_rassoc", "namespacemim_1_1ast.html#a50e9195843afe95df3aa715f91e1b32b", null ],
     [ "is_wildcard", "namespacemim_1_1ast.html#a1986780d7d1248fdf645de7080d7cf68", null ],

@@ -4,6 +4,7 @@ var stream_8cpp =
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", "structmim_1_1ast_1_1R" ],
     [ "mim::ast::axm_group_end", "namespacemim_1_1ast.html#a5d8c23a2bc8c52814398b3c677d54ccf", null ],
     [ "mim::ast::escape_char", "namespacemim_1_1ast.html#a68ae1f1917eb119bcf6ac2a5af99fbf4", null ],
+    [ "mim::ast::is_block", "namespacemim_1_1ast.html#a639ae4844956cf41c798a7c33e19c40c", null ],
     [ "mim::ast::operator<<", "namespacemim_1_1ast.html#a1631cb88419d6782f500b090cdb8befc", null ],
     [ "mim::ast::stream_axm", "namespacemim_1_1ast.html#a18f2f4215f25017a4f1c03f5d91766b3", null ],
     [ "mim::ast::stream_axm_group", "namespacemim_1_1ast.html#aedc2890f17d41ce94bac8a249605a243", null ],
