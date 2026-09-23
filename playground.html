@@ -201,21 +201,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('playground.htm
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a>.{js,wasm,data}</span>  </td><td class="markdownTableBodyNone">Emscripten's output; <span class="tt">mim.data</span> carries the plugins' <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> halves and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> runtime.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
 Building</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
 Emscripten</h2>
 <p>Install the SDK once and put it in the environment of every shell that configures or builds:</p>
 <div class="fragment"><div class="line">git clone https://github.com/emscripten-core/emsdk.git ~/emsdk</div>
 <div class="line">~/emsdk/emsdk install 6.0.9 # the version CI pins</div>
 <div class="line">~/emsdk/emsdk activate 6.0.9</div>
 <div class="line">source ~/emsdk/emsdk_env.sh</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
 A native <span class="tt">mim</span> first</h2>
 <p>A cross build cannot run the <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> it just built, but bootstrapping a plugin needs one, so point <span class="tt">MIM_NATIVE_MIM</span> at a native binary — an ordinary <span class="tt">build/bin/mim</span> does. Bring it up to date first:</p>
 <div class="fragment"><div class="line">cmake --build build -j16</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Nothing checks that the binary matches the sources. A <span class="tt">build/bin/mim</span> left over from an earlier state of the tree may abort on startup (<span class="tt">free(): invalid pointer</span>), and every plugin bootstrap fails with it. Rebuild the native tree and try again.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
 Configure and build</h2>
 <div class="fragment"><div class="line">source ~/emsdk/emsdk_env.sh</div>
 <div class="line">emcmake cmake -B build-wasm                     \</div>
@@ -227,13 +227,13 @@ Configure and build</h2>
 <div class="line">    -DMIM_NATIVE_MIM=$PWD/build/bin/mim</div>
 <div class="line">cmake --build build-wasm --target mim_playground -j16</div>
 </div><!-- fragment --><p><span class="tt">mim_playground</span> also stages the page, so a change to it alone is a second's rebuild — no need to touch the compiler.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
 Running</h1>
 <p>The page loads its Worker and wasm over <span class="tt">fetch</span>, which <span class="tt"><a href="file://">file://</a></span> refuses; serve the directory instead:</p>
 <div class="fragment"><div class="line">python3 -m http.server -d build-wasm/playground 8080</div>
 </div><!-- fragment --><p>Then open <a href="http://localhost:8080">http://localhost:8080</a>. The server keeps running until you stop it with <span class="tt">Ctrl-C</span>; after a rebuild just reload the page.</p>
 <dl class="section note"><dt>Note</dt><dd>The browser caches <span class="tt">mim.wasm</span> aggressively. If a freshly built compiler seems to behave like the old one, reload while bypassing the cache (<span class="tt">Ctrl-Shift-R</span>).</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
 Using it</h1>
 <p>The editor compiles on every keystroke, half a second after you stop typing; <b>Run</b> turns into <b>Stop</b> while a run is in flight and kills a program that does not terminate. <em>optimize</em> runs the <a class="el" href="opt.html" title="The opt Plugin">opt</a> pipeline and the <a class="el" href="ll.html" title="The ll Plugin">ll</a> backend; without it the program is only parsed and emitted again. The <b><a class="el" href="namespaceMim.html">Mim</a></b> tab's <em>typed lets</em> box is <span class="tt">--mim-typed-let</span> and its <em>local blocks</em> box is <span class="tt">--mim-local</span>; see <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a> for what each one does. <em>ASCII</em> is <span class="tt">-a</span>, which is a global flag rather than a Mim-only one: it swaps the UTF-8 spellings out of every output, the graph's labels included.</p>
 <p>The <em>vi</em> box in the editor bar switches the editor to vi keybindings — <a href="https://github.com/replit/codemirror-vim">@replit/codemirror-vim</a>, fetched from a CDN the first time you tick it. The bar below the editor shows the mode and takes <span class="tt">:</span> commands; <span class="tt">:w</span> runs the program, which is the only thing there is to write to. The box is remembered across reloads, and it is gone altogether when the editor falls back to a plain textarea because CodeMirror did not load.</p>
@@ -257,15 +257,15 @@ Using it</h1>
 </table>
 <p>See <a class="el" href="cli.html" title="Command-Line Reference">Command-Line Reference</a> for what each one does. Since they are compile-time flags, toggling one re-runs the compiler. <span class="tt">--dot-all-annexes</span> has no checkbox: it buries any program of this size in the annexes it pulls in.</p>
 <p>Layout happens on the page, so a graph beyond 512 KB of DOT is refused rather than attempted. The last two checkboxes are the ones that buy room — on an optimized <span class="tt">ackermann.mim</span> the tooltips are two fifths of the file and the labels another third, and the two together take it from 30 KB to 7 KB. They are what a refused graph needs; the price is the hover text and the ports an edge docks at.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md129"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
 Navigating</h2>
 <p>Drag to pan and turn the wheel to zoom at the pointer; <b>Fit</b>, a double-click, or <span class="tt">0</span> frames the whole graph again, and <span class="tt">+</span>/<span class="tt">-</span> zoom from the keyboard. A re-run keeps the current view: the editor recompiles on every pause in typing, so re-framing each time would leave no way to stay zoomed in on one spot.</p>
 <p>Hovering a node dims everything but that node, its direct neighbours and the edges between them; a click pins that focus, and a click elsewhere or <span class="tt">Esc</span> releases it. The highlight paints detached edges too, so it shows per node what <em>hidden edges</em> shows for the whole graph — without a recompile.</p>
 <p>The button left of the zoom controls opens the graph in a window of its own, with the same controls and nothing else. The page lays the DOT out and sends the SVG over, so the pop-out needs neither Graphviz nor the compiler and follows every re-run — including while the <b>Graph</b> tab itself is down, which leaves the whole page for the editor and the other tabs.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md130"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
 Dark mode</h2>
 <p>The toggle in the header is the <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome</a> one these docs use, staged from the submodule, so both offer the same control and — served from one origin — share the stored preference. The graph's colors are baked by the compiler rather than applied by CSS, so flipping the theme re-runs it with <span class="tt">--dot-dark</span>, which drops the white backdrop and lightens the edges.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md131"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md132"></a>
 CI</h1>
 <p><span class="tt">.github/workflows/playground.yml</span> does all of the above on every push, compiles a program with the binary it just built — a wasm-only regression such as the one behind <span class="tt">Def::ops_ptr</span> fails there instead of silently shipping — and uploads <span class="tt">build-wasm/playground/</span> as an artifact.</p>
 <p>A push to <span class="tt">master</span> also deploys that directory into <span class="tt">playground/</span> of the <a href="https://github.com/mimir/mimir.github.io">site repository</a>, next to the Doxygen output, via <span class="tt"><a class="el" href="deploy_8py.html">docs/deploy.py</a> --subdir playground</span>. The docs deploy sweeps the site root, so <span class="tt">playground/</span> only survives by being listed in that script's <span class="tt">FOREIGN_DIRS</span>. Both workflows push to the same repository from their own concurrency group and rely on the script's rebase retry; they never write the same paths. </p>

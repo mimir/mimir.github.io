@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tutorial.html'
 <li>Every <span class="tt">refly.struc.e</span> below is a <em>static</em> assertion, checked while the graph is built. So this file compiling at all is what tests it.</li>
 </ul>
 </dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md191"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md192"></a>
 Files, Imports, and Modules</h1>
 <p><span class="tt">import foo;</span>, <span class="tt">import "some/dir/foo.mim" as bar;</span>, and <span class="tt">pub import foo as *;</span> bind a file the same way - only <span class="tt">plugin</span> additionally loads a shared object.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;        // loads `libmim_core` and imports `core.mim` under the name `core`</div>
@@ -188,7 +188,7 @@ Files, Imports, and Modules</h1>
 <div class="line">plugin refly;</div>
 <div class="line"> </div>
 <div class="line">use core.ops.u.w;   // `+`, `&lt;`, `&lt;&lt;`, … bound for unsigned `Idx s`, wrapping around</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md192"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
 Lexical Structure</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let dec = 42;               // decimal</div>
 <div class="line">let bin = 0b101010;         // binary</div>
@@ -213,7 +213,7 @@ Lexical Structure</h1>
 <div class="line">let _ = refly.struc.e (tru, tt);</div>
 <div class="line">let _ = refly.struc.e (alt, tt);</div>
 <div class="line">let _ = refly.struc.e (wid, 23:I32);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md194"></a>
 Kinds and Builtin Types</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let univ = Univ;            // the universe of type levels</div>
 <div class="line">let lvl0 = Type (0:Univ);   // the type at level 0 …</div>
@@ -224,7 +224,7 @@ Kinds and Builtin Types</h1>
 <div class="line">let rul  = Rule Nat;        // the type of rewrite rules over `Nat`</div>
 <div class="line"> </div>
 <div class="line">lam bool_is_idx (b: Bool): Idx 2 = b;   // `Bool` abbreviates `Idx i1`; likewise I8 … I64</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md194"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
 Patterns and Telescopes</h1>
 <p><span class="tt">(...)</span> is a pattern and <span class="tt">[...]</span> a telescope: an unnamed element <em>binds</em> in the one and is a <em>type</em> in the other. Position decides which one you need.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam ptrn (a: Nat, _: Bool): Nat = a;</div>
@@ -234,7 +234,7 @@ Patterns and Telescopes</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p>An alias pattern binds the components <em>and</em> the whole value.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (a, b, c) as abc = (23, 42, 66);</div>
 <div class="line">let _ = refly.struc.e (abc, (23, 42, 66));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
 Aggregates</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let tup = (23, 42, 66);     // a tuple</div>
 <div class="line">let pck = ‹3; 7›;           // a pack - and a tuple of equal elements *is* one</div>
@@ -255,7 +255,7 @@ Aggregates</h1>
 <div class="line">    refly.struc.e (t#i#j, t#(i, j));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Unless an extent depends on an earlier index - then the nest stays one array per axis.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let jagged = «i: 3, j: (1, 2, 3)#i; Nat»;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
 Dependent Tuple Types</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let dyn = [n: Nat, «n; Nat»];   // a component mentions a name to its left: a *mutable* sigma</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">rec</span> puts the declared name in scope inside the body - the only way for a type to mention itself - and keeps the sigma mutable even where nothing depends on it.</p>
@@ -273,7 +273,7 @@ Dependent Tuple Types</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec One = [x: Nat];</div>
 <div class="line">lam real_extract (t: «2; One»): Nat = t#1₂#0₁;    // a real Extract into the 1-tuple</div>
 <div class="line">lam axis_folds   (t: «2; One»): One = t#(1₂, 0₁); // the size-1 axis folds away: just `t#1₂`</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
 Functions and Continuations</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -311,14 +311,14 @@ Functions and Continuations</h1>
 <div class="line">    con yes() = return ff;</div>
 <div class="line">    con no () = ret r = even $ (n - 1I32); return r;</div>
 <div class="line">end;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md198"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
 Unions</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam inject (A B: *) (x: A): A ∪ B = x inj A ∪ B;</div>
 <div class="line">lam elim (A B: *) (ab: A ∪ B): Nat =</div>
 <div class="line">    match ab with</div>
 <div class="line">    | _: A =&gt; 0</div>
 <div class="line">    | _: B =&gt; 1;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
 Variants</h1>
 <p>A variant's cases are positional and never merged: these three <span class="tt">[]</span> cases stay three, where <span class="tt">∪</span> would collapse them.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec Color = | Red | Green | Blue;</div>
@@ -339,7 +339,7 @@ Variants</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A variant is a type like any other, so it may just as well be anonymous.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam get (x: | None | Some: Nat): Nat = match x with | None =&gt; 0 | Some n =&gt; n;</div>
 <div class="line">let _ = refly.struc.e (get ((| None | Some: Nat)#Some 42), 42);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md200"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
 Singletons</h1>
 <p><span class="tt">«e»</span> is the singleton type whose sole inhabitant is <span class="tt">e</span> and sits one level above it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam ty   (T: *) (x: T): * = «x»;    // so `«23»` is a type …</div>
@@ -353,7 +353,7 @@ Singletons</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam not_single (x: «2; Nat»): Nat = x#0₂;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">#</span> is a prefix only where an expression starts, so <span class="tt">f #x</span> extracts instead of applying.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = refly.struc.e (#‹2› + 3, 5) where use core.ops.n; end;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
 Infix Operators</h1>
 <p><span class="tt">a op b</span> is sugar for <span class="tt"> `op (a, b) </span> - <a class="el" href="namespaceMim.html">Mim</a> gives the operators no meaning of their own.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let arith = (1 + 2, 5 - 3, 2 * 3, 7 / 2, 7 % 2)       where use core.ops.n; end;</div>
@@ -362,7 +362,7 @@ Infix Operators</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Rebind one and the arithmetic changes with it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let surprise = 2 + 3 where let `+ = core.nat.mul; end;</div>
 <div class="line">let _ = refly.struc.e (surprise, 6);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md202"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
 Modules, Visibility, Annexes, Axioms, and Rules</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod geo {</div>
 <div class="line">    pub let dim = 3;</div>
@@ -389,7 +389,7 @@ Modules, Visibility, Annexes, Axioms, and Rules</h1>
 <div class="line">    norm zro (a: Nat): (a * 0) when (a == a) =&gt; 0;      // its normalizing variant</div>
 <div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>First-class rules are WIP and you can't really do anything useful with them yet.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md204"></a>
 LLVM</h1>
 <p>A bodyless <span class="tt">extern</span> forward-declares a function living in a native translation unit.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">extern con println_i32 [mem.M 0, I32, Cn [mem.M 0]];</div>

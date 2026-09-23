@@ -12,5 +12,6 @@ var classmim_1_1ast_1_1RecDecl =
     [ "emit_decl", "classmim_1_1ast_1_1RecDecl.html#a603da42132febe4a8dfb79c8b2a0dbaa", null ],
     [ "next", "classmim_1_1ast_1_1RecDecl.html#ac7c21cf066f7dbb313f5408b392d49f3", null ],
     [ "stream", "classmim_1_1ast_1_1RecDecl.html#a2b2abade33c01a8318083fa41979c2c5", null ],
-    [ "stream_", "classmim_1_1ast_1_1RecDecl.html#a9888bd51e46c1a8fb19bd52e7e5ea85b", null ]
+    [ "stream_", "classmim_1_1ast_1_1RecDecl.html#a9888bd51e46c1a8fb19bd52e7e5ea85b", null ],
+    [ "stream_chain", "classmim_1_1ast_1_1RecDecl.html#a1fbabd663ed4f0690862461de0b1ad2e", null ]
 ];
