@@ -128,9 +128,9 @@ var NAVTREEINDEX =
 "namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baacecd0f2415ba21a6a908010576282c6d",
 "namespacemim_1_1plug_1_1gpu.html#a5eaa9a2722ece31aabf7e3f5d8795a54",
 "namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dac1111bd512b29e821b120b86446026b8",
-"namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632",
-"static__arg__opt_8cpp.html",
-"structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id"
+"namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be",
+"split__off__kernels_8h_source.html",
+"structmim_1_1ast_1_1AnnexInfo.html#afbf00ed72fef69f6ea539e5ed98214f4"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

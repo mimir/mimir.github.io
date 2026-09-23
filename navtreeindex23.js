@@ -56,11 +56,12 @@ var NAVTREEINDEX23 =
 "namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc":[2,0,4,1,13,2],
 "namespacemim_1_1plug_1_1mem.html#afbf5b5fae36f11d5031d0b7672eabf06":[2,0,4,1,13,11],
 "namespacemim_1_1plug_1_1mem_1_1phase.html":[2,0,4,1,13,0],
-"namespacemim_1_1plug_1_1mem_1_1phase.html#a15bda67947f7f0af1a9307a3d967dda4":[2,0,4,1,13,0,3],
-"namespacemim_1_1plug_1_1mem_1_1phase.html#a9d9568a79751fc87a4d230ee37c8a202":[2,0,4,1,13,0,5],
-"namespacemim_1_1plug_1_1mem_1_1phase.html#ab7f8de36bdae13ccceb6e0cf573a401a":[2,0,4,1,13,0,4],
-"namespacemim_1_1plug_1_1mem_1_1phase.html#acab92e534d4abc11bd41fcc12136090d":[2,0,4,1,13,0,6],
-"namespacemim_1_1plug_1_1mem_1_1phase.html#aeea0dcbb2cf333344a31d37243ad3f83":[2,0,4,1,13,0,2],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#a15bda67947f7f0af1a9307a3d967dda4":[2,0,4,1,13,0,4],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#a1a97fa43f6a1e036734c1fcebd47d7fd":[2,0,4,1,13,0,2],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#a9d9568a79751fc87a4d230ee37c8a202":[2,0,4,1,13,0,6],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#ab7f8de36bdae13ccceb6e0cf573a401a":[2,0,4,1,13,0,5],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#acab92e534d4abc11bd41fcc12136090d":[2,0,4,1,13,0,7],
+"namespacemim_1_1plug_1_1mem_1_1phase.html#aeea0dcbb2cf333344a31d37243ad3f83":[2,0,4,1,13,0,3],
 "namespacemim_1_1plug_1_1nvptx.html":[2,0,4,1,14],
 "namespacemim_1_1plug_1_1nvptx.html#a08e942c03727b7c051996fa7b39aab27":[2,0,4,1,14,2],
 "namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf":[2,0,4,1,14,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba":[2,0,4,1,20,14],
 "namespacemim_1_1plug_1_1tensor.html#ab50f852fce42de48377c115841616c7a":[2,0,4,1,20,43],
 "namespacemim_1_1plug_1_1tensor.html#ab511548cbf48ece2876c0cd008cf7a8b":[2,0,4,1,20,53],
-"namespacemim_1_1plug_1_1tensor.html#abd9f1619367c3c59608291c816a32913":[2,0,4,1,20,56],
-"namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be":[5,0,3,1,3,20,1,0,2]
+"namespacemim_1_1plug_1_1tensor.html#abd9f1619367c3c59608291c816a32913":[2,0,4,1,20,56]
 };

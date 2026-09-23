@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be":[5,0,3,1,3,20,1,0,2],
 "namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632":[2,0,4,1,20,25],
 "namespacemim_1_1plug_1_1tensor.html#ac686361a5e7f522d84adb349b6b90643":[2,0,4,1,20,2],
 "namespacemim_1_1plug_1_1tensor.html#ad569704b20c40f43af9caa1700288ab0":[2,0,4,1,20,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "split__apply_8h_source.html":[5,0,3,1,3,9,0,3],
 "split__off__kernels_8cpp.html":[5,0,4,1,3,9,0,4],
 "split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,4],
-"split__off__kernels_8h.html":[5,0,3,1,3,9,0,4],
-"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4]
+"split__off__kernels_8h.html":[5,0,3,1,3,9,0,4]
 };
