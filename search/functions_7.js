@@ -9,7 +9,7 @@ var searchData=
   ['has_5fsym_6',['has_sym',['../classmim_1_1ast_1_1Tok.html#a109a9d42fc496ebfe29622a8a5f682a3',1,'mim::ast::Tok']]],
   ['has_5fvar_7',['has_var',['../classmim_1_1Def.html#af82f20111e9f1cbdbf910d30341bd4ee',1,'mim::Def::has_var()'],['../classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3',1,'mim::Def::has_var() const']]],
   ['hash_8',['hash',['../classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53',1,'mim::Def']]],
-  ['head_9',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../structmim_1_1sexpr_1_1BB.html#a761f2dbcf68ce4ebb0f1f31bc0c97f3d',1,'mim::sexpr::BB::head()']]],
+  ['head_9',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB']]],
   ['holeexpr_10',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
   ['hook_11',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
   ['hostemitter_12',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab533f6d9e904301676ba050227e3a364',1,'mim::plug::ll_nvptx::HostEmitter']]]

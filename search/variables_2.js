@@ -21,7 +21,7 @@ var searchData=
   ['cu_5fstream_5fdestroy_18',['Cu_Stream_Destroy',['../namespacemim_1_1plug_1_1ll__nvptx.html#ad7318d9743bbe7f324756c9a6101a706',1,'mim::plug::ll_nvptx']]],
   ['cu_5fstream_5fsync_19',['Cu_Stream_Sync',['../namespacemim_1_1plug_1_1ll__nvptx.html#a58c1b2a73540a1053b8457982e8e2ccf',1,'mim::plug::ll_nvptx']]],
   ['curr_5fgid_20',['curr_gid',['../structmim_1_1World_1_1State.html#a8ccafc53565de548c4f754d6564430b8',1,'mim::World::State::POD']]],
-  ['curr_5flam_5f_21',['curr_lam_',['../classmim_1_1Emitter.html#a94ea0cd6b7bbbe32e1c25868317b463d',1,'mim::Emitter']]],
+  ['curr_5flam_5f_21',['curr_lam_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a6dc887a02d5d0b23661854056b21018f',1,'mim::plug::ll::Emitter']]],
   ['curr_5floc_22',['curr_loc',['../structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a',1,'mim::World::State::POD']]],
   ['curr_5fsub_23',['curr_sub',['../structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1',1,'mim::World::State::POD']]],
   ['curry_24',['curry',['../structmim_1_1ast_1_1AnnexInfo.html#a0de87a50f04add9c37858ea6f78d287d',1,'mim::ast::AnnexInfo::[struct].id']]],

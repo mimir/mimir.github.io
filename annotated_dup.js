@@ -141,10 +141,6 @@ var annotated_dup =
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]
         ] ]
       ] ],
-      [ "sexpr", "namespacemim_1_1sexpr.html", [
-        [ "BB", "structmim_1_1sexpr_1_1BB.html", "structmim_1_1sexpr_1_1BB" ],
-        [ "Emitter", "classmim_1_1sexpr_1_1Emitter.html", "classmim_1_1sexpr_1_1Emitter" ]
-      ] ],
       [ "Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
       [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
       [ "App", "classmim_1_1App.html", "classmim_1_1App" ],
@@ -162,7 +158,6 @@ var annotated_dup =
       [ "Dispatch", "classmim_1_1Dispatch.html", "classmim_1_1Dispatch" ],
       [ "DotConfig", "namespacemim.html#structmim_1_1DotConfig", "namespacemim_structmim_1_1DotConfig_dup" ],
       [ "Driver", "classmim_1_1Driver.html", "classmim_1_1Driver" ],
-      [ "Emitter", "classmim_1_1Emitter.html", "classmim_1_1Emitter" ],
       [ "EtaConv", "classmim_1_1EtaConv.html", "classmim_1_1EtaConv" ],
       [ "Ext", "classmim_1_1Ext.html", "classmim_1_1Ext" ],
       [ "Extract", "classmim_1_1Extract.html", "classmim_1_1Extract" ],

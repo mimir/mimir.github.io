@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parts_0',['parts',['../structmim_1_1plug_1_1ll_1_1BB.html#a6c56dd1a2e67307ee56544a626f2de71',1,'mim::plug::ll::BB::parts'],['../structmim_1_1sexpr_1_1BB.html#a1167f8b5349a20c8dd4b7077c8deb756',1,'mim::sexpr::BB::parts']]],
+  ['parts_0',['parts',['../structmim_1_1plug_1_1ll_1_1BB.html#a6c56dd1a2e67307ee56544a626f2de71',1,'mim::plug::ll::BB']]],
   ['path_1',['path',['../classmim_1_1Driver_1_1Imports.html#ad991196f5703893cde292feaba80a8b0',1,'mim::Driver::Imports::Entry']]],
   ['phis_2',['phis',['../structmim_1_1plug_1_1ll_1_1BB.html#a624316e192405d0c58e6bb744767ab08',1,'mim::plug::ll::BB']]],
   ['pi_3',['pi',['../structmim_1_1ast_1_1AnnexInfo.html#af41ba625568bc4967b7c36b886305782',1,'mim::ast::AnnexInfo']]],

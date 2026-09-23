@@ -16,7 +16,6 @@ var hierarchy =
       [ "automaton::NFA", "classautomaton_1_1NFA.html", null ]
     ] ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
-    [ "mim::sexpr::BB", "structmim_1_1sexpr_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
     [ "mim::Checker", "classmim_1_1Checker.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
@@ -161,24 +160,19 @@ var hierarchy =
         [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
       ] ],
       [ "mim::Phase", "classmim_1_1Phase.html", [
-        [ "mim::ClosedMutPhase< Lam >", "classmim_1_1ClosedMutPhase.html", [
-          [ "mim::NestPhase< Lam >", "classmim_1_1NestPhase.html", [
-            [ "mim::Emitter< std::string, std::string, BB, Emitter >", "classmim_1_1Emitter.html", [
-              [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", [
-                [ "mim::plug::ll_nvptx::DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", null ],
-                [ "mim::plug::ll_nvptx::HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", null ]
-              ] ],
-              [ "mim::sexpr::Emitter", "classmim_1_1sexpr_1_1Emitter.html", null ]
-            ] ],
-            [ "mim::Emitter< Value, Type, BB, Child >", "classmim_1_1Emitter.html", null ]
-          ] ]
-        ] ],
         [ "mim::ClosedMutPhase< Def >", "classmim_1_1ClosedMutPhase.html", [
           [ "mim::NestPhase< M >", "classmim_1_1NestPhase.html", null ]
         ] ],
         [ "Named", "classNamed.html", null ],
         [ "mim::Analysis", "classmim_1_1Analysis.html", null ],
-        [ "mim::ClosedMutPhase< M >", "classmim_1_1ClosedMutPhase.html", null ],
+        [ "mim::ClosedMutPhase< M >", "classmim_1_1ClosedMutPhase.html", [
+          [ "mim::NestPhase< Lam >", "classmim_1_1NestPhase.html", [
+            [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", [
+              [ "mim::plug::ll_nvptx::DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", null ],
+              [ "mim::plug::ll_nvptx::HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", null ]
+            ] ]
+          ] ]
+        ] ],
         [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", null ],
         [ "mim::RWBase", "classmim_1_1RWBase.html", null ],
         [ "mim::Unload", "classmim_1_1Unload.html", null ],
