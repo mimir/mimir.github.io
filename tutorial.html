@@ -336,6 +336,9 @@ Variants</h1>
 <div class="line">    | Nil         =&gt; 0</div>
 <div class="line">    | Cons (h, _) =&gt; h;</div>
 <div class="line">let _ = refly.struc.e (first (Nats#Cons (23, Nats#Nil)), 23);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>An arm selects its case by index just as well, exactly like <span class="tt">T#n</span> does.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam first_by_index (l: Nats): Nat = match l with | 0 =&gt; 0 | 1 (h, _) =&gt; h;</div>
+<div class="line">let _ = refly.struc.e (first_by_index (Nats#Cons (23, Nats#Nil)), 23);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A variant is a type like any other, so it may just as well be anonymous.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam get (x: | None | Some: Nat): Nat = match x with | None =&gt; 0 | Some n =&gt; n;</div>
 <div class="line">let _ = refly.struc.e (get ((| None | Some: Nat)#Some 42), 42);</div>

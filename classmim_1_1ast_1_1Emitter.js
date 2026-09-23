@@ -10,5 +10,6 @@ var classmim_1_1ast_1_1Emitter =
     [ "driver", "classmim_1_1ast_1_1Emitter.html#af63c0e340a1dbef41a23238343e1da1f", null ],
     [ "error", "classmim_1_1ast_1_1Emitter.html#a2784381e0e08286d42a82d1d7e4f579c", null ],
     [ "find_name", "classmim_1_1ast_1_1Emitter.html#a598e36f52bf0a6bbea09cec7fb72e228", null ],
+    [ "variant_str", "classmim_1_1ast_1_1Emitter.html#afa9148c5104e43a67becf5a35e40bbd8", null ],
     [ "world", "classmim_1_1ast_1_1Emitter.html#a4d8496ba716eead72b41b4f709361792", null ]
 ];

@@ -564,15 +564,15 @@ Unions</h3>
 <h3 class="doxsection"><a class="anchor" id="variant"></a>
 Variants</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;|&quot; (I (&quot;:&quot; e)? (&quot;|&quot; I (&quot;:&quot; e)?)*)?</div>
-<div class="line">arm ::= I p? &quot;=&gt;&quot; e</div>
+<div class="line">arm ::= (I | L) p? &quot;=&gt;&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">| I₀: e₀ | ... | Iₙ₋₁: eₙ₋₁</span> forms a variant type: a sum whose cases are <em>positional</em>. A constructor without <span class="tt">: e</span> carries <span class="tt">[]</span>, and a lone <span class="tt">|</span> is the empty variant.</li>
 <li>Unlike <span class="tt">∪</span>, nothing is sorted, deduplicated, or flattened: <span class="tt">| A | B | C</span> has three cases where <span class="tt">[] ∪ [] ∪ []</span> is just <span class="tt">[]</span>, and <span class="tt">| A: Nat | B: Nat</span> keeps both.</li>
 <li>A variant is a type like any other and may be anonymous; <span class="tt">rec</span> makes it recursive, and <span class="tt">and</span> mutually recursive.</li>
 <li>Its last payload extends as far right as it can, and <span class="tt">|</span> never starts an application argument: write <span class="tt">f (| A | B)</span>, and parenthesize a variant inside a <span class="tt">match</span> arm.</li>
 <li><span class="tt">T#I</span> or <span class="tt">T#n</span> on a variant type <span class="tt">T</span> selects a case by constructor name or by index, counting from <span class="tt">0</span>. That is a value for a <span class="tt">[]</span> payload, and a function from the payload into <span class="tt">T</span> otherwise.</li>
-<li>In a <span class="tt">match</span> on a variant, each arm names a constructor, optionally followed by a pattern for its payload. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>
-<li>Constructor names are looked up in the scrutinee's <em>type</em>, so any scrutinee works, not just an annotated variable. Variants are structural, so two of the same shape are the same type; where they put a name at different positions, it is ambiguous and needs an index.</li>
+<li>In a <span class="tt">match</span> on a variant, each arm names a constructor or gives its index, optionally followed by a pattern for its payload. <span class="tt">| 1 (h, t) =&gt; e</span> selects the same case as <span class="tt">| Cons (h, t) =&gt; e</span>, just as <span class="tt">T#1</span> and <span class="tt">T#Cons</span> do. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>
+<li>Constructor names are looked up in the scrutinee's <em>type</em>, so any scrutinee works, not just an annotated variable. Variants are structural, so two of the same shape are the same type; where they put a name at different positions, it is ambiguous and needs an index. A name reaches only the type it was declared on, so an instance of a polymorphic variant such as <span class="tt">V T</span> carries none and its cases are selected by index.</li>
 </ul>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec List = | Nil | Cons: [Nat, List];</div>
 <div class="line"> </div>

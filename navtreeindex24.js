@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1tensor.html#ac43a7dd1b59044becd04c763e03f8632":[2,0,4,1,20,25],
+"namespacemim_1_1plug_1_1tensor.html#ac686361a5e7f522d84adb349b6b90643":[2,0,4,1,20,2],
+"namespacemim_1_1plug_1_1tensor.html#ad569704b20c40f43af9caa1700288ab0":[2,0,4,1,20,8],
+"namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37":[2,0,4,1,20,28],
 "namespacemim_1_1plug_1_1tensor.html#ae1fdc14eb6abcb8076cf61c55f87a9be":[2,0,4,1,20,26],
 "namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e":[2,0,4,1,20,13],
 "namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5":[2,0,4,1,20,30],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "split__off__kernels_8cpp.html":[5,0,4,1,3,9,0,4],
 "split__off__kernels_8cpp_source.html":[5,0,4,1,3,9,0,4],
 "split__off__kernels_8h.html":[5,0,3,1,3,9,0,4],
-"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4],
-"static__arg__opt_8cpp.html":[5,0,4,1,2,8],
-"static__arg__opt_8cpp_source.html":[5,0,4,1,2,8],
-"static__arg__opt_8h.html":[5,0,3,1,2,8],
-"static__arg__opt_8h_source.html":[5,0,3,1,2,8]
+"split__off__kernels_8h_source.html":[5,0,3,1,3,9,0,4]
 };
