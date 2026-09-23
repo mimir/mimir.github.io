@@ -171,73 +171,73 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mem.html','','
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2mem"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mim::plug::mem</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="memM"></a>
 M</h2>
 <p>This type tracks all kinds of side effects in the given address space.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm M: Nat → *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
 Ptr</h2>
 <p>Pointer type with <em>pointee</em> type <span class="tt">T</span> and <em>address space</em> <span class="tt">a</span>. At the moment, the <em>address space</em> is not really used and serves as a placeholder for future work.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Ptr: [*, Nat] → *;</div>
 <div class="line"> </div>
 <div class="line">anx lam Ptr0(T: *): * = Ptr (T, 0);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md424"></a>
 Operations w/ Side Effects</h1>
 <p>The following operations have side effects. For this reason, they consume a <span class="tt">mem.M a</span> and yield a new <span class="tt">mem.M a</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md425"></a>
 load</h2>
 <p>Loads the pointee of type <span class="tt">T</span> from a pointer of type <span class="tt">mem.Ptr (T, a)</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm load: {T: *, a: Nat} as Ta → [M a, Ptr Ta] → [M a, T], normalize_load;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md424"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md426"></a>
 store</h2>
 <p>Stores a value of type <span class="tt">T</span> to the location pointed to by a pointer of type <span class="tt">mem.Ptr (T, a)</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm store: {T: *, a: Nat} as Ta → [M a, Ptr Ta, T] → M a, normalize_store;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md425"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md427"></a>
 fresh</h2>
 <p>Passes a <em>fresh</em> <span class="tt">mem.M a</span> for address space <span class="tt">a</span> to its return continuation: <span class="tt">ret mem = mem.fresh $ 0</span>. Conversion-only phases (e.g. <span class="tt">tensor.lower_to_mem</span>) emit memory operations before memory has been threaded. Each call site's return continuation is a distinct mutable, so the received memories are distinct by construction - hash-consing cannot collapse two otherwise identical memory operations into one. <span class="tt">mem.add_mem</span> resolves each call by jumping to the continuation with the memory that is current at that point.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fresh: Fn [a: Nat] → M a;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md426"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
 alloc</h2>
 <p>Allocates memory of type <span class="tt">T</span> in address space <span class="tt">a</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm alloc: [*, a: Nat] as Ta → [M a] → [M a, Ptr Ta];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md427"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
 slot</h2>
 <p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The slot is passed to the continuation and its lifetime is scoped to that continuation.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm slot: [*, a: Nat] as Ta → Fn M a → [M a, Ptr Ta];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md430"></a>
 malloc</h2>
 <p>Allocates memory of type <span class="tt">T</span> in address space <span class="tt">a</span>. The difference to <span class="tt">mem.alloc</span> is that the size is passed explicitly (in bytes) instead of being derived from <span class="tt">T</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm malloc: [*, a: Nat] as Ta → [M a, Nat] → [M a, Ptr Ta];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md431"></a>
 free</h2>
 <p>Frees memory of type <span class="tt">T</span> in address space <span class="tt">a</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm free: {*, a: Nat} as Ta → [M a, Ptr Ta] → M a;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md430"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md432"></a>
 mslot</h2>
 <p>Reserves a stack slot for type <span class="tt">T</span> in address space <span class="tt">a</span>. The reserved slot will be <span class="tt">size</span> bytes large. The slot is passed to the continuation and its lifetime is scoped to that continuation.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mslot: [*, a: Nat] as Ta → Fn [M a, size: Nat] → [M a, Ptr Ta];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md431"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md433"></a>
 Operations w/o Side Effects</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md432"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md434"></a>
 lea</h2>
 <p>Load effective address. Performs address computation by offsetting the passed pointer with index <span class="tt">i</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lea: {n: Nat, Ts: «n; *», a: Nat} → [Ptr («j: n; Ts#j», a), i: Idx n] → Ptr (Ts#i, a), normalize_lea;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md433"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md435"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md434"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md436"></a>
 add_mem</h2>
 <p>Threads <span class="tt">mem.M</span> through functions that lack it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm add_mem: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md435"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md437"></a>
 seo</h2>
 <p>Symbolic Expression Optimization — SSA construction, expression propagation, and GVN in one fixed point (see <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html" title="Symbolic Expression Optimization.">mim::plug::mem::phase::SEO</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm seo: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md436"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md438"></a>
 alloc2malloc_repl</h2>
 <p>Rewrites <span class="tt">mem.alloc</span> / <span class="tt">mem.slot</span> into <span class="tt">mem.malloc</span> / <span class="tt">mem.mslot</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm alloc2malloc_repl: compile.Phase;</div>
