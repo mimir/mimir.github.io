@@ -171,15 +171,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gpu.html','','
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2gpu"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1gpu.html" title="The gpu Plugin">mim::plug::gpu</a></dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md349"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md350"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
 <div class="line">plugin buffer;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md350"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md351"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md351"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md352"></a>
 Address Spaces</h2>
 <p>Address space numbers correlate to the ones used by LLVM. </p><dl class="section see"><dt>See also</dt><dd></dd></dl>
 <ul>
@@ -190,55 +190,55 @@ Address Spaces</h2>
 <div class="line">anx let addr_space_shared = 3;</div>
 <div class="line">anx let addr_space_const  = 4;</div>
 <div class="line">anx let addr_space_local  = 5;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md352"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md353"></a>
 Memory Types</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let GlobalM = mem.M addr_space_global;</div>
 <div class="line">anx let SharedM = mem.M addr_space_shared;</div>
 <div class="line">anx let ConstM  = mem.M addr_space_const;</div>
 <div class="line">anx let LocalM  = mem.M addr_space_local;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md353"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md354"></a>
 Pointer Types</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam GlobalPtr(T: *): * = mem.Ptr (T, addr_space_global);</div>
 <div class="line">anx lam SharedPtr(T: *): * = mem.Ptr (T, addr_space_shared);</div>
 <div class="line">anx lam ConstPtr(T: *): *  = mem.Ptr (T, addr_space_const);</div>
 <div class="line">anx lam LocalPtr(T: *): *  = mem.Ptr (T, addr_space_local);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md354"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md355"></a>
 Stream Types</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Stream: *;</div>
 <div class="line">axm default_stream: Stream;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md355"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md356"></a>
 Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md356"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md357"></a>
 Context</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md357"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md358"></a>
 init</h3>
 <p>Initializes the GPU runtime.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// TODO: consider allowing multiple contexts and configuration of device number or context flags</div>
 <div class="line">axm init: mem.M 0 → [mem.M 0, GlobalM, ConstM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md358"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md359"></a>
 deinit</h3>
 <p>Deinitializes the GPU runtime.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm deinit: [mem.M 0, GlobalM, ConstM] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md359"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md360"></a>
 auto_init / auto_deinit</h3>
 <p>The compiler-inserted counterparts of gpu.init / gpu.deinit. gpu.lower_btensor_map_reduce uses these instead of calling gpu.init / gpu.deinit directly, so a backend can recognize and collapse the sessions it creates without touching one that the user opened by hand.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm auto_init: mem.M 0 → [mem.M 0, GlobalM, ConstM];</div>
 <div class="line">axm auto_deinit: [mem.M 0, GlobalM, ConstM] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md360"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md361"></a>
 Streams</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md361"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md362"></a>
 stream_init</h3>
 <p>Initializes a stream.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm stream_init: [mem.M 0, GlobalM, mem.Ptr0 Stream] → [mem.M 0, GlobalM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md362"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md363"></a>
 stream_deinit</h3>
 <p>Deinitializes a stream.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm stream_deinit: [mem.M 0, GlobalM, Stream] → [mem.M 0, GlobalM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md363"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md364"></a>
 stream_sync</h3>
 <p>Waits for a stream to finish all its work.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm stream_sync: [mem.M 0, GlobalM, Stream] → [mem.M 0, GlobalM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md364"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md365"></a>
 with_streams</h2>
 <p>Provides <span class="tt">n</span> streams to <span class="tt">func</span> for executing asynchronous GPU operations, managing their initialization and teardown.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx fun with_streams (n: Nat, func: Fn [mem.M 0, GlobalM, «n; Stream»] → [mem.M 0, GlobalM])</div>
@@ -279,37 +279,37 @@ with_streams</h2>
 <div class="line">                    end;</div>
 <div class="line">            end;</div>
 <div class="line">    end;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md365"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md366"></a>
 Blocking / Async Memory Operations</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md366"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
 alloc(block) / alloc(asyn)</h3>
 <p>Allocates memory on the device (in global address space), synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc {</div>
 <div class="line">    axm block: [T: *] → GlobalM → [GlobalM, GlobalPtr T];</div>
 <div class="line">    axm asyn:  [T: *] → [GlobalM, Stream] → [GlobalM, GlobalPtr T];</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md367"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md368"></a>
 free(block) / free(asyn)</h3>
 <p>Frees memory on the device (in global address space), synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod free {</div>
 <div class="line">    axm block: {T: *} → [GlobalM, GlobalPtr T] → GlobalM;</div>
 <div class="line">    axm asyn:  {T: *} → [GlobalM, GlobalPtr T, Stream] → GlobalM;</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md368"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
 copy_to_device(block) / copy_to_device(asyn)</h3>
 <p>Copies data from host memory to device memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_device {</div>
 <div class="line">    axm block: {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T] → [mem.M 0, GlobalM];</div>
 <div class="line">    axm asyn:  {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T, Stream] → [mem.M 0, GlobalM];</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md369"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
 copy_to_host(block) / copy_to_host(asyn)</h3>
 <p>Copies data from device memory to host memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_host {</div>
 <div class="line">    axm block: {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T] → [mem.M 0, GlobalM];</div>
 <div class="line">    axm asyn:  {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T, Stream] → [mem.M 0, GlobalM];</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md370"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
 alloc_copy(block) / alloc_copy(asyn)</h3>
 <p>Allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc_copy {</div>
@@ -327,23 +327,23 @@ alloc_copy(block) / alloc_copy(asyn)</h3>
 <div class="line">        let (m0, m1) = copy_to_device.asyn (m0, m1, ptr, d_ptr, stream);</div>
 <div class="line">        (m0, m1, d_ptr);</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
 Buffer Operations</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
 buf_alloc_copy</h3>
 <p>Placeholder for copying a host-side <span class="tt">buffer.Buf</span> to the device. Unlike <span class="tt">gpu.alloc_copy(block)</span>, this operates directly on the still-abstract <span class="tt">buffer.Buf</span></p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm buf_alloc_copy: {r: Nat, s: «r; Nat», T: *}</div>
 <div class="line">                  → [mem.M 0, GlobalM, buffer.Buf (r, s, T)]</div>
 <div class="line">                  → [mem.M 0, GlobalM, GlobalPtr «s; T»];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
 buf_copy_to_host</h3>
 <p>Placeholder for copying device data to a host-side <span class="tt">buffer.Buf</span>. Unlike <span class="tt">gpu.copy_to_host(block)</span>, this operates directly on the still-abstract <span class="tt">buffer.Buf</span></p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm buf_copy_to_host: {r: Nat, s: «r; Nat», T: *}</div>
 <div class="line">                  → [mem.M 0, GlobalM, GlobalPtr «s; T», buffer.Buf (r, s, T)]</div>
 <div class="line">                  → [mem.M 0, GlobalM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
 Kernel Launch</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
 launch</h3>
 <p>Launches a kernel function on the device with dynamic shared memory and module symbols.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// TODO: refactor to {n m: N, Ts: «n; *»} as soon as type inference bug is fixed</div>
@@ -355,13 +355,13 @@ launch</h3>
 <div class="line">          → «i: n; Ts#i»</div>
 <div class="line">          → Fn [mem.M 0, GlobalM, ConstM]</div>
 <div class="line">          → [mem.M 0, GlobalM, ConstM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
 Work-Item Synchronization</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
 sync_work_items</h3>
 <p>Low-level operation to synchronize all work-items in the same work-group.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sync_work_items: [GlobalM, SharedM] → [GlobalM, SharedM];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md378"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
 synced_scope</h3>
 <p>Runs <span class="tt">scope</span> bracketed by work-item synchronization: syncs, runs <span class="tt">scope</span>, and syncs again.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// TODO: consider variadic arguments and returns values for the scope</div>
@@ -372,33 +372,33 @@ synced_scope</h3>
 <div class="line">    let (m1, m3) = scope (m1, m3);</div>
 <div class="line">    let (m1, m3) = sync_work_items (m1, m3);</div>
 <div class="line">    (m1, m3);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md379"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md380"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md380"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md381"></a>
 check_addr_spaces_repl</h2>
 <p>Rejects address-space misuse: <span class="tt">mem.malloc</span> / <span class="tt">mem.free</span> outside the global address space, <span class="tt">mem.mslot</span> in the global or const one, and <span class="tt">mem.store</span> into the const one.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check_addr_spaces_repl: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md381"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md382"></a>
 host_malloc2gpualloc_repl</h2>
 <p>Rewrites <span class="tt">mem.malloc</span> / <span class="tt">mem.free</span> in the global address space into <span class="tt">gpu.alloc</span> / <span class="tt">gpu.free</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm host_malloc2gpualloc_repl: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md382"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md383"></a>
 mem_checks</h2>
 <p>Rejects <span class="tt">mem.M</span> crossing a device boundary — passed to a <span class="tt">gpu.launch</span> kernel, or taken/returned by <span class="tt"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></span> with a non-zero address space.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mem_checks: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md383"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md384"></a>
 remove_double_syncs</h2>
 <p>Drops a <span class="tt">sync_work_items</span> whose memories come from the immediately preceding sync or from the kernel entry.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm remove_double_syncs: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md384"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md385"></a>
 split_apply</h2>
 <p>Splits the kernels off into a device world, then runs <span class="tt">host_specific_phases</span> on the host world and <span class="tt">device_specific_phases</span> on the device world.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm split_apply: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md385"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md386"></a>
 lower_btensor_map_reduce</h2>
 <p>Lowers <span class="tt">btensor.map_reduce_post</span> to a kernel launch; skipped if the program already contains an explicit <span class="tt">init</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_btensor_map_reduce: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md386"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md387"></a>
 Pipelines</h2>
 <p>The two sub-pipelines <span class="tt">split_apply</span> runs on the worlds it has just split apart; override them to plug target-specific phases into either side.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam host_specific_phases () = host_malloc2gpualloc_repl;</div>

@@ -614,7 +614,29 @@ Why this is hard elsewhere</h3>
 <li><b>Sea-of-nodes</b> deliberately refuses that commitment: data nodes float, and only control, φ, and memory nodes are pinned. That freedom is the entire point — it is what lets the optimizer move computations around without fighting a premature schedule. But it makes availability ill-posed: a floating expression has no location, so <em>"is it available here?"</em> is not even a well-formed question until the node is anchored. To answer it you must reason about where the expression's transitively control-pinned inputs would sit — that is, run (at least partial) global code motion and consult the CFG dominator relation. So copy/expression propagation drags the schedule — precisely what sea-of-nodes set out to avoid — back into the picture.</li>
 </ul>
 <p>MimIR sidesteps the dilemma without introducing syntactic scope: it is a <em>scopeless</em> IR. There are no lexical scoping brackets that a <span class="tt">Lam</span> opens over its body; instead, scope is <em>implicit</em>, emerging from how free variables nest. <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> reads availability straight off that implicit nesting — <span class="tt">L</span> nests <span class="tt">def</span> iff <span class="tt">def</span> transitively depends on a variable bound below <span class="tt">L</span> — so the containment a lexical language would spell out with explicit brackets is recovered purely from the free-variable structure MimIR maintains anyway. The query is structural and commits to no schedule, so MimIR gets a compelling, schedule-free answer to the availability question that dominance-based and sea-of-nodes IRs can only reconstruct by (partially) scheduling first.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+A second dominance: contification</h3>
+<p>The availability guard is not the only place where a classical dominance computation fails to materialize.</p>
+<p><a href="https://dl.acm.org/doi/10.1145/507635.507639">Contification</a> turns a function that always returns to the same place into a continuation. Here is the canonical example of Fluet &amp; Weeks, transcribed into <a class="el" href="namespaceMim.html">Mim</a> with their original in the comment.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+<div class="line">plugin mem;</div>
+<div class="line"> </div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
+<div class="line">// fun g y = y - 1</div>
+<div class="line">// fun f b = (if b then g 13 else g 15) + 1</div>
+<div class="line">extern fun f (b: Bool): Nat =</div>
+<div class="line">    (l2, l1)#b () where</div>
+<div class="line">        con l1 () = g (13, k);</div>
+<div class="line">        con l2 () = g (15, k);</div>
+<div class="line">        fun g (y: Nat): Nat = return (y - 1);</div>
+<div class="line">        con k (x: Nat) = return (x + 1);</div>
+<div class="line">    end;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>Both calls to <span class="tt">g</span> return to the same continuation <span class="tt">k</span>, so <span class="tt">g</span> can become a continuation inside <span class="tt">f</span>. Their algorithm computes <em>where</em> the contified function goes from the dominator tree of the program's call graph, and proves that choice optimal within their framework. That placement is a real decision with a wrong answer: a continuation may only be jumped to from within its scope, so putting <span class="tt">g</span> too far in hides it from some of its call sites, and too far out is not expressible at all.</p>
+<p>MimIR never makes the decision. A return continuation is an ordinary parameter, so the join described above already covers it: once every call site passes the same continuation, that parameter is propagated away and <span class="tt">g</span>'s body transfers control straight to it. Contification is not a separate transformation here — it is what expression propagation looks like when the propagated expression happens to be a <a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="mim::Pi::isa_cn"><span class="tt">Cn</span></a>.</p>
+<p>Placement then takes care of itself, because where a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> sits is a function of its free variables and not of anything a phase decides. Before propagation <span class="tt">g</span> is closed, so it belongs to the top level even when it was written inside <span class="tt">f</span>. After propagation <span class="tt">g</span> mentions <span class="tt">f</span>'s continuation, so it belongs inside <span class="tt">f</span>. Neither move is carried out by anything; both are readings of the very free-variable structure that <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> already queries for availability.</p>
+<p>The contrast with a scoped compiler is sharp. MLton runs contification <em>after</em> closure conversion, and Fluet &amp; Weeks describe their own loop example as moving <span class="tt">loop</span> back inside <span class="tt">sum</span> after closure conversion took it out — a dominator analysis reconstructing a nesting that an earlier phase destroyed. A scopeless IR never loses that nesting, so there is no hoisting-versus-contification phase ordering to get right and no oracle to consult.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
 Transformation</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;sccp.h&quot;</span></div>
 <div class="line"> </div>
@@ -672,7 +694,7 @@ Transformation</h2>
 <li>rewrite into a new world using the computed facts,</li>
 <li>swap worlds.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Discussion</h2>
 <p>Separating SCCP into analysis and rewrite keeps both parts simple:</p>
 <ul>
@@ -683,7 +705,7 @@ Discussion</h2>
 </ul>
 <p>This separation is the main design pattern to follow for nontrivial optimizations.</p>
 <dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 130 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
 Choosing the Right Base Class</h1>
 <p>A useful rule of thumb is:</p>
 <ul>
@@ -694,7 +716,7 @@ Choosing the Right Base Class</h1>
 <li>derive from <a class="el" href="classmim_1_1ClosedMutPhase.html" title="mim::ClosedMutPhase"><span class="tt">ClosedMutPhase</span></a> if you want to visit all reachable closed mutables,</li>
 <li>derive from <a class="el" href="classmim_1_1NestPhase.html" title="mim::NestPhase"><span class="tt">NestPhase</span></a> if that visit should come with a computed <a class="el" href="classmim_1_1Nest.html" title="mim::Nest"><span class="tt">Nest</span></a>.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
 Recommended Design Pattern</h1>
 <p>For most optimization phases, the preferred structure is:</p>
 <ol type="1">
@@ -703,7 +725,7 @@ Recommended Design Pattern</h1>
 <li>write an <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> that consumes those facts while rebuilding the world.</li>
 </ol>
 <p>This keeps analyses and transformations cleanly separated and fits naturally with MimIR's rewriting-based infrastructure.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
 Minimal Examples</h1>
 <p>A simple whole-world rewrite phase:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>Simplify : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1RWPhase.html">mim::RWPhase</a> {</div>
@@ -742,10 +764,10 @@ Minimal Examples</h1>
 <div class="line">analysis.run();</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;Simplify&gt;</a>(world);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
 Compilation Pipelines in M⁠im</h2>
 <p>You can also expose your custom phases as axioms in <a class="el" href="namespaceMim.html">Mim</a> via the <a class="el" href="compile.html" title="The compile Plugin">compile plugin</a> and build your own compilation pipeline. <a class="el" href="namespaceMim.html">Mim</a>'s default compilation pipeline is defined in the <a class="el" href="opt.html" title="The opt Plugin">opt plugin</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
 Summary</h1>
 <p>Phases are MimIR's main unit of compiler work.</p>
 <ul>

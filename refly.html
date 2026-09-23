@@ -172,36 +172,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('refly.html',''
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2refly"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1refly.html" title="The refly Plugin">mim::plug::refly</a></dd></dl>
 <p>The refly plugin allows you to <a href="https://en.wikipedia.org/wiki/Reification_(computer_science)">reify</a> and <a href="https://en.wikipedia.org/wiki/Reflective_programming">reflect</a> MimIR's own representation.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
 Code</h2>
 <p>The reified internal representation of a <a class="el" href="namespaceMim.html">Mim</a> expression of type <span class="tt">T</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Code: * → *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
 Reify / Reflect</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md474"></a>
 reify</h2>
 <p>Yields the internal MimIR representation of a <a class="el" href="namespaceMim.html">Mim</a> expression as <span class="tt">refly.Code</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reify: {T: *} → T → [Code T], normalize_reify;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md474"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md475"></a>
 reflect</h2>
 <p>Converts a <span class="tt">refly.Code</span> back to a <a class="el" href="namespaceMim.html">Mim</a> expression.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reflect: {T: *} → [Code T] → T, normalize_reflect;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md475"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md476"></a>
 Inspect</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md476"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md477"></a>
 type</h2>
 <p>Returns the type of an expression.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm type: {T: *} → T → *, normalize_type;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md477"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md478"></a>
 gid</h2>
 <p>Returns the internal <a class="el" href="classmim_1_1Def.html#ae3b896cb0e3c5a2351169ce5cb2183b4" title="Global id - unique number for this Def.">mim::Def::gid</a> of the argument.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gid: {T: *} → T → Nat, normalize_gid;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md478"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md479"></a>
 dbg</h2>
 <p>Debugs a given expression.</p>
 <ul>
@@ -215,27 +215,27 @@ dbg</h2>
 <div class="line">anx let debug   = 4;</div>
 <div class="line"> </div>
 <div class="line">axm dbg.(tmp, perm): {T: *} → [Nat, T] → T, normalize_dbg;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md479"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md480"></a>
 Testing</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md480"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md481"></a>
 struc</h2>
 <p>Asserts structural identity (<span class="tt">e</span>) or non-identity (<span class="tt">ne</span>) of both arguments.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm struc.(ne, e): {T: *} → [T, T] → T, normalize_struc;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md481"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md482"></a>
 alpha</h2>
 <p>Asserts α-equivalence (<span class="tt">e</span>) or α-inequivalence (<span class="tt">ne</span>) of both arguments.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm alpha.(ne, e): {T: *} → [T, T] → T, normalize_alpha;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md482"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md483"></a>
 check_bot</h2>
 <p>Checks whether the argument is <span class="tt">⊥</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check_bot: {T: *} → T → T, normalize_check_bot;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md483"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md484"></a>
 check</h2>
 <p>Checks the given condition and emits the error message if it is <span class="tt">ff</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm check: {T: *} → {n: Nat} → [Bool, T, «n; I8»] → T, normalize_check;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md484"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md485"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md485"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md486"></a>
 remove_dbg_repl</h2>
 <p>Removes the permanent <span class="tt">refly.dbg</span> markers for code generation.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm remove_dbg_repl: compile.Phase;</div>
