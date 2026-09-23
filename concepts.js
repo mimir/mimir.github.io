@@ -3,6 +3,7 @@ var concepts =
     [ "mim", "namespacemim.html", [
       [ "annex_with_subs", "conceptmim_1_1annex__with__subs.html", null ],
       [ "annex_without_subs", "conceptmim_1_1annex__without__subs.html", null ],
+      [ "DefPred", "conceptmim_1_1DefPred.html", null ],
       [ "Enum", "conceptmim_1_1Enum.html", null ],
       [ "MutPred", "conceptmim_1_1MutPred.html", null ],
       [ "Projector", "conceptmim_1_1Projector.html", null ]

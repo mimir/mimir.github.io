@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mutpred_0',['MutPred',['../conceptmim_1_1MutPred.html',1,'mim']]]
+  ['enum_0',['Enum',['../conceptmim_1_1Enum.html',1,'mim']]]
 ];

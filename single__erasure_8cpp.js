@@ -1,4 +1,4 @@
 var single__erasure_8cpp =
 [
-    [ "mim::collect", "namespacemim.html#a14e875ff9d37fba52618767b032ed91d", null ]
+    [ "mim::is_shaped", "namespacemim.html#aba2a676bca77d183a084b2bf6ade2bf5", null ]
 ];

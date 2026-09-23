@@ -266,6 +266,9 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:af558a87c967163ee8f41ebfb353a0da0" id="r_af558a87c967163ee8f41ebfb353a0da0"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af558a87c967163ee8f41ebfb353a0da0">rewrite_imm_Single</a> (const <a class="el" href="classmim_1_1Single.html">Single</a> *) final</td></tr>
 <tr class="memitem:a777163be74099af94de0b1d20c18ef8c" id="r_a777163be74099af94de0b1d20c18ef8c"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a777163be74099af94de0b1d20c18ef8c">rewrite_imm_Wrap</a> (const <a class="el" href="classmim_1_1Wrap.html">Wrap</a> *) final</td></tr>
+<tr class="memitem:a0ed615a215b50c566e72a9a97544c637" id="r_a0ed615a215b50c566e72a9a97544c637"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a0ed615a215b50c566e72a9a97544c637">rewrite_imm_Variant</a> (const <a class="el" href="classmim_1_1Variant.html">Variant</a> *) final</td></tr>
+<tr class="memitem:af0ea94ff21a7a9f88f123515f2e780e9" id="r_af0ea94ff21a7a9f88f123515f2e780e9"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af0ea94ff21a7a9f88f123515f2e780e9">rewrite_imm_Inj</a> (const <a class="el" href="classmim_1_1Inj.html">Inj</a> *) final</td></tr>
+<tr class="memitem:a8a32f422b48fef82d955432615c49320" id="r_a8a32f422b48fef82d955432615c49320"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8a32f422b48fef82d955432615c49320">rewrite_imm_Match</a> (const <a class="el" href="classmim_1_1Match.html">Match</a> *) final</td></tr>
 <tr class="memitem:ab2ca67f0a5e78af4600466cbf5acd2e3" id="r_ab2ca67f0a5e78af4600466cbf5acd2e3"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ab2ca67f0a5e78af4600466cbf5acd2e3">rewrite_imm_Sigma</a> (const <a class="el" href="classmim_1_1Sigma.html">Sigma</a> *) final</td></tr>
 <tr class="memitem:a74a60022aa405c2f5ef8f411b03b6f60" id="r_a74a60022aa405c2f5ef8f411b03b6f60"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a74a60022aa405c2f5ef8f411b03b6f60">rewrite_mut_Sigma</a> (<a class="el" href="classmim_1_1Sigma.html">Sigma</a> *) final</td></tr>
 <tr class="memitem:a0096ca84b5c012a3d01801660481c399" id="r_a0096ca84b5c012a3d01801660481c399"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a0096ca84b5c012a3d01801660481c399">rewrite_imm_Tuple</a> (const <a class="el" href="classmim_1_1Tuple.html">Tuple</a> *) final</td></tr>
@@ -311,9 +314,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Eliminates all types that have exactly one inhabitant, so that no Single/Wrap ever reaches a backend. </p>
-<p>Such a type carries no information, so its erasure is the unit: <span class="tt">«e»</span> becomes <span class="tt">[]</span> and <span class="tt">‹e›</span> becomes <span class="tt">()</span>. Within an aggregate the component is dropped altogether, which shifts the indices of its successors. Besides <a class="el" href="classmim_1_1Single.html" title="Singleton type formation.">Single</a> this also catches the unit <span class="tt">[]</span> and <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> 1</span> - and any aggregate built from those. A singleton above <span class="tt">*</span> has no unit to erase to and degrades to the type of its inhabitant instead. An aggregate whose arity another def relies upon keeps all of its components; only the erasure is mandatory. </p>
+<p>Such a type carries no information, so its erasure is the unit: <span class="tt">«e»</span> becomes <span class="tt">[]</span> and <span class="tt">‹e›</span> becomes <span class="tt">()</span>. Within an aggregate the component is dropped altogether, which shifts the indices of its successors. Besides <a class="el" href="classmim_1_1Single.html" title="Singleton type formation.">Single</a> this also catches the unit <span class="tt">[]</span> and <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> 1</span> - and any aggregate built from those. A <a class="el" href="classmim_1_1Variant.html" title="A sum type whose cases are positional: unlike a Join, they are neither sorted nor deduplicated.">Variant</a> with a single case <span class="tt">| A</span> is isomorphic to <span class="tt">A</span> and erased to it. A singleton above <span class="tt">*</span> has no unit to erase to and degrades to the type of its inhabitant instead. An aggregate whose arity another def relies upon keeps all of its components; only the erasure is mandatory. </p>
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8h_source.html#l00013">13</a> of file <a class="el" href="single__erasure_8h_source.html">single_erasure.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8h_source.html#l00014">14</a> of file <a class="el" href="single__erasure_8h_source.html">single_erasure.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac77051f84d2cf2c225a550dcbc08c396" name="ac77051f84d2cf2c225a550dcbc08c396"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac77051f84d2cf2c225a550dcbc08c396">&#9670;&#160;</a></span>SingleErasure() <span class="overload">[1/2]</span></h2>
@@ -344,7 +347,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="single__erasure_8h_source.html#l00029">29</a> of file <a class="el" href="single__erasure_8h_source.html">single_erasure.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00434">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00463">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
 </div>
 </div>
@@ -377,7 +380,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="single__erasure_8h_source.html#l00032">32</a> of file <a class="el" href="single__erasure_8h_source.html">single_erasure.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00434">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00463">mim::RWPhase::RWPhase()</a>, and <a class="el" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world()</a>.</p>
 
 </div>
 </div>
@@ -405,9 +408,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00139">139</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00140">140</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00430">mim::World::extract()</a>, <a class="el" href="tuple_8h_source.html#l00371">mim::Extract::index()</a>, <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="tuple_8h_source.html#l00370">mim::Extract::tuple()</a>, and <a class="el" href="def_8h_source.html#l01183">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00430">mim::World::extract()</a>, <a class="el" href="tuple_8h_source.html#l00371">mim::Extract::index()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="tuple_8h_source.html#l00370">mim::Extract::tuple()</a>, and <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>.</p>
+
+</div>
+</div>
+<a id="af0ea94ff21a7a9f88f123515f2e780e9" name="af0ea94ff21a7a9f88f123515f2e780e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ea94ff21a7a9f88f123515f2e780e9">&#9670;&#160;</a></span>rewrite_imm_Inj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::SingleErasure::rewrite_imm_Inj </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Inj.html">Inj</a> *</td>          <td class="paramname"><span class="paramname"><em>inj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00101">101</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>, and <a class="el" href="union_8h_source.html#l00036">mim::Inj::value()</a>.</p>
 
 </div>
 </div>
@@ -434,9 +466,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00150">150</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00151">151</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00632">mim::World::insert()</a>, <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00632">mim::World::insert()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
+
+</div>
+</div>
+<a id="a8a32f422b48fef82d955432615c49320" name="a8a32f422b48fef82d955432615c49320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a32f422b48fef82d955432615c49320">&#9670;&#160;</a></span>rewrite_imm_Match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::SingleErasure::rewrite_imm_Match </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Match.html">Match</a> *</td>          <td class="paramname"><span class="paramname"><em>match</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00106">106</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00295">mim::World::app()</a>, <a class="el" href="union_8h_source.html#l00100">mim::Match::arm()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="union_8h_source.html#l00095">mim::Match::scrutinee()</a>, and <a class="el" href="def_8cpp_source.html#l00459">mim::Def::unfold_type()</a>.</p>
 
 </div>
 </div>
@@ -465,9 +526,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a2a27820f2a968a37e4024cdba81a870c">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00162">162</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00163">163</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00370">mim::Def::is_intro()</a>, <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="world_8h_source.html#l00488">mim::World::prod()</a>, <a class="el" href="rewrite_8cpp_source.html#l00227">mim::Rewriter::rewrite_imm_Seq()</a>, and <a class="el" href="def_8h_source.html#l01183">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00368">mim::Def::is_intro()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="world_8h_source.html#l00488">mim::World::prod()</a>, <a class="el" href="rewrite_8cpp_source.html#l00227">mim::Rewriter::rewrite_imm_Seq()</a>, and <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>.</p>
 
 </div>
 </div>
@@ -494,11 +555,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00111">111</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00112">112</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00397">mim::Def::ops()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="world_8cpp_source.html#l00374">mim::World::sigma()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00395">mim::Def::ops()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, and <a class="el" href="world_8cpp_source.html#l00374">mim::World::sigma()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="single__erasure_8cpp_source.html#l00117">rewrite_mut_Sigma()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="single__erasure_8cpp_source.html#l00118">rewrite_mut_Sigma()</a>.</p>
 
 </div>
 </div>
@@ -525,7 +586,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00099">99</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00084">84</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, and <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>.</p>
 
@@ -554,9 +615,38 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00127">127</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00128">128</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00397">mim::Def::ops()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="world_8cpp_source.html#l00384">mim::World::tuple()</a>, and <a class="el" href="def_8h_source.html#l01183">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="def_8h_source.html#l00395">mim::Def::ops()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="world_8cpp_source.html#l00384">mim::World::tuple()</a>, and <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>.</p>
+
+</div>
+</div>
+<a id="a0ed615a215b50c566e72a9a97544c637" name="a0ed615a215b50c566e72a9a97544c637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed615a215b50c566e72a9a97544c637">&#9670;&#160;</a></span>rewrite_imm_Variant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::SingleErasure::rewrite_imm_Variant </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Variant.html">Variant</a> *</td>          <td class="paramname"><span class="paramname"><em>variant</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00096">96</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00398">mim::Def::op()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>.</p>
 
 </div>
 </div>
@@ -583,7 +673,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00106">106</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00091">91</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>.</p>
 
@@ -614,9 +704,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00167">167</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00168">168</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8h_source.html#l00280">mim::Seq::body()</a>, <a class="el" href="def_8h_source.html#l00370">mim::Def::is_intro()</a>, <a class="el" href="def_8h_source.html#l00419">mim::Def::is_set()</a>, <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="world_8h_source.html#l00488">mim::World::prod()</a>, <a class="el" href="rewrite_8cpp_source.html#l00233">mim::Rewriter::rewrite_mut_Seq()</a>, and <a class="el" href="def_8h_source.html#l01183">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8h_source.html#l00280">mim::Seq::body()</a>, <a class="el" href="def_8h_source.html#l00368">mim::Def::is_intro()</a>, <a class="el" href="def_8h_source.html#l00417">mim::Def::is_set()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="world_8h_source.html#l00488">mim::World::prod()</a>, <a class="el" href="rewrite_8cpp_source.html#l00233">mim::Rewriter::rewrite_mut_Seq()</a>, and <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>.</p>
 
 </div>
 </div>
@@ -643,9 +733,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00117">117</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="single__erasure_8cpp_source.html#l00118">118</a> of file <a class="el" href="single__erasure_8cpp_source.html">single_erasure.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00141">mim::Def::is_immutabilizable()</a>, <a class="el" href="world_8h_source.html#l00452">mim::World::mut_sigma()</a>, <a class="el" href="phase_8h_source.html#l00455">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00111">rewrite_imm_Sigma()</a>, <a class="el" href="rewrite_8cpp_source.html#l00260">mim::Rewriter::rewrite_stub()</a>, and <a class="el" href="def_8h_source.html#l01183">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00141">mim::Def::is_immutabilizable()</a>, <a class="el" href="world_8h_source.html#l00452">mim::World::mut_sigma()</a>, <a class="el" href="phase_8h_source.html#l00484">mim::RWPhase::new_world()</a>, <a class="el" href="rewrite_8cpp_source.html#l00055">mim::Rewriter::rewrite()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00112">rewrite_imm_Sigma()</a>, <a class="el" href="rewrite_8cpp_source.html#l00260">mim::Rewriter::rewrite_stub()</a>, and <a class="el" href="def_8h_source.html#l01181">mim::Def::type()</a>.</p>
 
 </div>
 </div>
