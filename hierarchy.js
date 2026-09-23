@@ -123,11 +123,6 @@ var hierarchy =
       [ "mim::Def", "classmim_1_1Def.html", [
         [ "mim::App", "classmim_1_1App.html", null ],
         [ "mim::Axm", "classmim_1_1Axm.html", null ],
-        [ "mim::Bound", "classmim_1_1Bound.html", [
-          [ "mim::TBound< false >", "classmim_1_1TBound.html", null ],
-          [ "mim::TBound< true >", "classmim_1_1TBound.html", null ],
-          [ "mim::TBound< Up >", "classmim_1_1TBound.html", null ]
-        ] ],
         [ "mim::Ext", "classmim_1_1Ext.html", [
           [ "mim::TExt< false >", "classmim_1_1TExt.html", null ],
           [ "mim::TExt< true >", "classmim_1_1TExt.html", null ],
@@ -139,10 +134,10 @@ var hierarchy =
         [ "mim::Idx", "classmim_1_1Idx.html", null ],
         [ "mim::Inj", "classmim_1_1Inj.html", null ],
         [ "mim::Insert", "classmim_1_1Insert.html", null ],
+        [ "mim::Join", "classmim_1_1Join.html", null ],
         [ "mim::Lam", "classmim_1_1Lam.html", null ],
         [ "mim::Lit", "classmim_1_1Lit.html", null ],
         [ "mim::Match", "classmim_1_1Match.html", null ],
-        [ "mim::Merge", "classmim_1_1Merge.html", null ],
         [ "mim::Nat", "classmim_1_1Nat.html", null ],
         [ "mim::Pi", "classmim_1_1Pi.html", null ],
         [ "mim::Prod", "classmim_1_1Prod.html", [
@@ -157,7 +152,6 @@ var hierarchy =
           [ "mim::Pack", "classmim_1_1Pack.html", null ]
         ] ],
         [ "mim::Single", "classmim_1_1Single.html", null ],
-        [ "mim::Split", "classmim_1_1Split.html", null ],
         [ "mim::Type", "classmim_1_1Type.html", null ],
         [ "mim::UInc", "classmim_1_1UInc.html", null ],
         [ "mim::UMax", "classmim_1_1UMax.html", null ],
@@ -280,6 +274,9 @@ var hierarchy =
     [ "mim::Setters&lt; Insert &gt;", "classmim_1_1Setters.html", [
       [ "mim::Insert", "classmim_1_1Insert.html", null ]
     ] ],
+    [ "mim::Setters&lt; Join &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Join", "classmim_1_1Join.html", null ]
+    ] ],
     [ "mim::Setters&lt; Lam &gt;", "classmim_1_1Setters.html", [
       [ "mim::Lam", "classmim_1_1Lam.html", null ]
     ] ],
@@ -288,9 +285,6 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Match &gt;", "classmim_1_1Setters.html", [
       [ "mim::Match", "classmim_1_1Match.html", null ]
-    ] ],
-    [ "mim::Setters&lt; Merge &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Merge", "classmim_1_1Merge.html", null ]
     ] ],
     [ "mim::Setters&lt; Nat &gt;", "classmim_1_1Setters.html", [
       [ "mim::Nat", "classmim_1_1Nat.html", null ]
@@ -321,14 +315,6 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Single &gt;", "classmim_1_1Setters.html", [
       [ "mim::Single", "classmim_1_1Single.html", null ]
-    ] ],
-    [ "mim::Setters&lt; Split &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Split", "classmim_1_1Split.html", null ]
-    ] ],
-    [ "mim::Setters&lt; TBound&lt; Up &gt; &gt;", "classmim_1_1Setters.html", [
-      [ "mim::TBound< false >", "classmim_1_1TBound.html", null ],
-      [ "mim::TBound< true >", "classmim_1_1TBound.html", null ],
-      [ "mim::TBound< Up >", "classmim_1_1TBound.html", null ]
     ] ],
     [ "mim::Setters&lt; TExt&lt; Up &gt; &gt;", "classmim_1_1Setters.html", [
       [ "mim::TExt< false >", "classmim_1_1TExt.html", null ],

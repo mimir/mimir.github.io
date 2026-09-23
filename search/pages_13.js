@@ -3,7 +3,7 @@ var searchData=
   ['unary_0',['unary',['../tensor.html#autotoc_md539',1,'']]],
   ['unary_5fimpl_1',['unary_impl',['../tensor.html#autotoc_md610',1,'']]],
   ['underscore_2',['Underscore',['../langref.html#autotoc_md74',1,'']]],
-  ['unions_3',['Unions',['../langref.html#autotoc_md66',1,'Unions'],['../tutorial.html#autotoc_md198',1,'Unions']]],
+  ['unions_3',['Unions',['../langref.html#autotoc_md66',1,'Unions'],['../langref.html#autotoc_md80',1,'Unions'],['../tutorial.html#autotoc_md198',1,'Unions']]],
   ['unit_20tests_4',['Unit Tests',['../coding.html#autotoc_md13',1,'']]],
   ['universes_5',['Universes',['../langref.html#autotoc_md83',1,'']]],
   ['unload_6',['unload',['../compile.html#autotoc_md315',1,'']]],

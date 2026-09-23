@@ -11,7 +11,6 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "driver.cpp", "driver_8cpp.html", "driver_8cpp" ],
     [ "dump.cpp", "dump_8cpp.html", "dump_8cpp" ],
     [ "lam.cpp", "lam_8cpp.html", "lam_8cpp" ],
-    [ "lattice.cpp", "lattice_8cpp.html", null ],
     [ "nest.cpp", "nest_8cpp.html", null ],
     [ "phase.cpp", "phase_8cpp.html", null ],
     [ "plugin.cpp", "plugin_8cpp.html", null ],
@@ -20,5 +19,6 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "schedule.cpp", "schedule_8cpp.html", null ],
     [ "sexpr.cpp", "sexpr_8cpp.html", "sexpr_8cpp" ],
     [ "tuple.cpp", "tuple_8cpp.html", "tuple_8cpp" ],
+    [ "union.cpp", "union_8cpp.html", null ],
     [ "world.cpp", "world_8cpp.html", "world_8cpp" ]
 ];

@@ -86,6 +86,7 @@ var classmim_1_1Def =
     [ "local_muts", "classmim_1_1Def.html#a8a6a0861bea1acfecbf8e2260774b212", null ],
     [ "local_vars", "classmim_1_1Def.html#a3f5a341398bd97b516f9fd7d1d170e5b", null ],
     [ "mark", "classmim_1_1Def.html#a592578e8733989b79ab6649485eae42b", null ],
+    [ "mut_node", "classmim_1_1Def.html#aaf5f4937b7ce6cf9b72a9b2a6300d998", null ],
     [ "needs_zonk", "classmim_1_1Def.html#ae9f80ca1bccce9842c16092f977fbf79", null ],
     [ "nests", "classmim_1_1Def.html#a4215aea9762a0fca45f190b40509b4a8", null ],
     [ "nests", "classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab", null ],

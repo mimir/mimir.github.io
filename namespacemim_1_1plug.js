@@ -187,8 +187,6 @@ var namespacemim_1_1plug =
         [ "mul", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa353942263d1bedfbe06b7bfa78226253", null ],
         [ "shl", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efabc192716b0e1d5c96a67961dd0d3f9da", null ]
       ] ],
-      [ "convert", "namespacemim_1_1plug_1_1core.html#aa245e9d008c0ad08a145c4b06162ebe6", null ],
-      [ "convert", "namespacemim_1_1plug_1_1core.html#a12f61a2fced37e3d62c253da4c825c46", null ],
       [ "extract_unsafe", "namespacemim_1_1plug_1_1core.html#a04b2bc63f2900e9c6e2d745d3f3419d4", null ],
       [ "extract_unsafe", "namespacemim_1_1plug_1_1core.html#a9a65a10d9e296d08c1a4f393d4c17881", null ],
       [ "insert_unsafe", "namespacemim_1_1plug_1_1core.html#ac4e599118974e6a467f3cb081a2e16a0", null ],

@@ -194,6 +194,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a592578e8733989b79ab6649485eae42b pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally by <a class="el" href="classmim_1_1Def.html#aed49f75ef33a07d498daffbcc3d2d838" title="Global set of free Vars: extends local_vars() by transitively following mutables as well.">free_vars()</a>.  <br /></td></tr>
 <tr class="memitem:a7a2188433df55928789a717ab00afc53 pub_methods_classmim_1_1Def" id="r_a7a2188433df55928789a717ab00afc53"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53">hash</a> () const noexcept</td></tr>
 <tr class="memitem:a107ccfac1058aee369926112bb593d35 pub_methods_classmim_1_1Def" id="r_a107ccfac1058aee369926112bb593d35"><td class="memItemLeft">constexpr <a class="el" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a107ccfac1058aee369926112bb593d35">node</a> () const noexcept</td></tr>
+<tr class="memitem:aaf5f4937b7ce6cf9b72a9b2a6300d998 pub_methods_classmim_1_1Def" id="r_aaf5f4937b7ce6cf9b72a9b2a6300d998"><td class="memItemLeft">constexpr <a class="el" href="namespacemim.html#a99e09c81af2fdf69220123e2b04a5341">MutNode</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#aaf5f4937b7ce6cf9b72a9b2a6300d998">mut_node</a> () const noexcept</td></tr>
+<tr class="memdesc:aaf5f4937b7ce6cf9b72a9b2a6300d998 pub_methods_classmim_1_1Def"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Def.html#a107ccfac1058aee369926112bb593d35">node()</a> of a <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> whose <a class="el" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a> <em>may</em> be mutable, whether this one is or not; see <a class="el" href="namespacemim.html#a99e09c81af2fdf69220123e2b04a5341" title="The Nodes that may be mutable, with the same values as their Node.">MutNode</a>.  <br /></td></tr>
 <tr class="memitem:a361f116b80b8b8fd1eac9a22e34564b0 pub_methods_classmim_1_1Def" id="r_a361f116b80b8b8fd1eac9a22e34564b0"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a361f116b80b8b8fd1eac9a22e34564b0">node_name</a> () const</td></tr>
 <tr class="memitem:a3b3855428d7b5b33f6245dc88a8568c1 pub_methods_classmim_1_1Def" id="r_a3b3855428d7b5b33f6245dc88a8568c1"><td class="memItemLeft">fe::Error &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a3b3855428d7b5b33f6245dc88a8568c1">error</a> () const noexcept</td></tr>
 <tr class="memitem:a07e164d0f4a14ae5c83312675fbcd330 pub_methods_classmim_1_1Def" id="r_a07e164d0f4a14ae5c83312675fbcd330"><td class="memItemLeft">Loc&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#a07e164d0f4a14ae5c83312675fbcd330">err_loc</a> () const</td></tr>
@@ -475,7 +477,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Used as intermediate value during optimizatinos such as <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a>. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Def.html#a3e96d1f2d3715f3d059a7396366af7eb">Def::ops()</a> are hashed as normal but they do <b>not</b> contribute to <a class="el" href="classmim_1_1Def.html#a3f5a341398bd97b516f9fd7d1d170e5b" title="Vars reachable by following immutable deps().">Def::local_vars()</a>, nor <a class="el" href="classmim_1_1Def.html#a8a6a0861bea1acfecbf8e2260774b212" title="Mutables reachable by following immutable deps(); mut-&gt;local_muts() is by definition the set { mut }...">Def::local_muts()</a> and hence not to <a class="el" href="classmim_1_1Def.html#a55751862df2e7aab0d76521dd77fadb9" title="As above but drives (and caches) the fixed-point iteration for mutables.">Def::free_vars()</a>. This is by design as those ops typically are some meta information to memoize certain things that do not carry semantic information per se. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01071">1071</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01104">1104</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="af48a97ffa45904f6ccf974c0b69e6bd0" name="af48a97ffa45904f6ccf974c0b69e6bd0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af48a97ffa45904f6ccf974c0b69e6bd0">&#9670;&#160;</a></span>isa()</h2>
@@ -502,7 +504,7 @@ template&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01085">1085</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01118">1118</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00094">mim::plug::mem::phase::isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00351">mim::plug::mem::phase::keep()</a>.</p>
 
@@ -531,9 +533,9 @@ template&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01081">1081</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01114">1114</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00811">mim::Def::flags_</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00844">mim::Def::flags_</a>.</p>
 
 </div>
 </div>
@@ -558,11 +560,11 @@ template&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01094">1094</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01127">1127</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01094">World</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01127">World</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l01094">World</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l01127">World</a>.</p>
 
 </div>
 </div>
@@ -587,7 +589,7 @@ template&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01090">1090</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01123">1123</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -611,7 +613,7 @@ template&lt;<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01091">1091</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01124">1124</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>

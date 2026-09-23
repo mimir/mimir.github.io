@@ -16,5 +16,6 @@ var searchData=
   ['mr_5fnest_13',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],
   ['mr_5ftileable_14',['mr_tileable',['../namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8',1,'mim::plug::tensor']]],
   ['mslot_15',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
-  ['mut_16',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim']]]
+  ['mut_16',['Mut',['../namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d',1,'mim']]],
+  ['mutnode_17',['MutNode',['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341',1,'mim']]]
 ];

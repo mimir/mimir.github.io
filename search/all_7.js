@@ -14,7 +14,7 @@ var searchData=
   ['generated_20markdown_20page_11',['Generated Markdown Page',['../plugins.html#autotoc_md134',1,'']]],
   ['generated_20python_20module_12',['Generated Python Module',['../plugins.html#autotoc_md133',1,'']]],
   ['genuinely_20wins_13',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md187',1,'']]],
-  ['get_14',['get',['../classmim_1_1Axm.html#aeeaa1986a69f4d11556b9f042fd2688e',1,'mim::Axm::get()'],['../classmim_1_1Lit.html#a803287a2ae4c917b44be99ca53bc8d7d',1,'mim::Lit::get()'],['../classmim_1_1Bound.html#a9e96f7185ac2eebdc31c76e793b0c6a3',1,'mim::Bound::get()'],['../namespacemim_1_1plug_1_1ord.html#aba44102109a1561a91c6182d20785923',1,'mim::plug::ord::get'],['../ord.html#autotoc_md464',1,'get']]],
+  ['get_14',['get',['../classmim_1_1Axm.html#aeeaa1986a69f4d11556b9f042fd2688e',1,'mim::Axm::get()'],['../classmim_1_1Lit.html#a803287a2ae4c917b44be99ca53bc8d7d',1,'mim::Lit::get()'],['../namespacemim_1_1plug_1_1ord.html#aba44102109a1561a91c6182d20785923',1,'mim::plug::ord::get'],['../ord.html#autotoc_md464',1,'get']]],
   ['get_5fextra_5fflags_15',['get_extra_flags',['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#acad99ab7b7ec21a2538674bb68676849',1,'mim::plug::ll_nvptx::DeviceEmitter']]],
   ['get_5ffun_5fptr_16',['GET_FUN_PTR',['../driver_8h.html#ab004995be061e8045533148b21580ed8',1,'driver.h']]],
   ['get_5ffun_5fptr_17',['get_fun_ptr',['../classmim_1_1Driver.html#aca49523948aa7ad5392fdc0b884bad6d',1,'mim::Driver::get_fun_ptr(std::string_view plugin, const char *name)'],['../classmim_1_1Driver.html#a25f86fd34e99f1bb3d6c16e3e245c24d',1,'mim::Driver::get_fun_ptr(std::string_view plugin, const char *name)']]],
