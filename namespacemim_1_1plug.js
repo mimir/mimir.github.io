@@ -6,6 +6,7 @@ var namespacemim_1_1plug =
     [ "buffer", "namespacemim_1_1plug_1_1buffer.html", "namespacemim_1_1plug_1_1buffer" ],
     [ "clos", "namespacemim_1_1plug_1_1clos.html", "namespacemim_1_1plug_1_1clos" ],
     [ "compile", "namespacemim_1_1plug_1_1compile.html", [
+      [ "adce", "namespacemim_1_1plug_1_1compile.html#adde27d527fec51d3eaf69a23d761f1b4", null ],
       [ "aggr", "namespacemim_1_1plug_1_1compile.html#a10cabf94630436845a86b8fa9f77feb7", null ],
       [ "beta_red", "namespacemim_1_1plug_1_1compile.html#ac68b9ddeabbfec213ee407dd20b13975", null ],
       [ "branch_normalize", "namespacemim_1_1plug_1_1compile.html#a4b0d14f5c672ba3dc0bc2fd6e4e77bec", null ],

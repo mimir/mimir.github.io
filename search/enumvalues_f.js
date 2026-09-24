@@ -7,8 +7,9 @@ var searchData=
   ['priv_4',['Priv',['../namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986',1,'mim::ast']]],
   ['proxy_5',['Proxy',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daf56ec2ab97d604832d90f6394e3f341f',1,'mim::Proxy'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132baf56ec2ab97d604832d90f6394e3f341f',1,'mim::Proxy']]],
   ['proxy_5fbundle_6',['Proxy_Bundle',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624a31a82486cd45cba4828febf403521bdb',1,'mim::plug::mem::phase']]],
-  ['proxy_5fphi_7',['Proxy_Phi',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624acbfb4b6baef7e1d6c8cc6ef57a5a9893',1,'mim::plug::mem::phase']]],
-  ['proxy_5fsccp_5ftop_8',['Proxy_SCCP_Top',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624ac273dd86b6c0ddd14f9fd3b863cab724',1,'mim::plug::mem::phase']]],
-  ['proxy_5fsloxy_9',['Proxy_Sloxy',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624a6104f0c8e1acb892b454f416fc5e889a',1,'mim::plug::mem::phase']]],
-  ['pub_10',['Pub',['../namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2',1,'mim::ast']]]
+  ['proxy_5fdead_7',['Proxy_Dead',['../namespacemim.html#a7abd4f925bcdddac54659a52df76b407a49919968cb746dd7f76dde1a6f14110d',1,'mim']]],
+  ['proxy_5fphi_8',['Proxy_Phi',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624acbfb4b6baef7e1d6c8cc6ef57a5a9893',1,'mim::plug::mem::phase']]],
+  ['proxy_5fsccp_5ftop_9',['Proxy_SCCP_Top',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624ac273dd86b6c0ddd14f9fd3b863cab724',1,'mim::plug::mem::phase']]],
+  ['proxy_5fsloxy_10',['Proxy_Sloxy',['../namespacemim_1_1plug_1_1mem_1_1phase.html#a454c3e336e54c2f696affda731c24624a6104f0c8e1acb892b454f416fc5e889a',1,'mim::plug::mem::phase']]],
+  ['pub_11',['Pub',['../namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2',1,'mim::ast']]]
 ];

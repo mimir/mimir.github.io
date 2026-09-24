@@ -1,6 +1,7 @@
 var compile_2autogen_8h =
 [
     [ "MIM_compile_NORMALIZER_IMPL", "compile_2autogen_8h.html#a7664b0fbc28b9dafd6c4ca3f00dad9a8", null ],
+    [ "mim::plug::compile::adce", "namespacemim_1_1plug_1_1compile.html#adde27d527fec51d3eaf69a23d761f1b4", null ],
     [ "mim::plug::compile::aggr", "namespacemim_1_1plug_1_1compile.html#a10cabf94630436845a86b8fa9f77feb7", null ],
     [ "mim::plug::compile::beta_red", "namespacemim_1_1plug_1_1compile.html#ac68b9ddeabbfec213ee407dd20b13975", null ],
     [ "mim::plug::compile::branch_normalize", "namespacemim_1_1plug_1_1compile.html#a4b0d14f5c672ba3dc0bc2fd6e4e77bec", null ],

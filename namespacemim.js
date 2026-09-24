@@ -2,6 +2,7 @@ var namespacemim =
 [
     [ "ast", "namespacemim_1_1ast.html", "namespacemim_1_1ast" ],
     [ "plug", "namespacemim_1_1plug.html", "namespacemim_1_1plug" ],
+    [ "ADCE", "classmim_1_1ADCE.html", "classmim_1_1ADCE" ],
     [ "Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
     [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
     [ "App", "classmim_1_1App.html", "classmim_1_1App" ],
@@ -218,6 +219,7 @@ var namespacemim =
     [ "is_commutative", "namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a", null ],
     [ "is_commutative", "namespacemim.html#a1bf9f164e985cb56deedf827f7fb2c3f", null ],
     [ "is_commutative", "namespacemim.html#a2d08547c4fc3b6bcf3d8779269813b50", null ],
+    [ "is_dependent", "namespacemim.html#a06962288632d610e3a9640b3ebabe9eb", null ],
     [ "is_flex", "namespacemim.html#af13ff5627285a5c96c9df99a12612858", null ],
     [ "is_mut_node", "namespacemim.html#aba9b8f07925b0b13adb89a9101a9412b", null ],
     [ "is_shaped", "namespacemim.html#aba2a676bca77d183a084b2bf6ade2bf5", null ],

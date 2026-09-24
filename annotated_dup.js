@@ -141,6 +141,7 @@ var annotated_dup =
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]
         ] ]
       ] ],
+      [ "ADCE", "classmim_1_1ADCE.html", "classmim_1_1ADCE" ],
       [ "Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
       [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
       [ "App", "classmim_1_1App.html", "classmim_1_1App" ],

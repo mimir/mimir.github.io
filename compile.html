@@ -206,46 +206,50 @@ phases</h2>
 Phases</h1>
 <p>The phases this plugin itself registers; every other one is contributed by the plugin that implements it.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
+adce</h2>
+<p>Aggressive dead code elimination; removes Lam params nobody needs (<a class="el" href="classmim_1_1ADCE.html" title="Aggressive Dead Code Elimination.">mim::ADCE</a>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm adce: Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
 beta_red</h2>
 <p>β-reduction; inlines Lams that occur exactly once in the program (<a class="el" href="classmim_1_1BetaRed.html" title="Inlines in post-order all Lams that occur exactly once in the program.">mim::BetaRed</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm beta_red: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
 branch_normalize</h2>
 <p>η-expands non-Lam branch targets so both sides of a branch are Lams (<a class="el" href="classmim_1_1BranchNormalize.html" title="Normalizes branches: η-expands non-Lam branch targets so that both sides of a (f, t)#cond branch are ...">mim::BranchNormalize</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm branch_normalize: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
 cleanup</h2>
 <p>Removes dead and unreachable code by rebuilding the World (<a class="el" href="classmim_1_1Cleanup.html" title="Removes unreachable and dead code by rebuilding the whole World into a new one and swapping them afte...">mim::Cleanup</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cleanup: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
 eta_conv</h2>
 <p>Combined, idempotent η-reduction/η-expansion (<a class="el" href="classmim_1_1EtaConv.html" title="Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase.">mim::EtaConv</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm eta_conv: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md314"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
 lam_spec</h2>
 <p>Specializes a Lam at its call site by inlining higher-order arguments (<a class="el" href="classmim_1_1LamSpec.html" title="Specializes a Lam at its call site by inlining all Pi-typed (i.e. higher-order) arguments.">mim::LamSpec</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lam_spec: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md315"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
 null</h2>
 <p>Does nothing; useful as an elided placeholder.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm null: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md316"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
 ret_wrap</h2>
 <p>Prepares return continuations for the backend (<a class="el" href="classmim_1_1RetWrap.html">mim::RetWrap</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm ret_wrap: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md317"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
 scalarize</h2>
 <p>Flattens function signatures (<a class="el" href="classmim_1_1Scalarize.html" title="Perform Scalarization (= Argument simplification).">mim::Scalarize</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scalarize: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md318"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md319"></a>
 single_erasure</h2>
 <p>Eliminates all types with exactly one inhabitant so that none reaches a backend (<a class="el" href="classmim_1_1SingleErasure.html" title="Eliminates all types that have exactly one inhabitant, so that no Single/Wrap ever reaches a backend.">mim::SingleErasure</a>). Within an aggregate the component is dropped; elsewhere <span class="tt">«e»</span> degrades to <span class="tt">[]</span> and <span class="tt">‹e›</span> to <span class="tt">()</span>. Besides <span class="tt">«e»</span> this also catches <span class="tt">[]</span> and <span class="tt">Idx 1</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm single_erasure: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md319"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md320"></a>
 static_arg_opt</h2>
 <p>Drops params that recursive calls merely forward, turning them into loops (<a class="el" href="classmim_1_1StaticArgOpt.html" title="Static Argument Transformation.">mim::StaticArgOpt</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm static_arg_opt: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md320"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md321"></a>
 unload</h2>
 <p>Unloads a plugin and nukes its annexes on the next World swap.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm unload: {n: Nat} → «n; I8» → Phase;</div>

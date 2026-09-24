@@ -81,6 +81,7 @@ var hierarchy =
           [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ]
         ] ],
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
+          [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
           [ "mim::BranchNormalize", "classmim_1_1BranchNormalize.html", null ],
           [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
           [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],

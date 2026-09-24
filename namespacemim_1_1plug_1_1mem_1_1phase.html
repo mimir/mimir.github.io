@@ -196,6 +196,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a1a97fa43f6a1e036734c1fcebd47d7fd" id="r_a1a97fa43f6a1e036734c1fcebd47d7fd"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a1a97fa43f6a1e036734c1fcebd47d7fd">eta_canon</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:a1a97fa43f6a1e036734c1fcebd47d7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strips <a class="el" href="classmim_1_1EtaConv.html" title="Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase.">EtaConv</a>'s per-occurrence wrappers so that call sites passing the same continuation still agree.  <br /></td></tr>
 <tr class="memitem:ab7f8de36bdae13ccceb6e0cf573a401a" id="r_ab7f8de36bdae13ccceb6e0cf573a401a"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ab7f8de36bdae13ccceb6e0cf573a401a">isa_bundle</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
+<tr class="memitem:ae60b586e8df39141bbc60defc176f10d" id="r_ae60b586e8df39141bbc60defc176f10d"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ae60b586e8df39141bbc60defc176f10d">is_visible</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, <a class="el" href="classmim_1_1Def.html">Def</a> *mut)</td></tr>
+<tr class="memdesc:ae60b586e8df39141bbc60defc176f10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is every free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code> bound by <code class="param">mut</code> or by a mutable that nests <code class="param">mut</code>?  <br /></td></tr>
 <tr class="memitem:a15bda67947f7f0af1a9307a3d967dda4" id="r_a15bda67947f7f0af1a9307a3d967dda4"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a15bda67947f7f0af1a9307a3d967dda4">is_dependent</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
 <tr class="memdesc:a15bda67947f7f0af1a9307a3d967dda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does <code class="param">lam's</code> signature refer to its own binder's <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>?  <br /></td></tr>
 <tr class="memitem:acab92e534d4abc11bd41fcc12136090d" id="r_acab92e534d4abc11bd41fcc12136090d"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#acab92e534d4abc11bd41fcc12136090d">mk_phi</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam, const <a class="el" href="classmim_1_1Def.html">Def</a> *sloxy)</td></tr>
@@ -319,11 +321,48 @@ Functions</h2></td></tr>
 <p>Does <code class="param">lam's</code> signature refer to its own binder's <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>? </p>
 <p>Such a signature cannot be narrowed: dropping a component would tear its siblings off the binder. </p>
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00040">40</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00047">47</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00035">mim::Pi::dom()</a>, <a class="el" href="seo_8cpp_source.html#l00040">is_dependent()</a>, <a class="el" href="def_8h_source.html#l00625">mim::Def::isa_mut()</a>, and <a class="el" href="lam_8h_source.html#l00134">mim::Lam::type()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00035">mim::Pi::dom()</a>, <a class="el" href="seo_8cpp_source.html#l00047">is_dependent()</a>, <a class="el" href="def_8h_source.html#l00625">mim::Def::isa_mut()</a>, and <a class="el" href="lam_8h_source.html#l00134">mim::Lam::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00040">is_dependent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00047">is_dependent()</a>.</p>
+
+</div>
+</div>
+<a id="ae60b586e8df39141bbc60defc176f10d" name="ae60b586e8df39141bbc60defc176f10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60b586e8df39141bbc60defc176f10d">&#9670;&#160;</a></span>is_visible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::mem::phase::is_visible </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is every free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code> bound by <code class="param">mut</code> or by a mutable that nests <code class="param">mut</code>? </p>
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00039">39</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00251">mim::Def::free_vars()</a>, <a class="el" href="seo_8cpp_source.html#l00039">is_visible()</a>, and <a class="el" href="def_8cpp_source.html#l00379">mim::Def::nests()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00039">is_visible()</a>.</p>
 
 </div>
 </div>
@@ -354,11 +393,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00104">104</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00121">121</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01116">mim::Proxy::isa()</a>, and <a class="el" href="seo_8cpp_source.html#l00104">isa_bundle()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01116">mim::Proxy::isa()</a>, and <a class="el" href="seo_8cpp_source.html#l00121">isa_bundle()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00104">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00365">keep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00121">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00383">keep()</a>.</p>
 
 </div>
 </div>
@@ -394,11 +433,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00365">365</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00383">383</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01116">mim::Proxy::isa()</a>, <a class="el" href="seo_8cpp_source.html#l00104">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00365">keep()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01116">mim::Proxy::isa()</a>, <a class="el" href="seo_8cpp_source.html#l00121">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00383">keep()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00365">keep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00383">keep()</a>.</p>
 
 </div>
 </div>
@@ -434,11 +473,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00178">178</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00195">195</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00668">mim::Def::dbg_key()</a>, <a class="el" href="seo_8cpp_source.html#l00178">mk_phi()</a>, <a class="el" href="mem_8h_source.html#l00104">mim::plug::mem::pointee()</a>, and <a class="el" href="seo_8cpp_source.html#l00017">Proxy_Phi</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00668">mim::Def::dbg_key()</a>, <a class="el" href="seo_8cpp_source.html#l00195">mk_phi()</a>, <a class="el" href="mem_8h_source.html#l00104">mim::plug::mem::pointee()</a>, and <a class="el" href="seo_8cpp_source.html#l00017">Proxy_Phi</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00178">mk_phi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00195">mk_phi()</a>.</p>
 
 </div>
 </div>

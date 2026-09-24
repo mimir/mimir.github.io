@@ -172,17 +172,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ord.html','','
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2ord"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1ord.html" title="The ord Plugin">mim::plug::ord</a></dd></dl>
 <p>Ordered Set and Map. </p><dl class="section warning"><dt>Warning</dt><dd>This is still WIP!</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md458"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md459"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin option;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md459"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md460"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md460"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md461"></a>
 Key</h2>
 <p>This existential-style type specifies a type together with a less-than function.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let Key = [T: *, lt: [T, T] → Bool];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md461"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
 Set / Map</h2>
 <p>Type constructors for set / map.</p>
 <ul>
@@ -191,50 +191,50 @@ Set / Map</h2>
 </ul>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Set: Key     → *;</div>
 <div class="line">axm Map: Key → * → *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
 Constructors</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
 init</h2>
 <p>Creates a set / map from a list of values / key-value pairs.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod init {</div>
 <div class="line">    axm set: [K: Key] →          {n: Nat} → «n;  K#T    » → Set K  , normalize_init;</div>
 <div class="line">    axm map: [K: Key] → {V: *} → {n: Nat} → «n; [K#T, V]» → Map K V, normalize_init;</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
 create</h2>
 <p>Creates an empty set / map.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam create_set (K: Key)        : Set K   = init.set K    @0 ();</div>
 <div class="line">anx lam create_map (K: Key) (V: *) : Map K V = init.map K @V @0 ();</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
 Capacity</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
 size</h2>
 <p>Yields the number of elements in the container.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod size {</div>
 <div class="line">    axm set: {K: Key} →          Set K   → Nat, normalize_size;</div>
 <div class="line">    axm map: {K: Key} → {V: *} → Map K V → Nat, normalize_size;</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
 is_empty</h2>
 <p>Is the container empty?</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam is_empty_set {K: Key}        (set: Set K  ): Bool = core.ncmp.e (size.set set, 0);</div>
 <div class="line">anx lam is_empty_map {K: Key} {V: *} (map: Map K V): Bool = core.ncmp.e (size.map map, 0);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
 Lookup</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
 get</h2>
 <p>Looks up the given key in the map. Returns an optional value (<span class="tt">option.Opt V</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm get: {K: Key} → {V: *} → [Map K V, K#T] → option.Opt V, normalize_get;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
 contains</h2>
 <p>Does the container contain the given key?</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod contains {</div>
 <div class="line">    axm set: {K: Key} →          [Set K  , K#T] → Bool, normalize_contains;</div>
 <div class="line">    axm map: {K: Key} → {V: *} → [Map K V, K#T] → Bool, normalize_contains;</div>
 <div class="line">}</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
 Modifiers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
 insert</h2>
 <p>Inserts a key / key-value pair into the container.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod insert {</div>
