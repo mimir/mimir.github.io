@@ -131,7 +131,7 @@ var searchData=
   ['is_5fmut_5fnode_128',['is_mut_node',['../namespacemim.html#aba9b8f07925b0b13adb89a9101a9412b',1,'mim']]],
   ['is_5fmutable_129',['is_mutable',['../classmim_1_1Def.html#aa1ff7be9ef3b9164c027c954867a052e',1,'mim::Def::is_mutable()'],['../classmim_1_1Global.html#a839917d09d37319383f232f6e5d0c56b',1,'mim::Global::is_mutable()']]],
   ['is_5fmutually_5frecursive_130',['is_mutually_recursive',['../classmim_1_1Nest_1_1Node.html#ae7bc3d2bb2a18017ff6a9a18ca529f0c',1,'mim::Nest::Node']]],
-  ['is_5fnormalizer_131',['is_normalizer',['../classmim_1_1ast_1_1RuleDecl.html#a436fae2a72a0e86c3004fe7a71b9d676',1,'mim::ast::RuleDecl']]],
+  ['is_5fnorm_131',['is_norm',['../classmim_1_1ast_1_1RuleDecl.html#a493af0fb5d886e9479d4f112ba9ac78a',1,'mim::ast::RuleDecl']]],
   ['is_5fopen_132',['is_open',['../classmim_1_1Def.html#a7944689314d207575d41902eae1eeddc',1,'mim::Def']]],
   ['is_5fpack_133',['is_pack',['../classmim_1_1ast_1_1SeqExpr.html#a055afaff793421e902a92edc659d5e8c',1,'mim::ast::SeqExpr']]],
   ['is_5fparen_134',['is_paren',['../classmim_1_1ast_1_1TuplePtrn.html#a1176d6f6f64281b96a02177112d56d0e',1,'mim::ast::TuplePtrn']]],

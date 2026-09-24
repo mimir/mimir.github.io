@@ -1,11 +1,11 @@
 var classmim_1_1ast_1_1RuleDecl =
 [
-    [ "RuleDecl", "classmim_1_1ast_1_1RuleDecl.html#a4a1a4103e588046e0dc11417e8961310", null ],
+    [ "RuleDecl", "classmim_1_1ast_1_1RuleDecl.html#a7602a1d1ef99aa94c307f56ea9e0d773", null ],
     [ "bind", "classmim_1_1ast_1_1RuleDecl.html#a2c0a2805d44f26d0f02c54cb6a3666c0", null ],
     [ "dbg", "classmim_1_1ast_1_1RuleDecl.html#af07087bd87f2e93b83fa0b3e507cb418", null ],
     [ "emit", "classmim_1_1ast_1_1RuleDecl.html#aeb37623261c0fc42d66379a89fe19f7e", null ],
     [ "guard", "classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251", null ],
-    [ "is_normalizer", "classmim_1_1ast_1_1RuleDecl.html#a436fae2a72a0e86c3004fe7a71b9d676", null ],
+    [ "is_norm", "classmim_1_1ast_1_1RuleDecl.html#a493af0fb5d886e9479d4f112ba9ac78a", null ],
     [ "lhs", "classmim_1_1ast_1_1RuleDecl.html#ac753ab2f9274d165bbd1062c9b18ca87", null ],
     [ "rhs", "classmim_1_1ast_1_1RuleDecl.html#ac3998bb2935420c2a2244bf2fe56724d", null ],
     [ "stream", "classmim_1_1ast_1_1RuleDecl.html#afba16a6acd7e2de31859ad965ba86cd6", null ],
