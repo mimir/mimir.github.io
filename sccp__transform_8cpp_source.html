@@ -1,0 +1,225 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/phase/sccp_transform.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('sccp__transform_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">sccp_transform.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="sccp__transform_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">    5</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">SCCP::rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* old_app) {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> old_lam = old_app-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">isa_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;()) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> l = <a class="code hl_function" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6">lattice</a>(old_lam-&gt;var()); l &amp;&amp; l != old_lam-&gt;var()) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>            <a class="code hl_function" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a>();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            <span class="keyword">auto</span> old_vars = old_lam-&gt;tvars();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            <span class="keyword">auto</span> keep     = <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(old_vars, [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* var) { <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWBase.html#a712036964209fba73e58d2f29f9ebb3d">is_top</a>(var); });</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* new_lam;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = lam2lam_.find(old_lam); i != lam2lam_.end())</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                new_lam = i-&gt;second;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                <span class="keyword">auto</span> new_doms     = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_lam-&gt;doms(keep.num_old())));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                new_lam           = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mut_lam</a>(new_doms, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;codom()))-&gt;<a class="code hl_function" href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">set</a>(old_lam-&gt;dbg());</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>                lam2lam_[old_lam] = new_lam;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <span class="keyword">auto</span> new_vars = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(keep.num_old(), [&amp;](<span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                    auto j = keep[i];</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    return j == Sieve::Gone ? rewrite(lattice(old_vars[i])) <span class="comment">// SCCP propagate</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                                            : new_lam-&gt;var(keep.num_new(), j);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                });</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <a class="code hl_function" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map</a>(old_lam-&gt;var(), new_vars);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                new_lam-&gt;set(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;filter()), <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;body()));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map</a>(old_app, <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().app(new_lam, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_app-&gt;targs()))));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00213">lam.h:213</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_a9df7e6baae6a143ed3af2bc7ec643641"><div class="ttname"><a href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">mim::App::callee</a></div><div class="ttdeci">const Def * callee() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00235">lam.h:235</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00312">def.h:312</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00625">def.h:625</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00093">lam.h:93</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html_a24231a9b2503394cd8a54128a043db1b"><div class="ttname"><a href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">mim::Lam::set</a></div><div class="ttdeci">Lam * set(Filter filter, const Def *body)</div><div class="ttdef"><b>Definition</b> <a href="lam_8cpp_source.html#l00028">lam.cpp:28</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a28a39b288a2f2de29cb8d7db113d99d6"><div class="ttname"><a href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">mim::Phase::invalidate</a></div><div class="ttdeci">void invalidate(bool todo=true)</div><div class="ttdoc">Signals that another round of fixed-point iteration is required, either as part of.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00098">phase.h:98</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWBase_html_a3e86038d68efc0cfad3f580cce75efb6"><div class="ttname"><a href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6">mim::RWBase::lattice</a></div><div class="ttdeci">const Def * lattice(const Def *def) const</div><div class="ttdoc">Returns the abstract value computed by the associated Analysis for def, or nullptr if no value is ava...</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00409">phase.h:409</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWBase_html_a712036964209fba73e58d2f29f9ebb3d"><div class="ttname"><a href="classmim_1_1RWBase.html#a712036964209fba73e58d2f29f9ebb3d">mim::RWBase::is_top</a></div><div class="ttdeci">bool is_top(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00417">phase.h:417</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00484">phase.h:484</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a832644b4df14efed752cba8e8568aca4"><div class="ttname"><a href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">mim::Rewriter::map</a></div><div class="ttdeci">virtual const Def * map(const Def *old_def, const Def *new_def)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00048">rewrite.h:48</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00055">rewrite.cpp:55</a></div></div>
+<div class="ttc" id="aclassmim_1_1SCCP_html_a5a8ae60909f1115e5609d01423e4e827"><div class="ttname"><a href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">mim::SCCP::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *old_app) final</div><div class="ttdef"><b>Definition</b> <a href="#l00005">sccp_transform.cpp:5</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00123">tuple.h:123</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00403">world.h:403</a></div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00016">ast.h:16</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00098">def.h:98</a></div></div>
+<div class="ttc" id="asccp_8h_html"><div class="ttname"><a href="sccp_8h.html">sccp.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_4ad15e0004aa2fc2424d5bded02c9369.html">phase</a></li><li class="navelem"><a href="sccp__transform_8cpp.html">sccp_transform.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

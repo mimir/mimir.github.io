@@ -87,6 +87,7 @@ var hierarchy =
           [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
           [ "mim::Repl", "classmim_1_1Repl.html", null ],
           [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
+          [ "mim::SCCP", "classmim_1_1SCCP.html", null ],
           [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
           [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ],
           [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],

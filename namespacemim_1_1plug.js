@@ -21,6 +21,7 @@ var namespacemim_1_1plug =
       [ "phases", "namespacemim_1_1plug_1_1compile.html#a2ad95a9bc25b51ef2cd839513ac0fc3a", null ],
       [ "ret_wrap", "namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34", null ],
       [ "scalarize", "namespacemim_1_1plug_1_1compile.html#abe7aa45fb16af8ecaf314c3aa23cdef4", null ],
+      [ "sccp", "namespacemim_1_1plug_1_1compile.html#a7c6f14e6f0e8f8f3a40ae6763af9c8a0", null ],
       [ "single_erasure", "namespacemim_1_1plug_1_1compile.html#a41b6aeb6d6ea2197e71fa5ffcff951d9", null ],
       [ "static_arg_opt", "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de", null ],
       [ "unload", "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10", null ],

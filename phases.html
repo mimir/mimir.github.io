@@ -453,7 +453,7 @@ NestPhase</h2>
 Example: SCCP</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="phase_8h.html">mim/phase.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
 <div class="line"><span class="comment"></span> </div>
@@ -470,10 +470,10 @@ Example: SCCP</h1>
 <div class="line"><span class="comment">/// ```</span></div>
 <div class="line"><span class="keyword">class </span>SCCP : <span class="keyword">public</span> RWPhase {</div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">class </span>Analysis : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1Analysis.html">mim::Analysis</a> {</div>
+<div class="line">    <span class="keyword">class </span><a class="code hl_friend" href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">Analysis</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1Analysis.html">mim::Analysis</a> {</div>
 <div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        Analysis(World&amp; world)</div>
-<div class="line">            : <a class="code hl_namespace" href="namespacemim.html">mim</a>::Analysis(world, <span class="stringliteral">&quot;SCCP::Analyzer&quot;</span>) {}</div>
+<div class="line">        <a class="code hl_friend" href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">Analysis</a>(World&amp; <a class="code hl_function" href="classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f">world</a>)</div>
+<div class="line">            : <a class="code hl_namespace" href="namespacemim.html">mim</a>::<a class="code hl_friend" href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">Analysis</a>(<a class="code hl_function" href="classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <span class="stringliteral">&quot;SCCP::Analyzer&quot;</span>) {}</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">private</span>:</div>
 <div class="line">        <span class="keyword">const</span> Def* propagate(<span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def);</div>
@@ -481,12 +481,12 @@ Example: SCCP</h1>
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    SCCP(World&amp; world)</div>
-<div class="line">        : RWPhase(world, <span class="stringliteral">&quot;SCCP&quot;</span>, &amp;analysis_)</div>
-<div class="line">        , analysis_(world) {}</div>
+<div class="line">    <a class="code hl_function" href="classmim_1_1SCCP.html#a06f56aa2ab4ac16e532627a558434c4a">SCCP</a>(World&amp; <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
+<div class="line">        : <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a>(<a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>, &amp;analysis_)</div>
+<div class="line">        , analysis_(<a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>) {}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">const</span> Def* rewrite_imm_App(<span class="keyword">const</span> App* old_app) <span class="keyword">final</span>;</div>
+<div class="line">    <span class="keyword">const</span> Def* <a class="code hl_function" href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">rewrite_imm_App</a>(<span class="keyword">const</span> App* old_app) <span class="keyword">final</span>;</div>
 <div class="line"> </div>
 <div class="line">    Analysis analysis_;</div>
 <div class="line">    <a class="code hl_typedef" href="namespacemim.html#a8d37dada179be276702eb8680efbc370">Lam2Lam</a> lam2lam_;</div>
@@ -494,7 +494,15 @@ Example: SCCP</h1>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
 <div class="ttc" id="aclassmim_1_1Analysis_html"><div class="ttname"><a href="classmim_1_1Analysis.html">mim::Analysis</a></div><div class="ttdoc">Traverses the current World using Rewriter infrastructure while staying in the same world.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00151">phase.h:151</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_afeae25f4ecab3e3812e9607f630a506f"><div class="ttname"><a href="classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f">mim::Analysis::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00077">phase.h:77</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a1e23f70a55de946d03c863586003862d"><div class="ttname"><a href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">mim::Phase::Analysis</a></div><div class="ttdeci">friend class Analysis</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00125">phase.h:125</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00081">phase.h:81</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_afeae25f4ecab3e3812e9607f630a506f"><div class="ttname"><a href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">mim::Phase::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00077">phase.h:77</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00463">phase.h:463</a></div></div>
+<div class="ttc" id="aclassmim_1_1SCCP_html_a06f56aa2ab4ac16e532627a558434c4a"><div class="ttname"><a href="classmim_1_1SCCP.html#a06f56aa2ab4ac16e532627a558434c4a">mim::SCCP::SCCP</a></div><div class="ttdeci">SCCP(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="sccp_8h_source.html#l00031">sccp.h:31</a></div></div>
+<div class="ttc" id="aclassmim_1_1SCCP_html_a5a8ae60909f1115e5609d01423e4e827"><div class="ttname"><a href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">mim::SCCP::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *old_app) final</div><div class="ttdef"><b>Definition</b> <a href="sccp__transform_8cpp_source.html#l00005">sccp_transform.cpp:5</a></div></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00016">ast.h:16</a></div></div>
+<div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
 <div class="ttc" id="anamespacemim_html_a8d37dada179be276702eb8680efbc370"><div class="ttname"><a href="namespacemim.html#a8d37dada179be276702eb8680efbc370">mim::Lam2Lam</a></div><div class="ttdeci">LamMap&lt; Lam * &gt; Lam2Lam</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00210">lam.h:210</a></div></div>
 <div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
 </div><!-- fragment --><p>The provided <a href="https://en.wikipedia.org/wiki/Sparse_conditional_constant_propagation">Sparse Conditional Constant Propagation (SCCP)</a> implementation is a good example of the intended phase structure. Its architecture is:</p>
@@ -505,7 +513,7 @@ Example: SCCP</h1>
 <dl class="section note"><dt>Note</dt><dd>The implementation propagates not only constants but also arbitrary expressions.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
 Analysis</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;sccp.h&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
 <div class="line"><span class="comment"></span> </div>
@@ -517,26 +525,26 @@ Analysis</h2>
 <div class="line"> </div>
 <div class="line"><span class="keyword">const</span> Def* SCCP::Analysis::propagate(<span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def) {</div>
 <div class="line">    <span class="comment">// `⊥ ⊔ x` is `x`, but unusable if lam nests it.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (lam_of(var)-&gt;nests(def)) <span class="keywordflow">return</span> pin(var), var;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">lam_of</a>(var)-&gt;nests(def)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a>(var), var;</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">auto</span> cur = lattice(var);</div>
+<div class="line">    <span class="keyword">auto</span> cur = <a class="code hl_function" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a>(var);</div>
 <div class="line">    <span class="keywordflow">if</span> (!cur) { <span class="comment">// ⊥ ⊔ def = def; lattice(var, def) invalidates, as it inserts a fresh non-⊤ fact</span></div>
-<div class="line">        lattice(var, def);</div>
-<div class="line">        log().d(<span class="stringliteral">&quot;propagate {} → {}&quot;</span>, var, def);</div>
+<div class="line">        <a class="code hl_function" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a>(var, def);</div>
+<div class="line">        <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().d(<span class="stringliteral">&quot;propagate {} → {}&quot;</span>, var, def);</div>
 <div class="line">        <span class="keywordflow">return</span> def;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (def-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a>&gt;() || cur == def || cur == var) <span class="keywordflow">return</span> cur; <span class="comment">// cur ⊔ ⊥ = cur ⊔ cur = cur; ⊤ stays ⊤</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (cur-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a>&gt;()) { <span class="comment">// ⊥ ⊔ def = def; lattice(var, def) invalidates, as it overwrites cur</span></div>
-<div class="line">        lattice(var, def);</div>
+<div class="line">        <a class="code hl_function" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a>(var, def);</div>
 <div class="line">        <span class="keywordflow">return</span> def;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> pin(var), var; <span class="comment">// two different values join to ⊤; lattice(var, var) therein invalidates, as it overwrites cur</span></div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a>(var), var; <span class="comment">// two different values join to ⊤; lattice(var, var) therein invalidates, as it overwrites cur</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* SCCP::Analysis::rewrite_imm_App(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* app) {</div>
+<div class="line"><span class="keyword">const</span> Def* SCCP::Analysis::rewrite_imm_App(<span class="keyword">const</span> App* app) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<span class="keyword">auto</span> lam = <a class="code hl_function" href="classmim_1_1Lam.html#ad2d55564ba0b3e0b9df6ad1f9905466d">Lam::isa_rewritable</a>(app-&gt;callee())) {</div>
 <div class="line">        <span class="keyword">auto</span> n          = app-&gt;num_targs();</div>
 <div class="line">        <span class="keyword">auto</span> abstr_args = absl::FixedArray&lt;const Def*&gt;(n);</div>
@@ -544,23 +552,28 @@ Analysis</h2>
 <div class="line"> </div>
 <div class="line">        <span class="comment">// propagate</span></div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i != n; ++i) {</div>
-<div class="line">            <span class="keyword">auto</span> abstr    = rewrite(app-&gt;targ(i));</div>
+<div class="line">            <span class="keyword">auto</span> abstr    = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(app-&gt;targ(i));</div>
 <div class="line">            abstr_vars[i] = propagate(lam-&gt;tvar(i), abstr);</div>
 <div class="line">            abstr_args[i] = abstr;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
-<div class="line">        lattice(lam-&gt;var(), world().tuple(abstr_vars)); <span class="comment">// set new abstract var</span></div>
-<div class="line">        <span class="keywordflow">return</span> world().app(rewrite(lam), abstr_args);</div>
+<div class="line">        <a class="code hl_function" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6">lattice</a>(lam-&gt;var(), <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().tuple(abstr_vars)); <span class="comment">// set new abstract var</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">app</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(lam), abstr_args);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> mim::Analysis::rewrite_imm_App(app);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00213">lam.h:213</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00312">def.h:312</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_ad7c0e4db7456e9d3910876ce4db8180a"><div class="ttname"><a href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">mim::Analysis::lattice</a></div><div class="ttdeci">const auto &amp; lattice() const</div><div class="ttdoc">The whole map; used e.g. to diff two fixed-point runs.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00190">phase.h:190</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_aea34c4c2e764fd0fe97b3ba63299f42d"><div class="ttname"><a href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">mim::Analysis::pin</a></div><div class="ttdeci">bool pin(const Def *def)</div><div class="ttdoc">Monotonically forces def to ⊤ (keep as is).</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00261">phase.h:261</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html_ad2d55564ba0b3e0b9df6ad1f9905466d"><div class="ttname"><a href="classmim_1_1Lam.html#ad2d55564ba0b3e0b9df6ad1f9905466d">mim::Lam::isa_rewritable</a></div><div class="ttdeci">static Lam * isa_rewritable(const Def *def)</div><div class="ttdoc">Yields def as a mutable Lam, if it is_rewritable() and nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00191">lam.h:191</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00079">phase.h:79</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWBase_html_a3e86038d68efc0cfad3f580cce75efb6"><div class="ttname"><a href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6">mim::RWBase::lattice</a></div><div class="ttdeci">const Def * lattice(const Def *def) const</div><div class="ttdoc">Returns the abstract value computed by the associated Analysis for def, or nullptr if no value is ava...</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00409">phase.h:409</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00298">world.cpp:298</a></div></div>
+<div class="ttc" id="anamespacemim_html_a460ec790ce35ed5ebbbee20d96305c21"><div class="ttname"><a href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">mim::lam_of</a></div><div class="ttdeci">static Lam * lam_of(const Def *var)</div><div class="ttdoc">The Lam the abstract var belongs to; var is a Var or a Var projection.</div><div class="ttdef"><b>Definition</b> <a href="sccp__analysis_8cpp_source.html#l00006">sccp_analysis.cpp:6</a></div></div>
 <div class="ttc" id="anamespacemim_html_ad6a85076174e8ee770ec5ad1f3c06ea4"><div class="ttname"><a href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">mim::Bot</a></div><div class="ttdeci">TExt&lt; false &gt; Bot</div><div class="ttdef"><b>Definition</b> <a href="lattice_8h_source.html#l00039">lattice.h:39</a></div></div>
+<div class="ttc" id="asccp_8h_html"><div class="ttname"><a href="sccp_8h.html">sccp.h</a></div></div>
 </div><!-- fragment --><p>The SCCP analysis associates each lambda variable with a lattice value:</p>
 <ul>
 <li>bottom: no useful information yet (an <em>absent</em> entry),</li>
@@ -637,24 +650,24 @@ A second dominance: contification</h3>
 <p>The contrast with a scoped compiler is sharp. MLton runs contification <em>after</em> closure conversion, and Fluet &amp; Weeks describe their own loop example as moving <span class="tt">loop</span> back inside <span class="tt">sum</span> after closure conversion took it out — a dominator analysis reconstructing a nesting that an earlier phase destroyed. A scopeless IR never loses that nesting, so there is no hoisting-versus-contification phase ordering to get right and no oracle to consult.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Transformation</h2>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;sccp.h&quot;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">const</span> Def* SCCP::rewrite_imm_App(<span class="keyword">const</span> App* old_app) {</div>
+<div class="line"><span class="keyword">const</span> Def* <a class="code hl_function" href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">SCCP::rewrite_imm_App</a>(<span class="keyword">const</span> App* old_app) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<span class="keyword">auto</span> old_lam = old_app-&gt;callee()-&gt;isa_mut&lt;Lam&gt;()) {</div>
-<div class="line">        <span class="keywordflow">if</span> (<span class="keyword">auto</span> l = lattice(old_lam-&gt;var()); l &amp;&amp; l != old_lam-&gt;var()) {</div>
-<div class="line">            invalidate();</div>
+<div class="line">        <span class="keywordflow">if</span> (<span class="keyword">auto</span> l = <a class="code hl_function" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6">lattice</a>(old_lam-&gt;var()); l &amp;&amp; l != old_lam-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">var</a>()) {</div>
+<div class="line">            <a class="code hl_function" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a>();</div>
 <div class="line"> </div>
 <div class="line">            <span class="keyword">auto</span> old_vars = old_lam-&gt;tvars();</div>
-<div class="line">            <span class="keyword">auto</span> keep     = <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(old_vars, [<span class="keyword">this</span>](<span class="keyword">const</span> Def* var) { <span class="keywordflow">return</span> is_top(var); });</div>
+<div class="line">            <span class="keyword">auto</span> keep     = <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(old_vars, [<span class="keyword">this</span>](<span class="keyword">const</span> Def* var) { <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWBase.html#a712036964209fba73e58d2f29f9ebb3d">is_top</a>(var); });</div>
 <div class="line"> </div>
 <div class="line">            Lam* new_lam;</div>
 <div class="line">            <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = lam2lam_.find(old_lam); i != lam2lam_.end())</div>
 <div class="line">                new_lam = i-&gt;second;</div>
 <div class="line">            <span class="keywordflow">else</span> {</div>
-<div class="line">                <span class="keyword">auto</span> new_doms     = rewrite(keep.gather(old_lam-&gt;doms(keep.num_old())));</div>
-<div class="line">                new_lam           = new_world().mut_lam(new_doms, rewrite(old_lam-&gt;codom()))-&gt;set(old_lam-&gt;dbg());</div>
+<div class="line">                <span class="keyword">auto</span> new_doms     = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_lam-&gt;doms(keep.num_old())));</div>
+<div class="line">                new_lam           = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mut_lam</a>(new_doms, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;codom()))-&gt;<a class="code hl_function" href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">set</a>(old_lam-&gt;dbg());</div>
 <div class="line">                lam2lam_[old_lam] = new_lam;</div>
 <div class="line"> </div>
 <div class="line">                <span class="keyword">auto</span> new_vars = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(keep.num_old(), [&amp;](<span class="keywordtype">size_t</span> i) {</div>
@@ -663,11 +676,11 @@ Transformation</h2>
 <div class="line">                                            : new_lam-&gt;var(keep.num_new(), j);</div>
 <div class="line">                });</div>
 <div class="line"> </div>
-<div class="line">                map(old_lam-&gt;var(), new_vars);</div>
-<div class="line">                new_lam-&gt;set(rewrite(old_lam-&gt;filter()), rewrite(old_lam-&gt;body()));</div>
+<div class="line">                <a class="code hl_function" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map</a>(old_lam-&gt;var(), new_vars);</div>
+<div class="line">                new_lam-&gt;set(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;filter()), <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;body()));</div>
 <div class="line">            }</div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordflow">return</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">map</a>(old_app, new_world().app(new_lam, rewrite(keep.gather(old_app-&gt;targs()))));</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">map</a>(old_app, <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().app(new_lam, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_app-&gt;targs()))));</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -675,8 +688,14 @@ Transformation</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a6e757a3ae8e52ee5b9ebdaea32c6abd8"><div class="ttname"><a href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">mim::Def::var</a></div><div class="ttdeci">const Def * var(nat_t a, nat_t i) noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00524">def.h:524</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html_a24231a9b2503394cd8a54128a043db1b"><div class="ttname"><a href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">mim::Lam::set</a></div><div class="ttdeci">Lam * set(Filter filter, const Def *body)</div><div class="ttdef"><b>Definition</b> <a href="lam_8cpp_source.html#l00028">lam.cpp:28</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a28a39b288a2f2de29cb8d7db113d99d6"><div class="ttname"><a href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">mim::Phase::invalidate</a></div><div class="ttdeci">void invalidate(bool todo=true)</div><div class="ttdoc">Signals that another round of fixed-point iteration is required, either as part of.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00098">phase.h:98</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWBase_html_a712036964209fba73e58d2f29f9ebb3d"><div class="ttname"><a href="classmim_1_1RWBase.html#a712036964209fba73e58d2f29f9ebb3d">mim::RWBase::is_top</a></div><div class="ttdeci">bool is_top(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00417">phase.h:417</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00484">phase.h:484</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a832644b4df14efed752cba8e8568aca4"><div class="ttname"><a href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">mim::Rewriter::map</a></div><div class="ttdeci">virtual const Def * map(const Def *old_def, const Def *new_def)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00048">rewrite.h:48</a></div></div>
 <div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00123">tuple.h:123</a></div></div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1affine_html_a667c8ee6bbd08791a3f99dd6c17c13b0"><div class="ttname"><a href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">mim::plug::affine::map</a></div><div class="ttdeci">map</div><div class="ttdef"><b>Definition</b> <a href="affine_2autogen_8h_source.html#l00057">autogen.h:57</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00403">world.h:403</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00098">def.h:98</a></div></div>
 </div><!-- fragment --><p>Once the lattice is stable, the outer SCCP phase starts rewriting. During rewriting, it can query abstract values for old-world definitions through <a class="el" href="classmim_1_1RWBase.html#a3e86038d68efc0cfad3f580cce75efb6" title="mim::RWBase::lattice"><span class="tt">RWBase::lattice()</span></a>.</p>
 <p>When it sees an application of a lambda whose parameters have propagated values, it rebuilds a specialized lambda:</p>
@@ -739,6 +758,8 @@ Minimal Examples</h1>
 <div class="line">        <span class="keywordflow">return</span> Rewriter::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00213">lam.h:213</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00312">def.h:312</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00043">world.h:43</a></div></div>
 </div><!-- fragment --><p>A simple analysis phase:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>CountMutLams : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1Analysis.html">mim::Analysis</a> {</div>

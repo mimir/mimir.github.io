@@ -199,6 +199,7 @@ var annotated_dup =
       [ "RWBase", "classmim_1_1RWBase.html", "classmim_1_1RWBase" ],
       [ "RWPhase", "classmim_1_1RWPhase.html", "classmim_1_1RWPhase" ],
       [ "Scalarize", "classmim_1_1Scalarize.html", "classmim_1_1Scalarize" ],
+      [ "SCCP", "classmim_1_1SCCP.html", "classmim_1_1SCCP" ],
       [ "Scheduler", "classmim_1_1Scheduler.html", "classmim_1_1Scheduler" ],
       [ "Select", "classmim_1_1Select.html", "classmim_1_1Select" ],
       [ "Seq", "classmim_1_1Seq.html", "classmim_1_1Seq" ],
