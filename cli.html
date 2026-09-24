@@ -230,10 +230,6 @@ Output</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">-o, --output-mim &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the <a class="el" href="namespaceMim.html">Mim</a> program again.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--mim-local</span>  </td><td class="markdownTableBodyNone">Dumps each mutable as its own flat block without scheduling; the result does not read back but works for broken programs.  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">--mim-typed-let</span>  </td><td class="markdownTableBodyNone">Ascribes the type of each <span class="tt">let</span>-bound name; it is inferable from the right-hand side and hence elided by default.  </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">--output-nest &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits the program's nesting tree using Graphviz' DOT language.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--output-py &lt;file&gt;</span>  </td><td class="markdownTableBodyNone">Emits a Python enum to be used to interface with a plugin in Python.  </td></tr>
@@ -261,6 +257,16 @@ DOT Output</h2>
 <td class="markdownTableBodyNone"><span class="tt">--dot-show-hidden</span>  </td><td class="markdownTableBodyNone">Renders otherwise-transparent detached edges in DOT output - back-edges from a Var to its binder, shared literals/axioms, and type edges - in a subtle gray.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Mim Output</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">--mim-local</span>  </td><td class="markdownTableBodyNone">Dumps each mutable as its own flat block without scheduling; the result does not read back but works for broken programs.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--mim-typed-let</span>  </td><td class="markdownTableBodyNone">Ascribes the type of each <span class="tt">let</span>-bound name; it is inferable from the right-hand side and hence elided by default.  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Diagnostics</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -278,7 +284,7 @@ Diagnostics</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--werror</span>  </td><td class="markdownTableBodyNone">Treats warnings as errors.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Profiling</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -288,7 +294,7 @@ Profiling</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--profile &lt;mode&gt;</span>  </td><td class="markdownTableBodyNone">Measures how long each phase takes; <span class="tt">&lt;mode&gt;</span> is <span class="tt">summary</span>, <span class="tt">tree</span>, or <span class="tt">trace</span> (<span class="tt">chrome://tracing</span> compatible).  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Optimization</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -302,7 +308,7 @@ Optimization</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--scalarize-threshold &lt;threshold&gt;</span>  </td><td class="markdownTableBodyNone">MimIR will not scalarize tuples/packs/sigmas/arrays with a number of elements greater than or equal this threshold. [default: <span class="tt">32</span>]  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 Developer Options</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -322,7 +328,7 @@ Developer Options</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-w, --watch &lt;gid&gt;</span>  </td><td class="markdownTableBodyNone">Triggers a breakpoint when a node with this global id is set.  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Environment Variables</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -431,9 +437,9 @@ Diagnostics</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">msvc</span>  </td><td class="markdownTableBodyNone"><span class="tt">path(row,col)</span>  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Plugins</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Search Paths</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> keeps three separate lookups, because the artifacts they find are different in kind: a plugin library is host-native code, a <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is portable source, and a backend runtime belongs to the target.</p>
 <p>Two kinds of entry feed them. A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span> / <span class="tt">-I</span> and their environment variables add. A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself; <span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add one, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>

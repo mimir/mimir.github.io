@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('langref.html',
 <div class="textblock"><p><a class="anchor" id="md_docs_2langref"></a></p>
 <p>This page is the reference for <a class="el" href="namespaceMim.html">Mim</a> surface syntax.</p>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="tutorial.html" title="Tutorial">Tutorial</a> shows every construct defined here in one annotated file. That page is <span class="tt">lit/docs/tutorial.mim</span> rendered by <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-md</span>, and the file asserts what it shows with <a class="el" href="refly.html" title="The refly Plugin">refly</a>, so the test suite keeps the tour honest. It is also the <a class="el" href="playground.html" title="Playground">playground</a>'s landing example - open it there to run and edit the tour in the browser.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
 Notation</h1>
 <p>This document uses a lightweight <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">EBNF</a>-style notation. A terminal is shaded, a nonterminal is not, and the <a class="el" href="#terminals" title="Terminals">lexical terminals</a> <span class="tt">I</span>, <span class="tt">L</span>, <span class="tt">X_n</span>, <span class="tt">C</span>, and <span class="tt">S</span> have a colour of their own. Clicking a nonterminal or a lexical terminal traces its occurrences across the page. The meta-symbols are:</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">x ::= y  // defines the nonterminal x as y</div>
@@ -192,7 +192,7 @@ Lexical Structure</h1>
 <h2 class="doxsection"><a class="anchor" id="terminals"></a>
 Terminals</h2>
 <p>The grammar refers to <em>primary terminals</em>. Some tokens have a second spelling - an ASCII-only one or a Unicode variant - that denotes the very same lexical token; these are the <em>secondary terminals</em>.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
 Primary Terminals</h3>
 <div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">( ) [ ] { }</div>
 <div class="line">‹ › « »</div>
@@ -205,7 +205,7 @@ Primary Terminals</h3>
 <li><span class="tt">+</span>, <span class="tt">-</span>, <span class="tt">*</span>, <span class="tt">/</span>, <span class="tt">%</span>, <span class="tt">==</span>, <span class="tt">!=</span>, <span class="tt">&lt;</span>, <span class="tt">&lt;=</span>, <span class="tt">&gt;</span>, <span class="tt">&gt;=</span>, <span class="tt">&lt;&lt;</span>, and <span class="tt">&gt;&gt;</span> are <a class="el" href="#infix" title="Infix Operators">infix operators</a>.</li>
 <li><span class="tt">#</span> is an infix operator after an expression and a prefix one everywhere else; see <a class="el" href="#single" title="Singletons">Singletons</a>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
 Secondary Terminals</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -223,7 +223,7 @@ Secondary Terminals</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">*</span>  </td><td class="markdownTableBodyNone"><span class="tt">★</span>  </td></tr>
 </table>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
 Keywords</h3>
 <div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Nat Rule Type Univ</div>
 <div class="line">and anx as axm cn con end extern ff fn fun</div>
@@ -261,7 +261,7 @@ Keywords</h3>
 <td class="markdownTableBodyNone"><span class="tt">i64</span>  </td><td class="markdownTableBodyNone"><span class="tt">0</span>  </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>2⁶⁴ doesn't fit into a <span class="tt">Nat</span>, so <span class="tt">i64</span> is <span class="tt">0</span>, which <span class="tt">Idx</span> reads as 2⁶⁴.</dd></dl>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 Lexical Terminals</h3>
 <p>The following terminals are defined by lexical rules.</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">I      ::= id</div>
@@ -298,7 +298,7 @@ Lexical Terminals</h3>
 <div class="line">esc    ::= &quot;\&#39;&quot; | &quot;\\&quot; | &quot;\&quot;&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\b&quot;</div>
 <div class="line">        |  &quot;\f&quot; | &quot;\n&quot; | &quot;\r&quot; | &quot;\t&quot; | &quot;\v&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">ascii_char</span> is any ASCII character except <span class="tt">\</span>, <span class="tt">ascii_string_char</span> is any ASCII character except <span class="tt">\</span> and <span class="tt">"</span>, and a non-ASCII payload character is an error.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Comments</h2>
 <p>Supported comments:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">/* multi-line comment */</div>
@@ -392,7 +392,7 @@ Declarations</h2>
 <li><span class="tt">rule</span> and <span class="tt">norm</span> declare rewrite rules.</li>
 <li><span class="tt">norm</span> is the normalizing variant of <span class="tt">rule</span>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 Modifiers</h3>
 <ul>
 <li><span class="tt">anx</span> marks a declaration as an <a class="el" href="#annex" title="Annex">annex</a>. It doesn't apply to <span class="tt">mod</span>, since a module is pure AST grouping, not a single value. <span class="tt">axm</span> is implicitly <span class="tt">anx</span> and may not combine with <span class="tt">extern</span>.</li>
@@ -402,7 +402,7 @@ Modifiers</h3>
 </ul>
 </li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 Visibility</h4>
 <ul>
 <li><span class="tt">priv</span> restricts a declaration to its lexical scope: a path may not cross into it from outside its enclosing <span class="tt">mod</span>; it is the default visibility unless <span class="tt">extern</span> or <span class="tt">anx</span> nudges it to <span class="tt">pub</span>.</li>
@@ -445,7 +445,7 @@ Patterns and Telescopes</h2>
 <div class="line">let (m, val) = mem.load (m, ptr);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="expr"></a>
 Expressions</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Kinds and Builtin Types</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;Univ&quot;</div>
 <div class="line">       |  &quot;Type&quot; e</div>
@@ -488,7 +488,7 @@ Literals and Basic Forms</h3>
 <li>Without an explicit type, <span class="tt">⊥</span> and <span class="tt">⊤</span> default to <span class="tt">*</span>.</li>
 <li><span class="tt">d+ e</span> is a declaration expression: one or more declarations followed by a final expression <span class="tt">e</span>, which is the result. It is not delimited by any brackets; it simply starts with a declaration keyword such as <span class="tt">let</span>.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Functions and Continuations</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
 <div class="line">     |  t &quot;→&quot; e</div>
@@ -551,7 +551,7 @@ Dependent Tuple Types</h3>
 <div class="line">lam f (t: «2; One»): Nat = t#1₂#0₁;    // a real Extract: reads `x` out of the 1-tuple</div>
 <div class="line">lam g (t: «2; One»): One = t#(1₂, 0₁); // the `0₁` axis folds away, so this is just `t#1₂`</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">←</span> is unaffected: writing the component rebuilds the whole 1-tuple either way, so <span class="tt">t#(1₂, 0₁) ← v</span> and <span class="tt">t#1₂#0₁ ← v</span> do agree.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Unions</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
 <div class="line">     |  e &quot;inj&quot; e</div>
@@ -620,7 +620,7 @@ Infix Operators</h3>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
 <li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Univ)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Local Declaration Blocks</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
@@ -665,7 +665,7 @@ Precedence</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">17  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Summary: Functions and Types</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses different surface syntax for declarations, expressions, and types:</p>
 <table class="markdownTable">
@@ -678,21 +678,21 @@ Summary: Functions and Types</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">fun</span>  </td><td class="markdownTableBodyNone"><span class="tt">fn</span>  </td><td class="markdownTableBodyNone"><span class="tt">Fn</span>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f1 (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">con f2 (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">fun f3 (T: *)  (x y: T): T                    = return x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above - except that <span class="tt">f</span> is <em>not</em> in scope inside the body, so they cannot recurse:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f1 =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let _  = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f2 = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f3 = fn (T: *)  (x y: T): T                    = return x;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 Applications</h2>
 <p>The following applications of <span class="tt">f</span> are equivalent, where <span class="tt">g</span> is a continuation that consumes the result:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun f (T: *)  (x y: T): T = return x;</div>
@@ -703,16 +703,16 @@ Applications</h2>
 <div class="line">fun test2 (): Nat =</div>
 <div class="line">    ret res = f Nat $ (23, 42);</div>
 <div class="line">    return res;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = [T: *] →    [[T, T], T → ⊥] → ⊥</div>
 <div class="line">let _ = [T: *] → Cn [[T, T], Cn T]</div>
 <div class="line">let _ = [T: *] → Fn  [T, T] → T</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
 <h2 class="doxsection"><a class="anchor" id="annex"></a>
@@ -732,7 +732,7 @@ Field Names of Sigmas</h2>
 <h1 class="doxsection"><a class="anchor" id="normalization"></a>
 Normalizations</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> nodes are hash-consed and normalized while they are built, so the left-hand sides below never reach the IR - <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-mim</span> prints the right-hand side. Every argument is <a class="el" href="classmim_1_1Zonker.html" title="mim::Zonker">zonked</a> first, so a resolved <span class="tt">Hole</span> normalizes like the term it stands for. A <em>mutable</em> node is built empty and filled in afterwards and is therefore never normalized; only its body is. While the <span class="tt">World</span> is frozen, a rule that would have to build a new node bails out instead.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 Aggregates</h2>
 <ul>
 <li><span class="tt">(e)</span> -&gt; <span class="tt">e</span>, <span class="tt">[T]</span> -&gt; <span class="tt">T</span> - a one-element aggregate degrades to its element; the sole exception is a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component</li>
@@ -740,14 +740,14 @@ Aggregates</h2>
 <li><span class="tt">(t#0, t#1, t#2)</span> -&gt; <span class="tt">t</span> - η for tuples, provided <span class="tt">t</span> has the ascribed type</li>
 <li><span class="tt">⊥:[T, U]</span> -&gt; <span class="tt">(⊥:T, ⊥:U)</span>, <span class="tt">⊥:«n; T»</span> -&gt; <span class="tt">‹n; ⊥:T›</span> - <span class="tt">⊥</span>/<span class="tt">⊤</span> are pushed into aggregates</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Shapes</h2>
 <ul>
 <li><span class="tt">«1; T»</span> -&gt; <span class="tt">T</span> - a literal size-1 axis folds out of a shape</li>
 <li><span class="tt">«2, 0, 3; T»</span> -&gt; <span class="tt">«2; []»</span> - a literal <span class="tt">0</span> extent empties everything below it</li>
 <li><span class="tt">«a; «b; T»»</span> -&gt; <span class="tt">«a, b; T»</span> - a nest of the same kind fuses into one shape, unless the inner extents depend on the outer index</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Extract</h2>
 <ul>
 <li><span class="tt">d#(i, 0₁, k)</span> -&gt; <span class="tt">d#(i, k)</span> - a literal size-1 axis folds out of an index, mirroring the shape rule</li>
@@ -759,7 +759,7 @@ Extract</h2>
 <li><span class="tt">(d#i ← v)#i</span> -&gt; <span class="tt">v</span></li>
 <li><span class="tt">(d#j ← v)#i</span> -&gt; <span class="tt">d#i</span> for literal <span class="tt">i ≠ j</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 Insert</h2>
 <ul>
 <li><span class="tt">d#() ← v</span> -&gt; <span class="tt">v</span>, and likewise for an index of <span class="tt">Idx 1</span> - the write replaces all of <span class="tt">d</span></li>
@@ -770,7 +770,7 @@ Insert</h2>
 <li><span class="tt">d#i ← d#i</span> -&gt; <span class="tt">d</span></li>
 <li><span class="tt">(d#i ← y)#i ← v</span> -&gt; <span class="tt">d#i ← v</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 Application</h2>
 <ul>
 <li><span class="tt">(λ (_: T) = e) a</span> -&gt; <span class="tt">e</span> - an immutable <span class="tt">λ</span> binds no var, so it always β-reduces</li>
@@ -779,7 +779,7 @@ Application</h2>
 <li>an application of an <a class="el" href="#decl" title="Declarations">axiom</a> runs its normalizer once the curry counter hits <span class="tt">0</span></li>
 <li>an application of a <span class="tt">[T: *] → e</span> with implicit domains inserts a <span class="tt">Hole</span> per implicit argument</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Unions</h2>
 <ul>
 <li><span class="tt">T ∪ ⊥</span> -&gt; <span class="tt">T</span> - the unit of a join is dropped</li>
@@ -792,20 +792,20 @@ Unions</h2>
 <li>a <span class="tt">match</span> whose scrutinee is not a union is the degenerate one-case union and reduces right away</li>
 <li>an arm handling no case is dropped; a case handled by no arm is an error</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 Variants</h2>
 <ul>
 <li>a variant is never sorted, deduplicated, or flattened; an empty or one-case variant stays a variant</li>
 <li><span class="tt">match (T#i x) with ...</span> -&gt; the arm for case <span class="tt">i</span></li>
 <li>the arms of a <span class="tt">match</span> on a variant are in the order of its cases, one each</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 Singletons</h2>
 <ul>
 <li><span class="tt">#x</span> -&gt; <span class="tt">e</span> for every <span class="tt">x: «e»</span> - the inhabitant is read off the <em>type</em>, so the var of a <span class="tt">λ (x: «e»)</span> never occurs in the body</li>
 <li><span class="tt">#‹e›</span> -&gt; <span class="tt">e</span> - a special case of the above; a singleton elimination is therefore never built</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 Universes</h2>
 <ul>
 <li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, and a <span class="tt">UMax</span> flattens nested maxima, folds their literals into one, and sorts and deduplicates the rest</li>
