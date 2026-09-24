@@ -33,7 +33,7 @@ var searchData=
   ['commit_5fand_5fpush_30',['commit_and_push',['../namespacedeploy.html#ad85620aca5e6550c7e9da47e623b63e4',1,'deploy']]],
   ['compare_5fre_31',['compare_re',['../namespacemim_1_1plug_1_1regex.html#ae5b509ae2785246a5099b89e294ac2fe',1,'mim::plug::regex']]],
   ['compile_32',['compile',['../classmim_1_1ast_1_1File.html#a628d1716988eb3c623a3f5bcc49e79ab',1,'mim::ast::File']]],
-  ['compose_5fcn_33',['compose_cn',['../namespacemim.html#aab8bd049eb0b9bf7561a602f62ce7ebd',1,'mim']]],
+  ['compose_5fcn_33',['compose_cn',['../namespacemim_1_1plug_1_1autodiff_1_1phase.html#a435f07f1952e917409aa39848d9ffc30',1,'mim::plug::autodiff::phase']]],
   ['compose_5fmap_34',['compose_map',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a09d1835975049dc93906aa3750a07c5b',1,'mim::plug::tensor::phase']]],
   ['con_35',['con',['../classmim_1_1World.html#acbe77774e9e87180aafc7ec9150d4a03',1,'mim::World::con(const Def *dom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a0c7dfef7a0114fbf8dbd040dbf50bf5e',1,'mim::World::con(Defs dom, Lam::Filter f, const Def *body)']]],
   ['cond_36',['cond',['../classmim_1_1Select.html#a4b750b71eb98623eab02e753dbffe112',1,'mim::Select']]],

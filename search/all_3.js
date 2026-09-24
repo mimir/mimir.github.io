@@ -119,7 +119,7 @@ var searchData=
   ['compile_2eh_116',['compile.h',['../compile_8h.html',1,'']]],
   ['compile_2emd_117',['compile.md',['../compile_8md.html',1,'']]],
   ['components_118',['Adding Components',['../rewriting.html#autotoc_md164',1,'']]],
-  ['compose_5fcn_119',['compose_cn',['../namespacemim.html#aab8bd049eb0b9bf7561a602f62ce7ebd',1,'mim']]],
+  ['compose_5fcn_119',['compose_cn',['../namespacemim_1_1plug_1_1autodiff_1_1phase.html#a435f07f1952e917409aa39848d9ffc30',1,'mim::plug::autodiff::phase']]],
   ['compose_5fmap_120',['compose_map',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a09d1835975049dc93906aa3750a07c5b',1,'mim::plug::tensor::phase']]],
   ['con_121',['con',['../classmim_1_1World.html#acbe77774e9e87180aafc7ec9150d4a03',1,'mim::World::con(const Def *dom, Lam::Filter f, const Def *body)'],['../classmim_1_1World.html#a0c7dfef7a0114fbf8dbd040dbf50bf5e',1,'mim::World::con(Defs dom, Lam::Filter f, const Def *body)']]],
   ['concat_122',['concat',['../namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085',1,'mim::plug::btensor::concat'],['../namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a',1,'mim::plug::tensor::concat'],['../btensor.html#autotoc_md253',1,'concat'],['../tensor.html#autotoc_md531',1,'concat']]],
