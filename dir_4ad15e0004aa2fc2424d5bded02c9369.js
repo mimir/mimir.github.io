@@ -1,6 +1,6 @@
 var dir_4ad15e0004aa2fc2424d5bded02c9369 =
 [
-    [ "adce.cpp", "adce_8cpp.html", "adce_8cpp" ],
+    [ "adce.cpp", "adce_8cpp.html", null ],
     [ "beta_red.cpp", "beta__red_8cpp.html", null ],
     [ "branch_normalize.cpp", "branch__normalize_8cpp.html", null ],
     [ "eta_conv.cpp", "eta__conv_8cpp.html", null ],

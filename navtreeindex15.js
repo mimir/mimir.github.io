@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"classmim_1_1ast_1_1UseDecl.html#a1761c0adb9821612f0e51b8245d1f528":[4,0,1,0,49,4],
+"classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5":[2,0,4,0,49,0],
 "classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5":[4,0,1,0,49,0],
 "classmim_1_1ast_1_1UseDecl.html#a25820873fb9dba0a7dbd33952428c2a3":[2,0,4,0,49,12],
 "classmim_1_1ast_1_1UseDecl.html#a25820873fb9dba0a7dbd33952428c2a3":[4,0,1,0,49,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#a556021e7599486204b40ed6868569813":[4,0,1,1,6,0,0,1],
 "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#ab8201263068477a8bbf88426d404b100":[2,0,4,1,9,0,0,0],
 "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#ab8201263068477a8bbf88426d404b100":[4,0,1,1,6,0,0,0],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#af236a7fb15b97a49d01d6ef203a95237":[2,0,4,1,9,0,0,2],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#af236a7fb15b97a49d01d6ef203a95237":[4,0,1,1,6,0,0,2],
-"classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html":[2,0,4,1,9,0,1]
+"classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#af236a7fb15b97a49d01d6ef203a95237":[2,0,4,1,9,0,0,2]
 };

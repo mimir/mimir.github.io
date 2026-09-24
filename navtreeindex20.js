@@ -1,20 +1,21 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9":[2,0,4,143,3],
 "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e":[2,0,4,143,0],
 "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ae46a61588776648a5513d415ba6de279":[2,0,4,143,2],
-"namespacemim.html#add322dac68393a6b179d1243a52cf9a1":[2,0,4,190],
+"namespacemim.html#add322dac68393a6b179d1243a52cf9a1":[2,0,4,189],
 "namespacemim.html#ae219e373875516ae10fdaa6f229b65d8":[2,0,4,149],
 "namespacemim.html#ae4993d8ec478d9b21be0d34df1047d50":[2,0,4,159],
-"namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81":[2,0,4,205],
+"namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81":[2,0,4,204],
 "namespacemim.html#ae86bc5c8f900fdf4b341ddd521fd3a7d":[2,0,4,104],
 "namespacemim.html#aea032103adfec5c9b968665857549fe2":[5,0,3,1,6,2,2],
 "namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288":[2,0,4,127],
 "namespacemim.html#aed213d360936f015062f16dd7a3210d4":[2,0,4,106],
 "namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7":[2,0,4,133],
-"namespacemim.html#af13ff5627285a5c96c9df99a12612858":[2,0,4,173],
+"namespacemim.html#af13ff5627285a5c96c9df99a12612858":[2,0,4,172],
 "namespacemim.html#af485193faab3fd743dc27aa379950c00":[2,0,4,162],
 "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33":[2,0,4,151],
-"namespacemim.html#af537e552f07ed689e1d2df001cd1a35d":[2,0,4,198],
+"namespacemim.html#af537e552f07ed689e1d2df001cd1a35d":[2,0,4,197],
 "namespacemim.html#afb12dbffaaa27bca46f171517d96256d":[2,0,4,146],
 "namespacemim.html#afb12dbffaaa27bca46f171517d96256da07f2a27c6e5ee8afd08991e64dd5c136":[2,0,4,146,29],
 "namespacemim.html#afb12dbffaaa27bca46f171517d96256da127125672f1e85d1e676d4394d24e066":[2,0,4,146,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1compile.html#a538868adc12502b1140af4b6f2f0efa2":[2,0,4,1,5,21],
 "namespacemim_1_1plug_1_1compile.html#a57741844980aa80909fe8481f07c458e":[2,0,4,1,5,10],
 "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de":[2,0,4,1,5,16],
-"namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10":[2,0,4,1,5,17],
-"namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515":[2,0,4,1,5,7]
+"namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10":[2,0,4,1,5,17]
 };
