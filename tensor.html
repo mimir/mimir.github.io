@@ -900,7 +900,7 @@ pool_schedule</h3>
 <div class="line">    unroll_trailing (vectorize_if (t, vec, 3), u);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md585"></a>
 Implementations</h1>
-<p>The <span class="tt">_impl</span> annexes <span class="tt">lower_tensor</span> re-applies to expand the derived operations above, together with the fold steps and access maps they read through. Most are a single <span class="tt">map_reduce</span> over a copy step — the operation itself lives in the access map.</p>
+<p>The <span class="tt">_impl</span> annexes <span class="tt">lower_tensor</span> re-applies to expand the derived operations above, together with the fold steps and access maps they read through. Most are a single <span class="tt">map_reduce</span> over a copy step — the operation itself lives in the access map. They are <span class="tt">priv</span>: the phase resolves them through the annex table, so no path from outside this plugin reaches them and the axioms above stay the only public spelling of these operations.</p>
 <p>The declaration order is load-bearing beyond the usual definition-before-use: <span class="tt">lower_tensor</span> resolves an <span class="tt">_impl</span> in the world it is <em>building</em>, so an impl must be declared before any annex whose body applies the axiom it implements — <span class="tt">reshape_impl</span> before <span class="tt">conv_impl</span> and <span class="tt">dot_product_impl</span>, which reshape their packed results.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md586"></a>
 tensor_copy</h2>
@@ -914,7 +914,7 @@ bid_map</h2>
 <div class="line">    ‹i: r_in; affine.semiop.mul (o#(index#i), core.select (s_in#i == 1, 0, 1))›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md588"></a>
 broadcast_in_dim_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam broadcast_in_dim_impl {T: *, r_in r_out: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam broadcast_in_dim_impl {T: *, r_in r_out: Nat}</div>
 <div class="line">    (s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»): «s_out; T» =</div>
 <div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)</div>
 <div class="line">        affine.id (bid_map (s_in, index),) input;</div>
@@ -925,13 +925,13 @@ flip_map</h2>
 <div class="line">    ‹d: r; affine.op.sub (affine.lit (s_in#d - 1), o#d)›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md590"></a>
 flip_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam flip_impl {T: *, r: Nat} (s_in: «r; Nat») (input: «s_in; T»): «s_in; T» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam flip_impl {T: *, r: Nat} (s_in: «r; Nat») (input: «s_in; T»): «s_in; T» =</div>
 <div class="line">    map_reduce (s_in, s_in) (tensor_copy, ⊥: T)</div>
 <div class="line">        affine.id (flip_map s_in,) input;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md591"></a>
 gather_pointwise_elem_impl</h2>
 <p>One output element: reads <span class="tt">index</span> at the output coordinate, then the source at that coordinate with axis <span class="tt">dim</span> replaced by the loaded value.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam gather_pointwise_elem_impl {T: *, r: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam gather_pointwise_elem_impl {T: *, r: Nat}</div>
 <div class="line">                                   (s_src: «r; Nat», s_idx: «r; Nat»)</div>
 <div class="line">                                   (dim: Idx r)</div>
 <div class="line">                                   (out_indices: «r; I64»)</div>
@@ -945,7 +945,7 @@ gather_pointwise_elem_impl</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md592"></a>
 map_impl</h2>
 <p>A <span class="tt">map_reduce</span> whose fold step drops the accumulator and applies <span class="tt">app</span> to the element tuple.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam map_impl {T: *, ni: Nat, Is: «ni; *»}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam map_impl {T: *, ni: Nat, Is: «ni; *»}</div>
 <div class="line">                     (app: «i: ni; Is#i» → T)</div>
 <div class="line">                     {r: Nat, s: «r; Nat»}</div>
 <div class="line">                     (is: «i: ni; «s; Is#i» »)</div>
@@ -971,7 +971,7 @@ pool2d_in_map</h2>
 <div class="line">     affine.op.add (affine.semiop.mul (o#3_6, stride#1_2), affine.semiop.mul (o#5_6, dilation#1_2)));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md595"></a>
 pool_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam pool_impl {T: *} (g: [T, T] → T, init: T) {n c h w: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam pool_impl {T: *} (g: [T, T] → T, init: T) {n c h w: Nat}</div>
 <div class="line">                      (kernel stride dilation padding s_out: «2; Nat»)</div>
 <div class="line">                      (input: «n, c, h, w; T»)</div>
 <div class="line">                    : «n, c, s_out#0_2, s_out#1_2; T» =</div>
@@ -996,7 +996,7 @@ repeat_map</h2>
 <div class="line">    ‹d: r; affine.semiop.rem (o#d, s_in#d)›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md597"></a>
 repeat_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam repeat_impl {T: *, r: Nat} (s_in: «r; Nat») (s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam repeat_impl {T: *, r: Nat} (s_in: «r; Nat») (s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =</div>
 <div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)</div>
 <div class="line">        affine.id (repeat_map s_in,) input;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md598"></a>
@@ -1007,7 +1007,7 @@ reshape_map</h2>
 <div class="line">    affine.delinearize (affine.linearize (o, s_out), s_in);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md599"></a>
 reshape_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam reshape_impl {T: *, r_in r_out: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam reshape_impl {T: *, r_in r_out: Nat}</div>
 <div class="line">                         (s_in: «r_in; Nat») (s_out: «r_out; Nat») (input: «s_in; T»): «s_out; T» =</div>
 <div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)</div>
 <div class="line">        affine.id (reshape_map (s_in, s_out),) input;</div>
@@ -1024,7 +1024,7 @@ conv2d_in_map</h2>
 <div class="line">     affine.op.add (affine.semiop.mul (o#3_7, stride#1_2), affine.semiop.mul (o#6_7, dilation#1_2)));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md602"></a>
 conv_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam conv_impl (R: Ring) {n cin cout h w kh kw: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam conv_impl (R: Ring) {n cin cout h w kh kw: Nat}</div>
 <div class="line">                      (stride dilation padding: «2; Nat»)</div>
 <div class="line">                      (input: «n, cin, h, w; R#T», weight: «cout, cin, kh, kw; R#T»)</div>
 <div class="line">                    : «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T» =</div>
@@ -1077,7 +1077,7 @@ dot_product_impl</h2>
 <li>a contracted fastest axis ( \(x \cdot W^T\), e.g. behind a weight transpose the read-through absorbs) selects <span class="tt">dot_schedule_kvec</span>, anything else <span class="tt">dot_schedule</span>;</li>
 <li>the selected schedule may strip-mine an output dim (row/output-cell blocking), packing the materialized tensor along that axis, whereupon the row-major <span class="tt">reshape</span> restores <span class="tt">s_out</span> — the identity for the neutral split, and absorbed into the consumers' access maps by <span class="tt">fuse_tensor</span>'s read-through in a fused graph.</li>
 </ul>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam dot_product_impl</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam dot_product_impl</div>
 <div class="line">  (fastest_2: Nat)</div>
 <div class="line">  (R: Ring) (r1 r2: Nat) {nc nb: Nat}</div>
 <div class="line">  (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)</div>
@@ -1125,17 +1125,17 @@ dot_product_impl</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md606"></a>
 bmm_impl</h2>
 <p>The <span class="tt">{r1 r2}</span>/<span class="tt">{s1 s2}</span> groups are explicit for the same reason as in <span class="tt">product_2d_impl</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam bmm_impl (fastest_2: Nat) (R: Ring) {B M K N: Nat} (t1: «B, M, K; R#T», t2: «B, K, N; R#T»): «B, M, N; R#T»</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam bmm_impl (fastest_2: Nat) (R: Ring) {B M K N: Nat} (t1: «B, M, K; R#T», t2: «B, K, N; R#T»): «B, M, N; R#T»</div>
 <div class="line">        = dot_product_impl fastest_2 R (3, 3) (2_3, 1_3, 0_3, 0_3) (t1, t2);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md607"></a>
 product_2d_impl</h2>
-<p>The <span class="tt">{r1 r2}</span> and <span class="tt">{s1 s2}</span> groups are passed explicitly — not because inference fails, but because of <em>when</em> it succeeds: <span class="tt">dot_product_impl</span> is a curried <span class="tt">lam</span>, so applying it to a group β-reduces the body right away. With the ranks still unsolved Holes the <span class="tt">vec.diff</span>/<span class="tt">vec.fold.l</span> subscript machinery is built over non-literals, its normalizers decline to fold, and nothing re-normalizes the body once the Holes are resolved: the result type-checks but carries the whole <span class="tt">vec.*</span> scaffolding inside its access maps (<span class="tt">refly.struc.e</span> in <span class="tt">lit/tensor/dot_product.mim</span> pins this down). Passing literals up front folds it away.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam product_2d_impl (fastest_2: Nat) (R: Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
+<p>The <span class="tt">{r1 r2}</span> and <span class="tt">{s1 s2}</span> groups are passed explicitly — not because inference fails, but because of <em>when</em> it succeeds: <span class="tt">dot_product_impl</span> is a curried <span class="tt">lam</span>, so applying it to a group β-reduces the body right away. With the ranks still unsolved Holes the <span class="tt">vec.diff</span>/<span class="tt">vec.fold.l</span> subscript machinery is built over non-literals, its normalizers decline to fold, and nothing re-normalizes the body once the Holes are resolved: the result type-checks but carries the whole <span class="tt">vec.*</span> scaffolding inside its access maps (<span class="tt">lit/tensor/dot_product.mim</span> pins this down). Passing literals up front folds it away.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam product_2d_impl (fastest_2: Nat) (R: Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
 <div class="line">        = dot_product_impl fastest_2 R (2, 2) (1_2, 0_2, (), ()) (t1, t2);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md608"></a>
 scatter_step_impl</h2>
 <p>One update: reads <span class="tt">index</span> and <span class="tt">updates</span> at the visited coordinate and inserts the element into the accumulated tensor at the destination it selects.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam scatter_step_impl {T: *, r: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam scatter_step_impl {T: *, r: Nat}</div>
 <div class="line">                          (s_src: «r; Nat», s_idx: «r; Nat», s_updates: «r; Nat»)</div>
 <div class="line">                          (dim: Idx r)</div>
 <div class="line">                          (visit_indices: «r; I64»)</div>
@@ -1155,7 +1155,7 @@ slice_map</h2>
 <div class="line">    ‹d: r; affine.op.add (affine.semiop.mul (o#d, step#d), affine.lit (start#d))›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md610"></a>
 slice_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam slice_impl {T: *, r: Nat} (s_in: «r; Nat»)</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam slice_impl {T: *, r: Nat} (s_in: «r; Nat»)</div>
 <div class="line">                       (start step s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =</div>
 <div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥: T)</div>
 <div class="line">        affine.id (slice_map (start, step),) input;</div>
@@ -1165,7 +1165,7 @@ transpose_map</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam transpose_map {r: Nat} (perm: «r; Idx r») (o: «r; affine.Index»): «r; affine.Index» = ‹j: r; o#(perm#j)›;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md612"></a>
 transpose_impl</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam transpose_impl {T: *, r: Nat}</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam transpose_impl {T: *, r: Nat}</div>
 <div class="line">                           (permutation: «r; Idx r») {s: «r; Nat»} (input: «s; T»)</div>
 <div class="line">                         : «transpose_shape (s, permutation); T»</div>
 <div class="line">                         = let out_s = transpose_shape (s, permutation);</div>
@@ -1174,22 +1174,22 @@ transpose_impl</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md613"></a>
 transpose_2d_impl</h2>
 <p><span class="tt">transpose_impl</span> at the swap permutation.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam transpose_2d_impl {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» =</div>
 <div class="line">  transpose_impl (tt, ff) input;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md614"></a>
 binary_impl</h2>
 <p><span class="tt">map_impl</span> over two tensors.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam binary_impl {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat, s: «r; Nat»} (is: [«s; Ti1», «s; Ti2»]): «s; To» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam binary_impl {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat, s: «r; Nat»} (is: [«s; Ti1», «s; Ti2»]): «s; To» =</div>
 <div class="line">  map_impl app is;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md615"></a>
 select_impl</h2>
 <p><span class="tt">map_impl</span> of <span class="tt">core.select</span> over three tensors.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam select_impl {T: *} {r: Nat, s: «r; Nat»} (is: [«s; Bool», «s; T», «s; T»]): «s; T» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam select_impl {T: *} {r: Nat, s: «r; Nat»} (is: [«s; Bool», «s; T», «s; T»]): «s; T» =</div>
 <div class="line">  map_impl core.select is;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md616"></a>
 unary_impl</h2>
 <p><span class="tt">map_impl</span> over one tensor.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam unary_impl {Ti To : *} (app: Ti → To) {r: Nat, s: «r; Nat»} (i: «s; Ti»): «s; To» =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam unary_impl {Ti To : *} (app: Ti → To) {r: Nat, s: «r; Nat»} (i: «s; Ti»): «s; To» =</div>
 <div class="line">  map_impl app i;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md617"></a>
 Phases</h1>
