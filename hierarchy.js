@@ -53,9 +53,6 @@ var hierarchy =
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
     [ "mim::Nest::Node", "classmim_1_1Nest_1_1Node.html", null ],
-    [ "absl::node_hash_map", null, [
-      [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
-    ] ],
     [ "mim::detail::NullSafeDefGIDLt", null, null ],
     [ "mim::Out", "classmim_1_1Out.html", null ],
     [ "fe::Parser", null, [
@@ -348,6 +345,9 @@ var hierarchy =
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
+    [ "std::unordered_map", null, [
+      [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
+    ] ],
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],

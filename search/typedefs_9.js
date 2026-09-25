@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['phases_0',['Phases',['../namespacemim.html#ace9968a67fd836075490bf9fe9b62457',1,'mim']]],
-  ['plugin_5ft_1',['plugin_t',['../namespacemim.html#abb3c4d87d349db095756fced097d8ac8',1,'mim']]],
-  ['ptr_2',['Ptr',['../namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599',1,'mim::ast']]],
-  ['ptrs_3',['Ptrs',['../namespacemim_1_1ast.html#adab9e5d9f6ae6b66ad36b2ac12701482',1,'mim::ast']]]
+  ['nat_5ft_0',['nat_t',['../namespacemim.html#a02aae51c2293663cb7352f21c7fbe490',1,'mim']]],
+  ['nfaset_1',['NFASet',['../namespaceautomaton.html#aff8bde3fed7648c53bafdf22224534ec',1,'automaton']]],
+  ['node_5ft_2',['node_t',['../namespacemim.html#a459cb02e53212327ccb3957614a485ca',1,'mim']]],
+  ['normalizefn_3',['NormalizeFn',['../namespacemim.html#ab992e926dce870b1e086b34589849a92',1,'mim']]],
+  ['normalizers_4',['Normalizers',['../namespacemim.html#a2f22db57ec53935eb9dfedebd9b9b0b2',1,'mim']]]
 ];

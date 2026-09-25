@@ -308,7 +308,7 @@ C++ Style</h2>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="includes"></a>
 Include Style</h3>
-<p>Use <span class="tt">#include "..."</span> for headers that belong to the artifact you are currently building and <span class="tt">#include &lt;...&gt;</span> for everything you link against - including external dependencies such as <a href="https://abseil.io/">Abseil</a>, <a href="https://github.com/leissa/fe">fe</a>, and the standard library.</p>
+<p>Use <span class="tt">#include "..."</span> for headers that belong to the artifact you are currently building and <span class="tt">#include &lt;...&gt;</span> for everything you link against - including external dependencies such as <a href="https://github.com/martinus/unordered_dense">ankerl</a>, <a href="https://github.com/leissa/fe">fe</a>, and the standard library.</p>
 <p>The artifact a file belongs to - and hence the prefix of its own headers - follows from its path:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -331,7 +331,7 @@ Include Style</h3>
 <p>The last three link against <span class="tt">libmim</span> but do not ship headers of their own, so they use <span class="tt">&lt;...&gt;</span> throughout. A plugin is a separate build artifact as well, so for a plugin <span class="tt">X</span>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;cstdlib&gt;</span> <span class="comment">// standard library</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;absl/container/flat_hash_map.h&gt;</span> <span class="comment">// other external dependencies</span></div>
+<div class="line"><span class="preprocessor">#include &lt;ankerl/unordered_dense.h&gt;</span> <span class="comment">// other external dependencies</span></div>
 <div class="line"><span class="preprocessor">#include &lt;fe/assert.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="world_8h.html">mim/world.h</a>&gt;</span> <span class="comment">// libmim</span></div>

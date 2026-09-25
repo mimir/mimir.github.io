@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['tag_0',['Tag',['../namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3',1,'mim::ast']]],
-  ['tag_5ft_1',['tag_t',['../namespacemim.html#aec640f0bb1ca994e0f2946fa2f00f288',1,'mim']]],
-  ['top_2',['Top',['../namespacemim.html#a8c95db47da2d9514da3e16e015062bf2',1,'mim']]],
-  ['type_3',['type',['../classmim_1_1Axm.html#a7151fc68b556560716e09c5e318d5222',1,'mim::Axm::IsANode']]]
+  ['s16_0',['s16',['../namespacemim.html#a482a4a4a0e8f85c8c3c19f3ea130c314',1,'mim']]],
+  ['s32_1',['s32',['../namespacemim.html#a57bc30f8ac8359a582c8f53b9b4f0ed8',1,'mim']]],
+  ['s64_2',['s64',['../namespacemim.html#a82bd82851e0f25f0390ebe12e4963ed4',1,'mim']]],
+  ['s8_3',['s8',['../namespacemim.html#ac4e6752bd834d28cb851c128dfa5b8c7',1,'mim']]],
+  ['scc_4',['SCC',['../classmim_1_1Nest_1_1Node.html#a703327d9e034bc208d14107e0aa8341a',1,'mim::Nest::Node']]],
+  ['schedule_5',['Schedule',['../classmim_1_1Scheduler.html#a3df38c3ac0b5e1b5b2af665af6cb40bf',1,'mim::Scheduler']]],
+  ['scope_6',['Scope',['../namespacemim_1_1ast.html#a093ff4664a025c66f9bfdfe42f971659',1,'mim::ast']]],
+  ['scopedloc_7',['ScopedLoc',['../classmim_1_1World.html#aab7ecab9540c82754523bf9aa523f5d6',1,'mim::World']]],
+  ['splits_8',['Splits',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83',1,'mim::plug::tensor::phase']]],
+  ['sub_5ft_9',['sub_t',['../namespacemim.html#a190fd94a575b212f38ae8be611f1c367',1,'mim']]],
+  ['super_10',['Super',['../classmim_1_1BetaRed.html#aaf1890b84b92504bc4b2785554852898',1,'mim::BetaRed::Super'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#ab8201263068477a8bbf88426d404b100',1,'mim::plug::gpu::phase::LowerMapReduce::Super'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html#a1eef64de7f58b92d2b188653578a8c56',1,'mim::plug::gpu::phase::MemChecks::Super'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html#a6841dab577e02244b9496b44c1b70419',1,'mim::plug::gpu::phase::RemoveDoubleSyncs::Super'],['../classmim_1_1plug_1_1ll_1_1Emitter.html#a655fbcee77b30f6bee09ad633180be9c',1,'mim::plug::ll::Emitter::Super'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#a7162a1b89b3057bc8efb7452fa2245e8',1,'mim::plug::ll_nvptx::HostEmitter::Super'],['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#a2ee0d360083c55e77484c1691bce7f6b',1,'mim::plug::ll_nvptx::DeviceEmitter::Super']]]
 ];

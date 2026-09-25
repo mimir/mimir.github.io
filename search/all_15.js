@@ -74,7 +74,7 @@ var searchData=
   ['useeq_71',['UseEq',['../structmim_1_1UseEq.html',1,'mim']]],
   ['usehash_72',['UseHash',['../structmim_1_1UseHash.html',1,'mim']]],
   ['users_73',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
-  ['uses_74',['Uses',['../namespacemim.html#aa5a838964832f04e880e1aa8c5789343',1,'mim']]],
+  ['uses_74',['Uses',['../namespacemim.html#a7d50dc59d277c5e591ef4a74f163ae62',1,'mim']]],
   ['uses_75',['uses',['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler']]],
   ['uses_5flibdevice_76',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]],
   ['using_20it_77',['Using it',['../playground.html#autotoc_md131',1,'']]]

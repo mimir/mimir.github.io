@@ -9,7 +9,7 @@ var searchData=
   ['w2u_6',['w2u',['../namespacemim.html#ad0b148caad3b040f944f32bc4fa9a966',1,'mim']]],
   ['warn_7',['warn',['../namespacemim_1_1plug_1_1refly.html#a7b28d3c30005b51a4045c19a3beee279',1,'mim::plug::refly']]],
   ['watchpoint_8',['watchpoint',['../classmim_1_1World.html#a26f0fb5ac4918e179c288f377757d8a9',1,'mim::World']]],
-  ['watchpoints_9',['watchpoints',['../structmim_1_1World_1_1State.html#a22d5dcbcefd078fb05bc965ab3c6ebbc',1,'mim::World::State::watchpoints'],['../classmim_1_1World.html#a3927508f5ffda384019188e6141e7f85',1,'mim::World::watchpoints()']]],
+  ['watchpoints_9',['watchpoints',['../structmim_1_1World_1_1State.html#a8dbf5811b2c327caf7f9aaa2e7534f6b',1,'mim::World::State::watchpoints'],['../classmim_1_1World.html#a3927508f5ffda384019188e6141e7f85',1,'mim::World::watchpoints()']]],
   ['way_20sum_20type_20in_20one_20machine_20word_10',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md174',1,'']]],
   ['what_20about_20rust_11',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md188',1,'']]],
   ['what_20the_20c_20implementation_20actually_20relies_20on_12',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md172',1,'']]],

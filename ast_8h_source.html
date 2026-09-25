@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ast_8h_source.
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    std::deque&lt;Scope&gt; scopes_;</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="comment">// Inner map must be pointer-stable: name2annex() hands out `AnnexInfo*`s that are cached in AST nodes,</span></div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// so the elements must not be relocated when further annexes are inserted into the same plugin.</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    absl::node_hash_map&lt;fe::Sym, absl::node_hash_map&lt;fe::Sym, AnnexInfo&gt;&gt; plugin2sym2annex_;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    std::unordered_map&lt;fe::Sym, std::unordered_map&lt;fe::Sym, AnnexInfo&gt;&gt; plugin2sym2annex_;</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>};</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment"></span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">/// Base class of all AST nodes.</span></div>

@@ -124,13 +124,13 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#a49130aa931fe2a8924532c29b62c02f8",
 "dir_a8cd42f79f0840c8aa2393bc13f0c02e.html",
 "math_8cpp.html#a4c0458e752b73345765464ca3a56df97",
-"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988",
+"namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188",
 "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de",
 "namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0",
 "namespacemim_1_1plug_1_1mem.html#a8b2f069e29fa1d51255fd22d817b169f",
 "namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664",
 "structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b",
-"structmim_1_1ast_1_1S.html#a9846e17ff79686cbf576f7a8d0eac004"
+"structmim_1_1ast_1_1S.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

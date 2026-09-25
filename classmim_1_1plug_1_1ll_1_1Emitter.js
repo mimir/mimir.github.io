@@ -34,7 +34,7 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "mim_ll_emit_epilogue", "classmim_1_1plug_1_1ll_1_1Emitter.html#afbea4d68ef229cede396edd88b9a6e35", null ],
     [ "mim_ll_finalize", "classmim_1_1plug_1_1ll_1_1Emitter.html#adf2801a80435ad15c5b708e43739f5f7", null ],
     [ "curr_lam_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a6dc887a02d5d0b23661854056b21018f", null ],
-    [ "decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#a65ac63a5b52dcac775dc3c0ee75a3520", null ],
+    [ "decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#af45212c9201d19e18bc65b80977f19aa", null ],
     [ "func_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa27e43c7bfe8e0e3284eadf1fd17060a", null ],
     [ "func_impls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab31bbfcaecd5d6fc4d1e54e1d19716be", null ],
     [ "globals_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa21e2974fbe684c3665c64d8bfe7d251", null ],
