@@ -76,7 +76,7 @@ window.MathJax = {
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><a href="https://github.com/mimir"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
   <td id="projectalign">
    <div id="projectname">MimIR
     <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
@@ -220,7 +220,7 @@ Reshaping Aggregates</h2>
 </div><!-- fragment --><p>For an immutable aggregate, <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">Sieve::gather</span></a> picks the surviving ops directly.</p>
 <p>Dropping a component shifts the indices of its successors, so every <a class="el" href="classmim_1_1Extract.html" title="mim::Extract"><span class="tt">Extract</span></a> and <a class="el" href="classmim_1_1Insert.html" title="mim::Insert"><span class="tt">Insert</span></a> into that aggregate needs its index adjusted. This is what <span class="tt">keep[i]</span> answers - or <a class="el" href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb" title="mim::Sieve::Gone"><span class="tt">Sieve::Gone</span></a>, if that component did not survive:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> new_index = keep[<a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a>(extract-&gt;index())];</div>
-<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01018">def.h:1018</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01019">def.h:1019</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Only a <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a> ever needs this. An <a class="el" href="classmim_1_1Arr.html" title="mim::Arr"><span class="tt">Arr</span></a>'s components all share one type, so it is dropped as a whole, and <span class="tt">World::extract_fused</span> splits a fused index at the <span class="tt">Arr</span> boundary - which leaves a <span class="tt">Sigma</span>'s index scalar.</dd></dl>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
 Adding Components</h3>
