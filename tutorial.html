@@ -265,7 +265,7 @@ Dependent Tuple Types</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">and</span> extends the group, so two types may refer to each other.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec Tree   = [val: I32, kids: mem.Ptr0 Forest]</div>
 <div class="line">and Forest = [car: mem.Ptr0 Tree, cdr: mem.Ptr0 Forest];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>Components carry field names, which beat lexical names of the same spelling.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>Components carry field names, which beat lexical names of the same spelling - with a warning, as here.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let tail = 1₂;</div>
 <div class="line">lam by_field (l: List): mem.Ptr0 List = l#tail;</div>
 <div class="line">lam by_var   (p: «2; Nat»): Nat       = p#(tail);   // parentheses force the variable</div>
