@@ -236,24 +236,19 @@ Registered translations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md238"></a>
 diff</h2>
 <p>The derivative of the axiom <span class="tt">plugin.tag.sub</span> is the annex <span class="tt">autodiff.diff.plugin_tag_sub</span>, i.e. the axiom's name with all <span class="tt">.</span>s replaced by <span class="tt">_</span>s; this is how <a class="el" href="classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html" title="This phase is the heart of AD.">mim::plug::autodiff::phase::Eval</a> looks a derivative up. Being annexes, they are roots of the World and hence survive until <a class="el" href="classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html" title="This phase is the heart of AD.">mim::plug::autodiff::phase::Eval</a> has consumed them. But - unlike externals - they are invisible to the backends and a <span class="tt">compile.unload "autodiff"</span> nukes them along with all the other annexes of this plugin.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md239"></a>
+autodiff.diff</h3>
+<ul>
+<li>The derivative of <span class="tt">core.icmp.xYgLE (eq)</span>. The comparison pullback exists formally but is not used.</li>
+<li>The derivative of <span class="tt">core.wrap.add</span>: <span class="tt">s ↦ (s, s)</span></li>
+<li>The derivative of <span class="tt">core.wrap.mul</span>: <span class="tt">s ↦ (s*b, s*a)</span></li>
+</ul>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mod diff {</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md239"></a>
-autodiff.diff.core_icmp_xYgLE</h3>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The derivative of core.icmp.xYgLE (eq).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The comparison pullback exists formally but is not used.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx fun core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =</div>
-<div class="line">    return (core.icmp.sle ab, fn (_: Bool)@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md240"></a>
-autodiff.diff.core_wrap_add</h3>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The derivative of core.wrap.add:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>s ↦ (s, s)</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx fun core_wrap_add (m: Nat) {s: Nat} (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
-<div class="line">    return (core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md241"></a>
-autodiff.diff.core_wrap_mul</h3>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The derivative of core.wrap.mul:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>s ↦ (s*b, s*a)</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">    anx fun core_wrap_mul (m: Nat) {s: Nat} (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
+<div class="line">    anx fun core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =</div>
+<div class="line">        return (core.icmp.sle ab, fn (_: Bool)@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);</div>
+<div class="line">    anx fun core_wrap_add (m: Nat) {s: Nat} (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
+<div class="line">        return (core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);</div>
+<div class="line">    anx fun core_wrap_mul (m: Nat) {s: Nat} (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
 <div class="line">        return (core.wrap.mul m ab, fn (i: Idx s)@tt: «2; Idx s» = return (core.wrap.mul m (i, b), core.wrap.mul m (i, a)));</div>
 <div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
