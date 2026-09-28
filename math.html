@@ -459,21 +459,27 @@ conv</h2>
 <div class="line">    axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;</div>
 <div class="line">}</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
+inf, neg_inf, nan</h2>
+<p>Positive and negative infinity and a quiet NaN of the floating-point format <span class="tt">pe</span>, e.g. <span class="tt">math.neg_inf math.f32</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam inf     (pe: «2; Nat»): F pe = conv.f2f pe 0x7FF0000000000000:F64;</div>
+<div class="line">anx lam neg_inf (pe: «2; Nat»): F pe = conv.f2f pe 0xFFF0000000000000:F64;</div>
+<div class="line">anx lam nan     (pe: «2; Nat»): F pe = conv.f2f pe 0x7FF8000000000000:F64;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
 slf</h2>
 <p><a href="https://en.wikipedia.org/wiki/Logistic_function">Standard logistic function</a> of a floating-point number ( \(\textrm{slf}(x) = \frac{1}{1+e^{-x}}\))</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam slf (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    arith.div m ((conv.f2f pe 1.0:(F64)), arith.add m ((conv.f2f pe 1.0:(F64)), exp.exp m (minus m x)));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md421"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
 sgn</h2>
 <p><a href="https://en.wikipedia.org/wiki/Sign_function">Sign function</a></p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam sgn (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    ((conv.f2f pe (-1.0:(F64))), ((conv.f2f pe 0.0:(F64)), (conv.f2f pe 1.0:(F64)))#(cmp.g m (x,(conv.f2f pe 0.0:(F64)))))#(cmp.ge m (x, (conv.f2f pe 0.0:(F64))));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md422"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
 rrt</h2>
 <p><a href="https://en.wikipedia.org/wiki/Multiplicative_inverse">Reciprocal</a> of the <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> ( \(\textrm{rrt}(x) = \frac{1}{\sqrt{x}}\))</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam rrt (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =</div>
 <div class="line">    arith.div m (conv.f2f pe 1.0:(F64), rt.sq m x);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md423"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md424"></a>
 Operators</h1>
 <p>Bindings for the infix operators, which are sugar for an application of the escaped name. <span class="tt">use</span> the module whose math.mode matches the accuracy you are willing to trade:</p>
 <table class="markdownTable">

@@ -175,6 +175,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemim_1
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Fuse" id="r_Fuse"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html">Fuse</a></td></tr>
+<tr class="memitem:Leaf_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1Leaf" id="r_Leaf_5Fstructmim_5F1_5F1plug_5F1_5F1tensor_5F1_5F1phase_5F1_5F1Leaf"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf">Leaf</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A chain operand; the chain reads its transpose if <code class="param">t</code>.  <a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf">More...</a><br /></td></tr>
 <tr class="memitem:Lower" id="r_Lower"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html">Lower</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lowers the high-level tensor axioms into the low-level tensor axioms (<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a></span>, …).  <a href="classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#details">More...</a><br /></td></tr>
 <tr class="memitem:LowerMapReduce" id="r_LowerMapReduce"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html">LowerMapReduce</a></td></tr>
@@ -192,6 +194,7 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a9354dd9f12f084b417b3197ce31a4b83" id="r_a9354dd9f12f084b417b3197ce31a4b83"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a9354dd9f12f084b417b3197ce31a4b83">Splits</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">Split</a>&gt;</td></tr>
 <tr class="memdesc:a9354dd9f12f084b417b3197ce31a4b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">A bracketing of a matrix chain, innermost node first.  <br /></td></tr>
+<tr class="memitem:a9a40db33e9223a27c6b303db3706c357" id="r_a9a40db33e9223a27c6b303db3706c357"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a9a40db33e9223a27c6b303db3706c357">Leaves</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf">Leaf</a>&gt;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -211,6 +214,38 @@ Functions</h2></td></tr>
 <tr class="memdesc:a90789f0506b7baf4427628463e594443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> the row-major reshape read <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a5846df9fb3d27c6dc67f0b23ac630b15">tensor.reshape_map</a> (s_in, s_out)</span> — the map that reads a PACKED producer (its output strip-mined to <span class="tt">s_in</span>) at the unpacked coordinates <span class="tt">s_out</span>?  <br /></td></tr>
 </table>
 <hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf" id="structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf">&#9670;&#160;</a></span>mim::plug::tensor::phase::Leaf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::tensor::phase::Leaf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A chain operand; the chain reads its transpose if <code class="param">t</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00021">21</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="aad91ab83a2f059802dd646c04e22e15b" name="aad91ab83a2f059802dd646c04e22e15b"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+def</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a94dd1c70a3b846b28c8818072d26b4e1" name="a94dd1c70a3b846b28c8818072d26b4e1"></a>bool</td>
+<td class="fieldname">
+t</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <a name="structmim_1_1plug_1_1tensor_1_1phase_1_1Split" id="structmim_1_1plug_1_1tensor_1_1phase_1_1Split"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Split">&#9670;&#160;</a></span>mim::plug::tensor::phase::Split</h2>
 
@@ -223,9 +258,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"><p>One node of a bracketing: <span class="tt"><a class="el" href="#ac879b26331d04ddbd27ca0664cf16cf3">i</a> … <a class="el" href="#a74f639428e135246401d316463e716c1">j</a></span> splits after <span class="tt"><a class="el" href="#ac9514ab15820064bdda1185d8a4b541a">s</a></span>. </p>
-<p>Spelling the fields out keeps <span class="tt">size_t</span> out of the type - it is <em>not</em> <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">mim::u64</a> everywhere. </p>
+<p>Spelling the fields out keeps <span class="tt">size_t</span> out of the type - it is <em>not</em> <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">mim::u64</a> everywhere. A transposed node <code class="param">t</code> is computed as the product of its operands' transposes, <span class="tt">(Rᵀ · Lᵀ)ᵀ</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00011">11</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00012">12</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -246,11 +281,33 @@ j</td>
 s</td>
 <td class="fielddoc">
 </td></tr>
+<tr><td class="fieldtype">
+<a id="a46ef6d36c29e32da192239bbf534da6d" name="a46ef6d36c29e32da192239bbf534da6d"></a>bool</td>
+<td class="fieldname">
+t = false</td>
+<td class="fielddoc">
+</td></tr>
 </table>
 
 </div>
 </div>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a9a40db33e9223a27c6b303db3706c357" name="a9a40db33e9223a27c6b303db3706c357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a40db33e9223a27c6b303db3706c357">&#9670;&#160;</a></span>Leaves</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9a40db33e9223a27c6b303db3706c357">mim::plug::tensor::phase::Leaves</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf">Leaf</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00026">26</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+
+</div>
+</div>
 <a id="a9354dd9f12f084b417b3197ce31a4b83" name="a9354dd9f12f084b417b3197ce31a4b83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9354dd9f12f084b417b3197ce31a4b83">&#9670;&#160;</a></span>Splits</h2>
 
@@ -265,7 +322,7 @@ s</td>
 
 <p>A bracketing of a matrix chain, innermost node first. </p>
 
-<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00016">16</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reassoc_8h_source.html#l00018">18</a> of file <a class="el" href="reassoc_8h_source.html">reassoc.h</a>.</p>
 
 </div>
 </div>

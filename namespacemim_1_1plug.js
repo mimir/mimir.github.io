@@ -325,6 +325,7 @@ var namespacemim_1_1plug =
         [ "t", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0ae358efa489f58062f10dd7316b65649e", null ],
         [ "l", "namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0a2db95e8e1a9267b7a1188556b2013b33", null ]
       ] ],
+      [ "inf", "namespacemim_1_1plug_1_1math.html#ade9b6cf80d57e6c553e85377d0e93b4a", null ],
       [ "is_finite", "namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059", null ],
       [ "minus", "namespacemim_1_1plug_1_1math.html#aa52b7f69b96d96a148a7ae67a76c7199", null ],
       [ "Mode", "namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91", [
@@ -355,6 +356,8 @@ var namespacemim_1_1plug =
         [ "unsafe", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a64c823fad1d87e0df1ef3cdeb8ac684f", null ],
         [ "fast", "namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a31d4541b8e926a24f0c9b835b68cfdf3", null ]
       ] ],
+      [ "nan", "namespacemim_1_1plug_1_1math.html#ab8b0e933c317c3c056f71c14d76852a0", null ],
+      [ "neg_inf", "namespacemim_1_1plug_1_1math.html#a6e9a58ec11bf2a5a3b7f44123ff9b303", null ],
       [ "NVTF32", "namespacemim_1_1plug_1_1math.html#a1a6f22c3b750ca37462e91f209d66fa7", null ],
       [ "nvtf32", "namespacemim_1_1plug_1_1math.html#a4b6b6615eaa73ce27195a4a716c8e199", null ],
       [ "pow", "namespacemim_1_1plug_1_1math.html#a638f19e14b30d84e0a57f808645bc3d7", null ],

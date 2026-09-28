@@ -131,6 +131,7 @@ var annotated_dup =
         [ "tensor", "namespacemim_1_1plug_1_1tensor.html", [
           [ "phase", "namespacemim_1_1plug_1_1tensor_1_1phase.html", [
             [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
+            [ "Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf_dup" ],
             [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
             [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
             [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ],

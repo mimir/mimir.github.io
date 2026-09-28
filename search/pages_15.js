@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md436',1,'']]],
-  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md427',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md437',1,'']]],
+  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md428',1,'']]],
   ['way_20sum_20type_20in_20one_20machine_20word_2',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md174',1,'']]],
   ['what_20about_20rust_3',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md188',1,'']]],
   ['what_20the_20c_20implementation_20actually_20relies_20on_4',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md172',1,'']]],
@@ -13,7 +13,7 @@ var searchData=
   ['why_20the_20guard_20exists_20at_20all_10',['Why the guard exists at all',['../phases.html#autotoc_md114',1,'']]],
   ['why_20this_20is_20hard_20elsewhere_11',['Why this is hard elsewhere',['../phases.html#autotoc_md117',1,'']]],
   ['wins_12',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md190',1,'']]],
-  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md542',1,'']]],
+  ['wise_20operations_13',['Element-wise Operations',['../tensor.html#autotoc_md543',1,'']]],
   ['with_20arena_20rollback_14',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md177',1,'']]],
   ['with_20indices_15',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_16',['With Subtags',['../dev.html#autotoc_md49',1,'']]],

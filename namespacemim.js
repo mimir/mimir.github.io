@@ -221,6 +221,7 @@ var namespacemim =
     [ "is_commutative", "namespacemim.html#a2d08547c4fc3b6bcf3d8779269813b50", null ],
     [ "is_flex", "namespacemim.html#af13ff5627285a5c96c9df99a12612858", null ],
     [ "is_mut_node", "namespacemim.html#aba9b8f07925b0b13adb89a9101a9412b", null ],
+    [ "is_polymorphic_arg", "namespacemim.html#ad71a02516bfec8afc2806c4f193b2709", null ],
     [ "is_shaped", "namespacemim.html#aba2a676bca77d183a084b2bf6ade2bf5", null ],
     [ "is_unit", "namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8", null ],
     [ "isa_axes", "namespacemim.html#a4ddb0b64689ed9de621fe712d8d42411", null ],

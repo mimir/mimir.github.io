@@ -17,7 +17,7 @@ var searchData=
   ['haskell_20specifically_14',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md182',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_15',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md187',1,'']]],
   ['head_16',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tail_17',['head / tail',['../tuple.html#autotoc_md629',1,'']]],
+  ['head_20tail_17',['head / tail',['../tuple.html#autotoc_md633',1,'']]],
   ['header_18',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['helpers_19',['Error Handling Helpers',['../python.html#autotoc_md145',1,'']]],
   ['here_20',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md184',1,'']]],

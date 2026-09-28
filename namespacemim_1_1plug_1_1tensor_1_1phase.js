@@ -1,12 +1,14 @@
 var namespacemim_1_1plug_1_1tensor_1_1phase =
 [
     [ "Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse" ],
+    [ "Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf_dup" ],
     [ "Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower" ],
     [ "LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce" ],
     [ "LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem" ],
     [ "Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc" ],
     [ "Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots" ],
     [ "Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1Split_dup" ],
+    [ "Leaves", "namespacemim_1_1plug_1_1tensor_1_1phase.html#a9a40db33e9223a27c6b303db3706c357", null ],
     [ "Splits", "namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83", null ],
     [ "check_gather_shape_constraints", "namespacemim_1_1plug_1_1tensor_1_1phase.html#af9e517e6bff0369881f8904d74fa39bd", null ],
     [ "check_scatter_shape_constraints", "namespacemim_1_1plug_1_1tensor_1_1phase.html#a366c198562cc20946fc693da625124e1", null ],

@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['effects_0',['Effects',['../mem.html#autotoc_md427',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md436',1,'Operations w/o Side Effects']]],
-  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md542',1,'']]],
+  ['effects_0',['Effects',['../mem.html#autotoc_md428',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md437',1,'Operations w/o Side Effects']]],
+  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md543',1,'']]],
   ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md117',1,'']]],
   ['embedded_20python_20dsl_3',['Embedded Python DSL',['../python.html#autotoc_md147',1,'']]],
   ['emit_4',['emit',['../ll.html#autotoc_md395',1,'emit'],['../ll_nvptx.html#autotoc_md400',1,'emit']]],
   ['empirical_20argument_5',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md183',1,'']]],
-  ['empty_6',['empty',['../regex.html#autotoc_md505',1,'']]],
+  ['empty_6',['empty',['../regex.html#autotoc_md506',1,'']]],
   ['emscripten_7',['Emscripten',['../playground.html#autotoc_md127',1,'']]],
   ['environment_20variables_8',['Environment Variables',['../cli.html#autotoc_md9',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../cli.html#envs',1,'Plugin Environment Variables']]],
   ['er_9',['er',['../math.html#autotoc_md412',1,'']]],

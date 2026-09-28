@@ -43,6 +43,7 @@ var hierarchy =
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
     [ "mim::Axm::IsA&lt; Id, D &gt;", "classmim_1_1Axm_1_1IsA.html", null ],
     [ "mim::Axm::IsANode&lt; T &gt;", "classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode", null ],
+    [ "mim::plug::tensor::phase::Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", null ],
     [ "fe::Lexer", null, [
       [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ]
     ] ],

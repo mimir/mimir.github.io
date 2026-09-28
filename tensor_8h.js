@@ -10,5 +10,9 @@ var tensor_8h =
     [ "mim::plug::tensor::count_consumers", "namespacemim_1_1plug_1_1tensor.html#a3c0df2efe3b69a9722d83fed404e81cc", null ],
     [ "mim::plug::tensor::is_copy_comb", "namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463", null ],
     [ "mim::plug::tensor::is_identity_post", "namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1", null ],
-    [ "mim::plug::tensor::is_pure_read", "namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85", null ]
+    [ "mim::plug::tensor::is_pure_read", "namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85", null ],
+    [ "mim::plug::tensor::isa_transpose_2d", "namespacemim_1_1plug_1_1tensor.html#a49bf3f416a9091d355186223c5988711", null ],
+    [ "mim::plug::tensor::lit_perm", "namespacemim_1_1plug_1_1tensor.html#a6db769d0b5d62b6d8d2c9e68513a6f8a", null ],
+    [ "mim::plug::tensor::lit_projs", "namespacemim_1_1plug_1_1tensor.html#a08802684d25d84baf17d88c365a9f5e0", null ],
+    [ "mim::plug::tensor::transpose_perm", "namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c", null ]
 ];
