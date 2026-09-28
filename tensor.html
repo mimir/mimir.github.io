@@ -456,7 +456,7 @@ bmm</h2>
 conv_shape</h2>
 <p><span class="tt">(n, cout, (H, W), (KH, KW), stride, dilation, padding) ↦ (n, cout, OH, OW)</span>, where \(O_d = (s_d + 2 \cdot \mathit{padding}_d - (\mathit{dilation}_d \cdot (k_d - 1) + 1)) / \mathit{stride}_d + 1\): the NCHW output shape.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam conv_shape (n cout: Nat, s k stride dilation padding: «2; Nat»): «4; Nat» =</div>
-<div class="line">    let (hwx, hwy) = ‹d: 2; (s#d + 2 * padding#d - (dilation#d * (k#d - 1) + 1)) / stride#d + 1›;</div>
+<div class="line">    let (hwx, hwy) = ‹d: 2; (s#(d) + 2 * padding#(d) - (dilation#(d) * (k#(d) - 1) + 1)) / stride#(d) + 1›;</div>
 <div class="line">    (n, cout, hwx, hwy);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md550"></a>
 conv</h2>
