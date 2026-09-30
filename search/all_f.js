@@ -10,7 +10,7 @@ var searchData=
   ['of_20sigmas_7',['Field Names of Sigmas',['../langref.html#field',1,'']]],
   ['of_20the_20node_8',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md181',1,'']]],
   ['offset_9',['offset',['../classmim_1_1UInc.html#ac09662b71a4e497e4aa65fa6647ba866',1,'mim::UInc']]],
-  ['old2news_5f_10',['old2news_',['../classmim_1_1Rewriter.html#abbcbabc35c7bffffb0e01346e248d99f',1,'mim::Rewriter']]],
+  ['old2news_5f_10',['old2news_',['../classmim_1_1Rewriter.html#ab38d793143a807dcb21ed8509b23c0be',1,'mim::Rewriter']]],
   ['old_5fworld_11',['old_world',['../classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3',1,'mim::RWPhase']]],
   ['on_12',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md172',1,'']]],
   ['one_20machine_20word_13',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md174',1,'']]],
