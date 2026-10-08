@@ -370,7 +370,14 @@ vec_for</h3>
 <div class="line">            (exit: Cn [mem.M 0, A])</div>
 <div class="line">            (begin stop step: I32, init: [mem.M 0, A])@tt =</div>
 <div class="line">    affine.For (ll.vec body) exit (begin, stop, step, init);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md265"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md265"></a>
+novec_for</h3>
+<p>The loop implementation for the loops enclosing a schedule's vector loop: <span class="tt">affine.For</span> with its body wrapped in <span class="tt">ll.novec</span>, so that LLVM vectorizes the nominated loop and none of the strided loops around it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">con novec_for {A: *} (body: Cn [I32, [mem.M 0, A], Cn [mem.M 0, A]])</div>
+<div class="line">              (exit: Cn [mem.M 0, A])</div>
+<div class="line">              (begin stop step: I32, init: [mem.M 0, A])@tt =</div>
+<div class="line">    affine.For (ll.novec body) exit (begin, stop, step, init);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md266"></a>
 range_nest</h2>
 <p>One nest of <span class="tt">loop</span>-implemented loops over the dim range <span class="tt">[lo, hi)</span> of the bounds <span class="tt">Sr</span>, threading an accumulator <span class="tt">A</span> and the shared <span class="tt">«r; I32»</span> loop-vector prefix; calls <span class="tt">inner</span> at the bottom with the prefix updated at the range's positions. Composed by a right fold — no recursion, and the flat I32 prefix avoids dependently-typed loop-variable tuples.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_nest (r: Nat, Sr: «r; Nat») (A: *) (loop: ForT A, lo hi: Nat)</div>
@@ -390,7 +397,7 @@ range_nest</h2>
 <div class="line">    let m = hi - lo;</div>
 <div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
 <div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md266"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
 range_unroll</h3>
 <p>Like <span class="tt">range_nest</span>, but every dim in the range is fully <b>unrolled</b>: the inner continuation is chained once per iteration point by a right fold over the dim's (compile-time) extent — straight-line code with constant coordinates, no loops, and structurally terminating (no recursion, no PE filters: the fold itself unfolds once the extent is a literal).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam range_unroll (r: Nat, Sr: «r; Nat») (A: *) (lo hi: Nat)</div>
@@ -410,7 +417,7 @@ range_unroll</h3>
 <div class="line">    let m = hi - lo;</div>
 <div class="line">    vec.fold.r @(Cn [«r; I32», mem.M 0, A, Cn [mem.M 0, A]], Nat) @m</div>
 <div class="line">        wrap (‹i: m; lo + core.bitcast Nat i›, inner);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md267"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
 NestT</h2>
 <p>The type of scheduled loop nests for a <span class="tt">map_reduce</span> over the domain <span class="tt">Sr</span> (<span class="tt">ro</span> leading parallel dims, <span class="tt">rr</span> trailing reduction dims, fold element type <span class="tt">To</span>): given the fold seed <span class="tt">init</span>, the per-point fold step <span class="tt">cell</span> (fold the elements at one loop vector into the accumulator) and the per-cell write-back <span class="tt">wb</span> (consume one folded value at its output coordinates), run the nest.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam NestT (ro rr: Nat, Sr: «ro + rr; Nat», To U: *): * =</div>
@@ -418,7 +425,7 @@ NestT</h2>
 <div class="line">       cell: Cn [mem.M 0, To, «ro + rr; I32», Cn [mem.M 0, To]],</div>
 <div class="line">       wb:   Cn [mem.M 0, U, To, «ro + rr; I32», Cn [mem.M 0, U]]]</div>
 <div class="line">    → Cn [mem.M 0, U, Cn [mem.M 0, U]];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md268"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
 mr_nest</h2>
 <p>The scheduled nest builder, selecting one of the four nests below from the schedule:</p>
 <ul>
@@ -477,11 +484,11 @@ mr_nest</h2>
 <div class="line">                con s2 (memB: mem.M 0, uB: U) =</div>
 <div class="line">                    (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) wb_cell) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
-<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
+<div class="line">                    (range_nest (r, Sr) U (novec_for @U, ro, u_lo)</div>
 <div class="line">                        (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) at_point))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
 <div class="line">                (range_nest (r, Sr) U (vec_for @U, vd, vd + 1) fill) (pref, m, u, s1);</div>
-<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, vd) at_row) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line">            (range_nest (r, Sr) U (novec_for @U, 0, vd) at_row) (‹r; 0I32›, mem1, u0, done);</div>
 <div class="line"> </div>
 <div class="line">        // BLOCKED (`vdim = ro − 2`): the two trailing parallel dims are sunk inside the reduction</div>
 <div class="line">        // loops — the last dim runs as the vector loop and the BLOCK dim before it (any extent Sp;</div>
@@ -519,16 +526,16 @@ mr_nest</h2>
 <div class="line">                    let (memw1, v) = buffer.read (1, Np, To) (memw, panel, vi_of pref2);</div>
 <div class="line">                    wb (memw1, uw, v, pref2, kw);</div>
 <div class="line">                con s2 (memB: mem.M 0, uB: U) =</div>
-<div class="line">                    (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)</div>
+<div class="line">                    (range_nest (r, Sr) U (novec_for @U, pd_c, sd_c)</div>
 <div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, ro) wb_cell)) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
-<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, u_lo)</div>
+<div class="line">                    (range_nest (r, Sr) U (novec_for @U, ro, u_lo)</div>
 <div class="line">                        (range_nest (r, Sr) U (vec_for @U, sd_c, sd_c + 1)</div>
 <div class="line">                            (range_unroll (r, Sr) U (pd_c, pd_c + 1) at_point)))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
-<div class="line">                (range_nest (r, Sr) U (affine_for @U, pd_c, sd_c)</div>
+<div class="line">                (range_nest (r, Sr) U (novec_for @U, pd_c, sd_c)</div>
 <div class="line">                    (range_nest (r, Sr) U (vec_for @U, sd_c, ro) fill)) (pref, m, u, s1);</div>
-<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, pd_c) at_block) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line">            (range_nest (r, Sr) U (novec_for @U, 0, pd_c) at_block) (‹r; 0I32›, mem1, u0, done);</div>
 <div class="line"> </div>
 <div class="line">        // REDUCTION-VECTORIZED (`ro ≤ vdim &lt; r`: the schedule names the innermost REDUCTION dim):</div>
 <div class="line">        // the contraction itself runs as the innermost (vector) loop. For a contraction whose</div>
@@ -581,20 +588,20 @@ mr_nest</h2>
 <div class="line">                con s2 (memB: mem.M 0, uB: U) =</div>
 <div class="line">                    (range_unroll (r, Sr_rv) U (rv_bd, ro) wb_cell) (pref, memB, uB, k);</div>
 <div class="line">                con s1 (memA: mem.M 0, uA: U) =</div>
-<div class="line">                    (range_nest (r, Sr) U (affine_for @U, ro, rv_vd)</div>
+<div class="line">                    (range_nest (r, Sr) U (novec_for @U, ro, rv_vd)</div>
 <div class="line">                        (range_nest (r, Sr) U (vec_for @U, rv_vd, rv_vd + 1)</div>
 <div class="line">                            (range_unroll (r, Sr_rv) U (rv_bd, ro) at_point)))</div>
 <div class="line">                        (pref, memA, uA, s2);</div>
 <div class="line">                (range_unroll (r, Sr_rv) U (rv_bd, ro) fill) (pref, m, u, s1);</div>
-<div class="line">            (range_nest (r, Sr) U (affine_for @U, 0, rv_bd) at_block) (‹r; 0I32›, mem1, u0, done);</div>
+<div class="line">            (range_nest (r, Sr) U (novec_for @U, 0, rv_bd) at_block) (‹r; 0I32›, mem1, u0, done);</div>
 <div class="line"> </div>
 <div class="line">        con run (mem0: mem.M 0, u0: U, done: Cn [mem.M 0, U])@tt =</div>
 <div class="line">            ((((classic, vectorized)#vec_ok, blocked)#block_ok, redvec)#redvec_ok) (mem0, u0, done);</div>
 <div class="line">        run;</div>
 <div class="line">    nest;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md269"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md270"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md270"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md271"></a>
 lower_map_reduce</h2>
 <p>Lowers every operation of this plugin to <span class="tt">affine.For</span> loops over <span class="tt">buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">mr_nest</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_map_reduce: compile.Phase;</div>

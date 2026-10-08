@@ -11,5 +11,7 @@ var tensor_2normalizers_8cpp =
     [ "mim::plug::tensor::normalize_reshape", "namespacemim_1_1plug_1_1tensor.html#afef9dbc1af6eef6ae5b68a3d93bf9286", null ],
     [ "mim::plug::tensor::normalize_shape", "namespacemim_1_1plug_1_1tensor.html#a7bf70e982d7ba65fee50749dc0674655", null ],
     [ "mim::plug::tensor::normalize_slice", "namespacemim_1_1plug_1_1tensor.html#a11058f84e28831d5f9743e1cf6a62b46", null ],
-    [ "mim::plug::tensor::normalize_transpose", "namespacemim_1_1plug_1_1tensor.html#a2d829edfe4c9a2c96bb45f9ae8cfd597", null ]
+    [ "mim::plug::tensor::normalize_transpose", "namespacemim_1_1plug_1_1tensor.html#a2d829edfe4c9a2c96bb45f9ae8cfd597", null ],
+    [ "mim::plug::tensor::normalize_vec_width", "namespacemim_1_1plug_1_1tensor.html#abbb3b2b5fa0e5a1375329f680bb61f08", null ],
+    [ "mim::plug::tensor::Vec_widths", "namespacemim_1_1plug_1_1tensor.html#aa3fb21f154d67eab24d1b1f6bb776469", null ]
 ];

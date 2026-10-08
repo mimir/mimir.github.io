@@ -172,7 +172,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tensor_2normal
   <div class="headertitle"><div class="title">normalizers.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="def_8h_source.html">mim/def.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;charconv&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;fe/format.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="def_8h_source.html">mim/def.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="driver_8h_source.html">mim/driver.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="tuple_8h_source.html">mim/tuple.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="world_8h_source.html">mim/world.h</a>&gt;</code><br />
@@ -217,8 +222,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a10cf88d7bfdbf0401e3e64eb1673aa0e" id="r_a10cf88d7bfdbf0401e3e64eb1673aa0e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a10cf88d7bfdbf0401e3e64eb1673aa0e">mim::plug::tensor::normalize_if_static</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
 <tr id="func-members-10" class="groupHeader"><td colspan="2"><div class="groupHeader">%tensor.fastest_axis</div></td></tr>
 <tr class="memitem:a5ff58c7d5227974f39614a44b9d99558" id="r_a5ff58c7d5227974f39614a44b9d99558"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a5ff58c7d5227974f39614a44b9d99558">mim::plug::tensor::normalize_fastest_axis</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
-<tr id="func-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">%tensor.shape</div></td></tr>
+<tr id="func-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">%tensor.vec_width</div></td></tr>
+<tr class="memitem:abbb3b2b5fa0e5a1375329f680bb61f08" id="r_abbb3b2b5fa0e5a1375329f680bb61f08"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#abbb3b2b5fa0e5a1375329f680bb61f08">mim::plug::tensor::normalize_vec_width</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
+<tr id="func-members-12" class="groupHeader"><td colspan="2"><div class="groupHeader">%tensor.shape</div></td></tr>
 <tr class="memitem:a7bf70e982d7ba65fee50749dc0674655" id="r_a7bf70e982d7ba65fee50749dc0674655"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a7bf70e982d7ba65fee50749dc0674655">mim::plug::tensor::normalize_shape</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *c, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa3fb21f154d67eab24d1b1f6bb776469" id="r_aa3fb21f154d67eab24d1b1f6bb776469"><td class="memItemLeft">constexpr std::array&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aa3fb21f154d67eab24d1b1f6bb776469">mim::plug::tensor::Vec_widths</a> = {1_u64, 4_u64, 8_u64, 16_u64}</td></tr>
+<tr class="memdesc:aa3fb21f154d67eab24d1b1f6bb776469"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector widths <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a>:vec-width</span> accepts.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

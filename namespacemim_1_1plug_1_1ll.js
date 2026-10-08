@@ -4,6 +4,7 @@ var namespacemim_1_1plug_1_1ll =
     [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
     [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
     [ "emit", "namespacemim_1_1plug_1_1ll.html#aa8af5751b0c661fdf794f6c05273f02d", null ],
+    [ "novec", "namespacemim_1_1plug_1_1ll.html#a03bac3de20e424d8b2177cb68d1fbbd2", null ],
     [ "vec", "namespacemim_1_1plug_1_1ll.html#aaee9c2cf398a457c5c7805f83765e599", null ],
     [ "find_common_simd_src", "namespacemim_1_1plug_1_1ll.html#a942225172076a1bccd4b46547f3cb1cc", null ],
     [ "is_simd", "namespacemim_1_1plug_1_1ll.html#a03f0cd076f43b618bd51d9a8158d1352", null ],

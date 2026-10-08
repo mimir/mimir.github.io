@@ -59,6 +59,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::transpose_impl", "namespacemim_1_1plug_1_1tensor.html#a975b1b3baf6d3029a2bc229d5ac1e319", null ],
     [ "mim::plug::tensor::unary", "namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65", null ],
     [ "mim::plug::tensor::unary_impl", "namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd", null ],
+    [ "mim::plug::tensor::vec_width", "namespacemim_1_1plug_1_1tensor.html#a788df686702aeb6a0be9d9246bf1c260", null ],
     [ "mim::plug::tensor::normalize_broadcast", "namespacemim_1_1plug_1_1tensor.html#ab71762cb00312ca246ea68f66dfc8848", null ],
     [ "mim::plug::tensor::normalize_broadcast_in_dim", "namespacemim_1_1plug_1_1tensor.html#a42c1609b7678afe0a84377ae3cb461ea", null ],
     [ "mim::plug::tensor::normalize_concat", "namespacemim_1_1plug_1_1tensor.html#a5b2694a9e4b9ef5fbb149c38d96076e6", null ],
@@ -71,6 +72,7 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::normalize_shape", "namespacemim_1_1plug_1_1tensor.html#a7bf70e982d7ba65fee50749dc0674655", null ],
     [ "mim::plug::tensor::normalize_slice", "namespacemim_1_1plug_1_1tensor.html#a11058f84e28831d5f9743e1cf6a62b46", null ],
     [ "mim::plug::tensor::normalize_transpose", "namespacemim_1_1plug_1_1tensor.html#a2d829edfe4c9a2c96bb45f9ae8cfd597", null ],
+    [ "mim::plug::tensor::normalize_vec_width", "namespacemim_1_1plug_1_1tensor.html#abbb3b2b5fa0e5a1375329f680bb61f08", null ],
     [ "mim::plug::tensor::register_normalizers", "namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3", null ],
     [ "mim::plug::tensor::Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ]
 ];

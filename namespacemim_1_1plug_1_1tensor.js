@@ -60,6 +60,7 @@ var namespacemim_1_1plug_1_1tensor =
     [ "transpose_impl", "namespacemim_1_1plug_1_1tensor.html#a975b1b3baf6d3029a2bc229d5ac1e319", null ],
     [ "unary", "namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65", null ],
     [ "unary_impl", "namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd", null ],
+    [ "vec_width", "namespacemim_1_1plug_1_1tensor.html#a788df686702aeb6a0be9d9246bf1c260", null ],
     [ "count_consumers", "namespacemim_1_1plug_1_1tensor.html#a3c0df2efe3b69a9722d83fed404e81cc", null ],
     [ "is_copy_comb", "namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463", null ],
     [ "is_identity_post", "namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1", null ],
@@ -79,8 +80,10 @@ var namespacemim_1_1plug_1_1tensor =
     [ "normalize_shape", "namespacemim_1_1plug_1_1tensor.html#a7bf70e982d7ba65fee50749dc0674655", null ],
     [ "normalize_slice", "namespacemim_1_1plug_1_1tensor.html#a11058f84e28831d5f9743e1cf6a62b46", null ],
     [ "normalize_transpose", "namespacemim_1_1plug_1_1tensor.html#a2d829edfe4c9a2c96bb45f9ae8cfd597", null ],
+    [ "normalize_vec_width", "namespacemim_1_1plug_1_1tensor.html#abbb3b2b5fa0e5a1375329f680bb61f08", null ],
     [ "reg_phases", "namespacemim_1_1plug_1_1tensor.html#aad696d2ad9f28535e9e3590565118f9f", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1tensor.html#a99f9f77a6b5be9770487e1f643c975d3", null ],
     [ "transpose_perm", "namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c", null ],
-    [ "Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ]
+    [ "Plugin_Id", "namespacemim_1_1plug_1_1tensor.html#a957e829a68eb9328e7aac6d47f0a4bfb", null ],
+    [ "Vec_widths", "namespacemim_1_1plug_1_1tensor.html#aa3fb21f154d67eab24d1b1f6bb776469", null ]
 ];

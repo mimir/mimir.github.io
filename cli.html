@@ -411,7 +411,7 @@ Plugin Arguments</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">reassoc-max=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Longest matrix chain whose <span class="tt">Catalan(n − 1)</span> bracketings <span class="tt">tensor.reassoc</span> enumerates and, failing one that provably wins for every extent, dispatches over at run time (default <span class="tt">4</span>; below <span class="tt">3</span> switches the dispatch off).  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">reassoc-vec=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Vector lanes <span class="tt">tensor.reassoc</span> pads a product's vector loop to, so that a bracketing whose intermediates are too narrow to fill a vector is charged for the lanes it leaves idle (<span class="tt">1</span> … <span class="tt">1024</span>, default <span class="tt">8</span>; <span class="tt">1</span> counts plain scalar multiplications).  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">vec-width=&lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Vector lanes the target's registers hold (<span class="tt">1</span>, <span class="tt">4</span>, <span class="tt">8</span> or <span class="tt">16</span>, default <span class="tt">8</span>). It caps the block of independent accumulators a vectorized loop body jams into its registers, and <span class="tt">tensor.reassoc</span> charges each product's vector loop in units of it; <span class="tt">1</span> means no lane-sized blocking and plain multiplication counts. See <span class="tt">tensor.vec_width</span>.  </td></tr>
 </table>
 <h1 class="doxsection"><a class="anchor" id="envs"></a>
 Plugin Environment Variables</h1>
