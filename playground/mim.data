@@ -66,12 +66,12 @@ axm semiop.(mul,ceildiv,floordiv,rem): [Index, Nat] → Index;
 ///   Performs multiplication of an affine index with a constant natural number.
 ///   The second argument must be a *closed* constant - a stronger requirement than affine.semiop imposes - which is enforced via refly.check.
 ///
-pub mod op {
+pub mod op
     axm (add, sub): [Index, Index] → Index;
     axm neg: Index → Index;
     anx lam mul (d : Index, c : Nat): Index =
         semiop.mul(d, refly.check (core.pe.is_closed(c), c, "The second argument of affine.op.mul must be a constant."));
-}
+end
 ///
 /// ### map
 ///
@@ -252,14 +252,14 @@ axm eval: compile.Phase;
 /// - The derivative of `core.wrap.add`: `s ↦ (s, s)`
 /// - The derivative of `core.wrap.mul`: `s ↦ (s*b, s*a)`
 ///
-mod diff {
+mod diff
     anx fun core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =
         return (core.icmp.sle ab, fn (_: Bool)@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);
     anx fun core_wrap_add (m: Nat) {s: Nat} (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =
         return (core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);
     anx fun core_wrap_mul (m: Nat) {s: Nat} (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =
         return (core.wrap.mul m ab, fn (i: Idx s)@tt: «2; Idx s» = return (core.wrap.mul m (i, b), core.wrap.mul m (i, a)));
-}
+end
 /// # The btensor Plugin {#btensor}
 ///
 /// @see mim::plug::btensor
@@ -1226,7 +1226,7 @@ axm ncmp.(gle = f, glE =  e, gLe =  l, gLE = le,
 /// All operations that may overflow take a leading parameter `m` - [mode](@ref mim::plug::core::Mode) - of type `Nat` that determines the exact desired behavior in the case of an overflow.
 /// It comes first so that currying it - `core.wrap.add 0` - still yields a value polymorphic in `s`.
 ///
-pub mod mode {
+pub mod mode
     anx let us = 0b00; // wrap around - both signed and unsigned
     anx let uS = 0b01; // no   signed wrap around
     anx let Us = 0b10; // no unsigned wrap around
@@ -1234,7 +1234,7 @@ pub mod mode {
     anx nsw  = uS;
     anx nuw  = Us;
     anx nsuw = US;
-}
+end
 ///
 /// ### idx
 ///
@@ -1452,11 +1452,11 @@ axm trait.(size, align): * → Nat, normalize_trait;
 ///
 /// Steers the partial evaluator.
 ///
-pub mod pe {
+pub mod pe
     axm hlt:       {T: *} → T → T, normalize_pe;
     axm run:       {T: *} → T → T, normalize_pe;
     axm is_closed: {T: *} → T → Bool, normalize_pe;
-}
+end
 ///
 /// ### select
 ///
@@ -1486,8 +1486,8 @@ anx lam Select {T: □} (cond: Bool, t f: T): T = (f, t)#cond;
 /// `core.ops.s`/`core.ops.u` offer only those operators that don't depend on the mode.
 /// `Idx s` has no `/` and `%`, since core.div expects a `mem.M`.
 ///
-pub mod ops {
-    pub mod n {
+pub mod ops
+    pub mod n
         pub let `+  =  nat.add;
         pub let `-  =  nat.sub;
         pub let `*  =  nat.mul;
@@ -1499,71 +1499,71 @@ pub mod ops {
         pub let `<= = ncmp.le;
         pub let `>  = ncmp.g;
         pub let `>= = ncmp.ge;
-    }
+    end
 
-    mod eq {
+    mod eq
         pub let `== = icmp.e;
         pub let `!= = icmp.ne;
-    }
+    end
 
-    mod signed {
+    mod signed
         pub use eq;
         pub let `>> = shr.a;
         pub let `<  = icmp.sl;
         pub let `<= = icmp.sle;
         pub let `>  = icmp.sg;
         pub let `>= = icmp.sge;
-    }
+    end
 
-    mod unsigned {
+    mod unsigned
         pub use eq;
         pub let `>> = shr.l;
         pub let `<  = icmp.ul;
         pub let `<= = icmp.ule;
         pub let `>  = icmp.ug;
         pub let `>= = icmp.uge;
-    }
+    end
 
-    pub mod s {
+    pub mod s
         pub use signed;
 
-        pub mod w {
+        pub mod w
             pub use signed;
             pub let `+  = wrap.add mode.us;
             pub let `-  = wrap.sub mode.us;
             pub let `*  = wrap.mul mode.us;
             pub let `<< = wrap.shl mode.us;
-        }
+        end
 
-        pub mod nw {
+        pub mod nw
             pub use signed;
             pub let `+  = wrap.add mode.nsw;
             pub let `-  = wrap.sub mode.nsw;
             pub let `*  = wrap.mul mode.nsw;
             pub let `<< = wrap.shl mode.nsw;
-        }
-    }
+        end
+    end
 
-    pub mod u {
+    pub mod u
         pub use unsigned;
 
-        pub mod w {
+        pub mod w
             pub use unsigned;
             pub let `+  = wrap.add mode.us;
             pub let `-  = wrap.sub mode.us;
             pub let `*  = wrap.mul mode.us;
             pub let `<< = wrap.shl mode.us;
-        }
+        end
 
-        pub mod nw {
+        pub mod nw
             pub use unsigned;
             pub let `+  = wrap.add mode.nuw;
             pub let `-  = wrap.sub mode.nuw;
             pub let `*  = wrap.mul mode.nuw;
             pub let `<< = wrap.shl mode.nuw;
-        }
-    }
-}
+        end
+    end
+end
 /// # The CPS Plugin {#cps}
 ///
 /// @see mim::plug::cps
@@ -1748,43 +1748,43 @@ anx fun with_streams (n: Nat, func: Fn [mem.M 0, GlobalM, «n; Stream»] → [me
 ///
 /// Allocates memory on the device (in global address space), synchronously (`block`) or asynchronously
 /// against a stream (`asyn`).
-pub mod alloc {
+pub mod alloc
     axm block: [T: *] → GlobalM → [GlobalM, GlobalPtr T];
     axm asyn:  [T: *] → [GlobalM, Stream] → [GlobalM, GlobalPtr T];
-}
+end
 ///
 /// #### free(block) / free(asyn)
 ///
 /// Frees memory on the device (in global address space), synchronously (`block`) or asynchronously
 /// against a stream (`asyn`).
-pub mod free {
+pub mod free
     axm block: {T: *} → [GlobalM, GlobalPtr T] → GlobalM;
     axm asyn:  {T: *} → [GlobalM, GlobalPtr T, Stream] → GlobalM;
-}
+end
 ///
 /// #### copy_to_device(block) / copy_to_device(asyn)
 ///
 /// Copies data from host memory to device memory, synchronously (`block`) or asynchronously against a
 /// stream (`asyn`).
-pub mod copy_to_device {
+pub mod copy_to_device
     axm block: {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T] → [mem.M 0, GlobalM];
     axm asyn:  {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T, Stream] → [mem.M 0, GlobalM];
-}
+end
 ///
 /// #### copy_to_host(block) / copy_to_host(asyn)
 ///
 /// Copies data from device memory to host memory, synchronously (`block`) or asynchronously against a
 /// stream (`asyn`).
-pub mod copy_to_host {
+pub mod copy_to_host
     axm block: {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T] → [mem.M 0, GlobalM];
     axm asyn:  {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T, Stream] → [mem.M 0, GlobalM];
-}
+end
 ///
 /// #### alloc_copy(block) / alloc_copy(asyn)
 ///
 /// Allocates memory on the device (in global address space) for the provided host data and copies the
 /// host data to that memory, synchronously (`block`) or asynchronously against a stream (`asyn`).
-pub mod alloc_copy {
+pub mod alloc_copy
     anx let block = lm {T: *}
                        (m0: mem.M 0, m1: GlobalM, ptr: mem.Ptr0 T)
                      : [mem.M 0, GlobalM, GlobalPtr T] =
@@ -1798,7 +1798,7 @@ pub mod alloc_copy {
         let (m1, d_ptr) = alloc.asyn T (m1, stream);
         let (m0, m1) = copy_to_device.asyn (m0, m1, ptr, d_ptr, stream);
         (m0, m1, d_ptr);
-}
+end
 ///
 /// ### Buffer Operations
 ///
@@ -2026,7 +2026,7 @@ anx let PXR24   = F pxr24;
 ///
 /// Fine-tunes how strictly a floating-point operation must obey IEEE semantics - see mim::plug::math::Mode.
 ///
-pub mod mode {
+pub mod mode
     pub anx let none     = 0b0000000; // no optimizations allowed
     pub anx let nnan     = 0b0000001; // no NaNs
     pub anx let ninf     = 0b0000010; // no Infs
@@ -2038,7 +2038,7 @@ pub mod mode {
     pub anx let finite   = 0b0000011; // nnan | ninf
     pub anx let unsafe   = 0b1001100; // nsz | arcp | reassoc
     pub anx let fast     = 0b1111111; // everything above
-}
+end
 ///
 /// ## Numerical Operations
 ///
@@ -2244,13 +2244,13 @@ axm is_finite: Nat → {pe: «2; Nat»} → F pe → Bool;
 ///
 /// Conversion between floating-point and index types - both signed and unsigned - of different sizes.
 ///
-pub mod conv {
+pub mod conv
     axm s2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;
     axm u2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;
     axm f2s: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;
     axm f2u: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;
     axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;
-}
+end
 ///
 /// ### inf, neg_inf, nan
 ///
@@ -2294,8 +2294,8 @@ anx lam rrt (m: Nat) {pe: «2; Nat»} (x: F pe): F pe =
 /// - `!=` is math.cmp.une - the exact complement of `==` - and hence `tt` if an operand is a NaN.
 /// - All other comparisons are ordered and thus `ff` in that case.
 ///
-pub mod ops {
-    pub mod none {
+pub mod ops
+    pub mod none
         pub let `+  = arith.add mode.none;
         pub let `-  = arith.sub mode.none;
         pub let `*  = arith.mul mode.none;
@@ -2307,9 +2307,9 @@ pub mod ops {
         pub let `<= =   cmp.le  mode.none;
         pub let `>  =   cmp.g   mode.none;
         pub let `>= =   cmp.ge  mode.none;
-    }
+    end
 
-    pub mod finite {
+    pub mod finite
         pub let `+  = arith.add mode.finite;
         pub let `-  = arith.sub mode.finite;
         pub let `*  = arith.mul mode.finite;
@@ -2321,9 +2321,9 @@ pub mod ops {
         pub let `<= =   cmp.le  mode.finite;
         pub let `>  =   cmp.g   mode.finite;
         pub let `>= =   cmp.ge  mode.finite;
-    }
+    end
 
-    pub mod unsafe {
+    pub mod unsafe
         pub let `+  = arith.add mode.unsafe;
         pub let `-  = arith.sub mode.unsafe;
         pub let `*  = arith.mul mode.unsafe;
@@ -2335,9 +2335,9 @@ pub mod ops {
         pub let `<= =   cmp.le  mode.unsafe;
         pub let `>  =   cmp.g   mode.unsafe;
         pub let `>= =   cmp.ge  mode.unsafe;
-    }
+    end
 
-    pub mod fast {
+    pub mod fast
         pub let `+  = arith.add mode.fast;
         pub let `-  = arith.sub mode.fast;
         pub let `*  = arith.mul mode.fast;
@@ -2349,8 +2349,8 @@ pub mod ops {
         pub let `<= =   cmp.le  mode.fast;
         pub let `>  =   cmp.g   mode.fast;
         pub let `>= =   cmp.ge  mode.fast;
-    }
-}
+    end
+end
 /// # The mem Plugin {#mem}
 ///
 /// @see mim::plug::mem
@@ -2697,10 +2697,10 @@ axm Map: Key → * → *;
 ///
 /// Creates a set / map from a list of values / key-value pairs.
 ///
-pub mod init {
+pub mod init
     axm set: [K: Key] →          {n: Nat} → «n;  K#T    » → Set K  , normalize_init;
     axm map: [K: Key] → {V: *} → {n: Nat} → «n; [K#T, V]» → Map K V, normalize_init;
-}
+end
 ///
 /// ### create
 ///
@@ -2715,10 +2715,10 @@ anx lam create_map (K: Key) (V: *) : Map K V = init.map K @V @0 ();
 ///
 /// Yields the number of elements in the container.
 ///
-pub mod size {
+pub mod size
     axm set: {K: Key} →          Set K   → Nat, normalize_size;
     axm map: {K: Key} → {V: *} → Map K V → Nat, normalize_size;
-}
+end
 ///
 /// ### is_empty
 ///
@@ -2740,10 +2740,10 @@ axm get: {K: Key} → {V: *} → [Map K V, K#T] → option.Opt V, normalize_get;
 ///
 /// Does the container contain the given key?
 ///
-pub mod contains {
+pub mod contains
     axm set: {K: Key} →          [Set K  , K#T] → Bool, normalize_contains;
     axm map: {K: Key} → {V: *} → [Map K V, K#T] → Bool, normalize_contains;
-}
+end
 ///
 /// ## Modifiers
 ///
@@ -2751,10 +2751,10 @@ pub mod contains {
 ///
 /// Inserts a key / key-value pair into the container.
 ///
-pub mod insert {
+pub mod insert
     axm set: {K: Key} →          [Set K  ,  K#T    ] → Set K  , normalize_insert;
     axm map: {K: Key} → {V: *} → [Map K V, [K#T, V]] → Map K V, normalize_insert;
-}
+end
 /// # The refly Plugin {#refly}
 ///
 /// @see mim::plug::refly
@@ -2931,14 +2931,14 @@ axm neg_lookahead: RE → RE, 1;
 /// | `s`    | whitespace `[ \t\r\n]`         |
 /// | `S`    | No whitespace                  |
 ///
-pub mod cls {
+pub mod cls
     anx let d = range ('0', '9');
     anx let D = not_ d;
     anx let w = disj (range ('0', '9'), range ('a', 'z'), range ('A', 'Z'), lit '_');
     anx let W = not_ w;
     anx let s = disj (range ('\t', '\n'), lit '\r', lit ' ');
     anx let S = not_ s;
-}
+end
 ///
 /// ### any
 ///
@@ -4667,10 +4667,10 @@ plugin refly;
 /// |------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 /// | ![Left Fold](https://upload.wikimedia.org/wikipedia/commons/5/5a/Left-fold-transformation.png) | ![Right Fold](https://upload.wikimedia.org/wikipedia/commons/3/3e/Right-fold-transformation.png) |
 ///
-pub mod fold {
+pub mod fold
     axm l: {A E: *} → {n: Nat} → [f: [A, E] → A] → [A, «n; E»] → A, normalize_fold;
     axm r: {A E: *} → {n: Nat} → [f: [E, A] → A] → [«n; E», A] → A, normalize_fold;
-}
+end
 ///
 /// ### zip
 ///
