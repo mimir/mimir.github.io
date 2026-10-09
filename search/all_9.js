@@ -60,7 +60,7 @@ var searchData=
   ['infixexpr_57',['InfixExpr',['../classmim_1_1ast_1_1InfixExpr.html',1,'mim::ast::InfixExpr'],['../classmim_1_1ast_1_1InfixExpr.html#ac3929f8ac195a7add603bd31d55e5b6c',1,'mim::ast::InfixExpr::InfixExpr()']]],
   ['info_58',['info',['../namespacemim_1_1plug_1_1refly.html#aa892e670a3611c79d730ddfe61bea1b8',1,'mim::plug::refly']]],
   ['inherently_20impure_59',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md180',1,'']]],
-  ['inherit_60',['inherit',['../classmim_1_1World.html#a082cce3d9d0307b4608146418226fb00',1,'mim::World']]],
+  ['inherit_60',['inherit',['../structmim_1_1ast_1_1Mods.html#a04e85e4a4fb8261c692c6af2b54209f9',1,'mim::ast::Mods::inherit()'],['../classmim_1_1World.html#a082cce3d9d0307b4608146418226fb00',1,'mim::World::inherit()']]],
   ['init_61',['init',['../classmim_1_1Global.html#a278c06f8dbc9c0b9dfd28e43fd6aea2f',1,'mim::Global::init()'],['../namespacemim_1_1plug_1_1buffer.html#a510dfa839a89984f2c6d54ab2295657d',1,'mim::plug::buffer::init'],['../namespacemim_1_1plug_1_1gpu.html#a60b2d54940be560945911cc9eb21cd73',1,'mim::plug::gpu::init'],['../namespacemim_1_1plug_1_1ord.html#af994f9a15f3bed1a74847bf1bc0160d3',1,'mim::plug::ord::init'],['../buffer.html#autotoc_md279',1,'init'],['../gpu.html#autotoc_md362',1,'init'],['../ord.html#autotoc_md466',1,'init']]],
   ['inj_62',['Inj',['../classmim_1_1Inj.html',1,'mim::Inj'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da62d8e3eff7a84b91e1fac08d56e1455b',1,'mim::Inj']]],
   ['inj_63',['inj',['../classmim_1_1World.html#a8c8152c28c8f6459f2f56cf47ea77bb2',1,'mim::World::inj(const Def *type, const Def *value)'],['../classmim_1_1World.html#a048c5ebd0c76793c92ddcd6edf0c3778',1,'mim::World::inj(const Def *type, nat_t index, const Def *value)']]],

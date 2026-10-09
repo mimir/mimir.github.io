@@ -202,7 +202,7 @@ Mode</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md404"></a>
 mode</h2>
 <p>Fine-tunes how strictly a floating-point operation must obey IEEE semantics - see <a class="el" href="namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91" title="Allowed optimizations for a specific operation.">mim::plug::math::Mode</a>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod mode {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod mode</div>
 <div class="line">    pub anx let none     = 0b0000000; // no optimizations allowed</div>
 <div class="line">    pub anx let nnan     = 0b0000001; // no NaNs</div>
 <div class="line">    pub anx let ninf     = 0b0000010; // no Infs</div>
@@ -214,7 +214,7 @@ mode</h2>
 <div class="line">    pub anx let finite   = 0b0000011; // nnan | ninf</div>
 <div class="line">    pub anx let unsafe   = 0b1001100; // nsz | arcp | reassoc</div>
 <div class="line">    pub anx let fast     = 0b1111111; // everything above</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md405"></a>
 Numerical Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md406"></a>
@@ -452,13 +452,13 @@ is_finite</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md419"></a>
 conv</h2>
 <p>Conversion between floating-point and index types - both signed and unsigned - of different sizes.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod conv {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod conv</div>
 <div class="line">    axm s2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;</div>
 <div class="line">    axm u2f: { ss:     Nat } → [dpe: «2; Nat»] →   Idx  ss → F dpe, normalize_conv;</div>
 <div class="line">    axm f2s: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;</div>
 <div class="line">    axm f2u: {spe: «2; Nat»} → [ ds:     Nat ] → F spe →   Idx  ds, normalize_conv;</div>
 <div class="line">    axm f2f: {spe: «2; Nat»} → [dpe: «2; Nat»] → F spe → F dpe,     normalize_conv;</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md420"></a>
 inf, neg_inf, nan</h2>
 <p>Positive and negative infinity and a quiet NaN of the floating-point format <span class="tt">pe</span>, e.g. <span class="tt">math.neg_inf math.f32</span>.</p>
@@ -499,8 +499,8 @@ Operators</h1>
 <li><span class="tt">!=</span> is math.cmp.une - the exact complement of <span class="tt">==</span> - and hence <span class="tt">tt</span> if an operand is a NaN.</li>
 <li>All other comparisons are ordered and thus <span class="tt">ff</span> in that case.</li>
 </ul>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod ops {</div>
-<div class="line">    pub mod none {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod ops</div>
+<div class="line">    pub mod none</div>
 <div class="line">        pub let `+  = arith.add mode.none;</div>
 <div class="line">        pub let `-  = arith.sub mode.none;</div>
 <div class="line">        pub let `*  = arith.mul mode.none;</div>
@@ -512,9 +512,9 @@ Operators</h1>
 <div class="line">        pub let `&lt;= =   cmp.le  mode.none;</div>
 <div class="line">        pub let `&gt;  =   cmp.g   mode.none;</div>
 <div class="line">        pub let `&gt;= =   cmp.ge  mode.none;</div>
-<div class="line">    }</div>
+<div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    pub mod finite {</div>
+<div class="line">    pub mod finite</div>
 <div class="line">        pub let `+  = arith.add mode.finite;</div>
 <div class="line">        pub let `-  = arith.sub mode.finite;</div>
 <div class="line">        pub let `*  = arith.mul mode.finite;</div>
@@ -526,9 +526,9 @@ Operators</h1>
 <div class="line">        pub let `&lt;= =   cmp.le  mode.finite;</div>
 <div class="line">        pub let `&gt;  =   cmp.g   mode.finite;</div>
 <div class="line">        pub let `&gt;= =   cmp.ge  mode.finite;</div>
-<div class="line">    }</div>
+<div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    pub mod unsafe {</div>
+<div class="line">    pub mod unsafe</div>
 <div class="line">        pub let `+  = arith.add mode.unsafe;</div>
 <div class="line">        pub let `-  = arith.sub mode.unsafe;</div>
 <div class="line">        pub let `*  = arith.mul mode.unsafe;</div>
@@ -540,9 +540,9 @@ Operators</h1>
 <div class="line">        pub let `&lt;= =   cmp.le  mode.unsafe;</div>
 <div class="line">        pub let `&gt;  =   cmp.g   mode.unsafe;</div>
 <div class="line">        pub let `&gt;= =   cmp.ge  mode.unsafe;</div>
-<div class="line">    }</div>
+<div class="line">    end</div>
 <div class="line"> </div>
-<div class="line">    pub mod fast {</div>
+<div class="line">    pub mod fast</div>
 <div class="line">        pub let `+  = arith.add mode.fast;</div>
 <div class="line">        pub let `-  = arith.sub mode.fast;</div>
 <div class="line">        pub let `*  = arith.mul mode.fast;</div>
@@ -554,8 +554,8 @@ Operators</h1>
 <div class="line">        pub let `&lt;= =   cmp.le  mode.fast;</div>
 <div class="line">        pub let `&gt;  =   cmp.g   mode.fast;</div>
 <div class="line">        pub let `&gt;= =   cmp.ge  mode.fast;</div>
-<div class="line">    }</div>
-<div class="line">}</div>
+<div class="line">    end</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

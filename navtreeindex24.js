@@ -1,5 +1,15 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5":[2,0,4,1,20,30],
+"namespacemim_1_1plug_1_1tensor.html#ae853e4d62b56281acaaad1e45741b6f4":[2,0,4,1,20,4],
+"namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59":[2,0,4,1,20,19],
+"namespacemim_1_1plug_1_1tensor.html#aec79c25d65d7e0096f5284f96ff67e87":[2,0,4,1,20,31],
+"namespacemim_1_1plug_1_1tensor.html#af6597e2be81e77563c122c0ee2f3ca49":[5,0,3,1,2,20,1,0,0],
+"namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a":[2,0,4,1,20,10],
+"namespacemim_1_1plug_1_1tensor.html#af6e21969cf9ba718efd729276a836057":[2,0,4,1,20,36],
+"namespacemim_1_1plug_1_1tensor.html#af8106ae30eb400ece1da1141b73335df":[2,0,4,1,20,75],
+"namespacemim_1_1plug_1_1tensor.html#afef9dbc1af6eef6ae5b68a3d93bf9286":[2,0,4,1,20,76],
+"namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead":[5,0,3,1,2,20,1,0],
 "namespacemim_1_1plug_1_1tensor_1_1phase.html":[2,0,4,1,20,0],
 "namespacemim_1_1plug_1_1tensor_1_1phase.html#a09d1835975049dc93906aa3750a07c5b":[2,0,4,1,20,0,12],
 "namespacemim_1_1plug_1_1tensor_1_1phase.html#a366c198562cc20946fc693da625124e1":[2,0,4,1,20,0,11],
@@ -239,15 +249,5 @@ var NAVTREEINDEX24 =
 "split__off__kernels_8h.html":[5,0,3,1,2,9,0,4],
 "split__off__kernels_8h_source.html":[5,0,3,1,2,9,0,4],
 "static__arg__opt_8cpp.html":[5,0,4,1,2,11],
-"static__arg__opt_8cpp_source.html":[5,0,4,1,2,11],
-"static__arg__opt_8h.html":[5,0,3,1,1,10],
-"static__arg__opt_8h_source.html":[5,0,3,1,1,10],
-"stream_8cpp.html":[5,0,4,1,0,6],
-"stream_8cpp_source.html":[5,0,4,1,0,6],
-"structautomaton_1_1DFANode_1_1Lt.html":[2,0,0,2,0],
-"structautomaton_1_1DFANode_1_1Lt.html":[4,0,0,2,0],
-"structautomaton_1_1DFANode_1_1Lt.html#a96ef0a9ea74d7fa46eb32090989d95cc":[2,0,0,2,0,0],
-"structautomaton_1_1DFANode_1_1Lt.html#a96ef0a9ea74d7fa46eb32090989d95cc":[4,0,0,2,0,0],
-"structautomaton_1_1NFANode_1_1Lt.html":[2,0,0,4,0],
-"structautomaton_1_1NFANode_1_1Lt.html":[4,0,0,4,0]
+"static__arg__opt_8cpp_source.html":[5,0,4,1,2,11]
 };

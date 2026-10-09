@@ -13,7 +13,7 @@ var searchData=
   ['nests_10',['nests',['../classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab',1,'mim::Def::nests(Def *mut)'],['../classmim_1_1Def.html#a4215aea9762a0fca45f190b40509b4a8',1,'mim::Def::nests(const Def *def)']]],
   ['new2old_11',['new2old',['../classmim_1_1Sieve.html#a757b87f677e5c314ebe7e586ef27edcb',1,'mim::Sieve']]],
   ['new_5fworld_12',['new_world',['../classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19',1,'mim::RWPhase']]],
-  ['next_13',['next',['../classmim_1_1ast_1_1RecDecl.html#ac7c21cf066f7dbb313f5408b392d49f3',1,'mim::ast::RecDecl::next()'],['../classmim_1_1Axm.html#a53ff494f0c47c403919d1b1c891ce296',1,'mim::Axm::next()']]],
+  ['next_13',['next',['../classmim_1_1Axm.html#a53ff494f0c47c403919d1b1c891ce296',1,'mim::Axm']]],
   ['next_5fgid_14',['next_gid',['../classmim_1_1World.html#a89d20b63f0497a0be16a946ef05134ca',1,'mim::World']]],
   ['next_5frun_15',['next_run',['../classmim_1_1World.html#a134d0723f41a4dc94a40e4c6ccaed459',1,'mim::World']]],
   ['nfa_16',['NFA',['../classautomaton_1_1NFA.html#abeb6ccb3a3571e6858e5721923bda6ae',1,'automaton::NFA::NFA()=default'],['../classautomaton_1_1NFA.html#ab414e1c657bc6cfc97c1158e9a72d01b',1,'automaton::NFA::NFA(const NFA &amp;)=delete']]],

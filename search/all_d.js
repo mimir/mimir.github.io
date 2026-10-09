@@ -228,5 +228,6 @@ var searchData=
   ['mutpred_225',['MutPred',['../conceptmim_1_1MutPred.html',1,'mim']]],
   ['muts_226',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
   ['muts_227',['muts',['../structmim_1_1Nest_1_1Node_1_1Children.html#a362340ee16c9969fe8b87e5d055b76f4',1,'mim::Nest::Node::Children::muts()'],['../classmim_1_1Nest.html#aaf12b333534fe887264a7abb4317a66b',1,'mim::Nest::muts()'],['../classmim_1_1World_1_1Externals.html#ac1b577682e6553faf40ae1ade97f6d7e',1,'mim::World::Externals::muts()'],['../classmim_1_1World.html#a1ab828141bfcd0c0bdc3608ac24ec358',1,'mim::World::muts()'],['../classmim_1_1World.html#a52b5c22ff4c01fdfa5b1c18412f38a6f',1,'mim::World::muts() const']]],
-  ['mutset_228',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]]
+  ['mutset_228',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]],
+  ['mutualdecl_229',['MutualDecl',['../classmim_1_1ast_1_1MutualDecl.html',1,'mim::ast::MutualDecl'],['../classmim_1_1ast_1_1MutualDecl.html#a4568d8422ee6a616180fe3d1a1c252ac',1,'mim::ast::MutualDecl::MutualDecl()']]]
 ];

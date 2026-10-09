@@ -37,6 +37,7 @@ var annotated_dup =
         [ "MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", "classmim_1_1ast_1_1MatchExpr" ],
         [ "ModDecl", "classmim_1_1ast_1_1ModDecl.html", "classmim_1_1ast_1_1ModDecl" ],
         [ "Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
+        [ "MutualDecl", "classmim_1_1ast_1_1MutualDecl.html", "classmim_1_1ast_1_1MutualDecl" ],
         [ "Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
         [ "Parser", "classmim_1_1ast_1_1Parser.html", "classmim_1_1ast_1_1Parser" ],
         [ "Path", "classmim_1_1ast_1_1Path.html", "classmim_1_1ast_1_1Path" ],

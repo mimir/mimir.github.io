@@ -20,7 +20,7 @@ var searchData=
   ['infix_5fprec_17',['infix_prec',['../classmim_1_1ast_1_1Tok.html#a9d235ba4a8cb78a9696058e20f496079',1,'mim::ast::Tok']]],
   ['infix_5fsym_18',['infix_sym',['../classmim_1_1ast_1_1Tok.html#a3ac78a7cc607b45b301fba0e1519aadb',1,'mim::ast::Tok']]],
   ['infixexpr_19',['InfixExpr',['../classmim_1_1ast_1_1InfixExpr.html#ac3929f8ac195a7add603bd31d55e5b6c',1,'mim::ast::InfixExpr']]],
-  ['inherit_20',['inherit',['../classmim_1_1World.html#a082cce3d9d0307b4608146418226fb00',1,'mim::World']]],
+  ['inherit_20',['inherit',['../structmim_1_1ast_1_1Mods.html#a04e85e4a4fb8261c692c6af2b54209f9',1,'mim::ast::Mods::inherit()'],['../classmim_1_1World.html#a082cce3d9d0307b4608146418226fb00',1,'mim::World::inherit()']]],
   ['init_21',['init',['../classmim_1_1Global.html#a278c06f8dbc9c0b9dfd28e43fd6aea2f',1,'mim::Global']]],
   ['inj_22',['inj',['../classmim_1_1World.html#a8c8152c28c8f6459f2f56cf47ea77bb2',1,'mim::World::inj(const Def *type, const Def *value)'],['../classmim_1_1World.html#a048c5ebd0c76793c92ddcd6edf0c3778',1,'mim::World::inj(const Def *type, nat_t index, const Def *value)']]],
   ['injective_5fcoord_23',['injective_coord',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a952e5475e9b27fe3add59987d9380cf3',1,'mim::plug::tensor::phase']]],

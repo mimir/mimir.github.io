@@ -229,8 +229,8 @@ Secondary Terminals</h3>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
 Keywords</h3>
 <div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Nat Rule Type Univ</div>
-<div class="line">and anx as axm cn con end extern ff fn fun</div>
-<div class="line">i1 i8 i16 i32 i64 import inj lam let match mod</div>
+<div class="line">anx as axm cn con end extern ff fn fun</div>
+<div class="line">i1 i8 i16 i32 i64 import inj lam let match mod mutual</div>
 <div class="line">norm plugin priv pub rec ret rule tt use when where with</div>
 </div><!-- fragment --></div><div class="terminals-code"></div><p>The following names are predefined aliases:</p>
 <table class="markdownTable">
@@ -359,18 +359,17 @@ Declarations</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> supports the following declaration families. Most of them may be prefixed with a visibility (<span class="tt">priv</span> or <span class="tt">pub</span>), <span class="tt">extern</span>, and <span class="tt">anx</span>. These modifiers may be written in any order; the productions below only spell out which of them a declaration accepts at all. Visibility is a Mim-only, purely lexical fact - it has no effect on backend linkage or compiler registration. <span class="tt">extern</span> and <span class="tt">anx</span> are each independent of visibility, but not of each other: <span class="tt">extern anx</span> on the same declaration is a static error. Either one nudges the default visibility to <span class="tt">pub</span> (instead of the usual <span class="tt">priv</span> default) unless <span class="tt">priv</span>/<span class="tt">pub</span> is given explicitly, so e.g. <span class="tt">priv anx</span> and <span class="tt">priv extern</span> are legal and meaningful.</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">d      ::= vis? import (I | S) (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
 <div class="line">        |  vis? &quot;use&quot;  path    (&quot;as&quot; (I | &quot;*&quot;))? &quot;;&quot;</div>
-<div class="line">        |  vis? &quot;mod&quot; I &quot;{&quot; d* &quot;}&quot;</div>
+<div class="line">        |  vis? &quot;mod&quot; I d* &quot;end&quot;</div>
 <div class="line">        |  vis? &quot;anx&quot;? &quot;let&quot; p &quot;=&quot; e</div>
 <div class="line">        |  vis? &quot;anx&quot; I &quot;=&quot; path</div>
-<div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e and*</div>
+<div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e</div>
 <div class="line">        |  vis?  &quot;extern&quot;          lam I fwd+ (&quot;:&quot; e)? &quot;;&quot;</div>
-<div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I &quot;=&quot; e and*</div>
+<div class="line">        |  vis? &quot;anx&quot;? &quot;rec&quot; I &quot;=&quot; e</div>
+<div class="line">        |  vis? (&quot;extern&quot; | &quot;anx&quot;)? &quot;mutual&quot; d* &quot;end&quot;</div>
 <div class="line">        |  vis? &quot;axm&quot; axm</div>
 <div class="line">        |  vis? (&quot;rule&quot; | &quot;norm&quot;) I p &quot;:&quot; e (&quot;when&quot; e)? &quot;=&gt;&quot; e</div>
 <div class="line"> </div>
 <div class="line">import ::= &quot;import&quot; | &quot;plugin&quot;</div>
-<div class="line">and    ::= &quot;and&quot; I &quot;=&quot; e</div>
-<div class="line">        |  &quot;and&quot; lam I dom+ (&quot;:&quot; e)? &quot;=&quot; e</div>
 <div class="line">vis    ::= &quot;priv&quot; | &quot;pub&quot;</div>
 <div class="line">lam    ::= &quot;lam&quot; | &quot;con&quot; | &quot;fun&quot;</div>
 <div class="line">dom    ::= p (&quot;@&quot; e)?</div>
@@ -386,10 +385,10 @@ Declarations</h2>
 <li><span class="tt">mod</span> groups declarations under a name; its body also sees the enclosing scope. Neither <span class="tt">extern</span> nor <span class="tt">anx</span> apply to it.</li>
 <li><span class="tt">let</span> introduces a binding pattern.</li>
 <li><span class="tt">anx I = path</span> declares <span class="tt">I</span> as an alias for the annex denoted by <span class="tt">path</span>.</li>
-<li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations. The declared name is already in scope inside its own body, so such a declaration is recursive. <span class="tt">and</span> extends the group to mutual recursion; a forward reference without <span class="tt">and</span> does not resolve. The corresponding <a class="el" href="#expr" title="Expressions">expression forms</a> are anonymous and cannot refer to themselves.</li>
+<li><span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span> declare lambdas, continuations, and returning continuations. The declared name is already in scope inside its own body, so such a declaration is recursive. A forward reference only resolves within a <span class="tt">mutual</span> block. The corresponding <a class="el" href="#expr" title="Expressions">expression forms</a> are anonymous and cannot refer to themselves.</li>
 <li>The <span class="tt">@</span> of a <span class="tt">dom</span> introduces its partial-evaluation filter.</li>
-<li><span class="tt">rec</span> starts a recursive declaration group, and <span class="tt">and</span> extends the same group. Its body must be a sigma, a <a class="el" href="#variant" title="Variants">variant</a>, or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
-<li>After <span class="tt">and</span>, the next declaration may be another <span class="tt">rec</span>-style binding or an explicit <span class="tt">lam</span>, <span class="tt">con</span>, or <span class="tt">fun</span> declaration; an <span class="tt">and</span>-continuation doesn't accept its own modifiers.</li>
+<li><span class="tt">rec</span> declares a recursive type. Its body must be a sigma, a <a class="el" href="#variant" title="Variants">variant</a>, or a function type, as those are built as a mutable and filled in afterwards, so that <span class="tt">I</span> is already in scope inside it; its universe level is inferred from the body. A recursive <em>function</em> is declared with <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> instead.</li>
+<li><span class="tt">mutual</span> ... <span class="tt">end</span> groups declarations that may refer to each other, as in Lean. Its members must be <span class="tt">rec</span>, <span class="tt">lam</span>, <span class="tt">con</span>, or <span class="tt">fun</span> declarations. Modifiers on <span class="tt">mutual</span> apply to every member; a member's own <span class="tt">priv</span>/<span class="tt">pub</span> overrides the group's.</li>
 <li><span class="tt">axm</span> declares an axiom. A <span class="tt">tag</span> list declares several axioms of the same type at once, and each <span class="tt">= I</span> adds another name for that tag. Prefixed with a name as in <span class="tt">axm nat.(add, sub): ...</span>, the tags become members of a module of that name.</li>
 <li>An <span class="tt">axm</span>'s <span class="tt">tail</span> is the normalizer, the curry counter, and the trip count, in that order; a trip count requires a curry counter.</li>
 <li><span class="tt">rule</span> and <span class="tt">norm</span> declare rewrite rules.</li>
@@ -571,7 +570,7 @@ Variants</h3>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">| I₀: e₀ | ... | Iₙ₋₁: eₙ₋₁</span> forms a variant type: a sum whose cases are <em>positional</em>. A constructor without <span class="tt">: e</span> carries <span class="tt">[]</span>, and a lone <span class="tt">|</span> is the empty variant.</li>
 <li>Unlike <span class="tt">∪</span>, nothing is sorted, deduplicated, or flattened: <span class="tt">| A | B | C</span> has three cases where <span class="tt">[] ∪ [] ∪ []</span> is just <span class="tt">[]</span>, and <span class="tt">| A: Nat | B: Nat</span> keeps both.</li>
-<li>A variant is a type like any other and may be anonymous; <span class="tt">rec</span> makes it recursive, and <span class="tt">and</span> mutually recursive.</li>
+<li>A variant is a type like any other and may be anonymous; <span class="tt">rec</span> makes it recursive, and a <span class="tt">mutual</span> block mutually recursive.</li>
 <li>Its last payload extends as far right as it can, and <span class="tt">|</span> never starts an application argument: write <span class="tt">f (| A | B)</span>, and parenthesize a variant inside a <span class="tt">match</span> arm.</li>
 <li><span class="tt">T#I</span> or <span class="tt">T#n</span> on a variant type <span class="tt">T</span> selects a case by constructor name or by index, counting from <span class="tt">0</span>. That is a value for a <span class="tt">[]</span> payload, and a function from the payload into <span class="tt">T</span> otherwise.</li>
 <li>In a <span class="tt">match</span> on a variant, each arm names a constructor or gives its index, optionally followed by a pattern for its payload. <span class="tt">| 1 (h, t) =&gt; e</span> selects the same case as <span class="tt">| Cons (h, t) =&gt; e</span>, just as <span class="tt">T#1</span> and <span class="tt">T#Cons</span> do. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>

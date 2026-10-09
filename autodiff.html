@@ -244,14 +244,14 @@ autodiff.diff</h3>
 <li>The derivative of <span class="tt">core.wrap.add</span>: <span class="tt">s ↦ (s, s)</span></li>
 <li>The derivative of <span class="tt">core.wrap.mul</span>: <span class="tt">s ↦ (s*b, s*a)</span></li>
 </ul>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mod diff {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mod diff</div>
 <div class="line">    anx fun core_icmp_xYgLE {s: Nat} (ab: «2; Idx s»)@tt: [Bool, Cn [Bool, Cn «2; Idx s»]] =</div>
 <div class="line">        return (core.icmp.sle ab, fn (_: Bool)@tt: «2; Idx s» = return ‹2; 0:(Idx s)›);</div>
 <div class="line">    anx fun core_wrap_add (m: Nat) {s: Nat} (ab: «2; Idx s»)@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
 <div class="line">        return (core.wrap.add m ab, fn (i: Idx s)@tt: «2; Idx s» = return ‹2; i›);</div>
 <div class="line">    anx fun core_wrap_mul (m: Nat) {s: Nat} (a b: Idx s) as ab@tt: [Idx s, Cn [Idx s, Cn «2; Idx s»]] =</div>
 <div class="line">        return (core.wrap.mul m ab, fn (i: Idx s)@tt: «2; Idx s» = return (core.wrap.mul m (i, b), core.wrap.mul m (i, a)));</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

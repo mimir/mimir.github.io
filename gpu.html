@@ -287,35 +287,35 @@ Blocking / Async Memory Operations</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md371"></a>
 alloc(block) / alloc(asyn)</h3>
 <p>Allocates memory on the device (in global address space), synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc</div>
 <div class="line">    axm block: [T: *] → GlobalM → [GlobalM, GlobalPtr T];</div>
 <div class="line">    axm asyn:  [T: *] → [GlobalM, Stream] → [GlobalM, GlobalPtr T];</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md372"></a>
 free(block) / free(asyn)</h3>
 <p>Frees memory on the device (in global address space), synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod free {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod free</div>
 <div class="line">    axm block: {T: *} → [GlobalM, GlobalPtr T] → GlobalM;</div>
 <div class="line">    axm asyn:  {T: *} → [GlobalM, GlobalPtr T, Stream] → GlobalM;</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md373"></a>
 copy_to_device(block) / copy_to_device(asyn)</h3>
 <p>Copies data from host memory to device memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_device {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_device</div>
 <div class="line">    axm block: {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T] → [mem.M 0, GlobalM];</div>
 <div class="line">    axm asyn:  {T: *} → [mem.M 0, GlobalM, mem.Ptr0 T, GlobalPtr T, Stream] → [mem.M 0, GlobalM];</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md374"></a>
 copy_to_host(block) / copy_to_host(asyn)</h3>
 <p>Copies data from device memory to host memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_host {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod copy_to_host</div>
 <div class="line">    axm block: {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T] → [mem.M 0, GlobalM];</div>
 <div class="line">    axm asyn:  {T: *} → [mem.M 0, GlobalM, GlobalPtr T, mem.Ptr0 T, Stream] → [mem.M 0, GlobalM];</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md375"></a>
 alloc_copy(block) / alloc_copy(asyn)</h3>
 <p>Allocates memory on the device (in global address space) for the provided host data and copies the host data to that memory, synchronously (<span class="tt">block</span>) or asynchronously against a stream (<span class="tt">asyn</span>).</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc_copy {</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod alloc_copy</div>
 <div class="line">    anx let block = lm {T: *}</div>
 <div class="line">                       (m0: mem.M 0, m1: GlobalM, ptr: mem.Ptr0 T)</div>
 <div class="line">                     : [mem.M 0, GlobalM, GlobalPtr T] =</div>
@@ -329,7 +329,7 @@ alloc_copy(block) / alloc_copy(asyn)</h3>
 <div class="line">        let (m1, d_ptr) = alloc.asyn T (m1, stream);</div>
 <div class="line">        let (m0, m1) = copy_to_device.asyn (m0, m1, ptr, d_ptr, stream);</div>
 <div class="line">        (m0, m1, d_ptr);</div>
-<div class="line">}</div>
+<div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md376"></a>
 Buffer Operations</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md377"></a>
