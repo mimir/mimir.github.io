@@ -44,6 +44,5 @@ var searchData=
   ['os_41',['os',['../classmim_1_1Out.html#ac3554854ca351aebf435c0d4ab153a30',1,'mim::Out']]],
   ['ostream_42',['ostream',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a57263f319591f8fd9f18a812bfe0fdc5',1,'mim::plug::ll::Emitter']]],
   ['out_43',['Out',['../classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f',1,'mim::Out::Out()=default'],['../classmim_1_1Out.html#a91b5d8f55b26fd324d0c0c032d3b6141',1,'mim::Out::Out(std::string name)']]],
-  ['outermost_5fbinder_44',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
-  ['owner_45',['owner',['../classmim_1_1ast_1_1AxmDecl_1_1Sibling.html#a3ec694b3fd899593a15ea1ffe00a4a14',1,'mim::ast::AxmDecl::Sibling']]]
+  ['outermost_5fbinder_44',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]]
 ];

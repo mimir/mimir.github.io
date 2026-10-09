@@ -181,6 +181,7 @@ var hierarchy =
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
+          [ "mim::ast::AxmDecl::Name", "classmim_1_1ast_1_1AxmDecl_1_1Name.html", null ],
           [ "mim::ast::DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", null ],
           [ "mim::ast::Ptrn", "classmim_1_1ast_1_1Ptrn.html", [
             [ "mim::ast::AliasPtrn", "classmim_1_1ast_1_1AliasPtrn.html", null ],
@@ -192,7 +193,6 @@ var hierarchy =
           [ "mim::ast::ValDecl", "classmim_1_1ast_1_1ValDecl.html", [
             [ "mim::ast::AliasDecl", "classmim_1_1ast_1_1AliasDecl.html", null ],
             [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", null ],
-            [ "mim::ast::AxmDecl::Sibling", "classmim_1_1ast_1_1AxmDecl_1_1Sibling.html", null ],
             [ "mim::ast::LetDecl", "classmim_1_1ast_1_1LetDecl.html", null ],
             [ "mim::ast::ModDecl", "classmim_1_1ast_1_1ModDecl.html", [
               [ "mim::ast::File", "classmim_1_1ast_1_1File.html", null ]
@@ -355,6 +355,8 @@ var hierarchy =
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],
     [ "mim::Version", "structmim_1_1Version.html", null ],
     [ "fe::VLA", null, [
+      [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", null ],
+      [ "mim::ast::AxmDecl::Name", "classmim_1_1ast_1_1AxmDecl_1_1Name.html", null ],
       [ "mim::ast::DeclExpr", "classmim_1_1ast_1_1DeclExpr.html", null ],
       [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ],
       [ "mim::ast::MatchExpr", "classmim_1_1ast_1_1MatchExpr.html", null ],

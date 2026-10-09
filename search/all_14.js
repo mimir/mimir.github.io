@@ -143,7 +143,7 @@ var searchData=
   ['tree_20plugin_140',['Tree Plugin',['../plugins.html#autotoc_md139',1,'Create a New In-Tree Plugin'],['../plugins.html#autotoc_md141',1,'Extract an Existing In-Tree Plugin']]],
   ['tri_141',['tri',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72',1,'mim::plug::math::tri'],['../math.html#autotoc_md408',1,'tri']]],
   ['triggering_20breakpoints_142',['Triggering Breakpoints',['../coding.html#autotoc_md30',1,'']]],
-  ['trip_143',['trip',['../classmim_1_1ast_1_1AxmDecl.html#a5ed6abc0e36ca09ee821fad07fa5632d',1,'mim::ast::AxmDecl::trip()'],['../classmim_1_1Axm.html#a487d487a0cce32b39edbaf56c0a00cd5',1,'mim::Axm::trip()'],['../classmim_1_1App.html#adf8da6305b674a2c035bde102db37740',1,'mim::App::trip()'],['../structmim_1_1ast_1_1AnnexInfo.html#a83a0a2fc0f9e07ec267f1d377a38cc89',1,'mim::ast::AnnexInfo::[struct].id::trip']]],
+  ['trip_143',['trip',['../classmim_1_1ast_1_1AxmDecl.html#a5ed6abc0e36ca09ee821fad07fa5632d',1,'mim::ast::AxmDecl::trip()'],['../classmim_1_1Axm.html#a487d487a0cce32b39edbaf56c0a00cd5',1,'mim::Axm::trip()'],['../classmim_1_1App.html#adf8da6305b674a2c035bde102db37740',1,'mim::App::trip()']]],
   ['trip_20tests_144',['Round-Trip Tests',['../coding.html#autotoc_md14',1,'']]],
   ['trip_5f_145',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
   ['trip_5fend_146',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],

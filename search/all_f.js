@@ -90,6 +90,5 @@ var searchData=
   ['outermost_5fbinder_87',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
   ['output_88',['Output',['../cli.html#autotoc_md3',1,'DOT Output'],['../cli.html#autotoc_md4',1,'Mim Output'],['../cli.html#autotoc_md2',1,'Output']]],
   ['over_20the_20program_89',['Iterating over the Program',['../dev.html#autotoc_md57',1,'']]],
-  ['overview_90',['Overview',['../phases.html#autotoc_md90',1,'']]],
-  ['owner_91',['owner',['../classmim_1_1ast_1_1AxmDecl_1_1Sibling.html#a3ec694b3fd899593a15ea1ffe00a4a14',1,'mim::ast::AxmDecl::Sibling']]]
+  ['overview_90',['Overview',['../phases.html#autotoc_md90',1,'']]]
 ];

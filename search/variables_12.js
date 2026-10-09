@@ -5,10 +5,9 @@ var searchData=
   ['tab_2',['tab',['../classmim_1_1plug_1_1ll_1_1Emitter.html#afb5d02a8fbb593878af423a560764730',1,'mim::plug::ll::Emitter::tab'],['../structmim_1_1ast_1_1S.html#a54fab320707ca39f7305431cb6c051d4',1,'mim::ast::S::tab'],['../structmim_1_1ast_1_1R.html#a1863b6de85ea7cd8147613900f6e07ad',1,'mim::ast::R::tab']]],
   ['tag_3',['tag',['../classmim_1_1Driver_1_1Imports.html#a77a6d63d306c0c9891b6d4dab3db83f7',1,'mim::Driver::Imports::Entry::tag'],['../structmim_1_1ast_1_1AnnexInfo.html#a76484548df15c4d70fc544f2162e5f0d',1,'mim::ast::AnnexInfo::[struct].sym::tag'],['../structmim_1_1ast_1_1AnnexInfo.html#af05517c7ddb899fbd9902fa54ee1f8f8',1,'mim::ast::AnnexInfo::[struct].id::tag']]],
   ['trace_5fgids_4',['trace_gids',['../structmim_1_1Flags.html#a6751eae1d81d212268261fecba66fa6a',1,'mim::Flags']]],
-  ['trip_5',['trip',['../structmim_1_1ast_1_1AnnexInfo.html#a83a0a2fc0f9e07ec267f1d377a38cc89',1,'mim::ast::AnnexInfo::[struct].id']]],
-  ['trip_5f_6',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
-  ['trip_5fend_7',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
-  ['type_8',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
-  ['type_5fdecls_5f_9',['type_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879',1,'mim::plug::ll::Emitter']]],
-  ['types_5f_10',['types_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a115e22c049d4c7fe790a44977d839031',1,'mim::plug::ll::Emitter']]]
+  ['trip_5f_5',['trip_',['../classmim_1_1Def.html#a24712467bea03b1120d3c69c1ad02916',1,'mim::Def']]],
+  ['trip_5fend_6',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
+  ['type_7',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
+  ['type_5fdecls_5f_8',['type_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879',1,'mim::plug::ll::Emitter']]],
+  ['types_5f_9',['types_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a115e22c049d4c7fe790a44977d839031',1,'mim::plug::ll::Emitter']]]
 ];

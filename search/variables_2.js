@@ -24,6 +24,5 @@ var searchData=
   ['curr_5flam_5f_21',['curr_lam_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a6dc887a02d5d0b23661854056b21018f',1,'mim::plug::ll::Emitter']]],
   ['curr_5floc_22',['curr_loc',['../structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a',1,'mim::World::State::POD']]],
   ['curr_5fsub_23',['curr_sub',['../structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1',1,'mim::World::State::POD']]],
-  ['curry_24',['curry',['../structmim_1_1ast_1_1AnnexInfo.html#a0de87a50f04add9c37858ea6f78d287d',1,'mim::ast::AnnexInfo::[struct].id']]],
-  ['curry_5f_25',['curry_',['../classmim_1_1Def.html#a6039d3f834a30baca2e8bf279231ea3a',1,'mim::Def']]]
+  ['curry_5f_24',['curry_',['../classmim_1_1Def.html#a6039d3f834a30baca2e8bf279231ea3a',1,'mim::Def']]]
 ];

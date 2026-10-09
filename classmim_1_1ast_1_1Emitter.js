@@ -5,6 +5,7 @@ var classmim_1_1ast_1_1Emitter =
     [ "add_names", "classmim_1_1ast_1_1Emitter.html#acd85daddeda37210e5d3a25265fdc830", null ],
     [ "ast", "classmim_1_1ast_1_1Emitter.html#a2f9b94cf6c3b3a065893050cfdf3b8f7", null ],
     [ "attach", "classmim_1_1ast_1_1Emitter.html#a28759c4620302518f452a04423300e0b", null ],
+    [ "attach_alias", "classmim_1_1ast_1_1Emitter.html#afa468d8901bfc7358e0210eb5503864a", null ],
     [ "ctor", "classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb", null ],
     [ "ctor_names", "classmim_1_1ast_1_1Emitter.html#aeeedbc29e166c6755c4ccb18f9d348e5", null ],
     [ "driver", "classmim_1_1ast_1_1Emitter.html#af63c0e340a1dbef41a23238343e1da1f", null ],

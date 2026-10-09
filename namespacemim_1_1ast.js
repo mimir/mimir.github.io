@@ -68,7 +68,7 @@ var namespacemim_1_1ast =
       [ "Priv", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3a3e63f28a78fab81158c4716b87d31986", null ],
       [ "Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]
     ] ],
-    [ "axm_group_end", "namespacemim_1_1ast.html#a5d8c23a2bc8c52814398b3c677d54ccf", null ],
+    [ "add_alias", "namespacemim_1_1ast.html#aa9f6e2684d6d06edb84cb5aed923da79", null ],
     [ "emit_ctor", "namespacemim_1_1ast.html#a020b751ee66665044aa55d37ab58ae72", null ],
     [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "emit_var", "namespacemim_1_1ast.html#a54b0669593d64574a33b773fcac7ae37", null ],
@@ -86,9 +86,6 @@ var namespacemim_1_1ast =
     [ "operator<<", "namespacemim_1_1ast.html#ae8647f142657ffe401f0ca6f29c09b74", null ],
     [ "prec_assoc", "namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "should_reduce", "namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890", null ],
-    [ "stream_axm", "namespacemim_1_1ast.html#a18f2f4215f25017a4f1c03f5d91766b3", null ],
-    [ "stream_axm_group", "namespacemim_1_1ast.html#aedc2890f17d41ce94bac8a249605a243", null ],
-    [ "stream_axm_tail", "namespacemim_1_1ast.html#a4dfb5b05231d717e7b7de36fa99c0eb8", null ],
     [ "stream_decls", "namespacemim_1_1ast.html#a00267fc58f83e3eca066b5fe7fe10300", null ],
     [ "vis2str", "namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711", null ],
     [ "Look_Ahead", "namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29", null ],

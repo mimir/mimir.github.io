@@ -44,7 +44,7 @@ var ast_8h =
     [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", "classmim_1_1ast_1_1UseDecl" ],
     [ "mim::ast::LetDecl", "classmim_1_1ast_1_1LetDecl.html", "classmim_1_1ast_1_1LetDecl" ],
     [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
-    [ "mim::ast::AxmDecl::Sibling", "classmim_1_1ast_1_1AxmDecl_1_1Sibling.html", "classmim_1_1ast_1_1AxmDecl_1_1Sibling" ],
+    [ "mim::ast::AxmDecl::Name", "classmim_1_1ast_1_1AxmDecl_1_1Name.html", "classmim_1_1ast_1_1AxmDecl_1_1Name" ],
     [ "mim::ast::RecDecl", "classmim_1_1ast_1_1RecDecl.html", "classmim_1_1ast_1_1RecDecl" ],
     [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", "classmim_1_1ast_1_1LamDecl" ],
     [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
