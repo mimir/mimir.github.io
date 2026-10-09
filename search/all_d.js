@@ -188,7 +188,7 @@ var searchData=
   ['model_185',['Execution Model',['../phases.html#autotoc_md97',1,'']]],
   ['modifiers_186',['Modifiers',['../langref.html#autotoc_md64',1,'Modifiers'],['../ord.html#autotoc_md477',1,'Modifiers'],['../vec.html#autotoc_md649',1,'Modifiers']]],
   ['mods_187',['Mods',['../structmim_1_1ast_1_1Mods.html',1,'mim::ast']]],
-  ['mods_188',['mods',['../classmim_1_1ast_1_1ValDecl.html#a55782f87dd48c72e297123925d2fc458',1,'mim::ast::ValDecl']]],
+  ['mods_188',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier::mods'],['../classmim_1_1ast_1_1ValDecl.html#a55782f87dd48c72e297123925d2fc458',1,'mim::ast::ValDecl::mods()']]],
   ['module_189',['Generated Python Module',['../plugins.html#autotoc_md137',1,'']]],
   ['modules_190',['Modules',['../tutorial.html#autotoc_md195',1,'Files, Imports, and Modules'],['../langref.html#path',1,'Paths and Modules']]],
   ['modules_20and_20visibility_191',['Modules and Visibility',['../tutorial.html#autotoc_md207',1,'']]],

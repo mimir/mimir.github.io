@@ -7,6 +7,7 @@ var classmim_1_1Lam =
     [ "branch", "classmim_1_1Lam.html#a9371fbebae39cfcc9a4c7943b756a18a", null ],
     [ "codom", "classmim_1_1Lam.html#afe57c9c0e30c3c94239efae40e4dea26", null ],
     [ "dom", "classmim_1_1Lam.html#a59d460811127f9d66d354c86e5c74483", null ],
+    [ "eta_callee", "classmim_1_1Lam.html#a28bbda5ac5104650b68110753bdafcc9", null ],
     [ "eta_expand", "classmim_1_1Lam.html#add8ef2eef11c167fdc2559b62c282960", null ],
     [ "eta_expand", "classmim_1_1Lam.html#a3a1da0cbd535350a1786d34228220d52", null ],
     [ "eta_reduce", "classmim_1_1Lam.html#a7f8009af756ca53c9a6e833f0f17b1ba", null ],

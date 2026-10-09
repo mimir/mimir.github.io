@@ -290,8 +290,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1Rewriter"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
 <tr class="memitem:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter" id="r_ae09f7a8bb555ce521cf0355fd77a79af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae09f7a8bb555ce521cf0355fd77a79af">enter</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
 <tr class="memdesc:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> to <code class="param">new_mut</code> and restores it at the end of the scope.  <br /></td></tr>
-<tr class="memitem:ac3568f817807984c3252d8c05417491c pro_methods_classmim_1_1Rewriter" id="r_ac3568f817807984c3252d8c05417491c"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac3568f817807984c3252d8c05417491c">seal_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
-<tr class="memdesc:ac3568f817807984c3252d8c05417491c pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tail of rewrite_stub: immutabilizes <code class="param">new_mut</code> in hindsight, as rewriting may have made it vacuous.  <br /></td></tr>
+<tr class="memitem:ab6b6478915afad4df1563eabea005120 pro_methods_classmim_1_1Rewriter" id="r_ab6b6478915afad4df1563eabea005120"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab6b6478915afad4df1563eabea005120">seal</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
+<tr class="memdesc:ab6b6478915afad4df1563eabea005120 pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tail of rewrite_stub: immutabilizes <code class="param">new_mut</code> in hindsight, as rewriting may have made it vacuous.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_classmim_1_1Phase"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
 <tr class="memitem:a0c13c41b1a3d729d9319fd38507be012 pro_attribs_classmim_1_1Phase" id="r_a0c13c41b1a3d729d9319fd38507be012"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012">name_</a></td></tr>
 <tr class="inherit_header pro_attribs_classmim_1_1Rewriter"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
@@ -299,10 +299,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase. </p>
-<p>A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> should appear either <b>only</b> in callee position (Known) or not (Unknown). A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> that occurs in an unknown position more than once (Unknown_N) or in both positions (Both) is η-expanded (<span class="tt">g f -&gt; g (λx.f x)</span>); a genuine η-redex <span class="tt">λx.f x</span> whose <span class="tt">f</span> does <b>not</b> want to be expanded is η-reduced.</p>
+<p>A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> should appear either <b>only</b> in callee position (Known) or not (Unknown). A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> that occurs in an unknown position more than once (Unknown_N) or in both positions is η-expanded (<span class="tt">g f -&gt; g (λx.f x)</span>); a genuine η-redex <span class="tt">λx.f x</span> whose <span class="tt">f</span> does <b>not</b> want to be expanded is η-reduced.</p>
 <p>The analysis is <b>wrapper-transparent</b>: a use of a wrapper <span class="tt">λx.f x</span> is counted as a use of <span class="tt">f</span> at the same position/multiplicity instead of counting <span class="tt">f</span> as Known (the wrapper's callee). This makes <span class="tt">f</span>'s classification identical whether <span class="tt">f</span> is bare or wrapped, so the canonical η-form is a genuine fixed point - the phase does not fight itself and can share one big <span class="tt">compile.phases tt</span> fixed-point loop with <a class="el" href="classmim_1_1BetaRed.html" title="Inlines in post-order all Lams that occur exactly once in the program.">BetaRed</a> and mem.seo without oscillating. </p>
 
-<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00021">21</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00019">19</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0e3f042fe6f92ea15d3546451318b0b6" name="a0e3f042fe6f92ea15d3546451318b0b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e3f042fe6f92ea15d3546451318b0b6">&#9670;&#160;</a></span>EtaConv() <span class="overload">[1/2]</span></h2>
@@ -327,7 +327,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00023">23</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00021">21</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00531">mim::InplaceRWPhase::InplaceRWPhase()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
 
@@ -360,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00025">25</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00023">23</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00531">mim::InplaceRWPhase::InplaceRWPhase()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
 
@@ -426,11 +426,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="eta__conv_8cpp_source.html#l00037">37</a> of file <a class="el" href="eta__conv_8cpp_source.html">eta_conv.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="eta__conv_8cpp_source.html#l00039">39</a> of file <a class="el" href="eta__conv_8cpp_source.html">eta_conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00058">mim::Lam::eta_expand()</a>, <a class="el" href="phase_8h_source.html#l00098">mim::Phase::invalidate()</a>, <a class="el" href="def_8h_source.html#l00574">mim::Def::is_ground()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00037">rewrite()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00042">mim::Rewriter::rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00076">mim::Lam::eta_expand()</a>, <a class="el" href="phase_8h_source.html#l00098">mim::Phase::invalidate()</a>, <a class="el" href="def_8h_source.html#l00574">mim::Def::is_ground()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00039">rewrite()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00042">mim::Rewriter::rewrite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="eta__conv_8cpp_source.html#l00037">rewrite()</a>, and <a class="el" href="eta__conv_8cpp_source.html#l00078">rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="eta__conv_8cpp_source.html#l00039">rewrite()</a>, and <a class="el" href="eta__conv_8cpp_source.html#l00078">rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="eta__conv_8cpp_source.html#l00078">78</a> of file <a class="el" href="eta__conv_8cpp_source.html">eta_conv.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00249">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00235">mim::App::callee()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00037">rewrite()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00039">rewrite()</a>, and <a class="el" href="phase_8h_source.html#l00077">mim::InplaceRWPhase::world()</a>.</p>
 
 </div>
 </div>
@@ -519,11 +519,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1RWBase.html#aa4dcfd5d28f6c97f001357bdf3d01bb9">mim::RWBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00082">82</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="eta__conv_8h_source.html#l00067">67</a> of file <a class="el" href="eta__conv_8h_source.html">eta_conv.h</a>.</p>
 
-<p class="reference">References <a class="el" href="eta__conv_8h_source.html#l00082">rewrite_root()</a>.</p>
+<p class="reference">References <a class="el" href="eta__conv_8h_source.html#l00067">rewrite_root()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="eta__conv_8h_source.html#l00082">rewrite_root()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="eta__conv_8h_source.html#l00067">rewrite_root()</a>.</p>
 
 </div>
 </div>

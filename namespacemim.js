@@ -208,6 +208,7 @@ var namespacemim =
     [ "arg_flag", "namespacemim.html#a18b9a0651a4ea8b0c2658215fd8426e3", null ],
     [ "arg_value", "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33", null ],
     [ "drop_self", "namespacemim.html#a243a2a51c74ad154125a9a0a79ef0955", null ],
+    [ "eta_next", "namespacemim.html#abb37efdc2e6dae908bbb52d970a5f761", null ],
     [ "file_stem", "namespacemim.html#a9fa2465060534febbc42d2cd5a2c1d04", null ],
     [ "flatten_umax", "namespacemim.html#acc7b1158f83b80e637de1a63f56d514c", null ],
     [ "is_associative", "namespacemim.html#abe80f437b1eb4a8af99d7a4e6fff1fe3", null ],

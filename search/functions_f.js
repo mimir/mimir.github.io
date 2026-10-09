@@ -29,7 +29,7 @@ var searchData=
   ['plugin_5fpaths_26',['plugin_paths',['../classmim_1_1Driver.html#ac598c78c88c5e6180c6461e915bb8da7',1,'mim::Driver']]],
   ['pointee_27',['pointee',['../namespacemim_1_1plug_1_1mem.html#aede1b45bcf193567f1120d04697b8aa7',1,'mim::plug::mem']]],
   ['pop_28',['pop',['../classmim_1_1Rewriter.html#a87c9821a28ae231d8e9434ff049dce35',1,'mim::Rewriter::pop()'],['../classmim_1_1VarRewriter.html#a269f876c26f40dc87f432b135d4a8f7c',1,'mim::VarRewriter::pop()'],['../classmim_1_1ast_1_1Scopes.html#ad0cdbd28cf71b2c1d3ed73e2254900a2',1,'mim::ast::Scopes::pop()']]],
-  ['pop_5fbarrier_29',['pop_barrier',['../classmim_1_1ast_1_1Scopes.html#aa3b9f537467520c67535f9a0e1737787',1,'mim::ast::Scopes']]],
+  ['pop_5fbarrier_29',['pop_barrier',['../classmim_1_1ast_1_1Scopes.html#a05e4de378a76b58a109349d9a7928b7b',1,'mim::ast::Scopes']]],
   ['pop_5fmod_30',['pop_mod',['../classmim_1_1ast_1_1Scopes.html#a0b4d0945b9e813fec10df99f288f3c72',1,'mim::ast::Scopes::pop_mod()'],['../classmim_1_1ast_1_1Emitter.html#a11e2f84c806ee47deb90da9c1f1f34c4',1,'mim::ast::Emitter::pop_mod()']]],
   ['post_5forder_31',['post_order',['../namespacemim.html#a61ddf45bef2304628acddc77ac1c1ecd',1,'mim']]],
   ['prec_5fassoc_32',['prec_assoc',['../namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d',1,'mim::ast::prec_assoc()'],['../namespacemim.html#af537e552f07ed689e1d2df001cd1a35d',1,'mim::prec_assoc()']]],
@@ -50,6 +50,6 @@ var searchData=
   ['ptrns_47',['ptrns',['../classmim_1_1ast_1_1TuplePtrn.html#a61c16e7b4effdd112f34b53aa777b1f3',1,'mim::ast::TuplePtrn']]],
   ['pullback_5ftype_48',['pullback_type',['../namespacemim_1_1plug_1_1autodiff.html#aea750f837c2ff1b730c268bf3c88cb26',1,'mim::plug::autodiff']]],
   ['push_49',['push',['../classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96',1,'mim::Rewriter::push()'],['../classmim_1_1VarRewriter.html#ac29d30f671daec7c01345363249542e7',1,'mim::VarRewriter::push()'],['../classmim_1_1World.html#a530372f1dfadd2f5004fba5692675dab',1,'mim::World::push()'],['../classmim_1_1ast_1_1Scopes.html#a7b66277eef69295c498385f34ad3ca54',1,'mim::ast::Scopes::push()'],['../classmim_1_1ast_1_1Scopes.html#a6fa2b5ae4e4b25dbc8bf0ae0b3ba68e7',1,'mim::ast::Scopes::push(Scope &amp;scope)'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a1813b9263233722195c2ef903c7fee54',1,'mim::plug::tensor::phase::Slots::push()']]],
-  ['push_5fbarrier_50',['push_barrier',['../classmim_1_1ast_1_1Scopes.html#a85ec3251cdad00afc562aa94524e6074',1,'mim::ast::Scopes']]],
+  ['push_5fbarrier_50',['push_barrier',['../classmim_1_1ast_1_1Scopes.html#aca65f9a7b286b7f87d6c70b6c206531a',1,'mim::ast::Scopes']]],
   ['push_5fmod_51',['push_mod',['../classmim_1_1ast_1_1Scopes.html#a80200e24440c4ab909a13e00952ebd5f',1,'mim::ast::Scopes::push_mod()'],['../classmim_1_1ast_1_1Emitter.html#a5aa386a903e0497d846b79b8ceeed4a4',1,'mim::ast::Emitter::push_mod()']]]
 ];

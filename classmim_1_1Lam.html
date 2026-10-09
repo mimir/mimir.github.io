@@ -489,10 +489,12 @@ Continuations</h2></td></tr>
 <tr class="memitem:a637291bc1cf994803562402bb0d77909" id="r_a637291bc1cf994803562402bb0d77909"><td class="memItemLeft">static Lam *&#160;</td><td class="memItemRight"><a class="el" href="#a637291bc1cf994803562402bb0d77909">isa_mut_returning</a> (const Def *d)</td></tr>
 <tr class="memitem:a4868f1bfe7fb5cbc7d453c0f83009dbe" id="r_a4868f1bfe7fb5cbc7d453c0f83009dbe"><td class="memItemLeft">static Lam *&#160;</td><td class="memItemRight"><a class="el" href="#a4868f1bfe7fb5cbc7d453c0f83009dbe">isa_mut_basicblock</a> (const Def *d)</td></tr>
 <tr class="memitem:adc6fcde1073943f69eb7eabe421a3adc" id="r_adc6fcde1073943f69eb7eabe421a3adc"><td class="memItemLeft">static const Def *&#160;</td><td class="memItemRight"><a class="el" href="#adc6fcde1073943f69eb7eabe421a3adc">isa_ret_arg</a> (const Def *d)</td></tr>
-<tr class="memdesc:adc6fcde1073943f69eb7eabe421a3adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields the <span class="tt">y</span> of <span class="tt">lm (x, ret) = ret y</span> - the argument <code class="param">d's</code> body hands to its <a class="el" href="#ae59c284f28c0728fbe24007b19112f6a" title="Yields the Lam::var of the Lam::ret_pi.">Lam::ret_var</a>.  <br /></td></tr>
+<tr class="memdesc:adc6fcde1073943f69eb7eabe421a3adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields the <span class="tt">y</span> of <span class="tt">λ (x, ret) = ret y</span> - the argument <code class="param">d's</code> body hands to its <a class="el" href="#ae59c284f28c0728fbe24007b19112f6a" title="Yields the Lam::var of the Lam::ret_pi.">Lam::ret_var</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Eta-Conversion</h2></td></tr>
+<tr class="memitem:a28bbda5ac5104650b68110753bdafcc9" id="r_a28bbda5ac5104650b68110753bdafcc9"><td class="memItemLeft">const Def *&#160;</td><td class="memItemRight"><a class="el" href="#a28bbda5ac5104650b68110753bdafcc9">eta_callee</a> () const</td></tr>
+<tr class="memdesc:a28bbda5ac5104650b68110753bdafcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields <span class="tt">f</span> if <span class="tt">this</span> is <span class="tt">λ x = f x</span> where <span class="tt">x</span> ∉ <span class="tt">FV(f)</span>.  <br /></td></tr>
 <tr class="memitem:a7f8009af756ca53c9a6e833f0f17b1ba" id="r_a7f8009af756ca53c9a6e833f0f17b1ba"><td class="memItemLeft">const Def *&#160;</td><td class="memItemRight"><a class="el" href="#a7f8009af756ca53c9a6e833f0f17b1ba">eta_reduce</a> () const</td></tr>
 <tr class="memdesc:a7f8009af756ca53c9a6e833f0f17b1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields the callee of <a class="el" href="#aca3affe9def9af98032c560f4f7a06ec">body()</a>, if eta-convertible and <span class="tt">nullptr</span> otherwise.  <br /></td></tr>
 <tr class="memitem:a3a1da0cbd535350a1786d34228220d52" id="r_a3a1da0cbd535350a1786d34228220d52"><td class="memItemLeft">static Lam *&#160;</td><td class="memItemRight"><a class="el" href="#a3a1da0cbd535350a1786d34228220d52">eta_expand</a> (<a class="el" href="#a0565c4cf6c92d40b051538f19417cb43">Filter</a>, const Def *f)</td></tr>
@@ -593,7 +595,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="world_8h_source.html#l00398">mim::World::filter()</a>, <a class="el" href="def_8cpp_source.html#l00203">mim::Def::set()</a>, and <a class="el" href="def_8h_source.html#l01175">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lam_8cpp_source.html#l00032">app()</a>, <a class="el" href="lam_8cpp_source.html#l00034">branch()</a>, <a class="el" href="lam_8cpp_source.html#l00049">eta_reduce()</a>, and <a class="el" href="lam_8cpp_source.html#l00042">isa_ret_arg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lam_8cpp_source.html#l00032">app()</a>, <a class="el" href="lam_8cpp_source.html#l00034">branch()</a>, <a class="el" href="lam_8cpp_source.html#l00049">eta_callee()</a>, and <a class="el" href="lam_8cpp_source.html#l00042">isa_ret_arg()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +658,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00402">mim::Def::op()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="eval_8cpp_source.html#l00165">mim::plug::autodiff::phase::Eval::augment_lam()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00276">mim::plug::ll_nvptx::HostEmitter::emit_epilogue()</a>, <a class="el" href="lam_8cpp_source.html#l00049">eta_reduce()</a>, <a class="el" href="lam_8cpp_source.html#l00042">isa_ret_arg()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="lam_8cpp_source.html#l00028">set()</a>, and <a class="el" href="lam_8h_source.html#l00159">set_body()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="eval_8cpp_source.html#l00165">mim::plug::autodiff::phase::Eval::augment_lam()</a>, <a class="el" href="phase_2ll__nvptx_8cpp_source.html#l00276">mim::plug::ll_nvptx::HostEmitter::emit_epilogue()</a>, <a class="el" href="lam_8cpp_source.html#l00049">eta_callee()</a>, <a class="el" href="lam_8cpp_source.html#l00042">isa_ret_arg()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="lam_8cpp_source.html#l00028">set()</a>, and <a class="el" href="lam_8h_source.html#l00159">set_body()</a>.</p>
 
 </div>
 </div>
@@ -766,6 +768,31 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a28bbda5ac5104650b68110753bdafcc9" name="a28bbda5ac5104650b68110753bdafcc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bbda5ac5104650b68110753bdafcc9">&#9670;&#160;</a></span>eta_callee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Def * mim::Lam::eta_callee </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yields <span class="tt">f</span> if <span class="tt">this</span> is <span class="tt">λ x = f x</span> where <span class="tt">x</span> ∉ <span class="tt">FV(f)</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00049">49</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00029">app()</a>, <a class="el" href="lam_8h_source.html#l00106">body()</a>, <a class="el" href="def_8cpp_source.html#l00278">mim::Def::has_free_var()</a>, <a class="el" href="def_8h_source.html#l00532">mim::Def::has_var()</a>, <a class="el" href="def_8h_source.html#l00421">mim::Def::is_set()</a>, and <a class="el" href="def_8h_source.html#l00528">mim::Def::var()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lam_8cpp_source.html#l00058">mim::eta_next()</a>, and <a class="el" href="lam_8cpp_source.html#l00063">eta_reduce()</a>.</p>
+
+</div>
+</div>
 <a id="add8ef2eef11c167fdc2559b62c282960" name="add8ef2eef11c167fdc2559b62c282960"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add8ef2eef11c167fdc2559b62c282960">&#9670;&#160;</a></span>eta_expand() <span class="overload">[1/2]</span></h2>
 
@@ -826,11 +853,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00058">58</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00076">76</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="lam_8h_source.html#l00105">filter()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="eta__conv_8cpp_source.html#l00037">mim::EtaConv::rewrite()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00050">mim::RetWrap::rewrite()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, and <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="eta__conv_8cpp_source.html#l00039">mim::EtaConv::rewrite()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00050">mim::RetWrap::rewrite()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, and <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>.</p>
 
 </div>
 </div>
@@ -850,11 +877,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Yields the callee of <a class="el" href="#aca3affe9def9af98032c560f4f7a06ec">body()</a>, if eta-convertible and <span class="tt">nullptr</span> otherwise. </p>
-<p>η-convertible means: <span class="tt">lm x = f x</span> where <span class="tt">x</span> ∉ <span class="tt">f</span>. </p>
+<p>η-convertible means: <span class="tt">λ x = f x</span> where <span class="tt">x</span> ∉ <span class="tt">FV(f)</span>. A <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> on an η-cycle like <span class="tt">ping = λn.pong n; pong = λn.ping n</span> diverges and is not η-convertible. </p>
 
-<p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00049">49</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00063">63</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00029">app()</a>, <a class="el" href="lam_8h_source.html#l00106">body()</a>, <a class="el" href="def_8cpp_source.html#l00278">mim::Def::has_free_var()</a>, <a class="el" href="def_8h_source.html#l00532">mim::Def::has_var()</a>, <a class="el" href="def_8h_source.html#l00421">mim::Def::is_set()</a>, and <a class="el" href="def_8h_source.html#l00528">mim::Def::var()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00049">eta_callee()</a>, and <a class="el" href="lam_8cpp_source.html#l00058">mim::eta_next()</a>.</p>
 
 </div>
 </div>
@@ -885,7 +912,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00402">mim::Def::op()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lam_8cpp_source.html#l00032">app()</a>, <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="eval_8cpp_source.html#l00165">mim::plug::autodiff::phase::Eval::augment_lam()</a>, <a class="el" href="lam_8cpp_source.html#l00034">branch()</a>, <a class="el" href="lam_8cpp_source.html#l00058">eta_expand()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="lam_8cpp_source.html#l00028">set()</a>, and <a class="el" href="lam_8cpp_source.html#l00027">set_filter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lam_8cpp_source.html#l00032">app()</a>, <a class="el" href="world_8cpp_source.html#l00298">mim::World::app()</a>, <a class="el" href="eval_8cpp_source.html#l00165">mim::plug::autodiff::phase::Eval::augment_lam()</a>, <a class="el" href="lam_8cpp_source.html#l00034">branch()</a>, <a class="el" href="lam_8cpp_source.html#l00076">eta_expand()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="branch__normalize_8cpp_source.html#l00007">mim::BranchNormalize::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="lam_8cpp_source.html#l00028">set()</a>, and <a class="el" href="lam_8cpp_source.html#l00027">set_filter()</a>.</p>
 
 </div>
 </div>
@@ -944,7 +971,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Is <span class="tt">this</span> neither <a class="el" href="classmim_1_1Def.html#aa3519178f6136b088a41d1bfa0cab603">is_external()</a> nor <a class="el" href="classmim_1_1Def.html#af91732c930dedfdd6fce8d6befe8e6bc">is_annex()</a> but <a class="el" href="classmim_1_1Def.html#a075f30462bdc7ae0e435c8e15cb48fff">is_set()</a>? </p>
 
-<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00189">189</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00191">191</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00606">mim::Def::is_annex()</a>, <a class="el" href="def_8h_source.html#l00602">mim::Def::is_external()</a>, and <a class="el" href="def_8h_source.html#l00421">mim::Def::is_set()</a>.</p>
 
@@ -1124,7 +1151,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Yields the <span class="tt">y</span> of <span class="tt">lm (x, ret) = ret y</span> - the argument <code class="param">d's</code> body hands to its <a class="el" href="#ae59c284f28c0728fbe24007b19112f6a" title="Yields the Lam::var of the Lam::ret_pi.">Lam::ret_var</a>. </p>
+<p>Yields the <span class="tt">y</span> of <span class="tt">λ (x, ret) = ret y</span> - the argument <code class="param">d's</code> body hands to its <a class="el" href="#ae59c284f28c0728fbe24007b19112f6a" title="Yields the Lam::var of the Lam::ret_pi.">Lam::ret_var</a>. </p>
 <p><span class="tt">nullptr</span> if <code class="param">d</code> is not a set, mutable <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> with such a body. </p>
 
 <p class="definition">Definition at line <a class="el" href="lam_8cpp_source.html#l00042">42</a> of file <a class="el" href="lam_8cpp_source.html">lam.cpp</a>.</p>
@@ -1189,7 +1216,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Yields <code class="param">def</code> as a mutable <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>, if it <a class="el" href="#a395f18451675fc059995878044244d71">is_rewritable()</a> and <span class="tt">nullptr</span> otherwise. </p>
 
-<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00191">191</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00193">193</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00629">mim::Def::isa_mut()</a>.</p>
 
@@ -1567,11 +1594,11 @@ template&lt;size_t N = std::dynamic_extent&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00201">201</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00203">203</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00201">World</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00203">World</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lam_8h_source.html#l00201">World</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lam_8h_source.html#l00203">World</a>.</p>
 
 </div>
 </div>
@@ -1596,7 +1623,7 @@ template&lt;size_t N = std::dynamic_extent&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00197">197</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00199">199</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
 
 </div>
 </div>
@@ -1620,7 +1647,7 @@ template&lt;size_t N = std::dynamic_extent&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00198">198</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lam_8h_source.html#l00200">200</a> of file <a class="el" href="lam_8h_source.html">lam.h</a>.</p>
 
 </div>
 </div>

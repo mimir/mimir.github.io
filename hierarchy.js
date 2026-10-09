@@ -15,6 +15,7 @@ var hierarchy =
     [ "automaton::AutomatonBase&lt; NFANode &gt;", "classautomaton_1_1AutomatonBase.html", [
       [ "automaton::NFA", "classautomaton_1_1NFA.html", null ]
     ] ],
+    [ "mim::ast::Scopes::Barrier", "classmim_1_1ast_1_1Scopes.html#structmim_1_1ast_1_1Scopes_1_1Barrier", null ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
     [ "mim::Checker", "classmim_1_1Checker.html", null ],
