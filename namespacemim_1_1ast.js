@@ -29,6 +29,7 @@ var namespacemim_1_1ast =
     [ "Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
     [ "MutualDecl", "classmim_1_1ast_1_1MutualDecl.html", "classmim_1_1ast_1_1MutualDecl" ],
     [ "Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
+    [ "NomDecl", "classmim_1_1ast_1_1NomDecl.html", "classmim_1_1ast_1_1NomDecl" ],
     [ "Parser", "classmim_1_1ast_1_1Parser.html", "classmim_1_1ast_1_1Parser" ],
     [ "Path", "classmim_1_1ast_1_1Path.html", "classmim_1_1ast_1_1Path" ],
     [ "PathExpr", "classmim_1_1ast_1_1PathExpr.html", "classmim_1_1ast_1_1PathExpr" ],
@@ -69,7 +70,8 @@ var namespacemim_1_1ast =
       [ "Pub", "namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3aa29bdd003ef6c0c34279807341f450f2", null ]
     ] ],
     [ "add_alias", "namespacemim_1_1ast.html#aa9f6e2684d6d06edb84cb5aed923da79", null ],
-    [ "emit_ctor", "namespacemim_1_1ast.html#a020b751ee66665044aa55d37ab58ae72", null ],
+    [ "check_nom_scope", "namespacemim_1_1ast.html#a7f73673f36257750aabe79243693ae1e", null ],
+    [ "emit_ctor", "namespacemim_1_1ast.html#a811d9e1c00aa7a88cb0b5b7398856535", null ],
     [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "emit_var", "namespacemim_1_1ast.html#a54b0669593d64574a33b773fcac7ae37", null ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],

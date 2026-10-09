@@ -46,6 +46,7 @@ var ast_8h =
     [ "mim::ast::AxmDecl", "classmim_1_1ast_1_1AxmDecl.html", "classmim_1_1ast_1_1AxmDecl" ],
     [ "mim::ast::AxmDecl::Name", "classmim_1_1ast_1_1AxmDecl_1_1Name.html", "classmim_1_1ast_1_1AxmDecl_1_1Name" ],
     [ "mim::ast::RecDecl", "classmim_1_1ast_1_1RecDecl.html", "classmim_1_1ast_1_1RecDecl" ],
+    [ "mim::ast::NomDecl", "classmim_1_1ast_1_1NomDecl.html", "classmim_1_1ast_1_1NomDecl" ],
     [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", "classmim_1_1ast_1_1LamDecl" ],
     [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
     [ "mim::ast::MutualDecl", "classmim_1_1ast_1_1MutualDecl.html", "classmim_1_1ast_1_1MutualDecl" ],

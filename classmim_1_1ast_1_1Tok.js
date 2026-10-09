@@ -36,6 +36,7 @@ var classmim_1_1ast_1_1Tok =
       [ "K_match", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7b5b8db5dbe48f5968e9dc5cac6050c4", null ],
       [ "K_mod", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a66afdb85b833d677fc82a5b311ef44e6", null ],
       [ "K_mutual", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a009822017487725fa86ac0f0566efd69", null ],
+      [ "K_nom", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ad8ec313f1cd35305006a2c2be448ca25", null ],
       [ "K_norm", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a43bec1de350f6575f696e7f802157c6d", null ],
       [ "K_plugin", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a16b614bec0670bc8776c90f9d69d2a62", null ],
       [ "K_priv", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a834f9a3acd41ed33da81fc2ad0759759", null ],

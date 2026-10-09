@@ -3,7 +3,6 @@ var classmim_1_1ast_1_1LamDecl =
     [ "Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
     [ "VLA_Types", "classmim_1_1ast_1_1LamDecl.html#a52e53855e7a377c77bcc46110c6c5488", null ],
     [ "LamDecl", "classmim_1_1ast_1_1LamDecl.html#a9d4ccd7c1254d9d0bbe80a3f0730b1a7", null ],
-    [ "annex_sub", "classmim_1_1ast_1_1LamDecl.html#a358d69b0279c4cbe041c22adb191f605", null ],
     [ "bind_body", "classmim_1_1ast_1_1LamDecl.html#a0c65aaaf0d0bb4a934ab4db15875762b", null ],
     [ "bind_decl", "classmim_1_1ast_1_1LamDecl.html#a963c27be1ecc0b79fa74ed7b4dd18d32", null ],
     [ "codom", "classmim_1_1ast_1_1LamDecl.html#a4fbcba316e2f2af7cb8669cd3610ba69", null ],

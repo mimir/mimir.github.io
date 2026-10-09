@@ -83,6 +83,7 @@ var hierarchy =
           [ "mim::BranchNormalize", "classmim_1_1BranchNormalize.html", null ],
           [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
           [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
+          [ "mim::NomErasure", "classmim_1_1NomErasure.html", null ],
           [ "mim::Repl", "classmim_1_1Repl.html", null ],
           [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
           [ "mim::SCCP", "classmim_1_1SCCP.html", null ],
@@ -137,7 +138,9 @@ var hierarchy =
         [ "mim::Lam", "classmim_1_1Lam.html", null ],
         [ "mim::Lit", "classmim_1_1Lit.html", null ],
         [ "mim::Match", "classmim_1_1Match.html", null ],
+        [ "mim::Name", "classmim_1_1Name.html", null ],
         [ "mim::Nat", "classmim_1_1Nat.html", null ],
+        [ "mim::Nom", "classmim_1_1Nom.html", null ],
         [ "mim::Pi", "classmim_1_1Pi.html", null ],
         [ "mim::Prod", "classmim_1_1Prod.html", [
           [ "mim::Sigma", "classmim_1_1Sigma.html", null ],
@@ -151,6 +154,7 @@ var hierarchy =
           [ "mim::Pack", "classmim_1_1Pack.html", null ]
         ] ],
         [ "mim::Single", "classmim_1_1Single.html", null ],
+        [ "mim::Struc", "classmim_1_1Struc.html", null ],
         [ "mim::Type", "classmim_1_1Type.html", null ],
         [ "mim::UInc", "classmim_1_1UInc.html", null ],
         [ "mim::UMax", "classmim_1_1UMax.html", null ],
@@ -199,7 +203,8 @@ var hierarchy =
             ] ],
             [ "mim::ast::MutualDecl", "classmim_1_1ast_1_1MutualDecl.html", null ],
             [ "mim::ast::RecDecl", "classmim_1_1ast_1_1RecDecl.html", [
-              [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ]
+              [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ],
+              [ "mim::ast::NomDecl", "classmim_1_1ast_1_1NomDecl.html", null ]
             ] ],
             [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", null ],
             [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", null ]
@@ -281,8 +286,14 @@ var hierarchy =
     [ "mim::Setters&lt; Match &gt;", "classmim_1_1Setters.html", [
       [ "mim::Match", "classmim_1_1Match.html", null ]
     ] ],
+    [ "mim::Setters&lt; Name &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Name", "classmim_1_1Name.html", null ]
+    ] ],
     [ "mim::Setters&lt; Nat &gt;", "classmim_1_1Setters.html", [
       [ "mim::Nat", "classmim_1_1Nat.html", null ]
+    ] ],
+    [ "mim::Setters&lt; Nom &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Nom", "classmim_1_1Nom.html", null ]
     ] ],
     [ "mim::Setters&lt; Pack &gt;", "classmim_1_1Setters.html", [
       [ "mim::Pack", "classmim_1_1Pack.html", null ]
@@ -310,6 +321,9 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Single &gt;", "classmim_1_1Setters.html", [
       [ "mim::Single", "classmim_1_1Single.html", null ]
+    ] ],
+    [ "mim::Setters&lt; Struc &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Struc", "classmim_1_1Struc.html", null ]
     ] ],
     [ "mim::Setters&lt; TExt&lt; Up &gt; &gt;", "classmim_1_1Setters.html", [
       [ "mim::TExt< false >", "classmim_1_1TExt.html", null ],

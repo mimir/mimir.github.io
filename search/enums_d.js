@@ -8,10 +8,11 @@ var searchData=
   ['neg_5flookahead_5',['neg_lookahead',['../namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be',1,'mim::plug::regex']]],
   ['nestt_6',['NestT',['../namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8',1,'mim::plug::btensor']]],
   ['node_7',['Node',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256d',1,'mim']]],
-  ['none_8',['none',['../namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f',1,'mim::plug::option']]],
-  ['not_5f_9',['not_',['../namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2',1,'mim::plug::regex']]],
-  ['novec_10',['novec',['../namespacemim_1_1plug_1_1ll.html#a03bac3de20e424d8b2177cb68d1fbbd2',1,'mim::plug::ll']]],
-  ['null_11',['null',['../namespacemim_1_1plug_1_1compile.html#a57741844980aa80909fe8481f07c458e',1,'mim::plug::compile']]],
-  ['nvtf32_12',['NVTF32',['../namespacemim_1_1plug_1_1math.html#a1a6f22c3b750ca37462e91f209d66fa7',1,'mim::plug::math']]],
-  ['nvtf32_13',['nvtf32',['../namespacemim_1_1plug_1_1math.html#a4b6b6615eaa73ce27195a4a716c8e199',1,'mim::plug::math']]]
+  ['nom_5ferasure_8',['nom_erasure',['../namespacemim_1_1plug_1_1compile.html#a8eaccd61fd0f59e0cac59a96db62a53b',1,'mim::plug::compile']]],
+  ['none_9',['none',['../namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f',1,'mim::plug::option']]],
+  ['not_5f_10',['not_',['../namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2',1,'mim::plug::regex']]],
+  ['novec_11',['novec',['../namespacemim_1_1plug_1_1ll.html#a03bac3de20e424d8b2177cb68d1fbbd2',1,'mim::plug::ll']]],
+  ['null_12',['null',['../namespacemim_1_1plug_1_1compile.html#a57741844980aa80909fe8481f07c458e',1,'mim::plug::compile']]],
+  ['nvtf32_13',['NVTF32',['../namespacemim_1_1plug_1_1math.html#a1a6f22c3b750ca37462e91f209d66fa7',1,'mim::plug::math']]],
+  ['nvtf32_14',['nvtf32',['../namespacemim_1_1plug_1_1math.html#a4b6b6615eaa73ce27195a4a716c8e199',1,'mim::plug::math']]]
 ];

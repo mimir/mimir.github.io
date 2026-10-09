@@ -187,6 +187,8 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>Field and constructor names live on the <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>, so same-shaped types share one table. </p>
 </div></td></tr>
 <tr class="memitem:acd85daddeda37210e5d3a25265fdc830" id="r_acd85daddeda37210e5d3a25265fdc830"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd85daddeda37210e5d3a25265fdc830">add_names</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, const fe::SymMap&lt; size_t &gt; &amp;sym2idx)</td></tr>
+<tr class="memitem:a82e35b4932c9e402182d58e89228c7aa" id="r_a82e35b4932c9e402182d58e89228c7aa"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a82e35b4932c9e402182d58e89228c7aa">adopt_names</a> (const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom)</td></tr>
+<tr class="memdesc:a82e35b4932c9e402182d58e89228c7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the names of <code class="param">nom's</code> declaration onto the corresponding parts of <code class="param">nom</code> - an instance of it.  <br /></td></tr>
 <tr class="memitem:afa9148c5104e43a67becf5a35e40bbd8" id="r_afa9148c5104e43a67becf5a35e40bbd8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afa9148c5104e43a67becf5a35e40bbd8">variant_str</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant)</td></tr>
 <tr class="memdesc:afa9148c5104e43a67becf5a35e40bbd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A declared <code class="param">variant</code> prints under its name; an anonymous one spells out its cases, named as source does.  <br /></td></tr>
 <tr class="memitem:a598e36f52bf0a6bbea09cec7fb72e228" id="r_a598e36f52bf0a6bbea09cec7fb72e228"><td class="memItemLeft">std::optional&lt; size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a598e36f52bf0a6bbea09cec7fb72e228">find_name</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, Dbg dbg)</td></tr>
@@ -194,6 +196,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea0c644551fb2b8f73a9d8bcd62e03fb" id="r_aea0c644551fb2b8f73a9d8bcd62e03fb"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#aea0c644551fb2b8f73a9d8bcd62e03fb">ctor</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, Dbg dbg)</td></tr>
 <tr class="memitem:aeeedbc29e166c6755c4ccb18f9d348e5" id="r_aeeedbc29e166c6755c4ccb18f9d348e5"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aeeedbc29e166c6755c4ccb18f9d348e5">ctor_names</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *variant, size_t i)</td></tr>
 <tr class="memdesc:aeeedbc29e166c6755c4ccb18f9d348e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every name case <code class="param">i</code> goes by, sorted for a deterministic diagnostic; its index if it has none.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Nominal scope</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Only the <span class="tt">mod</span> declaring a <span class="tt">nom</span> - or one nested in it - may use <span class="tt">inj</span> and <span class="tt">#</span> on it. </p>
+</div></td></tr>
+<tr class="memitem:a5aa386a903e0497d846b79b8ceeed4a4" id="r_a5aa386a903e0497d846b79b8ceeed4a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5aa386a903e0497d846b79b8ceeed4a4">push_mod</a> (const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> *mod)</td></tr>
+<tr class="memitem:a11e2f84c806ee47deb90da9c1f1f34c4" id="r_a11e2f84c806ee47deb90da9c1f1f34c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a11e2f84c806ee47deb90da9c1f1f34c4">pop_mod</a> ()</td></tr>
+<tr class="memitem:a27716b3559e01806c8c021dc1bf64662" id="r_a27716b3559e01806c8c021dc1bf64662"><td class="memItemLeft">fe::Vector&lt; const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a27716b3559e01806c8c021dc1bf64662">reset_mods</a> ()</td></tr>
+<tr class="memitem:ad393f42eec9e66306a8976188dae65a5" id="r_ad393f42eec9e66306a8976188dae65a5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad393f42eec9e66306a8976188dae65a5">restore_mods</a> (fe::Vector&lt; const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt; mods)</td></tr>
+<tr class="memitem:a69dfde5429d146db312368ab29bd97f9" id="r_a69dfde5429d146db312368ab29bd97f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a69dfde5429d146db312368ab29bd97f9">add_nom</a> (const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom)</td></tr>
+<tr class="memitem:a367fffb5fa74663db74f04727731fe54" id="r_a367fffb5fa74663db74f04727731fe54"><td class="memItemLeft">std::pair&lt; const <a class="el" href="classmim_1_1Nom.html">Nom</a> *, const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a367fffb5fa74663db74f04727731fe54">nom_decl</a> (const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom) const</td></tr>
+<tr class="memdesc:a367fffb5fa74663db74f04727731fe54"><td class="mdescLeft">&#160;</td><td class="mdescRight">The declared <span class="tt">nom</span> that <code class="param">nom</code> instantiates and the <span class="tt">mod</span> owning it.  <br /></td></tr>
+<tr class="memitem:a235463f109adcee593221620740904d4" id="r_a235463f109adcee593221620740904d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a235463f109adcee593221620740904d4">within</a> (const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> *mod) const</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -226,7 +239,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00019">ast()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00134">mim::ast::File::emit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00181">mim::ast::File::emit()</a>.</p>
 
 </div>
 </div>
@@ -258,7 +271,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00090">90</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00098">98</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00040">add_names()</a>, <a class="el" href="ast_8h_source.html#l00740">mim::ast::VariantExpr::ctor()</a>, <a class="el" href="ast_8h_source.html#l00724">mim::ast::VariantExpr::Ctor::dbg()</a>, <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, and <a class="el" href="ast_8h_source.html#l00741">mim::ast::VariantExpr::num_ctors()</a>.</p>
 
@@ -293,7 +306,69 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00040">40</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00090">add_ctors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00098">add_ctors()</a>.</p>
+
+</div>
+</div>
+<a id="a69dfde5429d146db312368ab29bd97f9" name="a69dfde5429d146db312368ab29bd97f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69dfde5429d146db312368ab29bd97f9">&#9670;&#160;</a></span>add_nom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::add_nom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Nom.html">Nom</a> *</td>          <td class="paramname"><span class="paramname"><em>nom</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00130">130</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="nom_8h_source.html#l00024">mim::Nom::key()</a>.</p>
+
+</div>
+</div>
+<a id="a82e35b4932c9e402182d58e89228c7aa" name="a82e35b4932c9e402182d58e89228c7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82e35b4932c9e402182d58e89228c7aa">&#9670;&#160;</a></span>adopt_names()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::adopt_names </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Nom.html">Nom</a> *</td>          <td class="paramname"><span class="paramname"><em>nom</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the names of <code class="param">nom's</code> declaration onto the corresponding parts of <code class="param">nom</code> - an instance of it. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00047">47</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00047">adopt_names()</a>, <a class="el" href="emit_8cpp_source.html#l00133">nom_decl()</a>, and <a class="el" href="nom_8h_source.html#l00021">mim::Nom::op()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00047">adopt_names()</a>.</p>
 
 </div>
 </div>
@@ -438,9 +513,9 @@ end</span>). </p>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00099">99</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00107">107</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, <a class="el" href="emit_8cpp_source.html#l00067">find_name()</a>, and <a class="el" href="emit_8cpp_source.html#l00048">variant_str()</a>.</p>
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, <a class="el" href="emit_8cpp_source.html#l00075">find_name()</a>, and <a class="el" href="emit_8cpp_source.html#l00056">variant_str()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +548,7 @@ end</span>). </p>
 
 <p>Every name case <code class="param">i</code> goes by, sorted for a deterministic diagnostic; its index if it has none. </p>
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00105">105</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00113">113</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 </div>
 </div>
@@ -535,7 +610,7 @@ end</span>). </p>
 
 <p class="reference">References <a class="el" href="emit_8cpp_source.html#l00021">driver()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00090">add_ctors()</a>, <a class="el" href="emit_8cpp_source.html#l00099">ctor()</a>, and <a class="el" href="emit_8cpp_source.html#l00067">find_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00098">add_ctors()</a>, <a class="el" href="emit_8cpp_source.html#l00107">ctor()</a>, and <a class="el" href="emit_8cpp_source.html#l00075">find_name()</a>.</p>
 
 </div>
 </div>
@@ -566,11 +641,152 @@ end</span>). </p>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00067">67</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00075">75</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, and <a class="el" href="emit_8cpp_source.html#l00048">variant_str()</a>.</p>
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00022">error()</a>, and <a class="el" href="emit_8cpp_source.html#l00056">variant_str()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00099">ctor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00107">ctor()</a>.</p>
+
+</div>
+</div>
+<a id="a367fffb5fa74663db74f04727731fe54" name="a367fffb5fa74663db74f04727731fe54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367fffb5fa74663db74f04727731fe54">&#9670;&#160;</a></span>nom_decl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; const <a class="el" href="classmim_1_1Nom.html">Nom</a> *, const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt; mim::ast::Emitter::nom_decl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Nom.html">Nom</a> *</td>          <td class="paramname"><span class="paramname"><em>nom</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The declared <span class="tt">nom</span> that <code class="param">nom</code> instantiates and the <span class="tt">mod</span> owning it. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00133">133</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="nom_8h_source.html#l00024">mim::Nom::key()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00047">adopt_names()</a>.</p>
+
+</div>
+</div>
+<a id="a11e2f84c806ee47deb90da9c1f1f34c4" name="a11e2f84c806ee47deb90da9c1f1f34c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e2f84c806ee47deb90da9c1f1f34c4">&#9670;&#160;</a></span>pop_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::pop_mod </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00126">126</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5aa386a903e0497d846b79b8ceeed4a4" name="a5aa386a903e0497d846b79b8ceeed4a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa386a903e0497d846b79b8ceeed4a4">&#9670;&#160;</a></span>push_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::push_mod </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> *</td>          <td class="paramname"><span class="paramname"><em>mod</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00125">125</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a27716b3559e01806c8c021dc1bf64662" name="a27716b3559e01806c8c021dc1bf64662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27716b3559e01806c8c021dc1bf64662">&#9670;&#160;</a></span>reset_mods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Vector&lt; const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt; mim::ast::Emitter::reset_mods </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00127">127</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad393f42eec9e66306a8976188dae65a5" name="ad393f42eec9e66306a8976188dae65a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad393f42eec9e66306a8976188dae65a5">&#9670;&#160;</a></span>restore_mods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::Emitter::restore_mods </td>
+          <td>(</td>
+          <td class="paramtype">fe::Vector&lt; const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>mods</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00128">128</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 </div>
 </div>
@@ -600,11 +816,38 @@ end</span>). </p>
 <p>A declared <code class="param">variant</code> prints under its name; an anonymous one spells out its cases, named as source does. </p>
 <p>Streams lazily so that it still renders under the <a class="el" href="classmim_1_1PlainNames.html" title="Renders Defs with their plain Def::sym instead of Def::unique_name while alive.">PlainNames</a> guard Error::msg formats within. </p>
 
-<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00048">48</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00056">56</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00400">mim::Def::num_ops()</a>, <a class="el" href="def_8h_source.html#l00399">mim::Def::op()</a>, <a class="el" href="world_8cpp_source.html#l00374">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l00671">mim::Def::sym()</a>, and <a class="el" href="def_8h_source.html#l01172">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00403">mim::Def::num_ops()</a>, <a class="el" href="def_8h_source.html#l00402">mim::Def::op()</a>, <a class="el" href="world_8cpp_source.html#l00374">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l00674">mim::Def::sym()</a>, and <a class="el" href="def_8h_source.html#l01175">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00099">ctor()</a>, and <a class="el" href="emit_8cpp_source.html#l00067">find_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00107">ctor()</a>, and <a class="el" href="emit_8cpp_source.html#l00075">find_name()</a>.</p>
+
+</div>
+</div>
+<a id="a235463f109adcee593221620740904d4" name="a235463f109adcee593221620740904d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235463f109adcee593221620740904d4">&#9670;&#160;</a></span>within()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::ast::Emitter::within </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> *</td>          <td class="paramname"><span class="paramname"><em>mod</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00138">138</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 </div>
 </div>
