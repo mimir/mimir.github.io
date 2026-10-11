@@ -239,10 +239,8 @@ axm eval: compile.Phase;
 /// The derivative of the axiom `plugin.tag.sub` is the annex `autodiff.diff.plugin_tag_sub`, i.e. the axiom's name
 /// with all `.`s replaced by `_`s;
 /// this is how mim::plug::autodiff::phase::Eval looks a derivative up.
-/// Being annexes, they are roots of the World and hence survive until mim::plug::autodiff::phase::Eval has consumed
-/// them.
-/// But - unlike externals - they are invisible to the backends and a `compile.unload "autodiff"` nukes them along
-/// with all the other annexes of this plugin.
+/// Being annexes, they live in the mim::Driver::library and are imported when mim::plug::autodiff::phase::Eval looks them up.
+/// But - unlike externals - they are invisible to the backends.
 ///
 ///
 /// #### autodiff.diff
@@ -1158,12 +1156,6 @@ axm single_erasure: Phase;
 /// Drops params that recursive calls merely forward, turning them into loops (mim::StaticArgOpt).
 ///
 axm static_arg_opt: Phase;
-///
-/// ### unload
-///
-/// Unloads a plugin and nukes its annexes on the next World swap.
-///
-axm unload: {n: Nat} → «n; I8» → Phase;
 /// # The core Plugin {#core}
 ///
 /// @see mim::plug::core
@@ -1664,7 +1656,8 @@ anx lam LocalPtr(T: *): *  = mem.Ptr (T, addr_space_local);
 ///
 /// ### Stream Types
 ///
-axm Stream: *;
+/// An opaque handle - a pointer on every GPU runtime.
+anx let Stream = mem.Ptr0 I8;
 axm default_stream: Stream;
 ///
 /// ## Operations
@@ -1976,7 +1969,6 @@ axm novec: {T: *} → T → T;
 /// ## Dependencies
 ///
 plugin gpu;
-plugin nvptx;
 plugin opt;
 import compile;
 ///
@@ -2464,33 +2456,6 @@ axm seo: compile.Phase;
 /// Rewrites `mem.alloc` / `mem.slot` into `mem.malloc` / `mem.mslot`.
 ///
 axm alloc2malloc_repl: compile.Phase;
-/// # The nvptx Plugin {#nvptx}
-///
-/// @see mim::plug::nvptx
-///
-/// A plugin for NVIDIA PTX intrinsics.
-///
-/// [TOC]
-///
-/// ## Dependencies
-///
-plugin gpu;
-import compile;
-import mem;
-///
-/// ## Types
-///
-/// ### Streams
-///
-anx let Stream = mem.Ptr0 I8;
-///
-/// ## Phases
-///
-/// ### stream_impl_repl
-///
-/// Replaces the abstract `gpu.Stream` with this plugin's PTX stream representation `nvptx.Stream`.
-///
-axm stream_impl_repl: compile.Phase;
 /// # The opt Plugin {#opt}
 ///
 /// @see mim::plug::opt
@@ -2528,21 +2493,18 @@ extern lam _default_compile (): compile.Phase =
         optimize,
         // regex
         compile.named "regex.lower_regex",
-        compile.unload "regex",
 
         // tensor
         compile.named "tensor.reassoc",
         compile.named "tensor.lower_tensor",
         compile.named "tensor.fuse_tensor",
         compile.named "tensor.lower_to_mem",
-        compile.unload "tensor",
         // Only run add_mem if the tensor plugin is loaded: tensor bufferization emits mem.M placeholders that must be stitched into a global mem chain.
         compile.cond "tensor" (compile.named "mem.add_mem"),
 
         // btensor
         compile.named "gpu.lower_btensor_map_reduce",
         compile.named "btensor.lower_map_reduce",
-        compile.unload "btensor",
 
         // gpu
         compile.named "gpu.mem_checks",
@@ -2550,18 +2512,14 @@ extern lam _default_compile (): compile.Phase =
         // autodiff
         compile.named "autodiff.eval",
         compile.named "autodiff.zero_repl",
-        compile.unload "autodiff",
 
         // buffer
         compile.named "buffer.lower_ptr",
-        compile.unload "buffer",
 
         // affine + cps
         compile.named "affine.lower_index",
         compile.named "cps.conv",
-        compile.unload "cps",
         compile.named "affine.lower_for",
-        compile.unload "affine",
 
         // clos conv
         let clos_opt_phases =
@@ -2593,10 +2551,8 @@ extern lam _default_compile (): compile.Phase =
         optimize,
         compile.branch_normalize,
         compile.ret_wrap,
-        compile.named "nvptx.stream_impl_repl",
         compile.named "mem.alloc2malloc_repl",
         compile.named "refly.remove_dbg_repl",
-        compile.unload "refly",
         compile.named "gpu.check_addr_spaces_repl",
         compile.named "ll.emit",
         compile.named "ll_nvptx.emit",
