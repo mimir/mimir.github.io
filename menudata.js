@@ -51,7 +51,6 @@ var menudata={children:[
 {text:"ll_nvptx",url:"ll_nvptx.html"},
 {text:"math",url:"math.html"},
 {text:"mem",url:"mem.html"},
-{text:"nvptx",url:"nvptx.html"},
 {text:"opt",url:"opt.html"},
 {text:"option",url:"option.html"},
 {text:"ord",url:"ord.html"},

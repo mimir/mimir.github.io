@@ -74,6 +74,7 @@ var hierarchy =
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
         [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ]
       ] ],
+      [ "mim::Importer", "classmim_1_1Importer.html", null ],
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
         [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
         [ "mim::BetaRed", "classmim_1_1BetaRed.html", null ],
@@ -176,7 +177,6 @@ var hierarchy =
         ] ],
         [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", null ],
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
-        [ "mim::Unload", "classmim_1_1Unload.html", null ],
         [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
         [ "mim::plug::ll_nvptx::Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", null ]
       ] ],

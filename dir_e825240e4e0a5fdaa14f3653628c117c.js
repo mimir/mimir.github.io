@@ -14,7 +14,6 @@ var dir_e825240e4e0a5fdaa14f3653628c117c =
     [ "ll_nvptx", "dir_4b1d03e261eb21553e7e75552dc222c6.html", "dir_4b1d03e261eb21553e7e75552dc222c6" ],
     [ "math", "dir_9a4d2ab5d7052ff5e52692f522ee4768.html", "dir_9a4d2ab5d7052ff5e52692f522ee4768" ],
     [ "mem", "dir_2b8155c79fe456239a885e12a4388c9f.html", "dir_2b8155c79fe456239a885e12a4388c9f" ],
-    [ "nvptx", "dir_83cc86c5e3255f7e14086c480ca69442.html", "dir_83cc86c5e3255f7e14086c480ca69442" ],
     [ "opt", "dir_e884a516ff4eb84233003344b2ceffc3.html", "dir_e884a516ff4eb84233003344b2ceffc3" ],
     [ "option", "dir_8edbff5d53e483c6ee8821a5cc20be13.html", "dir_8edbff5d53e483c6ee8821a5cc20be13" ],
     [ "ord", "dir_90753c19bc24970aef3726e9eb21b81d.html", "dir_90753c19bc24970aef3726e9eb21b81d" ],

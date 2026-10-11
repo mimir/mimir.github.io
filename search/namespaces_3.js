@@ -24,14 +24,13 @@ var searchData=
   ['mim_3a_3aplug_3a_3amath_21',['math',['../namespacemim_1_1plug_1_1math.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3amem_22',['mem',['../namespacemim_1_1plug_1_1mem.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3amem_3a_3aphase_23',['phase',['../namespacemim_1_1plug_1_1mem_1_1phase.html',1,'mim::plug::mem']]],
-  ['mim_3a_3aplug_3a_3anvptx_24',['nvptx',['../namespacemim_1_1plug_1_1nvptx.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3aopt_25',['opt',['../namespacemim_1_1plug_1_1opt.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3aoption_26',['option',['../namespacemim_1_1plug_1_1option.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3aord_27',['ord',['../namespacemim_1_1plug_1_1ord.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3arefly_28',['refly',['../namespacemim_1_1plug_1_1refly.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3aregex_29',['regex',['../namespacemim_1_1plug_1_1regex.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3atensor_30',['tensor',['../namespacemim_1_1plug_1_1tensor.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3atensor_3a_3aphase_31',['phase',['../namespacemim_1_1plug_1_1tensor_1_1phase.html',1,'mim::plug::tensor']]],
-  ['mim_3a_3aplug_3a_3atuple_32',['tuple',['../namespacemim_1_1plug_1_1tuple.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3avec_33',['vec',['../namespacemim_1_1plug_1_1vec.html',1,'mim::plug']]]
+  ['mim_3a_3aplug_3a_3aopt_24',['opt',['../namespacemim_1_1plug_1_1opt.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3aoption_25',['option',['../namespacemim_1_1plug_1_1option.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3aord_26',['ord',['../namespacemim_1_1plug_1_1ord.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3arefly_27',['refly',['../namespacemim_1_1plug_1_1refly.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3aregex_28',['regex',['../namespacemim_1_1plug_1_1regex.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3atensor_29',['tensor',['../namespacemim_1_1plug_1_1tensor.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3atensor_3a_3aphase_30',['phase',['../namespacemim_1_1plug_1_1tensor_1_1phase.html',1,'mim::plug::tensor']]],
+  ['mim_3a_3aplug_3a_3atuple_31',['tuple',['../namespacemim_1_1plug_1_1tuple.html',1,'mim::plug']]],
+  ['mim_3a_3aplug_3a_3avec_32',['vec',['../namespacemim_1_1plug_1_1vec.html',1,'mim::plug']]]
 ];

@@ -3,7 +3,6 @@ var def_8h =
     [ "mim::DefKey", "structmim_1_1DefKey.html", "structmim_1_1DefKey" ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", "classmim_1_1Setters" ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", [
-      [ "all_annexes", "namespacemim.html#a7ee84b1ca3e1d3d0beccc1b0486eb00c", null ],
       [ "dark", "namespacemim.html#a8dce87987956b9c3e2f54dd1a796cbdf", null ],
       [ "default_filter", "namespacemim.html#aea032103adfec5c9b968665857549fe2", null ],
       [ "follow_types", "namespacemim.html#a281d4e910e9913b8ce626aa19bc1de9c", null ],

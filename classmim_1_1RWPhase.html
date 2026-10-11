@@ -199,10 +199,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03163daff4b06d1ab84f40886ddab811" id="r_a03163daff4b06d1ab84f40886ddab811"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a03163daff4b06d1ab84f40886ddab811">analyze</a> ()</td></tr>
 <tr class="memdesc:a03163daff4b06d1ab84f40886ddab811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the optional pre-analysis on <a class="el" href="#aef58721bd5f8d89e624eea65ff51f6b3" title="Get old Defs from here.">old_world()</a>, typically to a fixed point, before rewriting begins.  <br /></td></tr>
 <tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Rewrite</div></td></tr>
-<tr class="memitem:a5aad3ec295eb2987ca065051fec1e4cd" id="r_a5aad3ec295eb2987ca065051fec1e4cd"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a5aad3ec295eb2987ca065051fec1e4cd">rewrite_annex</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>, Sym, const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:af324f7c09f5b26f88fbf3dad4e059b26" id="r_af324f7c09f5b26f88fbf3dad4e059b26"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af324f7c09f5b26f88fbf3dad4e059b26">rewrite_external</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
-<tr class="memitem:a8c1256f93cc63c1d8d0609e2aa474b51" id="r_a8c1256f93cc63c1d8d0609e2aa474b51"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8c1256f93cc63c1d8d0609e2aa474b51">is_bootstrapping</a> () const</td></tr>
-<tr class="memdesc:a8c1256f93cc63c1d8d0609e2aa474b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether we are currently bootstrapping (rewriting annexes).  <br /></td></tr>
+<tr class="memitem:a2b60687536b0f5c3148e1f0ea379b348" id="r_a2b60687536b0f5c3148e1f0ea379b348"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2b60687536b0f5c3148e1f0ea379b348">lookup</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *) override</td></tr>
+<tr class="memdesc:a2b60687536b0f5c3148e1f0ea379b348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps.  <br /></td></tr>
 <tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">World</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><ul>
 <li><a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">Phase::world</a> is the <b>old</b> one.</li>
@@ -216,10 +215,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aef58721bd5f8d89e624eea65ff51f6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <b>old</b> <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s from here.  <br /></td></tr>
 <tr class="memitem:a0f7249ac3c85d2f2b1d7c72455c61b19" id="r_a0f7249ac3c85d2f2b1d7c72455c61b19"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a> ()</td></tr>
 <tr class="memdesc:a0f7249ac3c85d2f2b1d7c72455c61b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <b>new</b> <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s into this.  <br /></td></tr>
-<tr class="memitem:a66a84b65ed3d757e8d17754b234db8fe" id="r_a66a84b65ed3d757e8d17754b234db8fe"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a66a84b65ed3d757e8d17754b234db8fe">annex</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> flags)</td></tr>
-<tr class="memdesc:a66a84b65ed3d757e8d17754b234db8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The annex <code class="param">flags</code> in <a class="el" href="#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a>, rewritten on demand if the annex walk has not reached it yet.  <br /></td></tr>
-<tr class="memitem:aadc6f8345ba1ebd09273944b067d0e7b" id="r_aadc6f8345ba1ebd09273944b067d0e7b"><td class="memTemplParams" colspan="2">template&lt;annex_without_subs Id&gt; </td></tr>
-<tr class="memitem:aadc6f8345ba1ebd09273944b067d0e7b template"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aadc6f8345ba1ebd09273944b067d0e7b">annex</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1Phase"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
 <tr class="memitem:a5c9e1cb4322b15d946feaaabcc057260 pub_methods_classmim_1_1Phase" id="r_a5c9e1cb4322b15d946feaaabcc057260"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name)</td></tr>
 <tr class="memitem:aa2ac27ba5ea35a77e6d86665ffbb7707 pub_methods_classmim_1_1Phase" id="r_aa2ac27ba5ea35a77e6d86665ffbb7707"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> annex)</td></tr>
@@ -263,8 +258,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a052f77bcdfc66751ed8f33ffd0b3be04 pub_methods_classmim_1_1Rewriter" id="r_a052f77bcdfc66751ed8f33ffd0b3be04"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04">map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> new_defs)</td></tr>
 <tr class="memitem:ab799239c0c41f5dfa4afb2f9fe3522b9 pub_methods_classmim_1_1Rewriter" id="r_ab799239c0c41f5dfa4afb2f9fe3522b9"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab799239c0c41f5dfa4afb2f9fe3522b9">map</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> old_defs, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
 <tr class="memitem:ac2f8ad29b11cf04069145a379cda1c16 pub_methods_classmim_1_1Rewriter" id="r_ac2f8ad29b11cf04069145a379cda1c16"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac2f8ad29b11cf04069145a379cda1c16">map</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> old_defs, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> new_defs)</td></tr>
-<tr class="memitem:aed2afef37f09545f262d8a8ce5471954 pub_methods_classmim_1_1Rewriter" id="r_aed2afef37f09545f262d8a8ce5471954"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954">lookup</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def)</td></tr>
-<tr class="memdesc:aed2afef37f09545f262d8a8ce5471954 pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps.  <br /></td></tr>
 <tr class="memitem:acd9201feaab8a6d73223308e48ff6652 pub_methods_classmim_1_1Rewriter" id="r_acd9201feaab8a6d73223308e48ff6652"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:abe4950e5b3e1591ed5a956b5e0cdc0bb pub_methods_classmim_1_1Rewriter" id="r_abe4950e5b3e1591ed5a956b5e0cdc0bb"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb">rewrite_imm</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
 <tr class="memitem:a62c1d60439f3bcf82da250acd2098112 pub_methods_classmim_1_1Rewriter" id="r_a62c1d60439f3bcf82da250acd2098112"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">rewrite_mut</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
@@ -279,8 +272,6 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8f18849b836d888382aed5b2bcc249f8" id="r_a8f18849b836d888382aed5b2bcc249f8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f18849b836d888382aed5b2bcc249f8">start</a> () override</td></tr>
 <tr class="memdesc:a8f18849b836d888382aed5b2bcc249f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
-<tr class="memitem:ac966cc87cd5acc5f214190c1c3640e3a" id="r_ac966cc87cd5acc5f214190c1c3640e3a"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ac966cc87cd5acc5f214190c1c3640e3a">rewrite_root</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
-<tr class="memdesc:ac966cc87cd5acc5f214190c1c3640e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites a <em>root</em> - i.e. an annex or an external.  <br /></td></tr>
 <tr class="memitem:a297eed1dd2544c1c5ee0a4b815e944e8" id="r_a297eed1dd2544c1c5ee0a4b815e944e8"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a297eed1dd2544c1c5ee0a4b815e944e8">finalize</a> ()</td></tr>
 <tr class="memdesc:a297eed1dd2544c1c5ee0a4b815e944e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <b>after</b> all roots have been walked but still <b>before</b> the two worlds are swapped.  <br /></td></tr>
 <tr class="inherit_header pro_methods_classmim_1_1Rewriter"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
@@ -305,11 +296,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Rebuilds <a class="el" href="#aef58721bd5f8d89e624eea65ff51f6b3" title="Get old Defs from here.">old_world()</a> into <a class="el" href="#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a> and then swaps them. </p>
-<p>It is a <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> <em>and</em> a <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a>, runs an optional <a class="el" href="#a03163daff4b06d1ab84f40886ddab811" title="Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.">analyze()</a> to a fixed point, and then rewrites</p><ol type="1">
-<li>all old <a class="el" href="classmim_1_1World.html#a861dd0450f17714ee8ae458629d773cd">World::annexes()</a> during which <a class="el" href="#a8c1256f93cc63c1d8d0609e2aa474b51" title="Returns whether we are currently bootstrapping (rewriting annexes).">is_bootstrapping()</a> is <span class="tt">true</span>, and then</li>
-<li>all old <a class="el" href="classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a">World::externals()</a> during which it is <span class="tt">false</span>.</li>
-</ol>
-<p>During bootstrapping, rewrites that depend on other annexes may need to be skipped, since those annexes might not yet exist in the new world.</p>
+<p>It is a <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> <em>and</em> a <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> that runs an optional <a class="el" href="#a03163daff4b06d1ab84f40886ddab811" title="Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.">analyze()</a> to a fixed point. Then, it rewrites all old <a class="el" href="classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a">World::externals()</a>. An <a class="el" href="classmim_1_1World_1_1Annexes.html#acb5187860e5335065b6e3c3518b07c2e" title="Like flags() but only for an Axm or a non-Lam mutable - whose identity phases must preserve.">World::Annexes::opaque()</a> annex is not rewritten but resolved to the annex of the same flags in <a class="el" href="#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a>.</p>
 <p>If an associated <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> is provided, the rewrite can query its abstract results through <a class="el" href="#ae4f4200bf0845a3f7110813c1f19d4a0" title="Returns the abstract value computed by the associated Analysis for the given old-world Def,...">lattice()</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>You can override<ul>
 <li><a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">Rewriter::rewrite()</a>,</li>
@@ -319,7 +306,7 @@ Additional Inherited Members</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="phases.html#phases_rwphase" title="RWPhase">RWPhase</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00378">378</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00371">371</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ef0c8aebc6eabaa582028156aaf081e" name="a8ef0c8aebc6eabaa582028156aaf081e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ef0c8aebc6eabaa582028156aaf081e">&#9670;&#160;</a></span>RWPhase() <span class="overload">[1/2]</span></h2>
@@ -353,11 +340,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00382">382</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00375">375</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>, <a class="el" href="phase_8h_source.html#l00390">analysis()</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00382">RWPhase()</a>, and <a class="el" href="#ab2f627b52ee66162e8dcf2249f67ed3e">world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>, <a class="el" href="phase_8h_source.html#l00383">analysis()</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00375">RWPhase()</a>, and <a class="el" href="#ab2f627b52ee66162e8dcf2249f67ed3e">world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="adce_8h_source.html#l00048">mim::ADCE::ADCE()</a>, <a class="el" href="adce_8h_source.html#l00051">mim::ADCE::ADCE()</a>, <a class="el" href="add__mem_8h_source.html#l00034">mim::plug::mem::phase::AddMem::AddMem()</a>, <a class="el" href="beta__red_8h_source.html#l00010">mim::BetaRed::BetaRed()</a>, <a class="el" href="beta__red_8h_source.html#l00012">mim::BetaRed::BetaRed()</a>, <a class="el" href="branch__clos__elim_8h_source.html#l00010">mim::plug::clos::phase::BranchClosElim::BranchClosElim()</a>, <a class="el" href="branch__normalize_8h_source.html#l00011">mim::BranchNormalize::BranchNormalize()</a>, <a class="el" href="phase_8h_source.html#l00513">mim::Cleanup::Cleanup()</a>, <a class="el" href="phase_8h_source.html#l00515">mim::Cleanup::Cleanup()</a>, <a class="el" href="clos2sjlj_8h_source.html#l00015">mim::plug::clos::phase::Clos2SJLJ::Clos2SJLJ()</a>, <a class="el" href="clos__conv_8h_source.html#l00085">mim::plug::clos::phase::ClosConv::ClosConv()</a>, <a class="el" href="clos__conv__prep_8h_source.html#l00013">mim::plug::clos::phase::ClosConvPrep::ClosConvPrep()</a>, <a class="el" href="conv_8h_source.html#l00037">mim::plug::cps::Conv::Conv()</a>, <a class="el" href="eta__conv_8h_source.html#l00021">mim::EtaConv::EtaConv()</a>, <a class="el" href="eta__conv_8h_source.html#l00023">mim::EtaConv::EtaConv()</a>, <a class="el" href="eval_8h_source.html#l00012">mim::plug::autodiff::phase::Eval::Eval()</a>, <a class="el" href="fuse_8h_source.html#l00009">mim::plug::tensor::phase::Fuse::Fuse()</a>, <a class="el" href="lam__spec_8h_source.html#l00010">mim::LamSpec::LamSpec()</a>, <a class="el" href="lower_8h_source.html#l00016">mim::plug::tensor::phase::Lower::Lower()</a>, <a class="el" href="lower__for_8h_source.html#l00028">mim::plug::affine::phase::LowerFor::LowerFor()</a>, <a class="el" href="lower__index_8h_source.html#l00030">mim::plug::affine::phase::LowerIndex::LowerIndex()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="tensor_2phase_2lower__map__reduce_8h_source.html#l00015">mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="lower__ptr_8h_source.html#l00015">mim::plug::buffer::LowerPtr::LowerPtr()</a>, <a class="el" href="lower__regex_8h_source.html#l00010">mim::plug::regex::LowerRegex::LowerRegex()</a>, <a class="el" href="lower__to__mem_8h_source.html#l00031">mim::plug::tensor::phase::LowerToMem::LowerToMem()</a>, <a class="el" href="lower__typed__clos_8h_source.html#l00037">mim::plug::clos::phase::LowerTypedClos::LowerTypedClos()</a>, <a class="el" href="lower__typed__clos__prep_8h_source.html#l00014">mim::plug::clos::phase::LowerTypedClosPrep::LowerTypedClosPrep()</a>, <a class="el" href="nom__erasure_8h_source.html#l00014">mim::NomErasure::NomErasure()</a>, <a class="el" href="nom__erasure_8h_source.html#l00012">mim::NomErasure::NomErasure()</a>, <a class="el" href="reassoc_8h_source.html#l00040">mim::plug::tensor::phase::Reassoc::Reassoc()</a>, <a class="el" href="phase_8h_source.html#l00473">mim::Repl::Repl()</a>, <a class="el" href="ret__wrap_8h_source.html#l00009">mim::RetWrap::RetWrap()</a>, <a class="el" href="phase_8h_source.html#l00384">RWPhase()</a>, <a class="el" href="phase_8h_source.html#l00382">RWPhase()</a>, <a class="el" href="scalarize_8h_source.html#l00079">mim::Scalarize::Scalarize()</a>, <a class="el" href="sccp_8h_source.html#l00031">mim::SCCP::SCCP()</a>, <a class="el" href="seo_8h_source.html#l00102">mim::plug::mem::phase::SEO::SEO()</a>, <a class="el" href="single__erasure_8h_source.html#l00032">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="single__erasure_8h_source.html#l00029">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="split__apply_8h_source.html#l00012">mim::plug::gpu::phase::SplitApply::SplitApply()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00011">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00013">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, and <a class="el" href="static__arg__opt_8h_source.html#l00018">mim::StaticArgOpt::StaticArgOpt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="adce_8h_source.html#l00048">mim::ADCE::ADCE()</a>, <a class="el" href="adce_8h_source.html#l00051">mim::ADCE::ADCE()</a>, <a class="el" href="add__mem_8h_source.html#l00034">mim::plug::mem::phase::AddMem::AddMem()</a>, <a class="el" href="beta__red_8h_source.html#l00010">mim::BetaRed::BetaRed()</a>, <a class="el" href="beta__red_8h_source.html#l00012">mim::BetaRed::BetaRed()</a>, <a class="el" href="branch__clos__elim_8h_source.html#l00010">mim::plug::clos::phase::BranchClosElim::BranchClosElim()</a>, <a class="el" href="branch__normalize_8h_source.html#l00011">mim::BranchNormalize::BranchNormalize()</a>, <a class="el" href="phase_8h_source.html#l00490">mim::Cleanup::Cleanup()</a>, <a class="el" href="phase_8h_source.html#l00492">mim::Cleanup::Cleanup()</a>, <a class="el" href="clos2sjlj_8h_source.html#l00015">mim::plug::clos::phase::Clos2SJLJ::Clos2SJLJ()</a>, <a class="el" href="clos__conv_8h_source.html#l00085">mim::plug::clos::phase::ClosConv::ClosConv()</a>, <a class="el" href="clos__conv__prep_8h_source.html#l00013">mim::plug::clos::phase::ClosConvPrep::ClosConvPrep()</a>, <a class="el" href="conv_8h_source.html#l00037">mim::plug::cps::Conv::Conv()</a>, <a class="el" href="eta__conv_8h_source.html#l00021">mim::EtaConv::EtaConv()</a>, <a class="el" href="eta__conv_8h_source.html#l00023">mim::EtaConv::EtaConv()</a>, <a class="el" href="eval_8h_source.html#l00012">mim::plug::autodiff::phase::Eval::Eval()</a>, <a class="el" href="fuse_8h_source.html#l00009">mim::plug::tensor::phase::Fuse::Fuse()</a>, <a class="el" href="lam__spec_8h_source.html#l00010">mim::LamSpec::LamSpec()</a>, <a class="el" href="lower_8h_source.html#l00016">mim::plug::tensor::phase::Lower::Lower()</a>, <a class="el" href="lower__for_8h_source.html#l00028">mim::plug::affine::phase::LowerFor::LowerFor()</a>, <a class="el" href="lower__index_8h_source.html#l00030">mim::plug::affine::phase::LowerIndex::LowerIndex()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="tensor_2phase_2lower__map__reduce_8h_source.html#l00015">mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="lower__ptr_8h_source.html#l00015">mim::plug::buffer::LowerPtr::LowerPtr()</a>, <a class="el" href="lower__regex_8h_source.html#l00010">mim::plug::regex::LowerRegex::LowerRegex()</a>, <a class="el" href="lower__to__mem_8h_source.html#l00031">mim::plug::tensor::phase::LowerToMem::LowerToMem()</a>, <a class="el" href="lower__typed__clos_8h_source.html#l00037">mim::plug::clos::phase::LowerTypedClos::LowerTypedClos()</a>, <a class="el" href="lower__typed__clos__prep_8h_source.html#l00014">mim::plug::clos::phase::LowerTypedClosPrep::LowerTypedClosPrep()</a>, <a class="el" href="nom__erasure_8h_source.html#l00014">mim::NomErasure::NomErasure()</a>, <a class="el" href="nom__erasure_8h_source.html#l00012">mim::NomErasure::NomErasure()</a>, <a class="el" href="reassoc_8h_source.html#l00040">mim::plug::tensor::phase::Reassoc::Reassoc()</a>, <a class="el" href="phase_8h_source.html#l00450">mim::Repl::Repl()</a>, <a class="el" href="ret__wrap_8h_source.html#l00009">mim::RetWrap::RetWrap()</a>, <a class="el" href="phase_8h_source.html#l00377">RWPhase()</a>, <a class="el" href="phase_8h_source.html#l00375">RWPhase()</a>, <a class="el" href="scalarize_8h_source.html#l00080">mim::Scalarize::Scalarize()</a>, <a class="el" href="sccp_8h_source.html#l00031">mim::SCCP::SCCP()</a>, <a class="el" href="seo_8h_source.html#l00102">mim::plug::mem::phase::SEO::SEO()</a>, <a class="el" href="single__erasure_8h_source.html#l00032">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="single__erasure_8h_source.html#l00029">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="split__apply_8h_source.html#l00012">mim::plug::gpu::phase::SplitApply::SplitApply()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00011">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00013">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, and <a class="el" href="static__arg__opt_8h_source.html#l00018">mim::StaticArgOpt::StaticArgOpt()</a>.</p>
 
 </div>
 </div>
@@ -393,9 +380,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00384">384</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00377">377</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>, <a class="el" href="phase_8h_source.html#l00390">analysis()</a>, <a class="el" href="phase_8cpp_source.html#l00187">annex()</a>, <a class="el" href="phase_8h_source.html#l00382">RWPhase()</a>, and <a class="el" href="#ab2f627b52ee66162e8dcf2249f67ed3e">world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>, <a class="el" href="phase_8h_source.html#l00383">analysis()</a>, <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00375">RWPhase()</a>, and <a class="el" href="#ab2f627b52ee66162e8dcf2249f67ed3e">world()</a>.</p>
 
 </div>
 </div>
@@ -425,9 +412,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns lattice(<code class="param">old_def</code>) if it differs from <code class="param">old_def</code> (i.e. we learned something), otherwise <span class="tt">nullptr</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00398">398</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00391">391</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00395">lattice()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00388">lattice()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00495">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>.</p>
 
@@ -456,11 +443,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00390">390</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00383">383</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00384">RWPhase()</a>, and <a class="el" href="phase_8h_source.html#l00382">RWPhase()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00377">RWPhase()</a>, and <a class="el" href="phase_8h_source.html#l00375">RWPhase()</a>.</p>
 
 </div>
 </div>
@@ -487,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00391">391</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00384">384</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00125">mim::Phase::Analysis</a>.</p>
 
@@ -521,65 +508,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1BetaRed.html#ac5e8603725cbc04d35fdb6cda0cdf9c9">mim::BetaRed</a>, <a class="el" href="classmim_1_1EtaConv.html#ac29ddb03b0c07dd2a292dcfdf63e59e3">mim::EtaConv</a>, <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html#ad4ac56ba8117b8fea9c8a5c8a2aa2b93">mim::plug::clos::phase::ClosConvPrep</a>, <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#aef9ae9e1a7f2727c89e146320918db60">mim::plug::clos::phase::LowerTypedClosPrep</a>, <a class="el" href="classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html#a125f5188a15188b5397489ddfb904135">mim::plug::gpu::phase::SplitOffKernels</a>, <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html#a19bcfedfd70a5439b30874287021e3b1">mim::plug::mem::phase::AddMem</a>, <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html#a45e297dc91e42baebdd17a424dfb42be">mim::plug::mem::phase::SEO</a>, <a class="el" href="classmim_1_1RetWrap.html#a6c01ff79d3efb73f5bcfe3d07f44a187">mim::RetWrap</a>, and <a class="el" href="classmim_1_1StaticArgOpt.html#ab19f730b57dab1fe62afffc25e46deef">mim::StaticArgOpt</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00177">177</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00165">165</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00458">mim::plug::mem::phase::SEO::analyze()</a>, and <a class="el" href="phase_8cpp_source.html#l00151">start()</a>.</p>
-
-</div>
-</div>
-<a id="aadc6f8345ba1ebd09273944b067d0e7b" name="aadc6f8345ba1ebd09273944b067d0e7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadc6f8345ba1ebd09273944b067d0e7b">&#9670;&#160;</a></span>annex() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;annex_without_subs Id&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::RWPhase::annex </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00436">436</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
-
-<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00187">annex()</a>, and <a class="el" href="plugin_8h_source.html#l00286">mim::Annex::base()</a>.</p>
-
-</div>
-</div>
-<a id="a66a84b65ed3d757e8d17754b234db8fe" name="a66a84b65ed3d757e8d17754b234db8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a84b65ed3d757e8d17754b234db8fe">&#9670;&#160;</a></span>annex() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::RWPhase::annex </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>flags</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The annex <code class="param">flags</code> in <a class="el" href="#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a>, rewritten on demand if the annex walk has not reached it yet. </p>
-
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00187">187</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="world_8h_source.html#l00276">mim::World::annexes()</a>, <a class="el" href="world_8cpp_source.html#l00122">mim::World::Annexes::attach()</a>, <a class="el" href="world_8h_source.html#l00227">mim::World::Annexes::flags2entry()</a>, <a class="el" href="phase_8h_source.html#l00431">new_world()</a>, <a class="el" href="phase_8h_source.html#l00430">old_world()</a>, and <a class="el" href="phase_8h_source.html#l00446">rewrite_root()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="adce_8h_source.html#l00051">mim::ADCE::ADCE()</a>, <a class="el" href="add__mem_8h_source.html#l00034">mim::plug::mem::phase::AddMem::AddMem()</a>, <a class="el" href="phase_8h_source.html#l00436">annex()</a>, <a class="el" href="eval_8cpp_source.html#l00278">mim::plug::autodiff::phase::Eval::augment_pack()</a>, <a class="el" href="beta__red_8h_source.html#l00012">mim::BetaRed::BetaRed()</a>, <a class="el" href="branch__clos__elim_8h_source.html#l00010">mim::plug::clos::phase::BranchClosElim::BranchClosElim()</a>, <a class="el" href="branch__normalize_8h_source.html#l00011">mim::BranchNormalize::BranchNormalize()</a>, <a class="el" href="phase_8h_source.html#l00515">mim::Cleanup::Cleanup()</a>, <a class="el" href="clos2sjlj_8h_source.html#l00015">mim::plug::clos::phase::Clos2SJLJ::Clos2SJLJ()</a>, <a class="el" href="clos__conv_8h_source.html#l00085">mim::plug::clos::phase::ClosConv::ClosConv()</a>, <a class="el" href="clos__conv__prep_8h_source.html#l00013">mim::plug::clos::phase::ClosConvPrep::ClosConvPrep()</a>, <a class="el" href="conv_8h_source.html#l00037">mim::plug::cps::Conv::Conv()</a>, <a class="el" href="eta__conv_8h_source.html#l00023">mim::EtaConv::EtaConv()</a>, <a class="el" href="eval_8h_source.html#l00012">mim::plug::autodiff::phase::Eval::Eval()</a>, <a class="el" href="fuse_8h_source.html#l00009">mim::plug::tensor::phase::Fuse::Fuse()</a>, <a class="el" href="lam__spec_8h_source.html#l00010">mim::LamSpec::LamSpec()</a>, <a class="el" href="lower_8h_source.html#l00016">mim::plug::tensor::phase::Lower::Lower()</a>, <a class="el" href="lower__for_8h_source.html#l00028">mim::plug::affine::phase::LowerFor::LowerFor()</a>, <a class="el" href="lower__index_8h_source.html#l00030">mim::plug::affine::phase::LowerIndex::LowerIndex()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="gpu_2phase_2lower__map__reduce_8h_source.html#l00013">mim::plug::gpu::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="tensor_2phase_2lower__map__reduce_8h_source.html#l00015">mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="lower__ptr_8h_source.html#l00015">mim::plug::buffer::LowerPtr::LowerPtr()</a>, <a class="el" href="lower__regex_8h_source.html#l00010">mim::plug::regex::LowerRegex::LowerRegex()</a>, <a class="el" href="lower__to__mem_8h_source.html#l00031">mim::plug::tensor::phase::LowerToMem::LowerToMem()</a>, <a class="el" href="lower__typed__clos_8h_source.html#l00037">mim::plug::clos::phase::LowerTypedClos::LowerTypedClos()</a>, <a class="el" href="lower__typed__clos__prep_8h_source.html#l00014">mim::plug::clos::phase::LowerTypedClosPrep::LowerTypedClosPrep()</a>, <a class="el" href="nom__erasure_8h_source.html#l00014">mim::NomErasure::NomErasure()</a>, <a class="el" href="reassoc_8h_source.html#l00040">mim::plug::tensor::phase::Reassoc::Reassoc()</a>, <a class="el" href="remove__double__syncs_8h_source.html#l00013">mim::plug::gpu::phase::RemoveDoubleSyncs::RemoveDoubleSyncs()</a>, <a class="el" href="phase_8h_source.html#l00473">mim::Repl::Repl()</a>, <a class="el" href="ret__wrap_8h_source.html#l00009">mim::RetWrap::RetWrap()</a>, <a class="el" href="lower_8cpp_source.html#l00090">mim::plug::tensor::phase::Lower::rewrite_imm_App()</a>, <a class="el" href="phase_8h_source.html#l00384">RWPhase()</a>, <a class="el" href="scalarize_8h_source.html#l00079">mim::Scalarize::Scalarize()</a>, <a class="el" href="sccp_8h_source.html#l00031">mim::SCCP::SCCP()</a>, <a class="el" href="seo_8h_source.html#l00102">mim::plug::mem::phase::SEO::SEO()</a>, <a class="el" href="single__erasure_8h_source.html#l00032">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="split__apply_8h_source.html#l00012">mim::plug::gpu::phase::SplitApply::SplitApply()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00011">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, and <a class="el" href="static__arg__opt_8h_source.html#l00018">mim::StaticArgOpt::StaticArgOpt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00458">mim::plug::mem::phase::SEO::analyze()</a>, and <a class="el" href="phase_8cpp_source.html#l00147">start()</a>.</p>
 
 </div>
 </div>
@@ -611,41 +542,9 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html#ad48f11b4b93abf0e9992ad07a97922fa">mim::plug::clos::phase::ClosConv</a>, and <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a39f27acc1e19fe6cf92e790e34bd58cc">mim::plug::clos::phase::LowerTypedClos</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00450">450</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00428">428</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00151">start()</a>.</p>
-
-</div>
-</div>
-<a id="a8c1256f93cc63c1d8d0609e2aa474b51" name="a8c1256f93cc63c1d8d0609e2aa474b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c1256f93cc63c1d8d0609e2aa474b51">&#9670;&#160;</a></span>is_bootstrapping()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mim::RWPhase::is_bootstrapping </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns whether we are currently bootstrapping (rewriting annexes). </p>
-<p>While bootstrapping, look up other annexes via <a class="el" href="#a66a84b65ed3d757e8d17754b234db8fe" title="The annex flags in new_world(), rewritten on demand if the annex walk has not reached it yet.">RWPhase::annex</a>, as they might not yet exist. </p>
-
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00419">419</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="lower__typed__clos_8cpp_source.html#l00106">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, <a class="el" href="add__mem_8cpp_source.html#l00042">mim::plug::mem::phase::AddMem::rewrite()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00327">mim::plug::tensor::phase::LowerToMem::rewrite()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00172">mim::plug::clos::phase::LowerTypedClos::rewrite_imm()</a>, <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="lower__index_8cpp_source.html#l00201">mim::plug::affine::phase::LowerIndex::rewrite_imm_App()</a>, <a class="el" href="eval_8cpp_source.html#l00070">mim::plug::autodiff::phase::Eval::rewrite_imm_App()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8cpp_source.html#l00080">mim::plug::btensor::phase::LowerMapReduce::rewrite_imm_App()</a>, <a class="el" href="lower__ptr_8cpp_source.html#l00046">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>, <a class="el" href="branch__clos__elim_8cpp_source.html#l00027">mim::plug::clos::phase::BranchClosElim::rewrite_imm_App()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00167">mim::plug::clos::phase::ClosConv::rewrite_imm_App()</a>, <a class="el" href="clos__conv__prep_8cpp_source.html#l00133">mim::plug::clos::phase::ClosConvPrep::rewrite_imm_App()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00159">mim::plug::clos::phase::LowerTypedClos::rewrite_imm_App()</a>, <a class="el" href="add__mem_8cpp_source.html#l00138">mim::plug::mem::phase::AddMem::rewrite_imm_App()</a>, <a class="el" href="lower__regex_8cpp_source.html#l00028">mim::plug::regex::LowerRegex::rewrite_imm_App()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00418">mim::plug::tensor::phase::LowerToMem::rewrite_imm_App()</a>, <a class="el" href="scalarize_8cpp_source.html#l00255">mim::Scalarize::rewrite_imm_App()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00097">mim::StaticArgOpt::rewrite_imm_App()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00210">mim::plug::clos::phase::ClosConv::rewrite_imm_Extract()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00532">mim::plug::tensor::phase::LowerToMem::rewrite_imm_Extract()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00550">mim::plug::tensor::phase::LowerToMem::rewrite_imm_Insert()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00143">mim::plug::clos::phase::ClosConv::rewrite_imm_Pi()</a>, <a class="el" href="add__mem_8cpp_source.html#l00069">mim::plug::mem::phase::AddMem::rewrite_imm_Pi()</a>, <a class="el" href="scalarize_8cpp_source.html#l00188">mim::Scalarize::rewrite_imm_Pi()</a>, <a class="el" href="lower__typed__clos__prep_8cpp_source.html#l00106">mim::plug::clos::phase::LowerTypedClosPrep::rewrite_imm_Tuple()</a>, <a class="el" href="add__mem_8cpp_source.html#l00174">mim::plug::mem::phase::AddMem::rewrite_imm_Tuple()</a>, <a class="el" href="clos2sjlj_8cpp_source.html#l00196">mim::plug::clos::phase::Clos2SJLJ::rewrite_mut_Lam()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00153">mim::plug::clos::phase::ClosConv::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00371">mim::plug::tensor::phase::LowerToMem::rewrite_mut_Lam()</a>, <a class="el" href="scalarize_8cpp_source.html#l00211">mim::Scalarize::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, and <a class="el" href="clos__conv_8cpp_source.html#l00148">mim::plug::clos::phase::ClosConv::rewrite_mut_Pi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00147">start()</a>.</p>
 
 </div>
 </div>
@@ -672,7 +571,7 @@ template&lt;annex_without_subs Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00403">403</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00396">396</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="sccp__transform_8cpp_source.html#l00005">mim::SCCP::rewrite_imm_App()</a>.</p>
 
@@ -703,9 +602,45 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Returns the abstract value computed by the associated <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> for the given old-world <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>, or <span class="tt">nullptr</span> if no value is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00395">395</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00388">388</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00398">abstracted()</a>, and <a class="el" href="sccp__transform_8cpp_source.html#l00005">mim::SCCP::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00391">abstracted()</a>, and <a class="el" href="sccp__transform_8cpp_source.html#l00005">mim::SCCP::rewrite_imm_App()</a>.</p>
+
+</div>
+</div>
+<a id="a2b60687536b0f5c3148e1f0ea379b348" name="a2b60687536b0f5c3148e1f0ea379b348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b60687536b0f5c3148e1f0ea379b348">&#9670;&#160;</a></span>lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::RWPhase::lookup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>old_def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">nullptr</span> if nothing was found. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00175">175</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00081">mim::Phase::annex()</a>, <a class="el" href="rewrite_8h_source.html#l00060">mim::Rewriter::lookup()</a>, <a class="el" href="rewrite_8h_source.html#l00050">mim::Rewriter::map_root()</a>, <a class="el" href="phase_8h_source.html#l00420">new_world()</a>, and <a class="el" href="phase_8h_source.html#l00419">old_world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lower__typed__clos_8cpp_source.html#l00099">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, and <a class="el" href="lower__index_8cpp_source.html#l00205">mim::plug::affine::phase::LowerIndex::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -734,11 +669,11 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Create <b>new</b> <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s into this. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00431">431</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00420">420</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8h_source.html#l00033">mim::Rewriter::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00187">annex()</a>, <a class="el" href="lower__index_8cpp_source.html#l00195">mim::plug::affine::phase::LowerIndex::rewrite()</a>, <a class="el" href="clos2sjlj_8cpp_source.html#l00179">mim::plug::clos::phase::Clos2SJLJ::rewrite()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00106">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00193">rewrite_annex()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00172">mim::plug::clos::phase::LowerTypedClos::rewrite_imm()</a>, <a class="el" href="adce_8cpp_source.html#l00122">mim::ADCE::rewrite_imm_App()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00072">mim::EtaConv::rewrite_imm_App()</a>, <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="lower__index_8cpp_source.html#l00201">mim::plug::affine::phase::LowerIndex::rewrite_imm_App()</a>, <a class="el" href="lower__ptr_8cpp_source.html#l00046">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>, <a class="el" href="branch__clos__elim_8cpp_source.html#l00027">mim::plug::clos::phase::BranchClosElim::rewrite_imm_App()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00167">mim::plug::clos::phase::ClosConv::rewrite_imm_App()</a>, <a class="el" href="clos__conv__prep_8cpp_source.html#l00133">mim::plug::clos::phase::ClosConvPrep::rewrite_imm_App()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00159">mim::plug::clos::phase::LowerTypedClos::rewrite_imm_App()</a>, <a class="el" href="conv_8cpp_source.html#l00070">mim::plug::cps::Conv::rewrite_imm_App()</a>, <a class="el" href="add__mem_8cpp_source.html#l00138">mim::plug::mem::phase::AddMem::rewrite_imm_App()</a>, <a class="el" href="seo_8cpp_source.html#l00495">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>, <a class="el" href="lower__regex_8cpp_source.html#l00028">mim::plug::regex::LowerRegex::rewrite_imm_App()</a>, <a class="el" href="lower_8cpp_source.html#l00090">mim::plug::tensor::phase::Lower::rewrite_imm_App()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00418">mim::plug::tensor::phase::LowerToMem::rewrite_imm_App()</a>, <a class="el" href="scalarize_8cpp_source.html#l00255">mim::Scalarize::rewrite_imm_App()</a>, <a class="el" href="sccp__transform_8cpp_source.html#l00005">mim::SCCP::rewrite_imm_App()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00097">mim::StaticArgOpt::rewrite_imm_App()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00138">mim::SingleErasure::rewrite_imm_Extract()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00149">mim::SingleErasure::rewrite_imm_Insert()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00106">mim::SingleErasure::rewrite_imm_Match()</a>, <a class="el" href="add__mem_8cpp_source.html#l00069">mim::plug::mem::phase::AddMem::rewrite_imm_Pi()</a>, <a class="el" href="scalarize_8cpp_source.html#l00188">mim::Scalarize::rewrite_imm_Pi()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00161">mim::SingleErasure::rewrite_imm_Seq()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00112">mim::SingleErasure::rewrite_imm_Sigma()</a>, <a class="el" href="lower__typed__clos__prep_8cpp_source.html#l00106">mim::plug::clos::phase::LowerTypedClosPrep::rewrite_imm_Tuple()</a>, <a class="el" href="add__mem_8cpp_source.html#l00174">mim::plug::mem::phase::AddMem::rewrite_imm_Tuple()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00126">mim::SingleErasure::rewrite_imm_Tuple()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00077">mim::EtaConv::rewrite_imm_Var()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00153">mim::plug::clos::phase::ClosConv::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00106">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>, <a class="el" href="scalarize_8cpp_source.html#l00211">mim::Scalarize::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00166">mim::SingleErasure::rewrite_mut_Seq()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00118">mim::SingleErasure::rewrite_mut_Sigma()</a>, <a class="el" href="split__apply_8cpp_source.html#l00022">mim::plug::gpu::phase::SplitApply::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00151">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00175">lookup()</a>, <a class="el" href="lower__index_8cpp_source.html#l00199">mim::plug::affine::phase::LowerIndex::rewrite()</a>, <a class="el" href="clos2sjlj_8cpp_source.html#l00179">mim::plug::clos::phase::Clos2SJLJ::rewrite()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00099">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00162">mim::plug::clos::phase::LowerTypedClos::rewrite_imm()</a>, <a class="el" href="adce_8cpp_source.html#l00122">mim::ADCE::rewrite_imm_App()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00072">mim::EtaConv::rewrite_imm_App()</a>, <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="lower__index_8cpp_source.html#l00205">mim::plug::affine::phase::LowerIndex::rewrite_imm_App()</a>, <a class="el" href="lower__ptr_8cpp_source.html#l00046">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>, <a class="el" href="branch__clos__elim_8cpp_source.html#l00027">mim::plug::clos::phase::BranchClosElim::rewrite_imm_App()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00163">mim::plug::clos::phase::ClosConv::rewrite_imm_App()</a>, <a class="el" href="clos__conv__prep_8cpp_source.html#l00133">mim::plug::clos::phase::ClosConvPrep::rewrite_imm_App()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00151">mim::plug::clos::phase::LowerTypedClos::rewrite_imm_App()</a>, <a class="el" href="conv_8cpp_source.html#l00070">mim::plug::cps::Conv::rewrite_imm_App()</a>, <a class="el" href="add__mem_8cpp_source.html#l00137">mim::plug::mem::phase::AddMem::rewrite_imm_App()</a>, <a class="el" href="seo_8cpp_source.html#l00495">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>, <a class="el" href="lower__regex_8cpp_source.html#l00028">mim::plug::regex::LowerRegex::rewrite_imm_App()</a>, <a class="el" href="lower_8cpp_source.html#l00089">mim::plug::tensor::phase::Lower::rewrite_imm_App()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00414">mim::plug::tensor::phase::LowerToMem::rewrite_imm_App()</a>, <a class="el" href="scalarize_8cpp_source.html#l00262">mim::Scalarize::rewrite_imm_App()</a>, <a class="el" href="sccp__transform_8cpp_source.html#l00005">mim::SCCP::rewrite_imm_App()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00094">mim::StaticArgOpt::rewrite_imm_App()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00138">mim::SingleErasure::rewrite_imm_Extract()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00149">mim::SingleErasure::rewrite_imm_Insert()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00106">mim::SingleErasure::rewrite_imm_Match()</a>, <a class="el" href="add__mem_8cpp_source.html#l00068">mim::plug::mem::phase::AddMem::rewrite_imm_Pi()</a>, <a class="el" href="scalarize_8cpp_source.html#l00195">mim::Scalarize::rewrite_imm_Pi()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00161">mim::SingleErasure::rewrite_imm_Seq()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00112">mim::SingleErasure::rewrite_imm_Sigma()</a>, <a class="el" href="lower__typed__clos__prep_8cpp_source.html#l00106">mim::plug::clos::phase::LowerTypedClosPrep::rewrite_imm_Tuple()</a>, <a class="el" href="add__mem_8cpp_source.html#l00173">mim::plug::mem::phase::AddMem::rewrite_imm_Tuple()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00126">mim::SingleErasure::rewrite_imm_Tuple()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00077">mim::EtaConv::rewrite_imm_Var()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00149">mim::plug::clos::phase::ClosConv::rewrite_mut_Lam()</a>, <a class="el" href="conv_8cpp_source.html#l00020">mim::plug::cps::Conv::rewrite_mut_Lam()</a>, <a class="el" href="add__mem_8cpp_source.html#l00105">mim::plug::mem::phase::AddMem::rewrite_mut_Lam()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>, <a class="el" href="scalarize_8cpp_source.html#l00218">mim::Scalarize::rewrite_mut_Lam()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00067">mim::StaticArgOpt::rewrite_mut_Lam()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00166">mim::SingleErasure::rewrite_mut_Seq()</a>, <a class="el" href="single__erasure_8cpp_source.html#l00118">mim::SingleErasure::rewrite_mut_Sigma()</a>, <a class="el" href="split__apply_8cpp_source.html#l00022">mim::plug::gpu::phase::SplitApply::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00147">start()</a>.</p>
 
 </div>
 </div>
@@ -767,51 +702,11 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Get <b>old</b> <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s from here. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00430">430</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00419">419</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00077">mim::Phase::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="beta__red_8cpp_source.html#l00005">mim::BetaRed::analyze()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00005">mim::EtaConv::analyze()</a>, <a class="el" href="clos__conv__prep_8cpp_source.html#l00035">mim::plug::clos::phase::ClosConvPrep::analyze()</a>, <a class="el" href="lower__typed__clos__prep_8cpp_source.html#l00064">mim::plug::clos::phase::LowerTypedClosPrep::analyze()</a>, <a class="el" href="split__off__kernels_8cpp_source.html#l00017">mim::plug::gpu::phase::SplitOffKernels::analyze()</a>, <a class="el" href="add__mem_8cpp_source.html#l00011">mim::plug::mem::phase::AddMem::analyze()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00005">mim::RetWrap::analyze()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00005">mim::StaticArgOpt::analyze()</a>, <a class="el" href="phase_8cpp_source.html#l00187">annex()</a>, <a class="el" href="eval_8cpp_source.html#l00393">mim::plug::autodiff::phase::Eval::augment_()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00172">mim::plug::clos::phase::LowerTypedClos::rewrite_imm()</a>, <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>, <a class="el" href="gpu_2phase_2lower__map__reduce_8cpp_source.html#l00337">mim::plug::gpu::phase::LowerMapReduce::start()</a>, <a class="el" href="split__apply_8cpp_source.html#l00022">mim::plug::gpu::phase::SplitApply::start()</a>, <a class="el" href="split__off__kernels_8cpp_source.html#l00007">mim::plug::gpu::phase::SplitOffKernels::start()</a>, <a class="el" href="fuse_8cpp_source.html#l00637">mim::plug::tensor::phase::Fuse::start()</a>, <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>, <a class="el" href="phase_8cpp_source.html#l00151">start()</a>, and <a class="el" href="phase_8h_source.html#l00477">mim::Repl::world()</a>.</p>
-
-</div>
-</div>
-<a id="a5aad3ec295eb2987ca065051fec1e4cd" name="a5aad3ec295eb2987ca065051fec1e4cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aad3ec295eb2987ca065051fec1e4cd">&#9670;&#160;</a></span>rewrite_annex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mim::RWPhase::rewrite_annex </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Sym</td>          <td class="paramname"><span class="paramname"><em>sym</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00193">193</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="world_8h_source.html#l00276">mim::World::annexes()</a>, <a class="el" href="world_8cpp_source.html#l00122">mim::World::Annexes::attach()</a>, <a class="el" href="phase_8h_source.html#l00431">new_world()</a>, and <a class="el" href="phase_8h_source.html#l00446">rewrite_root()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="split__off__kernels_8cpp_source.html#l00007">mim::plug::gpu::phase::SplitOffKernels::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00151">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="beta__red_8cpp_source.html#l00005">mim::BetaRed::analyze()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00005">mim::EtaConv::analyze()</a>, <a class="el" href="clos__conv__prep_8cpp_source.html#l00035">mim::plug::clos::phase::ClosConvPrep::analyze()</a>, <a class="el" href="lower__typed__clos__prep_8cpp_source.html#l00064">mim::plug::clos::phase::LowerTypedClosPrep::analyze()</a>, <a class="el" href="split__off__kernels_8cpp_source.html#l00014">mim::plug::gpu::phase::SplitOffKernels::analyze()</a>, <a class="el" href="add__mem_8cpp_source.html#l00011">mim::plug::mem::phase::AddMem::analyze()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00005">mim::RetWrap::analyze()</a>, <a class="el" href="static__arg__opt_8cpp_source.html#l00005">mim::StaticArgOpt::analyze()</a>, <a class="el" href="eval_8cpp_source.html#l00391">mim::plug::autodiff::phase::Eval::augment_()</a>, <a class="el" href="phase_8cpp_source.html#l00175">lookup()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00162">mim::plug::clos::phase::LowerTypedClos::rewrite_imm()</a>, <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>, <a class="el" href="lower__for_8cpp_source.html#l00024">mim::plug::affine::phase::LowerFor::rewrite_imm_App()</a>, <a class="el" href="ret__wrap_8cpp_source.html#l00060">mim::RetWrap::rewrite_mut_Lam()</a>, <a class="el" href="gpu_2phase_2lower__map__reduce_8cpp_source.html#l00337">mim::plug::gpu::phase::LowerMapReduce::start()</a>, <a class="el" href="split__apply_8cpp_source.html#l00022">mim::plug::gpu::phase::SplitApply::start()</a>, <a class="el" href="fuse_8cpp_source.html#l00648">mim::plug::tensor::phase::Fuse::start()</a>, <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>, <a class="el" href="phase_8cpp_source.html#l00147">start()</a>, and <a class="el" href="phase_8h_source.html#l00454">mim::Repl::world()</a>.</p>
 
 </div>
 </div>
@@ -838,49 +733,13 @@ template&lt;annex_without_subs Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html#a1beb74751c2a59283ae046133fa04927">mim::plug::clos::phase::ClosConv</a>, and <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a66cea8c641f984fe0d22056063092644">mim::plug::clos::phase::LowerTypedClos</a>.</p>
+<p>Reimplemented in <a class="el" href="classmim_1_1EtaConv.html#a5a322ac02c80104d75e61faf2791fd77">mim::EtaConv</a>, and <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html#a1beb74751c2a59283ae046133fa04927">mim::plug::clos::phase::ClosConv</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00198">198</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00181">181</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00638">mim::Def::as_mut()</a>, <a class="el" href="def_8h_source.html#l00602">mim::Def::is_external()</a>, and <a class="el" href="phase_8h_source.html#l00446">rewrite_root()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00601">mim::Def::is_external()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00043">mim::Rewriter::rewrite()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00151">start()</a>.</p>
-
-</div>
-</div>
-<a id="ac966cc87cd5acc5f214190c1c3640e3a" name="ac966cc87cd5acc5f214190c1c3640e3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac966cc87cd5acc5f214190c1c3640e3a">&#9670;&#160;</a></span>rewrite_root()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::RWPhase::rewrite_root </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rewrites a <em>root</em> - i.e. an annex or an external. </p>
-<p>Defaults to <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite()</a>; override if roots need to be exempt from some of your rewrites. </p>
-
-<p>Reimplemented in <a class="el" href="classmim_1_1EtaConv.html#ac2e3d7e0d9d4f7f1915295ae682670a3">mim::EtaConv</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00446">446</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
-
-<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00042">mim::Rewriter::rewrite()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00187">annex()</a>, <a class="el" href="phase_8cpp_source.html#l00193">rewrite_annex()</a>, <a class="el" href="clos__conv_8cpp_source.html#l00122">mim::plug::clos::phase::ClosConv::rewrite_external()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00016">mim::plug::clos::phase::LowerTypedClos::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00198">rewrite_external()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="clos__conv_8cpp_source.html#l00122">mim::plug::clos::phase::ClosConv::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00147">start()</a>.</p>
 
 </div>
 </div>
@@ -913,11 +772,11 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#ad73a21a4f3d795b90dd0fd44dead6723">mim::plug::gpu::phase::SplitApply</a>, and <a class="el" href="classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html#a0f8dcf0160a6e113a9c800302805aa52">mim::plug::gpu::phase::SplitOffKernels</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00151">151</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00147">147</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00177">analyze()</a>, <a class="el" href="world_8h_source.html#l00117">mim::World::curr_gid()</a>, <a class="el" href="phase_8h_source.html#l00078">mim::Phase::driver()</a>, <a class="el" href="phase_8h_source.html#l00450">finalize()</a>, <a class="el" href="driver_8h_source.html#l00077">mim::Driver::flags()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="flags_8h_source.html#l00021">mim::Flags::max_fp_iters</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00431">new_world()</a>, <a class="el" href="phase_8h_source.html#l00430">old_world()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00193">rewrite_annex()</a>, <a class="el" href="phase_8cpp_source.html#l00198">rewrite_external()</a>, <a class="el" href="rewrite_8h_source.html#l00091">mim::Rewriter::swap</a>, and <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00165">analyze()</a>, <a class="el" href="world_8h_source.html#l00117">mim::World::curr_gid()</a>, <a class="el" href="phase_8h_source.html#l00078">mim::Phase::driver()</a>, <a class="el" href="phase_8h_source.html#l00428">finalize()</a>, <a class="el" href="driver_8h_source.html#l00077">mim::Driver::flags()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::log()</a>, <a class="el" href="flags_8h_source.html#l00021">mim::Flags::max_fp_iters</a>, <a class="el" href="phase_8h_source.html#l00080">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00420">new_world()</a>, <a class="el" href="phase_8h_source.html#l00419">old_world()</a>, <a class="el" href="phase_8cpp_source.html#l00041">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00181">rewrite_external()</a>, <a class="el" href="rewrite_8h_source.html#l00091">mim::Rewriter::swap</a>, and <a class="el" href="phase_8h_source.html#l00090">mim::Phase::todo()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gpu_2phase_2lower__map__reduce_8cpp_source.html#l00337">mim::plug::gpu::phase::LowerMapReduce::start()</a>, <a class="el" href="fuse_8cpp_source.html#l00637">mim::plug::tensor::phase::Fuse::start()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00286">mim::plug::tensor::phase::LowerToMem::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gpu_2phase_2lower__map__reduce_8cpp_source.html#l00337">mim::plug::gpu::phase::LowerMapReduce::start()</a>, <a class="el" href="fuse_8cpp_source.html#l00648">mim::plug::tensor::phase::Fuse::start()</a>, <a class="el" href="lower__to__mem_8cpp_source.html#l00286">mim::plug::tensor::phase::LowerToMem::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
 
 </div>
 </div>
@@ -946,7 +805,7 @@ template&lt;annex_without_subs Id&gt; </div>
 
 <p>Hides both and forbids direct access. </p>
 
-<p class="reference">Referenced by <a class="el" href="adce_8h_source.html#l00048">mim::ADCE::ADCE()</a>, <a class="el" href="adce_8h_source.html#l00051">mim::ADCE::ADCE()</a>, <a class="el" href="add__mem_8h_source.html#l00034">mim::plug::mem::phase::AddMem::AddMem()</a>, <a class="el" href="beta__red_8h_source.html#l00010">mim::BetaRed::BetaRed()</a>, <a class="el" href="beta__red_8h_source.html#l00012">mim::BetaRed::BetaRed()</a>, <a class="el" href="branch__clos__elim_8h_source.html#l00010">mim::plug::clos::phase::BranchClosElim::BranchClosElim()</a>, <a class="el" href="branch__normalize_8h_source.html#l00011">mim::BranchNormalize::BranchNormalize()</a>, <a class="el" href="phase_8h_source.html#l00513">mim::Cleanup::Cleanup()</a>, <a class="el" href="phase_8h_source.html#l00515">mim::Cleanup::Cleanup()</a>, <a class="el" href="clos2sjlj_8h_source.html#l00015">mim::plug::clos::phase::Clos2SJLJ::Clos2SJLJ()</a>, <a class="el" href="clos__conv_8h_source.html#l00085">mim::plug::clos::phase::ClosConv::ClosConv()</a>, <a class="el" href="clos__conv__prep_8h_source.html#l00013">mim::plug::clos::phase::ClosConvPrep::ClosConvPrep()</a>, <a class="el" href="conv_8h_source.html#l00037">mim::plug::cps::Conv::Conv()</a>, <a class="el" href="eta__conv_8h_source.html#l00021">mim::EtaConv::EtaConv()</a>, <a class="el" href="eta__conv_8h_source.html#l00023">mim::EtaConv::EtaConv()</a>, <a class="el" href="fuse_8h_source.html#l00009">mim::plug::tensor::phase::Fuse::Fuse()</a>, <a class="el" href="lam__spec_8h_source.html#l00010">mim::LamSpec::LamSpec()</a>, <a class="el" href="lower_8h_source.html#l00016">mim::plug::tensor::phase::Lower::Lower()</a>, <a class="el" href="lower__for_8h_source.html#l00028">mim::plug::affine::phase::LowerFor::LowerFor()</a>, <a class="el" href="lower__index_8h_source.html#l00030">mim::plug::affine::phase::LowerIndex::LowerIndex()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="gpu_2phase_2lower__map__reduce_8h_source.html#l00013">mim::plug::gpu::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="tensor_2phase_2lower__map__reduce_8h_source.html#l00015">mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="lower__ptr_8h_source.html#l00015">mim::plug::buffer::LowerPtr::LowerPtr()</a>, <a class="el" href="lower__regex_8h_source.html#l00010">mim::plug::regex::LowerRegex::LowerRegex()</a>, <a class="el" href="lower__to__mem_8h_source.html#l00031">mim::plug::tensor::phase::LowerToMem::LowerToMem()</a>, <a class="el" href="lower__typed__clos_8h_source.html#l00037">mim::plug::clos::phase::LowerTypedClos::LowerTypedClos()</a>, <a class="el" href="lower__typed__clos__prep_8h_source.html#l00014">mim::plug::clos::phase::LowerTypedClosPrep::LowerTypedClosPrep()</a>, <a class="el" href="nom__erasure_8h_source.html#l00014">mim::NomErasure::NomErasure()</a>, <a class="el" href="nom__erasure_8h_source.html#l00012">mim::NomErasure::NomErasure()</a>, <a class="el" href="reassoc_8h_source.html#l00040">mim::plug::tensor::phase::Reassoc::Reassoc()</a>, <a class="el" href="remove__double__syncs_8h_source.html#l00013">mim::plug::gpu::phase::RemoveDoubleSyncs::RemoveDoubleSyncs()</a>, <a class="el" href="ret__wrap_8h_source.html#l00009">mim::RetWrap::RetWrap()</a>, <a class="el" href="phase_8h_source.html#l00384">RWPhase()</a>, <a class="el" href="phase_8h_source.html#l00382">RWPhase()</a>, <a class="el" href="scalarize_8h_source.html#l00079">mim::Scalarize::Scalarize()</a>, <a class="el" href="sccp_8h_source.html#l00031">mim::SCCP::SCCP()</a>, <a class="el" href="seo_8h_source.html#l00102">mim::plug::mem::phase::SEO::SEO()</a>, <a class="el" href="single__erasure_8h_source.html#l00032">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="single__erasure_8h_source.html#l00029">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="split__apply_8h_source.html#l00012">mim::plug::gpu::phase::SplitApply::SplitApply()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00011">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00013">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, and <a class="el" href="static__arg__opt_8h_source.html#l00018">mim::StaticArgOpt::StaticArgOpt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="adce_8h_source.html#l00048">mim::ADCE::ADCE()</a>, <a class="el" href="adce_8h_source.html#l00051">mim::ADCE::ADCE()</a>, <a class="el" href="add__mem_8h_source.html#l00034">mim::plug::mem::phase::AddMem::AddMem()</a>, <a class="el" href="beta__red_8h_source.html#l00010">mim::BetaRed::BetaRed()</a>, <a class="el" href="beta__red_8h_source.html#l00012">mim::BetaRed::BetaRed()</a>, <a class="el" href="branch__clos__elim_8h_source.html#l00010">mim::plug::clos::phase::BranchClosElim::BranchClosElim()</a>, <a class="el" href="branch__normalize_8h_source.html#l00011">mim::BranchNormalize::BranchNormalize()</a>, <a class="el" href="phase_8h_source.html#l00490">mim::Cleanup::Cleanup()</a>, <a class="el" href="phase_8h_source.html#l00492">mim::Cleanup::Cleanup()</a>, <a class="el" href="clos2sjlj_8h_source.html#l00015">mim::plug::clos::phase::Clos2SJLJ::Clos2SJLJ()</a>, <a class="el" href="clos__conv_8h_source.html#l00085">mim::plug::clos::phase::ClosConv::ClosConv()</a>, <a class="el" href="clos__conv__prep_8h_source.html#l00013">mim::plug::clos::phase::ClosConvPrep::ClosConvPrep()</a>, <a class="el" href="conv_8h_source.html#l00037">mim::plug::cps::Conv::Conv()</a>, <a class="el" href="eta__conv_8h_source.html#l00021">mim::EtaConv::EtaConv()</a>, <a class="el" href="eta__conv_8h_source.html#l00023">mim::EtaConv::EtaConv()</a>, <a class="el" href="fuse_8h_source.html#l00009">mim::plug::tensor::phase::Fuse::Fuse()</a>, <a class="el" href="lam__spec_8h_source.html#l00010">mim::LamSpec::LamSpec()</a>, <a class="el" href="lower_8h_source.html#l00016">mim::plug::tensor::phase::Lower::Lower()</a>, <a class="el" href="lower__for_8h_source.html#l00028">mim::plug::affine::phase::LowerFor::LowerFor()</a>, <a class="el" href="lower__index_8h_source.html#l00030">mim::plug::affine::phase::LowerIndex::LowerIndex()</a>, <a class="el" href="btensor_2phase_2lower__map__reduce_8h_source.html#l00017">mim::plug::btensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="gpu_2phase_2lower__map__reduce_8h_source.html#l00013">mim::plug::gpu::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="tensor_2phase_2lower__map__reduce_8h_source.html#l00015">mim::plug::tensor::phase::LowerMapReduce::LowerMapReduce()</a>, <a class="el" href="lower__ptr_8h_source.html#l00015">mim::plug::buffer::LowerPtr::LowerPtr()</a>, <a class="el" href="lower__regex_8h_source.html#l00010">mim::plug::regex::LowerRegex::LowerRegex()</a>, <a class="el" href="lower__to__mem_8h_source.html#l00031">mim::plug::tensor::phase::LowerToMem::LowerToMem()</a>, <a class="el" href="lower__typed__clos_8h_source.html#l00037">mim::plug::clos::phase::LowerTypedClos::LowerTypedClos()</a>, <a class="el" href="lower__typed__clos__prep_8h_source.html#l00014">mim::plug::clos::phase::LowerTypedClosPrep::LowerTypedClosPrep()</a>, <a class="el" href="nom__erasure_8h_source.html#l00014">mim::NomErasure::NomErasure()</a>, <a class="el" href="nom__erasure_8h_source.html#l00012">mim::NomErasure::NomErasure()</a>, <a class="el" href="reassoc_8h_source.html#l00040">mim::plug::tensor::phase::Reassoc::Reassoc()</a>, <a class="el" href="remove__double__syncs_8h_source.html#l00013">mim::plug::gpu::phase::RemoveDoubleSyncs::RemoveDoubleSyncs()</a>, <a class="el" href="ret__wrap_8h_source.html#l00009">mim::RetWrap::RetWrap()</a>, <a class="el" href="phase_8h_source.html#l00377">RWPhase()</a>, <a class="el" href="phase_8h_source.html#l00375">RWPhase()</a>, <a class="el" href="scalarize_8h_source.html#l00080">mim::Scalarize::Scalarize()</a>, <a class="el" href="sccp_8h_source.html#l00031">mim::SCCP::SCCP()</a>, <a class="el" href="seo_8h_source.html#l00102">mim::plug::mem::phase::SEO::SEO()</a>, <a class="el" href="single__erasure_8h_source.html#l00032">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="single__erasure_8h_source.html#l00029">mim::SingleErasure::SingleErasure()</a>, <a class="el" href="split__apply_8h_source.html#l00012">mim::plug::gpu::phase::SplitApply::SplitApply()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00011">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, <a class="el" href="split__off__kernels_8h_source.html#l00013">mim::plug::gpu::phase::SplitOffKernels::SplitOffKernels()</a>, and <a class="el" href="static__arg__opt_8h_source.html#l00018">mim::StaticArgOpt::StaticArgOpt()</a>.</p>
 
 </div>
 </div>

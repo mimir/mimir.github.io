@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['kernel_20launch_0',['Kernel Launch',['../gpu.html#autotoc_md377',1,'']]],
-  ['key_1',['Key',['../ord.html#autotoc_md461',1,'']]],
-  ['key_20innovations_2',['🔥 Key Innovations',['../index.html#autotoc_md149',1,'']]],
+  ['kernel_20launch_0',['Kernel Launch',['../gpu.html#autotoc_md375',1,'']]],
+  ['key_1',['Key',['../ord.html#autotoc_md454',1,'']]],
+  ['key_20innovations_2',['🔥 Key Innovations',['../index.html#autotoc_md148',1,'']]],
   ['keywords_3',['Keywords',['../langref.html#autotoc_md61',1,'']]],
-  ['kinds_20and_20builtin_20types_4',['Kinds and Builtin Types',['../langref.html#autotoc_md66',1,'Kinds and Builtin Types'],['../tutorial.html#autotoc_md192',1,'Kinds and Builtin Types']]]
+  ['kinds_20and_20builtin_20types_4',['Kinds and Builtin Types',['../langref.html#autotoc_md66',1,'Kinds and Builtin Types'],['../tutorial.html#autotoc_md191',1,'Kinds and Builtin Types']]]
 ];

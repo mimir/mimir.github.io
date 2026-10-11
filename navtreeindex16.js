@@ -1,7 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim.html#a70529127b5b9ce44a9760ede9cdffe06":[2,0,4,1,4,0,0,0],
-"classmim_1_1plug_1_1clos_1_1phase_1_1BranchClosElim.html#a70529127b5b9ce44a9760ede9cdffe06":[4,0,1,1,4,0,0,0],
 "classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html":[2,0,4,1,4,0,1],
 "classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html":[4,0,1,1,4,0,1],
 "classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html#a17341410535b9e11f5cd904365f56615":[2,0,4,1,4,0,1,1],
@@ -52,12 +50,10 @@ var NAVTREEINDEX16 =
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a39f27acc1e19fe6cf92e790e34bd58cc":[4,0,1,1,4,0,5,1],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a4a71222e2295b2975b11e09eb955a105":[2,0,4,1,4,0,5,0],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a4a71222e2295b2975b11e09eb955a105":[4,0,1,1,4,0,5,0],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a66cea8c641f984fe0d22056063092644":[2,0,4,1,4,0,5,3],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a66cea8c641f984fe0d22056063092644":[4,0,1,1,4,0,5,3],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ab511443d7506abb7cbe5e15122924f25":[2,0,4,1,4,0,5,4],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ab511443d7506abb7cbe5e15122924f25":[4,0,1,1,4,0,5,4],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ad7c25c0d36b4b7719a2f998f2c8d0a2e":[2,0,4,1,4,0,5,5],
-"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ad7c25c0d36b4b7719a2f998f2c8d0a2e":[4,0,1,1,4,0,5,5],
+"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ab511443d7506abb7cbe5e15122924f25":[2,0,4,1,4,0,5,3],
+"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ab511443d7506abb7cbe5e15122924f25":[4,0,1,1,4,0,5,3],
+"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ad7c25c0d36b4b7719a2f998f2c8d0a2e":[2,0,4,1,4,0,5,4],
+"classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#ad7c25c0d36b4b7719a2f998f2c8d0a2e":[4,0,1,1,4,0,5,4],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html":[2,0,4,1,4,0,6],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html":[4,0,1,1,4,0,6],
 "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#a282ffaced0abad29a22d450cac612b68":[2,0,4,1,4,0,6,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX16 =
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ae0abab79b267cce03122665e0119103c":[2,0,4,1,11,1,8],
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#ae0abab79b267cce03122665e0119103c":[4,0,1,1,8,1,8],
 "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#aea261e4899dea47658f94745fc66254d":[2,0,4,1,11,1,1],
-"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#aea261e4899dea47658f94745fc66254d":[4,0,1,1,8,1,1]
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#aea261e4899dea47658f94745fc66254d":[4,0,1,1,8,1,1],
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af80226a259c172237e9cb0c25374773a":[2,0,4,1,11,1,3],
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af80226a259c172237e9cb0c25374773a":[4,0,1,1,8,1,3],
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af83ee2502ac2f5af0a83210be6e9114e":[2,0,4,1,11,1,7],
+"classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#af83ee2502ac2f5af0a83210be6e9114e":[4,0,1,1,8,1,7]
 };

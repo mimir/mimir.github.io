@@ -25,7 +25,6 @@ var namespacemim_1_1plug =
       [ "sccp", "namespacemim_1_1plug_1_1compile.html#a7c6f14e6f0e8f8f3a40ae6763af9c8a0", null ],
       [ "single_erasure", "namespacemim_1_1plug_1_1compile.html#a41b6aeb6d6ea2197e71fa5ffcff951d9", null ],
       [ "static_arg_opt", "namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de", null ],
-      [ "unload", "namespacemim_1_1plug_1_1compile.html#a8d677b80fbe55f020b32c68064554c10", null ],
       [ "normalize_aggr", "namespacemim_1_1plug_1_1compile.html#aff478d151e97170b9981a93af28468ff", null ],
       [ "normalize_cond", "namespacemim_1_1plug_1_1compile.html#a1893a8582c67746a61e0449cb10a37ab", null ],
       [ "normalize_is_loaded", "namespacemim_1_1plug_1_1compile.html#a99c96c2c9e8f4f5320e6c8c2b7f92f0d", null ],
@@ -436,11 +435,6 @@ var namespacemim_1_1plug =
       [ "Plugin_Id", "namespacemim_1_1plug_1_1math.html#a05ac4b1ef1e0a51c44e4b0622835c4f4", null ]
     ] ],
     [ "mem", "namespacemim_1_1plug_1_1mem.html", "namespacemim_1_1plug_1_1mem" ],
-    [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
-      [ "Stream", "namespacemim_1_1plug_1_1nvptx.html#af2b0f3fa9556c30b7fd1bf4b4528adee", null ],
-      [ "stream_impl_repl", "namespacemim_1_1plug_1_1nvptx.html#ab6c4402534cd7401d3f7a35571aa81bf", null ],
-      [ "Plugin_Id", "namespacemim_1_1plug_1_1nvptx.html#a08e942c03727b7c051996fa7b39aab27", null ]
-    ] ],
     [ "opt", "namespacemim_1_1plug_1_1opt.html", [
       [ "Plugin_Id", "namespacemim_1_1plug_1_1opt.html#a0987aaf63a0209e71b7fcea95c848951", null ]
     ] ],

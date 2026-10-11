@@ -209,8 +209,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae2233eb6c57d715eed03b79f7958a283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> provably reads through <em>every</em> loop index of its domain: its body is the identity, or each result coordinate is an injective read of one loop index (see <span class="tt"><a class="el" href="#a952e5475e9b27fe3add59987d9380cf3" title="If e reads coordinate var#i injectively, returns i: a plain extract, possibly strided (affine....">injective_coord</a></span>) and together they cover all indices.  <br /></td></tr>
 <tr class="memitem:a09d1835975049dc93906aa3750a07c5b" id="r_a09d1835975049dc93906aa3750a07c5b"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a09d1835975049dc93906aa3750a07c5b">compose_map</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *inner, const <a class="el" href="classmim_1_1Def.html">Def</a> *outer)</td></tr>
 <tr class="memdesc:a09d1835975049dc93906aa3750a07c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">inner ∘ outer</span>: feeds the outer op's read coordinates for one input into the inner op's access map.  <br /></td></tr>
-<tr class="memitem:a87ae2db4a8ae283ef40100742e80a7e0" id="r_a87ae2db4a8ae283ef40100742e80a7e0"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">PureRead</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a87ae2db4a8ae283ef40100742e80a7e0">read_through</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *value, const <a class="el" href="classmim_1_1Def.html">Def</a> *slot_map)</td></tr>
-<tr class="memdesc:a87ae2db4a8ae283ef40100742e80a7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> (reshape/transpose/slice/ flip/repeat lower to these) or a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">tensor.broadcast</a></span> — returns its source and access map, to be composed behind the consuming slot's map.  <br /></td></tr>
+<tr class="memitem:a93c51a2a066f04143d8c3483c3510d96" id="r_a93c51a2a066f04143d8c3483c3510d96"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a93c51a2a066f04143d8c3483c3510d96">reads_as_produced</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *value, const <a class="el" href="classmim_1_1Def.html">Def</a> *S)</td></tr>
+<tr class="memdesc:a93c51a2a066f04143d8c3483c3510d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a slot that declares <code class="param">value</code> in shape <code class="param">S</code> read it in the shape it is produced in?  <br /></td></tr>
+<tr class="memitem:a037bac8df14fdd1049f5827b080369ec" id="r_a037bac8df14fdd1049f5827b080369ec"><td class="memItemLeft">static std::optional&lt; <a class="el" href="namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead">PureRead</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a037bac8df14fdd1049f5827b080369ec">read_through</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *value, const <a class="el" href="classmim_1_1Def.html">Def</a> *slot_map, const <a class="el" href="classmim_1_1Def.html">Def</a> *S)</td></tr>
+<tr class="memdesc:a037bac8df14fdd1049f5827b080369ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> (reshape/transpose/slice/ flip/repeat lower to these) or a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">tensor.broadcast</a></span> — returns its source and access map, to be composed behind the consuming slot's map.  <br /></td></tr>
 <tr class="memitem:a90789f0506b7baf4427628463e594443" id="r_a90789f0506b7baf4427628463e594443"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a90789f0506b7baf4427628463e594443">is_unpack_read</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, const <a class="el" href="classmim_1_1Def.html">Def</a> *map<a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *r_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *r_out, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out)</td></tr>
 <tr class="memdesc:a90789f0506b7baf4427628463e594443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> the row-major reshape read <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a5846df9fb3d27c6dc67f0b23ac630b15">tensor.reshape_map</a> (s_in, s_out)</span> — the map that reads a PACKED producer (its output strip-mined to <span class="tt">s_in</span>) at the unpacked coordinates <span class="tt">s_out</span>?  <br /></td></tr>
 </table>
@@ -361,7 +363,7 @@ t = false</td>
 
 <p class="definition">Definition at line <a class="el" href="constraints_8cpp_source.html#l00022">22</a> of file <a class="el" href="constraints_8cpp_source.html">constraints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="constraints_8cpp_source.html#l00022">check_gather_shape_constraints()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00635">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="constraints_8cpp_source.html#l00022">check_gather_shape_constraints()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00635">mim::Def::proj()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="constraints_8cpp_source.html#l00022">check_gather_shape_constraints()</a>.</p>
 
@@ -405,7 +407,7 @@ t = false</td>
 
 <p class="definition">Definition at line <a class="el" href="constraints_8cpp_source.html#l00038">38</a> of file <a class="el" href="constraints_8cpp_source.html">constraints.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="constraints_8cpp_source.html#l00038">check_scatter_shape_constraints()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00635">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="constraints_8cpp_source.html#l00038">check_scatter_shape_constraints()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00635">mim::Def::proj()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="constraints_8cpp_source.html#l00038">check_scatter_shape_constraints()</a>.</p>
 
@@ -447,7 +449,7 @@ t = false</td>
 
 <p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00089">89</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00089">compose_map()</a>, <a class="el" href="def_8h_source.html#l01189">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l00528">mim::Def::var()</a>.</p>
+<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00089">compose_map()</a>, <a class="el" href="def_8h_source.html#l01188">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l00527">mim::Def::var()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00089">compose_map()</a>.</p>
 
@@ -485,7 +487,7 @@ t = false</td>
 
 <p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00026">26</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="affine_2autogen_8h_source.html#l00047">mim::plug::affine::add</a>, <a class="el" href="fuse_8cpp_source.html#l00026">injective_coord()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="affine_2autogen_8h_source.html#l00036">mim::plug::affine::mul</a>, <a class="el" href="affine_2autogen_8h_source.html#l00048">mim::plug::affine::sub</a>, and <a class="el" href="tuple_8h_source.html#l00370">mim::Extract::tuple()</a>.</p>
+<p class="reference">References <a class="el" href="affine_2autogen_8h_source.html#l00047">mim::plug::affine::add</a>, <a class="el" href="fuse_8cpp_source.html#l00026">injective_coord()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, <a class="el" href="affine_2autogen_8h_source.html#l00036">mim::plug::affine::mul</a>, <a class="el" href="affine_2autogen_8h_source.html#l00048">mim::plug::affine::sub</a>, and <a class="el" href="tuple_8h_source.html#l00370">mim::Extract::tuple()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00026">injective_coord()</a>, and <a class="el" href="fuse_8cpp_source.html#l00057">reads_injectively()</a>.</p>
 
@@ -541,16 +543,16 @@ t = false</td>
 <p>Is <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> the row-major reshape read <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a5846df9fb3d27c6dc67f0b23ac630b15">tensor.reshape_map</a> (s_in, s_out)</span> — the map that reads a PACKED producer (its output strip-mined to <span class="tt">s_in</span>) at the unpacked coordinates <span class="tt">s_out</span>? </p>
 <p>Decided by normalization: both <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a></span> and the canonical unpack map are applied to the same probe variable; the reduced bodies are hash-consed, so pointer equality decides alpha-equivalence. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00407">407</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00419">419</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00407">is_unpack_read()</a>.</p>
+<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00419">is_unpack_read()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00407">is_unpack_read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00419">is_unpack_read()</a>.</p>
 
 </div>
 </div>
-<a id="a87ae2db4a8ae283ef40100742e80a7e0" name="a87ae2db4a8ae283ef40100742e80a7e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87ae2db4a8ae283ef40100742e80a7e0">&#9670;&#160;</a></span>read_through()</h2>
+<a id="a037bac8df14fdd1049f5827b080369ec" name="a037bac8df14fdd1049f5827b080369ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a037bac8df14fdd1049f5827b080369ec">&#9670;&#160;</a></span>read_through()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -571,7 +573,12 @@ t = false</td>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>slot_map</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>slot_map</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>S</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -584,9 +591,47 @@ t = false</td>
 <p>If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> (reshape/transpose/slice/ flip/repeat lower to these) or a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6235acc9b61bb9b81ab0b3bfed8de8b9">tensor.broadcast</a></span> — returns its source and access map, to be composed behind the consuming slot's map. </p>
 <p>Such reads perform no computation, so reading through them needs neither an injectivity gate nor a consumer count. </p>
 
-<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00111">111</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00122">122</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8h_source.html#l00043">mim::plug::tensor::is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="affine_2autogen_8h_source.html#l00036">mim::plug::affine::mul</a>, and <a class="el" href="def_8h_source.html#l01189">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00043">mim::plug::tensor::is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, <a class="el" href="affine_2autogen_8h_source.html#l00036">mim::plug::affine::mul</a>, <a class="el" href="fuse_8cpp_source.html#l00109">reads_as_produced()</a>, and <a class="el" href="def_8h_source.html#l01188">mim::Def::type()</a>.</p>
+
+</div>
+</div>
+<a id="a93c51a2a066f04143d8c3483c3510d96" name="a93c51a2a066f04143d8c3483c3510d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c51a2a066f04143d8c3483c3510d96">&#9670;&#160;</a></span>reads_as_produced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::tensor::phase::reads_as_produced </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>S</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does a slot that declares <code class="param">value</code> in shape <code class="param">S</code> read it in the shape it is produced in? </p>
+<p>Size-1 axes collapse out of the type, so they may differ - and then their maps do not compose. </p>
+
+<p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00109">109</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, and <a class="el" href="fuse_8cpp_source.html#l00109">reads_as_produced()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00122">read_through()</a>, and <a class="el" href="fuse_8cpp_source.html#l00109">reads_as_produced()</a>.</p>
 
 </div>
 </div>
@@ -618,7 +663,7 @@ t = false</td>
 
 <p class="definition">Definition at line <a class="el" href="fuse_8cpp_source.html#l00057">57</a> of file <a class="el" href="fuse_8cpp_source.html">fuse.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00026">injective_coord()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="fuse_8cpp_source.html#l00057">reads_injectively()</a>, and <a class="el" href="def_8h_source.html#l00528">mim::Def::var()</a>.</p>
+<p class="reference">References <a class="el" href="fuse_8cpp_source.html#l00026">injective_coord()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, <a class="el" href="fuse_8cpp_source.html#l00057">reads_injectively()</a>, and <a class="el" href="def_8h_source.html#l00527">mim::Def::var()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="fuse_8cpp_source.html#l00057">reads_injectively()</a>.</p>
 

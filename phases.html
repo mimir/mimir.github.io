@@ -221,12 +221,7 @@ Analysis</h1>
 <li>and other simplifications already provided by the <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>.</li>
 </ul>
 <p>So if your abstract domain fits naturally into MimIR, you can often encode it directly as <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span>s</a> and store it in the analysis lattice.</p>
-<p>An <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> visits:</p>
-<ol type="1">
-<li>all registered annex roots, then</li>
-<li>all external mutables.</li>
-</ol>
-<p>During the first part, <a class="el" href="classmim_1_1Analysis.html#aec37998476295eb08d93ff605e866ddd" title="mim::Analysis::is_bootstrapping"><span class="tt">mim::Analysis::is_bootstrapping()</span></a> is <span class="tt">true</span>. During the second part, it is <span class="tt">false</span>.</p>
+<p>An <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> visits everything reachable from the external mutables. Axioms and mutable annexes other than <span class="tt">Lam</span>s are opaque; see <a class="el" href="#phases_annexes" title="Annexes">Annexes</a>.</p>
 <p>Typical usage:</p>
 <ul>
 <li>override <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652" title="mim::Rewriter::rewrite"><span class="tt">rewrite()</span></a>, <a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb" title="mim::Rewriter::rewrite_imm"><span class="tt">rewrite_imm()</span></a>, <a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112" title="mim::Rewriter::rewrite_mut"><span class="tt">rewrite_mut()</span></a>, or node-specific rewrite hooks,</li>
@@ -268,8 +263,8 @@ Handling of Mutables</h2>
 <p>When a <span class="tt">rewrite_imm_App</span> override propagates abstract values from call arguments into a callee's binder vars, it should seed those lattice entries first and then <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652" title="mim::Rewriter::rewrite"><span class="tt">rewrite()</span></a> the callee. This schedules the callee (or does nothing if it is already scheduled), so its body is walked later during the drain, after the seeded facts — and any joins from sibling call sites — are in place. <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice(concr, abstr)</span></a> conveniently pairs the two writes (lattice and rewriter map) that arise in this seeding pattern.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 Sparse Fixed-Point Iteration</h2>
-<p>A <b>full</b> round traverses the whole <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>: <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">start()</span></a> first runs <a class="el" href="classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f" title="mim::Analysis::prepare"><span class="tt">prepare()</span></a>, then rewrites all annex roots, drains the worklist, does the same for the external mutables, and finally runs <a class="el" href="classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d" title="mim::Analysis::finalize"><span class="tt">finalize()</span></a>. Whenever <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice(concr, abstr)</span></a> changes an entry it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate</span>s</a>, requesting another round, and records <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70" title="mim::Rewriter::curr_mut"><span class="tt">curr_mut()</span></a> as <em>dirty</em>.</p>
-<p>The first round, and each certification round described below, is full. A follow-up round is <b>sparse</b>: it re-drains only dirty mutables — plus everything reachable from them — instead of walking the whole World. At the start of a sparse round the accumulated lattice is replayed into the rewriter map, so a dirty mutable's body sees the substitutions its (non-revisited) producers installed in earlier rounds. An analysis can <a class="el" href="classmim_1_1Analysis.html#a69aa191fb0bc0c08851bb7c92f35879c" title="mim::Analysis::taint"><span class="tt">taint()</span></a> additional mutables when a change must re-visit more than the writer — e.g. SEO taints all call sites of a <span class="tt">Lam</span> whose abstract vars changed, which keeps its per-round join restart sound. A change that cannot be attributed to any mutable (during the annex walk or <a class="el" href="classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d" title="mim::Analysis::finalize"><span class="tt">finalize()</span></a>) forces the next round to be full.</p>
+<p>A <b>full</b> round traverses the whole <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>: <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">start()</span></a> first runs <a class="el" href="classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f" title="mim::Analysis::prepare"><span class="tt">prepare()</span></a>, then rewrites all external mutables, drains the worklist, and finally runs <a class="el" href="classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d" title="mim::Analysis::finalize"><span class="tt">finalize()</span></a>. Whenever <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice(concr, abstr)</span></a> changes an entry it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate</span>s</a>, requesting another round, and records <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70" title="mim::Rewriter::curr_mut"><span class="tt">curr_mut()</span></a> as <em>dirty</em>.</p>
+<p>The first round, and each certification round described below, is full. A follow-up round is <b>sparse</b>: it re-drains only dirty mutables — plus everything reachable from them — instead of walking the whole World. At the start of a sparse round the accumulated lattice is replayed into the rewriter map, so a dirty mutable's body sees the substitutions its (non-revisited) producers installed in earlier rounds. An analysis can <a class="el" href="classmim_1_1Analysis.html#a69aa191fb0bc0c08851bb7c92f35879c" title="mim::Analysis::taint"><span class="tt">taint()</span></a> additional mutables when a change must re-visit more than the writer — e.g. SEO taints all call sites of a <span class="tt">Lam</span> whose abstract vars changed, which keeps its per-round join restart sound. A change that cannot be attributed to any mutable (e.g. in <a class="el" href="classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d" title="mim::Analysis::finalize"><span class="tt">finalize()</span></a>) forces the next round to be full.</p>
 <p>Since dirt tracks <em>writers</em> — not readers — a sparse round may miss affected mutables. Hence, once sparse rounds quiesce, one final <b>full</b> round certifies the fixed point; if it discovers new facts, iteration continues sparsely from its dirt. Only full rounds run <a class="el" href="classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d" title="mim::Analysis::finalize"><span class="tt">finalize()</span></a>, so post-passes always see the complete abstract World. Use <a class="el" href="classmim_1_1Analysis.html#a496981c42113362621010d00370e84e7" title="mim::Analysis::make_dense"><span class="tt">make_dense()</span></a> to force whole-World rounds unconditionally.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
 Reset Between Iterations</h2>
@@ -290,11 +285,7 @@ RWPhase</h1>
 Execution Model</h2>
 <ol type="1">
 <li>optionally perform a fixed-point analysis with <a class="el" href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811" title="mim::RWPhase::analyze"><span class="tt">analyze()</span></a>,</li>
-<li>rewrite the old world roots:<ol type="a">
-<li>the annexes,</li>
-<li>the external mutables;</li>
-</ol>
-</li>
+<li>rewrite the external mutables of the old world;</li>
 <li>run <a class="el" href="classmim_1_1RWPhase.html#a297eed1dd2544c1c5ee0a4b815e944e8" title="mim::RWPhase::finalize"><span class="tt">finalize()</span></a>;</li>
 <li>swap the <b>old</b> and the <b>new</b> world.</li>
 </ol>
@@ -314,25 +305,24 @@ Analysis Results</h2>
 <p>Once <a class="el" href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811" title="mim::RWPhase::analyze"><span class="tt">analyze()</span></a> has run, the rewrite can query the analysis result through <a class="el" href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0" title="mim::RWPhase::lattice"><span class="tt">RWPhase::lattice()</span></a>.</p>
 <p><a class="el" href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0" title="mim::RWPhase::lattice"><span class="tt">RWPhase::lattice()</span></a> provides access to the analysis lattice for <b>old-world</b> <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span>s</a>. It returns the abstract value computed by the associated <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, or <span class="tt">nullptr</span> if no value is available.</p>
 <p>This is the standard way to communicate fixed-point analysis results into the subsequent rewrite.</p>
+<h2 class="doxsection"><a class="anchor" id="phases_annexes"></a>
+Annexes</h2>
+<p><a class="el" href="namespacemim.html#a60ee93398f76269a406c841b2bb2c306" title="mim::optimize"><span class="tt">optimize()</span></a> moves all annexes into the <a class="el" href="classmim_1_1Driver.html#aa8d76f003295fc6ed4ea146be0314c88" title="mim::Driver::library"><span class="tt">Driver::library()</span></a>; a <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> imports an annex on first use. An <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> does not rewrite an axiom or a mutable annex but resolves it to the annex with the same flags in the new world, which imports it unchanged on demand. So a phase never alters such an annex - its shape is what normalizers and backends rely on. An immutable annex is just its value and is rewritten like any other immutable.</p>
+<p>The exception is an annex <span class="tt">Lam</span>: it is code, so it passes through the phase like the rest of the program - as an ordinary <span class="tt">Lam</span>. A phase that wants to process a <span class="tt">Lam</span> it fetches itself - e.g. a <span class="tt">priv</span> <span class="tt">*_impl</span> it instantiates - builds the instance in <a class="el" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3" title="mim::RWPhase::old_world"><span class="tt">old_world()</span></a> and rewrites it (see <a class="el" href="classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html" title="mim::plug::tensor::phase::Lower"><span class="tt">tensor::phase::Lower</span></a>).</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
-Bootstrapping</h2>
-<p>Like <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, an <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> processes annex roots before externals.</p>
-<p>While annexes are being rewritten, <a class="el" href="classmim_1_1RWPhase.html#a8c1256f93cc63c1d8d0609e2aa474b51" title="mim::RWPhase::is_bootstrapping"><span class="tt">mim::RWPhase::is_bootstrapping()</span></a> is <span class="tt">true</span>.</p>
-<p>This matters because annexes may depend on one another. During bootstrapping, a rewrite that refers to another annex should look it up via <a class="el" href="classmim_1_1RWPhase.html#a66a84b65ed3d757e8d17754b234db8fe" title="mim::RWPhase::annex"><span class="tt">RWPhase::annex()</span></a>, which rewrites it on demand if it does not exist in the new world yet.</p>
+Externals</h2>
+<p><a class="el" href="classmim_1_1RWPhase.html#af324f7c09f5b26f88fbf3dad4e059b26" title="mim::RWPhase::rewrite_external"><span class="tt">rewrite_external()</span></a> is the hook for rewrites that must exempt the externals. An external is the program's interface to the outside, so a phase that reshapes definitions usually has to leave the externals themselves alone; <a class="el" href="classmim_1_1EtaConv.html" title="mim::EtaConv"><span class="tt">EtaConv</span></a> uses it so that an external keeps its η-shape.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
-Roots</h2>
-<p><a class="el" href="classmim_1_1RWPhase.html#ac966cc87cd5acc5f214190c1c3640e3a" title="mim::RWPhase::rewrite_root"><span class="tt">rewrite_root()</span></a> is the hook for rewrites that must exempt roots. An annex or an external is the program's interface to the outside, so a phase that reshapes definitions usually has to leave the roots themselves alone; <a class="el" href="classmim_1_1EtaConv.html" title="mim::EtaConv"><span class="tt">EtaConv</span></a> uses it so that an annex or external keeps its η-shape.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Deferred Rewrites</h2>
 <p>A rewrite hook may not be able to finish its work immediately. For example, a closure-converting phase must create a function stub eagerly so callers can refer to it, but can rewrite its body only after completing the enclosing scope. Push such work onto your own worklist and drain it in <a class="el" href="classmim_1_1RWPhase.html#a297eed1dd2544c1c5ee0a4b815e944e8" title="mim::RWPhase::finalize"><span class="tt">finalize()</span></a>, which runs after all roots have been walked but still before the two worlds are swapped (see <a class="el" href="classmim_1_1plug_1_1clos_1_1phase_1_1ClosConv.html" title="mim::plug::clos::phase::ClosConv"><span class="tt">clos::phase::ClosConv</span></a>).</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md102"></a>
 Cleanup</h2>
 <p><a class="el" href="classmim_1_1Cleanup.html" title="mim::Cleanup"><span class="tt">Cleanup</span></a> is simply an <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> with no custom rewrites. Because an <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> reconstructs only what is reachable from the world roots, rebuilding automatically eliminates dead and unreachable code.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 Reshaping Aggregates</h2>
 <p>A phase that drops or reorders the components of a mutable <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a> changes its number of ops, so it needs the index-mapping overload of <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub</span></a> together with <a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> - see <a class="el" href="rewriting.html" title="Rewriting">Reshaping Aggregates</a> in the Rewriting Guide. <a class="el" href="classmim_1_1SingleErasure.html" title="mim::SingleErasure"><span class="tt">SingleErasure</span></a> is the canonical user.</p>
 <p><a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> is useful on its own, though: dropping the parameters of a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> changes its <em>type</em> rather than its ops, so the SCCP transformation below only uses <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">gather</span></a> and <a class="el" href="classmim_1_1Sieve.html#a972de8bcd87a06fb1cb346aa0b5fa963" title="mim::Sieve::operator[]"><span class="tt">operator[]</span></a>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
 Typical Shape</h2>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyRWPhase : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1RWPhase.html">mim::RWPhase</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -345,7 +335,7 @@ Typical Shape</h2>
 <div class="line">        <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00378">phase.h:378</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00371">phase.h:371</a></div></div>
 </div><!-- fragment --><p>Run it with:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;MyRWPhase&gt;</a>(world);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_phase_man"></a>
@@ -359,7 +349,7 @@ PhaseMan</h1>
 <p>A fixed-point <a class="el" href="classmim_1_1PhaseMan.html" title="mim::PhaseMan"><span class="tt">PhaseMan</span></a> reruns the pipeline as long as at least one phase <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate</span>s</a>. Because a phase's run is a deterministic function of the <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>'s content, <a class="el" href="classmim_1_1PhaseMan.html" title="mim::PhaseMan"><span class="tt">PhaseMan</span></a> <b>skips</b> a phase when its last run was quiet and no later phase has changed the world. Consequently, tail iterations rerun only phases that may still make progress; the pipeline terminates without a final round that reruns every phase.</p>
 <p>Before a rerun, the phase is recreated from its original configuration. This prevents phase-local state from leaking across rounds unless the phase explicitly reconstructs it.</p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1PhaseMan.html" title="mim::PhaseMan"><span class="tt">PhaseMan</span></a> is the orchestration layer for classical phase pipelines.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 Typical Shape</h2>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> phases = <a class="code hl_typedef" href="namespacemim.html#ace9968a67fd836075490bf9fe9b62457">mim::Phases</a>();</div>
 <div class="line">phases.emplace_back(std::make_unique&lt;PhaseA&gt;(world));</div>
@@ -368,7 +358,7 @@ Typical Shape</h2>
 <div class="line"><a class="code hl_class" href="classmim_1_1PhaseMan.html">mim::PhaseMan</a> man(world, <a class="code hl_function" href="structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658">mim::Annex::base&lt;mim::plug::compile::phases&gt;</a>());</div>
 <div class="line">man.apply(<span class="comment">/*fixed_point=*/</span><span class="keyword">true</span>, std::move(phases));</div>
 <div class="line">man.run();</div>
-<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00522">phase.h:522</a></div></div>
+<div class="ttc" id="aclassmim_1_1PhaseMan_html"><div class="ttname"><a href="classmim_1_1PhaseMan.html">mim::PhaseMan</a></div><div class="ttdoc">Organizes several Phases into a pipeline.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00499">phase.h:499</a></div></div>
 <div class="ttc" id="anamespacemim_html_ace9968a67fd836075490bf9fe9b62457"><div class="ttname"><a href="namespacemim.html#ace9968a67fd836075490bf9fe9b62457">mim::Phases</a></div><div class="ttdeci">std::deque&lt; std::unique_ptr&lt; Phase &gt; &gt; Phases</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00020">phase.h:20</a></div></div>
 <div class="ttc" id="astructmim_1_1Annex_html_abb47b7da8a1e6cc0e8c2754b978b2658"><div class="ttname"><a href="structmim_1_1Annex.html#abb47b7da8a1e6cc0e8c2754b978b2658">mim::Annex::base</a></div><div class="ttdeci">static consteval flags_t base()</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00286">plugin.h:286</a></div></div>
 </div><!-- fragment --><p>Use a fixed-point pipeline when phases expose new optimization opportunities for one another.</p>
@@ -384,7 +374,7 @@ ClosedMutPhase</h1>
 <p>This is useful for local analyses or transformations naturally phrased as:</p>
 <dl class="section note"><dt>Note</dt><dd>For every reachable closed mutable, inspect or process it.</dd></dl>
 <p>You override <span class="tt">visit(M*)</span>, where <span class="tt">M</span> defaults to <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> but may be restricted to a particular mutable subtype.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
 Typical Shape</h2>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyClosedPhase : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a>&lt;Lam&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -396,7 +386,7 @@ Typical Shape</h2>
 <div class="line">        <span class="comment">// process each reachable closed Lam</span></div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00554">phase.h:554</a></div></div>
+<div class="ttc" id="aclassmim_1_1ClosedMutPhase_html"><div class="ttname"><a href="classmim_1_1ClosedMutPhase.html">mim::ClosedMutPhase</a></div><div class="ttdoc">Transitively visits all reachable, closed mutables in the World.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00531">phase.h:531</a></div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="phases_nest_phase"></a>
 NestPhase</h2>
 <p><a class="el" href="classmim_1_1NestPhase.html" title="mim::NestPhase"><span class="tt">NestPhase</span></a> builds on <a class="el" href="classmim_1_1ClosedMutPhase.html" title="mim::ClosedMutPhase"><span class="tt">ClosedMutPhase</span></a> and computes a <a class="el" href="classmim_1_1Nest.html" title="mim::Nest"><span class="tt">Nest</span></a> for each visited mutable.</p>
@@ -404,7 +394,7 @@ NestPhase</h2>
 <p>Instead of overriding <span class="tt">visit(M*)</span>, override:</p>
 <div class="fragment"><div class="line">visit(<span class="keyword">const</span> Nest&amp;)</div>
 </div><!-- fragment --><p>This is convenient for analyses that reason about nesting, dominance-like structure, or hierarchical regions.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 Example: SCCP</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
@@ -448,12 +438,12 @@ Example: SCCP</h1>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1Analysis_html"><div class="ttname"><a href="classmim_1_1Analysis.html">mim::Analysis</a></div><div class="ttdoc">Traverses the current World using Rewriter infrastructure while staying in the same world.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00151">phase.h:151</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html"><div class="ttname"><a href="classmim_1_1Analysis.html">mim::Analysis</a></div><div class="ttdoc">Traverses the current World using Rewriter infrastructure while staying in the same world.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00149">phase.h:149</a></div></div>
 <div class="ttc" id="aclassmim_1_1Analysis_html_afeae25f4ecab3e3812e9607f630a506f"><div class="ttname"><a href="classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f">mim::Analysis::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00077">phase.h:77</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a1e23f70a55de946d03c863586003862d"><div class="ttname"><a href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">mim::Phase::Analysis</a></div><div class="ttdeci">friend class Analysis</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00125">phase.h:125</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00081">phase.h:81</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_afeae25f4ecab3e3812e9607f630a506f"><div class="ttname"><a href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">mim::Phase::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00077">phase.h:77</a></div></div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00382">phase.h:382</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00375">phase.h:375</a></div></div>
 <div class="ttc" id="aclassmim_1_1SCCP_html_a06f56aa2ab4ac16e532627a558434c4a"><div class="ttname"><a href="classmim_1_1SCCP.html#a06f56aa2ab4ac16e532627a558434c4a">mim::SCCP::SCCP</a></div><div class="ttdeci">SCCP(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="sccp_8h_source.html#l00031">sccp.h:31</a></div></div>
 <div class="ttc" id="aclassmim_1_1SCCP_html_a5a8ae60909f1115e5609d01423e4e827"><div class="ttname"><a href="classmim_1_1SCCP.html#a5a8ae60909f1115e5609d01423e4e827">mim::SCCP::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *old_app) final</div><div class="ttdef"><b>Definition</b> <a href="sccp__transform_8cpp_source.html#l00005">sccp_transform.cpp:5</a></div></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00016">ast.h:16</a></div></div>
@@ -466,7 +456,7 @@ Example: SCCP</h1>
 <li>an outer <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> uses those facts to rebuild a simplified new world.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The implementation propagates not only constants but also arbitrary expressions.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
 Analysis</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -520,13 +510,13 @@ Analysis</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1Analysis_html_ad7c0e4db7456e9d3910876ce4db8180a"><div class="ttname"><a href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">mim::Analysis::lattice</a></div><div class="ttdeci">const auto &amp; lattice() const</div><div class="ttdoc">The whole map; used e.g. to diff two fixed-point runs.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00190">phase.h:190</a></div></div>
-<div class="ttc" id="aclassmim_1_1Analysis_html_aea34c4c2e764fd0fe97b3ba63299f42d"><div class="ttname"><a href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">mim::Analysis::pin</a></div><div class="ttdeci">bool pin(const Def *def)</div><div class="ttdoc">Monotonically forces def to ⊤ (keep as is).</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00261">phase.h:261</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_ad7c0e4db7456e9d3910876ce4db8180a"><div class="ttname"><a href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">mim::Analysis::lattice</a></div><div class="ttdeci">const auto &amp; lattice() const</div><div class="ttdoc">The whole map; used e.g. to diff two fixed-point runs.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00187">phase.h:187</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_aea34c4c2e764fd0fe97b3ba63299f42d"><div class="ttname"><a href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">mim::Analysis::pin</a></div><div class="ttdeci">bool pin(const Def *def)</div><div class="ttdoc">Monotonically forces def to ⊤ (keep as is).</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00258">phase.h:258</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html_ad2d55564ba0b3e0b9df6ad1f9905466d"><div class="ttname"><a href="classmim_1_1Lam.html#ad2d55564ba0b3e0b9df6ad1f9905466d">mim::Lam::isa_rewritable</a></div><div class="ttdeci">static Lam * isa_rewritable(const Def *def)</div><div class="ttdoc">Yields def as a mutable Lam, if it is_rewritable() and nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00193">lam.h:193</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00079">phase.h:79</a></div></div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html_ae4f4200bf0845a3f7110813c1f19d4a0"><div class="ttname"><a href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0">mim::RWPhase::lattice</a></div><div class="ttdeci">const Def * lattice(const Def *old_def) const</div><div class="ttdoc">Returns the abstract value computed by the associated Analysis for the given old-world Def,...</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00395">phase.h:395</a></div></div>
-<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00042">rewrite.cpp:42</a></div></div>
-<div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00298">world.cpp:298</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_ae4f4200bf0845a3f7110813c1f19d4a0"><div class="ttname"><a href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0">mim::RWPhase::lattice</a></div><div class="ttdeci">const Def * lattice(const Def *old_def) const</div><div class="ttdoc">Returns the abstract value computed by the associated Analysis for the given old-world Def,...</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00388">phase.h:388</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00043">rewrite.cpp:43</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00322">world.cpp:322</a></div></div>
 <div class="ttc" id="anamespacemim_html_a460ec790ce35ed5ebbbee20d96305c21"><div class="ttname"><a href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">mim::lam_of</a></div><div class="ttdeci">static Lam * lam_of(const Def *var)</div><div class="ttdoc">The Lam the abstract var belongs to; var is a Var or a Var projection.</div><div class="ttdef"><b>Definition</b> <a href="sccp__analysis_8cpp_source.html#l00006">sccp_analysis.cpp:6</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00100">def.h:100</a></div></div>
 <div class="ttc" id="anamespacemim_html_ad6a85076174e8ee770ec5ad1f3c06ea4"><div class="ttname"><a href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">mim::Bot</a></div><div class="ttdeci">TExt&lt; false &gt; Bot</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00039">union.h:39</a></div></div>
@@ -551,11 +541,11 @@ SSA without Dominance</h2>
 <p>The very first line of <span class="tt">propagate()</span> is a guard that has no counterpart in the lattice algebra:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (lam_of(var)-&gt;nests(def)) <span class="keywordflow">return</span> pin(var);</div>
 </div><!-- fragment --><p>It is the MimIR analogue of the <em>dominance</em> side condition that a classical SSA-based SCCP has to enforce, so it is worth spelling out what it replaces.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 Why the guard exists at all</h3>
 <p>Textbook SCCP only ever propagates <b>constants</b>. A constant is a literal: it has no operands and is available at <em>every</em> program point by construction. This is what makes classical SCCP so comfortable — specializing a call site to a constant is <em>always</em> valid, and there is simply no availability question to ask.</p>
 <p>MimIR's SCCP is more ambitious: it propagates <b>arbitrary expressions</b>, not just constants (this is essentially copy/expression propagation folded into the same fixed point). The moment you propagate a whole expression, you inherit an obligation constants let you ignore: the expression you substitute must actually be <em>available</em> at the point where it lands. The guard is exactly that availability check.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
 The classical picture</h3>
 <p>Textbook SCCP runs on a CFG in SSA form. Every value has exactly one definition, control flow is made explicit by basic blocks and edges, and φ-nodes reconcile the values that arrive along the different predecessor edges of a join block. SCCP assigns each SSA value a lattice cell (⊥ / a constant / ⊤) and, once the fixed point is reached, substitutes the discovered constant at <em>every</em> use of that value.</p>
 <p>That substitution is only sound because SSA comes with a <b>dominator tree</b>:</p>
@@ -564,7 +554,7 @@ The classical picture</h3>
 <li>a φ-operand must be available along its associated predecessor edge, i.e. its definition dominates the end of that predecessor block.</li>
 </ul>
 <p>Dominance is exactly the structural guarantee <em>"the value already exists at the program point where I want to use it"</em>. Without it, folding a value into a use could move a computation to a place where its operands are not yet defined.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 The MimIR picture</h3>
 <p>MimIR has no CFG, no basic blocks, and no separate φ instructions. Control flow is expressed in CPS: a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> <em>is</em> a basic block, its parameters <em>are</em> the φ-nodes, and every <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> of that <span class="tt">Lam</span> is one <em>predecessor edge</em> supplying the corresponding operands. So the SCCP analysis joins, per parameter, all the arguments flowing in from the call sites — precisely the φ-semantics — and stores the result in the <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice()</span></a>.</p>
 <p>What is missing is the dominator tree. Its role — deciding whether a candidate value is <em>available</em> at the point where it would be substituted — is taken over by the scope/nesting relation <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a>, computed structurally from free variables rather than from a precomputed CFG analysis. <span class="tt">L-&gt;nests(def)</span> holds iff <span class="tt">def</span> lives <em>strictly inside</em> <span class="tt">L</span>, i.e. it transitively depends on binders introduced below <span class="tt">L</span>; a <span class="tt">def</span> that only mentions things visible at <span class="tt">L</span>'s level or further out is <b>not</b> nested.</p>
@@ -575,7 +565,7 @@ The MimIR picture</h3>
 <li>If <span class="tt">L</span> does <em>not</em> nest <span class="tt">def</span>, the value is in scope at every call site — the analogue of <em>"the definition dominates all uses"</em> — and propagation is sound.</li>
 </ul>
 <p>In other words, where classical SCCP walks a dominator tree to certify availability, MimIR asks a single scope question: <em>is this value visible at the binder it would replace?</em> <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> is that availability oracle, and it falls straight out of the free-variable structure that MimIR maintains anyway — no auxiliary dominance computation required.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
 Why this is hard elsewhere</h3>
 <p>The availability obligation is cheap to <em>state</em> but awkward to <em>discharge</em> in most IRs, and this is where MimIR's structural answer stands out.</p>
 <ul>
@@ -583,7 +573,7 @@ Why this is hard elsewhere</h3>
 <li><b>Sea-of-nodes</b> deliberately refuses that commitment: data nodes float, and only control, φ, and memory nodes are pinned. That freedom is the entire point — it is what lets the optimizer move computations around without fighting a premature schedule. But it makes availability ill-posed: a floating expression has no location, so <em>"is it available here?"</em> is not even a well-formed question until the node is anchored. To answer it you must reason about where the expression's transitively control-pinned inputs would sit — that is, run (at least partial) global code motion and consult the CFG dominator relation. So copy/expression propagation drags the schedule — precisely what sea-of-nodes set out to avoid — back into the picture.</li>
 </ul>
 <p>MimIR sidesteps the dilemma without introducing syntactic scope: it is a <em>scopeless</em> IR. There are no lexical scoping brackets that a <span class="tt">Lam</span> opens over its body; instead, scope is <em>implicit</em>, emerging from how free variables nest. <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> reads availability straight off that implicit nesting — <span class="tt">L</span> nests <span class="tt">def</span> iff <span class="tt">def</span> transitively depends on a variable bound below <span class="tt">L</span> — so the containment a lexical language would spell out with explicit brackets is recovered purely from the free-variable structure MimIR maintains anyway. The query is structural and commits to no schedule, so MimIR gets a compelling, schedule-free answer to the availability question that dominance-based and sea-of-nodes IRs can only reconstruct by (partially) scheduling first.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
 A second dominance: contification</h3>
 <p>The availability guard is not the only place where a classical dominance computation fails to materialize.</p>
 <p><a href="https://dl.acm.org/doi/10.1145/507635.507639">Contification</a> turns a function that always returns to the same place into a continuation. Here is the canonical example of Fluet &amp; Weeks, transcribed into <a class="el" href="namespaceMim.html">Mim</a> with their original in the comment.</p>
@@ -605,7 +595,7 @@ A second dominance: contification</h3>
 <p>MimIR never makes the decision. A return continuation is an ordinary parameter, so the join described above already covers it: once every call site passes the same continuation, that parameter is propagated away and <span class="tt">g</span>'s body transfers control straight to it. Contification is not a separate transformation here — it is what expression propagation looks like when the propagated expression happens to be a <a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="mim::Pi::isa_cn"><span class="tt">Cn</span></a>.</p>
 <p>Placement then takes care of itself, because where a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> sits is a function of its free variables and not of anything a phase decides. Before propagation <span class="tt">g</span> is closed, so it belongs to the top level even when it was written inside <span class="tt">f</span>. After propagation <span class="tt">g</span> mentions <span class="tt">f</span>'s continuation, so it belongs inside <span class="tt">f</span>. Neither move is carried out by anything; both are readings of the very free-variable structure that <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> already queries for availability.</p>
 <p>The contrast with a scoped compiler is sharp. MLton runs contification <em>after</em> closure conversion, and Fluet &amp; Weeks describe their own loop example as moving <span class="tt">loop</span> back inside <span class="tt">sum</span> after closure conversion took it out — a dominator analysis reconstructing a nesting that an earlier phase destroyed. A scopeless IR never loses that nesting, so there is no hoisting-versus-contification phase ordering to get right and no oracle to consult.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
 Transformation</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -645,14 +635,14 @@ Transformation</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1Def_html_a6e757a3ae8e52ee5b9ebdaea32c6abd8"><div class="ttname"><a href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">mim::Def::var</a></div><div class="ttdeci">const Def * var(nat_t a, nat_t i) noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00528">def.h:528</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a6e757a3ae8e52ee5b9ebdaea32c6abd8"><div class="ttname"><a href="classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8">mim::Def::var</a></div><div class="ttdeci">const Def * var(nat_t a, nat_t i) noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00527">def.h:527</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html_a24231a9b2503394cd8a54128a043db1b"><div class="ttname"><a href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">mim::Lam::set</a></div><div class="ttdeci">Lam * set(Filter filter, const Def *body)</div><div class="ttdef"><b>Definition</b> <a href="lam_8cpp_source.html#l00028">lam.cpp:28</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a28a39b288a2f2de29cb8d7db113d99d6"><div class="ttname"><a href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">mim::Phase::invalidate</a></div><div class="ttdeci">void invalidate(bool todo=true)</div><div class="ttdoc">Signals that another round of fixed-point iteration is required, either as part of.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00098">phase.h:98</a></div></div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00431">phase.h:431</a></div></div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html_a902bfad4a10e60cd70a591357648f94e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a902bfad4a10e60cd70a591357648f94e">mim::RWPhase::is_top</a></div><div class="ttdeci">bool is_top(const Def *old_def) const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00403">phase.h:403</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00420">phase.h:420</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a902bfad4a10e60cd70a591357648f94e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a902bfad4a10e60cd70a591357648f94e">mim::RWPhase::is_top</a></div><div class="ttdeci">bool is_top(const Def *old_def) const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00396">phase.h:396</a></div></div>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_a832644b4df14efed752cba8e8568aca4"><div class="ttname"><a href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">mim::Rewriter::map</a></div><div class="ttdeci">virtual const Def * map(const Def *old_def, const Def *new_def)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00045">rewrite.h:45</a></div></div>
 <div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00123">tuple.h:123</a></div></div>
-<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00393">world.h:393</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00392">world.h:392</a></div></div>
 </div><!-- fragment --><p>Once the lattice is stable, the outer SCCP phase starts rewriting. During rewriting, it can query abstract values for old-world definitions through <a class="el" href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0" title="mim::RWPhase::lattice"><span class="tt">RWPhase::lattice()</span></a>.</p>
 <p>When it sees an application of a lambda whose parameters have propagated values, it rebuilds a specialized lambda:</p>
 <ul>
@@ -668,7 +658,7 @@ Transformation</h2>
 <li>rewrite into a new world using the computed facts,</li>
 <li>swap worlds.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
 Discussion</h2>
 <p>Separating SCCP into analysis and rewrite keeps both parts simple:</p>
 <ul>
@@ -679,7 +669,7 @@ Discussion</h2>
 </ul>
 <p>This separation is the main design pattern to follow for nontrivial optimizations.</p>
 <dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 130 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 Choosing the Right Base Class</h1>
 <p>A useful rule of thumb is:</p>
 <ul>
@@ -689,7 +679,7 @@ Choosing the Right Base Class</h1>
 <li>derive from <a class="el" href="classmim_1_1ClosedMutPhase.html" title="mim::ClosedMutPhase"><span class="tt">ClosedMutPhase</span></a> if you want to visit all reachable closed mutables,</li>
 <li>derive from <a class="el" href="classmim_1_1NestPhase.html" title="mim::NestPhase"><span class="tt">NestPhase</span></a> if that visit should come with a computed <a class="el" href="classmim_1_1Nest.html" title="mim::Nest"><span class="tt">Nest</span></a>.</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
 Recommended Design Pattern</h1>
 <p>For most optimization phases, the preferred structure is:</p>
 <ol type="1">
@@ -698,7 +688,7 @@ Recommended Design Pattern</h1>
 <li>write an <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> that consumes those facts while rebuilding the world.</li>
 </ol>
 <p>This keeps analyses and transformations cleanly separated and fits naturally with MimIR's rewriting-based infrastructure.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
 Minimal Examples</h1>
 <p>A simple whole-world rewrite phase:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>Simplify : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1RWPhase.html">mim::RWPhase</a> {</div>
@@ -714,7 +704,7 @@ Minimal Examples</h1>
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00316">def.h:316</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00315">def.h:315</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00043">world.h:43</a></div></div>
 </div><!-- fragment --><p>A simple analysis phase:</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>CountMutLams : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1Analysis.html">mim::Analysis</a> {</div>
@@ -732,18 +722,18 @@ Minimal Examples</h1>
 <div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a>(mut);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
-<div class="ttc" id="aclassmim_1_1Analysis_html_afa57ec108651407ce0e7fe30452b24c7"><div class="ttname"><a href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a></div><div class="ttdeci">Def * rewrite_mut(Def *) override</div><div class="ttdoc">Schedules mut for a breadth-first visit of its dependencies and records mut -&gt; mut.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00126">phase.cpp:126</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00629">def.h:629</a></div></div>
+<div class="ttc" id="aclassmim_1_1Analysis_html_afa57ec108651407ce0e7fe30452b24c7"><div class="ttname"><a href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a></div><div class="ttdeci">Def * rewrite_mut(Def *) override</div><div class="ttdoc">Schedules mut for a breadth-first visit of its dependencies and records mut -&gt; mut.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00122">phase.cpp:122</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00628">def.h:628</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00093">lam.h:93</a></div></div>
 </div><!-- fragment --><p>Using both:</p>
 <div class="fragment"><div class="line">CountMutLams analysis(world);</div>
 <div class="line">analysis.run();</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;Simplify&gt;</a>(world);</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
 Compilation Pipelines in M⁠im</h2>
 <p>You can also expose your custom phases as axioms in <a class="el" href="namespaceMim.html">Mim</a> via the <a class="el" href="compile.html" title="The compile Plugin">compile plugin</a> and build your own compilation pipeline. <a class="el" href="namespaceMim.html">Mim</a>'s default compilation pipeline is defined in the <a class="el" href="opt.html" title="The opt Plugin">opt plugin</a>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
 Summary</h1>
 <p>Phases are MimIR's main unit of compiler work.</p>
 <ul>
