@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uses_5flibdevice_0',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]]
+  ['uses_5flibdevice_0',['uses_libdevice',['../namespacemim_1_1plug_1_1nvptx.html#a5d48390321b1ab2b012cfbbd3023bb1a',1,'mim::plug::nvptx::DeviceEmitFlags']]]
 ];

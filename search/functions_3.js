@@ -28,7 +28,7 @@ var searchData=
   ['deps_25',['deps',['../classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d',1,'mim::Def']]],
   ['derive_26',['derive',['../classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html#a4aa615e87ed71d14209a566d2543e6f9',1,'mim::plug::autodiff::phase::Eval']]],
   ['derive_5f_27',['derive_',['../classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html#ae0e849b074a62c108c2b202cbd096bf4',1,'mim::plug::autodiff::phase::Eval']]],
-  ['deviceemitter_28',['DeviceEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html#aea261e4899dea47658f94745fc66254d',1,'mim::plug::ll_nvptx::DeviceEmitter']]],
+  ['deviceemitter_28',['DeviceEmitter',['../classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html#a7c4c246526857dc895578b293c18ee03',1,'mim::plug::nvptx::DeviceEmitter']]],
   ['dfa_29',['DFA',['../classautomaton_1_1DFA.html#ac93a51665758426fa9fd076430b60e6a',1,'automaton::DFA::DFA()=default'],['../classautomaton_1_1DFA.html#af156bb68080e09f0e0210401b7ce2d07',1,'automaton::DFA::DFA(const DFA &amp;)=delete']]],
   ['dfa2matcher_30',['dfa2matcher',['../dfa2matcher_8h.html#a1e0e672715b88560268b38e30500f895',1,'dfa2matcher(mim::World &amp;, const automaton::DFA &amp;, const mim::Def *):&#160;dfa2matcher.cpp'],['../dfa2matcher_8cpp.html#ac08b97e6d39b1db82f6238f662dc2dbd',1,'dfa2matcher(World &amp;w, const DFA &amp;dfa, const Def *n):&#160;dfa2matcher.cpp']]],
   ['dfanode_31',['DFANode',['../classautomaton_1_1DFANode.html#a92167a1ac6cae89eba1fabe128bdfb9b',1,'automaton::DFANode']]],

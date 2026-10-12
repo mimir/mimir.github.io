@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['f_0',['F',['../math.html#autotoc_md398',1,'']]],
+  ['f_0',['F',['../math.html#autotoc_md395',1,'']]],
   ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md551',1,'']]],
   ['field_20names_20of_20sigmas_2',['Field Names of Sigmas',['../langref.html#field',1,'']]],
   ['files_20and_20imports_3',['Files and Imports',['../langref.html#module',1,'']]],
@@ -19,11 +19,11 @@ var searchData=
   ['forms_16',['Literals and Basic Forms',['../langref.html#lit',1,'']]],
   ['fort_17',['ForT',['../btensor.html#autotoc_md258',1,'']]],
   ['four_20way_20sum_20type_20in_20one_20machine_20word_18',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md169',1,'']]],
-  ['free_19',['free',['../mem.html#autotoc_md431',1,'']]],
+  ['free_19',['free',['../mem.html#autotoc_md428',1,'']]],
   ['free_20asyn_20',['free(block) / free(asyn)',['../gpu.html#autotoc_md368',1,'']]],
   ['free_20block_20free_20asyn_21',['free(block) / free(asyn)',['../gpu.html#autotoc_md368',1,'']]],
   ['free_20variables_22',['Free Variables',['../dev.html#free_vars',1,'']]],
-  ['fresh_23',['fresh',['../mem.html#autotoc_md427',1,'']]],
+  ['fresh_23',['fresh',['../mem.html#autotoc_md424',1,'']]],
   ['function_20types_24',['Function Types',['../langref.html#autotoc_md74',1,'']]],
   ['functions_20and_20continuations_25',['Functions and Continuations',['../langref.html#autotoc_md67',1,'Functions and Continuations'],['../tutorial.html#autotoc_md195',1,'Functions and Continuations']]],
   ['functions_20and_20types_26',['Summary: Functions and Types',['../langref.html#autotoc_md70',1,'']]],

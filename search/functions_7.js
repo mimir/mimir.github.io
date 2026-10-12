@@ -12,5 +12,5 @@ var searchData=
   ['head_9',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB']]],
   ['holeexpr_10',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
   ['hook_11',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
-  ['hostemitter_12',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab533f6d9e904301676ba050227e3a364',1,'mim::plug::ll_nvptx::HostEmitter']]]
+  ['hostemitter_12',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter']]]
 ];

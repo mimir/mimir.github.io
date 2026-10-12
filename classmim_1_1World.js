@@ -78,7 +78,6 @@ var classmim_1_1World =
     [ "fuse", "classmim_1_1World.html#a724cc0059d2985fe81ee79337835b838", null ],
     [ "get_loc", "classmim_1_1World.html#a9bd6d16e46909817c454c545ecd86496", null ],
     [ "gid2def", "classmim_1_1World.html#a8166ab5122fb1a299072eac68286b3a8", null ],
-    [ "global", "classmim_1_1World.html#aa7073d8ba047bdfc41a83b34a90920ba", null ],
     [ "implicit_app", "classmim_1_1World.html#a85051566b369d3fb7b471fee581fc861", null ],
     [ "implicit_app", "classmim_1_1World.html#a8834efb8c3a5e984488387e102515a13", null ],
     [ "implicit_app", "classmim_1_1World.html#ab7b9b13e053650aa1201651a383fa28c", null ],

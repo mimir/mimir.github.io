@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md433',1,'']]],
-  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md424',1,'']]],
+  ['w_20o_20side_20effects_0',['Operations w/o Side Effects',['../mem.html#autotoc_md430',1,'']]],
+  ['w_20side_20effects_1',['Operations w/ Side Effects',['../mem.html#autotoc_md421',1,'']]],
   ['way_20sum_20type_20in_20one_20machine_20word_2',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md169',1,'']]],
   ['what_20about_20rust_3',['What about Rust?',['../md_docs_2why-cpp.html#autotoc_md183',1,'']]],
   ['what_20the_20c_20implementation_20actually_20relies_20on_4',['What the C++ implementation actually relies on',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],

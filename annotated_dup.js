@@ -114,17 +114,17 @@ var annotated_dup =
           [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
           [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ]
         ] ],
-        [ "ll_nvptx", "namespacemim_1_1plug_1_1ll__nvptx.html", [
-          [ "DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx_structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags_dup" ],
-          [ "DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter" ],
-          [ "Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", "classmim_1_1plug_1_1ll__nvptx_1_1Emit" ],
-          [ "HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter" ]
-        ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [
             [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ],
             [ "SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO" ]
           ] ]
+        ] ],
+        [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
+          [ "DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx.html#structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx_structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags_dup" ],
+          [ "DeviceEmitter", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter" ],
+          [ "Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", "classmim_1_1plug_1_1nvptx_1_1Emit" ],
+          [ "HostEmitter", "classmim_1_1plug_1_1nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1nvptx_1_1HostEmitter" ]
         ] ],
         [ "regex", "namespacemim_1_1plug_1_1regex.html", [
           [ "app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", "structmim_1_1plug_1_1regex_1_1app__range" ],
@@ -168,7 +168,6 @@ var annotated_dup =
       [ "Flags", "structmim_1_1Flags.html", "structmim_1_1Flags" ],
       [ "GIDHash", "structmim_1_1GIDHash.html", "structmim_1_1GIDHash" ],
       [ "GIDLt", "structmim_1_1GIDLt.html", "structmim_1_1GIDLt" ],
-      [ "Global", "classmim_1_1Global.html", "classmim_1_1Global" ],
       [ "Hole", "classmim_1_1Hole.html", "classmim_1_1Hole" ],
       [ "Idx", "classmim_1_1Idx.html", "classmim_1_1Idx" ],
       [ "Importer", "classmim_1_1Importer.html", "classmim_1_1Importer" ],

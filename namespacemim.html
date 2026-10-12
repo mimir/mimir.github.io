@@ -223,7 +223,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiler switches that must be saved and looked up in later phases of compilation.  <a href="structmim_1_1Flags.html#details">More...</a><br /></td></tr>
 <tr class="memitem:GIDHash" id="r_GIDHash"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1GIDHash.html">GIDHash</a></td></tr>
 <tr class="memitem:GIDLt" id="r_GIDLt"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1GIDLt.html">GIDLt</a></td></tr>
-<tr class="memitem:Global" id="r_Global"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Global.html">Global</a></td></tr>
 <tr class="memitem:Hole" id="r_Hole"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Hole.html">Hole</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This node is a hole in the IR that is inferred by its context later on.  <a href="classmim_1_1Hole.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Idx" id="r_Idx"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Idx.html">Idx</a></td></tr>
@@ -531,8 +530,6 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#afb12dbffaaa27bca46f171517d96256da5a92344ee95acf10c31901b36418be77">Var</a>
 , <br />
-&#160;&#160;<a class="el" href="#afb12dbffaaa27bca46f171517d96256da4cc6684df7b4a92b1dec6fce3264fac8">Global</a>
-, <br />
 &#160;&#160;<a class="el" href="#afb12dbffaaa27bca46f171517d96256daf56ec2ab97d604832d90f6394e3f341f">Proxy</a>
 , <br />
 &#160;&#160;<a class="el" href="#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988">Hole</a>
@@ -629,7 +626,7 @@ Enums that classify certain aspects of Defs.</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memdesc:ad3c9308ec5430fd41d4aab5d38e3e08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classifies whether a <a class="el" href="#afb12dbffaaa27bca46f171517d96256d" title="mim::Node"><span class="tt">Node</span></a> may occur as a <em>mutable</em>, an <em>immutable</em>, or both.  <a href="#ad3c9308ec5430fd41d4aab5d38e3e08d">More...</a><br /></td></tr>
-<tr class="memitem:ab5f8c3cd104922822656e5d29311f0dd" id="r_ab5f8c3cd104922822656e5d29311f0dd"><td class="memItemLeft">static constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#ab5f8c3cd104922822656e5d29311f0dd">Num_Nodes</a> = size_t(0) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1)</td></tr>
+<tr class="memitem:ab5f8c3cd104922822656e5d29311f0dd" id="r_ab5f8c3cd104922822656e5d29311f0dd"><td class="memItemLeft">static constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#ab5f8c3cd104922822656e5d29311f0dd">Num_Nodes</a> = size_t(0) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1)</td></tr>
 <tr class="memitem:aba9b8f07925b0b13adb89a9101a9412b" id="r_aba9b8f07925b0b13adb89a9101a9412b"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#aba9b8f07925b0b13adb89a9101a9412b">is_mut_node</a> (<a class="el" href="#afb12dbffaaa27bca46f171517d96256d">Node</a> node) noexcept</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
@@ -656,7 +653,7 @@ Plugin Interface</h2></td></tr>
 <div class="textblock"><p>Options for <a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a>, <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a>, and <a class="el" href="classmim_1_1Nest.html#a17b2576561048e72873a99fa51fc55bd">Nest::dot</a>. </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Def.html#a682616cb73faafe983a645636bf4790f">Def::dot</a> and <a class="el" href="classmim_1_1World.html#a6bd62c6d2c2cc43c70af81daea2f4f7a" title="Dumps DOT to os, configured via cfg (see DotConfig).">World::dot</a> honor <a class="el" href="#a472ea1eba4d59fb1743c2087de458c1b" title="Maximum recursion depth.">DotConfig::max</a>. <a class="el" href="classmim_1_1Nest.html#a17b2576561048e72873a99fa51fc55bd">Nest::dot</a> only honors <a class="el" href="#a8dce87987956b9c3e2f54dd1a796cbdf" title="Drop the white background and lighten the edges for a dark backdrop.">DotConfig::dark</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00267">267</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00265">265</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -840,7 +837,7 @@ Address of the symbol. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00097">97</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00095">95</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -858,7 +855,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00095">95</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00093">93</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +871,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00098">98</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00096">96</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -890,7 +887,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00096">96</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00094">94</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -906,7 +903,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00100">100</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00098">98</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1144,7 +1141,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00109">109</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00107">107</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1162,7 +1159,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00107">107</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00105">105</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1175,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00110">110</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00108">108</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1194,7 +1191,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00108">108</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00106">106</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1242,7 +1239,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00122">122</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00120">120</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1514,7 +1511,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00118">118</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00116">116</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1532,7 +1529,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00117">117</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00115">115</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1548,7 +1545,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00119">119</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00117">117</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1684,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00169">169</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00167">167</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1725,7 +1722,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00178">178</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00176">176</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1758,7 +1755,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00190">190</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00188">188</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1785,7 +1782,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 <p>The <a class="el" href="#afb12dbffaaa27bca46f171517d96256d">Node</a>s that may be <em>mutable</em>, with the same values as their <a class="el" href="#afb12dbffaaa27bca46f171517d96256d">Node</a>. </p>
 <p>A switch over <a class="el" href="classmim_1_1Def.html#aaf5f4937b7ce6cf9b72a9b2a6300d998" title="node() of a Def whose Node may be mutable, whether this one is or not; see MutNode.">Def::mut_node</a> without a <span class="tt">default</span> must handle each of them, so a new one breaks the build there. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00139">139</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00137">137</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1812,7 +1809,6 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4" name="afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4"></a>Lit&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849" name="afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849"></a>Axm&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256da5a92344ee95acf10c31901b36418be77" name="afb12dbffaaa27bca46f171517d96256da5a92344ee95acf10c31901b36418be77"></a>Var&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256da4cc6684df7b4a92b1dec6fce3264fac8" name="afb12dbffaaa27bca46f171517d96256da4cc6684df7b4a92b1dec6fce3264fac8"></a>Global&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256daf56ec2ab97d604832d90f6394e3f341f" name="afb12dbffaaa27bca46f171517d96256daf56ec2ab97d604832d90f6394e3f341f"></a>Proxy&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988" name="afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988"></a>Hole&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256daa1fa27779242b4902f7ae3bdd5c6d508" name="afb12dbffaaa27bca46f171517d96256daa1fa27779242b4902f7ae3bdd5c6d508"></a>Type&#160;</td><td class="fielddoc"></td></tr>
@@ -1845,7 +1841,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 <tr><td class="fieldname"><a id="afb12dbffaaa27bca46f171517d96256da3c81cbbd361d97d7021798df6ff50939" name="afb12dbffaaa27bca46f171517d96256da3c81cbbd361d97d7021798df6ff50939"></a>Idx&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00127">127</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00125">125</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -1903,11 +1899,11 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00268">268</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00267">267</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00268">any_free_vars()</a>, <a class="el" href="def_8h_source.html#l00628">mim::Def::isa_mut()</a>, <a class="el" href="def_8h_source.html#l00555">mim::Def::local_muts()</a>, and <a class="el" href="def_8h_source.html#l00562">mim::Def::local_vars()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00267">any_free_vars()</a>, <a class="el" href="def_8h_source.html#l00626">mim::Def::isa_mut()</a>, <a class="el" href="def_8h_source.html#l00553">mim::Def::local_muts()</a>, and <a class="el" href="def_8h_source.html#l00560">mim::Def::local_vars()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00268">any_free_vars()</a>, <a class="el" href="def_8cpp_source.html#l00278">mim::Def::has_free_var()</a>, <a class="el" href="def_8cpp_source.html#l00282">mim::Def::has_free_vars()</a>, and <a class="el" href="def_8cpp_source.html#l00286">mim::Def::has_free_vars_in()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00267">any_free_vars()</a>, <a class="el" href="def_8cpp_source.html#l00277">mim::Def::has_free_var()</a>, <a class="el" href="def_8cpp_source.html#l00281">mim::Def::has_free_vars()</a>, and <a class="el" href="def_8cpp_source.html#l00285">mim::Def::has_free_vars_in()</a>.</p>
 
 </div>
 </div>
@@ -1949,7 +1945,7 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 
 <p class="reference">References <a class="el" href="plugin_8h_source.html#l00084">arg_bool()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00084">arg_bool()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00018">mim::plug::compile::normalize_aggr()</a>, and <a class="el" href="ll__nvptx_8cpp_source.html#l00158">mim::plug::ll_nvptx::Emit::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00084">arg_bool()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00018">mim::plug::compile::normalize_aggr()</a>, and <a class="el" href="nvptx_8cpp_source.html#l00158">mim::plug::nvptx::Emit::start()</a>.</p>
 
 </div>
 </div>
@@ -1980,7 +1976,7 @@ template&lt;class... Keys&gt; </div>
 
 <p class="reference">References <a class="el" href="plugin_8h_source.html#l00099">arg_flag()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00099">arg_flag()</a>, and <a class="el" href="ll__nvptx_8cpp_source.html#l00158">mim::plug::ll_nvptx::Emit::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00099">arg_flag()</a>, and <a class="el" href="nvptx_8cpp_source.html#l00158">mim::plug::nvptx::Emit::start()</a>.</p>
 
 </div>
 </div>
@@ -2011,7 +2007,7 @@ template&lt;class... Keys&gt; </div>
 
 <p class="reference">References <a class="el" href="plugin_8h_source.html#l00075">arg_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00075">arg_value()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">mim::plug::tensor::normalize_vec_width()</a>, <a class="el" href="ll_8cpp_source.html#l00032">mim::plug::ll::Emit::start()</a>, <a class="el" href="ll__nvptx_8cpp_source.html#l00158">mim::plug::ll_nvptx::Emit::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plugin_8h_source.html#l00075">arg_value()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">mim::plug::tensor::normalize_vec_width()</a>, <a class="el" href="ll_8cpp_source.html#l00032">mim::plug::ll::Emit::start()</a>, <a class="el" href="nvptx_8cpp_source.html#l00158">mim::plug::nvptx::Emit::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
 
 </div>
 </div>
@@ -2042,11 +2038,11 @@ template&lt;class... Keys&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00340">340</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00336">336</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="check_8cpp_source.html#l00340">drop_self()</a>, <a class="el" href="world_8cpp_source.html#l00254">mim::World::umax()</a>, <a class="el" href="def_8h_source.html#l00938">mim::UMax::Univ</a>, and <a class="el" href="def_8h_source.html#l01174">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="check_8cpp_source.html#l00336">drop_self()</a>, <a class="el" href="world_8cpp_source.html#l00254">mim::World::umax()</a>, <a class="el" href="def_8h_source.html#l00936">mim::UMax::Univ</a>, and <a class="el" href="def_8h_source.html#l01137">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="check_8cpp_source.html#l00340">drop_self()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="check_8cpp_source.html#l00336">drop_self()</a>.</p>
 
 </div>
 </div>
@@ -2647,7 +2643,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00200">200</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00129">Hole</a>, <a class="el" href="check_8cpp_source.html#l00200">is_flex()</a>, <a class="el" href="tuple_8h_source.html#l00019">mim::Prod::isa_node()</a>, <a class="el" href="tuple_8h_source.html#l00273">mim::Seq::isa_node()</a>, <a class="el" href="def_8h_source.html#l00339">mim::Def::node()</a>, <a class="el" href="def_8h_source.html#l00129">Top</a>, and <a class="el" href="def_8h_source.html#l00129">UMax</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00127">Hole</a>, <a class="el" href="check_8cpp_source.html#l00200">is_flex()</a>, <a class="el" href="tuple_8h_source.html#l00019">mim::Prod::isa_node()</a>, <a class="el" href="tuple_8h_source.html#l00273">mim::Seq::isa_node()</a>, <a class="el" href="def_8h_source.html#l00337">mim::Def::node()</a>, <a class="el" href="def_8h_source.html#l00127">Top</a>, and <a class="el" href="def_8h_source.html#l00127">UMax</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="check_8cpp_source.html#l00200">is_flex()</a>.</p>
 
@@ -2676,11 +2672,11 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00145">145</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00143">143</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tok_8h_source.html#l00052">CODE</a>, <a class="el" href="def_8h_source.html#l00145">is_mut_node()</a>, and <a class="el" href="def_8h_source.html#l00066">MIM_MUT_NODE</a>.</p>
+<p class="reference">References <a class="el" href="tok_8h_source.html#l00052">CODE</a>, <a class="el" href="def_8h_source.html#l00143">is_mut_node()</a>, and <a class="el" href="def_8h_source.html#l00065">MIM_MUT_NODE</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00145">is_mut_node()</a>, <a class="el" href="def_8h_source.html#l00341">mim::Def::mut_node()</a>, and <a class="el" href="def_8cpp_source.html#l00590">mim::Def::reduction_offset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00143">is_mut_node()</a>, <a class="el" href="def_8h_source.html#l00339">mim::Def::mut_node()</a>, and <a class="el" href="def_8cpp_source.html#l00588">mim::Def::reduction_offset()</a>.</p>
 
 </div>
 </div>
@@ -2712,7 +2708,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="scalarize_8cpp_source.html#l00019">19</a> of file <a class="el" href="scalarize_8cpp_source.html">scalarize.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00041">mim::Pi::codom()</a>, <a class="el" href="lam_8h_source.html#l00040">mim::Pi::dom()</a>, <a class="el" href="scalarize_8cpp_source.html#l00019">is_polymorphic_arg()</a>, <a class="el" href="def_8h_source.html#l01188">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00279">mim::App::uncurry_callee()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00041">mim::Pi::codom()</a>, <a class="el" href="lam_8h_source.html#l00040">mim::Pi::dom()</a>, <a class="el" href="scalarize_8cpp_source.html#l00019">is_polymorphic_arg()</a>, <a class="el" href="def_8h_source.html#l01151">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00279">mim::App::uncurry_callee()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="scalarize_8cpp_source.html#l00019">is_polymorphic_arg()</a>.</p>
 
@@ -2774,7 +2770,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="beta__red_8cpp_source.html#l00005">5</a> of file <a class="el" href="beta__red_8cpp_source.html">beta_red.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00106">mim::Lam::body()</a>, <a class="el" href="def_8cpp_source.html#l00278">mim::Def::has_free_var()</a>, <a class="el" href="def_8h_source.html#l00531">mim::Def::has_var()</a>, <a class="el" href="beta__red_8cpp_source.html#l00005">is_trivial()</a>, and <a class="el" href="lam_8h_source.html#l00138">mim::Lam::ret_var()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00106">mim::Lam::body()</a>, <a class="el" href="def_8cpp_source.html#l00277">mim::Def::has_free_var()</a>, <a class="el" href="def_8h_source.html#l00529">mim::Def::has_var()</a>, <a class="el" href="beta__red_8cpp_source.html#l00005">is_trivial()</a>, and <a class="el" href="lam_8h_source.html#l00138">mim::Lam::ret_var()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="beta__red_8cpp_source.html#l00005">is_trivial()</a>.</p>
 
@@ -2797,7 +2793,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00113">113</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00113">is_unit()</a>, <a class="el" href="world_8cpp_source.html#l00398">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l01188">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01174">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00113">is_unit()</a>, <a class="el" href="world_8cpp_source.html#l00398">mim::World::sigma()</a>, <a class="el" href="def_8h_source.html#l01151">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01137">mim::Def::world()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tuple_8cpp_source.html#l00113">is_unit()</a>.</p>
 
@@ -2901,7 +2897,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="check_8cpp_source.html#l00190">190</a> of file <a class="el" href="check_8cpp_source.html">check.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="check_8cpp_source.html#l00190">isa_flex_rank()</a>, <a class="el" href="def_8h_source.html#l00622">mim::Def::isa_imm()</a>, and <a class="el" href="check_8h_source.html#l00053">mim::Hole::isa_unset()</a>.</p>
+<p class="reference">References <a class="el" href="check_8cpp_source.html#l00190">isa_flex_rank()</a>, <a class="el" href="def_8h_source.html#l00620">mim::Def::isa_imm()</a>, and <a class="el" href="check_8h_source.html#l00053">mim::Hole::isa_unset()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="check_8cpp_source.html#l00190">isa_flex_rank()</a>.</p>
 
@@ -2967,7 +2963,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="sccp__analysis_8cpp_source.html#l00006">6</a> of file <a class="el" href="sccp__analysis_8cpp_source.html">sccp_analysis.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00637">mim::Def::as_mut()</a>, and <a class="el" href="sccp__analysis_8cpp_source.html#l00006">lam_of()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00635">mim::Def::as_mut()</a>, and <a class="el" href="sccp__analysis_8cpp_source.html#l00006">lam_of()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="sccp__analysis_8cpp_source.html#l00006">lam_of()</a>.</p>
 
@@ -3024,7 +3020,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00030">30</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00129">Hole</a>, <a class="el" href="def_8h_source.html#l00171">Mut</a>, <a class="el" href="def_8cpp_source.html#l00030">node2dep()</a>, <a class="el" href="def_8h_source.html#l00170">None</a>, <a class="el" href="def_8h_source.html#l00129">Proxy</a>, and <a class="el" href="def_8h_source.html#l00129">Var</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00127">Hole</a>, <a class="el" href="def_8h_source.html#l00169">Mut</a>, <a class="el" href="def_8cpp_source.html#l00030">node2dep()</a>, <a class="el" href="def_8h_source.html#l00168">None</a>, <a class="el" href="def_8h_source.html#l00127">Proxy</a>, and <a class="el" href="def_8h_source.html#l00127">Var</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00106">mim::Def::Def()</a>, <a class="el" href="def_8cpp_source.html#l00120">mim::Def::Def()</a>, <a class="el" href="def_8cpp_source.html#l00043">mim::Def::Def()</a>, and <a class="el" href="def_8cpp_source.html#l00030">node2dep()</a>.</p>
 
@@ -3319,7 +3315,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="optimize_8cpp_source.html#l00008">8</a> of file <a class="el" href="optimize_8cpp_source.html">optimize.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00037">mim::Phase::apply()</a>, <a class="el" href="world_8h_source.html#l00106">mim::World::driver()</a>, <a class="el" href="world_8h_source.html#l00279">mim::World::externals()</a>, <a class="el" href="def_8cpp_source.html#l00620">mim::Def::internalize()</a>, <a class="el" href="world_8cpp_source.html#l00214">mim::World::log()</a>, <a class="el" href="driver_8cpp_source.html#l00141">mim::Driver::move_to_library()</a>, <a class="el" href="world_8h_source.html#l00187">mim::World::Externals::mutate()</a>, <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>, <a class="el" href="driver_8h_source.html#l00210">mim::Driver::phase()</a>, <a class="el" href="world_8cpp_source.html#l00218">mim::World::sym()</a>, <a class="el" href="def_8h_source.html#l01188">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00280">mim::App::uncurry_callee()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00037">mim::Phase::apply()</a>, <a class="el" href="world_8h_source.html#l00106">mim::World::driver()</a>, <a class="el" href="world_8h_source.html#l00279">mim::World::externals()</a>, <a class="el" href="def_8cpp_source.html#l00617">mim::Def::internalize()</a>, <a class="el" href="world_8cpp_source.html#l00214">mim::World::log()</a>, <a class="el" href="driver_8cpp_source.html#l00141">mim::Driver::move_to_library()</a>, <a class="el" href="world_8h_source.html#l00187">mim::World::Externals::mutate()</a>, <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>, <a class="el" href="driver_8h_source.html#l00210">mim::Driver::phase()</a>, <a class="el" href="world_8cpp_source.html#l00218">mim::World::sym()</a>, <a class="el" href="def_8h_source.html#l01151">mim::Def::type()</a>, and <a class="el" href="lam_8h_source.html#l00280">mim::App::uncurry_callee()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="optimize_8cpp_source.html#l00008">optimize()</a>.</p>
 
@@ -3362,11 +3358,11 @@ template&lt;class Id&gt; </div>
 <p>Appends the mutables reachable from <code class="param">mut</code> via <a class="el" href="classmim_1_1Def.html#a20e9e09e55fc9b46a6f74423f2c5d35d">Def::deps</a> / <a class="el" href="classmim_1_1Def.html#a8a6a0861bea1acfecbf8e2260774b212" title="Mutables reachable by following immutable deps(); mut-&gt;local_muts() is by definition the set { mut }...">Def::local_muts</a> to <code class="param">res</code> in post-order: callees first, so a name is always bound before its uses. </p>
 <p><code class="param">descend</code> picks the mutables to walk through, <code class="param">collect</code> those that land in <code class="param">res</code>. <code class="param">done</code> is passed in so that several roots share one traversal. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01224">1224</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01187">1187</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00480">mim::Def::deps()</a>, and <a class="el" href="def_8h_source.html#l01224">post_order()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00479">mim::Def::deps()</a>, and <a class="el" href="def_8h_source.html#l01187">post_order()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l01058">mim::World::for_each()</a>, <a class="el" href="def_8h_source.html#l01224">post_order()</a>, and <a class="el" href="schedule_8cpp_source.html#l00103">mim::Scheduler::schedule()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l01058">mim::World::for_each()</a>, <a class="el" href="def_8h_source.html#l01187">post_order()</a>, and <a class="el" href="schedule_8cpp_source.html#l00103">mim::Scheduler::schedule()</a>.</p>
 
 </div>
 </div>
@@ -3517,7 +3513,7 @@ template&lt;class Id&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="tuple_8cpp_source.html#l00115">115</a> of file <a class="el" href="tuple_8cpp_source.html">tuple.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00606">mim::Def::arity()</a>, <a class="el" href="def_8h_source.html#l01015">mim::Lit::isa()</a>, <a class="el" href="def_8cpp_source.html#l00635">mim::Def::proj()</a>, <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>, and <a class="el" href="def_8h_source.html#l01174">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00603">mim::Def::arity()</a>, <a class="el" href="def_8h_source.html#l01013">mim::Lit::isa()</a>, <a class="el" href="def_8cpp_source.html#l00632">mim::Def::proj()</a>, <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>, and <a class="el" href="def_8h_source.html#l01137">mim::Def::world()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="compile_8cpp_source.html#l00038">Named::apply()</a>, <a class="el" href="refly_2normalizers_8cpp_source.html#l00081">mim::plug::refly::normalize_check()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00026">mim::plug::compile::normalize_cond()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00009">mim::plug::compile::normalize_is_loaded()</a>, and <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>.</p>
 
@@ -3599,11 +3595,11 @@ template&lt;class Id&gt; </div>
 <p><a class="el" href="classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96" title="Yields the type of this Def and builds a new Type (UInc n) if necessary.">Def::unfold_type</a> of <code class="param">def</code> for a diagnostic - <a class="el" href="classmim_1_1Univ.html">Univ</a> is the one <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> that has no type at all. </p>
 <p>Streams lazily so that it still renders under the <a class="el" href="classmim_1_1PlainNames.html" title="Renders Defs with their plain Def::sym instead of Def::unique_name while alive.">PlainNames</a> guard Error::msg formats within. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01213">1213</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l01176">1176</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01213">type_of()</a>, and <a class="el" href="def_8cpp_source.html#l00463">mim::Def::unfold_type()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01176">type_of()</a>, and <a class="el" href="def_8cpp_source.html#l00462">mim::Def::unfold_type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00322">mim::World::app()</a>, <a class="el" href="check_8cpp_source.html#l00480">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00464">mim::Def::check()</a>, <a class="el" href="emit_8cpp_source.html#l00652">mim::ast::MatchExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00481">mim::ast::PrefixExpr::emit_()</a>, <a class="el" href="world_8cpp_source.html#l00829">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00844">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00864">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l00971">mim::World::name()</a>, <a class="el" href="world_8cpp_source.html#l00739">mim::World::seq()</a>, <a class="el" href="world_8cpp_source.html#l00981">mim::World::struc()</a>, <a class="el" href="world_8cpp_source.html#l00408">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00225">mim::World::type()</a>, <a class="el" href="def_8h_source.html#l01213">type_of()</a>, <a class="el" href="world_8cpp_source.html#l00235">mim::World::uinc()</a>, <a class="el" href="world_8cpp_source.html#l00254">mim::World::umax()</a>, and <a class="el" href="world_8cpp_source.html#l00959">mim::World::unwrap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00322">mim::World::app()</a>, <a class="el" href="check_8cpp_source.html#l00476">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00460">mim::Def::check()</a>, <a class="el" href="emit_8cpp_source.html#l00652">mim::ast::MatchExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00481">mim::ast::PrefixExpr::emit_()</a>, <a class="el" href="world_8cpp_source.html#l00829">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00844">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00864">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l00971">mim::World::name()</a>, <a class="el" href="world_8cpp_source.html#l00739">mim::World::seq()</a>, <a class="el" href="world_8cpp_source.html#l00981">mim::World::struc()</a>, <a class="el" href="world_8cpp_source.html#l00408">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00225">mim::World::type()</a>, <a class="el" href="def_8h_source.html#l01176">type_of()</a>, <a class="el" href="world_8cpp_source.html#l00235">mim::World::uinc()</a>, <a class="el" href="world_8cpp_source.html#l00254">mim::World::umax()</a>, and <a class="el" href="world_8cpp_source.html#l00959">mim::World::unwrap()</a>.</p>
 
 </div>
 </div>
@@ -3618,7 +3614,7 @@ template&lt;class Id&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t mim::Num_Nodes = size_t(0) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1)</td>
+          <td class="memname">size_t mim::Num_Nodes = size_t(0) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1) +size_t(1)</td>
         </tr>
       </table>
   </td>
@@ -3628,9 +3624,9 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00134">134</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00132">132</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00885">mim::Def::judge()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00883">mim::Def::judge()</a>.</p>
 
 </div>
 </div>

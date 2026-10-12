@@ -72,6 +72,6 @@ var searchData=
   ['users_69',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
   ['uses_70',['Uses',['../namespacemim.html#a7d50dc59d277c5e591ef4a74f163ae62',1,'mim']]],
   ['uses_71',['uses',['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler']]],
-  ['uses_5flibdevice_72',['uses_libdevice',['../namespacemim_1_1plug_1_1ll__nvptx.html#a263c25c30333c2a3c5cddc0772ad2b25',1,'mim::plug::ll_nvptx::DeviceEmitFlags']]],
+  ['uses_5flibdevice_72',['uses_libdevice',['../namespacemim_1_1plug_1_1nvptx.html#a5d48390321b1ab2b012cfbbd3023bb1a',1,'mim::plug::nvptx::DeviceEmitFlags']]],
   ['using_20it_73',['Using it',['../playground.html#autotoc_md126',1,'']]]
 ];

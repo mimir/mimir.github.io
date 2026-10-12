@@ -226,7 +226,6 @@ var namespacemim_1_1plug =
     ] ],
     [ "gpu", "namespacemim_1_1plug_1_1gpu.html", "namespacemim_1_1plug_1_1gpu" ],
     [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
-    [ "ll_nvptx", "namespacemim_1_1plug_1_1ll__nvptx.html", "namespacemim_1_1plug_1_1ll__nvptx" ],
     [ "math", "namespacemim_1_1plug_1_1math.html", [
       [ "VMode", "namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a", null ],
       [ "abs", "namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b", null ],
@@ -435,6 +434,7 @@ var namespacemim_1_1plug =
       [ "Plugin_Id", "namespacemim_1_1plug_1_1math.html#a05ac4b1ef1e0a51c44e4b0622835c4f4", null ]
     ] ],
     [ "mem", "namespacemim_1_1plug_1_1mem.html", "namespacemim_1_1plug_1_1mem" ],
+    [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", "namespacemim_1_1plug_1_1nvptx" ],
     [ "opt", "namespacemim_1_1plug_1_1opt.html", [
       [ "Plugin_Id", "namespacemim_1_1plug_1_1opt.html#a0987aaf63a0209e71b7fcea95c848951", null ]
     ] ],

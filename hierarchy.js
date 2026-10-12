@@ -26,7 +26,7 @@ var hierarchy =
     ] ],
     [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
     [ "mim::DefKey", "structmim_1_1DefKey.html", null ],
-    [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],
+    [ "mim::plug::nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx.html#structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
     [ "fe::Driver", null, [
@@ -126,7 +126,6 @@ var hierarchy =
           [ "mim::TExt< Up >", "classmim_1_1TExt.html", null ]
         ] ],
         [ "mim::Extract", "classmim_1_1Extract.html", null ],
-        [ "mim::Global", "classmim_1_1Global.html", null ],
         [ "mim::Hole", "classmim_1_1Hole.html", null ],
         [ "mim::Idx", "classmim_1_1Idx.html", null ],
         [ "mim::Inj", "classmim_1_1Inj.html", null ],
@@ -169,15 +168,15 @@ var hierarchy =
         [ "mim::ClosedMutPhase< M >", "classmim_1_1ClosedMutPhase.html", [
           [ "mim::NestPhase< Lam >", "classmim_1_1NestPhase.html", [
             [ "mim::plug::ll::Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", [
-              [ "mim::plug::ll_nvptx::DeviceEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitter.html", null ],
-              [ "mim::plug::ll_nvptx::HostEmitter", "classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html", null ]
+              [ "mim::plug::nvptx::DeviceEmitter", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html", null ],
+              [ "mim::plug::nvptx::HostEmitter", "classmim_1_1plug_1_1nvptx_1_1HostEmitter.html", null ]
             ] ]
           ] ]
         ] ],
         [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", null ],
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
         [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
-        [ "mim::plug::ll_nvptx::Emit", "classmim_1_1plug_1_1ll__nvptx_1_1Emit.html", null ]
+        [ "mim::plug::nvptx::Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", null ]
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
@@ -251,9 +250,6 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Extract &gt;", "classmim_1_1Setters.html", [
       [ "mim::Extract", "classmim_1_1Extract.html", null ]
-    ] ],
-    [ "mim::Setters&lt; Global &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Global", "classmim_1_1Global.html", null ]
     ] ],
     [ "mim::Setters&lt; Hole &gt;", "classmim_1_1Setters.html", [
       [ "mim::Hole", "classmim_1_1Hole.html", null ]

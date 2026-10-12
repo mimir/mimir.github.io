@@ -30,6 +30,6 @@ var searchData=
   ['hook_27',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
   ['host_5fmalloc2gpualloc_5frepl_28',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu::host_malloc2gpualloc_repl'],['../gpu.html#autotoc_md382',1,'host_malloc2gpualloc_repl']]],
   ['host_5fspecific_5fphases_29',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
-  ['hostemitter_30',['HostEmitter',['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html',1,'mim::plug::ll_nvptx::HostEmitter'],['../classmim_1_1plug_1_1ll__nvptx_1_1HostEmitter.html#ab533f6d9e904301676ba050227e3a364',1,'mim::plug::ll_nvptx::HostEmitter::HostEmitter()']]],
+  ['hostemitter_30',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html',1,'mim::plug::nvptx::HostEmitter'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter::HostEmitter()']]],
   ['how_20defs_20are_20placed_20in_20them_31',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
 ];

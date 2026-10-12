@@ -3,14 +3,14 @@ var searchData=
   ['named_0',['named',['../compile.html#autotoc_md302',1,'']]],
   ['names_20of_20sigmas_1',['Field Names of Sigmas',['../langref.html#field',1,'']]],
   ['naming_3a_20mimir_20vs_20mim_2',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md152',1,'']]],
-  ['nan_3',['inf, neg_inf, nan',['../math.html#autotoc_md416',1,'']]],
+  ['nan_3',['inf, neg_inf, nan',['../math.html#autotoc_md413',1,'']]],
   ['nat_4',['nat',['../core.html#autotoc_md320',1,'']]],
   ['nat_20operations_5',['Nat Operations',['../core.html#autotoc_md319',1,'']]],
   ['native_20mim_20first_6',['A native &lt;span class=&quot;tt&quot;&gt;mim&lt;/span&gt; first',['../playground.html#autotoc_md123',1,'']]],
   ['navigating_7',['Navigating',['../playground.html#autotoc_md127',1,'']]],
   ['ncmp_8',['ncmp',['../core.html#autotoc_md321',1,'']]],
   ['neg_9',['op(neg)',['../affine.html#autotoc_md212',1,'']]],
-  ['neg_5finf_20nan_10',['inf, neg_inf, nan',['../math.html#autotoc_md416',1,'']]],
+  ['neg_5finf_20nan_10',['inf, neg_inf, nan',['../math.html#autotoc_md413',1,'']]],
   ['neg_5flookahead_11',['neg_lookahead',['../regex.html#autotoc_md494',1,'']]],
   ['nesting_12',['Scope &amp;amp; Nesting',['../dev.html#autotoc_md40',1,'']]],
   ['nestphase_13',['NestPhase',['../phases.html#phases_nest_phase',1,'']]],
@@ -32,5 +32,8 @@ var searchData=
   ['novec_29',['novec',['../ll.html#autotoc_md393',1,'']]],
   ['novec_5ffor_30',['novec_for',['../btensor.html#autotoc_md261',1,'']]],
   ['null_31',['null',['../compile.html#autotoc_md312',1,'']]],
-  ['numerical_20operations_32',['Numerical Operations',['../math.html#autotoc_md401',1,'']]]
+  ['numerical_20operations_32',['Numerical Operations',['../math.html#autotoc_md398',1,'']]],
+  ['nvptx_33',['nvptx',['../cli.html#xarg_nvptx',1,'&lt;a class=&quot;el&quot; href=&quot;nvptx.html&quot; title=&quot;The nvptx Plugin&quot;&gt;nvptx&lt;/a&gt;'],['../cli.html#env_nvptx',1,'&lt;a class=&quot;el&quot; href=&quot;nvptx.html&quot; title=&quot;The nvptx Plugin&quot;&gt;nvptx&lt;/a&gt;']]],
+  ['nvptx_20nvptx_34',['nvptx nvptx',['../cli.html#xarg_nvptx',1,'&lt;a class=&quot;el&quot; href=&quot;nvptx.html&quot; title=&quot;The nvptx Plugin&quot;&gt;nvptx&lt;/a&gt;'],['../cli.html#env_nvptx',1,'&lt;a class=&quot;el&quot; href=&quot;nvptx.html&quot; title=&quot;The nvptx Plugin&quot;&gt;nvptx&lt;/a&gt;']]],
+  ['nvptx_20plugin_35',['The nvptx Plugin',['../nvptx.html',1,'']]]
 ];

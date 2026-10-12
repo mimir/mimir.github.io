@@ -37,7 +37,6 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#af45212c9201d19e18bc65b80977f19aa", null ],
     [ "func_decls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa27e43c7bfe8e0e3284eadf1fd17060a", null ],
     [ "func_impls_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ab31bbfcaecd5d6fc4d1e54e1d19716be", null ],
-    [ "globals_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa21e2974fbe684c3665c64d8bfe7d251", null ],
     [ "lam2bb_", "classmim_1_1plug_1_1ll_1_1Emitter.html#aa633591addd9905309e2e7233a10553e", null ],
     [ "locals_", "classmim_1_1plug_1_1ll_1_1Emitter.html#acf6f744b3fc336a81c1d4e804014245d", null ],
     [ "loop_md_", "classmim_1_1plug_1_1ll_1_1Emitter.html#ad1be8b169a4565176c5fb4f8ef8ba93f", null ],

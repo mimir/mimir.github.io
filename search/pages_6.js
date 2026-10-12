@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gamma_0',['gamma',['../math.html#autotoc_md409',1,'']]],
+  ['gamma_0',['gamma',['../math.html#autotoc_md406',1,'']]],
   ['gather_1',['gather',['../btensor.html#autotoc_md255',1,'gather'],['../tensor.html#autotoc_md548',1,'gather']]],
   ['gather_5fpointwise_5felem_5fimpl_2',['gather_pointwise_elem_impl',['../tensor.html#autotoc_md585',1,'']]],
   ['gdb_3',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md29',1,'']]],
