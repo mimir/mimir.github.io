@@ -12,6 +12,7 @@ var classmim_1_1Lam =
     [ "eta_expand", "classmim_1_1Lam.html#a3a1da0cbd535350a1786d34228220d52", null ],
     [ "eta_reduce", "classmim_1_1Lam.html#a7f8009af756ca53c9a6e833f0f17b1ba", null ],
     [ "filter", "classmim_1_1Lam.html#a077994a2dbd8255456a1b9dbbdde4521", null ],
+    [ "forwardee", "classmim_1_1Lam.html#a23d77b8520c873032b72e866ec8a2fe2", null ],
     [ "is_dependent", "classmim_1_1Lam.html#a98414a6f2f252e5a7794e054384da803", null ],
     [ "is_rewritable", "classmim_1_1Lam.html#a395f18451675fc059995878044244d71", null ],
     [ "isa_basicblock", "classmim_1_1Lam.html#a846446604fca73562a518ec65fc65cb8", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX25 =
 {
+"refly_2autogen_8h.html":[5,0,0,1,0,0,17,0],
+"refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,17,0,0],
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,17,0],
 "refly_2normalizers_8cpp.html":[5,0,4,1,3,17,0],
 "refly_2normalizers_8cpp_source.html":[5,0,4,1,3,17,0],
 "refly_8cpp.html":[5,0,4,1,3,17,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX25 =
 "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[2,0,4,49,10],
 "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[4,0,1,49,10],
 "structmim_1_1UseEq.html":[2,0,4,82],
-"structmim_1_1UseEq.html":[4,0,1,82],
-"structmim_1_1UseEq.html#abf795ef78684f860fd42d0d377bd2d99":[2,0,4,82,0],
-"structmim_1_1UseEq.html#abf795ef78684f860fd42d0d377bd2d99":[4,0,1,82,0],
-"structmim_1_1UseHash.html":[2,0,4,83]
+"structmim_1_1UseEq.html":[4,0,1,82]
 };

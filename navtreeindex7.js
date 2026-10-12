@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"classmim_1_1Seq.html#aff8407c985780fb2e06f85d2365c0e32":[4,0,1,65,7],
+"classmim_1_1Setters.html":[2,0,4,66],
 "classmim_1_1Setters.html":[4,0,1,66],
 "classmim_1_1Setters.html#a1b6d679b56c54882ad7ca1434ecf2538":[2,0,4,66,1],
 "classmim_1_1Setters.html#a1b6d679b56c54882ad7ca1434ecf2538":[4,0,1,66,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "classmim_1_1Use.html":[4,0,1,81],
 "classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954":[2,0,4,81,1],
 "classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954":[4,0,1,81,1],
-"classmim_1_1Use.html#a721110ec91ddaa881e92061487256473":[2,0,4,81,3],
-"classmim_1_1Use.html#a721110ec91ddaa881e92061487256473":[4,0,1,81,3],
-"classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944":[2,0,4,81,7]
+"classmim_1_1Use.html#a721110ec91ddaa881e92061487256473":[2,0,4,81,3]
 };

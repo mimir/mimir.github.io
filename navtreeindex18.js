@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"dfamin_8cpp.html":[5,0,4,0,1],
+"dfamin_8cpp_source.html":[5,0,4,0,1],
 "dfamin_8h.html":[5,0,3,0,2],
 "dfamin_8h_source.html":[5,0,3,0,2],
 "dir_042382fc7b12dd3d765eda564991afc2.html":[5,0,0,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "functions_z.html":[4,3,0,23],
 "functions_~.html":[4,3,0,24],
 "fuse_8cpp.html":[5,0,4,1,3,19,0,1],
-"fuse_8cpp_source.html":[5,0,4,1,3,19,0,1],
-"fuse_8h.html":[5,0,3,1,2,19,0,1],
-"fuse_8h_source.html":[5,0,3,1,2,19,0,1]
+"fuse_8cpp_source.html":[5,0,4,1,3,19,0,1]
 };
