@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"dfamin_8h.html":[5,0,3,0,2],
+"dfamin_8h_source.html":[5,0,3,0,2],
+"dir_042382fc7b12dd3d765eda564991afc2.html":[5,0,0,1,0],
+"dir_07110a8747d2517ee97007224f1d2994.html":[5,0,4,1,3],
 "dir_0c1a003fbe6c71ddaffcd8b5710a815b.html":[5,0,4,1,3,19,0],
 "dir_0ebf8f8266bbb08accee7a7700444e6c.html":[5,0,4,1,3,10,0],
 "dir_1175bb71810950b57807dd164b9077fe.html":[5,0,0,1,0,0,17],
@@ -110,6 +114,10 @@ var NAVTREEINDEX18 =
 "dir_f984b2ba368b09e30d6d58c581c51286.html":[5,0,3,1,2,13],
 "dir_ff1b7b5329a4b5bde2c45ec2ac3be82c.html":[5,0,3,1,3],
 "dir_ff79ea9a0e93f1b322097d6642888840.html":[5,0,3,1,2,17],
+"dispatch__normalize_8cpp.html":[5,0,4,1,2,2],
+"dispatch__normalize_8cpp_source.html":[5,0,4,1,2,2],
+"dispatch__normalize_8h.html":[5,0,3,1,1,2],
+"dispatch__normalize_8h_source.html":[5,0,3,1,1,2],
 "dot_8cpp.html":[5,0,4,1,7],
 "dot_8cpp_source.html":[5,0,4,1,7],
 "driver_8cpp.html":[5,0,4,1,8],
@@ -241,13 +249,5 @@ var NAVTREEINDEX18 =
 "fuse_8cpp.html":[5,0,4,1,3,19,0,1],
 "fuse_8cpp_source.html":[5,0,4,1,3,19,0,1],
 "fuse_8h.html":[5,0,3,1,2,19,0,1],
-"fuse_8h_source.html":[5,0,3,1,2,19,0,1],
-"gid_8h.html":[5,0,3,1,3,1],
-"gid_8h_source.html":[5,0,3,1,3,1],
-"globals.html":[5,1,0],
-"globals_defs.html":[5,1,4],
-"globals_func.html":[5,1,1],
-"globals_type.html":[5,1,3],
-"globals_vars.html":[5,1,2],
-"gpu.html":[1,9]
+"fuse_8h_source.html":[5,0,3,1,2,19,0,1]
 };

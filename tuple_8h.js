@@ -10,6 +10,7 @@ var tuple_8h =
     [ "mim::Pack", "classmim_1_1Pack.html", "classmim_1_1Pack" ],
     [ "mim::Extract", "classmim_1_1Extract.html", "classmim_1_1Extract" ],
     [ "mim::Insert", "classmim_1_1Insert.html", "classmim_1_1Insert" ],
+    [ "mim::Switch", "classmim_1_1Switch.html", "classmim_1_1Switch" ],
     [ "mim::Select", "classmim_1_1Select.html", "classmim_1_1Select" ],
     [ "mim::Branch", "classmim_1_1Branch.html", "classmim_1_1Branch" ],
     [ "mim::Dispatch", "classmim_1_1Dispatch.html", "classmim_1_1Dispatch" ],

@@ -4,6 +4,7 @@ var classmim_1_1Rewriter =
     [ "~Rewriter", "classmim_1_1Rewriter.html#a927f0d7a4ad6aa61787c9a972eff7f7f", null ],
     [ "curr_mut", "classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70", null ],
     [ "enter", "classmim_1_1Rewriter.html#ae09f7a8bb555ce521cf0355fd77a79af", null ],
+    [ "finish_Lam", "classmim_1_1Rewriter.html#a84a73eac577a29e1dae3bf5f3f2d84c5", null ],
     [ "lookup", "classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954", null ],
     [ "map", "classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4", null ],
     [ "map", "classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04", null ],

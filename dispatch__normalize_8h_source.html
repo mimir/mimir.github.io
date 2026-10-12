@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MimIR: include/mim/phase/branch_normalize.h Source File</title>
+<title>MimIR: include/mim/phase/dispatch_normalize.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 // Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('branch__normalize_8h_source.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('dispatch__normalize_8h_source.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -153,55 +153,55 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('branch__normal
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">branch_normalize.h</div></div>
+  <div class="headertitle"><div class="title">dispatch_normalize.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="branch__normalize_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="dispatch__normalize_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="phase_8h.html">mim/phase.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// Normalizes branches: η-expands non-Lam branch targets so that both sides of a `(f, t)#cond`</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// branch are Lam%s, as later phases and the backends expect.</span></div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classmim_1_1BranchNormalize.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1BranchNormalize.html#a08456b10e498780c726da9a8766318bd">BranchNormalize</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classmim_1_1BranchNormalize.html#a08456b10e498780c726da9a8766318bd">   11</a></span>    <a class="code hl_function" href="classmim_1_1BranchNormalize.html#a08456b10e498780c726da9a8766318bd">BranchNormalize</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; <a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        : <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a>(<a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>) {}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="tuple_8h.html">mim/tuple.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// Normalizes Dispatch%es: η-expands non-Lam targets so that every target of a `(t_0, ..., t_n)#index`</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// jump table is a Lam, as later phases and the backends expect.</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classmim_1_1DispatchNormalize.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1DispatchNormalize.html#a2171d4fdd1ad73492949bb9a5ce3977d">DispatchNormalize</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classmim_1_1DispatchNormalize.html#a2171d4fdd1ad73492949bb9a5ce3977d">   12</a></span>    <a class="code hl_function" href="classmim_1_1DispatchNormalize.html#a2171d4fdd1ad73492949bb9a5ce3977d">DispatchNormalize</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; <a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        : <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a>(<a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>) {}</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* normalize(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1BranchNormalize.html#a395db333596aeb23aac401838930b3e6">rewrite_mut_Lam</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*) <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> analyzed_;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_typedef" href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">LamMap&lt;bool&gt;</a> candidate_;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::pair&lt;const Def*, const Def*&gt; <a class="code hl_function" href="classmim_1_1DispatchNormalize.html#aa325812273a7bbe984acc47700515352">finish_Lam</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*) <span class="keyword">final</span>;<span class="comment"></span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    /// η-expands the targets of @p sw to Lam%s, recursively.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* normalize(<a class="code hl_class" href="classmim_1_1Switch.html">Switch</a> sw);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* eta_expand(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>} <span class="comment">// namespace mim</span></div>
-<div class="ttc" id="aclassmim_1_1BranchNormalize_html_a08456b10e498780c726da9a8766318bd"><div class="ttname"><a href="classmim_1_1BranchNormalize.html#a08456b10e498780c726da9a8766318bd">mim::BranchNormalize::BranchNormalize</a></div><div class="ttdeci">BranchNormalize(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="#l00011">branch_normalize.h:11</a></div></div>
-<div class="ttc" id="aclassmim_1_1BranchNormalize_html_a395db333596aeb23aac401838930b3e6"><div class="ttname"><a href="classmim_1_1BranchNormalize.html#a395db333596aeb23aac401838930b3e6">mim::BranchNormalize::rewrite_mut_Lam</a></div><div class="ttdeci">const Def * rewrite_mut_Lam(Lam *) final</div><div class="ttdef"><b>Definition</b> <a href="branch__normalize_8cpp_source.html#l00007">branch_normalize.cpp:7</a></div></div>
 <div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00315">def.h:315</a></div></div>
+<div class="ttc" id="aclassmim_1_1DispatchNormalize_html_a2171d4fdd1ad73492949bb9a5ce3977d"><div class="ttname"><a href="classmim_1_1DispatchNormalize.html#a2171d4fdd1ad73492949bb9a5ce3977d">mim::DispatchNormalize::DispatchNormalize</a></div><div class="ttdeci">DispatchNormalize(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">dispatch_normalize.h:12</a></div></div>
+<div class="ttc" id="aclassmim_1_1DispatchNormalize_html_aa325812273a7bbe984acc47700515352"><div class="ttname"><a href="classmim_1_1DispatchNormalize.html#aa325812273a7bbe984acc47700515352">mim::DispatchNormalize::finish_Lam</a></div><div class="ttdeci">std::pair&lt; const Def *, const Def * &gt; finish_Lam(Lam *, const Def *, const Def *) final</div><div class="ttdoc">Post-processes the rewritten filter and body of new_lam before rewrite_stub sets them.</div><div class="ttdef"><b>Definition</b> <a href="dispatch__normalize_8cpp_source.html#l00007">dispatch_normalize.cpp:7</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00093">lam.h:93</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00081">phase.h:81</a></div></div>
 <div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00375">phase.h:375</a></div></div>
 <div class="ttc" id="aclassmim_1_1RWPhase_html_ab2f627b52ee66162e8dcf2249f67ed3e"><div class="ttname"><a href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world</a></div><div class="ttdeci">World &amp; world()=delete</div><div class="ttdoc">Hides both and forbids direct access.</div></div>
+<div class="ttc" id="aclassmim_1_1Switch_html"><div class="ttname"><a href="classmim_1_1Switch.html">mim::Switch</a></div><div class="ttdoc">Matches a jump table (target_0, target_1, ...)#index where index is a non-Literal Idx n and n the ari...</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00408">tuple.h:408</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00043">world.h:43</a></div></div>
 <div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00016">ast.h:16</a></div></div>
 <div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
-<div class="ttc" id="anamespacemim_html_a9b9b3ca7beeb379f7bb5dd8999a77034"><div class="ttname"><a href="namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034">mim::LamMap</a></div><div class="ttdeci">GIDMap&lt; Lam *, To &gt; LamMap</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00210">lam.h:210</a></div></div>
-<div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00096">def.h:96</a></div></div>
 <div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
+<div class="ttc" id="atuple_8h_html"><div class="ttname"><a href="tuple_8h.html">tuple.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_b94543b43292d94334aee5f8fc74aa82.html">phase</a></li><li class="navelem"><a href="branch__normalize_8h.html">branch_normalize.h</a></li>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_b94543b43292d94334aee5f8fc74aa82.html">phase</a></li><li class="navelem"><a href="dispatch__normalize_8h.html">dispatch_normalize.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

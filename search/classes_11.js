@@ -61,5 +61,6 @@ var searchData=
   ['splitoffkernels_58',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
   ['state_59',['State',['../structmim_1_1World_1_1State.html',1,'mim::World']]],
   ['staticargopt_60',['StaticArgOpt',['../classmim_1_1StaticArgOpt.html',1,'mim']]],
-  ['struc_61',['Struc',['../classmim_1_1Struc.html',1,'mim']]]
+  ['struc_61',['Struc',['../classmim_1_1Struc.html',1,'mim']]],
+  ['switch_62',['Switch',['../classmim_1_1Switch.html',1,'mim']]]
 ];

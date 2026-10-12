@@ -60,7 +60,7 @@ var searchData=
   ['class_57',['Choosing the Right Base Class',['../phases.html#autotoc_md116',1,'']]],
   ['classical_20picture_58',['The classical picture',['../phases.html#autotoc_md110',1,'']]],
   ['cleanup_59',['Cleanup',['../classmim_1_1Cleanup.html',1,'mim::Cleanup'],['../classmim_1_1Cleanup.html#af1de642ec25e581a4091c3f1e48beaee',1,'mim::Cleanup::Cleanup(World &amp;world)'],['../classmim_1_1Cleanup.html#ac181084cd594a1b51302b8f4b6a03a10',1,'mim::Cleanup::Cleanup(World &amp;world, flags_t annex)'],['../phases.html#autotoc_md102',1,'Cleanup']]],
-  ['cleanup_60',['cleanup',['../namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a',1,'mim::plug::compile::cleanup'],['../compile.html#autotoc_md308',1,'cleanup']]],
+  ['cleanup_60',['cleanup',['../namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a',1,'mim::plug::compile::cleanup'],['../compile.html#autotoc_md307',1,'cleanup']]],
   ['cli_2emd_61',['cli.md',['../cli_8md.html',1,'']]],
   ['clos_20plugin_62',['The clos Plugin',['../clos.html',1,'']]],
   ['clos_2ecpp_63',['clos.cpp',['../clos_8cpp.html',1,'']]],

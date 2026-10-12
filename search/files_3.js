@@ -14,8 +14,10 @@ var searchData=
   ['dfa2matcher_2eh_11',['dfa2matcher.h',['../dfa2matcher_8h.html',1,'']]],
   ['dfamin_2ecpp_12',['dfamin.cpp',['../dfamin_8cpp.html',1,'']]],
   ['dfamin_2eh_13',['dfamin.h',['../dfamin_8h.html',1,'']]],
-  ['dot_2ecpp_14',['dot.cpp',['../dot_8cpp.html',1,'']]],
-  ['driver_2ecpp_15',['driver.cpp',['../driver_8cpp.html',1,'']]],
-  ['driver_2eh_16',['driver.h',['../driver_8h.html',1,'']]],
-  ['dump_2ecpp_17',['dump.cpp',['../dump_8cpp.html',1,'']]]
+  ['dispatch_5fnormalize_2ecpp_14',['dispatch_normalize.cpp',['../dispatch__normalize_8cpp.html',1,'']]],
+  ['dispatch_5fnormalize_2eh_15',['dispatch_normalize.h',['../dispatch__normalize_8h.html',1,'']]],
+  ['dot_2ecpp_16',['dot.cpp',['../dot_8cpp.html',1,'']]],
+  ['driver_2ecpp_17',['driver.cpp',['../driver_8cpp.html',1,'']]],
+  ['driver_2eh_18',['driver.h',['../driver_8h.html',1,'']]],
+  ['dump_2ecpp_19',['dump.cpp',['../dump_8cpp.html',1,'']]]
 ];

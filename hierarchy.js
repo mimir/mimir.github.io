@@ -28,7 +28,6 @@ var hierarchy =
     [ "mim::DefKey", "structmim_1_1DefKey.html", null ],
     [ "mim::plug::ll_nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1ll__nvptx.html#structmim_1_1plug_1_1ll__nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
-    [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
     [ "fe::Driver", null, [
       [ "mim::Driver", "classmim_1_1Driver.html", null ]
@@ -78,8 +77,8 @@ var hierarchy =
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
         [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
         [ "mim::BetaRed", "classmim_1_1BetaRed.html", null ],
-        [ "mim::BranchNormalize", "classmim_1_1BranchNormalize.html", null ],
         [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
+        [ "mim::DispatchNormalize", "classmim_1_1DispatchNormalize.html", null ],
         [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ],
         [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
         [ "mim::NomErasure", "classmim_1_1NomErasure.html", null ],
@@ -240,9 +239,6 @@ var hierarchy =
     [ "mim::ast::S", "structmim_1_1ast_1_1S.html", null ],
     [ "mim::Scheduler", "classmim_1_1Scheduler.html", null ],
     [ "mim::ast::Scopes", "classmim_1_1ast_1_1Scopes.html", null ],
-    [ "mim::Select", "classmim_1_1Select.html", [
-      [ "mim::Branch", "classmim_1_1Branch.html", null ]
-    ] ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", null ],
     [ "mim::Setters&lt; App &gt;", "classmim_1_1Setters.html", [
       [ "mim::App", "classmim_1_1App.html", null ]
@@ -357,6 +353,12 @@ var hierarchy =
     [ "mim::plug::tensor::phase::Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", null ],
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
+    [ "mim::Switch", "classmim_1_1Switch.html", [
+      [ "mim::Dispatch", "classmim_1_1Dispatch.html", null ],
+      [ "mim::Select", "classmim_1_1Select.html", [
+        [ "mim::Branch", "classmim_1_1Branch.html", null ]
+      ] ]
+    ] ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "std::unordered_map", null, [
       [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]

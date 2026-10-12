@@ -202,7 +202,7 @@ var searchData=
   ['num_5fptrns_199',['num_ptrns',['../classmim_1_1ast_1_1TuplePtrn.html#aba0c50821ac158c7c324c0c4f30677a0',1,'mim::ast::TuplePtrn']]],
   ['num_5fsubst_200',['Num_Subst',['../namespacemim_1_1ast.html#a6b5ba7d04cb805affa9f9e4a286f0539',1,'mim::ast']]],
   ['num_5fsyms_201',['num_syms',['../structmim_1_1Plugin.html#a3409c74588ff82ce8c50662fd2ceba21',1,'mim::Plugin']]],
-  ['num_5ftargets_202',['num_targets',['../classmim_1_1Dispatch.html#a754f0df5fcf0c8270de2119b5b0232ad',1,'mim::Dispatch']]],
+  ['num_5ftargets_202',['num_targets',['../classmim_1_1Switch.html#a1e0073d3721e302619cf56822eeff5ca',1,'mim::Switch']]],
   ['num_5ftprojs_203',['num_tprojs',['../classmim_1_1Def.html#a26e88f05b40da602dbc2d3cfc02e4799',1,'mim::Def']]],
   ['num_5ftvars_204',['num_tvars',['../classmim_1_1Def.html#a9dab3baf6f2253040e5a0f7dc3d954dd',1,'mim::Def']]],
   ['num_5fvars_205',['num_vars',['../classmim_1_1Def.html#a84ee4f56868a620ccf508d9044212fad',1,'mim::Def']]],

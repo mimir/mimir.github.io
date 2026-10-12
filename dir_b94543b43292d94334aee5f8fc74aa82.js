@@ -2,7 +2,7 @@ var dir_b94543b43292d94334aee5f8fc74aa82 =
 [
     [ "adce.h", "adce_8h.html", "adce_8h" ],
     [ "beta_red.h", "beta__red_8h.html", "beta__red_8h" ],
-    [ "branch_normalize.h", "branch__normalize_8h.html", "branch__normalize_8h" ],
+    [ "dispatch_normalize.h", "dispatch__normalize_8h.html", "dispatch__normalize_8h" ],
     [ "eta_conv.h", "eta__conv_8h.html", "eta__conv_8h" ],
     [ "lam_spec.h", "lam__spec_8h.html", "lam__spec_8h" ],
     [ "nom_erasure.h", "nom__erasure_8h.html", "nom__erasure_8h" ],

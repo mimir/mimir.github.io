@@ -20,7 +20,7 @@ var searchData=
   ['class_17',['Choosing the Right Base Class',['../phases.html#autotoc_md116',1,'']]],
   ['classical_20picture_18',['The classical picture',['../phases.html#autotoc_md110',1,'']]],
   ['cleanup_19',['Cleanup',['../phases.html#autotoc_md102',1,'']]],
-  ['cleanup_20',['cleanup',['../compile.html#autotoc_md308',1,'']]],
+  ['cleanup_20',['cleanup',['../compile.html#autotoc_md307',1,'']]],
   ['clos_20plugin_21',['The clos Plugin',['../clos.html',1,'']]],
   ['clos2sjlj_22',['clos2sjlj',['../clos.html#autotoc_md294',1,'']]],
   ['clos_5fconv_23',['clos_conv',['../clos.html#autotoc_md291',1,'']]],

@@ -52,10 +52,6 @@ var NAVTREEINDEX0 =
 "branch__clos__elim_8cpp_source.html":[5,0,4,1,3,4,0,0],
 "branch__clos__elim_8h.html":[5,0,3,1,2,4,0,0],
 "branch__clos__elim_8h_source.html":[5,0,3,1,2,4,0,0],
-"branch__normalize_8cpp.html":[5,0,4,1,2,2],
-"branch__normalize_8cpp_source.html":[5,0,4,1,2,2],
-"branch__normalize_8h.html":[5,0,3,1,1,2],
-"branch__normalize_8h_source.html":[5,0,3,1,1,2],
 "btensor.html":[1,2],
 "btensor_2autogen_8h.html":[5,0,0,1,0,0,2,0],
 "btensor_2autogen_8h.html#ab1324df9ed32880e800b03662519e64d":[5,0,0,1,0,0,2,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX0 =
 "classmim_1_1Analysis.html#af452ff2897eed267ba834654b30fdf14":[2,0,4,3,17],
 "classmim_1_1Analysis.html#af452ff2897eed267ba834654b30fdf14":[4,0,1,3,17],
 "classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7":[2,0,4,3,22],
-"classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7":[4,0,1,3,22]
+"classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7":[4,0,1,3,22],
+"classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f":[2,0,4,3,27],
+"classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f":[4,0,1,3,27],
+"classmim_1_1App.html":[2,0,4,5],
+"classmim_1_1App.html":[4,0,1,5]
 };

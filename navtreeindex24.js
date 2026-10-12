@@ -1,5 +1,13 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1regex.html#af81cf78b33c5d7b68c0c2d58e1b05edc":[2,0,4,1,18,20],
+"namespacemim_1_1plug_1_1regex.html#afbafccea4f72061dbaedab24d1fbcede":[2,0,4,1,18,28],
+"namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854":[2,0,4,1,18,13],
+"namespacemim_1_1plug_1_1regex.html#afe291bf091de248e352dada9e3653c04":[2,0,4,1,18,15],
+"namespacemim_1_1plug_1_1tensor.html":[2,0,4,1,19],
+"namespacemim_1_1plug_1_1tensor.html#a0281472aa2604344bb475423751dcd77":[2,0,4,1,19,7],
+"namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65":[2,0,4,1,19,58],
+"namespacemim_1_1plug_1_1tensor.html#a069b471a87f8931264fc1f0e62988f49":[2,0,4,1,19,51],
 "namespacemim_1_1plug_1_1tensor.html#a076287850db66694ec2d946c4a2ba07b":[2,0,4,1,19,5],
 "namespacemim_1_1plug_1_1tensor.html#a08802684d25d84baf17d88c365a9f5e0":[2,0,4,1,19,67],
 "namespacemim_1_1plug_1_1tensor.html#a0a45db2751812e1c7382301b0a7f59d7":[2,0,4,1,19,16],
@@ -241,13 +249,5 @@ var NAVTREEINDEX24 =
 "refly.html":[1,17],
 "refly_2autogen_8h.html":[5,0,0,1,0,0,17,0],
 "refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,17,0,0],
-"refly_2autogen_8h_source.html":[5,0,0,1,0,0,17,0],
-"refly_2normalizers_8cpp.html":[5,0,4,1,3,17,0],
-"refly_2normalizers_8cpp_source.html":[5,0,4,1,3,17,0],
-"refly_8cpp.html":[5,0,4,1,3,17,1],
-"refly_8cpp.html#a88f150f6849d0fef8e93f308548f3a6a":[5,0,4,1,3,17,1,0],
-"refly_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,17,1,1],
-"refly_8cpp_source.html":[5,0,4,1,3,17,1],
-"refly_8h.html":[5,0,3,1,2,17,0],
-"refly_8h_source.html":[5,0,3,1,2,17,0]
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,17,0]
 };
