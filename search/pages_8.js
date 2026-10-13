@@ -40,7 +40,7 @@ var searchData=
   ['interfaces_37',['Generated Interfaces',['../plugins.html#plugin_codegen',1,'']]],
   ['invalidation_38',['Invalidation',['../dev.html#autotoc_md39',1,'']]],
   ['ir_39',['Matching IR',['../dev.html#autotoc_md42',1,'']]],
-  ['is_20hard_20elsewhere_40',['Why this is hard elsewhere',['../phases.html#autotoc_md112',1,'']]],
+  ['is_20hard_20elsewhere_40',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['is_20inherently_20impure_41',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md175',1,'']]],
   ['is_20mimir_20implemented_20in_20c_42',['Why is MimIR implemented in C++?',['../md_docs_2why-cpp.html',1,'']]],
   ['is_20much_20worse_43',['Why idiomatic style is much worse',['../md_docs_2why-cpp.html#autotoc_md173',1,'']]],

@@ -23,7 +23,7 @@ var searchData=
   ['phaseman_20',['PhaseMan',['../phases.html#phases_phase_man',1,'']]],
   ['phases_21',['Phases',['../phases.html',1,'Phases'],['../affine.html#autotoc_md218',1,'Phases'],['../autodiff.html#autotoc_md230',1,'Phases'],['../btensor.html#autotoc_md266',1,'Phases'],['../buffer.html#autotoc_md279',1,'Phases'],['../clos.html#autotoc_md289',1,'Phases'],['../compile.html#autotoc_md304',1,'Phases'],['../cps.html#autotoc_md346',1,'Phases'],['../gpu.html#autotoc_md380',1,'Phases'],['../ll.html#autotoc_md389',1,'Phases'],['../mem.html#autotoc_md432',1,'Phases'],['../nvptx.html#autotoc_md437',1,'Phases'],['../refly.html#autotoc_md482',1,'Phases'],['../regex.html#autotoc_md500',1,'Phases'],['../tensor.html#autotoc_md614',1,'Phases']]],
   ['phases_22',['phases',['../compile.html#autotoc_md303',1,'']]],
-  ['picture_23',['picture',['../phases.html#autotoc_md110',1,'The classical picture'],['../phases.html#autotoc_md111',1,'The MimIR picture']]],
+  ['picture_23',['picture',['../phases.html#autotoc_md112',1,'The classical picture'],['../phases.html#autotoc_md113',1,'The MimIR picture']]],
   ['pipeline_24',['The default pipeline',['../opt.html#autotoc_md440',1,'']]],
   ['pipelines_25',['Pipelines',['../gpu.html#autotoc_md387',1,'']]],
   ['pipelines_20in_20m⁠im_26',['Compilation Pipelines in M⁠im',['../phases.html#autotoc_md119',1,'']]],

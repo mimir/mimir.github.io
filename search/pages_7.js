@@ -2,7 +2,7 @@ var searchData=
 [
   ['handling_20helpers_0',['Error Handling Helpers',['../python.html#autotoc_md140',1,'']]],
   ['handling_20of_20mutables_1',['Handling of Mutables',['../phases.html#autotoc_md94',1,'']]],
-  ['hard_20elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md112',1,'']]],
+  ['hard_20elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['hash_20consing_20is_20inherently_20impure_3',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md175',1,'']]],
   ['haskell_20specifically_4',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md177',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_5',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md182',1,'']]],

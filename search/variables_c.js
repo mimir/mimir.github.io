@@ -9,5 +9,6 @@ var searchData=
   ['mim_5flocal_6',['mim_local',['../structmim_1_1Flags.html#a02b769c888db2f4ec9686f339c4fd57b',1,'mim::Flags']]],
   ['mim_5ftyped_5flet_7',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
   ['minor_8',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
-  ['mods_9',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]]
+  ['mods_9',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]],
+  ['muts_5fbit_10',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]]
 ];

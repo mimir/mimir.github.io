@@ -170,7 +170,7 @@ var searchData=
   ['mim_5fversion_167',['MIM_VERSION',['../plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2',1,'plugin.h']]],
   ['mimir_168',['MimIR',['../index.html#autotoc_md145',1,'💡 Why MimIR?'],['../mimir.html',1,'A Tour of MimIR'],['../index.html',1,'MimIR']]],
   ['mimir_20implemented_20in_20c_169',['Why is MimIR implemented in C++?',['../md_docs_2why-cpp.html',1,'']]],
-  ['mimir_20picture_170',['The MimIR picture',['../phases.html#autotoc_md111',1,'']]],
+  ['mimir_20picture_170',['The MimIR picture',['../phases.html#autotoc_md113',1,'']]],
   ['mimir_20vs_20mim_171',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md152',1,'']]],
   ['mimir_2emd_172',['mimir.md',['../mimir_8md.html',1,'']]],
   ['minimal_20examples_173',['Minimal Examples',['../phases.html#autotoc_md118',1,'']]],
@@ -227,6 +227,7 @@ var searchData=
   ['mutpred_224',['MutPred',['../conceptmim_1_1MutPred.html',1,'mim']]],
   ['muts_225',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
   ['muts_226',['muts',['../structmim_1_1Nest_1_1Node_1_1Children.html#a362340ee16c9969fe8b87e5d055b76f4',1,'mim::Nest::Node::Children::muts()'],['../classmim_1_1Nest.html#aaf12b333534fe887264a7abb4317a66b',1,'mim::Nest::muts()'],['../classmim_1_1World_1_1Externals.html#ac1b577682e6553faf40ae1ade97f6d7e',1,'mim::World::Externals::muts()'],['../classmim_1_1World.html#a1ab828141bfcd0c0bdc3608ac24ec358',1,'mim::World::muts()'],['../classmim_1_1World.html#a52b5c22ff4c01fdfa5b1c18412f38a6f',1,'mim::World::muts() const']]],
-  ['mutset_227',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]],
-  ['mutualdecl_228',['MutualDecl',['../classmim_1_1ast_1_1MutualDecl.html',1,'mim::ast::MutualDecl'],['../classmim_1_1ast_1_1MutualDecl.html#a4568d8422ee6a616180fe3d1a1c252ac',1,'mim::ast::MutualDecl::MutualDecl()']]]
+  ['muts_5fbit_227',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]],
+  ['mutset_228',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]],
+  ['mutualdecl_229',['MutualDecl',['../classmim_1_1ast_1_1MutualDecl.html',1,'mim::ast::MutualDecl'],['../classmim_1_1ast_1_1MutualDecl.html#a4568d8422ee6a616180fe3d1a1c252ac',1,'mim::ast::MutualDecl::MutualDecl()']]]
 ];

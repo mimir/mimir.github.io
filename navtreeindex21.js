@@ -1,5 +1,15 @@
 var NAVTREEINDEX21 =
 {
+"namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864":[2,0,4,1,2,13],
+"namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085":[2,0,4,1,2,2],
+"namespacemim_1_1plug_1_1btensor.html#ae60b4af6f42cfc600d8560d1df41ba44":[2,0,4,1,2,18],
+"namespacemim_1_1plug_1_1btensor_1_1phase.html":[2,0,4,1,2,0],
+"namespacemim_1_1plug_1_1buffer.html":[2,0,4,1,3],
+"namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c":[2,0,4,1,3,2],
+"namespacemim_1_1plug_1_1buffer.html#a06147b300ea7be68c1ebad95e5bafa42":[2,0,4,1,3,5],
+"namespacemim_1_1plug_1_1buffer.html#a0620f0531bd572b2baeb94cc4a706f40":[2,0,4,1,3,22],
+"namespacemim_1_1plug_1_1buffer.html#a1f336dadf3b16e8153af1e9e7383f202":[2,0,4,1,3,13],
+"namespacemim_1_1plug_1_1buffer.html#a205230a8fbf5e686a174ca332c57138b":[2,0,4,1,3,12],
 "namespacemim_1_1plug_1_1buffer.html#a217eccd3a90c9a01efb7d3901d352bee":[2,0,4,1,3,6],
 "namespacemim_1_1plug_1_1buffer.html#a3b41cd78cfb6f80fe4c1dd11e55e1e0b":[2,0,4,1,3,19],
 "namespacemim_1_1plug_1_1buffer.html#a3be8da324d9e541248b0c17222613b3e":[2,0,4,1,3,20],
@@ -239,15 +249,5 @@ var NAVTREEINDEX21 =
 "namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e":[2,0,4,1,6,16,2],
 "namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977aa53108f7543b75adbb34afc035d4cdf6":[2,0,4,1,6,16,1],
 "namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43":[2,0,4,1,6,19],
-"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661":[2,0,4,1,6,19,0],
-"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a2db95e8e1a9267b7a1188556b2013b33":[2,0,4,1,6,19,1],
-"namespacemim_1_1plug_1_1core.html#aa90620d89f43753fb2f7907167019bf6":[2,0,4,1,6,18],
-"namespacemim_1_1plug_1_1core.html#ab5864aab9439e6c149631d6f62ce9f7b":[2,0,4,1,6,36],
-"namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d":[2,0,4,1,6,26],
-"namespacemim_1_1plug_1_1core.html#ac12b763d789e7ec8c789060f55a71d6d":[2,0,4,1,6,31],
-"namespacemim_1_1plug_1_1core.html#ac4e599118974e6a467f3cb081a2e16a0":[2,0,4,1,6,24],
-"namespacemim_1_1plug_1_1core.html#ac5e6745c0724f9ad515f710379700abe":[2,0,4,1,6,39],
-"namespacemim_1_1plug_1_1core.html#ad82399b0e163c0348b58f2a8c3c43d54":[2,0,4,1,6,47],
-"namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a":[2,0,4,1,6,9],
-"namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138":[2,0,4,1,6,12]
+"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661":[2,0,4,1,6,19,0]
 };

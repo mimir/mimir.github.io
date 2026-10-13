@@ -61,6 +61,7 @@ var classmim_1_1Def =
     [ "has_var", "classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3", null ],
     [ "hash", "classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53", null ],
     [ "immutabilize", "classmim_1_1Def.html#ade3390ec29c423c2d406b7d02239e377", null ],
+    [ "in_scope", "classmim_1_1Def.html#a3eca19d37220809e38414e1261a34337", null ],
     [ "internalize", "classmim_1_1Def.html#aa73c33fa04415ff69e455ec10193244c", null ],
     [ "is_annex", "classmim_1_1Def.html#af91732c930dedfdd6fce8d6befe8e6bc", null ],
     [ "is_closed", "classmim_1_1Def.html#aec7aa74467c589b28b16a9630eb96a69", null ],

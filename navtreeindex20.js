@@ -1,5 +1,15 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim.html#a54b5eaeee81baedf35cb803d4c39b222":[2,0,4,169],
+"namespacemim.html#a57bc30f8ac8359a582c8f53b9b4f0ed8":[2,0,4,126],
+"namespacemim.html#a60ee93398f76269a406c841b2bb2c306":[2,0,4,198],
+"namespacemim.html#a61ddf45bef2304628acddc77ac1c1ecd":[2,0,4,199],
+"namespacemim.html#a63a74e46f0a8192dceceba8b413bf6da":[2,0,4,156],
+"namespacemim.html#a63d7daa748288edee7a99436759d61ca":[2,0,4,189],
+"namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a":[2,0,4,172],
+"namespacemim.html#a64c933b41d9c8162537d22966b3ad303":[5,0,3,1,6,2,6],
+"namespacemim.html#a651a2dea89f330efd5ed961191620af8":[2,0,4,166],
+"namespacemim.html#a659d017e0b42344997eb847f5b6d8f27":[2,0,4,188],
 "namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b":[2,0,4,182],
 "namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987":[2,0,4,179],
 "namespacemim.html#a694f8c3f79839cce8733f86ce2f7cb2f":[2,0,4,108],
@@ -239,15 +249,5 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1btensor.html#aba813b28b836393826b0878bcccd66fb":[2,0,4,1,2,12],
 "namespacemim_1_1plug_1_1btensor.html#ac3ae404f8dde1bd876fefb63ff263980":[2,0,4,1,2,5],
 "namespacemim_1_1plug_1_1btensor.html#acc5c488a59e6f9ee424fc9d3c7d2b0ef":[2,0,4,1,2,16],
-"namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8":[2,0,4,1,2,10],
-"namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864":[2,0,4,1,2,13],
-"namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085":[2,0,4,1,2,2],
-"namespacemim_1_1plug_1_1btensor.html#ae60b4af6f42cfc600d8560d1df41ba44":[2,0,4,1,2,18],
-"namespacemim_1_1plug_1_1btensor_1_1phase.html":[2,0,4,1,2,0],
-"namespacemim_1_1plug_1_1buffer.html":[2,0,4,1,3],
-"namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c":[2,0,4,1,3,2],
-"namespacemim_1_1plug_1_1buffer.html#a06147b300ea7be68c1ebad95e5bafa42":[2,0,4,1,3,5],
-"namespacemim_1_1plug_1_1buffer.html#a0620f0531bd572b2baeb94cc4a706f40":[2,0,4,1,3,22],
-"namespacemim_1_1plug_1_1buffer.html#a1f336dadf3b16e8153af1e9e7383f202":[2,0,4,1,3,13],
-"namespacemim_1_1plug_1_1buffer.html#a205230a8fbf5e686a174ca332c57138b":[2,0,4,1,3,12]
+"namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8":[2,0,4,1,2,10]
 };

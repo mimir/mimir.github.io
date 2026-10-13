@@ -2,7 +2,7 @@ var searchData=
 [
   ['effects_0',['Effects',['../mem.html#autotoc_md421',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md430',1,'Operations w/o Side Effects']]],
   ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md534',1,'']]],
-  ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md112',1,'']]],
+  ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['embedded_20python_20dsl_3',['Embedded Python DSL',['../python.html#autotoc_md142',1,'']]],
   ['emit_4',['emit',['../ll.html#autotoc_md390',1,'emit'],['../nvptx.html#autotoc_md438',1,'emit']]],
   ['empirical_20argument_5',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md178',1,'']]],
@@ -23,7 +23,7 @@ var searchData=
   ['exceptions_20',['Catching Exceptions',['../coding.html#autotoc_md28',1,'']]],
   ['execution_20model_21',['Execution Model',['../phases.html#autotoc_md97',1,'']]],
   ['existing_20in_20tree_20plugin_22',['Extract an Existing In-Tree Plugin',['../plugins.html#autotoc_md136',1,'']]],
-  ['exists_20at_20all_23',['Why the guard exists at all',['../phases.html#autotoc_md109',1,'']]],
+  ['exists_20at_20all_23',['Why the guard exists at all',['../phases.html#autotoc_md111',1,'']]],
   ['exp_24',['exp',['../math.html#autotoc_md404',1,'']]],
   ['expressions_25',['Expressions',['../langref.html#expr',1,'Expressions'],['../langref.html#autotoc_md72',1,'Expressions']]],
   ['extending_20the_20bindings_26',['Extending the Bindings',['../python.html#python_extending',1,'']]],

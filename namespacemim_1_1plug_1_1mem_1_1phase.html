@@ -197,9 +197,11 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aeea0dcbb2cf333344a31d37243ad3f83" id="r_aeea0dcbb2cf333344a31d37243ad3f83"><td class="memItemLeft">static size_t&#160;</td><td class="memItemRight"><a class="el" href="#aeea0dcbb2cf333344a31d37243ad3f83">idx_of</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> vars, const <a class="el" href="classmim_1_1Def.html">Def</a> *p)</td></tr>
 <tr class="memitem:ab7f8de36bdae13ccceb6e0cf573a401a" id="r_ab7f8de36bdae13ccceb6e0cf573a401a"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ab7f8de36bdae13ccceb6e0cf573a401a">isa_bundle</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
-<tr class="memitem:ae60b586e8df39141bbc60defc176f10d" id="r_ae60b586e8df39141bbc60defc176f10d"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ae60b586e8df39141bbc60defc176f10d">is_visible</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, <a class="el" href="classmim_1_1Def.html">Def</a> *mut)</td></tr>
-<tr class="memdesc:ae60b586e8df39141bbc60defc176f10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is every free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code> bound by <code class="param">mut</code> or by a mutable that nests <code class="param">mut</code>?  <br /></td></tr>
 <tr class="memitem:acab92e534d4abc11bd41fcc12136090d" id="r_acab92e534d4abc11bd41fcc12136090d"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#acab92e534d4abc11bd41fcc12136090d">mk_phi</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam, const <a class="el" href="classmim_1_1Def.html">Def</a> *sloxy)</td></tr>
+<tr class="memitem:ac4d2716ab66905eb35d205787107b58f" id="r_ac4d2716ab66905eb35d205787107b58f"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ac4d2716ab66905eb35d205787107b58f">returns_mem</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app)</td></tr>
+<tr class="memitem:aecbadff86485ea143269d104f4710717" id="r_aecbadff86485ea143269d104f4710717"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Var.html">Var</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aecbadff86485ea143269d104f4710717">slot_var</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *ptr)</td></tr>
+<tr class="memitem:a1ebd1af790f2d3638017ff803dc7a675" id="r_a1ebd1af790f2d3638017ff803dc7a675"><td class="memItemLeft">static std::pair&lt; const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *, <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1ebd1af790f2d3638017ff803dc7a675">sloxy_path</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr_ptr)</td></tr>
+<tr class="memdesc:a1ebd1af790f2d3638017ff803dc7a675"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sloxy <code class="param">abstr_ptr</code> points into, and the literal <a class="el" href="namespacemim_1_1plug_1_1mem.html#add102b8e1cf16c9e60dbcacb03c9f4eb">mem.lea</a> indices on the way, outermost first.  <br /></td></tr>
 <tr class="memitem:a9d9568a79751fc87a4d230ee37c8a202" id="r_a9d9568a79751fc87a4d230ee37c8a202"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a9d9568a79751fc87a4d230ee37c8a202">keep</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam, const <a class="el" href="classmim_1_1Def.html">Def</a> *old_var, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
 </table>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
@@ -221,7 +223,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a454c3e336e54c2f696affda731c24624acbfb4b6baef7e1d6c8cc6ef57a5a9893" name="a454c3e336e54c2f696affda731c24624acbfb4b6baef7e1d6c8cc6ef57a5a9893"></a>Proxy_Phi&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00013">13</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00014">14</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,48 +255,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00020">20</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00021">21</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="seo_8cpp_source.html#l00020">idx_of()</a>.</p>
+<p class="reference">References <a class="el" href="seo_8cpp_source.html#l00021">idx_of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00020">idx_of()</a>.</p>
-
-</div>
-</div>
-<a id="ae60b586e8df39141bbc60defc176f10d" name="ae60b586e8df39141bbc60defc176f10d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae60b586e8df39141bbc60defc176f10d">&#9670;&#160;</a></span>is_visible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mim::plug::mem::phase::is_visible </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Is every free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code> bound by <code class="param">mut</code> or by a mutable that nests <code class="param">mut</code>? </p>
-
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00029">29</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00254">mim::Def::free_vars()</a>, <a class="el" href="seo_8cpp_source.html#l00029">is_visible()</a>, and <a class="el" href="def_8cpp_source.html#l00382">mim::Def::nests()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00029">is_visible()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00021">idx_of()</a>.</p>
 
 </div>
 </div>
@@ -325,11 +290,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00107">107</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00103">103</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01121">mim::Proxy::isa()</a>, and <a class="el" href="seo_8cpp_source.html#l00107">isa_bundle()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01134">mim::Proxy::isa()</a>, and <a class="el" href="seo_8cpp_source.html#l00103">isa_bundle()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00107">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00368">keep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00103">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00461">keep()</a>.</p>
 
 </div>
 </div>
@@ -365,11 +330,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00368">368</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00461">461</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01121">mim::Proxy::isa()</a>, <a class="el" href="seo_8cpp_source.html#l00107">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00368">keep()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l01134">mim::Proxy::isa()</a>, <a class="el" href="seo_8cpp_source.html#l00103">isa_bundle()</a>, and <a class="el" href="seo_8cpp_source.html#l00461">keep()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00368">keep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00461">keep()</a>.</p>
 
 </div>
 </div>
@@ -405,11 +370,106 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00181">181</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00178">178</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00669">mim::Def::dbg_key()</a>, <a class="el" href="seo_8cpp_source.html#l00181">mk_phi()</a>, <a class="el" href="mem_8h_source.html#l00100">mim::plug::mem::pointee()</a>, and <a class="el" href="seo_8cpp_source.html#l00017">Proxy_Phi</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00672">mim::Def::dbg_key()</a>, <a class="el" href="seo_8cpp_source.html#l00178">mk_phi()</a>, <a class="el" href="mem_8h_source.html#l00100">mim::plug::mem::pointee()</a>, <a class="el" href="seo_8cpp_source.html#l00018">Proxy_Phi</a>, and <a class="el" href="def_8h_source.html#l00525">mim::Def::var()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00181">mk_phi()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00178">mk_phi()</a>.</p>
+
+</div>
+</div>
+<a id="ac4d2716ab66905eb35d205787107b58f" name="ac4d2716ab66905eb35d205787107b58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4d2716ab66905eb35d205787107b58f">&#9670;&#160;</a></span>returns_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::mem::phase::returns_mem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00200">200</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00025">mim::plug::mem::isa_mem()</a>, <a class="el" href="seo_8cpp_source.html#l00200">returns_mem()</a>, and <a class="el" href="def_8h_source.html#l01164">mim::Def::type()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00200">returns_mem()</a>.</p>
+
+</div>
+</div>
+<a id="aecbadff86485ea143269d104f4710717" name="aecbadff86485ea143269d104f4710717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecbadff86485ea143269d104f4710717">&#9670;&#160;</a></span>slot_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Var.html">Var</a> * mim::plug::mem::phase::slot_var </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00207">207</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="seo_8cpp_source.html#l00207">slot_var()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00207">slot_var()</a>.</p>
+
+</div>
+</div>
+<a id="a1ebd1af790f2d3638017ff803dc7a675" name="a1ebd1af790f2d3638017ff803dc7a675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebd1af790f2d3638017ff803dc7a675">&#9670;&#160;</a></span>sloxy_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *, <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> &gt; mim::plug::mem::phase::sloxy_path </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>abstr_ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sloxy <code class="param">abstr_ptr</code> points into, and the literal <a class="el" href="namespacemim_1_1plug_1_1mem.html#add102b8e1cf16c9e60dbcacb03c9f4eb">mem.lea</a> indices on the way, outermost first. </p>
+
+<p class="definition">Definition at line <a class="el" href="seo_8cpp_source.html#l00210">210</a> of file <a class="el" href="seo_8cpp_source.html">seo.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8cpp_source.html#l00215">mim::World::flags()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="def_8h_source.html#l01134">mim::Proxy::isa()</a>, <a class="el" href="mem_8h_source.html#l00100">mim::plug::mem::pointee()</a>, <a class="el" href="flags_8h_source.html#l00020">mim::Flags::scalarize_threshold</a>, <a class="el" href="seo_8cpp_source.html#l00210">sloxy_path()</a>, and <a class="el" href="def_8h_source.html#l01150">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00210">sloxy_path()</a>.</p>
 
 </div>
 </div>

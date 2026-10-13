@@ -33,7 +33,7 @@ var searchData=
   ['mim_5fstatic_5fplugin_5fregistry_30',['mim_static_plugin_registry',['../mim_static_plugin_registry_cmake.html',1,'']]],
   ['mimir_31',['MimIR',['../index.html#autotoc_md145',1,'💡 Why MimIR?'],['../mimir.html',1,'A Tour of MimIR'],['../index.html',1,'MimIR']]],
   ['mimir_20implemented_20in_20c_32',['Why is MimIR implemented in C++?',['../md_docs_2why-cpp.html',1,'']]],
-  ['mimir_20picture_33',['The MimIR picture',['../phases.html#autotoc_md111',1,'']]],
+  ['mimir_20picture_33',['The MimIR picture',['../phases.html#autotoc_md113',1,'']]],
   ['mimir_20vs_20mim_34',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md152',1,'']]],
   ['minimal_20examples_35',['Minimal Examples',['../phases.html#autotoc_md118',1,'']]],
   ['mining_36',['Strip-Mining',['../tensor.html#autotoc_md562',1,'']]],

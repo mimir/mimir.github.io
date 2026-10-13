@@ -479,7 +479,15 @@ Analysis</h2>
 <div class="line">        <span class="keywordflow">return</span> def;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (def-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a>&gt;() || cur == def || cur == var) <span class="keywordflow">return</span> cur; <span class="comment">// cur ⊔ ⊥ = cur ⊔ cur = cur; ⊤ stays ⊤</span></div>
+<div class="line">    <span class="keywordflow">if</span> (cur == var) <span class="keywordflow">return</span> cur; <span class="comment">// ⊤ stays ⊤</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// cur ⊔ ⊥ = cur, but the ⊥-site&#39;s caller must see cur as well.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (def-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a>&gt;()) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<span class="keyword">auto</span> caller = <a class="code hl_function" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut</a>(); caller &amp;&amp; !cur-&gt;in_scope(caller)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a>(var), var;</div>
+<div class="line">        <span class="keywordflow">return</span> cur;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (cur == def) <span class="keywordflow">return</span> cur; <span class="comment">// cur ⊔ cur = cur</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (cur-&gt;isa&lt;<a class="code hl_typedef" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a>&gt;()) { <span class="comment">// ⊥ ⊔ def = def; lattice(var, def) invalidates, as it overwrites cur</span></div>
 <div class="line">        <a class="code hl_function" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a>(var, def);</div>
@@ -515,6 +523,7 @@ Analysis</h2>
 <div class="ttc" id="aclassmim_1_1Lam_html_ad2d55564ba0b3e0b9df6ad1f9905466d"><div class="ttname"><a href="classmim_1_1Lam.html#ad2d55564ba0b3e0b9df6ad1f9905466d">mim::Lam::isa_rewritable</a></div><div class="ttdeci">static Lam * isa_rewritable(const Def *def)</div><div class="ttdoc">Yields def as a mutable Lam, if it is_rewritable() and nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00194">lam.h:194</a></div></div>
 <div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00079">phase.h:79</a></div></div>
 <div class="ttc" id="aclassmim_1_1RWPhase_html_ae4f4200bf0845a3f7110813c1f19d4a0"><div class="ttname"><a href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0">mim::RWPhase::lattice</a></div><div class="ttdeci">const Def * lattice(const Def *old_def) const</div><div class="ttdoc">Returns the abstract value computed by the associated Analysis for the given old-world Def,...</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00385">phase.h:385</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a75096ea0eb8e19be1c2286f9425dfd70"><div class="ttname"><a href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">mim::Rewriter::curr_mut</a></div><div class="ttdeci">D * curr_mut() const</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00098">rewrite.h:98</a></div></div>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00043">rewrite.cpp:43</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00327">world.cpp:327</a></div></div>
 <div class="ttc" id="anamespacemim_html_a460ec790ce35ed5ebbbee20d96305c21"><div class="ttname"><a href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">mim::lam_of</a></div><div class="ttdeci">static Lam * lam_of(const Def *var)</div><div class="ttdoc">The Lam the abstract var belongs to; var is a Var or a Var projection.</div><div class="ttdef"><b>Definition</b> <a href="sccp__analysis_8cpp_source.html#l00006">sccp_analysis.cpp:6</a></div></div>
@@ -536,66 +545,7 @@ Analysis</h2>
 <li>store them in <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">Analysis::lattice()</span></a>,</li>
 <li>iterate to a fixed point.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="ssa-without-dominance"></a>
-SSA without Dominance</h2>
-<p>The very first line of <span class="tt">propagate()</span> is a guard that has no counterpart in the lattice algebra:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (lam_of(var)-&gt;nests(def)) <span class="keywordflow">return</span> pin(var);</div>
-</div><!-- fragment --><p>It is the MimIR analogue of the <em>dominance</em> side condition that a classical SSA-based SCCP has to enforce, so it is worth spelling out what it replaces.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
-Why the guard exists at all</h3>
-<p>Textbook SCCP only ever propagates <b>constants</b>. A constant is a literal: it has no operands and is available at <em>every</em> program point by construction. This is what makes classical SCCP so comfortable — specializing a call site to a constant is <em>always</em> valid, and there is simply no availability question to ask.</p>
-<p>MimIR's SCCP is more ambitious: it propagates <b>arbitrary expressions</b>, not just constants (this is essentially copy/expression propagation folded into the same fixed point). The moment you propagate a whole expression, you inherit an obligation constants let you ignore: the expression you substitute must actually be <em>available</em> at the point where it lands. The guard is exactly that availability check.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
-The classical picture</h3>
-<p>Textbook SCCP runs on a CFG in SSA form. Every value has exactly one definition, control flow is made explicit by basic blocks and edges, and φ-nodes reconcile the values that arrive along the different predecessor edges of a join block. SCCP assigns each SSA value a lattice cell (⊥ / a constant / ⊤) and, once the fixed point is reached, substitutes the discovered constant at <em>every</em> use of that value.</p>
-<p>That substitution is only sound because SSA comes with a <b>dominator tree</b>:</p>
-<ul>
-<li>a definition dominates all of its uses, and</li>
-<li>a φ-operand must be available along its associated predecessor edge, i.e. its definition dominates the end of that predecessor block.</li>
-</ul>
-<p>Dominance is exactly the structural guarantee <em>"the value already exists at the program point where I want to use it"</em>. Without it, folding a value into a use could move a computation to a place where its operands are not yet defined.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
-The MimIR picture</h3>
-<p>MimIR has no CFG, no basic blocks, and no separate φ instructions. Control flow is expressed in CPS: a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> <em>is</em> a basic block, its parameters <em>are</em> the φ-nodes, and every <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> of that <span class="tt">Lam</span> is one <em>predecessor edge</em> supplying the corresponding operands. So the SCCP analysis joins, per parameter, all the arguments flowing in from the call sites — precisely the φ-semantics — and stores the result in the <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice()</span></a>.</p>
-<p>What is missing is the dominator tree. Its role — deciding whether a candidate value is <em>available</em> at the point where it would be substituted — is taken over by the scope/nesting relation <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a>, computed structurally from free variables rather than from a precomputed CFG analysis. <span class="tt">L-&gt;nests(def)</span> holds iff <span class="tt">def</span> lives <em>strictly inside</em> <span class="tt">L</span>, i.e. it transitively depends on binders introduced below <span class="tt">L</span>; a <span class="tt">def</span> that only mentions things visible at <span class="tt">L</span>'s level or further out is <b>not</b> nested.</p>
-<p>Now the guard reads directly:</p>
-<ul>
-<li><span class="tt">var</span> is a parameter of <span class="tt">L = lam_of(var)</span>; its call sites live <em>outside</em> <span class="tt">L</span>.</li>
-<li>If <span class="tt">L-&gt;nests(def)</span>, the joined value refers to binders that only come into existence <em>within</em> <span class="tt">L</span>'s own body. Such a value simply does not exist at <span class="tt">L</span>'s call sites, so propagating it into <span class="tt">var</span> — and thus substituting it at <span class="tt">var</span>'s uses — would hoist a computation out of the region where its operands are defined. This is the exact situation dominance forbids, so the analysis pins <span class="tt">var</span> to ⊤ (<a class="el" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d" title="mim::Analysis::pin"><span class="tt">pin</span></a>) instead.</li>
-<li>If <span class="tt">L</span> does <em>not</em> nest <span class="tt">def</span>, the value is in scope at every call site — the analogue of <em>"the definition dominates all uses"</em> — and propagation is sound.</li>
-</ul>
-<p>In other words, where classical SCCP walks a dominator tree to certify availability, MimIR asks a single scope question: <em>is this value visible at the binder it would replace?</em> <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> is that availability oracle, and it falls straight out of the free-variable structure that MimIR maintains anyway — no auxiliary dominance computation required.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
-Why this is hard elsewhere</h3>
-<p>The availability obligation is cheap to <em>state</em> but awkward to <em>discharge</em> in most IRs, and this is where MimIR's structural answer stands out.</p>
-<ul>
-<li><b>CFG + SSA</b> answers it with the dominator tree, as sketched above. This works, but only because the CFG has already fixed <em>where</em> every value lives; the whole machinery presupposes a schedule.</li>
-<li><b>Sea-of-nodes</b> deliberately refuses that commitment: data nodes float, and only control, φ, and memory nodes are pinned. That freedom is the entire point — it is what lets the optimizer move computations around without fighting a premature schedule. But it makes availability ill-posed: a floating expression has no location, so <em>"is it available here?"</em> is not even a well-formed question until the node is anchored. To answer it you must reason about where the expression's transitively control-pinned inputs would sit — that is, run (at least partial) global code motion and consult the CFG dominator relation. So copy/expression propagation drags the schedule — precisely what sea-of-nodes set out to avoid — back into the picture.</li>
-</ul>
-<p>MimIR sidesteps the dilemma without introducing syntactic scope: it is a <em>scopeless</em> IR. There are no lexical scoping brackets that a <span class="tt">Lam</span> opens over its body; instead, scope is <em>implicit</em>, emerging from how free variables nest. <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> reads availability straight off that implicit nesting — <span class="tt">L</span> nests <span class="tt">def</span> iff <span class="tt">def</span> transitively depends on a variable bound below <span class="tt">L</span> — so the containment a lexical language would spell out with explicit brackets is recovered purely from the free-variable structure MimIR maintains anyway. The query is structural and commits to no schedule, so MimIR gets a compelling, schedule-free answer to the availability question that dominance-based and sea-of-nodes IRs can only reconstruct by (partially) scheduling first.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
-A second dominance: contification</h3>
-<p>The availability guard is not the only place where a classical dominance computation fails to materialize.</p>
-<p><a href="https://dl.acm.org/doi/10.1145/507635.507639">Contification</a> turns a function that always returns to the same place into a continuation. Here is the canonical example of Fluet &amp; Weeks, transcribed into <a class="el" href="namespaceMim.html">Mim</a> with their original in the comment.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
-<div class="line">plugin mem;</div>
-<div class="line"> </div>
-<div class="line">use core.ops.n;</div>
-<div class="line"> </div>
-<div class="line">// fun g y = y - 1</div>
-<div class="line">// fun f b = (if b then g 13 else g 15) + 1</div>
-<div class="line">extern fun f (b: Bool): Nat =</div>
-<div class="line">    (l2, l1)#b () where</div>
-<div class="line">        con l1 () = g (13, k);</div>
-<div class="line">        con l2 () = g (15, k);</div>
-<div class="line">        fun g (y: Nat): Nat = return (y - 1);</div>
-<div class="line">        con k (x: Nat) = return (x + 1);</div>
-<div class="line">    end;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>Both calls to <span class="tt">g</span> return to the same continuation <span class="tt">k</span>, so <span class="tt">g</span> can become a continuation inside <span class="tt">f</span>. Their algorithm computes <em>where</em> the contified function goes from the dominator tree of the program's call graph, and proves that choice optimal within their framework. That placement is a real decision with a wrong answer: a continuation may only be jumped to from within its scope, so putting <span class="tt">g</span> too far in hides it from some of its call sites, and too far out is not expressible at all.</p>
-<p>MimIR never makes the decision. A return continuation is an ordinary parameter, so the join described above already covers it: once every call site passes the same continuation, that parameter is propagated away and <span class="tt">g</span>'s body transfers control straight to it. Contification is not a separate transformation here — it is what expression propagation looks like when the propagated expression happens to be a <a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="mim::Pi::isa_cn"><span class="tt">Cn</span></a>.</p>
-<p>Placement then takes care of itself, because where a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> sits is a function of its free variables and not of anything a phase decides. Before propagation <span class="tt">g</span> is closed, so it belongs to the top level even when it was written inside <span class="tt">f</span>. After propagation <span class="tt">g</span> mentions <span class="tt">f</span>'s continuation, so it belongs inside <span class="tt">f</span>. Neither move is carried out by anything; both are readings of the very free-variable structure that <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> already queries for availability.</p>
-<p>The contrast with a scoped compiler is sharp. MLton runs contification <em>after</em> closure conversion, and Fluet &amp; Weeks describe their own loop example as moving <span class="tt">loop</span> back inside <span class="tt">sum</span> after closure conversion took it out — a dominator analysis reconstructing a nesting that an earlier phase destroyed. A scopeless IR never loses that nesting, so there is no hoisting-versus-contification phase ordering to get right and no oracle to consult.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 Transformation</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -642,7 +592,7 @@ Transformation</h2>
 <div class="ttc" id="aclassmim_1_1RWPhase_html_a902bfad4a10e60cd70a591357648f94e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a902bfad4a10e60cd70a591357648f94e">mim::RWPhase::is_top</a></div><div class="ttdeci">bool is_top(const Def *old_def) const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00393">phase.h:393</a></div></div>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_a832644b4df14efed752cba8e8568aca4"><div class="ttname"><a href="classmim_1_1Rewriter.html#a832644b4df14efed752cba8e8568aca4">mim::Rewriter::map</a></div><div class="ttdeci">virtual const Def * map(const Def *old_def, const Def *new_def)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00045">rewrite.h:45</a></div></div>
 <div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00123">tuple.h:123</a></div></div>
-<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00394">world.h:394</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_afa7919f0e7f69f2451aedd9da912c857"><div class="ttname"><a href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mim::World::mut_lam</a></div><div class="ttdeci">Lam * mut_lam(const Pi *pi)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00397">world.h:397</a></div></div>
 </div><!-- fragment --><p>Once the lattice is stable, the outer SCCP phase starts rewriting. During rewriting, it can query abstract values for old-world definitions through <a class="el" href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0" title="mim::RWPhase::lattice"><span class="tt">RWPhase::lattice()</span></a>.</p>
 <p>When it sees an application of a lambda whose parameters have propagated values, it rebuilds a specialized lambda:</p>
 <ul>
@@ -658,7 +608,7 @@ Transformation</h2>
 <li>rewrite into a new world using the computed facts,</li>
 <li>swap worlds.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
 Discussion</h2>
 <p>Separating SCCP into analysis and rewrite keeps both parts simple:</p>
 <ul>
@@ -669,6 +619,78 @@ Discussion</h2>
 </ul>
 <p>This separation is the main design pattern to follow for nontrivial optimizations.</p>
 <dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 130 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="ssa-without-dominance"></a>
+SSA without Dominance</h2>
+<p>The very first line of <span class="tt">propagate()</span> is a guard that has no counterpart in the lattice algebra; a <a class="el" href="#sccp-bot-site" title="⊥-sites">second one</a> guards the ⊥ case of the join:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (lam_of(var)-&gt;nests(def)) <span class="keywordflow">return</span> pin(var), var;</div>
+</div><!-- fragment --><p>It is the MimIR analogue of the <em>dominance</em> side condition that a classical SSA-based SCCP has to enforce, so it is worth spelling out what it replaces.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+Why the guard exists at all</h3>
+<p>Textbook SCCP only ever propagates <b>constants</b>. A constant is a literal: it has no operands and is available at <em>every</em> program point by construction. This is what makes classical SCCP so comfortable — specializing a call site to a constant is <em>always</em> valid, and there is simply no availability question to ask.</p>
+<p>MimIR's SCCP is more ambitious: it propagates <b>arbitrary expressions</b>, not just constants (this is essentially copy/expression propagation folded into the same fixed point). The moment you propagate a whole expression, you inherit an obligation constants let you ignore: the expression you substitute must actually be <em>available</em> at the point where it lands. The guard is exactly that availability check.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md112"></a>
+The classical picture</h3>
+<p>Textbook SCCP runs on a CFG in SSA form. Every value has exactly one definition, control flow is made explicit by basic blocks and edges, and φ-nodes reconcile the values that arrive along the different predecessor edges of a join block. SCCP assigns each SSA value a lattice cell (⊥ / a constant / ⊤) and, once the fixed point is reached, substitutes the discovered constant at <em>every</em> use of that value.</p>
+<p>That substitution is only sound because SSA comes with a <b>dominator tree</b>:</p>
+<ul>
+<li>a definition dominates all of its uses, and</li>
+<li>a φ-operand must be available along its associated predecessor edge, i.e. its definition dominates the end of that predecessor block.</li>
+</ul>
+<p>Dominance is exactly the structural guarantee <em>"the value already exists at the program point where I want to use it"</em>. Without it, folding a value into a use could move a computation to a place where its operands are not yet defined.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
+The MimIR picture</h3>
+<p>MimIR has no CFG, no basic blocks, and no separate φ instructions. Control flow is expressed in CPS: a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> <em>is</em> a basic block, its parameters <em>are</em> the φ-nodes, and every <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> of that <span class="tt">Lam</span> is one <em>predecessor edge</em> supplying the corresponding operands. So the SCCP analysis joins, per parameter, all the arguments flowing in from the call sites — precisely the φ-semantics — and stores the result in the <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">lattice()</span></a>.</p>
+<p>What is missing is the dominator tree. Its role — deciding whether a candidate value is <em>available</em> at the point where it would be substituted — is taken over by the scope/nesting relation <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a>, computed structurally from free variables rather than from a precomputed CFG analysis. <span class="tt">L-&gt;nests(def)</span> holds iff <span class="tt">def</span> lives <em>strictly inside</em> <span class="tt">L</span>, i.e. it transitively depends on binders introduced below <span class="tt">L</span>; a <span class="tt">def</span> that only mentions things visible at <span class="tt">L</span>'s level or further out is <b>not</b> nested.</p>
+<p>Now the guard reads directly:</p>
+<ul>
+<li><span class="tt">var</span> is a parameter of <span class="tt">L = lam_of(var)</span>, and the joined value replaces <span class="tt">var</span> throughout <span class="tt">L</span>'s body.</li>
+<li>If <span class="tt">L-&gt;nests(def)</span>, the joined value refers to binders that only come into existence <em>within</em> <span class="tt">L</span>'s own body, so only a call site inside <span class="tt">L</span> — a recursive jump — can pass it. Substituting it for <span class="tt">var</span> would use those binders before they exist: on entry to <span class="tt">L</span>, nothing below <span class="tt">L</span> has been bound yet. This is the exact situation dominance forbids, so the analysis pins <span class="tt">var</span> to ⊤ (<a class="el" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d" title="mim::Analysis::pin"><span class="tt">pin</span></a>) instead.</li>
+<li>A call site <em>outside</em> <span class="tt">L</span> cannot pass such a value: it passes ⊥, which the <a class="el" href="#sccp-bot-site" title="⊥-sites">⊥-site check</a> handles, or a different value, which joins to ⊤ anyway. But when <span class="tt">L</span> is only entered through an escaping value, its recursive call sites are the only known ones, and this guard is all that stands in the way.</li>
+</ul>
+<p>In other words, where classical SCCP walks a dominator tree to certify availability, MimIR asks scope questions: <em>is this value visible at the binder it would replace, and at every caller?</em> <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> and <a class="el" href="classmim_1_1Def.html#a3eca19d37220809e38414e1261a34337" title="mim::Def::in_scope"><span class="tt">Def::in_scope</span></a> are those availability oracles, and they fall straight out of the free-variable structure that MimIR maintains anyway — no auxiliary dominance computation required.</p>
+<h3 class="doxsection"><a class="anchor" id="sccp-bot-site"></a>
+⊥-sites</h3>
+<p><span class="tt">L-&gt;nests(def)</span> only rules out values from <em>below</em> <span class="tt">L</span>. A value from a <em>sibling</em> scope passes it, and the join alone never notices when that is wrong:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">(init, early)#c () where</div>
+<div class="line">    con early () = exit ⊥:Nat;</div>
+<div class="line">    con init () =</div>
+<div class="line">        ret y = get $ ();</div>
+<div class="line">        exit y;</div>
+<div class="line">    con exit (v: Nat) = ...;</div>
+<div class="line">end;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">y</span> is bound by <span class="tt">init</span>'s continuation, which does not nest <span class="tt">exit</span>, so <span class="tt">exit</span> happily joins <span class="tt">v ↦ y</span>. <span class="tt">early</span> passes ⊥, and <span class="tt">y ⊔ ⊥ = y</span> — but ⊥ is a contribution that says nothing, not a promise to be compatible with whatever the other sites send. Once <span class="tt">y</span> replaces <span class="tt">v</span>, <span class="tt">exit</span>'s body mentions <span class="tt">y</span>, so <span class="tt">exit</span> now <em>lives inside</em> <span class="tt">init</span>'s continuation — and <span class="tt">early</span>, outside of it, can no longer jump there.</p>
+<p>So <span class="tt">propagate()</span> checks a ⊥-site, too: the joined value must be in scope at the calling mutable, i.e. <a class="el" href="classmim_1_1Def.html#a3eca19d37220809e38414e1261a34337" title="mim::Def::in_scope"><span class="tt">cur-&gt;in_scope(caller)</span></a> — every free Var of <span class="tt">cur</span> is bound by <span class="tt">caller</span> itself or by a mutable that <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests">nests</a> <span class="tt">caller</span>. Otherwise <span class="tt">var</span> is pinned to ⊤. In dominance terms: the definition must dominate <em>every</em> predecessor edge, including the ones that carry no information.</p>
+<p>The check needs no ordering: if the ⊥-site happens to be visited before <span class="tt">cur</span> arrives, the lattice change triggers another round, and the <a class="el" href="#phases_analysis" title="Analysis">full round</a> that certifies the fixed point revisits the ⊥-site with the final <span class="tt">cur</span>. <span class="tt">mem.seo</span> performs the very same ⊥-site check; there, it also catches a φ of an unrelated loop header flowing into a block that a ⊥-site jumps to as well.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+Why this is hard elsewhere</h3>
+<p>The availability obligation is cheap to <em>state</em> but awkward to <em>discharge</em> in most IRs, and this is where MimIR's structural answer stands out.</p>
+<ul>
+<li><b>CFG + SSA</b> answers it with the dominator tree, as sketched above. This works, but only because the CFG has already fixed <em>where</em> every value lives; the whole machinery presupposes a schedule - which may overapproximate actual data dependencies.</li>
+<li><b>Sea-of-nodes</b> deliberately refuses that commitment: data nodes float, and only control, φ, and memory nodes are pinned. That freedom is the entire point — it is what lets the optimizer move computations around without fighting a premature schedule. But it makes availability ill-posed: a floating expression has no location, so <em>"is it available here?"</em> is not even a well-formed question until the node is anchored. To answer it you must reason about where the expression's transitively control-pinned inputs would sit — that is, run (at least partial) global code motion and consult the CFG dominator relation. So copy/expression propagation drags the schedule — precisely what sea-of-nodes set out to avoid — back into the picture.</li>
+</ul>
+<p>MimIR sidesteps the dilemma without introducing syntactic scope: it is a <em>scopeless</em> IR. There are no lexical scoping brackets that a <span class="tt">Lam</span> opens over its body; instead, scope is <em>implicit</em>, emerging from how free variables nest. <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> reads availability straight off that implicit nesting — <span class="tt">L</span> nests <span class="tt">def</span> iff <span class="tt">def</span> transitively depends on a variable bound below <span class="tt">L</span> — so the containment a lexical language would spell out with explicit brackets is recovered purely from the free-variable structure MimIR maintains anyway. The query is structural and commits to no schedule, so MimIR gets a compelling, schedule-free answer to the availability question that dominance-based and sea-of-nodes IRs can only reconstruct by (partially) scheduling first.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+A second dominance: contification</h3>
+<p>The availability guard is not the only place where a classical dominance computation fails to materialize.</p>
+<p><a href="https://dl.acm.org/doi/10.1145/507635.507639">Contification</a> turns a function that always returns to the same place into a continuation. Here is the canonical example of Fluet &amp; Weeks, transcribed into <a class="el" href="namespaceMim.html">Mim</a> with their original in the comment.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+<div class="line">plugin mem;</div>
+<div class="line"> </div>
+<div class="line">use core.ops.n;</div>
+<div class="line"> </div>
+<div class="line">// fun g y = y - 1</div>
+<div class="line">// fun f b = (if b then g 13 else g 15) + 1</div>
+<div class="line">extern fun f (b: Bool): Nat =</div>
+<div class="line">    (l2, l1)#b () where</div>
+<div class="line">        con l1 () = g (13, k);</div>
+<div class="line">        con l2 () = g (15, k);</div>
+<div class="line">        fun g (y: Nat): Nat = return (y - 1);</div>
+<div class="line">        con k (x: Nat) = return (x + 1);</div>
+<div class="line">    end;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>Both calls to <span class="tt">g</span> return to the same continuation <span class="tt">k</span>, so <span class="tt">g</span> can become a continuation inside <span class="tt">f</span>. Their algorithm computes <em>where</em> the contified function goes from the dominator tree of the program's call graph, and proves that choice optimal within their framework. That placement is a real decision with a wrong answer: a continuation may only be jumped to from within its scope, so putting <span class="tt">g</span> too far in hides it from some of its call sites, and too far out is not expressible at all.</p>
+<p>MimIR never makes the decision. A return continuation is an ordinary parameter, so the join described above already covers it: once every call site passes the same continuation, that parameter is propagated away and <span class="tt">g</span>'s body transfers control straight to it. Contification is not a separate transformation here — it is what expression propagation looks like when the propagated expression happens to be a <a class="el" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61" title="mim::Pi::isa_cn"><span class="tt">Cn</span></a>.</p>
+<p>Placement then takes care of itself, because where a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> sits is a function of its free variables and not of anything a phase decides. Before propagation <span class="tt">g</span> is closed, so it belongs to the top level even when it was written inside <span class="tt">f</span>. After propagation <span class="tt">g</span> mentions <span class="tt">f</span>'s continuation, so it belongs inside <span class="tt">f</span>. Neither move is carried out by anything; both are readings of the very free-variable structure that <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a> already queries for availability.</p>
+<p>The contrast with a scoped compiler is sharp. MLton runs contification <em>after</em> closure conversion, and Fluet &amp; Weeks describe their own loop example as moving <span class="tt">loop</span> back inside <span class="tt">sum</span> after closure conversion took it out — a dominator analysis reconstructing a nesting that an earlier phase destroyed. A scopeless IR never loses that nesting, so there is no hoisting-versus-contification phase ordering to get right and no oracle to consult.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
 Choosing the Right Base Class</h1>
 <p>A useful rule of thumb is:</p>
@@ -723,7 +745,7 @@ Minimal Examples</h1>
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassmim_1_1Analysis_html_afa57ec108651407ce0e7fe30452b24c7"><div class="ttname"><a href="classmim_1_1Analysis.html#afa57ec108651407ce0e7fe30452b24c7">mim::Analysis::rewrite_mut</a></div><div class="ttdeci">Def * rewrite_mut(Def *) override</div><div class="ttdoc">Schedules mut for a breadth-first visit of its dependencies and records mut -&gt; mut.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00112">phase.cpp:112</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00626">def.h:626</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00629">def.h:629</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00093">lam.h:93</a></div></div>
 </div><!-- fragment --><p>Using both:</p>
 <div class="fragment"><div class="line">CountMutLams analysis(world);</div>
