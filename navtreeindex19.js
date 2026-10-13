@@ -242,12 +242,12 @@ var NAVTREEINDEX19 =
 "namespacemim.html#a57bc30f8ac8359a582c8f53b9b4f0ed8":[2,0,4,126],
 "namespacemim.html#a60ee93398f76269a406c841b2bb2c306":[2,0,4,198],
 "namespacemim.html#a61ddf45bef2304628acddc77ac1c1ecd":[2,0,4,199],
+"namespacemim.html#a63a74e46f0a8192dceceba8b413bf6da":[2,0,4,156],
 "namespacemim.html#a63d7daa748288edee7a99436759d61ca":[2,0,4,189],
 "namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a":[2,0,4,172],
 "namespacemim.html#a64c933b41d9c8162537d22966b3ad303":[5,0,3,1,6,2,6],
 "namespacemim.html#a651a2dea89f330efd5ed961191620af8":[2,0,4,166],
 "namespacemim.html#a659d017e0b42344997eb847f5b6d8f27":[2,0,4,188],
 "namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b":[2,0,4,182],
-"namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987":[2,0,4,179],
-"namespacemim.html#a694f8c3f79839cce8733f86ce2f7cb2f":[2,0,4,108]
+"namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987":[2,0,4,179]
 };

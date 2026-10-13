@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"namespacemim.html#a694f8c3f79839cce8733f86ce2f7cb2f":[2,0,4,108],
 "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab":[2,0,4,139],
 "namespacemim.html#a757d0ae5667a57e8322b916c17de712b":[2,0,4,193],
 "namespacemim.html#a77f34c28f8418e4828b4684cbc025e52":[2,0,4,186],
@@ -38,7 +39,6 @@ var NAVTREEINDEX20 =
 "namespacemim.html#aba1dd89e9049fc3fd5f807e098d95cd9":[2,0,4,197],
 "namespacemim.html#aba2a676bca77d183a084b2bf6ade2bf5":[2,0,4,178],
 "namespacemim.html#aba9b8f07925b0b13adb89a9101a9412b":[2,0,4,176],
-"namespacemim.html#abb37efdc2e6dae908bbb52d970a5f761":[2,0,4,156],
 "namespacemim.html#abb3c4d87d349db095756fced097d8ac8":[2,0,4,124],
 "namespacemim.html#abd0be8cef745edc10628729e7096bba0":[2,0,4,163],
 "namespacemim.html#abdf57b48740472043af02225a151fc64":[2,0,4,201],

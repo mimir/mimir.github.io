@@ -1,6 +1,5 @@
 var seo_8cpp =
 [
-    [ "mim::plug::mem::phase::eta_canon", "namespacemim_1_1plug_1_1mem_1_1phase.html#a1a97fa43f6a1e036734c1fcebd47d7fd", null ],
     [ "mim::plug::mem::phase::idx_of", "namespacemim_1_1plug_1_1mem_1_1phase.html#aeea0dcbb2cf333344a31d37243ad3f83", null ],
     [ "mim::plug::mem::phase::is_visible", "namespacemim_1_1plug_1_1mem_1_1phase.html#ae60b586e8df39141bbc60defc176f10d", null ],
     [ "mim::plug::mem::phase::isa_bundle", "namespacemim_1_1plug_1_1mem_1_1phase.html#ab7f8de36bdae13ccceb6e0cf573a401a", null ],
