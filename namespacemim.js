@@ -227,6 +227,7 @@ var namespacemim =
     [ "is_flex", "namespacemim.html#af13ff5627285a5c96c9df99a12612858", null ],
     [ "is_mut_node", "namespacemim.html#aba9b8f07925b0b13adb89a9101a9412b", null ],
     [ "is_polymorphic_arg", "namespacemim.html#ad71a02516bfec8afc2806c4f193b2709", null ],
+    [ "is_seq_arity", "namespacemim.html#a4fb7661e76f31be41db0ec3b4e88a397", null ],
     [ "is_shaped", "namespacemim.html#aba2a676bca77d183a084b2bf6ade2bf5", null ],
     [ "is_trivial", "namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987", null ],
     [ "is_unit", "namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8", null ],

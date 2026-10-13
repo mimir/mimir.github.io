@@ -123,13 +123,13 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html#a1feb5da2f221fb5f571a4e7b522b31a2",
 "dir_2aff747bd961ffeb05f3766c17b5a0e1.html",
 "gpu_8cpp.html",
-"namespacemim.html#a54b5eaeee81baedf35cb803d4c39b222",
-"namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864",
-"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a2db95e8e1a9267b7a1188556b2013b33",
-"namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a82c6d0be24503b7b1633dea41a3cfe3e",
-"namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8",
-"regex2nfa_8h.html#a71e2159aa38b79d054f3548cd4a97201",
-"structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49"
+"namespacemim.html#a4fb7661e76f31be41db0ec3b4e88a397",
+"namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8",
+"namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43a0cc175b9c0f1b6a831c399e269772661",
+"namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a7b774effe4a349c6dd82ad4f4f21d34c",
+"namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1",
+"regex2nfa_8h.html",
+"structmim_1_1Version.html#a3a241d7d6bf3d7280b6dc360ce7018e2"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';
