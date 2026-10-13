@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"regex_8cpp_source.html":[5,0,4,1,3,18,3],
+"regex_8h.html":[5,0,3,1,2,18,2],
 "regex_8h_source.html":[5,0,3,1,2,18,2],
 "remove__double__syncs_8cpp.html":[5,0,4,1,3,9,0,2],
 "remove__double__syncs_8cpp_source.html":[5,0,4,1,3,9,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "structmim_1_1World_1_1State.html":[2,0,4,87,1],
 "structmim_1_1World_1_1State.html":[4,0,1,87,1],
 "structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15":[2,0,4,87,1,1],
-"structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15":[4,0,1,87,1,1],
-"structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a":[2,0,4,87,1,0,1],
-"structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a":[4,0,1,87,1,0,1]
+"structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15":[4,0,1,87,1,1]
 };

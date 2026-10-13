@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim_1_1plug_1_1tensor.html#a47e1c62aeb04464a9bad6b284165af85":[2,0,4,1,19,64],
+"namespacemim_1_1plug_1_1tensor.html#a49bf3f416a9091d355186223c5988711":[2,0,4,1,19,65],
 "namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd":[2,0,4,1,19,59],
 "namespacemim_1_1plug_1_1tensor.html#a53f85e185a8a5de00988160ea6bee6cd":[2,0,4,1,19,46],
 "namespacemim_1_1plug_1_1tensor.html#a5814fef73877a1b9809d09fcaaad3b7c":[2,0,4,1,19,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "regex_8cpp.html":[5,0,4,1,3,18,3],
 "regex_8cpp.html#a32913a9d0d0f5f5186410c360f723967":[5,0,4,1,3,18,3,2],
 "regex_8cpp.html#a80d6bd13de673ff0ab7d0200e02de5f2":[5,0,4,1,3,18,3,0],
-"regex_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,18,3,1],
-"regex_8cpp_source.html":[5,0,4,1,3,18,3],
-"regex_8h.html":[5,0,3,1,2,18,2]
+"regex_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,18,3,1]
 };

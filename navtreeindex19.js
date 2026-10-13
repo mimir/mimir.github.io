@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"lam_8h.html":[5,0,3,1,9],
+"lam_8h_source.html":[5,0,3,1,9],
 "lam__spec_8cpp.html":[5,0,4,1,2,4],
 "lam__spec_8cpp_source.html":[5,0,4,1,2,4],
 "lam__spec_8h.html":[5,0,3,1,1,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "namespacemim.html#a645c73e7dc74e25de2bc1c7b4236a40a":[2,0,4,172],
 "namespacemim.html#a64c933b41d9c8162537d22966b3ad303":[5,0,3,1,6,2,6],
 "namespacemim.html#a651a2dea89f330efd5ed961191620af8":[2,0,4,166],
-"namespacemim.html#a659d017e0b42344997eb847f5b6d8f27":[2,0,4,188],
-"namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b":[2,0,4,182],
-"namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987":[2,0,4,179]
+"namespacemim.html#a659d017e0b42344997eb847f5b6d8f27":[2,0,4,188]
 };

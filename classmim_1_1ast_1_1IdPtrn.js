@@ -6,6 +6,7 @@ var classmim_1_1ast_1_1IdPtrn =
     [ "dbg", "classmim_1_1ast_1_1IdPtrn.html#ab6c354da0454c31577aea472d4ce5955", null ],
     [ "emit_type", "classmim_1_1ast_1_1IdPtrn.html#a20f6660a3c4c4124d586c2bd9b208dca", null ],
     [ "emit_value", "classmim_1_1ast_1_1IdPtrn.html#ac42da49ebbef65a1567a9592debea706", null ],
+    [ "emit_value_without_type_check", "classmim_1_1ast_1_1IdPtrn.html#a30a3546d1d3b1264151c04a204fa93f1", null ],
     [ "is_anx", "classmim_1_1ast_1_1IdPtrn.html#aebc75fdc2b6186bb7330797b02f465a9", null ],
     [ "make_id", "classmim_1_1ast_1_1IdPtrn.html#ae1a8caaf25007b8fea7fb9e4178455cd", null ],
     [ "stream", "classmim_1_1ast_1_1IdPtrn.html#a0baa026abe3065e5c34e74e6aeac2cb5", null ],
