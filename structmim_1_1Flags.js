@@ -16,6 +16,7 @@ var structmim_1_1Flags =
     [ "max_fp_iters", "structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d", null ],
     [ "mim_local", "structmim_1_1Flags.html#a02b769c888db2f4ec9686f339c4fd57b", null ],
     [ "mim_typed_let", "structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9", null ],
+    [ "pe_fuel", "structmim_1_1Flags.html#aa8a91f3c370ec2d133aaaf5dc76548c2", null ],
     [ "profile", "structmim_1_1Flags.html#afc1f0ccd205ffa9e1c9a760997c9ddfc", null ],
     [ "reeval_breakpoints", "structmim_1_1Flags.html#aa3d3421bf85526b22938b6f5d289af22", null ],
     [ "scalarize_threshold", "structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7", null ],
