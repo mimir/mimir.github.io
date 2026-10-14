@@ -1,7 +1,6 @@
 var classmim_1_1Idx =
 [
     [ "as", "classmim_1_1Idx.html#ae95408e6077d75d927cea9abf0091922", null ],
-    [ "as_lit", "classmim_1_1Idx.html#a205f902b6156d862d538960868670e93", null ],
     [ "bitwidth2size", "classmim_1_1Idx.html#a752a4648753c26f9d618a451fdf3b703", null ],
     [ "expect_bitwidth", "classmim_1_1Idx.html#af571bc3aa9b5ba62983206eedded2b71", null ],
     [ "isa", "classmim_1_1Idx.html#a7b4496e71deaa94835f732de364e5d76", null ],

@@ -90,7 +90,6 @@ var namespacemim =
     [ "World", "classmim_1_1World.html", "classmim_1_1World" ],
     [ "Wrap", "classmim_1_1Wrap.html", "classmim_1_1Wrap" ],
     [ "Zonker", "classmim_1_1Zonker.html", "classmim_1_1Zonker" ],
-    [ "annex_with_subs", "conceptmim_1_1annex__with__subs.html", null ],
     [ "annex_without_subs", "conceptmim_1_1annex__without__subs.html", null ],
     [ "DefPred", "conceptmim_1_1DefPred.html", null ],
     [ "Enum", "conceptmim_1_1Enum.html", null ],
@@ -108,14 +107,12 @@ var namespacemim =
     [ "flags_t", "namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f", null ],
     [ "GIDMap", "namespacemim.html#a110168b2aced7064a3dc5606772e17d3", null ],
     [ "GIDNodeMap", "namespacemim.html#ac39bb389be019e5f68815908bac7ce3d", null ],
-    [ "GIDNodeSet", "namespacemim.html#a694f8c3f79839cce8733f86ce2f7cb2f", null ],
     [ "GIDSet", "namespacemim.html#aa7ac6faf2fa82349c4acf7d5f08470e3", null ],
     [ "Keys", "namespacemim.html#ac41e9fa118277e50afd6c79f4d8e5665", null ],
     [ "Lam2Lam", "namespacemim.html#a8d37dada179be276702eb8680efbc370", null ],
     [ "LamMap", "namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034", null ],
     [ "LamSet", "namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9", null ],
     [ "level_t", "namespacemim.html#a81981a41f846c6a9c2a7d3d57fa81189", null ],
-    [ "Mut2Mut", "namespacemim.html#a9fd6d037a8eb540c32dbe840e32c90e9", null ],
     [ "MutMap", "namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2", null ],
     [ "Muts", "namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0", null ],
     [ "MutSet", "namespacemim.html#a9cef35a428a391739d168b05bad8dfb2", null ],
@@ -138,7 +135,6 @@ var namespacemim =
     [ "u64", "namespacemim.html#ad8bae182cdb06699fc07a348105f193c", null ],
     [ "u8", "namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7", null ],
     [ "Uses", "namespacemim.html#a7d50dc59d277c5e591ef4a74f163ae62", null ],
-    [ "Var2Var", "namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06", null ],
     [ "VarMap", "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab", null ],
     [ "Vars", "namespacemim.html#aaa812145285556e31140df683b2367f7", null ],
     [ "w2f", "namespacemim.html#a2812faa6603be36aef320b6b3fb90767", null ],
@@ -158,10 +154,6 @@ var namespacemim =
       [ "Elim", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ae46a61588776648a5513d415ba6de279", null ],
       [ "Meta", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9", null ],
       [ "Hole", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988", null ]
-    ] ],
-    [ "Mut", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d", [
-      [ "Mut", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08daebb87a770abac0e394d963d20ed574b7", null ],
-      [ "Imm", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08dada9470e1aa5be1858e667318254dcb4b", null ]
     ] ],
     [ "MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", null ],
     [ "Node", "namespacemim.html#afb12dbffaaa27bca46f171517d96256d", [
@@ -255,7 +247,7 @@ var namespacemim =
     [ "rem", "namespacemim.html#a4b886d6d719beecae433602545de678c", null ],
     [ "rem", "namespacemim.html#ac8e771be2e47e2503c4a1f2a241437fd", null ],
     [ "tuple2str", "namespacemim.html#a491928b70e9d5a3cc4bb053cd49bf49e", null ],
-    [ "tuple_of_dict", "namespacemim.html#a31108855e962bd3bf8dbf912eb4349b0", null ],
+    [ "tuple_of_dict", "namespacemim.html#a22cd0a02e944601c54bd019bf8de8659", null ],
     [ "tuple_of_types", "namespacemim.html#a8edd5d2569579fbdac7077d606a2e2b5", null ],
     [ "type_of", "namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81", null ],
     [ "Num_Nodes", "namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd", null ]

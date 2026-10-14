@@ -200,7 +200,7 @@ Lexical Structure</h1>
 <div class="line">let flt = 4.2e1:math.F64;   // a floating-point literal needs its type</div>
 <div class="line">let chr = &#39;A&#39;;              // I8</div>
 <div class="line">let str = &quot;Mim&quot;;            // «3; I8»</div>
-<div class="line">let neg = -42;              // the sign belongs to the expression, not to the token</div>
+<div class="line">let neg = -42I32;           // the sign belongs to the expression, not to the token</div>
 <div class="line">let nothing = ⊥;            // `bot`; defaults to `*`</div>
 <div class="line">let anything = ⊤:Nat;       // `top`, ascribed</div>
 <div class="line"> </div>
@@ -310,12 +310,12 @@ Functions and Continuations</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">mutual</span> also groups functions, and <span class="tt">ret p = f $ a; body</span> binds the result of a continuation-style call.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">mutual</div>
 <div class="line">    fun even (n: I32): Bool = core.select (n == 0I32, yes, no) () where</div>
-<div class="line">        con yes() = return tt;</div>
-<div class="line">        con no () = ret r = odd $ (n - 1I32); return r;</div>
+<div class="line">        con yes () = return tt;</div>
+<div class="line">        con no  () = ret r = odd $ (n - 1I32); return r;</div>
 <div class="line">    end;</div>
 <div class="line">    fun odd (n: I32): Bool = core.select (n == 0I32, yes, no) () where</div>
-<div class="line">        con yes() = return ff;</div>
-<div class="line">        con no () = ret r = even $ (n - 1I32); return r;</div>
+<div class="line">        con yes () = return ff;</div>
+<div class="line">        con no  () = ret r = even $ (n - 1I32); return r;</div>
 <div class="line">    end;</div>
 <div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md196"></a>
@@ -362,13 +362,13 @@ Singletons</h1>
 </div><!-- fragment --></div><div class="mim-code"></div><p>The <span class="tt">;</span> is what tells an array or pack from a singleton.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam not_single (x: «2; Nat»): Nat = x#0₂;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">#</span> is a prefix only where an expression starts, so <span class="tt">f #x</span> extracts instead of applying.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = refly.struc.e (#‹2› + 3, 5) where use core.ops.n; end;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam extracts (t: «2; Nat», i: Idx 2): Nat = refly.struc.e (t #i, t#i);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
 Nominal Newtypes</h1>
 <p><span class="tt">nom</span> wraps a type into a fresh one; two <span class="tt">nom</span>s over the same type stay distinct.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Meter = I32;</div>
 <div class="line">nom Foot  = I32;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">inj</span> wraps a value and the prefix <span class="tt">#</span> unwraps it again - both only in the <span class="tt">mod</span> (or file) that declared the <span class="tt">nom</span>, so an importer sees the type as abstract.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">inj</span> wraps a value and the prefix <span class="tt">#</span> unwraps it again - both only in the <span class="tt">mod</span> (or file) that declared the <span class="tt">nom</span>. An importer therefore sees the type as abstract.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam to_foot (m: Meter): Foot = #m inj Foot;</div>
 <div class="line">let _ = refly.struc.e (#(23I32 inj Meter), 23I32);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Like <span class="tt">rec</span>, a <span class="tt">nom</span> is in scope in its own body, and <span class="tt">anx nom</span> makes it an annex.</p>
@@ -429,9 +429,10 @@ LLVM</h1>
 <div class="line">    where</div>
 <div class="line">        con loop (acc i: I32) = core.select (i &gt; 0I32, body, exit) ()</div>
 <div class="line">            where</div>
-<div class="line">                con body() = loop (acc * i, i - 1I32);</div>
-<div class="line">                con exit() = return acc;</div>
+<div class="line">                con body () = loop (acc * i, i - 1I32);</div>
+<div class="line">                con exit () = return acc;</div>
 <div class="line">            end;</div>
+<div class="line">        use core.ops.s.w;</div>
 <div class="line">    end;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>In order to compile to LLVM you have to load the <a class="el" href="ll.html" title="The ll Plugin">ll</a> plugin (implies loading the <a class="el" href="opt.html" title="The opt Plugin">opt</a> plugin):</p>
 <div class="fragment"><div class="line">mim myprogram.mim -p ll</div>

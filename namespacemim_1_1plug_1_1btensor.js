@@ -1,6 +1,7 @@
 var namespacemim_1_1plug_1_1btensor =
 [
     [ "phase", "namespacemim_1_1plug_1_1btensor_1_1phase.html", "namespacemim_1_1plug_1_1btensor_1_1phase" ],
+    [ "MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ],
     [ "broadcast", "namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d", null ],
     [ "concat", "namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085", null ],
     [ "gather", "namespacemim_1_1plug_1_1btensor.html#a52e55fb0c4b38eed71595a010c06dadd", null ],
@@ -17,7 +18,17 @@ var namespacemim_1_1plug_1_1btensor =
     [ "Ring", "namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87", null ],
     [ "scatter", "namespacemim_1_1plug_1_1btensor.html#ab479974738dec361208040c802c33f50", null ],
     [ "transpose_2d", "namespacemim_1_1plug_1_1btensor.html#acc5c488a59e6f9ee424fc9d3c7d2b0ef", null ],
+    [ "app_cps", "namespacemim_1_1plug_1_1btensor.html#ae30478d943f1561f59d65e1339b1afca", null ],
+    [ "build_pointwise", "namespacemim_1_1plug_1_1btensor.html#a2b63e75f4d9d5793a33208a49255d676", null ],
+    [ "clamp", "namespacemim_1_1plug_1_1btensor.html#a68fb0a2ed7c67958245f946f07e1b33f", null ],
+    [ "concat_extents", "namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d", null ],
+    [ "concat_select", "namespacemim_1_1plug_1_1btensor.html#adc675d0c43c37daa23f54fdaff020e9e", null ],
+    [ "ds_splice", "namespacemim_1_1plug_1_1btensor.html#ae118082de780df1ddea00f39fca6a78d", null ],
+    [ "folded_idx", "namespacemim_1_1plug_1_1btensor.html#ad5489055e37845955c0ce3bf34d07dee", null ],
     [ "normalize_map_reduce", "namespacemim_1_1plug_1_1btensor.html#aa1ab9fc65f86afbf46f639f631613034", null ],
+    [ "op_affine_map", "namespacemim_1_1plug_1_1btensor.html#a21fb97ac045b7341ad37c3453469f58e", null ],
+    [ "pad_coords", "namespacemim_1_1plug_1_1btensor.html#ad534f6a0eaa1f47b02b523f46f4b0e4e", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1btensor.html#ae60b4af6f42cfc600d8560d1df41ba44", null ],
+    [ "to_idxs", "namespacemim_1_1plug_1_1btensor.html#a47aa7b1ac64b3fda6b806bfd781bf00d", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1btensor.html#ab5e27486c5e2ab06a2d6d8d20cf22bd5", null ]
 ];

@@ -49,6 +49,7 @@ var hierarchy =
     ] ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
+    [ "mim::plug::btensor::MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", null ],
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
@@ -69,6 +70,7 @@ var hierarchy =
     [ "mim::plug::tensor::PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", null ],
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
+    [ "mim::plug::btensor::MapRedPost::Ranks", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
         [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ]

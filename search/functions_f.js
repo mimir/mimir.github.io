@@ -1,7 +1,7 @@
 var searchData=
 [
   ['pack_0',['pack',['../classmim_1_1World.html#a1b409ee886730ee07fb61b4229d0732d',1,'mim::World::pack(Shape shape, const Def *body)'],['../classmim_1_1World.html#a914e6103a07f900227c386c1668470bf',1,'mim::World::pack(Defs shape, const Def *body)'],['../classmim_1_1World.html#a7fe04bb9b3f06b9b8149ac446afa8fcb',1,'mim::World::pack(fe::View&lt; u64 &gt; shape, const Def *body)'],['../classmim_1_1World.html#a4e79256e398157f6c7c61ee0939ed167',1,'mim::World::pack(u64 n, const Def *body)']]],
-  ['pack_5funsafe_1',['pack_unsafe',['../classmim_1_1World.html#ad5abcad5abbe33fcfc3df7141d498776',1,'mim::World']]],
+  ['pad_5fcoords_1',['pad_coords',['../namespacemim_1_1plug_1_1btensor.html#ad534f6a0eaa1f47b02b523f46f4b0e4e',1,'mim::plug::btensor']]],
   ['pair_2',['pair',['../classmim_1_1Select.html#a59031e25a631153cee4285eb00e5e01c',1,'mim::Select']]],
   ['parse_5fargs_3',['parse_args',['../namespacedeploy.html#ac2837808e674ff0116e95ebbb1524244',1,'deploy']]],
   ['parser_4',['Parser',['../classmim_1_1ast_1_1Parser.html#a3a6fc31bddc3da721fe722fb315b14f0',1,'mim::ast::Parser']]],
@@ -10,7 +10,7 @@ var searchData=
   ['pathexpr_7',['PathExpr',['../classmim_1_1ast_1_1PathExpr.html#a8f03487036ac4a943d7412074d62b314',1,'mim::ast::PathExpr']]],
   ['payload_8',['payload',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#a3438589f4bb6f2d89b962c5be9edccc0',1,'mim::ast::MatchExpr::Arm']]],
   ['peel_9',['peel',['../classmim_1_1Axm.html#a1962bb2193fdde2003bce69e4783111b',1,'mim::Axm::peel()'],['../classmim_1_1World.html#ac84a891e732da4e82e26965d602ca557',1,'mim::World::peel()']]],
-  ['phase_10',['Phase',['../classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260',1,'mim::Phase::Phase(World &amp;world, std::string name)'],['../classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707',1,'mim::Phase::Phase(World &amp;world, flags_t annex)']]],
+  ['phase_10',['Phase',['../classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260',1,'mim::Phase::Phase(World &amp;world, std::string name)'],['../classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707',1,'mim::Phase::Phase(World &amp;world, flags_t annex)'],['../classmim_1_1plug_1_1ll_1_1Emit.html#a5c9e1cb4322b15d946feaaabcc057260',1,'mim::plug::ll::Emit::Phase(World &amp;world, std::string name)'],['../classmim_1_1plug_1_1ll_1_1Emit.html#aa2ac27ba5ea35a77e6d86665ffbb7707',1,'mim::plug::ll::Emit::Phase(World &amp;world, flags_t annex)'],['../classmim_1_1plug_1_1nvptx_1_1Emit.html#a5c9e1cb4322b15d946feaaabcc057260',1,'mim::plug::nvptx::Emit::Phase(World &amp;world, std::string name)'],['../classmim_1_1plug_1_1nvptx_1_1Emit.html#aa2ac27ba5ea35a77e6d86665ffbb7707',1,'mim::plug::nvptx::Emit::Phase(World &amp;world, flags_t annex)']]],
   ['phase_11',['phase',['../classmim_1_1Driver.html#ae98e9444e90210ce6ab197daec6c56fb',1,'mim::Driver']]],
   ['phaseman_12',['PhaseMan',['../classmim_1_1PhaseMan.html#a07c8ecc9846081ddbe641bd1533f919d',1,'mim::PhaseMan']]],
   ['phases_13',['phases',['../classmim_1_1Driver.html#ad255a2786ccfe3ca27450b36940d6bc5',1,'mim::Driver::phases()'],['../classmim_1_1PhaseMan.html#a17deb6d65290de8e24955b7432d63046',1,'mim::PhaseMan::phases()'],['../classmim_1_1PhaseMan.html#aa0dda207f7319622ce59a2b17fb49a6f',1,'mim::PhaseMan::phases() const']]],

@@ -26,7 +26,7 @@ var searchData=
   ['some_23',['some',['../namespacemim_1_1plug_1_1option.html#ab6c6d898b0c82f9c3c9a52ed3bb5bfd8',1,'mim::plug::option']]],
   ['some_5fif_24',['some_if',['../namespacemim_1_1plug_1_1option.html#ab4a39114347d879f20a6f587fd419f63',1,'mim::plug::option']]],
   ['sort_25',['Sort',['../classmim_1_1UMax.html#a098634bb335cad742136e612032ab42f',1,'mim::UMax']]],
-  ['specialtransitons_26',['SpecialTransitons',['../classautomaton_1_1DFA.html#a0e1eba2b8de869d374e647966c20b6d3',1,'automaton::DFA::SpecialTransitons'],['../classautomaton_1_1NFA.html#aa22a4b55ded13c4fc0b6fb4c4fd11d12',1,'automaton::NFA::SpecialTransitons']]],
+  ['specialtransitons_26',['SpecialTransitons',['../classautomaton_1_1NFA.html#aa22a4b55ded13c4fc0b6fb4c4fd11d12',1,'automaton::NFA']]],
   ['splat_27',['splat',['../namespacemim_1_1plug_1_1tensor.html#a16a6978611660fab5fcbd02501f236e7',1,'mim::plug::tensor']]],
   ['split_5fapply_28',['split_apply',['../namespacemim_1_1plug_1_1gpu.html#abd4cc171f8effb9c046c05ab8aac1f5e',1,'mim::plug::gpu']]],
   ['static_5farg_5fopt_29',['static_arg_opt',['../namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de',1,'mim::plug::compile']]],

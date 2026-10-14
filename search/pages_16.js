@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['zero_0',['zero',['../autodiff.html#autotoc_md227',1,'']]],
-  ['zero_5frepl_1',['zero_repl',['../autodiff.html#autotoc_md231',1,'']]],
-  ['zip_2',['zip',['../tuple.html#autotoc_md631',1,'zip'],['../vec.html#autotoc_md635',1,'zip']]]
+  ['zero_0',['zero',['../autodiff.html#autotoc_md228',1,'']]],
+  ['zero_5frepl_1',['zero_repl',['../autodiff.html#autotoc_md232',1,'']]],
+  ['zip_2',['zip',['../tuple.html#autotoc_md632',1,'zip'],['../vec.html#autotoc_md636',1,'zip']]]
 ];

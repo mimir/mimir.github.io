@@ -286,6 +286,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6e8a8835358077fdbc9c2143c8c79816" id="r_a6e8a8835358077fdbc9c2143c8c79816"><td class="memItemLeft">std::optional&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6e8a8835358077fdbc9c2143c8c79816">arg_u64</a> (<a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;d, std::string_view key)</td></tr>
+<tr class="memdesc:a6e8a8835358077fdbc9c2143c8c79816"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number passed as <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a>:&lt;key&gt;=&lt;n&gt;</span>, if any; warns about and ignores a non-number.  <br /></td></tr>
+<tr class="memitem:aabb62e3ea3c7b862bb8f8a9b79e03f5d" id="r_aabb62e3ea3c7b862bb8f8a9b79e03f5d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aabb62e3ea3c7b862bb8f8a9b79e03f5d">is_identity_map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *map<a class="el" href="#ad8d4e9b960bda9c68eb671e4e988fb37">map</a>)</td></tr>
+<tr class="memdesc:aabb62e3ea3c7b862bb8f8a9b79e03f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">map</code> the identity access map <span class="tt">λ x. x</span>?  <br /></td></tr>
 <tr class="memitem:a8c8dd822f6ed249bfef725636586c463" id="r_a8c8dd822f6ed249bfef725636586c463"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8c8dd822f6ed249bfef725636586c463">is_copy_comb</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *comb)</td></tr>
 <tr class="memdesc:a8c8dd822f6ed249bfef725636586c463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recognizes the (rebuilt) <span class="tt">tensor_copy</span> combiner <span class="tt">(acc, ys) ↦ ys#0</span>: the result is exactly the single input element, so a <a class="el" href="#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> built on it is a pure re-indexed read of that input.  <br /></td></tr>
 <tr class="memitem:a2c5af7154fdcb4cd3e3a75223d588fd1" id="r_a2c5af7154fdcb4cd3e3a75223d588fd1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2c5af7154fdcb4cd3e3a75223d588fd1">is_identity_post</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *post)</td></tr>
@@ -392,7 +396,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>A pure re-indexed read: the source tensor, the access map into it (over the read's output coordinates), and the source's element type/rank/shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00031">31</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00054">54</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -1895,6 +1899,43 @@ T = nullptr</td>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a6e8a8835358077fdbc9c2143c8c79816" name="a6e8a8835358077fdbc9c2143c8c79816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8a8835358077fdbc9c2143c8c79816">&#9670;&#160;</a></span>arg_u64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; mim::plug::tensor::arg_u64 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number passed as <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a>:&lt;key&gt;=&lt;n&gt;</span>, if any; warns about and ignores a non-number. </p>
+
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00020">20</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00020">arg_u64()</a>, and <a class="el" href="plugin_8h_source.html#l00064">mim::arg_value()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00020">arg_u64()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00145">normalize_vec_width()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
+
+</div>
+</div>
 <a id="a3c0df2efe3b69a9722d83fed404e81cc" name="a3c0df2efe3b69a9722d83fed404e81cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c0df2efe3b69a9722d83fed404e81cc">&#9670;&#160;</a></span>count_consumers()</h2>
 
@@ -1917,11 +1958,11 @@ T = nullptr</td>
 <p>Counts the consumers of every def of <code class="param">world</code> matched by <code class="param">pred</code>. </p>
 <p>Tuples and packs are transparent argument wrappers, so a wrapped def is charged to the enclosing non-tuple consumer - a shared argument tuple charges each of its users, and a def used twice in one argument list counts twice. A phase whose world does not track uses needs this up front. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00102">102</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00124">124</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8h_source.html#l00102">count_consumers()</a>, <a class="el" href="world_8h_source.html#l00279">mim::World::externals()</a>, and <a class="el" href="world_8h_source.html#l00184">mim::World::Externals::muts()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00124">count_consumers()</a>, <a class="el" href="world_8h_source.html#l00277">mim::World::externals()</a>, and <a class="el" href="world_8h_source.html#l00182">mim::World::Externals::muts()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00102">count_consumers()</a>, <a class="el" href="fuse_8cpp_source.html#l00648">mim::plug::tensor::phase::Fuse::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00124">count_consumers()</a>, <a class="el" href="fuse_8cpp_source.html#l00600">mim::plug::tensor::phase::Fuse::start()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
 
 </div>
 </div>
@@ -1950,11 +1991,44 @@ T = nullptr</td>
 
 <p>Recognizes the (rebuilt) <span class="tt">tensor_copy</span> combiner <span class="tt">(acc, ys) ↦ ys#0</span>: the result is exactly the single input element, so a <a class="el" href="#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> built on it is a pure re-indexed read of that input. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00017">17</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00040">40</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00638">mim::Def::as_mut()</a>, <a class="el" href="tensor_8h_source.html#l00017">is_copy_comb()</a>, <a class="el" href="lam_8cpp_source.html#l00046">mim::Lam::isa_ret_arg()</a>, and <a class="el" href="def_8cpp_source.html#l00652">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00620">mim::Def::as_mut()</a>, <a class="el" href="tensor_8h_source.html#l00040">is_copy_comb()</a>, <a class="el" href="lam_8cpp_source.html#l00046">mim::Lam::isa_ret_arg()</a>, and <a class="el" href="def_8cpp_source.html#l00662">mim::Def::proj()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00017">is_copy_comb()</a>, and <a class="el" href="tensor_8h_source.html#l00043">is_pure_read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00040">is_copy_comb()</a>, and <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>.</p>
+
+</div>
+</div>
+<a id="aabb62e3ea3c7b862bb8f8a9b79e03f5d" name="aabb62e3ea3c7b862bb8f8a9b79e03f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb62e3ea3c7b862bb8f8a9b79e03f5d">&#9670;&#160;</a></span>is_identity_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::tensor::is_identity_map </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>map</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">map</code> the identity access map <span class="tt">λ x. x</span>? </p>
+
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00033">33</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00033">is_identity_map()</a>, and <a class="el" href="def_8h_source.html#l00408">mim::Def::is_set()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00033">is_identity_map()</a>, and <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>.</p>
 
 </div>
 </div>
@@ -1984,11 +2058,11 @@ T = nullptr</td>
 <p>Is <span class="tt">post</span> the (rebuilt) CPS identity <span class="tt"><a class="el" href="#a8edcd430d409375d96f02982da7ddd7e">tensor.id</a></span>, i.e. </p>
 <p>a lam <span class="tt">(x, extras) ↦ x</span> that returns its first argument (and hence has no epilogue inputs)? </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00024">24</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00047">47</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00638">mim::Def::as_mut()</a>, <a class="el" href="tensor_8h_source.html#l00024">is_identity_post()</a>, <a class="el" href="lam_8cpp_source.html#l00046">mim::Lam::isa_ret_arg()</a>, and <a class="el" href="def_8cpp_source.html#l00652">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00620">mim::Def::as_mut()</a>, <a class="el" href="tensor_8h_source.html#l00047">is_identity_post()</a>, <a class="el" href="lam_8cpp_source.html#l00046">mim::Lam::isa_ret_arg()</a>, and <a class="el" href="def_8cpp_source.html#l00662">mim::Def::proj()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00024">is_identity_post()</a>, and <a class="el" href="tensor_8h_source.html#l00043">is_pure_read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00047">is_identity_post()</a>, and <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>.</p>
 
 </div>
 </div>
@@ -2018,11 +2092,11 @@ T = nullptr</td>
 <p>If <span class="tt">value</span> is a pure re-indexed read — a copy-combiner <a class="el" href="#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> without reduction loops that writes its full loop domain through the identity output map (reshape/transpose/slice/flip/repeat lower to these) — returns its single access map and source. </p>
 <p><span class="tt"><a class="el" href="#a0b4e536dd702dc64876d65b96315d36c">fuse_tensor</a></span>'s read-through absorbs exactly these into the consuming op's access maps. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00043">43</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00066">66</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_8h_source.html#l00017">is_copy_comb()</a>, <a class="el" href="tensor_8h_source.html#l00024">is_identity_post()</a>, <a class="el" href="tensor_8h_source.html#l00043">is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, and <a class="el" href="def_8h_source.html#l00490">mim::Def::projs()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00040">is_copy_comb()</a>, <a class="el" href="tensor_8h_source.html#l00033">is_identity_map()</a>, <a class="el" href="tensor_8h_source.html#l00047">is_identity_post()</a>, <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, and <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00043">is_pure_read()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00116">normalize_fastest_axis()</a>, <a class="el" href="fuse_8cpp_source.html#l00122">mim::plug::tensor::phase::read_through()</a>, and <a class="el" href="fuse_8cpp_source.html#l00654">mim::plug::tensor::phase::Fuse::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00112">normalize_fastest_axis()</a>, <a class="el" href="fuse_8cpp_source.html#l00123">mim::plug::tensor::phase::read_through()</a>, and <a class="el" href="fuse_8cpp_source.html#l00606">mim::plug::tensor::phase::Fuse::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -2051,11 +2125,11 @@ T = nullptr</td>
 
 <p>The input of a 2-D transpose <span class="tt"><a class="el" href="#aaa0644a4e639f6682b0e95d95eb32c47">transpose</a> (1, 0)</span>, or <span class="tt">nullptr</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00086">86</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00108">108</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, and <a class="el" href="tensor_8h_source.html#l00086">isa_transpose_2d()</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, and <a class="el" href="tensor_8h_source.html#l00108">isa_transpose_2d()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00086">isa_transpose_2d()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00108">isa_transpose_2d()</a>, and <a class="el" href="reassoc_8cpp_source.html#l00209">mim::plug::tensor::phase::Reassoc::start()</a>.</p>
 
 </div>
 </div>
@@ -2084,11 +2158,11 @@ T = nullptr</td>
 
 <p><code class="param">perm</code> as literals, if it is literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00075">75</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00097">97</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_8h_source.html#l00075">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00064">lit_projs()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_8h_source.html#l00097">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00086">lit_projs()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00075">lit_perm()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00056">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00081">transpose_perm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00097">lit_perm()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00052">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00103">transpose_perm()</a>.</p>
 
 </div>
 </div>
@@ -2121,11 +2195,11 @@ T = nullptr</td>
 
 <p>The literal values of <code class="param">def's</code> <code class="param">n</code> projections, or nothing if one of them is not a literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00064">64</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00086">86</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_8h_source.html#l00064">lit_projs()</a>, and <a class="el" href="def_8cpp_source.html#l00652">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_8h_source.html#l00086">lit_projs()</a>, and <a class="el" href="def_8cpp_source.html#l00662">mim::Def::proj()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00075">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00064">lit_projs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_8h_source.html#l00097">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00086">lit_projs()</a>.</p>
 
 </div>
 </div>
@@ -2155,7 +2229,7 @@ T = nullptr</td>
 
 <p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00020">20</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00020">normalize_broadcast()</a>, and <a class="el" href="def_8h_source.html#l00490">mim::Def::projs()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00020">normalize_broadcast()</a>, and <a class="el" href="def_8h_source.html#l00480">mim::Def::projs()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00020">normalize_broadcast()</a>.</p>
 
@@ -2185,11 +2259,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00038">38</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00034">34</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00038">normalize_broadcast_in_dim()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00034">normalize_broadcast_in_dim()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00038">normalize_broadcast_in_dim()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00034">normalize_broadcast_in_dim()</a>.</p>
 
 </div>
 </div>
@@ -2217,11 +2291,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00105">105</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00101">101</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00105">normalize_concat()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00101">normalize_concat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00105">normalize_concat()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00101">normalize_concat()</a>.</p>
 
 </div>
 </div>
@@ -2249,11 +2323,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00116">116</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00112">112</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00617">mim::Def::arity()</a>, <a class="el" href="lam_8h_source.html#l00041">mim::Pi::codom()</a>, <a class="el" href="lam_8h_source.html#l00040">mim::Pi::dom()</a>, <a class="el" href="tensor_8h_source.html#l00043">is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00116">normalize_fastest_axis()</a>, <a class="el" href="def_8h_source.html#l00490">mim::Def::projs()</a>, and <a class="el" href="def_8h_source.html#l01150">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00627">mim::Def::arity()</a>, <a class="el" href="lam_8h_source.html#l00039">mim::Pi::codom()</a>, <a class="el" href="lam_8h_source.html#l00038">mim::Pi::dom()</a>, <a class="el" href="tensor_8h_source.html#l00066">is_pure_read()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00112">normalize_fastest_axis()</a>, <a class="el" href="def_8h_source.html#l00480">mim::Def::projs()</a>, and <a class="el" href="def_8h_source.html#l01126">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00116">normalize_fastest_axis()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00112">normalize_fastest_axis()</a>.</p>
 
 </div>
 </div>
@@ -2281,11 +2355,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00089">89</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00085">85</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00089">normalize_flip()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00085">normalize_flip()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00089">normalize_flip()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00085">normalize_flip()</a>.</p>
 
 </div>
 </div>
@@ -2313,11 +2387,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00107">107</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00103">103</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00107">normalize_if_static()</a>, and <a class="el" href="def_8h_source.html#l00490">mim::Def::projs()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00103">normalize_if_static()</a>, and <a class="el" href="def_8h_source.html#l00480">mim::Def::projs()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00107">normalize_if_static()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00103">normalize_if_static()</a>.</p>
 
 </div>
 </div>
@@ -2345,11 +2419,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00091">91</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00087">87</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00091">normalize_pad()</a>, and <a class="el" href="def_8cpp_source.html#l00652">mim::Def::proj()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00087">normalize_pad()</a>, and <a class="el" href="def_8cpp_source.html#l00662">mim::Def::proj()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00091">normalize_pad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00087">normalize_pad()</a>.</p>
 
 </div>
 </div>
@@ -2377,11 +2451,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00040">40</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00036">36</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00040">normalize_repeat()</a>, and <a class="el" href="def_8h_source.html#l01164">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00036">normalize_repeat()</a>, and <a class="el" href="def_8h_source.html#l01140">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00040">normalize_repeat()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00036">normalize_repeat()</a>.</p>
 
 </div>
 </div>
@@ -2409,11 +2483,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00048">48</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00044">44</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00048">normalize_reshape()</a>, and <a class="el" href="def_8h_source.html#l01164">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_2normalizers_8cpp_source.html#l00044">normalize_reshape()</a>, and <a class="el" href="def_8h_source.html#l01140">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00048">normalize_reshape()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00044">normalize_reshape()</a>.</p>
 
 </div>
 </div>
@@ -2441,11 +2515,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00168">168</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00157">157</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00252">mim::App::arg()</a>, <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00168">normalize_shape()</a>, and <a class="el" href="def_8h_source.html#l01164">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00250">mim::App::arg()</a>, <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00157">normalize_shape()</a>, and <a class="el" href="def_8h_source.html#l01140">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00168">normalize_shape()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00157">normalize_shape()</a>.</p>
 
 </div>
 </div>
@@ -2473,11 +2547,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00074">74</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00070">70</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l01016">mim::Lit::isa()</a>, and <a class="el" href="tensor_2normalizers_8cpp_source.html#l00074">normalize_slice()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00997">mim::Lit::isa()</a>, and <a class="el" href="tensor_2normalizers_8cpp_source.html#l00070">normalize_slice()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00074">normalize_slice()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00070">normalize_slice()</a>.</p>
 
 </div>
 </div>
@@ -2505,11 +2579,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00056">56</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00052">52</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="tensor_8h_source.html#l00075">lit_perm()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00056">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00081">transpose_perm()</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="tensor_8h_source.html#l00097">lit_perm()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00052">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00103">transpose_perm()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00056">normalize_transpose()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00052">normalize_transpose()</a>.</p>
 
 </div>
 </div>
@@ -2537,11 +2611,11 @@ T = nullptr</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">149</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00145">145</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="plugin_8h_source.html#l00075">mim::arg_value()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">normalize_vec_width()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00147">Vec_widths</a>, and <a class="el" href="def_8h_source.html#l01150">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="tensor_8h_source.html#l00020">arg_u64()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00145">normalize_vec_width()</a>, <a class="el" href="tensor_2normalizers_8cpp_source.html#l00143">Vec_widths</a>, and <a class="el" href="def_8h_source.html#l01126">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">normalize_vec_width()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00145">normalize_vec_width()</a>.</p>
 
 </div>
 </div>
@@ -2570,7 +2644,7 @@ T = nullptr</td>
 
 <p class="definition">Definition at line <a class="el" href="tensor_8cpp_source.html#l00015">15</a> of file <a class="el" href="tensor_8cpp_source.html">tensor.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00070">mim::Phase::hook()</a>, and <a class="el" href="tensor_8cpp_source.html#l00015">reg_phases()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00051">mim::Phase::hook()</a>, and <a class="el" href="tensor_8cpp_source.html#l00015">reg_phases()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tensor_8cpp_source.html#l00031">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="tensor_8cpp_source.html#l00015">reg_phases()</a>.</p>
 
@@ -2622,11 +2696,11 @@ T = nullptr</td>
 
 <p>The permutation of a <span class="tt"><a class="el" href="#aaa0644a4e639f6682b0e95d95eb32c47">transpose</a></span> app, if it is literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00081">81</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00103">103</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00252">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00239">mim::App::decurry()</a>, <a class="el" href="tensor_8h_source.html#l00075">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00081">transpose_perm()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00250">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00237">mim::App::decurry()</a>, <a class="el" href="tensor_8h_source.html#l00097">lit_perm()</a>, and <a class="el" href="tensor_8h_source.html#l00103">transpose_perm()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00056">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00081">transpose_perm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00052">normalize_transpose()</a>, and <a class="el" href="tensor_8h_source.html#l00103">transpose_perm()</a>.</p>
 
 </div>
 </div>
@@ -2677,9 +2751,9 @@ T = nullptr</td>
 
 <p>The vector widths <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a>:vec-width</span> accepts. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00147">147</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_2normalizers_8cpp_source.html#l00143">143</a> of file <a class="el" href="tensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00149">normalize_vec_width()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tensor_2normalizers_8cpp_source.html#l00145">normalize_vec_width()</a>.</p>
 
 </div>
 </div>

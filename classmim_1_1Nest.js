@@ -16,7 +16,6 @@ var classmim_1_1Nest =
     [ "lca", "classmim_1_1Nest.html#a8b83453dfda47591c4b209e319823164", null ],
     [ "muts", "classmim_1_1Nest.html#aaf12b333534fe887264a7abb4317a66b", null ],
     [ "nodes", "classmim_1_1Nest.html#a619bc4de18e21d5d585355f4beaf2769", null ],
-    [ "num_nodes", "classmim_1_1Nest.html#af828cf9cfe46633b75d601263f019bc4", null ],
     [ "operator=", "classmim_1_1Nest.html#aa96dbe240f8e8d20708bee30489e1ca4", null ],
     [ "operator[]", "classmim_1_1Nest.html#a5aa4df61ed488a9b7bcda3021274b9a2", null ],
     [ "root", "classmim_1_1Nest.html#ac099472ee5301d183779c4c70d2b7ef3", null ],

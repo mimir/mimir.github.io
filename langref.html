@@ -191,7 +191,7 @@ Notation</h1>
 Every comma-separated list additionally accepts a trailing <span class="tt">,</span>, as in <span class="tt">(e, e, e,)</span>. The rules below don't spell this out.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="lex"></a>
 Lexical Structure</h1>
-<p><a class="el" href="namespaceMim.html">Mim</a> source files are <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoded and are <a href="https://en.wikipedia.org/wiki/Lexical_analysis">lexed</a> from left to right. The lexer uses <a href="https://en.wikipedia.org/wiki/Maximal_munch">maximal munch</a>, so ambiguities are resolved by taking the longest matching token. For example, <span class="tt">&gt;&gt;=</span> is tokenized as <span class="tt">&gt;&gt;</span> followed by <span class="tt">=</span>. </p><dl class="section note"><dt>Note</dt><dd><span class="tt">&lt;-</span> is therefore a single token: <span class="tt">x &lt;- 1</span> is an insert, and a comparison against a negative literal has to be written <span class="tt">x &lt; (-1)</span>.</dd></dl>
+<p><a class="el" href="namespaceMim.html">Mim</a> source files are <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoded and are <a href="https://en.wikipedia.org/wiki/Lexical_analysis">lexed</a> from left to right. The lexer uses <a href="https://en.wikipedia.org/wiki/Maximal_munch">maximal munch</a>, so ambiguities are resolved by taking the longest matching token. For example, <span class="tt">&gt;&gt;=</span> is tokenized as <span class="tt">&gt;&gt;</span> followed by <span class="tt">=</span>. </p><dl class="section note"><dt>Note</dt><dd><span class="tt">&lt;-</span> is therefore a single token: <span class="tt">x &lt;- 1</span> is an insert, and a comparison against a negative literal needs a space, as in <span class="tt">x &lt; -1</span>.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="terminals"></a>
 Terminals</h2>
 <p>The grammar refers to <em>primary terminals</em>. Some tokens have a second spelling - an ASCII-only one or a Unicode variant - that denotes the very same lexical token; these are the <em>secondary terminals</em>.</p>
@@ -284,7 +284,7 @@ Lexical Terminals</h3>
 <div class="line">        |  dec+ (&quot;i&quot; | &quot;I&quot;) dec+</div>
 <div class="line">C      ::= &quot;&#39;&quot; (ascii_char | esc) &quot;&#39;&quot;</div>
 <div class="line">S      ::= &quot;\&quot;&quot; (ascii_string_char | esc)* &quot;\&quot;&quot;</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p>Here <span class="tt">I</span> is an identifier, <span class="tt">L</span> is a numeric literal, <span class="tt">X_n</span> is an index literal of type <span class="tt">Idx n</span>, <span class="tt">C</span> is a character literal, and <span class="tt">S</span> is a string literal. The third form of <span class="tt">X_n</span> spells a bit width instead of <span class="tt">n</span> itself, so <span class="tt">23I32</span> is <span class="tt">23:I32</span>. A literal never carries a sign; <span class="tt">-23</span> is the <a class="el" href="#lit" title="Literals and Basic Forms">signed literal</a> expression instead. <span class="tt"> ` </span> escapes an <a class="el" href="#infix" title="Infix Operators">infix operator</a> into an ordinary identifier, e.g. <span class="tt"> `+ </span>.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>Here <span class="tt">I</span> is an identifier, <span class="tt">L</span> is a numeric literal, <span class="tt">X_n</span> is an index literal of type <span class="tt">Idx n</span>, <span class="tt">C</span> is a character literal, and <span class="tt">S</span> is a string literal. The third form of <span class="tt">X_n</span> spells a bit width instead of <span class="tt">n</span> itself, so <span class="tt">23I32</span> is <span class="tt">23:I32</span>; its integer may also carry a <span class="tt">0b</span>/<span class="tt">0o</span>/<span class="tt">0x</span> prefix, as in <span class="tt">0xFFI8</span>. A literal never carries a sign; <span class="tt">-23</span> is the <a class="el" href="#lit" title="Literals and Basic Forms">signed literal</a> expression instead. <span class="tt"> ` </span> escapes an <a class="el" href="#infix" title="Infix Operators">infix operator</a> into an ordinary identifier, e.g. <span class="tt"> `+ </span>.</p>
 <p>The shorthand symbols used above are:</p>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">bin    ::= [0-1]</div>
 <div class="line">oct    ::= [0-7]</div>
@@ -300,7 +300,7 @@ Lexical Terminals</h3>
 <div class="line">        |  &quot;&lt;&lt;&quot; | &quot;&gt;&gt;&quot;</div>
 <div class="line">esc    ::= &quot;\&#39;&quot; | &quot;\\&quot; | &quot;\&quot;&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\b&quot;</div>
 <div class="line">        |  &quot;\f&quot; | &quot;\n&quot; | &quot;\r&quot; | &quot;\t&quot; | &quot;\v&quot;</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">ascii_char</span> is any ASCII character except <span class="tt">\</span>, <span class="tt">ascii_string_char</span> is any ASCII character except <span class="tt">\</span> and <span class="tt">"</span>, and a non-ASCII payload character is an error.</p>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">ascii_char</span> is any ASCII character except <span class="tt">\</span> and <span class="tt">'</span>, <span class="tt">ascii_string_char</span> is any ASCII character except <span class="tt">\</span> and <span class="tt">"</span>, and a non-ASCII payload character is an error.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 Comments</h2>
 <p>Supported comments:</p>
@@ -309,7 +309,7 @@ Comments</h2>
 <div class="line">/// doc-comment</div>
 </div><!-- fragment --></div><div class="mim-code"></div><ul>
 <li><span class="tt">/* ... */</span> comments do not nest.</li>
-<li>doc-comments are forwarded to generated <a href="https://www.doxygen.nl/manual/markdown.html">Markdown</a> output. A line of the form <span class="tt">/// text</span> contributes <span class="tt">text</span> directly to the Markdown output. Other <span class="tt">///</span> forms are emitted verbatim inside a <a href="https://www.doxygen.nl/manual/markdown.html#md_fenced">fenced code block</a>.</li>
+<li>doc-comments are forwarded to generated <a href="https://www.doxygen.nl/manual/markdown.html">Markdown</a> output. Each line starting with <span class="tt">///</span> contributes its remainder, minus one leading space, directly to the Markdown output. All other source lines are emitted verbatim inside a <a href="https://www.doxygen.nl/manual/markdown.html#md_fenced">fenced code block</a>.</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="grammar"></a>
 Grammar</h1>
@@ -373,8 +373,8 @@ Declarations</h2>
 <div class="line">import ::= &quot;import&quot; | &quot;plugin&quot;</div>
 <div class="line">vis    ::= &quot;priv&quot; | &quot;pub&quot;</div>
 <div class="line">lam    ::= &quot;lam&quot; | &quot;con&quot; | &quot;fun&quot;</div>
-<div class="line">dom    ::= p (&quot;@&quot; e)?</div>
-<div class="line">fwd    ::= (p | t) (&quot;@&quot; e)?</div>
+<div class="line">dom    ::= (p | &quot;{&quot; plist? &quot;}&quot;) (&quot;@&quot; e)?</div>
+<div class="line">fwd    ::= (p | t | &quot;{&quot; tlist? &quot;}&quot;) (&quot;@&quot; e)?</div>
 <div class="line">axm    ::= I &quot;:&quot; e tail</div>
 <div class="line">        |  (I &quot;.&quot;)? &quot;(&quot; (tag (&quot;,&quot; tag)*)? &quot;)&quot; &quot;:&quot; e tail</div>
 <div class="line">tag    ::= I (&quot;=&quot; I)*</div>
@@ -445,7 +445,7 @@ Patterns and Telescopes</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><p>This binds <span class="tt">a</span>, <span class="tt">b</span>, and <span class="tt">c</span> to the tuple elements and <span class="tt">abc</span> to the whole tuple.</p>
 <p><span class="tt">let</span> and <span class="tt">ret</span> allow rebinding of an existing name, which is especially useful for state-threading style code:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let (m, ptr) = mem.alloc (I32, 0) m;</div>
-<div class="line">let m        = mem.store (m, ptr, 23:I32);</div>
+<div class="line">let m        = mem.store (m, ptr, 23I32);</div>
 <div class="line">let (m, val) = mem.load (m, ptr);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="expr"></a>
 Expressions</h2>
@@ -496,6 +496,7 @@ Literals and Basic Forms</h3>
 Functions and Continuations</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;→&quot; e</div>
 <div class="line">     |  t &quot;→&quot; e</div>
+<div class="line">     |  &quot;{&quot; tlist? &quot;}&quot; &quot;→&quot; e</div>
 <div class="line">     |  &quot;Cn&quot; t</div>
 <div class="line">     |  &quot;Fn&quot; t &quot;→&quot; e</div>
 <div class="line">     |  &quot;λ&quot; p+ (&quot;:&quot; e)? &quot;=&quot; e</div>
@@ -509,6 +510,7 @@ Functions and Continuations</h3>
 <li><span class="tt">t → e</span>, <span class="tt">Cn t</span>, and <span class="tt">Fn t → e</span> are dependent function forms whose domain is described by a telescope.</li>
 <li><span class="tt">λ</span>, <span class="tt">cn</span>, and <span class="tt">fn</span> are the expression forms corresponding to <span class="tt">lam</span>, <span class="tt">con</span>, and <span class="tt">fun</span>. They are anonymous, so they cannot call themselves; use a <span class="tt">lam</span>/<span class="tt">con</span>/<span class="tt">fun</span> <a class="el" href="#decl" title="Declarations">declaration</a> to recurse.</li>
 <li>Application is written by juxtaposition.</li>
+<li><span class="tt">{...}</span> declares implicit domains: an application inserts a <span class="tt">Hole</span> for each, and <span class="tt">e @ e</span> passes one explicitly.</li>
 <li><span class="tt">e @ e</span> passes an explicit implicit argument.</li>
 <li><span class="tt">ret p = callee $ arg; body</span> binds the result of a continuation-style call and continues with <span class="tt">body</span>.</li>
 </ul>
@@ -559,7 +561,9 @@ Dependent Tuple Types</h3>
 Unions</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
 <div class="line">     |  e &quot;inj&quot; e</div>
-<div class="line">     |  &quot;match&quot; e &quot;with&quot; &quot;|&quot;? p &quot;=&gt;&quot; e (&quot;|&quot; p &quot;=&gt;&quot; e)*</div>
+<div class="line">     |  &quot;match&quot; e &quot;with&quot; &quot;|&quot;? arm (&quot;|&quot; arm)*</div>
+<div class="line">arm ::= p &quot;=&gt;&quot; e</div>
+<div class="line">     |  (I | L) p? &quot;=&gt;&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">e ∪ e</span> forms a union type.</li>
 <li><span class="tt">e inj e</span> injects a value into a union type.</li>
@@ -568,7 +572,6 @@ Unions</h3>
 <h3 class="doxsection"><a class="anchor" id="variant"></a>
 Variants</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;|&quot; (I (&quot;:&quot; e)? (&quot;|&quot; I (&quot;:&quot; e)?)*)?</div>
-<div class="line">arm ::= (I | L) p? &quot;=&gt;&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">| I₀: e₀ | ... | Iₙ₋₁: eₙ₋₁</span> forms a variant type: a sum whose cases are <em>positional</em>. A constructor without <span class="tt">: e</span> carries <span class="tt">[]</span>, and a lone <span class="tt">|</span> is the empty variant.</li>
 <li>Unlike <span class="tt">∪</span>, nothing is sorted, deduplicated, or flattened: <span class="tt">| A | B | C</span> has three cases where <span class="tt">[] ∪ [] ∪ []</span> is just <span class="tt">[]</span>, and <span class="tt">| A: Nat | B: Nat</span> keeps both.</li>
@@ -727,9 +730,9 @@ Applications</h2>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = [T: *] →    [[T, T], T → ⊥] → ⊥</div>
-<div class="line">let _ = [T: *] → Cn [[T, T], Cn T]</div>
-<div class="line">let _ = [T: *] → Fn  [T, T] → T</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = [T: *] →    [[T, T], T → ⊥] → ⊥;</div>
+<div class="line">let _ = [T: *] → Cn [[T, T], Cn T];</div>
+<div class="line">let _ = [T: *] → Fn  [T, T] → T;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
@@ -760,6 +763,7 @@ Aggregates</h2>
 <li><span class="tt">(e, e, e)</span> -&gt; <span class="tt">‹3; e›</span>, <span class="tt">[T, T, T]</span> -&gt; <span class="tt">«3; T»</span> - uniform elements compress into a pack/array</li>
 <li><span class="tt">(t#0, t#1, t#2)</span> -&gt; <span class="tt">t</span> - η for tuples, provided <span class="tt">t</span> has the ascribed type</li>
 <li><span class="tt">⊥:[T, U]</span> -&gt; <span class="tt">(⊥:T, ⊥:U)</span>, <span class="tt">⊥:«n; T»</span> -&gt; <span class="tt">‹n; ⊥:T›</span> - <span class="tt">⊥</span>/<span class="tt">⊤</span> are pushed into aggregates</li>
+<li><span class="tt">‹i: 3; e›</span> -&gt; <span class="tt">(e[i ↦ 0₃], e[i ↦ 1₃], e[i ↦ 2₃])</span> - only for a literal arity below <span class="tt">--scalarize-threshold</span> and a body that depends on <span class="tt">i</span></li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Shapes</h2>
@@ -774,7 +778,7 @@ Extract</h2>
 <li><span class="tt">d#(i, 0₁, k)</span> -&gt; <span class="tt">d#(i, k)</span> - a literal size-1 axis folds out of an index, mirroring the shape rule</li>
 <li><span class="tt">d#i</span> -&gt; <span class="tt">d</span> if <span class="tt">i: Idx 1</span> and <span class="tt">d</span>'s type is not a mutable sigma of one component</li>
 <li><span class="tt">d#()</span> -&gt; <span class="tt">d</span> - an index that folded away entirely</li>
-<li><span class="tt">‹i: n; e›#j</span> -&gt; <span class="tt">[i ↦ j]e</span>, <span class="tt">(a, b, c)#1</span> -&gt; <span class="tt">b</span></li>
+<li><span class="tt">‹i: n; e›#j</span> -&gt; <span class="tt">[i ↦ j]e</span> for a pack that is not expanded into a tuple (see Aggregates), <span class="tt">(a, b, c)#1</span> -&gt; <span class="tt">b</span></li>
 <li><span class="tt">t#i#j</span> -&gt; <span class="tt">t#(i, j)</span> - the maximal-rank fused Extract is the normal form, as far as <span class="tt">t</span>'s own shape reaches</li>
 <li><span class="tt">t#(i, j)</span> -&gt; <span class="tt">t#i#j</span> - conversely, for an index reaching past <span class="tt">t</span>'s own shape into its element type</li>
 <li><span class="tt">(d#i ← v)#i</span> -&gt; <span class="tt">v</span></li>
@@ -798,7 +802,7 @@ Application</h2>
 <li><span class="tt">f x</span> -&gt; body of <span class="tt">f</span> if <span class="tt">x</span> is <span class="tt">f</span>'s own var - substituting a var by itself is the identity</li>
 <li><span class="tt">f x</span> -&gt; <span class="tt">[var ↦ x]</span>body of <span class="tt">f</span> if <span class="tt">f</span>'s <a class="el" href="#decl" title="Declarations">filter</a> evaluates to <span class="tt">tt</span> for <span class="tt">x</span>; nothing is reduced if the filter is <span class="tt">ff</span></li>
 <li>an application of an <a class="el" href="#decl" title="Declarations">axiom</a> runs its normalizer once the curry counter hits <span class="tt">0</span></li>
-<li>an application of a <span class="tt">[T: *] → e</span> with implicit domains inserts a <span class="tt">Hole</span> per implicit argument</li>
+<li>an application of a <span class="tt">{T: *} → e</span> inserts a <span class="tt">Hole</span> per implicit argument</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Unions</h2>

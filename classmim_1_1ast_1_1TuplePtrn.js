@@ -11,7 +11,6 @@ var classmim_1_1ast_1_1TuplePtrn =
     [ "emit_value", "classmim_1_1ast_1_1TuplePtrn.html#ada7b5fbb5fb0407e0c933b26a47fad83", null ],
     [ "is_brckt", "classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029", null ],
     [ "is_implicit", "classmim_1_1ast_1_1TuplePtrn.html#a07459c614c70c28dbe498664cc326882", null ],
-    [ "is_paren", "classmim_1_1ast_1_1TuplePtrn.html#a1176d6f6f64281b96a02177112d56d0e", null ],
     [ "num_ptrns", "classmim_1_1ast_1_1TuplePtrn.html#aba0c50821ac158c7c324c0c4f30677a0", null ],
     [ "ptrn", "classmim_1_1ast_1_1TuplePtrn.html#a288df728e2c1cb2d0744d774c35863e1", null ],
     [ "ptrns", "classmim_1_1ast_1_1TuplePtrn.html#a61c16e7b4effdd112f34b53aa777b1f3", null ],

@@ -10,8 +10,6 @@ var namespaceautomaton =
     [ "DFASet", "namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06", null ],
     [ "NFASet", "namespaceautomaton.html#aff8bde3fed7648c53bafdf22224534ec", null ],
     [ "Range", "namespaceautomaton.html#aa7f4b5c4276e92cf0d3d5a53ea55d921", null ],
-    [ "epsilonClosure", "namespaceautomaton.html#a7000edaccafa021522bb90cc1df27308", null ],
-    [ "epsilonClosure", "namespaceautomaton.html#a3f0975bd6f204729e1f8d87808c49fc1", null ],
     [ "merge_ranges", "namespaceautomaton.html#a3ce290eb201e318c6e9716f0b35bc539", null ],
     [ "merge_ranges", "namespaceautomaton.html#ae087d7e9d3842e594cac74a961ee0d77", null ],
     [ "merge_ranges", "namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6", null ],

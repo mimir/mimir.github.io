@@ -172,9 +172,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('tensor_8h.html
   <div class="headertitle"><div class="title">tensor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<div class="textblock"><code>#include &lt;charconv&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;fe/worklist.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="driver_8h_source.html">mim/driver.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="lam_8h_source.html">mim/lam.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="tuple_8h_source.html">mim/tuple.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="world_8h_source.html">mim/world.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="tensor_2autogen_8h_source.html">mim/plug/tensor/autogen.h</a>&quot;</code><br />
@@ -205,6 +208,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6e8a8835358077fdbc9c2143c8c79816" id="r_a6e8a8835358077fdbc9c2143c8c79816"><td class="memItemLeft">std::optional&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a6e8a8835358077fdbc9c2143c8c79816">mim::plug::tensor::arg_u64</a> (<a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;d, std::string_view key)</td></tr>
+<tr class="memdesc:a6e8a8835358077fdbc9c2143c8c79816"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number passed as <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">tensor</a>:&lt;key&gt;=&lt;n&gt;</span>, if any; warns about and ignores a non-number.  <br /></td></tr>
+<tr class="memitem:aabb62e3ea3c7b862bb8f8a9b79e03f5d" id="r_aabb62e3ea3c7b862bb8f8a9b79e03f5d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aabb62e3ea3c7b862bb8f8a9b79e03f5d">mim::plug::tensor::is_identity_map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *map<a class="el" href="namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37">map</a>)</td></tr>
+<tr class="memdesc:aabb62e3ea3c7b862bb8f8a9b79e03f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">map</code> the identity access map <span class="tt">λ x. x</span>?  <br /></td></tr>
 <tr class="memitem:a8c8dd822f6ed249bfef725636586c463" id="r_a8c8dd822f6ed249bfef725636586c463"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463">mim::plug::tensor::is_copy_comb</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *comb)</td></tr>
 <tr class="memdesc:a8c8dd822f6ed249bfef725636586c463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recognizes the (rebuilt) <span class="tt">tensor_copy</span> combiner <span class="tt">(acc, ys) ↦ ys#0</span>: the result is exactly the single input element, so a <a class="el" href="namespacemim_1_1plug_1_1tensor.html#ae6b419dcfc5dd70e2a31b28fd234a3f5">map_reduce</a> built on it is a pure re-indexed read of that input.  <br /></td></tr>
 <tr class="memitem:a2c5af7154fdcb4cd3e3a75223d588fd1" id="r_a2c5af7154fdcb4cd3e3a75223d588fd1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#a2c5af7154fdcb4cd3e3a75223d588fd1">mim::plug::tensor::is_identity_post</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *post)</td></tr>
@@ -236,7 +243,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>A pure re-indexed read: the source tensor, the access map into it (over the read's output coordinates), and the source's element type/rank/shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00031">31</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tensor_8h_source.html#l00054">54</a> of file <a class="el" href="tensor_8h_source.html">tensor.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">

@@ -18,9 +18,7 @@ var classmim_1_1Nest_1_1Node =
     [ "name", "classmim_1_1Nest_1_1Node.html#a025d0c2e4c0c53d47930f363c0e5f61d", null ],
     [ "nest", "classmim_1_1Nest_1_1Node.html#ae1c9f7727e8b614745014e839656825c", null ],
     [ "scc", "classmim_1_1Nest_1_1Node.html#ac0400d41a60df95e90994e6b3769d321", null ],
-    [ "SCCs", "classmim_1_1Nest_1_1Node.html#a187c295f32e602fcc4573db9741a55c6", null ],
     [ "sibl_deps", "classmim_1_1Nest_1_1Node.html#a2a29ed570ed6ad81039fa1ad52a9b784", null ],
     [ "sibl_deps", "classmim_1_1Nest_1_1Node.html#a42cacaae58788b53f4aeaea495b1293e", null ],
-    [ "topo", "classmim_1_1Nest_1_1Node.html#acc9b1a95929c76ea4a03e8b9a75e9c5c", null ],
     [ "Nest", "classmim_1_1Nest_1_1Node.html#a835cdf64395521c736b393399a1dddbd", null ]
 ];

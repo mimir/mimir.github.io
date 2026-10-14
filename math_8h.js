@@ -23,12 +23,5 @@ var math_8h =
     [ "mim::plug::math::isa_f", "namespacemim_1_1plug_1_1math.html#a9f9256bc3c1cc75b278560fd4c2f3c0a", null ],
     [ "mim::plug::math::lit_f", "namespacemim_1_1plug_1_1math.html#a0ac6940e5fc2baa2a025f12066c91db2", null ],
     [ "mim::plug::math::lit_f", "namespacemim_1_1plug_1_1math.html#a9391b28e90d68f497dd4a78650d6c5ba", null ],
-    [ "mim::plug::math::match_f", "namespacemim_1_1plug_1_1math.html#a6997da1ee16a8a8176042a524ae02dae", null ],
-    [ "mim::plug::math::match_f16", "namespacemim_1_1plug_1_1math.html#a9f21132c6f33d36e69565752fff39793", null ],
-    [ "mim::plug::math::match_f32", "namespacemim_1_1plug_1_1math.html#affa2e23bf7486738df24d3d3f1ce79da", null ],
-    [ "mim::plug::math::match_f64", "namespacemim_1_1plug_1_1math.html#aee88662a06816ef08a92b69f9166ed84", null ],
-    [ "mim::plug::math::mode", "namespacemim_1_1plug_1_1math.html#a88d9bfdf9fbcd82d0a00f06088221ec6", null ],
-    [ "mim::plug::math::op_rminus", "namespacemim_1_1plug_1_1math.html#aaa35cfb305025a1cdac738b548baac43", null ],
-    [ "mim::plug::math::type_f", "namespacemim_1_1plug_1_1math.html#a3363d5189fd3c7b94f11d227c3dc5e03", null ],
-    [ "mim::plug::math::type_f", "namespacemim_1_1plug_1_1math.html#aa4960fe0b7013ecd6c2a2bd437246212", null ]
+    [ "mim::plug::math::mode", "namespacemim_1_1plug_1_1math.html#a88d9bfdf9fbcd82d0a00f06088221ec6", null ]
 ];

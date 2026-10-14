@@ -40,12 +40,10 @@ var def_8h =
     [ "mim::Defs", "namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23", null ],
     [ "mim::DefSet", "namespacemim.html#aa55cde5ad8246840d0a046cc728f987d", null ],
     [ "mim::DefVec", "namespacemim.html#aa432220e1051080319865a2d84b1cdaf", null ],
-    [ "mim::Mut2Mut", "namespacemim.html#a9fd6d037a8eb540c32dbe840e32c90e9", null ],
     [ "mim::MutMap", "namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2", null ],
     [ "mim::Muts", "namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0", null ],
     [ "mim::MutSet", "namespacemim.html#a9cef35a428a391739d168b05bad8dfb2", null ],
     [ "mim::NormalizeFn", "namespacemim.html#ab992e926dce870b1e086b34589849a92", null ],
-    [ "mim::Var2Var", "namespacemim.html#afe12e59f7ee4253d3b71cd8c0db61d06", null ],
     [ "mim::VarMap", "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab", null ],
     [ "mim::Vars", "namespacemim.html#aaa812145285556e31140df683b2367f7", null ],
     [ "mim::Dep", "namespacemim.html#a249738da6a953390b70691dd3fe7132b", [
@@ -61,10 +59,6 @@ var def_8h =
       [ "mim::Judge::Elim", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ae46a61588776648a5513d415ba6de279", null ],
       [ "mim::Judge::Meta", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9", null ],
       [ "mim::Judge::Hole", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988", null ]
-    ] ],
-    [ "mim::Mut", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08d", [
-      [ "mim::Mut::Mut", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08daebb87a770abac0e394d963d20ed574b7", null ],
-      [ "mim::Mut::Imm", "namespacemim.html#ad3c9308ec5430fd41d4aab5d38e3e08dada9470e1aa5be1858e667318254dcb4b", null ]
     ] ],
     [ "mim::MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", null ],
     [ "mim::Node", "namespacemim.html#afb12dbffaaa27bca46f171517d96256d", [

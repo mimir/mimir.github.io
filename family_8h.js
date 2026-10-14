@@ -1,7 +1,6 @@
 var family_8h =
 [
     [ "C_CN", "family_8h.html#a71124e1d35a88e16183c1b1fe07ad46f", null ],
-    [ "C_CURRIED_B", "family_8h.html#a06c96ee2829d7a7746429b0b47bb03d1", null ],
     [ "C_CURRIED_P", "family_8h.html#a21d14d14f4f16a311635db6d8e7a8d5f", null ],
     [ "C_DECL", "family_8h.html#a8ef5d0985c731f534b59a096ac0739e3", null ],
     [ "C_DS", "family_8h.html#a0f842da801e7f859cabedb3cfb8221e0", null ],

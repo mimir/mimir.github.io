@@ -5,6 +5,7 @@ var classautomaton_1_1AutomatonBase =
     [ "add_state", "classautomaton_1_1AutomatonBase.html#a27a58ecd31ac562612a9de83a4d3e92b", null ],
     [ "get_reachable_states", "classautomaton_1_1AutomatonBase.html#a3e63306c358b3d4904cc6ccbfef2a738", null ],
     [ "get_start", "classautomaton_1_1AutomatonBase.html#a5ee7463fbfa2f071ea1deb56490ba8d5", null ],
+    [ "num_states", "classautomaton_1_1AutomatonBase.html#a0123fb52aab2423c0a4ec36775a60a04", null ],
     [ "operator=", "classautomaton_1_1AutomatonBase.html#af855d27249a3454b48202f5b557f3f4d", null ],
     [ "print", "classautomaton_1_1AutomatonBase.html#a9c7da529745c0682b556e4095524f249", null ],
     [ "set_start", "classautomaton_1_1AutomatonBase.html#a0e05846b6df87852aefea2874b4a6c49", null ],

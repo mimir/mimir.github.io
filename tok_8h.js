@@ -24,7 +24,6 @@ var tok_8h =
       [ "mim::ast::Assoc::R", "namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4ae1e1d3d40573127e9ee0480caf1283d6", null ]
     ] ],
     [ "mim::ast::Prec", "namespacemim_1_1ast.html#afc6cb12ae859bd6554aebf244d2db28a", null ],
-    [ "mim::ast::is_lassoc", "namespacemim_1_1ast.html#a1eb898857b7ca5ba98b77ffc52ada0b7", null ],
     [ "mim::ast::is_rassoc", "namespacemim_1_1ast.html#a50e9195843afe95df3aa715f91e1b32b", null ],
     [ "mim::ast::prec_assoc", "namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "mim::ast::should_reduce", "namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890", null ],

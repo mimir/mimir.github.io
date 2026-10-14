@@ -22,5 +22,7 @@ var namespacemim_1_1plug_1_1affine =
       [ "floordiv", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70eae61e8ab8beab2f144c8bbf6e4143436c", null ],
       [ "rem", "namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea5cadb523cb6909f92350f70f124adfb8", null ]
     ] ],
+    [ "counting_for", "namespacemim_1_1plug_1_1affine.html#a287f0a97ecbd528920344f1b789ab9b6", null ],
+    [ "counting_nest", "namespacemim_1_1plug_1_1affine.html#aafb61432628fb14a7bf7193c7af5e54f", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1affine.html#ad7c8f6316983dab0fe34c1c97dd6322e", null ]
 ];

@@ -25,7 +25,6 @@ var classmim_1_1plug_1_1ll_1_1Emitter =
     [ "ostream", "classmim_1_1plug_1_1ll_1_1Emitter.html#a57263f319591f8fd9f18a812bfe0fdc5", null ],
     [ "prepare", "classmim_1_1plug_1_1ll_1_1Emitter.html#a0553a4b3a37018e2ae31211674d55dd6", null ],
     [ "rt_mode", "classmim_1_1plug_1_1ll_1_1Emitter.html#a716f42495d52bea72d6f34ce9f708aef", null ],
-    [ "rt_module", "classmim_1_1plug_1_1ll_1_1Emitter.html#a028ef63fb02d2876ccfe254f2f6aab80", null ],
     [ "schedule", "classmim_1_1plug_1_1ll_1_1Emitter.html#a2e4bf427969fa2003d10327a8df07959", null ],
     [ "start", "classmim_1_1plug_1_1ll_1_1Emitter.html#ac0f9e4889a963e8dccc382090d247357", null ],
     [ "visit", "classmim_1_1plug_1_1ll_1_1Emitter.html#afc2b1acb18e5921e3e06d5191821743f", null ],
