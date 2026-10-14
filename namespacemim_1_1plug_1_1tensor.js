@@ -12,6 +12,8 @@ var namespacemim_1_1plug_1_1tensor =
     [ "buf", "namespacemim_1_1plug_1_1tensor.html#a1170738079b3a0790326fdc8278036c4", null ],
     [ "concat", "namespacemim_1_1plug_1_1tensor.html#af6c1862907e6ee80ae0549586d23379a", null ],
     [ "conv", "namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8", null ],
+    [ "conv_grouped", "namespacemim_1_1plug_1_1tensor.html#a3890a49d30af94e793a400af9aa72a91", null ],
+    [ "conv_grouped_impl", "namespacemim_1_1plug_1_1tensor.html#ae72e065eb36a09c29df21fb1a27cc17f", null ],
     [ "conv_impl", "namespacemim_1_1plug_1_1tensor.html#a1d832398d65d16713358b2861b5c291a", null ],
     [ "dot_product", "namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e", null ],
     [ "dot_product_impl", "namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba", null ],

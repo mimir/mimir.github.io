@@ -59,7 +59,7 @@ var searchData=
   ['annotations_56',['Annotations',['../ll.html#autotoc_md391',1,'Annotations'],['../tensor.html#autotoc_md508',1,'Annotations'],['../clos.html#autotoc_md287',1,'Closure Annotations']]],
   ['any_57',['any',['../regex.html#autotoc_md496',1,'']]],
   ['api_58',['Lattice API',['../phases.html#autotoc_md93',1,'']]],
-  ['append_20prepend_59',['append / prepend',['../tuple.html#autotoc_md624',1,'']]],
+  ['append_20prepend_59',['append / prepend',['../tuple.html#autotoc_md628',1,'']]],
   ['application_60',['Application',['../langref.html#autotoc_md81',1,'']]],
   ['applications_61',['Applications',['../langref.html#autotoc_md73',1,'']]],
   ['apply_20here_62',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md179',1,'']]],

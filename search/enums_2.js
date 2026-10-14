@@ -20,12 +20,14 @@ var searchData=
   ['constptr_17',['ConstPtr',['../namespacemim_1_1plug_1_1gpu.html#a555dfadc10ca559592ce1581159b598f',1,'mim::plug::gpu']]],
   ['contains_18',['contains',['../namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166d',1,'mim::plug::ord::contains'],['../namespacemim_1_1plug_1_1tuple.html#a2c3b889c139b975a1735543c8ed40664',1,'mim::plug::tuple::contains']]],
   ['conv_19',['conv',['../namespacemim_1_1plug_1_1core.html#a42b1555ce3001847c5543dd01ebc712a',1,'mim::plug::core::conv'],['../namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec',1,'mim::plug::cps::conv'],['../namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eb',1,'mim::plug::math::conv'],['../namespacemim_1_1plug_1_1tensor.html#a2c8b223b3374893b74cc9642b40632b8',1,'mim::plug::tensor::conv']]],
-  ['conv_5fimpl_20',['conv_impl',['../namespacemim_1_1plug_1_1tensor.html#a1d832398d65d16713358b2861b5c291a',1,'mim::plug::tensor']]],
-  ['copy_21',['copy',['../namespacemim_1_1plug_1_1buffer.html#a3fb378dcb7592932135a7f5167d12380',1,'mim::plug::buffer']]],
-  ['copy_5fto_5fdevice_22',['copy_to_device',['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3e',1,'mim::plug::gpu']]],
-  ['copy_5fto_5fhost_23',['copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056',1,'mim::plug::gpu']]],
-  ['cps2ds_24',['cps2ds',['../namespacemim_1_1plug_1_1cps.html#a5a24afd7ba8b82c842e0accc5ad5816e',1,'mim::plug::cps']]],
-  ['cps2ds_5fdep_25',['cps2ds_dep',['../namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7',1,'mim::plug::cps']]],
-  ['create_5fmap_26',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
-  ['create_5fset_27',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
+  ['conv_5fgrouped_20',['conv_grouped',['../namespacemim_1_1plug_1_1tensor.html#a3890a49d30af94e793a400af9aa72a91',1,'mim::plug::tensor']]],
+  ['conv_5fgrouped_5fimpl_21',['conv_grouped_impl',['../namespacemim_1_1plug_1_1tensor.html#ae72e065eb36a09c29df21fb1a27cc17f',1,'mim::plug::tensor']]],
+  ['conv_5fimpl_22',['conv_impl',['../namespacemim_1_1plug_1_1tensor.html#a1d832398d65d16713358b2861b5c291a',1,'mim::plug::tensor']]],
+  ['copy_23',['copy',['../namespacemim_1_1plug_1_1buffer.html#a3fb378dcb7592932135a7f5167d12380',1,'mim::plug::buffer']]],
+  ['copy_5fto_5fdevice_24',['copy_to_device',['../namespacemim_1_1plug_1_1gpu.html#adb2e49ca9fcd95ec2b3a934aa772fc3e',1,'mim::plug::gpu']]],
+  ['copy_5fto_5fhost_25',['copy_to_host',['../namespacemim_1_1plug_1_1gpu.html#a4e806a8815eb6e80f354b8286a89b056',1,'mim::plug::gpu']]],
+  ['cps2ds_26',['cps2ds',['../namespacemim_1_1plug_1_1cps.html#a5a24afd7ba8b82c842e0accc5ad5816e',1,'mim::plug::cps']]],
+  ['cps2ds_5fdep_27',['cps2ds_dep',['../namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7',1,'mim::plug::cps']]],
+  ['create_5fmap_28',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
+  ['create_5fset_29',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]]
 ];

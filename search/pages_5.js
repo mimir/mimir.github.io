@@ -1,19 +1,19 @@
 var searchData=
 [
   ['f_0',['F',['../math.html#autotoc_md395',1,'']]],
-  ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md551',1,'']]],
+  ['fastest_5faxis_1',['fastest_axis',['../tensor.html#autotoc_md552',1,'']]],
   ['field_20names_20of_20sigmas_2',['Field Names of Sigmas',['../langref.html#field',1,'']]],
   ['files_20and_20imports_3',['Files and Imports',['../langref.html#module',1,'']]],
   ['files_20imports_20and_20modules_4',['Files, Imports, and Modules',['../tutorial.html#autotoc_md189',1,'']]],
   ['first_5',['A native &lt;span class=&quot;tt&quot;&gt;mim&lt;/span&gt; first',['../playground.html#autotoc_md123',1,'']]],
-  ['first_20last_6',['first / last',['../vec.html#autotoc_md634',1,'']]],
+  ['first_20last_6',['first / last',['../vec.html#autotoc_md638',1,'']]],
   ['first_20steps_7',['First Steps',['../python.html#autotoc_md139',1,'']]],
   ['fixed_20point_20iteration_8',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md95',1,'']]],
   ['flip_9',['flip',['../tensor.html#autotoc_md525',1,'']]],
-  ['flip_5fimpl_10',['flip_impl',['../tensor.html#autotoc_md584',1,'']]],
-  ['flip_5fmap_11',['flip_map',['../tensor.html#autotoc_md583',1,'']]],
+  ['flip_5fimpl_10',['flip_impl',['../tensor.html#autotoc_md585',1,'']]],
+  ['flip_5fmap_11',['flip_map',['../tensor.html#autotoc_md584',1,'']]],
   ['floordiv_20rem_12',['semiop(mul,ceildiv,floordiv,rem)',['../affine.html#autotoc_md213',1,'']]],
-  ['fold_13',['fold',['../vec.html#autotoc_md630',1,'']]],
+  ['fold_13',['fold',['../vec.html#autotoc_md634',1,'']]],
   ['for_14',['For',['../affine.html#autotoc_md207',1,'']]],
   ['for_20built_20ins_15',['Downcasts for Built-ins',['../dev.html#cast_builtin',1,'']]],
   ['forms_16',['Literals and Basic Forms',['../langref.html#lit',1,'']]],
@@ -28,5 +28,5 @@ var searchData=
   ['functions_20and_20continuations_25',['Functions and Continuations',['../langref.html#autotoc_md67',1,'Functions and Continuations'],['../tutorial.html#autotoc_md195',1,'Functions and Continuations']]],
   ['functions_20and_20types_26',['Summary: Functions and Types',['../langref.html#autotoc_md70',1,'']]],
   ['further_20casts_27',['Further Casts',['../dev.html#autotoc_md47',1,'']]],
-  ['fuse_5ftensor_28',['fuse_tensor',['../tensor.html#autotoc_md618',1,'']]]
+  ['fuse_5ftensor_28',['fuse_tensor',['../tensor.html#autotoc_md622',1,'']]]
 ];
