@@ -203,7 +203,7 @@ var searchData=
   ['create_5fmap_200',['create_map',['../namespacemim_1_1plug_1_1ord.html#a1df1214b2f201f8285ba3757b18290d4',1,'mim::plug::ord']]],
   ['create_5fset_201',['create_set',['../namespacemim_1_1plug_1_1ord.html#a1f9447414a2d8bd3d9b5e7098786740c',1,'mim::plug::ord']]],
   ['ctor_202',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html',1,'mim::ast::VariantExpr::Ctor'],['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html#af2c26faa2fa5ce6549519849253685b3',1,'mim::ast::VariantExpr::Ctor::Ctor()']]],
-  ['ctor_203',['ctor',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#ab872be9e169493211b471b9dd1564060',1,'mim::ast::MatchExpr::Arm::ctor()'],['../classmim_1_1ast_1_1VariantExpr.html#a6b7d11a3e72240250254fc914f52e40f',1,'mim::ast::VariantExpr::ctor()'],['../classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb',1,'mim::ast::Emitter::ctor(const Def *variant, Dbg dbg)']]],
+  ['ctor_203',['ctor',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#a7872aa126504055bcfe42d514aee8a73',1,'mim::ast::MatchExpr::Arm::ctor()'],['../classmim_1_1ast_1_1VariantExpr.html#a6b7d11a3e72240250254fc914f52e40f',1,'mim::ast::VariantExpr::ctor()'],['../classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb',1,'mim::ast::Emitter::ctor(const Def *variant, Dbg dbg)']]],
   ['ctor_5fnames_204',['ctor_names',['../classmim_1_1ast_1_1Emitter.html#aeeedbc29e166c6755c4ccb18f9d348e5',1,'mim::ast::Emitter']]],
   ['ctors_205',['ctors',['../classmim_1_1ast_1_1VariantExpr.html#a3d9d66cd043fc9ddaf7d17be53c7f971',1,'mim::ast::VariantExpr']]],
   ['ctype_206',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],

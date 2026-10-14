@@ -18,7 +18,6 @@ var classmim_1_1ast_1_1AST =
     [ "sym", "classmim_1_1ast_1_1AST.html#aabc7c822c356b3cc17ce638289966b13", null ],
     [ "sym", "classmim_1_1ast_1_1AST.html#af37a2dfcc38d784f2e8b47039e9e108a", null ],
     [ "sym", "classmim_1_1ast_1_1AST.html#a607ada8eb3fe062648edbd483b0f2ff6", null ],
-    [ "sym_anon", "classmim_1_1ast_1_1AST.html#a8899c2750a526004e0bbcae3f327a01c", null ],
     [ "sym_error", "classmim_1_1ast_1_1AST.html#addcecc401fa2340d35035a6c8bf23f1e", null ],
     [ "sym_return", "classmim_1_1ast_1_1AST.html#a85ddb7b560da4ba40d7923a8dc6ccd2d", null ],
     [ "world", "classmim_1_1ast_1_1AST.html#a5eb3297e76c206b9129d905274edb591", null ],

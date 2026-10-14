@@ -184,6 +184,7 @@ var hierarchy =
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
           [ "mim::ast::AxmDecl::Name", "classmim_1_1ast_1_1AxmDecl_1_1Name.html", null ],
           [ "mim::ast::DummyDecl", "classmim_1_1ast_1_1DummyDecl.html", null ],
+          [ "mim::ast::IdDecl", "classmim_1_1ast_1_1IdDecl.html", null ],
           [ "mim::ast::Ptrn", "classmim_1_1ast_1_1Ptrn.html", [
             [ "mim::ast::AliasPtrn", "classmim_1_1ast_1_1AliasPtrn.html", null ],
             [ "mim::ast::ErrorPtrn", "classmim_1_1ast_1_1ErrorPtrn.html", null ],

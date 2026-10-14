@@ -10,6 +10,7 @@ var ast_8h =
     [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
     [ "mim::ast::Expr", "classmim_1_1ast_1_1Expr.html", "classmim_1_1ast_1_1Expr" ],
     [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", "classmim_1_1ast_1_1Decl" ],
+    [ "mim::ast::IdDecl", "classmim_1_1ast_1_1IdDecl.html", "classmim_1_1ast_1_1IdDecl" ],
     [ "mim::ast::ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
     [ "mim::ast::Ptrn", "classmim_1_1ast_1_1Ptrn.html", "classmim_1_1ast_1_1Ptrn" ],
     [ "mim::ast::ErrorPtrn", "classmim_1_1ast_1_1ErrorPtrn.html", "classmim_1_1ast_1_1ErrorPtrn" ],

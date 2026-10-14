@@ -27,6 +27,7 @@ var annotated_dup =
         [ "File", "classmim_1_1ast_1_1File.html", "classmim_1_1ast_1_1File" ],
         [ "GrpPtrn", "classmim_1_1ast_1_1GrpPtrn.html", "classmim_1_1ast_1_1GrpPtrn" ],
         [ "HoleExpr", "classmim_1_1ast_1_1HoleExpr.html", "classmim_1_1ast_1_1HoleExpr" ],
+        [ "IdDecl", "classmim_1_1ast_1_1IdDecl.html", "classmim_1_1ast_1_1IdDecl" ],
         [ "IdPtrn", "classmim_1_1ast_1_1IdPtrn.html", "classmim_1_1ast_1_1IdPtrn" ],
         [ "InfixExpr", "classmim_1_1ast_1_1InfixExpr.html", "classmim_1_1ast_1_1InfixExpr" ],
         [ "LamDecl", "classmim_1_1ast_1_1LamDecl.html", "classmim_1_1ast_1_1LamDecl" ],

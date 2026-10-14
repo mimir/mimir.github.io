@@ -53,7 +53,7 @@ var searchData=
   ['grammar_50',['Grammar',['../langref.html#grammar',1,'']]],
   ['graphs_51',['Displaying DOT Graphs',['../coding.html#autotoc_md26',1,'']]],
   ['greater_52',['greater',['../classmim_1_1Def.html#ab53725bf0bb0b66ad322d671f25d7a4a',1,'mim::Def']]],
-  ['grpptrn_53',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast::GrpPtrn'],['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn::GrpPtrn()']]],
+  ['grpptrn_53',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast::GrpPtrn'],['../classmim_1_1ast_1_1IdPtrn.html#a292b89345b1a3afca333046f148e10ca',1,'mim::ast::IdPtrn::GrpPtrn()'],['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn::GrpPtrn()']]],
   ['guard_54',['guard',['../classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251',1,'mim::ast::RuleDecl::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard()']]],
   ['guard_20exists_20at_20all_55',['Why the guard exists at all',['../phases.html#autotoc_md111',1,'']]],
   ['guide_56',['Developer Guide',['../dev.html',1,'']]]

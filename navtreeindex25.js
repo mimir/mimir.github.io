@@ -1,5 +1,14 @@
 var NAVTREEINDEX25 =
 {
+"refly_2autogen_8h.html#a11dc8b1207b37282b6f36efbbd75dc15":[5,0,0,1,0,0,17,0,0],
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,17,0],
+"refly_2normalizers_8cpp.html":[5,0,4,1,3,17,0],
+"refly_2normalizers_8cpp_source.html":[5,0,4,1,3,17,0],
+"refly_8cpp.html":[5,0,4,1,3,17,1],
+"refly_8cpp.html#a88f150f6849d0fef8e93f308548f3a6a":[5,0,4,1,3,17,1,0],
+"refly_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,17,1,1],
+"refly_8cpp_source.html":[5,0,4,1,3,17,1],
+"refly_8h.html":[5,0,3,1,2,17,0],
 "refly_8h_source.html":[5,0,3,1,2,17,0],
 "regex.html":[1,18],
 "regex2nfa_8cpp.html":[5,0,4,1,3,18,4],
@@ -240,14 +249,5 @@ var NAVTREEINDEX25 =
 "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[4,0,1,48,10],
 "structmim_1_1UseEq.html":[2,0,4,81],
 "structmim_1_1UseEq.html":[4,0,1,81],
-"structmim_1_1UseEq.html#abf795ef78684f860fd42d0d377bd2d99":[2,0,4,81,0],
-"structmim_1_1UseEq.html#abf795ef78684f860fd42d0d377bd2d99":[4,0,1,81,0],
-"structmim_1_1UseHash.html":[2,0,4,82],
-"structmim_1_1UseHash.html":[4,0,1,82],
-"structmim_1_1UseHash.html#a6d13f2e0a9453f2bfcc5f67bcd47e741":[2,0,4,82,1],
-"structmim_1_1UseHash.html#a6d13f2e0a9453f2bfcc5f67bcd47e741":[4,0,1,82,1],
-"structmim_1_1UseHash.html#ac6dfe7ce6d8e3641876ac31264403272":[2,0,4,82,0],
-"structmim_1_1UseHash.html#ac6dfe7ce6d8e3641876ac31264403272":[4,0,1,82,0],
-"structmim_1_1Version.html":[2,0,4,86],
-"structmim_1_1Version.html":[4,0,1,86]
+"structmim_1_1UseEq.html#abf795ef78684f860fd42d0d377bd2d99":[2,0,4,81,0]
 };

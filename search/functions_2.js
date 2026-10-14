@@ -53,7 +53,7 @@ var searchData=
   ['counting_5fnest_50',['counting_nest',['../namespacemim_1_1plug_1_1affine.html#aafb61432628fb14a7bf7193c7af5e54f',1,'mim::plug::affine']]],
   ['create_51',['create',['../classmim_1_1Phase.html#ac17c7524655ffa3640f8a3189f6e3af1',1,'mim::Phase']]],
   ['ctor_52',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html#af2c26faa2fa5ce6549519849253685b3',1,'mim::ast::VariantExpr::Ctor']]],
-  ['ctor_53',['ctor',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#ab872be9e169493211b471b9dd1564060',1,'mim::ast::MatchExpr::Arm::ctor()'],['../classmim_1_1ast_1_1VariantExpr.html#a6b7d11a3e72240250254fc914f52e40f',1,'mim::ast::VariantExpr::ctor()'],['../classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb',1,'mim::ast::Emitter::ctor(const Def *variant, Dbg dbg)']]],
+  ['ctor_53',['ctor',['../classmim_1_1ast_1_1MatchExpr_1_1Arm.html#a7872aa126504055bcfe42d514aee8a73',1,'mim::ast::MatchExpr::Arm::ctor()'],['../classmim_1_1ast_1_1VariantExpr.html#a6b7d11a3e72240250254fc914f52e40f',1,'mim::ast::VariantExpr::ctor()'],['../classmim_1_1ast_1_1Emitter.html#aea0c644551fb2b8f73a9d8bcd62e03fb',1,'mim::ast::Emitter::ctor(const Def *variant, Dbg dbg)']]],
   ['ctor_5fnames_54',['ctor_names',['../classmim_1_1ast_1_1Emitter.html#aeeedbc29e166c6755c4ccb18f9d348e5',1,'mim::ast::Emitter']]],
   ['ctors_55',['ctors',['../classmim_1_1ast_1_1VariantExpr.html#a3d9d66cd043fc9ddaf7d17be53c7f971',1,'mim::ast::VariantExpr']]],
   ['ctype_56',['ctype',['../namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114',1,'mim::plug::clos']]],

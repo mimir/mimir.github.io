@@ -1,5 +1,14 @@
 var NAVTREEINDEX27 =
 {
+"tensor_2autogen_8h.html":[5,0,0,1,0,0,19,0],
+"tensor_2autogen_8h.html#ad376e0f5c0659983cdcbb15819757c60":[5,0,0,1,0,0,19,0,0],
+"tensor_2autogen_8h_source.html":[5,0,0,1,0,0,19,0],
+"tensor_2normalizers_8cpp.html":[5,0,4,1,3,19,1],
+"tensor_2normalizers_8cpp_source.html":[5,0,4,1,3,19,1],
+"tensor_2phase_2lower__map__reduce_8cpp.html":[5,0,4,1,3,19,0,3],
+"tensor_2phase_2lower__map__reduce_8cpp_source.html":[5,0,4,1,3,19,0,3],
+"tensor_2phase_2lower__map__reduce_8h.html":[5,0,3,1,2,19,0,3],
+"tensor_2phase_2lower__map__reduce_8h_source.html":[5,0,3,1,2,19,0,3],
 "tensor_8cpp.html":[5,0,4,1,3,19,2],
 "tensor_8cpp.html#a52c9ed43927ba186f37026e891f68383":[5,0,4,1,3,19,2,0],
 "tensor_8cpp.html#ab41c3ad0befed5678e957c6d09ef9908":[5,0,4,1,3,19,2,2],
