@@ -124,7 +124,7 @@ var NAVTREEINDEX =
 "dir_042382fc7b12dd3d765eda564991afc2.html",
 "globals_defs.html",
 "namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23",
-"namespacemim_1_1plug_1_1btensor.html#a47aa7b1ac64b3fda6b806bfd781bf00d",
+"namespacemim_1_1plug_1_1btensor.html#a52e55fb0c4b38eed71595a010c06dadd",
 "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673af79db5f5ed7a623224a6d3bbf4d96185",
 "namespacemim_1_1plug_1_1math.html#ad0d483b8c713d41e11fa417fd2c513df",
 "namespacemim_1_1plug_1_1tensor.html#a0d1b5850e2bdc481d26c9cc5a189e7c2",

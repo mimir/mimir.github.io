@@ -3,7 +3,7 @@ var btensor_8h =
     [ "mim::plug::btensor::MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ],
     [ "mim::plug::btensor::MapRedPost::Ranks", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks" ],
     [ "mim::plug::btensor::app_cps", "namespacemim_1_1plug_1_1btensor.html#ae30478d943f1561f59d65e1339b1afca", null ],
-    [ "mim::plug::btensor::build_pointwise", "namespacemim_1_1plug_1_1btensor.html#a2b63e75f4d9d5793a33208a49255d676", null ],
+    [ "mim::plug::btensor::build_pointwise", "namespacemim_1_1plug_1_1btensor.html#a6348d0f36f7c1cf62224c9e75079fb3e", null ],
     [ "mim::plug::btensor::clamp", "namespacemim_1_1plug_1_1btensor.html#a68fb0a2ed7c67958245f946f07e1b33f", null ],
     [ "mim::plug::btensor::concat_extents", "namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d", null ],
     [ "mim::plug::btensor::concat_select", "namespacemim_1_1plug_1_1btensor.html#adc675d0c43c37daa23f54fdaff020e9e", null ],

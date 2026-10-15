@@ -4,6 +4,7 @@ var buffer_2autogen_8h =
     [ "mim::plug::buffer::alloc", "namespacemim_1_1plug_1_1buffer.html#a6d3e35261f35dea8968c3b995a30f0ee", null ],
     [ "mim::plug::buffer::Buf", "namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c", null ],
     [ "mim::plug::buffer::copy", "namespacemim_1_1plug_1_1buffer.html#a3fb378dcb7592932135a7f5167d12380", null ],
+    [ "mim::plug::buffer::free", "namespacemim_1_1plug_1_1buffer.html#af0ca377a12c36965ec50d3ea75163a12", null ],
     [ "mim::plug::buffer::init", "namespacemim_1_1plug_1_1buffer.html#a510dfa839a89984f2c6d54ab2295657d", null ],
     [ "mim::plug::buffer::lit", "namespacemim_1_1plug_1_1buffer.html#a06147b300ea7be68c1ebad95e5bafa42", null ],
     [ "mim::plug::buffer::lower_ptr", "namespacemim_1_1plug_1_1buffer.html#a217eccd3a90c9a01efb7d3901d352bee", null ],

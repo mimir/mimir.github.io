@@ -245,9 +245,9 @@ var NAVTREEINDEX20 =
 "namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e":[2,0,4,1,2,10],
 "namespacemim_1_1plug_1_1btensor.html#a1448fb87a7d7752f2b341d00f84ef661":[2,0,4,1,2,12],
 "namespacemim_1_1plug_1_1btensor.html#a178c1d5c474562b4f36e73abb0f7ebb3":[2,0,4,1,2,5],
-"namespacemim_1_1plug_1_1btensor.html#a21fb97ac045b7341ad37c3453469f58e":[2,0,4,1,2,26],
-"namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d":[2,0,4,1,2,21],
-"namespacemim_1_1plug_1_1btensor.html#a2b63e75f4d9d5793a33208a49255d676":[2,0,4,1,2,19],
-"namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87":[2,0,4,1,2,15],
-"namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d":[2,0,4,1,2,2]
+"namespacemim_1_1plug_1_1btensor.html#a21fb97ac045b7341ad37c3453469f58e":[2,0,4,1,2,24],
+"namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d":[2,0,4,1,2,19],
+"namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87":[2,0,4,1,2,14],
+"namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d":[2,0,4,1,2,2],
+"namespacemim_1_1plug_1_1btensor.html#a47aa7b1ac64b3fda6b806bfd781bf00d":[2,0,4,1,2,27]
 };

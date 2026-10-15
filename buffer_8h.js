@@ -3,6 +3,7 @@ var buffer_8h =
     [ "mim::plug::buffer::op_alloc", "namespacemim_1_1plug_1_1buffer.html#aeb923067ffb5d6389b8c711d9d8ae534", null ],
     [ "mim::plug::buffer::op_copy", "namespacemim_1_1plug_1_1buffer.html#a438123099d3fe47ad23bccd8dfc6830b", null ],
     [ "mim::plug::buffer::op_copy", "namespacemim_1_1plug_1_1buffer.html#aff6fec8329ff1de1d64a5f64e002d978", null ],
+    [ "mim::plug::buffer::op_free", "namespacemim_1_1plug_1_1buffer.html#a291c425187907695f854dd1886a52ee5", null ],
     [ "mim::plug::buffer::op_init", "namespacemim_1_1plug_1_1buffer.html#abd0c6f20c924ce86ad3382e4b6aecbfb", null ],
     [ "mim::plug::buffer::op_lit", "namespacemim_1_1plug_1_1buffer.html#aa5fbef610620dbc9247aed725c22f2ba", null ],
     [ "mim::plug::buffer::op_read", "namespacemim_1_1plug_1_1buffer.html#ad5ec40be17df038ee18c2c9cabfe5a80", null ],
