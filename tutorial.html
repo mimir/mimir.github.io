@@ -199,6 +199,8 @@ Lexical Structure</h1>
 <div class="line">let hex = 0x2A;             // hexadecimal</div>
 <div class="line">let flt = 4.2e1:math.F64;   // a floating-point literal needs its type</div>
 <div class="line">let chr = &#39;A&#39;;              // I8</div>
+<div class="line">let quo = &#39;\&#39;&#39;;             // a `&#39;` payload must be escaped</div>
+<div class="line">let byt = 0xFFI8;           // the `I8` suffix spells a bit width</div>
 <div class="line">let str = &quot;Mim&quot;;            // «3; I8»</div>
 <div class="line">let neg = -42I32;           // the sign belongs to the expression, not to the token</div>
 <div class="line">let nothing = ⊥;            // `bot`; defaults to `*`</div>
@@ -208,6 +210,8 @@ Lexical Structure</h1>
 <div class="line"> </div>
 <div class="line">let _ = refly.struc.e (dec, bin);</div>
 <div class="line">let _ = refly.struc.e (oct, hex);</div>
+<div class="line">let _ = refly.struc.e (quo, 39I8);</div>
+<div class="line">let _ = refly.struc.e (byt, 255I8);</div>
 <div class="line"> </div>
 <div class="line">let tru = 1₂;               // an index literal spells its arity as a subscript …</div>
 <div class="line">let alt = 1_2;              // … or after an `_`</div>
