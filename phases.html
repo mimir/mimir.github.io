@@ -332,10 +332,11 @@ Typical Shape</h2>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">    <span class="keyword">const</span> Def* rewrite_imm_App(<span class="keyword">const</span> App* app)<span class="keyword"> override </span>{</div>
 <div class="line">        <span class="comment">// customize rebuilding here</span></div>
-<div class="line">        <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(app);</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">RWPhase::rewrite_imm_App</a>(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassmim_1_1RWPhase_html"><div class="ttname"><a href="classmim_1_1RWPhase.html">mim::RWPhase</a></div><div class="ttdoc">Rebuilds old_world() into new_world() and then swaps them.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00333">phase.h:333</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_ae075070aa11c3f803665f7cd97fe2b94"><div class="ttname"><a href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">mim::Rewriter::rewrite_imm_App</a></div><div class="ttdeci">virtual const Def * rewrite_imm_App(const App *)</div></div>
 </div><!-- fragment --><p>Run it with:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">mim::Phase::run&lt;MyRWPhase&gt;</a>(world);</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="phases_phase_man"></a>
@@ -423,7 +424,7 @@ Example: SCCP</h1>
 <div class="line">            : <a class="code hl_namespace" href="namespacemim.html">mim</a>::<a class="code hl_friend" href="classmim_1_1Phase.html#a1e23f70a55de946d03c863586003862d">Analysis</a>(<a class="code hl_function" href="classmim_1_1Analysis.html#afeae25f4ecab3e3812e9607f630a506f">world</a>, <span class="stringliteral">&quot;SCCP::Analyzer&quot;</span>) {}</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">private</span>:</div>
-<div class="line">        <span class="keyword">const</span> Def* propagate(<span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def);</div>
+<div class="line">        <span class="keyword">const</span> Def* propagate(Lam* lam, <span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def);</div>
 <div class="line">        <span class="keyword">const</span> Def* rewrite_imm_App(<span class="keyword">const</span> App* app) <span class="keyword">final</span>;</div>
 <div class="line">    };</div>
 <div class="line"> </div>
@@ -463,16 +464,10 @@ Analysis</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment">/// The Lam the abstract @p var belongs to; @p var is a Var or a Var projection.</span></div>
-<div class="line"><span class="keyword">static</span> Lam* lam_of(<span class="keyword">const</span> Def* var) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<span class="keyword">auto</span> ex = var-&gt;isa&lt;Extract&gt;()) <span class="keywordflow">return</span> ex-&gt;tuple()-&gt;as&lt;Var&gt;()-&gt;binder()-&gt;as_mut&lt;Lam&gt;();</div>
-<div class="line">    <span class="keywordflow">return</span> var-&gt;as&lt;Var&gt;()-&gt;binder()-&gt;as_mut&lt;Lam&gt;();</div>
-<div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">const</span> Def* SCCP::Analysis::propagate(<span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def) {</div>
+<div class="line"><span class="keyword">const</span> Def* SCCP::Analysis::propagate(Lam* lam, <span class="keyword">const</span> Def* var, <span class="keyword">const</span> Def* def) {</div>
 <div class="line">    <span class="comment">// `⊥ ⊔ x` is `x`, but unusable if lam nests it.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">lam_of</a>(var)-&gt;nests(def)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a>(var), var;</div>
+<div class="line">    <span class="keywordflow">if</span> (lam-&gt;nests(def)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a>(var), var;</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">auto</span> cur = <a class="code hl_function" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a>(var);</div>
 <div class="line">    <span class="keywordflow">if</span> (!cur) { <span class="comment">// ⊥ ⊔ def = def; lattice(var, def) invalidates, as it inserts a fresh non-⊤ fact</span></div>
@@ -508,7 +503,7 @@ Analysis</h2>
 <div class="line">        <span class="comment">// propagate</span></div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i != n; ++i) {</div>
 <div class="line">            <span class="keyword">auto</span> abstr    = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(app-&gt;targ(i));</div>
-<div class="line">            abstr_vars[i] = propagate(lam-&gt;tvar(i), abstr);</div>
+<div class="line">            abstr_vars[i] = propagate(lam, lam-&gt;tvar(i), abstr);</div>
 <div class="line">            abstr_args[i] = abstr;</div>
 <div class="line">        }</div>
 <div class="line"> </div>
@@ -516,7 +511,7 @@ Analysis</h2>
 <div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().<a class="code hl_function" href="classmim_1_1World.html#ac49e089f686b5294788c9d71e59b5f98">raw_app</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(app-&gt;type()), <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(lam), <a class="code hl_function" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a>().tuple(abstr_args));</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> mim::Analysis::rewrite_imm_App(app);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">mim::Analysis::rewrite_imm_App</a>(app);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
@@ -528,7 +523,6 @@ Analysis</h2>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_a75096ea0eb8e19be1c2286f9425dfd70"><div class="ttname"><a href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">mim::Rewriter::curr_mut</a></div><div class="ttdeci">D * curr_mut() const</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00098">rewrite.h:98</a></div></div>
 <div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00043">rewrite.cpp:43</a></div></div>
 <div class="ttc" id="aclassmim_1_1World_html_ac49e089f686b5294788c9d71e59b5f98"><div class="ttname"><a href="classmim_1_1World.html#ac49e089f686b5294788c9d71e59b5f98">mim::World::raw_app</a></div><div class="ttdeci">const Def * raw_app(const Axm *axm, u8 curry, u8 trip, const Def *type, const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00410">world.cpp:410</a></div></div>
-<div class="ttc" id="anamespacemim_html_a460ec790ce35ed5ebbbee20d96305c21"><div class="ttname"><a href="namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21">mim::lam_of</a></div><div class="ttdeci">static Lam * lam_of(const Def *var)</div><div class="ttdoc">The Lam the abstract var belongs to; var is a Var or a Var projection.</div><div class="ttdef"><b>Definition</b> <a href="sccp__analysis_8cpp_source.html#l00006">sccp_analysis.cpp:6</a></div></div>
 <div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00098">def.h:98</a></div></div>
 <div class="ttc" id="anamespacemim_html_ad6a85076174e8ee770ec5ad1f3c06ea4"><div class="ttname"><a href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">mim::Bot</a></div><div class="ttdeci">TExt&lt; false &gt; Bot</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00039">union.h:39</a></div></div>
 <div class="ttc" id="asccp_8h_html"><div class="ttname"><a href="sccp_8h.html">sccp.h</a></div></div>
@@ -547,6 +541,7 @@ Analysis</h2>
 <li>store them in <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">Analysis::lattice()</span></a>,</li>
 <li>iterate to a fixed point.</li>
 </ul>
+<p>The <em>conditional</em> part of SCCP needs no code of its own. Wegman and Zadeck track which CFG edges are executable, so that an unreachable predecessor does not spoil a join. Here, the analysis rewrites each body into the abstract domain, and building that abstract body normalizes it. Once the condition of a branch <span class="tt">(f, t)#c</span> is abstracted to a literal, the extract folds to the taken target, and <a class="el" href="classmim_1_1Rewriter.html#a355268725383a5c9742d93ca542a8d88" title="mim::Rewriter::rewrite_imm_Extract"><span class="tt">rewrite_imm_Extract</span></a> only rewrites that op. The untaken target is never scheduled, so its call sites never contribute to a join. This works for any condition that normalizes to a literal - including one computed from a propagated expression rather than a plain constant.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 Transformation</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="sccp_8h.html">mim/phase/sccp.h</a>&quot;</span></div>
@@ -563,7 +558,7 @@ Transformation</h2>
 <div class="line"> </div>
 <div class="line">            <span class="keyword">auto</span> new_lam = fe::lookup(lam2lam_, old_lam);</div>
 <div class="line">            <span class="keywordflow">if</span> (!new_lam) {</div>
-<div class="line">                <span class="keyword">auto</span> new_doms     = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_lam-&gt;doms(keep.num_old())));</div>
+<div class="line">                <span class="keyword">auto</span> new_doms     = <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(old_lam-&gt;tdoms()));</div>
 <div class="line">                new_lam           = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#afa7919f0e7f69f2451aedd9da912c857">mut_lam</a>(new_doms, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_lam-&gt;codom()))-&gt;<a class="code hl_function" href="classmim_1_1Lam.html#a24231a9b2503394cd8a54128a043db1b">set</a>(old_lam-&gt;dbg());</div>
 <div class="line">                lam2lam_[old_lam] = new_lam;</div>
 <div class="line"> </div>
@@ -581,7 +576,7 @@ Transformation</h2>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> RWPhase::rewrite_imm_App(old_app);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">RWPhase::rewrite_imm_App</a>(old_app);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// namespace mim</span></div>
@@ -603,6 +598,7 @@ Transformation</h2>
 <li>the call site is rebuilt with only the remaining arguments.</li>
 </ul>
 <p>Which parameters survive is stated once as a <a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> over the old <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span>s</a>, and all three rebuilds read it back: <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">gather</span></a> picks the surviving domains and arguments, while <a class="el" href="classmim_1_1Sieve.html#a972de8bcd87a06fb1cb346aa0b5fa963" title="mim::Sieve::operator[]"><span class="tt">operator[]</span></a> maps each old parameter either to its new <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a> or - on <a class="el" href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb" title="mim::Sieve::Gone"><span class="tt">Gone</span></a> - to its propagated value.</p>
+<p>The <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="mim::Phase::invalidate"><span class="tt">invalidate()</span></a> in the transformation is unrelated to the analysis' fixed point. It tells an enclosing fixed-point <a class="el" href="#phases_phase_man" title="PhaseMan"><span class="tt">PhaseMan</span></a> that this phase changed the program, so the other phases get another round.</p>
 <p>So SCCP follows the standard <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a> pattern:</p>
 <ol type="1">
 <li>analyze the old world,</li>
@@ -619,11 +615,11 @@ Discussion</h2>
 <li>the handoff from analysis to rewrite is explicit through <a class="el" href="classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a" title="mim::Analysis::lattice"><span class="tt">Analysis::lattice()</span></a> and <a class="el" href="classmim_1_1RWPhase.html#ae4f4200bf0845a3f7110813c1f19d4a0" title="mim::RWPhase::lattice"><span class="tt">RWPhase::lattice()</span></a>.</li>
 </ul>
 <p>This separation is the main design pattern to follow for nontrivial optimizations.</p>
-<dl class="section note"><dt>Note</dt><dd>The complete SCCP example is roughly 130 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The complete SCCP example is less than 100 lines of C++ source code. Most of the usual compiler boilerplate is absorbed by the existing <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a>, <a class="el" href="classmim_1_1RWPhase.html" title="mim::RWPhase"><span class="tt">RWPhase</span></a>, and <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> infrastructure, so the implementation can focus on the optimization itself.</dd></dl>
 <h2 class="doxsection"><a class="anchor" id="ssa-without-dominance"></a>
 SSA without Dominance</h2>
 <p>The very first line of <span class="tt">propagate()</span> is a guard that has no counterpart in the lattice algebra; a <a class="el" href="#sccp-bot-site" title="⊥-sites">second one</a> guards the ⊥ case of the join:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (lam_of(var)-&gt;nests(def)) <span class="keywordflow">return</span> pin(var), var;</div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (lam-&gt;nests(def)) <span class="keywordflow">return</span> pin(var), var;</div>
 </div><!-- fragment --><p>It is the MimIR analogue of the <em>dominance</em> side condition that a classical SSA-based SCCP has to enforce, so it is worth spelling out what it replaces.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 Why the guard exists at all</h3>
@@ -644,7 +640,7 @@ The MimIR picture</h3>
 <p>What is missing is the dominator tree. Its role — deciding whether a candidate value is <em>available</em> at the point where it would be substituted — is taken over by the scope/nesting relation <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="mim::Def::nests"><span class="tt">Def::nests</span></a>, computed structurally from free variables rather than from a precomputed CFG analysis. <span class="tt">L-&gt;nests(def)</span> holds iff <span class="tt">def</span> lives <em>strictly inside</em> <span class="tt">L</span>, i.e. it transitively depends on binders introduced below <span class="tt">L</span>; a <span class="tt">def</span> that only mentions things visible at <span class="tt">L</span>'s level or further out is <b>not</b> nested.</p>
 <p>Now the guard reads directly:</p>
 <ul>
-<li><span class="tt">var</span> is a parameter of <span class="tt">L = lam_of(var)</span>, and the joined value replaces <span class="tt">var</span> throughout <span class="tt">L</span>'s body.</li>
+<li><span class="tt">L</span> is the <span class="tt">lam</span> passed to <span class="tt">propagate()</span>, <span class="tt">var</span> is one of its parameters, and the joined value replaces <span class="tt">var</span> throughout <span class="tt">L</span>'s body.</li>
 <li>If <span class="tt">L-&gt;nests(def)</span>, the joined value refers to binders that only come into existence <em>within</em> <span class="tt">L</span>'s own body, so only a call site inside <span class="tt">L</span> — a recursive jump — can pass it. Substituting it for <span class="tt">var</span> would use those binders before they exist: on entry to <span class="tt">L</span>, nothing below <span class="tt">L</span> has been bound yet. This is the exact situation dominance forbids, so the analysis pins <span class="tt">var</span> to ⊤ (<a class="el" href="classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d" title="mim::Analysis::pin"><span class="tt">pin</span></a>) instead.</li>
 <li>A call site <em>outside</em> <span class="tt">L</span> cannot pass such a value: it passes ⊥, which the <a class="el" href="#sccp-bot-site" title="⊥-sites">⊥-site check</a> handles, or a different value, which joins to ⊤ anyway. But when <span class="tt">L</span> is only entered through an escaping value, its recursive call sites are the only known ones, and this guard is all that stands in the way.</li>
 </ul>
@@ -723,7 +719,7 @@ Minimal Examples</h1>
 <div class="line">    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">mim::Def</a>* rewrite_imm_App(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">mim::App</a>* app)<span class="keyword"> override </span>{</div>
 <div class="line">        <span class="comment">// rewrite or simplify selected applications</span></div>
 <div class="line">        <span class="comment">// fallback:</span></div>
-<div class="line">        <span class="keywordflow">return</span> Rewriter::rewrite_imm_App(app);</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">Rewriter::rewrite_imm_App</a>(app);</div>
 <div class="line">    }</div>
 <div class="line">};</div>
 <div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00214">lam.h:214</a></div></div>

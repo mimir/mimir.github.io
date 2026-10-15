@@ -9,7 +9,7 @@ var searchData=
   ['sg_6',['sg',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a5dae429688af1c521ad87ac394192c6d',1,'mim::plug::core']]],
   ['sge_7',['sge',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a2a2ab400d355ac301859e4abb5432138',1,'mim::plug::core']]],
   ['shl_8',['shl',['../namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efabc192716b0e1d5c96a67961dd0d3f9da',1,'mim::plug::core']]],
-  ['sigma_9',['Sigma',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da827faff1bdcfe446237c4d6289abce66',1,'mim']]],
+  ['sigma_9',['Sigma',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da827faff1bdcfe446237c4d6289abce66',1,'mim::Sigma'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a827faff1bdcfe446237c4d6289abce66',1,'mim::Sigma']]],
   ['sin_10',['sin',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a7d27e4a7ca7533a3bef4fad10a0c19c7',1,'mim::plug::math']]],
   ['single_11',['Single',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da66ba162102bbf6ae31b522aec561735e',1,'mim']]],
   ['sinh_12',['sinh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72aa7cd83fe6a92873f5118a3dd9edeff2d',1,'mim::plug::math']]],

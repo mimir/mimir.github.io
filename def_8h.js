@@ -60,7 +60,16 @@ var def_8h =
       [ "mim::Judge::Meta", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9", null ],
       [ "mim::Judge::Hole", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988", null ]
     ] ],
-    [ "mim::MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", null ],
+    [ "mim::MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", [
+      [ "mim::MutNode::Hole", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a6368a5bde7853b2f6c660f010adbb988", null ],
+      [ "mim::MutNode::Pi", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a127125672f1e85d1e676d4394d24e066", null ],
+      [ "mim::MutNode::Lam", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a36b73508d151b2fc641e0c0265d3d360", null ],
+      [ "mim::MutNode::Sigma", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a827faff1bdcfe446237c4d6289abce66", null ],
+      [ "mim::MutNode::Arr", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a3e09ae791896ec3e7e65b3fe363f0fc3", null ],
+      [ "mim::MutNode::Pack", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a4492081ca02b059f9e8af4ddaf0f7292", null ],
+      [ "mim::MutNode::Variant", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a", null ],
+      [ "mim::MutNode::Rule", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341aab7a485ebe75b6dd7243ad719f23c7de", null ]
+    ] ],
     [ "mim::Node", "namespacemim.html#afb12dbffaaa27bca46f171517d96256d", [
       [ "mim::Node::Lit", "namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4", null ],
       [ "mim::Node::Axm", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849", null ],

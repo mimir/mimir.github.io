@@ -24,7 +24,7 @@ var searchData=
   ['here_21',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md179',1,'']]],
   ['highlighting_22',['Syntax Highlighting',['../coding.html#autotoc_md23',1,'']]],
   ['hlt_23',['hlt',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a4f4000d921968b9665f52e88333007da',1,'mim::plug::core']]],
-  ['hole_24',['Hole',['../classmim_1_1Hole.html',1,'mim::Hole'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole']]],
+  ['hole_24',['Hole',['../classmim_1_1Hole.html',1,'mim::Hole'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole']]],
   ['holeexpr_25',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html',1,'mim::ast::HoleExpr'],['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr::HoleExpr()']]],
   ['honest_20caveats_26',['Two honest caveats',['../md_docs_2why-cpp.html#autotoc_md181',1,'']]],
   ['hook_27',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],

@@ -1,5 +1,5 @@
 var searchData=
 [
   ['var_0',['Var',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da5a92344ee95acf10c31901b36418be77',1,'mim::Var'],['../namespacemim.html#a249738da6a953390b70691dd3fe7132ba5a92344ee95acf10c31901b36418be77',1,'mim::Var']]],
-  ['variant_1',['Variant',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a',1,'mim']]]
+  ['variant_1',['Variant',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant']]]
 ];

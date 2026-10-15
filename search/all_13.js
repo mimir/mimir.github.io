@@ -140,7 +140,7 @@ var searchData=
   ['sibldeps_3c_20true_20_3e_137',['SiblDeps&lt; true &gt;',['../structmim_1_1Nest_1_1Node_1_1SiblDeps.html',1,'mim::Nest::Node']]],
   ['side_20effects_138',['Side Effects',['../mem.html#autotoc_md418',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md427',1,'Operations w/o Side Effects']]],
   ['sieve_139',['Sieve',['../classmim_1_1Sieve.html',1,'mim::Sieve'],['../classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441',1,'mim::Sieve::Sieve(size_t num)'],['../classmim_1_1Sieve.html#aeda26aa0fda64fbd25ce3dfb19d968b5',1,'mim::Sieve::Sieve(size_t num, std::predicate&lt; size_t &gt; auto pred)'],['../classmim_1_1Sieve.html#a533dea9bd67441290965671db10f6523',1,'mim::Sieve::Sieve(Defs ops, std::predicate&lt; const Def * &gt; auto pred)']]],
-  ['sigma_140',['Sigma',['../classmim_1_1Sigma.html',1,'mim::Sigma'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da827faff1bdcfe446237c4d6289abce66',1,'mim::Sigma']]],
+  ['sigma_140',['Sigma',['../classmim_1_1Sigma.html',1,'mim::Sigma'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da827faff1bdcfe446237c4d6289abce66',1,'mim::Sigma'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a827faff1bdcfe446237c4d6289abce66',1,'mim::Sigma']]],
   ['sigma_141',['sigma',['../classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856',1,'mim::World::sigma(Defs ops)'],['../classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0',1,'mim::World::sigma()']]],
   ['sigmaexpr_142',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html',1,'mim::ast::SigmaExpr'],['../classmim_1_1ast_1_1SigmaExpr.html#af4aa536aa2e8c456f558b02ad414b8a2',1,'mim::ast::SigmaExpr::SigmaExpr()']]],
   ['sigmas_143',['Field Names of Sigmas',['../langref.html#field',1,'']]],

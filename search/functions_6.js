@@ -15,5 +15,6 @@ var searchData=
   ['git_12',['git',['../namespacedeploy.html#acb38204d20e518597be69025ad49086e',1,'deploy']]],
   ['greater_13',['greater',['../classmim_1_1Def.html#ab53725bf0bb0b66ad322d671f25d7a4a',1,'mim::Def']]],
   ['grpptrn_14',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn']]],
-  ['guard_15',['guard',['../classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251',1,'mim::ast::RuleDecl::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard()']]]
+  ['guard_15',['guard',['../classmim_1_1ast_1_1RuleDecl.html#a413e8521fa4a639fe24af51eb3992251',1,'mim::ast::RuleDecl::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard() const'],['../classmim_1_1Rule.html#ad10ae792792c2eca90e8ad19d04f3182',1,'mim::Rule::guard(nat_t a, nat_t i) const noexcept']]],
+  ['guards_16',['guards',['../classmim_1_1Rule.html#a7ae9443c5f3af9394f0d0506f0528fd2',1,'mim::Rule::guards(Projector auto f) const noexcept'],['../classmim_1_1Rule.html#aa2aa975ae0bde8d4998dd5f87bf9b417',1,'mim::Rule::guards() const noexcept'],['../classmim_1_1Rule.html#ab2061bc3a98d3b3deafab0f8c57a121e',1,'mim::Rule::guards(nat_t a, Projector auto f) const noexcept'],['../classmim_1_1Rule.html#a98e7457d4ee719c90d13ff1b3cf7ee19',1,'mim::Rule::guards(nat_t a) const noexcept']]]
 ];

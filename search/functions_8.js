@@ -128,9 +128,10 @@ var searchData=
   ['isa_5frewritable_125',['isa_rewritable',['../classmim_1_1Lam.html#ad2d55564ba0b3e0b9df6ad1f9905466d',1,'mim::Lam']]],
   ['isa_5fset_126',['isa_set',['../classmim_1_1Hole.html#ac67c922abf10e80101a6442adfc06506',1,'mim::Hole']]],
   ['isa_5ftargetspecific_5fintrinsic_127',['isa_targetspecific_intrinsic',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a1b6340836cebcce5c39aa39f74bdb597',1,'mim::plug::ll::Emitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#addb03a4f90c681986e49448dfbc13e65',1,'mim::plug::nvptx::HostEmitter::isa_targetspecific_intrinsic()'],['../classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html#a7108bad97bea89b712301293b088c99f',1,'mim::plug::nvptx::DeviceEmitter::isa_targetspecific_intrinsic()']]],
-  ['isa_5ftranspose_5f2d_128',['isa_transpose_2d',['../namespacemim_1_1plug_1_1tensor.html#a49bf3f416a9091d355186223c5988711',1,'mim::plug::tensor']]],
-  ['isa_5ftype_129',['isa_type',['../classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd',1,'mim::Def']]],
-  ['isa_5funset_130',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
-  ['isa_5fvar_5fproj_131',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
-  ['its_5fa_5fmatch_132',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
+  ['isa_5ftproj_128',['isa_tproj',['../classmim_1_1Var.html#a3d339463a6100f6eeef9bee8f4b599ce',1,'mim::Var']]],
+  ['isa_5ftranspose_5f2d_129',['isa_transpose_2d',['../namespacemim_1_1plug_1_1tensor.html#a49bf3f416a9091d355186223c5988711',1,'mim::plug::tensor']]],
+  ['isa_5ftype_130',['isa_type',['../classmim_1_1Def.html#afbcb47e10b7739e8506e561e9235e1fd',1,'mim::Def']]],
+  ['isa_5funset_131',['isa_unset',['../classmim_1_1Hole.html#a805da1d774ba0d78bcf3a780362fce0a',1,'mim::Hole']]],
+  ['isa_5fvar_5fproj_132',['isa_var_proj',['../namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b',1,'mim::plug::clos']]],
+  ['its_5fa_5fmatch_133',['its_a_match',['../classmim_1_1Rule.html#a686d82d5d20cf127fb03d1e380a8d612',1,'mim::Rule']]]
 ];

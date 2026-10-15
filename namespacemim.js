@@ -155,7 +155,16 @@ var namespacemim =
       [ "Meta", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ab6755d218d5f4e1cef9cce9cc39aeda9", null ],
       [ "Hole", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988", null ]
     ] ],
-    [ "MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", null ],
+    [ "MutNode", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341", [
+      [ "Hole", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a6368a5bde7853b2f6c660f010adbb988", null ],
+      [ "Pi", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a127125672f1e85d1e676d4394d24e066", null ],
+      [ "Lam", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a36b73508d151b2fc641e0c0265d3d360", null ],
+      [ "Sigma", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a827faff1bdcfe446237c4d6289abce66", null ],
+      [ "Arr", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a3e09ae791896ec3e7e65b3fe363f0fc3", null ],
+      [ "Pack", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a4492081ca02b059f9e8af4ddaf0f7292", null ],
+      [ "Variant", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a", null ],
+      [ "Rule", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341aab7a485ebe75b6dd7243ad719f23c7de", null ]
+    ] ],
     [ "Node", "namespacemim.html#afb12dbffaaa27bca46f171517d96256d", [
       [ "Lit", "namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4", null ],
       [ "Axm", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da772a78ebe7cabb9591df042871a5a849", null ],
@@ -227,7 +236,6 @@ var namespacemim =
     [ "isa_flattenable", "namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b", null ],
     [ "isa_flex_rank", "namespacemim.html#a09c6e231d7bdc610a4957da7fa3cddae", null ],
     [ "known_rank", "namespacemim.html#ad262379562ed8a48bfa97470e6e7c4f5", null ],
-    [ "lam_of", "namespacemim.html#a460ec790ce35ed5ebbbee20d96305c21", null ],
     [ "mim_get_plugin", "namespacemim.html#a77f34c28f8418e4828b4684cbc025e52", null ],
     [ "node2dep", "namespacemim.html#aaf1a8484eb0b1963fec744d23a7e28b3", null ],
     [ "operator\"\"_n", "namespacemim.html#a659d017e0b42344997eb847f5b6d8f27", null ],

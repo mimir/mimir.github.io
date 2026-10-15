@@ -8,7 +8,7 @@ var searchData=
   ['var_5',['var',['../classmim_1_1ast_1_1RuleDecl.html#a3b47f29265106727248c3f18e9cac35c',1,'mim::ast::RuleDecl::var()'],['../classmim_1_1Def.html#a6e757a3ae8e52ee5b9ebdaea32c6abd8',1,'mim::Def::var(nat_t a, nat_t i) noexcept'],['../classmim_1_1Def.html#ac0d3c5c425d581e1e6836790d1437d1d',1,'mim::Def::var()'],['../classmim_1_1World.html#abbcb4c5098ac6716583a08038c68cf84',1,'mim::World::var()']]],
   ['var_5ftype_6',['var_type',['../classmim_1_1Def.html#ae27e362495c89965b30a40f16cfd860a',1,'mim::Def']]],
   ['variables_7',['Variables',['../cli.html#autotoc_md9',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../dev.html#free_vars',1,'Free Variables'],['../cli.html#envs',1,'Plugin Environment Variables'],['../dev.html#autotoc_md37',1,'Variables']]],
-  ['variant_8',['Variant',['../classmim_1_1Variant.html',1,'mim::Variant'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant']]],
+  ['variant_8',['Variant',['../classmim_1_1Variant.html',1,'mim::Variant'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant']]],
   ['variant_9',['variant',['../classmim_1_1World.html#a0e5f1998a583d645c08a38874f249018',1,'mim::World']]],
   ['variant_5fstr_10',['variant_str',['../classmim_1_1ast_1_1Emitter.html#afa9148c5104e43a67becf5a35e40bbd8',1,'mim::ast::Emitter']]],
   ['variantexpr_11',['VariantExpr',['../classmim_1_1ast_1_1VariantExpr.html',1,'mim::ast::VariantExpr'],['../classmim_1_1ast_1_1VariantExpr.html#af351e421e18585528729fe02ff521568',1,'mim::ast::VariantExpr::VariantExpr()']]],
