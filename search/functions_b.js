@@ -55,7 +55,5 @@ var searchData=
   ['local_5fvars_52',['local_vars',['../classmim_1_1Def.html#a3f5a341398bd97b516f9fd7d1d170e5b',1,'mim::Def']]],
   ['log_53',['log',['../classmim_1_1Driver.html#ad986bcc29d263ac15dd192571454b9b9',1,'mim::Driver::log()'],['../classmim_1_1Driver.html#aef4e29a363eb7440c7fa8231f2435deb',1,'mim::Driver::log() const'],['../classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28',1,'mim::Phase::log()'],['../classmim_1_1World.html#a6805186dd54b22be877a544f77641f8a',1,'mim::World::log()']]],
   ['lookup_54',['lookup',['../classmim_1_1Analysis.html#a5190fee54fca9de9365c6006994df353',1,'mim::Analysis::lookup()'],['../classmim_1_1RWPhase.html#a2b60687536b0f5c3148e1f0ea379b348',1,'mim::RWPhase::lookup()'],['../classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954',1,'mim::Rewriter::lookup()'],['../classmim_1_1Zonker.html#a9baa4de21ec32c764ae27a4d7c99d436',1,'mim::Zonker::lookup()']]],
-  ['loop_5fdepth_55',['loop_depth',['../classmim_1_1Nest_1_1Node.html#aeba233c5d375cdc2f9e8c07708c09bbc',1,'mim::Nest::Node']]],
-  ['lowertypedclos_56',['LowerTypedClos',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html#a4a71222e2295b2975b11e09eb955a105',1,'mim::plug::clos::phase::LowerTypedClos']]],
-  ['lowertypedclosprep_57',['LowerTypedClosPrep',['../classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html#a282ffaced0abad29a22d450cac612b68',1,'mim::plug::clos::phase::LowerTypedClosPrep']]]
+  ['loop_5fdepth_55',['loop_depth',['../classmim_1_1Nest_1_1Node.html#aeba233c5d375cdc2f9e8c07708c09bbc',1,'mim::Nest::Node']]]
 ];

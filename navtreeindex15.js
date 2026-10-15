@@ -1,11 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"classmim_1_1ast_1_1SigmaExpr.html#ad97c5e68f18fcb9cb5d9e1106c01ec85":[2,0,4,0,46,1],
-"classmim_1_1ast_1_1SigmaExpr.html#ad97c5e68f18fcb9cb5d9e1106c01ec85":[4,0,1,0,46,1],
-"classmim_1_1ast_1_1SigmaExpr.html#aeececcfab2a2db400489daf864d05e09":[2,0,4,0,46,6],
-"classmim_1_1ast_1_1SigmaExpr.html#aeececcfab2a2db400489daf864d05e09":[4,0,1,0,46,6],
-"classmim_1_1ast_1_1SigmaExpr.html#af4aa536aa2e8c456f558b02ad414b8a2":[2,0,4,0,46,0],
-"classmim_1_1ast_1_1SigmaExpr.html#af4aa536aa2e8c456f558b02ad414b8a2":[4,0,1,0,46,0],
 "classmim_1_1ast_1_1SingleExpr.html":[2,0,4,0,47],
 "classmim_1_1ast_1_1SingleExpr.html":[4,0,1,0,47],
 "classmim_1_1ast_1_1SingleExpr.html#a0392dfe70a62efbfc952ef1009d2f906":[2,0,4,0,47,4],
@@ -249,5 +243,11 @@ var NAVTREEINDEX15 =
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee3aae0dddbaf29b850c9b7bbbbe779f":[2,0,4,0,48,0,72],
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee3aae0dddbaf29b850c9b7bbbbe779f":[4,0,1,0,48,0,72],
 "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee4f36d19b140744668c52ea6444ef44":[2,0,4,0,48,0,64],
-"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee4f36d19b140744668c52ea6444ef44":[4,0,1,0,48,0,64]
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee4f36d19b140744668c52ea6444ef44":[4,0,1,0,48,0,64],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee7551d72e4f96d98112da884712a64a":[2,0,4,0,48,0,80],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aee7551d72e4f96d98112da884712a64a":[4,0,1,0,48,0,80],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aeea124ed662462016d9034366aa0e2d5":[2,0,4,0,48,0,62],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aeea124ed662462016d9034366aa0e2d5":[4,0,1,0,48,0,62],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aef24a45c736c5c5aca00490b376cc0ae":[2,0,4,0,48,0,86],
+"classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aef24a45c736c5c5aca00490b376cc0ae":[4,0,1,0,48,0,86]
 };

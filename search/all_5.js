@@ -74,7 +74,7 @@ var searchData=
   ['eta_5fexpand_71',['eta_expand',['../classmim_1_1Lam.html#a3a1da0cbd535350a1786d34228220d52',1,'mim::Lam::eta_expand(Filter, const Def *f)'],['../classmim_1_1Lam.html#add8ef2eef11c167fdc2559b62c282960',1,'mim::Lam::eta_expand(const Def *f)']]],
   ['eta_5freduce_72',['eta_reduce',['../classmim_1_1Lam.html#a7542662023935c77311f9700fa900d73',1,'mim::Lam']]],
   ['eta_5fstep_73',['eta_step',['../namespacemim.html#a63a74e46f0a8192dceceba8b413bf6da',1,'mim']]],
-  ['etaconv_74',['EtaConv',['../classmim_1_1EtaConv.html',1,'mim::EtaConv'],['../classmim_1_1EtaConv.html#a0e3f042fe6f92ea15d3546451318b0b6',1,'mim::EtaConv::EtaConv()']]],
+  ['etaconv_74',['EtaConv',['../classmim_1_1EtaConv.html',1,'mim']]],
   ['eval_75',['Eval',['../classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html',1,'mim::plug::autodiff::phase']]],
   ['eval_76',['eval',['../namespacemim_1_1plug_1_1autodiff.html#adf94367a8aeb140540cb64f07e46fcf8',1,'mim::plug::autodiff::eval'],['../autodiff.html#autotoc_md233',1,'eval']]],
   ['eval_2ecpp_77',['eval.cpp',['../eval_8cpp.html',1,'']]],

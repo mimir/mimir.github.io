@@ -1,5 +1,13 @@
 var NAVTREEINDEX25 =
 {
+"namespacemim_1_1plug_1_1regex.html#a0b697d300d25301e1f6685015daccb3d":[2,0,4,1,18,28],
+"namespacemim_1_1plug_1_1regex.html#a0f11dcb5b9b55f3624a6bcd966b4dcd5":[2,0,4,1,18,21],
+"namespacemim_1_1plug_1_1regex.html#a141ba9d4adefded9ef82563b7909114f":[2,0,4,1,18,20],
+"namespacemim_1_1plug_1_1regex.html#a22ae7a476a9fc4465086b7c5c57c33a7":[2,0,4,1,18,17],
+"namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be":[2,0,4,1,18,9],
+"namespacemim_1_1plug_1_1regex.html#a3984cc3aeb9513c6e43d3f6dd20ee498":[2,0,4,1,18,18],
+"namespacemim_1_1plug_1_1regex.html#a503fd044ea11748600b636a1590a3945":[2,0,4,1,18,4],
+"namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2":[2,0,4,1,18,10],
 "namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75":[2,0,4,1,18,12],
 "namespacemim_1_1plug_1_1regex.html#a69e15eff07c15faf117e019314f4ab43":[2,0,4,1,18,22],
 "namespacemim_1_1plug_1_1regex.html#a820085ea00f02004ffc5a08691db4748":[2,0,4,1,18,30],
@@ -241,13 +249,5 @@ var NAVTREEINDEX25 =
 "ord_2autogen_8h_source.html":[5,0,0,1,0,0,16,0],
 "ord_2normalizers_8cpp.html":[5,0,4,1,3,16,0],
 "ord_2normalizers_8cpp_source.html":[5,0,4,1,3,16,0],
-"ord_8cpp.html":[5,0,4,1,3,16,1],
-"ord_8cpp.html#acda3ce425181f696cc284d1a5af9309b":[5,0,4,1,3,16,1,0],
-"ord_8cpp_source.html":[5,0,4,1,3,16,1],
-"ord_8h.html":[5,0,3,1,2,16,0],
-"ord_8h_source.html":[5,0,3,1,2,16,0],
-"pages.html":[],
-"parser_8cpp.html":[5,0,4,1,0,5],
-"parser_8cpp_source.html":[5,0,4,1,0,5],
-"parser_8h.html":[5,0,3,1,0,2]
+"ord_8cpp.html":[5,0,4,1,3,16,1]
 };

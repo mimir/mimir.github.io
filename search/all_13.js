@@ -200,7 +200,7 @@ var searchData=
   ['split_5foff_5fkernels_2eh_197',['split_off_kernels.h',['../split__off__kernels_8h.html',1,'']]],
   ['split_5fomega_198',['split_omega',['../tensor.html#autotoc_md565',1,'']]],
   ['split_5fslot_199',['split_slot',['../namespacemim_1_1plug_1_1mem.html#ae22de884df815481d063ceda8244366d',1,'mim::plug::mem']]],
-  ['splitapply_200',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase::SplitApply'],['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html#afa9aa24b1a7f4b8ea4ec1719054fabf9',1,'mim::plug::gpu::phase::SplitApply::SplitApply()']]],
+  ['splitapply_200',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase']]],
   ['splitoffkernels_201',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
   ['splits_202',['Splits',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83',1,'mim::plug::tensor::phase']]],
   ['sps_203',['Sps',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a5baf8c7c39951a81f209dfcaebe38e81',1,'mim::plug::btensor::MapRedPost']]],
