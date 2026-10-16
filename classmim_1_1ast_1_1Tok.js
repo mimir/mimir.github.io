@@ -13,7 +13,7 @@ var classmim_1_1ast_1_1Tok =
       [ "K_Idx", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aab54c87aafa7bce8586a296d8646b262", null ],
       [ "K_Nat", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aefffde19d56073e2539eb8c5b2d51296", null ],
       [ "K_Type", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a99c9443b98ae3d0847fdcd64f6600e25", null ],
-      [ "K_Univ", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a49b3d477647d73a29f5821aad9819448", null ],
+      [ "K_Level", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a873aa8d1ec93c042c89352c548a7632e", null ],
       [ "K_anx", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a9f7e194d256524fcefa2cae9635473eb", null ],
       [ "K_as", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a74314c711b45f9273b31ab00f9d7ced0", null ],
       [ "K_axm", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a644cd57745626e1e7bfaa30032c1bcf4", null ],

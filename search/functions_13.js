@@ -57,10 +57,12 @@ var searchData=
   ['type_5fi8_54',['type_i8',['../classmim_1_1World.html#a5a9ab2d2c7512df5623a4f893a96b2b8',1,'mim::World']]],
   ['type_5fidx_55',['type_idx',['../classmim_1_1World.html#a5e817825405c6dd82156c5da6ce60bb9',1,'mim::World::type_idx()'],['../classmim_1_1World.html#adda852f145362180eb8ec2f4f2171b2d',1,'mim::World::type_idx(const Def *size)'],['../classmim_1_1World.html#a3babc6b25d1f1d29aa262105f12cd762',1,'mim::World::type_idx(nat_t size)']]],
   ['type_5findices_56',['type_indices',['../classmim_1_1World.html#acaf6e94cd5e9960011b112fb6787dae6',1,'mim::World']]],
-  ['type_5finfer_5funiv_57',['type_infer_univ',['../classmim_1_1World.html#abca27ffe5d0a6ffcf366d01f4340ed67',1,'mim::World']]],
+  ['type_5finfer_5flevel_57',['type_infer_level',['../classmim_1_1World.html#a39b4d5d0517dc6f2f03852bcec3caab8',1,'mim::World']]],
   ['type_5fint_58',['type_int',['../classmim_1_1World.html#a1f9cf19f590572d0757180090718f47f',1,'mim::World']]],
-  ['type_5fnat_59',['type_nat',['../classmim_1_1World.html#a76a2bc4914920ee550be62ace9403d9f',1,'mim::World']]],
-  ['type_5fof_60',['type_of',['../namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81',1,'mim']]],
-  ['type_5ftop_61',['type_top',['../classmim_1_1World.html#ab80f3808083473823d0f46dbe958016b',1,'mim::World']]],
-  ['typeexpr_62',['TypeExpr',['../classmim_1_1ast_1_1TypeExpr.html#ad57fb7365ce9d447322795f91808cfd0',1,'mim::ast::TypeExpr']]]
+  ['type_5flevel_59',['type_level',['../classmim_1_1World.html#afd3f483c1338be547e5d22e1fa8ec2d3',1,'mim::World']]],
+  ['type_5fnat_60',['type_nat',['../classmim_1_1World.html#a76a2bc4914920ee550be62ace9403d9f',1,'mim::World']]],
+  ['type_5fof_61',['type_of',['../namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81',1,'mim']]],
+  ['type_5fpending_62',['type_pending',['../classmim_1_1World.html#a63569c9ba7357ffbeda0ce783816cd82',1,'mim::World']]],
+  ['type_5ftop_63',['type_top',['../classmim_1_1World.html#ab80f3808083473823d0f46dbe958016b',1,'mim::World']]],
+  ['typeexpr_64',['TypeExpr',['../classmim_1_1ast_1_1TypeExpr.html#ad57fb7365ce9d447322795f91808cfd0',1,'mim::ast::TypeExpr']]]
 ];

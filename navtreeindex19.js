@@ -1,7 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"core_2normalizers_8cpp_source.html":[5,0,4,1,3,6,1],
-"core_8cpp.html":[5,0,4,1,3,6,0],
 "core_8cpp.html#a1c0fe438ac8081b3ccf7259e79e3e1eb":[5,0,4,1,3,6,0,0],
 "core_8cpp_source.html":[5,0,4,1,3,6,0],
 "core_8h.html":[5,0,3,1,2,6,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX19 =
 "functions_func_i.html":[4,3,1,8],
 "functions_func_j.html":[4,3,1,9],
 "functions_func_k.html":[4,3,1,10],
-"functions_func_l.html":[4,3,1,11]
+"functions_func_l.html":[4,3,1,11],
+"functions_func_m.html":[4,3,1,12],
+"functions_func_n.html":[4,3,1,13]
 };

@@ -18,9 +18,12 @@ var searchData=
   ['lbb_15',['lbB',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7eb2f84ffa93bc81d9d8f5945262d5f6',1,'mim::plug::math']]],
   ['lbb_16',['lbb',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895',1,'mim::plug::math']]],
   ['le_17',['le',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ead9180594744f870aeefb086982e980bb',1,'mim::plug::core::le'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3ad9180594744f870aeefb086982e980bb',1,'mim::plug::math::le']]],
-  ['lit_18',['Lit',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim']]],
-  ['local_19',['Local',['../classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a509820290d57f333403f490dde7316f4',1,'mim::Def']]],
-  ['log_20',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
-  ['log10_21',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
-  ['log2_22',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]]
+  ['level_18',['Level',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa0db49ba470c1c9ae2128c3470339153',1,'mim']]],
+  ['lit_19',['Lit',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim']]],
+  ['lmax_20',['LMax',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dac05ae41f62fd075f931c92069cb01606',1,'mim']]],
+  ['local_21',['Local',['../classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a509820290d57f333403f490dde7316f4',1,'mim::Def']]],
+  ['log_22',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
+  ['log10_23',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
+  ['log2_24',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]],
+  ['lsucc_25',['LSucc',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da4d0cbcbdd48e62b27cf6c271072edfe0',1,'mim']]]
 ];

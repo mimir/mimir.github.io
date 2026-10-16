@@ -228,7 +228,7 @@ Secondary Terminals</h3>
 </table>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
 Keywords</h3>
-<div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Nat Rule Type Univ</div>
+<div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">Bool Cn Fn I1 I8 I16 I32 I64 Idx Level Nat Rule Type</div>
 <div class="line">anx as axm cn con end extern ff fn fun</div>
 <div class="line">i1 i8 i16 i32 i64 import inj lam let match mod mutual</div>
 <div class="line">nom norm plugin priv pub rec ret rule tt use when where with</div>
@@ -451,7 +451,7 @@ Patterns and Telescopes</h2>
 Expressions</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 Kinds and Builtin Types</h3>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;Univ&quot;</div>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e     ::= &quot;Level&quot;</div>
 <div class="line">       |  &quot;Type&quot; e</div>
 <div class="line">       |  &quot;*&quot;</div>
 <div class="line">       |  &quot;□&quot;</div>
@@ -464,10 +464,10 @@ Kinds and Builtin Types</h3>
 <div class="line">       |  &quot;I1&quot; | &quot;I8&quot; | &quot;I16&quot; | &quot;I32&quot; | &quot;I64&quot;</div>
 <div class="line">       |  &quot;i1&quot; | &quot;i8&quot; | &quot;i16&quot; | &quot;i32&quot; | &quot;i64&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
-<li><span class="tt">Univ</span> is the universe of type levels.</li>
+<li><span class="tt">Level</span> is the type of universe levels.</li>
 <li><span class="tt">Type e</span> is the type at level <span class="tt">e</span>.</li>
-<li><span class="tt">*</span> abbreviates <span class="tt">Type (0:Univ)</span>.</li>
-<li><span class="tt">□</span> abbreviates <span class="tt">Type (1:Univ)</span>.</li>
+<li><span class="tt">*</span> abbreviates <span class="tt">Type (0:Level)</span>.</li>
+<li><span class="tt">□</span> abbreviates <span class="tt">Type (1:Level)</span>.</li>
 <li><span class="tt">Nat</span> is the natural number type.</li>
 <li><span class="tt">Idx</span> is the builtin of type <span class="tt">Nat → *</span>.</li>
 <li><span class="tt">Rule e</span> is the type of rewrite rules over the meta type <span class="tt">e</span>.</li>
@@ -596,7 +596,7 @@ Singletons</h3>
 <div class="line">     |  &quot;‹&quot; e &quot;›&quot;</div>
 <div class="line">     |  &quot;#&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
-<li><span class="tt">« e »</span> is the singleton type whose sole inhabitant is <span class="tt">e</span>. It sits one level above <span class="tt">e</span>, so <span class="tt">«23»</span> is a type and <span class="tt">«Nat»</span> a kind; <span class="tt">«Univ»</span> does not exist.</li>
+<li><span class="tt">« e »</span> is the singleton type whose sole inhabitant is <span class="tt">e</span>. It sits one level above <span class="tt">e</span>, so <span class="tt">«23»</span> is a type and <span class="tt">«Nat»</span> a kind; <span class="tt">«Level»</span> does not exist.</li>
 <li><span class="tt">‹ e ›</span> introduces a value of that type and the prefix <span class="tt">#</span> eliminates it again, so <span class="tt">#‹e›</span> is <span class="tt">e</span>.</li>
 <li><span class="tt">#</span> recovers the inhabitant from the type alone: <span class="tt">#x</span> is <span class="tt">e</span> for every <span class="tt">x: «e»</span>.</li>
 <li>The <span class="tt">;</span> is what tells an <a class="el" href="#prod" title="Products">array or pack</a> from a singleton - <span class="tt">«n; T»</span> is an array, <span class="tt">«T»</span> a singleton.</li>
@@ -642,7 +642,7 @@ Infix Operators</h3>
 <div class="line">let `+ = core.nat.add;</div>
 <div class="line">let x = 2 + 3;</div>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
-<li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Univ)</span>; write <span class="tt">f (*)</span> for the latter.</li>
+<li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Level)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Local Declaration Blocks</h3>
@@ -838,7 +838,10 @@ Nominal Newtypes</h2>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 Universes</h2>
 <ul>
-<li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, and a <span class="tt">UMax</span> flattens nested maxima, folds their literals into one, and sorts and deduplicates the rest</li>
+<li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, nested successors add up, and a successor distributes over an <span class="tt">LMax</span></li>
+<li>an <span class="tt">LMax</span> flattens nested maxima, folds their literals into one (dropping <span class="tt">0</span>), sorts and deduplicates the rest, and collapses to its sole operand</li>
+<li>inference: <span class="tt">x + k = l</span> solves <span class="tt">x = l - k</span>, and <span class="tt">max(xs, c) = l</span> solves the <span class="tt">xs</span> right away if <span class="tt">l = 0</span> or a single <span class="tt">x</span> must reach <span class="tt">l</span>; any other such constraint is postponed to the end of the enclosing declaration, where its still unknown levels default to <span class="tt">0</span></li>
+<li>an untyped binder used as a type, as <span class="tt">A</span> in <span class="tt">lam f (A) (B: *): * = [A, B]</span>, gets the sort <span class="tt">Type l</span> for a fresh level <span class="tt">l</span></li>
 <li>the var of a mutable whose var type is <span class="tt">Idx 1</span> -&gt; <span class="tt">0₁</span>, and one whose var type is <span class="tt">[]</span> -&gt; <span class="tt">()</span></li>
 </ul>
 <div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">

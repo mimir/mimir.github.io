@@ -135,7 +135,10 @@ var hierarchy =
         [ "mim::Inj", "classmim_1_1Inj.html", null ],
         [ "mim::Insert", "classmim_1_1Insert.html", null ],
         [ "mim::Join", "classmim_1_1Join.html", null ],
+        [ "mim::LMax", "classmim_1_1LMax.html", null ],
+        [ "mim::LSucc", "classmim_1_1LSucc.html", null ],
         [ "mim::Lam", "classmim_1_1Lam.html", null ],
+        [ "mim::Level", "classmim_1_1Level.html", null ],
         [ "mim::Lit", "classmim_1_1Lit.html", null ],
         [ "mim::Match", "classmim_1_1Match.html", null ],
         [ "mim::Name", "classmim_1_1Name.html", null ],
@@ -156,9 +159,6 @@ var hierarchy =
         [ "mim::Single", "classmim_1_1Single.html", null ],
         [ "mim::Struc", "classmim_1_1Struc.html", null ],
         [ "mim::Type", "classmim_1_1Type.html", null ],
-        [ "mim::UInc", "classmim_1_1UInc.html", null ],
-        [ "mim::UMax", "classmim_1_1UMax.html", null ],
-        [ "mim::Univ", "classmim_1_1Univ.html", null ],
         [ "mim::Var", "classmim_1_1Var.html", null ],
         [ "mim::Variant", "classmim_1_1Variant.html", null ],
         [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
@@ -275,8 +275,17 @@ var hierarchy =
     [ "mim::Setters&lt; Lam &gt;", "classmim_1_1Setters.html", [
       [ "mim::Lam", "classmim_1_1Lam.html", null ]
     ] ],
+    [ "mim::Setters&lt; Level &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Level", "classmim_1_1Level.html", null ]
+    ] ],
     [ "mim::Setters&lt; Lit &gt;", "classmim_1_1Setters.html", [
       [ "mim::Lit", "classmim_1_1Lit.html", null ]
+    ] ],
+    [ "mim::Setters&lt; LMax &gt;", "classmim_1_1Setters.html", [
+      [ "mim::LMax", "classmim_1_1LMax.html", null ]
+    ] ],
+    [ "mim::Setters&lt; LSucc &gt;", "classmim_1_1Setters.html", [
+      [ "mim::LSucc", "classmim_1_1LSucc.html", null ]
     ] ],
     [ "mim::Setters&lt; Match &gt;", "classmim_1_1Setters.html", [
       [ "mim::Match", "classmim_1_1Match.html", null ]
@@ -330,15 +339,6 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Type &gt;", "classmim_1_1Setters.html", [
       [ "mim::Type", "classmim_1_1Type.html", null ]
-    ] ],
-    [ "mim::Setters&lt; UInc &gt;", "classmim_1_1Setters.html", [
-      [ "mim::UInc", "classmim_1_1UInc.html", null ]
-    ] ],
-    [ "mim::Setters&lt; UMax &gt;", "classmim_1_1Setters.html", [
-      [ "mim::UMax", "classmim_1_1UMax.html", null ]
-    ] ],
-    [ "mim::Setters&lt; Univ &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Univ", "classmim_1_1Univ.html", null ]
     ] ],
     [ "mim::Setters&lt; Var &gt;", "classmim_1_1Setters.html", [
       [ "mim::Var", "classmim_1_1Var.html", null ]
