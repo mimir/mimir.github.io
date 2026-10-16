@@ -9,7 +9,8 @@ var searchData=
   ['closedmutphase_6',['ClosedMutPhase',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closedmutphase_3c_20def_20_3e_7',['ClosedMutPhase&lt; Def &gt;',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closlit_8',['ClosLit',['../classmim_1_1plug_1_1clos_1_1ClosLit.html',1,'mim::plug::clos']]],
-  ['conv_9',['Conv',['../classmim_1_1plug_1_1cps_1_1Conv.html',1,'mim::plug::cps']]],
-  ['ctor_10',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html',1,'mim::ast::VariantExpr']]],
-  ['currloc_11',['CurrLoc',['../classmim_1_1World.html#structmim_1_1World_1_1CurrLoc',1,'mim::World']]]
+  ['coercephase_9',['CoercePhase',['../classmim_1_1CoercePhase.html',1,'mim']]],
+  ['conv_10',['Conv',['../classmim_1_1plug_1_1cps_1_1Conv.html',1,'mim::plug::cps']]],
+  ['ctor_11',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html',1,'mim::ast::VariantExpr']]],
+  ['currloc_12',['CurrLoc',['../classmim_1_1World.html#structmim_1_1World_1_1CurrLoc',1,'mim::World']]]
 ];

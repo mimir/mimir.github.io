@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['zero_0',['zero',['../autodiff.html#autotoc_md228',1,'']]],
-  ['zero_5frepl_1',['zero_repl',['../autodiff.html#autotoc_md232',1,'']]],
-  ['zip_2',['zip',['../tuple.html#autotoc_md628',1,'zip'],['../vec.html#autotoc_md632',1,'zip']]]
+  ['yes_20no_20queries_0',['Local Yes/No Queries',['../dev.html#autotoc_md41',1,'']]]
 ];

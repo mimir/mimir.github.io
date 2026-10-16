@@ -157,6 +157,7 @@ var annotated_dup =
       [ "Checker", "classmim_1_1Checker.html", "classmim_1_1Checker" ],
       [ "Cleanup", "classmim_1_1Cleanup.html", "classmim_1_1Cleanup" ],
       [ "ClosedMutPhase", "classmim_1_1ClosedMutPhase.html", "classmim_1_1ClosedMutPhase" ],
+      [ "CoercePhase", "classmim_1_1CoercePhase.html", "classmim_1_1CoercePhase" ],
       [ "Def", "classmim_1_1Def.html", "classmim_1_1Def" ],
       [ "DefKey", "structmim_1_1DefKey.html", "structmim_1_1DefKey" ],
       [ "Diag", "classmim_1_1Diag.html", "classmim_1_1Diag" ],

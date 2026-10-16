@@ -12,7 +12,7 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "dump.cpp", "dump_8cpp.html", "dump_8cpp" ],
     [ "lam.cpp", "lam_8cpp.html", "lam_8cpp" ],
     [ "nest.cpp", "nest_8cpp.html", null ],
-    [ "phase.cpp", "phase_8cpp.html", null ],
+    [ "phase.cpp", "phase_8cpp.html", "phase_8cpp" ],
     [ "plugin.cpp", "plugin_8cpp.html", null ],
     [ "rewrite.cpp", "rewrite_8cpp.html", "rewrite_8cpp" ],
     [ "rule.cpp", "rule_8cpp.html", "rule_8cpp" ],

@@ -176,122 +176,86 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('rewriting.html
 <p>In MimIR, rewriting means rebuilding an IR graph, usually into a target <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a>, while preserving sharing and handling mutable nodes correctly. The rewriting infrastructure is used for tasks like copying IR between worlds, rebuilding terms after substitutions, and reconstructing terms after local changes. It is also the foundation of several <a class="el" href="phases.html" title="Phases">phase</a> families.</p>
 <h1 class="doxsection"><a class="anchor" id="rewriter"></a>
 Rewriter</h1>
-<p><a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> is the general mechanism for recursively rebuilding IR.</p>
-<p>Conceptually, it walks a graph of <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>s and constructs corresponding nodes in a target world. While doing so, it maintains a mapping from old nodes to new nodes. This is what makes rewriting graph-aware rather than tree-only: if the same old node is referenced multiple times, the rewritten graph will reuse the same rebuilt node instead of duplicating it.</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> rebuilds a <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a> graph into a target <a class="el" href="classmim_1_1World.html" title="mim::World"><span class="tt">World</span></a> while preserving sharing and handling recursive mutables safely.</dd></dl>
-<p>The mapping is also the basis for termination on cyclic or recursive structures. For mutable nodes, rewriting typically proceeds by first creating a stub, recording the mapping from old mutable to new mutable, and only then rewriting and filling its operands. This allows recursive references to resolve to the stub instead of recursing forever.</p>
-<p>So the two key ideas behind <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> are:</p>
+<p><a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> walks a graph of <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>s and constructs corresponding nodes in a target world. It memoizes the mapping from old to new nodes, so a node referenced multiple times is rebuilt once and shared - rewriting is graph-aware rather than tree-only.</p>
+<p>The same map makes rewriting terminate on recursive structures. A mutable is rebuilt by first creating a stub, mapping old mutable to stub, and only then rewriting and filling its operands. A recursive reference thus resolves to the stub instead of recursing forever.</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> rw      = <a class="code hl_class" href="classmim_1_1Rewriter.html">mim::Rewriter</a>(new_world);</div>
+<div class="line"><span class="keyword">auto</span> new_def = rw.rewrite(old_def);</div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html"><div class="ttname"><a href="classmim_1_1Rewriter.html">mim::Rewriter</a></div><div class="ttdoc">Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00021">rewrite.h:21</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="rewriter_scopes"></a>
+Scopes</h2>
+<p>A rewrite often has to map an old node to something that is only valid <em>locally</em>: a binder's <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a> to a fresh representative, a loop index to one particular literal, and so on. For this, the map is a stack of <a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799" title="mim::Rewriter::push">scopes</a>. <a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799" title="mim::Rewriter::push"><span class="tt">push(old_vars, new_vars)</span></a> opens a scope that owns two sets of <a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7" title="mim::Vars"><span class="tt">Vars</span></a> - one of the old world, one of the new - and <a class="el" href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257" title="mim::Rewriter::pop"><span class="tt">pop()</span></a> discards it together with all of its mappings. The bottom scope - the <em>root</em> - is always there.</p>
+<p>A scope does not take <em>every</em> mapping recorded while it is open, though. <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b" title="mim::Rewriter::map"><span class="tt">map(old, new)</span></a> files the mapping into the innermost scope whose old <span class="tt">Vars</span> <span class="tt">old</span> mentions or whose new <span class="tt">Vars</span> <span class="tt">new</span> mentions as free variables; any other mapping goes into the root. So only what actually depends on the local binding dies with the scope, while everything context-free stays shared across sibling scopes and beyond. For instance, <a class="el" href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d" title="mim::Rewriter::rewrite_mut_Seq"><span class="tt">rewrite_mut_Seq</span></a> scalarizes <span class="tt">«i: n; body»</span> by rewriting <span class="tt">body</span> once per <span class="tt">i</span>, each time under</p>
+<div class="fragment"><div class="line">push(Vars(var));</div>
+<div class="line">map(var, world().lit_idx(n, i));</div>
+<div class="line"><span class="keyword">auto</span> new_op = rewrite(seq-&gt;body());</div>
+<div class="line">pop();</div>
+</div><!-- fragment --><p>Only those parts of <span class="tt">body</span> that mention <span class="tt">var</span> are rebuilt for every <span class="tt">i</span>; the rest is rewritten once and found in the root on the next iteration.</p>
+<p>Dependencies propagate:</p>
 <ul>
-<li>memoization of already rewritten nodes</li>
-<li>stub-based reconstruction of mutable or recursive nodes</li>
+<li>If a mutable binder is mapped into a scope, its own <span class="tt">Var</span> joins that scope's old <span class="tt">Vars</span>, so whatever its body builds from that <span class="tt">Var</span> lands there, too.</li>
+<li><a class="el" href="classmim_1_1Rewriter.html#a28a8fb944e1cc2c8338550fc5115cdc9" title="mim::Rewriter::bind_old"><span class="tt">bind_old(var)</span></a> and <a class="el" href="classmim_1_1Rewriter.html#a98be1bc048c16e53e2ca4dcd5e8121b2" title="mim::Rewriter::bind_new"><span class="tt">bind_new(var)</span></a> add a <span class="tt">Var</span> to the innermost scope by hand. The latter is for a fresh binder of the <em>new</em> world whose <span class="tt">Var</span> should keep new nodes local - e.g. the continuation <span class="tt">cps::phase::Conv</span> introduces when lifting a call.</li>
 </ul>
-<p>At a high level, <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> preserves:</p>
-<ul>
-<li>graph sharing</li>
-<li>debug metadata</li>
-<li>recursive structure through mutable stubs</li>
-</ul>
+<p><a class="el" href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954" title="mim::Rewriter::lookup"><span class="tt">lookup()</span></a> searches the scopes from innermost to root.</p>
+<h2 class="doxsection"><a class="anchor" id="rewriter_nested"></a>
+Nested Rewriters</h2>
+<p>Sometimes the <em>same</em> old node must be rewritten differently depending on where it occurs. <a class="el" href="classmim_1_1Scalarize.html" title="mim::Scalarize"><span class="tt">Scalarize</span></a>, for example, flattens a function type <span class="tt">Cn [[A, B], C]</span> to <span class="tt">Cn [A, B, C]</span> everywhere - except in what the signature of an interface <span class="tt">Lam</span> (an external, an annex, or a foreign declaration) mentions, which must keep its shape. A single map cannot hold both results.</p>
+<p>Hence, such a rewrite runs a second Rewriter with a map of its own that rebuilds only what differs and hands everything else back to the outer one:</p>
+<div class="fragment"><div class="line"><span class="keyword">const</span> Def* Scalarize::Keep::rewrite(<span class="keyword">const</span> Def* old_def) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!has_cn(old_def) &amp;&amp; !has_intersection(old_def)) <span class="keywordflow">return</span> sca_.rewrite(old_def);</div>
+<div class="line">    bind_old(old_def-&gt;has_var());</div>
+<div class="line">    <span class="keywordflow">return</span> Rewriter::rewrite(old_def); <span class="comment">// rebuilds a Pi without flattening it</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Whatever does not mention a <span class="tt">Cn</span> - or the <span class="tt">Var</span> of a binder rebuilt in here - is thus rewritten once and shared, while the nested map dies with the nested Rewriter. Where values of the two shapes meet, a <a class="el" href="phases.html#phases_coerce_phase" title="CoercePhase"><span class="tt">CoercePhase</span></a> coerces between them.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
-Scoping</h2>
-<p><a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> uses a stack of mappings rather than a single global map. This allows temporary, scoped rewrites. This matters whenever rewriting enters a context where some old node should mean something different locally than globally. Inner mappings shadow outer ones, and leaving the scope removes the temporary bindings again. This scoped structure is important for binder-sensitive rewrites and for transformations that temporarily substitute certain nodes while rebuilding a larger term.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 Mutable Rewrites</h2>
-<p>In practice, mutable rewrites and scoped substitutions go together. When a transformation may encounter recursion, cycles, or binder-introduced variables, the usual pattern is:</p>
+<p>Putting it together, a mutable is rebuilt as follows:</p>
 <ol type="1">
-<li>create the replacement mutable first,</li>
-<li>record the old-to-new mapping immediately,</li>
-<li>push a temporary scope if the rewrite introduces binder-local substitutions,</li>
-<li>rewrite operands, filters, codomains, or bodies,</li>
-<li>pop the temporary scope again,</li>
-<li>finally fill the mutable via <a class="el" href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97" title="mim::Def::set"><span class="tt">mim::Def::set</span></a>.</li>
+<li>create the replacement stub,</li>
+<li>map old mutable to stub immediately,</li>
+<li>map binder-local substitutions - in a <a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799" title="mim::Rewriter::push"><span class="tt">push</span></a>ed scope if they must not outlive this rewrite,</li>
+<li>rewrite and <a class="el" href="classmim_1_1Def.html#a1164a26b23818879edfa4e6b9fe41d97" title="mim::Def::set"><span class="tt">set</span></a> the operands,</li>
+<li><a class="el" href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257" title="mim::Rewriter::pop"><span class="tt">pop</span></a> the scope again.</li>
 </ol>
-<p>The base <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> follows this pattern through <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">mim::Rewriter::rewrite_stub</span></a>, and custom phases often mirror it manually when they need more control over how a mutable is rebuilt. The crucial point is that recursive self-references must see the already-created replacement mutable instead of triggering another rebuild of the same node.</p>
-<p>The same stack discipline is used for binder-sensitive substitutions. Temporary mappings introduced while rewriting under a binder should stay local to that binder, typically via <a class="el" href="classmim_1_1Rewriter.html#a7fc46133b467d4b2683529aa6c4eea96" title="mim::Rewriter::push"><span class="tt">mim::Rewriter::push</span></a> / <a class="el" href="classmim_1_1Rewriter.html#a87c9821a28ae231d8e9434ff049dce35" title="mim::Rewriter::pop"><span class="tt">mim::Rewriter::pop</span></a>. This is the common pattern when rewriting dependent codomains under fresh variables, substituting a variable with a temporary representative, or rebuilding a body under newly introduced binder variables.</p>
-<dl class="section note"><dt>Note</dt><dd>The practical rule of thumb is: map early for recursive mutables, and scope narrowly for binder-local substitutions.</dd></dl>
+<p><a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub</span></a> implements steps 2 and 4, and finally tries to immutabilize the result in hindsight. Custom phases mirror this pattern when they need more control - e.g. to map an old <span class="tt">Var</span> to something other than the new mutable's <span class="tt">Var</span>. The crucial point is that recursive self-references must see the stub instead of triggering another rebuild of the same node.</p>
 <p>If a rewrite replaces an external mutable with a fresh one, preserve the root explicitly by calling <a class="el" href="classmim_1_1Def.html#a7112131d01128be7d9a1f53248d7ae2b" title="mim::Def::transfer_external"><span class="tt">mim::Def::transfer_external</span></a> or re-externalizing the replacement node.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md157"></a>
 Reshaping Aggregates</h2>
-<p>A rewrite that changes a mutable's <em>number</em> of ops - dropping components of a <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a>, say - cannot use the plain <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub</span></a>: that one rewrites <span class="tt">old-&gt;op(i)</span> into <span class="tt">new-&gt;op(i)</span> for every <span class="tt">i</span>. The overload <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub(old, new, new2old)</span></a> spells out the op indices instead: <span class="tt">new-&gt;op(i)</span> is rewritten from <span class="tt">old-&gt;op(new2old[i])</span>. Everything else stays the same - mapping the stub before descending into it, entering its scope, and immutabilizing the result in hindsight unless something already captured the stub recursively. If you fill a stub entirely by hand, <a class="el" href="classmim_1_1Rewriter.html#ab6b6478915afad4df1563eabea005120" title="mim::Rewriter::seal"><span class="tt">seal</span></a> is that last step on its own.</p>
+<p>A rewrite that changes a mutable's <em>number</em> of ops - dropping components of a <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a>, say - cannot use the plain <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub</span></a>: that one rewrites <span class="tt">old-&gt;op(i)</span> into <span class="tt">new-&gt;op(i)</span> for every <span class="tt">i</span>. The overload <a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd" title="mim::Rewriter::rewrite_stub"><span class="tt">rewrite_stub(old, new, new2old)</span></a> spells out the op indices instead: <span class="tt">new-&gt;op(i)</span> is rewritten from <span class="tt">old-&gt;op(new2old[i])</span>. Everything else stays the same - mapping the stub before descending into it, entering it as <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70" title="mim::Rewriter::curr_mut"><span class="tt">curr_mut()</span></a>, and immutabilizing the result in hindsight unless something already captured the stub recursively. If you fill a stub entirely by hand, <a class="el" href="classmim_1_1Rewriter.html#ab6b6478915afad4df1563eabea005120" title="mim::Rewriter::seal"><span class="tt">seal</span></a> is that last step on its own.</p>
 <p><a class="el" href="classmim_1_1Sieve.html" title="mim::Sieve"><span class="tt">Sieve</span></a> computes such an index list from a predicate over the old components:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> keep = <a class="code hl_class" href="classmim_1_1Sieve.html">mim::Sieve</a>(old_sigma-&gt;ops(), [](<span class="keyword">const</span> Def* op) { return !is_gone(op); });</div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> keep = <a class="code hl_class" href="classmim_1_1Sieve.html">mim::Sieve</a>(old_sigma-&gt;ops(), [&amp;](<span class="keyword">const</span> Def* op) { return !old_world().inhabitant(op); });</div>
 <div class="line"><span class="keywordflow">if</span> (keep.all()) <span class="keywordflow">return</span> RWPhase::rewrite_mut_Sigma(old_sigma);</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> new_sigma = new_world().mut_sigma(rewrite(old_sigma-&gt;type()), keep.size());</div>
+<div class="line"><span class="keyword">auto</span> new_sigma = new_world().mut_sigma(rewrite(old_sigma-&gt;type()), keep.num_new());</div>
 <div class="line"><span class="keywordflow">return</span> rewrite_stub(old_sigma, new_sigma, keep.new2old());</div>
 <div class="ttc" id="aclassmim_1_1Sieve_html"><div class="ttname"><a href="classmim_1_1Sieve.html">mim::Sieve</a></div><div class="ttdoc">Filters the components of an aggregate and keeps track of where the survivors end up.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00116">tuple.h:116</a></div></div>
 </div><!-- fragment --><p>For an immutable aggregate, <a class="el" href="classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb" title="mim::Sieve::gather"><span class="tt">Sieve::gather</span></a> picks the surviving ops directly.</p>
 <p>Dropping a component shifts the indices of its successors, so every <a class="el" href="classmim_1_1Extract.html" title="mim::Extract"><span class="tt">Extract</span></a> and <a class="el" href="classmim_1_1Insert.html" title="mim::Insert"><span class="tt">Insert</span></a> into that aggregate needs its index adjusted. This is what <span class="tt">keep[i]</span> answers - or <a class="el" href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb" title="mim::Sieve::Gone"><span class="tt">Sieve::Gone</span></a>, if that component did not survive:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> new_index = keep[<a class="code hl_function" href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a>(extract-&gt;index())];</div>
-<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01008">def.h:1008</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a95a167621043b56d131ebe4481b5d523"><div class="ttname"><a href="classmim_1_1Lit.html#a95a167621043b56d131ebe4481b5d523">mim::Lit::as</a></div><div class="ttdeci">static T as(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00985">def.h:985</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Only a <a class="el" href="classmim_1_1Sigma.html" title="mim::Sigma"><span class="tt">Sigma</span></a> ever needs this. An <a class="el" href="classmim_1_1Arr.html" title="mim::Arr"><span class="tt">Arr</span></a>'s components all share one type, so it is dropped as a whole, and <span class="tt">World::extract_fused</span> splits a fused index at the <span class="tt">Arr</span> boundary - which leaves a <span class="tt">Sigma</span>'s index scalar.</dd></dl>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
 Adding Components</h3>
 <p>A rewrite that also <em>adds</em> components - <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html" title="mim::plug::mem::phase::SEO"><span class="tt">mem::SEO</span></a> threads a fresh φ parameter through a <a class="el" href="classmim_1_1Lam.html" title="mim::Lam"><span class="tt">Lam</span></a> for every promoted slot - <a class="el" href="classmim_1_1Sieve.html#a2558195d1ad99d8f4b84b33ccfd7543d" title="mim::Sieve::cat"><span class="tt">cat</span></a>s them as further candidates behind the old ones:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> keep = <a class="code hl_class" href="classmim_1_1Sieve.html">mim::Sieve</a>(old_lam-&gt;tvars(), [&amp;](<span class="keyword">const</span> Def* var) { return is_kept(var); });</div>
 <div class="line">keep.cat(phis.size(), [&amp;](<span class="keywordtype">size_t</span> i) { return is_kept(phis[i]); });</div>
 </div><!-- fragment --><p>They extend the very same index space, so one <span class="tt">Sieve</span> still answers the whole new layout: <a class="el" href="classmim_1_1Sieve.html#a7bfcfc8ab2479e2f4c683bc3d88c8a9f" title="mim::Sieve::num_new"><span class="tt">num_new</span></a> is the new arity, <span class="tt">keep[i]</span> the new index of an old component, and <a class="el" href="classmim_1_1Sieve.html#a2558195d1ad99d8f4b84b33ccfd7543d" title="mim::Sieve::cat"><span class="tt">keep.cat(i)</span></a> the new index of an concat'ed one. <a class="el" href="classmim_1_1Sieve.html#ad9548910eeb55f1b9bba6a3e115d9f0c" title="mim::Sieve::all"><span class="tt">all</span></a> then means <em>the new aggregate is the old one</em> - nothing dropped <b>and</b> nothing appended. Since an appended component has no old op to rewrite from, <a class="el" href="classmim_1_1Sieve.html#a757b87f677e5c314ebe7e586ef27edcb" title="mim::Sieve::new2old"><span class="tt">new2old</span></a> - and hence <span class="tt">rewrite_stub</span> - is unavailable once you append.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Dropping decides <em>per type def</em>, so it must not tear apart an edge where two distinct defs meet: an <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> connecting a dependent dom with its instance (<span class="tt">[n: Nat, «n; *»]</span> vs <span class="tt">[Nat, []]</span>), or an <a class="el" href="classmim_1_1Axm.html" title="mim::Axm"><span class="tt">Axm</span></a> application, whose shapes are re-derived from the <span class="tt">Axm</span>'s generic type instead of being rewritten. Pin such aggregates in an <a class="el" href="classmim_1_1Analysis.html" title="mim::Analysis"><span class="tt">Analysis</span></a> first; <a class="el" href="classmim_1_1SingleErasure.html" title="mim::SingleErasure"><span class="tt">SingleErasure</span></a> does exactly that.</dd></dl>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md160"></a>
+<dl class="section warning"><dt>Warning</dt><dd>Dropping decides <em>per type</em>, but some shapes are not the phase's to change: an <a class="el" href="classmim_1_1Axm.html" title="mim::Axm"><span class="tt">Axm</span></a>'s signature, or the dependent domain an <a class="el" href="classmim_1_1App.html" title="mim::App"><span class="tt">App</span></a> instantiates (<span class="tt">[n: Nat, «n; *»]</span> vs <span class="tt">[Nat, []]</span>). Where a reshaped value meets such a shape, it must be converted back - this is what <a class="el" href="phases.html#phases_coerce_phase" title="CoercePhase"><span class="tt">CoercePhase</span></a> does; <a class="el" href="classmim_1_1SingleErasure.html" title="mim::SingleErasure"><span class="tt">SingleErasure</span></a> builds on it.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md159"></a>
 Preserving Metadata</h2>
 <p>Most rebuilds preserve debug metadata explicitly. The default <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> restores the old debug info with <span class="tt">new_def-&gt;set(old_def-&gt;dbg_key())</span>, which just copies the interned index instead of re-interning the <a href="https://leissa.github.io/fe/structfe_1_1Dbg.html"><span class="tt">Dbg</span></a>. Hand-written transformations commonly propagate names or add derived names with helpers such as <a class="el" href="classmim_1_1Def.html#a8daf14a811af7e64ffc033ea347862f0" title="mim::Def::debug_suffix"><span class="tt">mim::Def::debug_suffix</span></a>.</p>
 <p>If you create a replacement node that should still be recognizable in dumps, diagnostics, or generated code, preserve or adapt its debug payload immediately instead of treating naming as an afterthought.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md161"></a>
-Typical Usage</h2>
-<p>Rebuild a term into another world:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> rw      = <a class="code hl_class" href="classmim_1_1Rewriter.html">mim::Rewriter</a>(new_world);</div>
-<div class="line"><span class="keyword">auto</span> new_def = rw.rewrite(old_def);</div>
-<div class="ttc" id="aclassmim_1_1Rewriter_html"><div class="ttname"><a href="classmim_1_1Rewriter.html">mim::Rewriter</a></div><div class="ttdoc">Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00021">rewrite.h:21</a></div></div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="varrewriter"></a>
+<h1 class="doxsection"><a class="anchor" id="varrewriter"></a>
 VarRewriter</h1>
-<p><a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> is a specialized form of <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> for variable substitution. It extends the generic rewriting machinery with knowledge about <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a>s and binders. Instead of rebuilding everything indiscriminately, it only rewrites parts of the graph that may actually mention substituted variables.</p>
-<p>A good summary is:</p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> performs scoped variable substitution on top of the general rewriting framework.</dd></dl>
-<p>The main extra idea is that <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> tracks which variables are currently relevant for substitution and uses free-variable information to decide whether a node needs to be rebuilt at all. If a subgraph cannot contain any of the substituted variables, it can be reused unchanged. This makes substitution much more efficient on large terms: unaffected subgraphs are skipped entirely.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
-Scoped Substitution</h2>
-<p>Like <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a>, <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> is scope-aware. This is essential because substitution interacts with binders. When rewriting enters a mutable binder that introduces a variable, <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> tracks that variable in the current scope. This allows it to reason correctly about which free variables are relevant in nested terms.</p>
-<p>So <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> is not just “replace <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a> with <a class="el" href="classmim_1_1Def.html" title="mim::Def"><span class="tt">Def</span></a>”. It is substitution that respects binder structure and avoids rebuilding irrelevant parts of the graph.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md163"></a>
-Typical Usage</h2>
-<p>Substitute one variable with one argument:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> rw     = <a class="code hl_class" href="classmim_1_1VarRewriter.html">mim::VarRewriter</a>(var, arg);</div>
-<div class="line"><span class="keyword">auto</span> result = rw.rewrite(body);</div>
-<div class="ttc" id="aclassmim_1_1VarRewriter_html"><div class="ttname"><a href="classmim_1_1VarRewriter.html">mim::VarRewriter</a></div><div class="ttdoc">Extends Rewriter for variable substitution.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00120">rewrite.h:120</a></div></div>
-</div><!-- fragment --><p>Build it incrementally:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> rw = <a class="code hl_class" href="classmim_1_1VarRewriter.html">mim::VarRewriter</a>(world);</div>
-<div class="line">rw.add(var1, arg1)</div>
-<div class="line">  .add(var2, arg2);</div>
+<p><a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> substitutes <a class="el" href="classmim_1_1Var.html" title="mim::Var"><span class="tt">Var</span></a>s and is nothing but a <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> whose root <a class="el" href="#rewriter_scopes" title="Scopes">scope</a> owns the substituted <span class="tt">Var</span>s: <a class="el" href="classmim_1_1VarRewriter.html#a03e23a38ed0740d5c601e242529b46b1" title="mim::VarRewriter::add"><span class="tt">add(var, arg)</span></a> maps <span class="tt">var ↦ arg</span> and <a class="el" href="classmim_1_1Rewriter.html#a28a8fb944e1cc2c8338550fc5115cdc9" title="mim::Rewriter::bind_old"><span class="tt">bind_old</span>s</a> <span class="tt">var</span>.</p>
+<p>On top of that, it only rebuilds what can change at all. A node without free variables in any scope's <span class="tt">Vars</span> is returned as is, so unaffected subgraphs are skipped entirely. Entering a mutable binds the mutable's own <span class="tt">Var</span>, since a binder that gets rebuilt changes its <span class="tt">Var</span>, too.</p>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> result = <a class="code hl_class" href="classmim_1_1VarRewriter.html">mim::VarRewriter</a>(var, arg).<a class="code hl_function" href="classmim_1_1VarRewriter.html#adea6b2eeeb99455d811673a8e9fa0d26">rewrite</a>(body);</div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> rw = <a class="code hl_class" href="classmim_1_1VarRewriter.html">mim::VarRewriter</a>(world);</div>
+<div class="line">rw.add(var1, arg1).add(var2, arg2);</div>
 <div class="line"><span class="keyword">auto</span> result = rw.rewrite(def);</div>
-</div><!-- fragment --><p>Conceptually, this rewrites only those parts of <span class="tt">def</span> whose free variables intersect the substituted variables.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
-Rewriter vs. VarRewriter</h1>
-<p><a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> is a specialization of <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a>:</p>
-<ul>
-<li><p class="startli"><a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> provides the general graph-rebuilding machinery:</p><ul>
-<li>rebuild nodes into a target world</li>
-<li>preserve sharing</li>
-<li>handle mutable recursion through stubs</li>
-<li>support scoped mappings</li>
-</ul>
-<p class="startli">If you just want to rebuild IR, use <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a>:</p>
-</li>
-</ul>
-<blockquote class="doxtable">
-<p>What is the corresponding version of this IR in another rewriting context? </p>
-</blockquote>
-<ul>
-<li><p class="startli"><a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> adds substitution-specific behavior:</p><ul>
-<li>map variables to replacement terms</li>
-<li>track relevant variables by scope</li>
-<li>skip unaffected subgraphs using free-variable information</li>
-</ul>
-<p class="startli">If you want to substitute variables while rebuilding, use <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a>:</p>
-</li>
-</ul>
-<blockquote class="doxtable">
-<p>What do I get if I substitute these variables and rebuild only where necessary? </p>
-</blockquote>
+<div class="ttc" id="aclassmim_1_1VarRewriter_html"><div class="ttname"><a href="classmim_1_1VarRewriter.html">mim::VarRewriter</a></div><div class="ttdoc">Extends Rewriter for variable substitution.</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00142">rewrite.h:142</a></div></div>
+<div class="ttc" id="aclassmim_1_1VarRewriter_html_adea6b2eeeb99455d811673a8e9fa0d26"><div class="ttname"><a href="classmim_1_1VarRewriter.html#adea6b2eeeb99455d811673a8e9fa0d26">mim::VarRewriter::rewrite</a></div><div class="ttdeci">const Def * rewrite(const Def *) final</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00291">rewrite.cpp:291</a></div></div>
+</div><!-- fragment --><p>Use <a class="el" href="classmim_1_1Rewriter.html" title="mim::Rewriter"><span class="tt">Rewriter</span></a> to rebuild everything, e.g. into another world; use <a class="el" href="classmim_1_1VarRewriter.html" title="mim::VarRewriter"><span class="tt">VarRewriter</span></a> to substitute within the same world and rebuild only where necessary.</p>
 <div class="section_buttons"></div><div class="section_buttons"><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous  </th><th class="markdownTableHeadRight">Next  </th></tr>

@@ -12,7 +12,6 @@ var classmim_1_1Analysis =
     [ "lookup", "classmim_1_1Analysis.html#a5190fee54fca9de9365c6006994df353", null ],
     [ "make_dense", "classmim_1_1Analysis.html#a496981c42113362621010d00370e84e7", null ],
     [ "pin", "classmim_1_1Analysis.html#aea34c4c2e764fd0fe97b3ba63299f42d", null ],
-    [ "pin_axm", "classmim_1_1Analysis.html#a70c43d15b712738026fdf9d083c9cf3a", null ],
     [ "pin_imm", "classmim_1_1Analysis.html#a61405e505d4268afe8284b245d206234", null ],
     [ "pin_imm", "classmim_1_1Analysis.html#a9ebdd61c49398e749d050864a2060882", null ],
     [ "prepare", "classmim_1_1Analysis.html#a066ffcf7433a84ba859331ea5b199f4f", null ],

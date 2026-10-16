@@ -1,6 +1,7 @@
 var classmim_1_1Variant =
 [
     [ "infer", "classmim_1_1Variant.html#a65406700d45547e6207462e3f8ca918f", null ],
+    [ "isa_lone", "classmim_1_1Variant.html#ab942cafbed6da6e2b595d35e099e9717", null ],
     [ "set", "classmim_1_1Variant.html#a94c5cffdd5b37e1b8e2c50ed6e7eb504", null ],
     [ "set", "classmim_1_1Variant.html#a13b3b4a78519c25c9bd80e11f1162062", null ],
     [ "unset", "classmim_1_1Variant.html#a234e8910a991bc4ebfd582d84e09a8db", null ],

@@ -80,6 +80,10 @@ var hierarchy =
         [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
         [ "mim::BetaRed", "classmim_1_1BetaRed.html", null ],
         [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
+        [ "mim::CoercePhase", "classmim_1_1CoercePhase.html", [
+          [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
+          [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ]
+        ] ],
         [ "mim::DispatchNormalize", "classmim_1_1DispatchNormalize.html", null ],
         [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ],
         [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
@@ -87,8 +91,6 @@ var hierarchy =
         [ "mim::Repl", "classmim_1_1Repl.html", null ],
         [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
         [ "mim::SCCP", "classmim_1_1SCCP.html", null ],
-        [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
-        [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ],
         [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
@@ -240,6 +242,7 @@ var hierarchy =
     ] ],
     [ "mim::ast::S", "structmim_1_1ast_1_1S.html", null ],
     [ "mim::Scheduler", "classmim_1_1Scheduler.html", null ],
+    [ "mim::Rewriter::Scope", "classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope", null ],
     [ "mim::ast::Scopes", "classmim_1_1ast_1_1Scopes.html", null ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", null ],
     [ "mim::Setters&lt; App &gt;", "classmim_1_1Setters.html", [

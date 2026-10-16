@@ -46,13 +46,6 @@ var def_8h =
     [ "mim::NormalizeFn", "namespacemim.html#ab992e926dce870b1e086b34589849a92", null ],
     [ "mim::VarMap", "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab", null ],
     [ "mim::Vars", "namespacemim.html#aaa812145285556e31140df683b2367f7", null ],
-    [ "mim::Dep", "namespacemim.html#a249738da6a953390b70691dd3fe7132b", [
-      [ "mim::Dep::None", "namespacemim.html#a249738da6a953390b70691dd3fe7132ba6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "mim::Dep::Mut", "namespacemim.html#a249738da6a953390b70691dd3fe7132baebb87a770abac0e394d963d20ed574b7", null ],
-      [ "mim::Dep::Var", "namespacemim.html#a249738da6a953390b70691dd3fe7132ba5a92344ee95acf10c31901b36418be77", null ],
-      [ "mim::Dep::Hole", "namespacemim.html#a249738da6a953390b70691dd3fe7132ba6368a5bde7853b2f6c660f010adbb988", null ],
-      [ "mim::Dep::Proxy", "namespacemim.html#a249738da6a953390b70691dd3fe7132baf56ec2ab97d604832d90f6394e3f341f", null ]
-    ] ],
     [ "mim::Judge", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293", [
       [ "mim::Judge::Form", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e", null ],
       [ "mim::Judge::Intro", "namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a1cad35d4b3b9f624f82dbf237daaf188", null ],

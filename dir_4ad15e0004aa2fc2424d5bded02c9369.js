@@ -11,6 +11,6 @@ var dir_4ad15e0004aa2fc2424d5bded02c9369 =
     [ "scalarize.cpp", "scalarize_8cpp.html", "scalarize_8cpp" ],
     [ "sccp_analysis.cpp", "sccp__analysis_8cpp.html", null ],
     [ "sccp_transform.cpp", "sccp__transform_8cpp.html", null ],
-    [ "single_erasure.cpp", "single__erasure_8cpp.html", "single__erasure_8cpp" ],
+    [ "single_erasure.cpp", "single__erasure_8cpp.html", null ],
     [ "static_arg_opt.cpp", "static__arg__opt_8cpp.html", null ]
 ];

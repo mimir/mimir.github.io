@@ -549,7 +549,7 @@ var namespacemim_1_1plug =
       [ "zip", "namespacemim_1_1plug_1_1vec.html#a2e32f89440fc8e5beac96559a98f4303", null ],
       [ "normalize_cat", "namespacemim_1_1plug_1_1vec.html#a33960430a521324a04b3eae57f4c837d", null ],
       [ "normalize_diff", "namespacemim_1_1plug_1_1vec.html#abbc9a471c743f28e6bd53866ad31be1b", null ],
-      [ "normalize_fold", "namespacemim_1_1plug_1_1vec.html#aa034c7954646426b7f7af3838238655c", null ],
+      [ "normalize_fold", "namespacemim_1_1plug_1_1vec.html#ad0011878a139b10d25a61654e5186877", null ],
       [ "normalize_is_unique", "namespacemim_1_1plug_1_1vec.html#a26c5e42e01f5b275543be50458d27469", null ],
       [ "normalize_scan", "namespacemim_1_1plug_1_1vec.html#a009bb0ca6ee61eaae893c94c8e145e13", null ],
       [ "normalize_zip", "namespacemim_1_1plug_1_1vec.html#ae2df07a23e69b8802ebe4ec5df3ae747", null ],
