@@ -1,4 +1,4 @@
 var phase_8cpp =
 [
-    [ "mim::component", "namespacemim.html#ad9f56967527c9ecb8f0552f6dcbfc8c4", null ]
+    [ "mim::has_inferred_type", "namespacemim.html#a43abbf197daa252359e95aa365f51472", null ]
 ];

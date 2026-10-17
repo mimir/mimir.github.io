@@ -156,7 +156,7 @@ var searchData=
   ['is_5fterm_153',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5ftop_154',['is_top',['../classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab',1,'mim::Analysis::is_top()'],['../classmim_1_1RWPhase.html#a902bfad4a10e60cd70a591357648f94e',1,'mim::RWPhase::is_top()']]],
   ['is_5ftrivial_155',['is_trivial',['../namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987',1,'mim']]],
-  ['is_5funiform_156',['is_uniform',['../classmim_1_1Checker.html#a169a88c923419cfcfb6d15a14d1cfa4b',1,'mim::Checker']]],
+  ['is_5funiform_156',['is_uniform',['../classmim_1_1Check.html#a50c59b25c3b5c582b83379b6c53e0897',1,'mim::Check']]],
   ['is_5funique_157',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec::is_unique'],['../vec.html#autotoc_md632',1,'is_unique']]],
   ['is_5funit_158',['is_unit',['../namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8',1,'mim']]],
   ['is_5funpack_5fread_159',['is_unpack_read',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a90789f0506b7baf4427628463e594443',1,'mim::plug::tensor::phase']]],

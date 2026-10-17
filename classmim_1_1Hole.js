@@ -8,7 +8,7 @@ var classmim_1_1Hole =
     [ "set", "classmim_1_1Hole.html#a230c55acb7e2c2b8451d738882ad85da", null ],
     [ "tuplefy", "classmim_1_1Hole.html#a4473e6f1b7fa0bd52823b5e88a5eb6bc", null ],
     [ "unset", "classmim_1_1Hole.html#a8d591b06cb894d13113e8514343faa8b", null ],
-    [ "Checker", "classmim_1_1Hole.html#a42e74b7760f36154466246901e25398f", null ],
+    [ "Check", "classmim_1_1Hole.html#a340d2e0eea68faab58a9001ff666a432", null ],
     [ "World", "classmim_1_1Hole.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],
     [ "Node", "classmim_1_1Hole.html#a56f1733069c1b5dbc77702109a5e6a4b", null ],
     [ "Num_Ops", "classmim_1_1Hole.html#a04ae04d4aa12598b438080cc07ea738d", null ]

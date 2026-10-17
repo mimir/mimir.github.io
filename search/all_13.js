@@ -203,7 +203,7 @@ var searchData=
   ['splitapply_200',['SplitApply',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html',1,'mim::plug::gpu::phase']]],
   ['splitoffkernels_201',['SplitOffKernels',['../classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html',1,'mim::plug::gpu::phase']]],
   ['splits_202',['Splits',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a9354dd9f12f084b417b3197ce31a4b83',1,'mim::plug::tensor::phase']]],
-  ['splittable_203',['splittable',['../classmim_1_1CoercePhase.html#a5f68e894f9ded1ee9bafe1f6dda0efea',1,'mim::CoercePhase']]],
+  ['splittable_203',['splittable',['../classmim_1_1RWPhase.html#a53474e5bd14bc49fda8cf94a859375d5',1,'mim::RWPhase']]],
   ['sps_204',['Sps',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a5baf8c7c39951a81f209dfcaebe38e81',1,'mim::plug::btensor::MapRedPost']]],
   ['sq_205',['sq',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598a4bc92a7aeb9478e6bf3f989025232b22',1,'mim::plug::math']]],
   ['sr_206',['Sr',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#ac21723a7c1e73e25692c53f1cfb1bada',1,'mim::plug::btensor::MapRedPost']]],

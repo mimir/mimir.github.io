@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['checker_0',['Checker',['../classmim_1_1Checker.html',1,'mim']]],
+  ['check_0',['Check',['../classmim_1_1Check.html',1,'mim']]],
   ['children_1',['Children',['../structmim_1_1Nest_1_1Node_1_1Children.html',1,'mim::Nest::Node']]],
   ['cleanup_2',['Cleanup',['../classmim_1_1Cleanup.html',1,'mim']]],
   ['clos2sjlj_3',['Clos2SJLJ',['../classmim_1_1plug_1_1clos_1_1phase_1_1Clos2SJLJ.html',1,'mim::plug::clos::phase']]],
@@ -9,8 +9,7 @@ var searchData=
   ['closedmutphase_6',['ClosedMutPhase',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closedmutphase_3c_20def_20_3e_7',['ClosedMutPhase&lt; Def &gt;',['../classmim_1_1ClosedMutPhase.html',1,'mim']]],
   ['closlit_8',['ClosLit',['../classmim_1_1plug_1_1clos_1_1ClosLit.html',1,'mim::plug::clos']]],
-  ['coercephase_9',['CoercePhase',['../classmim_1_1CoercePhase.html',1,'mim']]],
-  ['conv_10',['Conv',['../classmim_1_1plug_1_1cps_1_1Conv.html',1,'mim::plug::cps']]],
-  ['ctor_11',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html',1,'mim::ast::VariantExpr']]],
-  ['currloc_12',['CurrLoc',['../classmim_1_1World.html#structmim_1_1World_1_1CurrLoc',1,'mim::World']]]
+  ['conv_9',['Conv',['../classmim_1_1plug_1_1cps_1_1Conv.html',1,'mim::plug::cps']]],
+  ['ctor_10',['Ctor',['../classmim_1_1ast_1_1VariantExpr_1_1Ctor.html',1,'mim::ast::VariantExpr']]],
+  ['currloc_11',['CurrLoc',['../classmim_1_1World.html#structmim_1_1World_1_1CurrLoc',1,'mim::World']]]
 ];

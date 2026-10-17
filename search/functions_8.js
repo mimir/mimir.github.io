@@ -90,7 +90,7 @@ var searchData=
   ['is_5fterm_87',['is_term',['../classmim_1_1Def.html#a648a10d226521d9f30d10973296476b3',1,'mim::Def']]],
   ['is_5ftop_88',['is_top',['../classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab',1,'mim::Analysis::is_top()'],['../classmim_1_1RWPhase.html#a902bfad4a10e60cd70a591357648f94e',1,'mim::RWPhase::is_top()']]],
   ['is_5ftrivial_89',['is_trivial',['../namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987',1,'mim']]],
-  ['is_5funiform_90',['is_uniform',['../classmim_1_1Checker.html#a169a88c923419cfcfb6d15a14d1cfa4b',1,'mim::Checker']]],
+  ['is_5funiform_90',['is_uniform',['../classmim_1_1Check.html#a50c59b25c3b5c582b83379b6c53e0897',1,'mim::Check']]],
   ['is_5funit_91',['is_unit',['../namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8',1,'mim']]],
   ['is_5funpack_5fread_92',['is_unpack_read',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a90789f0506b7baf4427628463e594443',1,'mim::plug::tensor::phase']]],
   ['is_5fusing_5flibdevice_93',['is_using_libdevice',['../classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html#a4caea462170117575ec1cdc1f99596e0',1,'mim::plug::nvptx::DeviceEmitter']]],

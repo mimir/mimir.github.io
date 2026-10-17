@@ -40,6 +40,7 @@ var classmim_1_1World =
     [ "cn", "classmim_1_1World.html#a0efd9d34965cd245c2a1efa7059fda13", null ],
     [ "cn", "classmim_1_1World.html#a1f0bb95ad857931b61264c0471ac2b9e", null ],
     [ "cn", "classmim_1_1World.html#a68176f2f91337dd7424f8cfed7d800b3", null ],
+    [ "component", "classmim_1_1World.html#a2fac216fc338a6aa7efd2f3bf097e811", null ],
     [ "con", "classmim_1_1World.html#acbe77774e9e87180aafc7ec9150d4a03", null ],
     [ "con", "classmim_1_1World.html#a0c7dfef7a0114fbf8dbd040dbf50bf5e", null ],
     [ "curr_gid", "classmim_1_1World.html#a42972b62b30faf83a3470c03a4883685", null ],

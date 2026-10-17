@@ -18,7 +18,7 @@ var hierarchy =
     [ "mim::ast::Scopes::Barrier", "classmim_1_1ast_1_1Scopes.html#structmim_1_1ast_1_1Scopes_1_1Barrier", null ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
-    [ "mim::Checker", "classmim_1_1Checker.html", null ],
+    [ "mim::Check", "classmim_1_1Check.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
     [ "fe::CodeDiag", null, [
@@ -80,10 +80,6 @@ var hierarchy =
         [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
         [ "mim::BetaRed", "classmim_1_1BetaRed.html", null ],
         [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
-        [ "mim::CoercePhase", "classmim_1_1CoercePhase.html", [
-          [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
-          [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ]
-        ] ],
         [ "mim::DispatchNormalize", "classmim_1_1DispatchNormalize.html", null ],
         [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ],
         [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
@@ -91,6 +87,8 @@ var hierarchy =
         [ "mim::Repl", "classmim_1_1Repl.html", null ],
         [ "mim::RetWrap", "classmim_1_1RetWrap.html", null ],
         [ "mim::SCCP", "classmim_1_1SCCP.html", null ],
+        [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
+        [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ],
         [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],

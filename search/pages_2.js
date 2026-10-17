@@ -32,7 +32,7 @@ var searchData=
   ['cmp_29',['cmp',['../math.html#autotoc_md402',1,'']]],
   ['code_30',['Code',['../refly.html#autotoc_md461',1,'']]],
   ['coding_20style_31',['Coding Style',['../coding.html#autotoc_md16',1,'Coding Style'],['../coding.html#autotoc_md22',1,'M⁠im Coding Style']]],
-  ['coercephase_32',['CoercePhase',['../phases.html#phases_coerce_phase',1,'']]],
+  ['coercion_32',['Coercion',['../phases.html#phases_coercion',1,'']]],
   ['command_20line_20reference_33',['Command-Line Reference',['../cli.html',1,'']]],
   ['comments_34',['Comments',['../langref.html#autotoc_md63',1,'']]],
   ['community_35',['💬 Community',['../index.html#autotoc_md153',1,'']]],
