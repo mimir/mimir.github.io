@@ -14,6 +14,7 @@ var searchData=
   ['fold_11',['fold',['../namespacemim_1_1plug_1_1vec.html#a03747184dd4c53d173ec208a448907dc',1,'mim::plug::vec']]],
   ['for_12',['For',['../namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068',1,'mim::plug::affine']]],
   ['free_13',['free',['../namespacemim_1_1plug_1_1buffer.html#af0ca377a12c36965ec50d3ea75163a12',1,'mim::plug::buffer::free'],['../namespacemim_1_1plug_1_1gpu.html#a984ce474f7a834df9bc48a3851e28650',1,'mim::plug::gpu::free'],['../namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b',1,'mim::plug::mem::free']]],
-  ['fresh_14',['fresh',['../namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6',1,'mim::plug::mem']]],
-  ['fuse_5ftensor_15',['fuse_tensor',['../namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c',1,'mim::plug::tensor']]]
+  ['free_5flocals_14',['free_locals',['../namespacemim_1_1plug_1_1mem.html#a77713f77e6e56d3e854ef900df4cf7e9',1,'mim::plug::mem']]],
+  ['fresh_15',['fresh',['../namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6',1,'mim::plug::mem']]],
+  ['fuse_5ftensor_16',['fuse_tensor',['../namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c',1,'mim::plug::tensor']]]
 ];

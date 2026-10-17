@@ -7,7 +7,6 @@ var tensor_8h =
       [ "src", "namespacemim_1_1plug_1_1tensor.html#aa902f273a90911d24fadef83b085944f", null ],
       [ "T", "namespacemim_1_1plug_1_1tensor.html#a301293d412fd1a577a530753e71be473", null ]
     ] ],
-    [ "mim::plug::tensor::arg_u64", "namespacemim_1_1plug_1_1tensor.html#a6e8a8835358077fdbc9c2143c8c79816", null ],
     [ "mim::plug::tensor::count_consumers", "namespacemim_1_1plug_1_1tensor.html#a3c0df2efe3b69a9722d83fed404e81cc", null ],
     [ "mim::plug::tensor::is_copy_comb", "namespacemim_1_1plug_1_1tensor.html#a8c8dd822f6ed249bfef725636586c463", null ],
     [ "mim::plug::tensor::is_identity_map", "namespacemim_1_1plug_1_1tensor.html#aabb62e3ea3c7b862bb8f8a9b79e03f5d", null ],

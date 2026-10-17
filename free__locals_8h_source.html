@@ -1,0 +1,249 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/plug/mem/phase/free_locals.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('free__locals_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">free_locals.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="free__locals_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="nest_8h.html">mim/nest.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="escape__analysis_8h.html">mim/plug/mem/escape_analysis.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem_1_1phase.html">mim::plug::mem::phase</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// Frees the memory a function allocates but does not let escape; see mem::EscapeAnalysis.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">///</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// An allocation only its home&#39;s own memory chain mentions is freed right after its last use there.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// Any other is freed as control passes from where it is live to where it is dead.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// It is live on entry to a Nest node if the node or a sibling it or one of its ancestors reaches mentions it.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// Since a recursive node reaches itself, this covers loops, too.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// This is closed under control flow: once dead, an allocation stays dead.</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a22c2c1239fc39da3ed916b9ad0965ccb">FreeLocals</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a22c2c1239fc39da3ed916b9ad0965ccb">   18</a></span>    <a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a22c2c1239fc39da3ed916b9ad0965ccb">FreeLocals</a>(<a class="code hl_class" href="classmim_1_1World.html">World</a>&amp; <a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_typedef" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        : <a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a>(<a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>, <a class="code hl_function" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a>, &amp;escape_)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        , escape_(<a class="code hl_function" href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">world</a>) {}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#ae7aafebea39e5950a2e39d3b585f00b9">analyze</a>() final;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a0ed3df7adf9007ce67f016db6ce55361">rewrite_imm_App</a>(const <a class="code hl_class" href="classmim_1_1App.html">App</a>*) final;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">    /// Collects the mentions of every node&#39;s subtree.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    const <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&amp; mentions(const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>*);<span class="comment"></span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">    /// The mentions of every sibling @p node transitively reaches.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    const <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&amp; reach(const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* node);<span class="comment"></span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">    /// Places the frees of @p alloc in @p node%&#39;s subtree, which hangs below its @p home.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> place(const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* home, const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* node, const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> live(const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* home, const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* node, const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">bool</span> dead(const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>* home, const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* target, const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"></span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    /// Rebuilds @p arg with `mem.free`s of the (old-world) @p allocs threaded through its memory @p mem.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* thread(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg, const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, const <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs);<span class="comment"></span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    /// Rebuilds a control position of a tail, freeing on the way to the targets in @p edges.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* rewrite_target(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* target, const <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt;<a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&gt;&amp; edges);<span class="comment"></span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    /// A continuation that frees @p allocs and jumps on to @p cont.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* trampoline(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* cont, const <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">free</a>(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, const <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html">EscapeAnalysis</a> escape_;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_typedef" href="namespacemim.html#a110168b2aced7064a3dc5606772e17d3">GIDMap</a>&lt;const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>*, <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&gt; mentions_;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_typedef" href="namespacemim.html#a110168b2aced7064a3dc5606772e17d3">GIDMap</a>&lt;const <a class="code hl_class" href="classmim_1_1Nest.html">Nest</a>::<a class="code hl_enumeration" href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">Node</a>*, <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&gt; reach_;<span class="comment"></span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    /// Old op or tail ↦ allocations to free right before it.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt;<a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&gt; frees_;<span class="comment"></span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">    /// Old tail ↦ old target ↦ allocations to free on the way there.</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt;<a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap</a>&lt;<a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&gt;&gt; edges_;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace mim::plug::mem::phase</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00214">lam.h:214</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00289">def.h:289</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_html"><div class="ttname"><a href="classmim_1_1Nest.html">mim::Nest</a></div><div class="ttdoc">Builds a nesting tree for all mutables/binders.</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00030">nest.h:30</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a2f84cd002f509749f1fcfc6a9be0bfd1"><div class="ttname"><a href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">mim::Phase::annex</a></div><div class="ttdeci">flags_t annex() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00062">phase.h:62</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00322">phase.h:322</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_ab2f627b52ee66162e8dcf2249f67ed3e"><div class="ttname"><a href="classmim_1_1RWPhase.html#ab2f627b52ee66162e8dcf2249f67ed3e">mim::RWPhase::world</a></div><div class="ttdeci">World &amp; world()=delete</div><div class="ttdoc">Hides both and forbids direct access.</div></div>
+<div class="ttc" id="aclassmim_1_1World_html"><div class="ttname"><a href="classmim_1_1World.html">mim::World</a></div><div class="ttdoc">The World represents the whole program and manages creation of MimIR nodes (Defs).</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00043">world.h:43</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1EscapeAnalysis_html"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html">mim::plug::mem::EscapeAnalysis</a></div><div class="ttdoc">Determines which allocations stay within the scope that allocates them.</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00026">escape_analysis.h:26</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals_html_a0ed3df7adf9007ce67f016db6ce55361"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a0ed3df7adf9007ce67f016db6ce55361">mim::plug::mem::phase::FreeLocals::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="free__locals_8cpp_source.html#l00107">free_locals.cpp:107</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals_html_a22c2c1239fc39da3ed916b9ad0965ccb"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a22c2c1239fc39da3ed916b9ad0965ccb">mim::plug::mem::phase::FreeLocals::FreeLocals</a></div><div class="ttdeci">FreeLocals(World &amp;world, flags_t annex)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">free_locals.h:18</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals_html_ae7aafebea39e5950a2e39d3b585f00b9"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#ae7aafebea39e5950a2e39d3b585f00b9">mim::plug::mem::phase::FreeLocals::analyze</a></div><div class="ttdeci">bool analyze() final</div><div class="ttdoc">Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.</div><div class="ttdef"><b>Definition</b> <a href="free__locals_8cpp_source.html#l00007">free_locals.cpp:7</a></div></div>
+<div class="ttc" id="aescape__analysis_8h_html"><div class="ttname"><a href="escape__analysis_8h.html">escape_analysis.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_1_1phase_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem_1_1phase.html">mim::plug::mem::phase</a></div><div class="ttdef"><b>Definition</b> <a href="add__mem_8h_source.html#l00005">add_mem.h:5</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html">mim::plug::mem</a></div><div class="ttdoc">The mem Plugin</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00009">escape_analysis.h:9</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_aa920d510e2e4277188e0b9517e6ea64b"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">mim::plug::mem::free</a></div><div class="ttdeci">free</div><div class="ttdef"><b>Definition</b> <a href="mem_2autogen_8h_source.html#l00079">autogen.h:79</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_afaa1b7ff42fe8de01c9ae6f3531c5cbc"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">mim::plug::mem::alloc</a></div><div class="ttdeci">alloc</div><div class="ttdef"><b>Definition</b> <a href="mem_2autogen_8h_source.html#l00058">autogen.h:58</a></div></div>
+<div class="ttc" id="anamespacemim_html_a110168b2aced7064a3dc5606772e17d3"><div class="ttname"><a href="namespacemim.html#a110168b2aced7064a3dc5606772e17d3">mim::GIDMap</a></div><div class="ttdeci">ankerl::unordered_dense::map&lt; K, V, GIDHash&lt; K &gt; &gt; GIDMap</div><div class="ttdef"><b>Definition</b> <a href="gid_8h_source.html#l00025">gid.h:25</a></div></div>
+<div class="ttc" id="anamespacemim_html_a2aaf0a830058bfdf4884b0addad6a93f"><div class="ttname"><a href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">mim::flags_t</a></div><div class="ttdeci">u64 flags_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
+<div class="ttc" id="anamespacemim_html_a879f9e518002de13d65d757536033f0e"><div class="ttname"><a href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a></div><div class="ttdeci">GIDMap&lt; const Def *, To &gt; DefMap</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00098">def.h:98</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00094">def.h:94</a></div></div>
+<div class="ttc" id="anamespacemim_html_afb12dbffaaa27bca46f171517d96256d"><div class="ttname"><a href="namespacemim.html#afb12dbffaaa27bca46f171517d96256d">mim::Node</a></div><div class="ttdeci">Node</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00123">def.h:123</a></div></div>
+<div class="ttc" id="anest_8h_html"><div class="ttname"><a href="nest_8h.html">nest.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html">plug</a></li><li class="navelem"><a href="dir_f984b2ba368b09e30d6d58c581c51286.html">mem</a></li><li class="navelem"><a href="dir_c81a4445134ea055746248e54998b75a.html">phase</a></li><li class="navelem"><a href="free__locals_8h.html">free_locals.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

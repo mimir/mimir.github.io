@@ -119,8 +119,11 @@ var annotated_dup =
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
           [ "phase", "namespacemim_1_1plug_1_1mem_1_1phase.html", [
             [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ],
+            [ "FreeLocals", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals" ],
+            [ "Heap2Stack", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack" ],
             [ "SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO" ]
-          ] ]
+          ] ],
+          [ "EscapeAnalysis", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis" ]
         ] ],
         [ "nvptx", "namespacemim_1_1plug_1_1nvptx.html", [
           [ "DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx.html#structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx_structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags_dup" ],

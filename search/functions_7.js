@@ -12,7 +12,8 @@ var searchData=
   ['has_5fvar_9',['has_var',['../classmim_1_1Def.html#af82f20111e9f1cbdbf910d30341bd4ee',1,'mim::Def::has_var()'],['../classmim_1_1Def.html#a18f12761a17e1e15e867178e2f383dc3',1,'mim::Def::has_var() const']]],
   ['hash_10',['hash',['../classmim_1_1Def.html#a7a2188433df55928789a717ab00afc53',1,'mim::Def']]],
   ['head_11',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB']]],
-  ['holeexpr_12',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
-  ['hook_13',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
-  ['hostemitter_14',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter']]]
+  ['heap2stack_12',['Heap2Stack',['../classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html#a901b069771b03ae51a194aad13d03f14',1,'mim::plug::mem::phase::Heap2Stack']]],
+  ['holeexpr_13',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
+  ['hook_14',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase']]],
+  ['hostemitter_15',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter']]]
 ];

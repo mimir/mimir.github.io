@@ -237,10 +237,18 @@ add_mem</h2>
 <p>Threads <span class="tt">mem.M</span> through functions that lack it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm add_mem: compile.Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md426"></a>
+free_locals</h2>
+<p>Frees the memory a function allocates but does not let escape (see <a class="el" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html" title="Determines which allocations stay within the scope that allocates them.">mim::plug::mem::EscapeAnalysis</a>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm free_locals: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md427"></a>
+heap2stack</h2>
+<p>Turns a small <span class="tt">mem.alloc</span> that does not escape its function into a <span class="tt">mem.slot</span> (see <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html" title="Turns a mem.alloc that does not escape its function (see mem::EscapeAnalysis) into a mem....">mim::plug::mem::phase::Heap2Stack</a>). <span class="tt">-X mem:heap2stack=&lt;n&gt;</span> sets the maximum number of elements to stack-allocate; <span class="tt">0</span> disables it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm heap2stack: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md428"></a>
 seo</h2>
 <p>Symbolic Expression Optimization — SSA construction, expression propagation, and GVN in one fixed point (see <a class="el" href="classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html" title="Symbolic Expression Optimization.">mim::plug::mem::phase::SEO</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm seo: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md427"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
 alloc2malloc_repl</h2>
 <p>Rewrites <span class="tt">mem.alloc</span> / <span class="tt">mem.slot</span> into <span class="tt">mem.malloc</span> / <span class="tt">mem.mslot</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm alloc2malloc_repl: compile.Phase;</div>

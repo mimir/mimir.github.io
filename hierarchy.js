@@ -18,6 +18,7 @@ var hierarchy =
     [ "mim::ast::Scopes::Barrier", "classmim_1_1ast_1_1Scopes.html#structmim_1_1ast_1_1Scopes_1_1Barrier", null ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
+    [ "mim::plug::mem::EscapeAnalysis::Chain", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#structmim_1_1plug_1_1mem_1_1EscapeAnalysis_1_1Chain", null ],
     [ "mim::Check", "classmim_1_1Check.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
@@ -73,7 +74,8 @@ var hierarchy =
     [ "mim::plug::btensor::MapRedPost::Ranks", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
-        [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ]
+        [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ],
+        [ "mim::plug::mem::EscapeAnalysis", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html", null ]
       ] ],
       [ "mim::Importer", "classmim_1_1Importer.html", null ],
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
@@ -107,6 +109,8 @@ var hierarchy =
         [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
         [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
         [ "mim::plug::mem::phase::AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", null ],
+        [ "mim::plug::mem::phase::FreeLocals", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html", null ],
+        [ "mim::plug::mem::phase::Heap2Stack", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html", null ],
         [ "mim::plug::mem::phase::SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", null ],
         [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],

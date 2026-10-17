@@ -252,6 +252,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b37e4f106cdfda15ffc8a3d70b952b5" id="r_a9b37e4f106cdfda15ffc8a3d70b952b5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9b37e4f106cdfda15ffc8a3d70b952b5">add_arg</a> (std::string_view plugin, std::string arg)</td></tr>
 <tr class="memitem:abc9aacc4bd302c9c9f7ce52285312f79" id="r_abc9aacc4bd302c9c9f7ce52285312f79"><td class="memItemLeft">const fe::Vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abc9aacc4bd302c9c9f7ce52285312f79">args</a> (std::string_view plugin) const</td></tr>
 <tr class="memdesc:abc9aacc4bd302c9c9f7ce52285312f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yields an empty fe::Vector if <code class="param">plugin</code> has none.  <br /></td></tr>
+<tr class="memitem:af5581e87373d490073bc74622c07f2f7" id="r_af5581e87373d490073bc74622c07f2f7"><td class="memItemLeft">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af5581e87373d490073bc74622c07f2f7">arg_nat</a> (std::string_view plugin, std::string_view key)</td></tr>
+<tr class="memdesc:af5581e87373d490073bc74622c07f2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number passed as <span class="tt">-X &lt;plugin&gt;:&lt;key&gt;=&lt;n&gt;</span>, if any; warns about and ignores a non-number.  <br /></td></tr>
 <tr class="memitem:a5f7e5ef39e1ffaf2f857528fdee91e1e" id="r_a5f7e5ef39e1ffaf2f857528fdee91e1e"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5f7e5ef39e1ffaf2f857528fdee91e1e">known_args</a> () const</td></tr>
 <tr class="memdesc:a5f7e5ef39e1ffaf2f857528fdee91e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>.  <br /></td></tr>
 <tr class="memitem:a00f6fb77429b6f7b353e95d42b2a1bd2" id="r_a00f6fb77429b6f7b353e95d42b2a1bd2"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a00f6fb77429b6f7b353e95d42b2a1bd2">known_envs</a> () const</td></tr>
@@ -333,11 +335,11 @@ sym2gid</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00059">59</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00060">60</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="driver_8h_source.html#l00136">add_import_path()</a>, <a class="el" href="driver_8h_source.html#l00135">add_plugin_path()</a>, <a class="el" href="driver_8h_source.html#l00137">add_prefix_path()</a>, <a class="el" href="tok_8h_source.html#l00052">CODE</a>, <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>, <a class="el" href="config_8h_source.html#l00012">MIM_INSTALL_PREFIX</a>, <a class="el" href="tok_8h_source.html#l00075">MIM_KEY</a>, <a class="el" href="tok_8h_source.html#l00225">MIM_SUBST</a>, and <a class="el" href="plugin_8h_source.html#l00150">MIM_VERSION</a>.</p>
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00136">add_import_path()</a>, <a class="el" href="driver_8h_source.html#l00135">add_plugin_path()</a>, <a class="el" href="driver_8h_source.html#l00137">add_prefix_path()</a>, <a class="el" href="tok_8h_source.html#l00052">CODE</a>, <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>, <a class="el" href="config_8h_source.html#l00012">MIM_INSTALL_PREFIX</a>, <a class="el" href="tok_8h_source.html#l00075">MIM_KEY</a>, <a class="el" href="tok_8h_source.html#l00225">MIM_SUBST</a>, and <a class="el" href="plugin_8h_source.html#l00150">MIM_VERSION</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#aab01142c53929ece60b610a25bf0809f">Driver()</a>, <a class="el" href="#af9b87b0d6995a419184f6bab396a816f">Driver()</a>, <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>, and <a class="el" href="#a916332ec561f680e7b66004a1de23325">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#aab01142c53929ece60b610a25bf0809f">Driver()</a>, <a class="el" href="#af9b87b0d6995a419184f6bab396a816f">Driver()</a>, <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>, and <a class="el" href="#a916332ec561f680e7b66004a1de23325">operator=()</a>.</p>
 
 </div>
 </div>
@@ -364,7 +366,7 @@ sym2gid</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>.</p>
 
 </div>
 </div>
@@ -391,7 +393,7 @@ sym2gid</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>.</p>
 
 </div>
 </div>
@@ -454,7 +456,7 @@ sym2gid</td>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00136">136</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -483,7 +485,7 @@ sym2gid</td>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00135">135</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -512,7 +514,7 @@ sym2gid</td>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00137">137</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -545,7 +547,34 @@ sym2gid</td>
 
 <p>Makes a <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> linked into this binary available to <a class="el" href="#a2c87555910e1c7d735f571311e9dc62d">Driver::load</a> under <code class="param">name</code>; see <span class="tt"><a class="el" href="Mim_8cmake.html">cmake/Mim.cmake</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00147">147</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00148">148</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af5581e87373d490073bc74622c07f2f7" name="af5581e87373d490073bc74622c07f2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5581e87373d490073bc74622c07f2f7">&#9670;&#160;</a></span>arg_nat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> &gt; mim::Driver::arg_nat </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>plugin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number passed as <span class="tt">-X &lt;plugin&gt;:&lt;key&gt;=&lt;n&gt;</span>, if any; warns about and ignores a non-number. </p>
+
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00227">227</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="plugin_8h_source.html#l00064">mim::arg_value()</a>, <a class="el" href="driver_8cpp_source.html#l00221">args()</a>, and <a class="el" href="driver_8h_source.html#l00079">log()</a>.</p>
 
 </div>
 </div>
@@ -566,11 +595,11 @@ sym2gid</td>
 
 <p>Yields an empty fe::Vector if <code class="param">plugin</code> has none. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00220">220</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00221">221</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00220">args()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00221">args()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00220">args()</a>, and <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00227">arg_nat()</a>, <a class="el" href="driver_8cpp_source.html#l00221">args()</a>, and <a class="el" href="phase_8cpp_source.html#l00023">mim::Phase::args()</a>.</p>
 
 </div>
 </div>
@@ -599,7 +628,7 @@ sym2gid</td>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00077">77</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00214">mim::World::flags()</a>, <a class="el" href="driver_8cpp_source.html#l00149">load()</a>, <a class="el" href="ast_8cpp_source.html#l00206">mim::ast::load_plugins()</a>, <a class="el" href="main_8cpp_source.html#l00152">main()</a>, <a class="el" href="driver_8h_source.html#l00213">normalizer()</a>, <a class="el" href="driver_8h_source.html#l00211">phase()</a>, <a class="el" href="phase_8cpp_source.html#l00051">mim::Phase::run()</a>, <a class="el" href="phase_8cpp_source.html#l00345">mim::PhaseMan::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00180">mim::RWPhase::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00214">mim::World::flags()</a>, <a class="el" href="driver_8cpp_source.html#l00150">load()</a>, <a class="el" href="ast_8cpp_source.html#l00206">mim::ast::load_plugins()</a>, <a class="el" href="main_8cpp_source.html#l00152">main()</a>, <a class="el" href="driver_8h_source.html#l00213">normalizer()</a>, <a class="el" href="driver_8h_source.html#l00211">phase()</a>, <a class="el" href="phase_8cpp_source.html#l00051">mim::Phase::run()</a>, <a class="el" href="phase_8cpp_source.html#l00345">mim::PhaseMan::start()</a>, and <a class="el" href="phase_8cpp_source.html#l00180">mim::RWPhase::start()</a>.</p>
 
 </div>
 </div>
@@ -661,7 +690,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00203">203</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00212">get_fun_ptr()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00213">get_fun_ptr()</a>.</p>
 
 </div>
 </div>
@@ -684,7 +713,7 @@ template&lt;class F&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00212">212</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00213">213</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="driver_8h_source.html#l00203">get_fun_ptr()</a>.</p>
 
@@ -707,7 +736,7 @@ template&lt;class F&gt; </div>
 
 <p>Where <a class="el" href="classmim_1_1ast_1_1Parser.html" title="Parses Mim code as AST.">ast::Parser</a> looks for <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>; plugin directories are included, as a plugin ships both halves. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00109">109</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00110">110</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="config_8h_source.html#l00014">MIM_DATADIR</a>, and <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
 
@@ -796,7 +825,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00193">193</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00130">mim::plug::ll::Emitter::Emitter()</a>, and <a class="el" href="driver_8cpp_source.html#l00149">load()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00130">mim::plug::ll::Emitter::Emitter()</a>, and <a class="el" href="driver_8cpp_source.html#l00150">load()</a>.</p>
 
 </div>
 </div>
@@ -854,7 +883,7 @@ template&lt;class F&gt; </div>
 
 <p>The <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginArg" title="One -X &lt;plugin&gt;:&lt;arg&gt; a Plugin understands; see Arguments.">PluginArg</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00226">226</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00228">228</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
 </div>
 </div>
@@ -883,7 +912,7 @@ template&lt;class F&gt; </div>
 
 <p>The <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>s each loaded <a class="el" href="structmim_1_1Plugin.html" title="Basic info and registration function pointer to be returned from a specific plugin.">Plugin</a> declares, in load order; only for listing them, see <a class="el" href="namespacemim.html#structmim_1_1PluginEnv" title="One environment variable a Plugin reads; see Environment Variables.">PluginEnv</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00229">229</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00231">231</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
 </div>
 </div>
@@ -962,9 +991,9 @@ template&lt;class F&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00149">149</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00150">150</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="driver_8h_source.html#l00077">flags()</a>, <a class="el" href="driver_8h_source.html#l00193">is_loaded()</a>, <a class="el" href="driver_8h_source.html#l00079">log()</a>, <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin()</a>, <a class="el" href="driver_8cpp_source.html#l00133">plugin_name()</a>, <a class="el" href="driver_8cpp_source.html#l00099">plugin_paths()</a>, and <a class="el" href="driver_8h_source.html#l00084">version()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8h_source.html#l00077">flags()</a>, <a class="el" href="driver_8h_source.html#l00193">is_loaded()</a>, <a class="el" href="driver_8h_source.html#l00079">log()</a>, <a class="el" href="namespacemim.html#a77f34c28f8418e4828b4684cbc025e52">mim::mim_get_plugin()</a>, <a class="el" href="driver_8cpp_source.html#l00134">plugin_name()</a>, <a class="el" href="driver_8cpp_source.html#l00100">plugin_paths()</a>, and <a class="el" href="driver_8h_source.html#l00084">version()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00130">mim::plug::ll::Emitter::Emitter()</a>, and <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>.</p>
 
@@ -995,7 +1024,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00079">79</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00125">mim::World::Annexes::attach()</a>, <a class="el" href="parser_8cpp_source.html#l00091">mim::ast::Parser::import()</a>, <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>, <a class="el" href="driver_8cpp_source.html#l00149">load()</a>, <a class="el" href="world_8cpp_source.html#l00213">mim::World::log()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00227">arg_nat()</a>, <a class="el" href="world_8cpp_source.html#l00125">mim::World::Annexes::attach()</a>, <a class="el" href="parser_8cpp_source.html#l00091">mim::ast::Parser::import()</a>, <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>, <a class="el" href="driver_8cpp_source.html#l00150">load()</a>, <a class="el" href="world_8cpp_source.html#l00213">mim::World::log()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1073,7 @@ template&lt;class F&gt; </div>
 <p>Moves everything of <code class="param">world</code> into <a class="el" href="#aa8d76f003295fc6ed4ea146be0314c88" title="nullptr before move_to_library().">library()</a> and imports only its externals back. </p>
 <p>From then on, <code class="param">world</code> imports an annex lazily when first looked up; </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmim_1_1World.html#ac8c02c318c07e32bf555c5bd8a45303c" title="Imports def of Driver::library into this World.">World::import</a>. Importing also resolves the <a class="el" href="classmim_1_1Hole.html" title="This node is a hole in the IR that is inferred by its context later on.">Hole</a>s elaboration solved. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00140">140</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00141">141</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l00597">mim::Def::as_mut()</a>, <a class="el" href="world_8h_source.html#l00305">mim::World::import()</a>, <a class="el" href="world_8h_source.html#l00096">mim::World::inherit()</a>, and <a class="el" href="driver_8h_source.html#l00083">world()</a>.</p>
 
@@ -1077,7 +1106,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00108">108</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00243">mim::PlainNames::claim()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00256">mim::PlainNames::claim()</a>.</p>
 
 </div>
 </div>
@@ -1173,7 +1202,7 @@ template&lt;class F&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00059">Driver()</a>.</p>
+<p class="reference">References <a class="el" href="driver_8cpp_source.html#l00060">Driver()</a>.</p>
 
 </div>
 </div>
@@ -1292,9 +1321,9 @@ template&lt;class F&gt; </div>
 
 <p>Bare plugin name of a possibly path-qualified <code class="param">name:</code> <span class="tt">foo/libmim_bar.so</span> &rarr; <span class="tt">bar</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00133">133</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00134">134</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>, and <a class="el" href="driver_8cpp_source.html#l00149">load()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8cpp_source.html#l00031">mim::ast::Parser::import()</a>, and <a class="el" href="driver_8cpp_source.html#l00150">load()</a>.</p>
 
 </div>
 </div>
@@ -1315,11 +1344,11 @@ template&lt;class F&gt; </div>
 
 <p>Where <a class="el" href="#a2c87555910e1c7d735f571311e9dc62d">Driver::load</a> looks for <span class="tt">libmim_&lt;name&gt;</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00099">99</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00100">100</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00149">load()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00150">load()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1425,7 @@ template&lt;class F&gt; </div>
 
 <p>Where a backend looks for its runtime modules. </p>
 
-<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00123">123</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver_8cpp_source.html#l00124">124</a> of file <a class="el" href="driver_8cpp_source.html">driver.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="config_8h_source.html#l00013">MIM_LIBDIR</a>.</p>
 
@@ -1431,7 +1460,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00084">84</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00149">load()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00150">load()</a>, and <a class="el" href="main_8cpp_source.html#l00152">main()</a>.</p>
 
 </div>
 </div>
@@ -1460,7 +1489,7 @@ template&lt;class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="driver_8h_source.html#l00083">83</a> of file <a class="el" href="driver_8h_source.html">driver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00152">main()</a>, and <a class="el" href="driver_8cpp_source.html#l00140">move_to_library()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00152">main()</a>, and <a class="el" href="driver_8cpp_source.html#l00141">move_to_library()</a>.</p>
 
 </div>
 </div>
