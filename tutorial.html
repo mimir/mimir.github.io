@@ -203,8 +203,6 @@ Lexical Structure</h1>
 <div class="line">let byt = 0xFFI8;           // the `I8` suffix spells a bit width</div>
 <div class="line">let str = &quot;Mim&quot;;            // «3; I8»</div>
 <div class="line">let neg = -42I32;           // the sign belongs to the expression, not to the token</div>
-<div class="line">let nothing = ⊥;            // `bot`; defaults to `*`</div>
-<div class="line">let anything = ⊤:Nat;       // `top`, ascribed</div>
 <div class="line"> </div>
 <div class="line">let _ = refly.struc.e (⊥:[Nat, Bool], (⊥:Nat, ⊥:Bool)); // pushed into aggregates</div>
 <div class="line"> </div>
@@ -274,9 +272,9 @@ Dependent Tuple Types</h1>
 <div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Components carry field names, which beat lexical names of the same spelling - with a warning, as here.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let tail = 1₂;</div>
-<div class="line">lam by_field (l: List): mem.Ptr0 List = l#tail;</div>
-<div class="line">lam by_var   (p: «2; Nat»): Nat       = p#(tail);   // parentheses force the variable</div>
-<div class="line">let Size = [w h: Nat];                               // just `«2; Nat»`: the names belong to the shape</div>
+<div class="line">// lam by_field (l: List): mem.Ptr0 List = l#tail; // warning: tail names both field 1 of `List` and a declaration in scope; using the field</div>
+<div class="line">lam by_var   (p: «2; Nat»): Nat       = p#(tail);  // parentheses force the variable</div>
+<div class="line">let Size = [w h: Nat];                             // just `«2; Nat»`: the names belong to the shape</div>
 <div class="line">lam width (s: Size): Nat = s#w;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">rec</span> is also the only way to keep a genuine one-element aggregate.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rec One = [x: Nat];</div>

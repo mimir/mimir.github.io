@@ -4,6 +4,8 @@ var mem_2autogen_8h =
     [ "mim::plug::mem::add_mem", "namespacemim_1_1plug_1_1mem.html#a8a648f12a72d6a66add41e2e7936fa10", null ],
     [ "mim::plug::mem::alloc", "namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc", null ],
     [ "mim::plug::mem::alloc2malloc_repl", "namespacemim_1_1plug_1_1mem.html#a4af6c0a89b26ab2719c93fa85a18d9fc", null ],
+    [ "mim::plug::mem::assume", "namespacemim_1_1plug_1_1mem.html#aa3f281098a1177b822b551c798a1f4ce", null ],
+    [ "mim::plug::mem::decay", "namespacemim_1_1plug_1_1mem.html#a8c0dc698cf2179ee5d87afd11287ca39", null ],
     [ "mim::plug::mem::free", "namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b", null ],
     [ "mim::plug::mem::free_locals", "namespacemim_1_1plug_1_1mem.html#a77713f77e6e56d3e854ef900df4cf7e9", null ],
     [ "mim::plug::mem::fresh", "namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6", null ],

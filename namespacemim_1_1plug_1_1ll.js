@@ -10,6 +10,7 @@ var namespacemim_1_1plug_1_1ll =
     [ "fcmp_pred", "namespacemim_1_1plug_1_1ll.html#a614742d52a5c49c02ae5e21b93bca716", null ],
     [ "fmath_flags", "namespacemim_1_1plug_1_1ll.html#ac1b299962452670eed200d4f6fdfbd99", null ],
     [ "icmp_pred", "namespacemim_1_1plug_1_1ll.html#a829d2ff7cdef719da61fb85553fb3223", null ],
+    [ "idx_bitwidth", "namespacemim_1_1plug_1_1ll.html#a2e239041fa5c3a829ec3929918a86af2", null ],
     [ "is_simd", "namespacemim_1_1plug_1_1ll.html#a03f0cd076f43b618bd51d9a8158d1352", null ],
     [ "mim_ll_convert", "namespacemim_1_1plug_1_1ll.html#a5709117c1c7e2f0202ba3c2e12f8b859", null ],
     [ "mim_ll_emit_bb", "namespacemim_1_1plug_1_1ll.html#adb15d93ae000eb338a9ac9393b46871f", null ],

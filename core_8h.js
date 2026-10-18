@@ -7,10 +7,6 @@ var core_8h =
       [ "mim::plug::core::Mode::nuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97", null ],
       [ "mim::plug::core::Mode::nsuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
     ] ],
-    [ "mim::plug::core::extract_unsafe", "namespacemim_1_1plug_1_1core.html#a04b2bc63f2900e9c6e2d745d3f3419d4", null ],
-    [ "mim::plug::core::extract_unsafe", "namespacemim_1_1plug_1_1core.html#a9a65a10d9e296d08c1a4f393d4c17881", null ],
-    [ "mim::plug::core::insert_unsafe", "namespacemim_1_1plug_1_1core.html#ac4e599118974e6a467f3cb081a2e16a0", null ],
-    [ "mim::plug::core::insert_unsafe", "namespacemim_1_1plug_1_1core.html#a46c49f3a8526d8e82eca419b2aa993d5", null ],
     [ "mim::is_associative", "namespacemim.html#a18ea687fca3cafcb3ae2e8afacdb6a43", null ],
     [ "mim::is_associative", "namespacemim.html#a789eca4a75e2540e6d34f59994f69704", null ],
     [ "mim::is_associative", "namespacemim.html#ae4993d8ec478d9b21be0d34df1047d50", null ],

@@ -23,6 +23,7 @@ var searchData=
   ['append_20',['append',['../namespacemim_1_1plug_1_1tuple.html#aedc9c99286296674c67cba716067592d',1,'mim::plug::tuple']]],
   ['arith_21',['arith',['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686',1,'mim::plug::math']]],
   ['assoc_22',['Assoc',['../namespacemim_1_1ast.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::ast::Assoc'],['../namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4',1,'mim::Assoc']]],
-  ['auto_5fdeinit_23',['auto_deinit',['../namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129',1,'mim::plug::gpu']]],
-  ['auto_5finit_24',['auto_init',['../namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d',1,'mim::plug::gpu']]]
+  ['assume_23',['assume',['../namespacemim_1_1plug_1_1mem.html#aa3f281098a1177b822b551c798a1f4ce',1,'mim::plug::mem']]],
+  ['auto_5fdeinit_24',['auto_deinit',['../namespacemim_1_1plug_1_1gpu.html#a51fc4735294acb8e2b234b43d7ec2129',1,'mim::plug::gpu']]],
+  ['auto_5finit_25',['auto_init',['../namespacemim_1_1plug_1_1gpu.html#a460dcb5e45404222f0ec6b0a8839737d',1,'mim::plug::gpu']]]
 ];

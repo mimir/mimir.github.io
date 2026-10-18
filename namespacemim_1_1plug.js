@@ -126,7 +126,6 @@ var namespacemim_1_1plug =
         [ "t", "namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673ae358efa489f58062f10dd7316b65649e", null ]
       ] ],
       [ "idx", "namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a", null ],
-      [ "idx_unsafe", "namespacemim_1_1plug_1_1core.html#a050017688d0e1c7eccd2c395a15687c7", null ],
       [ "minus", "namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313", null ],
       [ "Mode", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138", [
         [ "none", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
@@ -189,10 +188,6 @@ var namespacemim_1_1plug =
         [ "mul", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa353942263d1bedfbe06b7bfa78226253", null ],
         [ "shl", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efabc192716b0e1d5c96a67961dd0d3f9da", null ]
       ] ],
-      [ "extract_unsafe", "namespacemim_1_1plug_1_1core.html#a04b2bc63f2900e9c6e2d745d3f3419d4", null ],
-      [ "extract_unsafe", "namespacemim_1_1plug_1_1core.html#a9a65a10d9e296d08c1a4f393d4c17881", null ],
-      [ "insert_unsafe", "namespacemim_1_1plug_1_1core.html#ac4e599118974e6a467f3cb081a2e16a0", null ],
-      [ "insert_unsafe", "namespacemim_1_1plug_1_1core.html#a46c49f3a8526d8e82eca419b2aa993d5", null ],
       [ "make_truth_table", "namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d", null ],
       [ "mode", "namespacemim_1_1plug_1_1core.html#a3d0f9954758bcfbac8df807f8ca8e1dd", null ],
       [ "normalize_abs", "namespacemim_1_1plug_1_1core.html#a93d18c05e754c8b3cb2469ebf571698c", null ],
@@ -204,7 +199,6 @@ var namespacemim_1_1plug =
       [ "normalize_extrema", "namespacemim_1_1plug_1_1core.html#a3965efe43a42e535a3dde409b3f582ef", null ],
       [ "normalize_icmp", "namespacemim_1_1plug_1_1core.html#a4881a78f9df82cf012cb47de44377105", null ],
       [ "normalize_idx", "namespacemim_1_1plug_1_1core.html#ab5864aab9439e6c149631d6f62ce9f7b", null ],
-      [ "normalize_idx_unsafe", "namespacemim_1_1plug_1_1core.html#a09b295b72152630094b80318daa74b73", null ],
       [ "normalize_nat", "namespacemim_1_1plug_1_1core.html#a02c742e75a36b8e924ddff10bcfa34e6", null ],
       [ "normalize_ncmp", "namespacemim_1_1plug_1_1core.html#ac5e6745c0724f9ad515f710379700abe", null ],
       [ "normalize_pe", "namespacemim_1_1plug_1_1core.html#a1c1bc54436049519a58d20e2c92d0945", null ],
