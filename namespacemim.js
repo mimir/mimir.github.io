@@ -200,6 +200,7 @@ var namespacemim =
     [ "arg_value", "namespacemim.html#af50a6cdbd067cfcee49e649ee8247a33", null ],
     [ "default_level", "namespacemim.html#af79e383fb2cb865a83f01c9f93605c8f", null ],
     [ "drop_self", "namespacemim.html#a243a2a51c74ad154125a9a0a79ef0955", null ],
+    [ "eta_callee", "namespacemim.html#a72287fe61ea5fd985019ed697119a91e", null ],
     [ "eta_step", "namespacemim.html#a63a74e46f0a8192dceceba8b413bf6da", null ],
     [ "eval0", "namespacemim.html#a315d27ac764c7886f4385abe47143dec", null ],
     [ "file_stem", "namespacemim.html#a9fa2465060534febbc42d2cd5a2c1d04", null ],

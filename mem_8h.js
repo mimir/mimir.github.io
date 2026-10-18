@@ -1,6 +1,7 @@
 var mem_8h =
 [
     [ "mim::plug::mem::has_leading_mem", "namespacemim_1_1plug_1_1mem.html#a0b3a4f02c49f44380ce8b9e83a5affc5", null ],
+    [ "mim::plug::mem::has_mem_ty", "namespacemim_1_1plug_1_1mem.html#ab4b98d4f8b1959f6bb675fff1725dc62", null ],
     [ "mim::plug::mem::isa_mem", "namespacemim_1_1plug_1_1mem.html#ada840448f31c6d5165bd35848433793b", null ],
     [ "mim::plug::mem::mem_def", "namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2", null ],
     [ "mim::plug::mem::mem_var", "namespacemim_1_1plug_1_1mem.html#a2446c4ae7a339f03a420a00338ee8e3d", null ],

@@ -232,6 +232,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4260bcf4de298db4a63520dc98c0d4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the (first) element of type <span class="tt"><a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a> a</span> from the given tuple.  <br /></td></tr>
 <tr class="memitem:a2446c4ae7a339f03a420a00338ee8e3d" id="r_a2446c4ae7a339f03a420a00338ee8e3d"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2446c4ae7a339f03a420a00338ee8e3d">mem_var</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
 <tr class="memdesc:a2446c4ae7a339f03a420a00338ee8e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the memory argument of a function if it has one.  <br /></td></tr>
+<tr class="memitem:ab4b98d4f8b1959f6bb675fff1725dc62" id="r_ab4b98d4f8b1959f6bb675fff1725dc62"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab4b98d4f8b1959f6bb675fff1725dc62">has_mem_ty</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *type)</td></tr>
+<tr class="memdesc:ab4b98d4f8b1959f6bb675fff1725dc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">type</code> <span class="tt"><a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> or a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> with a <span class="tt"><a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> component?  <br /></td></tr>
 <tr class="memitem:a4b2337e685c87cd59cd16b2bb90a217a" id="r_a4b2337e685c87cd59cd16b2bb90a217a"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4b2337e685c87cd59cd16b2bb90a217a">strip_mem_ty</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:a4b2337e685c87cd59cd16b2bb90a217a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes recusively all occurences of mem from a type (sigma).  <br /></td></tr>
 <tr id="func-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">mem.Ptr</div></td></tr>
@@ -717,6 +719,39 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ab4b98d4f8b1959f6bb675fff1725dc62" name="ab4b98d4f8b1959f6bb675fff1725dc62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b98d4f8b1959f6bb675fff1725dc62">&#9670;&#160;</a></span>has_mem_ty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::plug::mem::has_mem_ty </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">type</code> <span class="tt"><a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> or a <a class="el" href="classmim_1_1Sigma.html" title="A dependent tuple type.">Sigma</a> with a <span class="tt"><a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a></span> component? </p>
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00054">54</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00054">has_mem_ty()</a>, and <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00054">has_mem_ty()</a>.</p>
+
+</div>
+</div>
 <a id="ada840448f31c6d5165bd35848433793b" name="ada840448f31c6d5165bd35848433793b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada840448f31c6d5165bd35848433793b">&#9670;&#160;</a></span>isa_mem()</h2>
 
@@ -746,7 +781,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="mem_8h_source.html#l00025">isa_mem()</a>, and <a class="el" href="def_8h_source.html#l01120">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00025">isa_mem()</a>, <a class="el" href="mem_8h_source.html#l00038">mem_def()</a>, <a class="el" href="seo_8cpp_source.html#l00205">mim::plug::mem::phase::returns_mem()</a>, <a class="el" href="add__mem_8cpp_source.html#l00043">mim::plug::mem::phase::AddMem::rewrite()</a>, and <a class="el" href="add__mem_8cpp_source.html#l00165">mim::plug::mem::phase::AddMem::rewrite_imm_Tuple()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00025">isa_mem()</a>, <a class="el" href="mem_8h_source.html#l00038">mem_def()</a>, <a class="el" href="add__mem_8cpp_source.html#l00043">mim::plug::mem::phase::AddMem::rewrite()</a>, and <a class="el" href="add__mem_8cpp_source.html#l00165">mim::plug::mem::phase::AddMem::rewrite_imm_Tuple()</a>.</p>
 
 </div>
 </div>
@@ -910,7 +945,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">7</a> of file <a class="el" href="mem_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00977">mim::Lit::isa()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">normalize_lea()</a>, <a class="el" href="mem_8h_source.html#l00073">pointee()</a>, and <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00977">mim::Lit::isa()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">normalize_lea()</a>, <a class="el" href="mem_8h_source.html#l00081">pointee()</a>, and <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">normalize_lea()</a>.</p>
 
@@ -942,7 +977,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">14</a> of file <a class="el" href="mem_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">normalize_load()</a>, <a class="el" href="def_8h_source.html#l00378">mim::Def::num_ops()</a>, <a class="el" href="def_8h_source.html#l00377">mim::Def::op()</a>, <a class="el" href="mem_8h_source.html#l00073">pointee()</a>, and <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>.</p>
+<p class="reference">References <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">normalize_load()</a>, <a class="el" href="def_8h_source.html#l00378">mim::Def::num_ops()</a>, <a class="el" href="def_8h_source.html#l00377">mim::Def::op()</a>, <a class="el" href="mem_8h_source.html#l00081">pointee()</a>, and <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">normalize_load()</a>.</p>
 
@@ -1012,11 +1047,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00100">100</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00108">108</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00100">op_alloc()</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00108">op_alloc()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00100">op_alloc()</a>, <a class="el" href="mem_8h_source.html#l00104">op_alloc()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00099">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, and <a class="el" href="lower__ptr_8cpp_source.html#l00013">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00108">op_alloc()</a>, <a class="el" href="mem_8h_source.html#l00112">op_alloc()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00099">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, and <a class="el" href="lower__ptr_8cpp_source.html#l00013">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -1047,9 +1082,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00104">104</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00112">112</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00100">op_alloc()</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00108">op_alloc()</a>.</p>
 
 </div>
 </div>
@@ -1080,11 +1115,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00081">81</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00089">89</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00134">mim::Axm::as()</a>, <a class="el" href="mem_8h_source.html#l00081">op_lea()</a>, <a class="el" href="mem_8h_source.html#l00073">pointee()</a>, <a class="el" href="tuple_8cpp_source.html#l00167">mim::tuple_of_types()</a>, <a class="el" href="def_8h_source.html#l01120">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01106">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00134">mim::Axm::as()</a>, <a class="el" href="mem_8h_source.html#l00089">op_lea()</a>, <a class="el" href="mem_8h_source.html#l00081">pointee()</a>, <a class="el" href="tuple_8cpp_source.html#l00167">mim::tuple_of_types()</a>, <a class="el" href="def_8h_source.html#l01120">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01106">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00081">op_lea()</a>, and <a class="el" href="mem_8h_source.html#l00089">op_lea_tuple()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00089">op_lea()</a>, and <a class="el" href="mem_8h_source.html#l00097">op_lea_tuple()</a>.</p>
 
 </div>
 </div>
@@ -1117,11 +1152,11 @@ Variables</h2></td></tr>
 
 <p>Successively offsets <code class="param">ptr</code> by each component of the index <code class="param">tuple</code>, peeling one array dimension per <span class="tt"><a class="el" href="#add102b8e1cf16c9e60dbcacb03c9f4eb">mem.lea</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00089">89</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00097">97</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00081">op_lea()</a>, and <a class="el" href="mem_8h_source.html#l00089">op_lea_tuple()</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00089">op_lea()</a>, and <a class="el" href="mem_8h_source.html#l00097">op_lea_tuple()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00089">op_lea_tuple()</a>, and <a class="el" href="lower__ptr_8cpp_source.html#l00013">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00097">op_lea_tuple()</a>, and <a class="el" href="lower__ptr_8cpp_source.html#l00013">mim::plug::buffer::LowerPtr::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -1157,11 +1192,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00129">129</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00137">137</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00129">op_malloc()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00273">mim::plug::core::size</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00137">op_malloc()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00273">mim::plug::core::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00129">op_malloc()</a>, and <a class="el" href="mem_8cpp_source.html#l00014">reg_phases()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00137">op_malloc()</a>, and <a class="el" href="mem_8cpp_source.html#l00014">reg_phases()</a>.</p>
 
 </div>
 </div>
@@ -1203,11 +1238,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Builds the continuation-based <span class="tt"><a class="el" href="#a966b87ce8236f82e10a5c87dc544b9c9">mem.mslot</a> (type, as)</span> applied to <span class="tt">(<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, size)</span> and the continuation <code class="param">ret</code>. <code class="param">ret</code> is a <span class="tt">Cn [<a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a> as, <a class="el" href="#afbf5b5fae36f11d5031d0b7672eabf06">mem.Ptr</a> (type, as)]</span> receiving the fresh slot; its scope delimits the slot's lifetime. </p>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00140">140</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00148">148</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00140">op_mslot()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00273">mim::plug::core::size</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00148">op_mslot()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00273">mim::plug::core::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00140">op_mslot()</a>, and <a class="el" href="mem_8cpp_source.html#l00014">reg_phases()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00148">op_mslot()</a>, and <a class="el" href="mem_8cpp_source.html#l00014">reg_phases()</a>.</p>
 
 </div>
 </div>
@@ -1249,11 +1284,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Builds the continuation-based <span class="tt"><a class="el" href="#ae34ad21e9af0dc16eaaba90794a316f4">mem.slot</a> (type, as)</span> applied to <code class="param">mem</code> and the continuation <code class="param">ret</code>. <code class="param">ret</code> is a <span class="tt">Cn [<a class="el" href="#a44127c99fa94a5143565463d65206ea6">mem.M</a> as, <a class="el" href="#afbf5b5fae36f11d5031d0b7672eabf06">mem.Ptr</a> (type, as)]</span> receiving the fresh slot; its scope delimits the slot's lifetime. </p>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00111">111</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00119">119</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00111">op_slot()</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00119">op_slot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00111">op_slot()</a>, <a class="el" href="heap2stack_8cpp_source.html#l00079">mim::plug::mem::phase::Heap2Stack::rewrite_imm_App()</a>, and <a class="el" href="seo_8cpp_source.html#l00586">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00119">op_slot()</a>, <a class="el" href="heap2stack_8cpp_source.html#l00080">mim::plug::mem::phase::Heap2Stack::rewrite_imm_App()</a>, and <a class="el" href="seo_8cpp_source.html#l00588">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
@@ -1280,11 +1315,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00073">73</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00081">81</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00134">mim::Axm::as()</a>, <a class="el" href="mem_8h_source.html#l00073">pointee()</a>, and <a class="el" href="def_8h_source.html#l01120">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00134">mim::Axm::as()</a>, <a class="el" href="mem_8h_source.html#l00081">pointee()</a>, and <a class="el" href="def_8h_source.html#l01120">mim::Def::type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="heap2stack_8cpp_source.html#l00026">mim::plug::mem::phase::Heap2Stack::analyze()</a>, <a class="el" href="seo_8cpp_source.html#l00183">mim::plug::mem::phase::mk_phi()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">normalize_lea()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">normalize_load()</a>, <a class="el" href="mem_8h_source.html#l00081">op_lea()</a>, <a class="el" href="mem_8h_source.html#l00073">pointee()</a>, <a class="el" href="heap2stack_8cpp_source.html#l00079">mim::plug::mem::phase::Heap2Stack::rewrite_imm_App()</a>, and <a class="el" href="seo_8cpp_source.html#l00215">mim::plug::mem::phase::sloxy_path()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="heap2stack_8cpp_source.html#l00026">mim::plug::mem::phase::Heap2Stack::analyze()</a>, <a class="el" href="seo_8cpp_source.html#l00183">mim::plug::mem::phase::mk_phi()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00007">normalize_lea()</a>, <a class="el" href="mem_2normalizers_8cpp_source.html#l00014">normalize_load()</a>, <a class="el" href="mem_8h_source.html#l00089">op_lea()</a>, <a class="el" href="mem_8h_source.html#l00081">pointee()</a>, <a class="el" href="heap2stack_8cpp_source.html#l00080">mim::plug::mem::phase::Heap2Stack::rewrite_imm_App()</a>, and <a class="el" href="seo_8cpp_source.html#l00207">mim::plug::mem::phase::sloxy_path()</a>.</p>
 
 </div>
 </div>
@@ -1335,11 +1370,11 @@ Variables</h2></td></tr>
 <p>Decomposes the continuation-based <code class="param">slot</code> into <span class="tt">(<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, ret_lam, ret_mem, ptr)</span>, where <span class="tt">ret_mem</span> is the continuation's mem and <span class="tt">ptr</span> is the continuation's slot var; the slot's lifetime is <span class="tt">ret_lam</span>'s scope. </p>
 <p>All but <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> are <span class="tt">nullptr</span> if the continuation is no mutable <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00119">119</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00127">127</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="mem_8h_source.html#l00119">split_slot()</a>.</p>
+<p class="reference">References <a class="el" href="mem_8h_source.html#l00127">split_slot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00586">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>, and <a class="el" href="mem_8h_source.html#l00119">split_slot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00588">mim::plug::mem::phase::SEO::rewrite_imm_App()</a>, and <a class="el" href="mem_8h_source.html#l00127">split_slot()</a>.</p>
 
 </div>
 </div>
@@ -1368,11 +1403,11 @@ Variables</h2></td></tr>
 
 <p>Removes recusively all occurences of mem from a type (sigma). </p>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00054">54</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00062">62</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="mem_8h_source.html#l00054">strip_mem_ty()</a>, and <a class="el" href="def_8h_source.html#l01106">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="mem_8h_source.html#l00062">strip_mem_ty()</a>, and <a class="el" href="def_8h_source.html#l01106">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00372">mim::plug::ll::Emitter::convert_ret_pi()</a>, and <a class="el" href="mem_8h_source.html#l00054">strip_mem_ty()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ll_8h_source.html#l00384">mim::plug::ll::Emitter::convert_ret_pi()</a>, and <a class="el" href="mem_8h_source.html#l00062">strip_mem_ty()</a>.</p>
 
 </div>
 </div>

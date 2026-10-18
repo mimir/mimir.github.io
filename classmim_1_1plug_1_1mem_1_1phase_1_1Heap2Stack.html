@@ -343,9 +343,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Turns a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">mem.alloc</a></span> that does not escape its function (see <a class="el" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html" title="Determines which allocations stay within the scope that allocates them.">mem::EscapeAnalysis</a>) into a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4">mem.slot</a></span>. </p>
-<p>The slot's continuation receives the remainder of the alloc's home. Only allocations of at most <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>:<a class="el" href="namespacemim_1_1plug_1_1mem.html#aebc739f361b2f38c1d0b03c122054777">heap2stack</a>=&lt;n&gt;</span> elements in address space 0 qualify; <span class="tt">0</span> disables this phase. A slot lives until its function returns, so an alloc in a loop of its function stays on the heap. </p>
+<p>The slot's continuation receives the remainder of the alloc's home. Only allocations of at most <span class="tt">-X <a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>:<a class="el" href="namespacemim_1_1plug_1_1mem.html#aebc739f361b2f38c1d0b03c122054777">heap2stack</a>=&lt;n&gt;</span> elements in address space 0 qualify; <span class="tt">0</span> disables this phase. A slot lives until its function returns, so an alloc in a loop of its function stays on the heap. A <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">mem.free</a></span> of a converted alloc is dropped. </p>
 
-<p class="definition">Definition at line <a class="el" href="heap2stack_8h_source.html#l00012">12</a> of file <a class="el" href="heap2stack_8h_source.html">heap2stack.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="heap2stack_8h_source.html#l00013">13</a> of file <a class="el" href="heap2stack_8h_source.html">heap2stack.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a901b069771b03ae51a194aad13d03f14" name="a901b069771b03ae51a194aad13d03f14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a901b069771b03ae51a194aad13d03f14">&#9670;&#160;</a></span>Heap2Stack()</h2>
@@ -403,7 +403,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="heap2stack_8cpp_source.html#l00026">26</a> of file <a class="el" href="heap2stack_8cpp_source.html">heap2stack.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00198">mim::RWPhase::analyze()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00977">mim::Lit::isa()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::log()</a>, <a class="el" href="phase_8h_source.html#l00366">mim::RWPhase::old_world()</a>, and <a class="el" href="mem_8h_source.html#l00073">mim::plug::mem::pointee()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00198">mim::RWPhase::analyze()</a>, <a class="el" href="axm_8h_source.html#l00112">mim::Axm::isa()</a>, <a class="el" href="def_8h_source.html#l00977">mim::Lit::isa()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::log()</a>, <a class="el" href="phase_8h_source.html#l00366">mim::RWPhase::old_world()</a>, and <a class="el" href="mem_8h_source.html#l00081">mim::plug::mem::pointee()</a>.</p>
 
 </div>
 </div>
@@ -432,9 +432,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="heap2stack_8cpp_source.html#l00079">79</a> of file <a class="el" href="heap2stack_8cpp_source.html">heap2stack.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="heap2stack_8cpp_source.html#l00080">80</a> of file <a class="el" href="heap2stack_8cpp_source.html">heap2stack.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="world_8h_source.html#l00405">mim::World::mut_con()</a>, <a class="el" href="phase_8h_source.html#l00367">mim::RWPhase::new_world()</a>, <a class="el" href="mem_8h_source.html#l00111">mim::plug::mem::op_slot()</a>, <a class="el" href="mem_8h_source.html#l00073">mim::plug::mem::pointee()</a>, <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00219">mim::RWPhase::rewrite_imm_App()</a>, and <a class="el" href="lam_8cpp_source.html#l00034">mim::Lam::set()</a>.</p>
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="escape__analysis_8h_source.html#l00052">mim::plug::mem::EscapeAnalysis::freed_alloc()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="world_8h_source.html#l00405">mim::World::mut_con()</a>, <a class="el" href="phase_8h_source.html#l00367">mim::RWPhase::new_world()</a>, <a class="el" href="mem_8h_source.html#l00119">mim::plug::mem::op_slot()</a>, <a class="el" href="mem_8h_source.html#l00081">mim::plug::mem::pointee()</a>, <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00219">mim::RWPhase::rewrite_imm_App()</a>, and <a class="el" href="lam_8cpp_source.html#l00034">mim::Lam::set()</a>.</p>
 
 </div>
 </div>

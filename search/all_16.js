@@ -27,7 +27,7 @@ var searchData=
   ['vec_5ffor_24',['vec_for',['../btensor.html#autotoc_md251',1,'']]],
   ['vec_5fwidth_25',['vec_width',['../namespacemim_1_1plug_1_1tensor.html#a788df686702aeb6a0be9d9246bf1c260',1,'mim::plug::tensor::vec_width'],['../tensor.html#autotoc_md548',1,'vec_width']]],
   ['vec_5fwidths_26',['Vec_widths',['../namespacemim_1_1plug_1_1tensor.html#aa3fb21f154d67eab24d1b1f6bb776469',1,'mim::plug::tensor']]],
-  ['vectorize_27',['vectorize',['../tensor.html#autotoc_md556',1,'']]],
+  ['vectorize_27',['vectorize',['../classmim_1_1plug_1_1ll_1_1Emitter.html#aec564a365e9319d10b5f4660484bef2b',1,'mim::plug::ll::Emitter::vectorize()'],['../tensor.html#autotoc_md556',1,'vectorize']]],
   ['vectorize_5fif_28',['vectorize_if',['../tensor.html#autotoc_md569',1,'']]],
   ['verbose_29',['verbose',['../namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7',1,'mim::plug::refly']]],
   ['verdict_30',['Verdict',['../md_docs_2why-cpp.html#autotoc_md182',1,'']]],
