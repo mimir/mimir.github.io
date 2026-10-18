@@ -1193,12 +1193,6 @@ end
 ///
 axm idx: [m: Nat] → [s: Nat] → [l: Nat] → Idx s, normalize_idx;
 ///
-/// ### idx_unsafe
-///
-/// Creates a literal of type `Idx ⊤`.
-///
-axm idx_unsafe: Nat → Idx ⊤:Nat, normalize_idx_unsafe;
-///
 /// ### bit1
 ///
 /// These *unary* bitwise operations offer all [4 possible operations](https://en.wikipedia.org/wiki/Truth_table#Unary_operations) as summarized in the following table:
@@ -1250,8 +1244,7 @@ axm bit2.( f,      nor, nciff, nfst, niff, nsnd, xor_, nand,
 /// - [`a`rithmetic shift right](https://en.wikipedia.org/wiki/Arithmetic_shift)
 /// - [`l`ogical shift right](https://en.wikipedia.org/wiki/Logical_shift)
 ///
-/// For `Idx s`, the shift count must be smaller than the minimal bit width needed to encode the carrier.
-/// For `Idx ⊤`, this width is `64`; otherwise it is `max(1, ceil(log2(s)))`.
+/// For `Idx s`, the shift count must be smaller than the minimal bit width needed to encode the carrier: `max(1, ceil(log2(s)))`.
 /// Larger counts are undefined behavior.
 ///
 /// - `shr.l` divides the unsigned representative by `2^b`.
@@ -2351,6 +2344,17 @@ axm mslot: [*, a: Nat] as Ta → Fn [M a, size: Nat] → [M a, Ptr Ta];
 /// Load effective address.
 /// Performs address computation by offsetting the passed pointer with index `i`.
 axm lea: {n: Nat, Ts: «n; *», a: Nat} → [Ptr («j: n; Ts#j», a), i: Idx n] → Ptr (Ts#i, a), normalize_lea;
+///
+/// ### decay
+///
+/// Pointer to the first element of an array, akin to C's array-to-pointer decay.
+anx lam decay {n: Nat, T: *, a: Nat} (p: Ptr («n; T», a)): Ptr (T, a) = lea (p, 0:(Idx n));
+///
+/// ### assume
+///
+/// Views `p` as a pointer to an array of `n` elements.
+/// @warning This is *unchecked*: the caller vouches for the length, e.g. for memory a C function hands over.
+axm assume: {T: *, a: Nat} as Ta → [Ptr Ta, n: Nat] → Ptr («n; T», a);
 ///
 /// ## Phases
 ///
