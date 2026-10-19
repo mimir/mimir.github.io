@@ -38,6 +38,7 @@ var hierarchy =
     [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", null ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", null ],
     [ "mim::Flags", "structmim_1_1Flags.html", null ],
+    [ "mim::ast::AST::ForeignAlias", "classmim_1_1ast_1_1AST.html#structmim_1_1ast_1_1AST_1_1ForeignAlias", null ],
     [ "mim::plug::clos::phase::FreeDefAna", "classmim_1_1plug_1_1clos_1_1phase_1_1FreeDefAna.html", null ],
     [ "mim::GIDHash&lt; T &gt;", "structmim_1_1GIDHash.html", null ],
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", null ],
@@ -352,7 +353,7 @@ var hierarchy =
       [ "mim::Wrap", "classmim_1_1Wrap.html", null ]
     ] ],
     [ "mim::Shape", "classmim_1_1Shape.html", null ],
-    [ "mim::Nest::Node::SiblDeps&lt; Forward &gt;", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
+    [ "mim::Nest::Node::SiblDeps", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
     [ "mim::Sieve", "classmim_1_1Sieve.html", null ],
     [ "mim::plug::tensor::phase::Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", null ],
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],

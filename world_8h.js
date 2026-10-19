@@ -11,6 +11,7 @@ var world_8h =
       [ "curr_loc", "structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a", null ],
       [ "curr_sub", "structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1", null ],
       [ "frozen", "structmim_1_1World_1_1State.html#a3fbd87f24478b2e87fb87e19e6206a13", null ],
+      [ "lenient", "structmim_1_1World_1_1State.html#a84e6059624f0d1b241fd51c2ff0bcf89", null ],
       [ "name", "structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6", null ]
     ] ],
     [ "mim::World::Externals", "classmim_1_1World_1_1Externals.html", "classmim_1_1World_1_1Externals" ],

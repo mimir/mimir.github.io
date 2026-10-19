@@ -9,9 +9,8 @@ var searchData=
   ['max_5ffp_5fiters_6',['max_fp_iters',['../structmim_1_1Flags.html#abc3ed0465da8b206d319045542edc24d',1,'mim::Flags']]],
   ['max_5fplugin_5fsize_7',['Max_Plugin_Size',['../structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b',1,'mim::Annex']]],
   ['meta_8',['meta',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a752ec154f7186e28dd9fc549cd31287b',1,'mim::plug::btensor::MapRedPost']]],
-  ['mim_5flocal_9',['mim_local',['../structmim_1_1Flags.html#a02b769c888db2f4ec9686f339c4fd57b',1,'mim::Flags']]],
-  ['mim_5ftyped_5flet_10',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
-  ['minor_11',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
-  ['mods_12',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]],
-  ['muts_5fbit_13',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]]
+  ['mim_5ftyped_5flet_9',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
+  ['minor_10',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
+  ['mods_11',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]],
+  ['muts_5fbit_12',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]]
 ];

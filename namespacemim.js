@@ -227,6 +227,7 @@ var namespacemim =
     [ "is_seq_arity", "namespacemim.html#a4fb7661e76f31be41db0ec3b4e88a397", null ],
     [ "is_trivial", "namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987", null ],
     [ "is_unit", "namespacemim.html#a2efd858db7ed2bd9c205337f6129daa8", null ],
+    [ "is_value_telescope", "namespacemim.html#a6eb04dd474a5900c3ce9e9959a5cd450", null ],
     [ "isa_axes", "namespacemim.html#a4ddb0b64689ed9de621fe712d8d42411", null ],
     [ "isa_flattenable", "namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b", null ],
     [ "isa_flex_rank", "namespacemim.html#a09c6e231d7bdc610a4957da7fa3cddae", null ],

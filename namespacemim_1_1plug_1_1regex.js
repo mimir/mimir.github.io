@@ -18,12 +18,16 @@ var namespacemim_1_1plug_1_1regex =
     [ "lower_regex", "namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700", null ],
     [ "neg_lookahead", "namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be", null ],
     [ "not_", "namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2", null ],
+    [ "Pos", "namespacemim_1_1plug_1_1regex.html#a79ef3bb01e318a7841181bcf28939d6c", null ],
+    [ "pos", "namespacemim_1_1plug_1_1regex.html#ab3a764f9d39b068e136ecdb2d8a0a40a", null ],
     [ "quant", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55", [
       [ "optional", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad57c24f3fe52d16e7169b912dd647f0d", null ],
       [ "star", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55a8ff953dd97c4405234a04291dee39e0b", null ],
       [ "plus", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad7d18cfb3a0d8293e2f5d94ea30e04d2", null ]
     ] ],
     [ "range", "namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75", null ],
+    [ "RE", "namespacemim_1_1plug_1_1regex.html#ab773acfd1b51cdf10f8ef7764bf8ac44", null ],
+    [ "Res", "namespacemim_1_1plug_1_1regex.html#a991b36716d0b2422fa9077600a5b7f4f", null ],
     [ "any_unwanted_for_not", "namespacemim_1_1plug_1_1regex.html#afc913cbf58308232750894b06c902854", null ],
     [ "compare_re", "namespacemim_1_1plug_1_1regex.html#ae5b509ae2785246a5099b89e294ac2fe", null ],
     [ "equals_any", "namespacemim_1_1plug_1_1regex.html#aa8cfe9b14b05191510c403314b69f2f7", null ],

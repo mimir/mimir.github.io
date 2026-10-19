@@ -175,11 +175,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('opt.html','','
 <div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2opt"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1opt.html" title="The opt Plugin">mim::plug::opt</a></dd></dl>
 <p>Manages the default compilation pipeline of <a class="el" href="namespaceMim.html">Mim</a> programs using plugins.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md434"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md437"></a>
 Dependencies</h1>
-<p><span class="tt">opt</span> only depends on <span class="tt">compile</span>. Every other plugin is referenced <em>by name</em> through <span class="tt">compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
+<p><span class="tt">opt</span> depends on <span class="tt">compile</span> and on <span class="tt">mem</span>, whose SEO is the general-purpose optimizer, so it references their phases directly. Every other plugin is referenced <em>by name</em> through <span class="tt">compile.named</span> (which resolves to the plugin's annex iff it is loaded) and <span class="tt">compile.cond</span> (which gates a whole sub-pipeline on a plugin being loaded). This way the default pipeline does not have to import any of the optional plugins.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md435"></a>
+<div class="line">plugin mem;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md438"></a>
 The default pipeline</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">extern lam _default_compile (): compile.Phase =</div>
 <div class="line">    let optimize =</div>
@@ -190,8 +191,8 @@ The default pipeline</h1>
 <div class="line">                compile.beta_red,</div>
 <div class="line">                compile.eta_conv,</div>
 <div class="line">            ),</div>
-<div class="line">            compile.named &quot;mem.heap2stack&quot;,</div>
-<div class="line">            compile.named &quot;mem.seo&quot;,</div>
+<div class="line">            mem.heap2stack,</div>
+<div class="line">            mem.seo,</div>
 <div class="line">            compile.adce,</div>
 <div class="line">            compile.static_arg_opt,</div>
 <div class="line">        );</div>
@@ -207,7 +208,7 @@ The default pipeline</h1>
 <div class="line">        compile.named &quot;tensor.fuse_tensor&quot;,</div>
 <div class="line">        compile.named &quot;tensor.lower_to_mem&quot;,</div>
 <div class="line">        // tensor bufferization emits mem.M placeholders that need a mem chain.</div>
-<div class="line">        compile.cond &quot;tensor&quot; (compile.named &quot;mem.add_mem&quot;),</div>
+<div class="line">        compile.cond &quot;tensor&quot; mem.add_mem,</div>
 <div class="line"> </div>
 <div class="line">        // btensor</div>
 <div class="line">        compile.named &quot;gpu.lower_btensor_map_reduce&quot;,</div>
@@ -233,7 +234,7 @@ The default pipeline</h1>
 <div class="line">            compile.phases ff (</div>
 <div class="line">                compile.scalarize,</div>
 <div class="line">                compile.named &quot;clos.branch_clos&quot;,</div>
-<div class="line">                compile.named &quot;mem.seo&quot;,</div>
+<div class="line">                mem.seo,</div>
 <div class="line">            );</div>
 <div class="line">        compile.cond &quot;clos&quot; (</div>
 <div class="line">            compile.phases ff (</div>
@@ -258,8 +259,8 @@ The default pipeline</h1>
 <div class="line">        optimize,</div>
 <div class="line">        compile.dispatch_normalize,</div>
 <div class="line">        compile.ret_wrap,</div>
-<div class="line">        compile.named &quot;mem.free_locals&quot;,</div>
-<div class="line">        compile.named &quot;mem.alloc2malloc_repl&quot;,</div>
+<div class="line">        mem.free_locals,</div>
+<div class="line">        mem.alloc2malloc_repl,</div>
 <div class="line">        compile.named &quot;refly.remove_dbg_repl&quot;,</div>
 <div class="line">        compile.named &quot;gpu.check_addr_spaces_repl&quot;,</div>
 <div class="line">        compile.named &quot;ll.emit&quot;,</div>

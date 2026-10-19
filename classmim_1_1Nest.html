@@ -204,6 +204,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf12b333534fe887264a7abb4317a66b" id="r_aaf12b333534fe887264a7abb4317a66b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf12b333534fe887264a7abb4317a66b">muts</a> () const</td></tr>
 <tr class="memitem:a619bc4de18e21d5d585355f4beaf2769" id="r_a619bc4de18e21d5d585355f4beaf2769"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a619bc4de18e21d5d585355f4beaf2769">nodes</a> () const</td></tr>
 <tr class="memitem:a5aa4df61ed488a9b7bcda3021274b9a2" id="r_a5aa4df61ed488a9b7bcda3021274b9a2"><td class="memItemLeft">const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a5aa4df61ed488a9b7bcda3021274b9a2">operator[]</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *mut) const</td></tr>
+<tr class="memitem:a00034c8878e4e587a3b2d756af08a225" id="r_a00034c8878e4e587a3b2d756af08a225"><td class="memItemLeft">const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a00034c8878e4e587a3b2d756af08a225">inest</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memdesc:a00034c8878e4e587a3b2d756af08a225"><td class="mdescLeft">&#160;</td><td class="mdescRight">The innermost <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> binding a free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code>, or the <a class="el" href="#ac099472ee5301d183779c4c70d2b7ef3">root()</a> if there is none.  <br /></td></tr>
 <tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Iterators</div></td></tr>
 <tr class="memitem:ae96bfa6aa34712fdc4fe2e2d322970b6" id="r_ae96bfa6aa34712fdc4fe2e2d322970b6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae96bfa6aa34712fdc4fe2e2d322970b6">begin</a> () const</td></tr>
 <tr class="memitem:ac3a1139ee7db6d31d7d6c159f22ca3f8" id="r_ac3a1139ee7db6d31d7d6c159f22ca3f8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac3a1139ee7db6d31d7d6c159f22ca3f8">end</a> () const</td></tr>
@@ -216,17 +218,14 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b83453dfda47591c4b209e319823164" id="r_a8b83453dfda47591c4b209e319823164"><td class="memTemplParams" colspan="2">template&lt;bool bootstrapping = false&gt; </td></tr>
-<tr class="memitem:a8b83453dfda47591c4b209e319823164 template"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8b83453dfda47591c4b209e319823164">lca</a> (const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *n, const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *m)</td></tr>
-<tr class="memdesc:a8b83453dfda47591c4b209e319823164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common ancestor of <code class="param">n</code> and <code class="param">m</code>.  <br /></td></tr>
+<tr class="memitem:aa971059ff841ddd3a4de9c30a8a10401" id="r_aa971059ff841ddd3a4de9c30a8a10401"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa971059ff841ddd3a4de9c30a8a10401">lca</a> (const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *n, const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *m)</td></tr>
+<tr class="memdesc:aa971059ff841ddd3a4de9c30a8a10401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Least common ancestor of <code class="param">n</code> and <code class="param">m</code>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Builds a nesting tree for all mutables/binders. </p>
-<dl class="section note"><dt>Note</dt><dd>This type should typically be constructed as <span class="tt">const</span>, because some member functions used during lookup have private non-<span class="tt">const</span> overloads. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> nest = <a class="code hl_function" href="#ad3b42fbd77a9cac91221689797cad7d9">Nest</a>(lam);</div>
-<div class="ttc" id="aclassmim_1_1Nest_html_ad3b42fbd77a9cac91221689797cad7d9"><div class="ttname"><a href="#ad3b42fbd77a9cac91221689797cad7d9">mim::Nest::Nest</a></div><div class="ttdeci">Nest(Def *root)</div><div class="ttdef"><b>Definition</b> <a href="nest_8cpp_source.html#l00009">nest.cpp:9</a></div></div>
-</div><!-- fragment --> </dd></dl>
+<p>The constructor also computes sibling dependencies, SCCs, loop depths, and dominance. A <a class="el" href="classmim_1_1Nest.html" title="Builds a nesting tree for all mutables/binders.">Nest</a> is immutable afterwards. </p>
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00030">30</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00025">25</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad3b42fbd77a9cac91221689797cad7d9" name="ad3b42fbd77a9cac91221689797cad7d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3b42fbd77a9cac91221689797cad7d9">&#9670;&#160;</a></span>Nest() <span class="overload">[1/5]</span></h2>
@@ -245,9 +244,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00009">9</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="nest_8h_source.html#l00224">world()</a>.</p>
+<p class="reference">References <a class="el" href="nest_8h_source.html#l00194">world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="clos__conv__prep_8cpp_source.html#l00018">mim::plug::clos::phase::ClosConvPrep::analyze()</a>, <a class="el" href="free__locals_8cpp_source.html#l00007">mim::plug::mem::phase::FreeLocals::analyze()</a>, <a class="el" href="#af81c6f1257eac51bf6060a64dba77073">Nest()</a>, <a class="el" href="#a135ef8fe82ebe23761ba300dfb367758">Nest()</a>, and <a class="el" href="#aa96dbe240f8e8d20708bee30489e1ca4">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="clos__conv__prep_8cpp_source.html#l00018">mim::plug::clos::phase::ClosConvPrep::analyze()</a>, <a class="el" href="free__locals_8cpp_source.html#l00007">mim::plug::mem::phase::FreeLocals::analyze()</a>, <a class="el" href="#af81c6f1257eac51bf6060a64dba77073">Nest()</a>, <a class="el" href="#a135ef8fe82ebe23761ba300dfb367758">Nest()</a>, <a class="el" href="nest_8cpp_source.html#l00025">Nest()</a>, and <a class="el" href="#aa96dbe240f8e8d20708bee30489e1ca4">operator=()</a>.</p>
 
 </div>
 </div>
@@ -277,9 +276,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p><em>Virtual root</em> with <code class="param">muts</code> as children; <code class="param">transitive</code> also adds the closed mutables they reach. </p>
 
-<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00015">15</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00016">16</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="nest_8h_source.html#l00234">muts()</a>, and <a class="el" href="nest_8h_source.html#l00224">world()</a>.</p>
+<p class="reference">References <a class="el" href="nest_8h_source.html#l00204">muts()</a>, and <a class="el" href="nest_8h_source.html#l00194">world()</a>.</p>
 
 </div>
 </div>
@@ -300,9 +299,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p><em>Virtual root</em> with all <a class="el" href="classmim_1_1World.html#ac5b0195c62710ec975a71944002a53b5">World::externals</a> as children. </p>
 
-<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00024">24</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00025">25</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="world_8cpp_source.html#l01191">mim::World::for_each()</a>, and <a class="el" href="nest_8h_source.html#l00224">world()</a>.</p>
+<p class="reference">References <a class="el" href="nest_8cpp_source.html#l00009">Nest()</a>, and <a class="el" href="nest_8h_source.html#l00194">world()</a>.</p>
 
 </div>
 </div>
@@ -384,7 +383,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00246">246</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00216">216</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 </div>
 </div>
@@ -411,9 +410,9 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00227">227</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00197">197</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00285">mim::Def::has_free_vars_in()</a>, and <a class="el" href="nest_8h_source.html#l00226">vars()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00285">mim::Def::has_free_vars_in()</a>, and <a class="el" href="nest_8h_source.html#l00196">vars()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="schedule_8cpp_source.html#l00010">mim::Scheduler::Scheduler()</a>.</p>
 
@@ -463,7 +462,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="dot_8cpp_source.html#l00281">281</a> of file <a class="el" href="dot_8cpp_source.html">dot.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00248">mim::DotConfig::dark</a>, and <a class="el" href="nest_8h_source.html#l00225">root()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00248">mim::DotConfig::dark</a>, and <a class="el" href="nest_8h_source.html#l00195">root()</a>.</p>
 
 </div>
 </div>
@@ -494,7 +493,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00258">258</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00227">227</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 </div>
 </div>
@@ -521,7 +520,37 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00247">247</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00217">217</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+
+</div>
+</div>
+<a id="a00034c8878e4e587a3b2d756af08a225" name="a00034c8878e4e587a3b2d756af08a225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00034c8878e4e587a3b2d756af08a225">&#9670;&#160;</a></span>inest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> * mim::Nest::inest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The innermost <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> binding a free <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> of <code class="param">def</code>, or the <a class="el" href="#ac099472ee5301d183779c4c70d2b7ef3">root()</a> if there is none. </p>
+<p>For a mutable in this <a class="el" href="classmim_1_1Nest.html" title="Builds a nesting tree for all mutables/binders.">Nest</a>, that is its <a class="el" href="classmim_1_1Nest_1_1Node.html#af0dd6fc13e1e752eb7864b6c346fe985" title="Immediate nester/parent of this Node.">Node::inest</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00211">211</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 </div>
 </div>
@@ -548,25 +577,23 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00228">228</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00198">198</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lam__spec_8cpp_source.html#l00009">mim::LamSpec::rewrite_imm_App()</a>.</p>
 
 </div>
 </div>
-<a id="a8b83453dfda47591c4b209e319823164" name="a8b83453dfda47591c4b209e319823164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b83453dfda47591c4b209e319823164">&#9670;&#160;</a></span>lca()</h2>
+<a id="aa971059ff841ddd3a4de9c30a8a10401" name="aa971059ff841ddd3a4de9c30a8a10401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa971059ff841ddd3a4de9c30a8a10401">&#9670;&#160;</a></span>lca()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;bool bootstrapping&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">template const <a class="el" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a> * mim::Nest::lca&lt; false &gt; </td>
+          <td class="memname">const <a class="el" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a> * mim::Nest::lca </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classmim_1_1Nest_1_1Node.html">Node</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
         </tr>
@@ -585,9 +612,9 @@ template&lt;bool bootstrapping&gt; </div>
 
 <p>Least common ancestor of <code class="param">n</code> and <code class="param">m</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00112">112</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8cpp_source.html#l00174">174</a> of file <a class="el" href="nest_8cpp_source.html">nest.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="nest_8h_source.html#l00038">mim::Nest::Node::inest()</a>.</p>
+<p class="reference">References <a class="el" href="nest_8h_source.html#l00033">mim::Nest::Node::inest()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="schedule_8cpp_source.html#l00055">mim::Scheduler::late()</a>.</p>
 
@@ -616,9 +643,9 @@ template&lt;bool bootstrapping&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00234">234</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00204">204</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="nest_8cpp_source.html#l00015">Nest()</a>, and <a class="el" href="schedule_8cpp_source.html#l00010">mim::Scheduler::Scheduler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="nest_8cpp_source.html#l00016">Nest()</a>, and <a class="el" href="schedule_8cpp_source.html#l00010">mim::Scheduler::Scheduler()</a>.</p>
 
 </div>
 </div>
@@ -645,7 +672,7 @@ template&lt;bool bootstrapping&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00235">235</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00205">205</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 </div>
 </div>
@@ -699,7 +726,7 @@ template&lt;bool bootstrapping&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00238">238</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00208">208</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 </div>
 </div>
@@ -726,7 +753,7 @@ template&lt;bool bootstrapping&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00225">225</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00195">195</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="dot_8cpp_source.html#l00281">dot()</a>, <a class="el" href="schedule_8cpp_source.html#l00039">mim::Scheduler::early()</a>, <a class="el" href="schedule_8cpp_source.html#l00055">mim::Scheduler::late()</a>, and <a class="el" href="schedule_8cpp_source.html#l00103">mim::Scheduler::schedule()</a>.</p>
 
@@ -757,9 +784,9 @@ template&lt;bool bootstrapping&gt; </div>
 
 <p>All <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>s occurring in this <a class="el" href="classmim_1_1Nest.html" title="Builds a nesting tree for all mutables/binders.">Nest</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00226">226</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00196">196</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="nest_8h_source.html#l00227">contains()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="nest_8h_source.html#l00197">contains()</a>.</p>
 
 </div>
 </div>
@@ -786,9 +813,9 @@ template&lt;bool bootstrapping&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00224">224</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nest_8h_source.html#l00194">194</a> of file <a class="el" href="nest_8h_source.html">nest.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="nest_8cpp_source.html#l00009">Nest()</a>, <a class="el" href="nest_8cpp_source.html#l00024">Nest()</a>, <a class="el" href="nest_8cpp_source.html#l00015">Nest()</a>, and <a class="el" href="schedule_8h_source.html#l00059">mim::Scheduler::world()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="nest_8cpp_source.html#l00009">Nest()</a>, <a class="el" href="nest_8cpp_source.html#l00025">Nest()</a>, <a class="el" href="nest_8cpp_source.html#l00016">Nest()</a>, and <a class="el" href="schedule_8h_source.html#l00059">mim::Scheduler::world()</a>.</p>
 
 </div>
 </div>

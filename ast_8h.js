@@ -7,6 +7,11 @@ var ast_8h =
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", "structmim_1_1ast_1_1Mods" ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", "structmim_1_1ast_1_1AnnexInfo" ],
     [ "mim::ast::AST", "classmim_1_1ast_1_1AST.html", "classmim_1_1ast_1_1AST" ],
+    [ "mim::ast::AST::ForeignAlias", "classmim_1_1ast_1_1AST.html#structmim_1_1ast_1_1AST_1_1ForeignAlias", [
+      [ "alias", "classmim_1_1ast_1_1AST.html#ae9abed72416ebdefe9991b356f24d8cc", null ],
+      [ "annex", "classmim_1_1ast_1_1AST.html#ad8209a2cf4c8542637a8ab81e7268ece", null ],
+      [ "sub", "classmim_1_1ast_1_1AST.html#a635e69c54ef3aa4672aca622f9d4d378", null ]
+    ] ],
     [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", "classmim_1_1ast_1_1Node" ],
     [ "mim::ast::Expr", "classmim_1_1ast_1_1Expr.html", "classmim_1_1ast_1_1Expr" ],
     [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", "classmim_1_1ast_1_1Decl" ],

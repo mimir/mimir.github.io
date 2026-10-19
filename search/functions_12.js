@@ -35,7 +35,7 @@ var searchData=
   ['shape_32',['shape',['../classmim_1_1ast_1_1SeqExpr.html#af2f24f61b6a2ba06f171922830145757',1,'mim::ast::SeqExpr::shape()'],['../classmim_1_1Seq.html#ac8b9403e1efb2be14417d5dfc33c096b',1,'mim::Seq::shape()']]],
   ['shift_5fenv_33',['shift_env',['../namespacemim_1_1plug_1_1clos.html#a50b8b1bc3c13d8035fc3db8cf4c70772',1,'mim::plug::clos']]],
   ['should_5freduce_34',['should_reduce',['../namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890',1,'mim::ast']]],
-  ['sibl_5fdeps_35',['sibl_deps',['../classmim_1_1Nest_1_1Node.html#a2a29ed570ed6ad81039fa1ad52a9b784',1,'mim::Nest::Node::sibl_deps()'],['../classmim_1_1Nest_1_1Node.html#a42cacaae58788b53f4aeaea495b1293e',1,'mim::Nest::Node::sibl_deps() const']]],
+  ['sibl_5fdeps_35',['sibl_deps',['../classmim_1_1Nest_1_1Node.html#a228346b558d1045c98c1b0eaad55a5a5',1,'mim::Nest::Node']]],
   ['sieve_36',['Sieve',['../classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441',1,'mim::Sieve::Sieve(size_t num)'],['../classmim_1_1Sieve.html#aeda26aa0fda64fbd25ce3dfb19d968b5',1,'mim::Sieve::Sieve(size_t num, std::predicate&lt; size_t &gt; auto pred)'],['../classmim_1_1Sieve.html#a533dea9bd67441290965671db10f6523',1,'mim::Sieve::Sieve(Defs ops, std::predicate&lt; const Def * &gt; auto pred)']]],
   ['sigma_37',['sigma',['../classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856',1,'mim::World::sigma(Defs ops)'],['../classmim_1_1World.html#ad33564f05ba959e62ed53b811f6296d0',1,'mim::World::sigma()']]],
   ['sigmaexpr_38',['SigmaExpr',['../classmim_1_1ast_1_1SigmaExpr.html#af4aa536aa2e8c456f558b02ad414b8a2',1,'mim::ast::SigmaExpr']]],

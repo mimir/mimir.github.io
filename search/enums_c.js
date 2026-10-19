@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m_0',['M',['../namespacemim_1_1plug_1_1mem.html#a44127c99fa94a5143565463d65206ea6',1,'mim::plug::mem']]],
+  ['m_0',['M',['../namespacemim_1_1plug_1_1core.html#a235e2ad13b75649e9e189bc2dfe83f42',1,'mim::plug::core']]],
   ['malloc_1',['malloc',['../namespacemim_1_1plug_1_1mem.html#ad6931e3bea27087eb6646508f7db27f5',1,'mim::plug::mem']]],
   ['map_2',['Map',['../namespacemim_1_1plug_1_1ord.html#abc7482320010e15a67481e999f1e8e37',1,'mim::plug::ord']]],
   ['map_3',['map',['../namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0',1,'mim::plug::affine::map'],['../namespacemim_1_1plug_1_1tensor.html#ad8d4e9b960bda9c68eb671e4e988fb37',1,'mim::plug::tensor::map']]],

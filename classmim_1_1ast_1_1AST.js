@@ -1,10 +1,16 @@
 var classmim_1_1ast_1_1AST =
 [
+    [ "ForeignAlias", "classmim_1_1ast_1_1AST.html#structmim_1_1ast_1_1AST_1_1ForeignAlias", [
+      [ "alias", "classmim_1_1ast_1_1AST.html#ae9abed72416ebdefe9991b356f24d8cc", null ],
+      [ "annex", "classmim_1_1ast_1_1AST.html#ad8209a2cf4c8542637a8ab81e7268ece", null ],
+      [ "sub", "classmim_1_1ast_1_1AST.html#a635e69c54ef3aa4672aca622f9d4d378", null ]
+    ] ],
     [ "Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ],
     [ "AST", "classmim_1_1ast_1_1AST.html#ac47fa079b872e2f002b3c5ff197dded4", null ],
     [ "AST", "classmim_1_1ast_1_1AST.html#a729e3532bf11dbdfd0cd164ab8ead3a8", null ],
     [ "AST", "classmim_1_1ast_1_1AST.html#acc541ea5aeb88087c4c0b461cc15ef7e", null ],
     [ "~AST", "classmim_1_1ast_1_1AST.html#af6eb75cf58c8827dfac9515e3552cb9b", null ],
+    [ "add_foreign_alias", "classmim_1_1ast_1_1AST.html#a6585e03dd403bdd0e390fb5ed787569d", null ],
     [ "bootstrap", "classmim_1_1ast_1_1AST.html#a6b9ce37fadefc4e22c611481193b2db4", null ],
     [ "bootstrap_py", "classmim_1_1ast_1_1AST.html#a5644a17af6ed0dd677825604bf131e9c", null ],
     [ "copy", "classmim_1_1ast_1_1AST.html#a23ed7c37243eb9f9e4213df5daa14754", null ],
@@ -13,6 +19,7 @@ var classmim_1_1ast_1_1AST =
     [ "file", "classmim_1_1ast_1_1AST.html#ade5287029f218b478dcf69fbdd81d2be", null ],
     [ "name2annex", "classmim_1_1ast_1_1AST.html#ab000cef8ed6166c2c71aa6c43bb1990f", null ],
     [ "plugin2annexes", "classmim_1_1ast_1_1AST.html#a649c6f8468518ab7a934003528cd9f6c", null ],
+    [ "plugin2foreign_aliases", "classmim_1_1ast_1_1AST.html#a6e4c48d4a8c2d1e97f44955083a6857f", null ],
     [ "ptr", "classmim_1_1ast_1_1AST.html#a2f9bbf195db6ddc9f0ada8b71cefa90c", null ],
     [ "scope", "classmim_1_1ast_1_1AST.html#a00cfa82dbb0b12ac5df6d9a35bf5aaa1", null ],
     [ "sym", "classmim_1_1ast_1_1AST.html#aabc7c822c356b3cc17ce638289966b13", null ],

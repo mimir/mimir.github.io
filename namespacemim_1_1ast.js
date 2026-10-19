@@ -84,6 +84,7 @@ var namespacemim_1_1ast =
     [ "isa_math_f", "namespacemim_1_1ast.html#ad2a1c1594048c3494e84b1150fd23576", null ],
     [ "load_plugin", "namespacemim_1_1ast.html#a91e7627a30cd8ff68e463c60e633e1a1", null ],
     [ "load_plugins", "namespacemim_1_1ast.html#a66a1aa2d36d5c50e3d3a99d56e32fd97", null ],
+    [ "loc2plugin", "namespacemim_1_1ast.html#aa5f6723d6e030efed52caf97543750bd", null ],
     [ "negate", "namespacemim_1_1ast.html#abd351741bb825f5c91b5e0314cb0c1d6", null ],
     [ "operator<<", "namespacemim_1_1ast.html#a1631cb88419d6782f500b090cdb8befc", null ],
     [ "operator<<", "namespacemim_1_1ast.html#ae8647f142657ffe401f0ca6f29c09b74", null ],

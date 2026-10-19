@@ -35,6 +35,7 @@ var namespacemim_1_1plug_1_1clos =
     [ "ctype", "namespacemim_1_1plug_1_1clos.html#a7820bb02f38dcb275393c75227c85114", null ],
     [ "env_param", "namespacemim_1_1plug_1_1clos.html#a5289fbf3ff1c99e6fda2d6a8cac883ce", null ],
     [ "env_param", "namespacemim_1_1plug_1_1clos.html#ae5fdb7afb6a9b96d4cc21ae5472d58c6", null ],
+    [ "is_telescope_cn", "namespacemim_1_1plug_1_1clos.html#a225be3897e4415ca374fc77227ed53d6", null ],
     [ "isa_clos_lit", "namespacemim_1_1plug_1_1clos.html#a08e2dd10f68834ee59b63662b9a63c06", null ],
     [ "isa_clos_type", "namespacemim_1_1plug_1_1clos.html#ae10a86ed5dc2d90d8365cec5ca883d19", null ],
     [ "isa_var_proj", "namespacemim_1_1plug_1_1clos.html#ab1f88edfe3f1a618024035ed9982e96b", null ],

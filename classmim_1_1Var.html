@@ -435,8 +435,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:aeae43231a2e0f690bdb5c6d4d2b05c71" id="r_aeae43231a2e0f690bdb5c6d4d2b05c71"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71">Dump</a> { <br />
 &#160;&#160;<a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a6d952cd5600ef0b8ed1c5ecf4b4936ff">Expr</a>
 , <br />
-&#160;&#160;<a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a509820290d57f333403f490dde7316f4">Local</a>
-, <br />
 &#160;&#160;<a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a5d113f2038d289f391614c39043629e8">Scope</a>
 , <br />
 &#160;&#160;<a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71ab1c94ca2fbc3e78fc30069c8d0f01680">All</a>
@@ -482,7 +480,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>A variable introduced by a binder (mutable). </p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a> will keep its type_ field as <span class="tt">nullptr</span>. Instead, <a class="el" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c" title="Yields the &quot;raw&quot; type of this Def (maybe nullptr).">Def::type()</a> and <a class="el" href="#a42bc9b2f4d88e8d4cd8cf8f4b3d45db9">Var::type()</a> will compute the type via <a class="el" href="classmim_1_1Def.html#ae27e362495c89965b30a40f16cfd860a" title="If this is a binder, compute the type of its Variable.">Def::var_type()</a>. The reason is that the type could need a <a class="el" href="classmim_1_1Def.html#a29019dd6f96db3881b604f0b16cba29a" title="If Holes have been filled, reconstruct the program without them.">Def::zonk()</a>. But we don't want to have several <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>s that belong to the same binder. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00858">858</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00856">856</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a7e86cad5b81a007f8d25825b97ec83c4" name="a7e86cad5b81a007f8d25825b97ec83c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e86cad5b81a007f8d25825b97ec83c4">&#9670;&#160;</a></span>binder()</h2>
@@ -510,9 +508,9 @@ Additional Inherited Members</h2></td></tr>
 <p>The binder of this <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>. </p>
 <p>It is <em>not</em> an official <a class="el" href="classmim_1_1Def.html#a67a94030742a4217fe19bb739990f73e">Def::op</a> but stored in Def::binder_, so it is out of the operand graph but still hashed. </p>
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00868">868</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00866">866</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00514">mim::Def::cmp()</a>, <a class="el" href="def_8cpp_source.html#l00399">mim::Def::in_scope()</a>, <a class="el" href="clos_8h_source.html#l00073">mim::plug::clos::isa_var_proj()</a>, <a class="el" href="world_8cpp_source.html#l01141">mim::World::reduce()</a>, <a class="el" href="world_8cpp_source.html#l01172">mim::World::reduce()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00099">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, <a class="el" href="remove__double__syncs_8cpp_source.html#l00009">mim::plug::gpu::phase::RemoveDoubleSyncs::rewrite_imm_App()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00070">mim::EtaConv::rewrite_imm_Var()</a>, <a class="el" href="seo_8cpp_source.html#l00652">mim::plug::mem::phase::SEO::rewrite_imm_Var()</a>, and <a class="el" href="def_8h_source.html#l00869">type()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8cpp_source.html#l00514">mim::Def::cmp()</a>, <a class="el" href="def_8cpp_source.html#l00399">mim::Def::in_scope()</a>, <a class="el" href="clos_8h_source.html#l00073">mim::plug::clos::isa_var_proj()</a>, <a class="el" href="world_8cpp_source.html#l01142">mim::World::reduce()</a>, <a class="el" href="world_8cpp_source.html#l01173">mim::World::reduce()</a>, <a class="el" href="lower__typed__clos_8cpp_source.html#l00101">mim::plug::clos::phase::LowerTypedClos::rewrite()</a>, <a class="el" href="remove__double__syncs_8cpp_source.html#l00009">mim::plug::gpu::phase::RemoveDoubleSyncs::rewrite_imm_App()</a>, <a class="el" href="eta__conv_8cpp_source.html#l00070">mim::EtaConv::rewrite_imm_Var()</a>, <a class="el" href="seo_8cpp_source.html#l00653">mim::plug::mem::phase::SEO::rewrite_imm_Var()</a>, and <a class="el" href="def_8h_source.html#l00867">type()</a>.</p>
 
 </div>
 </div>
@@ -544,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="def_8cpp_source.html#l00223">223</a> of file <a class="el" href="def_8cpp_source.html">def.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00977">mim::Lit::isa()</a>, <a class="el" href="def_8h_source.html#l01141">mim::Def::num_projs()</a>, <a class="el" href="def_8cpp_source.html#l00642">mim::Def::num_tprojs()</a>, <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>, and <a class="el" href="def_8h_source.html#l00492">mim::Def::var()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00975">mim::Lit::isa()</a>, <a class="el" href="def_8h_source.html#l01139">mim::Def::num_projs()</a>, <a class="el" href="def_8cpp_source.html#l00642">mim::Def::num_tprojs()</a>, <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>, and <a class="el" href="def_8h_source.html#l00492">mim::Def::var()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="seo_8cpp_source.html#l00022">mim::plug::mem::phase::idx_of()</a>, and <a class="el" href="escape__analysis_8cpp_source.html#l00018">mim::plug::mem::EscapeAnalysis::rewrite_imm()</a>.</p>
 
@@ -573,9 +571,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00869">869</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00867">867</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00868">binder()</a>, and <a class="el" href="def_8cpp_source.html#l00239">mim::Def::var_type()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00866">binder()</a>, and <a class="el" href="def_8cpp_source.html#l00239">mim::Def::var_type()</a>.</p>
 
 </div>
 </div>
@@ -600,11 +598,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00880">880</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00878">878</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00880">World</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00878">World</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00880">World</a>.</p>
+<p class="reference">Referenced by <a class="el" href="def_8h_source.html#l00878">World</a>.</p>
 
 </div>
 </div>
@@ -629,7 +627,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00876">876</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00874">874</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>
@@ -653,7 +651,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00877">877</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="def_8h_source.html#l00875">875</a> of file <a class="el" href="def_8h_source.html">def.h</a>.</p>
 
 </div>
 </div>

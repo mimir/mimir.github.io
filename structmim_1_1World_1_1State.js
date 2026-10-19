@@ -5,6 +5,7 @@ var structmim_1_1World_1_1State =
       [ "curr_loc", "structmim_1_1World_1_1State.html#a38293918bcb7fac76a63ddcfb3c13c5a", null ],
       [ "curr_sub", "structmim_1_1World_1_1State.html#af54ab6a3209bb04cd7b736a8ac6bbde1", null ],
       [ "frozen", "structmim_1_1World_1_1State.html#a3fbd87f24478b2e87fb87e19e6206a13", null ],
+      [ "lenient", "structmim_1_1World_1_1State.html#a84e6059624f0d1b241fd51c2ff0bcf89", null ],
       [ "name", "structmim_1_1World_1_1State.html#a83f874916de86e36b3e8272523dae7b6", null ]
     ] ],
     [ "State", "structmim_1_1World_1_1State.html#a28989d4f11b1768a46b21407b8f66f15", null ],

@@ -17,12 +17,16 @@ var regex_2autogen_8h =
     [ "mim::plug::regex::lower_regex", "namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700", null ],
     [ "mim::plug::regex::neg_lookahead", "namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be", null ],
     [ "mim::plug::regex::not_", "namespacemim_1_1plug_1_1regex.html#a571f5196daa1119e017b08d1f210aff2", null ],
+    [ "mim::plug::regex::Pos", "namespacemim_1_1plug_1_1regex.html#a79ef3bb01e318a7841181bcf28939d6c", null ],
+    [ "mim::plug::regex::pos", "namespacemim_1_1plug_1_1regex.html#ab3a764f9d39b068e136ecdb2d8a0a40a", null ],
     [ "mim::plug::regex::quant", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55", [
       [ "mim::plug::regex::quant::optional", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad57c24f3fe52d16e7169b912dd647f0d", null ],
       [ "mim::plug::regex::quant::star", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55a8ff953dd97c4405234a04291dee39e0b", null ],
       [ "mim::plug::regex::quant::plus", "namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55ad7d18cfb3a0d8293e2f5d94ea30e04d2", null ]
     ] ],
     [ "mim::plug::regex::range", "namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75", null ],
+    [ "mim::plug::regex::RE", "namespacemim_1_1plug_1_1regex.html#ab773acfd1b51cdf10f8ef7764bf8ac44", null ],
+    [ "mim::plug::regex::Res", "namespacemim_1_1plug_1_1regex.html#a991b36716d0b2422fa9077600a5b7f4f", null ],
     [ "mim::plug::regex::normalize_conj", "namespacemim_1_1plug_1_1regex.html#a69e15eff07c15faf117e019314f4ab43", null ],
     [ "mim::plug::regex::normalize_disj", "namespacemim_1_1plug_1_1regex.html#aba32ced244f11e75065ef038ce1a6d88", null ],
     [ "mim::plug::regex::normalize_not", "namespacemim_1_1plug_1_1regex.html#ad065605ee526d9128e4bc7f4ef505fc9", null ],
