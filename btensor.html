@@ -575,9 +575,43 @@ mr_nest</h2>
 <div class="line">            ((((classic, vectorized)#vec_ok, blocked)#block_ok, redvec)#redvec_ok) (m, u, done);</div>
 <div class="line">        run;</div>
 <div class="line">    nest;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md257"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md257"></a>
+map_reduce_post_impl</h2>
+<p>Destination-passing map-reduce: apply the selected nest to ordinary fold and write-back functions.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam map_reduce_post_impl {nis nps: Nat}</div>
+<div class="line">    {To Tp: *, Ro Rr: Nat}</div>
+<div class="line">    (So: «Ro; Nat», Sr: «Ro + Rr; Nat», sched: [N: *] → ([vdim unroll: Nat] → N) → N)</div>
+<div class="line">    {Tis: «nis; *», Tps: «nps; *»}</div>
+<div class="line">    (f: Fn [mem.M 0, To, «i: nis; Tis#i»] → [mem.M 0, To], init: To,</div>
+<div class="line">     post: Fn [mem.M 0, To, «j: nps; Tps#j»] → [mem.M 0, Tp])</div>
+<div class="line">    (map_out: «Ro + Rr; affine.Index» → «Ro; affine.Index»)</div>
+<div class="line">    (read_inputs: Fn [mem.M 0, «d: Ro + Rr; Idx (Sr#d)»] → [mem.M 0, «i: nis; Tis#i»],</div>
+<div class="line">     read_post: Fn [mem.M 0, «d: Ro; Idx (So#d)»] → [mem.M 0, «j: nps; Tps#j»],</div>
+<div class="line">     write_output: Fn [mem.M 0, buffer.Buf (Ro, So, Tp), «d: Ro; Idx (So#d)», Tp]</div>
+<div class="line">         → mem.M 0)</div>
+<div class="line">    (m: mem.M 0, dst: buffer.Buf (Ro, So, Tp)): [mem.M 0, buffer.Buf (Ro, So, Tp)] =</div>
+<div class="line">    let Rn = Ro + Rr;</div>
+<div class="line">    let Output = buffer.Buf (Ro, So, Tp);</div>
+<div class="line">    // Explicit runtime parameters keep upstream memory expressions outside the loop builders.</div>
+<div class="line">    fun run (m: mem.M 0, dst: Output)@tt: [mem.M 0, Output] =</div>
+<div class="line">        con cell (m: mem.M 0, acc: To, ivs: «Rn; I32», k: Cn [mem.M 0, To])@tt =</div>
+<div class="line">            let indices = ‹d: Rn; core.conv.u (Sr#d) (ivs#d)›;</div>
+<div class="line">            con combine (m: mem.M 0, values: «i: nis; Tis#i»)@tt = f ((m, acc, values), k);</div>
+<div class="line">            read_inputs ((m, indices), combine);</div>
+<div class="line">        con wb (m: mem.M 0, output: Output, acc: To, ivs: «Rn; I32», k: Cn [mem.M 0, Output])@tt =</div>
+<div class="line">            let indices = ‹d: Rn; core.conv.u (Sr#d) (ivs#d, 0I32)#(Ro &lt;= core.bitcast Nat d)›;</div>
+<div class="line">            let (m, coords) = affine.map @(Ro, Rn) @(Sr, So) map_out indices @0 m;</div>
+<div class="line">            con write (m: mem.M 0, value: Tp)@tt =</div>
+<div class="line">                con written (m: mem.M 0)@tt = k (m, output);</div>
+<div class="line">                write_output ((m, output, coords, value), written);</div>
+<div class="line">            con epilogue (m: mem.M 0, values: «j: nps; Tps#j»)@tt = post ((m, acc, values), write);</div>
+<div class="line">            read_post ((m, coords), epilogue);</div>
+<div class="line">        let nest = sched (NestT (Ro, Rr, Sr, To, Output)) (mr_nest (Ro, Rr, Sr, To, Output));</div>
+<div class="line">        nest (init, cell, wb) (m, dst, return);</div>
+<div class="line">    cps.cps2ds run (m, dst);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
 lower_map_reduce</h2>
 <p>Lowers every operation of this plugin to <span class="tt">affine.For</span> loops over <span class="tt">buffer</span> element operations, binding each op's <span class="tt">sched</span> chooser to <span class="tt">mr_nest</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_map_reduce: compile.Phase;</div>

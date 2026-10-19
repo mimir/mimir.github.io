@@ -9,6 +9,7 @@ var namespacemim_1_1plug_1_1btensor =
     [ "lower_map_reduce", "namespacemim_1_1plug_1_1btensor.html#ac3ae404f8dde1bd876fefb63ff263980", null ],
     [ "map_reduce", "namespacemim_1_1plug_1_1btensor.html#a01e0a1e721ba27474863d45ab94017c3", null ],
     [ "map_reduce_post", "namespacemim_1_1plug_1_1btensor.html#a6fb6d9c0e5f1d87f59af7b27d689f365", null ],
+    [ "map_reduce_post_impl", "namespacemim_1_1plug_1_1btensor.html#a7db6f5033e4cffc2a72e8b29aeb86430", null ],
     [ "mk_sched", "namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14", null ],
     [ "mr_nest", "namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e", null ],
     [ "NestT", "namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8", null ],
