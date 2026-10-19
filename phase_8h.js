@@ -8,6 +8,7 @@ var phase_8h =
     [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", "classmim_1_1PhaseMan" ],
     [ "mim::ClosedMutPhase&lt; M &gt;", "classmim_1_1ClosedMutPhase.html", "classmim_1_1ClosedMutPhase" ],
     [ "mim::NestPhase&lt; M &gt;", "classmim_1_1NestPhase.html", "classmim_1_1NestPhase" ],
+    [ "CODE_MUT", "phase_8h.html#a199de7dc7775a7eb7d9cc11702d1da1a", null ],
     [ "MIM_CONCAT", "phase_8h.html#a4b6ee482611c96913829f74c17ee1df4", null ],
     [ "MIM_CONCAT_INNER", "phase_8h.html#a5524d37751342ad354f02d31c7fd6a55", null ],
     [ "MIM_REPL", "phase_8h.html#a14d4a7c6df40734cbfbca567beddbb87", null ],

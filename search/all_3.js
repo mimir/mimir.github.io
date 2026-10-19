@@ -105,7 +105,7 @@ var searchData=
   ['code3_102',['CODE3',['../types_8h.html#a9414ba3a2fb815027a872506cc048797',1,'types.h']]],
   ['code4_103',['CODE4',['../types_8h.html#a3753a8fd672ed997199aecbd1955c611',1,'types.h']]],
   ['code_5fimm_104',['CODE_IMM',['../rewrite_8h.html#abf17bc3bdf547027cc35451498d99653',1,'CODE_IMM:&#160;rewrite.h'],['../rewrite_8cpp.html#abf17bc3bdf547027cc35451498d99653',1,'CODE_IMM:&#160;rewrite.cpp']]],
-  ['code_5fmut_105',['CODE_MUT',['../rewrite_8h.html#a199de7dc7775a7eb7d9cc11702d1da1a',1,'CODE_MUT:&#160;rewrite.h'],['../rewrite_8cpp.html#a199de7dc7775a7eb7d9cc11702d1da1a',1,'CODE_MUT:&#160;rewrite.cpp']]],
+  ['code_5fmut_105',['CODE_MUT',['../phase_8h.html#a199de7dc7775a7eb7d9cc11702d1da1a',1,'CODE_MUT:&#160;phase.h'],['../rewrite_8h.html#a199de7dc7775a7eb7d9cc11702d1da1a',1,'CODE_MUT:&#160;rewrite.h'],['../rewrite_8cpp.html#a199de7dc7775a7eb7d9cc11702d1da1a',1,'CODE_MUT:&#160;rewrite.cpp']]],
   ['coding_20style_106',['Coding Style',['../coding.html#autotoc_md16',1,'Coding Style'],['../coding.html#autotoc_md22',1,'M⁠im Coding Style']]],
   ['coding_2emd_107',['coding.md',['../coding_8md.html',1,'']]],
   ['codom_108',['codom',['../classmim_1_1ast_1_1LamDecl.html#a4fbcba316e2f2af7cb8669cd3610ba69',1,'mim::ast::LamDecl::codom()'],['../classmim_1_1Pi.html#a826161c3dae157a2aa1c273f71f0a8c2',1,'mim::Pi::codom() const'],['../classmim_1_1Pi.html#a10825b4902ffea08fb5f7f78d62cfd99',1,'mim::Pi::codom(nat_t a, nat_t i) const noexcept'],['../classmim_1_1Lam.html#afe57c9c0e30c3c94239efae40e4dea26',1,'mim::Lam::codom() const'],['../classmim_1_1Lam.html#a80f494e462dc8c79b68eb30ace3c604b',1,'mim::Lam::codom(nat_t a, nat_t i) const noexcept']]],

@@ -14,5 +14,6 @@ var classmim_1_1plug_1_1mem_1_1EscapeAnalysis =
     [ "freed", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a70b19c146cedea9751fac22746bdf9d6", null ],
     [ "freed_alloc", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af3479dd371aa0c69e336d6c1620373a9", null ],
     [ "leave", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#aa4379e24b2739df1a73bbba54042d46b", null ],
-    [ "rewrite_imm", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af7148392543e7107c0cf653b226b6cad", null ]
+    [ "rewrite_imm", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af7148392543e7107c0cf653b226b6cad", null ],
+    [ "rewrite_imm_App", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a14883676287f5d4beacc8cab49c357aa", null ]
 ];
