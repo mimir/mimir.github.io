@@ -125,12 +125,12 @@ var NAVTREEINDEX =
 "clos_2normalizers_8cpp.html",
 "dot_8cpp_source.html",
 "mem__checks_8cpp_source.html",
-"namespacemim.html#af79e383fb2cb865a83f01c9f93605c8f",
-"namespacemim_1_1plug_1_1compile.html#a6a431098c17ef804ed016e775d70f7de",
-"namespacemim_1_1plug_1_1gpu_1_1phase.html",
-"namespacemim_1_1plug_1_1mem_1_1phase.html",
-"namespacemim_1_1plug_1_1tensor_1_1phase.html#a09d1835975049dc93906aa3750a07c5b",
-"static__arg__opt_8h_source.html",
+"namespacemim.html#afb12dbffaaa27bca46f171517d96256d",
+"namespacemim_1_1plug_1_1compile.html#a7c6f14e6f0e8f8f3a40ae6763af9c8a0",
+"namespacemim_1_1plug_1_1gpu_1_1phase.html#ac6e0784661dc3de9ab464706fbf3bf9c",
+"namespacemim_1_1plug_1_1mem_1_1phase.html#a1ebd1af790f2d3638017ff803dc7a675",
+"namespacemim_1_1plug_1_1tensor_1_1phase.html#a46ef6d36c29e32da192239bbf534da6d",
+"stream_8cpp.html",
 "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym"
 ];
 
