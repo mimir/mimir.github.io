@@ -106,6 +106,7 @@ var namespacemim =
     [ "Flags2Phases", "namespacemim.html#af732126e419c1fc8a783e1ad804a5e9b", null ],
     [ "flags_t", "namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f", null ],
     [ "GIDMap", "namespacemim.html#a110168b2aced7064a3dc5606772e17d3", null ],
+    [ "GIDNodeMap", "namespacemim.html#ac39bb389be019e5f68815908bac7ce3d", null ],
     [ "GIDSet", "namespacemim.html#aa7ac6faf2fa82349c4acf7d5f08470e3", null ],
     [ "Keys", "namespacemim.html#ac41e9fa118277e50afd6c79f4d8e5665", null ],
     [ "Lam2Lam", "namespacemim.html#a8d37dada179be276702eb8680efbc370", null ],

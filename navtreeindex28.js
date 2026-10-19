@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym":[2,0,4,0,2,0],
 "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym":[4,0,1,0,2,0],
 "structmim_1_1ast_1_1Mods.html":[2,0,4,0,27],
 "structmim_1_1ast_1_1Mods.html":[4,0,1,0,27],
