@@ -1,8 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"namespacemim_1_1plug_1_1tensor.html#a67b1512448efe745b8d5c41337da58f0":[2,0,4,1,19,36],
-"namespacemim_1_1plug_1_1tensor.html#a6a7a2d3951d8c63bb4a735edd4a5c143":[2,0,4,1,19,27],
-"namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c":[2,0,4,1,19,91],
 "namespacemim_1_1plug_1_1tensor.html#a6db769d0b5d62b6d8d2c9e68513a6f8a":[2,0,4,1,19,74],
 "namespacemim_1_1plug_1_1tensor.html#a788df686702aeb6a0be9d9246bf1c260":[2,0,4,1,19,67],
 "namespacemim_1_1plug_1_1tensor.html#a7954b221c8c568ad0918b4397d796ad2":[2,0,4,1,19,49],
@@ -249,5 +246,8 @@ var NAVTREEINDEX26 =
 "regex_8cpp.html#a8abebad40345a2355ec701aaea26d9a4":[5,0,4,1,3,18,3,1],
 "regex_8cpp_source.html":[5,0,4,1,3,18,3],
 "regex_8h.html":[5,0,3,1,2,18,2],
-"regex_8h_source.html":[5,0,3,1,2,18,2]
+"regex_8h_source.html":[5,0,3,1,2,18,2],
+"remove__double__syncs_8cpp.html":[5,0,4,1,3,9,0,2],
+"remove__double__syncs_8cpp_source.html":[5,0,4,1,3,9,0,2],
+"remove__double__syncs_8h.html":[5,0,3,1,2,9,0,2]
 };

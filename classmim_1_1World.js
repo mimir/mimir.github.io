@@ -82,6 +82,7 @@ var classmim_1_1World =
     [ "implicit_app", "classmim_1_1World.html#a8834efb8c3a5e984488387e102515a13", null ],
     [ "implicit_app", "classmim_1_1World.html#ab7b9b13e053650aa1201651a383fa28c", null ],
     [ "implicit_app", "classmim_1_1World.html#a16be25e975264e675cd7af9b50892c45", null ],
+    [ "implicit_holes", "classmim_1_1World.html#a5499b80b55c679e9dac391b16944767f", null ],
     [ "import", "classmim_1_1World.html#ac8c02c318c07e32bf555c5bd8a45303c", null ],
     [ "inhabitant", "classmim_1_1World.html#a1299d9e1e6da7e301d7f10fdbb790dd3", null ],
     [ "inherit", "classmim_1_1World.html#a082cce3d9d0307b4608146418226fb00", null ],

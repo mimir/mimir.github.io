@@ -2,9 +2,7 @@ var namespacemim_1_1plug_1_1option =
 [
     [ "Opt_ctor", "structmim_1_1plug_1_1option_1_1Opt__ctor.html", null ],
     [ "is_some", "namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263", null ],
-    [ "none", "namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f", null ],
     [ "Opt", "namespacemim_1_1plug_1_1option.html#a1b4fe5a188a5e5a070a9a17c8740b798", null ],
-    [ "some", "namespacemim_1_1plug_1_1option.html#ab6c6d898b0c82f9c3c9a52ed3bb5bfd8", null ],
     [ "some_if", "namespacemim_1_1plug_1_1option.html#ab4a39114347d879f20a6f587fd419f63", null ],
     [ "unwrap_or", "namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad", null ],
     [ "unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53", null ],

@@ -73,7 +73,7 @@ var namespacemim_1_1ast =
     [ "add_alias", "namespacemim_1_1ast.html#aa9f6e2684d6d06edb84cb5aed923da79", null ],
     [ "add_names", "namespacemim_1_1ast.html#a60b8016d289281523e0828bb77606426", null ],
     [ "assign", "namespacemim_1_1ast.html#a41aa06d76be9688fda224ca56982610a", null ],
-    [ "check_nom_scope", "namespacemim_1_1ast.html#a774e7e6f2df98bac968d795ebc9b1965", null ],
+    [ "check_nom_scope", "namespacemim_1_1ast.html#a7f73673f36257750aabe79243693ae1e", null ],
     [ "emit_ctor", "namespacemim_1_1ast.html#a811d9e1c00aa7a88cb0b5b7398856535", null ],
     [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "emit_var", "namespacemim_1_1ast.html#a54b0669593d64574a33b773fcac7ae37", null ],

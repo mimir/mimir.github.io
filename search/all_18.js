@@ -22,7 +22,7 @@ var searchData=
   ['why_20this_20is_20hard_20elsewhere_19',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['why_2dcpp_2emd_20',['why-cpp.md',['../why-cpp_8md.html',1,'']]],
   ['wins_21',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md180',1,'']]],
-  ['wise_20operations_22',['Element-wise Operations',['../tensor.html#autotoc_md534',1,'']]],
+  ['wise_20operations_22',['Element-wise Operations',['../tensor.html#autotoc_md531',1,'']]],
   ['with_20arena_20rollback_23',['Speculative construction with arena rollback',['../md_docs_2why-cpp.html#autotoc_md167',1,'']]],
   ['with_20indices_24',['Working with Indices',['../dev.html#autotoc_md51',1,'']]],
   ['with_20subtags_25',['With Subtags',['../dev.html#autotoc_md49',1,'']]],

@@ -182,41 +182,31 @@ Dependencies</h1>
 Types</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md444"></a>
 Opt</h2>
-<p>The option type: <span class="tt">| None | Some: T</span>. Unlike <span class="tt">[] ∪ T</span>, it neither collapses <span class="tt">Opt []</span> to <span class="tt">[]</span> nor flattens <span class="tt">Opt (Opt T)</span> to <span class="tt">Opt T</span>. It is nominal, but its constructors <span class="tt">None</span> and <span class="tt">Some</span> are public.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx nom Opt (T: *) =</div>
+<p>The option type: <span class="tt">| None | Some: T</span>. Unlike <span class="tt">[] ∪ T</span>, it neither collapses <span class="tt">Opt@[]</span> to <span class="tt">[]</span> nor flattens <span class="tt">Opt@(Opt@T)</span> to <span class="tt">Opt@T</span>. <span class="tt">T</span> is implicit, so <span class="tt">Opt#Some 23</span> and <span class="tt">Opt#None</span> infer it; <span class="tt">(Opt@Nat)#None</span> gives it explicitly.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx nom Opt {T: *} =</div>
 <div class="line">    | None</div>
 <div class="line">    | Some: T;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md445"></a>
-Constructors</h1>
+Operations</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md446"></a>
-some</h2>
-<p>Wraps a value into an option.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam some {T: *} (v: T): Opt T = (Opt T)#Some v;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md447"></a>
-none</h2>
-<p>The empty option.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam none (T: *): Opt T = (Opt T)#None;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md448"></a>
 some_if</h2>
 <p>Wraps <span class="tt">v</span> into an option iff <span class="tt">b</span> holds.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam some_if {T: *} (b: Bool, v: T): Opt T = (none T, some v)#b;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md449"></a>
-Operations</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md450"></a>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam some_if {T: *} (b: Bool, v: T): Opt@T = (Opt#None, Opt#Some v)#b;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md447"></a>
 is_some</h2>
 <p>Returns <span class="tt">tt</span> if the option contains a value.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam is_some {T: *} (o: Opt T): Bool =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam is_some {T: *} (o: Opt@T): Bool =</div>
 <div class="line">    match o with</div>
 <div class="line">        | None   =&gt; ff</div>
 <div class="line">        | Some _ =&gt; tt;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md451"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md448"></a>
 unwrap_unsafe</h2>
-<p>Extracts the value without checking - undefined behavior for <span class="tt">option.none</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm unwrap_unsafe: {T: *} → Opt T → T, normalize_unwrap_unsafe;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md452"></a>
+<p>Extracts the value without checking - undefined behavior for <span class="tt">None</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm unwrap_unsafe: {T: *} → Opt@T → T, normalize_unwrap_unsafe;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md449"></a>
 unwrap_or</h2>
 <p>Extracts the value or returns <span class="tt">default</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam unwrap_or {T: *} (o: Opt T) (default: T): T =</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam unwrap_or {T: *} (o: Opt@T) (default: T): T =</div>
 <div class="line">    match o with</div>
 <div class="line">        | None   =&gt; default</div>
 <div class="line">        | Some x =&gt; x;</div>

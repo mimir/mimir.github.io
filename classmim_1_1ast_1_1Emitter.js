@@ -2,7 +2,6 @@ var classmim_1_1ast_1_1Emitter =
 [
     [ "NomInfo", "classmim_1_1ast_1_1Emitter.html#structmim_1_1ast_1_1Emitter_1_1NomInfo", [
       [ "decl", "classmim_1_1ast_1_1Emitter.html#a5992bcdc0b542767204fe16e7a6efce5", null ],
-      [ "named_vis", "classmim_1_1ast_1_1Emitter.html#a8a606389c3f9125de6d8563a05643d0b", null ],
       [ "owner", "classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249", null ]
     ] ],
     [ "Emitter", "classmim_1_1ast_1_1Emitter.html#a57785961428c0dd305c09592f94a5c7f", null ],

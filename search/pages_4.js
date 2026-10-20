@@ -1,12 +1,12 @@
 var searchData=
 [
   ['effects_0',['Effects',['../mem.html#autotoc_md417',1,'Operations w/ Side Effects'],['../mem.html#autotoc_md426',1,'Operations w/o Side Effects']]],
-  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md534',1,'']]],
+  ['element_20wise_20operations_1',['Element-wise Operations',['../tensor.html#autotoc_md531',1,'']]],
   ['elsewhere_2',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['embedded_20python_20dsl_3',['Embedded Python DSL',['../python.html#autotoc_md142',1,'']]],
   ['emit_4',['emit',['../ll.html#autotoc_md385',1,'emit'],['../nvptx.html#autotoc_md439',1,'emit']]],
   ['empirical_20argument_5',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md173',1,'']]],
-  ['empty_6',['empty',['../regex.html#autotoc_md498',1,'']]],
+  ['empty_6',['empty',['../regex.html#autotoc_md495',1,'']]],
   ['emscripten_7',['Emscripten',['../playground.html#autotoc_md122',1,'']]],
   ['environment_20variables_8',['Environment Variables',['../cli.html#autotoc_md9',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../cli.html#envs',1,'Plugin Environment Variables']]],
   ['er_9',['er',['../math.html#autotoc_md400',1,'']]],

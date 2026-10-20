@@ -6,7 +6,7 @@ var searchData=
   ['hash_20consing_20is_20inherently_20impure_3',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md170',1,'']]],
   ['haskell_20specifically_4',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md172',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_5',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md177',1,'']]],
-  ['head_20tail_6',['head / tail',['../tuple.html#autotoc_md629',1,'']]],
+  ['head_20tail_6',['head / tail',['../tuple.html#autotoc_md626',1,'']]],
   ['header_7',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['heap2stack_8',['heap2stack',['../mem.html#autotoc_md434',1,'']]],
   ['helpers_9',['Error Handling Helpers',['../python.html#autotoc_md140',1,'']]],

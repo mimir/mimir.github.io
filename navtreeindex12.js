@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classmim_1_1ast_1_1AliasPtrn.html#a5fcf8d4c04cd5dd303abc9db17ace9cb":[4,0,1,0,1,3],
+"classmim_1_1ast_1_1AliasPtrn.html#aa6f8bdfad5c24e0cdd72b719175e2a25":[2,0,4,0,1,6],
 "classmim_1_1ast_1_1AliasPtrn.html#aa6f8bdfad5c24e0cdd72b719175e2a25":[4,0,1,0,1,6],
 "classmim_1_1ast_1_1AliasPtrn.html#aaeaa343f30cca62d630cdfbe2bbc6695":[2,0,4,0,1,2],
 "classmim_1_1ast_1_1AliasPtrn.html#aaeaa343f30cca62d630cdfbe2bbc6695":[4,0,1,0,1,2],
@@ -146,12 +148,9 @@ var NAVTREEINDEX12 =
 "classmim_1_1ast_1_1Emitter.html#a5aa386a903e0497d846b79b8ceeed4a4":[4,0,1,0,10,16],
 "classmim_1_1ast_1_1Emitter.html#a82e35b4932c9e402182d58e89228c7aa":[2,0,4,0,10,5],
 "classmim_1_1ast_1_1Emitter.html#a82e35b4932c9e402182d58e89228c7aa":[4,0,1,0,10,5],
-"classmim_1_1ast_1_1Emitter.html#a8a606389c3f9125de6d8563a05643d0b":[2,0,4,0,10,0,1],
-"classmim_1_1ast_1_1Emitter.html#a8a606389c3f9125de6d8563a05643d0b":[4,0,1,0,10,0,1],
-"classmim_1_1ast_1_1Emitter.html#a8a606389c3f9125de6d8563a05643d0b":[5,0,4,1,0,2,1,1],
-"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[2,0,4,0,10,0,2],
-"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[4,0,1,0,10,0,2],
-"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[5,0,4,1,0,2,1,2],
+"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[2,0,4,0,10,0,1],
+"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[4,0,1,0,10,0,1],
+"classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249":[5,0,4,1,0,2,1,1],
 "classmim_1_1ast_1_1Emitter.html#ac7dfcf3847f527a8b8802ab9f5ffe9eb":[2,0,4,0,10,4],
 "classmim_1_1ast_1_1Emitter.html#ac7dfcf3847f527a8b8802ab9f5ffe9eb":[4,0,1,0,10,4],
 "classmim_1_1ast_1_1Emitter.html#acd85daddeda37210e5d3a25265fdc830":[2,0,4,0,10,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "classmim_1_1ast_1_1GrpPtrn.html#addf97b7c47ac8834cd4f7486f9f42396":[4,0,1,0,15,5],
 "classmim_1_1ast_1_1GrpPtrn.html#af8438e966da941f094192586d87d7906":[2,0,4,0,15,2],
 "classmim_1_1ast_1_1GrpPtrn.html#af8438e966da941f094192586d87d7906":[4,0,1,0,15,2],
-"classmim_1_1ast_1_1HoleExpr.html":[2,0,4,0,16]
+"classmim_1_1ast_1_1HoleExpr.html":[2,0,4,0,16],
+"classmim_1_1ast_1_1HoleExpr.html":[4,0,1,0,16]
 };

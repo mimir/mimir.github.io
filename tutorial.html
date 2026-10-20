@@ -370,12 +370,12 @@ Nominal Newtypes</h1>
 <p><span class="tt">nom</span> wraps a type into a fresh one; two <span class="tt">nom</span>s over the same type stay distinct.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Meter = I32;</div>
 <div class="line">nom Foot  = I32;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">inj</span> wraps a value and the prefix <span class="tt">#</span> unwraps it again - both only in the <span class="tt">mod</span> (or file) that declared the <span class="tt">nom</span>. An importer therefore sees the type as abstract.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">inj</span> wraps a value and the prefix <span class="tt">#</span> unwraps it again - for a <span class="tt">priv</span> <span class="tt">nom</span> only in the <span class="tt">mod</span> (or file) that declared it. <span class="tt">pub let Meter = Meter;</span> would export it as an abstract type that an importer may name but not unwrap.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam to_foot (m: Meter): Foot = #m inj Foot;</div>
 <div class="line">let _ = refly.struc.e (#(23I32 inj Meter), 23I32);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Like <span class="tt">rec</span>, a <span class="tt">nom</span> is in scope in its own body, and <span class="tt">anx nom</span> makes it an annex.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Chain = | End | Link: [I32, Chain];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>With domains, <span class="tt">nom</span> declares a type constructor; within its body, <span class="tt">Bin T</span> is the instance at hand. <a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> constructors and fields are as visible as the <span class="tt">nom</span>, and <span class="tt">match</span> sees through it.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>With domains, <span class="tt">nom</span> declares a type constructor; within its body, <span class="tt">Bin T</span> is the instance at hand. <a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> constructors and fields unwrap by themselves, and <span class="tt">match</span> sees through it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Bin (T: *) = | Leaf | Node: [Bin T, T, Bin T];</div>
 <div class="line">let NatBin = Bin Nat;</div>
 <div class="line">let _ = refly.struc.e (match NatBin#Node (NatBin#Leaf, 23, NatBin#Leaf) with | Leaf =&gt; 0 | Node (_, x, _) =&gt; x, 23);</div>
