@@ -188,11 +188,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab0aca5f79219cdf2b0779b95d7678249" id="r_ab0aca5f79219cdf2b0779b95d7678249"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab0aca5f79219cdf2b0779b95d7678249">NomDecl</a> (Loc loc, <a class="el" href="structmim_1_1ast_1_1Mods.html">Mods</a> mods, Dbg dbg, <a class="el" href="namespacemim_1_1ast.html#a8be9b934808970bc31a9c2b313db0599">Ptr</a>&lt; <a class="el" href="classmim_1_1ast_1_1Expr.html">Expr</a> &gt; body)</td></tr>
 <tr class="memitem:aab7d56498d7750e2388ffc6fbc0ca51d" id="r_aab7d56498d7750e2388ffc6fbc0ca51d"><td class="memItemLeft"><a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3">Vis</a>&#160;</td><td class="memItemRight"><a class="el" href="#aab7d56498d7750e2388ffc6fbc0ca51d">named_vis</a> () const</td></tr>
 <tr class="memdesc:aab7d56498d7750e2388ffc6fbc0ca51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The visibility of the named constructors and fields: that of the enclosing top-level declaration.  <br /></td></tr>
-<tr class="memitem:aaac762f3da2e5a9cdd7b7bd3035a1af3" id="r_aaac762f3da2e5a9cdd7b7bd3035a1af3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaac762f3da2e5a9cdd7b7bd3035a1af3">bind_decl</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const override</td></tr>
+<tr class="memitem:a5058102be563469e1737d1a744c69969" id="r_a5058102be563469e1737d1a744c69969"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5058102be563469e1737d1a744c69969">bind_body</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const override</td></tr>
 <tr class="memitem:acc86c96802d3aec16ff0deaa5faa9f07" id="r_acc86c96802d3aec16ff0deaa5faa9f07"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acc86c96802d3aec16ff0deaa5faa9f07">emit_decl</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const override</td></tr>
 <tr class="memitem:a6519e21cd1498af49bfbe45db8c06d30" id="r_a6519e21cd1498af49bfbe45db8c06d30"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6519e21cd1498af49bfbe45db8c06d30">emit_body</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const override</td></tr>
 <tr class="memitem:a4dd7906da7b3c823ea9e591976c83eba" id="r_a4dd7906da7b3c823ea9e591976c83eba"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4dd7906da7b3c823ea9e591976c83eba">emit_ahead</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const</td></tr>
 <tr class="memdesc:a4dd7906da7b3c823ea9e591976c83eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emits a <span class="tt">nom</span> without a mutable body as soon as a sibling refers to it; <span class="tt">nullptr</span> on a cycle.  <br /></td></tr>
+<tr class="memitem:a15b0c8f9f75a5ea4ccf50956e21d2638" id="r_a15b0c8f9f75a5ea4ccf50956e21d2638"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a15b0c8f9f75a5ea4ccf50956e21d2638">emit_sugar</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam) const</td></tr>
+<tr class="memdesc:a15b0c8f9f75a5ea4ccf50956e21d2638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <code class="param">lam's</code> body to this <a class="el" href="classmim_1_1ast_1_1LamDecl.html#aadcbd8072560f51a1c6fa00649f7b99a" title="The nom of lam I dom+ = nom I = e; I if nom I dom+ = e desugared to this; within e,...">LamDecl::nom_sugar</a> before emitting the latter's body.  <br /></td></tr>
 <tr class="memitem:acdb0256b97e2b97a6c5336a37414645d" id="r_acdb0256b97e2b97a6c5336a37414645d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acdb0256b97e2b97a6c5336a37414645d">stream_</a> (fe::Tab &amp;, std::ostream &amp;) const override</td></tr>
 <tr class="memdesc:acdb0256b97e2b97a6c5336a37414645d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streams this declaration without modifiers and without the trailing <span class="tt">;</span>.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classmim_1_1ast_1_1RecDecl"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1ast_1_1RecDecl.html">mim::ast::RecDecl</a></td></tr>
@@ -203,7 +205,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a50d4d4d4f69fe02f2e08fe826d0d1f5b pub_methods_classmim_1_1ast_1_1RecDecl" id="r_a50d4d4d4f69fe02f2e08fe826d0d1f5b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#a50d4d4d4f69fe02f2e08fe826d0d1f5b">has_mut_body</a> () const</td></tr>
 <tr class="memdesc:a50d4d4d4f69fe02f2e08fe826d0d1f5b pub_methods_classmim_1_1ast_1_1RecDecl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only such a body is emitted as a mutable, so only it may refer to the declaration itself.  <br /></td></tr>
 <tr class="memitem:adaeee223054b02f9aa44a5d0849b491d pub_methods_classmim_1_1ast_1_1RecDecl" id="r_adaeee223054b02f9aa44a5d0849b491d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#adaeee223054b02f9aa44a5d0849b491d">bind</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const override</td></tr>
-<tr class="memitem:a483bc0ba63896033e17f65d40db7d06b pub_methods_classmim_1_1ast_1_1RecDecl" id="r_a483bc0ba63896033e17f65d40db7d06b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#a483bc0ba63896033e17f65d40db7d06b">bind_body</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const</td></tr>
+<tr class="memitem:a7d612167a2d17eb82609f2cb00678d37 pub_methods_classmim_1_1ast_1_1RecDecl" id="r_a7d612167a2d17eb82609f2cb00678d37"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#a7d612167a2d17eb82609f2cb00678d37">bind_decl</a> (<a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;) const</td></tr>
 <tr class="memitem:a25d8d641cb2118fd30da15b55156d838 pub_methods_classmim_1_1ast_1_1RecDecl" id="r_a25d8d641cb2118fd30da15b55156d838"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#a25d8d641cb2118fd30da15b55156d838">emit</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const override</td></tr>
 <tr class="memitem:a2b2abade33c01a8318083fa41979c2c5 pub_methods_classmim_1_1ast_1_1RecDecl" id="r_a2b2abade33c01a8318083fa41979c2c5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#a2b2abade33c01a8318083fa41979c2c5">stream</a> (fe::Tab &amp;, std::ostream &amp;) const override</td></tr>
 <tr class="memitem:af2fcfe0198c0d0f9328365f30de199ca pub_methods_classmim_1_1ast_1_1RecDecl" id="r_af2fcfe0198c0d0f9328365f30de199ca"><td class="memItemLeft">std::pair&lt; <a class="el" href="structmim_1_1ast_1_1AnnexInfo.html">AnnexInfo</a> *, <a class="el" href="namespacemim.html#a190fd94a575b212f38ae8be611f1c367">sub_t</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1RecDecl.html#af2fcfe0198c0d0f9328365f30de199ca">annex_sub</a> () const override</td></tr>
@@ -287,8 +289,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aaac762f3da2e5a9cdd7b7bd3035a1af3" name="aaac762f3da2e5a9cdd7b7bd3035a1af3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaac762f3da2e5a9cdd7b7bd3035a1af3">&#9670;&#160;</a></span>bind_decl()</h2>
+<a id="a5058102be563469e1737d1a744c69969" name="a5058102be563469e1737d1a744c69969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5058102be563469e1737d1a744c69969">&#9670;&#160;</a></span>bind_body()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +299,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mim::ast::NomDecl::bind_decl </td>
+          <td class="memname">void mim::ast::NomDecl::bind_body </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Scopes.html">Scopes</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
           <td> const</td>
@@ -310,11 +312,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classmim_1_1ast_1_1RecDecl.html#a7d612167a2d17eb82609f2cb00678d37">mim::ast::RecDecl</a>.</p>
+<p>Reimplemented from <a class="el" href="classmim_1_1ast_1_1RecDecl.html#a483bc0ba63896033e17f65d40db7d06b">mim::ast::RecDecl</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00542">542</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00529">mim::ast::RecDecl::bind_decl()</a>, and <a class="el" href="ast_8h_source.html#l00042">mim::ast::Pub</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00540">mim::ast::RecDecl::bind_body()</a>, and <a class="el" href="ast_8h_source.html#l00042">mim::ast::Pub</a>.</p>
 
 </div>
 </div>
@@ -338,6 +340,8 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00994">994</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, <a class="el" href="emit_8cpp_source.html#l00982">emit_body()</a>, and <a class="el" href="bind_8cpp_source.html#l00524">mim::ast::RecDecl::has_mut_body()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00999">emit_sugar()</a>.</p>
 
 </div>
 </div>
@@ -370,7 +374,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l01161">mim::ast::RecDecl::annex_</a>, <a class="el" href="ast_8h_source.html#l01143">mim::ast::RecDecl::body()</a>, <a class="el" href="ast_8h_source.html#l01142">mim::ast::RecDecl::dbg()</a>, <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, <a class="el" href="emit_8cpp_source.html#l00951">mim::ast::RecDecl::emit()</a>, <a class="el" href="bind_8cpp_source.html#l00524">mim::ast::RecDecl::has_mut_body()</a>, <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>, <a class="el" href="nom_8h_source.html#l00021">mim::Nom::op()</a>, and <a class="el" href="ast_8h_source.html#l01162">mim::ast::RecDecl::sub_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00994">emit_ahead()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00994">emit_ahead()</a>, and <a class="el" href="emit_8cpp_source.html#l00999">emit_sugar()</a>.</p>
 
 </div>
 </div>
@@ -403,7 +407,34 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l01143">mim::ast::RecDecl::body()</a>, <a class="el" href="emit_8cpp_source.html#l00976">emit_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00524">mim::ast::RecDecl::has_mut_body()</a>, and <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00976">emit_decl()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="emit_8cpp_source.html#l00976">emit_decl()</a>, and <a class="el" href="emit_8cpp_source.html#l00999">emit_sugar()</a>.</p>
+
+</div>
+</div>
+<a id="a15b0c8f9f75a5ea4ccf50956e21d2638" name="a15b0c8f9f75a5ea4ccf50956e21d2638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15b0c8f9f75a5ea4ccf50956e21d2638">&#9670;&#160;</a></span>emit_sugar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::NomDecl::emit_sugar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets <code class="param">lam's</code> body to this <a class="el" href="classmim_1_1ast_1_1LamDecl.html#aadcbd8072560f51a1c6fa00649f7b99a" title="The nom of lam I dom+ = nom I = e; I if nom I dom+ = e desugared to this; within e,...">LamDecl::nom_sugar</a> before emitting the latter's body. </p>
+
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00999">999</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="emit_8cpp_source.html#l00994">emit_ahead()</a>, <a class="el" href="emit_8cpp_source.html#l00982">emit_body()</a>, <a class="el" href="emit_8cpp_source.html#l00976">emit_decl()</a>, and <a class="el" href="lam_8h_source.html#l00158">mim::Lam::set_body()</a>.</p>
 
 </div>
 </div>

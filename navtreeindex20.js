@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"dir_9e6e121b0f1127edcf737074380ea215.html":[5,0,3,1,0],
+"dir_a5bdbfbbaa7895161d62825676df7980.html":[5,0,1],
 "dir_a5f6124a4b526271d12e46c048dc5e78.html":[5,0,4,1,3,4],
 "dir_a7eab0f7808399d4e3d37f7a2e690b1f.html":[5,0,4,1,3,16],
 "dir_a8769299ba688646b3b09d59765dd001.html":[5,0,4,1,3,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "lower__index_8cpp.html":[5,0,4,1,3,0,0,1],
 "lower__index_8cpp_source.html":[5,0,4,1,3,0,0,1],
 "lower__index_8h.html":[5,0,3,1,2,0,0,1],
-"lower__index_8h_source.html":[5,0,3,1,2,0,0,1],
-"lower__ptr_8cpp.html":[5,0,4,1,3,3,0,0],
-"lower__ptr_8cpp_source.html":[5,0,4,1,3,3,0,0]
+"lower__index_8h_source.html":[5,0,3,1,2,0,0,1]
 };

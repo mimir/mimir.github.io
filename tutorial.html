@@ -375,8 +375,8 @@ Nominal Newtypes</h1>
 <div class="line">let _ = refly.struc.e (#(23I32 inj Meter), 23I32);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Like <span class="tt">rec</span>, a <span class="tt">nom</span> is in scope in its own body, and <span class="tt">anx nom</span> makes it an annex.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Chain = | End | Link: [I32, Chain];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>With domains, <span class="tt">nom</span> declares a type constructor; within its body, <span class="tt">Bin</span> is the instance at hand. <a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> constructors and fields are as visible as the <span class="tt">nom</span>, and <span class="tt">match</span> sees through it.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Bin (T: *) = | Leaf | Node: [Bin, T, Bin];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>With domains, <span class="tt">nom</span> declares a type constructor; within its body, <span class="tt">Bin T</span> is the instance at hand. <a class="el" href="classNamed.html" title="Phase hook for compile.named.">Named</a> constructors and fields are as visible as the <span class="tt">nom</span>, and <span class="tt">match</span> sees through it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">nom Bin (T: *) = | Leaf | Node: [Bin T, T, Bin T];</div>
 <div class="line">let NatBin = Bin Nat;</div>
 <div class="line">let _ = refly.struc.e (match NatBin#Node (NatBin#Leaf, 23, NatBin#Leaf) with | Leaf =&gt; 0 | Node (_, x, _) =&gt; x, 23);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
