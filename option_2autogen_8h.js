@@ -1,5 +1,6 @@
 var option_2autogen_8h =
 [
+    [ "mim::plug::option::Opt_ctor", "structmim_1_1plug_1_1option_1_1Opt__ctor.html", null ],
     [ "MIM_option_NORMALIZER_IMPL", "option_2autogen_8h.html#a674fa50276bc320e0052ec6e1af992d7", null ],
     [ "mim::plug::option::is_some", "namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263", null ],
     [ "mim::plug::option::none", "namespacemim_1_1plug_1_1option.html#ad870835f1ef18526c9b33492ac2ded9f", null ],
@@ -8,7 +9,7 @@ var option_2autogen_8h =
     [ "mim::plug::option::some_if", "namespacemim_1_1plug_1_1option.html#ab4a39114347d879f20a6f587fd419f63", null ],
     [ "mim::plug::option::unwrap_or", "namespacemim_1_1plug_1_1option.html#a0cf323d12b847d73a3f7072558fcf2ad", null ],
     [ "mim::plug::option::unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a2a034eea369e04135212fd3f8c51ae53", null ],
-    [ "mim::plug::option::normalize_unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a69723717eb7ea4a18de35451bd7444a8", null ],
+    [ "mim::plug::option::normalize_unwrap_unsafe", "namespacemim_1_1plug_1_1option.html#a742c73a0dc42cd460e1622e93ba3b372", null ],
     [ "mim::plug::option::register_normalizers", "namespacemim_1_1plug_1_1option.html#af6203c25caf29713dc1dcf66748919cc", null ],
     [ "mim::plug::option::Plugin_Id", "namespacemim_1_1plug_1_1option.html#a0c1c5b5078108c1ab6c88e6f766810e3", null ]
 ];

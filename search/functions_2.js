@@ -11,7 +11,7 @@ var searchData=
   ['check_8',['Check',['../classmim_1_1Check.html#a5cf3253a84fa5f1ee21fb68f1647d77b',1,'mim::Check']]],
   ['check_9',['check',['../classmim_1_1Def.html#af5de4f9dcbade5ac5a60f7a50e76e69f',1,'mim::Def::check(size_t i, const Def *def)'],['../classmim_1_1Def.html#afcefb366e9e0024f038fe9aa145a3126',1,'mim::Def::check()']]],
   ['check_5fgather_5fshape_5fconstraints_10',['check_gather_shape_constraints',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#ac3754a9fb07990567c6b955e2f8ead8a',1,'mim::plug::tensor::phase']]],
-  ['check_5fnom_5fscope_11',['check_nom_scope',['../namespacemim_1_1ast.html#a7f73673f36257750aabe79243693ae1e',1,'mim::ast']]],
+  ['check_5fnom_5fscope_11',['check_nom_scope',['../namespacemim_1_1ast.html#a774e7e6f2df98bac968d795ebc9b1965',1,'mim::ast']]],
   ['check_5fscatter_5fshape_5fconstraints_12',['check_scatter_shape_constraints',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#a91704d2cb2a15f3601ece36850e93c70',1,'mim::plug::tensor::phase']]],
   ['children_13',['children',['../classmim_1_1Nest_1_1Node.html#aabfd78eeaa88bfaa0ce7f9dbb08b751a',1,'mim::Nest::Node']]],
   ['claim_14',['claim',['../classmim_1_1PlainNames.html#a571873e4a9e7056f40eb481caad760b8',1,'mim::PlainNames']]],

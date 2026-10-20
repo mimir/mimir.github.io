@@ -8,5 +8,6 @@ var bind_8cpp =
     ] ],
     [ "mim::ast::Tag", "namespacemim_1_1ast.html#ac9fa7d53674c22f3b68cf03b08d905b3", null ],
     [ "mim::ast::add_alias", "namespacemim_1_1ast.html#aa9f6e2684d6d06edb84cb5aed923da79", null ],
+    [ "mim::ast::add_names", "namespacemim_1_1ast.html#a60b8016d289281523e0828bb77606426", null ],
     [ "mim::ast::loc2plugin", "namespacemim_1_1ast.html#aa5f6723d6e030efed52caf97543750bd", null ]
 ];

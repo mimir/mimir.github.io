@@ -187,6 +187,7 @@ Include dependency graph for emit.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:mim_3A_3Aast_3A_3AEmitter" id="r_mim_3A_3Aast_3A_3AEmitter"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Emitter.html">mim::ast::Emitter</a></td></tr>
+<tr class="memitem:mim_3A_3Aast_3A_3AEmitter_3A_3ANomInfo_5Fstructmim_5F1_5F1ast_5F1_5F1Emitter_5F1_5F1NomInfo" id="r_mim_3A_3Aast_3A_3AEmitter_3A_3ANomInfo_5Fstructmim_5F1_5F1ast_5F1_5F1Emitter_5F1_5F1NomInfo"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1ast_1_1Emitter.html#structmim_1_1ast_1_1Emitter_1_1NomInfo">mim::ast::Emitter::NomInfo</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -206,11 +207,53 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4d5e6bb359fe6aff819c36df26777e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">A float <a class="el" href="classmim_1_1ast_1_1Tok.html">Tok</a> stores its value as <a class="el" href="namespacemim.html#a43c8683ea43b0bd8c38bb973d5f91d63">mim::f64</a> bits; re-encode them for the width of the annotated type <code class="param">t</code>.  <br /></td></tr>
 <tr class="memitem:ac6cc8247d86d61a5e8b5a16c329d57f5" id="r_ac6cc8247d86d61a5e8b5a16c329d57f5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5">mim::ast::emit_union</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, const <a class="el" href="classmim_1_1ast_1_1Expr.html">Expr</a> *expr, <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> &amp;types)</td></tr>
 <tr class="memdesc:ac6cc8247d86d61a5e8b5a16c329d57f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">a ∪ b ∪ c</span> is one n-ary <a class="el" href="classmim_1_1Join.html" title="A union type whose ops are sorted and deduplicated: T ∪ T is T.">Join</a>, so flatten the left spine the left-associative parse built.  <br /></td></tr>
-<tr class="memitem:a7f73673f36257750aabe79243693ae1e" id="r_a7f73673f36257750aabe79243693ae1e"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a7f73673f36257750aabe79243693ae1e">mim::ast::check_nom_scope</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, Loc loc, const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom)</td></tr>
-<tr class="memdesc:a7f73673f36257750aabe79243693ae1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt">nom</span>'s intro and elim are private to the <span class="tt">mod</span> that declared it; the type itself is not.  <br /></td></tr>
+<tr class="memitem:a774e7e6f2df98bac968d795ebc9b1965" id="r_a774e7e6f2df98bac968d795ebc9b1965"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a774e7e6f2df98bac968d795ebc9b1965">mim::ast::check_nom_scope</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, Loc loc, const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom, bool named=false)</td></tr>
+<tr class="memdesc:a774e7e6f2df98bac968d795ebc9b1965"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt">nom</span>'s intro and elim are private to the <span class="tt">mod</span> that declared it; the type itself is not.  <br /></td></tr>
+<tr class="memitem:ab937736cbad1e3b098cf34345f6fb541" id="r_ab937736cbad1e3b098cf34345f6fb541"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#ab937736cbad1e3b098cf34345f6fb541">mim::ast::open_nom</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, Loc loc, const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom)</td></tr>
+<tr class="memdesc:ab937736cbad1e3b098cf34345f6fb541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and prepares access to <code class="param">nom</code> through its named constructors or fields.  <br /></td></tr>
+<tr class="memitem:a306bf530c6641603d8d243d84dac6ada" id="r_a306bf530c6641603d8d243d84dac6ada"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a306bf530c6641603d8d243d84dac6ada">mim::ast::unwrap_field</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, const <a class="el" href="classmim_1_1ast_1_1InfixExpr.html">InfixExpr</a> *ex, const <a class="el" href="classmim_1_1Def.html">Def</a> *tup)</td></tr>
+<tr class="memdesc:a306bf530c6641603d8d243d84dac6ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps <code class="param">tup</code> if it is a value of a <span class="tt">nom</span> and <code class="param">ex</code> names one of its fields; <span class="tt">nullptr</span> otherwise.  <br /></td></tr>
 <tr class="memitem:a811d9e1c00aa7a88cb0b5b7398856535" id="r_a811d9e1c00aa7a88cb0b5b7398856535"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1ast.html#a811d9e1c00aa7a88cb0b5b7398856535">mim::ast::emit_ctor</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;e, const <a class="el" href="classmim_1_1Variant.html">Variant</a> *variant, const <a class="el" href="classmim_1_1ast_1_1Expr.html">Expr</a> *index, const <a class="el" href="classmim_1_1Nom.html">Nom</a> *nom=nullptr)</td></tr>
 <tr class="memdesc:a811d9e1c00aa7a88cb0b5b7398856535"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">T#C</span> or <span class="tt">T#i</span> selects case <span class="tt">C</span> or <span class="tt">i</span> of the <a class="el" href="classmim_1_1Variant.html" title="A sum type whose cases are positional: unlike a Join, they are neither sorted nor deduplicated.">Variant</a> <span class="tt">T</span>: a constructor function - or its value for a <span class="tt">[]</span> payload.  <br /></td></tr>
 </table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1ast_1_1Emitter_1_1NomInfo" id="structmim_1_1ast_1_1Emitter_1_1NomInfo"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1ast_1_1Emitter_1_1NomInfo">&#9670;&#160;</a></span>mim::ast::Emitter::NomInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::ast::Emitter::NomInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="emit_8cpp_source.html#l00131">131</a> of file <a class="el" href="emit_8cpp_source.html">emit.cpp</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a5992bcdc0b542767204fe16e7a6efce5" name="a5992bcdc0b542767204fe16e7a6efce5"></a>const <a class="el" href="classmim_1_1Nom.html">Nom</a> *</td>
+<td class="fieldname">
+decl</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8a606389c3f9125de6d8563a05643d0b" name="a8a606389c3f9125de6d8563a05643d0b"></a><a class="el" href="namespacemim_1_1ast.html#a62f2a98de823df1fd98e48becb381af3">Vis</a></td>
+<td class="fieldname">
+named_vis</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ab7d5523c677161eeb102e477eec2c249" name="ab7d5523c677161eeb102e477eec2c249"></a>const <a class="el" href="classmim_1_1ast_1_1ModDecl.html">ModDecl</a> *</td>
+<td class="fieldname">
+owner</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

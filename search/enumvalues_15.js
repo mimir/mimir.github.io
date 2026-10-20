@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['w_0',['W',['../namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276',1,'mim::plug::regex']]],
-  ['w_1',['w',['../namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938af1290186a5d0b1ceab27f4e77c0c5d68',1,'mim::plug::regex']]],
-  ['wrap_2',['Wrap',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa212b19ef5f2fb30acf92e6cbccc1f2d',1,'mim']]]
+  ['var_0',['Var',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da5a92344ee95acf10c31901b36418be77',1,'mim']]],
+  ['variant_1',['Variant',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a',1,'mim::Variant']]]
 ];

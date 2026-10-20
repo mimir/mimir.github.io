@@ -1,5 +1,6 @@
 var btensor_2autogen_8h =
 [
+    [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
     [ "MIM_btensor_NORMALIZER_IMPL", "btensor_2autogen_8h.html#ab1324df9ed32880e800b03662519e64d", null ],
     [ "mim::plug::btensor::broadcast", "namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d", null ],
     [ "mim::plug::btensor::concat", "namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085", null ],

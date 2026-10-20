@@ -644,8 +644,8 @@ interchange</h3>
 <div class="line">                                       &quot;interchange: permutation must not mix parallel and reduction dims&quot;)›;</div>
 <div class="line">    let sr_n   = ‹i: r; t#Sr#(core.idx 0 r (perm_ok#i))›;</div>
 <div class="line">    let vdim_n = match vec.first `== (perm_ok, t#vdim) with</div>
-<div class="line">                     | j: Idx r =&gt; core.idx2nat j</div>
-<div class="line">                     | _: []    =&gt; t#vdim;</div>
+<div class="line">                     | Some j =&gt; core.idx2nat j</div>
+<div class="line">                     | None   =&gt; t#vdim;</div>
 <div class="line">    // The parallel dims permute among themselves (checked above), so the new dim j writes the</div>
 <div class="line">    // output axis its old dim perm#j wrote.</div>
 <div class="line">    let oax_n = ‹j: t#Ro; t#oax#(core.idx 0 (t#Ro) (perm_ok#(core.idx 0 r (core.idx2nat j))))›;</div>
@@ -845,7 +845,7 @@ conv_schedule</h3>
 <div class="line">    let r     = t#Ro + t#Rr;</div>
 <div class="line">    let ow    = t#Sr#(core.idx 0 r 3);</div>
 <div class="line">    let vec   = if_static (stride#1_2 * dilation#1_2 * ow, s_red &lt; s_ow, ff);</div>
-<div class="line">    lam fits (k b: Nat): Bool = core.bit2.and_ 2 (k / b * b == k, b &lt; k);</div>
+<div class="line">    lam fits (k b: Nat): Bool = core.bit2.and 2 (k / b * b == k, b &lt; k);</div>
 <div class="line">    // Rows too short for the vectorizer (ow &lt; 16) are processed in BLOCKS: strip-mine oh by the</div>
 <div class="line">    // largest block size ≤ 4 that divides it and sink both halves (vdim = ro − 2 selects mr_nest&#39;s</div>
 <div class="line">    // blocked branch, which jams the block dim into the vector body — one reduction pass folds the</div>
@@ -855,7 +855,7 @@ conv_schedule</h3>
 <div class="line">    let oh    = t#Sr#(core.idx 0 r 2);</div>
 <div class="line">    lam divides (d: Nat): Bool = oh / d * d == oh;</div>
 <div class="line">    let bs    = ((1, 2)#(divides 2), 4)#(divides 4);</div>
-<div class="line">    let short = if_static (oh * ow, core.bit2.and_ 2 (vec, ow &lt; 16), ff);</div>
+<div class="line">    let short = if_static (oh * ow, core.bit2.and 2 (vec, ow &lt; 16), ff);</div>
 <div class="line">    // There is one jam slot, so a `co` block is worth taking only where the row block cannot fire:</div>
 <div class="line">    // a POINTWISE window (which has no taps to amortize the accumulator round trip at all), or a</div>
 <div class="line">    // short row whose oh does not split. Measured over the level3 3x3 layers, taking it against a</div>
@@ -863,21 +863,21 @@ conv_schedule</h3>
 <div class="line">    let co    = t#Sr#(core.idx 0 r 1);</div>
 <div class="line">    let ci    = t#Sr#(core.idx 0 r 4);</div>
 <div class="line">    let win   = t#Sr#(core.idx 0 r 5) * t#Sr#(core.idx 0 r 6);</div>
-<div class="line">    let pw    = if_static (win, core.bit2.and_ 2 (vec, win == 1), ff);</div>
+<div class="line">    let pw    = if_static (win, core.bit2.and 2 (vec, win == 1), ff);</div>
 <div class="line">    // A pointwise window keeps a working 2-row block at unit stride (1.3-1.6x faster over the level3</div>
 <div class="line">    // pointwise layers); 4-row blocks and strided rows still lose to the `co` block.</div>
-<div class="line">    let pw_rows = core.bit2.and_ 2 (core.bit2.and_ 2 (short, bs == 2),</div>
-<div class="line">                                    core.bit2.and_ 2 (stride#0_2 == 1, stride#1_2 == 1));</div>
-<div class="line">    let cob   = core.bit2.or_ 2 (core.bit2.and_ 2 (pw, (tt, ff)#pw_rows), core.bit2.and_ 2 (short, bs == 1));</div>
+<div class="line">    let pw_rows = core.bit2.and 2 (core.bit2.and 2 (short, bs == 2),</div>
+<div class="line">                                    core.bit2.and 2 (stride#0_2 == 1, stride#1_2 == 1));</div>
+<div class="line">    let cob   = core.bit2.or 2 (core.bit2.and 2 (pw, (tt, ff)#pw_rows), core.bit2.and 2 (short, bs == 1));</div>
 <div class="line">    // One accumulator register per jammed cell, so a block wider than the target&#39;s lanes spills;</div>
 <div class="line">    // every jammed cell also replays the window, so the block shares the 32-tap register budget.</div>
 <div class="line">    let vw    = vec_width 8;</div>
-<div class="line">    lam cb_ok (b: Nat): Bool = core.bit2.and_ 2 (core.bit2.and_ 2 (fits (co, b), b &lt;= vw), b * win &lt;= 32);</div>
+<div class="line">    lam cb_ok (b: Nat): Bool = core.bit2.and 2 (core.bit2.and 2 (fits (co, b), b &lt;= vw), b * win &lt;= 32);</div>
 <div class="line">    let cb    = if_static (co, (1, (((1, 2)#(cb_ok 2), 4)#(cb_ok 4), 8)#(cb_ok 8))#cob, 1);</div>
 <div class="line">    let cblk  = cb != 1;</div>
-<div class="line">    lam ct_ok (b: Nat): Bool = core.bit2.and_ 2 (fits (ci, b), cb * b * win &lt;= 32);</div>
+<div class="line">    lam ct_ok (b: Nat): Bool = core.bit2.and 2 (fits (ci, b), cb * b * win &lt;= 32);</div>
 <div class="line">    let cts   = if_static (ci, (1, (((1, 2)#(ct_ok 2), 4)#(ct_ok 4), 8)#(ct_ok 8))#cob, 1);</div>
-<div class="line">    let block = core.bit2.and_ 2 ((tt, ff)#cblk, core.bit2.and_ 2 (short, bs != 1));</div>
+<div class="line">    let block = core.bit2.and 2 ((tt, ff)#cblk, core.bit2.and 2 (short, bs != 1));</div>
 <div class="line">    let t_ci  = strip_mine_red (t, 4, cts);</div>
 <div class="line">    let t_co  = strip_mine_par (t_ci, 1, cb);</div>
 <div class="line">    let t_oh  = strip_mine_par (t_co, 3, (1, bs)#block);</div>
@@ -887,13 +887,13 @@ conv_schedule</h3>
 <div class="line">    // Dims are (n, co/cb, cb, oh/bs, bs, ow | …); rotate `cb` down next to `ow` so the jam dim and</div>
 <div class="line">    // the vector dim are the trailing parallel pair. Identity when the block is not taken.</div>
 <div class="line">    let perm  = ‹j: r_n; let jj = core.idx2nat j;</div>
-<div class="line">                         core.select (core.bit2.and_ 2 (cblk, jj == 2), 3,</div>
-<div class="line">                         core.select (core.bit2.and_ 2 (cblk, jj == 3), 4,</div>
-<div class="line">                         core.select (core.bit2.and_ 2 (cblk, jj == 4), 2, jj)))›;</div>
-<div class="line">    let vd    = core.select (core.bit2.or_ 2 (cblk, block), 4, (r_n, 5)#vec);</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 2), 3,</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 3), 4,</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 4), 2, jj)))›;</div>
+<div class="line">    let vd    = core.select (core.bit2.or 2 (cblk, block), 4, (r_n, 5)#vec);</div>
 <div class="line">    // The window grows only when the `ci` split is REAL; keying it off the pointwise flag would</div>
 <div class="line">    // over-unroll a big window past the tap budget (a 7x7 stem goes 7 -&gt; 49 taps, and 2x slower).</div>
-<div class="line">    let un    = core.select (core.bit2.or_ 2 (cts != 1, 3 &lt;= u), u + 1, u);</div>
+<div class="line">    let un    = core.select (core.bit2.or 2 (cts != 1, 3 &lt;= u), u + 1, u);</div>
 <div class="line">    unroll_trailing (vectorize (interchange (t_oh, perm), vd), un);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md576"></a>
 dot_schedule</h3>
@@ -921,10 +921,10 @@ dot_schedule_kvec</h3>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam dot_schedule_kvec (r_out: Nat) (t: Tileable): Tileable =</div>
 <div class="line">    // A block counts only when it divides AND leaves a non-trivial outer dim (`b &lt; k`): an exact</div>
 <div class="line">    // split&#39;s leading size-1 axis would type-collapse the packed output («1; T» ≡ T).</div>
-<div class="line">    lam blk_by (k b: Nat): Bool = core.bit2.and_ 2 (k / b * b == k, b &lt; k);</div>
+<div class="line">    lam blk_by (k b: Nat): Bool = core.bit2.and 2 (k / b * b == k, b &lt; k);</div>
 <div class="line">    // One accumulator register per jammed cell, so a block wider than the target&#39;s lanes spills.</div>
 <div class="line">    let vw  = vec_width 8;</div>
-<div class="line">    lam blk_ok (k b: Nat): Bool = core.bit2.and_ 2 (blk_by (k, b), b &lt;= vw);</div>
+<div class="line">    lam blk_ok (k b: Nat): Bool = core.bit2.and 2 (blk_by (k, b), b &lt;= vw);</div>
 <div class="line">    let d   = r_out - 1;</div>
 <div class="line">    let n   = t#So#(core.idx 0 (t#Ro) d);</div>
 <div class="line">    let bs  = if_static (n, ((((1, 2)#(blk_ok (n, 2)), 4)#(blk_ok (n, 4)), 8)#(blk_ok (n, 8)), 16)#(blk_ok (n, 16)), 1);</div>
@@ -943,8 +943,8 @@ dot_schedule_kvec</h3>
 <div class="line">    let pa   = r_out - 1;</div>
 <div class="line">    let pb   = r_out;</div>
 <div class="line">    let perm = ‹j: r3; let jj = core.idx2nat j;</div>
-<div class="line">                       core.select (core.bit2.and_ 2 (swap, jj == pa), pb,</div>
-<div class="line">                       core.select (core.bit2.and_ 2 (swap, jj == pb), pa, jj))›;</div>
+<div class="line">                       core.select (core.bit2.and 2 (swap, jj == pa), pb,</div>
+<div class="line">                       core.select (core.bit2.and 2 (swap, jj == pb), pa, jj))›;</div>
 <div class="line">    unroll_trailing (vectorize (interchange (t3, perm), r3 - 1), 2);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md578"></a>
 pool_schedule</h3>
@@ -1193,12 +1193,12 @@ dot_general_pick</h2>
 <p>Sends input axis <span class="tt">i</span> to the loop id it reads — batching dims first, then the contractions, then the remaining free axes.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam dot_general_pick {n: Nat} {na nb nc: Nat} (a: «na; Idx n», b: «nb; Idx n», c: «nc; Idx n») (off_1 off_2: Nat) (i: Idx n): Nat =</div>
 <div class="line">    match vec.first core.icmp.e (b, i) with</div>
-<div class="line">        | bi: Idx nb =&gt; core.idx2nat bi</div>
-<div class="line">        | _:  []     =&gt; match vec.first core.icmp.e (c, i) with</div>
-<div class="line">            | ci: Idx nc =&gt; off_2 + core.idx2nat ci</div>
-<div class="line">            | _:  []     =&gt; match vec.first core.icmp.e (a, i) with</div>
-<div class="line">                | ai: Idx na =&gt; off_1 + core.idx2nat ai</div>
-<div class="line">                | _:  []     =&gt; 0;</div>
+<div class="line">        | Some bi =&gt; core.idx2nat bi</div>
+<div class="line">        | None    =&gt; match vec.first core.icmp.e (c, i) with</div>
+<div class="line">            | Some ci =&gt; off_2 + core.idx2nat ci</div>
+<div class="line">            | None    =&gt; match vec.first core.icmp.e (a, i) with</div>
+<div class="line">                | Some ai =&gt; off_1 + core.idx2nat ai</div>
+<div class="line">                | None    =&gt; 0;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md606"></a>
 dot_product_impl</h2>
 <p><span class="tt">r1</span>/<span class="tt">r2</span> are an <em>explicit</em> group here, unlike in the <span class="tt">dot_product</span> axiom: they must be literals already when this <span class="tt">lam</span> is β-reduced, since the subscript rows are built with <span class="tt">vec.diff</span>/<span class="tt">vec.first</span>, whose normalizers decline to fold over a non-literal rank, and nothing re-normalizes the body once a Hole is resolved later. <span class="tt">{s1 s2}</span> has no such problem and stays implicit.</p>

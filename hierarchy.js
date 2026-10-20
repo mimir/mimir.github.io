@@ -45,6 +45,7 @@ var hierarchy =
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
     [ "mim::Axm::IsA&lt; Id, D &gt;", "classmim_1_1Axm_1_1IsA.html", null ],
     [ "mim::Axm::IsANode&lt; T &gt;", "classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode", null ],
+    [ "mim::plug::ord::Key_field", "structmim_1_1plug_1_1ord_1_1Key__field.html", null ],
     [ "mim::plug::tensor::phase::Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", null ],
     [ "fe::Lexer", null, [
       [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ]
@@ -57,7 +58,9 @@ var hierarchy =
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
     [ "automaton::NFANode", "classautomaton_1_1NFANode.html", null ],
     [ "mim::Nest::Node", "classmim_1_1Nest_1_1Node.html", null ],
+    [ "mim::ast::Emitter::NomInfo", "classmim_1_1ast_1_1Emitter.html#structmim_1_1ast_1_1Emitter_1_1NomInfo", null ],
     [ "mim::detail::NullSafeDefGIDLt", null, null ],
+    [ "mim::plug::option::Opt_ctor", "structmim_1_1plug_1_1option_1_1Opt__ctor.html", null ],
     [ "mim::Out", "classmim_1_1Out.html", null ],
     [ "fe::Parser", null, [
       [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
@@ -123,6 +126,7 @@ var hierarchy =
       [ "mim::VarRewriter", "classmim_1_1VarRewriter.html", null ],
       [ "mim::Zonker", "classmim_1_1Zonker.html", null ]
     ] ],
+    [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
     [ "fe::RuntimeCast", null, [
       [ "mim::Def", "classmim_1_1Def.html", [
         [ "mim::App", "classmim_1_1App.html", null ],

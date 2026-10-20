@@ -10,6 +10,7 @@ var classmim_1_1ast_1_1Scopes =
     [ "bind", "classmim_1_1ast_1_1Scopes.html#a7bbc80713307fa025da008099e7af1d1", null ],
     [ "dummy", "classmim_1_1ast_1_1Scopes.html#a1ccec7fa48ba733643d462600ceef56b", null ],
     [ "enclosing_mod", "classmim_1_1ast_1_1Scopes.html#a3af69feaff9b24c567edd43b97774c12", null ],
+    [ "enter_top_decl", "classmim_1_1ast_1_1Scopes.html#a4fd60f39234de6ea34b79d10ead02b69", null ],
     [ "error", "classmim_1_1ast_1_1Scopes.html#acf753fc74cea0b62c619b7a0625d28e8", null ],
     [ "find", "classmim_1_1ast_1_1Scopes.html#a6c745af337b10780bac0723719281c7c", null ],
     [ "find_shadowed_module", "classmim_1_1ast_1_1Scopes.html#a742c1fa180ef481b50d8813f19606263", null ],
@@ -21,5 +22,6 @@ var classmim_1_1ast_1_1Scopes =
     [ "push", "classmim_1_1ast_1_1Scopes.html#a6fa2b5ae4e4b25dbc8bf0ae0b3ba68e7", null ],
     [ "push_barrier", "classmim_1_1ast_1_1Scopes.html#aca65f9a7b286b7f87d6c70b6c206531a", null ],
     [ "push_mod", "classmim_1_1ast_1_1Scopes.html#a80200e24440c4ab909a13e00952ebd5f", null ],
-    [ "top", "classmim_1_1ast_1_1Scopes.html#a060fac65e920cc7ec69d8a7a93e927e9", null ]
+    [ "top", "classmim_1_1ast_1_1Scopes.html#a060fac65e920cc7ec69d8a7a93e927e9", null ],
+    [ "top_decl", "classmim_1_1ast_1_1Scopes.html#a234e9d58614bfea3fd3fc56dfe119a33", null ]
 ];

@@ -417,7 +417,7 @@ mr_nest</h2>
 <div class="line">        let win = range_unroll (r, Sr) To (u_lo, r) cell_at;</div>
 <div class="line">        // `vd` is `vdim` clamped through the dispatch condition: the non-selected branch is still</div>
 <div class="line">        // ELABORATED, so its body must be type-sane even when `vdim` is the out-of-range sentinel.</div>
-<div class="line">        let vec_ok = core.bit2.and_ 2 (vdim + 1 == ro, Sr#(core.idx 0 r ((0, vdim)#(vdim &lt; r))) != 1);</div>
+<div class="line">        let vec_ok = core.bit2.and 2 (vdim + 1 == ro, Sr#(core.idx 0 r ((0, vdim)#(vdim &lt; r))) != 1);</div>
 <div class="line">        let vd = (0, vdim)#vec_ok;</div>
 <div class="line"> </div>
 <div class="line">        // CLASSIC: reduction loops inside all output loops, one accumulator cell at a time; the</div>
@@ -470,8 +470,8 @@ mr_nest</h2>
 <div class="line">        let pd_c    = (0, vdim)#(vdim &lt; r);</div>
 <div class="line">        let sd_r    = vdim + 1;</div>
 <div class="line">        let sd_c    = (0, sd_r)#(sd_r &lt; r);</div>
-<div class="line">        let block_ok = core.bit2.and_ 2 (vdim + 2 == ro,</div>
-<div class="line">                       core.bit2.and_ 2 (Sr#(core.idx 0 r pd_c) != 1, Sr#(core.idx 0 r sd_c) != 1));</div>
+<div class="line">        let block_ok = core.bit2.and 2 (vdim + 2 == ro,</div>
+<div class="line">                       core.bit2.and 2 (Sr#(core.idx 0 r pd_c) != 1, Sr#(core.idx 0 r sd_c) != 1));</div>
 <div class="line"> </div>
 <div class="line">        con blocked (m: mem.M 0, u: U, done: Cn [mem.M 0, U])@tt =</div>
 <div class="line">            let Sp = Sr#(core.idx 0 r pd_c);</div>
@@ -528,9 +528,9 @@ mr_nest</h2>
 <div class="line">        let rv_j      = (1, unroll)#(1 &lt;= unroll);</div>
 <div class="line">        let rv_bd     = (0, ro - rv_j)#(rv_j &lt;= ro);</div>
 <div class="line">        let rv_vd     = (0, vdim)#(vdim &lt; r);</div>
-<div class="line">        let redvec_ok = core.bit2.and_ 2 (ro &lt;= vdim, core.bit2.and_ 2 (vdim + 1 == r, rv_j &lt;= ro));</div>
+<div class="line">        let redvec_ok = core.bit2.and 2 (ro &lt;= vdim, core.bit2.and 2 (vdim + 1 == r, rv_j &lt;= ro));</div>
 <div class="line">        let Sr_rv     = ‹j: r; let jj = core.idx2nat j;</div>
-<div class="line">                               (Sr#j, (1, Sr#j)#redvec_ok)#(core.bit2.and_ 2 (rv_bd &lt;= jj, jj &lt; ro))›;</div>
+<div class="line">                               (Sr#j, (1, Sr#j)#redvec_ok)#(core.bit2.and 2 (rv_bd &lt;= jj, jj &lt; ro))›;</div>
 <div class="line">        lam rv_mul (d: Nat, acc: Nat): Nat = acc * Sr_rv#(core.idx 0 r d);</div>
 <div class="line">        let rv_ds = ‹i: rv_j; rv_bd + core.idx2nat i›;</div>
 <div class="line">        let Sb    = vec.fold.r @(Nat, Nat) @rv_j rv_mul (rv_ds, 1);</div>

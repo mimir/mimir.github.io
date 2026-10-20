@@ -9,6 +9,7 @@ var classmim_1_1ast_1_1TuplePtrn =
     [ "emit_decl", "classmim_1_1ast_1_1TuplePtrn.html#a49478562797c22c2e95ba7a505dc03ce", null ],
     [ "emit_type", "classmim_1_1ast_1_1TuplePtrn.html#a476e1d760d91776c97d8a87c5d0322c5", null ],
     [ "emit_value", "classmim_1_1ast_1_1TuplePtrn.html#ada7b5fbb5fb0407e0c933b26a47fad83", null ],
+    [ "field", "classmim_1_1ast_1_1TuplePtrn.html#abac46b48b4280051ae7d005a0ca50312", null ],
     [ "is_brckt", "classmim_1_1ast_1_1TuplePtrn.html#af6806c46bee8ae53065c6e6cdea49029", null ],
     [ "is_implicit", "classmim_1_1ast_1_1TuplePtrn.html#a07459c614c70c28dbe498664cc326882", null ],
     [ "num_ptrns", "classmim_1_1ast_1_1TuplePtrn.html#aba0c50821ac158c7c324c0c4f30677a0", null ],

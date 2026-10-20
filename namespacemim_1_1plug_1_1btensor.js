@@ -2,6 +2,7 @@ var namespacemim_1_1plug_1_1btensor =
 [
     [ "phase", "namespacemim_1_1plug_1_1btensor_1_1phase.html", "namespacemim_1_1plug_1_1btensor_1_1phase" ],
     [ "MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ],
+    [ "Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
     [ "broadcast", "namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d", null ],
     [ "concat", "namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085", null ],
     [ "gather", "namespacemim_1_1plug_1_1btensor.html#a52e55fb0c4b38eed71595a010c06dadd", null ],

@@ -215,9 +215,9 @@ lit</h2>
 <p>Wraps a literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam lit (val: mem.Char): RE = range (val, val);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md492"></a>
-not_</h2>
+not</h2>
 <p>Matches anything but the ranges in the parameter - the parameter must only contain <span class="tt">regex.disj</span>s and <span class="tt">regex.range</span>s.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm not_: RE → RE, normalize_not, 1;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm not: RE → RE, normalize_not, 1;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md493"></a>
 neg_lookahead</h2>
 <p>Succeeds iff the parameter does <em>not</em> match, without consuming input.</p>
@@ -242,11 +242,11 @@ cls.*</h2>
 </table>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod cls</div>
 <div class="line">    anx let d = range (&#39;0&#39;, &#39;9&#39;);</div>
-<div class="line">    anx let D = not_ d;</div>
+<div class="line">    anx let D = not d;</div>
 <div class="line">    anx let w = disj (range (&#39;0&#39;, &#39;9&#39;), range (&#39;a&#39;, &#39;z&#39;), range (&#39;A&#39;, &#39;Z&#39;), lit &#39;_&#39;);</div>
-<div class="line">    anx let W = not_ w;</div>
+<div class="line">    anx let W = not w;</div>
 <div class="line">    anx let s = disj (range (&#39;\t&#39;, &#39;\n&#39;), lit &#39;\r&#39;, lit &#39; &#39;);</div>
-<div class="line">    anx let S = not_ s;</div>
+<div class="line">    anx let S = not s;</div>
 <div class="line">end</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md495"></a>
 any</h2>

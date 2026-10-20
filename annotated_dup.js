@@ -82,7 +82,8 @@ var annotated_dup =
           [ "phase", "namespacemim_1_1plug_1_1btensor_1_1phase.html", [
             [ "LowerMapReduce", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce" ]
           ] ],
-          [ "MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ]
+          [ "MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ],
+          [ "Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ]
         ] ],
         [ "buffer", "namespacemim_1_1plug_1_1buffer.html", [
           [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ]
@@ -130,6 +131,12 @@ var annotated_dup =
           [ "DeviceEmitter", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter" ],
           [ "Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", "classmim_1_1plug_1_1nvptx_1_1Emit" ],
           [ "HostEmitter", "classmim_1_1plug_1_1nvptx_1_1HostEmitter.html", "classmim_1_1plug_1_1nvptx_1_1HostEmitter" ]
+        ] ],
+        [ "option", "namespacemim_1_1plug_1_1option.html", [
+          [ "Opt_ctor", "structmim_1_1plug_1_1option_1_1Opt__ctor.html", null ]
+        ] ],
+        [ "ord", "namespacemim_1_1plug_1_1ord.html", [
+          [ "Key_field", "structmim_1_1plug_1_1ord_1_1Key__field.html", null ]
         ] ],
         [ "regex", "namespacemim_1_1plug_1_1regex.html", [
           [ "app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", "structmim_1_1plug_1_1regex_1_1app__range" ],
