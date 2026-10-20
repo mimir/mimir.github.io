@@ -330,6 +330,8 @@ lattice</h2></td></tr>
 <tr class="memitem:af452ff2897eed267ba834654b30fdf14" id="r_af452ff2897eed267ba834654b30fdf14"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af452ff2897eed267ba834654b30fdf14">repr</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
 <tr class="memdesc:af452ff2897eed267ba834654b30fdf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">The representative of <code class="param">def:</code> follows <span class="tt">def ↦ lattice(def)</span> to the end of its chain.  <br /></td></tr>
 <tr class="memitem:a9833bb5af241375f6f2b0ee59e9928ab" id="r_a9833bb5af241375f6f2b0ee59e9928ab"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9833bb5af241375f6f2b0ee59e9928ab">is_top</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memitem:adfece26e49ed8baae053ab5ecb1cdf5e" id="r_adfece26e49ed8baae053ab5ecb1cdf5e"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#adfece26e49ed8baae053ab5ecb1cdf5e">is_singleton</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:adfece26e49ed8baae053ab5ecb1cdf5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sole inhabitant of a singleton type is ⊤ and shared by all binders of that type, so it is never recorded.  <br /></td></tr>
 <tr class="memitem:a2a47fc0b6867d524f4b55ac13ac7ac07" id="r_a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2a47fc0b6867d524f4b55ac13ac7ac07">lattice_force</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
 <tr class="memdesc:a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Non-monotone</b> write of <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>.  <br /></td></tr>
 <tr class="memitem:ac8af6e64009d736d3db52cc6cf7d9ba7" id="r_ac8af6e64009d736d3db52cc6cf7d9ba7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac8af6e64009d736d3db52cc6cf7d9ba7">lattice_erase</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr)</td></tr>
@@ -470,9 +472,42 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>after</b> the main analysis - only in <b>full</b> rounds, so it always sees the complete abstract <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00262">262</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00268">268</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<a id="adfece26e49ed8baae053ab5ecb1cdf5e" name="adfece26e49ed8baae053ab5ecb1cdf5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfece26e49ed8baae053ab5ecb1cdf5e">&#9670;&#160;</a></span>is_singleton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::is_singleton </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sole inhabitant of a singleton type is ⊤ and shared by all binders of that type, so it is never recorded. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00199">199</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8h_source.html#l00342">mim::World::inhabitant()</a>, <a class="el" href="def_8h_source.html#l01118">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01104">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00134">lattice()</a>, <a class="el" href="phase_8h_source.html#l00168">lattice()</a>, and <a class="el" href="phase_8cpp_source.html#l00123">lattice_force()</a>.</p>
 
 </div>
 </div>
@@ -500,7 +535,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>whether <code class="param">def</code> is pinned to ⊤ (<span class="tt">def ↦ def</span>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00185">185</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00188">188</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -531,7 +566,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00165">165</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00221">pin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00227">pin()</a>.</p>
 
 </div>
 </div>
@@ -565,9 +600,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Writes <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>. </p>
 <p><a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s - and thereby triggers another fixed-point round - iff this changes observable information: an existing entry was overwritten, or a fresh fact other than ⊤ was inserted. Freshly inserting ⊤ (<span class="tt">concr ↦ concr</span>) stays silent, as it is indistinguishable from <em>absent</em> for consumers. Every change also <a class="el" href="#a7ef44bd3020205c3c53e4226e6696677" title="Observable analysis information changed: records curr_mut() as dirty - the seed set of the next spars...">touch()</a>es <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> - the seed set of the next sparse round. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed observable information - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00133">133</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00134">134</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00247">touch()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
 
 </div>
 </div>
@@ -597,6 +632,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00168">168</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>.</p>
+
 </div>
 </div>
 <a id="ac8af6e64009d736d3db52cc6cf7d9ba7" name="ac8af6e64009d736d3db52cc6cf7d9ba7"></a>
@@ -625,9 +662,9 @@ Additional Inherited Members</h2></td></tr>
 <p><b>Non-monotone</b> removal of <code class="param">concr</code> from <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a>, so no later sparse round replays it. </p>
 <p>Like lattice_force, a removal <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s and <a class="el" href="#a7ef44bd3020205c3c53e4226e6696677" title="Observable analysis information changed: records curr_mut() as dirty - the seed set of the next spars...">touch()</a>es <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a>. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff <code class="param">concr</code> had an entry. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00206">206</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00212">212</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00247">touch()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
 
 </div>
 </div>
@@ -663,7 +700,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00123">123</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00247">touch()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
 
 </div>
 </div>
@@ -694,7 +731,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#aa4379e24b2739df1a73bbba54042d46b">mim::plug::mem::EscapeAnalysis</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00286">286</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00292">292</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -730,7 +767,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="world_8h_source.html#l00289">mim::World::annexes()</a>, <a class="el" href="rewrite_8h_source.html#l00066">mim::Rewriter::lookup()</a>, <a class="el" href="world_8h_source.html#l00245">mim::World::Annexes::opaque()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00157">rewrite_mut()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00159">rewrite_mut()</a>.</p>
 
 </div>
 </div>
@@ -789,11 +826,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Monotonically forces <code class="param">def</code> to ⊤ (keep as is). </p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed observable information - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00221">221</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00227">227</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8h_source.html#l00165">lattice()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="escape__analysis_8cpp_source.html#l00057">mim::plug::mem::EscapeAnalysis::leave()</a>, and <a class="el" href="phase_8h_source.html#l00225">pin_imm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="escape__analysis_8cpp_source.html#l00057">mim::plug::mem::EscapeAnalysis::leave()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
 
 </div>
 </div>
@@ -824,9 +861,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00233">233</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00239">239</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00225">pin_imm()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
 
 </div>
 </div>
@@ -865,11 +902,11 @@ Additional Inherited Members</h2></td></tr>
 <p>pins every def in <code class="param">def's</code> immutable subgraph for which <code class="param">pinnable</code> holds. </p>
 <p>Mutables are visited but not descended into; defs already in <code class="param">visited</code> are skipped. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00225">225</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00231">231</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8cpp_source.html#l00486">mim::Def::deps()</a>, <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00221">pin()</a>, and <a class="el" href="phase_8h_source.html#l00225">pin_imm()</a>.</p>
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00486">mim::Def::deps()</a>, <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00227">pin()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00233">pin_imm()</a>, and <a class="el" href="phase_8h_source.html#l00225">pin_imm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00239">pin_imm()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
 
 </div>
 </div>
@@ -898,7 +935,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Run <b>before</b> the main analysis. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00260">260</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00266">266</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
 
@@ -930,9 +967,9 @@ Additional Inherited Members</h2></td></tr>
 <p>The representative of <code class="param">def:</code> follows <span class="tt">def ↦ lattice(def)</span> to the end of its chain. </p>
 <p>The lattice records <em>expressions</em>, so one and the same abstract value can be spelled at several depths of a chain (a var, and the value it was propagated to). <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a> collapses those spellings to one def, so that comparing two of them answers whether they mean the same value - not whether they were derived by the same route. This is union-find's <em>find</em> without the path compression: the chain is what the lattice means, and its links keep changing between rounds - see <a class="el" href="#a2a47fc0b6867d524f4b55ac13ac7ac07" title="Non-monotone write of concr ↦ abstr into lattice() and map().">Analysis::lattice_force</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00178">178</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00181">181</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00152">rewrite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>.</p>
 
 </div>
 </div>
@@ -996,9 +1033,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00152">152</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00154">154</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00178">repr()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00181">repr()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="escape__analysis_8cpp_source.html#l00057">mim::plug::mem::EscapeAnalysis::leave()</a>, <a class="el" href="phase_8cpp_source.html#l00116">rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
 
@@ -1031,7 +1068,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00116">116</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00152">rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="mem__checks_8cpp_source.html#l00059">mim::plug::gpu::phase::MemChecks::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
 
@@ -1064,7 +1101,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a7e49837723ed3acb4ffabb5363848b12">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00265">265</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00271">271</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1096,7 +1133,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00157">157</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00159">159</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="phase_8cpp_source.html#l00118">lookup()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00083">mim::Rewriter::rewrite_mut()</a>.</p>
 
@@ -1127,9 +1164,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a9e5b0c4f65787cd3e3c5ec9ac3d8b4a9">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00282">CODE_MUT</a>, and <a class="el" href="def_8h_source.html#l00065">MIM_MUT_NODE</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00288">CODE_MUT</a>, and <a class="el" href="def_8h_source.html#l00065">MIM_MUT_NODE</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1195,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a77f51ae19557b78b81ffb399a88dda6c">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1187,7 +1224,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a8742f1c9a062031a0c93ecad0d4504fa">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1216,7 +1253,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#abafdce11ee9ebc348da80584ee512fdb">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1245,7 +1282,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#af3f4e88d1f1f82bab1914c7f2f186553">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1274,7 +1311,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#ae2999b37ad9a4f217e2ee00917a1eda7">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1340,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a375c68f78cb83d1f6802f582ce242938">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1332,7 +1369,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a774d62a669366e57a2eed64a3cd02c14">mim::Rewriter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00284">284</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1365,7 +1402,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00075">75</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00262">finalize()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::invalidate()</a>, <a class="el" href="world_8h_source.html#l00168">mim::World::lenient()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::log()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="rewrite_8h_source.html#l00104">mim::Rewriter::old2new()</a>, <a class="el" href="phase_8h_source.html#l00260">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00060">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00152">rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00116">rewrite_external()</a>, <a class="el" href="phase_8h_source.html#l00071">mim::Phase::todo()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00268">finalize()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::invalidate()</a>, <a class="el" href="world_8h_source.html#l00168">mim::World::lenient()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::log()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="rewrite_8h_source.html#l00104">mim::Rewriter::old2new()</a>, <a class="el" href="phase_8h_source.html#l00266">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00060">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00116">rewrite_external()</a>, <a class="el" href="phase_8h_source.html#l00071">mim::Phase::todo()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
 
 </div>
 </div>
@@ -1395,7 +1432,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Additionally schedules <code class="param">mut</code> for the next sparse round. </p>
 <p><a class="el" href="classmim_1_1Use.html" title="const Def*erences a user.">Use</a> this when a lattice change must re-visit <em>other</em> mutables than <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> - e.g. all call sites of a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> whose var's abstract value changed. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00241">241</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00247">247</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1425,11 +1462,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Observable analysis information changed: records <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> as <em>dirty</em> - the seed set of the next sparse round - and <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s. </p>
 <p>Outside of any mutable (e.g. in <a class="el" href="#ad06b63e77f01f2780b54c98fdc7c5d5d" title="Run after the main analysis - only in full rounds, so it always sees the complete abstract World.">finalize()</a>) the change cannot be attributed to a mutable; then the next round falls back to a full one. The lattice writes above do this for you; call it directly when a subclass keeps facts of its own. </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00247">247</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00253">253</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8h_source.html#l00098">mim::Rewriter::curr_mut()</a>, and <a class="el" href="phase_8h_source.html#l00079">mim::Phase::invalidate()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00133">lattice()</a>, <a class="el" href="phase_8h_source.html#l00206">lattice_erase()</a>, and <a class="el" href="phase_8cpp_source.html#l00123">lattice_force()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00134">lattice()</a>, <a class="el" href="phase_8h_source.html#l00212">lattice_erase()</a>, and <a class="el" href="phase_8cpp_source.html#l00123">lattice_force()</a>.</p>
 
 </div>
 </div>

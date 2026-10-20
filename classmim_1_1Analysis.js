@@ -3,6 +3,7 @@ var classmim_1_1Analysis =
     [ "Analysis", "classmim_1_1Analysis.html#a4515f0f091b7c563a7fec2b5a5127b9a", null ],
     [ "Analysis", "classmim_1_1Analysis.html#aee9e19bc9197491f6b62b274fbf2378c", null ],
     [ "finalize", "classmim_1_1Analysis.html#ad06b63e77f01f2780b54c98fdc7c5d5d", null ],
+    [ "is_singleton", "classmim_1_1Analysis.html#adfece26e49ed8baae053ab5ecb1cdf5e", null ],
     [ "is_top", "classmim_1_1Analysis.html#a9833bb5af241375f6f2b0ee59e9928ab", null ],
     [ "lattice", "classmim_1_1Analysis.html#ad7c0e4db7456e9d3910876ce4db8180a", null ],
     [ "lattice", "classmim_1_1Analysis.html#a66aeeff62149090ca33a1cd320f79e7c", null ],

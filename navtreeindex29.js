@@ -1,5 +1,9 @@
 var NAVTREEINDEX29 =
 {
+"vec.html":[1,21],
+"vec_2autogen_8h.html":[5,0,0,1,0,0,21,0],
+"vec_2autogen_8h.html#a397c9b9a8cd26cfb8927c171dc620410":[5,0,0,1,0,0,21,0,0],
+"vec_2autogen_8h_source.html":[5,0,0,1,0,0,21,0],
 "vec_2normalizers_8cpp.html":[5,0,4,1,3,21,0],
 "vec_2normalizers_8cpp_source.html":[5,0,4,1,3,21,0],
 "vec_8cpp.html":[5,0,4,1,3,21,1],
