@@ -126,13 +126,13 @@ var NAVTREEINDEX =
 "dir_a5f6124a4b526271d12e46c048dc5e78.html",
 "lower__ptr_8h.html",
 "namespacemim.html#aaabd11fa56b1d4815c409ba3eba2d5c8",
-"namespacemim_1_1plug_1_1clos.html",
-"namespacemim_1_1plug_1_1gpu.html#a150a9f414f43d81d174a419996ef5f4d",
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f",
-"namespacemim_1_1plug_1_1tensor.html#a7954b221c8c568ad0918b4397d796ad2",
-"ret__wrap_8h.html",
-"structmim_1_1World_1_1State.html#a84e6059624f0d1b241fd51c2ff0bcf89",
-"tok_8h.html#a7665c181db88f5409c94c8234cdd7f0c"
+"namespacemim_1_1plug_1_1buffer.html#af9c784e7898190a6b68b046e9fbfcf4c",
+"namespacemim_1_1plug_1_1demo.html#ae296affd3e0486ee32cf817d398dc72b",
+"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad7d058fbb1486f940542f8837551bab6",
+"namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c",
+"remove__double__syncs_8h.html",
+"structmim_1_1World_1_1State.html#a5180ce487b39e57ec00a32e3d992fa94",
+"tok_8h.html#a0dc001f65ce75c2b9579d0928907ef6f"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

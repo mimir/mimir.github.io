@@ -248,6 +248,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "mim::ast::S", "structmim_1_1ast_1_1S.html", null ],
+    [ "mim::plug::btensor::Sched_field", "structmim_1_1plug_1_1btensor_1_1Sched__field.html", null ],
     [ "mim::Scheduler", "classmim_1_1Scheduler.html", null ],
     [ "mim::Rewriter::Scope", "classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope", null ],
     [ "mim::ast::Scopes", "classmim_1_1ast_1_1Scopes.html", null ],

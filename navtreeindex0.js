@@ -54,7 +54,7 @@ var NAVTREEINDEX0 =
 "branch__clos__elim_8h_source.html":[5,0,3,1,2,4,0,0],
 "btensor.html":[1,2],
 "btensor_2autogen_8h.html":[5,0,0,1,0,0,2,0],
-"btensor_2autogen_8h.html#ab1324df9ed32880e800b03662519e64d":[5,0,0,1,0,0,2,0,1],
+"btensor_2autogen_8h.html#ab1324df9ed32880e800b03662519e64d":[5,0,0,1,0,0,2,0,2],
 "btensor_2autogen_8h_source.html":[5,0,0,1,0,0,2,0],
 "btensor_2normalizers_8cpp.html":[5,0,4,1,3,2,2],
 "btensor_2normalizers_8cpp_source.html":[5,0,4,1,3,2,2],

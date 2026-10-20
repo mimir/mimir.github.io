@@ -4,6 +4,8 @@ var tensor_2autogen_8h =
     [ "mim::plug::tensor::mk_sched", "namespacemim_1_1plug_1_1tensor.html#ae0b98c61ec801e789b072abf237391ef", null ],
     [ "mim::plug::tensor::proj_map", "namespacemim_1_1plug_1_1tensor.html#a403c6433c262de7d9b92b2b069325082", null ],
     [ "mim::plug::tensor::Ring", "namespacemim_1_1plug_1_1tensor.html#aa032b01cee13a89fb2f87ef02cb88c4e", null ],
+    [ "mim::plug::tensor::Sched", "namespacemim_1_1plug_1_1tensor.html#a4daf250d50acaa510128fd32faa819e1", null ],
+    [ "mim::plug::tensor::SchedT", "namespacemim_1_1plug_1_1tensor.html#aa01efa6225e6c141e6d1e4dd3102cdf5", null ],
     [ "mim::plug::tensor::binary", "namespacemim_1_1plug_1_1tensor.html#ac686361a5e7f522d84adb349b6b90643", null ],
     [ "mim::plug::tensor::binary_impl", "namespacemim_1_1plug_1_1tensor.html#aa13ee0f69935ffa0b32706dd1f07dcbd", null ],
     [ "mim::plug::tensor::bmm", "namespacemim_1_1plug_1_1tensor.html#ae853e4d62b56281acaaad1e45741b6f4", null ],

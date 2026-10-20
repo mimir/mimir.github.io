@@ -83,7 +83,8 @@ var annotated_dup =
             [ "LowerMapReduce", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce.html", "classmim_1_1plug_1_1btensor_1_1phase_1_1LowerMapReduce" ]
           ] ],
           [ "MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", "structmim_1_1plug_1_1btensor_1_1MapRedPost" ],
-          [ "Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ]
+          [ "Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
+          [ "Sched_field", "structmim_1_1plug_1_1btensor_1_1Sched__field.html", null ]
         ] ],
         [ "buffer", "namespacemim_1_1plug_1_1buffer.html", [
           [ "LowerPtr", "classmim_1_1plug_1_1buffer_1_1LowerPtr.html", "classmim_1_1plug_1_1buffer_1_1LowerPtr" ]

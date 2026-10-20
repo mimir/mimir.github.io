@@ -1,6 +1,7 @@
 var btensor_2autogen_8h =
 [
     [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
+    [ "mim::plug::btensor::Sched_field", "structmim_1_1plug_1_1btensor_1_1Sched__field.html", null ],
     [ "MIM_btensor_NORMALIZER_IMPL", "btensor_2autogen_8h.html#ab1324df9ed32880e800b03662519e64d", null ],
     [ "mim::plug::btensor::broadcast", "namespacemim_1_1plug_1_1btensor.html#a2f50cafce85608cadb3720c0d64c3f0d", null ],
     [ "mim::plug::btensor::concat", "namespacemim_1_1plug_1_1btensor.html#ae2597490cce019005008d6db5a917085", null ],
@@ -17,6 +18,8 @@ var btensor_2autogen_8h =
     [ "mim::plug::btensor::proj_map", "namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864", null ],
     [ "mim::plug::btensor::Ring", "namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87", null ],
     [ "mim::plug::btensor::scatter", "namespacemim_1_1plug_1_1btensor.html#ab479974738dec361208040c802c33f50", null ],
+    [ "mim::plug::btensor::Sched", "namespacemim_1_1plug_1_1btensor.html#adbee22807ad8e7712b1f3d57c3969eda", null ],
+    [ "mim::plug::btensor::SchedT", "namespacemim_1_1plug_1_1btensor.html#a802f738e35a7830ec38a0ff50ce2a6e2", null ],
     [ "mim::plug::btensor::normalize_map_reduce", "namespacemim_1_1plug_1_1btensor.html#aa1ab9fc65f86afbf46f639f631613034", null ],
     [ "mim::plug::btensor::register_normalizers", "namespacemim_1_1plug_1_1btensor.html#ae60b4af6f42cfc600d8560d1df41ba44", null ],
     [ "mim::plug::btensor::Plugin_Id", "namespacemim_1_1plug_1_1btensor.html#ab5e27486c5e2ab06a2d6d8d20cf22bd5", null ]
