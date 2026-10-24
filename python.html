@@ -173,11 +173,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('python.html','
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_docs_2python"></a></p>
-<p>MimIR ships a Python package called <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>. Its binding code is generated directly from the C++ headers via <a href="https://nanobind.readthedocs.io/">nanobind</a> (see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>), so it mirrors a large portion of the C++ API rather than a hand-picked subset, with a small Python layer on top for convenience. Because the surface is generated, it stays close to the C++ API by construction. Names such as <span class="tt">lit_i8</span>, <span class="tt">type_i32</span>, <span class="tt">arr</span>, <span class="tt">mut_con</span>, and <span class="tt">optimize</span> are exposed with the same spelling you see in the C++ code. You have to enable <span class="tt">MIM_BUILD_PYTHON</span> (default) during configuration for Python support. The build creates a virtual environment at <span class="tt">build/.venv</span> and installs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> into it. Only the initial creation of that venv needs a network connection to fetch <span class="tt">pip</span>, <span class="tt">setuptools</span>, <span class="tt">wheel</span>, <span class="tt">pytest</span>, and <span class="tt">libclang</span> (which the binding generator runs on). Once <span class="tt">build/.venv</span> exists, all further builds stay offline.</p>
-<p>Activate that environment before importing <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>:</p>
-<div class="fragment"><div class="line">source build/.venv/bin/activate</div>
+<p>MimIR ships a Python package called <span class="tt"><a class="el" href="namespacemim.html">mim</a></span>. Its binding code is generated directly from the C++ headers via <a href="https://nanobind.readthedocs.io/">nanobind</a> (see <a class="el" href="#python_extending" title="Extending the Bindings">Extending the Bindings</a>), so it mirrors a large portion of the C++ API rather than a hand-picked subset, with a small Python layer on top for convenience. Because the surface is generated, it stays close to the C++ API by construction. Names such as <span class="tt">lit_i8</span>, <span class="tt">type_i32</span>, <span class="tt">arr</span>, <span class="tt">mut_con</span>, and <span class="tt">optimize</span> are exposed with the same spelling you see in the C++ code. You have to enable <span class="tt">MIM_BUILD_PYTHON</span> (default) during configuration for Python support. The binding generator runs on the clang Python bindings (<span class="tt">clang.cindex</span>) of the Python CMake finds, so install them first: e.g. <span class="tt">clang</span> on Arch, <span class="tt">python3-clang-&lt;N&gt;</span> on Debian/Ubuntu, or <span class="tt">pip install libclang</span>. The build fetches nothing. It stages the package in <span class="tt">build/python</span>, so point <span class="tt">PYTHONPATH</span> there to import <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> from the build tree:</p>
+<div class="fragment"><div class="line">export PYTHONPATH=build/python</div>
 <div class="line">python -c &#39;import mim; print(mim.Driver)&#39;</div>
-</div><!-- fragment --><p>Run the Python test suite with:</p>
+</div><!-- fragment --><p><span class="tt">cmake --install</span> puts the package into the Python <span class="tt">site-packages</span> below the install prefix; <span class="tt">MIM_PY_INSTALL_DIR</span> overrides that location.</p>
+<p>Run the Python test suite (requires <span class="tt">pytest</span>) with:</p>
 <div class="fragment"><div class="line">cmake --build build --target test-py</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md138"></a>
 Package Layout</h1>
@@ -216,7 +216,7 @@ First Steps</h1>
 </div><!-- fragment --><p>So the Python surface follows the same “named IR handle” model as the C++ API rather than copying nodes into Python-owned objects.</p>
 <h1 class="doxsection"><a class="anchor" id="pyplugins"></a>
 Loading Plugins</h1>
-<p>Runtime plugins are still discovered the same way as in C++. <span class="tt">Driver()</span> usually picks up the in-tree plugin build directory automatically, including from the editable Python package. Use <span class="tt">add_plugin_path(...)</span> only when you want to load plugins from an extra directory; <span class="tt">add_import_path(...)</span> and <span class="tt">add_prefix_path(...)</span> add an import directory and an install prefix respectively:</p>
+<p>Runtime plugins are still discovered the same way as in C++. <span class="tt">Driver()</span> usually picks up the in-tree plugin build directory automatically, including from the staged Python package. Use <span class="tt">add_plugin_path(...)</span> only when you want to load plugins from an extra directory; <span class="tt">add_import_path(...)</span> and <span class="tt">add_prefix_path(...)</span> add an import directory and an install prefix respectively:</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mim</div>
 <div class="line"> </div>
 <div class="line">driver = <a class="code hl_class" href="classmim_1_1Driver.html">mim.Driver</a>()</div>
@@ -285,7 +285,7 @@ Bindable Types</h2>
 Embedded Python DSL</h1>
 <p>The file <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1regex.html" title="The regex Plugin">mim.plug.regex</a></span> provides a higher-level wrapper around the regex plugin in form of an embedded domain-specific language. It builds MimIR through overloaded operators, runs optimization, emits LLVM IR, invokes <span class="tt">clang</span>, and loads the resulting shared object via <span class="tt">ctypes</span>.</p>
 <div class="fragment"><div class="line"><span class="comment"># To run, do this beforehand:</span></div>
-<div class="line"><span class="comment"># source build/.venv/bin/activate</span></div>
+<div class="line"><span class="comment"># export PYTHONPATH=build/python</span></div>
 <div class="line"><span class="keyword">import</span> mim</div>
 <div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacemim_1_1plug_1_1regex.html">mim.plug.regex</a> <span class="keyword">as</span> regex</div>
 <div class="line"> </div>
