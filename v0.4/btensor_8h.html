@@ -1,0 +1,252 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/plug/btensor/btensor.h File Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('btensor_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">btensor.h File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;<a class="el" href="lam_8h_source.html">mim/lam.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_8h_source.html">mim/tuple.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="world_8h_source.html">mim/world.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="affine_8h_source.html">mim/plug/affine/affine.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="buffer_8h_source.html">mim/plug/buffer/buffer.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_8h_source.html">mim/plug/core/core.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cps_8h_source.html">mim/plug/cps/cps.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mem_8h_source.html">mim/plug/mem/mem.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="btensor_2autogen_8h_source.html">mim/plug/btensor/autogen.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for btensor.h:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="btensor_8h__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="btensor_8h__dep__incl.svg" width="100%" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div>
+<p><a href="btensor_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Abtensor_3A_3AMapRedPost" id="r_mim_3A_3Aplug_3A_3Abtensor_3A_3AMapRedPost"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1btensor_1_1MapRedPost.html">mim::plug::btensor::MapRedPost</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The curried meta arguments of a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aec79c25d65d7e0096f5284f96ff67e87">tensor.map_reduce_post</a></span> or <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a6fb6d9c0e5f1d87f59af7b27d689f365">btensor.map_reduce_post</a></span> callee (same layout).  <a href="structmim_1_1plug_1_1btensor_1_1MapRedPost.html#details">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Abtensor_3A_3AMapRedPost_3A_3ARanks" id="r_mim_3A_3Aplug_3A_3Abtensor_3A_3AMapRedPost_3A_3ARanks"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html">mim::plug::btensor::MapRedPost::Ranks</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:mim" id="r_mim"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html">mim</a></td></tr>
+<tr class="memitem:mim_3A_3Aplug" id="r_mim_3A_3Aplug"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug.html">mim::plug</a></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Abtensor" id="r_mim_3A_3Aplug_3A_3Abtensor"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html">mim::plug::btensor</a></td></tr>
+<tr class="memdesc:namespacemim_1_1plug_1_1btensor"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="btensor.html" title="The btensor Plugin">The btensor Plugin</a> <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a21fb97ac045b7341ad37c3453469f58e" id="r_a21fb97ac045b7341ad37c3453469f58e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a21fb97ac045b7341ad37c3453469f58e">mim::plug::btensor::op_affine_map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *f, const <a class="el" href="classmim_1_1Def.html">Def</a> *m, const <a class="el" href="classmim_1_1Def.html">Def</a> *n, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out, const <a class="el" href="classmim_1_1Def.html">Def</a> *idxs, const <a class="el" href="classmim_1_1Def.html">Def</a> *mem)</td></tr>
+<tr class="memdesc:a21fb97ac045b7341ad37c3453469f58e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">affine.map</a> @(m, n) @(s_in, s_out) f idxs as <a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> with the address space <span class="tt">as</span> of <code class="param">mem</code> ↦ <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>', coords]</span>.  <br /></td></tr>
+<tr class="memitem:ae30478d943f1561f59d65e1339b1afca" id="r_ae30478d943f1561f59d65e1339b1afca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#ae30478d943f1561f59d65e1339b1afca">mim::plug::btensor::app_cps</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *caller, const <a class="el" href="classmim_1_1Def.html">Def</a> *f, <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> args, const <a class="el" href="classmim_1_1Def.html">Def</a> *ret)</td></tr>
+<tr class="memdesc:ae30478d943f1561f59d65e1339b1afca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the combiner/epilogue <code class="param">f</code> from <code class="param">caller</code> with <code class="param">args</code> and the continuation <code class="param">ret</code>.  <br /></td></tr>
+<tr class="memitem:ae118082de780df1ddea00f39fca6a78d" id="r_ae118082de780df1ddea00f39fca6a78d"><td class="memItemLeft">std::pair&lt; <a class="el" href="classmim_1_1Lam.html">Lam</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#ae118082de780df1ddea00f39fca6a78d">mim::plug::btensor::ds_splice</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *arg, const <a class="el" href="classmim_1_1Def.html">Def</a> *codom, std::string name)</td></tr>
+<tr class="memdesc:ae118082de780df1ddea00f39fca6a78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fresh <span class="tt">fun: Fn arg-&gt;type() → codom</span> named <code class="param">name</code>, spliced into direct style as <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a> fun arg</span>.  <br /></td></tr>
+<tr class="memitem:a47aa7b1ac64b3fda6b806bfd781bf00d" id="r_a47aa7b1ac64b3fda6b806bfd781bf00d"><td class="memItemLeft"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a47aa7b1ac64b3fda6b806bfd781bf00d">mim::plug::btensor::to_idxs</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> extents, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters)</td></tr>
+<tr class="memdesc:a47aa7b1ac64b3fda6b806bfd781bf00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the raw i64 loop counters <code class="param">iters</code> into indices <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> extents[d]</span>.  <br /></td></tr>
+<tr class="memitem:ad5489055e37845955c0ce3bf34d07dee" id="r_ad5489055e37845955c0ce3bf34d07dee"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#ad5489055e37845955c0ce3bf34d07dee">mim::plug::btensor::folded_idx</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *shape, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters)</td></tr>
+<tr class="memdesc:ad5489055e37845955c0ce3bf34d07dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The raw i64 loop counters <code class="param">iters</code> as a buffer index into <code class="param">shape</code>, with its literal size-1 axes folded away.  <br /></td></tr>
+<tr class="memitem:a68fb0a2ed7c67958245f946f07e1b33f" id="r_a68fb0a2ed7c67958245f946f07e1b33f"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a68fb0a2ed7c67958245f946f07e1b33f">mim::plug::btensor::clamp</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *x, const <a class="el" href="classmim_1_1Def.html">Def</a> *hi)</td></tr>
+<tr class="memdesc:a68fb0a2ed7c67958245f946f07e1b33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps the i64 <code class="param">x</code> into <span class="tt">[0, hi]</span>.  <br /></td></tr>
+<tr class="memitem:ad534f6a0eaa1f47b02b523f46f4b0e4e" id="r_ad534f6a0eaa1f47b02b523f46f4b0e4e"><td class="memItemLeft">std::pair&lt; <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#ad534f6a0eaa1f47b02b523f46f4b0e4e">mim::plug::btensor::pad_coords</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters, const <a class="el" href="classmim_1_1Def.html">Def</a> *lo, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, bool replicate)</td></tr>
+<tr class="memdesc:ad534f6a0eaa1f47b02b523f46f4b0e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The read coordinates <span class="tt">o#d − lo#d</span> of a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a1448fb87a7d7752f2b341d00f84ef661">pad</a></span> into <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> s_in#d</span> - clamped to the nearest edge if <code class="param">replicate</code>, or else zeroed out of range - together with the all-axes in-range flag (<span class="tt">nullptr</span> if <code class="param">replicate</code>).  <br /></td></tr>
+<tr class="memitem:a29d971faebc3c599f372db6c7835ba9d" id="r_a29d971faebc3c599f372db6c7835ba9d"><td class="memItemLeft">std::optional&lt; fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d">mim::plug::btensor::concat_extents</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *Sis, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> nis, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> r, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> ax)</td></tr>
+<tr class="memdesc:a29d971faebc3c599f372db6c7835ba9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The literal extents of the <span class="tt">nis</span> input shapes <code class="param">Sis</code> along the concat axis <code class="param">ax</code>; <span class="tt">std::nullopt</span> if one is not literal.  <br /></td></tr>
+<tr class="memitem:adc675d0c43c37daa23f54fdaff020e9e" id="r_adc675d0c43c37daa23f54fdaff020e9e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#adc675d0c43c37daa23f54fdaff020e9e">mim::plug::btensor::concat_select</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *o_ax, const fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &amp;exts, auto read)</td></tr>
+<tr class="memdesc:adc675d0c43c37daa23f54fdaff020e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The concat cell at the i64 axis coordinate <code class="param">o_ax:</code> <span class="tt">read(i, loc)</span> of the input <span class="tt">i</span> owning it - the highest one whose prefix offset is <span class="tt">≤ o_ax</span> - at the axis coordinate <span class="tt">loc</span> clamped into that input.  <br /></td></tr>
+<tr class="memitem:a6348d0f36f7c1cf62224c9e75079fb3e" id="r_a6348d0f36f7c1cf62224c9e75079fb3e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor.html#a6348d0f36f7c1cf62224c9e75079fb3e">mim::plug::btensor::build_pointwise</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *result_ty, const <a class="el" href="classmim_1_1Def.html">Def</a> *mem, const <a class="el" href="classmim_1_1Def.html">Def</a> *dst, const <a class="el" href="classmim_1_1Def.html">Def</a> *ins, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> rn, const std::string &amp;name, auto compute)</td></tr>
+<tr class="memdesc:a6348d0f36f7c1cf62224c9e75079fb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst, ins] → [<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, Buf]</span> fun spliced via <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a></span> that loops over <code class="param">s_out</code> carrying <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst]</span> and writes <span class="tt">compute</span>'s element at the loop's (identity) output coordinates.  <br /></td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html">plug</a></li><li class="navelem"><a href="dir_76b788a7e540b0df5c6eda349926cfd0.html">btensor</a></li><li class="navelem"><a href="btensor_8h.html">btensor.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

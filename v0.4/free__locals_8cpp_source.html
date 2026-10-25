@@ -1,0 +1,383 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/plug/mem/phase/free_locals.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('free__locals_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">free_locals.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="free__locals_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="free__locals_8h.html">mim/plug/mem/phase/free_locals.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;fe/worklist.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem_1_1phase.html">mim::plug::mem::phase</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#ae7aafebea39e5950a2e39d3b585f00b9">    7</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#ae7aafebea39e5950a2e39d3b585f00b9">FreeLocals::analyze</a>() {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811">RWPhase::analyze</a>()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">auto</span> shared = fe::Vector&lt;std::pair&lt;Lam*, const Def*&gt;&gt;();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [lam, chain] : escape_.chains()) {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0, n = chain.ops.size(); i != n; ++i) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">auto</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a> = chain.ops[i];</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a299d8e118878220b57f69b35c01ba3a3">EscapeAnalysis::allocates</a>(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>) || escape_.is_top(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>) || escape_.freed(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <span class="keywordflow">if</span> (escape_.confined(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>)) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                <span class="keyword">auto</span> last = fe::lookup(chain.last, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                <span class="keyword">auto</span> j    = (last ? *last : i) + 1;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                frees_[j &lt; n ? chain.ops[j] : chain.tail].emplace_back(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                shared.emplace_back(lam, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!shared.empty()) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">auto</span> homes = <a class="code hl_typedef" href="namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9">LamSet</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [lam, _] : shared)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            homes.emplace(lam);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// A home nested in another must hang below it, not below the virtual root.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">auto</span> roots = fe::Vector&lt;Def*&gt;();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> lam : homes)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">if</span> (std::ranges::none_of(homes, [lam](<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* home) { <span class="keywordflow">return</span> home-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab">nests</a>(lam); })) roots.emplace_back(lam);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">const</span> <span class="keyword">auto</span> nest = <a class="code hl_function" href="classmim_1_1Nest.html#ad3b42fbd77a9cac91221689797cad7d9">Nest</a>(<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>(), roots);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        mentions(nest.root());</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [lam, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>] : shared)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            place(nest[lam], nest[lam], <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().d(<span class="stringliteral">&quot;free_locals: frees before {} ops, on {} edges&quot;</span>, frees_.size(), edges_.size());</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&amp; FreeLocals::mentions(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a>* node) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">auto</span> res = <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> lam = node-&gt;<a class="code hl_function" href="classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf">mut</a>() ? node-&gt;<a class="code hl_function" href="classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf">mut</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">isa_mut</a>&lt;<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>&gt;() : <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = escape_.<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a97a6d943c72d4e78a62d4877c7202a3a">chains</a>().find(lam); i != escape_.<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a97a6d943c72d4e78a62d4877c7202a3a">chains</a>().end())</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>, _] : i-&gt;second.last)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                res.emplace(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> child : node-&gt;<a class="code hl_function" href="classmim_1_1Nest_1_1Node.html#aabfd78eeaa88bfaa0ce7f9dbb08b751a">children</a>().<a class="code hl_function" href="structmim_1_1Nest_1_1Node_1_1Children.html#acfc4c3e6048a588e5a10b0565937796d">nodes</a>()) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; sub = mentions(child);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        res.insert(sub.begin(), sub.end());</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> mentions_[node] = std::move(res);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&amp; FreeLocals::reach(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Nest_1_1Node.html">Nest::Node</a>* node) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> i = reach_.find(node); i != reach_.end()) <span class="keywordflow">return</span> i-&gt;second;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> res  = <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> = fe::BFSWorklist&lt;GIDSet&lt;const Nest::Node*&gt;&gt;();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>.push(node-&gt;<a class="code hl_function" href="classmim_1_1Nest_1_1Node.html#a228346b558d1045c98c1b0eaad55a5a5">sibl_deps</a>().<a class="code hl_function" href="structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a85ca15a8c2d7f2e068de95daea760e98">nodes</a>());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">while</span> (!<a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>.empty()) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">auto</span> s          = <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>.pop();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; sub = mentions_.at(s);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        res.insert(sub.begin(), sub.end());</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_function" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a>.push(s-&gt;sibl_deps().nodes());</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> reach_[node] = std::move(res);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> FreeLocals::place(<span class="keyword">const</span> Nest::Node* home, <span class="keyword">const</span> Nest::Node* node, <span class="keyword">const</span> Def* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> child : node-&gt;children().nodes())</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        place(home, child, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">auto</span> lam = node-&gt;mut()-&gt;isa_mut&lt;Lam&gt;();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (!lam || escape_.<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#ad584dad7fdf92b1c17b3591047fa86ba">escaping</a>(lam) || (node != home &amp;&amp; !live(home, node, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>))) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">auto</span> i = escape_.<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a97a6d943c72d4e78a62d4877c7202a3a">chains</a>().find(lam);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (i == escape_.<a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a97a6d943c72d4e78a62d4877c7202a3a">chains</a>().end()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; chain = i-&gt;second;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">auto</span> deads        = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> target : chain.targets)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (dead(home, target, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>)) deads.emplace_back(target);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (deads.size() == chain.targets.size())</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        frees_[chain.tail].emplace_back(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> target : deads)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            edges_[chain.tail][target].emplace_back(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">bool</span> FreeLocals::live(<span class="keyword">const</span> Nest::Node* home, <span class="keyword">const</span> Nest::Node* node, <span class="keyword">const</span> Def* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (mentions_.at(node).contains(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = node; x != home; x = x-&gt;inest())</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (reach(x).<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166d">contains</a>(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">bool</span> FreeLocals::dead(<span class="keyword">const</span> Nest::Node* home, <span class="keyword">const</span> Def* target, <span class="keyword">const</span> Def* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">auto</span> scope = home-&gt;mut();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!scope-&gt;nests(target)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> lam = target-&gt;isa_mut&lt;Lam&gt;()) <span class="keywordflow">return</span> !live(home, home-&gt;nest()[lam], <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a0ed3df7adf9007ce67f016db6ce55361">  107</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a0ed3df7adf9007ce67f016db6ce55361">FreeLocals::rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* app) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">auto</span> allocs = fe::lookup(frees_, app);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">auto</span> edges  = fe::lookup(edges_, app);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!allocs &amp;&amp; !edges) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#afc3c5c4246d09777b5bd08204db355fe">RWPhase::rewrite_imm_App</a>(app);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">auto</span>&amp; w  = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a> = allocs ? <a class="code hl_function" href="namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2">mem_def</a>(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>()) : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (allocs &amp;&amp; !<a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>) <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().d(<span class="stringliteral">&quot;free_locals: `{}` threads no memory, leaking {} allocations&quot;</span>, app, allocs-&gt;size());</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">auto</span> new_arg = <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a> ? thread(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>(), <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, *allocs) : <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>());</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (!edges) <span class="keywordflow">return</span> w.app(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>()), new_arg);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a> = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#acfaa17347cff2a3b1800bb9b8622d2c8">num_targs</a>(), [&amp;](<span class="keywordtype">size_t</span> i) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        auto arg = app-&gt;targ(i);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        return Pi::isa_cn(arg-&gt;type()) ? rewrite_target(arg, *edges) : new_arg-&gt;proj(app-&gt;num_targs(), i);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    });</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> w.app(rewrite_target(app-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>(), *edges), w.tuple(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>));</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* FreeLocals::thread(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (arg == <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">free</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(<a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>), allocs);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2">mem_def</a>(arg) != <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(arg);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a7b4e60ce92685a9b7d7d140ccaddd495">tuple</a>(arg-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e">projs</a>([&amp;](<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* proj) { return thread(proj, mem, allocs); }));</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* FreeLocals::free(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="comment">// TODO: address spaces other than 0 are barely tested; some, like gpu shared memory, cannot be freed.</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a> : allocs)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a> = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a2794260d070a6dafbae53e0ed623214a">call</a>&lt;<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">mem::free</a>&gt;(<a class="code hl_typedef" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a>{<a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>, <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">alloc</a>-&gt;proj(2, 1))});</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_namespace" href="namespacemim_1_1plug_1_1mem.html">mem</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* FreeLocals::rewrite_target(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* target, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;DefVec&gt;</a>&amp; edges) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">auto</span>&amp; w = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> allocs = fe::lookup(edges, target)) <span class="keywordflow">return</span> trampoline(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(target), *allocs);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> tuple = target-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Tuple.html">Tuple</a>&gt;())</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">return</span> w.tuple(<a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(tuple-&gt;num_ops(), [&amp;](<span class="keywordtype">size_t</span> i) { return rewrite_target(tuple-&gt;op(i), edges); }));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> sw = <a class="code hl_function" href="classmim_1_1Switch.html#a9a056cd629044cebeb6627b718dfb4bd">Switch</a>(target)) <span class="keywordflow">return</span> w.extract(rewrite_target(sw.tuple(), edges), <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(sw.index()));</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(target);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">const</span> Def* FreeLocals::trampoline(<span class="keyword">const</span> Def* cont, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; allocs) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">auto</span>&amp; w   = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">auto</span> lam  = w.mut_con(<a class="code hl_function" href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61">Pi::isa_cn</a>(cont-&gt;type())-&gt;<a class="code hl_function" href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">dom</a>())-&gt;set(<span class="stringliteral">&quot;free_then&quot;</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">auto</span> <a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a> = <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(lam-&gt;vars());</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">auto</span> mem  = std::ranges::find_if(<a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>, [](<span class="keyword">const</span> Def* arg) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemim_1_1plug_1_1mem.html#ada840448f31c6d5165bd35848433793b">isa_mem</a>(arg); });</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (mem == <a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>.end()) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().d(<span class="stringliteral">&quot;free_locals: `{}` takes no memory, leaking {} allocations&quot;</span>, cont, allocs.size());</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">return</span> cont;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    *mem = free(*mem, allocs);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    lam-&gt;app(<span class="keyword">false</span>, cont, <a class="code hl_function" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> lam;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>} <span class="comment">// namespace mim::plug::mem::phase</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_a9df7e6baae6a143ed3af2bc7ec643641"><div class="ttname"><a href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">mim::App::callee</a></div><div class="ttdeci">const Def * callee() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00237">lam.h:237</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_acfaa17347cff2a3b1800bb9b8622d2c8"><div class="ttname"><a href="classmim_1_1App.html#acfaa17347cff2a3b1800bb9b8622d2c8">mim::App::num_targs</a></div><div class="ttdeci">nat_t num_targs() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00252">lam.h:252</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_adf118f16568ef138e33bdb1f330112d1"><div class="ttname"><a href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">mim::App::arg</a></div><div class="ttdeci">const Def * arg() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00251">lam.h:251</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00289">def.h:289</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a53a70702795d9c4bafe6de0d4f4a66f1"><div class="ttname"><a href="classmim_1_1Def.html#a53a70702795d9c4bafe6de0d4f4a66f1">mim::Def::isa_mut</a></div><div class="ttdeci">T * isa_mut() const</div><div class="ttdoc">If this is mutable, it will cast constness away and perform a dynamic_cast to T.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00588">def.h:588</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a91096a2f915fcbf0dffcbe29074bd76e"><div class="ttname"><a href="classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e">mim::Def::projs</a></div><div class="ttdeci">auto projs(Projector auto f) const</div><div class="ttdoc">Splits this Def via Def::projections into an Array (if A == std::dynamic_extent) or std::array (other...</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00457">def.h:457</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a9d55dd5ba4da4423fec9da70c4c81eab"><div class="ttname"><a href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab">mim::Def::nests</a></div><div class="ttdeci">bool nests(Def *mut)</div><div class="ttdoc">Does this nest mut?</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00382">def.cpp:382</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00091">lam.h:91</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_1_1Node_html"><div class="ttname"><a href="classmim_1_1Nest_1_1Node.html">mim::Nest::Node</a></div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00027">nest.h:27</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_1_1Node_html_a228346b558d1045c98c1b0eaad55a5a5"><div class="ttname"><a href="classmim_1_1Nest_1_1Node.html#a228346b558d1045c98c1b0eaad55a5a5">mim::Nest::Node::sibl_deps</a></div><div class="ttdeci">const SiblDeps &amp; sibl_deps() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00116">nest.h:116</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_1_1Node_html_a73f5b9658f4d8830f9dda6717377aadf"><div class="ttname"><a href="classmim_1_1Nest_1_1Node.html#a73f5b9658f4d8830f9dda6717377aadf">mim::Nest::Node::mut</a></div><div class="ttdeci">Def * mut() const</div><div class="ttdoc">The mutable capsulated in this Node or nullptr, if it&#39;s a virtual root comprising several Nodes.</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00039">nest.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_1_1Node_html_aabfd78eeaa88bfaa0ce7f9dbb08b751a"><div class="ttname"><a href="classmim_1_1Nest_1_1Node.html#aabfd78eeaa88bfaa0ce7f9dbb08b751a">mim::Nest::Node::children</a></div><div class="ttdeci">const Children &amp; children() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00082">nest.h:82</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nest_html_ad3b42fbd77a9cac91221689797cad7d9"><div class="ttname"><a href="classmim_1_1Nest.html#ad3b42fbd77a9cac91221689797cad7d9">mim::Nest::Nest</a></div><div class="ttdeci">Nest(Def *root)</div><div class="ttdef"><b>Definition</b> <a href="nest_8cpp_source.html#l00009">nest.cpp:9</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00060">phase.h:60</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ab1bbf65a4a0593a5343758ac5a82fdfb"><div class="ttname"><a href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">mim::Phase::args</a></div><div class="ttdeci">const fe::Vector&lt; std::string &gt; &amp; args()</div><div class="ttdoc">Command-line arguments passed to this Phase&#39;s plugin via -X &lt;plugin&gt;:&lt;arg&gt;.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00023">phase.cpp:23</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_ac2bba54939517aaceb9c371c02db97b8"><div class="ttname"><a href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">mim::Phase::todo</a></div><div class="ttdeci">bool todo() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00071">phase.h:71</a></div></div>
+<div class="ttc" id="aclassmim_1_1Pi_html_a60c2d05d18e618930742433ce71e0a61"><div class="ttname"><a href="classmim_1_1Pi.html#a60c2d05d18e618930742433ce71e0a61">mim::Pi::isa_cn</a></div><div class="ttdeci">static const Pi * isa_cn(const Def *d)</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00050">lam.h:50</a></div></div>
+<div class="ttc" id="aclassmim_1_1Pi_html_a7941d7dac71f378682c9303de3e45e27"><div class="ttname"><a href="classmim_1_1Pi.html#a7941d7dac71f378682c9303de3e45e27">mim::Pi::dom</a></div><div class="ttdeci">const Def * dom() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00038">lam.h:38</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a03163daff4b06d1ab84f40886ddab811"><div class="ttname"><a href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811">mim::RWPhase::analyze</a></div><div class="ttdeci">virtual bool analyze()</div><div class="ttdoc">Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00202">phase.cpp:202</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00379">phase.h:379</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_aef58721bd5f8d89e624eea65ff51f6b3"><div class="ttname"><a href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">mim::RWPhase::old_world</a></div><div class="ttdeci">World &amp; old_world()</div><div class="ttdoc">Get old Defs from here.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00378">phase.h:378</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_afc3c5c4246d09777b5bd08204db355fe"><div class="ttname"><a href="classmim_1_1RWPhase.html#afc3c5c4246d09777b5bd08204db355fe">mim::RWPhase::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) override</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00223">phase.cpp:223</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00062">rewrite.cpp:62</a></div></div>
+<div class="ttc" id="aclassmim_1_1Switch_html_a9a056cd629044cebeb6627b718dfb4bd"><div class="ttname"><a href="classmim_1_1Switch.html#a9a056cd629044cebeb6627b718dfb4bd">mim::Switch::Switch</a></div><div class="ttdeci">Switch(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8cpp_source.html#l00084">tuple.cpp:84</a></div></div>
+<div class="ttc" id="aclassmim_1_1Tuple_html"><div class="ttname"><a href="classmim_1_1Tuple.html">mim::Tuple</a></div><div class="ttdoc">Data constructor for a Sigma.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00084">tuple.h:84</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a2794260d070a6dafbae53e0ed623214a"><div class="ttname"><a href="classmim_1_1World.html#a2794260d070a6dafbae53e0ed623214a">mim::World::call</a></div><div class="ttdeci">const Def * call(const Def *callee, auto &amp;&amp;arg, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00674">world.h:674</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a7b4e60ce92685a9b7d7d140ccaddd495"><div class="ttname"><a href="classmim_1_1World.html#a7b4e60ce92685a9b7d7d140ccaddd495">mim::World::tuple</a></div><div class="ttdeci">const Def * tuple(Defs ops)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00504">world.cpp:504</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1EscapeAnalysis_html_a299d8e118878220b57f69b35c01ba3a3"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a299d8e118878220b57f69b35c01ba3a3">mim::plug::mem::EscapeAnalysis::allocates</a></div><div class="ttdeci">static bool allocates(const App *app)</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00039">escape_analysis.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1EscapeAnalysis_html_a97a6d943c72d4e78a62d4877c7202a3a"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a97a6d943c72d4e78a62d4877c7202a3a">mim::plug::mem::EscapeAnalysis::chains</a></div><div class="ttdeci">const LamMap&lt; Chain &gt; &amp; chains() const</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00044">escape_analysis.h:44</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1EscapeAnalysis_html_ad584dad7fdf92b1c17b3591047fa86ba"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#ad584dad7fdf92b1c17b3591047fa86ba">mim::plug::mem::EscapeAnalysis::escaping</a></div><div class="ttdeci">bool escaping(Lam *lam) const</div><div class="ttdoc">May lam run at any time, as it is used as a value or jumped to by an escaping Lam?</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00046">escape_analysis.h:46</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals_html_a0ed3df7adf9007ce67f016db6ce55361"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#a0ed3df7adf9007ce67f016db6ce55361">mim::plug::mem::phase::FreeLocals::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00107">free_locals.cpp:107</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals_html_ae7aafebea39e5950a2e39d3b585f00b9"><div class="ttname"><a href="classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html#ae7aafebea39e5950a2e39d3b585f00b9">mim::plug::mem::phase::FreeLocals::analyze</a></div><div class="ttdeci">bool analyze() final</div><div class="ttdoc">Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">free_locals.cpp:7</a></div></div>
+<div class="ttc" id="afree__locals_8h_html"><div class="ttname"><a href="free__locals_8h.html">free_locals.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_1_1phase_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem_1_1phase.html">mim::plug::mem::phase</a></div><div class="ttdef"><b>Definition</b> <a href="add__mem_8h_source.html#l00005">add_mem.h:5</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html">mim::plug::mem</a></div><div class="ttdoc">The mem Plugin</div><div class="ttdef"><b>Definition</b> <a href="escape__analysis_8h_source.html#l00009">escape_analysis.h:9</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_a4260bcf4de298db4a63520dc98c0d4e2"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#a4260bcf4de298db4a63520dc98c0d4e2">mim::plug::mem::mem_def</a></div><div class="ttdeci">const Def * mem_def(const Def *def)</div><div class="ttdoc">Returns the (first) element of type mem.M a from the given tuple.</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00038">mem.h:38</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_aa920d510e2e4277188e0b9517e6ea64b"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b">mim::plug::mem::free</a></div><div class="ttdeci">free</div><div class="ttdef"><b>Definition</b> <a href="mem_2autogen_8h_source.html#l00084">autogen.h:84</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_ada840448f31c6d5165bd35848433793b"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#ada840448f31c6d5165bd35848433793b">mim::plug::mem::isa_mem</a></div><div class="ttdeci">const App * isa_mem(const Def *def)</div><div class="ttdoc">If def is a mem.M-typed value, yields its memory type mem.M a; otherwise nullptr.</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00025">mem.h:25</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mem_html_afaa1b7ff42fe8de01c9ae6f3531c5cbc"><div class="ttname"><a href="namespacemim_1_1plug_1_1mem.html#afaa1b7ff42fe8de01c9ae6f3531c5cbc">mim::plug::mem::alloc</a></div><div class="ttdeci">alloc</div><div class="ttdef"><b>Definition</b> <a href="mem_2autogen_8h_source.html#l00063">autogen.h:63</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1ord_html_ab41bd48f8eb19704f4036734356f166d"><div class="ttname"><a href="namespacemim_1_1plug_1_1ord.html#ab41bd48f8eb19704f4036734356f166d">mim::plug::ord::contains</a></div><div class="ttdeci">contains</div><div class="ttdef"><b>Definition</b> <a href="ord_2autogen_8h_source.html#l00098">autogen.h:98</a></div></div>
+<div class="ttc" id="anamespacemim_html_a26a0e9df92d9733ba607a78d19edbbe9"><div class="ttname"><a href="namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9">mim::LamSet</a></div><div class="ttdeci">GIDSet&lt; Lam * &gt; LamSet</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00211">lam.h:211</a></div></div>
+<div class="ttc" id="anamespacemim_html_a413c339cd397df7ea6a0d5913a45ee23"><div class="ttname"><a href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">mim::Defs</a></div><div class="ttdeci">fe::View&lt; const Def * &gt; Defs</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00096">def.h:96</a></div></div>
+<div class="ttc" id="anamespacemim_html_a879f9e518002de13d65d757536033f0e"><div class="ttname"><a href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a></div><div class="ttdeci">GIDMap&lt; const Def *, To &gt; DefMap</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00098">def.h:98</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00094">def.h:94</a></div></div>
+<div class="ttc" id="astructmim_1_1Nest_1_1Node_1_1Children_html_acfc4c3e6048a588e5a10b0565937796d"><div class="ttname"><a href="structmim_1_1Nest_1_1Node_1_1Children.html#acfc4c3e6048a588e5a10b0565937796d">mim::Nest::Node::Children::nodes</a></div><div class="ttdeci">auto nodes() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00057">nest.h:57</a></div></div>
+<div class="ttc" id="astructmim_1_1Nest_1_1Node_1_1SiblDeps_html_a85ca15a8c2d7f2e068de95daea760e98"><div class="ttname"><a href="structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a85ca15a8c2d7f2e068de95daea760e98">mim::Nest::Node::SiblDeps::nodes</a></div><div class="ttdeci">auto nodes() const</div><div class="ttdef"><b>Definition</b> <a href="nest_8h_source.html#l00088">nest.h:88</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_07110a8747d2517ee97007224f1d2994.html">plug</a></li><li class="navelem"><a href="dir_a8769299ba688646b3b09d59765dd001.html">mem</a></li><li class="navelem"><a href="dir_2281a8ca2902267c90b03110a95e76a2.html">phase</a></li><li class="navelem"><a href="free__locals_8cpp.html">free_locals.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

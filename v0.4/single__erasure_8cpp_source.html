@@ -1,0 +1,380 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/phase/single_erasure.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('single__erasure_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">single_erasure.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="single__erasure_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="single__erasure_8h.html">mim/phase/single_erasure.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * SingleErasure</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_class" href="classmim_1_1Sieve.html">Sieve</a> SingleErasure::sieve(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>* sigma) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// A foreign declaration has no components to inspect.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!sigma-&gt;is_set()) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(sigma-&gt;num_ops());</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">Sieve</a>(sigma-&gt;ops(), [<span class="keyword">this</span>](<span class="keyword">const</span> Def* op) { return !old_world().inhabitant(op); });</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* SingleErasure::erase(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Single.html">Single</a>* single) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (is_unit(single)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856">sigma</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(single-&gt;op())-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96">unfold_type</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* SingleErasure::inhabitant(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* type) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> single = <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1refly.html#a28d21b99af5c1d61200601d069b512a4">type</a>-&gt;isa&lt;Single&gt;(); single &amp;&amp; !is_unit(single)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(single-&gt;op());</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a1299d9e1e6da7e301d7f10fdbb790dd3">inhabitant</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(type));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">size_t</span> SingleErasure::remap(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Sieve.html">Sieve</a>&amp; keep, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* index) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">auto</span> i = <a class="code hl_function" href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">Lit::isa</a>(index);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (!i)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        index-&gt;blame(<span class="stringliteral">&quot;index is not a literal&quot;</span>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            .n(<span class="stringliteral">&quot;dropping an information-free component shifts the indices of its successors&quot;</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            .bail();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span> j = keep[*i];</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    assert(j != <a class="code hl_variable" href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb">Sieve::Gone</a> &amp;&amp; <span class="stringliteral">&quot;an Extract/Insert of a dropped component is erased before it is remapped&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> j;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#af558a87c967163ee8f41ebfb353a0da0">   37</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#af558a87c967163ee8f41ebfb353a0da0">SingleErasure::rewrite_imm_Single</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Single.html">Single</a>* single) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">auto</span> type = erase(single);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a>().d(<span class="stringliteral">&quot;single-erasure `{}` → `{}`&quot;</span>, single, type);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a>(<span class="stringliteral">&quot;singletons eliminated&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> type;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a777163be74099af94de0b1d20c18ef8c">   44</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a777163be74099af94de0b1d20c18ef8c">SingleErasure::rewrite_imm_Wrap</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Wrap.html">Wrap</a>* wrap) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a>(<span class="stringliteral">&quot;singletons eliminated&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> inhabitant(wrap-&gt;type());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a0ed615a215b50c566e72a9a97544c637">   49</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a0ed615a215b50c566e72a9a97544c637">SingleErasure::rewrite_imm_Variant</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Variant.html">Variant</a>* variant) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> lone = <a class="code hl_function" href="classmim_1_1Variant.html#ab942cafbed6da6e2b595d35e099e9717">Variant::isa_lone</a>(variant)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(lone);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#aff60530a4213e31398bcb9d1eaac523e">RWPhase::rewrite_imm_Variant</a>(variant);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#af0ea94ff21a7a9f88f123515f2e780e9">   54</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#af0ea94ff21a7a9f88f123515f2e780e9">SingleErasure::rewrite_imm_Inj</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Inj.html">Inj</a>* inj) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Variant.html#ab942cafbed6da6e2b595d35e099e9717">Variant::isa_lone</a>(inj-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>())) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(inj-&gt;<a class="code hl_function" href="classmim_1_1Inj.html#a167ba717f47e477c876a09252e6e19f3">value</a>());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#ab401d47a8d110fa8aea12ba19e25e53f">RWPhase::rewrite_imm_Inj</a>(inj);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a8a32f422b48fef82d955432615c49320">   59</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a8a32f422b48fef82d955432615c49320">SingleErasure::rewrite_imm_Match</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Match.html">Match</a>* match) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Variant.html#ab942cafbed6da6e2b595d35e099e9717">Variant::isa_lone</a>(match-&gt;<a class="code hl_function" href="classmim_1_1Match.html#a4f6522e1cd09634efd3121fc12d4f29e">scrutinee</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96">unfold_type</a>()))</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">app</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(match-&gt;<a class="code hl_function" href="classmim_1_1Match.html#ad4c29afb6b4f08aa1b875927ac75eec0">arm</a>(0)), <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(match-&gt;<a class="code hl_function" href="classmim_1_1Match.html#a4f6522e1cd09634efd3121fc12d4f29e">scrutinee</a>()));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a281a1cdde96f1562fc52fa556f536b45">RWPhase::rewrite_imm_Match</a>(match);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#ab2ca67f0a5e78af4600466cbf5acd2e3">   65</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#ab2ca67f0a5e78af4600466cbf5acd2e3">SingleErasure::rewrite_imm_Sigma</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>* sigma) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> keep = sieve(sigma);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (keep.all()) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a97887c27f2110e6a2b13fac0f4cdd1a5">RWPhase::rewrite_imm_Sigma</a>(sigma);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856">sigma</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(keep.gather(sigma-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a3e96d1f2d3715f3d059a7396366af7eb">ops</a>())));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a74a60022aa405c2f5ef8f411b03b6f60">   71</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a74a60022aa405c2f5ef8f411b03b6f60">SingleErasure::rewrite_mut_Sigma</a>(<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>* old_sigma) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">auto</span> keep = sieve(old_sigma);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (keep.all()) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a375c68f78cb83d1f6802f582ce242938">RWPhase::rewrite_mut_Sigma</a>(old_sigma);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">auto</span> new_sigma = <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#ae54352dda91fcfd8412ce37e0a3ba624">mut_sigma</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(old_sigma-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>()), keep.num_new());</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#aa37a105582124262b847118f713c9a49">rewrite_stub</a>(old_sigma, new_sigma, keep.new2old());</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a0096ca84b5c012a3d01801660481c399">   79</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a0096ca84b5c012a3d01801660481c399">SingleErasure::rewrite_imm_Tuple</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Tuple.html">Tuple</a>* tuple) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().inhabitant(tuple-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>())) <span class="keywordflow">return</span> inhabitant(tuple-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a3a12b887bba4de6d6d4685bbbc6f6397">RWPhase::rewrite_imm_Tuple</a>(tuple);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#aeaa9160c1213dba34883da0db82ff133">   84</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#aeaa9160c1213dba34883da0db82ff133">SingleErasure::rewrite_imm_Extract</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Extract.html">Extract</a>* extract) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().inhabitant(extract-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>())) <span class="keywordflow">return</span> inhabitant(extract-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>());</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> sigma = extract-&gt;<a class="code hl_function" href="classmim_1_1Extract.html#a5ef043e63b59c57e07ef3845aa01b1f5">tuple</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>()-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;()) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keyword">auto</span> keep = sieve(sigma);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">if</span> (!keep.all())</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a9799c99593056d7d6d47b1993de4ee33">extract</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(extract-&gt;<a class="code hl_function" href="classmim_1_1Extract.html#a5ef043e63b59c57e07ef3845aa01b1f5">tuple</a>()), keep.num_new(), remap(keep, extract-&gt;<a class="code hl_function" href="classmim_1_1Extract.html#a939c6c1bcbfb9c90039212bb1054f001">index</a>()));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a355268725383a5c9742d93ca542a8d88">RWPhase::rewrite_imm_Extract</a>(extract);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a9889e33354096722dedc3fe611e404c7">   96</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a9889e33354096722dedc3fe611e404c7">SingleErasure::rewrite_imm_Insert</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Insert.html">Insert</a>* insert) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().inhabitant(insert-&gt;value()-&gt;type())) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(insert-&gt;tuple());</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> sigma = insert-&gt;tuple()-&gt;type()-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Sigma.html">Sigma</a>&gt;()) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">auto</span> keep = sieve(sigma);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">if</span> (!keep.all())</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#a0283eb16fdab2d8cf03cd37d3d3e9855">insert</a>(<a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(insert-&gt;tuple()), keep.num_new(), remap(keep, insert-&gt;index()),</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                                      <a class="code hl_function" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">rewrite</a>(insert-&gt;value()));</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a41edce9af022e58a82dfddde9d8d0196">RWPhase::rewrite_imm_Insert</a>(insert);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#af7abc836dd27e070562bbde7090cd2fe">  109</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#af7abc836dd27e070562bbde7090cd2fe">SingleErasure::rewrite_imm_Seq</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Seq.html">Seq</a>* seq) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().inhabitant(seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d">is_intro</a>() ? seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>() : seq)) <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#ac4e4f8fed18d6d76d31a0c107382c762">prod</a>(seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d">is_intro</a>());</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a2a27820f2a968a37e4024cdba81a870c">RWPhase::rewrite_imm_Seq</a>(seq);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classmim_1_1SingleErasure.html#a6b8a944c061a0429a7ded3659c967ec5">  114</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1SingleErasure.html#a6b8a944c061a0429a7ded3659c967ec5">SingleErasure::rewrite_mut_Seq</a>(<a class="code hl_class" href="classmim_1_1Seq.html">Seq</a>* seq) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">// A mutable Seq has no immutable type to ask, so inspect its body directly.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a075f30462bdc7ae0e435c8e15cb48fff">is_set</a>() &amp;&amp; <a class="code hl_function" href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">old_world</a>().inhabitant(seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d">is_intro</a>() ? seq-&gt;<a class="code hl_function" href="classmim_1_1Seq.html#aa308123fd663ddd571238019a640cbdf">body</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>() : seq-&gt;<a class="code hl_function" href="classmim_1_1Seq.html#aa308123fd663ddd571238019a640cbdf">body</a>()))</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#ac4e4f8fed18d6d76d31a0c107382c762">prod</a>(seq-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d">is_intro</a>());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d">RWPhase::rewrite_mut_Seq</a>(seq);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00289">def.h:289</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a075f30462bdc7ae0e435c8e15cb48fff"><div class="ttname"><a href="classmim_1_1Def.html#a075f30462bdc7ae0e435c8e15cb48fff">mim::Def::is_set</a></div><div class="ttdeci">bool is_set() const</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00396">def.h:396</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a3d02c1dc261e9dae5f2eff1f35e5e39d"><div class="ttname"><a href="classmim_1_1Def.html#a3d02c1dc261e9dae5f2eff1f35e5e39d">mim::Def::is_intro</a></div><div class="ttdeci">bool is_intro() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00347">def.h:347</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a3e96d1f2d3715f3d059a7396366af7eb"><div class="ttname"><a href="classmim_1_1Def.html#a3e96d1f2d3715f3d059a7396366af7eb">mim::Def::ops</a></div><div class="ttdeci">constexpr auto ops() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00374">def.h:374</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a718d2d516d8014f4ce3011aad8009c96"><div class="ttname"><a href="classmim_1_1Def.html#a718d2d516d8014f4ce3011aad8009c96">mim::Def::unfold_type</a></div><div class="ttdeci">const Def * unfold_type() const</div><div class="ttdoc">Yields the type of this Def and builds a new Type (LSucc n) if necessary.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00469">def.cpp:469</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a9ab6cb5c35d630f631fd365cf7fa8f0c"><div class="ttname"><a href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">mim::Def::type</a></div><div class="ttdeci">const Def * type() const noexcept</div><div class="ttdoc">Yields the &quot;raw&quot; type of this Def (maybe nullptr).</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01119">def.h:1119</a></div></div>
+<div class="ttc" id="aclassmim_1_1Extract_html"><div class="ttname"><a href="classmim_1_1Extract.html">mim::Extract</a></div><div class="ttdoc">Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00360">tuple.h:360</a></div></div>
+<div class="ttc" id="aclassmim_1_1Extract_html_a5ef043e63b59c57e07ef3845aa01b1f5"><div class="ttname"><a href="classmim_1_1Extract.html#a5ef043e63b59c57e07ef3845aa01b1f5">mim::Extract::tuple</a></div><div class="ttdeci">const Def * tuple() const</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00370">tuple.h:370</a></div></div>
+<div class="ttc" id="aclassmim_1_1Extract_html_a939c6c1bcbfb9c90039212bb1054f001"><div class="ttname"><a href="classmim_1_1Extract.html#a939c6c1bcbfb9c90039212bb1054f001">mim::Extract::index</a></div><div class="ttdeci">const Def * index() const</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00371">tuple.h:371</a></div></div>
+<div class="ttc" id="aclassmim_1_1Inj_html"><div class="ttname"><a href="classmim_1_1Inj.html">mim::Inj</a></div><div class="ttdoc">Constructs a Join or Variant value.</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00060">union.h:60</a></div></div>
+<div class="ttc" id="aclassmim_1_1Inj_html_a167ba717f47e477c876a09252e6e19f3"><div class="ttname"><a href="classmim_1_1Inj.html#a167ba717f47e477c876a09252e6e19f3">mim::Inj::value</a></div><div class="ttdeci">const Def * value() const</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00070">union.h:70</a></div></div>
+<div class="ttc" id="aclassmim_1_1Insert_html"><div class="ttname"><a href="classmim_1_1Insert.html">mim::Insert</a></div><div class="ttdoc">Creates a new Tuple / Pack by inserting Insert::value at position Insert::index into Insert::tuple.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00385">tuple.h:385</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a429b15b3da51e9b60ffab09a744896b7"><div class="ttname"><a href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">mim::Lit::isa</a></div><div class="ttdeci">static std::optional&lt; T &gt; isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00976">def.h:976</a></div></div>
+<div class="ttc" id="aclassmim_1_1Match_html"><div class="ttname"><a href="classmim_1_1Match.html">mim::Match</a></div><div class="ttdoc">Scrutinize Match::scrutinee() and dispatch to Match::arms.</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00123">union.h:123</a></div></div>
+<div class="ttc" id="aclassmim_1_1Match_html_a4f6522e1cd09634efd3121fc12d4f29e"><div class="ttname"><a href="classmim_1_1Match.html#a4f6522e1cd09634efd3121fc12d4f29e">mim::Match::scrutinee</a></div><div class="ttdeci">const Def * scrutinee() const</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00135">union.h:135</a></div></div>
+<div class="ttc" id="aclassmim_1_1Match_html_ad4c29afb6b4f08aa1b875927ac75eec0"><div class="ttname"><a href="classmim_1_1Match.html#ad4c29afb6b4f08aa1b875927ac75eec0">mim::Match::arm</a></div><div class="ttdeci">const Def * arm(size_t i) const</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00140">union.h:140</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a59afca1f7558ed31d2cd0497befa7e28"><div class="ttname"><a href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">mim::Phase::log</a></div><div class="ttdeci">const fe::Log &amp; log() const</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00060">phase.h:60</a></div></div>
+<div class="ttc" id="aclassmim_1_1Phase_html_a856fff2fdf7482d4a48fb0de3f1f43b6"><div class="ttname"><a href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">mim::Phase::profile_count</a></div><div class="ttdeci">void profile_count(std::string_view key, uint64_t n=1)</div><div class="ttdoc">Adds n to the custom fe::Profiler counter key of the current run; no-op unless profiling is enabled.</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00060">phase.cpp:60</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00379">phase.h:379</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a3a12b887bba4de6d6d4685bbbc6f6397"><div class="ttname"><a href="classmim_1_1RWPhase.html#a3a12b887bba4de6d6d4685bbbc6f6397">mim::RWPhase::rewrite_imm_Tuple</a></div><div class="ttdeci">const Def * rewrite_imm_Tuple(const Tuple *) override</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00237">phase.cpp:237</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_aa37a105582124262b847118f713c9a49"><div class="ttname"><a href="classmim_1_1RWPhase.html#aa37a105582124262b847118f713c9a49">mim::RWPhase::rewrite_stub</a></div><div class="ttdeci">const Def * rewrite_stub(Def *, Def *) override</div><div class="ttdef"><b>Definition</b> <a href="phase_8cpp_source.html#l00250">phase.cpp:250</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_aef58721bd5f8d89e624eea65ff51f6b3"><div class="ttname"><a href="classmim_1_1RWPhase.html#aef58721bd5f8d89e624eea65ff51f6b3">mim::RWPhase::old_world</a></div><div class="ttdeci">World &amp; old_world()</div><div class="ttdoc">Get old Defs from here.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00378">phase.h:378</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a281a1cdde96f1562fc52fa556f536b45"><div class="ttname"><a href="classmim_1_1Rewriter.html#a281a1cdde96f1562fc52fa556f536b45">mim::Rewriter::rewrite_imm_Match</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Match(const Match *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a2a27820f2a968a37e4024cdba81a870c"><div class="ttname"><a href="classmim_1_1Rewriter.html#a2a27820f2a968a37e4024cdba81a870c">mim::Rewriter::rewrite_imm_Seq</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Seq(const Seq *seq)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00230">rewrite.cpp:230</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a355268725383a5c9742d93ca542a8d88"><div class="ttname"><a href="classmim_1_1Rewriter.html#a355268725383a5c9742d93ca542a8d88">mim::Rewriter::rewrite_imm_Extract</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Extract(const Extract *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a375c68f78cb83d1f6802f582ce242938"><div class="ttname"><a href="classmim_1_1Rewriter.html#a375c68f78cb83d1f6802f582ce242938">mim::Rewriter::rewrite_mut_Sigma</a></div><div class="ttdeci">virtual const Def * rewrite_mut_Sigma(Sigma *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a41edce9af022e58a82dfddde9d8d0196"><div class="ttname"><a href="classmim_1_1Rewriter.html#a41edce9af022e58a82dfddde9d8d0196">mim::Rewriter::rewrite_imm_Insert</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Insert(const Insert *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a509aa94f5f2daf12f190a684001dd58d"><div class="ttname"><a href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d">mim::Rewriter::rewrite_mut_Seq</a></div><div class="ttdeci">virtual const Def * rewrite_mut_Seq(Seq *seq)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00236">rewrite.cpp:236</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_a97887c27f2110e6a2b13fac0f4cdd1a5"><div class="ttname"><a href="classmim_1_1Rewriter.html#a97887c27f2110e6a2b13fac0f4cdd1a5">mim::Rewriter::rewrite_imm_Sigma</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Sigma(const Sigma *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_ab401d47a8d110fa8aea12ba19e25e53f"><div class="ttname"><a href="classmim_1_1Rewriter.html#ab401d47a8d110fa8aea12ba19e25e53f">mim::Rewriter::rewrite_imm_Inj</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Inj(const Inj *)</div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_acd9201feaab8a6d73223308e48ff6652"><div class="ttname"><a href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter::rewrite</a></div><div class="ttdeci">virtual const Def * rewrite(const Def *)</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8cpp_source.html#l00062">rewrite.cpp:62</a></div></div>
+<div class="ttc" id="aclassmim_1_1Rewriter_html_aff60530a4213e31398bcb9d1eaac523e"><div class="ttname"><a href="classmim_1_1Rewriter.html#aff60530a4213e31398bcb9d1eaac523e">mim::Rewriter::rewrite_imm_Variant</a></div><div class="ttdeci">virtual const Def * rewrite_imm_Variant(const Variant *)</div></div>
+<div class="ttc" id="aclassmim_1_1Seq_html"><div class="ttname"><a href="classmim_1_1Seq.html">mim::Seq</a></div><div class="ttdoc">Base class for Arr and Pack.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00267">tuple.h:267</a></div></div>
+<div class="ttc" id="aclassmim_1_1Seq_html_aa308123fd663ddd571238019a640cbdf"><div class="ttname"><a href="classmim_1_1Seq.html#aa308123fd663ddd571238019a640cbdf">mim::Seq::body</a></div><div class="ttdeci">const Def * body() const</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00280">tuple.h:280</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sieve_html"><div class="ttname"><a href="classmim_1_1Sieve.html">mim::Sieve</a></div><div class="ttdoc">Filters the components of an aggregate and keeps track of where the survivors end up.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00116">tuple.h:116</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sieve_html_a1e3e35760b97939dbf258de323afe441"><div class="ttname"><a href="classmim_1_1Sieve.html#a1e3e35760b97939dbf258de323afe441">mim::Sieve::Sieve</a></div><div class="ttdeci">Sieve(size_t num)</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00123">tuple.h:123</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sieve_html_aa7aa4c594865cac1864c249963570aeb"><div class="ttname"><a href="classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb">mim::Sieve::Gone</a></div><div class="ttdeci">static constexpr size_t Gone</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00118">tuple.h:118</a></div></div>
+<div class="ttc" id="aclassmim_1_1Sigma_html"><div class="ttname"><a href="classmim_1_1Sigma.html">mim::Sigma</a></div><div class="ttdoc">A dependent tuple type.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00039">tuple.h:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a0096ca84b5c012a3d01801660481c399"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a0096ca84b5c012a3d01801660481c399">mim::SingleErasure::rewrite_imm_Tuple</a></div><div class="ttdeci">const Def * rewrite_imm_Tuple(const Tuple *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00079">single_erasure.cpp:79</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a0ed615a215b50c566e72a9a97544c637"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a0ed615a215b50c566e72a9a97544c637">mim::SingleErasure::rewrite_imm_Variant</a></div><div class="ttdeci">const Def * rewrite_imm_Variant(const Variant *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00049">single_erasure.cpp:49</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a6b8a944c061a0429a7ded3659c967ec5"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a6b8a944c061a0429a7ded3659c967ec5">mim::SingleErasure::rewrite_mut_Seq</a></div><div class="ttdeci">const Def * rewrite_mut_Seq(Seq *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00114">single_erasure.cpp:114</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a74a60022aa405c2f5ef8f411b03b6f60"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a74a60022aa405c2f5ef8f411b03b6f60">mim::SingleErasure::rewrite_mut_Sigma</a></div><div class="ttdeci">const Def * rewrite_mut_Sigma(Sigma *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00071">single_erasure.cpp:71</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a777163be74099af94de0b1d20c18ef8c"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a777163be74099af94de0b1d20c18ef8c">mim::SingleErasure::rewrite_imm_Wrap</a></div><div class="ttdeci">const Def * rewrite_imm_Wrap(const Wrap *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00044">single_erasure.cpp:44</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a8a32f422b48fef82d955432615c49320"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a8a32f422b48fef82d955432615c49320">mim::SingleErasure::rewrite_imm_Match</a></div><div class="ttdeci">const Def * rewrite_imm_Match(const Match *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00059">single_erasure.cpp:59</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_a9889e33354096722dedc3fe611e404c7"><div class="ttname"><a href="classmim_1_1SingleErasure.html#a9889e33354096722dedc3fe611e404c7">mim::SingleErasure::rewrite_imm_Insert</a></div><div class="ttdeci">const Def * rewrite_imm_Insert(const Insert *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00096">single_erasure.cpp:96</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_ab2ca67f0a5e78af4600466cbf5acd2e3"><div class="ttname"><a href="classmim_1_1SingleErasure.html#ab2ca67f0a5e78af4600466cbf5acd2e3">mim::SingleErasure::rewrite_imm_Sigma</a></div><div class="ttdeci">const Def * rewrite_imm_Sigma(const Sigma *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00065">single_erasure.cpp:65</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_aeaa9160c1213dba34883da0db82ff133"><div class="ttname"><a href="classmim_1_1SingleErasure.html#aeaa9160c1213dba34883da0db82ff133">mim::SingleErasure::rewrite_imm_Extract</a></div><div class="ttdeci">const Def * rewrite_imm_Extract(const Extract *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00084">single_erasure.cpp:84</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_af0ea94ff21a7a9f88f123515f2e780e9"><div class="ttname"><a href="classmim_1_1SingleErasure.html#af0ea94ff21a7a9f88f123515f2e780e9">mim::SingleErasure::rewrite_imm_Inj</a></div><div class="ttdeci">const Def * rewrite_imm_Inj(const Inj *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00054">single_erasure.cpp:54</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_af558a87c967163ee8f41ebfb353a0da0"><div class="ttname"><a href="classmim_1_1SingleErasure.html#af558a87c967163ee8f41ebfb353a0da0">mim::SingleErasure::rewrite_imm_Single</a></div><div class="ttdeci">const Def * rewrite_imm_Single(const Single *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00037">single_erasure.cpp:37</a></div></div>
+<div class="ttc" id="aclassmim_1_1SingleErasure_html_af7abc836dd27e070562bbde7090cd2fe"><div class="ttname"><a href="classmim_1_1SingleErasure.html#af7abc836dd27e070562bbde7090cd2fe">mim::SingleErasure::rewrite_imm_Seq</a></div><div class="ttdeci">const Def * rewrite_imm_Seq(const Seq *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00109">single_erasure.cpp:109</a></div></div>
+<div class="ttc" id="aclassmim_1_1Single_html"><div class="ttname"><a href="classmim_1_1Single.html">mim::Single</a></div><div class="ttdoc">Singleton type formation.</div><div class="ttdef"><b>Definition</b> <a href="single_8h_source.html#l00010">single.h:10</a></div></div>
+<div class="ttc" id="aclassmim_1_1Tuple_html"><div class="ttname"><a href="classmim_1_1Tuple.html">mim::Tuple</a></div><div class="ttdoc">Data constructor for a Sigma.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00084">tuple.h:84</a></div></div>
+<div class="ttc" id="aclassmim_1_1Variant_html"><div class="ttname"><a href="classmim_1_1Variant.html">mim::Variant</a></div><div class="ttdoc">A sum type whose cases are positional: unlike a Join, they are neither sorted nor deduplicated.</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00086">union.h:86</a></div></div>
+<div class="ttc" id="aclassmim_1_1Variant_html_ab942cafbed6da6e2b595d35e099e9717"><div class="ttname"><a href="classmim_1_1Variant.html#ab942cafbed6da6e2b595d35e099e9717">mim::Variant::isa_lone</a></div><div class="ttdeci">static const Def * isa_lone(const Def *d)</div><div class="ttdoc">The payload A of a single-case Variant | A, which is isomorphic to A.</div><div class="ttdef"><b>Definition</b> <a href="union_8h_source.html#l00109">union.h:109</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a0283eb16fdab2d8cf03cd37d3d3e9855"><div class="ttname"><a href="classmim_1_1World.html#a0283eb16fdab2d8cf03cd37d3d3e9855">mim::World::insert</a></div><div class="ttdeci">const Def * insert(const Def *d, const Def *i, const Def *val)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00789">world.cpp:789</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a1299d9e1e6da7e301d7f10fdbb790dd3"><div class="ttname"><a href="classmim_1_1World.html#a1299d9e1e6da7e301d7f10fdbb790dd3">mim::World::inhabitant</a></div><div class="ttdeci">const Def * inhabitant(const Def *type)</div><div class="ttdoc">The sole inhabitant of type, if it has exactly one, nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00342">world.h:342</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a3996a1f09477ab9cffdcdff8d0674856"><div class="ttname"><a href="classmim_1_1World.html#a3996a1f09477ab9cffdcdff8d0674856">mim::World::sigma</a></div><div class="ttdeci">const Def * sigma(Defs ops)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00494">world.cpp:494</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a41d6416de4c8ec665cb15c3ca7db77e6"><div class="ttname"><a href="classmim_1_1World.html#a41d6416de4c8ec665cb15c3ca7db77e6">mim::World::app</a></div><div class="ttdeci">const Def * app(const Def *callee, const Def *arg)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00404">world.cpp:404</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_a9799c99593056d7d6d47b1993de4ee33"><div class="ttname"><a href="classmim_1_1World.html#a9799c99593056d7d6d47b1993de4ee33">mim::World::extract</a></div><div class="ttdeci">const Def * extract(const Def *d, const Def *i)</div><div class="ttdef"><b>Definition</b> <a href="world_8cpp_source.html#l00586">world.cpp:586</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_ac4e4f8fed18d6d76d31a0c107382c762"><div class="ttname"><a href="classmim_1_1World.html#ac4e4f8fed18d6d76d31a0c107382c762">mim::World::prod</a></div><div class="ttdeci">const Def * prod(bool term, Defs ops)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00497">world.h:497</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_ae54352dda91fcfd8412ce37e0a3ba624"><div class="ttname"><a href="classmim_1_1World.html#ae54352dda91fcfd8412ce37e0a3ba624">mim::World::mut_sigma</a></div><div class="ttdeci">Sigma * mut_sigma(const Def *type, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00464">world.h:464</a></div></div>
+<div class="ttc" id="aclassmim_1_1Wrap_html"><div class="ttname"><a href="classmim_1_1Wrap.html">mim::Wrap</a></div><div class="ttdoc">Singleton term introduction.</div><div class="ttdef"><b>Definition</b> <a href="single_8h_source.html#l00032">single.h:32</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1refly_html_a28d21b99af5c1d61200601d069b512a4"><div class="ttname"><a href="namespacemim_1_1plug_1_1refly.html#a28d21b99af5c1d61200601d069b512a4">mim::plug::refly::type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition</b> <a href="refly_2autogen_8h_source.html#l00037">autogen.h:37</a></div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="ast_8h_source.html#l00016">ast.h:16</a></div></div>
+<div class="ttc" id="asingle__erasure_8h_html"><div class="ttname"><a href="single__erasure_8h.html">single_erasure.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="dir_4ad15e0004aa2fc2424d5bded02c9369.html">phase</a></li><li class="navelem"><a href="single__erasure_8cpp.html">single_erasure.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

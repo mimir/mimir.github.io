@@ -1,0 +1,1245 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::plug::btensor Namespace Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemim_1_1plug_1_1btensor.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::plug::btensor Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="btensor.html" title="The btensor Plugin">The btensor Plugin</a>  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:phase" id="r_phase"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1btensor_1_1phase.html">phase</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:MapRedPost" id="r_MapRedPost"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1btensor_1_1MapRedPost.html">MapRedPost</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The curried meta arguments of a <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1tensor.html#aec79c25d65d7e0096f5284f96ff67e87">tensor.map_reduce_post</a></span> or <span class="tt"><a class="el" href="#a6fb6d9c0e5f1d87f59af7b27d689f365">btensor.map_reduce_post</a></span> callee (same layout).  <a href="structmim_1_1plug_1_1btensor_1_1MapRedPost.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Ring_5Ffield" id="r_Ring_5Ffield"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1btensor_1_1Ring__field.html">Ring_field</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fields of <span class="tt"><a class="el" href="#a2ce521bcc48d0976f41196257b82cd87">btensor.Ring</a></span>, by index.  <a href="structmim_1_1plug_1_1btensor_1_1Ring__field.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Sched_5Ffield" id="r_Sched_5Ffield"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1btensor_1_1Sched__field.html">Sched_field</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fields of <span class="tt"><a class="el" href="#adbee22807ad8e7712b1f3d57c3969eda">btensor.Sched</a></span>, by index.  <a href="structmim_1_1plug_1_1btensor_1_1Sched__field.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr id="enum-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.Ring&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a2ce521bcc48d0976f41196257b82cd87" id="r_a2ce521bcc48d0976f41196257b82cd87"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a2ce521bcc48d0976f41196257b82cd87">Ring</a> : flags_t </td></tr>
+<tr id="enum-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.id&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a178c1d5c474562b4f36e73abb0f7ebb3" id="r_a178c1d5c474562b4f36e73abb0f7ebb3"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a178c1d5c474562b4f36e73abb0f7ebb3">id</a> : flags_t </td></tr>
+<tr id="enum-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.map_reduce_post&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a6fb6d9c0e5f1d87f59af7b27d689f365" id="r_a6fb6d9c0e5f1d87f59af7b27d689f365"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a6fb6d9c0e5f1d87f59af7b27d689f365">map_reduce_post</a> : flags_t </td></tr>
+<tr id="enum-members-3" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.Sched&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:adbee22807ad8e7712b1f3d57c3969eda" id="r_adbee22807ad8e7712b1f3d57c3969eda"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#adbee22807ad8e7712b1f3d57c3969eda">Sched</a> : flags_t </td></tr>
+<tr id="enum-members-4" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.SchedT&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a802f738e35a7830ec38a0ff50ce2a6e2" id="r_a802f738e35a7830ec38a0ff50ce2a6e2"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a802f738e35a7830ec38a0ff50ce2a6e2">SchedT</a> : flags_t </td></tr>
+<tr id="enum-members-5" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.mk_sched&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a938c45f409f6c19f9c368568ba2e2c14" id="r_a938c45f409f6c19f9c368568ba2e2c14"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a938c45f409f6c19f9c368568ba2e2c14">mk_sched</a> : flags_t </td></tr>
+<tr id="enum-members-6" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.proj_map&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ade590d9fd340e93b3e16bf1e890ed864" id="r_ade590d9fd340e93b3e16bf1e890ed864"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ade590d9fd340e93b3e16bf1e890ed864">proj_map</a> : flags_t </td></tr>
+<tr id="enum-members-7" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.broadcast&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a2f50cafce85608cadb3720c0d64c3f0d" id="r_a2f50cafce85608cadb3720c0d64c3f0d"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a2f50cafce85608cadb3720c0d64c3f0d">broadcast</a> : flags_t </td></tr>
+<tr id="enum-members-8" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.concat&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ae2597490cce019005008d6db5a917085" id="r_ae2597490cce019005008d6db5a917085"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ae2597490cce019005008d6db5a917085">concat</a> : flags_t </td></tr>
+<tr id="enum-members-9" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.pad&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a1448fb87a7d7752f2b341d00f84ef661" id="r_a1448fb87a7d7752f2b341d00f84ef661"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a1448fb87a7d7752f2b341d00f84ef661">pad</a> : flags_t </td></tr>
+<tr id="enum-members-10" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.gather&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a52e55fb0c4b38eed71595a010c06dadd" id="r_a52e55fb0c4b38eed71595a010c06dadd"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a52e55fb0c4b38eed71595a010c06dadd">gather</a> : flags_t </td></tr>
+<tr id="enum-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.scatter&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ab479974738dec361208040c802c33f50" id="r_ab479974738dec361208040c802c33f50"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ab479974738dec361208040c802c33f50">scatter</a> : flags_t </td></tr>
+<tr id="enum-members-12" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.NestT&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ad7c70ee7385f733efc4f3c571b42e6a8" id="r_ad7c70ee7385f733efc4f3c571b42e6a8"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad7c70ee7385f733efc4f3c571b42e6a8">NestT</a> : flags_t </td></tr>
+<tr id="enum-members-13" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.mr_nest&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a11f0d6e9879af854289bc56b7a226a7e" id="r_a11f0d6e9879af854289bc56b7a226a7e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a11f0d6e9879af854289bc56b7a226a7e">mr_nest</a> : flags_t </td></tr>
+<tr id="enum-members-14" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.map_reduce_post_impl&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a7db6f5033e4cffc2a72e8b29aeb86430" id="r_a7db6f5033e4cffc2a72e8b29aeb86430"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a7db6f5033e4cffc2a72e8b29aeb86430">map_reduce_post_impl</a> : flags_t </td></tr>
+<tr id="enum-members-15" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;btensor.lower_map_reduce&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ac3ae404f8dde1bd876fefb63ff263980" id="r_ac3ae404f8dde1bd876fefb63ff263980"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ac3ae404f8dde1bd876fefb63ff263980">lower_map_reduce</a> : flags_t </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a21fb97ac045b7341ad37c3453469f58e" id="r_a21fb97ac045b7341ad37c3453469f58e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a21fb97ac045b7341ad37c3453469f58e">op_affine_map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *f, const <a class="el" href="classmim_1_1Def.html">Def</a> *m, const <a class="el" href="classmim_1_1Def.html">Def</a> *n, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out, const <a class="el" href="classmim_1_1Def.html">Def</a> *idxs, const <a class="el" href="classmim_1_1Def.html">Def</a> *mem)</td></tr>
+<tr class="memdesc:a21fb97ac045b7341ad37c3453469f58e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">affine.map</a> @(m, n) @(s_in, s_out) f idxs as <a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> with the address space <span class="tt">as</span> of <code class="param">mem</code> ↦ <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>', coords]</span>.  <br /></td></tr>
+<tr class="memitem:ae30478d943f1561f59d65e1339b1afca" id="r_ae30478d943f1561f59d65e1339b1afca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae30478d943f1561f59d65e1339b1afca">app_cps</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *caller, const <a class="el" href="classmim_1_1Def.html">Def</a> *f, <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> args, const <a class="el" href="classmim_1_1Def.html">Def</a> *ret)</td></tr>
+<tr class="memdesc:ae30478d943f1561f59d65e1339b1afca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the combiner/epilogue <code class="param">f</code> from <code class="param">caller</code> with <code class="param">args</code> and the continuation <code class="param">ret</code>.  <br /></td></tr>
+<tr class="memitem:ae118082de780df1ddea00f39fca6a78d" id="r_ae118082de780df1ddea00f39fca6a78d"><td class="memItemLeft">std::pair&lt; <a class="el" href="classmim_1_1Lam.html">Lam</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae118082de780df1ddea00f39fca6a78d">ds_splice</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *arg, const <a class="el" href="classmim_1_1Def.html">Def</a> *codom, std::string name)</td></tr>
+<tr class="memdesc:ae118082de780df1ddea00f39fca6a78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fresh <span class="tt">fun: Fn arg-&gt;type() → codom</span> named <code class="param">name</code>, spliced into direct style as <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a> fun arg</span>.  <br /></td></tr>
+<tr class="memitem:a47aa7b1ac64b3fda6b806bfd781bf00d" id="r_a47aa7b1ac64b3fda6b806bfd781bf00d"><td class="memItemLeft"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="#a47aa7b1ac64b3fda6b806bfd781bf00d">to_idxs</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;w, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> extents, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters)</td></tr>
+<tr class="memdesc:a47aa7b1ac64b3fda6b806bfd781bf00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the raw i64 loop counters <code class="param">iters</code> into indices <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> extents[d]</span>.  <br /></td></tr>
+<tr class="memitem:ad5489055e37845955c0ce3bf34d07dee" id="r_ad5489055e37845955c0ce3bf34d07dee"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad5489055e37845955c0ce3bf34d07dee">folded_idx</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *shape, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters)</td></tr>
+<tr class="memdesc:ad5489055e37845955c0ce3bf34d07dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The raw i64 loop counters <code class="param">iters</code> as a buffer index into <code class="param">shape</code>, with its literal size-1 axes folded away.  <br /></td></tr>
+<tr class="memitem:a68fb0a2ed7c67958245f946f07e1b33f" id="r_a68fb0a2ed7c67958245f946f07e1b33f"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a68fb0a2ed7c67958245f946f07e1b33f">clamp</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *x, const <a class="el" href="classmim_1_1Def.html">Def</a> *hi)</td></tr>
+<tr class="memdesc:a68fb0a2ed7c67958245f946f07e1b33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps the i64 <code class="param">x</code> into <span class="tt">[0, hi]</span>.  <br /></td></tr>
+<tr class="memitem:ad534f6a0eaa1f47b02b523f46f4b0e4e" id="r_ad534f6a0eaa1f47b02b523f46f4b0e4e"><td class="memItemLeft">std::pair&lt; <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad534f6a0eaa1f47b02b523f46f4b0e4e">pad_coords</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> iters, const <a class="el" href="classmim_1_1Def.html">Def</a> *lo, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_in, bool replicate)</td></tr>
+<tr class="memdesc:ad534f6a0eaa1f47b02b523f46f4b0e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The read coordinates <span class="tt">o#d − lo#d</span> of a <span class="tt"><a class="el" href="#a1448fb87a7d7752f2b341d00f84ef661">pad</a></span> into <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> s_in#d</span> - clamped to the nearest edge if <code class="param">replicate</code>, or else zeroed out of range - together with the all-axes in-range flag (<span class="tt">nullptr</span> if <code class="param">replicate</code>).  <br /></td></tr>
+<tr class="memitem:a29d971faebc3c599f372db6c7835ba9d" id="r_a29d971faebc3c599f372db6c7835ba9d"><td class="memItemLeft">std::optional&lt; fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a29d971faebc3c599f372db6c7835ba9d">concat_extents</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *Sis, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> nis, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> r, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> ax)</td></tr>
+<tr class="memdesc:a29d971faebc3c599f372db6c7835ba9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The literal extents of the <span class="tt">nis</span> input shapes <code class="param">Sis</code> along the concat axis <code class="param">ax</code>; <span class="tt">std::nullopt</span> if one is not literal.  <br /></td></tr>
+<tr class="memitem:adc675d0c43c37daa23f54fdaff020e9e" id="r_adc675d0c43c37daa23f54fdaff020e9e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#adc675d0c43c37daa23f54fdaff020e9e">concat_select</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *o_ax, const fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &amp;exts, auto read)</td></tr>
+<tr class="memdesc:adc675d0c43c37daa23f54fdaff020e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The concat cell at the i64 axis coordinate <code class="param">o_ax:</code> <span class="tt">read(i, loc)</span> of the input <span class="tt">i</span> owning it - the highest one whose prefix offset is <span class="tt">≤ o_ax</span> - at the axis coordinate <span class="tt">loc</span> clamped into that input.  <br /></td></tr>
+<tr class="memitem:a6348d0f36f7c1cf62224c9e75079fb3e" id="r_a6348d0f36f7c1cf62224c9e75079fb3e"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6348d0f36f7c1cf62224c9e75079fb3e">build_pointwise</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *result_ty, const <a class="el" href="classmim_1_1Def.html">Def</a> *mem, const <a class="el" href="classmim_1_1Def.html">Def</a> *dst, const <a class="el" href="classmim_1_1Def.html">Def</a> *ins, const <a class="el" href="classmim_1_1Def.html">Def</a> *s_out, <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> rn, const std::string &amp;name, auto compute)</td></tr>
+<tr class="memdesc:a6348d0f36f7c1cf62224c9e75079fb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst, ins] → [<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, Buf]</span> fun spliced via <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a></span> that loops over <code class="param">s_out</code> carrying <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst]</span> and writes <span class="tt">compute</span>'s element at the loop's (identity) output coordinates.  <br /></td></tr>
+<tr class="memitem:ae60b4af6f42cfc600d8560d1df41ba44" id="r_ae60b4af6f42cfc600d8560d1df41ba44"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae60b4af6f42cfc600d8560d1df41ba44">register_normalizers</a> (<a class="el" href="namespacemim.html#a2f22db57ec53935eb9dfedebd9b9b0b2">Normalizers</a> &amp;normalizers)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab5e27486c5e2ab06a2d6d8d20cf22bd5" id="r_ab5e27486c5e2ab06a2d6d8d20cf22bd5"><td class="memItemLeft">static constexpr <a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab5e27486c5e2ab06a2d6d8d20cf22bd5">Plugin_Id</a> = 0xd518f5104c00000</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+&lt;tt&gt;btensor.map_reduce&lt;/tt&gt;</h2></td></tr>
+<tr class="memitem:a01e0a1e721ba27474863d45ab94017c3" id="r_a01e0a1e721ba27474863d45ab94017c3"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a01e0a1e721ba27474863d45ab94017c3">map_reduce</a> : flags_t </td></tr>
+<tr class="memitem:aa1ab9fc65f86afbf46f639f631613034" id="r_aa1ab9fc65f86afbf46f639f631613034"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa1ab9fc65f86afbf46f639f631613034">normalize_map_reduce</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *c, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
+<tr class="memdesc:aa1ab9fc65f86afbf46f639f631613034"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a01e0a1e721ba27474863d45ab94017c3">btensor.map_reduce</a> is <a class="el" href="#a6fb6d9c0e5f1d87f59af7b27d689f365">btensor.map_reduce_post</a> without the epilogue and with the neutral schedule: delegate with <span class="tt">post = <a class="el" href="#a178c1d5c474562b4f36e73abb0f7ebb3">btensor.id</a></span> (so <span class="tt">Tp = To</span>), no epilogue inputs (<span class="tt">nps = 0</span>), no vector dim (<span class="tt">vdim = Rn</span>, the out-of-range sentinel), and no unrolling.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="btensor.html" title="The btensor Plugin">The btensor Plugin</a> </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="a2f50cafce85608cadb3720c0d64c3f0d" name="a2f50cafce85608cadb3720c0d64c3f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f50cafce85608cadb3720c0d64c3f0d">&#9670;&#160;</a></span>broadcast</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2f50cafce85608cadb3720c0d64c3f0d">mim::plug::btensor::broadcast</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00077">77</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2597490cce019005008d6db5a917085" name="ae2597490cce019005008d6db5a917085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2597490cce019005008d6db5a917085">&#9670;&#160;</a></span>concat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ae2597490cce019005008d6db5a917085">mim::plug::btensor::concat</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00084">84</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a52e55fb0c4b38eed71595a010c06dadd" name="a52e55fb0c4b38eed71595a010c06dadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e55fb0c4b38eed71595a010c06dadd">&#9670;&#160;</a></span>gather</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a52e55fb0c4b38eed71595a010c06dadd">mim::plug::btensor::gather</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00098">98</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a178c1d5c474562b4f36e73abb0f7ebb3" name="a178c1d5c474562b4f36e73abb0f7ebb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a178c1d5c474562b4f36e73abb0f7ebb3">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a178c1d5c474562b4f36e73abb0f7ebb3">mim::plug::btensor::id</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00024">24</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3ae404f8dde1bd876fefb63ff263980" name="ac3ae404f8dde1bd876fefb63ff263980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3ae404f8dde1bd876fefb63ff263980">&#9670;&#160;</a></span>lower_map_reduce</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ac3ae404f8dde1bd876fefb63ff263980">mim::plug::btensor::lower_map_reduce</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00133">133</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a01e0a1e721ba27474863d45ab94017c3" name="a01e0a1e721ba27474863d45ab94017c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e0a1e721ba27474863d45ab94017c3">&#9670;&#160;</a></span>map_reduce</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a01e0a1e721ba27474863d45ab94017c3">mim::plug::btensor::map_reduce</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00031">31</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a6fb6d9c0e5f1d87f59af7b27d689f365" name="a6fb6d9c0e5f1d87f59af7b27d689f365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb6d9c0e5f1d87f59af7b27d689f365">&#9670;&#160;</a></span>map_reduce_post</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a6fb6d9c0e5f1d87f59af7b27d689f365">mim::plug::btensor::map_reduce_post</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00039">39</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a7db6f5033e4cffc2a72e8b29aeb86430" name="a7db6f5033e4cffc2a72e8b29aeb86430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7db6f5033e4cffc2a72e8b29aeb86430">&#9670;&#160;</a></span>map_reduce_post_impl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a7db6f5033e4cffc2a72e8b29aeb86430">mim::plug::btensor::map_reduce_post_impl</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00126">126</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a938c45f409f6c19f9c368568ba2e2c14" name="a938c45f409f6c19f9c368568ba2e2c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938c45f409f6c19f9c368568ba2e2c14">&#9670;&#160;</a></span>mk_sched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a938c45f409f6c19f9c368568ba2e2c14">mim::plug::btensor::mk_sched</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00063">63</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a11f0d6e9879af854289bc56b7a226a7e" name="a11f0d6e9879af854289bc56b7a226a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f0d6e9879af854289bc56b7a226a7e">&#9670;&#160;</a></span>mr_nest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a11f0d6e9879af854289bc56b7a226a7e">mim::plug::btensor::mr_nest</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00119">119</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ad7c70ee7385f733efc4f3c571b42e6a8" name="ad7c70ee7385f733efc4f3c571b42e6a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c70ee7385f733efc4f3c571b42e6a8">&#9670;&#160;</a></span>NestT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ad7c70ee7385f733efc4f3c571b42e6a8">mim::plug::btensor::NestT</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00112">112</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a1448fb87a7d7752f2b341d00f84ef661" name="a1448fb87a7d7752f2b341d00f84ef661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1448fb87a7d7752f2b341d00f84ef661">&#9670;&#160;</a></span>pad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a1448fb87a7d7752f2b341d00f84ef661">mim::plug::btensor::pad</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00091">91</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ade590d9fd340e93b3e16bf1e890ed864" name="ade590d9fd340e93b3e16bf1e890ed864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade590d9fd340e93b3e16bf1e890ed864">&#9670;&#160;</a></span>proj_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ade590d9fd340e93b3e16bf1e890ed864">mim::plug::btensor::proj_map</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00070">70</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ce521bcc48d0976f41196257b82cd87" name="a2ce521bcc48d0976f41196257b82cd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce521bcc48d0976f41196257b82cd87">&#9670;&#160;</a></span>Ring</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a2ce521bcc48d0976f41196257b82cd87">mim::plug::btensor::Ring</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00014">14</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ab479974738dec361208040c802c33f50" name="ab479974738dec361208040c802c33f50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab479974738dec361208040c802c33f50">&#9670;&#160;</a></span>scatter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ab479974738dec361208040c802c33f50">mim::plug::btensor::scatter</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00105">105</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="adbee22807ad8e7712b1f3d57c3969eda" name="adbee22807ad8e7712b1f3d57c3969eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbee22807ad8e7712b1f3d57c3969eda">&#9670;&#160;</a></span>Sched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#adbee22807ad8e7712b1f3d57c3969eda">mim::plug::btensor::Sched</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00046">46</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a802f738e35a7830ec38a0ff50ce2a6e2" name="a802f738e35a7830ec38a0ff50ce2a6e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802f738e35a7830ec38a0ff50ce2a6e2">&#9670;&#160;</a></span>SchedT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a802f738e35a7830ec38a0ff50ce2a6e2">mim::plug::btensor::SchedT</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00056">56</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ae30478d943f1561f59d65e1339b1afca" name="ae30478d943f1561f59d65e1339b1afca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae30478d943f1561f59d65e1339b1afca">&#9670;&#160;</a></span>app_cps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::btensor::app_cps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>caller</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a></td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>ret</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calls the combiner/epilogue <code class="param">f</code> from <code class="param">caller</code> with <code class="param">args</code> and the continuation <code class="param">ret</code>. </p>
+<p><a class="el" href="classmim_1_1Scalarize.html" title="Scalarization (= argument simplification):">Scalarize</a> may have flattened <code class="param">f's</code> domain <span class="tt">Cn [[args], Cn ret]</span> to <span class="tt">Cn [args…, Cn ret]</span>; the call matches either. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00073">73</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8cpp_source.html#l00035">mim::Lam::app()</a>, <a class="el" href="btensor_8h_source.html#l00073">app_cps()</a>, <a class="el" href="lam_8h_source.html#l00038">mim::Pi::dom()</a>, <a class="el" href="def_8h_source.html#l01140">mim::Def::num_projs()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00073">app_cps()</a>.</p>
+
+</div>
+</div>
+<a id="a6348d0f36f7c1cf62224c9e75079fb3e" name="a6348d0f36f7c1cf62224c9e75079fb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6348d0f36f7c1cf62224c9e75079fb3e">&#9670;&#160;</a></span>build_pointwise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::build_pointwise </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>result_ty</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>ins</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>s_out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>          <td class="paramname"><span class="paramname"><em>rn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto</td>          <td class="paramname"><span class="paramname"><em>compute</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst, ins] → [<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, Buf]</span> fun spliced via <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a></span> that loops over <code class="param">s_out</code> carrying <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>, dst]</span> and writes <span class="tt">compute</span>'s element at the loop's (identity) output coordinates. </p>
+<p><span class="tt">compute(iters, ins, mem)</span> receives the raw i64 loop counters, the fun's inputs var, and the current mem; it returns <span class="tt">{<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>', elem}</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00172">172</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00172">build_pointwise()</a>, <a class="el" href="affine_8h_source.html#l00024">mim::plug::affine::counting_nest()</a>, <a class="el" href="btensor_8h_source.html#l00085">ds_splice()</a>, <a class="el" href="btensor_8h_source.html#l00098">folded_idx()</a>, <a class="el" href="buffer_8h_source.html#l00030">mim::plug::buffer::op_write()</a>, <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>, <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>, and <a class="el" href="def_8h_source.html#l00492">mim::Def::var()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00172">build_pointwise()</a>.</p>
+
+</div>
+</div>
+<a id="a68fb0a2ed7c67958245f946f07e1b33f" name="a68fb0a2ed7c67958245f946f07e1b33f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fb0a2ed7c67958245f946f07e1b33f">&#9670;&#160;</a></span>clamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::clamp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>hi</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clamps the i64 <code class="param">x</code> into <span class="tt">[0, hi]</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00104">104</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00104">clamp()</a>, <a class="el" href="core_2autogen_8h_source.html#l00240">mim::plug::core::smax</a>, <a class="el" href="core_2autogen_8h_source.html#l00238">mim::plug::core::smin</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00104">clamp()</a>, <a class="el" href="btensor_8h_source.html#l00152">concat_select()</a>, and <a class="el" href="btensor_8h_source.html#l00111">pad_coords()</a>.</p>
+
+</div>
+</div>
+<a id="a29d971faebc3c599f372db6c7835ba9d" name="a29d971faebc3c599f372db6c7835ba9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d971faebc3c599f372db6c7835ba9d">&#9670;&#160;</a></span>concat_extents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &gt; mim::plug::btensor::concat_extents </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>Sis</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>          <td class="paramname"><span class="paramname"><em>nis</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a></td>          <td class="paramname"><span class="paramname"><em>ax</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The literal extents of the <span class="tt">nis</span> input shapes <code class="param">Sis</code> along the concat axis <code class="param">ax</code>; <span class="tt">std::nullopt</span> if one is not literal. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00140">140</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00140">concat_extents()</a>, <a class="el" href="def_8h_source.html#l00976">mim::Lit::isa()</a>, and <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00140">concat_extents()</a>.</p>
+
+</div>
+</div>
+<a id="adc675d0c43c37daa23f54fdaff020e9e" name="adc675d0c43c37daa23f54fdaff020e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc675d0c43c37daa23f54fdaff020e9e">&#9670;&#160;</a></span>concat_select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::concat_select </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>o_ax</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fe::Vector&lt; <a class="el" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>exts</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto</td>          <td class="paramname"><span class="paramname"><em>read</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The concat cell at the i64 axis coordinate <code class="param">o_ax:</code> <span class="tt">read(i, loc)</span> of the input <span class="tt">i</span> owning it - the highest one whose prefix offset is <span class="tt">≤ o_ax</span> - at the axis coordinate <span class="tt">loc</span> clamped into that input. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00152">152</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00104">clamp()</a>, <a class="el" href="btensor_8h_source.html#l00152">concat_select()</a>, <a class="el" href="core_8h_source.html#l00016">mim::plug::core::none</a>, <a class="el" href="core_2autogen_8h_source.html#l00145">mim::plug::core::sub</a>, <a class="el" href="core_2autogen_8h_source.html#l00198">mim::plug::core::uge</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00152">concat_select()</a>.</p>
+
+</div>
+</div>
+<a id="ae118082de780df1ddea00f39fca6a78d" name="ae118082de780df1ddea00f39fca6a78d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae118082de780df1ddea00f39fca6a78d">&#9670;&#160;</a></span>ds_splice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="classmim_1_1Lam.html">Lam</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt; mim::plug::btensor::ds_splice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>codom</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A fresh <span class="tt">fun: Fn arg-&gt;type() → codom</span> named <code class="param">name</code>, spliced into direct style as <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1cps.html#aebec18f814ace750a46fb836bbdd4cb7">cps.cps2ds_dep</a> fun arg</span>. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">{fun, call}</span>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00085">85</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00085">ds_splice()</a>, <a class="el" href="cps_8h_source.html#l00016">mim::plug::cps::op_cps2ds_dep()</a>, <a class="el" href="def_8h_source.html#l01119">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00172">build_pointwise()</a>, and <a class="el" href="btensor_8h_source.html#l00085">ds_splice()</a>.</p>
+
+</div>
+</div>
+<a id="ad5489055e37845955c0ce3bf34d07dee" name="ad5489055e37845955c0ce3bf34d07dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5489055e37845955c0ce3bf34d07dee">&#9670;&#160;</a></span>folded_idx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::folded_idx </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>shape</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a></td>          <td class="paramname"><span class="paramname"><em>iters</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The raw i64 loop counters <code class="param">iters</code> as a buffer index into <code class="param">shape</code>, with its literal size-1 axes folded away. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00098">98</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00098">folded_idx()</a>, <a class="el" href="classmim_1_1Shape.html#af53511e53908e89e254155b34b0a5af5">mim::Shape::Shape()</a>, and <a class="el" href="btensor_8h_source.html#l00093">to_idxs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00172">build_pointwise()</a>, and <a class="el" href="btensor_8h_source.html#l00098">folded_idx()</a>.</p>
+
+</div>
+</div>
+<a id="aa1ab9fc65f86afbf46f639f631613034" name="aa1ab9fc65f86afbf46f639f631613034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ab9fc65f86afbf46f639f631613034">&#9670;&#160;</a></span>normalize_map_reduce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::normalize_map_reduce </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#a01e0a1e721ba27474863d45ab94017c3">btensor.map_reduce</a> is <a class="el" href="#a6fb6d9c0e5f1d87f59af7b27d689f365">btensor.map_reduce_post</a> without the epilogue and with the neutral schedule: delegate with <span class="tt">post = <a class="el" href="#a178c1d5c474562b4f36e73abb0f7ebb3">btensor.id</a></span> (so <span class="tt">Tp = To</span>), no epilogue inputs (<span class="tt">nps = 0</span>), no vector dim (<span class="tt">vdim = Rn</span>, the out-of-range sentinel), and no unrolling. </p>
+<p>The delegation lives in a normalizer (rather than a wrapping <span class="tt">lam</span>) so that call sites keep axm-style implicit inference: the stuck axm application lets the checker solve the <span class="tt">{Tis, Ris, Sis}</span> holes from the operands, whereas applying a <span class="tt">lam</span> would eagerly β-reduce <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1buffer.html#a0588dc55718f51ff35df7253bdb8b05c">buffer.Buf</a></span> over still-unsolved holes. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_2normalizers_8cpp_source.html#l00014">14</a> of file <a class="el" href="btensor_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_2normalizers_8cpp_source.html#l00014">normalize_map_reduce()</a>, and <a class="el" href="def_8h_source.html#l00457">mim::Def::projs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_2normalizers_8cpp_source.html#l00014">normalize_map_reduce()</a>.</p>
+
+</div>
+</div>
+<a id="a21fb97ac045b7341ad37c3453469f58e" name="a21fb97ac045b7341ad37c3453469f58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fb97ac045b7341ad37c3453469f58e">&#9670;&#160;</a></span>op_affine_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::btensor::op_affine_map </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>f</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>s_in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>s_out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>idxs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mem</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1affine.html#a667c8ee6bbd08791a3f99dd6c17c13b0">affine.map</a> @(m, n) @(s_in, s_out) f idxs as <a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> with the address space <span class="tt">as</span> of <code class="param">mem</code> ↦ <span class="tt">[<a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a>', coords]</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00055">55</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, and <a class="el" href="btensor_8h_source.html#l00055">op_affine_map()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00055">op_affine_map()</a>.</p>
+
+</div>
+</div>
+<a id="ad534f6a0eaa1f47b02b523f46f4b0e4e" name="ad534f6a0eaa1f47b02b523f46f4b0e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad534f6a0eaa1f47b02b523f46f4b0e4e">&#9670;&#160;</a></span>pad_coords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt; mim::plug::btensor::pad_coords </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a></td>          <td class="paramname"><span class="paramname"><em>iters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>lo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>s_in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replicate</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The read coordinates <span class="tt">o#d − lo#d</span> of a <span class="tt"><a class="el" href="#a1448fb87a7d7752f2b341d00f84ef661">pad</a></span> into <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> s_in#d</span> - clamped to the nearest edge if <code class="param">replicate</code>, or else zeroed out of range - together with the all-axes in-range flag (<span class="tt">nullptr</span> if <code class="param">replicate</code>). </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00111">111</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="core_2autogen_8h_source.html#l00114">mim::plug::core::and_</a>, <a class="el" href="btensor_8h_source.html#l00104">clamp()</a>, <a class="el" href="core_8h_source.html#l00016">mim::plug::core::none</a>, <a class="el" href="btensor_8h_source.html#l00111">pad_coords()</a>, <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>, <a class="el" href="core_2autogen_8h_source.html#l00145">mim::plug::core::sub</a>, <a class="el" href="core_2autogen_8h_source.html#l00260">mim::plug::core::u</a>, <a class="el" href="core_2autogen_8h_source.html#l00204">mim::plug::core::ul</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00111">pad_coords()</a>.</p>
+
+</div>
+</div>
+<a id="ae60b4af6f42cfc600d8560d1df41ba44" name="ae60b4af6f42cfc600d8560d1df41ba44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60b4af6f42cfc600d8560d1df41ba44">&#9670;&#160;</a></span>register_normalizers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::btensor::register_normalizers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2f22db57ec53935eb9dfedebd9b9b0b2">Normalizers</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>normalizers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#ae60b4af6f42cfc600d8560d1df41ba44">register_normalizers()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8cpp_source.html#l00015">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="#ae60b4af6f42cfc600d8560d1df41ba44">register_normalizers()</a>.</p>
+
+</div>
+</div>
+<a id="a47aa7b1ac64b3fda6b806bfd781bf00d" name="a47aa7b1ac64b3fda6b806bfd781bf00d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47aa7b1ac64b3fda6b806bfd781bf00d">&#9670;&#160;</a></span>to_idxs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> mim::plug::btensor::to_idxs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a></td>          <td class="paramname"><span class="paramname"><em>extents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a></td>          <td class="paramname"><span class="paramname"><em>iters</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the raw i64 loop counters <code class="param">iters</code> into indices <span class="tt"><a class="el" href="classmim_1_1Idx.html" title="A built-in constant of type Nat -&gt; *.">Idx</a> extents[d]</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="btensor_8h_source.html#l00093">93</a> of file <a class="el" href="btensor_8h_source.html">btensor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="btensor_8h_source.html#l00093">to_idxs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="btensor_8h_source.html#l00098">folded_idx()</a>, and <a class="el" href="btensor_8h_source.html#l00093">to_idxs()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="ab5e27486c5e2ab06a2d6d8d20cf22bd5" name="ab5e27486c5e2ab06a2d6d8d20cf22bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e27486c5e2ab06a2d6d8d20cf22bd5">&#9670;&#160;</a></span>Plugin_Id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a> mim::plug::btensor::Plugin_Id = 0xd518f5104c00000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="btensor_2autogen_8h_source.html#l00010">10</a> of file <a class="el" href="btensor_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="namespacemim_1_1plug.html">plug</a></li><li class="navelem"><a href="namespacemim_1_1plug_1_1btensor.html">btensor</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1553 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::Analysis Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1Analysis.html','','classmim_1_1Analysis-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::Analysis Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Traverses the current <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a> using <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> infrastructure while staying in the same world.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mim::Analysis:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classmim_1_1Analysis__inherit__graph.svg" width="440" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Construction &amp; Destruction</div></td></tr>
+<tr class="memitem:a4515f0f091b7c563a7fec2b5a5127b9a" id="r_a4515f0f091b7c563a7fec2b5a5127b9a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4515f0f091b7c563a7fec2b5a5127b9a">Analysis</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name)</td></tr>
+<tr class="memitem:aee9e19bc9197491f6b62b274fbf2378c" id="r_aee9e19bc9197491f6b62b274fbf2378c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aee9e19bc9197491f6b62b274fbf2378c">Analysis</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> annex)</td></tr>
+<tr class="memitem:ac94bad8fbf28de336d4c2f9046ac0555" id="r_ac94bad8fbf28de336d4c2f9046ac0555"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac94bad8fbf28de336d4c2f9046ac0555">reset</a> ()</td></tr>
+<tr class="memdesc:ac94bad8fbf28de336d4c2f9046ac0555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> for the next fixed-point iteration.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Sparse Fixed-Point Iteration</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>&lt; Disambiguates the Phase/Rewriter double base; for an <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> both denote the same <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>. </p>
+</div></td></tr>
+<tr class="memitem:a496981c42113362621010d00370e84e7" id="r_a496981c42113362621010d00370e84e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a496981c42113362621010d00370e84e7">make_dense</a> ()</td></tr>
+<tr class="memdesc:a496981c42113362621010d00370e84e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces whole-World rounds unconditionally.  <br /></td></tr>
+<tr class="memitem:a07b16850f29a35f1f7311aa861302c40" id="r_a07b16850f29a35f1f7311aa861302c40"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a07b16850f29a35f1f7311aa861302c40">version</a> () const</td></tr>
+<tr class="memdesc:a07b16850f29a35f1f7311aa861302c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bumped on every observable lattice change; snapshot it around a code region to detect changes.  <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Getters</div></td></tr>
+<tr class="memitem:afeae25f4ecab3e3812e9607f630a506f" id="r_afeae25f4ecab3e3812e9607f630a506f"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#afeae25f4ecab3e3812e9607f630a506f">world</a> ()</td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1Phase"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:a5c9e1cb4322b15d946feaaabcc057260 pub_methods_classmim_1_1Phase" id="r_a5c9e1cb4322b15d946feaaabcc057260"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, std::string name)</td></tr>
+<tr class="memitem:aa2ac27ba5ea35a77e6d86665ffbb7707 pub_methods_classmim_1_1Phase" id="r_aa2ac27ba5ea35a77e6d86665ffbb7707"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aa2ac27ba5ea35a77e6d86665ffbb7707">Phase</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> annex)</td></tr>
+<tr class="memitem:af1ee1aba228756a429741fd748f1cf7c pub_methods_classmim_1_1Phase" id="r_af1ee1aba228756a429741fd748f1cf7c"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#af1ee1aba228756a429741fd748f1cf7c">~Phase</a> ()=default</td></tr>
+<tr class="memitem:a0a303da72b9a80aaeb79f00755572750 pub_methods_classmim_1_1Phase" id="r_a0a303da72b9a80aaeb79f00755572750"><td class="memItemLeft">virtual std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750">recreate</a> ()</td></tr>
+<tr class="memdesc:a0a303da72b9a80aaeb79f00755572750 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance; needed by a fixed-point <a class="el" href="classmim_1_1PhaseMan.html" title="Organizes several Phases into a pipeline.">PhaseMan</a>.  <br /></td></tr>
+<tr class="memitem:ae53d7b9cecc27b16e8bec12c4e6e2e87 pub_methods_classmim_1_1Phase" id="r_ae53d7b9cecc27b16e8bec12c4e6e2e87"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ae53d7b9cecc27b16e8bec12c4e6e2e87">apply</a> (const <a class="el" href="classmim_1_1App.html">App</a> *)</td></tr>
+<tr class="memdesc:ae53d7b9cecc27b16e8bec12c4e6e2e87 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked if your <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> has additional args.  <br /></td></tr>
+<tr class="memitem:aae46baa7ff0775b46c1fc4b1bed9ef54 pub_methods_classmim_1_1Phase" id="r_aae46baa7ff0775b46c1fc4b1bed9ef54"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aae46baa7ff0775b46c1fc4b1bed9ef54">apply</a> (<a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &amp;)</td></tr>
+<tr class="memdesc:aae46baa7ff0775b46c1fc4b1bed9ef54 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dito, but invoked by <a class="el" href="classmim_1_1Phase.html#a0a303da72b9a80aaeb79f00755572750" title="Creates a new instance; needed by a fixed-point PhaseMan.">Phase::recreate</a>.  <br /></td></tr>
+<tr class="memitem:ae6352de218de18f9ddba804f583a9e21 pub_methods_classmim_1_1Phase" id="r_ae6352de218de18f9ddba804f583a9e21"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ae6352de218de18f9ddba804f583a9e21">redirects</a> () const</td></tr>
+<tr class="memdesc:ae6352de218de18f9ddba804f583a9e21 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <span class="tt">true</span>, <a class="el" href="classmim_1_1Phase.html#ac17c7524655ffa3640f8a3189f6e3af1">Phase::create</a> uses <a class="el" href="classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6" title="The Phase to use instead; nullptr means elide.">take_resolved()</a>.  <br /></td></tr>
+<tr class="memitem:a90a56ecbd675f91124b8e2514df57fa6 pub_methods_classmim_1_1Phase" id="r_a90a56ecbd675f91124b8e2514df57fa6"><td class="memItemLeft">virtual std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a90a56ecbd675f91124b8e2514df57fa6">take_resolved</a> ()</td></tr>
+<tr class="memdesc:a90a56ecbd675f91124b8e2514df57fa6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a> to use instead; <span class="tt">nullptr</span> means <em>elide</em>.  <br /></td></tr>
+<tr class="memitem:afeae25f4ecab3e3812e9607f630a506f pub_methods_classmim_1_1Phase" id="r_afeae25f4ecab3e3812e9607f630a506f"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">world</a> ()</td></tr>
+<tr class="memitem:ab1744c9a213b3ba696051d73fadb0afc pub_methods_classmim_1_1Phase" id="r_ab1744c9a213b3ba696051d73fadb0afc"><td class="memItemLeft"><a class="el" href="classmim_1_1Driver.html">Driver</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ab1744c9a213b3ba696051d73fadb0afc">driver</a> ()</td></tr>
+<tr class="memitem:a59afca1f7558ed31d2cd0497befa7e28 pub_methods_classmim_1_1Phase" id="r_a59afca1f7558ed31d2cd0497befa7e28"><td class="memItemLeft">const fe::Log &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a59afca1f7558ed31d2cd0497befa7e28">log</a> () const</td></tr>
+<tr class="memitem:ac3a0b91d02e7086abfa1e5e69c40260a pub_methods_classmim_1_1Phase" id="r_ac3a0b91d02e7086abfa1e5e69c40260a"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ac3a0b91d02e7086abfa1e5e69c40260a">name</a> () const</td></tr>
+<tr class="memitem:a2f84cd002f509749f1fcfc6a9be0bfd1 pub_methods_classmim_1_1Phase" id="r_a2f84cd002f509749f1fcfc6a9be0bfd1"><td class="memItemLeft"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a2f84cd002f509749f1fcfc6a9be0bfd1">annex</a> () const</td></tr>
+<tr class="memitem:ab1bbf65a4a0593a5343758ac5a82fdfb pub_methods_classmim_1_1Phase" id="r_ab1bbf65a4a0593a5343758ac5a82fdfb"><td class="memItemLeft">const fe::Vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ab1bbf65a4a0593a5343758ac5a82fdfb">args</a> ()</td></tr>
+<tr class="memdesc:ab1bbf65a4a0593a5343758ac5a82fdfb pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command-line arguments passed to this <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a>'s plugin via <span class="tt">-X &lt;plugin&gt;:&lt;arg&gt;</span>.  <br /></td></tr>
+<tr class="memitem:ac2bba54939517aaceb9c371c02db97b8 pub_methods_classmim_1_1Phase" id="r_ac2bba54939517aaceb9c371c02db97b8"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">todo</a> () const</td></tr>
+<tr class="memitem:a28a39b288a2f2de29cb8d7db113d99d6 pub_methods_classmim_1_1Phase" id="r_a28a39b288a2f2de29cb8d7db113d99d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6">invalidate</a> (bool todo=true)</td></tr>
+<tr class="memdesc:a28a39b288a2f2de29cb8d7db113d99d6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals that another round of fixed-point iteration is required, either as part of.  <br /></td></tr>
+<tr class="memitem:aba635c81bd49841a563dc533e5ae347f pub_methods_classmim_1_1Phase" id="r_aba635c81bd49841a563dc533e5ae347f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#aba635c81bd49841a563dc533e5ae347f">run</a> ()</td></tr>
+<tr class="memdesc:aba635c81bd49841a563dc533e5ae347f pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point and generates some debug output; invokes <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d" title="Actual entry.">Phase::start</a>.  <br /></td></tr>
+<tr class="memitem:a856fff2fdf7482d4a48fb0de3f1f43b6 pub_methods_classmim_1_1Phase" id="r_a856fff2fdf7482d4a48fb0de3f1f43b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a856fff2fdf7482d4a48fb0de3f1f43b6">profile_count</a> (std::string_view key, uint64_t n=1)</td></tr>
+<tr class="memdesc:a856fff2fdf7482d4a48fb0de3f1f43b6 pub_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds <code class="param">n</code> to the custom fe::Profiler counter <code class="param">key</code> of the current run; no-op unless profiling is enabled.  <br /></td></tr>
+<tr class="inherit_header pub_methods_classmim_1_1Rewriter"><td colspan="2">Public Member Functions inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
+<tr class="memitem:a75096ea0eb8e19be1c2286f9425dfd70 pub_methods_classmim_1_1Rewriter" id="r_a75096ea0eb8e19be1c2286f9425dfd70"><td class="memTemplParams" colspan="2">template&lt;class D = Def&gt; </td></tr>
+<tr class="memitem:a75096ea0eb8e19be1c2286f9425dfd70 pub_methods_classmim_1_1Rewriter template"><td class="memItemLeft">D *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut</a> () const</td></tr>
+<tr class="memitem:a91e2e9a8aac307e43309ce8458e74d91 pub_methods_classmim_1_1Rewriter" id="r_a91e2e9a8aac307e43309ce8458e74d91"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a91e2e9a8aac307e43309ce8458e74d91">Rewriter</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world)</td></tr>
+<tr class="memitem:a927f0d7a4ad6aa61787c9a972eff7f7f pub_methods_classmim_1_1Rewriter" id="r_a927f0d7a4ad6aa61787c9a972eff7f7f"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a927f0d7a4ad6aa61787c9a972eff7f7f">~Rewriter</a> ()</td></tr>
+<tr class="memitem:ab7102318660bc8e25e068db6142bf737 pub_methods_classmim_1_1Rewriter" id="r_ab7102318660bc8e25e068db6142bf737"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab7102318660bc8e25e068db6142bf737">reset</a> ()</td></tr>
+<tr class="memitem:a5fdd3ce8c4bd5220007469a503338854 pub_methods_classmim_1_1Rewriter" id="r_a5fdd3ce8c4bd5220007469a503338854"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a5fdd3ce8c4bd5220007469a503338854">world</a> ()</td></tr>
+<tr class="memitem:ae87c2d59b0f724757b7e22f7135f7799 pub_methods_classmim_1_1Rewriter" id="r_ae87c2d59b0f724757b7e22f7135f7799"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">push</a> (<a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> old_vars={}, <a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> new_vars={})</td></tr>
+<tr class="memitem:a28c9f380cebbda61ac84a9d8a2fad257 pub_methods_classmim_1_1Rewriter" id="r_a28c9f380cebbda61ac84a9d8a2fad257"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257">pop</a> ()</td></tr>
+<tr class="memitem:a28a8fb944e1cc2c8338550fc5115cdc9 pub_methods_classmim_1_1Rewriter" id="r_a28a8fb944e1cc2c8338550fc5115cdc9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a28a8fb944e1cc2c8338550fc5115cdc9">bind_old</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *var)</td></tr>
+<tr class="memdesc:a28a8fb944e1cc2c8338550fc5115cdc9 pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the old <code class="param">var</code> - if any - to the innermost scope.  <br /></td></tr>
+<tr class="memitem:a98be1bc048c16e53e2ca4dcd5e8121b2 pub_methods_classmim_1_1Rewriter" id="r_a98be1bc048c16e53e2ca4dcd5e8121b2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a98be1bc048c16e53e2ca4dcd5e8121b2">bind_new</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *var)</td></tr>
+<tr class="memdesc:a98be1bc048c16e53e2ca4dcd5e8121b2 pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the new <code class="param">var</code> - if any - to the innermost scope.  <br /></td></tr>
+<tr class="memitem:a7e44cf8011eb5e53a49c409d3bf1cc61 pub_methods_classmim_1_1Rewriter" id="r_a7e44cf8011eb5e53a49c409d3bf1cc61"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a7e44cf8011eb5e53a49c409d3bf1cc61">bind</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *old_var, const <a class="el" href="classmim_1_1Var.html">Var</a> *new_var)</td></tr>
+<tr class="memitem:a85d96cbeb961ed21800497582152862b pub_methods_classmim_1_1Rewriter" id="r_a85d96cbeb961ed21800497582152862b"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
+<tr class="memitem:a052f77bcdfc66751ed8f33ffd0b3be04 pub_methods_classmim_1_1Rewriter" id="r_a052f77bcdfc66751ed8f33ffd0b3be04"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a052f77bcdfc66751ed8f33ffd0b3be04">map</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> new_defs)</td></tr>
+<tr class="memitem:ab799239c0c41f5dfa4afb2f9fe3522b9 pub_methods_classmim_1_1Rewriter" id="r_ab799239c0c41f5dfa4afb2f9fe3522b9"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab799239c0c41f5dfa4afb2f9fe3522b9">map</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> old_defs, const <a class="el" href="classmim_1_1Def.html">Def</a> *new_def)</td></tr>
+<tr class="memitem:ac2f8ad29b11cf04069145a379cda1c16 pub_methods_classmim_1_1Rewriter" id="r_ac2f8ad29b11cf04069145a379cda1c16"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac2f8ad29b11cf04069145a379cda1c16">map</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> old_defs, <a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a> new_defs)</td></tr>
+<tr class="memitem:abe4950e5b3e1591ed5a956b5e0cdc0bb pub_methods_classmim_1_1Rewriter" id="r_abe4950e5b3e1591ed5a956b5e0cdc0bb"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb">rewrite_imm</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a82d16f0f2d9cc130004428a547920ffd pub_methods_classmim_1_1Rewriter" id="r_a82d16f0f2d9cc130004428a547920ffd"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd">rewrite_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *, <a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a53b074ec43d29eb4e104ee5f1e4fa1ef pub_methods_classmim_1_1Rewriter" id="r_a53b074ec43d29eb4e104ee5f1e4fa1ef"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a53b074ec43d29eb4e104ee5f1e4fa1ef">rewrite_stub</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut, fe::View&lt; size_t &gt; new2old)</td></tr>
+<tr class="memdesc:a53b074ec43d29eb4e104ee5f1e4fa1ef pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like above, but <code class="param">new_mut</code> may have a <em>different</em> number of ops than <code class="param">old_mut:</code> <span class="tt">new_mut-&gt;op(i)</span> is rewritten from <span class="tt">old_mut-&gt;op(new2old[i])</span>.  <br /></td></tr>
+<tr class="memitem:a4f5ba9e51337c7981fb93e3c7476d2cf pub_methods_classmim_1_1Rewriter" id="r_a4f5ba9e51337c7981fb93e3c7476d2cf"><td class="memItemLeft">virtual <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a4f5ba9e51337c7981fb93e3c7476d2cf">rewrite</a> (<a class="el" href="namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23">Defs</a>)</td></tr>
+<tr class="memitem:aef1bc98d3876a43de2d856872c7a19e8 pub_methods_classmim_1_1Rewriter" id="r_aef1bc98d3876a43de2d856872c7a19e8"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aef1bc98d3876a43de2d856872c7a19e8">rewrite_imm_Lit</a> (const <a class="el" href="classmim_1_1Lit.html">Lit</a> *)</td></tr>
+<tr class="memitem:a95b440e8be96d82f2de06f309a6de61c pub_methods_classmim_1_1Rewriter" id="r_a95b440e8be96d82f2de06f309a6de61c"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a95b440e8be96d82f2de06f309a6de61c">rewrite_imm_Axm</a> (const <a class="el" href="classmim_1_1Axm.html">Axm</a> *)</td></tr>
+<tr class="memitem:aa942d44eaf2db9cf588bec24b10ae4b8 pub_methods_classmim_1_1Rewriter" id="r_aa942d44eaf2db9cf588bec24b10ae4b8"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aa942d44eaf2db9cf588bec24b10ae4b8">rewrite_imm_Var</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *)</td></tr>
+<tr class="memitem:a9d6013b1a5f50215d18374cf215488cc pub_methods_classmim_1_1Rewriter" id="r_a9d6013b1a5f50215d18374cf215488cc"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a9d6013b1a5f50215d18374cf215488cc">rewrite_imm_Type</a> (const <a class="el" href="classmim_1_1Type.html">Type</a> *)</td></tr>
+<tr class="memitem:ae6d1de2a052afc384bd13dd5dc33ec79 pub_methods_classmim_1_1Rewriter" id="r_ae6d1de2a052afc384bd13dd5dc33ec79"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae6d1de2a052afc384bd13dd5dc33ec79">rewrite_imm_Level</a> (const <a class="el" href="classmim_1_1Level.html">Level</a> *)</td></tr>
+<tr class="memitem:ae0993eb15b25671a34c13d59f85f4fbe pub_methods_classmim_1_1Rewriter" id="r_ae0993eb15b25671a34c13d59f85f4fbe"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae0993eb15b25671a34c13d59f85f4fbe">rewrite_imm_LMax</a> (const <a class="el" href="classmim_1_1LMax.html">LMax</a> *)</td></tr>
+<tr class="memitem:a365f5a02011000321a560bed4162930c pub_methods_classmim_1_1Rewriter" id="r_a365f5a02011000321a560bed4162930c"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a365f5a02011000321a560bed4162930c">rewrite_imm_LSucc</a> (const <a class="el" href="classmim_1_1LSucc.html">LSucc</a> *)</td></tr>
+<tr class="memitem:ab322f87732fd6f8e6546768f53eb8346 pub_methods_classmim_1_1Rewriter" id="r_ab322f87732fd6f8e6546768f53eb8346"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab322f87732fd6f8e6546768f53eb8346">rewrite_imm_Pi</a> (const <a class="el" href="classmim_1_1Pi.html">Pi</a> *)</td></tr>
+<tr class="memitem:afac7fab824b50e8b85f9b5329fda7c7f pub_methods_classmim_1_1Rewriter" id="r_afac7fab824b50e8b85f9b5329fda7c7f"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#afac7fab824b50e8b85f9b5329fda7c7f">rewrite_imm_Lam</a> (const <a class="el" href="classmim_1_1Lam.html">Lam</a> *)</td></tr>
+<tr class="memitem:ae075070aa11c3f803665f7cd97fe2b94 pub_methods_classmim_1_1Rewriter" id="r_ae075070aa11c3f803665f7cd97fe2b94"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae075070aa11c3f803665f7cd97fe2b94">rewrite_imm_App</a> (const <a class="el" href="classmim_1_1App.html">App</a> *)</td></tr>
+<tr class="memitem:a97887c27f2110e6a2b13fac0f4cdd1a5 pub_methods_classmim_1_1Rewriter" id="r_a97887c27f2110e6a2b13fac0f4cdd1a5"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a97887c27f2110e6a2b13fac0f4cdd1a5">rewrite_imm_Sigma</a> (const <a class="el" href="classmim_1_1Sigma.html">Sigma</a> *)</td></tr>
+<tr class="memitem:a81d7459b8d9f80dc5dcf5b675deb81bc pub_methods_classmim_1_1Rewriter" id="r_a81d7459b8d9f80dc5dcf5b675deb81bc"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a81d7459b8d9f80dc5dcf5b675deb81bc">rewrite_imm_Tuple</a> (const <a class="el" href="classmim_1_1Tuple.html">Tuple</a> *)</td></tr>
+<tr class="memitem:a355268725383a5c9742d93ca542a8d88 pub_methods_classmim_1_1Rewriter" id="r_a355268725383a5c9742d93ca542a8d88"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a355268725383a5c9742d93ca542a8d88">rewrite_imm_Extract</a> (const <a class="el" href="classmim_1_1Extract.html">Extract</a> *)</td></tr>
+<tr class="memitem:a41edce9af022e58a82dfddde9d8d0196 pub_methods_classmim_1_1Rewriter" id="r_a41edce9af022e58a82dfddde9d8d0196"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a41edce9af022e58a82dfddde9d8d0196">rewrite_imm_Insert</a> (const <a class="el" href="classmim_1_1Insert.html">Insert</a> *)</td></tr>
+<tr class="memitem:a3c8337ccf1c44e40130ff899d0d21c03 pub_methods_classmim_1_1Rewriter" id="r_a3c8337ccf1c44e40130ff899d0d21c03"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a3c8337ccf1c44e40130ff899d0d21c03">rewrite_imm_Arr</a> (const <a class="el" href="classmim_1_1Arr.html">Arr</a> *)</td></tr>
+<tr class="memitem:a470fa46a814a8e1706624d08c8380b80 pub_methods_classmim_1_1Rewriter" id="r_a470fa46a814a8e1706624d08c8380b80"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a470fa46a814a8e1706624d08c8380b80">rewrite_imm_Pack</a> (const <a class="el" href="classmim_1_1Pack.html">Pack</a> *)</td></tr>
+<tr class="memitem:a26ab28c6a1fee8d8f89b117da6489acc pub_methods_classmim_1_1Rewriter" id="r_a26ab28c6a1fee8d8f89b117da6489acc"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a26ab28c6a1fee8d8f89b117da6489acc">rewrite_imm_Join</a> (const <a class="el" href="classmim_1_1Join.html">Join</a> *)</td></tr>
+<tr class="memitem:ab401d47a8d110fa8aea12ba19e25e53f pub_methods_classmim_1_1Rewriter" id="r_ab401d47a8d110fa8aea12ba19e25e53f"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab401d47a8d110fa8aea12ba19e25e53f">rewrite_imm_Inj</a> (const <a class="el" href="classmim_1_1Inj.html">Inj</a> *)</td></tr>
+<tr class="memitem:a281a1cdde96f1562fc52fa556f536b45 pub_methods_classmim_1_1Rewriter" id="r_a281a1cdde96f1562fc52fa556f536b45"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a281a1cdde96f1562fc52fa556f536b45">rewrite_imm_Match</a> (const <a class="el" href="classmim_1_1Match.html">Match</a> *)</td></tr>
+<tr class="memitem:aff60530a4213e31398bcb9d1eaac523e pub_methods_classmim_1_1Rewriter" id="r_aff60530a4213e31398bcb9d1eaac523e"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aff60530a4213e31398bcb9d1eaac523e">rewrite_imm_Variant</a> (const <a class="el" href="classmim_1_1Variant.html">Variant</a> *)</td></tr>
+<tr class="memitem:a258d138d204cc038076b7873241f977e pub_methods_classmim_1_1Rewriter" id="r_a258d138d204cc038076b7873241f977e"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a258d138d204cc038076b7873241f977e">rewrite_imm_Top</a> (const <a class="el" href="namespacemim.html#a8c95db47da2d9514da3e16e015062bf2">Top</a> *)</td></tr>
+<tr class="memitem:abb5abc69e4775cc51ae5d320b4649fd7 pub_methods_classmim_1_1Rewriter" id="r_abb5abc69e4775cc51ae5d320b4649fd7"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#abb5abc69e4775cc51ae5d320b4649fd7">rewrite_imm_Bot</a> (const <a class="el" href="namespacemim.html#ad6a85076174e8ee770ec5ad1f3c06ea4">Bot</a> *)</td></tr>
+<tr class="memitem:aa9bff3cb074b461fb0a218bdf3533998 pub_methods_classmim_1_1Rewriter" id="r_aa9bff3cb074b461fb0a218bdf3533998"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aa9bff3cb074b461fb0a218bdf3533998">rewrite_imm_Reform</a> (const <a class="el" href="classmim_1_1Reform.html">Reform</a> *)</td></tr>
+<tr class="memitem:af2b260464f49769064031bf97d3956d3 pub_methods_classmim_1_1Rewriter" id="r_af2b260464f49769064031bf97d3956d3"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#af2b260464f49769064031bf97d3956d3">rewrite_imm_Rule</a> (const <a class="el" href="classmim_1_1Rule.html">Rule</a> *)</td></tr>
+<tr class="memitem:aa564ae034f2a24ed515e940c0e956023 pub_methods_classmim_1_1Rewriter" id="r_aa564ae034f2a24ed515e940c0e956023"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#aa564ae034f2a24ed515e940c0e956023">rewrite_imm_Single</a> (const <a class="el" href="classmim_1_1Single.html">Single</a> *)</td></tr>
+<tr class="memitem:a3747ed770eb5900d54d7a91dbcad8049 pub_methods_classmim_1_1Rewriter" id="r_a3747ed770eb5900d54d7a91dbcad8049"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a3747ed770eb5900d54d7a91dbcad8049">rewrite_imm_Wrap</a> (const <a class="el" href="classmim_1_1Wrap.html">Wrap</a> *)</td></tr>
+<tr class="memitem:ae93d42630683b371a6e53cb3a734cd2b pub_methods_classmim_1_1Rewriter" id="r_ae93d42630683b371a6e53cb3a734cd2b"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae93d42630683b371a6e53cb3a734cd2b">rewrite_imm_Nat</a> (const <a class="el" href="classmim_1_1Nat.html">Nat</a> *)</td></tr>
+<tr class="memitem:ac60f5419af48d0a49c1da92918f872b9 pub_methods_classmim_1_1Rewriter" id="r_ac60f5419af48d0a49c1da92918f872b9"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ac60f5419af48d0a49c1da92918f872b9">rewrite_imm_Idx</a> (const <a class="el" href="classmim_1_1Idx.html">Idx</a> *)</td></tr>
+<tr class="memitem:a9c040676505930181a5cfb856901d3c9 pub_methods_classmim_1_1Rewriter" id="r_a9c040676505930181a5cfb856901d3c9"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a9c040676505930181a5cfb856901d3c9">rewrite_imm_Nom</a> (const <a class="el" href="classmim_1_1Nom.html">Nom</a> *)</td></tr>
+<tr class="memitem:a81b872d6ceea138d2bdd45e609368f92 pub_methods_classmim_1_1Rewriter" id="r_a81b872d6ceea138d2bdd45e609368f92"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a81b872d6ceea138d2bdd45e609368f92">rewrite_imm_Name</a> (const <a class="el" href="classmim_1_1Name.html">Name</a> *)</td></tr>
+<tr class="memitem:a8c22cb44fcf7cdadebfbf0ed518c73c7 pub_methods_classmim_1_1Rewriter" id="r_a8c22cb44fcf7cdadebfbf0ed518c73c7"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a8c22cb44fcf7cdadebfbf0ed518c73c7">rewrite_imm_Struc</a> (const <a class="el" href="classmim_1_1Struc.html">Struc</a> *)</td></tr>
+<tr class="memitem:a2a27820f2a968a37e4024cdba81a870c pub_methods_classmim_1_1Rewriter" id="r_a2a27820f2a968a37e4024cdba81a870c"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a2a27820f2a968a37e4024cdba81a870c">rewrite_imm_Seq</a> (const <a class="el" href="classmim_1_1Seq.html">Seq</a> *seq)</td></tr>
+<tr class="memitem:a509aa94f5f2daf12f190a684001dd58d pub_methods_classmim_1_1Rewriter" id="r_a509aa94f5f2daf12f190a684001dd58d"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a509aa94f5f2daf12f190a684001dd58d">rewrite_mut_Seq</a> (<a class="el" href="classmim_1_1Seq.html">Seq</a> *seq)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr id="pro-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Rewrite</div></td></tr>
+<tr class="memitem:a1c5cd105ce8fad4292146bcb3d98cc04" id="r_a1c5cd105ce8fad4292146bcb3d98cc04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04">start</a> () override</td></tr>
+<tr class="memdesc:a1c5cd105ce8fad4292146bcb3d98cc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual entry.  <br /></td></tr>
+<tr class="memitem:a066ffcf7433a84ba859331ea5b199f4f" id="r_a066ffcf7433a84ba859331ea5b199f4f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a066ffcf7433a84ba859331ea5b199f4f">prepare</a> ()</td></tr>
+<tr class="memdesc:a066ffcf7433a84ba859331ea5b199f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <b>before</b> the main analysis.  <br /></td></tr>
+<tr class="memitem:ad06b63e77f01f2780b54c98fdc7c5d5d" id="r_ad06b63e77f01f2780b54c98fdc7c5d5d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ad06b63e77f01f2780b54c98fdc7c5d5d">finalize</a> ()</td></tr>
+<tr class="memdesc:ad06b63e77f01f2780b54c98fdc7c5d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <b>after</b> the main analysis - only in <b>full</b> rounds, so it always sees the complete abstract <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>.  <br /></td></tr>
+<tr class="memitem:aa7d78ed906cc6531fa13d42e18bc398d" id="r_aa7d78ed906cc6531fa13d42e18bc398d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aa7d78ed906cc6531fa13d42e18bc398d">rewrite_external</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *)</td></tr>
+<tr class="memitem:a5190fee54fca9de9365c6006994df353" id="r_a5190fee54fca9de9365c6006994df353"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a5190fee54fca9de9365c6006994df353">lookup</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *) override</td></tr>
+<tr class="memdesc:a5190fee54fca9de9365c6006994df353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps.  <br /></td></tr>
+<tr class="memitem:a3339b4cc840d3e782eba78bf41608faa" id="r_a3339b4cc840d3e782eba78bf41608faa"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a3339b4cc840d3e782eba78bf41608faa">rewrite_imm_Proxy</a> (const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *proxy) override</td></tr>
+<tr class="memdesc:a3339b4cc840d3e782eba78bf41608faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default: ignore <a class="el" href="classmim_1_1Proxy.html" title="Used as intermediate value during optimizatinos such as Analysis.">Proxy</a>s.  <br /></td></tr>
+<tr class="memitem:a32c57f40fd50d9936c29384d21214bde" id="r_a32c57f40fd50d9936c29384d21214bde"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a32c57f40fd50d9936c29384d21214bde">rewrite</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *) override</td></tr>
+<tr class="memdesc:a32c57f40fd50d9936c29384d21214bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites <code class="param">def</code> and then maps the result to its <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a>.  <br /></td></tr>
+<tr class="memitem:a5909abf12c44a2760035855c61423b53" id="r_a5909abf12c44a2760035855c61423b53"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a5909abf12c44a2760035855c61423b53">rewrite_mut</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *) final</td></tr>
+<tr class="memdesc:a5909abf12c44a2760035855c61423b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedules <code class="param">mut</code> for a breadth-first visit of its dependencies and records <span class="tt">mut -&gt; mut</span>.  <br /></td></tr>
+<tr class="memitem:af80cf867f189da782f8778530b86b2bd" id="r_af80cf867f189da782f8778530b86b2bd"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af80cf867f189da782f8778530b86b2bd">rewrite_mut_Hole</a> (<a class="el" href="classmim_1_1Hole.html">Hole</a> *mut) override</td></tr>
+<tr class="memitem:ad0165c29ea97512395c501a35999d113" id="r_ad0165c29ea97512395c501a35999d113"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad0165c29ea97512395c501a35999d113">rewrite_mut_Pi</a> (<a class="el" href="classmim_1_1Pi.html">Pi</a> *mut) override</td></tr>
+<tr class="memitem:aa90dcb3e3d972712700a54f5ec2b0298" id="r_aa90dcb3e3d972712700a54f5ec2b0298"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa90dcb3e3d972712700a54f5ec2b0298">rewrite_mut_Lam</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *mut) override</td></tr>
+<tr class="memitem:a77b420a19d2f8eee23b247f1bf6ece13" id="r_a77b420a19d2f8eee23b247f1bf6ece13"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a77b420a19d2f8eee23b247f1bf6ece13">rewrite_mut_Sigma</a> (<a class="el" href="classmim_1_1Sigma.html">Sigma</a> *mut) override</td></tr>
+<tr class="memitem:a2258d005170da06858a5e193c60496c3" id="r_a2258d005170da06858a5e193c60496c3"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2258d005170da06858a5e193c60496c3">rewrite_mut_Arr</a> (<a class="el" href="classmim_1_1Arr.html">Arr</a> *mut) override</td></tr>
+<tr class="memitem:a4c8bec6390fcf6b339cef8085d3777ab" id="r_a4c8bec6390fcf6b339cef8085d3777ab"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4c8bec6390fcf6b339cef8085d3777ab">rewrite_mut_Pack</a> (<a class="el" href="classmim_1_1Pack.html">Pack</a> *mut) override</td></tr>
+<tr class="memitem:a0ccee3db79c7ad567c374eb79f4f3a33" id="r_a0ccee3db79c7ad567c374eb79f4f3a33"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a0ccee3db79c7ad567c374eb79f4f3a33">rewrite_mut_Variant</a> (<a class="el" href="classmim_1_1Variant.html">Variant</a> *mut) override</td></tr>
+<tr class="memitem:a2f94fc939beb1c10a537fbe18801bdd8" id="r_a2f94fc939beb1c10a537fbe18801bdd8"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2f94fc939beb1c10a537fbe18801bdd8">rewrite_mut_Rule</a> (<a class="el" href="classmim_1_1Rule.html">Rule</a> *mut) override</td></tr>
+<tr class="memitem:a63c1512b9b4a37033e465bf6736234ab" id="r_a63c1512b9b4a37033e465bf6736234ab"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a63c1512b9b4a37033e465bf6736234ab">leave</a> ()</td></tr>
+<tr class="memdesc:a63c1512b9b4a37033e465bf6736234ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> has been completely dealt with.  <br /></td></tr>
+<tr class="inherit_header pro_methods_classmim_1_1Rewriter"><td colspan="2">Protected Member Functions inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
+<tr class="memitem:ae88929887ae10a6d2d7b4911170afaa8 pro_methods_classmim_1_1Rewriter" id="r_ae88929887ae10a6d2d7b4911170afaa8"><td class="memItemLeft"><a class="el" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae88929887ae10a6d2d7b4911170afaa8">old2new</a> ()</td></tr>
+<tr class="memdesc:ae88929887ae10a6d2d7b4911170afaa8 pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The map of the innermost <a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">push()</a> scope.  <br /></td></tr>
+<tr class="memitem:a23adf1798f6f60e3a60d7ab3317f947c pro_methods_classmim_1_1Rewriter" id="r_a23adf1798f6f60e3a60d7ab3317f947c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a23adf1798f6f60e3a60d7ab3317f947c">has_intersection</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *old_def)</td></tr>
+<tr class="memdesc:a23adf1798f6f60e3a60d7ab3317f947c pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does <code class="param">old_def</code> depend on the old <a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> of any scope?  <br /></td></tr>
+<tr class="memitem:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter" id="r_ae09f7a8bb555ce521cf0355fd77a79af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae09f7a8bb555ce521cf0355fd77a79af">enter</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
+<tr class="memdesc:ae09f7a8bb555ce521cf0355fd77a79af pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> to <code class="param">new_mut</code> and restores it at the end of the scope.  <br /></td></tr>
+<tr class="memitem:ab6b6478915afad4df1563eabea005120 pro_methods_classmim_1_1Rewriter" id="r_ab6b6478915afad4df1563eabea005120"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ab6b6478915afad4df1563eabea005120">seal</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *old_mut, <a class="el" href="classmim_1_1Def.html">Def</a> *new_mut)</td></tr>
+<tr class="memdesc:ab6b6478915afad4df1563eabea005120 pro_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tail of rewrite_stub: immutabilizes <code class="param">new_mut</code> in hindsight, as rewriting may have made it vacuous.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+lattice</h2></td></tr>
+<tr class="memitem:ad7c0e4db7456e9d3910876ce4db8180a" id="r_ad7c0e4db7456e9d3910876ce4db8180a"><td class="memItemLeft">const auto &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a">lattice</a> () const</td></tr>
+<tr class="memdesc:ad7c0e4db7456e9d3910876ce4db8180a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The whole map; used e.g. to diff two fixed-point runs.  <br /></td></tr>
+<tr class="memitem:a8f7b00c11d97657ed2ef7dcdaf5e3628" id="r_a8f7b00c11d97657ed2ef7dcdaf5e3628"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8f7b00c11d97657ed2ef7dcdaf5e3628">lattice</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memitem:af452ff2897eed267ba834654b30fdf14" id="r_af452ff2897eed267ba834654b30fdf14"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af452ff2897eed267ba834654b30fdf14">repr</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memdesc:af452ff2897eed267ba834654b30fdf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">The representative of <code class="param">def:</code> follows <span class="tt">def ↦ lattice(def)</span> to the end of its chain.  <br /></td></tr>
+<tr class="memitem:a9833bb5af241375f6f2b0ee59e9928ab" id="r_a9833bb5af241375f6f2b0ee59e9928ab"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9833bb5af241375f6f2b0ee59e9928ab">is_top</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memitem:adfece26e49ed8baae053ab5ecb1cdf5e" id="r_adfece26e49ed8baae053ab5ecb1cdf5e"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#adfece26e49ed8baae053ab5ecb1cdf5e">is_singleton</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:adfece26e49ed8baae053ab5ecb1cdf5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sole inhabitant of a singleton type is ⊤ and shared by all binders of that type, so it is never recorded.  <br /></td></tr>
+<tr class="memitem:a2a47fc0b6867d524f4b55ac13ac7ac07" id="r_a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2a47fc0b6867d524f4b55ac13ac7ac07">lattice_force</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
+<tr class="memdesc:a2a47fc0b6867d524f4b55ac13ac7ac07"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Non-monotone</b> write of <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>.  <br /></td></tr>
+<tr class="memitem:ac8af6e64009d736d3db52cc6cf7d9ba7" id="r_ac8af6e64009d736d3db52cc6cf7d9ba7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac8af6e64009d736d3db52cc6cf7d9ba7">lattice_erase</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr)</td></tr>
+<tr class="memdesc:ac8af6e64009d736d3db52cc6cf7d9ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Non-monotone</b> removal of <code class="param">concr</code> from <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a>, so no later sparse round replays it.  <br /></td></tr>
+<tr class="memitem:a66aeeff62149090ca33a1cd320f79e7c" id="r_a66aeeff62149090ca33a1cd320f79e7c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a66aeeff62149090ca33a1cd320f79e7c">lattice</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *concr, const <a class="el" href="classmim_1_1Def.html">Def</a> *abstr)</td></tr>
+<tr class="memdesc:a66aeeff62149090ca33a1cd320f79e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>.  <br /></td></tr>
+<tr class="memitem:aea34c4c2e764fd0fe97b3ba63299f42d" id="r_aea34c4c2e764fd0fe97b3ba63299f42d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aea34c4c2e764fd0fe97b3ba63299f42d">pin</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memdesc:aea34c4c2e764fd0fe97b3ba63299f42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monotonically forces <code class="param">def</code> to ⊤ (keep as is).  <br /></td></tr>
+<tr class="memitem:a9ebdd61c49398e749d050864a2060882" id="r_a9ebdd61c49398e749d050864a2060882"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9ebdd61c49398e749d050864a2060882">pin_imm</a> (<a class="el" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> &amp;visited, const <a class="el" href="classmim_1_1Def.html">Def</a> *def, DefPred auto pinnable)</td></tr>
+<tr class="memdesc:a9ebdd61c49398e749d050864a2060882"><td class="mdescLeft">&#160;</td><td class="mdescRight">pins every def in <code class="param">def's</code> immutable subgraph for which <code class="param">pinnable</code> holds.  <br /></td></tr>
+<tr class="memitem:a61405e505d4268afe8284b245d206234" id="r_a61405e505d4268afe8284b245d206234"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a61405e505d4268afe8284b245d206234">pin_imm</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def, DefPred auto pinnable)</td></tr>
+<tr class="memitem:a69aa191fb0bc0c08851bb7c92f35879c" id="r_a69aa191fb0bc0c08851bb7c92f35879c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a69aa191fb0bc0c08851bb7c92f35879c">taint</a> (<a class="el" href="classmim_1_1Def.html">Def</a> *mut)</td></tr>
+<tr class="memdesc:a69aa191fb0bc0c08851bb7c92f35879c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additionally schedules <code class="param">mut</code> for the next sparse round.  <br /></td></tr>
+<tr class="memitem:a7ef44bd3020205c3c53e4226e6696677" id="r_a7ef44bd3020205c3c53e4226e6696677"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7ef44bd3020205c3c53e4226e6696677">touch</a> ()</td></tr>
+<tr class="memdesc:a7ef44bd3020205c3c53e4226e6696677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Observable analysis information changed: records <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> as <em>dirty</em> - the seed set of the next sparse round - and <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classmim_1_1Phase"><td colspan="2">Static Public Member Functions inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:ac17c7524655ffa3640f8a3189f6e3af1 pub_static_methods_classmim_1_1Phase" id="r_ac17c7524655ffa3640f8a3189f6e3af1"><td class="memItemLeft">static std::unique_ptr&lt; <a class="el" href="classmim_1_1Phase.html#a5c9e1cb4322b15d946feaaabcc057260">Phase</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#ac17c7524655ffa3640f8a3189f6e3af1">create</a> (const <a class="el" href="namespacemim.html#af732126e419c1fc8a783e1ad804a5e9b">Flags2Phases</a> &amp;phases, const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
+<tr class="memitem:a19df66aeb259f2d7208c70f4484ab7c3 pub_static_methods_classmim_1_1Phase" id="r_a19df66aeb259f2d7208c70f4484ab7c3"><td class="memTemplParams" colspan="2">template&lt;class A, class P&gt; </td></tr>
+<tr class="memitem:a19df66aeb259f2d7208c70f4484ab7c3 pub_static_methods_classmim_1_1Phase template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3">hook</a> (<a class="el" href="namespacemim.html#af732126e419c1fc8a783e1ad804a5e9b">Flags2Phases</a> &amp;phases)</td></tr>
+<tr class="memitem:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase" id="r_a688656a879e35a05d8f41924f1d9df0a"><td class="memTemplParams" colspan="2">template&lt;class P, class... Args&gt; </td></tr>
+<tr class="memitem:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a688656a879e35a05d8f41924f1d9df0a">run</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a688656a879e35a05d8f41924f1d9df0a pub_static_methods_classmim_1_1Phase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a single <a class="el" href="classmim_1_1Phase.html" title="A Phase performs one self-contained task over the whole World.">Phase</a>.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_classmim_1_1Phase"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Phase.html">mim::Phase</a></td></tr>
+<tr class="memitem:a0c13c41b1a3d729d9319fd38507be012 pro_attribs_classmim_1_1Phase" id="r_a0c13c41b1a3d729d9319fd38507be012"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012">name_</a></td></tr>
+<tr class="inherit_header pro_attribs_classmim_1_1Rewriter"><td colspan="2">Protected Attributes inherited from <a class="el" href="classmim_1_1Rewriter.html">mim::Rewriter</a></td></tr>
+<tr class="memitem:a05d16f2385c8e42c3fe6dd32a518c86e pro_attribs_classmim_1_1Rewriter" id="r_a05d16f2385c8e42c3fe6dd32a518c86e"><td class="memItemLeft">fe::Vector&lt; <a class="el" href="classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope">Scope</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a05d16f2385c8e42c3fe6dd32a518c86e">scopes_</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Traverses the current <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a> using <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> infrastructure while staying in the same world. </p>
+<p>It recursively rewrites all <a class="el" href="classmim_1_1World.html#a3336433005ad21cbf70d42c2837ec05a">World::externals()</a> but treats <a class="el" href="classmim_1_1World_1_1Annexes.html#acb5187860e5335065b6e3c3518b07c2e" title="Like flags() but only for an Axm or a non-Lam mutable - whose identity phases must preserve.">World::Annexes::opaque()</a> annexes as opaque.</p>
+<p><a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> provides a reusable <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> mapping old <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s to abstract values, represented as ordinary MimIR <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s.</p>
+<p>Fixed-point iteration is <em>sparse</em> by default: whenever a lattice write changes observable information, the mutable currently being drained is recorded as <em>dirty</em>. The next round then re-drains only those dirty mutables - plus everything reachable from them - instead of walking the whole <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>. At the start of such a round, the accumulated <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> is replayed into the rewriter map, so a dirty mutable's body sees the substitutions its (non-revisited) producers installed in earlier rounds. Since dirt tracks <em>writers</em> - not readers - a sparse round may miss affected mutables; hence, once sparse rounds quiesce, one final <b>full</b> round certifies the fixed point. That replay only <em>prunes</em> the walk; what the lattice means is applied by <a class="el" href="#a32c57f40fd50d9936c29384d21214bde" title="Rewrites def and then maps the result to its repr().">rewrite()</a> through <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a>, in every kind of round alike - see <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a> for why an analysis whose values are expressions needs that. </p><dl class="section note"><dt>Note</dt><dd>You can override<ul>
+<li><a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">Rewriter::rewrite()</a>,</li>
+<li><a class="el" href="classmim_1_1Rewriter.html#abe4950e5b3e1591ed5a956b5e0cdc0bb">Rewriter::rewrite_imm()</a>,</li>
+<li><a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">Rewriter::rewrite_mut()</a>, etc. </li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="phases.html#phases_analysis" title="Analysis">Analysis</a> </dd>
+<dd>
+<a class="el" href="phases.html#ssa-without-dominance" title="SSA without Dominance">SSA without Dominance</a> for how an <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a> substitutes <a class="el" href="classmim_1_1Def.html#a9d55dd5ba4da4423fec9da70c4c81eab" title="Does this nest mut?">Def::nests</a> for the classical SSA dominance check. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00130">130</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4515f0f091b7c563a7fec2b5a5127b9a" name="a4515f0f091b7c563a7fec2b5a5127b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4515f0f091b7c563a7fec2b5a5127b9a">&#9670;&#160;</a></span>Analysis() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Analysis::Analysis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00134">134</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00061">mim::Phase::name()</a>, <a class="el" href="phase_8h_source.html#l00027">mim::Phase::Phase()</a>, <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="escape__analysis_8h_source.html#l00036">mim::plug::mem::EscapeAnalysis::EscapeAnalysis()</a>.</p>
+
+</div>
+</div>
+<a id="aee9e19bc9197491f6b62b274fbf2378c" name="aee9e19bc9197491f6b62b274fbf2378c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee9e19bc9197491f6b62b274fbf2378c">&#9670;&#160;</a></span>Analysis() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Analysis::Analysis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1World.html">World</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>world</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>annex</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00137">137</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00062">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00027">mim::Phase::Phase()</a>, <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad06b63e77f01f2780b54c98fdc7c5d5d" name="ad06b63e77f01f2780b54c98fdc7c5d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad06b63e77f01f2780b54c98fdc7c5d5d">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mim::Analysis::finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Run <b>after</b> the main analysis - only in <b>full</b> rounds, so it always sees the complete abstract <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00268">268</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<a id="adfece26e49ed8baae053ab5ecb1cdf5e" name="adfece26e49ed8baae053ab5ecb1cdf5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfece26e49ed8baae053ab5ecb1cdf5e">&#9670;&#160;</a></span>is_singleton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::is_singleton </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The sole inhabitant of a singleton type is ⊤ and shared by all binders of that type, so it is never recorded. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00199">199</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8h_source.html#l00342">mim::World::inhabitant()</a>, <a class="el" href="def_8h_source.html#l01119">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00134">lattice()</a>, <a class="el" href="phase_8h_source.html#l00168">lattice()</a>, and <a class="el" href="phase_8cpp_source.html#l00123">lattice_force()</a>.</p>
+
+</div>
+</div>
+<a id="a9833bb5af241375f6f2b0ee59e9928ab" name="a9833bb5af241375f6f2b0ee59e9928ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9833bb5af241375f6f2b0ee59e9928ab">&#9670;&#160;</a></span>is_top()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::is_top </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>whether <code class="param">def</code> is pinned to ⊤ (<span class="tt">def ↦ def</span>). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00188">188</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="ad7c0e4db7456e9d3910876ce4db8180a" name="ad7c0e4db7456e9d3910876ce4db8180a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c0e4db7456e9d3910876ce4db8180a">&#9670;&#160;</a></span>lattice() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto &amp; mim::Analysis::lattice </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The whole map; used e.g. to diff two fixed-point runs. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00165">165</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00227">pin()</a>.</p>
+
+</div>
+</div>
+<a id="a66aeeff62149090ca33a1cd320f79e7c" name="a66aeeff62149090ca33a1cd320f79e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66aeeff62149090ca33a1cd320f79e7c">&#9670;&#160;</a></span>lattice() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::lattice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>concr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>abstr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>. </p>
+<p><a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s - and thereby triggers another fixed-point round - iff this changes observable information: an existing entry was overwritten, or a fresh fact other than ⊤ was inserted. Freshly inserting ⊤ (<span class="tt">concr ↦ concr</span>) stays silent, as it is indistinguishable from <em>absent</em> for consumers. Every change also <a class="el" href="#a7ef44bd3020205c3c53e4226e6696677" title="Observable analysis information changed: records curr_mut() as dirty - the seed set of the next spars...">touch()</a>es <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> - the seed set of the next sparse round. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed observable information - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00134">134</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
+
+</div>
+</div>
+<a id="a8f7b00c11d97657ed2ef7dcdaf5e3628" name="a8f7b00c11d97657ed2ef7dcdaf5e3628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7b00c11d97657ed2ef7dcdaf5e3628">&#9670;&#160;</a></span>lattice() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::lattice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the abstract value recorded for <code class="param">def</code>, or <span class="tt">nullptr</span> if unknown. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00168">168</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>.</p>
+
+</div>
+</div>
+<a id="ac8af6e64009d736d3db52cc6cf7d9ba7" name="ac8af6e64009d736d3db52cc6cf7d9ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8af6e64009d736d3db52cc6cf7d9ba7">&#9670;&#160;</a></span>lattice_erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::lattice_erase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>concr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><b>Non-monotone</b> removal of <code class="param">concr</code> from <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a>, so no later sparse round replays it. </p>
+<p>Like lattice_force, a removal <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s and <a class="el" href="#a7ef44bd3020205c3c53e4226e6696677" title="Observable analysis information changed: records curr_mut() as dirty - the seed set of the next spars...">touch()</a>es <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a>. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff <code class="param">concr</code> had an entry. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00212">212</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
+
+</div>
+</div>
+<a id="a2a47fc0b6867d524f4b55ac13ac7ac07" name="a2a47fc0b6867d524f4b55ac13ac7ac07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a47fc0b6867d524f4b55ac13ac7ac07">&#9670;&#160;</a></span>lattice_force()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::lattice_force </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>concr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>abstr</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><b>Non-monotone</b> write of <span class="tt">concr ↦ abstr</span> into <a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> and <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a>. </p>
+<p>This is the escape hatch for analyses that must overwrite an earlier round's value (descending from ⊤ is fine). <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s iff the stored value changed; an <em>absent</em> entry counts as changed - even for ⊤ - since a non-monotone lattice's consumers may well distinguish ⊥ from ⊤. Every change also <a class="el" href="#a7ef44bd3020205c3c53e4226e6696677" title="Observable analysis information changed: records curr_mut() as dirty - the seed set of the next spars...">touch()</a>es <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> - the seed set of the next sparse round. </p><dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed the entry - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00123">123</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00199">is_singleton()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="phase_8h_source.html#l00253">touch()</a>.</p>
+
+</div>
+</div>
+<a id="a63c1512b9b4a37033e465bf6736234ab" name="a63c1512b9b4a37033e465bf6736234ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c1512b9b4a37033e465bf6736234ab">&#9670;&#160;</a></span>leave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mim::Analysis::leave </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called after <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> has been completely dealt with. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#aa4379e24b2739df1a73bbba54042d46b">mim::plug::mem::EscapeAnalysis</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00292">292</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a5190fee54fca9de9365c6006994df353" name="a5190fee54fca9de9365c6006994df353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5190fee54fca9de9365c6006994df353">&#9670;&#160;</a></span>lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::lookup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>old_def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lookup <span class="tt">old_def</span> by searching in reverse through the stack of maps. </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">nullptr</span> if nothing was found. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00118">118</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="world_8h_source.html#l00289">mim::World::annexes()</a>, <a class="el" href="rewrite_8h_source.html#l00066">mim::Rewriter::lookup()</a>, <a class="el" href="world_8h_source.html#l00245">mim::World::Annexes::opaque()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00159">rewrite_mut()</a>.</p>
+
+</div>
+</div>
+<a id="a496981c42113362621010d00370e84e7" name="a496981c42113362621010d00370e84e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496981c42113362621010d00370e84e7">&#9670;&#160;</a></span>make_dense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::make_dense </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Forces whole-World rounds unconditionally. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00156">156</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="aea34c4c2e764fd0fe97b3ba63299f42d" name="aea34c4c2e764fd0fe97b3ba63299f42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea34c4c2e764fd0fe97b3ba63299f42d">&#9670;&#160;</a></span>pin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Analysis::pin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Monotonically forces <code class="param">def</code> to ⊤ (keep as is). </p>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> iff this changed observable information - i.e. iff it <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>d. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00227">227</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00165">lattice()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="escape__analysis_8cpp_source.html#l00057">mim::plug::mem::EscapeAnalysis::leave()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
+
+</div>
+</div>
+<a id="a61405e505d4268afe8284b245d206234" name="a61405e505d4268afe8284b245d206234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61405e505d4268afe8284b245d206234">&#9670;&#160;</a></span>pin_imm() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::pin_imm </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DefPred auto</td>          <td class="paramname"><span class="paramname"><em>pinnable</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00239">239</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
+
+</div>
+</div>
+<a id="a9ebdd61c49398e749d050864a2060882" name="a9ebdd61c49398e749d050864a2060882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ebdd61c49398e749d050864a2060882">&#9670;&#160;</a></span>pin_imm() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::pin_imm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>visited</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DefPred auto</td>          <td class="paramname"><span class="paramname"><em>pinnable</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pins every def in <code class="param">def's</code> immutable subgraph for which <code class="param">pinnable</code> holds. </p>
+<p>Mutables are visited but not descended into; defs already in <code class="param">visited</code> are skipped. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00231">231</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00486">mim::Def::deps()</a>, <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00227">pin()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00239">pin_imm()</a>, and <a class="el" href="phase_8h_source.html#l00231">pin_imm()</a>.</p>
+
+</div>
+</div>
+<a id="a066ffcf7433a84ba859331ea5b199f4f" name="a066ffcf7433a84ba859331ea5b199f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066ffcf7433a84ba859331ea5b199f4f">&#9670;&#160;</a></span>prepare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mim::Analysis::prepare </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Run <b>before</b> the main analysis. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00266">266</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<a id="af452ff2897eed267ba834654b30fdf14" name="af452ff2897eed267ba834654b30fdf14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af452ff2897eed267ba834654b30fdf14">&#9670;&#160;</a></span>repr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::repr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The representative of <code class="param">def:</code> follows <span class="tt">def ↦ lattice(def)</span> to the end of its chain. </p>
+<p>The lattice records <em>expressions</em>, so one and the same abstract value can be spelled at several depths of a chain (a var, and the value it was propagated to). <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a> collapses those spellings to one def, so that comparing two of them answers whether they mean the same value - not whether they were derived by the same route. This is union-find's <em>find</em> without the path compression: the chain is what the lattice means, and its links keep changing between rounds - see <a class="el" href="#a2a47fc0b6867d524f4b55ac13ac7ac07" title="Non-monotone write of concr ↦ abstr into lattice() and map().">Analysis::lattice_force</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00181">181</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>.</p>
+
+</div>
+</div>
+<a id="ac94bad8fbf28de336d4c2f9046ac0555" name="ac94bad8fbf28de336d4c2f9046ac0555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94bad8fbf28de336d4c2f9046ac0555">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears the rewriter map and resets <a class="el" href="classmim_1_1Phase.html#ac2bba54939517aaceb9c371c02db97b8">Phase::todo()</a> for the next fixed-point iteration. </p>
+<p><a class="el" href="#ad7c0e4db7456e9d3910876ce4db8180a" title="The whole map; used e.g. to diff two fixed-point runs.">lattice()</a> is <b>preserved</b> across iterations so that abstract values accumulated in earlier rounds remain available - this is what makes fixed-point convergence possible. The dirty set survives as well; <a class="el" href="#a1c5cd105ce8fad4292146bcb3d98cc04" title="Actual entry.">start()</a> consumes it to decide whether the round can be sparse. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classmim_1_1RWPhase.html#a03163daff4b06d1ab84f40886ddab811" title="Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.">RWPhase::analyze</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00068">68</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00040">mim::Rewriter::push()</a>, and <a class="el" href="rewrite_8h_source.html#l00127">mim::Rewriter::scopes_</a>.</p>
+
+</div>
+</div>
+<a id="a32c57f40fd50d9936c29384d21214bde" name="a32c57f40fd50d9936c29384d21214bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c57f40fd50d9936c29384d21214bde">&#9670;&#160;</a></span>rewrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rewrites <code class="param">def</code> and then maps the result to its <a class="el" href="#af452ff2897eed267ba834654b30fdf14" title="The representative of def: follows def ↦ lattice(def) to the end of its chain.">repr()</a>. </p>
+<p>This is how the lattice is applied: at the <em>point of use</em>, and only after the structural rewrite - so an <a class="el" href="classmim_1_1Analysis.html" title="Traverses the current World using Rewriter infrastructure while staying in the same world.">Analysis</a>'s hooks always see the program itself. Pre-installing the substitutions into <a class="el" href="classmim_1_1Rewriter.html#a85d96cbeb961ed21800497582152862b">map()</a> instead would skip those hooks, and only a sparse round would do so - putting the two kinds of round in different regimes, where they spell one and the same abstract value differently. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#acd9201feaab8a6d73223308e48ff6652">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00154">154</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00588">mim::Def::isa_mut()</a>, <a class="el" href="phase_8h_source.html#l00181">repr()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="escape__analysis_8cpp_source.html#l00057">mim::plug::mem::EscapeAnalysis::leave()</a>, <a class="el" href="phase_8cpp_source.html#l00116">rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<a id="aa7d78ed906cc6531fa13d42e18bc398d" name="aa7d78ed906cc6531fa13d42e18bc398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d78ed906cc6531fa13d42e18bc398d">&#9670;&#160;</a></span>rewrite_external()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::rewrite_external </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html#afba8f4898c747f151f1dc47f18ae9083">mim::plug::gpu::phase::MemChecks</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00116">116</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mem__checks_8cpp_source.html#l00059">mim::plug::gpu::phase::MemChecks::rewrite_external()</a>, and <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<a id="a3339b4cc840d3e782eba78bf41608faa" name="a3339b4cc840d3e782eba78bf41608faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3339b4cc840d3e782eba78bf41608faa">&#9670;&#160;</a></span>rewrite_imm_Proxy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_imm_Proxy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Proxy.html">Proxy</a> *</td>          <td class="paramname"><span class="paramname"><em>proxy</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>By default: ignore <a class="el" href="classmim_1_1Proxy.html" title="Used as intermediate value during optimizatinos such as Analysis.">Proxy</a>s. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a7e49837723ed3acb4ffabb5363848b12">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00271">271</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a5909abf12c44a2760035855c61423b53" name="a5909abf12c44a2760035855c61423b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5909abf12c44a2760035855c61423b53">&#9670;&#160;</a></span>rewrite_mut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel final">final</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Schedules <code class="param">mut</code> for a breadth-first visit of its dependencies and records <span class="tt">mut -&gt; mut</span>. </p>
+<p>Mutables are enqueued instead of recursed into; Analysis::drain then walks them in BFS order. The <span class="tt">mut -&gt; mut</span> entry doubles as the per-round "already scheduled" marker (<a class="el" href="classmim_1_1Rewriter.html#a05d16f2385c8e42c3fe6dd32a518c86e">Rewriter::scopes_</a> are cleared by <a class="el" href="#ac94bad8fbf28de336d4c2f9046ac0555" title="Clears the rewriter map and resets Phase::todo() for the next fixed-point iteration.">reset()</a>), so each mutable's deps are visited at most once per fixed-point round. Then dispatches to the rewrite_mut_* hook, which merely observes <code class="param">mut</code>. </p>
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a62c1d60439f3bcf82da250acd2098112">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00159">159</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00118">lookup()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00083">mim::Rewriter::rewrite_mut()</a>.</p>
+
+</div>
+</div>
+<a id="a2258d005170da06858a5e193c60496c3" name="a2258d005170da06858a5e193c60496c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2258d005170da06858a5e193c60496c3">&#9670;&#160;</a></span>rewrite_mut_Arr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Arr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Arr.html">Arr</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a9e5b0c4f65787cd3e3c5ec9ac3d8b4a9">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00288">CODE_MUT</a>, and <a class="el" href="def_8h_source.html#l00065">MIM_MUT_NODE</a>.</p>
+
+</div>
+</div>
+<a id="af80cf867f189da782f8778530b86b2bd" name="af80cf867f189da782f8778530b86b2bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80cf867f189da782f8778530b86b2bd">&#9670;&#160;</a></span>rewrite_mut_Hole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Hole </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Hole.html">Hole</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a77f51ae19557b78b81ffb399a88dda6c">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="aa90dcb3e3d972712700a54f5ec2b0298" name="aa90dcb3e3d972712700a54f5ec2b0298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90dcb3e3d972712700a54f5ec2b0298">&#9670;&#160;</a></span>rewrite_mut_Lam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Lam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a8742f1c9a062031a0c93ecad0d4504fa">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c8bec6390fcf6b339cef8085d3777ab" name="a4c8bec6390fcf6b339cef8085d3777ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8bec6390fcf6b339cef8085d3777ab">&#9670;&#160;</a></span>rewrite_mut_Pack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Pack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Pack.html">Pack</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#abafdce11ee9ebc348da80584ee512fdb">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0165c29ea97512395c501a35999d113" name="ad0165c29ea97512395c501a35999d113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0165c29ea97512395c501a35999d113">&#9670;&#160;</a></span>rewrite_mut_Pi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Pi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Pi.html">Pi</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#af3f4e88d1f1f82bab1914c7f2f186553">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a2f94fc939beb1c10a537fbe18801bdd8" name="a2f94fc939beb1c10a537fbe18801bdd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f94fc939beb1c10a537fbe18801bdd8">&#9670;&#160;</a></span>rewrite_mut_Rule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Rule </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Rule.html">Rule</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#ae2999b37ad9a4f217e2ee00917a1eda7">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a77b420a19d2f8eee23b247f1bf6ece13" name="a77b420a19d2f8eee23b247f1bf6ece13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b420a19d2f8eee23b247f1bf6ece13">&#9670;&#160;</a></span>rewrite_mut_Sigma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Sigma </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Sigma.html">Sigma</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a375c68f78cb83d1f6802f582ce242938">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ccee3db79c7ad567c374eb79f4f3a33" name="a0ccee3db79c7ad567c374eb79f4f3a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ccee3db79c7ad567c374eb79f4f3a33">&#9670;&#160;</a></span>rewrite_mut_Variant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Analysis::rewrite_mut_Variant </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Variant.html">Variant</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classmim_1_1Rewriter.html#a774d62a669366e57a2eed64a3cd02c14">mim::Rewriter</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00290">290</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c5cd105ce8fad4292146bcb3d98cc04" name="a1c5cd105ce8fad4292146bcb3d98cc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5cd105ce8fad4292146bcb3d98cc04">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actual entry. </p>
+
+<p>Implements <a class="el" href="classmim_1_1Phase.html#ac440f59a1682e69dcc4327bda527ce9d">mim::Phase</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00075">75</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00268">finalize()</a>, <a class="el" href="phase_8h_source.html#l00079">mim::Phase::invalidate()</a>, <a class="el" href="world_8h_source.html#l00168">mim::World::lenient()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::log()</a>, <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="rewrite_8h_source.html#l00104">mim::Rewriter::old2new()</a>, <a class="el" href="phase_8h_source.html#l00266">prepare()</a>, <a class="el" href="phase_8cpp_source.html#l00060">mim::Phase::profile_count()</a>, <a class="el" href="phase_8cpp_source.html#l00154">rewrite()</a>, <a class="el" href="phase_8cpp_source.html#l00116">rewrite_external()</a>, <a class="el" href="phase_8h_source.html#l00071">mim::Phase::todo()</a>, and <a class="el" href="phase_8h_source.html#l00058">world()</a>.</p>
+
+</div>
+</div>
+<a id="a69aa191fb0bc0c08851bb7c92f35879c" name="a69aa191fb0bc0c08851bb7c92f35879c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69aa191fb0bc0c08851bb7c92f35879c">&#9670;&#160;</a></span>taint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::taint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>mut</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Additionally schedules <code class="param">mut</code> for the next sparse round. </p>
+<p><a class="el" href="classmim_1_1Use.html" title="const Def*erences a user.">Use</a> this when a lattice change must re-visit <em>other</em> mutables than <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> - e.g. all call sites of a <a class="el" href="classmim_1_1Lam.html" title="A function.">Lam</a> whose var's abstract value changed. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00247">247</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ef44bd3020205c3c53e4226e6696677" name="a7ef44bd3020205c3c53e4226e6696677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef44bd3020205c3c53e4226e6696677">&#9670;&#160;</a></span>touch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::Analysis::touch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Observable analysis information changed: records <a class="el" href="classmim_1_1Rewriter.html#a75096ea0eb8e19be1c2286f9425dfd70">curr_mut()</a> as <em>dirty</em> - the seed set of the next sparse round - and <a class="el" href="classmim_1_1Phase.html#a28a39b288a2f2de29cb8d7db113d99d6" title="Signals that another round of fixed-point iteration is required, either as part of.">invalidate()</a>s. </p>
+<p>Outside of any mutable (e.g. in <a class="el" href="#ad06b63e77f01f2780b54c98fdc7c5d5d" title="Run after the main analysis - only in full rounds, so it always sees the complete abstract World.">finalize()</a>) the change cannot be attributed to a mutable; then the next round falls back to a full one. The lattice writes above do this for you; call it directly when a subclass keeps facts of its own. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00253">253</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="rewrite_8h_source.html#l00098">mim::Rewriter::curr_mut()</a>, and <a class="el" href="phase_8h_source.html#l00079">mim::Phase::invalidate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00134">lattice()</a>, <a class="el" href="phase_8h_source.html#l00212">lattice_erase()</a>, and <a class="el" href="phase_8cpp_source.html#l00123">lattice_force()</a>.</p>
+
+</div>
+</div>
+<a id="a07b16850f29a35f1f7311aa861302c40" name="a07b16850f29a35f1f7311aa861302c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b16850f29a35f1f7311aa861302c40">&#9670;&#160;</a></span>version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Analysis::version </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bumped on every observable lattice change; snapshot it around a code region to detect changes. </p>
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00158">158</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+</div>
+</div>
+<a id="afeae25f4ecab3e3812e9607f630a506f" name="afeae25f4ecab3e3812e9607f630a506f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeae25f4ecab3e3812e9607f630a506f">&#9670;&#160;</a></span>world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmim_1_1World.html">World</a> &amp; <a class="el" href="classmim_1_1Phase.html#afeae25f4ecab3e3812e9607f630a506f">mim::Phase::world</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00058">58</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="phase_8h_source.html#l00137">Analysis()</a>, <a class="el" href="phase_8h_source.html#l00134">Analysis()</a>, <a class="el" href="escape__analysis_8h_source.html#l00036">mim::plug::mem::EscapeAnalysis::EscapeAnalysis()</a>, <a class="el" href="phase_8cpp_source.html#l00118">lookup()</a>, and <a class="el" href="phase_8cpp_source.html#l00075">start()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/mim/<a class="el" href="phase_8h_source.html">phase.h</a></li>
+<li>src/mim/<a class="el" href="phase_8cpp_source.html">phase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="classmim_1_1Analysis.html">Analysis</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

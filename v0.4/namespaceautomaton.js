@@ -1,0 +1,19 @@
+var namespaceautomaton =
+[
+    [ "AutomatonBase", "classautomaton_1_1AutomatonBase.html", "classautomaton_1_1AutomatonBase" ],
+    [ "DFA", "classautomaton_1_1DFA.html", "classautomaton_1_1DFA" ],
+    [ "DFANode", "classautomaton_1_1DFANode.html", "classautomaton_1_1DFANode" ],
+    [ "NFA", "classautomaton_1_1NFA.html", "classautomaton_1_1NFA" ],
+    [ "NFANode", "classautomaton_1_1NFANode.html", "classautomaton_1_1NFANode" ],
+    [ "RangeCompare", "structautomaton_1_1RangeCompare.html", "structautomaton_1_1RangeCompare" ],
+    [ "DFAMap", "namespaceautomaton.html#ac935bb3b7e7cbc4be411a7657f3d693c", null ],
+    [ "DFASet", "namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06", null ],
+    [ "NFASet", "namespaceautomaton.html#aff8bde3fed7648c53bafdf22224534ec", null ],
+    [ "Range", "namespaceautomaton.html#aa7f4b5c4276e92cf0d3d5a53ea55d921", null ],
+    [ "merge_ranges", "namespaceautomaton.html#a3ce290eb201e318c6e9716f0b35bc539", null ],
+    [ "merge_ranges", "namespaceautomaton.html#ae087d7e9d3842e594cac74a961ee0d77", null ],
+    [ "merge_ranges", "namespaceautomaton.html#afa6a570db4fdd2ae8e3f1f5e4b654ec6", null ],
+    [ "minimize_dfa", "namespaceautomaton.html#a0a07cb42cd7cc111f81d4f73f00c1bdd", null ],
+    [ "nfa2dfa", "namespaceautomaton.html#a4fc3c2d91804e47cc25903b2939720ee", null ],
+    [ "print_node", "namespaceautomaton.html#af971d6c6b26bcd61f5452f27289cb34b", null ]
+];

@@ -1,0 +1,1366 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: The tensor Plugin</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.4</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('tensor.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">The tensor Plugin </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_build_2docs_2plug_2tensor"></a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="cli.html#xarg_tensor" title="@ref tensor &quot;tensor&quot;"><span class="tt">-X tensor:&lt;arg&gt;</span></a> </dd>
+<dd>
+<a class="el" href="namespacemim_1_1plug_1_1tensor.html" title="The tensor Plugin">mim::plug::tensor</a></dd></dl>
+<p>SSA-world tensor operations: a generic <span class="tt">map_reduce</span> loop-nest abstraction plus derived operations (reshape, slice, convolution, pooling, dot product, ...), lowered via <span class="tt">affine</span> loops and bufferized onto the <span class="tt">buffer</span> layer.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md500"></a>
+Dependencies</h1>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin tuple;</div>
+<div class="line">plugin refly;</div>
+<div class="line">plugin core;</div>
+<div class="line">import compile;</div>
+<div class="line">plugin option;</div>
+<div class="line">plugin vec;</div>
+<div class="line">plugin cps;</div>
+<div class="line">plugin affine;</div>
+<div class="line">plugin buffer;</div>
+<div class="line">plugin btensor;</div>
+<div class="line">plugin math;</div>
+<div class="line"> </div>
+<div class="line">use core.ops.n;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md501"></a>
+Types</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md502"></a>
+Ring</h2>
+<p>Represents an <a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">algebraic ring</a>. E.g., <span class="tt">let nat_ring = (Nat, 0, core.nat.add, core.nat.mul);</span>.</p>
+<p>An alias for <span class="tt">btensor.Ring</span>. The buffer-world <span class="tt">btensor</span> plugin sits <em>below</em> <span class="tt">tensor</span> — <span class="tt">lower_to_mem</span> bufferizes onto <span class="tt">btensor.*</span> ops - so the definition lives there and both layers share one notion of a ring.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx Ring = btensor.Ring;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md503"></a>
+Constructors</h1>
+<p>Build a tensor from nothing but its shape.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md504"></a>
+generate</h2>
+<p>Constructs a tensor by evaluating <span class="tt">body</span> once for every logical output coordinate. Coordinates use <span class="tt">I64</span> so the body can do ordinary scalar arithmetic before converting them to bounded tensor indices.</p>
+<div class="fragment"><div class="line">output = empty(s_out)</div>
+<div class="line"><span class="keywordflow">for</span> index <span class="keywordflow">in</span> ndindex(s_out):</div>
+<div class="line">    output[index] = body(index)</div>
+<div class="line"><span class="keywordflow">return</span> output</div>
+</div><!-- fragment --><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm generate: {T: *, r: Nat}</div>
+<div class="line">            → [s_out: «r; Nat»]</div>
+<div class="line">            → [body: [«r; I64»] → T]</div>
+<div class="line">            → «s_out; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md505"></a>
+splat</h2>
+<p>Constructs a tensor whose every element is <span class="tt">value</span>. Keeping this explicit lets bufferization pick a fill operation instead of first building an index lambda or a monolithic nested-array literal.</p>
+<div class="fragment"><div class="line">output = empty(s_out)</div>
+<div class="line"><span class="keywordflow">for</span> index <span class="keywordflow">in</span> ndindex(s_out):</div>
+<div class="line">    output[index] = value</div>
+<div class="line"><span class="keywordflow">return</span> output</div>
+</div><!-- fragment --><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm splat: {T: *, r: Nat}</div>
+<div class="line">         → [s_out: «r; Nat», value: T]</div>
+<div class="line">         → «s_out; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md506"></a>
+Annotations</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md507"></a>
+buf</h2>
+<p>Nominates an array value as a <em>tensor</em>: one that lives in a buffer and is passed by handle, rather than an SSA aggregate that merely shares the <span class="tt">Arr</span> structure - an <span class="tt">(x y: I32)</span> group <em>is</em> a <span class="tt">«2; I32»</span>. The result type is the argument's, so an annotated tensor extracts, inserts and folds exactly like any other array and no tensor operation has to reimplement what MimIR's arrays already do.</p>
+<p>Annotate <em>boundary</em> values only - an external function's array parameters. Everything a tensor operation produces is self-identifying, and <span class="tt">lower_to_mem</span> propagates tensor-ness from there; it consumes the annotation and every array type it reaches becomes a <span class="tt">buffer.Buf</span>. Losing one before that silently leaves a tensor with value semantics.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm buf: {T: *} → T → T;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md508"></a>
+Accessors</h1>
+<p>Element access is a plain <span class="tt">Extract</span> / <span class="tt">Insert</span>: <span class="tt">arr#(a, b, c)</span> ≡ <span class="tt">arr#a#b#c</span>.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md509"></a>
+shape</h2>
+<p>Returns the shape of <span class="tt">arr</span> as a rank-<span class="tt">r</span> array of Nats: <span class="tt">(s#0, …, s#(r-1))</span>.</p>
+<p>The rank <span class="tt">r</span> is explicit: it selects the first <span class="tt">r</span> axes of <span class="tt">arr</span>'s fused shape. Size-1 axes collapse out of the type, so <span class="tt">arr</span> must have no literal-1 dims among the first <span class="tt">r</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm shape: {A: *} → [r: Nat] → [arr: A] → «r; Nat», normalize_shape;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md510"></a>
+Map-Reduce</h1>
+<p>The loop-nest core every other operation is lowered onto: <span class="tt">lower_tensor</span> re-applies the matching annex from Implementations, while <span class="tt">broadcast</span>, <span class="tt">concat</span>, <span class="tt">gather</span>, <span class="tt">generate</span>, <span class="tt">pad</span> and <span class="tt">scatter</span> are expanded by <span class="tt">lower_map_reduce</span> directly.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md511"></a>
+id</h2>
+<p>The CPS identity (with an empty epilogue-input pack) — the neutral <span class="tt">post</span> epilogue.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx fun id {T: *} (x: T, _: [])@tt: T = return x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md512"></a>
+map_reduce_post</h2>
+<p>The workhorse behind every tensor operation: a reduction fold over an affinely-indexed loop nest. The loop vector <span class="tt">(o…, r…)</span> has length <span class="tt">Rn</span>; its leading <span class="tt">Ro</span> dims are the parallel output loops, the trailing ones the reduction loops that are folded away.</p>
+<ul>
+<li><span class="tt">Sr</span>, <span class="tt">So</span>: the full loop bounds and the result shape (rank <span class="tt">Ro</span>). <span class="tt">So</span> may differ from the leading <span class="tt">Ro</span> bounds of <span class="tt">Sr</span> — that is what lets <span class="tt">map_out</span> write to a re-shaped output, e.g. a transpose.</li>
+<li><span class="tt">f</span>: folds one element of each input into the accumulator, seeded per output cell with <span class="tt">init</span>.</li>
+<li><span class="tt">post</span>: maps the folded accumulator, plus one element of each of the <span class="tt">nps</span> <em>epilogue inputs</em> <span class="tt">post_is</span>, to the stored element. It runs once per output cell, between fold and write-back — the slot <span class="tt">fuse_tensor</span> composes trailing elementwise maps into (bias + activation after a convolution or matrix product).</li>
+<li><span class="tt">map_out</span>: full loop vector ↦ the <span class="tt">Ro</span> write coordinates in <span class="tt">«So»</span>. The reduction is folded away before the write, so it may only depend on the leading <span class="tt">Ro</span> indices.</li>
+<li><span class="tt">maps#i</span>: full loop vector ↦ the <span class="tt">Ris#i</span> read coordinates of input <span class="tt">i</span>. Transposes, slices and broadcasts are expressed here.</li>
+<li><span class="tt">post_maps#j</span>: the <span class="tt">Ro</span> <em>output-cell</em> coordinates (the write coordinates <span class="tt">map_out</span> produces) ↦ the read coordinates of epilogue input <span class="tt">j</span>; epilogue inputs are read once per output cell, not per loop iteration.</li>
+<li><span class="tt">sched</span>: the op's <b>schedule</b>, selected in the frontend via the <span class="tt">Tileable</span> machinery below and carried as an ordinary operand through fusion — a target-agnostic chooser (canonically a <span class="tt">mk_sched</span> value) that, handed the target's loop-nest builder, returns the nest to run. The lowering only binds it and <b>applies</b> the result to the op's decision-free fold step and write-back, so unrolling, interchange and vectorization are plain IR, not lowering behavior.</li>
+</ul>
+<p>The total loop count <span class="tt">Rn</span> is stated instead of the reduction count <span class="tt">Rr = Rn - Ro</span>: a <span class="tt">core.nat.add (Ro, Rr)</span> in the domain cannot be inverted by type inference and every call site would have to pass the whole meta group explicitly with <span class="tt">@</span>, whereas <span class="tt">Sr</span> pins <span class="tt">Rn</span> structurally.</p>
+<p><span class="tt">nis</span>, <span class="tt">nps</span>, <span class="tt">Ro</span>, <span class="tt">Rn</span>, <span class="tt">Ris</span> and <span class="tt">Rps</span> must be literals before the <span class="tt">tensor::Lower</span> phase; the bounds <span class="tt">So</span> and <span class="tt">Sr</span> may stay symbolic.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm map_reduce_post: {nis nps: Nat}</div>
+<div class="line">                   → {To Tp: *, Ro Rn: Nat, TSched: □}</div>
+<div class="line">                   → [So: «Ro; Nat», Sr: «Rn; Nat», sched: TSched]</div>
+<div class="line">                   → {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»,</div>
+<div class="line">                      Tps: «nps; *», Rps: «j: nps; Nat», Sps: «j: nps; «Rps#j; Nat»»}</div>
+<div class="line">                   → [f: Fn [To, «i: nis; Tis#i»] → To, init: To, post: Fn [To, «j: nps; Tps#j»] → Tp]</div>
+<div class="line">                   → [map_out: «Rn; affine.Index» → «Ro; affine.Index»]</div>
+<div class="line">                   → [     maps: «i: nis; «Rn; affine.Index» → «Ris#i; affine.Index»»,</div>
+<div class="line">                      post_maps: «j: nps; «Ro; affine.Index» → «Rps#j; affine.Index»»]</div>
+<div class="line">                   → [is: «i: nis; «Sis#i; Tis#i»», post_is: «j: nps; «Sps#j; Tps#j»»]</div>
+<div class="line">                   → «So; Tp»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md513"></a>
+Sched, SchedT, mk_sched</h2>
+<p>The schedule record (<span class="tt">vdim</span>, <span class="tt">unroll</span>), the type of a schedule <b>chooser</b> over the target's loop-nest builder, and the canonical chooser. Aliases for the <span class="tt">btensor</span> definitions, which <span class="tt">btensor</span> owns for the same reason it owns <span class="tt">btensor.Ring</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx Sched    = btensor.Sched;</div>
+<div class="line">anx SchedT   = btensor.SchedT;</div>
+<div class="line">anx mk_sched = btensor.mk_sched;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md514"></a>
+map_reduce</h2>
+<p><span class="tt">map_reduce_post</span> without the epilogue and with the neutral schedule: delegates with <span class="tt">post = id</span> (so <span class="tt">Tp = To</span>), no epilogue inputs (<span class="tt">nps = 0</span>), no vector dim (<span class="tt">vdim = Rn</span>, the out-of-range sentinel), and no unrolling. <span class="tt">Rn</span> is stated instead of <span class="tt">Rr</span> for the same reason as there.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam map_reduce {nis: Nat} {To: *, Ro Rn: Nat}</div>
+<div class="line">                   (So: «Ro; Nat», Sr: «Rn; Nat»)</div>
+<div class="line">                   {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}</div>
+<div class="line">                   (f: Fn [To, «i: nis; Tis#i»] → To, init: To)</div>
+<div class="line">                   (map_out: «Rn; affine.Index» → «Ro; affine.Index»)</div>
+<div class="line">                   (maps: «i: nis; («Rn; affine.Index» → «Ris#i; affine.Index»)»)</div>
+<div class="line">                   (is: «i: nis; «Sis#i; Tis#i»»): «So; To» =</div>
+<div class="line">    map_reduce_post</div>
+<div class="line">        (So, Sr, mk_sched (Rn, 0))</div>
+<div class="line">        (f, init, id @To) map_out (maps, ()) (is, ());</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md515"></a>
+proj_map</h2>
+<p><span class="tt">subs ↦ λ o. ‹j; o#(subs#j)›</span>: the access map that reads input axis <span class="tt">j</span> at loop variable <span class="tt">subs#j</span>, e.g. <span class="tt">((0, 2), (2, 1))</span> for the two inputs of a matrix product. An alias for <span class="tt">btensor.proj_map</span>, which <span class="tt">btensor</span> owns for the same reason it owns <span class="tt">btensor.Ring</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx proj_map = btensor.proj_map;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md516"></a>
+Shape Operations</h1>
+<p>Pure re-indexing: every element of the result is one element of an input, so the operation lives entirely in the access map.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md517"></a>
+broadcast</h2>
+<p>Expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span>: for all <span class="tt">i</span>, either <span class="tt">s_in#i = s_out#i</span> or <span class="tt">s_in#i = 1</span>, and the size-1 dimensions are expanded to fit <span class="tt">s_out</span>.</p>
+<p>Lowered directly to packs by the <span class="tt">LowerMapReduce</span> phase (<span class="tt">lower_broadcast</span>): a size-1 axis broadcast to <span class="tt">n</span> becomes a <span class="tt">‹n; …›</span> pack instead of a copy loop.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm broadcast: {T: *, r: Nat}</div>
+<div class="line">             → [s_in s_out: «r; Nat», input: «s_in; T»]</div>
+<div class="line">             → «s_out; T», normalize_broadcast;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md518"></a>
+broadcast_in_dim</h2>
+<p>Transposes and expands the dimensions of <span class="tt">input</span> to fit <span class="tt">s_out</span>. Each input dimension is mapped to the output dimension given by <span class="tt">index</span>; the holes are filled by broadcasting.</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo</a></b></dt><dd>We could probably implement this in terms of <span class="tt">broadcast</span> and <span class="tt">transpose</span> directly.</dd></dl>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm broadcast_in_dim: {T: *, r_in r_out: Nat}</div>
+<div class="line">                    → [s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»]</div>
+<div class="line">                    → «s_out; T», normalize_broadcast_in_dim;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md519"></a>
+concat_acc</h2>
+<p>Accumulator for the axis-sum: adds <span class="tt">row#ax</span> to the running total.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam concat_acc {r: Nat} (ax: Idx r) (acc: Nat, row: «r; Nat»): Nat = acc + row#ax;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md520"></a>
+concat_shape</h2>
+<p><span class="tt">(ax, Sis) ↦ s_out</span>: sums the inputs' extents along <span class="tt">ax</span>, keeps the shared extents on every other axis.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam concat_shape {nis r: Nat} (ax: Idx r, Sis: «nis; «r; Nat»»): «r; Nat» =</div>
+<div class="line">    let sum_ax = vec.fold.l (concat_acc ax) (0, Sis);</div>
+<div class="line">    let row_0  = Sis#(core.idx 0 nis 0);</div>
+<div class="line">    ‹d: r; core.select (core.icmp.e (d, ax), sum_ax, row_0#d)›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md521"></a>
+concat</h2>
+<p>Joins <span class="tt">nis</span> inputs along axis <span class="tt">ax</span>. All inputs share rank <span class="tt">r</span> and agree on every axis except <span class="tt">ax</span>; the output extent along <span class="tt">ax</span> is the sum of the inputs' extents there (<span class="tt">s_out#ax = Σ_i Sis#i#ax</span>). <span class="tt">out[…o…] = is#k[… o with o#ax ↦ o#ax − off#k …]</span>, where <span class="tt">k</span> is the input whose range <span class="tt">o#ax</span> lands in (<span class="tt">off</span> are the prefix sums of the per-input extents along <span class="tt">ax</span>).</p>
+<p>The output shape is deduced from <span class="tt">ax</span> and the per-input shapes <span class="tt">Sis</span> (see <span class="tt">concat_shape</span>), so it is not passed explicitly.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm concat: {T: *, nis r: Nat}</div>
+<div class="line">          → [ax: Idx r]</div>
+<div class="line">          → {Sis: «i: nis; «r; Nat»»}</div>
+<div class="line">          → [is: «i: nis; «Sis#i; T»»]</div>
+<div class="line">          → «concat_shape (ax, Sis); T», normalize_concat;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md522"></a>
+flip</h2>
+<p>Reverses every axis: <span class="tt">out[…d…] = input[… (s_in#d − 1) − d …]</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm flip: {T: *, r: Nat}</div>
+<div class="line">        → [s_in: «r; Nat»]</div>
+<div class="line">        → [input: «s_in; T»]</div>
+<div class="line">        → «s_in; T», normalize_flip;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md523"></a>
+pad_shape</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam pad_shape {r: Nat} (lo s_in hi: «r; Nat»): «r; Nat» =</div>
+<div class="line">    ‹d: r; lo#d + s_in#d + hi#d›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md524"></a>
+pad</h2>
+<p>Pads each axis: <span class="tt">s_out#d = lo#d + s_in#d + hi#d</span>, rank preserved. <span class="tt">out[…o…] = input[… o#d − lo#d …]</span> whenever every axis lands inside the input region; otherwise the value depends on <span class="tt">mode</span>:</p>
+<ul>
+<li><span class="tt">mode = 0</span> (constant): out-of-region cells take the scalar <span class="tt">value</span>.</li>
+<li><span class="tt">mode = 1</span> (replicate): out-of-region cells take the nearest edge element (the read index is clamped to <span class="tt">[0, s_in#d − 1]</span> per axis); <span class="tt">value</span> is ignored.</li>
+</ul>
+<p>The output shape is deduced from <span class="tt">lo</span>, <span class="tt">s_in</span> and <span class="tt">hi</span> (see <span class="tt">pad_shape</span>), so it is not passed explicitly.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm pad: {T: *, r: Nat}</div>
+<div class="line">       → [s_in: «r; Nat»]</div>
+<div class="line">       → [mode: Nat, lo hi: «r; Nat»]</div>
+<div class="line">       → [input: «s_in; T», value: T]</div>
+<div class="line">       → «pad_shape (lo, s_in, hi); T», normalize_pad;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md525"></a>
+repeat</h2>
+<p>Tiles <span class="tt">input</span> to the larger shape <span class="tt">s_out</span> (each <span class="tt">s_out#d</span> must be a multiple of <span class="tt">s_in#d</span>): <span class="tt">out[…d…] = input[… d mod s_in#d …]</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm repeat: {T: *, r: Nat}</div>
+<div class="line">          → [s_in: «r; Nat»]</div>
+<div class="line">          → [s_out: «r; Nat»]</div>
+<div class="line">          → [input: «s_in; T»]</div>
+<div class="line">          → «s_out; T», normalize_repeat;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md526"></a>
+reshape</h2>
+<p>Row-major reshape: <span class="tt">prod(s_in)</span> must equal <span class="tt">prod(s_out)</span>. Loops over the result and reads the input at the delinearized linear index, so it works for arbitrary rank changes (e.g. flatten/unflatten).</p>
+<p><span class="tt">s_in</span> is explicit because <span class="tt">s_out</span> has a different rank and so cannot pin the input's rank/element-type during inference.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reshape: {T: *, r_in r_out: Nat}</div>
+<div class="line">           → [s_in: «r_in; Nat»]</div>
+<div class="line">           → [s_out: «r_out; Nat»]</div>
+<div class="line">           → [input: «s_in; T»]</div>
+<div class="line">           → «s_out; T», normalize_reshape;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md527"></a>
+slice</h2>
+<p>Strided slice / narrow: <span class="tt">out[…d…] = input[… start#d + step#d · d …]</span>. Same rank in/out; <span class="tt">s_out</span> gives the sliced extents (the caller must ensure <span class="tt">start#d + step#d · (s_out#d − 1) &lt; s_in#d</span>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm slice: {T: *, r: Nat}</div>
+<div class="line">         → [s_in: «r; Nat»]</div>
+<div class="line">         → [start step s_out: «r; Nat»]</div>
+<div class="line">         → [input: «s_in; T»]</div>
+<div class="line">         → «s_out; T», normalize_slice;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md528"></a>
+transpose_shape</h2>
+<p><span class="tt">(s, permutation) ↦ ‹i; s#(permutation⁻¹#i)›</span>: the permuted shape.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam transpose_shape {r: Nat} (s: «r; Nat», permutation: «r; Idx r»): «r; Nat» =</div>
+<div class="line">    let shape_permutation = ‹i: r; option.unwrap_unsafe (vec.first core.icmp.e (permutation, i))›;</div>
+<div class="line">    ‹i: r; s#(shape_permutation#i)›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md529"></a>
+transpose</h2>
+<p>Permutes the dimensions of <span class="tt">input</span> according to <span class="tt">permutation</span>. Input axis <span class="tt">j</span> becomes output axis <span class="tt">permutation#j</span>, so <span class="tt">out#i = s#(permutation⁻¹#i)</span> — the inverse of the StableHLO/NumPy convention.</p>
+<p><span class="tt">permutation</span> precedes <span class="tt">input</span>, and <span class="tt">{s}</span> is a <em>separate</em> implicit group introduced after it, so that <span class="tt">{T, r, s}</span> can be inferred: <span class="tt">permutation: «r; Idx r»</span> pins the rank <span class="tt">r</span>, and only then is the <span class="tt">{s}</span> Hole created — with the now-literal type <span class="tt">«r; Nat»</span>, which lets <span class="tt">input: «s; T»</span> read off exactly the first <span class="tt">r</span> axes of its shape. Merging the two groups would not do: the domain <span class="tt">«s; T»</span> is built once, while <span class="tt">r</span> is still unknown.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm transpose: {T: *, r: Nat}</div>
+<div class="line">             → [permutation: «r; Idx r»]</div>
+<div class="line">             → {s: «r; Nat»}</div>
+<div class="line">             → [input: «s; T»]</div>
+<div class="line">             → «transpose_shape (s, permutation); T», normalize_transpose;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md530"></a>
+transpose_2d</h2>
+<p>Permutes the dimensions of a 2-dimensional tensor.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam transpose_2d {T: *} {s: «2; Nat»} (input: «s; T»): «s#tt, s#ff; T» = transpose (tt, ff) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md531"></a>
+Element-wise Operations</h1>
+<p>Apply a scalar function at every coordinate.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md532"></a>
+binary</h2>
+<p>Maps a binary function over a pair of tensors.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm binary: {Ti1 Ti2 To: *}</div>
+<div class="line">          → [app: [Ti1, Ti2] → To]</div>
+<div class="line">          → {r: Nat, s: «r; Nat»}</div>
+<div class="line">          → [is: [«s; Ti1», «s; Ti2»]]</div>
+<div class="line">          → «s; To»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md533"></a>
+map</h2>
+<p>Maps a function over a collection of tensors.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm map: {T: *, ni: Nat, Is: «ni; *»}</div>
+<div class="line">       → [app: «i: ni; Is#i» → T]</div>
+<div class="line">       → {r: Nat, s: «r; Nat»}</div>
+<div class="line">       → [is: «i: ni; «s; Is#i»»]</div>
+<div class="line">       → «s; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md534"></a>
+select</h2>
+<p>Maps <span class="tt">core.select</span> over tensors.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm select: {T: *}</div>
+<div class="line">          → {r: Nat, s: «r; Nat»}</div>
+<div class="line">          → [is: [«s; Bool», «s; T», «s; T»]]</div>
+<div class="line">          → «s; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md535"></a>
+unary</h2>
+<p>Maps a unary function over a tensor.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm unary: {Ti To: *}</div>
+<div class="line">         → [app: Ti → To]</div>
+<div class="line">         → {r: Nat, s: «r; Nat»}</div>
+<div class="line">         → [i: «s; Ti»]</div>
+<div class="line">         → «s; To»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md536"></a>
+Reductions</h1>
+<p>Operations that fold one or more reduction dims away.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md537"></a>
+bmm</h2>
+<p>Computes the batch matrix multiplication (BMM) of two 3-dimensional tensors — a special case of <span class="tt">dot_product</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm bmm: [R: Ring]</div>
+<div class="line">       → {B M K N: Nat}</div>
+<div class="line">       → [t1: «B, M, K; R#T», t2: «B, K, N; R#T»]</div>
+<div class="line">       → «B, M, N; R#T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md538"></a>
+conv_shape</h2>
+<p><span class="tt">(n, cout, (H, W), (KH, KW), stride, dilation, padding) ↦ (n, cout, OH, OW)</span>, where \(O_d = (s_d + 2 \cdot \mathit{padding}_d - (\mathit{dilation}_d \cdot (k_d - 1) + 1)) / \mathit{stride}_d + 1\): the NCHW output shape.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam conv_shape (n cout: Nat, s k stride dilation padding: «2; Nat»): «4; Nat» =</div>
+<div class="line">    let (hwx, hwy) = ‹d: 2; (s#(d) + 2 * padding#(d) - (dilation#(d) * (k#(d) - 1) + 1)) / stride#(d) + 1›;</div>
+<div class="line">    (n, cout, hwx, hwy);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md539"></a>
+conv</h2>
+<p>2-D convolution (cross-correlation) in the ring <span class="tt">R</span>, <span class="tt">groups = 1</span>, no bias:     </p><p class="formulaDsp">
+\[    \mathit{out}_{n,co,oh,ow} = \sum_{ci,kh,kw} \mathit{padded}_{n,ci,ih,iw} \cdot \mathit{weight}_{co,ci,kh,kw},
+    \qquad ih = \mathit{stride}_0 \cdot oh + \mathit{dilation}_0 \cdot kh,
+    \qquad iw = \mathit{stride}_1 \cdot ow + \mathit{dilation}_1 \cdot kw
+\]
+</p>
+<ul>
+<li>Layout: <span class="tt">input: «N, Cin, H, W; R#T»</span>, <span class="tt">weight: «Cout, Cin, KH, KW; R#T»</span>, <span class="tt">output: «N, Cout, OH, OW; R#T»</span>.</li>
+<li><span class="tt">padding</span> zero-pads the spatial axes (composed via <span class="tt">pad</span>), so the windowed read is a pure affine map.</li>
+<li>The output shape follows from the extents and window parameters (see <span class="tt">conv_shape</span>) and is not passed explicitly.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm conv: [R: Ring]</div>
+<div class="line">        → {n cin cout h w kh kw: Nat}</div>
+<div class="line">        → [stride dilation padding: «2; Nat»]</div>
+<div class="line">        → [input: «n, cin, h, w; R#T», weight: «cout, cin, kh, kw; R#T»]</div>
+<div class="line">        → «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md540"></a>
+conv_grouped</h2>
+<p><span class="tt">conv</span> with the channels split into <span class="tt">groups</span> independent convolutions: output channel <span class="tt">co</span> only reads the <span class="tt">ci = cin / groups</span> input channels of its group <span class="tt">co / (cout / groups)</span>.</p>
+<ul>
+<li>Layout: as for <span class="tt">conv</span>, but <span class="tt">weight: «Cout, Cin / groups, KH, KW; R#T»</span>.</li>
+<li><span class="tt">groups</span> must divide both <span class="tt">cin</span> and <span class="tt">cout</span>.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm conv_grouped: [R: Ring]</div>
+<div class="line">                → {n cin cout h w ci kh kw: Nat}</div>
+<div class="line">                → [groups: Nat, stride dilation padding: «2; Nat»]</div>
+<div class="line">                → [input: «n, cin, h, w; R#T», weight: «cout, ci, kh, kw; R#T»]</div>
+<div class="line">                → «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md541"></a>
+dot_general_shape</h2>
+<p>The result shape: the batching extents, then the left operand's free extents, then the right operand's; the batching extents are checked to agree (the contracting ones in <span class="tt">dot_product_impl</span>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam dot_general_shape {r1 r2: Nat} {nc nb: Nat}</div>
+<div class="line">    (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)</div>
+<div class="line">    (s1: «r1; Nat», s2: «r2; Nat») =</div>
+<div class="line">    let bs      = ‹i: nb; refly.check (s1#(b1#i) == s2#(b2#i), s1#(b1#i), &quot;batching dims don&#39;t match&quot;)›;</div>
+<div class="line">    let bc_1    = vec.cat (b1, c1);</div>
+<div class="line">    let s1_res  = vec.diff (s1, bc_1);</div>
+<div class="line">    let bc_2    = vec.cat (b2, c2);</div>
+<div class="line">    let s2_res  = vec.diff (s2, bc_2);</div>
+<div class="line">    let s12_res = vec.cat (s1_res, s2_res);</div>
+<div class="line">    vec.cat (bs, s12_res);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md542"></a>
+dot_product</h2>
+<p>Returns the <a href="https://openxla.org/stablehlo/spec#dot_general">generalized dot product</a> of <span class="tt">a</span> and <span class="tt">b</span>:</p>
+<ul>
+<li><span class="tt">R</span>: the ring in which the dot product is performed</li>
+<li><span class="tt">r1</span>/<span class="tt">r2</span>: the ranks of the two inputs</li>
+<li><span class="tt">nc</span>/<span class="tt">nb</span>: the number of contracting/batching dimensions</li>
+<li><span class="tt">c1</span>/<span class="tt">c2</span>: the contracting dimensions of the left/right input</li>
+<li><span class="tt">b1</span>/<span class="tt">b2</span>: the batching dimensions of the left/right input</li>
+<li><span class="tt">s1</span>/<span class="tt">s2</span>: the shape of the left/right input</li>
+<li><span class="tt">a</span>/<span class="tt">b</span>: the left/right input</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm dot_product: [R: Ring]</div>
+<div class="line">               → {r1 r2: Nat}</div>
+<div class="line">               → {nc nb: Nat}</div>
+<div class="line">               → [c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»]</div>
+<div class="line">               → {s1: «r1; Nat», s2: «r2; Nat»}</div>
+<div class="line">               → [a: «s1; R#T», b: «s2; R#T»]</div>
+<div class="line">               → «dot_general_shape (c1, c2, b1, b2) (s1, s2); R#T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md543"></a>
+pool</h2>
+<p>2-D pooling: reduces each <span class="tt">(kernel#0, kernel#1)</span> window of <span class="tt">input: «N, C, H, W; T»</span> with the fold <span class="tt">g</span> seeded by <span class="tt">init</span> to <span class="tt">output: «N, C, OH, OW; T»</span>, each channel independently.</p>
+<ul>
+<li><span class="tt">padding</span> pads the spatial axes with <span class="tt">init</span> (composed via <span class="tt">pad</span>), so padded cells are inert.</li>
+<li>Max-pooling is <span class="tt">g = max, init = −∞</span>; sum-/average-pooling is <span class="tt">g = +, init = 0</span> — divide by the window size afterwards for the average.</li>
+<li>Unlike <span class="tt">conv</span> there is no weight, so the window size <span class="tt">kernel</span> is an explicit operand, and the output spatial size <span class="tt">s_out = (OH, OW)</span> is passed explicitly.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm pool: {T: *}</div>
+<div class="line">        → [g: [T, T] → T, init: T]</div>
+<div class="line">        → {n c h w: Nat}</div>
+<div class="line">        → [kernel stride dilation padding s_out: «2; Nat»]</div>
+<div class="line">        → [input: «n, c, h, w; T»]</div>
+<div class="line">        → «n, c, s_out#0₂, s_out#1₂; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md544"></a>
+product_2d</h2>
+<p>Computes the matrix product of two 2-dimensional tensors — a special case of <span class="tt">dot_product</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm product_2d: [R: Ring]</div>
+<div class="line">              → {m k l: Nat}</div>
+<div class="line">              → [t1: «m, k; R#T», t2: «k, l; R#T»]</div>
+<div class="line">              → «m, l; R#T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md545"></a>
+Indexing</h1>
+<p>Data-dependent access: an <span class="tt">index</span> tensor picks the coordinate along <span class="tt">dim</span>.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md546"></a>
+gather</h2>
+<p>Reads one source element for every index element:</p>
+<ul>
+<li>the output coordinate is also the index coordinate, except on <span class="tt">dim</span>, where the value loaded from <span class="tt">index</span> selects the source coordinate;</li>
+<li><span class="tt">s_idx#d &lt;= s_src#d</span> is required for every <span class="tt">d != dim</span>;</li>
+<li><span class="tt">dim: Idx r</span> and the index element type encode the axis and the indexed-source bounds in the type.</li>
+</ul>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> out_index <span class="keywordflow">in</span> ndindex(s_idx):</div>
+<div class="line">    selected = index[out_index]</div>
+<div class="line">    source_index = tuple(</div>
+<div class="line">        selected <span class="keywordflow">if</span> d == dim <span class="keywordflow">else</span> out_index[d]</div>
+<div class="line">        <span class="keywordflow">for</span> d <span class="keywordflow">in</span> range(r)</div>
+<div class="line">    )</div>
+<div class="line">    output[out_index] = input[source_index]</div>
+</div><!-- fragment --><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gather: {T: *, r: Nat}</div>
+<div class="line">          → [s_src: «r; Nat», s_idx: «r; Nat»]</div>
+<div class="line">          → [dim: Idx r]</div>
+<div class="line">          → [input: «s_src; T», index: «s_idx; Idx (s_src#dim)»]</div>
+<div class="line">          → «s_idx; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md547"></a>
+scatter</h2>
+<p>Starts with <span class="tt">input</span> and visits <span class="tt">index</span> in row-major order. Each corresponding <span class="tt">updates</span> element is stored at the input coordinate selected by <span class="tt">index</span> on <span class="tt">dim</span>. Duplicate destinations use the last visited update. For <span class="tt">d != dim</span>, <span class="tt">s_idx#d &lt;= s_src#d</span>; on every axis, <span class="tt">s_idx#d &lt;= s_updates#d</span>.</p>
+<div class="fragment"><div class="line">output = input.copy()</div>
+<div class="line"><span class="keywordflow">for</span> update_coord <span class="keywordflow">in</span> ndindex(s_idx):</div>
+<div class="line">    selected = index[update_coord]</div>
+<div class="line">    destination = tuple(</div>
+<div class="line">        selected <span class="keywordflow">if</span> d == dim <span class="keywordflow">else</span> update_coord[d]</div>
+<div class="line">        <span class="keywordflow">for</span> d <span class="keywordflow">in</span> range(r)</div>
+<div class="line">    )</div>
+<div class="line">    output[destination] = updates[update_coord]</div>
+</div><!-- fragment --><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scatter: {T: *, r: Nat}</div>
+<div class="line">           → [s_src: «r; Nat», s_idx: «r; Nat», s_updates: «r; Nat»]</div>
+<div class="line">           → [dim: Idx r]</div>
+<div class="line">           → [input: «s_src; T», index: «s_idx; Idx (s_src#dim)», updates: «s_updates; T»]</div>
+<div class="line">           → «s_src; T»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md548"></a>
+Reflection</h1>
+<p>Compile-time queries about an operand that a schedule selector (see Tiling) branches on.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md549"></a>
+fastest_axis</h2>
+<p>Layout reflection for schedule selectors: which axis of the rank-<span class="tt">r</span> tensor <span class="tt">t</span> is the fastest-varying (unit-stride) axis of the tensor <b>actually</b> read, once <span class="tt">fuse_tensor</span>'s read-through has absorbed a pure re-indexed read behind <span class="tt">t</span> — behind a transpose the source's trailing axis maps back to a different axis of <span class="tt">t</span>.</p>
+<ul>
+<li>a plain tensor (anything that is not such a read, a still-symbolic operand included): its own last axis <span class="tt">r − 1</span>.</li>
+<li>an undecidable read (composed arithmetic like <span class="tt">reshape</span>, a nested read chain): the sentinel <span class="tt">r</span>.</li>
+</ul>
+<p>This reflects only operand structure the frontend cannot inspect itself; the schedule <b>decision</b> built on the answer stays in the IR next to the op (see <span class="tt">dot_product_impl</span>). <span class="tt">tensor::Lower</span> applies it where the op's operands are concrete.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fastest_axis: {T: *} → [r: Nat, t: T] → Nat, normalize_fastest_axis;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md550"></a>
+if_static</h2>
+<p>Binding-time dispatch for schedule selectors, so that one selector serves compile-time and runtime extents without staging annotations at the call site:</p>
+<ul>
+<li><span class="tt">k</span> a literal: the normalizer picks <span class="tt">s</span>.</li>
+<li><span class="tt">k</span> symbolic: stays stuck, keeping the choice open until instantiation.</li>
+<li>still stuck at lowering time: the lowerings residualize to <span class="tt">d</span>, since an undecided <span class="tt">k</span> is then a runtime value.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm if_static: {T: *} → [k: Nat, s d: T] → T, normalize_if_static;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md551"></a>
+vec_width</h2>
+<p>Target reflection for schedule selectors: the machine's vector width, in elements of the schedule's fold type. It is the number of lanes one vector register holds, and hence the widest block of independent accumulators a vectorized loop body can keep in registers. <span class="tt">d</span> is the width to answer when the compilation was not told one; <span class="tt">-X tensor:vec-width=&lt;n&gt;</span> (<span class="tt">1</span>, <span class="tt">4</span>, <span class="tt">8</span> or <span class="tt">16</span>) overrides it, so a single world can be emitted for one target and re-emitted for another. <span class="tt">1</span> describes a target without SIMD: no block is sized by lanes, and <span class="tt">reassoc</span> counts plain multiplications. It does not stop the backend from vectorizing the loops a schedule nominates. Like <span class="tt">fastest_axis</span> this only reflects what the frontend cannot inspect itself; the schedule <b>decision</b> built on the answer stays in the IR next to the op (see <span class="tt">dot_schedule_kvec</span>). <span class="tt">reassoc</span> charges its costs in units of the same width, so schedules and cost model agree on the target.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm vec_width: [d: Nat] → Nat, normalize_vec_width;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md552"></a>
+Tiling</h1>
+<p>Tiling, strip-mining and schedule selection are implemented entirely in the frontend IR, with partial evaluation doing the rewriting; no C++ transformation code.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md553"></a>
+Tileable</h2>
+<p>A <span class="tt">Tileable</span> existentially packages a computation over an affinely-indexed iteration domain together with its <b>schedule</b> (cf. MLIR's TilingInterface):</p>
+<ul>
+<li><span class="tt">Out</span>: the result <em>type constructor</em> — what materializing over a domain with <span class="tt">ro</span> parallel dims of extents <span class="tt">so</span> yields.</li>
+<li>the iteration domain <span class="tt">Sr</span> (leading <span class="tt">Ro</span> parallel dims, trailing <span class="tt">Rr</span> reduction dims) and the result shape <span class="tt">So</span> — MLIR's getIterationDomain + getLoopIteratorTypes.</li>
+<li><span class="tt">oax</span>: which output axis each parallel dim writes — the piece of the write map the domain transforms need (<span class="tt">strip_mine_par</span> splits the output along <span class="tt">oax#d</span>).</li>
+<li>the schedule <span class="tt">sched</span> (see <span class="tt">Sched</span>): the record <span class="tt">retile</span> packs into the op's chooser.</li>
+<li><span class="tt">retile</span>: rebuild the computation over a <em>reindexed</em> domain, given the new domain and schedule, <span class="tt">iota</span> (maps new loop vectors to old loop vectors) and <span class="tt">omega</span> (maps (old output coordinates, new loop vector) to new output coordinates).</li>
+</ul>
+<p>The op's internals (combiner, init, epilogue, inputs, access maps) stay hidden in the closure.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let Tileable = [</div>
+<div class="line">    Out: [ro: Nat, so: «ro; Nat»] → *,</div>
+<div class="line">    Ro: Nat, Rr: Nat,</div>
+<div class="line">    So: «Ro; Nat»,</div>
+<div class="line">    oax: «Ro; Nat»,</div>
+<div class="line">    Sr: «Ro + Rr; Nat»,</div>
+<div class="line">    sched: Sched,</div>
+<div class="line">    retile: [Ro_n Rr_n: Nat]</div>
+<div class="line">          → [So_n: «Ro_n; Nat», Sr_n: «Ro_n + Rr_n; Nat», sched_n: Sched]</div>
+<div class="line">          → [iota:  «Ro_n + Rr_n; affine.Index» → «Ro + Rr; affine.Index»,</div>
+<div class="line">             omega: [«Ro; affine.Index», «Ro_n + Rr_n; affine.Index»] → «Ro_n; affine.Index»]</div>
+<div class="line">          → Out (Ro_n, So_n),</div>
+<div class="line">];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md554"></a>
+comp_map</h3>
+<p>Composition helper for access maps: (m ∘ g).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam comp_map {A B C: *} (m: B → C, g: A → B) (o: A): C = m (g o);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md555"></a>
+interchange</h3>
+<p>Permute the loop dims — new loop <span class="tt">j</span> iterates old dim <span class="tt">perm#j</span>. Loop order and write position are decoupled by the write map, so So is untouched. The permutation must keep parallel dims parallel (<span class="tt">perm#j &lt; Ro</span> iff <span class="tt">j &lt; Ro</span>), enforced at compile time; the schedule's <span class="tt">vdim</span> moves to its new position.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam interchange (t: Tileable, perm: «t#Ro + t#Rr; Nat»): Tileable =</div>
+<div class="line">    let r = t#Ro + t#Rr;</div>
+<div class="line">    let perm_ok = ‹j: r; let jj = core.idx2nat j;</div>
+<div class="line">                         refly.check (core.icmp.e @2 (jj &lt; t#Ro, perm#j &lt; t#Ro),</div>
+<div class="line">                                       perm#j,</div>
+<div class="line">                                       &quot;interchange: permutation must not mix parallel and reduction dims&quot;)›;</div>
+<div class="line">    let sr_n   = ‹i: r; t#Sr#(core.idx 0 r (perm_ok#i))›;</div>
+<div class="line">    let vdim_n = match vec.first `== (perm_ok, t#sched#vdim) with</div>
+<div class="line">                     | Some j =&gt; core.idx2nat j</div>
+<div class="line">                     | None   =&gt; t#sched#vdim;</div>
+<div class="line">    // The parallel dims permute among themselves (checked above), so the new dim j writes the</div>
+<div class="line">    // output axis its old dim perm#j wrote.</div>
+<div class="line">    let oax_n = ‹j: t#Ro; t#oax#(core.idx 0 (t#Ro) (perm_ok#(core.idx 0 r (core.idx2nat j))))›;</div>
+<div class="line">    // iota: old dim i is found at the new position j with perm#j = i.</div>
+<div class="line">    lam iota_p (o: «r; affine.Index»): «r; affine.Index» =</div>
+<div class="line">        ‹i: r; o#(option.unwrap_unsafe (vec.first `== (perm_ok, core.idx2nat i)))›;</div>
+<div class="line">    lam retile_n (ro_m rr_m: Nat)</div>
+<div class="line">                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», sched_m: Sched)</div>
+<div class="line">                 (iota:  «ro_m + rr_m; affine.Index» → «r; affine.Index»,</div>
+<div class="line">                  omega: [«t#Ro; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)</div>
+<div class="line">               : t#Out (ro_m, so_m) =</div>
+<div class="line">        t#retile (ro_m, rr_m) (so_m, sr_m, sched_m) (comp_map (iota_p, iota), omega);</div>
+<div class="line">    (t#Out, t#Ro, t#Rr, t#So, oax_n, sr_n, (t#sched)#vdim ← vdim_n, retile_n);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md556"></a>
+materialize</h3>
+<p>Materialize a <span class="tt">Tileable</span> over its current domain and schedule (identity reindexing).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam materialize (t: Tileable): t#Out (t#Ro, t#So) =</div>
+<div class="line">    lam id_i (o: «t#Ro + t#Rr; affine.Index»): «t#Ro + t#Rr; affine.Index» = o;</div>
+<div class="line">    lam id_o (oo: «t#Ro; affine.Index», o: «t#Ro + t#Rr; affine.Index»): «t#Ro; affine.Index» = oo;</div>
+<div class="line">    t#retile (t#Ro, t#Rr) (t#So, t#Sr, t#sched) (id_i, id_o);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md557"></a>
+mr_tileable</h3>
+<p>The <span class="tt">map_reduce_post</span> instance, the SSA analog of MLIR's getTiledImplementation: <span class="tt">retile</span> rebuilds the same op over the new domain, composing the access maps with <span class="tt">iota</span> and the write map with <span class="tt">omega</span>.</p>
+<ul>
+<li>No extract/insert_slice machinery — the tiled reads hit the original inputs through the reindexed access maps.</li>
+<li>Epilogue-free (<span class="tt">nps = 0</span>): impls build raw ops and the epilogue arrives later via <span class="tt">fuse_tensor</span>, because epilogue-input access maps take output-cell coordinates, whose rank a domain transform may change.</li>
+<li><span class="tt">oax</span> states which output axis <span class="tt">map_out</span> writes each parallel dim to — the identity for the impls' projection write maps.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam mr_tileable</div>
+<div class="line">                {nis: Nat}</div>
+<div class="line">                {Ro Rr: Nat}</div>
+<div class="line">                {To Tp: *}</div>
+<div class="line">                (So: «Ro; Nat», oax: «Ro; Nat», Sr: «Ro + Rr; Nat»)</div>
+<div class="line">                {Tis: «nis; *», Ris: «i: nis; Nat», Sis: «i: nis; «Ris#i; Nat»»}</div>
+<div class="line">                (f: Fn [To, «i: nis; Tis#i»] → To, init: To, post: Fn [To, []] → Tp)</div>
+<div class="line">                (map_out: «Ro + Rr; affine.Index» → «Ro; affine.Index»)</div>
+<div class="line">                (maps: «i: nis; («Ro + Rr; affine.Index» → «Ris#i; affine.Index»)»)</div>
+<div class="line">                (is: «i: nis; «Sis#i; Tis#i»»)</div>
+<div class="line">              : Tileable =</div>
+<div class="line">    lam out_t (ro: Nat, so: «ro; Nat»): * = «so; Tp»;</div>
+<div class="line">    lam retile (Ro_n Rr_n: Nat)</div>
+<div class="line">               (So_n: «Ro_n; Nat», Sr_n: «Ro_n + Rr_n; Nat», sched_n: Sched)</div>
+<div class="line">               (iota:  «Ro_n + Rr_n; affine.Index» → «Ro + Rr; affine.Index»,</div>
+<div class="line">                omega: [«Ro; affine.Index», «Ro_n + Rr_n; affine.Index»] → «Ro_n; affine.Index»)</div>
+<div class="line">             : «So_n; Tp» =</div>
+<div class="line">        lam map_out_n (o: «Ro_n + Rr_n; affine.Index»): «Ro_n; affine.Index» =</div>
+<div class="line">            omega (map_out (iota o), o);</div>
+<div class="line">        map_reduce_post @(nis, 0) @(To, Tp, Ro_n, Ro_n + Rr_n, SchedT)</div>
+<div class="line">            (So_n, Sr_n, mk_sched sched_n)</div>
+<div class="line">            @(Tis, Ris, Sis, (), (), ()) (f, init, post)</div>
+<div class="line">            map_out_n</div>
+<div class="line">            (‹i: nis; comp_map (maps#i, iota)›, ())</div>
+<div class="line">            (is, ());</div>
+<div class="line">    (out_t, Ro, Rr, So, oax, Sr, (Ro + Rr, 0), retile);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md558"></a>
+unroll_trailing</h3>
+<p>Fully unroll the trailing <span class="tt">d</span> reduction dims into the loop body — e.g. a convolution's kh·kw window (<span class="tt">d = 2</span>). Their trip counts must be literals at lowering time.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam unroll_trailing (t: Tileable, d: Nat): Tileable = t#sched#unroll ← d;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md559"></a>
+vectorize</h3>
+<p>Run dim <span class="tt">d</span> as the innermost, unit-stride vector loop (per-cell fold order is unchanged). A parallel <span class="tt">d</span> runs inside the reduction loops over a row of accumulators; the innermost reduction dim as <span class="tt">d</span> selects <span class="tt">btensor.mr_nest</span>'s reduction-vectorized nest instead.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam vectorize (t: Tileable, d: Nat): Tileable = t#sched#vdim ← d;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md560"></a>
+Strip-Mining</h2>
+<p>Strip-mining is a pure <b>domain</b> transform (cf. TilingInterface's <span class="tt">op[N] → op[N/ts, ts]</span>) that <span class="tt">retile</span> absorbs entirely: <span class="tt">iota</span> recombines the split loop vector, and for a parallel dim <span class="tt">omega</span> splits the write coordinate. The result is an ordinary <span class="tt">map_reduce_post</span> over a higher-rank domain with composed access maps — schedule operand and lowering untouched. Classic cache tiling is composition: strip-mine, then <span class="tt">interchange</span> the tile loops outward.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md561"></a>
+check_div</h3>
+<p>Checks that <span class="tt">ts</span> exactly divides the extent <span class="tt">sd</span> (discharges symbolically for factored extents).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam check_div (sd ts: Nat): Nat =</div>
+<div class="line">    refly.check (sd / ts * ts == sd, sd, &quot;strip_mine: tile size must divide the extent&quot;);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md562"></a>
+shift_ax</h3>
+<p>Axis renumbering after inserting a new axis at position <span class="tt">a</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam shift_ax (a x: Nat): Nat = core.select (x &lt; a, x, x + 1);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md563"></a>
+split_bounds</h3>
+<p>Split bounds vector <span class="tt">v</span> (length <span class="tt">n</span>) at dim <span class="tt">d</span> into <span class="tt">(nt, ts)</span>; the result arity <span class="tt">m</span> (<span class="tt">= n+1</span>) is passed explicitly, in the syntactic form the call site's types require (the checker does not re-associate <span class="tt">core.nat.add</span> symbolically).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam split_bounds (m n: Nat, v: «n; Nat», d ts nt: Nat): «m; Nat» =</div>
+<div class="line">    ‹i: m; let ii = core.idx2nat i;</div>
+<div class="line">           core.select (ii &lt; d, v#(core.idx 0 n ii),</div>
+<div class="line">           core.select (ii == d, nt,</div>
+<div class="line">           core.select (ii == d + 1, ts,</div>
+<div class="line">           v#(core.idx 0 n (ii - 1)))))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md564"></a>
+split_iota</h3>
+<p>Recombine a split loop vector (<span class="tt">m = n+1</span>): <span class="tt">old#d = new#d · ts + new#(d+1)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam split_iota (m n d ts: Nat) (o: «m; affine.Index»): «n; affine.Index» =</div>
+<div class="line">    ‹j: n; let jj = core.idx2nat j;</div>
+<div class="line">           core.select (jj &lt; d, o#(core.idx 0 m jj),</div>
+<div class="line">           core.select (jj == d,</div>
+<div class="line">                         affine.op.add (affine.semiop.mul (o#(core.idx 0 m d), ts),</div>
+<div class="line">                                         o#(core.idx 0 m (d + 1))),</div>
+<div class="line">           o#(core.idx 0 m (jj + 1))))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md565"></a>
+split_omega</h3>
+<p>Split an output coordinate vector (<span class="tt">m = n+1</span>): <span class="tt">new#a = old#a ⌊/⌋ ts</span>, <span class="tt">new#(a+1) = old#a mod ts</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam split_omega (m n a ts: Nat) (oc: «n; affine.Index»): «m; affine.Index» =</div>
+<div class="line">    ‹j: m; let jj = core.idx2nat j;</div>
+<div class="line">           core.select (jj &lt; a, oc#(core.idx 0 n jj),</div>
+<div class="line">           core.select (jj == a, affine.semiop.floordiv (oc#(core.idx 0 n a), ts),</div>
+<div class="line">           core.select (jj == a + 1, affine.semiop.rem (oc#(core.idx 0 n a), ts),</div>
+<div class="line">           oc#(core.idx 0 n (jj - 1)))))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md566"></a>
+strip_mine_par</h3>
+<p>Split parallel dim <span class="tt">d</span> (d &lt; Ro) into two adjacent parallel dims. The result shape splits along the output axis <span class="tt">d</span> writes (<span class="tt">oax#d</span>), so the materialized tensor is <em>packed</em> (<span class="tt">«…, N/ts, ts, …»</span> along that axis); a row-major <span class="tt">reshape</span> restores the original shape — and in a fused graph <span class="tt">fuse_tensor</span>'s read-through absorbs it into the consumers' access maps.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam strip_mine_par (t: Tileable, d ts: Nat): Tileable =</div>
+<div class="line">    let r    = t#Ro + t#Rr;</div>
+<div class="line">    let ro_n = t#Ro + 1;</div>
+<div class="line">    let r_n  = t#Ro + 1 + t#Rr;</div>
+<div class="line">    let a    = t#oax#(core.idx 0 (t#Ro) d);</div>
+<div class="line">    let sd   = refly.check (t#So#(core.idx 0 (t#Ro) a) == t#Sr#(core.idx 0 r d),</div>
+<div class="line">                             t#Sr#(core.idx 0 r d),</div>
+<div class="line">                             &quot;strip_mine_par: output extent (at oax#d) must match domain extent&quot;);</div>
+<div class="line">    let nt   = check_div (sd, ts) / ts;</div>
+<div class="line">    // The split dim writes the split axis pair; all other dims write their old axis, renumbered</div>
+<div class="line">    // around the insertion at `a`. The unit-stride half is the inner one: a vdim at `d` moves to</div>
+<div class="line">    // `d + 1`.</div>
+<div class="line">    let oax_n = ‹j: ro_n; let jj = core.idx2nat j;</div>
+<div class="line">                          core.select (jj &lt; d, shift_ax (a, t#oax#(core.idx 0 (t#Ro) jj)),</div>
+<div class="line">                          core.select (jj == d, a,</div>
+<div class="line">                          core.select (jj == d + 1, a + 1,</div>
+<div class="line">                          shift_ax (a, t#oax#(core.idx 0 (t#Ro) (jj - 1))))))›;</div>
+<div class="line">    // FIXME: a reduction vdim is reset to none here instead of moving to `vdim + 1`.</div>
+<div class="line">    let vd     = t#sched#vdim;</div>
+<div class="line">    let vdim_n = core.select (vd &lt; t#Ro, core.select (vd &lt; d, vd, vd + 1), r_n);</div>
+<div class="line">    lam retile_n (ro_m rr_m: Nat)</div>
+<div class="line">                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», sched_m: Sched)</div>
+<div class="line">                 (iota:  «ro_m + rr_m; affine.Index» → «r_n; affine.Index»,</div>
+<div class="line">                  omega: [«ro_n; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)</div>
+<div class="line">               : t#Out (ro_m, so_m) =</div>
+<div class="line">        lam iota_c  (o: «ro_m + rr_m; affine.Index»): «r; affine.Index» =</div>
+<div class="line">            split_iota (r_n, r, d, ts) (iota o);</div>
+<div class="line">        lam omega_c (oo: «t#Ro; affine.Index», ov: «ro_m + rr_m; affine.Index»): «ro_m; affine.Index» =</div>
+<div class="line">            omega (split_omega (ro_n, t#Ro, a, ts) oo, ov);</div>
+<div class="line">        t#retile (ro_m, rr_m) (so_m, sr_m, sched_m) (iota_c, omega_c);</div>
+<div class="line">    (t#Out, ro_n, t#Rr,</div>
+<div class="line">     split_bounds (ro_n, t#Ro, t#So, a, ts, nt), oax_n,</div>
+<div class="line">     split_bounds (r_n, r, t#Sr, d, ts, nt), (t#sched)#vdim ← vdim_n, retile_n);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md567"></a>
+strip_mine_red</h3>
+<p>Split reduction dim <span class="tt">d</span> (Ro ≤ d &lt; Ro + Rr) of extent N into two adjacent reduction dims (N/ts, ts). If the split lands inside the trailing unroll window, both halves unroll — the tap count is unchanged.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam strip_mine_red (t: Tileable, d ts: Nat): Tileable =</div>
+<div class="line">    let r   = t#Ro + t#Rr;</div>
+<div class="line">    let r_n = t#Ro + (t#Rr + 1);</div>
+<div class="line">    let nt  = check_div (t#Sr#(core.idx 0 r d), ts) / ts;</div>
+<div class="line">    let vd       = t#sched#vdim;</div>
+<div class="line">    let un       = t#sched#unroll;</div>
+<div class="line">    let vdim_n   = core.select (vd &lt; t#Ro, vd, r_n);</div>
+<div class="line">    let unroll_n = core.select (d &lt; r - un, un, un + 1);</div>
+<div class="line">    lam retile_n (ro_m rr_m: Nat)</div>
+<div class="line">                 (so_m: «ro_m; Nat», sr_m: «ro_m + rr_m; Nat», sched_m: Sched)</div>
+<div class="line">                 (iota:  «ro_m + rr_m; affine.Index» → «r_n; affine.Index»,</div>
+<div class="line">                  omega: [«t#Ro; affine.Index», «ro_m + rr_m; affine.Index»] → «ro_m; affine.Index»)</div>
+<div class="line">               : t#Out (ro_m, so_m) =</div>
+<div class="line">        t#retile (ro_m, rr_m) (so_m, sr_m, sched_m)</div>
+<div class="line">                 (comp_map (split_iota (r_n, r, d, ts), iota), omega);</div>
+<div class="line">    (t#Out, t#Ro, t#Rr + 1, t#So, t#oax,</div>
+<div class="line">     split_bounds (r_n, r, t#Sr, d, ts, nt), ((t#sched)#vdim ← vdim_n)#unroll ← unroll_n, retile_n);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md568"></a>
+Schedules</h2>
+<p>A <span class="tt">Schedule</span> is just a <span class="tt">Tileable</span> transformer, a <b>selector</b> a compile-time inspection of an op's parameters returning the appropriate one — combinator composition, dispatched as an extract over thunks so that partial evaluation resolves it entirely. This is where "when is a transformation appropriate" lives: in the IR next to the op, not in a lowering heuristic.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md569"></a>
+Schedule</h3>
+<p>A transformer of <span class="tt">Tileable</span>s.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let Schedule = Tileable → Tileable;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md570"></a>
+sched_id</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam sched_id (t: Tileable): Tileable = t;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md571"></a>
+unroll_budget</h3>
+<p>The greedy trailing-suffix unroll scan (the old lowering's budget scan): the number of trailing reduction dims whose tap product stays within <span class="tt">budget</span>. Folded innermost-first over the reduction dims with state (count, taps, alive); a dim whose extent is still open at lowering time stops the scan (<span class="tt">if_static</span> residualizes its step to "over budget").</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam unroll_budget (t: Tileable, budget: Nat): Nat =</div>
+<div class="line">    let r = t#Ro + t#Rr;</div>
+<div class="line">    lam step (d: Nat, (cnt taps alive: Nat)): «3; Nat» =</div>
+<div class="line">        let taps_n  = taps * t#Sr#(core.idx 0 r d);</div>
+<div class="line">        let alive_n = alive * if_static (taps_n, (0, 1)#(taps_n &lt;= budget), 0);</div>
+<div class="line">        (cnt + alive_n, core.select (alive_n == 1, taps_n, taps), alive_n);</div>
+<div class="line">    (vec.fold.r @(«3; Nat», Nat) @(t#Rr) step (‹i: t#Rr; t#Ro + core.idx2nat i›, (0, 1, 1)))#0_3;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md572"></a>
+vectorize_if</h3>
+<p>Vectorize the parallel dim <span class="tt">d</span> only when <span class="tt">cond</span> holds; otherwise the sentinel "no vector dim".</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam vectorize_if (t: Tileable, cond: Bool, d: Nat): Tileable =</div>
+<div class="line">    vectorize (t, (t#Ro + t#Rr, d)#cond);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md573"></a>
+conv_schedule</h3>
+<p>The convolution schedule, selected from the op's parameters — the old lowering's heuristics, now plain IR next to the op:</p>
+<ul>
+<li>unroll the trailing reduction dims greedily while their tap product fits the register budget (the kh·kw window; a small cin joins it) — constant tap offsets, no window loops;</li>
+<li>run <span class="tt">ow</span> (parallel dim 3) innermost with unit stride over a row of accumulators iff it beats the innermost <em>remaining</em> reduction dim on unit-stride/broadcast reads: ow reads the padded input at stride_w and is broadcast in the weight (score [stride_w = 1] + 1); an un-unrolled kw reads the input at dilation_w and the weight at unit stride ([dilation_w = 1] + 1 — the classic nest is already unit-stride, so vectorizing buys nothing); kh/cin score 0; with the whole reduction unrolled there is nothing to beat;</li>
+<li>a <b>pointwise</b> window (kh·kw = 1) has no taps to unroll, so the row accumulator would make a memory round trip per MAC: jam a block of <span class="tt">co</span> into the vector body (the padded-input read is invariant in <span class="tt">co</span>, so the jammed cells share it) and unroll a tile of <span class="tt">ci</span> into the window (which amortizes the round trip over the tile) — the 1x1 counterpart of the kh·kw window.</li>
+</ul>
+<p>Open extents/strides residualize to no unrolling and no vector dim (<span class="tt">if_static</span>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam conv_schedule (stride dilation: «2; Nat») (t: Tileable): Tileable =</div>
+<div class="line">    let u     = unroll_budget (t, 32);</div>
+<div class="line">    let s_ow  = (0, 1)#(stride#1_2 == 1) + 1;</div>
+<div class="line">    // FIXME: with the whole reduction unrolled the doc says `ow` has nothing to beat, but `s_red = s_ow` keeps it scalar.</div>
+<div class="line">    let s_red = core.select (u == 0, (0, 1)#(dilation#1_2 == 1) + 1, core.select (u &lt; t#Rr, 0, s_ow));</div>
+<div class="line">    let r     = t#Ro + t#Rr;</div>
+<div class="line">    let ow    = t#Sr#(core.idx 0 r 3);</div>
+<div class="line">    let vec   = if_static (stride#1_2 * dilation#1_2 * ow, s_red &lt; s_ow, ff);</div>
+<div class="line">    lam fits (k b: Nat): Bool = core.bit2.and 2 (k / b * b == k, b &lt; k);</div>
+<div class="line">    // Rows too short for the vectorizer (ow &lt; 16) are processed in BLOCKS: strip-mine oh by the</div>
+<div class="line">    // largest block size ≤ 4 that divides it and sink both halves (vdim = ro − 2 selects mr_nest&#39;s</div>
+<div class="line">    // blocked branch, which jams the block dim into the vector body — one reduction pass folds the</div>
+<div class="line">    // whole row block, sharing the hoisted window weights). Otherwise the split is the neutral</div>
+<div class="line">    // ts = 1 (its size-1 axis folds away), so one code path serves every case and no divisibility</div>
+<div class="line">    // check fires on an untaken choice.</div>
+<div class="line">    let oh    = t#Sr#(core.idx 0 r 2);</div>
+<div class="line">    lam divides (d: Nat): Bool = oh / d * d == oh;</div>
+<div class="line">    let bs    = ((1, 2)#(divides 2), 4)#(divides 4);</div>
+<div class="line">    let short = if_static (oh * ow, core.bit2.and 2 (vec, ow &lt; 16), ff);</div>
+<div class="line">    // There is one jam slot, so a `co` block is worth taking only where the row block cannot fire:</div>
+<div class="line">    // a POINTWISE window (which has no taps to amortize the accumulator round trip at all), or a</div>
+<div class="line">    // short row whose oh does not split. Measured over the level3 3x3 layers, taking it against a</div>
+<div class="line">    // working row block instead is a 5-12% loss, and taking it for a long row is a wash.</div>
+<div class="line">    let co    = t#Sr#(core.idx 0 r 1);</div>
+<div class="line">    let ci    = t#Sr#(core.idx 0 r 4);</div>
+<div class="line">    let win   = t#Sr#(core.idx 0 r 5) * t#Sr#(core.idx 0 r 6);</div>
+<div class="line">    let pw    = if_static (win, core.bit2.and 2 (vec, win == 1), ff);</div>
+<div class="line">    // A pointwise window keeps a working 2-row block at unit stride (1.3-1.6x faster over the level3</div>
+<div class="line">    // pointwise layers); 4-row blocks and strided rows still lose to the `co` block.</div>
+<div class="line">    let pw_rows = core.bit2.and 2 (core.bit2.and 2 (short, bs == 2),</div>
+<div class="line">                                    core.bit2.and 2 (stride#0_2 == 1, stride#1_2 == 1));</div>
+<div class="line">    let cob   = core.bit2.or 2 (core.bit2.and 2 (pw, (tt, ff)#pw_rows), core.bit2.and 2 (short, bs == 1));</div>
+<div class="line">    // One accumulator register per jammed cell, so a block wider than the target&#39;s lanes spills;</div>
+<div class="line">    // every jammed cell also replays the window, so the block shares the 32-tap register budget.</div>
+<div class="line">    let vw    = vec_width 8;</div>
+<div class="line">    lam cb_ok (b: Nat): Bool = core.bit2.and 2 (core.bit2.and 2 (fits (co, b), b &lt;= vw), b * win &lt;= 32);</div>
+<div class="line">    let cb    = if_static (co, (1, (((1, 2)#(cb_ok 2), 4)#(cb_ok 4), 8)#(cb_ok 8))#cob, 1);</div>
+<div class="line">    let cblk  = cb != 1;</div>
+<div class="line">    lam ct_ok (b: Nat): Bool = core.bit2.and 2 (fits (ci, b), cb * b * win &lt;= 32);</div>
+<div class="line">    let cts   = if_static (ci, (1, (((1, 2)#(ct_ok 2), 4)#(ct_ok 4), 8)#(ct_ok 8))#cob, 1);</div>
+<div class="line">    let block = core.bit2.and 2 ((tt, ff)#cblk, core.bit2.and 2 (short, bs != 1));</div>
+<div class="line">    let t_ci  = strip_mine_red (t, 4, cts);</div>
+<div class="line">    let t_co  = strip_mine_par (t_ci, 1, cb);</div>
+<div class="line">    let t_oh  = strip_mine_par (t_co, 3, (1, bs)#block);</div>
+<div class="line">    // Spelled from t_oh&#39;s positional fields so the pack&#39;s length is definitionally the</div>
+<div class="line">    // «t#Ro + t#Rr» the dependent `interchange` domain expects.</div>
+<div class="line">    let r_n   = t_oh#1_8 + t_oh#2_8;</div>
+<div class="line">    // Dims are (n, co/cb, cb, oh/bs, bs, ow | …); rotate `cb` down next to `ow` so the jam dim and</div>
+<div class="line">    // the vector dim are the trailing parallel pair. Identity when the block is not taken.</div>
+<div class="line">    let perm  = ‹j: r_n; let jj = core.idx2nat j;</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 2), 3,</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 3), 4,</div>
+<div class="line">                         core.select (core.bit2.and 2 (cblk, jj == 4), 2, jj)))›;</div>
+<div class="line">    let vd    = core.select (core.bit2.or 2 (cblk, block), 4, (r_n, 5)#vec);</div>
+<div class="line">    // The window grows only when the `ci` split is REAL; keying it off the pointwise flag would</div>
+<div class="line">    // over-unroll a big window past the tap budget (a 7x7 stem goes 7 -&gt; 49 taps, and 2x slower).</div>
+<div class="line">    let un    = core.select (core.bit2.or 2 (cts != 1, 3 &lt;= u), u + 1, u);</div>
+<div class="line">    unroll_trailing (vectorize (interchange (t_oh, perm), vd), un);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md574"></a>
+dot_schedule</h3>
+<p>The dot-product schedule for a contraction whose right operand stores the last output dim unit-stride ( \(A \cdot B\)): that dim is invariant in the left operand, so it runs innermost over a row of accumulators (GEMM-style vectorization) and the innermost contraction is register-blocked — strip-mined by 4, the tile unrolled.</p>
+<ul>
+<li>Blocking only needs the <b>divisibility</b> decided, which is weaker than a literal extent: a factored extent (<span class="tt">«(n+3)/4*4, …»</span>, say a padded row) folds the guard to <span class="tt">tt</span> under a symbolic <span class="tt">n</span>, because <span class="tt">core.nat</span> cancels <span class="tt">(c*x)/c</span>.</li>
+<li><span class="tt">if_static</span> therefore gates on the tile size rather than on <span class="tt">K</span> — a tile that folded to a literal is decided, no matter which kind of extent decided it.</li>
+<li>An undecided divisibility takes the neutral tile (<span class="tt">ts = 1</span>), so one selector serves static, symbolic and runtime shapes.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam dot_schedule (r_out: Nat) (t: Tileable): Tileable =</div>
+<div class="line">    let r   = t#Ro + t#Rr;</div>
+<div class="line">    let d   = r - 1;</div>
+<div class="line">    let K   = t#Sr#(core.idx 0 r d);</div>
+<div class="line">    let ts0 = (1, 4)#(K / 4 * 4 == K);</div>
+<div class="line">    let ts  = if_static (ts0, ts0, 1);</div>
+<div class="line">    unroll_trailing (strip_mine_red (vectorize (t, r_out - 1), d, ts), 1);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md575"></a>
+dot_schedule_kvec</h3>
+<p>The dot-product schedule for a contraction whose right operand stores the <b>contraction</b> unit-stride per output cell ( \(x \cdot W^T\) — the fc/linear layout, where <span class="tt">fuse_tensor</span>'s read-through absorbs the weight transpose into the access map). Vectorizing the last output dim would read a different weight row per lane (gathers), so instead</p>
+<ul>
+<li>the contraction itself runs as the vector loop — unit-stride in both the input row and each weight row, folded with a horizontal sum (see <span class="tt">btensor.mr_nest</span>'s reduction-vectorized branch, selected by a <span class="tt">vdim</span> naming the innermost reduction dim, where <span class="tt">unroll</span> names the jam width);</li>
+<li>a 2-D block of output cells is unroll-and-jammed into its body over independent vector accumulators: the last output dim strip-mined by the largest power-of-two divisor that fits the target's vector width (<span class="tt">vec_width</span> — jammed lanes share the input-row loads) × the second-to-last by 2 (jammed rows share the weight-row loads — without this the whole weight matrix re-streams once per batch row).</li>
+</ul>
+<p>An extent still open at lowering time, an indivisible one, and the missing row dim of a rank-1 output all take the neutral split (<span class="tt">1</span>), whose size-1 jam dim folds away.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam dot_schedule_kvec (r_out: Nat) (t: Tileable): Tileable =</div>
+<div class="line">    // A block counts only when it divides AND leaves a non-trivial outer dim (`b &lt; k`): an exact</div>
+<div class="line">    // split&#39;s leading size-1 axis would type-collapse the packed output («1; T» ≡ T).</div>
+<div class="line">    lam blk_by (k b: Nat): Bool = core.bit2.and 2 (k / b * b == k, b &lt; k);</div>
+<div class="line">    // One accumulator register per jammed cell, so a block wider than the target&#39;s lanes spills.</div>
+<div class="line">    let vw  = vec_width 8;</div>
+<div class="line">    lam blk_ok (k b: Nat): Bool = core.bit2.and 2 (blk_by (k, b), b &lt;= vw);</div>
+<div class="line">    let d   = r_out - 1;</div>
+<div class="line">    let n   = t#So#(core.idx 0 (t#Ro) d);</div>
+<div class="line">    let bs  = if_static (n, ((((1, 2)#(blk_ok (n, 2)), 4)#(blk_ok (n, 4)), 8)#(blk_ok (n, 8)), 16)#(blk_ok (n, 16)), 1);</div>
+<div class="line">    let t2  = strip_mine_par (t, d, bs);</div>
+<div class="line">    let d2  = r_out - 2;</div>
+<div class="line">    let m   = t#So#(core.idx 0 (t#Ro) d2);</div>
+<div class="line">    let ms  = (1, if_static (m, (1, 2)#(blk_by (m, 2)), 1))#(2 &lt;= r_out);</div>
+<div class="line">    let t3  = strip_mine_par (t2, d2, ms);</div>
+<div class="line">    // Dims now (…, m/ms, ms, n/bs, bs | red): swap ms ↔ n/bs so both jam dims are the trailing</div>
+<div class="line">    // parallel pair. Identity for a rank-1 output, where the neutral split already sits next to</div>
+<div class="line">    // `bs` ((n/bs, 1, bs | red)). `r3` is spelled from t3&#39;s own (positional) fields so the pack&#39;s</div>
+<div class="line">    // length is definitionally the «t#Ro + t#Rr» the dependent `interchange` domain expects —</div>
+<div class="line">    // `core.nat.add` does not reassociate an equivalent spelling.</div>
+<div class="line">    let r3   = t3#1_8 + t3#2_8;</div>
+<div class="line">    let swap = 2 &lt;= r_out;</div>
+<div class="line">    let pa   = r_out - 1;</div>
+<div class="line">    let pb   = r_out;</div>
+<div class="line">    let perm = ‹j: r3; let jj = core.idx2nat j;</div>
+<div class="line">                       core.select (core.bit2.and 2 (swap, jj == pa), pb,</div>
+<div class="line">                       core.select (core.bit2.and 2 (swap, jj == pb), pa, jj))›;</div>
+<div class="line">    unroll_trailing (vectorize (interchange (t3, perm), r3 - 1), 2);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md576"></a>
+pool_schedule</h3>
+<p>The pooling schedule: unroll the window while it stays within budget. Pooling reads its single input in every loop dim (no broadcast operand), so <span class="tt">ow</span> scores [stride_w = 1] against an un-unrolled kw's [dilation_w = 1] — the row accumulator never wins and the nest stays classic.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam pool_schedule (stride dilation: «2; Nat») (t: Tileable): Tileable =</div>
+<div class="line">    let u     = unroll_budget (t, 32);</div>
+<div class="line">    let s_ow  = (0, 1)#(stride#1_2 == 1);</div>
+<div class="line">    let s_red = core.select (u == 0, (0, 1)#(dilation#1_2 == 1), core.select (u &lt; t#Rr, 0, s_ow));</div>
+<div class="line">    let ow    = t#Sr#(core.idx 0 (t#Ro + t#Rr) 3);</div>
+<div class="line">    let vec   = if_static (stride#1_2 * dilation#1_2 * ow, s_red &lt; s_ow, ff);</div>
+<div class="line">    unroll_trailing (vectorize_if (t, vec, 3), u);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md577"></a>
+Implementations</h1>
+<p>The <span class="tt">_impl</span> annexes <span class="tt">lower_tensor</span> re-applies to expand the derived operations above, together with the fold steps and access maps they read through. Most are a single <span class="tt">map_reduce</span> over a copy step — the operation itself lives in the access map. They are <span class="tt">priv</span>: the phase resolves them through the annex table, so no path from outside this plugin reaches them and the axioms above stay the only public spelling of these operations.</p>
+<p>The declaration order is load-bearing beyond the usual definition-before-use: <span class="tt">lower_tensor</span> resolves an <span class="tt">_impl</span> in the world it is <em>building</em>, so an impl must be declared before any annex whose body applies the axiom it implements — <span class="tt">reshape_impl</span> before <span class="tt">conv_impl</span> and <span class="tt">dot_product_impl</span>, which reshape their packed results.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md578"></a>
+tensor_copy</h2>
+<p>Ignores the (⊥) accumulator and returns the read element — the fold step of every pure re-indexing operation below.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun tensor_copy {T: *} (acc: T, y: T)@tt: T = return y;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md579"></a>
+bid_map</h2>
+<p><span class="tt">o ↦ (o#(index#i) · [s_in#i ≠ 1])_i</span>: input axis <span class="tt">i</span> reads output-loop var <span class="tt">o#(index#i)</span> (the transpose), unless it is a broadcast axis (<span class="tt">s_in#i = 1</span>), which reads index 0.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam bid_map {r_in r_out: Nat} (s_in: «r_in; Nat», index: «r_in; Idx r_out»)</div>
+<div class="line">            (o: «r_out; affine.Index»): «r_in; affine.Index» =</div>
+<div class="line">    ‹i: r_in; affine.semiop.mul (o#(index#i), core.select (s_in#i == 1, 0, 1))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md580"></a>
+broadcast_in_dim_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam broadcast_in_dim_impl {T: *, r_in r_out: Nat}</div>
+<div class="line">    (s_in: «r_in; Nat», s_out: «r_out; Nat», input: «s_in; T», index: «r_in; Idx r_out»): «s_out; T» =</div>
+<div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥:T)</div>
+<div class="line">        affine.id (bid_map (s_in, index),) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md581"></a>
+flip_map</h2>
+<p><span class="tt">o ↦ ((s_in#d − 1) − o#d)_d</span>: the reverse read map.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam flip_map {r: Nat} (s_in: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =</div>
+<div class="line">    ‹d: r; affine.op.sub (affine.lit (s_in#d - 1), o#d)›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md582"></a>
+flip_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam flip_impl {T: *, r: Nat} (s_in: «r; Nat») (input: «s_in; T»): «s_in; T» =</div>
+<div class="line">    map_reduce (s_in, s_in) (tensor_copy, ⊥:T)</div>
+<div class="line">        affine.id (flip_map s_in,) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md583"></a>
+gather_pointwise_elem_impl</h2>
+<p>One output element: reads <span class="tt">index</span> at the output coordinate, then the source at that coordinate with axis <span class="tt">dim</span> replaced by the loaded value.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam gather_pointwise_elem_impl {T: *, r: Nat}</div>
+<div class="line">                                   (s_src: «r; Nat», s_idx: «r; Nat»)</div>
+<div class="line">                                   (dim: Idx r)</div>
+<div class="line">                                   (out_indices: «r; I64»)</div>
+<div class="line">                                   (input: «s_src; T», index: «s_idx; Idx (s_src#dim)»): T =</div>
+<div class="line">    let index_coords = ‹d: r; core.conv.u (s_idx#d) (out_indices#d)›;</div>
+<div class="line">    let source_axis_index = core.bitcast I64 (index#index_coords);</div>
+<div class="line">    let source_coords = ‹d: r;</div>
+<div class="line">        let coordinate = core.select (core.icmp.e @r (d, dim), source_axis_index, out_indices#d);</div>
+<div class="line">        core.conv.u (s_src#d) coordinate›;</div>
+<div class="line">    input#source_coords;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md584"></a>
+map_impl</h2>
+<p>A <span class="tt">map_reduce</span> whose fold step drops the accumulator and applies <span class="tt">app</span> to the element tuple.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam map_impl {T: *, ni: Nat, Is: «ni; *»}</div>
+<div class="line">                     (app: «i: ni; Is#i» → T)</div>
+<div class="line">                     {r: Nat, s: «r; Nat»}</div>
+<div class="line">                     (is: «i: ni; «s; Is#i»»)</div>
+<div class="line">                     : «s; T» =</div>
+<div class="line">    fun app_mr (x: T, y: «i: ni; Is#i»)@tt = return (app y);</div>
+<div class="line">    // The `{Tis, Ris, Sis}` group stays explicit: with a *symbolic* `ni`, solving `Sis#i ≡ s` for all `i`</div>
+<div class="line">    // (i.e. `Sis := ‹ni; s›`) is Miller pattern unification. Adding that rule to `Checker::alpha_impl_` was tried</div>
+<div class="line">    // and reverted — even with an occurs check it fires inside `tuple`&#39;s machinery and commits a wrong solution.</div>
+<div class="line">    map_reduce (s, s) @(Is, ‹ni; r›, ‹ni; s›) (app_mr, ⊥:T)</div>
+<div class="line">        // `‹ni; …›` builds the pack bottom-up, so there is no expected type to drive implicit insertion for the</div>
+<div class="line">        // element; `affine.id` needs its rank here.</div>
+<div class="line">        affine.id ‹ni; affine.id @r› is;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md585"></a>
+pool_fun</h2>
+<p>Wraps a binary fold <span class="tt">g</span> as a <span class="tt">map_reduce</span> reduction <span class="tt">Fn [T, «1; T»] → T</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub fun pool_fun {T: *} (g: [T, T] → T) (acc y: T)@tt: T = return (g (acc, y));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md586"></a>
+reduce_shape</h2>
+<p><span class="tt">s</span> without axis <span class="tt">ax</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam reduce_shape {r: Nat} (ax: Idx r, s: «r; Nat»): «r - 1; Nat» =</div>
+<div class="line">    ‹i: r - 1; s#(core.idx 0 r (shift_ax (core.idx2nat ax, core.idx2nat i)))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md587"></a>
+reduce</h2>
+<p>Folds <span class="tt">input</span> along axis <span class="tt">ax</span> with <span class="tt">g</span>, seeded with <span class="tt">init</span>; the result drops that axis. The output axes run as the leading loops, <span class="tt">ax</span> as the trailing reduction loop.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam reduce {T: *} (g: [T, T] → T, init: T) {r: Nat} (ax: Idx r) {s: «r; Nat»} (input: «s; T»): «reduce_shape (ax, s); T» =</div>
+<div class="line">    let a = core.idx2nat ax;</div>
+<div class="line">    map_reduce (reduce_shape (ax, s), ‹i: r; let ii = core.idx2nat i; s#(core.idx 0 r (core.select (ii &lt; r - 1, shift_ax (a, ii), a)))›)</div>
+<div class="line">        (pool_fun g, init)</div>
+<div class="line">        (proj_map ‹i: r - 1; core.idx2nat i›)</div>
+<div class="line">        (proj_map ‹j: r; let jj = core.idx2nat j; core.select (jj &lt; a, jj, core.select (jj == a, r - 1, jj - 1))›)</div>
+<div class="line">        input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md588"></a>
+binary_ax</h2>
+<p><span class="tt">binary app (x, y)</span> where <span class="tt">y</span> lacks axis <span class="tt">ax</span> of <span class="tt">x</span> and is broadcast along it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam binary_ax {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat} (ax: Idx r) {s: «r; Nat»}</div>
+<div class="line">                  (x: «s; Ti1», y: «reduce_shape (ax, s); Ti2»): «s; To» =</div>
+<div class="line">    fun app_mr (_: To, (u: Ti1, v: Ti2))@tt: To = return (app (u, v));</div>
+<div class="line">    let a = core.idx2nat ax;</div>
+<div class="line">    map_reduce (s, s) @((Ti1, Ti2), (r, r - 1), (s, reduce_shape (ax, s))) (app_mr, ⊥:To)</div>
+<div class="line">        affine.id (affine.id @r, proj_map ‹i: r - 1; shift_ax (a, core.idx2nat i)›) (x, y);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md589"></a>
+softmax</h2>
+<p>Numerically stable softmax along axis <span class="tt">ax</span>: <span class="tt">exp (x - max) / Σ exp (x - max)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam softmax (m: Nat) {pe: «2; Nat»} {r: Nat} (ax: Idx r) {s: «r; Nat»} (input: «s; math.F pe»): «s; math.F pe» =</div>
+<div class="line">    let F  = math.F pe;</div>
+<div class="line">    let mx = reduce (math.extrema.fmax m, math.neg_inf pe) ax input;</div>
+<div class="line">    let e  = binary_ax (λ (x y: F): F = math.exp.exp m (math.arith.sub m (x, y))) ax (input, mx);</div>
+<div class="line">    binary_ax (math.arith.div m) ax (e, reduce (math.arith.add m, 0:F) ax e);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md590"></a>
+pool2d_in_map</h2>
+<p>Windowed input read over the loop vector <span class="tt">(n, c, oh, ow, kh, kw)</span>: <span class="tt">(n, c, stride#0·oh + dilation#0·kh, stride#1·ow + dilation#1·kw)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam pool2d_in_map (stride dilation: «2; Nat») (o: «6; affine.Index»): «4; affine.Index» =</div>
+<div class="line">    let (n, c, oh, ow, kh, kw) = o;</div>
+<div class="line">    (n, c,</div>
+<div class="line">     affine.op.add (affine.semiop.mul (oh, stride#0_2), affine.semiop.mul (kh, dilation#0_2)),</div>
+<div class="line">     affine.op.add (affine.semiop.mul (ow, stride#1_2), affine.semiop.mul (kw, dilation#1_2)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md591"></a>
+pool_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam pool_impl {T: *} (g: [T, T] → T, init: T) {n c h w: Nat}</div>
+<div class="line">                      (kernel stride dilation padding s_out: «2; Nat»)</div>
+<div class="line">                      (input: «n, c, h, w; T»)</div>
+<div class="line">                    : «n, c, s_out#0_2, s_out#1_2; T» =</div>
+<div class="line">    let s_in     = (n, c, h, w);</div>
+<div class="line">    let pad_lohi = (0, 0, padding#0_2, padding#1_2);</div>
+<div class="line">    let padded   = pad s_in (0, pad_lohi, pad_lohi) (input, init);</div>
+<div class="line">    let s_padded = shape 4 padded;</div>
+<div class="line"> </div>
+<div class="line">    // Schedule (frontend, selected from the parameters — see `pool_schedule`).</div>
+<div class="line">    materialize (pool_schedule (stride, dilation) (</div>
+<div class="line">        mr_tileable @1 @(4, 2)</div>
+<div class="line">            ((n, c, s_out#0_2, s_out#1_2), (0, 1, 2, 3), (n, c, s_out#0_2, s_out#1_2, kernel#0_2, kernel#1_2))</div>
+<div class="line">            @(T, 4, s_padded)</div>
+<div class="line">            (pool_fun g, init, id @T)</div>
+<div class="line">            (proj_map @(6, 4) (0, 1, 2, 3))</div>
+<div class="line">            (pool2d_in_map (stride, dilation),)</div>
+<div class="line">            padded));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md592"></a>
+repeat_map</h2>
+<p><span class="tt">o ↦ (o#d mod s_in#d)_d</span>: the wrap-around (tiling) read map.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam repeat_map {r: Nat} (s_in: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =</div>
+<div class="line">    ‹d: r; affine.semiop.rem (o#d, s_in#d)›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md593"></a>
+repeat_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam repeat_impl {T: *, r: Nat} (s_in: «r; Nat») (s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =</div>
+<div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥:T)</div>
+<div class="line">        affine.id (repeat_map s_in,) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md594"></a>
+reshape_map</h2>
+<p><span class="tt">o ↦ delinearize(linearize(o, s_out), s_in)</span>: the row-major output→input index map.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam reshape_map {r_in r_out: Nat} (s_in: «r_in; Nat», s_out: «r_out; Nat»)</div>
+<div class="line">                (o: «r_out; affine.Index»): «r_in; affine.Index» =</div>
+<div class="line">    affine.delinearize (affine.linearize (o, s_out), s_in);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md595"></a>
+reshape_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam reshape_impl {T: *, r_in r_out: Nat}</div>
+<div class="line">                         (s_in: «r_in; Nat») (s_out: «r_out; Nat») (input: «s_in; T»): «s_out; T» =</div>
+<div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥:T)</div>
+<div class="line">        affine.id (reshape_map (s_in, s_out),) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md596"></a>
+conv_fun</h2>
+<p>Fused multiply-add over the ring <span class="tt">R</span>; <span class="tt">x</span> is the padded-input element, <span class="tt">w</span> the weight.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun conv_fun (R: Ring) (acc: R#T, (x w: R#T))@tt: R#T = return (R#add (acc, R#mul (x, w)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md597"></a>
+conv2d_in_map</h2>
+<p>The <span class="tt">«7; affine.Index»</span> loop vector is <span class="tt">o = (n, co, oh, ow, ci, kh, kw)</span>, so the weight read map <span class="tt">(co, ci, kh, kw)</span> and the output write map <span class="tt">(n, co, oh, ow)</span> are <span class="tt">proj_map</span> projections of it; only this padded-input read needs arithmetic: <span class="tt">(n, ci, stride#0·oh + dilation#0·kh, stride#1·ow + dilation#1·kw)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam conv2d_in_map (stride dilation: «2; Nat») (o: «7; affine.Index»): «4; affine.Index» =</div>
+<div class="line">    let (n, _, oh, ow, ci, kh, kw) = o;</div>
+<div class="line">    (n, ci,</div>
+<div class="line">     affine.op.add (affine.semiop.mul (oh, stride#0_2), affine.semiop.mul (kh, dilation#0_2)),</div>
+<div class="line">     affine.op.add (affine.semiop.mul (ow, stride#1_2), affine.semiop.mul (kw, dilation#1_2)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md598"></a>
+conv_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam conv_impl (R: Ring) {n cin cout h w kh kw: Nat}</div>
+<div class="line">                      (stride dilation padding: «2; Nat»)</div>
+<div class="line">                      (input: «n, cin, h, w; R#T», weight: «cout, cin, kh, kw; R#T»)</div>
+<div class="line">                    : «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T» =</div>
+<div class="line">    // Zero-pad only the spatial axes (lo = hi = (0, 0, pad_h, pad_w)); the pad value is the ring zero.</div>
+<div class="line">    let s_in     = (n, cin, h, w);</div>
+<div class="line">    let pad_lohi = (0, 0, padding#0_2, padding#1_2);</div>
+<div class="line">    let padded   = pad s_in (0, pad_lohi, pad_lohi) (input, R#_0);</div>
+<div class="line">    let s_padded = shape 4 padded;</div>
+<div class="line">    let s_out    = conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding);</div>
+<div class="line">    let (_, _, oh, ow) = s_out;</div>
+<div class="line"> </div>
+<div class="line">    // The SCHEDULE, selected in the frontend from the parameters (see `conv_schedule`): unroll the</div>
+<div class="line">    // kh·kw window into the loop body (constant tap offsets) when it fits the budget, and run `ow`</div>
+<div class="line">    // as the innermost, unit-stride loop — for a fixed tap, adjacent output pixels read adjacent</div>
+<div class="line">    // input pixels, so the vectorizer emits contiguous vector loads instead of gathers. The</div>
+<div class="line">    // schedule may strip-mine `oh` (row blocking), packing the materialized tensor along that axis;</div>
+<div class="line">    // the row-major `reshape` restores `s_out` (an identity for the neutral split, and absorbed into</div>
+<div class="line">    // the consumers&#39; access maps by `fuse_tensor`&#39;s read-through in a fused graph).</div>
+<div class="line">    let sched = conv_schedule (stride, dilation) (</div>
+<div class="line">        mr_tileable @2 @(4, 3)</div>
+<div class="line">            ((n, cout, oh, ow), (0, 1, 2, 3), (n, cout, oh, ow, cin, kh, kw))</div>
+<div class="line">            @((R#T, R#T), (4, 4), (s_padded, (cout, cin, kh, kw)))</div>
+<div class="line">            (conv_fun R, R#_0, id @(R#T))</div>
+<div class="line">            (proj_map @(7, 4) (0, 1, 2, 3))</div>
+<div class="line">            (conv2d_in_map (stride, dilation), proj_map @(7, 4) (1, 4, 5, 6))</div>
+<div class="line">            (padded, weight));</div>
+<div class="line">    // `sched#3_8` is the scheduled Tileable&#39;s (possibly packed) output shape `So`.</div>
+<div class="line">    reshape (sched#3_8) s_out (materialize sched);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md599"></a>
+conv_grouped_in_map</h2>
+<p>The loop vector is <span class="tt">o = (b, co, oh, ow, ci, kh, kw)</span> with <span class="tt">b = n·groups + g</span>: group <span class="tt">g</span> reads input channel <span class="tt">g·ci + ci</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam conv_grouped_in_map (groups ci: Nat, stride dilation: «2; Nat») (o: «7; affine.Index»): «4; affine.Index» =</div>
+<div class="line">    let (_, _, ih, iw) = conv2d_in_map (stride, dilation) o;</div>
+<div class="line">    (affine.semiop.floordiv (o#0_7, groups),</div>
+<div class="line">     affine.op.add (affine.semiop.mul (affine.semiop.rem (o#0_7, groups), ci), o#4_7),</div>
+<div class="line">     ih, iw);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md600"></a>
+conv_grouped_w_map</h2>
+<p>The weight read of <span class="tt">conv_grouped_in_map</span>'s loop vector: group <span class="tt">g</span> owns the weight rows <span class="tt">g·co + co</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam conv_grouped_w_map (groups co: Nat) (o: «7; affine.Index»): «4; affine.Index» =</div>
+<div class="line">    (affine.op.add (affine.semiop.mul (affine.semiop.rem (o#0_7, groups), co), o#1_7), o#4_7, o#5_7, o#6_7);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md601"></a>
+conv_grouped_impl</h2>
+<p>Each (batch, group) pair is an independent dense convolution, so folding the group into the batch dim lets the group-free <span class="tt">conv_schedule</span> apply unchanged: the group arithmetic stays in the outermost loop. The materialized <span class="tt">«n·groups, cout / groups, oh, ow»</span> is the row-major layout of the NCHW output.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam conv_grouped_impl (R: Ring) {n cin cout h w ci kh kw: Nat}</div>
+<div class="line">                              (groups: Nat, stride dilation padding: «2; Nat»)</div>
+<div class="line">                              (input: «n, cin, h, w; R#T», weight: «cout, ci, kh, kw; R#T»)</div>
+<div class="line">                            : «conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding); R#T» =</div>
+<div class="line">    let ci_g     = refly.check (ci * groups == cin, ci, &quot;conv_grouped: weight must hold cin / groups input channels&quot;);</div>
+<div class="line">    let co       = check_div (cout, groups) / groups;</div>
+<div class="line">    let s_in     = (n, cin, h, w);</div>
+<div class="line">    let pad_lohi = (0, 0, padding#0_2, padding#1_2);</div>
+<div class="line">    let padded   = pad s_in (0, pad_lohi, pad_lohi) (input, R#_0);</div>
+<div class="line">    let s_padded = shape 4 padded;</div>
+<div class="line">    let s_out    = conv_shape (n, cout, (h, w), (kh, kw), stride, dilation, padding);</div>
+<div class="line">    let oh       = s_out#2_4;</div>
+<div class="line">    let ow       = s_out#3_4;</div>
+<div class="line">    let b        = n * groups;</div>
+<div class="line">    let sched = conv_schedule (stride, dilation) (</div>
+<div class="line">        mr_tileable @2 @(4, 3)</div>
+<div class="line">            ((b, co, oh, ow), (0, 1, 2, 3), (b, co, oh, ow, ci, kh, kw))</div>
+<div class="line">            @((R#T, R#T), (4, 4), (s_padded, (cout, ci, kh, kw)))</div>
+<div class="line">            (conv_fun R, R#_0, id @(R#T))</div>
+<div class="line">            (proj_map @(7, 4) (0, 1, 2, 3))</div>
+<div class="line">            (conv_grouped_in_map (groups, ci_g, stride, dilation), conv_grouped_w_map (groups, co))</div>
+<div class="line">            (padded, weight));</div>
+<div class="line">    reshape (sched#3_8) s_out (materialize sched);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md602"></a>
+dot_general_fun</h2>
+<p>The fold step: a fused multiply-add in the ring <span class="tt">R</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub fun dot_general_fun (R: Ring) (x: R#T, (y z: R#T))@tt: R#T = return (R#add (x, (R#mul (y, z))));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md603"></a>
+dot_general_pick</h2>
+<p>Sends input axis <span class="tt">i</span> to the loop id it reads — batching dims first, then the contractions, then the remaining free axes.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub lam dot_general_pick {n: Nat} {na nb nc: Nat} (a: «na; Idx n», b: «nb; Idx n», c: «nc; Idx n») (off_1 off_2: Nat) (i: Idx n): Nat =</div>
+<div class="line">    match vec.first core.icmp.e (b, i) with</div>
+<div class="line">        | Some bi =&gt; core.idx2nat bi</div>
+<div class="line">        | None    =&gt; match vec.first core.icmp.e (c, i) with</div>
+<div class="line">            | Some ci =&gt; off_2 + core.idx2nat ci</div>
+<div class="line">            | None    =&gt; match vec.first core.icmp.e (a, i) with</div>
+<div class="line">                | Some ai =&gt; off_1 + core.idx2nat ai</div>
+<div class="line">                | None    =&gt; 0;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md604"></a>
+dot_product_impl</h2>
+<p><span class="tt">r1</span>/<span class="tt">r2</span> are an <em>explicit</em> group here, unlike in the <span class="tt">dot_product</span> axiom: they must be literals already when this <span class="tt">lam</span> is β-reduced, since the subscript rows are built with <span class="tt">vec.diff</span>/<span class="tt">vec.first</span>, whose normalizers decline to fold over a non-literal rank, and nothing re-normalizes the body once a Hole is resolved later. <span class="tt">{s1 s2}</span> has no such problem and stays implicit.</p>
+<p><span class="tt">tensor::Lower</span> re-applies the axiom's groups positionally, so the two curry shapes still match — except for the leading <span class="tt">fastest_2</span>, which has no axiom counterpart: it is <span class="tt">fastest_axis</span> of the right operand, pre-applied by <span class="tt">Lower</span> where that operand is concrete. The schedule <b>decision</b> built on it lives in the body:</p>
+<ul>
+<li>a contracted fastest axis ( \(x \cdot W^T\), e.g. behind a weight transpose the read-through absorbs) selects <span class="tt">dot_schedule_kvec</span>, anything else <span class="tt">dot_schedule</span>;</li>
+<li>the selected schedule may strip-mine an output dim (row/output-cell blocking), packing the materialized tensor along that axis, whereupon the row-major <span class="tt">reshape</span> restores <span class="tt">s_out</span> — the identity for the neutral split, and absorbed into the consumers' access maps by <span class="tt">fuse_tensor</span>'s read-through in a fused graph.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam dot_product_impl</div>
+<div class="line">    (fastest_2: Nat)</div>
+<div class="line">    (R: Ring) (r1 r2: Nat) {nc nb: Nat}</div>
+<div class="line">    (c1: «nc; Idx r1», c2: «nc; Idx r2», b1: «nb; Idx r1», b2: «nb; Idx r2»)</div>
+<div class="line">    {s1: «r1; Nat», s2: «r2; Nat»} (a: «s1; R#T», b: «s2; R#T»)</div>
+<div class="line">    : let s_out = dot_general_shape (c1, c2, b1, b2) (s1, s2);</div>
+<div class="line">      «s_out; R#T»</div>
+<div class="line">    = let s_out    = dot_general_shape (c1, c2, b1, b2) (s1, s2);</div>
+<div class="line">      let bc_1     = vec.cat (b1, c1);</div>
+<div class="line">      let s1_res   = vec.diff (s1, bc_1);</div>
+<div class="line">      let n_s1_res = vec.len s1_res;</div>
+<div class="line">      let bc_2     = vec.cat (b2, c2);</div>
+<div class="line">      let f        = dot_general_fun R;</div>
+<div class="line">      let r_out    = vec.len s_out;</div>
+<div class="line">      let a1       = vec.diff (‹i: r1; i›, bc_1);</div>
+<div class="line">      let a2       = vec.diff (‹i: r2; i›, bc_2);</div>
+<div class="line">      let subs_1   = ‹i: r1; dot_general_pick (a1, b1, c1) (nb, r_out) i›;</div>
+<div class="line">      let subs_2   = ‹i: r2; dot_general_pick (a2, b2, c2) (nb + n_s1_res, r_out) i›;</div>
+<div class="line">      // The subscript rows use consecutive loop ids: 0 … r_out−1 are the output loops</div>
+<div class="line">      // and r_out … r_out+nc−1 the contractions, whose bounds are the contracting extents of `a`.</div>
+<div class="line">      let s_red    = ‹i: nc; refly.check (s1#(c1#i) == s2#(c2#i), s1#(c1#i), &quot;contracting dims don&#39;t match&quot;)›;</div>
+<div class="line">      let s_full   = vec.cat (s_out, s_red);</div>
+<div class="line">      let n_loops  = r_out + nc;</div>
+<div class="line">      let t        = mr_tileable @2 @(r_out, nc)</div>
+<div class="line">                         (s_out, ‹i: r_out; core.idx2nat i›, s_full)</div>
+<div class="line">                         @((R#T, R#T), (r1, r2), (s1, s2))</div>
+<div class="line">                         (f, R#_0, id @(R#T))</div>
+<div class="line">                         (proj_map @(n_loops, r_out) ‹i: r_out; core.idx2nat i›)</div>
+<div class="line">                         (proj_map @(n_loops, r1) subs_1, proj_map @(n_loops, r2) subs_2)</div>
+<div class="line">                         (a, b);</div>
+<div class="line">      // Schedule (frontend, selected from the parameters — see `dot_schedule`/`dot_schedule_kvec`):</div>
+<div class="line">      // vectorize the contraction iff it is the right operand&#39;s effective fastest axis (x·Wᵀ);</div>
+<div class="line">      // otherwise the last output dim is unit-stride in that operand (A·B) and runs as the vector</div>
+<div class="line">      // loop. Dispatched as an extract over thunks, each materializing its own concretely-scheduled</div>
+<div class="line">      // Tileable: behind a stuck extract the record&#39;s `Out` field would not reduce, so the</div>
+<div class="line">      // reshape&#39;s input could not be checked. `sched#3_8` is the scheduled Tileable&#39;s (possibly</div>
+<div class="line">      // packed) output shape `So`.</div>
+<div class="line">      let kvec = option.is_some (vec.first `== (‹i: nc; core.idx2nat (c2#i)›, fastest_2));</div>
+<div class="line">      lam go_n    (u: []): «s_out; R#T» =</div>
+<div class="line">          let sched = dot_schedule r_out t;</div>
+<div class="line">          reshape (sched#3_8) s_out (materialize sched);</div>
+<div class="line">      lam go_kvec (u: []): «s_out; R#T» =</div>
+<div class="line">          let sched = dot_schedule_kvec r_out t;</div>
+<div class="line">          reshape (sched#3_8) s_out (materialize sched);</div>
+<div class="line">      (go_n, go_kvec)#kvec ();</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md605"></a>
+bmm_impl</h2>
+<p><span class="tt">dot_product_impl</span> with literal ranks <span class="tt">(3, 3)</span>, batching axis 0 and contraction <span class="tt">k</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam bmm_impl (fastest_2: Nat) (R: Ring) {B M K N: Nat} (t1: «B, M, K; R#T», t2: «B, K, N; R#T»): «B, M, N; R#T»</div>
+<div class="line">        = dot_product_impl fastest_2 R (3, 3) (2_3, 1_3, 0_3, 0_3) (t1, t2);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md606"></a>
+product_2d_impl</h2>
+<p><span class="tt">dot_product_impl</span> with literal ranks <span class="tt">(2, 2)</span> and the contraction <span class="tt">k</span>; see there for why the ranks are an explicit group.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam product_2d_impl (fastest_2: Nat) (R: Ring) {m k l: Nat} (t1: «m, k; R#T», t2: «k, l; R#T»): «m, l; R#T»</div>
+<div class="line">        = dot_product_impl fastest_2 R (2, 2) (1_2, 0_2, (), ()) (t1, t2);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md607"></a>
+scatter_step_impl</h2>
+<p>One update: reads <span class="tt">index</span> and <span class="tt">updates</span> at the visited coordinate and inserts the element into the accumulated tensor at the destination it selects.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam scatter_step_impl {T: *, r: Nat}</div>
+<div class="line">                          (s_src: «r; Nat», s_idx: «r; Nat», s_updates: «r; Nat»)</div>
+<div class="line">                          (dim: Idx r)</div>
+<div class="line">                          (visit_indices: «r; I64»)</div>
+<div class="line">                          (acc: «s_src; T», index: «s_idx; Idx (s_src#dim)», updates: «s_updates; T»): «s_src; T» =</div>
+<div class="line">    let index_coords = ‹d: r; core.conv.u (s_idx#d) (visit_indices#d)›;</div>
+<div class="line">    let update_coords = ‹d: r; core.conv.u (s_updates#d) (visit_indices#d)›;</div>
+<div class="line">    let destination_axis_index = core.bitcast I64 (index#index_coords);</div>
+<div class="line">    let update = updates#update_coords;</div>
+<div class="line">    let destination_coords = ‹d: r;</div>
+<div class="line">        let coordinate = core.select (core.icmp.e @r (d, dim), destination_axis_index, visit_indices#d);</div>
+<div class="line">        core.conv.u (s_src#d) coordinate›;</div>
+<div class="line">    acc#destination_coords ← update;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md608"></a>
+slice_map</h2>
+<p><span class="tt">o ↦ (start#d + step#d · o#d)_d</span>: the strided read map.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam slice_map {r: Nat} (start step: «r; Nat») (o: «r; affine.Index»): «r; affine.Index» =</div>
+<div class="line">    ‹d: r; affine.op.add (affine.semiop.mul (o#d, step#d), affine.lit (start#d))›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md609"></a>
+slice_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam slice_impl {T: *, r: Nat} (s_in: «r; Nat»)</div>
+<div class="line">                       (start step s_out: «r; Nat») (input: «s_in; T»): «s_out; T» =</div>
+<div class="line">    map_reduce (s_out, s_out) (tensor_copy, ⊥:T)</div>
+<div class="line">        affine.id (slice_map (start, step),) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md610"></a>
+transpose_map</h2>
+<p><span class="tt">o ↦ (o#(perm#0), …, o#(perm#(r−1)))</span>: input axis <span class="tt">j</span> reads output-loop var <span class="tt">o#(perm#j)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam transpose_map {r: Nat} (perm: «r; Idx r») (o: «r; affine.Index»): «r; affine.Index» = ‹j: r; o#(perm#j)›;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md611"></a>
+transpose_impl</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam transpose_impl {T: *, r: Nat}</div>
+<div class="line">                           (permutation: «r; Idx r») {s: «r; Nat»} (input: «s; T»)</div>
+<div class="line">                         : «transpose_shape (s, permutation); T»</div>
+<div class="line">                         = let out_s = transpose_shape (s, permutation);</div>
+<div class="line">                           map_reduce (out_s, out_s) (tensor_copy, ⊥:T)</div>
+<div class="line">                               affine.id (transpose_map permutation,) input;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md612"></a>
+binary_impl</h2>
+<p><span class="tt">map_impl</span> over two tensors.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam binary_impl {Ti1 Ti2 To: *} (app: [Ti1, Ti2] → To) {r: Nat, s: «r; Nat»} (is: [«s; Ti1», «s; Ti2»]): «s; To» =</div>
+<div class="line">    map_impl app is;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md613"></a>
+select_impl</h2>
+<p><span class="tt">map_impl</span> of <span class="tt">core.select</span> over three tensors.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam select_impl {T: *} {r: Nat, s: «r; Nat»} (is: [«s; Bool», «s; T», «s; T»]): «s; T» =</div>
+<div class="line">    map_impl core.select is;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md614"></a>
+unary_impl</h2>
+<p><span class="tt">map_impl</span> over one tensor.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">priv anx lam unary_impl {Ti To: *} (app: Ti → To) {r: Nat, s: «r; Nat»} (i: «s; Ti»): «s; To» =</div>
+<div class="line">    map_impl app i;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md615"></a>
+Phases</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md616"></a>
+reassoc</h2>
+<p>Reassociates chains of <span class="tt">product_2d</span> with the classic matrix-chain-order dynamic program — but minimizing vector-lane slots instead of scalar multiplications.</p>
+<ul>
+<li>The vector loop runs over a product's trailing extent (<span class="tt">dot_schedule</span>) or, for a transposed operand, over its contraction (<span class="tt">dot_schedule_kvec</span>), and a literal extent is charged rounded up to whole lanes of <span class="tt">vec_width</span> (<span class="tt">-X tensor:vec-width=&lt;n&gt;</span>). A bracketing whose intermediates are too narrow to fill a vector thus pays for the lanes it leaves idle, which is exactly what the multiplication count misses.</li>
+<li>Extents need not be literal: a cost is a polynomial in the symbolic extents, ordered by coefficient-wise <span class="tt">≤</span>, which proves <span class="tt">≤</span> for every instantiation because extents are non-negative.</li>
+<li>That order is only <em>partial</em>, so a chain can have several bracketings that each win for some instantiation — a batch dimension favouring a different one when small than when large. Up to 4 matrices — <span class="tt">-X tensor:reassoc-max=&lt;n&gt;</span>, below <span class="tt">3</span> to switch it off — those survivors are emitted side by side behind a run-time comparison of their costs, so only the winner's thunk runs; a longer chain is only reassociated where one bracketing provably wins for every extent.</li>
+<li>Common sub-products are hash-consed across the alternatives, so the code growth stays well below \(\mathit{Catalan}(n-1)\).</li>
+<li>A product with more than one consumer stays a chain boundary, as pulling it apart would leave it materialized for its other consumers as well.</li>
+<li>A transposed product is part of the chain, as <span class="tt">(A · B)ᵀ = Bᵀ · Aᵀ</span>; so <span class="tt">Q · Kᵀ</span> with <span class="tt">Q = x · wq</span> and <span class="tt">K = x · wk</span> is the chain <span class="tt">x · wq · wkᵀ · xᵀ</span>.</li>
+<li>Reassociation is only exact for an associative ring; on floating-point rings it changes the rounding, just like <span class="tt">-ffast-math</span>.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reassoc: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md617"></a>
+lower_tensor</h2>
+<p>Lowers the derived operations to the core ones by re-applying the matching <span class="tt">_impl</span> annexes.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_tensor: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md618"></a>
+lower_map_reduce</h2>
+<p>Lowers the core operations, <span class="tt">generate</span> included, to their underlying primitives: loops, <span class="tt">extract</span>, <span class="tt">insert</span>, packs, ...</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_map_reduce: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md619"></a>
+fuse_tensor</h2>
+<p>Fuses pure producer <span class="tt">map_reduce</span>s into their consumers' access maps.</p>
+<ul>
+<li>A producer is only fused where the consumer reads it injectively — its access map uses every loop index, possibly strided/shifted — so fusion never recomputes a producer element; strided reads even skip producer elements entirely.</li>
+<li>In the reverse direction, a trailing elementwise map over a reducing <span class="tt">map_reduce</span> is composed into the producer's <span class="tt">post</span> epilogue (the GEMM-epilogue pattern), provided the map is its only consumer.</li>
+</ul>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fuse_tensor: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md620"></a>
+lower_to_mem</h2>
+<p>Bufferizes the core operations onto the <span class="tt">buffer</span> layer: tensor values become <span class="tt">buffer.Buf</span> handles, <span class="tt">extract</span> / <span class="tt">insert</span> / <span class="tt">generate</span> / <span class="tt">map_reduce</span> become <span class="tt">buffer.read</span> / <span class="tt">buffer.write</span> / <span class="tt">buffer.alloc</span> threading <span class="tt">mem.M</span>. This is where a <span class="tt">buf</span> annotation is consumed: it seeds the set of array types that denote tensors, next to the operand and result types of the operations above. <span class="tt">mem.add_mem</span> (scheduled next in the pipeline) threads the memory; run <span class="tt">buffer.lower_ptr</span> afterwards to reach <span class="tt">mem.Ptr</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_to_mem: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>
