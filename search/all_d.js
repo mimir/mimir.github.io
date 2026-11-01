@@ -134,7 +134,7 @@ var searchData=
   ['longjmp_131',['longjmp',['../namespacemim_1_1plug_1_1clos.html#a8c9d1749e78425672fc67a331980da7d',1,'mim::plug::clos::longjmp'],['../clos.html#autotoc_md281',1,'longjmp']]],
   ['look_5fahead_132',['Look_Ahead',['../namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29',1,'mim::ast']]],
   ['lookup_133',['Lookup',['../ord.html#autotoc_md460',1,'']]],
-  ['lookup_134',['lookup',['../classmim_1_1Analysis.html#a5190fee54fca9de9365c6006994df353',1,'mim::Analysis::lookup()'],['../classmim_1_1RWPhase.html#a2b60687536b0f5c3148e1f0ea379b348',1,'mim::RWPhase::lookup()'],['../classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954',1,'mim::Rewriter::lookup()'],['../classmim_1_1Zonker.html#a9baa4de21ec32c764ae27a4d7c99d436',1,'mim::Zonker::lookup()']]],
+  ['lookup_134',['lookup',['../classmim_1_1Analysis.html#a5190fee54fca9de9365c6006994df353',1,'mim::Analysis::lookup()'],['../classmim_1_1RWPhase.html#a2b60687536b0f5c3148e1f0ea379b348',1,'mim::RWPhase::lookup()'],['../classmim_1_1NomErasure.html#aa2a1279b8a2c460e9496be42494f79f3',1,'mim::NomErasure::lookup()'],['../classmim_1_1Rewriter.html#aed2afef37f09545f262d8a8ce5471954',1,'mim::Rewriter::lookup()'],['../classmim_1_1Zonker.html#a9baa4de21ec32c764ae27a4d7c99d436',1,'mim::Zonker::lookup()']]],
   ['lookups_135',['Pointers become map lookups',['../md_docs_2why-cpp.html#autotoc_md169',1,'']]],
   ['loop_20nests_136',['Loop Nests',['../btensor.html#autotoc_md250',1,'']]],
   ['loop_5fdepth_137',['loop_depth',['../classmim_1_1Nest_1_1Node.html#aeba233c5d375cdc2f9e8c07708c09bbc',1,'mim::Nest::Node']]],

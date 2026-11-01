@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classmim_1_1ast_1_1MutualDecl.html#ae8d04111b8a1a00d1d71224ba50e96f6":[2,0,4,0,28,4],
+"classmim_1_1ast_1_1MutualDecl.html#ae8d04111b8a1a00d1d71224ba50e96f6":[4,0,1,0,28,4],
 "classmim_1_1ast_1_1Node.html":[2,0,4,0,29],
 "classmim_1_1ast_1_1Node.html":[4,0,1,0,29],
 "classmim_1_1ast_1_1Node.html#a0ea77b93860b8d8c5cb46c7d2080d0a6":[2,0,4,0,29,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classmim_1_1ast_1_1RuleExpr.html#ac177777c57be07d17916d50b1749ed80":[2,0,4,0,42,3],
 "classmim_1_1ast_1_1RuleExpr.html#ac177777c57be07d17916d50b1749ed80":[4,0,1,0,42,3],
 "classmim_1_1ast_1_1RuleExpr.html#afabb6b30e2072aca3f0ba7ac1d661c0e":[2,0,4,0,42,4],
-"classmim_1_1ast_1_1RuleExpr.html#afabb6b30e2072aca3f0ba7ac1d661c0e":[4,0,1,0,42,4],
-"classmim_1_1ast_1_1Scopes.html":[2,0,4,0,44],
-"classmim_1_1ast_1_1Scopes.html":[4,0,1,0,44]
+"classmim_1_1ast_1_1RuleExpr.html#afabb6b30e2072aca3f0ba7ac1d661c0e":[4,0,1,0,42,4]
 };

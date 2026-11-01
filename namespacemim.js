@@ -206,6 +206,7 @@ var namespacemim =
     [ "eval0", "namespacemim.html#a315d27ac764c7886f4385abe47143dec", null ],
     [ "file_stem", "namespacemim.html#a9fa2465060534febbc42d2cd5a2c1d04", null ],
     [ "has_inferred_type", "namespacemim.html#a43abbf197daa252359e95aa365f51472", null ],
+    [ "has_nom", "namespacemim.html#a5ecb5002090b6edf39e67ae2c2a31280", null ],
     [ "is_associative", "namespacemim.html#abe80f437b1eb4a8af99d7a4e6fff1fe3", null ],
     [ "is_associative", "namespacemim.html#a18ea687fca3cafcb3ae2e8afacdb6a43", null ],
     [ "is_associative", "namespacemim.html#a789eca4a75e2540e6d34f59994f69704", null ],

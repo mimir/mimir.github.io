@@ -1,5 +1,6 @@
 var classmim_1_1NomErasure =
 [
+    [ "lookup", "classmim_1_1NomErasure.html#aa2a1279b8a2c460e9496be42494f79f3", null ],
     [ "rewrite_imm_Name", "classmim_1_1NomErasure.html#aba0349efa5661e60af65c3d5f355ee5a", null ],
     [ "rewrite_imm_Nom", "classmim_1_1NomErasure.html#a31bb015279f6a8b692a511567a93066a", null ],
     [ "rewrite_imm_Struc", "classmim_1_1NomErasure.html#af29fedf3c19a70e4626184b7b8db70be", null ],
