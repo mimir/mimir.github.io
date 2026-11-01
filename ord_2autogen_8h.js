@@ -26,10 +26,10 @@ var ord_2autogen_8h =
       [ "mim::plug::ord::size::set", "namespacemim_1_1plug_1_1ord.html#a2f8d1f32c6daa846d3673454db617c38acdaeeeba9b4a4c5ebf042c0215a7bb0e", null ],
       [ "mim::plug::ord::size::map", "namespacemim_1_1plug_1_1ord.html#a2f8d1f32c6daa846d3673454db617c38a1d78dc8ed51214e518b5114fe24490ae", null ]
     ] ],
-    [ "mim::plug::ord::normalize_contains", "namespacemim_1_1plug_1_1ord.html#a8bccaea168c844dbebc2f252cdf37a11", null ],
-    [ "mim::plug::ord::normalize_get", "namespacemim_1_1plug_1_1ord.html#a663e0eedf428cefa377204fad418d61f", null ],
+    [ "mim::plug::ord::normalize_contains", "namespacemim_1_1plug_1_1ord.html#a32efac9317e2bc2f2b0803caecaff885", null ],
+    [ "mim::plug::ord::normalize_get", "namespacemim_1_1plug_1_1ord.html#af7715aa4d4d8b78f7274ede92ab0fbba", null ],
     [ "mim::plug::ord::normalize_init", "namespacemim_1_1plug_1_1ord.html#acfdfd946d58d1ec4b8773d1e87204a17", null ],
-    [ "mim::plug::ord::normalize_insert", "namespacemim_1_1plug_1_1ord.html#a0a0cd2de80b19c6442cca3a48c25c376", null ],
+    [ "mim::plug::ord::normalize_insert", "namespacemim_1_1plug_1_1ord.html#a978b61a05ab56605a61ead46f5081baf", null ],
     [ "mim::plug::ord::normalize_size", "namespacemim_1_1plug_1_1ord.html#a43293b1d5a0e603e953bfbed048d5a99", null ],
     [ "mim::plug::ord::register_normalizers", "namespacemim_1_1plug_1_1ord.html#a24f01b06e141f8ed2ac155dbdd36fdd9", null ],
     [ "mim::plug::ord::Plugin_Id", "namespacemim_1_1plug_1_1ord.html#a755ae6a7f2ee39cdcf28d325d8bbfd39", null ]
