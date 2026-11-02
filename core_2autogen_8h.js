@@ -95,6 +95,8 @@ var core_2autogen_8h =
     ] ],
     [ "mim::plug::core::idx", "namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a", null ],
     [ "mim::plug::core::idx2nat", "namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2", null ],
+    [ "mim::plug::core::legalize_idx", "namespacemim_1_1plug_1_1core.html#a8375cb6651a461872bef335390554f7a", null ],
+    [ "mim::plug::core::lower_variant", "namespacemim_1_1plug_1_1core.html#a98dc2decfd857543ae392af96a29ac75", null ],
     [ "mim::plug::core::M", "namespacemim_1_1plug_1_1core.html#a235e2ad13b75649e9e189bc2dfe83f42", null ],
     [ "mim::plug::core::minus", "namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313", null ],
     [ "mim::plug::core::mode", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e", [
@@ -106,6 +108,7 @@ var core_2autogen_8h =
       [ "mim::plug::core::mode::US", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2", null ],
       [ "mim::plug::core::mode::nsuw", "namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
     ] ],
+    [ "mim::plug::core::mulrem", "namespacemim_1_1plug_1_1core.html#ad02dfa9728e62294164786e714b7d8c4", null ],
     [ "mim::plug::core::nat", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566", [
       [ "mim::plug::core::nat::add", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a34ec78fcc91ffb1e54cd85e4a0924332", null ],
       [ "mim::plug::core::nat::sub", "namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a8a68dc3e925eacf92633be230722a140", null ],
@@ -137,6 +140,7 @@ var core_2autogen_8h =
       [ "mim::plug::core::pe::is_closed", "namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977a8da26ba680a4bc49270f115861546f0e", null ]
     ] ],
     [ "mim::plug::core::Ptr", "namespacemim_1_1plug_1_1core.html#abc17a099c36f33dac3086c119b44ebf2", null ],
+    [ "mim::plug::core::rem", "namespacemim_1_1plug_1_1core.html#a78ed2a5deb9e09ba5f6b77adc285b4ef", null ],
     [ "mim::plug::core::Select", "namespacemim_1_1plug_1_1core.html#a835876d5284249d5deb8200937d7c564", null ],
     [ "mim::plug::core::select", "namespacemim_1_1plug_1_1core.html#aa90620d89f43753fb2f7907167019bf6", null ],
     [ "mim::plug::core::shr", "namespacemim_1_1plug_1_1core.html#aa277dfbcc34fa69c6e62d136815f3e43", [
@@ -147,6 +151,7 @@ var core_2autogen_8h =
       [ "mim::plug::core::trait::size", "namespacemim_1_1plug_1_1core.html#a699face68306eeb01636f32010cc2d9daf7bd60b75b29d79b660a2859395c1a24", null ],
       [ "mim::plug::core::trait::align", "namespacemim_1_1plug_1_1core.html#a699face68306eeb01636f32010cc2d9daf792d1afb0399dce47533bead9d71a8a", null ]
     ] ],
+    [ "mim::plug::core::Union", "namespacemim_1_1plug_1_1core.html#aa8d11950cafe91ddbbda2256affaf3cd", null ],
     [ "mim::plug::core::wrap", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672ef", [
       [ "mim::plug::core::wrap::add", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa34ec78fcc91ffb1e54cd85e4a0924332", null ],
       [ "mim::plug::core::wrap::sub", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa8a68dc3e925eacf92633be230722a140", null ],
@@ -163,9 +168,11 @@ var core_2autogen_8h =
     [ "mim::plug::core::normalize_icmp", "namespacemim_1_1plug_1_1core.html#a4881a78f9df82cf012cb47de44377105", null ],
     [ "mim::plug::core::normalize_idx", "namespacemim_1_1plug_1_1core.html#ab5864aab9439e6c149631d6f62ce9f7b", null ],
     [ "mim::plug::core::normalize_idx2nat", "namespacemim_1_1plug_1_1core.html#a1ccff032fa2d238d1d413e1c9cc046da", null ],
+    [ "mim::plug::core::normalize_mulrem", "namespacemim_1_1plug_1_1core.html#ae8ce640520a7d30ad3bdf2a09a0445db", null ],
     [ "mim::plug::core::normalize_nat", "namespacemim_1_1plug_1_1core.html#a02c742e75a36b8e924ddff10bcfa34e6", null ],
     [ "mim::plug::core::normalize_ncmp", "namespacemim_1_1plug_1_1core.html#ac5e6745c0724f9ad515f710379700abe", null ],
     [ "mim::plug::core::normalize_pe", "namespacemim_1_1plug_1_1core.html#a1c1bc54436049519a58d20e2c92d0945", null ],
+    [ "mim::plug::core::normalize_rem", "namespacemim_1_1plug_1_1core.html#a8d9a6cbfcf899500e217d7ca17eb0b6e", null ],
     [ "mim::plug::core::normalize_shr", "namespacemim_1_1plug_1_1core.html#af9d9013ee2de9117cc3576555e8df6c5", null ],
     [ "mim::plug::core::normalize_trait", "namespacemim_1_1plug_1_1core.html#a75e69f99817e9657fd72561f0b40c3c3", null ],
     [ "mim::plug::core::normalize_wrap", "namespacemim_1_1plug_1_1core.html#a67845d51427dee2eba8a9b9c6399d7b7", null ],

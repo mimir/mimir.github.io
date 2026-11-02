@@ -10,9 +10,11 @@ var core_2normalizers_8cpp =
     [ "mim::plug::core::normalize_icmp", "namespacemim_1_1plug_1_1core.html#a4881a78f9df82cf012cb47de44377105", null ],
     [ "mim::plug::core::normalize_idx", "namespacemim_1_1plug_1_1core.html#ab5864aab9439e6c149631d6f62ce9f7b", null ],
     [ "mim::plug::core::normalize_idx2nat", "namespacemim_1_1plug_1_1core.html#a1ccff032fa2d238d1d413e1c9cc046da", null ],
+    [ "mim::plug::core::normalize_mulrem", "namespacemim_1_1plug_1_1core.html#ae8ce640520a7d30ad3bdf2a09a0445db", null ],
     [ "mim::plug::core::normalize_nat", "namespacemim_1_1plug_1_1core.html#a02c742e75a36b8e924ddff10bcfa34e6", null ],
     [ "mim::plug::core::normalize_ncmp", "namespacemim_1_1plug_1_1core.html#ac5e6745c0724f9ad515f710379700abe", null ],
     [ "mim::plug::core::normalize_pe", "namespacemim_1_1plug_1_1core.html#a1c1bc54436049519a58d20e2c92d0945", null ],
+    [ "mim::plug::core::normalize_rem", "namespacemim_1_1plug_1_1core.html#a8d9a6cbfcf899500e217d7ca17eb0b6e", null ],
     [ "mim::plug::core::normalize_shr", "namespacemim_1_1plug_1_1core.html#af9d9013ee2de9117cc3576555e8df6c5", null ],
     [ "mim::plug::core::normalize_trait", "namespacemim_1_1plug_1_1core.html#a75e69f99817e9657fd72561f0b40c3c3", null ],
     [ "mim::plug::core::normalize_wrap", "namespacemim_1_1plug_1_1core.html#a67845d51427dee2eba8a9b9c6399d7b7", null ]

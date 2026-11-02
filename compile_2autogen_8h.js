@@ -9,6 +9,7 @@ var compile_2autogen_8h =
     [ "mim::plug::compile::dispatch_normalize", "namespacemim_1_1plug_1_1compile.html#ac4951ff3ac61d4f9befbe4bb4fff43f4", null ],
     [ "mim::plug::compile::eta_conv", "namespacemim_1_1plug_1_1compile.html#a9640a522372d18247def70de720b623e", null ],
     [ "mim::plug::compile::is_loaded", "namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515", null ],
+    [ "mim::plug::compile::join2variant", "namespacemim_1_1plug_1_1compile.html#a46983ffacda7c917f047f373dc3e2ad4", null ],
     [ "mim::plug::compile::lam_spec", "namespacemim_1_1plug_1_1compile.html#a0c8162ec5ec9b298bf5f7dddb25ae391", null ],
     [ "mim::plug::compile::named", "namespacemim_1_1plug_1_1compile.html#ae1149d1839adefdd078f7efbf83e084c", null ],
     [ "mim::plug::compile::nom_erasure", "namespacemim_1_1plug_1_1compile.html#a8eaccd61fd0f59e0cac59a96db62a53b", null ],

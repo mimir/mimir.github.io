@@ -26,7 +26,7 @@ var searchData=
   ['plugin_5fid_23',['plugin_id',['../structmim_1_1ast_1_1AnnexInfo.html#a85bb89003643ce83db9347f08d848dd9',1,'mim::ast::AnnexInfo']]],
   ['plugin_5fname_24',['plugin_name',['../classmim_1_1Driver.html#a2f9018915c1c33d61432b8f968d27f36',1,'mim::Driver']]],
   ['plugin_5fpaths_25',['plugin_paths',['../classmim_1_1Driver.html#ac598c78c88c5e6180c6461e915bb8da7',1,'mim::Driver']]],
-  ['pointee_26',['pointee',['../namespacemim_1_1plug_1_1mem.html#aede1b45bcf193567f1120d04697b8aa7',1,'mim::plug::mem']]],
+  ['pointee_26',['pointee',['../namespacemim_1_1plug_1_1core.html#a66bb966b460d43a27279dacb69860af5',1,'mim::plug::core::pointee()'],['../namespacemim_1_1plug_1_1mem.html#a66bb966b460d43a27279dacb69860af5',1,'mim::plug::mem::pointee()']]],
   ['pop_27',['pop',['../classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257',1,'mim::Rewriter::pop()'],['../classmim_1_1ast_1_1Scopes.html#ad0cdbd28cf71b2c1d3ed73e2254900a2',1,'mim::ast::Scopes::pop()']]],
   ['pop_5fbarrier_28',['pop_barrier',['../classmim_1_1ast_1_1Scopes.html#a05e4de378a76b58a109349d9a7928b7b',1,'mim::ast::Scopes']]],
   ['pop_5fmod_29',['pop_mod',['../classmim_1_1ast_1_1Scopes.html#a0b4d0945b9e813fec10df99f288f3c72',1,'mim::ast::Scopes::pop_mod()'],['../classmim_1_1ast_1_1Emitter.html#a11e2f84c806ee47deb90da9c1f1f34c4',1,'mim::ast::Emitter::pop_mod()']]],

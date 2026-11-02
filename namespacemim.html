@@ -235,6 +235,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classmim_1_1Tuple.html" title="Data constructor for a Sigma.">Tuple</a> / <a class="el" href="classmim_1_1Pack.html" title="A (possibly paramterized) Tuple.">Pack</a> by inserting <a class="el" href="classmim_1_1Insert.html#aec9aab1fd16899f697bc7882d0b6ed06">Insert::value</a> at position <a class="el" href="classmim_1_1Insert.html#ac270b83fbfef80c8723daa7978540f7d">Insert::index</a> into <a class="el" href="classmim_1_1Insert.html#a69ecfd2583f09009424062277a187fdf">Insert::tuple</a>.  <a href="classmim_1_1Insert.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Join" id="r_Join"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Join.html">Join</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A union type whose ops are sorted and deduplicated: <span class="tt">T ∪ T</span> is <span class="tt">T</span>.  <a href="classmim_1_1Join.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Join2Variant" id="r_Join2Variant"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Join2Variant.html">Join2Variant</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites each <a class="el" href="classmim_1_1Join.html" title="A union type whose ops are sorted and deduplicated: T ∪ T is T.">Join</a> <span class="tt">A ∪ B</span> into the <a class="el" href="classmim_1_1Variant.html" title="A sum type whose cases are positional: unlike a Join, they are neither sorted nor deduplicated.">Variant</a> <span class="tt">| A | B</span> whose cases are the <a class="el" href="classmim_1_1Join.html" title="A union type whose ops are sorted and deduplicated: T ∪ T is T.">Join</a>'s ops in their sorted order.  <a href="classmim_1_1Join2Variant.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Lam" id="r_Lam"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Lam.html">Lam</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function.  <a href="classmim_1_1Lam.html#details">More...</a><br /></td></tr>
 <tr class="memitem:LamSpec" id="r_LamSpec"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1LamSpec.html">LamSpec</a></td></tr>
@@ -458,7 +460,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a43abbf197daa252359e95aa365f51472" id="r_a43abbf197daa252359e95aa365f51472"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a43abbf197daa252359e95aa365f51472">has_inferred_type</a> (const <a class="el" href="classmim_1_1Tuple.html">Tuple</a> *tuple)</td></tr>
 <tr class="memdesc:a43abbf197daa252359e95aa365f51472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">tuple's</code> type what <a class="el" href="classmim_1_1World.html#a7b4e60ce92685a9b7d7d140ccaddd495">World::tuple</a> would infer from its ops?  <br /></td></tr>
 <tr class="memitem:a68e9bd75c680a4ffc1e72951931fe987" id="r_a68e9bd75c680a4ffc1e72951931fe987"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a68e9bd75c680a4ffc1e72951931fe987">is_trivial</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam)</td></tr>
-<tr class="memitem:a5ecb5002090b6edf39e67ae2c2a31280" id="r_a5ecb5002090b6edf39e67ae2c2a31280"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a5ecb5002090b6edf39e67ae2c2a31280">has_nom</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memitem:a67e4f473bae8456d99c9c4ffc043c62b" id="r_a67e4f473bae8456d99c9c4ffc043c62b"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Pi.html">Pi</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a67e4f473bae8456d99c9c4ffc043c62b">isa_flattenable</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memdesc:a67e4f473bae8456d99c9c4ffc043c62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The only <a class="el" href="classmim_1_1Pi.html" title="A dependent function type.">Pi</a>s we ever reshape: immutable (non-dependent) continuations.  <br /></td></tr>
 <tr class="memitem:a6eb04dd474a5900c3ce9e9959a5cd450" id="r_a6eb04dd474a5900c3ce9e9959a5cd450"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a6eb04dd474a5900c3ce9e9959a5cd450">is_value_telescope</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
@@ -468,6 +469,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a22cd0a02e944601c54bd019bf8de8659" id="r_a22cd0a02e944601c54bd019bf8de8659"><td class="memItemLeft">static std::tuple&lt; const <a class="el" href="classmim_1_1Var.html">Var</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> * &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a22cd0a02e944601c54bd019bf8de8659">tuple_of_dict</a> (<a class="el" href="classmim_1_1World.html">World</a> &amp;world, <a class="el" href="#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> &amp;v2v)</td></tr>
 <tr class="memitem:a4ddb0b64689ed9de621fe712d8d42411" id="r_a4ddb0b64689ed9de621fe712d8d42411"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a4ddb0b64689ed9de621fe712d8d42411">isa_axes</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *type, auto leaf)</td></tr>
 <tr class="memdesc:a4ddb0b64689ed9de621fe712d8d42411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">type</code> a <code class="param">leaf</code> - or an aggregate of them? This is what makes a shape a shape and an index an index.  <br /></td></tr>
+<tr class="memitem:ad01516ad7841e8ab2878919eaaaea8cd" id="r_ad01516ad7841e8ab2878919eaaaea8cd"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ad01516ad7841e8ab2878919eaaaea8cd">alpha</a> (bool infer, const <a class="el" href="classmim_1_1Def.html">Def</a> *a, const <a class="el" href="classmim_1_1Def.html">Def</a> *b)</td></tr>
 <tr class="memitem:af79e383fb2cb865a83f01c9f93605c8f" id="r_af79e383fb2cb865a83f01c9f93605c8f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af79e383fb2cb865a83f01c9f93605c8f">default_level</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *level)</td></tr>
 <tr class="memitem:a315d27ac764c7886f4385abe47143dec" id="r_a315d27ac764c7886f4385abe47143dec"><td class="memItemLeft">static <a class="el" href="#a81981a41f846c6a9c2a7d3d57fa81189">level_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a315d27ac764c7886f4385abe47143dec">eval0</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *level)</td></tr>
 <tr class="memitem:a216440449d5e911f55cee4c2537f2164" id="r_a216440449d5e911f55cee4c2537f2164"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a216440449d5e911f55cee4c2537f2164">level_of</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *type)</td></tr>
@@ -1253,7 +1255,7 @@ template&lt;class To&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00018">18</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8h_source.html#l00019">19</a> of file <a class="el" href="phase_8h_source.html">phase.h</a>.</p>
 
 </div>
 </div>
@@ -1776,6 +1778,46 @@ template&lt;<a class="el" href="namespace_3globalScope_4.html#classint">int</a> 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ad01516ad7841e8ab2878919eaaaea8cd" name="ad01516ad7841e8ab2878919eaaaea8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad01516ad7841e8ab2878919eaaaea8cd">&#9670;&#160;</a></span>alpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::alpha </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>infer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="union_8cpp_source.html#l00011">11</a> of file <a class="el" href="union_8cpp_source.html">union.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="union_8cpp_source.html#l00011">alpha()</a>, <a class="el" href="check_8h_source.html#l00093">mim::Check::alpha()</a>, and <a class="el" href="check_8h_source.html#l00101">mim::Check::test_alpha()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="union_8cpp_source.html#l00041">mim::Match::accepts()</a>, <a class="el" href="union_8cpp_source.html#l00011">alpha()</a>, <a class="el" href="union_8cpp_source.html#l00015">mim::Join::case_of()</a>, and <a class="el" href="union_8cpp_source.html#l00021">mim::Join::find_case()</a>.</p>
+
+</div>
+</div>
 <a id="ad5652126b13a6b6e69f6b881528dbb5e" name="ad5652126b13a6b6e69f6b881528dbb5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5652126b13a6b6e69f6b881528dbb5e">&#9670;&#160;</a></span>any_free_vars()</h2>
 
@@ -1910,7 +1952,7 @@ template&lt;class... Keys&gt; </div>
 
 <p class="reference">References <a class="el" href="plugin_8h_source.html#l00064">arg_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00227">mim::Driver::arg_nat()</a>, <a class="el" href="ll_8h_source.html#l00325">mim::plug::ll::arg_rt()</a>, <a class="el" href="plugin_8h_source.html#l00064">arg_value()</a>, <a class="el" href="ll_8cpp_source.html#l00029">mim::plug::ll::Emit::start()</a>, and <a class="el" href="nvptx_8cpp_source.html#l00157">mim::plug::nvptx::Emit::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="driver_8cpp_source.html#l00227">mim::Driver::arg_nat()</a>, <a class="el" href="ll_8h_source.html#l00335">mim::plug::ll::arg_rt()</a>, <a class="el" href="plugin_8h_source.html#l00064">arg_value()</a>, <a class="el" href="ll_8cpp_source.html#l00029">mim::plug::ll::Emit::start()</a>, and <a class="el" href="nvptx_8cpp_source.html#l00157">mim::plug::nvptx::Emit::start()</a>.</p>
 
 </div>
 </div>
@@ -2098,11 +2140,11 @@ template&lt;class... Keys&gt; </div>
 
 <p>The name of the file a <a class="el" href="classmim_1_1World.html" title="The World represents the whole program and manages creation of MimIR nodes (Defs).">World</a> is dumped to - and hence the module its own annexes live in. </p>
 
-<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l01471">1471</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l01484">1484</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="dump_8cpp_source.html#l01471">file_stem()</a>, <a class="el" href="world_8h_source.html#l00113">mim::World::name()</a>, and <a class="el" href="world_8cpp_source.html#l00228">mim::World::sym()</a>.</p>
+<p class="reference">References <a class="el" href="dump_8cpp_source.html#l01484">file_stem()</a>, <a class="el" href="world_8h_source.html#l00113">mim::World::name()</a>, and <a class="el" href="world_8cpp_source.html#l00228">mim::World::sym()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="dump_8cpp_source.html#l01473">mim::World::dump()</a>, <a class="el" href="dump_8cpp_source.html#l01471">file_stem()</a>, and <a class="el" href="dump_8cpp_source.html#l01559">mim::World::write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="dump_8cpp_source.html#l01486">mim::World::dump()</a>, <a class="el" href="dump_8cpp_source.html#l01484">file_stem()</a>, and <a class="el" href="dump_8cpp_source.html#l01572">mim::World::write()</a>.</p>
 
 </div>
 </div>
@@ -2131,42 +2173,11 @@ template&lt;class... Keys&gt; </div>
 
 <p>Is <code class="param">tuple's</code> type what <a class="el" href="classmim_1_1World.html#a7b4e60ce92685a9b7d7d140ccaddd495">World::tuple</a> would infer from its ops? </p>
 
-<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00232">232</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="phase_8cpp_source.html#l00235">235</a> of file <a class="el" href="phase_8cpp_source.html">phase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00232">has_inferred_type()</a>, <a class="el" href="check_8cpp_source.html#l00488">mim::Tuple::infer()</a>, <a class="el" href="def_8h_source.html#l00374">mim::Def::ops()</a>, <a class="el" href="def_8h_source.html#l01119">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8cpp_source.html#l00235">has_inferred_type()</a>, <a class="el" href="check_8cpp_source.html#l00488">mim::Tuple::infer()</a>, <a class="el" href="def_8h_source.html#l00374">mim::Def::ops()</a>, <a class="el" href="def_8h_source.html#l01119">mim::Def::type()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00232">has_inferred_type()</a>, and <a class="el" href="phase_8cpp_source.html#l00237">mim::RWPhase::rewrite_imm_Tuple()</a>.</p>
-
-</div>
-</div>
-<a id="a5ecb5002090b6edf39e67ae2c2a31280" name="a5ecb5002090b6edf39e67ae2c2a31280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ecb5002090b6edf39e67ae2c2a31280">&#9670;&#160;</a></span>has_nom()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool mim::has_nom </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="nom__erasure_8cpp_source.html#l00007">7</a> of file <a class="el" href="nom__erasure_8cpp_source.html">nom_erasure.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="nom__erasure_8cpp_source.html#l00007">has_nom()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="nom__erasure_8cpp_source.html#l00007">has_nom()</a>, and <a class="el" href="nom__erasure_8cpp_source.html#l00017">mim::NomErasure::lookup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="phase_8cpp_source.html#l00235">has_inferred_type()</a>, and <a class="el" href="phase_8cpp_source.html#l00240">mim::RWPhase::rewrite_imm_Tuple()</a>.</p>
 
 </div>
 </div>
@@ -2200,7 +2211,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, and <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_8h_source.html#l00078">is_associative()</a>, <a class="el" href="core_8h_source.html#l00095">is_associative()</a>, <a class="el" href="core_8h_source.html#l00093">is_associative()</a>, <a class="el" href="core_8h_source.html#l00094">is_associative()</a>, <a class="el" href="core_8h_source.html#l00096">is_associative()</a>, and <a class="el" href="math_8h_source.html#l00097">is_associative()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_8h_source.html#l00207">is_associative()</a>, <a class="el" href="core_8h_source.html#l00224">is_associative()</a>, <a class="el" href="core_8h_source.html#l00222">is_associative()</a>, <a class="el" href="core_8h_source.html#l00223">is_associative()</a>, <a class="el" href="core_8h_source.html#l00225">is_associative()</a>, and <a class="el" href="math_8h_source.html#l00097">is_associative()</a>.</p>
 
 </div>
 </div>
@@ -2227,9 +2238,9 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00078">78</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00207">207</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
-<p class="reference">References <a class="el" href="core_2autogen_8h_source.html#l00114">mim::plug::core::and_</a>, <a class="el" href="core_2autogen_8h_source.html#l00106">mim::plug::core::f</a>, <a class="el" href="core_2autogen_8h_source.html#l00118">mim::plug::core::fst</a>, <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_2autogen_8h_source.html#l00115">mim::plug::core::nxor</a>, <a class="el" href="core_2autogen_8h_source.html#l00120">mim::plug::core::or_</a>, <a class="el" href="core_2autogen_8h_source.html#l00116">mim::plug::core::snd</a>, <a class="el" href="core_2autogen_8h_source.html#l00121">mim::plug::core::t</a>, and <a class="el" href="core_2autogen_8h_source.html#l00112">mim::plug::core::xor_</a>.</p>
+<p class="reference">References <a class="el" href="core_2autogen_8h_source.html#l00121">mim::plug::core::and_</a>, <a class="el" href="core_2autogen_8h_source.html#l00113">mim::plug::core::f</a>, <a class="el" href="core_2autogen_8h_source.html#l00125">mim::plug::core::fst</a>, <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_2autogen_8h_source.html#l00122">mim::plug::core::nxor</a>, <a class="el" href="core_2autogen_8h_source.html#l00127">mim::plug::core::or_</a>, <a class="el" href="core_2autogen_8h_source.html#l00123">mim::plug::core::snd</a>, <a class="el" href="core_2autogen_8h_source.html#l00128">mim::plug::core::t</a>, and <a class="el" href="core_2autogen_8h_source.html#l00119">mim::plug::core::xor_</a>.</p>
 
 </div>
 </div>
@@ -2256,7 +2267,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00095">95</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00224">224</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, and <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2285,7 +2296,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00093">93</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00222">222</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, and <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2314,7 +2325,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00094">94</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00223">223</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, and <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2343,7 +2354,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00096">96</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00225">225</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, and <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2407,7 +2418,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_8h_source.html#l00095">is_associative()</a>, <a class="el" href="core_8h_source.html#l00093">is_associative()</a>, <a class="el" href="core_8h_source.html#l00094">is_associative()</a>, <a class="el" href="core_8h_source.html#l00096">is_associative()</a>, <a class="el" href="math_8h_source.html#l00097">is_associative()</a>, <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00073">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00070">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00067">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00068">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00069">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00095">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00096">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00094">is_commutative()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00651">mim::plug::core::normalize_bit2()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00478">mim::plug::core::normalize_nat()</a>, and <a class="el" href="core_2normalizers_8cpp_source.html#l00555">mim::plug::core::normalize_ncmp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="axm_8h_source.html#l00177">is_associative()</a>, <a class="el" href="core_8h_source.html#l00224">is_associative()</a>, <a class="el" href="core_8h_source.html#l00222">is_associative()</a>, <a class="el" href="core_8h_source.html#l00223">is_associative()</a>, <a class="el" href="core_8h_source.html#l00225">is_associative()</a>, <a class="el" href="math_8h_source.html#l00097">is_associative()</a>, <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00202">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00199">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00196">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00197">is_commutative()</a>, <a class="el" href="core_8h_source.html#l00198">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00095">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00096">is_commutative()</a>, <a class="el" href="math_8h_source.html#l00094">is_commutative()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00651">mim::plug::core::normalize_bit2()</a>, <a class="el" href="core_2normalizers_8cpp_source.html#l00478">mim::plug::core::normalize_nat()</a>, and <a class="el" href="core_2normalizers_8cpp_source.html#l00555">mim::plug::core::normalize_ncmp()</a>.</p>
 
 </div>
 </div>
@@ -2434,7 +2445,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00073">73</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00202">202</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2463,9 +2474,9 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00070">70</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00199">199</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00220">mim::plug::core::ne</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00243">mim::plug::core::ne</a>.</p>
 
 </div>
 </div>
@@ -2492,7 +2503,7 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00067">67</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00196">196</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 <p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>.</p>
 
@@ -2521,9 +2532,9 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00068">68</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00197">197</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
-<p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00057">mim::plug::core::ne</a>.</p>
+<p class="reference">References <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00064">mim::plug::core::ne</a>.</p>
 
 </div>
 </div>
@@ -2550,9 +2561,9 @@ template&lt;class Id&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00069">69</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00198">198</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
-<p class="reference">References <a class="el" href="core_2autogen_8h_source.html#l00144">mim::plug::core::add</a>, <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00146">mim::plug::core::mul</a>.</p>
+<p class="reference">References <a class="el" href="core_2autogen_8h_source.html#l00151">mim::plug::core::add</a>, <a class="el" href="axm_8h_source.html#l00171">is_commutative()</a>, and <a class="el" href="core_2autogen_8h_source.html#l00153">mim::plug::core::mul</a>.</p>
 
 </div>
 </div>
@@ -3312,7 +3323,7 @@ template&lt;class Id&gt; </div>
 
 <p><a class="el" href="classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71a6d952cd5600ef0b8ed1c5ecf4b4936ff" title="Only this Def; whatever does not inline is referenced by its name.">Def::Dump::Expr</a>: one <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>, one line, no analysis - and the backend of <span class="tt">std::formatter</span> for every <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> pointer. </p>
 
-<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l01440">1440</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dump_8cpp_source.html#l01453">1453</a> of file <a class="el" href="dump_8cpp_source.html">dump.cpp</a>.</p>
 
 </div>
 </div>
@@ -3382,7 +3393,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="def_8cpp_source.html#l00486">mim::Def::deps()</a>, and <a class="el" href="def_8h_source.html#l01155">post_order()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l01220">mim::World::for_each()</a>, <a class="el" href="def_8h_source.html#l01155">post_order()</a>, and <a class="el" href="schedule_8cpp_source.html#l00103">mim::Scheduler::schedule()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l01208">mim::World::for_each()</a>, <a class="el" href="def_8h_source.html#l01155">post_order()</a>, and <a class="el" href="schedule_8cpp_source.html#l00103">mim::Scheduler::schedule()</a>.</p>
 
 </div>
 </div>
@@ -3535,7 +3546,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="def_8cpp_source.html#l00612">mim::Def::arity()</a>, <a class="el" href="def_8h_source.html#l00976">mim::Lit::isa()</a>, <a class="el" href="def_8cpp_source.html#l00647">mim::Def::proj()</a>, <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>, and <a class="el" href="def_8h_source.html#l01105">mim::Def::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="compile_8cpp_source.html#l00038">Named::apply()</a>, <a class="el" href="refly_2normalizers_8cpp_source.html#l00081">mim::plug::refly::normalize_check()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00026">mim::plug::compile::normalize_cond()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00009">mim::plug::compile::normalize_is_loaded()</a>, and <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="compile_8cpp_source.html#l00039">Named::apply()</a>, <a class="el" href="refly_2normalizers_8cpp_source.html#l00081">mim::plug::refly::normalize_check()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00026">mim::plug::compile::normalize_cond()</a>, <a class="el" href="compile_2normalizers_8cpp_source.html#l00009">mim::plug::compile::normalize_is_loaded()</a>, and <a class="el" href="tuple_8cpp_source.html#l00115">tuple2str()</a>.</p>
 
 </div>
 </div>
@@ -3593,7 +3604,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="tuple_8cpp_source.html#l00167">tuple_of_types()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00089">mim::plug::mem::op_lea()</a>, and <a class="el" href="tuple_8cpp_source.html#l00167">tuple_of_types()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mem_8h_source.html#l00028">mim::plug::mem::op_lea()</a>, and <a class="el" href="tuple_8cpp_source.html#l00167">tuple_of_types()</a>.</p>
 
 </div>
 </div>
@@ -3627,7 +3638,7 @@ template&lt;class Id&gt; </div>
 
 <p class="reference">References <a class="el" href="def_8h_source.html#l01144">type_of()</a>, and <a class="el" href="def_8cpp_source.html#l00469">mim::Def::unfold_type()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00416">mim::World::app()</a>, <a class="el" href="emit_8cpp_source.html#l00225">mim::ast::assign()</a>, <a class="el" href="check_8cpp_source.html#l00524">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00507">mim::Def::check()</a>, <a class="el" href="emit_8cpp_source.html#l00698">mim::ast::MatchExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00523">mim::ast::PrefixExpr::emit_()</a>, <a class="el" href="world_8cpp_source.html#l00975">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l01007">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00260">mim::World::lmax()</a>, <a class="el" href="world_8cpp_source.html#l00247">mim::World::lsucc()</a>, <a class="el" href="world_8cpp_source.html#l01030">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l01140">mim::World::name()</a>, <a class="el" href="world_8cpp_source.html#l00887">mim::World::seq()</a>, <a class="el" href="world_8cpp_source.html#l01150">mim::World::struc()</a>, <a class="el" href="world_8cpp_source.html#l00516">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00235">mim::World::type()</a>, <a class="el" href="def_8h_source.html#l01144">type_of()</a>, and <a class="el" href="world_8cpp_source.html#l01128">mim::World::unwrap()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="world_8cpp_source.html#l00416">mim::World::app()</a>, <a class="el" href="emit_8cpp_source.html#l00239">mim::ast::assign()</a>, <a class="el" href="check_8cpp_source.html#l00524">mim::Def::check()</a>, <a class="el" href="check_8cpp_source.html#l00507">mim::Def::check()</a>, <a class="el" href="emit_8cpp_source.html#l00712">mim::ast::MatchExpr::emit_()</a>, <a class="el" href="emit_8cpp_source.html#l00537">mim::ast::PrefixExpr::emit_()</a>, <a class="el" href="world_8cpp_source.html#l00975">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00995">mim::World::inj()</a>, <a class="el" href="world_8cpp_source.html#l00260">mim::World::lmax()</a>, <a class="el" href="world_8cpp_source.html#l00247">mim::World::lsucc()</a>, <a class="el" href="world_8cpp_source.html#l01018">mim::World::match()</a>, <a class="el" href="world_8cpp_source.html#l01128">mim::World::name()</a>, <a class="el" href="world_8cpp_source.html#l00887">mim::World::seq()</a>, <a class="el" href="world_8cpp_source.html#l01138">mim::World::struc()</a>, <a class="el" href="world_8cpp_source.html#l00516">mim::World::tuple()</a>, <a class="el" href="world_8cpp_source.html#l00235">mim::World::type()</a>, <a class="el" href="def_8h_source.html#l01144">type_of()</a>, and <a class="el" href="world_8cpp_source.html#l01116">mim::World::unwrap()</a>.</p>
 
 </div>
 </div>

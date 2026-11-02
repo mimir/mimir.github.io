@@ -229,34 +229,38 @@ eta_conv</h2>
 <p>Combined, idempotent η-reduction/η-expansion (<a class="el" href="classmim_1_1EtaConv.html" title="Combined η-normalization: folds η-reduction and η-expansion into a single, idempotent phase.">mim::EtaConv</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm eta_conv: Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md305"></a>
+join2variant</h2>
+<p>Rewrites each union type <span class="tt">A ∪ B</span> into the variant <span class="tt">| A | B</span> (<a class="el" href="classmim_1_1Join2Variant.html" title="Rewrites each Join A ∪ B into the Variant | A | B whose cases are the Join&#39;s ops in their sorted orde...">mim::Join2Variant</a>). Values that inhabit a union by subsumption are explicitly injected into their case.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm join2variant: Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md306"></a>
 lam_spec</h2>
 <p>Specializes a Lam at its call site by inlining higher-order arguments (<a class="el" href="classmim_1_1LamSpec.html" title="Specializes a Lam at its call site by inlining all Pi-typed (i.e. higher-order) arguments.">mim::LamSpec</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lam_spec: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md306"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md307"></a>
 nom_erasure</h2>
 <p>Eliminates all nominal newtypes so that none reaches a backend (<a class="el" href="classmim_1_1NomErasure.html" title="Eliminates all nominal newtypes, so that no Nom/Name/Struc ever reaches a backend.">mim::NomErasure</a>). <span class="tt">nom N = T</span> degrades to <span class="tt">T</span>, and both <span class="tt">v inj N</span> and <span class="tt">#v</span> to <span class="tt">v</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm nom_erasure: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md307"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md308"></a>
 null</h2>
 <p>Does nothing; useful as an elided placeholder.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm null: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md308"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md309"></a>
 ret_wrap</h2>
 <p>Prepares return continuations for the backend (<a class="el" href="classmim_1_1RetWrap.html">mim::RetWrap</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm ret_wrap: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md309"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
 scalarize</h2>
 <p>Flattens function signatures (<a class="el" href="classmim_1_1Scalarize.html" title="Scalarization (= argument simplification):">mim::Scalarize</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scalarize: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md310"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
 sccp</h2>
 <p>Sparse Conditional Constant Propagation; propagates arbitrary expressions, not just constants (<a class="el" href="classmim_1_1SCCP.html" title="SCCP - Sparse Conditional Constant Propagation - but propagates arbitrary expressions.">mim::SCCP</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sccp: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md311"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
 single_erasure</h2>
 <p>Eliminates all types with exactly one inhabitant so that none reaches a backend (<a class="el" href="classmim_1_1SingleErasure.html" title="Eliminates all types that have exactly one inhabitant, so that no Single/Wrap ever reaches a backend.">mim::SingleErasure</a>). Within an aggregate the component is dropped; elsewhere <span class="tt">«e»</span> degrades to <span class="tt">[]</span> and <span class="tt">‹e›</span> to <span class="tt">()</span>. Besides <span class="tt">«e»</span> this also catches <span class="tt">[]</span> and <span class="tt">Idx 1</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm single_erasure: Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md312"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md313"></a>
 static_arg_opt</h2>
 <p>Drops params that recursive calls merely forward, turning them into loops (<a class="el" href="classmim_1_1StaticArgOpt.html" title="Static Argument Transformation.">mim::StaticArgOpt</a>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm static_arg_opt: Phase;</div>

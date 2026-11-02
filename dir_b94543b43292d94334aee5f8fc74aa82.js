@@ -4,6 +4,7 @@ var dir_b94543b43292d94334aee5f8fc74aa82 =
     [ "beta_red.h", "beta__red_8h.html", "beta__red_8h" ],
     [ "dispatch_normalize.h", "dispatch__normalize_8h.html", "dispatch__normalize_8h" ],
     [ "eta_conv.h", "eta__conv_8h.html", "eta__conv_8h" ],
+    [ "join2variant.h", "join2variant_8h.html", "join2variant_8h" ],
     [ "lam_spec.h", "lam__spec_8h.html", "lam__spec_8h" ],
     [ "nom_erasure.h", "nom__erasure_8h.html", "nom__erasure_8h" ],
     [ "optimize.h", "optimize_8h.html", "optimize_8h" ],

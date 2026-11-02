@@ -18,6 +18,6 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "rule.cpp", "rule_8cpp.html", "rule_8cpp" ],
     [ "schedule.cpp", "schedule_8cpp.html", null ],
     [ "tuple.cpp", "tuple_8cpp.html", "tuple_8cpp" ],
-    [ "union.cpp", "union_8cpp.html", null ],
+    [ "union.cpp", "union_8cpp.html", "union_8cpp" ],
     [ "world.cpp", "world_8cpp.html", "world_8cpp" ]
 ];

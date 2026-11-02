@@ -16,6 +16,7 @@ var classmim_1_1ast_1_1Emitter =
     [ "ctor_names", "classmim_1_1ast_1_1Emitter.html#aeeedbc29e166c6755c4ccb18f9d348e5", null ],
     [ "driver", "classmim_1_1ast_1_1Emitter.html#af63c0e340a1dbef41a23238343e1da1f", null ],
     [ "error", "classmim_1_1ast_1_1Emitter.html#a2784381e0e08286d42a82d1d7e4f579c", null ],
+    [ "find_ctor", "classmim_1_1ast_1_1Emitter.html#ad46292f406ab335ce1b802d9b70f828e", null ],
     [ "find_name", "classmim_1_1ast_1_1Emitter.html#a598e36f52bf0a6bbea09cec7fb72e228", null ],
     [ "nom_decl", "classmim_1_1ast_1_1Emitter.html#ad4d0f5cb6b7dba16bff52cd173e27f84", null ],
     [ "pop_mod", "classmim_1_1ast_1_1Emitter.html#a11e2f84c806ee47deb90da9c1f1f34c4", null ],
