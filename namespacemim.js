@@ -1,6 +1,7 @@
 var namespacemim =
 [
     [ "ast", "namespacemim_1_1ast.html", "namespacemim_1_1ast" ],
+    [ "manifest", "namespacemim_1_1manifest.html", "namespacemim_1_1manifest" ],
     [ "plug", "namespacemim_1_1plug.html", "namespacemim_1_1plug" ],
     [ "ADCE", "classmim_1_1ADCE.html", "classmim_1_1ADCE" ],
     [ "Analysis", "classmim_1_1Analysis.html", "classmim_1_1Analysis" ],
@@ -39,6 +40,7 @@ var namespacemim =
     [ "Lit", "classmim_1_1Lit.html", "classmim_1_1Lit" ],
     [ "LMax", "classmim_1_1LMax.html", "classmim_1_1LMax" ],
     [ "LSucc", "classmim_1_1LSucc.html", "classmim_1_1LSucc" ],
+    [ "Manifest", "namespacemim.html#structmim_1_1Manifest", "namespacemim_structmim_1_1Manifest_dup" ],
     [ "Match", "classmim_1_1Match.html", "classmim_1_1Match" ],
     [ "Name", "classmim_1_1Name.html", "classmim_1_1Name" ],
     [ "Nat", "classmim_1_1Nat.html", "classmim_1_1Nat" ],
@@ -236,6 +238,8 @@ var namespacemim =
     [ "isa_flex_rank", "namespacemim.html#a09c6e231d7bdc610a4957da7fa3cddae", null ],
     [ "known_rank", "namespacemim.html#ad262379562ed8a48bfa97470e6e7c4f5", null ],
     [ "level_of", "namespacemim.html#a216440449d5e911f55cee4c2537f2164", null ],
+    [ "load_manifest", "namespacemim.html#aac48d0813c6e0ff9b1fdecf9f84fcd57", null ],
+    [ "load_manifest", "namespacemim.html#a5c3b15594fa8ff0448902eceea570cd2", null ],
     [ "mim_get_plugin", "namespacemim.html#a77f34c28f8418e4828b4684cbc025e52", null ],
     [ "operator\"\"_n", "namespacemim.html#a659d017e0b42344997eb847f5b6d8f27", null ],
     [ "operator\"\"_s16", "namespacemim.html#a63d7daa748288edee7a99436759d61ca", null ],
@@ -248,6 +252,7 @@ var namespacemim =
     [ "operator\"\"_u8", "namespacemim.html#a8b924f338e447617fa20f2b1f95b7616", null ],
     [ "operator<<", "namespacemim.html#aba1dd89e9049fc3fd5f807e098d95cd9", null ],
     [ "optimize", "namespacemim.html#a60ee93398f76269a406c841b2bb2c306", null ],
+    [ "paths_from_env", "namespacemim.html#a316e5594104be91f17fb87f75731f5c6", null ],
     [ "post_order", "namespacemim.html#a61ddf45bef2304628acddc77ac1c1ecd", null ],
     [ "prec_assoc", "namespacemim.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "rem", "namespacemim.html#abdf57b48740472043af02225a151fc64", null ],
@@ -257,5 +262,13 @@ var namespacemim =
     [ "tuple_of_dict", "namespacemim.html#a22cd0a02e944601c54bd019bf8de8659", null ],
     [ "tuple_of_types", "namespacemim.html#a8edd5d2569579fbdac7077d606a2e2b5", null ],
     [ "type_of", "namespacemim.html#ae6cd84c77b8ffb7880404d77c28f1d81", null ],
-    [ "Num_Nodes", "namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd", null ]
+    [ "Import_Path_Env", "namespacemim.html#ad88421120054d5eb275f3dd111f9a528", null ],
+    [ "Import_Path_Key", "namespacemim.html#ae65012ead16051e561ec94b6b356c01b", null ],
+    [ "Num_Nodes", "namespacemim.html#ab5f8c3cd104922822656e5d29311f0dd", null ],
+    [ "Plugin_Arg_Key", "namespacemim.html#a18e94be76c201b486fe5a3c2cb41a80f", null ],
+    [ "Plugin_Key", "namespacemim.html#a74aeb614e80a21b6c95fc092adb3dd5a", null ],
+    [ "Plugin_Path_Env", "namespacemim.html#ab0cf3235b5e27bbbec39c0ebe6849ce1", null ],
+    [ "Plugin_Path_Key", "namespacemim.html#a18eeb401502210bc8c3316639c628de9", null ],
+    [ "Prefix_Path_Env", "namespacemim.html#a9d5014abc96f8105defb78aef102363a", null ],
+    [ "Prefix_Path_Key", "namespacemim.html#a6b14cb1f6d461cbc6ce3eb18b9b79807", null ]
 ];

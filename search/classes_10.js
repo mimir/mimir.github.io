@@ -1,7 +1,7 @@
 var searchData=
 [
   ['pack_0',['Pack',['../classmim_1_1Pack.html',1,'mim']]],
-  ['parser_1',['Parser',['../classmim_1_1ast_1_1Parser.html',1,'mim::ast']]],
+  ['parser_1',['Parser',['../classmim_1_1ast_1_1Parser.html',1,'mim::ast::Parser'],['../classmim_1_1manifest_1_1Parser.html',1,'mim::manifest::Parser']]],
   ['path_2',['Path',['../classmim_1_1ast_1_1Path.html',1,'mim::ast']]],
   ['pathexpr_3',['PathExpr',['../classmim_1_1ast_1_1PathExpr.html',1,'mim::ast']]],
   ['paths_4',['Paths',['../classmim_1_1Driver_1_1Paths.html',1,'mim::Driver']]],

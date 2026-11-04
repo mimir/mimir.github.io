@@ -66,6 +66,12 @@ var annotated_dup =
         [ "ValDecl", "classmim_1_1ast_1_1ValDecl.html", "classmim_1_1ast_1_1ValDecl" ],
         [ "VariantExpr", "classmim_1_1ast_1_1VariantExpr.html", "classmim_1_1ast_1_1VariantExpr" ]
       ] ],
+      [ "manifest", "namespacemim_1_1manifest.html", [
+        [ "Tok", "classmim_1_1manifest_1_1Tok.html", "classmim_1_1manifest_1_1Tok" ],
+        [ "Lexer", "classmim_1_1manifest_1_1Lexer.html", "classmim_1_1manifest_1_1Lexer" ],
+        [ "Parser", "classmim_1_1manifest_1_1Parser.html", "classmim_1_1manifest_1_1Parser" ],
+        [ "List_Entry", "namespacemim_1_1manifest.html#structmim_1_1manifest_1_1List__Entry", "namespacemim_1_1manifest_structmim_1_1manifest_1_1List__Entry_dup" ]
+      ] ],
       [ "plug", "namespacemim_1_1plug.html", [
         [ "affine", "namespacemim_1_1plug_1_1affine.html", [
           [ "phase", "namespacemim_1_1plug_1_1affine_1_1phase.html", [
@@ -200,6 +206,7 @@ var annotated_dup =
       [ "Lit", "classmim_1_1Lit.html", "classmim_1_1Lit" ],
       [ "LMax", "classmim_1_1LMax.html", "classmim_1_1LMax" ],
       [ "LSucc", "classmim_1_1LSucc.html", "classmim_1_1LSucc" ],
+      [ "Manifest", "namespacemim.html#structmim_1_1Manifest", "namespacemim_structmim_1_1Manifest_dup" ],
       [ "Match", "classmim_1_1Match.html", "classmim_1_1Match" ],
       [ "Name", "classmim_1_1Name.html", "classmim_1_1Name" ],
       [ "Nat", "classmim_1_1Nat.html", "classmim_1_1Nat" ],

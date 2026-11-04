@@ -48,10 +48,13 @@ var hierarchy =
     [ "mim::plug::ord::Key_field", "structmim_1_1plug_1_1ord_1_1Key__field.html", null ],
     [ "mim::plug::tensor::phase::Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", null ],
     [ "fe::Lexer", null, [
-      [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ]
+      [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ],
+      [ "mim::manifest::Lexer", "classmim_1_1manifest_1_1Lexer.html", null ]
     ] ],
+    [ "mim::manifest::List_Entry", "namespacemim_1_1manifest.html#structmim_1_1manifest_1_1List__Entry", null ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
+    [ "mim::Manifest", "namespacemim.html#structmim_1_1Manifest", null ],
     [ "mim::plug::btensor::MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", null ],
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
@@ -63,7 +66,8 @@ var hierarchy =
     [ "mim::plug::option::Opt_ctor", "structmim_1_1plug_1_1option_1_1Opt__ctor.html", null ],
     [ "mim::Out", "classmim_1_1Out.html", null ],
     [ "fe::Parser", null, [
-      [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ]
+      [ "mim::ast::Parser", "classmim_1_1ast_1_1Parser.html", null ],
+      [ "mim::manifest::Parser", "classmim_1_1manifest_1_1Parser.html", null ]
     ] ],
     [ "mim::Driver::Paths", "classmim_1_1Driver_1_1Paths.html", null ],
     [ "mim::PlainNames", "classmim_1_1PlainNames.html", null ],
@@ -373,6 +377,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
+    [ "mim::manifest::Tok", "classmim_1_1manifest_1_1Tok.html", null ],
     [ "std::unordered_map", null, [
       [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
     ] ],

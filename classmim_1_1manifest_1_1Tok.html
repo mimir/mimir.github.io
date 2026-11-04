@@ -1,0 +1,629 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::manifest::Tok Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.5-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1manifest_1_1Tok.html','','classmim_1_1manifest_1_1Tok-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::manifest::Tok Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Token type of the <span class="tt">mim.toml</span> lexer; satisfies fe::Token (see fe::Parser).  
+ <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:acf96e5db36d6d9488030e4d9460ccb76" id="r_acf96e5db36d6d9488030e4d9460ccb76"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> { <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76a4da8b7eb2c3f2007cf8238334401ef51">Nil</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76aff6620b605642fc8a70795b0ff429afc">EoF</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76ad43558618211347eb1e180a76a011d7a">M_id</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76a1bc80ae8bc33264944cbc946554418d3">L_str</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76a54736d35195c3aa2a7159d1cdbe3f872">D_brckt_l</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76aeea124ed662462016d9034366aa0e2d5">D_brckt_r</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76a5cde09f8e1c778aeb1790bb89e72982b">T_assign</a>
+, <br />
+&#160;&#160;<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76ad8cf2c14f3943743fbaee862495fb5d2">T_comma</a>
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acb029cce4dd986297c6e093135eaf3e0" id="r_acb029cce4dd986297c6e093135eaf3e0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acb029cce4dd986297c6e093135eaf3e0">Tok</a> ()</td></tr>
+<tr class="memitem:a6fa515be22035f56f6b6a448a781ca3b" id="r_a6fa515be22035f56f6b6a448a781ca3b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6fa515be22035f56f6b6a448a781ca3b">Tok</a> (Loc loc, <a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> tag)</td></tr>
+<tr class="memitem:a52e1a07b419541bbac88b018ae25f886" id="r_a52e1a07b419541bbac88b018ae25f886"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52e1a07b419541bbac88b018ae25f886">Tok</a> (Loc loc, <a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> tag, std::string str)</td></tr>
+<tr class="memitem:a97d35980726df58fe768ab0c1f3a2bab" id="r_a97d35980726df58fe768ab0c1f3a2bab"><td class="memItemLeft"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a>&#160;</td><td class="memItemRight"><a class="el" href="#a97d35980726df58fe768ab0c1f3a2bab">tag</a> () const</td></tr>
+<tr class="memitem:a107c76e2dce0d5b98c3c798f95d88752" id="r_a107c76e2dce0d5b98c3c798f95d88752"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a107c76e2dce0d5b98c3c798f95d88752">isa</a> (<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> tag) const</td></tr>
+<tr class="memitem:aa91945a329ca6dce316f6c47160ee40a" id="r_aa91945a329ca6dce316f6c47160ee40a"><td class="memItemLeft">Loc&#160;</td><td class="memItemRight"><a class="el" href="#aa91945a329ca6dce316f6c47160ee40a">loc</a> () const</td></tr>
+<tr class="memitem:afbf8b33507755ff0c88f4f0191ebd2da" id="r_afbf8b33507755ff0c88f4f0191ebd2da"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="#afbf8b33507755ff0c88f4f0191ebd2da">str</a> () const</td></tr>
+<tr class="memitem:a2cb7a01d8f503bbf050fd73a6ac200f8" id="r_a2cb7a01d8f503bbf050fd73a6ac200f8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2cb7a01d8f503bbf050fd73a6ac200f8">operator bool</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a303eb51c5a58330b6d990ac167a8b577" id="r_a303eb51c5a58330b6d990ac167a8b577"><td class="memItemLeft">static constexpr std::string_view&#160;</td><td class="memItemRight"><a class="el" href="#a303eb51c5a58330b6d990ac167a8b577">tag2str</a> (<a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> tag)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac7b66ebd29abf065efbd59fdb8221a5f" id="r_ac7b66ebd29abf065efbd59fdb8221a5f"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac7b66ebd29abf065efbd59fdb8221a5f">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> tag)</td></tr>
+<tr class="memitem:a084d84652b01bf2b4605a0d7927653b0" id="r_a084d84652b01bf2b4605a0d7927653b0"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a084d84652b01bf2b4605a0d7927653b0">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="#acb029cce4dd986297c6e093135eaf3e0">Tok</a> tok)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Token type of the <span class="tt">mim.toml</span> lexer; satisfies fe::Token (see fe::Parser). </p>
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00033">33</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="acf96e5db36d6d9488030e4d9460ccb76" name="acf96e5db36d6d9488030e4d9460ccb76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf96e5db36d6d9488030e4d9460ccb76">&#9670;&#160;</a></span>Tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">mim::manifest::Tok::Tag</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76a4da8b7eb2c3f2007cf8238334401ef51" name="acf96e5db36d6d9488030e4d9460ccb76a4da8b7eb2c3f2007cf8238334401ef51"></a>Nil&#160;</td><td class="fielddoc"><p>The "failure" token of a failed Parser::expect. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76aff6620b605642fc8a70795b0ff429afc" name="acf96e5db36d6d9488030e4d9460ccb76aff6620b605642fc8a70795b0ff429afc"></a>EoF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76ad43558618211347eb1e180a76a011d7a" name="acf96e5db36d6d9488030e4d9460ccb76ad43558618211347eb1e180a76a011d7a"></a>M_id&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76a1bc80ae8bc33264944cbc946554418d3" name="acf96e5db36d6d9488030e4d9460ccb76a1bc80ae8bc33264944cbc946554418d3"></a>L_str&#160;</td><td class="fielddoc"><p><a class="el" href="#afbf8b33507755ff0c88f4f0191ebd2da">Tok::str</a> yields its unescaped value. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76a54736d35195c3aa2a7159d1cdbe3f872" name="acf96e5db36d6d9488030e4d9460ccb76a54736d35195c3aa2a7159d1cdbe3f872"></a>D_brckt_l&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76aeea124ed662462016d9034366aa0e2d5" name="acf96e5db36d6d9488030e4d9460ccb76aeea124ed662462016d9034366aa0e2d5"></a>D_brckt_r&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76a5cde09f8e1c778aeb1790bb89e72982b" name="acf96e5db36d6d9488030e4d9460ccb76a5cde09f8e1c778aeb1790bb89e72982b"></a>T_assign&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acf96e5db36d6d9488030e4d9460ccb76ad8cf2c14f3943743fbaee862495fb5d2" name="acf96e5db36d6d9488030e4d9460ccb76ad8cf2c14f3943743fbaee862495fb5d2"></a>T_comma&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00035">35</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acb029cce4dd986297c6e093135eaf3e0" name="acb029cce4dd986297c6e093135eaf3e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb029cce4dd986297c6e093135eaf3e0">&#9670;&#160;</a></span>Tok() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::manifest::Tok::Tok </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00060">60</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="manifest_8cpp_source.html#l00081">operator&lt;&lt;</a>.</p>
+
+</div>
+</div>
+<a id="a6fa515be22035f56f6b6a448a781ca3b" name="a6fa515be22035f56f6b6a448a781ca3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa515be22035f56f6b6a448a781ca3b">&#9670;&#160;</a></span>Tok() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::manifest::Tok::Tok </td>
+          <td>(</td>
+          <td class="paramtype">Loc</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00061">61</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00073">loc()</a>, and <a class="el" href="manifest_8cpp_source.html#l00071">tag()</a>.</p>
+
+</div>
+</div>
+<a id="a52e1a07b419541bbac88b018ae25f886" name="a52e1a07b419541bbac88b018ae25f886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e1a07b419541bbac88b018ae25f886">&#9670;&#160;</a></span>Tok() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::manifest::Tok::Tok </td>
+          <td>(</td>
+          <td class="paramtype">Loc</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00064">64</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00039">L_str</a>, <a class="el" href="manifest_8cpp_source.html#l00073">loc()</a>, <a class="el" href="manifest_8cpp_source.html#l00038">M_id</a>, <a class="el" href="manifest_8cpp_source.html#l00074">str()</a>, and <a class="el" href="manifest_8cpp_source.html#l00071">tag()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a107c76e2dce0d5b98c3c798f95d88752" name="a107c76e2dce0d5b98c3c798f95d88752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107c76e2dce0d5b98c3c798f95d88752">&#9670;&#160;</a></span>isa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::manifest::Tok::isa </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00072">72</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00071">tag()</a>.</p>
+
+</div>
+</div>
+<a id="aa91945a329ca6dce316f6c47160ee40a" name="aa91945a329ca6dce316f6c47160ee40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa91945a329ca6dce316f6c47160ee40a">&#9670;&#160;</a></span>loc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Loc mim::manifest::Tok::loc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00073">73</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="manifest_8cpp_source.html#l00061">Tok()</a>, and <a class="el" href="manifest_8cpp_source.html#l00064">Tok()</a>.</p>
+
+</div>
+</div>
+<a id="a2cb7a01d8f503bbf050fd73a6ac200f8" name="a2cb7a01d8f503bbf050fd73a6ac200f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb7a01d8f503bbf050fd73a6ac200f8">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::manifest::Tok::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00078">78</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00036">Nil</a>.</p>
+
+</div>
+</div>
+<a id="afbf8b33507755ff0c88f4f0191ebd2da" name="afbf8b33507755ff0c88f4f0191ebd2da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf8b33507755ff0c88f4f0191ebd2da">&#9670;&#160;</a></span>str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; mim::manifest::Tok::str </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00074">74</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00039">L_str</a>, and <a class="el" href="manifest_8cpp_source.html#l00038">M_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="manifest_8cpp_source.html#l00064">Tok()</a>.</p>
+
+</div>
+</div>
+<a id="a97d35980726df58fe768ab0c1f3a2bab" name="a97d35980726df58fe768ab0c1f3a2bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d35980726df58fe768ab0c1f3a2bab">&#9670;&#160;</a></span>tag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a> mim::manifest::Tok::tag </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00071">71</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="manifest_8cpp_source.html#l00072">isa()</a>, <a class="el" href="manifest_8cpp_source.html#l00080">operator&lt;&lt;</a>, <a class="el" href="manifest_8cpp_source.html#l00046">tag2str()</a>, <a class="el" href="manifest_8cpp_source.html#l00061">Tok()</a>, and <a class="el" href="manifest_8cpp_source.html#l00064">Tok()</a>.</p>
+
+</div>
+</div>
+<a id="a303eb51c5a58330b6d990ac167a8b577" name="a303eb51c5a58330b6d990ac167a8b577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303eb51c5a58330b6d990ac167a8b577">&#9670;&#160;</a></span>tag2str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::string_view mim::manifest::Tok::tag2str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00046">46</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00040">D_brckt_l</a>, <a class="el" href="manifest_8cpp_source.html#l00041">D_brckt_r</a>, <a class="el" href="manifest_8cpp_source.html#l00037">EoF</a>, <a class="el" href="manifest_8cpp_source.html#l00039">L_str</a>, <a class="el" href="manifest_8cpp_source.html#l00038">M_id</a>, <a class="el" href="manifest_8cpp_source.html#l00036">Nil</a>, <a class="el" href="manifest_8cpp_source.html#l00042">T_assign</a>, <a class="el" href="manifest_8cpp_source.html#l00043">T_comma</a>, and <a class="el" href="manifest_8cpp_source.html#l00071">tag()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="manifest_8cpp_source.html#l00080">operator&lt;&lt;</a>, and <a class="el" href="manifest_8cpp_source.html#l00081">operator&lt;&lt;</a>.</p>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac7b66ebd29abf065efbd59fdb8221a5f" name="ac7b66ebd29abf065efbd59fdb8221a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b66ebd29abf065efbd59fdb8221a5f">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acf96e5db36d6d9488030e4d9460ccb76">Tag</a></td>          <td class="paramname"><span class="paramname"><em>tag</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00080">80</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00071">tag()</a>, and <a class="el" href="manifest_8cpp_source.html#l00046">tag2str()</a>.</p>
+
+</div>
+</div>
+<a id="a084d84652b01bf2b4605a0d7927653b0" name="a084d84652b01bf2b4605a0d7927653b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084d84652b01bf2b4605a0d7927653b0">&#9670;&#160;</a></span>operator&lt;&lt; <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#acb029cce4dd986297c6e093135eaf3e0">Tok</a></td>          <td class="paramname"><span class="paramname"><em>tok</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="manifest_8cpp_source.html#l00081">81</a> of file <a class="el" href="manifest_8cpp_source.html">manifest.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="manifest_8cpp_source.html#l00039">L_str</a>, <a class="el" href="manifest_8cpp_source.html#l00038">M_id</a>, <a class="el" href="manifest_8cpp_source.html#l00046">tag2str()</a>, and <a class="el" href="manifest_8cpp_source.html#l00060">Tok()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/mim/<a class="el" href="manifest_8cpp_source.html">manifest.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="namespacemim_1_1manifest.html">manifest</a></li><li class="navelem"><a href="classmim_1_1manifest_1_1Tok.html">Tok</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -10,6 +10,7 @@ var dir_4c100286d577d9b034a54bf80a8d92ed =
     [ "driver.h", "driver_8h.html", "driver_8h" ],
     [ "flags.h", "flags_8h.html", "flags_8h" ],
     [ "lam.h", "lam_8h.html", "lam_8h" ],
+    [ "manifest.h", "manifest_8h.html", "manifest_8h" ],
     [ "nest.h", "nest_8h.html", "nest_8h" ],
     [ "nom.h", "nom_8h.html", "nom_8h" ],
     [ "phase.h", "phase_8h.html", "phase_8h" ],

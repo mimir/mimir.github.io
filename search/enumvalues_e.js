@@ -9,7 +9,7 @@ var searchData=
   ['neg_6',['neg',['../namespacemim_1_1plug_1_1affine.html#a207279532fb5b73280711baa550e32c6af24c2c15b9d03797c6874986a8d19516',1,'mim::plug::affine::neg'],['../namespacemim_1_1plug_1_1core.html#a7a60a2da3c1482d92696ed97b26f1b4caf24c2c15b9d03797c6874986a8d19516',1,'mim::plug::core::neg']]],
   ['nfst_7',['nfst',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205ac6bc7f69402fca3a754632ffc4dd9780',1,'mim::plug::core']]],
   ['niff_8',['niff',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a9f55314dfb4d78a2ccc362618a05a9c4',1,'mim::plug::core']]],
-  ['nil_9',['Nil',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a4da8b7eb2c3f2007cf8238334401ef51',1,'mim::ast::Tok']]],
+  ['nil_9',['Nil',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a4da8b7eb2c3f2007cf8238334401ef51',1,'mim::ast::Tok::Nil'],['../classmim_1_1manifest_1_1Tok.html#acf96e5db36d6d9488030e4d9460ccb76a4da8b7eb2c3f2007cf8238334401ef51',1,'mim::manifest::Tok::Nil']]],
   ['ninf_10',['ninf',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a4feafbe2844085aa42e95fb6d9ea3de8',1,'mim::plug::math::ninf'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a4feafbe2844085aa42e95fb6d9ea3de8',1,'mim::plug::math::ninf']]],
   ['nnan_11',['nnan',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a8d4e062f52a20018f38b08a87940fc07',1,'mim::plug::math::nnan'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a8d4e062f52a20018f38b08a87940fc07',1,'mim::plug::math::nnan']]],
   ['nom_12',['Nom',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dad4700b697a54fbd43a1a613d32694e7f',1,'mim']]],

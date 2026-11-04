@@ -209,10 +209,12 @@ Options</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-X, --plugin-arg &lt;plugin:arg&gt;</span>  </td><td class="markdownTableBodyNone">Passes an argument to a plugin/phase, e.g. <span class="tt">-X ll:o=output.ll</span>. Repeatable.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">--force-load</span>  </td><td class="markdownTableBodyNone">Loads plugins even on version mismatch.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">--config &lt;path&gt;</span>  </td><td class="markdownTableBodyNone">Reads project configuration from <span class="tt">&lt;path&gt;</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--bootstrap</span>  </td><td class="markdownTableBodyNone">Bootstrap mode: only read <a class="el" href="namespaceMim.html">Mim</a> AST, don't compile to MimIR.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">--force-load</span>  </td><td class="markdownTableBodyNone">Loads plugins even on version mismatch.  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">--bootstrap</span>  </td><td class="markdownTableBodyNone">Bootstrap mode: only read <a class="el" href="namespaceMim.html">Mim</a> AST, don't compile to MimIR.  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-V, --verbose</span>  </td><td class="markdownTableBodyNone">Raises the log level from error to warn, info, verbose, debug, trace; repeatable.  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
@@ -335,11 +337,11 @@ Environment Variables</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Description  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">MIM_PLUGIN_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of plugin search paths, searched after those given via <span class="tt">-P</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">MIM_PLUGIN_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of plugin search paths; adds to the <span class="tt">plugin-path</span>s of the <span class="tt">--config</span> file; <span class="tt">-P</span> paths are searched first.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">MIM_IMPORT_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of import search paths, searched after those given via <span class="tt">-I</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">MIM_IMPORT_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of import search paths; adds to the <span class="tt">import-path</span>s of the <span class="tt">--config</span> file; <span class="tt">-I</span> paths are searched first.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">MIM_PREFIX_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of install prefixes, searched after those given via <span class="tt">--prefix-path</span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">MIM_PREFIX_PATH</span>  </td><td class="markdownTableBodyNone">Colon-separated list of install prefixes; adds to the <span class="tt">prefix-path</span>s of the <span class="tt">--config</span> file; <span class="tt">-R</span> paths are searched first.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">NO_COLOR</span>  </td><td class="markdownTableBodyNone">Disables colored output if set to a non-empty value; wins over the two below.  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -440,22 +442,47 @@ Diagnostics</h1>
 </table>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Plugins</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h2 class="doxsection"><a class="anchor" id="clisearchpaths"></a>
 Search Paths</h2>
 <p><a class="el" href="namespaceMim.html">Mim</a> keeps three separate lookups, because the artifacts they find are different in kind: a plugin library is host-native code, a <span class="tt">.<a class="el" href="namespacemim.html">mim</a></span> is portable source, and a backend runtime belongs to the target.</p>
-<p>Two kinds of entry feed them. A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span> / <span class="tt">-I</span> and their environment variables add. A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself; <span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add one, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>
+<p>Two kinds of entry feed them:</p>
+<ul>
+<li>A <em>plain directory</em> is probed as-is and is what <span class="tt">-P</span>, <span class="tt">-I</span>, their environment variables, and the <span class="tt">--config</span> file add.</li>
+<li>A <em>prefix root</em> stands for an install tree and derives <span class="tt">&lt;root&gt;/lib/mim</span>, <span class="tt">&lt;root&gt;/share/mim</span>, and <span class="tt">&lt;root&gt;/lib/mim/rt</span> from itself.</li>
+</ul>
+<p><span class="tt">--prefix-path</span> / <span class="tt">MIM_PREFIX_PATH</span> add a prefix root, as do the install prefix and the tree <span class="tt">libmim</span> was loaded from.</p>
+<p>For every lookup below, sources add up in priority order: CLI flag, then environment variable, then the <span class="tt">--config</span> file. <span class="tt">plugin-path</span>, <span class="tt">import-path</span>, and <span class="tt">prefix-path</span> resolve independently. Entries keep the order you wrote them, so a path given in several places is searched at its highest-priority position.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Looking for  </th><th class="markdownTableHeadNone">Order  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">libmim_&lt;name&gt;</span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">lib/mim</span>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">libmim_&lt;name&gt;</span>  </td><td class="markdownTableBodyNone">cwd, the plugin search paths (<span class="tt">-P</span>, then <span class="tt">MIM_PLUGIN_PATH</span>, then the <span class="tt">--config</span> file's <span class="tt">plugin-path</span>), then each root's <span class="tt">lib/mim</span>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone">cwd, <span class="tt">-I</span>, <span class="tt">MIM_IMPORT_PATH</span>, <span class="tt">-P</span>, <span class="tt">MIM_PLUGIN_PATH</span>, then each root's <span class="tt">share/mim</span> and <span class="tt">lib/mim</span>  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span>  </td><td class="markdownTableBodyNone">cwd, the import search paths (<span class="tt">-I</span>, then <span class="tt">MIM_IMPORT_PATH</span>, then the <span class="tt">--config</span> file's <span class="tt">import-path</span>), the plugin search paths, then each root's <span class="tt">share/mim</span> and <span class="tt">lib/mim</span>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">runtime modules  </td><td class="markdownTableBodyNone">cwd <span class="tt">rt</span>, <span class="tt">-P</span> and <span class="tt">MIM_PLUGIN_PATH</span> each with <span class="tt">rt</span>, then each root's <span class="tt">lib/mim/rt</span>  </td></tr>
+<td class="markdownTableBodyNone">runtime modules  </td><td class="markdownTableBodyNone">cwd <span class="tt">rt</span>, the plugin search paths each suffixed with <span class="tt">rt</span>, then each root's <span class="tt">lib/mim/rt</span>  </td></tr>
 </table>
 <p>Plugin directories are searched for imports too, since a plugin ships both of its halves together. <span class="tt"><a class="el" href="namespacemim.html">mim</a> -l</span> prints all three lists fully resolved.</p>
-<p>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories. A plugin may also be spelled as a path - <span class="tt">plugin "foo/bar";</span> or <span class="tt">-p foo/bar</span> - which looks for <span class="tt">libmim_bar</span> in the <span class="tt">foo</span> below each entry of the table above. A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</p>
+<ul>
+<li>A <span class="tt">plugin &lt;name&gt;;</span> directive is special: its <span class="tt">&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a></span> is taken from the directory <span class="tt">libmim_&lt;name&gt;</span> was actually loaded from, so the two halves of a plugin can never be paired up across different directories.</li>
+<li>A plugin may also be spelled as a path, <span class="tt">plugin "foo/bar";</span> or <span class="tt">-p foo/bar</span>, which looks for <span class="tt">libmim_bar</span> in the <span class="tt">foo</span> below each entry of the table above.</li>
+<li>A bare <span class="tt">import &lt;name&gt;;</span> has no such anchor and resolves by the table above, so spell an import of your own file as <span class="tt">import "&lt;name&gt;.<a class="el" href="namespacemim.html">mim</a>"</span> if the name could collide with an installed plugin.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="climanifest"></a>
+Project Configuration</h2>
+<p>A project can pin its plugins, search paths, and plugin arguments in a <span class="tt">mim.toml</span> file:</p>
+<div class="fragment"><div class="line">plugin      = [&quot;ll&quot;]</div>
+<div class="line">plugin-path = [&quot;build/plugins&quot;]</div>
+<div class="line">import-path = [&quot;src&quot;, &quot;extra/mim&quot;]</div>
+<div class="line">prefix-path = [&quot;/opt/misc&quot;]</div>
+<div class="line">plugin-arg  = [&quot;ll:o=out.ll&quot;]</div>
+</div><!-- fragment --><ul>
+<li>Keys are the long option names above: <span class="tt">plugin</span>, <span class="tt">plugin-path</span>, <span class="tt">import-path</span>, <span class="tt">prefix-path</span>, <span class="tt">plugin-arg</span>.</li>
+<li>Values are TOML arrays of strings; each key may appear at most once.</li>
+<li><span class="tt">#</span> starts a comment to end of line.</li>
+<li>Relative <span class="tt">*-path</span> entries resolve against the directory of the config file.</li>
+</ul>
+<p>Pass <span class="tt">--config &lt;path&gt;</span> to read the file. Every <span class="tt">*-path</span> key adds to what the command line and environment provide, in the <a class="el" href="#clisearchpaths" title="Search Paths">Search Paths</a> order, so the file supplies the defaults.</p>
 <h2 class="doxsection"><a class="anchor" id="clipluginargs"></a>
 Arguments</h2>
 <p>Plugins - and in particular backends - often need to be configured from the command line. For example, a backend that invokes an external tool may want to forward optimization levels, a target triple for cross-compilation, or library paths. Use <span class="tt">-X</span> / <span class="tt">--plugin-arg</span> for this:</p>
