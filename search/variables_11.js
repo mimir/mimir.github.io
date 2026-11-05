@@ -1,7 +1,7 @@
 var searchData=
 [
   ['s_0',['S',['../namespacemim_1_1plug_1_1tensor.html#ac125649ee86c5cdcdc19362545ccb8be',1,'mim::plug::tensor::PureRead::S'],['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a94ee9afb668a879fc2c2aa1721cf4575',1,'mim::plug::tensor::phase::Slots::S']]],
-  ['s_1',['s',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a',1,'mim::plug::tensor::phase::Split']]],
+  ['s_1',['s',['../namespacemim_1_1plug_1_1tensor_1_1phase.html#ac9514ab15820064bdda1185d8a4b541a',1,'mim::plug::tensor::phase::Split::s'],['../structmim_1_1plug_1_1tensor_1_1TensorType.html#a36e05f7db3f8e989a30bf439ff1de570',1,'mim::plug::tensor::TensorType::s']]],
   ['scalarize_5fthreshold_2',['scalarize_threshold',['../structmim_1_1Flags.html#a39f92287adf5cb956f0696a740ba3fe7',1,'mim::Flags']]],
   ['sched_3',['sched',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a5a8bb7bab88e0acde1e262adcebe5ea1',1,'mim::plug::btensor::MapRedPost']]],
   ['schedule_5f_4',['schedule_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a444d2dc1a0b82b67e759299f63d6348d',1,'mim::plug::ll::Emitter']]],

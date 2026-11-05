@@ -1,5 +1,6 @@
 var tensor_8h =
 [
+    [ "mim::plug::tensor::TensorType", "structmim_1_1plug_1_1tensor_1_1TensorType.html", "structmim_1_1plug_1_1tensor_1_1TensorType" ],
     [ "mim::plug::tensor::PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", [
       [ "map", "namespacemim_1_1plug_1_1tensor.html#af6597e2be81e77563c122c0ee2f3ca49", null ],
       [ "R", "namespacemim_1_1plug_1_1tensor.html#aab61159bddae08a997706aade85f1be9", null ],
@@ -15,5 +16,10 @@ var tensor_8h =
     [ "mim::plug::tensor::isa_transpose_2d", "namespacemim_1_1plug_1_1tensor.html#a49bf3f416a9091d355186223c5988711", null ],
     [ "mim::plug::tensor::lit_perm", "namespacemim_1_1plug_1_1tensor.html#a6db769d0b5d62b6d8d2c9e68513a6f8a", null ],
     [ "mim::plug::tensor::lit_projs", "namespacemim_1_1plug_1_1tensor.html#a08802684d25d84baf17d88c365a9f5e0", null ],
-    [ "mim::plug::tensor::transpose_perm", "namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c", null ]
+    [ "mim::plug::tensor::op_from_array", "namespacemim_1_1plug_1_1tensor.html#abab6ce0a525773e31c94f185c95d9fe5", null ],
+    [ "mim::plug::tensor::op_get", "namespacemim_1_1plug_1_1tensor.html#ab4585852e94ed56dedb30c6a6bcbd689", null ],
+    [ "mim::plug::tensor::op_set", "namespacemim_1_1plug_1_1tensor.html#a43412f9df42be1cd2a3bce03319073dd", null ],
+    [ "mim::plug::tensor::tensor_key", "namespacemim_1_1plug_1_1tensor.html#aa616ba31e63be9862b37ba1085b9badb", null ],
+    [ "mim::plug::tensor::transpose_perm", "namespacemim_1_1plug_1_1tensor.html#a6d2bb12ebdf9116e3f642734fdf64d6c", null ],
+    [ "mim::plug::tensor::type_tensor", "namespacemim_1_1plug_1_1tensor.html#aa389c48c0e8875a06eae76abcb2fc12e", null ]
 ];

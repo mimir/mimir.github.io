@@ -16,5 +16,6 @@ var searchData=
   ['is_5ffinite_13',['is_finite',['../namespacemim_1_1plug_1_1math.html#a26d30486db33a6faa7a3f231c9760059',1,'mim::plug::math']]],
   ['is_5floaded_14',['is_loaded',['../namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515',1,'mim::plug::compile']]],
   ['is_5fsome_15',['is_some',['../namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263',1,'mim::plug::option']]],
-  ['is_5funique_16',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec']]]
+  ['is_5funique_16',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec']]],
+  ['item_17',['item',['../namespacemim_1_1plug_1_1tensor.html#aa2755bb847066b81f1f31f533ed9c1aa',1,'mim::plug::tensor']]]
 ];

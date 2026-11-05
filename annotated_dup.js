@@ -166,6 +166,7 @@ var annotated_dup =
             [ "Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots" ],
             [ "Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", "namespacemim_1_1plug_1_1tensor_1_1phase_structmim_1_1plug_1_1tensor_1_1phase_1_1Split_dup" ]
           ] ],
+          [ "TensorType", "structmim_1_1plug_1_1tensor_1_1TensorType.html", "structmim_1_1plug_1_1tensor_1_1TensorType" ],
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]
         ] ]
       ] ],

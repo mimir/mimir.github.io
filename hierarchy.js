@@ -376,6 +376,7 @@ var hierarchy =
         [ "mim::Branch", "classmim_1_1Branch.html", null ]
       ] ]
     ] ],
+    [ "mim::plug::tensor::TensorType", "structmim_1_1plug_1_1tensor_1_1TensorType.html", null ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "mim::manifest::Tok", "classmim_1_1manifest_1_1Tok.html", null ],
     [ "std::unordered_map", null, [
