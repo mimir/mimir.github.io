@@ -26,6 +26,7 @@ var namespacemim_1_1plug_1_1btensor =
     [ "clamp", "namespacemim_1_1plug_1_1btensor.html#a68fb0a2ed7c67958245f946f07e1b33f", null ],
     [ "concat_extents", "namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d", null ],
     [ "concat_select", "namespacemim_1_1plug_1_1btensor.html#adc675d0c43c37daa23f54fdaff020e9e", null ],
+    [ "copy_buffer", "namespacemim_1_1plug_1_1btensor.html#a0075f8d90a525f6bdc66893cf161c4c4", null ],
     [ "ds_splice", "namespacemim_1_1plug_1_1btensor.html#ae118082de780df1ddea00f39fca6a78d", null ],
     [ "folded_idx", "namespacemim_1_1plug_1_1btensor.html#ad5489055e37845955c0ce3bf34d07dee", null ],
     [ "normalize_map_reduce", "namespacemim_1_1plug_1_1btensor.html#aa1ab9fc65f86afbf46f639f631613034", null ],

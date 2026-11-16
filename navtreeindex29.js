@@ -1,5 +1,6 @@
 var NAVTREEINDEX29 =
 {
+"structmim_1_1ast_1_1AnnexInfo.html#afb2c494ae5ae9057eb651207679f25cf":[2,0,4,0,2,0,0],
 "structmim_1_1ast_1_1AnnexInfo.html#afb2c494ae5ae9057eb651207679f25cf":[4,0,1,0,2,0,0],
 "structmim_1_1ast_1_1AnnexInfo.html#afbf00ed72fef69f6ea539e5ed98214f4":[2,0,4,0,2,12],
 "structmim_1_1ast_1_1AnnexInfo.html#afbf00ed72fef69f6ea539e5ed98214f4":[4,0,1,0,2,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX29 =
 "union_8cpp.html":[5,0,4,1,19],
 "union_8cpp_source.html":[5,0,4,1,19],
 "union_8h.html":[5,0,3,1,20],
-"union_8h_source.html":[5,0,3,1,20],
-"usergroup0.html":[0]
+"union_8h_source.html":[5,0,3,1,20]
 };

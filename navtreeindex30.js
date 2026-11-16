@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"usergroup0.html":[0],
 "usergroup1.html":[1],
 "vec.html":[1,21],
 "vec_2autogen_8h.html":[5,0,0,1,0,0,21,0],
