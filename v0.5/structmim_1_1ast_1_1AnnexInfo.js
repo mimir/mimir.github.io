@@ -1,0 +1,22 @@
+var structmim_1_1ast_1_1AnnexInfo =
+[
+    [ "[struct].sym", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym", [
+      [ "plugin", "structmim_1_1ast_1_1AnnexInfo.html#afb2c494ae5ae9057eb651207679f25cf", null ],
+      [ "tag", "structmim_1_1ast_1_1AnnexInfo.html#a76484548df15c4d70fc544f2162e5f0d", null ]
+    ] ],
+    [ "[struct].id", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id", [
+      [ "tag", "structmim_1_1ast_1_1AnnexInfo.html#af05517c7ddb899fbd9902fa54ee1f8f8", null ]
+    ] ],
+    [ "AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html#ab8cc641e200304dd6ae29bca74962c8a", null ],
+    [ "base", "structmim_1_1ast_1_1AnnexInfo.html#ae25ec452f2ec9cee958dc0605b4455a6", null ],
+    [ "plugin_id", "structmim_1_1ast_1_1AnnexInfo.html#a85bb89003643ce83db9347f08d848dd9", null ],
+    [ "qualified", "structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8", null ],
+    [ "fields", "structmim_1_1ast_1_1AnnexInfo.html#aea4baaea1596dbc00d50f68d6f5a3fb3", null ],
+    [ "fresh", "structmim_1_1ast_1_1AnnexInfo.html#a48446c60c76575b7b3e6e7bb5cc54162", null ],
+    [ "id", "structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793", null ],
+    [ "names", "structmim_1_1ast_1_1AnnexInfo.html#a77d7e3023d9f913e0d0c8113e25264ce", null ],
+    [ "normalizer", "structmim_1_1ast_1_1AnnexInfo.html#a7f272ae0295326d1015bb7e7220e5bd0", null ],
+    [ "pi", "structmim_1_1ast_1_1AnnexInfo.html#af41ba625568bc4967b7c36b886305782", null ],
+    [ "subs", "structmim_1_1ast_1_1AnnexInfo.html#afbf00ed72fef69f6ea539e5ed98214f4", null ],
+    [ "sym", "structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c", null ]
+];
