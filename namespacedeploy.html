@@ -180,6 +180,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a50cbd7ea900872934bb57fa18b3b3265" id="r_a50cbd7ea900872934bb57fa18b3b3265"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a50cbd7ea900872934bb57fa18b3b3265">copy_children</a> (Path source_dir, Path target_dir)</td></tr>
 <tr class="memitem:a7da3bdc90b89dcbe2788127e22eea9ad" id="r_a7da3bdc90b89dcbe2788127e22eea9ad"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a7da3bdc90b89dcbe2788127e22eea9ad">deploy_root</a> (Path build_dir, Path site_dir)</td></tr>
 <tr class="memitem:a273ed67eb2d3b3ad0c774eb9149da4c8" id="r_a273ed67eb2d3b3ad0c774eb9149da4c8"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a273ed67eb2d3b3ad0c774eb9149da4c8">deploy_subdir</a> (Path build_dir, Path site_dir, str name)</td></tr>
+<tr class="memitem:a14d83a6b236f6a8de8f4773f5a18cfa3" id="r_a14d83a6b236f6a8de8f4773f5a18cfa3"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a14d83a6b236f6a8de8f4773f5a18cfa3">update_playground_versions</a> (Path playground_dir)</td></tr>
+<tr class="memitem:aea466e3fe36a11a4452abeba751db9e1" id="r_aea466e3fe36a11a4452abeba751db9e1"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#aea466e3fe36a11a4452abeba751db9e1">deploy_playground</a> (Path build_dir, Path site_dir, str git_ref, str ref_name)</td></tr>
 <tr class="memitem:aa91210938afd9aa6f35645f64b93680f" id="r_aa91210938afd9aa6f35645f64b93680f"><td class="memItemLeft">list[object]&#160;</td><td class="memItemRight"><a class="el" href="#aa91210938afd9aa6f35645f64b93680f">natural_key</a> (str name)</td></tr>
 <tr class="memitem:a732f85f15a31c1539303b21782a9cdf7" id="r_a732f85f15a31c1539303b21782a9cdf7"><td class="memItemLeft">None&#160;</td><td class="memItemRight"><a class="el" href="#a732f85f15a31c1539303b21782a9cdf7">update_versions</a> (Path site_dir)</td></tr>
 <tr class="memitem:acb38204d20e518597be69025ad49086e" id="r_acb38204d20e518597be69025ad49086e"><td class="memItemLeft">subprocess.CompletedProcess[str]&#160;</td><td class="memItemRight"><a class="el" href="#acb38204d20e518597be69025ad49086e">git</a> (Path site_dir, *str args, bool check=True)</td></tr>
@@ -213,11 +215,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Commit site changes and push with a small rebase retry loop.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00107">107</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00146">146</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">References <a class="el" href="deploy_8py_source.html#l00096">git()</a>.</p>
+<p class="reference">References <a class="el" href="deploy_8py_source.html#l00135">git()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00128">deploy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00167">deploy()</a>.</p>
 
 </div>
 </div>
@@ -242,7 +244,7 @@ Variables</h2></td></tr>
 <pre class="fragment">Copy all children from source_dir into target_dir.</pre> 
 <p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00041">41</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, and <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00090">deploy_playground()</a>, <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, and <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>.</p>
 
 </div>
 </div>
@@ -280,9 +282,46 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Deploy docs to the correct location based on the ref.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00128">128</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00167">167</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">References <a class="el" href="deploy_8py_source.html#l00107">commit_and_push()</a>, <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>, and <a class="el" href="deploy_8py_source.html#l00077">update_versions()</a>.</p>
+<p class="reference">References <a class="el" href="deploy_8py_source.html#l00146">commit_and_push()</a>, <a class="el" href="deploy_8py_source.html#l00090">deploy_playground()</a>, <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>, and <a class="el" href="deploy_8py_source.html#l00116">update_versions()</a>.</p>
+
+</div>
+</div>
+<a id="aea466e3fe36a11a4452abeba751db9e1" name="aea466e3fe36a11a4452abeba751db9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea466e3fe36a11a4452abeba751db9e1">&#9670;&#160;</a></span>deploy_playground()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str deploy_playground </td>
+          <td>(</td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>build_dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>site_dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>git_ref</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>ref_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Deploy master at playground/ and released builds beside it at playground/&lt;tag&gt;/.</pre> 
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00090">90</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+
+<p class="reference">References <a class="el" href="deploy_8py_source.html#l00041">copy_children()</a>, <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>, <a class="el" href="deploy_8py_source.html#l00033">remove_path()</a>, and <a class="el" href="deploy_8py_source.html#l00072">update_playground_versions()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00167">deploy()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +348,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="deploy_8py_source.html#l00041">copy_children()</a>, and <a class="el" href="deploy_8py_source.html#l00033">remove_path()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00128">deploy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00167">deploy()</a>.</p>
 
 </div>
 </div>
@@ -341,7 +380,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="deploy_8py_source.html#l00041">copy_children()</a>, and <a class="el" href="deploy_8py_source.html#l00033">remove_path()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00128">deploy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00167">deploy()</a>, and <a class="el" href="deploy_8py_source.html#l00090">deploy_playground()</a>.</p>
 
 </div>
 </div>
@@ -369,9 +408,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Run a git command in the site repository.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00096">96</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00135">135</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00107">commit_and_push()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00146">commit_and_push()</a>.</p>
 
 </div>
 </div>
@@ -390,11 +429,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Program entry point.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00156">156</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00199">199</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">References <a class="el" href="deploy_8py_source.html#l00156">main()</a>, and <a class="el" href="deploy_8py_source.html#l00020">parse_args()</a>.</p>
+<p class="reference">References <a class="el" href="deploy_8py_source.html#l00199">main()</a>, and <a class="el" href="deploy_8py_source.html#l00020">parse_args()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00156">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00199">main()</a>.</p>
 
 </div>
 </div>
@@ -413,9 +452,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Split version names into comparable text and numeric chunks.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00072">72</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00111">111</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00077">update_versions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00116">update_versions()</a>.</p>
 
 </div>
 </div>
@@ -436,7 +475,7 @@ Variables</h2></td></tr>
 <pre class="fragment">Parse command line arguments.</pre> 
 <p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00020">20</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00156">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00199">main()</a>.</p>
 
 </div>
 </div>
@@ -457,7 +496,28 @@ Variables</h2></td></tr>
 <pre class="fragment">Remove a file or directory.</pre> 
 <p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00033">33</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, and <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00090">deploy_playground()</a>, <a class="el" href="deploy_8py_source.html#l00051">deploy_root()</a>, and <a class="el" href="deploy_8py_source.html#l00063">deploy_subdir()</a>.</p>
+
+</div>
+</div>
+<a id="a14d83a6b236f6a8de8f4773f5a18cfa3" name="a14d83a6b236f6a8de8f4773f5a18cfa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14d83a6b236f6a8de8f4773f5a18cfa3">&#9670;&#160;</a></span>update_playground_versions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> None update_playground_versions </td>
+          <td>(</td>
+          <td class="paramtype">Path</td>          <td class="paramname"><span class="paramname"><em>playground_dir</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Write the manifest the playground's version picker reads.</pre> 
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00072">72</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00090">deploy_playground()</a>.</p>
 
 </div>
 </div>
@@ -476,11 +536,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Update versions.json in the root docs and each versioned snapshot.</pre> 
-<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00077">77</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deploy_8py_source.html#l00116">116</a> of file <a class="el" href="deploy_8py_source.html">deploy.py</a>.</p>
 
-<p class="reference">References <a class="el" href="deploy_8py_source.html#l00072">natural_key()</a>.</p>
+<p class="reference">References <a class="el" href="deploy_8py_source.html#l00111">natural_key()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00128">deploy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deploy_8py_source.html#l00167">deploy()</a>.</p>
 
 </div>
 </div>
