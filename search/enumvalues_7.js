@@ -10,5 +10,6 @@ var searchData=
   ['gle_7',['gLE',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985eae9108c689ff05a39ee50cdbf911300c2',1,'mim::plug::core']]],
   ['gle_8',['gLe',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985eabdeec3c370a9d97fb295c2db7c0c7698',1,'mim::plug::core']]],
   ['gle_9',['glE',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea88a95e934a9b0832f07799852a8d0fd1',1,'mim::plug::core']]],
-  ['gle_10',['gle',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea6044f05aa3ccdbb9313c6a26b30036b6',1,'mim::plug::core']]]
+  ['gle_10',['gle',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea6044f05aa3ccdbb9313c6a26b30036b6',1,'mim::plug::core']]],
+  ['gpr_11',['Gpr',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacaca9cfbb1031f99c38ca5d4137ad496aeec',1,'mim::plug::x86::Liveness']]]
 ];

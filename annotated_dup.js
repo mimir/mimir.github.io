@@ -168,6 +168,24 @@ var annotated_dup =
           ] ],
           [ "TensorType", "structmim_1_1plug_1_1tensor_1_1TensorType.html", "structmim_1_1plug_1_1tensor_1_1TensorType" ],
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]
+        ] ],
+        [ "x86", "namespacemim_1_1plug_1_1x86.html", [
+          [ "phase", "namespacemim_1_1plug_1_1x86_1_1phase.html", [
+            [ "Alt", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Alt_dup" ],
+            [ "Color", "classmim_1_1plug_1_1x86_1_1phase_1_1Color.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Color" ],
+            [ "Constrain", "classmim_1_1plug_1_1x86_1_1phase_1_1Constrain.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Constrain" ],
+            [ "Cover", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Cover_dup" ],
+            [ "Demand", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Demand", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Demand_dup" ],
+            [ "ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel" ],
+            [ "Live", "classmim_1_1plug_1_1x86_1_1phase_1_1Live.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Live" ],
+            [ "Rule", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Rule_dup" ],
+            [ "Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule" ],
+            [ "Spilling", "classmim_1_1plug_1_1x86_1_1phase_1_1Spilling.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Spilling" ]
+          ] ],
+          [ "Constraint", "namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Constraint", "namespacemim_1_1plug_1_1x86_structmim_1_1plug_1_1x86_1_1Constraint_dup" ],
+          [ "Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", "classmim_1_1plug_1_1x86_1_1Emit" ],
+          [ "Liveness", "classmim_1_1plug_1_1x86_1_1Liveness.html", "classmim_1_1plug_1_1x86_1_1Liveness" ],
+          [ "Subst", "classmim_1_1plug_1_1x86_1_1Subst.html", "classmim_1_1plug_1_1x86_1_1Subst" ]
         ] ]
       ] ],
       [ "ADCE", "classmim_1_1ADCE.html", "classmim_1_1ADCE" ],
@@ -260,6 +278,13 @@ var annotated_dup =
       [ "World", "classmim_1_1World.html", "classmim_1_1World" ],
       [ "Wrap", "classmim_1_1Wrap.html", "classmim_1_1Wrap" ],
       [ "Zonker", "classmim_1_1Zonker.html", "classmim_1_1Zonker" ]
+    ] ],
+    [ "pbqp", "namespacepbqp.html", [
+      [ "Cost", "classpbqp_1_1Cost.html", "classpbqp_1_1Cost" ],
+      [ "Graph", "classpbqp_1_1Graph.html", "classpbqp_1_1Graph" ],
+      [ "Instance", "namespacepbqp.html#structpbqp_1_1Instance", "namespacepbqp_structpbqp_1_1Instance_dup" ],
+      [ "Solution", "structpbqp_1_1Solution.html", "structpbqp_1_1Solution" ],
+      [ "Statistics", "namespacepbqp.html#structpbqp_1_1Statistics", "namespacepbqp_structpbqp_1_1Statistics_dup" ]
     ] ],
     [ "Named", "classNamed.html", "classNamed" ]
 ];

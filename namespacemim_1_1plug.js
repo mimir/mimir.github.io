@@ -328,5 +328,6 @@ var namespacemim_1_1plug =
       [ "normalize_zip", "namespacemim_1_1plug_1_1vec.html#ae2df07a23e69b8802ebe4ec5df3ae747", null ],
       [ "register_normalizers", "namespacemim_1_1plug_1_1vec.html#a0f5ea338a78435939ef48ab0e1111e1b", null ],
       [ "Plugin_Id", "namespacemim_1_1plug_1_1vec.html#ad3b6bd69dddb4ad52e620122c43f9965", null ]
-    ] ]
+    ] ],
+    [ "x86", "namespacemim_1_1plug_1_1x86.html", "namespacemim_1_1plug_1_1x86" ]
 ];

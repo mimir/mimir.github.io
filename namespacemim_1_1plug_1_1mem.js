@@ -24,7 +24,6 @@ var namespacemim_1_1plug_1_1mem =
     [ "slot", "namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4", null ],
     [ "store", "namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c", null ],
     [ "Str", "namespacemim_1_1plug_1_1mem.html#aea4fdd135841002b9c425f241909a50d", null ],
-    [ "has_leading_mem", "namespacemim_1_1plug_1_1mem.html#a11ae58b3bc8ceff295e6ec2171908569", null ],
     [ "has_mem_ty", "namespacemim_1_1plug_1_1mem.html#a219271eb2c5863473b39356d1bddecd0", null ],
     [ "isa_mem", "namespacemim_1_1plug_1_1mem.html#a153015a4f894c1d3dfdc9f596f9f6d6a", null ],
     [ "mem_def", "namespacemim_1_1plug_1_1mem.html#a8938e009dbeb34a5b0c03063f0fe5109", null ],

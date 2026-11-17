@@ -58,7 +58,8 @@ var menudata={children:[
 {text:"regex",url:"regex.html"},
 {text:"tensor",url:"tensor.html"},
 {text:"tuple",url:"tuple.html"},
-{text:"vec",url:"vec.html"}]},
+{text:"vec",url:"vec.html"},
+{text:"x86",url:"x86.html"}]},
 {text:"📦 Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
@@ -86,6 +87,7 @@ var menudata={children:[
 {text:"u",url:"namespacemembers_u.html#index_u"},
 {text:"v",url:"namespacemembers_v.html#index_v"},
 {text:"w",url:"namespacemembers_w.html#index_w"},
+{text:"x",url:"namespacemembers_x.html#index_x"},
 {text:"z",url:"namespacemembers_z.html#index_z"}]},
 {text:"Functions",url:"namespacemembers_func.html",children:[
 {text:"a",url:"namespacemembers_func.html#index_a"},
@@ -111,6 +113,7 @@ var menudata={children:[
 {text:"w",url:"namespacemembers_func_w.html#index_w"},
 {text:"z",url:"namespacemembers_func_z.html#index_z"}]},
 {text:"Variables",url:"namespacemembers_vars.html",children:[
+{text:"a",url:"namespacemembers_vars.html#index_a"},
 {text:"c",url:"namespacemembers_vars.html#index_c"},
 {text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"i",url:"namespacemembers_vars.html#index_i"},
@@ -120,14 +123,18 @@ var menudata={children:[
 {text:"v",url:"namespacemembers_vars.html#index_v"},
 {text:"w",url:"namespacemembers_vars.html#index_w"}]},
 {text:"Typedefs",url:"namespacemembers_type.html",children:[
+{text:"a",url:"namespacemembers_type.html#index_a"},
 {text:"b",url:"namespacemembers_type.html#index_b"},
+{text:"c",url:"namespacemembers_type.html#index_c"},
 {text:"d",url:"namespacemembers_type.html#index_d"},
+{text:"e",url:"namespacemembers_type.html#index_e"},
 {text:"f",url:"namespacemembers_type.html#index_f"},
 {text:"g",url:"namespacemembers_type.html#index_g"},
 {text:"k",url:"namespacemembers_type.html#index_k"},
 {text:"l",url:"namespacemembers_type.html#index_l"},
 {text:"m",url:"namespacemembers_type.html#index_m"},
 {text:"n",url:"namespacemembers_type.html#index_n"},
+{text:"o",url:"namespacemembers_type.html#index_o"},
 {text:"p",url:"namespacemembers_type.html#index_p"},
 {text:"r",url:"namespacemembers_type.html#index_r"},
 {text:"s",url:"namespacemembers_type.html#index_s"},
@@ -159,6 +166,7 @@ var menudata={children:[
 {text:"u",url:"namespacemembers_enum_u.html#index_u"},
 {text:"v",url:"namespacemembers_enum_v.html#index_v"},
 {text:"w",url:"namespacemembers_enum_w.html#index_w"},
+{text:"x",url:"namespacemembers_enum_x.html#index_x"},
 {text:"z",url:"namespacemembers_enum_z.html#index_z"}]},
 {text:"Enumerator",url:"namespacemembers_eval.html"}]}]},
 {text:"🔧 Concepts",url:"concepts.html"},
@@ -270,6 +278,7 @@ var menudata={children:[
 {text:"i",url:"globals.html#index_i"},
 {text:"k",url:"globals.html#index_k"},
 {text:"m",url:"globals.html#index_m"},
+{text:"p",url:"globals.html#index_p"},
 {text:"r",url:"globals.html#index_r"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"d",url:"globals_func.html#index_d"},
@@ -281,4 +290,5 @@ var menudata={children:[
 {text:"c",url:"globals_defs.html#index_c"},
 {text:"g",url:"globals_defs.html#index_g"},
 {text:"i",url:"globals_defs.html#index_i"},
-{text:"m",url:"globals_defs.html#index_m"}]}]}]}]}
+{text:"m",url:"globals_defs.html#index_m"},
+{text:"p",url:"globals_defs.html#index_p"}]}]}]}]}

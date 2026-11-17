@@ -1,0 +1,391 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/plug/x86/phase/isel.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('isel_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">isel.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="isel_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="graph_8h.html">pbqp/graph.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1x86_1_1phase.html">mim::plug::x86::phase</a> {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">ISel</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// @name Rules</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// A rule rewrites a pattern over `core`/`mem` into an x86 term; the holes of the pattern are typed.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">///@{</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// The type of a rule&#39;s replacement.</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">   16</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">Ty</a> : <a class="code hl_typedef" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a3791fc9668cfd0e7e10650add3cacf6d">   17</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42">Reg</a>,   <span class="comment">///&lt; What the pattern&#39;s root yields, in registers.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a095a1b43effec73955e31e790438de49">   18</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">Base</a>,  <span class="comment">///&lt; `x86.Base`.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a88fa71f0a6e0dfedbb46d91cc0b37a50">   19</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">Index</a>, <span class="comment">///&lt; `x86.Index`.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"></span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// The type of a hole.</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">   23</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">Want</a> : <a class="code hl_typedef" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d">   24</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42">Reg</a>,   <span class="comment">///&lt; A register.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b">   25</a></span>    <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b">Imm</a>,   <span class="comment">///&lt; A literal that fits an immediate; it is a pattern node rather than a hole.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49">   26</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">Base</a>,  <span class="comment">///&lt; `x86.Base`.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a88fa71f0a6e0dfedbb46d91cc0b37a50">   27</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">Index</a>, <span class="comment">///&lt; `x86.Index`.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3649a5e29ad648f3cfe3eea1a93d2f78">   28</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#ac3844dd04d0570654cc5c94a9e7ef45d">Addr</a>,  <span class="comment">///&lt; `Addr i` for any `i`.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// What a match needs of the operand @p def: a hole of type @p want or, if @p inner is set, that inner pattern node.</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html">   32</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Demand">Demand</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aaa6cd494a7163c100660eb9d1e2a4fc0">   33</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aaa6cd494a7163c100660eb9d1e2a4fc0">def</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a26cece713a5b35a0e0d4239f41d9f868">   34</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">Want</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a26cece713a5b35a0e0d4239f41d9f868">want</a> = <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d">Want::Reg</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae43f2733949f30f1472e3e8a407ae02b">   35</a></span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae43f2733949f30f1472e3e8a407ae02b">inner</a> = 0;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/// An inner node a match covers, with what it needs of its own operands.</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html">   39</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover">Cover</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a86f1dc0024ccb3cce7e6433e4cfe6939">   40</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a86f1dc0024ccb3cce7e6433e4cfe6939">def</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#af6d54d12df565e6b19dd80586dea6fdf">   41</a></span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#af6d54d12df565e6b19dd80586dea6fdf">inner</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a3785889cd50ec0410799bdc46f0c1d9b">   42</a></span>    fe::Vector&lt;Demand&gt; <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a3785889cd50ec0410799bdc46f0c1d9b">demands</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">Rule</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/// An alternative of a PBQP node: a match rooted there, or the class of all matches covering it as the same inner node.</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a447f3bec732675be40dc37c592ac073a">   49</a></span>    <span class="keyword">const</span> <a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">Rule</a>* <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a447f3bec732675be40dc37c592ac073a">rule</a> = <span class="keyword">nullptr</span>; <span class="comment">///&lt; `nullptr` for an inner alternative.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a71ff8e6ddb883a88b47e2ca29e3d092f">   50</a></span>    <a class="code hl_typedef" href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">u64</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a71ff8e6ddb883a88b47e2ca29e3d092f">inner</a>        = 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a83b45dbbc5043df9b7a8cf0bf137884f">   51</a></span>    <a class="code hl_class" href="classpbqp_1_1Cost.html">pbqp::Cost</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a83b45dbbc5043df9b7a8cf0bf137884f">cost</a>  = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a363c3640de4614299d049141a4351bec">   52</a></span>    fe::Vector&lt;Demand&gt; <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a363c3640de4614299d049141a4351bec">demands</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aba5eb7855c89d2fbfb0c8f561ffa7495">   53</a></span>    fe::Vector&lt;Cover&gt; <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aba5eb7855c89d2fbfb0c8f561ffa7495">covers</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#af96ce7f3cdfcd133564275ce73c9b4c9">   56</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacemim_1_1plug_1_1x86_1_1phase.html#af96ce7f3cdfcd133564275ce73c9b4c9">Alts</a> = fe::Vector&lt;Alt&gt;;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html">   58</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">Rule</a> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a92473e6af29fd5c5aed09ad49a76ae35">   59</a></span>    std::string_view <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a92473e6af29fd5c5aed09ad49a76ae35">name</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a77e0e9fe18fcf53b947429b399e14c47">   60</a></span>    <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">Ty</a> <a class="code hl_variable" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a77e0e9fe18fcf53b947429b399e14c47">type</a>;<span class="comment"></span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    /// Builds the replacement of the match @p alt rooted at the old_world() Def @p root.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a4374575dac8f8109160d3147ccf47a08">   62</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* (*build)(<a class="code hl_class" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">ISel</a>&amp;, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* root, <span class="keyword">const</span> <a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&amp; alt);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};<span class="comment"></span></div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">///@}</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/// Rewrites the `core` and `mem` operations of a lowered world into x86 instructions.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/// Pointers and `Nat` become `I64`; everything else this phase does not know is an error.</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">///</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/// Selection is a cover of the program by matches of rules, found as a PBQP (Buchwald &amp; Zwinkau, CASES 2010), where</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/// the holes of a pattern are typed.</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/// Every operation is a node; its alternatives are the matches rooted there and the inner nodes other matches cover it</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/// with.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/// An edge prices the conversion between the type of the operand&#39;s rule and the type of the user&#39;s hole.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/// The first alternative of every node is an atomic rule, so choosing it everywhere is a valid cover.</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">   75</a></span><span class="keyword">class </span><a class="code hl_class" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">ISel</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">using </span><a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase::RWPhase</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"></span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    /// `base + index * scale + disp` in new_world(); a missing `index` is `nullptr`.</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">   80</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address">Address</a> {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89">   81</a></span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_variable" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89">base</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">   82</a></span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_variable" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">index</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766">   83</a></span>        <a class="code hl_typedef" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a> <a class="code hl_variable" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766">scale</a>         = 1;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05">   84</a></span>        <a class="code hl_typedef" href="namespacemim.html#a82bd82851e0f25f0390ebe12e4963ed4">s64</a> <a class="code hl_variable" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05">disp</a>         = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    };</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"></span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">    /// @name For Rules</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">    ///@{</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a94f48bbb140a66ae3e5c1e92fbe95409">   89</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a94f48bbb140a66ae3e5c1e92fbe95409">uses</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">auto</span> n = fe::lookup(uses_, def);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> n ? *n : 0;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }<span class="comment"></span></div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">    /// The `mem.load` of old_world() that @p def is the value of, if nothing else uses this value.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a951548e0aa75be02afe354860eba18f7">sole_load</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    /// The old_world() operand @p def as @p want in new_world().</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a403959dcafffc61926b8a1dcd62bd46a">hole</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">Want</a> want = <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d">Want::Reg</a>);<span class="comment"></span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">    /// The rewritten @p def with a `Nat` literal as `I64`, for value operands.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18eca0936c5487e436b02b3c6494b268">val</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def);<span class="comment"></span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">    /// Zero-extends @p x of new_world() to `Idx d`, folding literals.</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9b77c732fbc570eb366b65044f6782a7">zext</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* d, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* x);<span class="comment"></span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    /// The `x86.addr`/`x86.index` term of @p a.</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#a91e592b260f1dde7393267aac7d888ea">addr</a>(Address a);<span class="comment"></span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    /// The Address of an `x86.addr`/`x86.index` term.</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    Address <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abee1da7757675ad645a532ac57e74bc6">split</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86.html#a91e592b260f1dde7393267aac7d888ea">addr</a>);<span class="comment"></span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">    /// @p a as a value.</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9423dea2dda8de5d52580639e54f002e">materialize</a>(Address a);<span class="comment"></span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">    ///@}</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ad26c917382680ba164a01a4dd3c76fb6">analyze</a>() final;<span class="comment"></span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">    /// Counts in `uses_` how often each Def of old_world() occurs as an operand.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> count(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*);<span class="comment"></span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">    /// The node Def @p def stands for: a load stands for its value.</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* key(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) const;<span class="comment"></span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    /// The chosen alternative of the node @p def.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    const <a class="code hl_struct" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>* choice(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) const;<span class="comment"></span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    /// The replacement of the node @p def as its rule built it.</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* select(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def);<span class="comment"></span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    /// The replacement of @p def in registers, if @p def is a node.</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* selected(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def);<span class="comment"></span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    /// @p x of type @p from as @p want.</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* convert(const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* x, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">Ty</a> from, <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">Want</a> want);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a5fa1c6b1902622746d7fa1eb01b78435">  124</a></span>    const <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a5fa1c6b1902622746d7fa1eb01b78435">rewrite_imm_Nat</a>(const <a class="code hl_class" href="classmim_1_1Nat.html">Nat</a>*) final { <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">new_world</a>().<a class="code hl_function" href="classmim_1_1World.html#ad2b448af8ad7fa12f99671987d1cae80">type_i64</a>(); }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a5d89189d978799f3a546fcbe175c898e">rewrite_imm_Lit</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Lit.html">Lit</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#acb8a90e6f863d8f5ebe1dddaa08a9763">rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ac18c41ce3696d503aa73abf5c87f7c65">rewrite_imm_Extract</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Extract.html">Extract</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ade4499a425ba446d1b4c2b6d3540f72a">coerce_leaf</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;size_t&gt;</a> uses_;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a> counted_;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;Alts&gt;</a> alts_;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;size_t&gt;</a> choices_;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_typedef" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> roots_; <span class="comment">///&lt; inner node → root of the match covering it</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_typedef" href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">Def2Def</a> repls_;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>} <span class="comment">// namespace mim::plug::x86::phase</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00289">def.h:289</a></div></div>
+<div class="ttc" id="aclassmim_1_1Extract_html"><div class="ttname"><a href="classmim_1_1Extract.html">mim::Extract</a></div><div class="ttdoc">Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00360">tuple.h:360</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html"><div class="ttname"><a href="classmim_1_1Lit.html">mim::Lit</a></div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00948">def.h:948</a></div></div>
+<div class="ttc" id="aclassmim_1_1Nat_html"><div class="ttname"><a href="classmim_1_1Nat.html">mim::Nat</a></div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01000">def.h:1000</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a0f7249ac3c85d2f2b1d7c72455c61b19"><div class="ttname"><a href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19">mim::RWPhase::new_world</a></div><div class="ttdeci">World &amp; new_world()</div><div class="ttdoc">Create new Defs into this.</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00393">phase.h:393</a></div></div>
+<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00335">phase.h:335</a></div></div>
+<div class="ttc" id="aclassmim_1_1World_html_ad2b448af8ad7fa12f99671987d1cae80"><div class="ttname"><a href="classmim_1_1World.html#ad2b448af8ad7fa12f99671987d1cae80">mim::World::type_i64</a></div><div class="ttdeci">const Def * type_i64()</div><div class="ttdef"><b>Definition</b> <a href="world_8h_source.html#l00644">world.h:644</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">mim::plug::x86::phase::ISel</a></div><div class="ttdoc">Rewrites the core and mem operations of a lowered world into x86 instructions.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">isel.h:75</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a18eca0936c5487e436b02b3c6494b268"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18eca0936c5487e436b02b3c6494b268">mim::plug::x86::phase::ISel::val</a></div><div class="ttdeci">const Def * val(const Def *def)</div><div class="ttdoc">The rewritten def with a Nat literal as I64, for value operands.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00716">isel.cpp:716</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a18f8c6ce8d83b57db28a70d15c1e8d89"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89">mim::plug::x86::phase::ISel::Address::base</a></div><div class="ttdeci">const Def * base</div><div class="ttdef"><b>Definition</b> <a href="#l00081">isel.h:81</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a348f2023f10800282a1495f4448b9766"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766">mim::plug::x86::phase::ISel::Address::scale</a></div><div class="ttdeci">u8 scale</div><div class="ttdef"><b>Definition</b> <a href="#l00083">isel.h:83</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a403959dcafffc61926b8a1dcd62bd46a"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a403959dcafffc61926b8a1dcd62bd46a">mim::plug::x86::phase::ISel::hole</a></div><div class="ttdeci">const Def * hole(const Def *def, Want want=Want::Reg)</div><div class="ttdoc">The old_world() operand def as want in new_world().</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00697">isel.cpp:697</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a5d89189d978799f3a546fcbe175c898e"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a5d89189d978799f3a546fcbe175c898e">mim::plug::x86::phase::ISel::rewrite_imm_Lit</a></div><div class="ttdeci">const Def * rewrite_imm_Lit(const Lit *) final</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00752">isel.cpp:752</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a5fa1c6b1902622746d7fa1eb01b78435"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a5fa1c6b1902622746d7fa1eb01b78435">mim::plug::x86::phase::ISel::rewrite_imm_Nat</a></div><div class="ttdeci">const Def * rewrite_imm_Nat(const Nat *) final</div><div class="ttdef"><b>Definition</b> <a href="#l00124">isel.h:124</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a836e8da83468e5403894427602340a41"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">mim::plug::x86::phase::ISel::Address::index</a></div><div class="ttdeci">const Def * index</div><div class="ttdef"><b>Definition</b> <a href="#l00082">isel.h:82</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::plug::x86::phase::ISel::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00335">phase.h:335</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a9423dea2dda8de5d52580639e54f002e"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9423dea2dda8de5d52580639e54f002e">mim::plug::x86::phase::ISel::materialize</a></div><div class="ttdeci">const Def * materialize(Address a)</div><div class="ttdoc">a as a value.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00744">isel.cpp:744</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a94f48bbb140a66ae3e5c1e92fbe95409"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a94f48bbb140a66ae3e5c1e92fbe95409">mim::plug::x86::phase::ISel::uses</a></div><div class="ttdeci">size_t uses(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="#l00089">isel.h:89</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a951548e0aa75be02afe354860eba18f7"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a951548e0aa75be02afe354860eba18f7">mim::plug::x86::phase::ISel::sole_load</a></div><div class="ttdeci">const App * sole_load(const Def *def) const</div><div class="ttdoc">The mem.load of old_world() that def is the value of, if nothing else uses this value.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00658">isel.cpp:658</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a9b77c732fbc570eb366b65044f6782a7"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9b77c732fbc570eb366b65044f6782a7">mim::plug::x86::phase::ISel::zext</a></div><div class="ttdeci">const Def * zext(const Def *d, const Def *x)</div><div class="ttdoc">Zero-extends x of new_world() to Idx d, folding literals.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00711">isel.cpp:711</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_a9c9274576cf9f31bd7b0c92c26970a05"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05">mim::plug::x86::phase::ISel::Address::disp</a></div><div class="ttdeci">s64 disp</div><div class="ttdef"><b>Definition</b> <a href="#l00084">isel.h:84</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_abee1da7757675ad645a532ac57e74bc6"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abee1da7757675ad645a532ac57e74bc6">mim::plug::x86::phase::ISel::split</a></div><div class="ttdeci">Address split(const Def *addr)</div><div class="ttdoc">The Address of an x86.addr/x86.index term.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00722">isel.cpp:722</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_ac18c41ce3696d503aa73abf5c87f7c65"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ac18c41ce3696d503aa73abf5c87f7c65">mim::plug::x86::phase::ISel::rewrite_imm_Extract</a></div><div class="ttdeci">const Def * rewrite_imm_Extract(const Extract *) final</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00763">isel.cpp:763</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_acb8a90e6f863d8f5ebe1dddaa08a9763"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#acb8a90e6f863d8f5ebe1dddaa08a9763">mim::plug::x86::phase::ISel::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00768">isel.cpp:768</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_ad26c917382680ba164a01a4dd3c76fb6"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ad26c917382680ba164a01a4dd3c76fb6">mim::plug::x86::phase::ISel::analyze</a></div><div class="ttdeci">bool analyze() final</div><div class="ttdoc">Runs the optional pre-analysis on old_world(), typically to a fixed point, before rewriting begins.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00554">isel.cpp:554</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_ade4499a425ba446d1b4c2b6d3540f72a"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ade4499a425ba446d1b4c2b6d3540f72a">mim::plug::x86::phase::ISel::coerce_leaf</a></div><div class="ttdeci">const Def * coerce_leaf(const Def *, const Def *) final</div><div class="ttdoc">Converts the new leaf new_val into the new new_type, whose representation this phase changed.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00757">isel.cpp:757</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1x86_1_1phase_1_1ISel_html_structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address"><div class="ttname"><a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address">mim::plug::x86::phase::ISel::Address</a></div><div class="ttdoc">base + index * scale + disp in new_world(); a missing index is nullptr.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">isel.h:80</a></div></div>
+<div class="ttc" id="aclasspbqp_1_1Cost_html"><div class="ttname"><a href="classpbqp_1_1Cost.html">pbqp::Cost</a></div><div class="ttdoc">A saturating cost; Cost::inf forbids an option or option pair.</div><div class="ttdef"><b>Definition</b> <a href="graph_8h_source.html#l00027">graph.h:27</a></div></div>
+<div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html">mim::plug::x86::phase</a></div><div class="ttdef"><b>Definition</b> <a href="color_8h_source.html#l00006">color.h:6</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a26cece713a5b35a0e0d4239f41d9f868"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a26cece713a5b35a0e0d4239f41d9f868">mim::plug::x86::phase::Demand::want</a></div><div class="ttdeci">Want want</div><div class="ttdef"><b>Definition</b> <a href="#l00034">isel.h:34</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a363c3640de4614299d049141a4351bec"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a363c3640de4614299d049141a4351bec">mim::plug::x86::phase::Alt::demands</a></div><div class="ttdeci">fe::Vector&lt; Demand &gt; demands</div><div class="ttdef"><b>Definition</b> <a href="#l00052">isel.h:52</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a3785889cd50ec0410799bdc46f0c1d9b"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a3785889cd50ec0410799bdc46f0c1d9b">mim::plug::x86::phase::Cover::demands</a></div><div class="ttdeci">fe::Vector&lt; Demand &gt; demands</div><div class="ttdef"><b>Definition</b> <a href="#l00042">isel.h:42</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a447f3bec732675be40dc37c592ac073a"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a447f3bec732675be40dc37c592ac073a">mim::plug::x86::phase::Alt::rule</a></div><div class="ttdeci">const Rule * rule</div><div class="ttdoc">nullptr for an inner alternative.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">isel.h:49</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a71ff8e6ddb883a88b47e2ca29e3d092f"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a71ff8e6ddb883a88b47e2ca29e3d092f">mim::plug::x86::phase::Alt::inner</a></div><div class="ttdeci">u64 inner</div><div class="ttdef"><b>Definition</b> <a href="#l00050">isel.h:50</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a77e0e9fe18fcf53b947429b399e14c47"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a77e0e9fe18fcf53b947429b399e14c47">mim::plug::x86::phase::Rule::type</a></div><div class="ttdeci">Ty type</div><div class="ttdef"><b>Definition</b> <a href="#l00060">isel.h:60</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a83b45dbbc5043df9b7a8cf0bf137884f"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a83b45dbbc5043df9b7a8cf0bf137884f">mim::plug::x86::phase::Alt::cost</a></div><div class="ttdeci">pbqp::Cost cost</div><div class="ttdef"><b>Definition</b> <a href="#l00051">isel.h:51</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a86f1dc0024ccb3cce7e6433e4cfe6939"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a86f1dc0024ccb3cce7e6433e4cfe6939">mim::plug::x86::phase::Cover::def</a></div><div class="ttdeci">const Def * def</div><div class="ttdef"><b>Definition</b> <a href="#l00040">isel.h:40</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a92473e6af29fd5c5aed09ad49a76ae35"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a92473e6af29fd5c5aed09ad49a76ae35">mim::plug::x86::phase::Rule::name</a></div><div class="ttdeci">std::string_view name</div><div class="ttdef"><b>Definition</b> <a href="#l00059">isel.h:59</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_a94aba43892c6e6d6e8ccd05c069bc194"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">mim::plug::x86::phase::Ty</a></div><div class="ttdeci">Ty</div><div class="ttdoc">The type of a rule&#39;s replacement.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">isel.h:16</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_aaa6cd494a7163c100660eb9d1e2a4fc0"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#aaa6cd494a7163c100660eb9d1e2a4fc0">mim::plug::x86::phase::Demand::def</a></div><div class="ttdeci">const Def * def</div><div class="ttdef"><b>Definition</b> <a href="#l00033">isel.h:33</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_aba5eb7855c89d2fbfb0c8f561ffa7495"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#aba5eb7855c89d2fbfb0c8f561ffa7495">mim::plug::x86::phase::Alt::covers</a></div><div class="ttdeci">fe::Vector&lt; Cover &gt; covers</div><div class="ttdef"><b>Definition</b> <a href="#l00053">isel.h:53</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_ae43f2733949f30f1472e3e8a407ae02b"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae43f2733949f30f1472e3e8a407ae02b">mim::plug::x86::phase::Demand::inner</a></div><div class="ttdeci">u64 inner</div><div class="ttdef"><b>Definition</b> <a href="#l00035">isel.h:35</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_ae5ea8a5a815bb103e66a503acb984841"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">mim::plug::x86::phase::Want</a></div><div class="ttdeci">Want</div><div class="ttdoc">The type of a hole.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">isel.h:23</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d">mim::plug::x86::phase::Want::Reg</a></div><div class="ttdeci">@ Reg</div><div class="ttdoc">A register.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">isel.h:24</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b">mim::plug::x86::phase::Want::Imm</a></div><div class="ttdeci">@ Imm</div><div class="ttdoc">A literal that fits an immediate; it is a pattern node rather than a hole.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">isel.h:25</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_af6d54d12df565e6b19dd80586dea6fdf"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#af6d54d12df565e6b19dd80586dea6fdf">mim::plug::x86::phase::Cover::inner</a></div><div class="ttdeci">u64 inner</div><div class="ttdef"><b>Definition</b> <a href="#l00041">isel.h:41</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_af96ce7f3cdfcd133564275ce73c9b4c9"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#af96ce7f3cdfcd133564275ce73c9b4c9">mim::plug::x86::phase::Alts</a></div><div class="ttdeci">fe::Vector&lt; Alt &gt; Alts</div><div class="ttdef"><b>Definition</b> <a href="#l00056">isel.h:56</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_structmim_1_1plug_1_1x86_1_1phase_1_1Alt"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">mim::plug::x86::phase::Alt</a></div><div class="ttdoc">An alternative of a PBQP node: a match rooted there, or the class of all matches covering it as the s...</div><div class="ttdef"><b>Definition</b> <a href="#l00048">isel.h:48</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_structmim_1_1plug_1_1x86_1_1phase_1_1Cover"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover">mim::plug::x86::phase::Cover</a></div><div class="ttdoc">An inner node a match covers, with what it needs of its own operands.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">isel.h:39</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_structmim_1_1plug_1_1x86_1_1phase_1_1Demand"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Demand">mim::plug::x86::phase::Demand</a></div><div class="ttdoc">What a match needs of the operand def: a hole of type want or, if inner is set, that inner pattern no...</div><div class="ttdef"><b>Definition</b> <a href="#l00032">isel.h:32</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_1_1phase_html_structmim_1_1plug_1_1x86_1_1phase_1_1Rule"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">mim::plug::x86::phase::Rule</a></div><div class="ttdef"><b>Definition</b> <a href="#l00058">isel.h:58</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_html_a91e592b260f1dde7393267aac7d888ea"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86.html#a91e592b260f1dde7393267aac7d888ea">mim::plug::x86::addr</a></div><div class="ttdeci">addr</div><div class="ttdef"><b>Definition</b> <a href="x86_2autogen_8h_source.html#l00042">autogen.h:42</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_html_ac3844dd04d0570654cc5c94a9e7ef45d"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86.html#ac3844dd04d0570654cc5c94a9e7ef45d">mim::plug::x86::Addr</a></div><div class="ttdeci">Addr</div><div class="ttdef"><b>Definition</b> <a href="x86_2autogen_8h_source.html#l00021">autogen.h:21</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_html_ac67e069414185d981e8d4f597447f69b"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">mim::plug::x86::Index</a></div><div class="ttdeci">Index</div><div class="ttdef"><b>Definition</b> <a href="x86_2autogen_8h_source.html#l00035">autogen.h:35</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_html_ad14bce528a8a67300b9038fbc4195f42"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42">mim::plug::x86::Reg</a></div><div class="ttdeci">Reg</div><div class="ttdoc">General-purpose registers in hardware encoding order.</div><div class="ttdef"><b>Definition</b> <a href="x86_8h_source.html#l00017">x86.h:17</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1x86_html_aefa3a97424aa92bfb2b9b7e23f9c9e72"><div class="ttname"><a href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">mim::plug::x86::Base</a></div><div class="ttdeci">Base</div><div class="ttdef"><b>Definition</b> <a href="x86_2autogen_8h_source.html#l00028">autogen.h:28</a></div></div>
+<div class="ttc" id="anamespacemim_html_a06961d2806f7fb3afe05273fb4c112ab"><div class="ttname"><a href="namespacemim.html#a06961d2806f7fb3afe05273fb4c112ab">mim::Def2Def</a></div><div class="ttdeci">DefMap&lt; const Def * &gt; Def2Def</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00095">def.h:95</a></div></div>
+<div class="ttc" id="anamespacemim_html_a82bd82851e0f25f0390ebe12e4963ed4"><div class="ttname"><a href="namespacemim.html#a82bd82851e0f25f0390ebe12e4963ed4">mim::s64</a></div><div class="ttdeci">int64_t s64</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00027">types.h:27</a></div></div>
+<div class="ttc" id="anamespacemim_html_a879f9e518002de13d65d757536033f0e"><div class="ttname"><a href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a></div><div class="ttdeci">GIDMap&lt; const Def *, To &gt; DefMap</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00093">def.h:93</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00094">def.h:94</a></div></div>
+<div class="ttc" id="anamespacemim_html_ad8bae182cdb06699fc07a348105f193c"><div class="ttname"><a href="namespacemim.html#ad8bae182cdb06699fc07a348105f193c">mim::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00027">types.h:27</a></div></div>
+<div class="ttc" id="anamespacemim_html_aef2afb7040e6345a0b89b209ae7560c7"><div class="ttname"><a href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">mim::u8</a></div><div class="ttdeci">uint8_t u8</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00027">types.h:27</a></div></div>
+<div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html">plug</a></li><li class="navelem"><a href="dir_6d846145c23501a53ba07aa0ffec9812.html">x86</a></li><li class="navelem"><a href="dir_ca3af2d3ca3b0ce798c5eaab1fd72507.html">phase</a></li><li class="navelem"><a href="isel_8h.html">isel.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

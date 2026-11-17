@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['range_0',['Range',['../namespaceautomaton.html#aa7f4b5c4276e92cf0d3d5a53ea55d921',1,'automaton::Range'],['../dfa2matcher_8cpp.html#a929a326a16b0a4c9d2e277325e556017',1,'Range:&#160;dfa2matcher.cpp']]],
-  ['ranges_1',['Ranges',['../dfa2matcher_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1',1,'Ranges:&#160;dfa2matcher.cpp'],['../regex_2normalizers_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1',1,'Ranges:&#160;normalizers.cpp']]],
-  ['ring_2',['Ring',['../namespacemim_1_1plug_1_1tensor.html#aa032b01cee13a89fb2f87ef02cb88c4e',1,'mim::plug::tensor']]]
+  ['m_0',['M',['../namespacemim_1_1plug_1_1mem.html#ae1c38e0bc69501922f6d575df5e5af24',1,'mim::plug::mem']]],
+  ['mk_5fsched_1',['mk_sched',['../namespacemim_1_1plug_1_1tensor.html#ae0b98c61ec801e789b072abf237391ef',1,'mim::plug::tensor']]],
+  ['mutmap_2',['MutMap',['../namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2',1,'mim']]],
+  ['muts_3',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
+  ['mutset_4',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]]
 ];

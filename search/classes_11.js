@@ -12,7 +12,7 @@ var searchData=
   ['retwrap_9',['RetWrap',['../classmim_1_1RetWrap.html',1,'mim']]],
   ['rewriter_10',['Rewriter',['../classmim_1_1Rewriter.html',1,'mim']]],
   ['ring_5ffield_11',['Ring_field',['../structmim_1_1plug_1_1btensor_1_1Ring__field.html',1,'mim::plug::btensor']]],
-  ['rule_12',['Rule',['../classmim_1_1Rule.html',1,'mim']]],
+  ['rule_12',['Rule',['../namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule',1,'mim::plug::x86::phase::Rule'],['../classmim_1_1Rule.html',1,'mim::Rule']]],
   ['ruledecl_13',['RuleDecl',['../classmim_1_1ast_1_1RuleDecl.html',1,'mim::ast']]],
   ['ruleexpr_14',['RuleExpr',['../classmim_1_1ast_1_1RuleExpr.html',1,'mim::ast']]],
   ['rwphase_15',['RWPhase',['../classmim_1_1RWPhase.html',1,'mim']]]

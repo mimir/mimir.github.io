@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['m_0',['M',['../namespacemim_1_1plug_1_1mem.html#ae1c38e0bc69501922f6d575df5e5af24',1,'mim::plug::mem']]],
-  ['mk_5fsched_1',['mk_sched',['../namespacemim_1_1plug_1_1tensor.html#ae0b98c61ec801e789b072abf237391ef',1,'mim::plug::tensor']]],
-  ['mutmap_2',['MutMap',['../namespacemim.html#afccd5f832a8d98e22ada5860ea24afd2',1,'mim']]],
-  ['muts_3',['Muts',['../namespacemim.html#ad4c992fea8e04600ea865ce24206d8b0',1,'mim']]],
-  ['mutset_4',['MutSet',['../namespacemim.html#a9cef35a428a391739d168b05bad8dfb2',1,'mim']]]
+  ['is_5favalanching_0',['is_avalanching',['../structmim_1_1UseHash.html#ac6dfe7ce6d8e3641876ac31264403272',1,'mim::UseHash::is_avalanching'],['../structmim_1_1GIDHash.html#ad9772061296a80e3150cfdf36aa2dc11',1,'mim::GIDHash::is_avalanching']]]
 ];

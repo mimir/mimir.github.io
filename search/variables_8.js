@@ -7,9 +7,12 @@ var searchData=
   ['import_5fpath_5fkey_4',['Import_Path_Key',['../namespacemim.html#ae65012ead16051e561ec94b6b356c01b',1,'mim']]],
   ['import_5fpaths_5',['import_paths',['../namespacemim.html#a8742189ea15aaa68da5c52f7a10e2c6d',1,'mim::Manifest']]],
   ['in_5ftys_6',['in_tys',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a09ac203b8a946d2910b8678bf9c637ac',1,'mim::plug::btensor::MapRedPost']]],
-  ['init_7',['init',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a87de7fd48e28678ad24ff5012c0f4ad3',1,'mim::plug::btensor::MapRedPost']]],
-  ['inline_5fconsts_8',['inline_consts',['../namespacemim.html#a3fc8356942a5cd09c359640a23897867',1,'mim::DotConfig']]],
-  ['is_9',['is',['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a4d4e93f82a951229aead5dd566ff2990',1,'mim::plug::tensor::phase::Slots']]],
-  ['is_5fanx_10',['is_anx',['../structmim_1_1ast_1_1Mods.html#a2207ef7132b8fa55a32950da88c14265',1,'mim::ast::Mods']]],
-  ['is_5fextern_11',['is_extern',['../structmim_1_1ast_1_1Mods.html#aa4abd95d916b211bb1257a2af0a93339',1,'mim::ast::Mods']]]
+  ['index_7',['index',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41',1,'mim::plug::x86::phase::ISel::Address']]],
+  ['init_8',['init',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a87de7fd48e28678ad24ff5012c0f4ad3',1,'mim::plug::btensor::MapRedPost']]],
+  ['inline_5fconsts_9',['inline_consts',['../namespacemim.html#a3fc8356942a5cd09c359640a23897867',1,'mim::DotConfig']]],
+  ['inner_10',['inner',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ae43f2733949f30f1472e3e8a407ae02b',1,'mim::plug::x86::phase::Demand::inner'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#af6d54d12df565e6b19dd80586dea6fdf',1,'mim::plug::x86::phase::Cover::inner'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#a71ff8e6ddb883a88b47e2ca29e3d092f',1,'mim::plug::x86::phase::Alt::inner']]],
+  ['insns_11',['insns',['../classmim_1_1plug_1_1x86_1_1Liveness.html#aa9f327a081af074010a6d5cb9ff0e091',1,'mim::plug::x86::Liveness::Block']]],
+  ['is_12',['is',['../structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a4d4e93f82a951229aead5dd566ff2990',1,'mim::plug::tensor::phase::Slots']]],
+  ['is_5fanx_13',['is_anx',['../structmim_1_1ast_1_1Mods.html#a2207ef7132b8fa55a32950da88c14265',1,'mim::ast::Mods']]],
+  ['is_5fextern_14',['is_extern',['../structmim_1_1ast_1_1Mods.html#aa4abd95d916b211bb1257a2af0a93339',1,'mim::ast::Mods']]]
 ];

@@ -165,7 +165,6 @@ var namespacemim_1_1plug_1_1core =
       [ "mul", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efa353942263d1bedfbe06b7bfa78226253", null ],
       [ "shl", "namespacemim_1_1plug_1_1core.html#a0d0bff4d75f3e06365643c56fd4672efabc192716b0e1d5c96a67961dd0d3f9da", null ]
     ] ],
-    [ "has_leading_mem", "namespacemim_1_1plug_1_1core.html#a11ae58b3bc8ceff295e6ec2171908569", null ],
     [ "has_mem_ty", "namespacemim_1_1plug_1_1core.html#a219271eb2c5863473b39356d1bddecd0", null ],
     [ "is_unsigned", "namespacemim_1_1plug_1_1core.html#a59f2ea7dd59e00093d98718bdf960afb", null ],
     [ "isa_mem", "namespacemim_1_1plug_1_1core.html#a153015a4f894c1d3dfdc9f596f9f6d6a", null ],

@@ -7,5 +7,7 @@ var searchData=
   ['get_4',['get',['../namespacemim_1_1plug_1_1ord.html#aba44102109a1561a91c6182d20785923',1,'mim::plug::ord::get'],['../namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692',1,'mim::plug::tensor::get']]],
   ['gid_5',['gid',['../namespacemim_1_1plug_1_1refly.html#a88be063a073d9a29cb463cb2486f9aab',1,'mim::plug::refly']]],
   ['globalm_6',['GlobalM',['../namespacemim_1_1plug_1_1gpu.html#a5eaa9a2722ece31aabf7e3f5d8795a54',1,'mim::plug::gpu']]],
-  ['globalptr_7',['GlobalPtr',['../namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0',1,'mim::plug::gpu']]]
+  ['globalptr_7',['GlobalPtr',['../namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0',1,'mim::plug::gpu']]],
+  ['gpr_8',['gpr',['../namespacemim_1_1plug_1_1x86.html#a31f42838c138fec36159d1706a848c5d',1,'mim::plug::x86']]],
+  ['gpr16_9',['gpr16',['../namespacemim_1_1plug_1_1x86.html#ace687b37cdc4918348e24810867588d1',1,'mim::plug::x86']]]
 ];

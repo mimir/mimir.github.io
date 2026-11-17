@@ -1,0 +1,745 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: pbqp Namespace Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacepbqp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pbqp Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:json" id="r_json"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacepbqp_1_1json.html">json</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Cost" id="r_Cost"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1Cost.html">Cost</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A saturating cost; <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> forbids an option or option pair.  <a href="classpbqp_1_1Cost.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Graph" id="r_Graph"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1Graph.html">Graph</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A PBQP problem graph.  <a href="classpbqp_1_1Graph.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Instance_5Fstructpbqp_5F1_5F1Instance" id="r_Instance_5Fstructpbqp_5F1_5F1Instance"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structpbqp_1_1Instance">Instance</a></td></tr>
+<tr class="memdesc:structpbqp_1_1Instance"><td class="mdescLeft">&#160;</td><td class="mdescRight">A graph together with the optional <span class="tt"><a class="el" href="#afd36605a060416fc36a7bd45ff8f9ceb" title="Empty, or one entry per node id.">rn_priority</a></span> for <span class="tt"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469" title="Heuristic PBQP solver.">solve</a></span>.  <a href="#structpbqp_1_1Instance">More...</a><br /></td></tr>
+<tr class="memitem:Solution" id="r_Solution"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structpbqp_1_1Solution.html">Solution</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A complete assignment of options to nodes.  <a href="structpbqp_1_1Solution.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Statistics_5Fstructpbqp_5F1_5F1Statistics" id="r_Statistics_5Fstructpbqp_5F1_5F1Statistics"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structpbqp_1_1Statistics">Statistics</a></td></tr>
+<tr class="memdesc:structpbqp_1_1Statistics"><td class="mdescLeft">&#160;</td><td class="mdescRight">How often <span class="tt"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469" title="Heuristic PBQP solver.">solve</a></span> applied each reduction.  <a href="#structpbqp_1_1Statistics">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr id="typedef-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Ids</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Node and edge ids are dense and stable: nothing is ever removed from a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
+</div></td></tr>
+<tr class="memitem:acb116c9a0cd62d8a649169771af17f54" id="r_acb116c9a0cd62d8a649169771af17f54"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acb116c9a0cd62d8a649169771af17f54">NodeId</a> = size_t</td></tr>
+<tr class="memdesc:acb116c9a0cd62d8a649169771af17f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of a node in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>.  <br /></td></tr>
+<tr class="memitem:ac4babaee4ee39391b4be052fbb875f3b" id="r_ac4babaee4ee39391b4be052fbb875f3b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> = size_t</td></tr>
+<tr class="memdesc:ac4babaee4ee39391b4be052fbb875f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of an edge in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>.  <br /></td></tr>
+<tr class="memitem:a047b2d59588a01078730d8e3fd7186d1" id="r_a047b2d59588a01078730d8e3fd7186d1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> = size_t</td></tr>
+<tr class="memdesc:a047b2d59588a01078730d8e3fd7186d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of an option within a node's cost vector.  <br /></td></tr>
+<tr id="typedef-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">PBQP Vectors &amp; Matrices</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>PBQP vectors and matrices are small, so they live inline. </p>
+</div></td></tr>
+<tr class="memitem:a84e598ccc32f68b844e2eecc2003bfe4" id="r_a84e598ccc32f68b844e2eecc2003bfe4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a84e598ccc32f68b844e2eecc2003bfe4">Costs</a> = fe::Vector&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>, 4&gt;</td></tr>
+<tr class="memitem:a37bcf571e2f33c91cf798ec56569b6b7" id="r_a37bcf571e2f33c91cf798ec56569b6b7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a37bcf571e2f33c91cf798ec56569b6b7">Edges</a> = fe::Vector&lt;<a class="el" href="#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a>, 4&gt;</td></tr>
+<tr class="memitem:a16ba793e93380acdaae0a61da5af0eba" id="r_a16ba793e93380acdaae0a61da5af0eba"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a16ba793e93380acdaae0a61da5af0eba">Choices</a> = fe::Vector&lt;<a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a>, 8&gt;</td></tr>
+<tr class="memdesc:a16ba793e93380acdaae0a61da5af0eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">One option per node, indexed by node id.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a64166371d46e791156e50cee73839218" id="r_a64166371d46e791156e50cee73839218"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a64166371d46e791156e50cee73839218">write_dot</a> (std::ostream &amp;out, const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt; choices={})</td></tr>
+<tr class="memdesc:a64166371d46e791156e50cee73839218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <span class="tt">graph</span> in Graphviz DOT format with cost vectors and matrices as HTML-like labels.  <br /></td></tr>
+<tr class="memitem:afa8ae380485586adbf59f3366b0b99e3" id="r_afa8ae380485586adbf59f3366b0b99e3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa8ae380485586adbf59f3366b0b99e3">read_json</a> (std::istream &amp;in, <a class="el" href="#structpbqp_1_1Instance">Instance</a> &amp;instance, const std::filesystem::path &amp;path=&quot;&lt;input&gt;&quot;)</td></tr>
+<tr class="memdesc:afa8ae380485586adbf59f3366b0b99e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a PBQP instance into the empty <span class="tt">instance</span>:  <br /></td></tr>
+<tr class="memitem:a3158e6281ffc8d2e6577f4885a784cbe" id="r_a3158e6281ffc8d2e6577f4885a784cbe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3158e6281ffc8d2e6577f4885a784cbe">write_json</a> (std::ostream &amp;out, const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, fe::View&lt; size_t &gt; rn_priority={})</td></tr>
+<tr class="memdesc:a3158e6281ffc8d2e6577f4885a784cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the format that <span class="tt"><a class="el" href="#afa8ae380485586adbf59f3366b0b99e3" title="Read a PBQP instance into the empty instance:">read_json</a></span> reads.  <br /></td></tr>
+<tr class="memitem:a581fa36de2b05788a50f5522f6aa3432" id="r_a581fa36de2b05788a50f5522f6aa3432"><td class="memItemLeft"><a class="el" href="classpbqp_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a581fa36de2b05788a50f5522f6aa3432">evaluate</a> (const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt; choices)</td></tr>
+<tr class="memdesc:a581fa36de2b05788a50f5522f6aa3432"><td class="mdescLeft">&#160;</td><td class="mdescRight">All solver functions are safe to call concurrently on a graph that nobody mutates meanwhile.  <br /></td></tr>
+<tr class="memitem:a739423283116065c24b773d84498cae9" id="r_a739423283116065c24b773d84498cae9"><td class="memItemLeft">fe::Bitset&#160;</td><td class="memItemRight"><a class="el" href="#a739423283116065c24b773d84498cae9">conflicts</a> (const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt; choices)</td></tr>
+<tr class="memdesc:a739423283116065c24b773d84498cae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodes whose choice is <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> in their cost vector or, given the neighbour's choice, in an incident matrix.  <br /></td></tr>
+<tr class="memitem:a5816dd4745f4e43e7f80ca3604363469" id="r_a5816dd4745f4e43e7f80ca3604363469"><td class="memItemLeft"><a class="el" href="structpbqp_1_1Solution.html">Solution</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469">solve</a> (const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, fe::View&lt; size_t &gt; rn_priority={})</td></tr>
+<tr class="memdesc:a5816dd4745f4e43e7f80ca3604363469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heuristic PBQP solver.  <br /></td></tr>
+<tr class="memitem:ab1e1c3084a33069c5b4d90822bd16e7a" id="r_ab1e1c3084a33069c5b4d90822bd16e7a"><td class="memItemLeft">std::optional&lt; <a class="el" href="structpbqp_1_1Solution.html">Solution</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab1e1c3084a33069c5b4d90822bd16e7a">solve_exhaustive</a> (const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;graph, size_t max_combinations=10 '000 '000, unsigned num_threads=0)</td></tr>
+<tr class="memdesc:ab1e1c3084a33069c5b4d90822bd16e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brute-force optimum, useful to cross-check small instances.  <br /></td></tr>
+<tr class="memitem:a2c53f1d4cd75110eea1e65103804d218" id="r_a2c53f1d4cd75110eea1e65103804d218"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a2c53f1d4cd75110eea1e65103804d218">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="classpbqp_1_1Cost.html">Cost</a> cost)</td></tr>
+</table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structpbqp_1_1Instance" id="structpbqp_1_1Instance"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structpbqp_1_1Instance">&#9670;&#160;</a></span>pbqp::Instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct pbqp::Instance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A graph together with the optional <span class="tt"><a class="el" href="#afd36605a060416fc36a7bd45ff8f9ceb" title="Empty, or one entry per node id.">rn_priority</a></span> for <span class="tt"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469" title="Heuristic PBQP solver.">solve</a></span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="json_8h_source.html#l00015">15</a> of file <a class="el" href="json_8h_source.html">json.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a80fc9d1d4a84f7c041f0eda6afcf6141" name="a80fc9d1d4a84f7c041f0eda6afcf6141"></a><a class="el" href="classpbqp_1_1Graph.html">Graph</a></td>
+<td class="fieldname">
+graph</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="afd36605a060416fc36a7bd45ff8f9ceb" name="afd36605a060416fc36a7bd45ff8f9ceb"></a>Vector&lt; size_t &gt;</td>
+<td class="fieldname">
+rn_priority</td>
+<td class="fielddoc">
+Empty, or one entry per node id. </td></tr>
+</table>
+
+</div>
+</div>
+<a name="structpbqp_1_1Statistics" id="structpbqp_1_1Statistics"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structpbqp_1_1Statistics">&#9670;&#160;</a></span>pbqp::Statistics</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct pbqp::Statistics</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>How often <span class="tt"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469" title="Heuristic PBQP solver.">solve</a></span> applied each reduction. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8h_source.html#l00015">15</a> of file <a class="el" href="solver_8h_source.html">solver.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a142c5d12ad79fd54e54bcef2ae2ab722" name="a142c5d12ad79fd54e54bcef2ae2ab722"></a>size_t</td>
+<td class="fieldname">
+dropped_edges = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a38fcae31f1f142d003d6364aa7978da2" name="a38fcae31f1f142d003d6364aa7978da2"></a>size_t</td>
+<td class="fieldname">
+forbidden_options = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ace4ae19483699fa64766701e5295c5cd" name="ace4ae19483699fa64766701e5295c5cd"></a>size_t</td>
+<td class="fieldname">
+r0 = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a2b26f169395c67e08ab242488003f3d4" name="a2b26f169395c67e08ab242488003f3d4"></a>size_t</td>
+<td class="fieldname">
+r1 = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a601107c626e0aa1bed5d5e49992e8cb4" name="a601107c626e0aa1bed5d5e49992e8cb4"></a>size_t</td>
+<td class="fieldname">
+r2 = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a1d243c658769a1071be899e50b6fb3bc" name="a1d243c658769a1071be899e50b6fb3bc"></a>size_t</td>
+<td class="fieldname">
+rm = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aa09a3f4ee2ab045036a0b0afa5aa7987" name="aa09a3f4ee2ab045036a0b0afa5aa7987"></a>size_t</td>
+<td class="fieldname">
+rn = 0</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a2a48696ca348b2237111fcffd9aaa912" name="a2a48696ca348b2237111fcffd9aaa912"></a>size_t</td>
+<td class="fieldname">
+single_option = 0</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a16ba793e93380acdaae0a61da5af0eba" name="a16ba793e93380acdaae0a61da5af0eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ba793e93380acdaae0a61da5af0eba">&#9670;&#160;</a></span>Choices</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a16ba793e93380acdaae0a61da5af0eba">pbqp::Choices</a> = fe::Vector&lt;<a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a>, 8&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One option per node, indexed by node id. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00063">63</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a84e598ccc32f68b844e2eecc2003bfe4" name="a84e598ccc32f68b844e2eecc2003bfe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e598ccc32f68b844e2eecc2003bfe4">&#9670;&#160;</a></span>Costs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a84e598ccc32f68b844e2eecc2003bfe4">pbqp::Costs</a> = fe::Vector&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00061">61</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4babaee4ee39391b4be052fbb875f3b" name="ac4babaee4ee39391b4be052fbb875f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4babaee4ee39391b4be052fbb875f3b">&#9670;&#160;</a></span>EdgeId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ac4babaee4ee39391b4be052fbb875f3b">pbqp::EdgeId</a> = size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifier of an edge in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00022">22</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a37bcf571e2f33c91cf798ec56569b6b7" name="a37bcf571e2f33c91cf798ec56569b6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bcf571e2f33c91cf798ec56569b6b7">&#9670;&#160;</a></span>Edges</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a37bcf571e2f33c91cf798ec56569b6b7">pbqp::Edges</a> = fe::Vector&lt;<a class="el" href="#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a>, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00062">62</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="acb116c9a0cd62d8a649169771af17f54" name="acb116c9a0cd62d8a649169771af17f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb116c9a0cd62d8a649169771af17f54">&#9670;&#160;</a></span>NodeId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#acb116c9a0cd62d8a649169771af17f54">pbqp::NodeId</a> = size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifier of a node in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00021">21</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a047b2d59588a01078730d8e3fd7186d1" name="a047b2d59588a01078730d8e3fd7186d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a047b2d59588a01078730d8e3fd7186d1">&#9670;&#160;</a></span>OptionId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">pbqp::OptionId</a> = size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Index of an option within a node's cost vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00023">23</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a739423283116065c24b773d84498cae9" name="a739423283116065c24b773d84498cae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739423283116065c24b773d84498cae9">&#9670;&#160;</a></span>conflicts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fe::Bitset pbqp::conflicts </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nodes whose choice is <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> in their cost vector or, given the neighbour's choice, in an incident matrix. </p>
+<p>These are the candidates to spill or split when an assignment is infeasible. Requires a valid option for every node. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00619">619</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00619">conflicts()</a>, <a class="el" href="graph_8h_source.html#l00125">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00117">pbqp::Graph::edge_cost()</a>, <a class="el" href="graph_8h_source.html#l00132">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00039">pbqp::Cost::is_inf()</a>, <a class="el" href="graph_8h_source.html#l00111">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00131">pbqp::Graph::nodes()</a>, and <a class="el" href="def_8cpp_source.html#l00188">mim::Def::set()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00619">conflicts()</a>.</p>
+
+</div>
+</div>
+<a id="a581fa36de2b05788a50f5522f6aa3432" name="a581fa36de2b05788a50f5522f6aa3432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a581fa36de2b05788a50f5522f6aa3432">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpbqp_1_1Cost.html">Cost</a> pbqp::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All solver functions are safe to call concurrently on a graph that nobody mutates meanwhile. </p>
+<p><a class="el" href="classpbqp_1_1Cost.html" title="A saturating cost; Cost::inf forbids an option or option pair.">Cost</a> of <span class="tt">choices</span> under <span class="tt">graph</span>; <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> if it picks a <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> entry or the total saturates. Requires a valid option for every node. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00603">603</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00114">pbqp::Graph::edge_costs()</a>, <a class="el" href="graph_8h_source.html#l00132">pbqp::Graph::edges()</a>, <a class="el" href="solver_8cpp_source.html#l00603">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00111">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00131">pbqp::Graph::nodes()</a>, and <a class="el" href="graph_8h_source.html#l00122">pbqp::Graph::num_options()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00554">mim::plug::x86::phase::ISel::analyze()</a>, <a class="el" href="solver_8cpp_source.html#l00603">evaluate()</a>, and <a class="el" href="solver_8cpp_source.html#l00641">solve()</a>.</p>
+
+</div>
+</div>
+<a id="a2c53f1d4cd75110eea1e65103804d218" name="a2c53f1d4cd75110eea1e65103804d218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c53f1d4cd75110eea1e65103804d218">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; pbqp::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpbqp_1_1Cost.html">Cost</a></td>          <td class="paramname"><span class="paramname"><em>cost</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00010">10</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afa8ae380485586adbf59f3366b0b99e3" name="afa8ae380485586adbf59f3366b0b99e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8ae380485586adbf59f3366b0b99e3">&#9670;&#160;</a></span>read_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pbqp::read_json </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;</td>          <td class="paramname"><span class="paramname"><em>in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#structpbqp_1_1Instance">Instance</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>instance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&lt;input&gt;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a PBQP instance into the empty <span class="tt">instance</span>: </p>
+<pre class="fragment">{
+  "nodes": [{"costs": [0, "inf"]}, {"costs": [7, 0, 2]}],
+  "edges": [{"src": 1, "dst": 0, "rows": 3, "cols": 2, "costs": [1, "inf", -5, 0, 4, 2]}],
+  "rn_priority": [5, 9]
+}
+</pre><p>The position of a node in <span class="tt">nodes</span> is its id. Edge <span class="tt">costs</span> are row-major with <span class="tt">src</span> as the row; <span class="tt">rows</span> and <span class="tt">cols</span> are optional and only checked. <span class="tt">"inf"</span> is <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a>, <span class="tt">rn_priority</span> is optional, and unknown keys are skipped. Throws <span class="tt">fe::Error::Bail</span>, a <span class="tt">std::exception</span>, on malformed input; <span class="tt">path</span> only names the input in its message. </p>
+
+<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00439">439</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="json_8cpp_source.html#l00439">read_json()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00439">read_json()</a>.</p>
+
+</div>
+</div>
+<a id="a5816dd4745f4e43e7f80ca3604363469" name="a5816dd4745f4e43e7f80ca3604363469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5816dd4745f4e43e7f80ca3604363469">&#9670;&#160;</a></span>solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpbqp_1_1Solution.html">Solution</a> pbqp::solve </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fe::View&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>rn_priority</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Heuristic PBQP solver. </p>
+<p>Reduces degree 0, 1 (RI) and 2 (RII) nodes exactly and higher-degree nodes with the RN heuristic. Normalization keeps intermediate costs relative, so they saturate only where option costs differ by <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a>. Short of that, the result is optimal whenever no RN step is needed, e.g. on trees. RN decides the node with the highest <span class="tt">rn_priority[n]</span> first; ties go to the highest degree, then the widest cost spread. SSA-based register allocation passes PEO positions, so coloring cannot fail (Buchwald et al. 2011). Requires <span class="tt">rn_priority</span> to be empty or to cover every node id. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00641">641</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00603">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00086">pbqp::Graph::npos</a>, <a class="el" href="graph_8h_source.html#l00134">pbqp::Graph::num_nodes()</a>, and <a class="el" href="solver_8cpp_source.html#l00641">solve()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00554">mim::plug::x86::phase::ISel::analyze()</a>, and <a class="el" href="solver_8cpp_source.html#l00641">solve()</a>.</p>
+
+</div>
+</div>
+<a id="ab1e1c3084a33069c5b4d90822bd16e7a" name="ab1e1c3084a33069c5b4d90822bd16e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e1c3084a33069c5b4d90822bd16e7a">&#9670;&#160;</a></span>solve_exhaustive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structpbqp_1_1Solution.html">Solution</a> &gt; pbqp::solve_exhaustive </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_combinations</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10'000'000</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned</td>          <td class="paramname"><span class="paramname"><em>num_threads</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Brute-force optimum, useful to cross-check small instances. </p>
+<p>The search space is split across <span class="tt">num_threads</span> threads (0 = hardware concurrency). Returns nothing if there are more than <span class="tt">max_combinations</span> candidate assignments. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00712">712</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00031">pbqp::Solution::cost</a>, and <a class="el" href="solver_8cpp_source.html#l00712">solve_exhaustive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00712">solve_exhaustive()</a>.</p>
+
+</div>
+</div>
+<a id="a64166371d46e791156e50cee73839218" name="a64166371d46e791156e50cee73839218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64166371d46e791156e50cee73839218">&#9670;&#160;</a></span>write_dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pbqp::write_dot </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fe::View&lt; <a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>choices</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write <span class="tt">graph</span> in Graphviz DOT format with cost vectors and matrices as HTML-like labels. </p>
+<p>Edge matrices are titled <span class="tt">src × dst</span>, i.e. rows × columns. Highlights the entries picked by <span class="tt">choices</span>, which must be empty or cover every node id. </p>
+
+<p class="definition">Definition at line <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">22</a> of file <a class="el" href="pbqp_2dot_8cpp_source.html">dot.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00117">pbqp::Graph::edge_cost()</a>, <a class="el" href="graph_8h_source.html#l00132">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00111">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00131">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00122">pbqp::Graph::num_options()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">write_dot()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00554">mim::plug::x86::phase::ISel::analyze()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">write_dot()</a>.</p>
+
+</div>
+</div>
+<a id="a3158e6281ffc8d2e6577f4885a784cbe" name="a3158e6281ffc8d2e6577f4885a784cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3158e6281ffc8d2e6577f4885a784cbe">&#9670;&#160;</a></span>write_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pbqp::write_json </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classpbqp_1_1Graph.html">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">fe::View&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>rn_priority</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the format that <span class="tt"><a class="el" href="#afa8ae380485586adbf59f3366b0b99e3" title="Read a PBQP instance into the empty instance:">read_json</a></span> reads. </p>
+<p>Requires <span class="tt">rn_priority</span> to be empty or to have one entry per node. </p>
+
+<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00446">446</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00114">pbqp::Graph::edge_costs()</a>, <a class="el" href="graph_8h_source.html#l00132">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00111">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00131">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00134">pbqp::Graph::num_nodes()</a>, <a class="el" href="graph_8h_source.html#l00122">pbqp::Graph::num_options()</a>, and <a class="el" href="json_8cpp_source.html#l00446">write_json()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00446">write_json()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacepbqp.html">pbqp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

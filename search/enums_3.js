@@ -10,7 +10,7 @@ var searchData=
   ['diff_7',['diff',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2',1,'mim::plug::autodiff::diff'],['../namespacemim_1_1plug_1_1vec.html#a5c01986cca7021fdf3002667cb8f347e',1,'mim::plug::vec::diff']]],
   ['disj_8',['disj',['../namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628',1,'mim::plug::regex']]],
   ['dispatch_5fnormalize_9',['dispatch_normalize',['../namespacemim_1_1plug_1_1compile.html#ac4951ff3ac61d4f9befbe4bb4fff43f4',1,'mim::plug::compile']]],
-  ['div_10',['div',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core']]],
+  ['div_10',['div',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1x86.html#a1806cd0e43b4d7e26ae01508e9f8c308',1,'mim::plug::x86::div']]],
   ['dot_5fproduct_11',['dot_product',['../namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e',1,'mim::plug::tensor']]],
   ['dot_5fproduct_5fimpl_12',['dot_product_impl',['../namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba',1,'mim::plug::tensor']]],
   ['dump_13',['Dump',['../classmim_1_1Def.html#aeae43231a2e0f690bdb5c6d4d2b05c71',1,'mim::Def']]]

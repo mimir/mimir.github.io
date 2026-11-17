@@ -7,7 +7,6 @@ var core_8h =
       [ "mim::plug::core::Mode::nuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a1cb6ecf47d175b4055a768fee5f76e97", null ],
       [ "mim::plug::core::Mode::nsuw", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a3dc736418b67aa8ad4d9c2c6f7d4bd12", null ]
     ] ],
-    [ "mim::plug::core::has_leading_mem", "namespacemim_1_1plug_1_1core.html#a11ae58b3bc8ceff295e6ec2171908569", null ],
     [ "mim::plug::core::has_mem_ty", "namespacemim_1_1plug_1_1core.html#a219271eb2c5863473b39356d1bddecd0", null ],
     [ "mim::is_associative", "namespacemim.html#a18ea687fca3cafcb3ae2e8afacdb6a43", null ],
     [ "mim::is_associative", "namespacemim.html#a789eca4a75e2540e6d34f59994f69704", null ],

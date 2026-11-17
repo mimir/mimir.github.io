@@ -1,0 +1,390 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: The x86 Plugin</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('x86.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">The x86 Plugin </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2x86"></a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">mim::plug::x86</a></dd></dl>
+<p>The native x86-64 backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p x86</span>) appends instruction selection and emission to the compilation pipeline. Instruction selection rewrites <span class="tt">core</span>, <span class="tt">math</span>, and <span class="tt">mem</span> into the axioms below. A literal operand of an instruction is an immediate and has to fit its encoding; <span class="tt">mov</span> puts any other constant into a register. Registers are no concern of these types; register allocation introduces them later. The schedule is the <span class="tt">mem.M 0</span> chain: memory instructions sit on it, and scheduling threads all other instructions onto it via <span class="tt">sched</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md649"></a>
+Dependencies</h1>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+<div class="line">plugin mem;</div>
+<div class="line">plugin opt;</div>
+<div class="line">plugin refly;</div>
+<div class="line">import compile;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md650"></a>
+Types</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md651"></a>
+Fl</h2>
+<p>The flags register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Fl: *;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md652"></a>
+Addr</h2>
+<p>A memory operand <span class="tt">disp(base, index, scale)</span>; the <span class="tt">Bool</span> states whether it has an index. It is no value and occupies no register of its own; only memory instructions and <span class="tt">lea</span> take one.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Addr: Bool → *;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md653"></a>
+Base</h2>
+<p>An address <span class="tt">disp(base)</span> without an index.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let Base = Addr ff;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md654"></a>
+Index</h2>
+<p>An address <span class="tt">disp(base, index, scale)</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let Index = Addr tt;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md655"></a>
+addr</h2>
+<p><span class="tt">addr (disp, base)</span> addresses <span class="tt">disp + base</span>, like AT&amp;T's <span class="tt">disp(base)</span>. A literal <span class="tt">0I64</span> as <span class="tt">base</span> means there is none.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm addr: [disp: I32, base: I64] → Base;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md656"></a>
+index</h2>
+<p><span class="tt">index a (i, scale)</span> addresses <span class="tt">a + (i &lt;&lt; scale)</span>, like AT&amp;T's <span class="tt">disp(base, index, scale)</span>. An address has at most one index.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm index: Base → [index: I64, scale: I2] → Index;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>These lets name the scales.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let scale_1 = 0I2;</div>
+<div class="line">anx let scale_2 = 1I2;</div>
+<div class="line">anx let scale_4 = 2I2;</div>
+<div class="line">anx let scale_8 = 3I2;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md657"></a>
+Spill</h2>
+<p>A spill slot holding a value of type <span class="tt">Idx s</span>. It is no register value; slot assignment gives it a place in the stack frame.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Spill: Nat → *;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md658"></a>
+Operand Sizes</h1>
+<p>Instructions are polymorphic in the operand size <span class="tt">s</span> and state which sizes they support via <span class="tt">refly.check</span> in their codomain. A literal <span class="tt">s</span> folds the check away; an unsupported one is an error.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam is (s n: Nat): Bool = core.ncmp.e (s, n);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md659"></a>
+gpr</h2>
+<p><span class="tt">i8</span>, <span class="tt">i16</span>, <span class="tt">i32</span>, or <span class="tt">i64</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam gpr (s: Nat): Nat =</div>
+<div class="line">    let ok = core.bit2.or 0 (core.bit2.or 0 (is (s, i8), is (s, i16)), core.bit2.or 0 (is (s, i32), is (s, i64)));</div>
+<div class="line">    refly.check (ok, s, &quot;x86: operand size must be i8, i16, i32, or i64&quot;);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md660"></a>
+gpr16</h2>
+<p><span class="tt">i16</span>, <span class="tt">i32</span>, or <span class="tt">i64</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam gpr16 (s: Nat): Nat =</div>
+<div class="line">    let ok = core.bit2.or 0 (is (s, i16), core.bit2.or 0 (is (s, i32), is (s, i64)));</div>
+<div class="line">    refly.check (ok, s, &quot;x86: operand size must be i16, i32, or i64&quot;);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md661"></a>
+logic</h2>
+<p><span class="tt">Bool</span> or a gpr size.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam logic (s: Nat): Nat =</div>
+<div class="line">    let ok = core.bit2.or 0 (is (s, 2), core.bit2.or 0 (core.bit2.or 0 (is (s, i8), is (s, i16)), core.bit2.or 0 (is (s, i32), is (s, i64))));</div>
+<div class="line">    refly.check (ok, s, &quot;x86: operand size must be Bool, i8, i16, i32, or i64&quot;);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md662"></a>
+Instruction Forms</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md663"></a>
+rm</h2>
+<p><span class="tt">op r, addr</span>: <span class="tt">rm f (m, a, addr)</span> is <span class="tt">f (a, b)</span> with <span class="tt">b</span> loaded from <span class="tt">addr</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm rm: {s: Nat, C: *, i: Bool} → («2; Idx s» → C) → [mem.M 0, Idx s, Addr i] → [mem.M 0, C];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md664"></a>
+mr</h2>
+<p><span class="tt">op addr, r</span>: <span class="tt">mr f (m, addr, b)</span> stores <span class="tt">f (a, b)</span> to <span class="tt">addr</span> with <span class="tt">a</span> loaded from <span class="tt">addr</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mr: {s: Nat, i: Bool} → («2; Idx s» → Idx s) → [mem.M 0, Addr i, Idx s] → mem.M 0;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md665"></a>
+sched</h2>
+<p>Places the pure instruction <span class="tt">f x</span> on the <span class="tt">mem.M 0</span> chain right after <span class="tt">m</span>: <span class="tt">let (m, y) = x86.sched x86.add m (a, b)</span>. The chain token makes each placement a distinct Def, so copies, spills, and reloads at different points never merge.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sched: {D C: *} → (D → C) → mem.M 0 → D → [mem.M 0, C];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md666"></a>
+Registers</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md667"></a>
+in</h2>
+<p><span class="tt">in r v</span> is <span class="tt">v</span>, which lives in register <span class="tt">r</span>; the operand size <span class="tt">s</span> selects the subregister. Register allocation wraps every use of a value, so all uses of <span class="tt">v</span> share one <span class="tt">in r v</span>. It is no instruction: it is neither scheduled nor on the chain.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm in: [r: I4] → {s: Nat} → Idx s → Idx s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>These lets name the registers in hardware encoding order.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let rax = 0I4;</div>
+<div class="line">anx let rcx = 1I4;</div>
+<div class="line">anx let rdx = 2I4;</div>
+<div class="line">anx let rbx = 3I4;</div>
+<div class="line">anx let rsp = 4I4;</div>
+<div class="line">anx let rbp = 5I4;</div>
+<div class="line">anx let rsi = 6I4;</div>
+<div class="line">anx let rdi = 7I4;</div>
+<div class="line">anx let r8  = 8I4;</div>
+<div class="line">anx let r9  = 9I4;</div>
+<div class="line">anx let r10 = 10I4;</div>
+<div class="line">anx let r11 = 11I4;</div>
+<div class="line">anx let r12 = 12I4;</div>
+<div class="line">anx let r13 = 13I4;</div>
+<div class="line">anx let r14 = 14I4;</div>
+<div class="line">anx let r15 = 15I4;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md668"></a>
+Instructions</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md669"></a>
+lea</h2>
+<p><span class="tt">lea r, addr</span> materializes an address as a value.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lea: {i: Bool} → Addr i → I64;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md670"></a>
+mov</h2>
+<p><span class="tt">mov r, imm</span> materializes a constant.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mov: {s: Nat} → Idx s → Idx (logic s);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md671"></a>
+load</h2>
+<p><span class="tt">mov r, addr</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm load: [s: Nat] → {i: Bool} → [mem.M 0, Addr i] → [mem.M 0, Idx (gpr s)];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md672"></a>
+store</h2>
+<p><span class="tt">mov addr, r</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm store: {s: Nat, i: Bool} → [mem.M 0, Addr i, Idx s] → mem.M 0;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md673"></a>
+slot</h2>
+<p>Reserves <span class="tt">n</span> bytes in the stack frame and yields their address via <span class="tt">lea</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm slot: [n: Nat] → mem.M 0 → [mem.M 0, I64];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md674"></a>
+spill</h2>
+<p><span class="tt">spill x</span> stores <span class="tt">x</span> into a spill slot; it is placed on the chain via <span class="tt">sched</span> like any other pure instruction.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm spill: {s: Nat} → Idx s → Spill s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md675"></a>
+reload</h2>
+<p><span class="tt">reload x</span> loads <span class="tt">x</span> from its spill slot.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reload: {s: Nat} → Spill s → Idx s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md676"></a>
+Arithmetic</h2>
+<p>Two-address arithmetic <span class="tt">op r, r/imm</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (add, sub): {s: Nat} → «2; Idx s» → Idx (gpr s);</div>
+<div class="line">axm (and, or, xor): {s: Nat} → «2; Idx s» → Idx (logic s);</div>
+<div class="line">axm imul: {s: Nat} → «2; Idx s» → Idx (gpr16 s);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md677"></a>
+Division</h2>
+<p><span class="tt">div</span>/<span class="tt">idiv</span> yield the quotient (<span class="tt">rax</span>) and the remainder (<span class="tt">rdx</span>).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (div, idiv): {s: Nat} → «2; Idx s» → «2; Idx (gpr16 s)»;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md678"></a>
+Shifts</h2>
+<p>Shifts by <span class="tt">cl</span> or an immediate.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (shl, shr, sar): {s: Nat} → «2; Idx s» → Idx (gpr s);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md679"></a>
+Conversions</h2>
+<p><span class="tt">movzx</span>, <span class="tt">movsx</span>, and truncation to the low bits of the register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (movzx, movsx, trunc): {s: Nat} → [d: Nat] → Idx s → Idx d;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md680"></a>
+Comparisons</h2>
+<p><span class="tt">cmp r, r/imm</span> and <span class="tt">test r, r/imm</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (cmp, test): {s: Nat} → «2; Idx s» → Fl;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md681"></a>
+Condition Codes</h2>
+<p>A condition code <span class="tt">cc</span> is a Nat in hardware encoding order: o = 0, no = 1, b = 2, ae = 3, e = 4, ne = 5, be = 6, a = 7, s = 8, ns = 9, p = 10, np = 11, l = 12, ge = 13, le = 14, g = 15.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md682"></a>
+cc</h3>
+<p>Tests <span class="tt">cc</span> on the flags: <span class="tt">jcc</span> as a branch condition, <span class="tt">setcc</span> otherwise.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cc: [cc: Nat] → Fl → Bool;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md683"></a>
+cmovcc</h3>
+<p><span class="tt">cmovcc cc (f, x, y)</span> yields <span class="tt">y</span> if <span class="tt">cc</span> holds on <span class="tt">f</span>, else <span class="tt">x</span>, like <span class="tt">(x, y)#cond</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cmovcc: [cc: Nat] → {s: Nat} → [Fl, Idx s, Idx s] → Idx (gpr16 s);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md684"></a>
+Phases</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md685"></a>
+isel</h2>
+<p>Instruction selection. <span class="tt">-X x86:isel-dot=&lt;file&gt;</span> writes the PBQP graph in Graphviz DOT format, with the chosen options highlighted.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm isel: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md686"></a>
+schedule</h2>
+<p>Threads every instruction of a block onto the block's <span class="tt">mem.M 0</span> chain. Expects every continuation to take a <span class="tt">mem.M 0</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm schedule: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md687"></a>
+spilling</h2>
+<p>Spills and reloads until at most <span class="tt">k</span> general-purpose values are live at every point (Braun &amp; Hack, CC 2009). <span class="tt">k</span> is 14 by default and <span class="tt">-X x86:k=&lt;n&gt;</span> overrides it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm spilling: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md688"></a>
+constrain</h2>
+<p>Moves the operands that an instruction needs in a fixed register, and a two-address operand that stays live, into a fresh continuation right before it. The jump is the copy, so the copies' live ranges end at the instruction and the interference graph stays chordal. The fixed operands are wrapped in <span class="tt">in</span>. Likewise, a fixed result that stays live is passed on to a fresh continuation right after its instruction.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm constrain: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md689"></a>
+color</h2>
+<p>Assigns a register to every general-purpose value by one PBQP per function (Buchwald, Zwinkau, Bersch, CC 2011) and wraps each use of a value in <span class="tt">in</span>. Jumps, calls, and returns are parallel copies: their arguments only prefer the registers of the parameters they bind. Removes chain instructions whose results are all dead. <span class="tt">-X x86:color-dot=&lt;file&gt;</span> writes the PBQP graph of each function in Graphviz DOT format, with the chosen options highlighted.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm color: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md690"></a>
+emit</h2>
+<p>Emits GNU assembler code (AT&amp;T syntax) to <span class="tt">&lt;world&gt;.s</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm emit: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md691"></a>
+live</h2>
+<p>Prints the liveness of every scheduled function to stdout, or to <span class="tt">-X x86:live=&lt;file&gt;</span>: per block the live-in and live-out values and the maximum number of live values (general-purpose registers, flags).</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm live: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

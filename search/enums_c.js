@@ -14,9 +14,13 @@ var searchData=
   ['mk_5fsched_11',['mk_sched',['../namespacemim_1_1plug_1_1btensor.html#a938c45f409f6c19f9c368568ba2e2c14',1,'mim::plug::btensor']]],
   ['mode_12',['Mode',['../classmim_1_1Check.html#af6978b3ba6064af1fed8d8677751b401',1,'mim::Check::Mode'],['../namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138',1,'mim::plug::core::Mode'],['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91',1,'mim::plug::math::Mode']]],
   ['mode_13',['mode',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707e',1,'mim::plug::core::mode'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91',1,'mim::plug::math::mode']]],
-  ['mr_5fnest_14',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],
-  ['mr_5ftileable_15',['mr_tileable',['../namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8',1,'mim::plug::tensor']]],
-  ['mslot_16',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
-  ['mulrem_17',['mulrem',['../namespacemim_1_1plug_1_1core.html#ad02dfa9728e62294164786e714b7d8c4',1,'mim::plug::core']]],
-  ['mutnode_18',['MutNode',['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341',1,'mim']]]
+  ['mov_14',['mov',['../namespacemim_1_1plug_1_1x86.html#aa5ac3cf94ec798b736ab116aa9e958cc',1,'mim::plug::x86']]],
+  ['movsx_15',['movsx',['../namespacemim_1_1plug_1_1x86.html#a808d02530b643e21c8aa2c26150bb5e8',1,'mim::plug::x86']]],
+  ['movzx_16',['movzx',['../namespacemim_1_1plug_1_1x86.html#a09af9280dd2719c576a5bda16c65450b',1,'mim::plug::x86']]],
+  ['mr_17',['mr',['../namespacemim_1_1plug_1_1x86.html#a0609ff1180938f13699921228bfe7d9e',1,'mim::plug::x86']]],
+  ['mr_5fnest_18',['mr_nest',['../namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e',1,'mim::plug::btensor']]],
+  ['mr_5ftileable_19',['mr_tileable',['../namespacemim_1_1plug_1_1tensor.html#a25c266a60c87623b52ea6acbff97dde8',1,'mim::plug::tensor']]],
+  ['mslot_20',['mslot',['../namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9',1,'mim::plug::mem']]],
+  ['mulrem_21',['mulrem',['../namespacemim_1_1plug_1_1core.html#ad02dfa9728e62294164786e714b7d8c4',1,'mim::plug::core']]],
+  ['mutnode_22',['MutNode',['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341',1,'mim']]]
 ];

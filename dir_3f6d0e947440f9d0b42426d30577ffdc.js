@@ -7,7 +7,7 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "axm.cpp", "axm_8cpp.html", null ],
     [ "check.cpp", "check_8cpp.html", "check_8cpp" ],
     [ "def.cpp", "def_8cpp.html", "def_8cpp" ],
-    [ "dot.cpp", "dot_8cpp.html", null ],
+    [ "dot.cpp", "mim_2dot_8cpp.html", null ],
     [ "driver.cpp", "driver_8cpp.html", "driver_8cpp" ],
     [ "dump.cpp", "dump_8cpp.html", "dump_8cpp" ],
     [ "lam.cpp", "lam_8cpp.html", "lam_8cpp" ],

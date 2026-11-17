@@ -5,7 +5,7 @@ var classmim_1_1Idx =
     [ "expect_bitwidth", "classmim_1_1Idx.html#af571bc3aa9b5ba62983206eedded2b71", null ],
     [ "isa", "classmim_1_1Idx.html#a7b4496e71deaa94835f732de364e5d76", null ],
     [ "isa_lit", "classmim_1_1Idx.html#ab6aa921a9f36cb7f3f7ddee0ae22726a", null ],
-    [ "size2bitwidth", "classmim_1_1Idx.html#a476bd0b41bda503d46dac1584823e1e1", null ],
+    [ "size2bitwidth", "classmim_1_1Idx.html#ab8182351fd6c29d58a52735c8357cef1", null ],
     [ "size2bitwidth", "classmim_1_1Idx.html#a445658b6d8a1922d7fc9fb33235417ff", null ],
     [ "World", "classmim_1_1Idx.html#a7b4bcdf992c21ae83363f25df05b1d25", null ],
     [ "Node", "classmim_1_1Idx.html#a1ad0fc50124498f395680f359fbf7182", null ],

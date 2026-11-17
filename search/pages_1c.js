@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['⚖️_20license_0',['⚖️ License',['../index.html#autotoc_md153',1,'']]]
+  ['⊥_20sites_0',['⊥-sites',['../phases.html#sccp-bot-site',1,'']]]
 ];
