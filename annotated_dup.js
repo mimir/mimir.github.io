@@ -284,6 +284,7 @@ var annotated_dup =
       [ "Cost", "classpbqp_1_1Cost.html", "classpbqp_1_1Cost" ],
       [ "Graph", "classpbqp_1_1Graph.html", "classpbqp_1_1Graph" ],
       [ "Instance", "namespacepbqp.html#structpbqp_1_1Instance", "namespacepbqp_structpbqp_1_1Instance_dup" ],
+      [ "Matrix", "classpbqp_1_1Matrix.html", "classpbqp_1_1Matrix" ],
       [ "Solution", "structpbqp_1_1Solution.html", "structpbqp_1_1Solution" ],
       [ "Statistics", "namespacepbqp.html#structpbqp_1_1Statistics", "namespacepbqp_structpbqp_1_1Statistics_dup" ]
     ] ],

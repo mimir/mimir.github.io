@@ -19,6 +19,9 @@ var hierarchy =
     ] ],
     [ "mim::ast::Scopes::Barrier", "classmim_1_1ast_1_1Scopes.html#structmim_1_1ast_1_1Scopes_1_1Barrier", null ],
     [ "pbqp::BasicMatrix&lt; T &gt;", "classpbqp_1_1BasicMatrix.html", null ],
+    [ "pbqp::BasicMatrix&lt; const Cost &gt;", "classpbqp_1_1BasicMatrix.html", [
+      [ "pbqp::Matrix", "classpbqp_1_1Matrix.html", null ]
+    ] ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
     [ "mim::plug::x86::Liveness::Block", "classmim_1_1plug_1_1x86_1_1Liveness.html#structmim_1_1plug_1_1x86_1_1Liveness_1_1Block", null ],

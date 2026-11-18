@@ -180,13 +180,15 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:BasicMatrix" id="r_BasicMatrix"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A row-major matrix of costs over storage owned elsewhere.  <a href="classpbqp_1_1BasicMatrix.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A view of a cost matrix over row-major storage owned elsewhere; <a class="el" href="classpbqp_1_1BasicMatrix.html#a7f3d52bdf3c73bd55f56da70fa7d035a">transposed()</a> views the same storage column-major.  <a href="classpbqp_1_1BasicMatrix.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Cost" id="r_Cost"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1Cost.html">Cost</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A saturating cost; <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> forbids an option or option pair.  <a href="classpbqp_1_1Cost.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Graph" id="r_Graph"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1Graph.html">Graph</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A PBQP problem graph.  <a href="classpbqp_1_1Graph.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Instance_5Fstructpbqp_5F1_5F1Instance" id="r_Instance_5Fstructpbqp_5F1_5F1Instance"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structpbqp_1_1Instance">Instance</a></td></tr>
 <tr class="memdesc:structpbqp_1_1Instance"><td class="mdescLeft">&#160;</td><td class="mdescRight">A graph together with the optional <span class="tt"><a class="el" href="#afd36605a060416fc36a7bd45ff8f9ceb" title="Empty, or one entry per node id.">rn_priority</a></span> for <span class="tt"><a class="el" href="#a5816dd4745f4e43e7f80ca3604363469" title="Heuristic PBQP solver.">solve</a></span>.  <a href="#structpbqp_1_1Instance">More...</a><br /></td></tr>
+<tr class="memitem:Matrix" id="r_Matrix"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classpbqp_1_1Matrix.html">Matrix</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning row-major cost matrix; it views its own storage, so writes go through <a class="el" href="classpbqp_1_1Matrix.html#ae18c111e77beafc6bad22d7346ec7c71">span()</a>.  <a href="classpbqp_1_1Matrix.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Solution" id="r_Solution"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structpbqp_1_1Solution.html">Solution</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A complete assignment of options to nodes.  <a href="structpbqp_1_1Solution.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Statistics_5Fstructpbqp_5F1_5F1Statistics" id="r_Statistics_5Fstructpbqp_5F1_5F1Statistics"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structpbqp_1_1Statistics">Statistics</a></td></tr>
@@ -194,7 +196,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0a8a3ab0df6c57c1dd69a74c5599b0db" id="r_a0a8a3ab0df6c57c1dd69a74c5599b0db"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0a8a3ab0df6c57c1dd69a74c5599b0db">Matrix</a> = <a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a>&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;</td></tr>
+<tr class="memitem:ad0a5a71fa0018cdd729cfdc347aa4306" id="r_ad0a5a71fa0018cdd729cfdc347aa4306"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad0a5a71fa0018cdd729cfdc347aa4306">MatrixSpan</a> = <a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a>&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;</td></tr>
 <tr class="memitem:a0ff1c7b734ad39dbc70940dc09c48f8c" id="r_a0ff1c7b734ad39dbc70940dc09c48f8c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0ff1c7b734ad39dbc70940dc09c48f8c">MatrixView</a> = <a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a>&lt;const <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;</td></tr>
 <tr id="typedef-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Ids</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>Node and edge ids are dense and stable: nothing is ever removed from a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
@@ -206,7 +208,7 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a047b2d59588a01078730d8e3fd7186d1" id="r_a047b2d59588a01078730d8e3fd7186d1"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> = size_t</td></tr>
 <tr class="memdesc:a047b2d59588a01078730d8e3fd7186d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of an option within a node's cost vector.  <br /></td></tr>
 <tr id="typedef-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">PBQP Vectors &amp; Matrices</div></td></tr>
-<tr><td colspan="2" class="ititle"><div class="groupText"><p>PBQP vectors and matrices are small, so they live inline; a <a class="el" href="#a0a8a3ab0df6c57c1dd69a74c5599b0db">Matrix</a> views such storage row-major. </p>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>PBQP vectors and matrices are small, so they live inline; a <a class="el" href="classpbqp_1_1Matrix.html" title="An owning row-major cost matrix; it views its own storage, so writes go through span().">Matrix</a> views such storage row-major. </p>
 </div></td></tr>
 <tr class="memitem:a84e598ccc32f68b844e2eecc2003bfe4" id="r_a84e598ccc32f68b844e2eecc2003bfe4"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a84e598ccc32f68b844e2eecc2003bfe4">Costs</a> = fe::Vector&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>, 4&gt;</td></tr>
 <tr class="memitem:a37bcf571e2f33c91cf798ec56569b6b7" id="r_a37bcf571e2f33c91cf798ec56569b6b7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a37bcf571e2f33c91cf798ec56569b6b7">Edges</a> = fe::Vector&lt;<a class="el" href="#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a>, 4&gt;</td></tr>
@@ -347,7 +349,7 @@ single_option = 0</td>
 
 <p>One option per node, indexed by node id. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00066">66</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00068">68</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -363,7 +365,7 @@ single_option = 0</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00064">64</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00066">66</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +383,7 @@ single_option = 0</td>
 
 <p>Identifier of an edge in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00024">24</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00026">26</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -397,23 +399,23 @@ single_option = 0</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00065">65</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00067">67</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="a0a8a3ab0df6c57c1dd69a74c5599b0db" name="a0a8a3ab0df6c57c1dd69a74c5599b0db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8a3ab0df6c57c1dd69a74c5599b0db">&#9670;&#160;</a></span>Matrix</h2>
+<a id="ad0a5a71fa0018cdd729cfdc347aa4306" name="ad0a5a71fa0018cdd729cfdc347aa4306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a5a71fa0018cdd729cfdc347aa4306">&#9670;&#160;</a></span>MatrixSpan</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a0a8a3ab0df6c57c1dd69a74c5599b0db">pbqp::Matrix</a> = <a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a>&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;</td>
+          <td class="memname">using <a class="el" href="#ad0a5a71fa0018cdd729cfdc347aa4306">pbqp::MatrixSpan</a> = <a class="el" href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a>&lt;<a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00155">155</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00166">166</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -429,7 +431,7 @@ single_option = 0</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00156">156</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00167">167</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -447,7 +449,7 @@ single_option = 0</td>
 
 <p>Identifier of a node in a <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00023">23</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00025">25</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +467,7 @@ single_option = 0</td>
 
 <p>Index of an option within a node's cost vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00025">25</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00027">27</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -500,11 +502,11 @@ single_option = 0</td>
 <p>Nodes whose choice is <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> in their cost vector or, given the neighbour's choice, in an incident matrix. </p>
 <p>These are the candidates to spill or split when an assignment is infeasible. Requires a valid option for every node. </p>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00609">609</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00600">600</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00609">conflicts()</a>, <a class="el" href="graph_8h_source.html#l00226">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00219">pbqp::Graph::edge_cost()</a>, <a class="el" href="graph_8h_source.html#l00233">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00041">pbqp::Cost::is_inf()</a>, <a class="el" href="graph_8h_source.html#l00203">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00232">pbqp::Graph::nodes()</a>, and <a class="el" href="def_8cpp_source.html#l00188">mim::Def::set()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00600">conflicts()</a>, <a class="el" href="graph_8h_source.html#l00284">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00268">pbqp::Graph::edge_matrix()</a>, <a class="el" href="graph_8h_source.html#l00291">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00265">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00290">pbqp::Graph::nodes()</a>, and <a class="el" href="def_8cpp_source.html#l00188">mim::Def::set()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00609">conflicts()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00600">conflicts()</a>.</p>
 
 </div>
 </div>
@@ -538,11 +540,11 @@ single_option = 0</td>
 <p>All solver functions are safe to call concurrently on a graph that nobody mutates meanwhile. </p>
 <p><a class="el" href="classpbqp_1_1Cost.html" title="A saturating cost; Cost::inf forbids an option or option pair.">Cost</a> of <span class="tt">choices</span> under <span class="tt">graph</span>; <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> if it picks a <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a> entry or the total saturates. Requires a valid option for every node. </p>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00593">593</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00584">584</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00212">pbqp::Graph::edge_matrix()</a>, <a class="el" href="graph_8h_source.html#l00233">pbqp::Graph::edges()</a>, <a class="el" href="solver_8cpp_source.html#l00593">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00203">pbqp::Graph::node_costs()</a>, and <a class="el" href="graph_8h_source.html#l00232">pbqp::Graph::nodes()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00284">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00268">pbqp::Graph::edge_matrix()</a>, <a class="el" href="graph_8h_source.html#l00291">pbqp::Graph::edges()</a>, <a class="el" href="solver_8cpp_source.html#l00584">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00265">pbqp::Graph::node_costs()</a>, and <a class="el" href="graph_8h_source.html#l00290">pbqp::Graph::nodes()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00559">mim::plug::x86::phase::ISel::analyze()</a>, <a class="el" href="solver_8cpp_source.html#l00593">evaluate()</a>, and <a class="el" href="solver_8cpp_source.html#l00631">solve()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00584">evaluate()</a>, and <a class="el" href="solver_8cpp_source.html#l00622">solve()</a>.</p>
 
 </div>
 </div>
@@ -601,11 +603,11 @@ single_option = 0</td>
 }
 </pre><p>The position of a node in <span class="tt">nodes</span> is its id. Edge <span class="tt">costs</span> are row-major with <span class="tt">src</span> as the row; <span class="tt">rows</span> and <span class="tt">cols</span> are optional and only checked. <span class="tt">"inf"</span> is <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a>, <span class="tt">rn_priority</span> is optional, and unknown keys are skipped. Throws <span class="tt">fe::Error::Bail</span>, a <span class="tt">std::exception</span>, on malformed input; <span class="tt">path</span> only names the input in its message. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00439">439</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00440">440</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="json_8cpp_source.html#l00439">read_json()</a>.</p>
+<p class="reference">References <a class="el" href="json_8cpp_source.html#l00440">read_json()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00439">read_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00440">read_json()</a>.</p>
 
 </div>
 </div>
@@ -639,11 +641,11 @@ single_option = 0</td>
 <p>Heuristic PBQP solver. </p>
 <p>Reduces degree 0, 1 (RI) and 2 (RII) nodes exactly and higher-degree nodes with the RN heuristic. Normalization keeps intermediate costs relative, so they saturate only where option costs differ by <a class="el" href="classpbqp_1_1Cost.html#a0a12b8135656c9b015010f979841f395">Cost::inf</a>. Short of that, the result is optimal whenever no RN step is needed, e.g. on trees. RN decides the node with the highest <span class="tt">rn_priority[n]</span> first; ties go to the highest degree, then the widest cost spread. SSA-based register allocation passes PEO positions, so coloring cannot fail (Buchwald et al. 2011). Requires <span class="tt">rn_priority</span> to be empty or to cover every node id. </p>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00631">631</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00622">622</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00593">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00178">pbqp::Graph::npos</a>, <a class="el" href="graph_8h_source.html#l00235">pbqp::Graph::num_nodes()</a>, and <a class="el" href="solver_8cpp_source.html#l00631">solve()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8cpp_source.html#l00584">evaluate()</a>, <a class="el" href="graph_8h_source.html#l00240">pbqp::Graph::npos</a>, <a class="el" href="graph_8h_source.html#l00293">pbqp::Graph::num_nodes()</a>, and <a class="el" href="solver_8cpp_source.html#l00622">solve()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00559">mim::plug::x86::phase::ISel::analyze()</a>, and <a class="el" href="solver_8cpp_source.html#l00631">solve()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00622">solve()</a>.</p>
 
 </div>
 </div>
@@ -682,11 +684,11 @@ single_option = 0</td>
 <p>Brute-force optimum, useful to cross-check small instances. </p>
 <p>The search space is split across <span class="tt">num_threads</span> threads (0 = hardware concurrency). Returns nothing if there are more than <span class="tt">max_combinations</span> candidate assignments. </p>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00702">702</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00684">684</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00031">pbqp::Solution::cost</a>, and <a class="el" href="solver_8cpp_source.html#l00702">solve_exhaustive()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00031">pbqp::Solution::cost</a>, and <a class="el" href="solver_8cpp_source.html#l00684">solve_exhaustive()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00702">solve_exhaustive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00684">solve_exhaustive()</a>.</p>
 
 </div>
 </div>
@@ -717,11 +719,11 @@ single_option = 0</td>
 <p>Write <span class="tt">graph</span> in Graphviz DOT format with cost vectors and matrices as HTML-like labels. </p>
 <p>Edge matrices are titled <span class="tt">src × dst</span>, i.e. rows × columns. Highlights the entries picked by <span class="tt">choices</span>, which must be empty or cover every node id. </p>
 
-<p class="definition">Definition at line <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">22</a> of file <a class="el" href="pbqp_2dot_8cpp_source.html">dot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">23</a> of file <a class="el" href="pbqp_2dot_8cpp_source.html">dot.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00219">pbqp::Graph::edge_cost()</a>, <a class="el" href="graph_8h_source.html#l00233">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00203">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00232">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00223">pbqp::Graph::num_options()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">write_dot()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00089">pbqp::BasicMatrix&lt; T &gt;::cols()</a>, <a class="el" href="graph_8h_source.html#l00284">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00268">pbqp::Graph::edge_matrix()</a>, <a class="el" href="graph_8h_source.html#l00291">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00265">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00290">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00293">pbqp::Graph::num_nodes()</a>, <a class="el" href="graph_8h_source.html#l00088">pbqp::BasicMatrix&lt; T &gt;::rows()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">write_dot()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="isel_8cpp_source.html#l00559">mim::plug::x86::phase::ISel::analyze()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">write_dot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">write_dot()</a>.</p>
 
 </div>
 </div>
@@ -752,11 +754,11 @@ single_option = 0</td>
 <p>Write the format that <span class="tt"><a class="el" href="#afa8ae380485586adbf59f3366b0b99e3" title="Read a PBQP instance into the empty instance:">read_json</a></span> reads. </p>
 <p>Requires <span class="tt">rn_priority</span> to be empty or to have one entry per node. </p>
 
-<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00446">446</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8cpp_source.html#l00447">447</a> of file <a class="el" href="json_8cpp_source.html">json.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00206">pbqp::Graph::edge_costs()</a>, <a class="el" href="graph_8h_source.html#l00233">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00203">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00232">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00235">pbqp::Graph::num_nodes()</a>, <a class="el" href="graph_8h_source.html#l00223">pbqp::Graph::num_options()</a>, and <a class="el" href="json_8cpp_source.html#l00446">write_json()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00089">pbqp::BasicMatrix&lt; T &gt;::cols()</a>, <a class="el" href="graph_8h_source.html#l00099">pbqp::BasicMatrix&lt; T &gt;::data()</a>, <a class="el" href="graph_8h_source.html#l00284">pbqp::Graph::edge()</a>, <a class="el" href="graph_8h_source.html#l00268">pbqp::Graph::edge_matrix()</a>, <a class="el" href="graph_8h_source.html#l00291">pbqp::Graph::edges()</a>, <a class="el" href="graph_8h_source.html#l00265">pbqp::Graph::node_costs()</a>, <a class="el" href="graph_8h_source.html#l00290">pbqp::Graph::nodes()</a>, <a class="el" href="graph_8h_source.html#l00293">pbqp::Graph::num_nodes()</a>, <a class="el" href="graph_8h_source.html#l00088">pbqp::BasicMatrix&lt; T &gt;::rows()</a>, <a class="el" href="graph_8h_source.html#l00090">pbqp::BasicMatrix&lt; T &gt;::size()</a>, and <a class="el" href="json_8cpp_source.html#l00447">write_json()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00446">write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00447">write_json()</a>.</p>
 
 </div>
 </div>

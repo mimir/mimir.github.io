@@ -173,14 +173,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classpbqp_1_1B
 </div><!--header-->
 <div class="contents">
 
-<p>A row-major matrix of costs over storage owned elsewhere.  
+<p>A view of a cost matrix over row-major storage owned elsewhere; <a class="el" href="#a7f3d52bdf3c73bd55f56da70fa7d035a">transposed()</a> views the same storage column-major.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="graph_8h_source.html">pbqp/graph.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for pbqp::BasicMatrix&lt; T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classpbqp_1_1BasicMatrix__inherit__graph.svg" width="338" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classpbqp_1_1BasicMatrix__inherit__graph.svg" width="334" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -190,29 +190,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8237f3190d7fb39e0f8b6302845f335" id="r_ae8237f3190d7fb39e0f8b6302845f335"><td class="memTemplParams" colspan="2">template&lt;class U&gt; <br />
 requires (std::same_as&lt;T, const <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt; &amp;&amp; std::same_as&lt;U, <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;)</td></tr>
 <tr class="memitem:ae8237f3190d7fb39e0f8b6302845f335 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ae8237f3190d7fb39e0f8b6302845f335">BasicMatrix</a> (const BasicMatrix&lt; U &gt; &amp;other)</td></tr>
-<tr class="memitem:ac64ded6b1a1c293757d7179d1389a517" id="r_ac64ded6b1a1c293757d7179d1389a517"><td class="memItemLeft">constexpr T &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac64ded6b1a1c293757d7179d1389a517">operator[]</a> (size_t row, size_t col)</td></tr>
-<tr class="memitem:a5f535a138c79b8dacccb4d37868de8b7" id="r_a5f535a138c79b8dacccb4d37868de8b7"><td class="memItemLeft">constexpr const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5f535a138c79b8dacccb4d37868de8b7">operator[]</a> (size_t row, size_t col) const</td></tr>
+<tr class="memitem:a1dc97a5aa572c6e6bd9971537048c3dd" id="r_a1dc97a5aa572c6e6bd9971537048c3dd"><td class="memItemLeft">constexpr T &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1dc97a5aa572c6e6bd9971537048c3dd">operator[]</a> (size_t row, size_t col) const</td></tr>
 <tr class="memitem:a806c1c49cb2d70819f4b8c08be31781c" id="r_a806c1c49cb2d70819f4b8c08be31781c"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a806c1c49cb2d70819f4b8c08be31781c">rows</a> () const</td></tr>
 <tr class="memitem:ae5a3e217bac2c93aa50bd3569ea53a7c" id="r_ae5a3e217bac2c93aa50bd3569ea53a7c"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#ae5a3e217bac2c93aa50bd3569ea53a7c">cols</a> () const</td></tr>
 <tr class="memitem:a0172e7933b3c35da847eff4080f1845f" id="r_a0172e7933b3c35da847eff4080f1845f"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a0172e7933b3c35da847eff4080f1845f">size</a> () const</td></tr>
+<tr class="memitem:a8bb965bd0a156800c0a6d50354175674" id="r_a8bb965bd0a156800c0a6d50354175674"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a8bb965bd0a156800c0a6d50354175674">row_major</a> () const</td></tr>
+<tr class="memdesc:a8bb965bd0a156800c0a6d50354175674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether rows are contiguous, which also holds for a transposed single row or column.  <br /></td></tr>
+<tr class="memitem:a7f3d52bdf3c73bd55f56da70fa7d035a" id="r_a7f3d52bdf3c73bd55f56da70fa7d035a"><td class="memItemLeft">constexpr <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7f3d52bdf3c73bd55f56da70fa7d035a">transposed</a> () const</td></tr>
+<tr class="memitem:a785c3f39672a879ad019f7c9a652b6df" id="r_a785c3f39672a879ad019f7c9a652b6df"><td class="memItemLeft">constexpr const <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a785c3f39672a879ad019f7c9a652b6df">operator+=</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs) const</td></tr>
+<tr class="memitem:adc17d0885ad679c70eabfe3ab50ba3a9" id="r_adc17d0885ad679c70eabfe3ab50ba3a9"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#adc17d0885ad679c70eabfe3ab50ba3a9">copy_from</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; src) const</td></tr>
+<tr class="memitem:a20009319503653035af3c9e24f34b357" id="r_a20009319503653035af3c9e24f34b357"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a20009319503653035af3c9e24f34b357">erase_row</a> (size_t row) &amp;</td></tr>
+<tr class="memitem:afb893571ed6a92fbcb0a598a884a0ac8" id="r_afb893571ed6a92fbcb0a598a884a0ac8"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#afb893571ed6a92fbcb0a598a884a0ac8">erase_col</a> (size_t col) &amp;</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Storage</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Iteration covers the storage in memory order, which is row-major only if <a class="el" href="#a8bb965bd0a156800c0a6d50354175674" title="Whether rows are contiguous, which also holds for a transposed single row or column.">row_major()</a>. </p>
+</div></td></tr>
 <tr class="memitem:af7623b2bd682ffaa9db574544946dd4a" id="r_af7623b2bd682ffaa9db574544946dd4a"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#af7623b2bd682ffaa9db574544946dd4a">data</a> () const</td></tr>
-<tr class="memitem:a2cd37a84fdbf2551864eaad8e922d13a" id="r_a2cd37a84fdbf2551864eaad8e922d13a"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a2cd37a84fdbf2551864eaad8e922d13a">row</a> (size_t row) const</td></tr>
 <tr class="memitem:a039e28a657696b05d400900538e64001" id="r_a039e28a657696b05d400900538e64001"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a039e28a657696b05d400900538e64001">begin</a> () const</td></tr>
 <tr class="memitem:a1ab2317924b3d43a0a406c235360aa5b" id="r_a1ab2317924b3d43a0a406c235360aa5b"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a1ab2317924b3d43a0a406c235360aa5b">end</a> () const</td></tr>
-<tr class="memitem:a57300c5e8e5c99a6b1e74e31958919ec" id="r_a57300c5e8e5c99a6b1e74e31958919ec"><td class="memItemLeft">constexpr <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a57300c5e8e5c99a6b1e74e31958919ec">operator+=</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs)</td></tr>
-<tr class="memitem:a10d44ae44ed6f05da0549df0a286736b" id="r_a10d44ae44ed6f05da0549df0a286736b"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a10d44ae44ed6f05da0549df0a286736b">add_transposed</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs)</td></tr>
-<tr class="memdesc:a10d44ae44ed6f05da0549df0a286736b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the transpose of <span class="tt">rhs</span>, i.e. <span class="tt">(*this)[r, c] += rhs[c, r]</span>.  <br /></td></tr>
-<tr class="memitem:a113225fa0ed4890cfbcf3d7a85c32c68" id="r_a113225fa0ed4890cfbcf3d7a85c32c68"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a113225fa0ed4890cfbcf3d7a85c32c68">transpose_from</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; src)</td></tr>
-<tr class="memdesc:a113225fa0ed4890cfbcf3d7a85c32c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces every entry with the transpose of <span class="tt">src</span>.  <br /></td></tr>
-<tr class="memitem:a158e6637d2fc5f2935ed75f969e36d5b" id="r_a158e6637d2fc5f2935ed75f969e36d5b"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a158e6637d2fc5f2935ed75f969e36d5b">erase_row</a> (size_t row) &amp;</td></tr>
-<tr class="memitem:aa5f5969e6ea905dedda857a5157f5851" id="r_aa5f5969e6ea905dedda857a5157f5851"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#aa5f5969e6ea905dedda857a5157f5851">erase_col</a> (size_t col) &amp;</td></tr>
+<tr class="memitem:a2cd37a84fdbf2551864eaad8e922d13a" id="r_a2cd37a84fdbf2551864eaad8e922d13a"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a2cd37a84fdbf2551864eaad8e922d13a">row</a> (size_t row) const</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 requires std::same_as&lt;std::remove_cv_t&lt;T&gt;, <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;<br />
-class pbqp::BasicMatrix&lt; T &gt;</div><p>A row-major matrix of costs over storage owned elsewhere. </p>
+class pbqp::BasicMatrix&lt; T &gt;</div><p>A view of a cost matrix over row-major storage owned elsewhere; <a class="el" href="#a7f3d52bdf3c73bd55f56da70fa7d035a">transposed()</a> views the same storage column-major. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00071">71</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00073">73</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac6f3804ae5231feb35c957b3ee88e8c2" name="ac6f3804ae5231feb35c957b3ee88e8c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6f3804ae5231feb35c957b3ee88e8c2">&#9670;&#160;</a></span>BasicMatrix() <span class="overload">[1/3]</span></h2>
@@ -238,6 +240,8 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00126">pbqp::BasicMatrix&lt; Cost &gt;::erase_row()</a>.</p>
 
 </div>
 </div>
@@ -275,7 +279,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00074">74</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00076">76</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -312,39 +316,6 @@ requires (std::same_as&lt;T, const <a class="el" href="classpbqp_1_1Cost.html">C
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a10d44ae44ed6f05da0549df0a286736b" name="a10d44ae44ed6f05da0549df0a286736b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10d44ae44ed6f05da0549df0a286736b">&#9670;&#160;</a></span>add_transposed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::add_transposed </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds the transpose of <span class="tt">rhs</span>, i.e. <span class="tt">(*this)[r, c] += rhs[c, r]</span>. </p>
-
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00114">114</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">pbqp::Graph::add_edge_costs()</a>.</p>
-
-</div>
-</div>
 <a id="a039e28a657696b05d400900538e64001" name="a039e28a657696b05d400900538e64001"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a039e28a657696b05d400900538e64001">&#9670;&#160;</a></span>begin()</h2>
 
@@ -370,7 +341,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00103">103</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00100">100</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +370,38 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00095">95</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00089">89</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00204">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
+
+</div>
+</div>
+<a id="adc17d0885ad679c70eabfe3ab50ba3a9" name="adc17d0885ad679c70eabfe3ab50ba3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc17d0885ad679c70eabfe3ab50ba3a9">&#9670;&#160;</a></span>copy_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::copy_from </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00117">117</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +430,9 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00098">98</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00099">99</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -457,12 +461,12 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00104">104</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00101">101</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="aa5f5969e6ea905dedda857a5157f5851" name="aa5f5969e6ea905dedda857a5157f5851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5f5969e6ea905dedda857a5157f5851">&#9670;&#160;</a></span>erase_col()</h2>
+<a id="afb893571ed6a92fbcb0a598a884a0ac8" name="afb893571ed6a92fbcb0a598a884a0ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb893571ed6a92fbcb0a598a884a0ac8">&#9670;&#160;</a></span>erase_col()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -486,12 +490,12 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00138">138</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00135">135</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="a158e6637d2fc5f2935ed75f969e36d5b" name="a158e6637d2fc5f2935ed75f969e36d5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158e6637d2fc5f2935ed75f969e36d5b">&#9670;&#160;</a></span>erase_row()</h2>
+<a id="a20009319503653035af3c9e24f34b357" name="a20009319503653035af3c9e24f34b357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20009319503653035af3c9e24f34b357">&#9670;&#160;</a></span>erase_row()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -515,12 +519,12 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00132">132</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00126">126</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="a57300c5e8e5c99a6b1e74e31958919ec" name="a57300c5e8e5c99a6b1e74e31958919ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57300c5e8e5c99a6b1e74e31958919ec">&#9670;&#160;</a></span>operator+=()</h2>
+<a id="a785c3f39672a879ad019f7c9a652b6df" name="a785c3f39672a879ad019f7c9a652b6df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785c3f39672a879ad019f7c9a652b6df">&#9670;&#160;</a></span>operator+=()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,10 +535,10 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator+= </td>
+          <td class="memname">const <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator+= </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -544,12 +548,12 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00106">106</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00108">108</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="ac64ded6b1a1c293757d7179d1389a517" name="ac64ded6b1a1c293757d7179d1389a517"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac64ded6b1a1c293757d7179d1389a517">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a1dc97a5aa572c6e6bd9971537048c3dd" name="a1dc97a5aa572c6e6bd9971537048c3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc97a5aa572c6e6bd9971537048c3dd">&#9670;&#160;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -567,39 +571,6 @@ template&lt;class T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00085">85</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
-
-</div>
-</div>
-<a id="a5f535a138c79b8dacccb4d37868de8b7" name="a5f535a138c79b8dacccb4d37868de8b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f535a138c79b8dacccb4d37868de8b7">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator[] </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;) const</td>
         </tr>
       </table>
@@ -610,7 +581,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00089">89</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00083">83</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -639,7 +610,38 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00099">99</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00102">102</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a8bb965bd0a156800c0a6d50354175674" name="a8bb965bd0a156800c0a6d50354175674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb965bd0a156800c0a6d50354175674">&#9670;&#160;</a></span>row_major()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::row_major </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether rows are contiguous, which also holds for a transposed single row or column. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00093">93</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -668,7 +670,9 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00094">94</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00088">88</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00204">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -697,12 +701,14 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00096">96</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00090">90</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
-<a id="a113225fa0ed4890cfbcf3d7a85c32c68" name="a113225fa0ed4890cfbcf3d7a85c32c68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a113225fa0ed4890cfbcf3d7a85c32c68">&#9670;&#160;</a></span>transpose_from()</h2>
+<a id="a7f3d52bdf3c73bd55f56da70fa7d035a" name="a7f3d52bdf3c73bd55f56da70fa7d035a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3d52bdf3c73bd55f56da70fa7d035a">&#9670;&#160;</a></span>transposed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -713,22 +719,20 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::transpose_from </td>
+          <td class="memname"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::transposed </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Replaces every entry with the transpose of <span class="tt">src</span>. </p>
-
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00123">123</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00094">94</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
