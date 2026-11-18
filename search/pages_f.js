@@ -25,11 +25,13 @@ var searchData=
   ['optional_22',['📦 Install (Optional)',['../index.html#autotoc_md147',1,'']]],
   ['optional_20pre_20analysis_23',['Optional Pre-Analysis',['../phases.html#autotoc_md98',1,'']]],
   ['options_24',['Options',['../coding.html#autotoc_md11',1,'Build Options'],['../cli.html#autotoc_md8',1,'Developer Options'],['../cli.html#autotoc_md1',1,'Options']]],
-  ['ord_20plugin_25',['The ord Plugin',['../ord.html',1,'']]],
-  ['other_20definitions_26',['Other Definitions',['../mimir.html#autotoc_md90',1,'']]],
-  ['other_20operations_27',['Other Operations',['../core.html#autotoc_md337',1,'Other Operations'],['../math.html#autotoc_md412',1,'Other Operations']]],
-  ['out_20of_20the_20node_28',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]],
-  ['output_29',['Output',['../cli.html#autotoc_md3',1,'DOT Output'],['../cli.html#autotoc_md4',1,'Mim Output'],['../cli.html#autotoc_md2',1,'Output']]],
-  ['over_20the_20program_30',['Iterating over the Program',['../dev.html#autotoc_md57',1,'']]],
-  ['overview_31',['Overview',['../phases.html#autotoc_md91',1,'']]]
+  ['oracles_25',['Output Oracles',['../coding.html#oracles',1,'']]],
+  ['ord_20plugin_26',['The ord Plugin',['../ord.html',1,'']]],
+  ['other_20definitions_27',['Other Definitions',['../mimir.html#autotoc_md90',1,'']]],
+  ['other_20operations_28',['Other Operations',['../core.html#autotoc_md337',1,'Other Operations'],['../math.html#autotoc_md412',1,'Other Operations']]],
+  ['out_20of_20the_20node_29',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]],
+  ['output_30',['Output',['../cli.html#autotoc_md3',1,'DOT Output'],['../cli.html#autotoc_md4',1,'Mim Output'],['../cli.html#autotoc_md2',1,'Output']]],
+  ['output_20oracles_31',['Output Oracles',['../coding.html#oracles',1,'']]],
+  ['over_20the_20program_32',['Iterating over the Program',['../dev.html#autotoc_md57',1,'']]],
+  ['overview_33',['Overview',['../phases.html#autotoc_md91',1,'']]]
 ];

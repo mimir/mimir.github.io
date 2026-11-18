@@ -81,9 +81,10 @@ var searchData=
   ['async_20memory_20operations_78',['Blocking / Async Memory Operations',['../gpu.html#autotoc_md369',1,'']]],
   ['at_20all_79',['Why the guard exists at all',['../phases.html#autotoc_md111',1,'']]],
   ['at_20roughly_20performance_20parity_80',['Rust would land at roughly performance parity',['../md_docs_2why-cpp.html#autotoc_md179',1,'']]],
-  ['auto_5fdeinit_81',['auto_init / auto_deinit',['../gpu.html#autotoc_md363',1,'']]],
-  ['auto_5finit_20auto_5fdeinit_82',['auto_init / auto_deinit',['../gpu.html#autotoc_md363',1,'']]],
-  ['autodiff_20diff_83',['autodiff.diff',['../autodiff.html#autotoc_md231',1,'']]],
-  ['automatic_20differentiation_20plugin_84',['The automatic differentiation Plugin',['../autodiff.html',1,'']]],
-  ['axioms_85',['Axioms',['../tutorial.html#autotoc_md197',1,'Annexes and Axioms'],['../mimir.html#autotoc_md89',1,'Axioms'],['../dev.html#cast_axm',1,'Matching Axioms']]]
+  ['at_20small_20register_20counts_81',['x86 Backend at Small Register Counts',['../coding.html#x86_ksweep',1,'']]],
+  ['auto_5fdeinit_82',['auto_init / auto_deinit',['../gpu.html#autotoc_md363',1,'']]],
+  ['auto_5finit_20auto_5fdeinit_83',['auto_init / auto_deinit',['../gpu.html#autotoc_md363',1,'']]],
+  ['autodiff_20diff_84',['autodiff.diff',['../autodiff.html#autotoc_md231',1,'']]],
+  ['automatic_20differentiation_20plugin_85',['The automatic differentiation Plugin',['../autodiff.html',1,'']]],
+  ['axioms_86',['Axioms',['../tutorial.html#autotoc_md197',1,'Annexes and Axioms'],['../mimir.html#autotoc_md89',1,'Axioms'],['../dev.html#cast_axm',1,'Matching Axioms']]]
 ];

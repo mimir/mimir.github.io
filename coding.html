@@ -283,7 +283,12 @@ lit Tests</h2>
 </div><!-- fragment --><p>If your build directory is actually called <span class="tt">build</span>, you can also use <span class="tt">probe.sh</span>:</p>
 <div class="fragment"><div class="line">cd lit</div>
 <div class="line">../scripts/probe.sh foo.mim</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use:</dd></dl>
+</div><!-- fragment --><p>lit runs the copies staged into <span class="tt">build/lit/</span>, so a manual run after editing a test needs <span class="tt">cmake --build build --target mim_lit_tests</span> first. <span class="tt">scripts/lit.sh</span> does that for you, caps each run's virtual memory, and prints only failures and the summary while the full log goes to <span class="tt">build/lit.log</span>:</p>
+<div class="fragment"><div class="line">scripts/lit.sh                      # whole suite</div>
+<div class="line">scripts/lit.sh x86/ &#39;clos/|matrix/&#39; # regexes over test paths, or-ed</div>
+<div class="line">scripts/lit.sh -- --param x86_k=3   # options after `--` go to lit</div>
+</div><!-- fragment --><p><span class="tt">MIM_BUILD_DIR</span>, <span class="tt">MIM_JOBS</span>, and <span class="tt">MIM_VMEM</span> (KiB) override the build tree, the parallelism, and the memory cap.</p>
+<dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific <span class="tt">lit</span> failure, use:</dd></dl>
 <div class="fragment"><div class="line">./scripts/make_lit_error.sh foo.mim</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Round-Trip Tests</h2>
@@ -305,7 +310,63 @@ Unit Tests</h2>
 </div><!-- fragment --><p>doctest breaks into an attached debugger on a failing assertion; pass <span class="tt">-nb</span> to suppress that.</p>
 <dl class="section note"><dt>Note</dt><dd>To generate a one-line reproducer for the current checkout and a specific unit-test failure, use:</dd></dl>
 <div class="fragment"><div class="line">./scripts/make_test_error.sh &quot;World: dependent extract&quot;</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="oracles"></a>
+Output Oracles</h2>
+<p>lit only checks a few lines per test, so a phase can silently emit different - still valid - IR. <span class="tt">scripts/oracle.sh</span> runs <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> over every <span class="tt">lit/</span> and <span class="tt">extra/*/lit/</span> input and compares stdout, stderr, and exit code byte for byte:</p>
+<div class="fragment"><div class="line">scripts/oracle.sh snap base             # before the change: record the current build&#39;s outputs</div>
+<div class="line">scripts/oracle.sh diff base             # after rebuilding: compare against them</div>
+<div class="line">scripts/oracle.sh rev HEAD -m dump5     # or build HEAD in a scratch worktree and compare against that</div>
+<div class="line">scripts/oracle.sh diff base -- lit/fib.mim lit/x86/emit_cf.mim  # only some inputs</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Mode (<span class="tt">-m</span>)  </th><th class="markdownTableHeadNone">Command per input  </th><th class="markdownTableHeadNone">Use for  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">opt</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a> -p opt &lt;f&gt; -o -</span> (default)  </td><td class="markdownTableBodyNone">optimizer and phase refactors  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">noopt</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a> --no-opt &lt;f&gt; -o -</span>  </td><td class="markdownTableBodyNone">the frontend  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">ast</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-ast - &lt;f&gt;</span>  </td><td class="markdownTableBodyNone">the parser  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ll</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a> -p opt &lt;f&gt; -p ll -X ll:o=-</span>  </td><td class="markdownTableBodyNone">codegen  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">nest</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-nest - &lt;f&gt;</span>  </td><td class="markdownTableBodyNone"><span class="tt">Nest</span> and scheduling  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">dump5</span>  </td><td class="markdownTableBodyNone"><span class="tt">opt</span>, <span class="tt">noopt</span>, <span class="tt">typed</span>, <span class="tt">ascii</span>, <span class="tt">dot</span>  </td><td class="markdownTableBodyNone">the dumper  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">NAME='ARGS'</span>  </td><td class="markdownTableBodyNone">your own arguments, <span class="tt">{}</span> for the input  </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+<p>The dump carries gids, so even a changed number or order of created <span class="tt">Def</span>s shows up: a pure refactor must be byte-identical. Snapshots live in <span class="tt">MIM_ORACLE_DIR</span> (default <span class="tt">${TMPDIR:-/tmp}/mim-oracle</span>); <span class="tt">rev</span> builds <span class="tt"><a class="el" href="namespacemim.html">mim</a></span> and the plugins once per commit with the build type and compiler of your tree, and never touches your working tree.</p>
+<h2 class="doxsection"><a class="anchor" id="perf_ab"></a>
+Performance</h2>
+<p>Wall time varies by several percent from run to run, so compare user-space instruction counts of two staged Release builds instead:</p>
+<div class="fragment"><div class="line">scripts/perf_ab.sh snap before          # copies build-release/{bin,lib}</div>
+<div class="line"># ... change and rebuild build-release ...</div>
+<div class="line">scripts/perf_ab.sh cmp before live      # median of 3 runs per workload, delta in percent</div>
+<div class="line">scripts/perf_ab.sh cmp before live -w vgg16 -w &quot;mine=$PWD/foo.mim -p opt -o -&quot;</div>
+</div><!-- fragment --><p>The default workloads are <span class="tt">hlo</span> (<span class="tt">-p opt -p gpu lit/tensor/hlo.mim -p nvptx</span>) and <span class="tt">vgg16</span> (<span class="tt">lit/tensor/vgg16.mim -p opt -o -</span>).</p>
+<h2 class="doxsection"><a class="anchor" id="x86_ksweep"></a>
+x86 Backend at Small Register Counts</h2>
+<p>Most bugs in the x86 register allocator only show when it has to spill. <span class="tt">--param x86_k=&lt;n&gt;</span> makes lit compile every <span class="tt">-p x86 … -X x86:o=</span> RUN line with <span class="tt">-X x86:k=&lt;n&gt;</span>, so each test's expected exit codes check the spiller at that register count; <span class="tt">scripts/x86_ksweep.sh</span> runs the whole allowlist that way:</p>
+<div class="fragment"><div class="line">scripts/x86_ksweep.sh                   # k = 2, 3, 4, 6</div>
+<div class="line">scripts/x86_ksweep.sh -k 3 regex/       # one k, some tests</div>
+</div><!-- fragment --><p>Keep <span class="tt">-p x86 -X x86:o=</span> adjacent in new RUN lines so the parameter finds them.</p>
+<h2 class="doxsection"><a class="anchor" id="skills"></a>
+Claude Code Skills</h2>
+<p><span class="tt">.claude/skills/</span> holds project skills for <a href="https://claude.com/claude-code">Claude Code</a> that encode the workflows above; invoke them as <span class="tt">/&lt;name&gt;</span> or let the agent pick them up:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Skill  </th><th class="markdownTableHeadNone">Does  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">verify</span>  </td><td class="markdownTableBodyNone">maps a diff to the checks it needs (lit, unit tests, oracles, <span class="tt">test-py</span>, k-sweep, perf) and runs them  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">new-lit-test</span>  </td><td class="markdownTableBodyNone">writes a lit test in the right shape, stages, runs, and mutation-checks it  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">x86-status</span>  </td><td class="markdownTableBodyNone">brings <span class="tt">src/mim/plug/x86/AGENTS.md</span>, the backend's design and status, in line with the code  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">sync-syntax</span>  </td><td class="markdownTableBodyNone">propagates a surface-syntax change to the language reference, editors, and grammars  </td></tr>
+</table>
+<p>Agent instructions live in <span class="tt">AGENTS.md</span> at the root and in the subdirectories that need their own; each has a <span class="tt">CLAUDE.md</span> next to it that imports it.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Coding Style</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 C++ Style</h2>
