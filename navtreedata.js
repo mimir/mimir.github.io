@@ -125,18 +125,18 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1clos_1_1phase_1_1ClosConvPrep.html#aa7e0a951f06fc58e37df27dcc36516fa",
 "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a408b364af5a10d242e588c52fca69ab9",
 "classmim_1_1plug_1_1x86_1_1Liveness.html#af057b1e130a6e0f4a81ab29df5b56ac5",
-"constraint_8cpp_source.html",
-"family_8h.html#ae86affbce2d8754577141d86d77e9079",
-"mem_8h_source.html",
-"namespacemim.html#ad5652126b13a6b6e69f6b881528dbb5e",
-"namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8ba",
-"namespacemim_1_1plug_1_1cps.html#ad217985a045617b574990a6b1eb28cb2",
-"namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7eb2f84ffa93bc81d9d8f5945262d5f6",
-"namespacemim_1_1plug_1_1tensor.html#a5ff58c7d5227974f39614a44b9d99558",
-"namespacemim_1_1plug_1_1x86_1_1phase.html#ae43f2733949f30f1472e3e8a407ae02b",
-"split__off__kernels_8cpp_source.html",
-"structmim_1_1ast_1_1AnnexInfo.html#af05517c7ddb899fbd9902fa54ee1f8f8",
-"tuple_8cpp.html"
+"clos_2autogen_8h.html",
+"dir_d34d55580b90d42b64eaea7eda64dfe6.html",
+"ll_8h_source.html",
+"namespacemim.html#a74aeb614e80a21b6c95fc092adb3dd5a",
+"namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87",
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a7ccc249988b0ccd2e50d93bd51bc229c",
+"namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca705d9cf5220b93288d854cdc637f44c6",
+"namespacemim_1_1plug_1_1regex.html#ab3a764f9d39b068e136ecdb2d8a0a40a",
+"namespacemim_1_1plug_1_1x86.html#aab78cb1a00ef920bd8f0fe27ac3cc7e4",
+"regex_2normalizers_8cpp.html#a1776a86e9b491a6a97330035fc8a2fc1",
+"structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49",
+"structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html#a1813b9263233722195c2ef903c7fee54"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -10,6 +10,7 @@ var classpbqp_1_1Graph =
     [ "edge", "classpbqp_1_1Graph.html#a28a6d0ea27c427ddc474bdc8d4ebb994", null ],
     [ "edge_cost", "classpbqp_1_1Graph.html#a601cbd8ea9ff663a9ce7806764c32f7f", null ],
     [ "edge_costs", "classpbqp_1_1Graph.html#ab770d87990a17f051be187dfa0b0d9c1", null ],
+    [ "edge_matrix", "classpbqp_1_1Graph.html#a420d5f3c8110eebbbef41107f5adf3e3", null ],
     [ "edges", "classpbqp_1_1Graph.html#a7d5c37769037988929062ca97dae4383", null ],
     [ "incident_edges", "classpbqp_1_1Graph.html#a3302fdfa2279dfb7f5717e8ded81e224", null ],
     [ "link", "classpbqp_1_1Graph.html#a9f73f2a4c42f0be0d50ae303fc37b903", null ],

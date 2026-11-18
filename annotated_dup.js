@@ -280,6 +280,7 @@ var annotated_dup =
       [ "Zonker", "classmim_1_1Zonker.html", "classmim_1_1Zonker" ]
     ] ],
     [ "pbqp", "namespacepbqp.html", [
+      [ "BasicMatrix", "classpbqp_1_1BasicMatrix.html", "classpbqp_1_1BasicMatrix" ],
       [ "Cost", "classpbqp_1_1Cost.html", "classpbqp_1_1Cost" ],
       [ "Graph", "classpbqp_1_1Graph.html", "classpbqp_1_1Graph" ],
       [ "Instance", "namespacepbqp.html#structpbqp_1_1Instance", "namespacepbqp_structpbqp_1_1Instance_dup" ],

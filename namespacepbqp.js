@@ -1,6 +1,7 @@
 var namespacepbqp =
 [
     [ "json", "namespacepbqp_1_1json.html", null ],
+    [ "BasicMatrix", "classpbqp_1_1BasicMatrix.html", "classpbqp_1_1BasicMatrix" ],
     [ "Cost", "classpbqp_1_1Cost.html", "classpbqp_1_1Cost" ],
     [ "Graph", "classpbqp_1_1Graph.html", "classpbqp_1_1Graph" ],
     [ "Instance", "namespacepbqp.html#structpbqp_1_1Instance", "namespacepbqp_structpbqp_1_1Instance_dup" ],
@@ -10,6 +11,8 @@ var namespacepbqp =
     [ "Costs", "namespacepbqp.html#a84e598ccc32f68b844e2eecc2003bfe4", null ],
     [ "EdgeId", "namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b", null ],
     [ "Edges", "namespacepbqp.html#a37bcf571e2f33c91cf798ec56569b6b7", null ],
+    [ "Matrix", "namespacepbqp.html#a0a8a3ab0df6c57c1dd69a74c5599b0db", null ],
+    [ "MatrixView", "namespacepbqp.html#a0ff1c7b734ad39dbc70940dc09c48f8c", null ],
     [ "NodeId", "namespacepbqp.html#acb116c9a0cd62d8a649169771af17f54", null ],
     [ "OptionId", "namespacepbqp.html#a047b2d59588a01078730d8e3fd7186d1", null ],
     [ "conflicts", "namespacepbqp.html#a739423283116065c24b773d84498cae9", null ],

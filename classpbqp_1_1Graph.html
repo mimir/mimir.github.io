@@ -199,8 +199,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a7b1079bcc5bf18210b2983f418869d" id="r_a4a7b1079bcc5bf18210b2983f418869d"><td class="memItemLeft">fe::View&lt; <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4a7b1079bcc5bf18210b2983f418869d">node_costs</a> (<a class="el" href="namespacepbqp.html#acb116c9a0cd62d8a649169771af17f54">NodeId</a> n) const</td></tr>
 <tr class="memitem:ab770d87990a17f051be187dfa0b0d9c1" id="r_ab770d87990a17f051be187dfa0b0d9c1"><td class="memItemLeft">fe::View&lt; <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab770d87990a17f051be187dfa0b0d9c1">edge_costs</a> (<a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> e) const</td></tr>
 <tr class="memdesc:ab770d87990a17f051be187dfa0b0d9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row-major with the src option as the row.  <br /></td></tr>
+<tr class="memitem:a420d5f3c8110eebbbef41107f5adf3e3" id="r_a420d5f3c8110eebbbef41107f5adf3e3"><td class="memItemLeft"><a class="el" href="namespacepbqp.html#a0ff1c7b734ad39dbc70940dc09c48f8c">MatrixView</a>&#160;</td><td class="memItemRight"><a class="el" href="#a420d5f3c8110eebbbef41107f5adf3e3">edge_matrix</a> (<a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> e) const</td></tr>
+<tr class="memdesc:a420d5f3c8110eebbbef41107f5adf3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row-major with the src option as the row.  <br /></td></tr>
 <tr class="memitem:a601cbd8ea9ff663a9ce7806764c32f7f" id="r_a601cbd8ea9ff663a9ce7806764c32f7f"><td class="memItemLeft"><a class="el" href="classpbqp_1_1Cost.html">Cost</a>&#160;</td><td class="memItemRight"><a class="el" href="#a601cbd8ea9ff663a9ce7806764c32f7f">edge_cost</a> (<a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> e, <a class="el" href="namespacepbqp.html#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> src_option, <a class="el" href="namespacepbqp.html#a047b2d59588a01078730d8e3fd7186d1">OptionId</a> dst_option) const</td></tr>
-<tr class="memdesc:a601cbd8ea9ff663a9ce7806764c32f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix entry of <span class="tt">e</span>, addressed as (src option, dst option).  <br /></td></tr>
+<tr class="memdesc:a601cbd8ea9ff663a9ce7806764c32f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacepbqp.html#a0a8a3ab0df6c57c1dd69a74c5599b0db">Matrix</a> entry of <span class="tt">e</span>, addressed as (src option, dst option).  <br /></td></tr>
 <tr class="memitem:a24210e222807f6bd5d218334cd43bd39" id="r_a24210e222807f6bd5d218334cd43bd39"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a24210e222807f6bd5d218334cd43bd39">num_options</a> (<a class="el" href="namespacepbqp.html#acb116c9a0cd62d8a649169771af17f54">NodeId</a> n) const</td></tr>
 <tr class="memitem:a3302fdfa2279dfb7f5717e8ded81e224" id="r_a3302fdfa2279dfb7f5717e8ded81e224"><td class="memItemLeft">fe::View&lt; <a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3302fdfa2279dfb7f5717e8ded81e224">incident_edges</a> (<a class="el" href="namespacepbqp.html#acb116c9a0cd62d8a649169771af17f54">NodeId</a> n) const</td></tr>
 <tr class="memitem:a028a753533ded116b2f63c58093a7f87" id="r_a028a753533ded116b2f63c58093a7f87"><td class="memItemLeft"><a class="el" href="#structpbqp_1_1Graph_1_1Ends">Ends</a>&#160;</td><td class="memItemRight"><a class="el" href="#a028a753533ded116b2f63c58093a7f87">edge</a> (<a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a> e) const</td></tr>
@@ -221,11 +223,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A PBQP problem graph. </p>
-<p>Every node carries a cost vector with one entry per option. Every edge carries a cost matrix indexed by the options of its endpoints: </p><pre class="fragment">costs[src_option * num_options(dst) + dst_option]
+<p>Every node carries a cost vector with one entry per option. Every edge carries a cost matrix indexed by the options of its endpoints: </p><pre class="fragment">matrix[src_option, dst_option]
 </pre><p>The total cost of an assignment <span class="tt">x</span> is </p><pre class="fragment">sum_n c_n(x_n) + sum_{mn} M_mn(x_m, x_n)
 </pre><p>A node holds at most one edge to any other node, so parallel edges have to be merged by summing their matrices first. A <a class="el" href="classpbqp_1_1Graph.html" title="A PBQP problem graph.">Graph</a> only grows; ids are handed out consecutively from 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00079">79</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00171">171</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 </div><hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
 <a name="structpbqp_1_1Graph_1_1Ends" id="structpbqp_1_1Graph_1_1Ends"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structpbqp_1_1Graph_1_1Ends">&#9670;&#160;</a></span>pbqp::Graph::Ends</h2>
@@ -239,7 +241,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00081">81</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00173">173</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -279,6 +281,8 @@ src = 0</td>
 
 <p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00012">12</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>.</p>
+
 </div>
 </div>
 <a id="a85225e8d3ac291fbd2f8a9faf50fd155" name="a85225e8d3ac291fbd2f8a9faf50fd155"></a>
@@ -310,7 +314,7 @@ src = 0</td>
 
 <p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00031">31</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">edge()</a>, <a class="el" href="graph_8h_source.html#l00114">edge_costs()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8h_source.html#l00086">npos</a>, <a class="el" href="graph_8h_source.html#l00122">num_options()</a>, and <a class="el" href="graph_8cpp_source.html#l00052">set_edge_costs()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8cpp_source.html#l00012">add()</a>, <a class="el" href="graph_8h_source.html#l00114">pbqp::BasicMatrix&lt; T &gt;::add_transposed()</a>, <a class="el" href="graph_8h_source.html#l00226">edge()</a>, <a class="el" href="graph_8h_source.html#l00206">edge_costs()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8h_source.html#l00178">npos</a>, <a class="el" href="graph_8h_source.html#l00223">num_options()</a>, and <a class="el" href="graph_8cpp_source.html#l00055">set_edge_costs()</a>.</p>
 
 </div>
 </div>
@@ -337,11 +341,11 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00125">125</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00226">226</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">edge()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">edge()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="solver_8cpp_source.html#l00619">pbqp::conflicts()</a>, <a class="el" href="graph_8h_source.html#l00125">edge()</a>, <a class="el" href="graph_8h_source.html#l00117">edge_cost()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="solver_8cpp_source.html#l00609">pbqp::conflicts()</a>, <a class="el" href="graph_8h_source.html#l00226">edge()</a>, <a class="el" href="graph_8h_source.html#l00212">edge_matrix()</a>, <a class="el" href="solver_8cpp_source.html#l00593">pbqp::evaluate()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -374,9 +378,9 @@ src = 0</td>
 
 <p>The edge between <span class="tt">m</span> and <span class="tt">n</span>, or npos. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00057">57</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00060">60</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00132">edges()</a>, <a class="el" href="graph_8h_source.html#l00086">npos</a>, and <a class="el" href="graph_8h_source.html#l00134">num_nodes()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00233">edges()</a>, <a class="el" href="graph_8h_source.html#l00178">npos</a>, and <a class="el" href="graph_8h_source.html#l00235">num_nodes()</a>.</p>
 
 </div>
 </div>
@@ -412,13 +416,13 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p>Matrix entry of <span class="tt">e</span>, addressed as (src option, dst option). </p>
+<p><a class="el" href="namespacepbqp.html#a0a8a3ab0df6c57c1dd69a74c5599b0db">Matrix</a> entry of <span class="tt">e</span>, addressed as (src option, dst option). </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00117">117</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00219">219</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">edge()</a>, and <a class="el" href="graph_8h_source.html#l00122">num_options()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00212">edge_matrix()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00619">pbqp::conflicts()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00609">pbqp::conflicts()</a>, and <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>.</p>
 
 </div>
 </div>
@@ -447,9 +451,44 @@ src = 0</td>
 
 <p>Row-major with the src option as the row. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00114">114</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00206">206</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="graph_8cpp_source.html#l00052">set_edge_costs()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00212">edge_matrix()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="graph_8cpp_source.html#l00055">set_edge_costs()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+
+</div>
+</div>
+<a id="a420d5f3c8110eebbbef41107f5adf3e3" name="a420d5f3c8110eebbbef41107f5adf3e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420d5f3c8110eebbbef41107f5adf3e3">&#9670;&#160;</a></span>edge_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacepbqp.html#a0ff1c7b734ad39dbc70940dc09c48f8c">MatrixView</a> pbqp::Graph::edge_matrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacepbqp.html#ac4babaee4ee39391b4be052fbb875f3b">EdgeId</a></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Row-major with the src option as the row. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00212">212</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">edge()</a>, and <a class="el" href="graph_8h_source.html#l00223">num_options()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00219">edge_cost()</a>, <a class="el" href="graph_8h_source.html#l00206">edge_costs()</a>, and <a class="el" href="solver_8cpp_source.html#l00593">pbqp::evaluate()</a>.</p>
 
 </div>
 </div>
@@ -478,11 +517,11 @@ src = 0</td>
 
 <p>All edge ids. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00132">132</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00233">233</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00135">num_edges()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00236">num_edges()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00619">pbqp::conflicts()</a>, <a class="el" href="graph_8cpp_source.html#l00057">edge()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00609">pbqp::conflicts()</a>, <a class="el" href="graph_8cpp_source.html#l00060">edge()</a>, <a class="el" href="solver_8cpp_source.html#l00593">pbqp::evaluate()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +548,7 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00124">124</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00225">225</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -542,7 +581,7 @@ src = 0</td>
 
 <p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00018">18</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00125">edge()</a>, <a class="el" href="graph_8h_source.html#l00086">npos</a>, <a class="el" href="graph_8h_source.html#l00134">num_nodes()</a>, and <a class="el" href="graph_8h_source.html#l00122">num_options()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00226">edge()</a>, <a class="el" href="graph_8h_source.html#l00178">npos</a>, <a class="el" href="graph_8h_source.html#l00235">num_nodes()</a>, and <a class="el" href="graph_8h_source.html#l00223">num_options()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>.</p>
 
@@ -571,9 +610,9 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00111">111</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00203">203</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00619">pbqp::conflicts()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="graph_8h_source.html#l00122">num_options()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00609">pbqp::conflicts()</a>, <a class="el" href="solver_8cpp_source.html#l00593">pbqp::evaluate()</a>, <a class="el" href="graph_8h_source.html#l00223">num_options()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -602,11 +641,11 @@ src = 0</td>
 
 <p>All node ids. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00131">131</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00232">232</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00134">num_nodes()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00235">num_nodes()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00619">pbqp::conflicts()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solver_8cpp_source.html#l00609">pbqp::conflicts()</a>, <a class="el" href="solver_8cpp_source.html#l00593">pbqp::evaluate()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -633,9 +672,9 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00135">135</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00236">236</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00132">edges()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00233">edges()</a>.</p>
 
 </div>
 </div>
@@ -664,7 +703,7 @@ src = 0</td>
 
 <p>Number of distinct edge matrices ever linked or set; edges with equal matrices share one copy. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00137">137</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00238">238</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -691,9 +730,9 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00134">134</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00235">235</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00057">edge()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8h_source.html#l00131">nodes()</a>, <a class="el" href="solver_8cpp_source.html#l00641">pbqp::solve()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00060">edge()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8h_source.html#l00232">nodes()</a>, <a class="el" href="solver_8cpp_source.html#l00631">pbqp::solve()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -720,11 +759,11 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00122">122</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00223">223</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00111">node_costs()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00203">node_costs()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="graph_8h_source.html#l00117">edge_cost()</a>, <a class="el" href="solver_8cpp_source.html#l00603">pbqp::evaluate()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8cpp_source.html#l00047">set_node_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="graph_8h_source.html#l00212">edge_matrix()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, <a class="el" href="graph_8cpp_source.html#l00050">set_node_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00022">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00446">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -749,9 +788,9 @@ src = 0</td>
 
 <p>Replace a cost matrix; the size must not change. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00052">52</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00055">55</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00114">edge_costs()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00206">edge_costs()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>.</p>
 
@@ -778,9 +817,9 @@ src = 0</td>
 
 <p>Replace a cost vector; the option count must not change. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00047">47</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8cpp_source.html#l00050">50</a> of file <a class="el" href="graph_8cpp_source.html">graph.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="graph_8h_source.html#l00122">num_options()</a>.</p>
+<p class="reference">References <a class="el" href="graph_8h_source.html#l00223">num_options()</a>.</p>
 
 </div>
 </div>
@@ -805,9 +844,9 @@ src = 0</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00086">86</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00178">178</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="graph_8cpp_source.html#l00057">edge()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, and <a class="el" href="solver_8cpp_source.html#l00641">pbqp::solve()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">add_edge_costs()</a>, <a class="el" href="graph_8cpp_source.html#l00060">edge()</a>, <a class="el" href="graph_8cpp_source.html#l00018">link()</a>, and <a class="el" href="solver_8cpp_source.html#l00631">pbqp::solve()</a>.</p>
 
 </div>
 </div>

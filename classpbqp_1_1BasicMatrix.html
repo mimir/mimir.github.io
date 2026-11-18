@@ -1,0 +1,756 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: pbqp::BasicMatrix&lt; T &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classpbqp_1_1BasicMatrix.html','','classpbqp_1_1BasicMatrix-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">pbqp::BasicMatrix&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A row-major matrix of costs over storage owned elsewhere.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="graph_8h_source.html">pbqp/graph.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for pbqp::BasicMatrix&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classpbqp_1_1BasicMatrix__inherit__graph.svg" width="338" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac6f3804ae5231feb35c957b3ee88e8c2" id="r_ac6f3804ae5231feb35c957b3ee88e8c2"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> ()=default</td></tr>
+<tr class="memitem:a348f77ad98f0ef6d77546b635e3f69a9" id="r_a348f77ad98f0ef6d77546b635e3f69a9"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a348f77ad98f0ef6d77546b635e3f69a9">BasicMatrix</a> (T *data, size_t rows, size_t cols)</td></tr>
+<tr class="memitem:ae8237f3190d7fb39e0f8b6302845f335" id="r_ae8237f3190d7fb39e0f8b6302845f335"><td class="memTemplParams" colspan="2">template&lt;class U&gt; <br />
+requires (std::same_as&lt;T, const <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt; &amp;&amp; std::same_as&lt;U, <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;)</td></tr>
+<tr class="memitem:ae8237f3190d7fb39e0f8b6302845f335 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#ae8237f3190d7fb39e0f8b6302845f335">BasicMatrix</a> (const BasicMatrix&lt; U &gt; &amp;other)</td></tr>
+<tr class="memitem:ac64ded6b1a1c293757d7179d1389a517" id="r_ac64ded6b1a1c293757d7179d1389a517"><td class="memItemLeft">constexpr T &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac64ded6b1a1c293757d7179d1389a517">operator[]</a> (size_t row, size_t col)</td></tr>
+<tr class="memitem:a5f535a138c79b8dacccb4d37868de8b7" id="r_a5f535a138c79b8dacccb4d37868de8b7"><td class="memItemLeft">constexpr const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5f535a138c79b8dacccb4d37868de8b7">operator[]</a> (size_t row, size_t col) const</td></tr>
+<tr class="memitem:a806c1c49cb2d70819f4b8c08be31781c" id="r_a806c1c49cb2d70819f4b8c08be31781c"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a806c1c49cb2d70819f4b8c08be31781c">rows</a> () const</td></tr>
+<tr class="memitem:ae5a3e217bac2c93aa50bd3569ea53a7c" id="r_ae5a3e217bac2c93aa50bd3569ea53a7c"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#ae5a3e217bac2c93aa50bd3569ea53a7c">cols</a> () const</td></tr>
+<tr class="memitem:a0172e7933b3c35da847eff4080f1845f" id="r_a0172e7933b3c35da847eff4080f1845f"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a0172e7933b3c35da847eff4080f1845f">size</a> () const</td></tr>
+<tr class="memitem:af7623b2bd682ffaa9db574544946dd4a" id="r_af7623b2bd682ffaa9db574544946dd4a"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#af7623b2bd682ffaa9db574544946dd4a">data</a> () const</td></tr>
+<tr class="memitem:a2cd37a84fdbf2551864eaad8e922d13a" id="r_a2cd37a84fdbf2551864eaad8e922d13a"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a2cd37a84fdbf2551864eaad8e922d13a">row</a> (size_t row) const</td></tr>
+<tr class="memitem:a039e28a657696b05d400900538e64001" id="r_a039e28a657696b05d400900538e64001"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a039e28a657696b05d400900538e64001">begin</a> () const</td></tr>
+<tr class="memitem:a1ab2317924b3d43a0a406c235360aa5b" id="r_a1ab2317924b3d43a0a406c235360aa5b"><td class="memItemLeft">constexpr T *&#160;</td><td class="memItemRight"><a class="el" href="#a1ab2317924b3d43a0a406c235360aa5b">end</a> () const</td></tr>
+<tr class="memitem:a57300c5e8e5c99a6b1e74e31958919ec" id="r_a57300c5e8e5c99a6b1e74e31958919ec"><td class="memItemLeft">constexpr <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a57300c5e8e5c99a6b1e74e31958919ec">operator+=</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs)</td></tr>
+<tr class="memitem:a10d44ae44ed6f05da0549df0a286736b" id="r_a10d44ae44ed6f05da0549df0a286736b"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a10d44ae44ed6f05da0549df0a286736b">add_transposed</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs)</td></tr>
+<tr class="memdesc:a10d44ae44ed6f05da0549df0a286736b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the transpose of <span class="tt">rhs</span>, i.e. <span class="tt">(*this)[r, c] += rhs[c, r]</span>.  <br /></td></tr>
+<tr class="memitem:a113225fa0ed4890cfbcf3d7a85c32c68" id="r_a113225fa0ed4890cfbcf3d7a85c32c68"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a113225fa0ed4890cfbcf3d7a85c32c68">transpose_from</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; src)</td></tr>
+<tr class="memdesc:a113225fa0ed4890cfbcf3d7a85c32c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces every entry with the transpose of <span class="tt">src</span>.  <br /></td></tr>
+<tr class="memitem:a158e6637d2fc5f2935ed75f969e36d5b" id="r_a158e6637d2fc5f2935ed75f969e36d5b"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a158e6637d2fc5f2935ed75f969e36d5b">erase_row</a> (size_t row) &amp;</td></tr>
+<tr class="memitem:aa5f5969e6ea905dedda857a5157f5851" id="r_aa5f5969e6ea905dedda857a5157f5851"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#aa5f5969e6ea905dedda857a5157f5851">erase_col</a> (size_t col) &amp;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+requires std::same_as&lt;std::remove_cv_t&lt;T&gt;, <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;<br />
+class pbqp::BasicMatrix&lt; T &gt;</div><p>A row-major matrix of costs over storage owned elsewhere. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00071">71</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac6f3804ae5231feb35c957b3ee88e8c2" name="ac6f3804ae5231feb35c957b3ee88e8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f3804ae5231feb35c957b3ee88e8c2">&#9670;&#160;</a></span>BasicMatrix() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::BasicMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a348f77ad98f0ef6d77546b635e3f69a9" name="a348f77ad98f0ef6d77546b635e3f69a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a348f77ad98f0ef6d77546b635e3f69a9">&#9670;&#160;</a></span>BasicMatrix() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::BasicMatrix </td>
+          <td>(</td>
+          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>cols</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00074">74</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8237f3190d7fb39e0f8b6302845f335" name="ae8237f3190d7fb39e0f8b6302845f335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8237f3190d7fb39e0f8b6302845f335">&#9670;&#160;</a></span>BasicMatrix() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;class U&gt; <br />
+requires (std::same_as&lt;T, const <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt; &amp;&amp; std::same_as&lt;U, <a class="el" href="classpbqp_1_1Cost.html">Cost</a>&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::BasicMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const BasicMatrix&lt; U &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00080">80</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a10d44ae44ed6f05da0549df0a286736b" name="a10d44ae44ed6f05da0549df0a286736b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d44ae44ed6f05da0549df0a286736b">&#9670;&#160;</a></span>add_transposed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::add_transposed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the transpose of <span class="tt">rhs</span>, i.e. <span class="tt">(*this)[r, c] += rhs[c, r]</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00114">114</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00031">pbqp::Graph::add_edge_costs()</a>.</p>
+
+</div>
+</div>
+<a id="a039e28a657696b05d400900538e64001" name="a039e28a657696b05d400900538e64001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039e28a657696b05d400900538e64001">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00103">103</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5a3e217bac2c93aa50bd3569ea53a7c" name="ae5a3e217bac2c93aa50bd3569ea53a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a3e217bac2c93aa50bd3569ea53a7c">&#9670;&#160;</a></span>cols()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::cols </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00095">95</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="af7623b2bd682ffaa9db574544946dd4a" name="af7623b2bd682ffaa9db574544946dd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7623b2bd682ffaa9db574544946dd4a">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00098">98</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ab2317924b3d43a0a406c235360aa5b" name="a1ab2317924b3d43a0a406c235360aa5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab2317924b3d43a0a406c235360aa5b">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00104">104</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="aa5f5969e6ea905dedda857a5157f5851" name="aa5f5969e6ea905dedda857a5157f5851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f5969e6ea905dedda857a5157f5851">&#9670;&#160;</a></span>erase_col()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_col </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00138">138</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a158e6637d2fc5f2935ed75f969e36d5b" name="a158e6637d2fc5f2935ed75f969e36d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158e6637d2fc5f2935ed75f969e36d5b">&#9670;&#160;</a></span>erase_row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_row </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00132">132</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a57300c5e8e5c99a6b1e74e31958919ec" name="a57300c5e8e5c99a6b1e74e31958919ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57300c5e8e5c99a6b1e74e31958919ec">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00106">106</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="ac64ded6b1a1c293757d7179d1389a517" name="ac64ded6b1a1c293757d7179d1389a517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64ded6b1a1c293757d7179d1389a517">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00085">85</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f535a138c79b8dacccb4d37868de8b7" name="a5f535a138c79b8dacccb4d37868de8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f535a138c79b8dacccb4d37868de8b7">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &amp; <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00089">89</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a2cd37a84fdbf2551864eaad8e922d13a" name="a2cd37a84fdbf2551864eaad8e922d13a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd37a84fdbf2551864eaad8e922d13a">&#9670;&#160;</a></span>row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::row </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00099">99</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a806c1c49cb2d70819f4b8c08be31781c" name="a806c1c49cb2d70819f4b8c08be31781c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806c1c49cb2d70819f4b8c08be31781c">&#9670;&#160;</a></span>rows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::rows </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00094">94</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a0172e7933b3c35da847eff4080f1845f" name="a0172e7933b3c35da847eff4080f1845f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0172e7933b3c35da847eff4080f1845f">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00096">96</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<a id="a113225fa0ed4890cfbcf3d7a85c32c68" name="a113225fa0ed4890cfbcf3d7a85c32c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113225fa0ed4890cfbcf3d7a85c32c68">&#9670;&#160;</a></span>transpose_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::transpose_from </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>src</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces every entry with the transpose of <span class="tt">src</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00123">123</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>include/pbqp/<a class="el" href="graph_8h_source.html">graph.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacepbqp.html">pbqp</a></li><li class="navelem"><a href="classpbqp_1_1BasicMatrix.html">BasicMatrix</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>
