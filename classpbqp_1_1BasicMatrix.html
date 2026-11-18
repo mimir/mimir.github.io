@@ -199,8 +199,10 @@ requires (std::same_as&lt;T, const <a class="el" href="classpbqp_1_1Cost.html">C
 <tr class="memitem:a7f3d52bdf3c73bd55f56da70fa7d035a" id="r_a7f3d52bdf3c73bd55f56da70fa7d035a"><td class="memItemLeft">constexpr <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7f3d52bdf3c73bd55f56da70fa7d035a">transposed</a> () const</td></tr>
 <tr class="memitem:a785c3f39672a879ad019f7c9a652b6df" id="r_a785c3f39672a879ad019f7c9a652b6df"><td class="memItemLeft">constexpr const <a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a785c3f39672a879ad019f7c9a652b6df">operator+=</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; rhs) const</td></tr>
 <tr class="memitem:adc17d0885ad679c70eabfe3ab50ba3a9" id="r_adc17d0885ad679c70eabfe3ab50ba3a9"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#adc17d0885ad679c70eabfe3ab50ba3a9">copy_from</a> (<a class="el" href="#ac6f3804ae5231feb35c957b3ee88e8c2">BasicMatrix</a>&lt; const <a class="el" href="classpbqp_1_1Cost.html">Cost</a> &gt; src) const</td></tr>
-<tr class="memitem:a20009319503653035af3c9e24f34b357" id="r_a20009319503653035af3c9e24f34b357"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#a20009319503653035af3c9e24f34b357">erase_row</a> (size_t row) &amp;</td></tr>
-<tr class="memitem:afb893571ed6a92fbcb0a598a884a0ac8" id="r_afb893571ed6a92fbcb0a598a884a0ac8"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#afb893571ed6a92fbcb0a598a884a0ac8">erase_col</a> (size_t col) &amp;</td></tr>
+<tr class="memitem:ad4b478438e52ca5cb5df2357fe911b18" id="r_ad4b478438e52ca5cb5df2357fe911b18"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#ad4b478438e52ca5cb5df2357fe911b18">erase_rows</a> (fe::View&lt; size_t &gt; rows) &amp;</td></tr>
+<tr class="memdesc:ad4b478438e52ca5cb5df2357fe911b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the rows in <span class="tt"><a class="el" href="#a806c1c49cb2d70819f4b8c08be31781c">rows</a></span>, which must be sorted and distinct.  <br /></td></tr>
+<tr class="memitem:abc8947f776b8411732498fdbee91c942" id="r_abc8947f776b8411732498fdbee91c942"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="#abc8947f776b8411732498fdbee91c942">erase_cols</a> (fe::View&lt; size_t &gt; cols) &amp;</td></tr>
+<tr class="memdesc:abc8947f776b8411732498fdbee91c942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the columns in <span class="tt"><a class="el" href="#ae5a3e217bac2c93aa50bd3569ea53a7c">cols</a></span>, which must be sorted and distinct.  <br /></td></tr>
 <tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Storage</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>Iteration covers the storage in memory order, which is row-major only if <a class="el" href="#a8bb965bd0a156800c0a6d50354175674" title="Whether rows are contiguous, which also holds for a transposed single row or column.">row_major()</a>. </p>
 </div></td></tr>
@@ -241,7 +243,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00126">pbqp::BasicMatrix&lt; Cost &gt;::erase_row()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8h_source.html#l00127">pbqp::BasicMatrix&lt; Cost &gt;::erase_rows()</a>.</p>
 
 </div>
 </div>
@@ -372,7 +374,7 @@ template&lt;class T&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00089">89</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00204">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00224">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
@@ -465,8 +467,8 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a id="afb893571ed6a92fbcb0a598a884a0ac8" name="afb893571ed6a92fbcb0a598a884a0ac8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb893571ed6a92fbcb0a598a884a0ac8">&#9670;&#160;</a></span>erase_col()</h2>
+<a id="abc8947f776b8411732498fdbee91c942" name="abc8947f776b8411732498fdbee91c942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8947f776b8411732498fdbee91c942">&#9670;&#160;</a></span>erase_cols()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,9 +479,9 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_col </td>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_cols </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span></td><td>)</td>
+          <td class="paramtype">fe::View&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>cols</em></span></td><td>)</td>
           <td> &amp;</td>
         </tr>
       </table>
@@ -490,12 +492,14 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00135">135</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p>Erases the columns in <span class="tt"><a class="el" href="#ae5a3e217bac2c93aa50bd3569ea53a7c">cols</a></span>, which must be sorted and distinct. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00151">151</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
-<a id="a20009319503653035af3c9e24f34b357" name="a20009319503653035af3c9e24f34b357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20009319503653035af3c9e24f34b357">&#9670;&#160;</a></span>erase_row()</h2>
+<a id="ad4b478438e52ca5cb5df2357fe911b18" name="ad4b478438e52ca5cb5df2357fe911b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b478438e52ca5cb5df2357fe911b18">&#9670;&#160;</a></span>erase_rows()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,9 +510,9 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_row </td>
+          <td class="memname">void <a class="el" href="classpbqp_1_1BasicMatrix.html">pbqp::BasicMatrix</a>&lt; T &gt;::erase_rows </td>
           <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td class="paramtype">fe::View&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>rows</em></span></td><td>)</td>
           <td> &amp;</td>
         </tr>
       </table>
@@ -519,7 +523,10 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00126">126</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
+<p>Erases the rows in <span class="tt"><a class="el" href="#a806c1c49cb2d70819f4b8c08be31781c">rows</a></span>, which must be sorted and distinct. </p>
+<p>The <span class="tt">&amp;</span> ensures erasing an rvalue cannot compact the storage yet drop the shrunken dimensions. </p>
+
+<p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00127">127</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +679,7 @@ template&lt;class T&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="graph_8h_source.html#l00088">88</a> of file <a class="el" href="graph_8h_source.html">graph.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00204">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="graph_8cpp_source.html#l00018">pbqp::Graph::link()</a>, <a class="el" href="graph_8h_source.html#l00224">pbqp::Matrix::operator==</a>, <a class="el" href="graph_8cpp_source.html#l00048">pbqp::Graph::set_edge_costs()</a>, <a class="el" href="pbqp_2dot_8cpp_source.html#l00023">pbqp::write_dot()</a>, and <a class="el" href="json_8cpp_source.html#l00447">pbqp::write_json()</a>.</p>
 
 </div>
 </div>
