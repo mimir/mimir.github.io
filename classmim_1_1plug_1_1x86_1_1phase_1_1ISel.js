@@ -6,6 +6,7 @@ var classmim_1_1plug_1_1x86_1_1phase_1_1ISel =
       [ "index", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41", null ],
       [ "scale", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766", null ]
     ] ],
+    [ "Insn", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#aae6d884ca1960ac43684a8a916f3167a", null ],
     [ "addr", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ae311ba06379c5ea69b18ffb235c9fc13", null ],
     [ "analyze", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#ad26c917382680ba164a01a4dd3c76fb6", null ],
     [ "build_assume", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a6520ce94ff641ec57b05ff8d5f487222", null ],
@@ -35,6 +36,6 @@ var classmim_1_1plug_1_1x86_1_1phase_1_1ISel =
     [ "split", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abee1da7757675ad645a532ac57e74bc6", null ],
     [ "uses", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a94f48bbb140a66ae3e5c1e92fbe95409", null ],
     [ "val", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18eca0936c5487e436b02b3c6494b268", null ],
-    [ "wide", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abb77f6e22b49641df53a7cbe08a1b58c", null ],
+    [ "wide", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a3f3f3bb19ac4f153e5ee3ed1eaaea9f1", null ],
     [ "zext", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9b77c732fbc570eb366b65044f6782a7", null ]
 ];

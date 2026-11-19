@@ -2,7 +2,7 @@ var searchData=
 [
   ['watchpoint_0',['watchpoint',['../classmim_1_1World.html#a26f0fb5ac4918e179c288f377757d8a9',1,'mim::World']]],
   ['watchpoints_1',['watchpoints',['../classmim_1_1World.html#a3927508f5ffda384019188e6141e7f85',1,'mim::World']]],
-  ['wide_2',['wide',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abb77f6e22b49641df53a7cbe08a1b58c',1,'mim::plug::x86::phase::ISel']]],
+  ['wide_2',['wide',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a3f3f3bb19ac4f153e5ee3ed1eaaea9f1',1,'mim::plug::x86::phase::ISel']]],
   ['widen_5fidx_3',['widen_idx',['../namespacemim_1_1plug_1_1core.html#a18f69c76a785c406fb57b6624e76e92d',1,'mim::plug::core']]],
   ['within_4',['within',['../classmim_1_1ast_1_1Emitter.html#a235463f109adcee593221620740904d4',1,'mim::ast::Emitter']]],
   ['world_5',['World',['../classmim_1_1World.html#a21f49c56917226caa95a8b83394b6690',1,'mim::World::World(Driver *, Sym name)'],['../classmim_1_1World.html#a29adf201f52b7026225b705bbedf105d',1,'mim::World::World(Driver *, const State &amp;)'],['../classmim_1_1World.html#aef94e6300d8fc8af845805bdfd02c8b2',1,'mim::World::World(World &amp;&amp;other) noexcept']]],

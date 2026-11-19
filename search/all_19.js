@@ -23,7 +23,7 @@ var searchData=
   ['why_20the_20guard_20exists_20at_20all_20',['Why the guard exists at all',['../phases.html#autotoc_md111',1,'']]],
   ['why_20this_20is_20hard_20elsewhere_21',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['why_2dcpp_2emd_22',['why-cpp.md',['../why-cpp_8md.html',1,'']]],
-  ['wide_23',['wide',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#abb77f6e22b49641df53a7cbe08a1b58c',1,'mim::plug::x86::phase::ISel']]],
+  ['wide_23',['wide',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a3f3f3bb19ac4f153e5ee3ed1eaaea9f1',1,'mim::plug::x86::phase::ISel']]],
   ['widen_5fidx_24',['widen_idx',['../namespacemim_1_1plug_1_1core.html#a18f69c76a785c406fb57b6624e76e92d',1,'mim::plug::core']]],
   ['wins_25',['Where Rust genuinely wins',['../md_docs_2why-cpp.html#autotoc_md180',1,'']]],
   ['wise_20operations_26',['Element-wise Operations',['../tensor.html#autotoc_md539',1,'']]],
