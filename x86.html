@@ -241,6 +241,7 @@ logic</h2>
 <div class="line">    refly.check (ok, s, &quot;x86: operand size must be Bool, i8, i16, i32, or i64&quot;);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md662"></a>
 Instruction Forms</h1>
+<p>The plugin pretends that x86 uses three-address code and copes with x86's two-address code later on. However, some artifacts shine through: for two-address instructions the tied value operand comes first; the tie is only a register-assignment constraint (<span class="tt">add (a, b)</span> computes <span class="tt">a + b</span>), and <span class="tt">x86.emit</span> reverses the value operands for its AT&amp;T output.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md663"></a>
 rm</h2>
 <p><span class="tt">op r, addr</span>: <span class="tt">rm f (m, a, addr)</span> is <span class="tt">f (a, b)</span> with <span class="tt">b</span> loaded from <span class="tt">addr</span>.</p>
@@ -334,7 +335,43 @@ Comparisons</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (cmp, test): {s: Nat} → «2; Idx s» → Flags;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md682"></a>
 Condition Codes</h2>
-<p>The condition codes in hardware encoding order: <span class="tt">o</span> = 0, <span class="tt">no</span> = 1, <span class="tt">b</span> = 2, <span class="tt">ae</span> = 3, <span class="tt">e</span> = 4, <span class="tt">ne</span> = 5, <span class="tt">be</span> = 6, <span class="tt">a</span> = 7, <span class="tt">s</span> = 8, <span class="tt">ns</span> = 9, <span class="tt">p</span> = 10, <span class="tt">np</span> = 11, <span class="tt">l</span> = 12, <span class="tt">ge</span> = 13, <span class="tt">le</span> = 14, <span class="tt">g</span> = 15.</p>
+<p>The condition codes in hardware encoding order:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Subtag  </th><th class="markdownTableHeadNone">cc  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">o</span>  </td><td class="markdownTableBodyNone">0  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">no</span>  </td><td class="markdownTableBodyNone">1  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">b</span>  </td><td class="markdownTableBodyNone">2  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ae</span>  </td><td class="markdownTableBodyNone">3  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">e</span>  </td><td class="markdownTableBodyNone">4  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ne</span>  </td><td class="markdownTableBodyNone">5  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">be</span>  </td><td class="markdownTableBodyNone">6  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">a</span>  </td><td class="markdownTableBodyNone">7  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">s</span>  </td><td class="markdownTableBodyNone">8  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ns</span>  </td><td class="markdownTableBodyNone">9  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">p</span>  </td><td class="markdownTableBodyNone">10  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">np</span>  </td><td class="markdownTableBodyNone">11  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">l</span>  </td><td class="markdownTableBodyNone">12  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">ge</span>  </td><td class="markdownTableBodyNone">13  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">le</span>  </td><td class="markdownTableBodyNone">14  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">g</span>  </td><td class="markdownTableBodyNone">15  </td></tr>
+</table>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md683"></a>
 cc</h3>
 <p>Tests a condition code on the flags: <span class="tt">jcc</span> as a branch condition, <span class="tt">setcc</span> otherwise.</p>
