@@ -17,11 +17,7 @@ var isel_8h =
       [ "inner", "namespacemim_1_1plug_1_1x86_1_1phase.html#a71ff8e6ddb883a88b47e2ca29e3d092f", null ],
       [ "rule", "namespacemim_1_1plug_1_1x86_1_1phase.html#a447f3bec732675be40dc37c592ac073a", null ]
     ] ],
-    [ "mim::plug::x86::phase::Rule", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule", [
-      [ "build", "namespacemim_1_1plug_1_1x86_1_1phase.html#a4d30ebcc4736fd27c432cb226939ab82", null ],
-      [ "name", "namespacemim_1_1plug_1_1x86_1_1phase.html#a92473e6af29fd5c5aed09ad49a76ae35", null ],
-      [ "type", "namespacemim_1_1plug_1_1x86_1_1phase.html#a77e0e9fe18fcf53b947429b399e14c47", null ]
-    ] ],
+    [ "mim::plug::x86::phase::Rule", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule" ],
     [ "mim::plug::x86::phase::ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel" ],
     [ "mim::plug::x86::phase::ISel::Address", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address", [
       [ "base", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89", null ],
@@ -29,7 +25,16 @@ var isel_8h =
       [ "index", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41", null ],
       [ "scale", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766", null ]
     ] ],
+    [ "MIM_X86_ISEL_OPS", "isel_8h.html#a69e7930386793b4dc2cd3f6b14e2164a", null ],
+    [ "X", "isel_8h.html#a5addefc9f566d89d726f6a2a9995c177", null ],
     [ "mim::plug::x86::phase::Alts", "namespacemim_1_1plug_1_1x86_1_1phase.html#af96ce7f3cdfcd133564275ce73c9b4c9", null ],
+    [ "mim::plug::x86::phase::BuildFn", "namespacemim_1_1plug_1_1x86_1_1phase.html#a993aa662fa43314e7a1bebf867a10e18", null ],
+    [ "mim::plug::x86::phase::Form", "namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbb", [
+      [ "mim::plug::x86::phase::Form::Reg", "namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbba3791fc9668cfd0e7e10650add3cacf6d", null ],
+      [ "mim::plug::x86::phase::Form::Imm", "namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbbada9470e1aa5be1858e667318254dcb4b", null ],
+      [ "mim::plug::x86::phase::Form::Rm", "namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbbac67f7ba024e306e2e25891ea1826d67a", null ]
+    ] ],
+    [ "mim::plug::x86::phase::Op", "namespacemim_1_1plug_1_1x86_1_1phase.html#ad2f2301451520676e7cd86b15986d10f", null ],
     [ "mim::plug::x86::phase::Ty", "namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194", [
       [ "mim::plug::x86::phase::Ty::Reg", "namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a3791fc9668cfd0e7e10650add3cacf6d", null ],
       [ "mim::plug::x86::phase::Ty::Base", "namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a095a1b43effec73955e31e790438de49", null ],
@@ -38,6 +43,7 @@ var isel_8h =
     [ "mim::plug::x86::phase::Want", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841", [
       [ "mim::plug::x86::phase::Want::Reg", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d", null ],
       [ "mim::plug::x86::phase::Want::Imm", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b", null ],
+      [ "mim::plug::x86::phase::Want::Sh", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a9b5a67295e5540c6368d6f3a67984fad", null ],
       [ "mim::plug::x86::phase::Want::Base", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49", null ],
       [ "mim::plug::x86::phase::Want::Index", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a88fa71f0a6e0dfedbb46d91cc0b37a50", null ],
       [ "mim::plug::x86::phase::Want::Addr", "namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3649a5e29ad648f3cfe3eea1a93d2f78", null ]

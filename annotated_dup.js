@@ -178,7 +178,7 @@ var annotated_dup =
             [ "Demand", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Demand", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Demand_dup" ],
             [ "ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel" ],
             [ "Live", "classmim_1_1plug_1_1x86_1_1phase_1_1Live.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Live" ],
-            [ "Rule", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule", "namespacemim_1_1plug_1_1x86_1_1phase_structmim_1_1plug_1_1x86_1_1phase_1_1Rule_dup" ],
+            [ "Rule", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule" ],
             [ "Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule" ],
             [ "Spilling", "classmim_1_1plug_1_1x86_1_1phase_1_1Spilling.html", "classmim_1_1plug_1_1x86_1_1phase_1_1Spilling" ]
           ] ],

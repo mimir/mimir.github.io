@@ -29,7 +29,7 @@ var searchData=
   ['displaying_20dot_20graphs_26',['Displaying DOT Graphs',['../coding.html#autotoc_md26',1,'']]],
   ['div_27',['div',['../core.html#autotoc_md327',1,'']]],
   ['dividend_20does_20not_20apply_20here_28',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md174',1,'']]],
-  ['division_29',['Division',['../x86.html#autotoc_md677',1,'']]],
+  ['division_29',['Division',['../x86.html#autotoc_md678',1,'']]],
   ['does_20not_20apply_20here_30',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md174',1,'']]],
   ['dominance_31',['Dominance',['../index.html#autotoc_md151',1,'🪾 SSA without Dominance'],['../phases.html#ssa-without-dominance',1,'SSA without Dominance']]],
   ['dominance_3a_20contification_32',['A second dominance: contification',['../phases.html#autotoc_md115',1,'']]],

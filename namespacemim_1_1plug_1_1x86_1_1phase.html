@@ -189,7 +189,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">core</a></span> and <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> operations of a lowered world into <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> instructions.  <a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Live" id="r_Live"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1Live.html">Live</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the <a class="el" href="classmim_1_1plug_1_1x86_1_1Liveness.html" title="Liveness of the values of one scheduled function, as a side table.">Liveness</a> of every function; a debugging and testing aid.  <a href="classmim_1_1plug_1_1x86_1_1phase_1_1Live.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Rule_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Rule" id="r_Rule_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Rule"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">Rule</a></td></tr>
+<tr class="memitem:Rule" id="r_Rule"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html">Rule</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One pattern ↦ replacement: what it selects, its operand forms, holes, cost, and how to build the replacement.  <a href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Schedule" id="r_Schedule"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html">Schedule</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes each continuation's <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#ae1c38e0bc69501922f6d575df5e5af24">mem.M</a> 0</span> chain total over its instructions, in a topological order.  <a href="classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Spilling" id="r_Spilling"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1Spilling.html">Spilling</a></td></tr>
@@ -213,6 +214,8 @@ Rules</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b">Imm</a>
 , <br />
+&#160;&#160;<a class="el" href="#ae5ea8a5a815bb103e66a503acb984841a9b5a67295e5540c6368d6f3a67984fad">Sh</a>
+, <br />
 &#160;&#160;<a class="el" href="#ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49">Base</a>
 , <br />
 &#160;&#160;<a class="el" href="#ae5ea8a5a815bb103e66a503acb984841a88fa71f0a6e0dfedbb46d91cc0b37a50">Index</a>
@@ -221,7 +224,19 @@ Rules</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memdesc:ae5ea8a5a815bb103e66a503acb984841"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a hole.  <a href="#ae5ea8a5a815bb103e66a503acb984841">More...</a><br /></td></tr>
+<tr class="memitem:ad2f2301451520676e7cd86b15986d10f" id="r_ad2f2301451520676e7cd86b15986d10f"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad2f2301451520676e7cd86b15986d10f">Op</a> : u8 </td></tr>
+<tr class="memitem:ac2a6dc43e89480185f6bdacd33673bbb" id="r_ac2a6dc43e89480185f6bdacd33673bbb"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ac2a6dc43e89480185f6bdacd33673bbb">Form</a> : u8 { <br />
+&#160;&#160;<a class="el" href="#ac2a6dc43e89480185f6bdacd33673bbba3791fc9668cfd0e7e10650add3cacf6d">Reg</a>
+, <br />
+&#160;&#160;<a class="el" href="#ac2a6dc43e89480185f6bdacd33673bbbada9470e1aa5be1858e667318254dcb4b">Imm</a>
+, <br />
+&#160;&#160;<a class="el" href="#ac2a6dc43e89480185f6bdacd33673bbbac67f7ba024e306e2e25891ea1826d67a">Rm</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac2a6dc43e89480185f6bdacd33673bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which operand form a rule builds; the instruction is the same.  <a href="#ac2a6dc43e89480185f6bdacd33673bbb">More...</a><br /></td></tr>
 <tr class="memitem:af96ce7f3cdfcd133564275ce73c9b4c9" id="r_af96ce7f3cdfcd133564275ce73c9b4c9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#af96ce7f3cdfcd133564275ce73c9b4c9">Alts</a> = fe::Vector&lt;<a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&gt;</td></tr>
+<tr class="memitem:a993aa662fa43314e7a1bebf867a10e18" id="r_a993aa662fa43314e7a1bebf867a10e18"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a993aa662fa43314e7a1bebf867a10e18">BuildFn</a> = const <a class="el" href="classmim_1_1Def.html">Def</a>* (ISel::*)(const <a class="el" href="classmim_1_1Def.html">Def</a>*, const <a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&amp;)</td></tr>
+<tr class="memdesc:a993aa662fa43314e7a1bebf867a10e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the replacement of the match <code class="param">alt</code> rooted at the old_world() <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> <code class="param">root</code>.  <br /></td></tr>
 </table>
 <hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
 <a name="structmim_1_1plug_1_1x86_1_1phase_1_1Alt" id="structmim_1_1plug_1_1x86_1_1phase_1_1Alt"></a>
@@ -237,7 +252,7 @@ Rules</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>An alternative of a PBQP node: a match rooted there, or the class of all matches covering it as the same inner node. </p>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00048">48</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00101">101</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -265,7 +280,7 @@ inner = 0</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a447f3bec732675be40dc37c592ac073a" name="a447f3bec732675be40dc37c592ac073a"></a>const <a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">Rule</a> *</td>
+<a id="a447f3bec732675be40dc37c592ac073a" name="a447f3bec732675be40dc37c592ac073a"></a>const <a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html">Rule</a> *</td>
 <td class="fieldname">
 rule = nullptr</td>
 <td class="fielddoc">
@@ -287,7 +302,7 @@ rule = nullptr</td>
 </div><div class="memdoc">
 <div class="textblock"><p>An inner node a match covers, with what it needs of its own operands. </p>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00039">39</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00092">92</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -325,7 +340,7 @@ inner</td>
 </div><div class="memdoc">
 <div class="textblock"><p>What a match needs of the operand <code class="param">def:</code> a hole of type <code class="param">want</code> or, if <code class="param">inner</code> is set, that inner pattern node. </p>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00032">32</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00085">85</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -350,43 +365,6 @@ want = <a class="el" href="#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e1
 
 </div>
 </div>
-<a name="structmim_1_1plug_1_1x86_1_1phase_1_1Rule" id="structmim_1_1plug_1_1x86_1_1phase_1_1Rule"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1phase_1_1Rule">&#9670;&#160;</a></span>mim::plug::x86::phase::Rule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct mim::plug::x86::phase::Rule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00058">58</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
-</div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a4d30ebcc4736fd27c432cb226939ab82" name="a4d30ebcc4736fd27c432cb226939ab82"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *(*)</td>
-<td class="fieldname">
-build(const <a class="el" href="classmim_1_1Def.html">Def</a> *root, const <a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a> &amp;alt)</td>
-<td class="fielddoc">
-Builds the replacement of the match <code class="param">alt</code> rooted at the old_world() <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> <code class="param">root</code>. </td></tr>
-<tr><td class="fieldtype">
-<a id="a92473e6af29fd5c5aed09ad49a76ae35" name="a92473e6af29fd5c5aed09ad49a76ae35"></a>string_view</td>
-<td class="fieldname">
-name</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a77e0e9fe18fcf53b947429b399e14c47" name="a77e0e9fe18fcf53b947429b399e14c47"></a><a class="el" href="#a94aba43892c6e6d6e8ccd05c069bc194">Ty</a></td>
-<td class="fieldname">
-type</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="af96ce7f3cdfcd133564275ce73c9b4c9" name="af96ce7f3cdfcd133564275ce73c9b4c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af96ce7f3cdfcd133564275ce73c9b4c9">&#9670;&#160;</a></span>Alts</h2>
@@ -400,11 +378,87 @@ type</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00056">56</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00109">109</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+
+</div>
+</div>
+<a id="a993aa662fa43314e7a1bebf867a10e18" name="a993aa662fa43314e7a1bebf867a10e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a993aa662fa43314e7a1bebf867a10e18">&#9670;&#160;</a></span>BuildFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a993aa662fa43314e7a1bebf867a10e18">mim::plug::x86::phase::BuildFn</a> = const <a class="el" href="classmim_1_1Def.html">Def</a>* (ISel::*)(const <a class="el" href="classmim_1_1Def.html">Def</a>*, const <a class="el" href="#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Builds the replacement of the match <code class="param">alt</code> rooted at the old_world() <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> <code class="param">root</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00112">112</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="ac2a6dc43e89480185f6bdacd33673bbb" name="ac2a6dc43e89480185f6bdacd33673bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a6dc43e89480185f6bdacd33673bbb">&#9670;&#160;</a></span>Form</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ac2a6dc43e89480185f6bdacd33673bbb">mim::plug::x86::phase::Form</a> : <a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Which operand form a rule builds; the instruction is the same. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2a6dc43e89480185f6bdacd33673bbba3791fc9668cfd0e7e10650add3cacf6d" name="ac2a6dc43e89480185f6bdacd33673bbba3791fc9668cfd0e7e10650add3cacf6d"></a>Reg&#160;</td><td class="fielddoc"><p>All operands in registers, addresses, or flags. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac2a6dc43e89480185f6bdacd33673bbbada9470e1aa5be1858e667318254dcb4b" name="ac2a6dc43e89480185f6bdacd33673bbbada9470e1aa5be1858e667318254dcb4b"></a>Imm&#160;</td><td class="fielddoc"><p>A literal operand whose range the hole type states. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac2a6dc43e89480185f6bdacd33673bbbac67f7ba024e306e2e25891ea1826d67a" name="ac2a6dc43e89480185f6bdacd33673bbbac67f7ba024e306e2e25891ea1826d67a"></a>Rm&#160;</td><td class="fielddoc"><p>A load folded into a memory operand. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00078">78</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2f2301451520676e7cd86b15986d10f" name="ad2f2301451520676e7cd86b15986d10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f2301451520676e7cd86b15986d10f">&#9670;&#160;</a></span>Op</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ad2f2301451520676e7cd86b15986d10f">mim::plug::x86::phase::Op</a> : <a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00071">71</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+
+</div>
+</div>
 <a id="a94aba43892c6e6d6e8ccd05c069bc194" name="a94aba43892c6e6d6e8ccd05c069bc194"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94aba43892c6e6d6e8ccd05c069bc194">&#9670;&#160;</a></span>Ty</h2>
 
@@ -435,7 +489,7 @@ type</td>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00016">16</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00018">18</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 
 </div>
 </div>
@@ -463,7 +517,9 @@ type</td>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d" name="ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d"></a>Reg&#160;</td><td class="fielddoc"><p>A register. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b" name="ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b"></a>Imm&#160;</td><td class="fielddoc"><p>A literal that fits an immediate; it is a pattern node rather than a hole. </p>
+<tr><td class="fieldname"><a id="ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b" name="ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b"></a>Imm&#160;</td><td class="fielddoc"><p>A literal that fits a sign-extended <span class="tt">i32</span> immediate; it is a pattern node rather than a hole. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae5ea8a5a815bb103e66a503acb984841a9b5a67295e5540c6368d6f3a67984fad" name="ae5ea8a5a815bb103e66a503acb984841a9b5a67295e5540c6368d6f3a67984fad"></a>Sh&#160;</td><td class="fielddoc"><p>A literal shift count, which <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> masks; any literal fits. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49" name="ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49"></a>Base&#160;</td><td class="fielddoc"><p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">x86.Base</a></span>. </p>
 </td></tr>
@@ -473,7 +529,7 @@ type</td>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00023">23</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00025">25</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 
 </div>
 </div>

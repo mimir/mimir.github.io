@@ -152,7 +152,7 @@ var hierarchy =
       [ "mim::plug::x86::phase::Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", null ]
     ] ],
     [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
-    [ "mim::plug::x86::phase::Rule", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Rule", null ],
+    [ "mim::plug::x86::phase::Rule", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html", null ],
     [ "fe::RuntimeCast", null, [
       [ "mim::Def", "classmim_1_1Def.html", [
         [ "mim::App", "classmim_1_1App.html", null ],

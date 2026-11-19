@@ -74,7 +74,7 @@ var searchData=
   ['argument_71',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md173',1,'']]],
   ['arguments_72',['Arguments',['../cli.html#autotoc_md0',1,'Arguments'],['../cli.html#clipluginargs',1,'Arguments'],['../cli.html#xargs',1,'Plugin Arguments']]],
   ['arith_73',['arith',['../math.html#autotoc_md402',1,'']]],
-  ['arithmetic_74',['Arithmetic',['../x86.html#autotoc_md676',1,'']]],
+  ['arithmetic_74',['Arithmetic',['../x86.html#autotoc_md677',1,'']]],
   ['arity_75',['Arity',['../dev.html#autotoc_md52',1,'']]],
   ['assume_76',['assume',['../mem.html#autotoc_md437',1,'']]],
   ['asyn_77',['asyn',['../gpu.html#autotoc_md370',1,'alloc(block) / alloc(asyn)'],['../gpu.html#autotoc_md374',1,'alloc_copy(block) / alloc_copy(asyn)'],['../gpu.html#autotoc_md372',1,'copy_to_device(block) / copy_to_device(asyn)'],['../gpu.html#autotoc_md373',1,'copy_to_host(block) / copy_to_host(asyn)'],['../gpu.html#autotoc_md371',1,'free(block) / free(asyn)']]],

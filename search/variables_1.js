@@ -7,5 +7,5 @@ var searchData=
   ['break_5fon_5ferror_4',['break_on_error',['../structmim_1_1Flags.html#a815524784f39e99f0d5929c8ef950552',1,'mim::Flags']]],
   ['break_5fon_5fwarn_5',['break_on_warn',['../structmim_1_1Flags.html#accee3d68c6800853cbb887679212d540',1,'mim::Flags']]],
   ['breakpoints_6',['breakpoints',['../structmim_1_1World_1_1State.html#a997cc9617373311cf06fae3478b71bd6',1,'mim::World::State']]],
-  ['build_7',['build',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a4d30ebcc4736fd27c432cb226939ab82',1,'mim::plug::x86::phase::Rule']]]
+  ['build_7',['build',['../structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html#a9c09c2d8f5858181c212fb5c297f81e9',1,'mim::plug::x86::phase::Rule']]]
 ];

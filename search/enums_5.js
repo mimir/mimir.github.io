@@ -9,14 +9,15 @@ var searchData=
   ['f64_6',['f64',['../namespacemim_1_1plug_1_1math.html#acb743982258e08d50f82c8b0dda5501a',1,'mim::plug::math']]],
   ['fastest_5faxis_7',['fastest_axis',['../namespacemim_1_1plug_1_1tensor.html#a903b15272ced3f9ccbcd61ba0899d2b9',1,'mim::plug::tensor']]],
   ['first_8',['first',['../namespacemim_1_1plug_1_1vec.html#a9988495005995ff4aaf5b257dcb1703c',1,'mim::plug::vec']]],
-  ['fl_9',['Fl',['../namespacemim_1_1plug_1_1x86.html#a7e65e173d428280be1e2b1854735d829',1,'mim::plug::x86']]],
+  ['flags_9',['Flags',['../namespacemim_1_1plug_1_1x86.html#a8686818e8f82fa96f2d2dd00fbe5ebaa',1,'mim::plug::x86']]],
   ['flip_10',['flip',['../namespacemim_1_1plug_1_1tensor.html#a0a45db2751812e1c7382301b0a7f59d7',1,'mim::plug::tensor']]],
   ['flip_5fimpl_11',['flip_impl',['../namespacemim_1_1plug_1_1tensor.html#a176c334db4b7b10799bd65c223d47930',1,'mim::plug::tensor']]],
   ['fold_12',['fold',['../namespacemim_1_1plug_1_1vec.html#a03747184dd4c53d173ec208a448907dc',1,'mim::plug::vec']]],
   ['for_13',['For',['../namespacemim_1_1plug_1_1affine.html#a6ff8673e1d2565961963aec89b59c068',1,'mim::plug::affine']]],
-  ['free_14',['free',['../namespacemim_1_1plug_1_1buffer.html#af0ca377a12c36965ec50d3ea75163a12',1,'mim::plug::buffer::free'],['../namespacemim_1_1plug_1_1gpu.html#a984ce474f7a834df9bc48a3851e28650',1,'mim::plug::gpu::free'],['../namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b',1,'mim::plug::mem::free']]],
-  ['free_5flocals_15',['free_locals',['../namespacemim_1_1plug_1_1mem.html#a77713f77e6e56d3e854ef900df4cf7e9',1,'mim::plug::mem']]],
-  ['fresh_16',['fresh',['../namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6',1,'mim::plug::mem']]],
-  ['from_5farray_17',['from_array',['../namespacemim_1_1plug_1_1tensor.html#a8fabee2bc707db0a5f76858095e22582',1,'mim::plug::tensor']]],
-  ['fuse_5ftensor_18',['fuse_tensor',['../namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c',1,'mim::plug::tensor']]]
+  ['form_14',['Form',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbb',1,'mim::plug::x86::phase']]],
+  ['free_15',['free',['../namespacemim_1_1plug_1_1buffer.html#af0ca377a12c36965ec50d3ea75163a12',1,'mim::plug::buffer::free'],['../namespacemim_1_1plug_1_1gpu.html#a984ce474f7a834df9bc48a3851e28650',1,'mim::plug::gpu::free'],['../namespacemim_1_1plug_1_1mem.html#aa920d510e2e4277188e0b9517e6ea64b',1,'mim::plug::mem::free']]],
+  ['free_5flocals_16',['free_locals',['../namespacemim_1_1plug_1_1mem.html#a77713f77e6e56d3e854ef900df4cf7e9',1,'mim::plug::mem']]],
+  ['fresh_17',['fresh',['../namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6',1,'mim::plug::mem']]],
+  ['from_5farray_18',['from_array',['../namespacemim_1_1plug_1_1tensor.html#a8fabee2bc707db0a5f76858095e22582',1,'mim::plug::tensor']]],
+  ['fuse_5ftensor_19',['fuse_tensor',['../namespacemim_1_1plug_1_1tensor.html#a0b4e536dd702dc64876d65b96315d36c',1,'mim::plug::tensor']]]
 ];

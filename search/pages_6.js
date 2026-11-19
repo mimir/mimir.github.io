@@ -9,7 +9,7 @@ var searchData=
   ['first_20last_6',['first / last',['../vec.html#autotoc_md643',1,'']]],
   ['first_20steps_7',['First Steps',['../python.html#autotoc_md139',1,'']]],
   ['fixed_20point_20iteration_8',['Sparse Fixed-Point Iteration',['../phases.html#autotoc_md95',1,'']]],
-  ['fl_9',['Fl',['../x86.html#autotoc_md651',1,'']]],
+  ['flags_9',['Flags',['../x86.html#autotoc_md651',1,'']]],
   ['flip_10',['flip',['../tensor.html#autotoc_md530',1,'']]],
   ['flip_5fimpl_11',['flip_impl',['../tensor.html#autotoc_md590',1,'']]],
   ['flip_5fmap_12',['flip_map',['../tensor.html#autotoc_md589',1,'']]],

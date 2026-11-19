@@ -5,7 +5,7 @@ var searchData=
   ['element_20wise_20operations_2',['Element-wise Operations',['../tensor.html#autotoc_md539',1,'']]],
   ['elsewhere_3',['Why this is hard elsewhere',['../phases.html#autotoc_md114',1,'']]],
   ['embedded_20python_20dsl_4',['Embedded Python DSL',['../python.html#autotoc_md142',1,'']]],
-  ['emit_5',['emit',['../ll.html#autotoc_md393',1,'emit'],['../nvptx.html#autotoc_md447',1,'emit'],['../x86.html#autotoc_md690',1,'emit']]],
+  ['emit_5',['emit',['../ll.html#autotoc_md393',1,'emit'],['../nvptx.html#autotoc_md447',1,'emit'],['../x86.html#autotoc_md691',1,'emit']]],
   ['empirical_20argument_6',['The empirical argument',['../md_docs_2why-cpp.html#autotoc_md173',1,'']]],
   ['empty_7',['empty',['../regex.html#autotoc_md503',1,'']]],
   ['emscripten_8',['Emscripten',['../playground.html#autotoc_md122',1,'']]],

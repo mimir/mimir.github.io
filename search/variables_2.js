@@ -7,7 +7,7 @@ var searchData=
   ['comb_4',['comb',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#abf62fe9feaa35be1eb811e1ea8db7526',1,'mim::plug::btensor::MapRedPost']]],
   ['comb_5finit_5',['comb_init',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#aee86250bbf994ed4a6de8d2f86d18ff0',1,'mim::plug::btensor::MapRedPost']]],
   ['conflicts_6',['conflicts',['../structpbqp_1_1Solution.html#aceaabb2ce687349ca2029b99721ee3d4',1,'pbqp::Solution']]],
-  ['cost_7',['cost',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a83b45dbbc5043df9b7a8cf0bf137884f',1,'mim::plug::x86::phase::Alt::cost'],['../structpbqp_1_1Solution.html#a4feee1e3f2e5c7491b4e946a7210dc55',1,'pbqp::Solution::cost']]],
+  ['cost_7',['cost',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a83b45dbbc5043df9b7a8cf0bf137884f',1,'mim::plug::x86::phase::Alt::cost'],['../structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html#a0c2a16d8e4517eb989a16eb6a2c110bb',1,'mim::plug::x86::phase::Rule::cost'],['../structpbqp_1_1Solution.html#a4feee1e3f2e5c7491b4e946a7210dc55',1,'pbqp::Solution::cost']]],
   ['covers_8',['covers',['../namespacemim_1_1plug_1_1x86_1_1phase.html#aba5eb7855c89d2fbfb0c8f561ffa7495',1,'mim::plug::x86::phase::Alt']]],
   ['cu_5fctx_5fcreate_9',['Cu_Ctx_Create',['../namespacemim_1_1plug_1_1nvptx.html#a463237387e1c146e40c53c545dc6f622',1,'mim::plug::nvptx']]],
   ['cu_5fctx_5fdestroy_10',['Cu_Ctx_Destroy',['../namespacemim_1_1plug_1_1nvptx.html#a614255bbb5ba77c93c23407608806573',1,'mim::plug::nvptx']]],

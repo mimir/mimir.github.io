@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('x86_8h.html','
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;ranges&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;<a class="el" href="core_8h_source.html">mim/plug/core/core.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="x86_2autogen_8h_source.html">mim/plug/x86/autogen.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -202,48 +203,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a10deea897719aea7028f048ff2f036c3" id="r_a10deea897719aea7028f048ff2f036c3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a10deea897719aea7028f048ff2f036c3">MIM_X86_BE</a>&#160;&#160;&#160;&quot;x86 backend: &quot;</td></tr>
 <tr class="memdesc:a10deea897719aea7028f048ff2f036c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix for this backend's diagnostics; concatenate it with the format literal.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ad14bce528a8a67300b9038fbc4195f42" id="r_ad14bce528a8a67300b9038fbc4195f42"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42">mim::plug::x86::Reg</a> : size_t { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42afd524000de2844fea7af3e66737aa322">mim::plug::x86::Rax</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a2dc89a339ff5ef973cee3b55d5c1f567">mim::plug::x86::Rcx</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a783ace517bef58a6f32161eee01a23e4">mim::plug::x86::Rdx</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ad572f70d9697a026967bfd2355e1a0e5">mim::plug::x86::Rbx</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a817f580857334b7e79f9ba499aabdcac">mim::plug::x86::Rsp</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a510e5b483415968ffac92e547d7e86f1">mim::plug::x86::Rbp</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7cc4f358ce29f9567bcdc93370c73b9c">mim::plug::x86::Rsi</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ab203b4142ef00432666aaa67604186c9">mim::plug::x86::Rdi</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a51f2805e2abfed14e97716de6de19019">mim::plug::x86::R8</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7e2a285878c387ceaa0ea79704afacfb">mim::plug::x86::R9</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a3813c262c8348aa1e9b0fe298f42fed1">mim::plug::x86::R10</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aa033ae061939dcd51853072a33d55894">mim::plug::x86::R11</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ad2c52b18cc725c924a54a41ab49c87c0">mim::plug::x86::R12</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ae7e2ebec6e241f70baa1313aeb3fbfcd">mim::plug::x86::R13</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a6cdb4301da9b2dd895ae4e95af39c6ef">mim::plug::x86::R14</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aaf0a4ba879de7963765dcbf38e581bc4">mim::plug::x86::R15</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aea5cb51c86810656310ec1144db6e331">mim::plug::x86::Num_Regs</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ad14bce528a8a67300b9038fbc4195f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">General-purpose registers in hardware encoding order.  <a href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac0adb9bb82c21bf21c3f04894fc8b535" id="r_ac0adb9bb82c21bf21c3f04894fc8b535"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ac0adb9bb82c21bf21c3f04894fc8b535">mim::plug::x86::encoding</a> (<a class="el" href="namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0">reg</a> r)</td></tr>
+<tr class="memdesc:ac0adb9bb82c21bf21c3f04894fc8b535"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hardware encoding of <code class="param">r</code>.  <br /></td></tr>
 <tr class="memitem:a852b3f82a82aa3931bd5430714e844a5" id="r_a852b3f82a82aa3931bd5430714e844a5"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a852b3f82a82aa3931bd5430714e844a5">mim::plug::x86::reserved</a> (size_t r)</td></tr>
 <tr class="memitem:a5f6082f080d6bb9d400bcb0fab087afe" id="r_a5f6082f080d6bb9d400bcb0fab087afe"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a5f6082f080d6bb9d400bcb0fab087afe">mim::plug::x86::is_mem</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def)</td></tr>
 <tr class="memitem:a51bafe61080ef1555a5ea956a5a0d103" id="r_a51bafe61080ef1555a5ea956a5a0d103"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a51bafe61080ef1555a5ea956a5a0d103">mim::plug::x86::in_reg</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *in<a class="el" href="namespacemim_1_1plug_1_1x86.html#a3e7c0b20a640755cd3b3d72a250b831a">in</a>)</td></tr>
@@ -260,11 +223,12 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8743fb5ce05a2b1bb4f8b94fcad7a1b2" id="r_a8743fb5ce05a2b1bb4f8b94fcad7a1b2"><td class="memItemLeft">constexpr std::array&lt; size_t, 6 &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2">mim::plug::x86::Arg_Regs</a> = {<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ab203b4142ef00432666aaa67604186c9">Rdi</a>, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7cc4f358ce29f9567bcdc93370c73b9c">Rsi</a>, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a783ace517bef58a6f32161eee01a23e4">Rdx</a>, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a2dc89a339ff5ef973cee3b55d5c1f567">Rcx</a>, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a51f2805e2abfed14e97716de6de19019">R8</a>, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7e2a285878c387ceaa0ea79704afacfb">R9</a>}</td></tr>
+<tr class="memitem:aa7723aaef2613a7095cb7244ac8c2f53" id="r_aa7723aaef2613a7095cb7244ac8c2f53"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53">mim::plug::x86::Num_Regs</a> = <a class="el" href="structmim_1_1Annex.html#a9b3df34d947a5fa2c9e9491de34f666f">Annex::num</a>&lt;<a class="el" href="namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0">reg</a>&gt;()</td></tr>
+<tr class="memitem:a8743fb5ce05a2b1bb4f8b94fcad7a1b2" id="r_a8743fb5ce05a2b1bb4f8b94fcad7a1b2"><td class="memItemLeft">constexpr std::array&lt; size_t, 6 &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2">mim::plug::x86::Arg_Regs</a></td></tr>
 <tr class="memdesc:a8743fb5ce05a2b1bb4f8b94fcad7a1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">System V AMD64 ABI.  <br /></td></tr>
-<tr class="memitem:a0377693fe38215f86a4cc2d992d5aa48" id="r_a0377693fe38215f86a4cc2d992d5aa48"><td class="memItemLeft">constexpr std::array&lt; bool, <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aea5cb51c86810656310ec1144db6e331">Num_Regs</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48">mim::plug::x86::Caller_Saved</a> = {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0}</td></tr>
+<tr class="memitem:a0377693fe38215f86a4cc2d992d5aa48" id="r_a0377693fe38215f86a4cc2d992d5aa48"><td class="memItemLeft">constexpr std::array&lt; bool, <a class="el" href="namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53">Num_Regs</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48">mim::plug::x86::Caller_Saved</a> = {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0}</td></tr>
 <tr class="memitem:a021725dab45a988da8502b30bff219d0" id="r_a021725dab45a988da8502b30bff219d0"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a021725dab45a988da8502b30bff219d0">mim::plug::x86::Num_Caller_Saved</a> = std::ranges::count(<a class="el" href="namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48">Caller_Saved</a>, true)</td></tr>
-<tr class="memitem:a9acd4ed745f331c7ebc0d1597d7b9cb9" id="r_a9acd4ed745f331c7ebc0d1597d7b9cb9"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a9acd4ed745f331c7ebc0d1597d7b9cb9">mim::plug::x86::Num_Allocatable</a> = <a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aea5cb51c86810656310ec1144db6e331">Num_Regs</a> - size_t(std::ranges::count_if(std::views::iota(0uz, +<a class="el" href="namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aea5cb51c86810656310ec1144db6e331">Num_Regs</a>), <a class="el" href="namespacemim_1_1plug_1_1x86.html#a852b3f82a82aa3931bd5430714e844a5">reserved</a>))</td></tr>
+<tr class="memitem:a9acd4ed745f331c7ebc0d1597d7b9cb9" id="r_a9acd4ed745f331c7ebc0d1597d7b9cb9"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a9acd4ed745f331c7ebc0d1597d7b9cb9">mim::plug::x86::Num_Allocatable</a> = <a class="el" href="namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53">Num_Regs</a> - size_t(std::ranges::count_if(std::views::iota(0uz, +<a class="el" href="namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53">Num_Regs</a>), <a class="el" href="namespacemim_1_1plug_1_1x86.html#a852b3f82a82aa3931bd5430714e844a5">reserved</a>))</td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a10deea897719aea7028f048ff2f036c3" name="a10deea897719aea7028f048ff2f036c3"></a>
@@ -281,9 +245,9 @@ Variables</h2></td></tr>
 
 <p>Prefix for this backend's diagnostics; concatenate it with the format literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="x86_8h_source.html#l00012">12</a> of file <a class="el" href="x86_8h_source.html">x86.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="x86_8h_source.html#l00013">13</a> of file <a class="el" href="x86_8h_source.html">x86.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="subst_8h_source.html#l00018">mim::plug::x86::Subst::rewrite()</a>, <a class="el" href="isel_8cpp_source.html#l00772">mim::plug::x86::phase::ISel::rewrite_imm_App()</a>, <a class="el" href="plug_2x86_2phase_2schedule_8cpp_source.html#l00069">mim::plug::x86::phase::Schedule::rewrite_imm_App()</a>, and <a class="el" href="plug_2x86_2emit_8cpp_source.html#l00623">mim::plug::x86::Emit::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="subst_8h_source.html#l00018">mim::plug::x86::Subst::rewrite()</a>, <a class="el" href="isel_8cpp_source.html#l01018">mim::plug::x86::phase::ISel::rewrite_imm_App()</a>, <a class="el" href="plug_2x86_2phase_2schedule_8cpp_source.html#l00065">mim::plug::x86::phase::Schedule::rewrite_imm_App()</a>, and <a class="el" href="plug_2x86_2emit_8cpp_source.html#l00623">mim::plug::x86::Emit::start()</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX23 =
 {
+"legalize__idx_8cpp.html":[5,0,4,1,3,6,0,0],
+"legalize__idx_8cpp_source.html":[5,0,4,1,3,6,0,0],
+"legalize__idx_8h.html":[5,0,3,1,2,6,0,0],
 "legalize__idx_8h_source.html":[5,0,3,1,2,6,0,0],
 "lexer_8cpp.html":[5,0,4,1,0,4],
 "lexer_8cpp_source.html":[5,0,4,1,0,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX23 =
 "namespacemim.html#a40afde9d55a8a99e31dd10f4845b7bf4":[2,0,4,144],
 "namespacemim.html#a413c339cd397df7ea6a0d5913a45ee23":[2,0,4,101],
 "namespacemim.html#a436317095cabc13d12a3971c4aa32f03":[2,0,4,194],
-"namespacemim.html#a43abbf197daa252359e95aa365f51472":[2,0,4,160],
-"namespacemim.html#a43c8683ea43b0bd8c38bb973d5f91d63":[2,0,4,105],
-"namespacemim.html#a459cb02e53212327ccb3957614a485ca":[2,0,4,121],
-"namespacemim.html#a472ea1eba4d59fb1743c2087de458c1b":[5,0,3,1,6,2,5]
+"namespacemim.html#a43abbf197daa252359e95aa365f51472":[2,0,4,160]
 };

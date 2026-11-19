@@ -17,7 +17,7 @@ var searchData=
   ['trip_5fend_14',['Trip_End',['../classmim_1_1Axm.html#acc0ce530cead2cf2565961ac2c1b8ffd',1,'mim::Axm']]],
   ['tsched_15',['TSched',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a38c6de1142387ae532b00e6039199a5c',1,'mim::plug::btensor::MapRedPost']]],
   ['type_16',['Type',['../classmim_1_1Use.html#a8da7b797895206c14c2f3e25f828f944',1,'mim::Use']]],
-  ['type_17',['type',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a77e0e9fe18fcf53b947429b399e14c47',1,'mim::plug::x86::phase::Rule']]],
+  ['type_17',['type',['../structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html#a77e0e9fe18fcf53b947429b399e14c47',1,'mim::plug::x86::phase::Rule']]],
   ['type_5fdecls_5f_18',['type_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ae8113f780ec9bcf7062e75de81e85879',1,'mim::plug::ll::Emitter']]],
   ['types_5f_19',['types_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a5242954a852500c0eb2b08d6e4f06cb3',1,'mim::plug::ll::Emitter']]]
 ];

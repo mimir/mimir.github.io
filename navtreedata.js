@@ -127,16 +127,16 @@ var NAVTREEINDEX =
 "classmim_1_1plug_1_1x86_1_1Liveness.html#af057b1e130a6e0f4a81ab29df5b56ac5",
 "classpbqp_1_1Matrix.html#a34e25baaf702918de95a266e23d69467",
 "dir_a5f6124a4b526271d12e46c048dc5e78.html",
-"legalize__idx_8h_source.html",
-"namespacemim.html#a482a4a4a0e8f85c8c3c19f3ea130c314",
-"namespacemim_1_1plug_1_1autodiff.html#a7d78f8fc3e4b05738330a02f7f8502e9",
-"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a1515e7f7d9a1253dcc7f7bba92d63a85",
-"namespacemim_1_1plug_1_1math.html#a8ac3bb9e8191efc677affb69ca0b71eb",
-"namespacemim_1_1plug_1_1refly.html#ae6c4717cdfdd622ee492f7c91e23f39f",
-"namespacemim_1_1plug_1_1x86.html#a71ead19f9c532eab8e55cfc25e7b5bb2",
-"reassoc_8h_source.html",
-"structmim_1_1Plugin.html#aeb76fcde7e35346fbfa6b654345b3bab",
-"structmim_1_1plug_1_1ord_1_1Key__field.html"
+"legalize__idx_8cpp.html",
+"namespacemim.html#a43c8683ea43b0bd8c38bb973d5f91d63",
+"namespacemim_1_1plug_1_1autodiff.html#a6514ec29aa7b54b50764711fa08c0183",
+"namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673",
+"namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91afabcaa97871555b68aa095335975e613",
+"namespacemim_1_1plug_1_1refly.html#adb7a95dc4452056bbd12a22f40d875e7",
+"namespacemim_1_1plug_1_1x86.html#a862ccce6e872bbc0ac8d8dbc3e5e6ba8",
+"plug_2tuple_2tuple_8h.html",
+"structmim_1_1Nest_1_1Node_1_1SiblDeps.html#a835cdf64395521c736b393399a1dddbd",
+"structmim_1_1plug_1_1ll_1_1BB.html#a2b60b380e7a85fda90bd49da2999df0c"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

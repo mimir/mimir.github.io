@@ -219,8 +219,11 @@ var NAVTREEINDEX22 =
 "hierarchy.html":[4,2],
 "index.html":[],
 "isel_8cpp.html":[5,0,4,1,3,22,0,2],
+"isel_8cpp.html#a826edd40636cbaa44266b97c8c6a4fa3":[5,0,4,1,3,22,0,2,0],
 "isel_8cpp_source.html":[5,0,4,1,3,22,0,2],
 "isel_8h.html":[5,0,3,1,2,22,0,2],
+"isel_8h.html#a5addefc9f566d89d726f6a2a9995c177":[5,0,3,1,2,22,0,2,7],
+"isel_8h.html#a69e7930386793b4dc2cd3f6b14e2164a":[5,0,3,1,2,22,0,2,6],
 "isel_8h_source.html":[5,0,3,1,2,22,0,2],
 "join2variant_8cpp.html":[5,0,4,1,2,4],
 "join2variant_8cpp_source.html":[5,0,4,1,2,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX22 =
 "lam__spec_8cpp_source.html":[5,0,4,1,2,5],
 "lam__spec_8h.html":[5,0,3,1,1,5],
 "lam__spec_8h_source.html":[5,0,3,1,1,5],
-"langref.html":[0,3],
-"legalize__idx_8cpp.html":[5,0,4,1,3,6,0,0],
-"legalize__idx_8cpp_source.html":[5,0,4,1,3,6,0,0],
-"legalize__idx_8h.html":[5,0,3,1,2,6,0,0]
+"langref.html":[0,3]
 };

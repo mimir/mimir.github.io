@@ -220,16 +220,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfamin_8cpp_so
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">auto</span> A = <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276">W</a>.back();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_enumvalue" href="namespacemim_1_1plug_1_1regex.html#af786f27f8eebb04e7543f565e8763938a61e9c06ea9a85a5088a499df6458d276">W</a>.pop_back();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> c : alphabet) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_typedef" href="namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06">DFASet</a> X{};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_typedef" href="namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06">DFASet</a> <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>{};</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>* state : reachableStates) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                state-&gt;for_transitions([&amp;](<span class="keyword">auto</span> c_, <span class="keyword">auto</span> to) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <span class="keywordflow">if</span> (c_ == c &amp;&amp; A.contains(to)) X.insert(state);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <span class="keywordflow">if</span> (c_ == c &amp;&amp; A.contains(to)) <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>.insert(state);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                });</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            newP.clear();</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; Y : P) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keyword">auto</span> YnX = Y * X;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keyword">auto</span> Y_X = Y - X;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keyword">auto</span> YnX = Y * <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keyword">auto</span> Y_X = Y - <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">if</span> (!YnX.empty() &amp;&amp; !Y_X.empty()) {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    newP.push_back(YnX);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    newP.push_back(Y_X);</div>
@@ -265,18 +265,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfamin_8cpp_so
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">auto</span> minDfa = std::make_unique&lt;DFA&gt;();</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_typedef" href="namespaceautomaton.html#ac935bb3b7e7cbc4be411a7657f3d693c">DFAMap&lt;DFANode*&gt;</a> dfaStates;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; X : P) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a> : P) {</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">auto</span> state = minDfa-&gt;add_state();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : X) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>) {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">if</span> (x-&gt;is_accepting()) state-&gt;set_accepting(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">if</span> (x-&gt;is_erroring()) state-&gt;set_erroring(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            dfaStates.emplace(x, state);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    minDfa-&gt;set_start(dfaStates[dfa.<a class="code hl_function" href="classautomaton_1_1AutomatonBase.html#a5ee7463fbfa2f071ea1deb56490ba8d5">get_start</a>()]);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; X : P) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">auto</span> state = dfaStates[*X.begin()];</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : X)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a> : P) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">auto</span> state = dfaStates[*<a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>.begin()];</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : <a class="code hl_define" href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a>)</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            x-&gt;for_transitions([&amp;](<span class="keyword">auto</span> c, <span class="keyword">auto</span> to) { state-&gt;add_transition(dfaStates[to], c); });</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">return</span> minDfa;</div>
@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dfamin_8cpp_so
 <div class="ttc" id="aclassautomaton_1_1DFA_html"><div class="ttname"><a href="classautomaton_1_1DFA.html">automaton::DFA</a></div><div class="ttdef"><b>Definition</b> <a href="dfa_8h_source.html#l00062">dfa.h:62</a></div></div>
 <div class="ttc" id="adfa_8h_html"><div class="ttname"><a href="dfa_8h.html">dfa.h</a></div></div>
 <div class="ttc" id="adfamin_8h_html"><div class="ttname"><a href="dfamin_8h.html">dfamin.h</a></div></div>
+<div class="ttc" id="aisel_8h_html_a5addefc9f566d89d726f6a2a9995c177"><div class="ttname"><a href="isel_8h.html#a5addefc9f566d89d726f6a2a9995c177">X</a></div><div class="ttdeci">#define X(op)</div><div class="ttdef"><b>Definition</b> <a href="isel_8h_source.html#l00072">isel.h:72</a></div></div>
 <div class="ttc" id="anamespaceautomaton_html"><div class="ttname"><a href="namespaceautomaton.html">automaton</a></div><div class="ttdef"><b>Definition</b> <a href="automaton_8h_source.html#l00015">automaton.h:15</a></div></div>
 <div class="ttc" id="anamespaceautomaton_html_a0a07cb42cd7cc111f81d4f73f00c1bdd"><div class="ttname"><a href="namespaceautomaton.html#a0a07cb42cd7cc111f81d4f73f00c1bdd">automaton::minimize_dfa</a></div><div class="ttdeci">std::unique_ptr&lt; DFA &gt; minimize_dfa(const DFA &amp;dfa)</div><div class="ttdef"><b>Definition</b> <a href="#l00102">dfamin.cpp:102</a></div></div>
 <div class="ttc" id="anamespaceautomaton_html_a29a4a1a2ddf42b41d2965e8260883a06"><div class="ttname"><a href="namespaceautomaton.html#a29a4a1a2ddf42b41d2965e8260883a06">automaton::DFASet</a></div><div class="ttdeci">std::set&lt; const DFANode *, DFANode::Lt &gt; DFASet</div><div class="ttdef"><b>Definition</b> <a href="dfa_8h_source.html#l00071">dfa.h:71</a></div></div>

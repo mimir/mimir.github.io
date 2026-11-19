@@ -1,25 +1,7 @@
 var x86_8h =
 [
     [ "MIM_X86_BE", "x86_8h.html#a10deea897719aea7028f048ff2f036c3", null ],
-    [ "mim::plug::x86::Reg", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42", [
-      [ "mim::plug::x86::Rax", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42afd524000de2844fea7af3e66737aa322", null ],
-      [ "mim::plug::x86::Rcx", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a2dc89a339ff5ef973cee3b55d5c1f567", null ],
-      [ "mim::plug::x86::Rdx", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a783ace517bef58a6f32161eee01a23e4", null ],
-      [ "mim::plug::x86::Rbx", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ad572f70d9697a026967bfd2355e1a0e5", null ],
-      [ "mim::plug::x86::Rsp", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a817f580857334b7e79f9ba499aabdcac", null ],
-      [ "mim::plug::x86::Rbp", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a510e5b483415968ffac92e547d7e86f1", null ],
-      [ "mim::plug::x86::Rsi", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7cc4f358ce29f9567bcdc93370c73b9c", null ],
-      [ "mim::plug::x86::Rdi", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ab203b4142ef00432666aaa67604186c9", null ],
-      [ "mim::plug::x86::R8", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a51f2805e2abfed14e97716de6de19019", null ],
-      [ "mim::plug::x86::R9", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a7e2a285878c387ceaa0ea79704afacfb", null ],
-      [ "mim::plug::x86::R10", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a3813c262c8348aa1e9b0fe298f42fed1", null ],
-      [ "mim::plug::x86::R11", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aa033ae061939dcd51853072a33d55894", null ],
-      [ "mim::plug::x86::R12", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ad2c52b18cc725c924a54a41ab49c87c0", null ],
-      [ "mim::plug::x86::R13", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42ae7e2ebec6e241f70baa1313aeb3fbfcd", null ],
-      [ "mim::plug::x86::R14", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42a6cdb4301da9b2dd895ae4e95af39c6ef", null ],
-      [ "mim::plug::x86::R15", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aaf0a4ba879de7963765dcbf38e581bc4", null ],
-      [ "mim::plug::x86::Num_Regs", "namespacemim_1_1plug_1_1x86.html#ad14bce528a8a67300b9038fbc4195f42aea5cb51c86810656310ec1144db6e331", null ]
-    ] ],
+    [ "mim::plug::x86::encoding", "namespacemim_1_1plug_1_1x86.html#ac0adb9bb82c21bf21c3f04894fc8b535", null ],
     [ "mim::plug::x86::in_reg", "namespacemim_1_1plug_1_1x86.html#a51bafe61080ef1555a5ea956a5a0d103", null ],
     [ "mim::plug::x86::is_mem", "namespacemim_1_1plug_1_1x86.html#a5f6082f080d6bb9d400bcb0fab087afe", null ],
     [ "mim::plug::x86::is_sched_cc", "namespacemim_1_1plug_1_1x86.html#abc6978e0d858816a14db31313a893216", null ],
@@ -31,5 +13,6 @@ var x86_8h =
     [ "mim::plug::x86::Arg_Regs", "namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2", null ],
     [ "mim::plug::x86::Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48", null ],
     [ "mim::plug::x86::Num_Allocatable", "namespacemim_1_1plug_1_1x86.html#a9acd4ed745f331c7ebc0d1597d7b9cb9", null ],
-    [ "mim::plug::x86::Num_Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a021725dab45a988da8502b30bff219d0", null ]
+    [ "mim::plug::x86::Num_Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a021725dab45a988da8502b30bff219d0", null ],
+    [ "mim::plug::x86::Num_Regs", "namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53", null ]
 ];
