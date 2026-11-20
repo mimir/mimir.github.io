@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f":[4,0,1,52,8],
+"structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[2,0,4,52,10],
 "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[4,0,1,52,10],
 "structmim_1_1UseEq.html":[2,0,4,82],
 "structmim_1_1UseEq.html":[4,0,1,82],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "structmim_1_1plug_1_1ord_1_1Key__field.html":[2,0,4,2,16,0],
 "structmim_1_1plug_1_1ord_1_1Key__field.html":[4,0,1,2,12,0],
 "structmim_1_1plug_1_1regex_1_1app__range.html":[2,0,4,2,18,0],
-"structmim_1_1plug_1_1regex_1_1app__range.html":[4,0,1,2,13,0],
-"structmim_1_1plug_1_1regex_1_1app__range.html#a2761d4060fc6d48c0bb624d69ad06286":[2,0,4,2,18,0,1],
-"structmim_1_1plug_1_1regex_1_1app__range.html#a2761d4060fc6d48c0bb624d69ad06286":[4,0,1,2,13,0,1]
+"structmim_1_1plug_1_1regex_1_1app__range.html":[4,0,1,2,13,0]
 };

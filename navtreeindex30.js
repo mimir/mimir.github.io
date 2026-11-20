@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"refly_2autogen_8h_source.html":[5,0,0,1,0,0,17,0],
+"refly_2normalizers_8cpp.html":[5,0,4,1,3,17,0],
 "refly_2normalizers_8cpp_source.html":[5,0,4,1,3,17,0],
 "refly_8cpp.html":[5,0,4,1,3,17,1],
 "refly_8cpp.html#a88f150f6849d0fef8e93f308548f3a6a":[5,0,4,1,3,17,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX30 =
 "structmim_1_1Plugin.html#aeb76fcde7e35346fbfa6b654345b3bab":[4,0,1,52,0],
 "structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11":[2,0,4,52,3],
 "structmim_1_1Plugin.html#aeced31f7b2cab59f9fbc5aff27c6db11":[4,0,1,52,3],
-"structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f":[2,0,4,52,8],
-"structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f":[4,0,1,52,8],
-"structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251":[2,0,4,52,10]
+"structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f":[2,0,4,52,8]
 };

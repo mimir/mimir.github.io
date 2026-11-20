@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"structmim_1_1plug_1_1regex_1_1app__range.html#a2761d4060fc6d48c0bb624d69ad06286":[2,0,4,2,18,0,1],
+"structmim_1_1plug_1_1regex_1_1app__range.html#a2761d4060fc6d48c0bb624d69ad06286":[4,0,1,2,13,0,1],
 "structmim_1_1plug_1_1regex_1_1app__range.html#af1ab5901ab3afd9af20865f5eda6034b":[2,0,4,2,18,0,0],
 "structmim_1_1plug_1_1regex_1_1app__range.html#af1ab5901ab3afd9af20865f5eda6034b":[4,0,1,2,13,0,0],
 "structmim_1_1plug_1_1tensor_1_1TensorType.html":[2,0,4,2,19,1],

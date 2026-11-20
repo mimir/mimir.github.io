@@ -200,7 +200,7 @@ Primary Terminals</h3>
 <div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">( ) [ ] { }</div>
 <div class="line">‹ › « »</div>
 <div class="line">→ ← =&gt; ⊥ ⊤ * □ λ</div>
-<div class="line">= , ; . : @ $ # |</div>
+<div class="line">= , ; . : @ $ # | ?</div>
 <div class="line">+ - / % == != &lt; &lt;= &gt; &gt;= &lt;&lt; &gt;&gt;</div>
 <div class="line">&lt;eof&gt;</div>
 </div><!-- fragment --></div><div class="terminals-code"></div><ul>
@@ -485,12 +485,14 @@ Literals and Basic Forms</h3>
 <div class="line">     |  &quot;⊥&quot; (&quot;:&quot; e)?</div>
 <div class="line">     |  &quot;⊤&quot; (&quot;:&quot; e)?</div>
 <div class="line">     |  path</div>
+<div class="line">     |  &quot;?&quot;</div>
 <div class="line">     |  d+ e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li>A numeric, character, string, <span class="tt">⊥</span>, or <span class="tt">⊤</span> literal may carry an explicit type ascription.</li>
 <li>A <span class="tt">+</span>/<span class="tt">-</span> sign is part of the literal expression, not of the literal token, and only a numeric literal accepts one. Because <span class="tt">+</span> and <span class="tt">-</span> are <a class="el" href="#infix" title="Infix Operators">infix operators</a> everywhere else, <span class="tt">f -23</span> subtracts; pass a negative argument as <span class="tt">f (-23)</span>.</li>
 <li>Without an explicit type, numeric literals default to <span class="tt">Nat</span>.</li>
 <li>Without an explicit type, <span class="tt">⊥</span> and <span class="tt">⊤</span> default to <span class="tt">*</span>.</li>
+<li><span class="tt">?</span> is a <span class="tt">Hole</span> whose type is a <span class="tt">Hole</span> as well, so it stands for a term or a type alike, e.g. <span class="tt">x: ?</span> or <span class="tt">f @? x</span>; inference fills it in.</li>
 <li><span class="tt">d+ e</span> is a declaration expression: one or more declarations followed by a final expression <span class="tt">e</span>, which is the result. It is not delimited by any brackets; it simply starts with a declaration keyword such as <span class="tt">let</span>.</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>

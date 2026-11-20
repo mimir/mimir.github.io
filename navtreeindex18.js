@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html#a0a480a678e734f23e1e7e17988c2a3e4":[4,0,1,2,5,0,0,3],
+"classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html#a338b4217843a5a9514433f2c70edeb5c":[2,0,4,2,6,0,0,4],
 "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html#a338b4217843a5a9514433f2c70edeb5c":[4,0,1,2,5,0,0,4],
 "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html#a3f185614c3610f080a3b1fe9f759c3b7":[2,0,4,2,6,0,0,1],
 "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html#a3f185614c3610f080a3b1fe9f759c3b7":[4,0,1,2,5,0,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#ad584dad7fdf92b1c17b3591047fa86ba":[4,0,1,2,9,1,5],
 "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af3479dd371aa0c69e336d6c1620373a9":[2,0,4,2,12,1,7],
 "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af3479dd371aa0c69e336d6c1620373a9":[4,0,1,2,9,1,7],
-"classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af7148392543e7107c0cf653b226b6cad":[2,0,4,2,12,1,9],
-"classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af7148392543e7107c0cf653b226b6cad":[4,0,1,2,9,1,9],
-"classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#structmim_1_1plug_1_1mem_1_1EscapeAnalysis_1_1Chain":[2,0,4,2,12,1,0]
+"classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#af7148392543e7107c0cf653b226b6cad":[2,0,4,2,12,1,9]
 };
