@@ -1109,13 +1109,6 @@ axm dispatch_normalize: Phase;
 ///
 axm eta_conv: Phase;
 ///
-/// ### join2variant
-///
-/// Rewrites each union type `A ∪ B` into the variant `| A | B` (mim::Join2Variant).
-/// Values that inhabit a union by subsumption are explicitly injected into their case.
-///
-axm join2variant: Phase;
-///
 /// ### lam_spec
 ///
 /// Specializes a Lam at its call site by inlining higher-order arguments (mim::LamSpec).
@@ -1513,6 +1506,13 @@ anx lam select {T: *} (cond: Bool, t f: T): T = (f, t)#cond;
 anx lam Select {T: □} (cond: Bool, t f: T): T = (f, t)#cond;
 ///
 /// ## Phases
+///
+/// ### lower_dyn_extract
+///
+/// Lowers each type `(T_0, ..., T_{n-1})#i` of a dynamic Extract to the core.Union of its components (mim::plug::core::LowerDynExtract).
+/// The union needs no tag, since the index `i` that selects the case is at hand wherever such a value is.
+///
+axm lower_dyn_extract: compile.Phase;
 ///
 /// ### lower_variant
 ///
@@ -2645,8 +2645,8 @@ extern lam _default_compile (): compile.Phase =
 
         // type legalization
         compile.nom_erasure,
-        compile.join2variant,
         compile.single_erasure,
+        core.lower_dyn_extract,
         core.lower_variant,
         core.legalize_idx,
 
@@ -2690,7 +2690,6 @@ plugin core;
 /// ### Opt
 ///
 /// The option type: `| None | Some: T`.
-/// Unlike `[] ∪ T`, it neither collapses `Opt@[]` to `[]` nor flattens `Opt@(Opt@T)` to `Opt@T`.
 /// `T` is implicit, so `Opt#Some 23` and `Opt#None` infer it; `(Opt@Nat)#None` gives it explicitly.
 ///
 anx nom Opt {T: *} =
