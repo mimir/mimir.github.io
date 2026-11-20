@@ -1,5 +1,11 @@
 var NAVTREEINDEX24 =
 {
+"namespacemim.html#a651a2dea89f330efd5ed961191620af8":[2,0,4,165],
+"namespacemim.html#a659d017e0b42344997eb847f5b6d8f27":[2,0,4,189],
+"namespacemim.html#a67e4f473bae8456d99c9c4ffc043c62b":[2,0,4,182],
+"namespacemim.html#a68df1c29731f0278a2d5a583dc4fb0e6":[5,0,3,1,10,0,4],
+"namespacemim.html#a68e9bd75c680a4ffc1e72951931fe987":[2,0,4,178],
+"namespacemim.html#a6b14cb1f6d461cbc6ce3eb18b9b79807":[2,0,4,218],
 "namespacemim.html#a6eb04dd474a5900c3ce9e9959a5cd450":[2,0,4,180],
 "namespacemim.html#a71e90dca4edd9dfdf7b1199a44faf1ab":[2,0,4,137],
 "namespacemim.html#a72287fe61ea5fd985019ed697119a91e":[2,0,4,153],
@@ -243,11 +249,5 @@ var NAVTREEINDEX24 =
 "namespacemim_1_1plug_1_1autodiff_1_1phase.html":[2,0,4,2,1,0],
 "namespacemim_1_1plug_1_1autodiff_1_1phase.html#a435f07f1952e917409aa39848d9ffc30":[2,0,4,2,1,0,1],
 "namespacemim_1_1plug_1_1btensor.html":[2,0,4,2,2],
-"namespacemim_1_1plug_1_1btensor.html#a0075f8d90a525f6bdc66893cf161c4c4":[2,0,4,2,2,26],
-"namespacemim_1_1plug_1_1btensor.html#a01e0a1e721ba27474863d45ab94017c3":[2,0,4,2,2,9],
-"namespacemim_1_1plug_1_1btensor.html#a11f0d6e9879af854289bc56b7a226a7e":[2,0,4,2,2,13],
-"namespacemim_1_1plug_1_1btensor.html#a1448fb87a7d7752f2b341d00f84ef661":[2,0,4,2,2,15],
-"namespacemim_1_1plug_1_1btensor.html#a178c1d5c474562b4f36e73abb0f7ebb3":[2,0,4,2,2,7],
-"namespacemim_1_1plug_1_1btensor.html#a21fb97ac045b7341ad37c3453469f58e":[2,0,4,2,2,30],
-"namespacemim_1_1plug_1_1btensor.html#a29d971faebc3c599f372db6c7835ba9d":[2,0,4,2,2,24]
+"namespacemim_1_1plug_1_1btensor.html#a0075f8d90a525f6bdc66893cf161c4c4":[2,0,4,2,2,26]
 };

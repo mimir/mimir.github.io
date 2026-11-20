@@ -11,9 +11,10 @@ var searchData=
   ['floordiv_8',['floordiv',['../namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70eae61e8ab8beab2f144c8bbf6e4143436c',1,'mim::plug::affine']]],
   ['fmax_9',['fmax',['../namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca6245653b1ded5cde266a956a325465ce',1,'mim::plug::math']]],
   ['fmin_10',['fmin',['../namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca91b8694b07e3650d5332a6d51af36421',1,'mim::plug::math']]],
-  ['for_5fall_11',['for_all',['../namespacemim_1_1plug_1_1vec.html#afc4be00d00e10620d57d3d788bec3f03a0a6701462dd440321b2b782395bfcb68',1,'mim::plug::vec']]],
-  ['form_12',['Form',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e',1,'mim']]],
-  ['free_5fbb_13',['free_bb',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baacecd0f2415ba21a6a908010576282c6d',1,'mim::plug::clos']]],
-  ['fst_14',['fst',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a3bd77778e6ff1c054e94a0cab12706c2',1,'mim::plug::core']]],
-  ['fstclass_5fbb_15',['fstclass_bb',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baaae0d060ff580e732d2ef22e37a765c23',1,'mim::plug::clos']]]
+  ['fold_11',['Fold',['../namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca7b0da812abcd107490aeb0aa803c9cfe',1,'mim::plug::x86::phase']]],
+  ['for_5fall_12',['for_all',['../namespacemim_1_1plug_1_1vec.html#afc4be00d00e10620d57d3d788bec3f03a0a6701462dd440321b2b782395bfcb68',1,'mim::plug::vec']]],
+  ['form_13',['Form',['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293ad359c6df99b25183d81f7d728b71de0e',1,'mim']]],
+  ['free_5fbb_14',['free_bb',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baacecd0f2415ba21a6a908010576282c6d',1,'mim::plug::clos']]],
+  ['fst_15',['fst',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a3bd77778e6ff1c054e94a0cab12706c2',1,'mim::plug::core']]],
+  ['fstclass_5fbb_16',['fstclass_bb',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baaae0d060ff580e732d2ef22e37a765c23',1,'mim::plug::clos']]]
 ];

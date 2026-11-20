@@ -13,5 +13,6 @@ var searchData=
   ['d_5fquote_5fl_10',['D_quote_l',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a5be9fecd8fb8ece5f3217942ae9f6c4a',1,'mim::ast::Tok']]],
   ['d_5fquote_5fr_11',['D_quote_r',['../classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5add7e7307bb61b436ebfaff2f7f0e0e29',1,'mim::ast::Tok']]],
   ['dec_12',['dec',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da1feea25ecb958229287f885aebe7c49b',1,'mim::plug::math']]],
-  ['div_13',['div',['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]]
+  ['div_13',['Div',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a43d11850893d2fe84a1e618121c1cc0a',1,'mim::plug::x86::phase']]],
+  ['div_14',['div',['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a38696558dc98494c08d951c052900a2a',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a38696558dc98494c08d951c052900a2a',1,'mim::plug::math::div']]]
 ];

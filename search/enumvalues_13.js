@@ -27,12 +27,13 @@ var searchData=
   ['ule_24',['ule',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a76cf56920355319ad148e25a340b0f18',1,'mim::plug::core::ule'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a76cf56920355319ad148e25a340b0f18',1,'mim::plug::math::ule']]],
   ['umax_25',['umax',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a82c1089b8c973b65be6d620f765ed1f5',1,'mim::plug::core']]],
   ['umin_26',['umin',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a017163727bc806385f1453c130b4fce3',1,'mim::plug::core']]],
-  ['une_27',['une',['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a92df19e29c9d45d888ed5f68bad1c3b5',1,'mim::plug::math']]],
-  ['unroll_28',['unroll',['../structmim_1_1plug_1_1btensor_1_1Sched__field.html#a4582c3c83dc1759dee1e3fd00a3e0cd2a249c0e2c4f448a985b635b35dc5fb4e2',1,'mim::plug::btensor::Sched_field']]],
-  ['unsafe_29',['unsafe',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a64c823fad1d87e0df1ef3cdeb8ac684f',1,'mim::plug::math::unsafe'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a64c823fad1d87e0df1ef3cdeb8ac684f',1,'mim::plug::math::unsafe']]],
-  ['urem_30',['urem',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9ae1851600007553e51484056678cdb3d1',1,'mim::plug::core']]],
-  ['us_31',['US',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2',1,'mim::plug::core']]],
-  ['us_32',['Us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca',1,'mim::plug::core']]],
-  ['us_33',['uS',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972',1,'mim::plug::core']]],
-  ['us_34',['us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2',1,'mim::plug::core']]]
+  ['unary_27',['Unary',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a19c6e8d6e2caeaff0ac8881e05c25010',1,'mim::plug::x86::phase']]],
+  ['une_28',['une',['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a92df19e29c9d45d888ed5f68bad1c3b5',1,'mim::plug::math']]],
+  ['unroll_29',['unroll',['../structmim_1_1plug_1_1btensor_1_1Sched__field.html#a4582c3c83dc1759dee1e3fd00a3e0cd2a249c0e2c4f448a985b635b35dc5fb4e2',1,'mim::plug::btensor::Sched_field']]],
+  ['unsafe_30',['unsafe',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a64c823fad1d87e0df1ef3cdeb8ac684f',1,'mim::plug::math::unsafe'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a64c823fad1d87e0df1ef3cdeb8ac684f',1,'mim::plug::math::unsafe']]],
+  ['urem_31',['urem',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9ae1851600007553e51484056678cdb3d1',1,'mim::plug::core']]],
+  ['us_32',['US',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea7516fd43adaa5e0b8a65a672c39845d2',1,'mim::plug::core']]],
+  ['us_33',['Us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea85e8f233669adc62acf13417cb9649ca',1,'mim::plug::core']]],
+  ['us_34',['uS',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707eadb341325cb123eae94a69292a2914972',1,'mim::plug::core']]],
+  ['us_35',['us',['../namespacemim_1_1plug_1_1core.html#a24bcda8cb32531a8a5b3d5ab6d6c707ea0b3b97fa66886c5688ee4ae80ec0c3c2',1,'mim::plug::core']]]
 ];

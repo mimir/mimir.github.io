@@ -4,7 +4,7 @@ var searchData=
   ['declexpr_1',['DeclExpr',['../classmim_1_1ast_1_1DeclExpr.html',1,'mim::ast']]],
   ['def_2',['Def',['../classmim_1_1Def.html',1,'mim']]],
   ['defkey_3',['DefKey',['../structmim_1_1DefKey.html',1,'mim']]],
-  ['demand_4',['Demand',['../namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Demand',1,'mim::plug::x86::phase']]],
+  ['demand_4',['Demand',['../structmim_1_1plug_1_1x86_1_1phase_1_1Demand.html',1,'mim::plug::x86::phase']]],
   ['deviceemitflags_5',['DeviceEmitFlags',['../namespacemim_1_1plug_1_1nvptx.html#structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags',1,'mim::plug::nvptx']]],
   ['deviceemitter_6',['DeviceEmitter',['../classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html',1,'mim::plug::nvptx']]],
   ['dfa_7',['DFA',['../classautomaton_1_1DFA.html',1,'automaton']]],

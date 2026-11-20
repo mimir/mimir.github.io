@@ -9,7 +9,7 @@ var searchData=
   ['im_6',['Im',['../namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428cad0fa7c3b5984b6f28d08dcba9cc682ec',1,'mim::plug::math']]],
   ['im_7',['iM',['../namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca705d9cf5220b93288d854cdc637f44c6',1,'mim::plug::math']]],
   ['im_8',['im',['../namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca73bebce395b6f1efedcf6842fbdb4d76',1,'mim::plug::math']]],
-  ['imm_9',['Imm',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b',1,'mim::plug::x86::phase::Imm'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac2a6dc43e89480185f6bdacd33673bbbada9470e1aa5be1858e667318254dcb4b',1,'mim::plug::x86::phase::Imm']]],
+  ['imm_9',['Imm',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b',1,'mim::plug::x86::phase']]],
   ['index_10',['Index',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a88fa71f0a6e0dfedbb46d91cc0b37a50',1,'mim::plug::x86::phase::Index'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a88fa71f0a6e0dfedbb46d91cc0b37a50',1,'mim::plug::x86::phase::Index']]],
   ['inj_11',['Inj',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da62d8e3eff7a84b91e1fac08d56e1455b',1,'mim']]],
   ['insert_12',['Insert',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa458be0f08b7e4ff3c0f633c100176c0',1,'mim']]],

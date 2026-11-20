@@ -30,7 +30,7 @@ var searchData=
   ['patricia_20tree_27',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; measured against OCaml&apos;s &lt;span class=&quot;tt&quot;&gt;patricia-tree&lt;/span&gt;',['../md_docs_2why-cpp.html#autotoc_md163',1,'']]],
   ['patricia_3a_3aset_20—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_28',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md162',1,'']]],
   ['patricia_3a_3aset_20measured_20against_20ocaml_20s_20patricia_20tree_29',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; measured against OCaml&apos;s &lt;span class=&quot;tt&quot;&gt;patricia-tree&lt;/span&gt;',['../md_docs_2why-cpp.html#autotoc_md163',1,'']]],
-  ['pattern_30',['Recommended Design Pattern',['../phases.html#autotoc_md115',1,'']]],
+  ['pattern_30',['Pattern',['../structmim_1_1plug_1_1x86_1_1phase_1_1Pattern.html',1,'mim::plug::x86::phase::Pattern'],['../phases.html#autotoc_md115',1,'Recommended Design Pattern']]],
   ['patterns_20and_20telescopes_31',['Patterns and Telescopes',['../langref.html#ptrn',1,'Patterns and Telescopes'],['../tutorial.html#autotoc_md185',1,'Patterns and Telescopes']]],
   ['pbqp_32',['pbqp',['../namespacepbqp.html',1,'']]],
   ['pbqp_3a_3ajson_33',['json',['../namespacepbqp_1_1json.html',1,'pbqp']]],

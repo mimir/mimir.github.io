@@ -1,5 +1,11 @@
 var NAVTREEINDEX28 =
 {
+"namespacemim_1_1plug_1_1regex.html#a82ed8ada05887f87eca2042aee3d1b1a":[2,0,4,2,18,30],
+"namespacemim_1_1plug_1_1regex.html#a8e7fb7d4e2c8eb1dce002cff7a43cf24":[2,0,4,2,18,6],
+"namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943":[2,0,4,2,18,33],
+"namespacemim_1_1plug_1_1regex.html#a991b36716d0b2422fa9077600a5b7f4f":[2,0,4,2,18,16],
+"namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49":[2,0,4,2,18,2],
+"namespacemim_1_1plug_1_1regex.html#aa8cfe9b14b05191510c403314b69f2f7":[2,0,4,2,18,19],
 "namespacemim_1_1plug_1_1regex.html#ab3a764f9d39b068e136ecdb2d8a0a40a":[2,0,4,2,18,12],
 "namespacemim_1_1plug_1_1regex.html#ab6f9a5fa4f24669f96d8db67637e8628":[2,0,4,2,18,5],
 "namespacemim_1_1plug_1_1regex.html#ab71f2a99ed0c2b59c63bf1ca4c0bb700":[2,0,4,2,18,8],
@@ -243,11 +249,5 @@ var NAVTREEINDEX28 =
 "namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0a5fb4c09ffcf0a2564a2eca001edde421":[2,0,4,2,22,35,5],
 "namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0a690ac99ca47423f97ec67e7cbfe15a1b":[2,0,4,2,22,35,1],
 "namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0a90a071d6a73f529da5efeb75b4cec839":[2,0,4,2,22,35,8],
-"namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0aa2a1f63d98e3755f63fb60485a56c853":[2,0,4,2,22,35,10],
-"namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0aa893136449f724af7726ba78208a1c86":[2,0,4,2,22,35,6],
-"namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0ae249a6ebf27391725552f1d90f559f14":[2,0,4,2,22,35,12],
-"namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0afba662cc36fc65e57623b25288b1e689":[2,0,4,2,22,35,7],
-"namespacemim_1_1plug_1_1x86.html#a91e592b260f1dde7393267aac7d888ea":[2,0,4,2,22,7],
-"namespacemim_1_1plug_1_1x86.html#a97276797f3a8496ce07abf2def0cb385":[5,0,3,1,2,22,1,0,1],
-"namespacemim_1_1plug_1_1x86.html#a98c86a37583bbdd7d5603bd1de51d17b":[2,0,4,2,22,40]
+"namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0aa2a1f63d98e3755f63fb60485a56c853":[2,0,4,2,22,35,10]
 };

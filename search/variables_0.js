@@ -6,5 +6,6 @@ var searchData=
   ['annex_5f_3',['annex_',['../classmim_1_1ast_1_1RecDecl.html#ab3d9775004afbc19c0e9494ad4600b67',1,'mim::ast::RecDecl']]],
   ['arg_5fregs_4',['Arg_Regs',['../namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2',1,'mim::plug::x86']]],
   ['args_5',['args',['../structmim_1_1Plugin.html#aa1db5972caaf1e7548690a26efb282d0',1,'mim::Plugin']]],
-  ['ascii_6',['ascii',['../structmim_1_1Flags.html#ab215ed00a54cbe6b05280568ac1a6f7b',1,'mim::Flags']]]
+  ['arity_6',['arity',['../structmim_1_1plug_1_1x86_1_1phase_1_1Slot.html#a222086c26def2a3f3b978590c8fbfd11',1,'mim::plug::x86::phase::Slot']]],
+  ['ascii_7',['ascii',['../structmim_1_1Flags.html#ab215ed00a54cbe6b05280568ac1a6f7b',1,'mim::Flags']]]
 ];

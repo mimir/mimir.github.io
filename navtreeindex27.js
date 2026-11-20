@@ -1,5 +1,11 @@
 var NAVTREEINDEX27 =
 {
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4a8a08f09d37b73795649038408b5f33":[2,0,4,2,11,32,1],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa4b43b0aee35624cd95b910189b3dc231":[2,0,4,2,11,32,2],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aa8fa14cdd754f91cc6554c9e71929cce7":[2,0,4,2,11,32,0],
+"namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87aae358efa489f58062f10dd7316b65649e":[2,0,4,2,11,32,3],
+"namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428c":[2,0,4,2,11,11],
+"namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca6245653b1ded5cde266a956a325465ce":[2,0,4,2,11,11,3],
 "namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca705d9cf5220b93288d854cdc637f44c6":[2,0,4,2,11,11,2],
 "namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca72d218e43966c28053831edff6a62f33":[2,0,4,2,11,11,7],
 "namespacemim_1_1plug_1_1math.html#ab3714a92165c9fc8ab8d7238944e428ca73bebce395b6f1efedcf6842fbdb4d76":[2,0,4,2,11,11,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX27 =
 "namespacemim_1_1plug_1_1regex.html#a64e05eb3efae975d47944dc127eede75":[2,0,4,2,18,14],
 "namespacemim_1_1plug_1_1regex.html#a69e15eff07c15faf117e019314f4ab43":[2,0,4,2,18,26],
 "namespacemim_1_1plug_1_1regex.html#a79ef3bb01e318a7841181bcf28939d6c":[2,0,4,2,18,11],
-"namespacemim_1_1plug_1_1regex.html#a820085ea00f02004ffc5a08691db4748":[2,0,4,2,18,34],
-"namespacemim_1_1plug_1_1regex.html#a82ed8ada05887f87eca2042aee3d1b1a":[2,0,4,2,18,30],
-"namespacemim_1_1plug_1_1regex.html#a8e7fb7d4e2c8eb1dce002cff7a43cf24":[2,0,4,2,18,6],
-"namespacemim_1_1plug_1_1regex.html#a9828979c810badaf1e7d2f40d6e19943":[2,0,4,2,18,33],
-"namespacemim_1_1plug_1_1regex.html#a991b36716d0b2422fa9077600a5b7f4f":[2,0,4,2,18,16],
-"namespacemim_1_1plug_1_1regex.html#a9e88c3311ac4201abeacb94102dcee49":[2,0,4,2,18,2],
-"namespacemim_1_1plug_1_1regex.html#aa8cfe9b14b05191510c403314b69f2f7":[2,0,4,2,18,19]
+"namespacemim_1_1plug_1_1regex.html#a820085ea00f02004ffc5a08691db4748":[2,0,4,2,18,34]
 };
