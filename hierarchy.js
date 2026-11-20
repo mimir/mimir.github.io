@@ -107,7 +107,6 @@ var hierarchy =
         [ "mim::Cleanup", "classmim_1_1Cleanup.html", null ],
         [ "mim::DispatchNormalize", "classmim_1_1DispatchNormalize.html", null ],
         [ "mim::EtaConv", "classmim_1_1EtaConv.html", null ],
-        [ "mim::Join2Variant", "classmim_1_1Join2Variant.html", null ],
         [ "mim::LamSpec", "classmim_1_1LamSpec.html", null ],
         [ "mim::NomErasure", "classmim_1_1NomErasure.html", null ],
         [ "mim::Repl", "classmim_1_1Repl.html", null ],
@@ -128,6 +127,7 @@ var hierarchy =
         [ "mim::plug::clos::phase::LowerTypedClos", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClos.html", null ],
         [ "mim::plug::clos::phase::LowerTypedClosPrep", "classmim_1_1plug_1_1clos_1_1phase_1_1LowerTypedClosPrep.html", null ],
         [ "mim::plug::core::phase::LegalizeIdx", "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html", null ],
+        [ "mim::plug::core::phase::LowerDynExtract", "classmim_1_1plug_1_1core_1_1phase_1_1LowerDynExtract.html", null ],
         [ "mim::plug::core::phase::LowerVariant", "classmim_1_1plug_1_1core_1_1phase_1_1LowerVariant.html", null ],
         [ "mim::plug::cps::Conv", "classmim_1_1plug_1_1cps_1_1Conv.html", null ],
         [ "mim::plug::gpu::phase::LowerMapReduce", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html", null ],
@@ -167,7 +167,6 @@ var hierarchy =
         [ "mim::Idx", "classmim_1_1Idx.html", null ],
         [ "mim::Inj", "classmim_1_1Inj.html", null ],
         [ "mim::Insert", "classmim_1_1Insert.html", null ],
-        [ "mim::Join", "classmim_1_1Join.html", null ],
         [ "mim::LMax", "classmim_1_1LMax.html", null ],
         [ "mim::LSucc", "classmim_1_1LSucc.html", null ],
         [ "mim::Lam", "classmim_1_1Lam.html", null ],
@@ -309,9 +308,6 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Insert &gt;", "classmim_1_1Setters.html", [
       [ "mim::Insert", "classmim_1_1Insert.html", null ]
-    ] ],
-    [ "mim::Setters&lt; Join &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Join", "classmim_1_1Join.html", null ]
     ] ],
     [ "mim::Setters&lt; Lam &gt;", "classmim_1_1Setters.html", [
       [ "mim::Lam", "classmim_1_1Lam.html", null ]

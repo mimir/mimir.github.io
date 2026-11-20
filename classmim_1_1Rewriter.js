@@ -33,7 +33,6 @@ var classmim_1_1Rewriter =
     [ "rewrite_imm_Idx", "classmim_1_1Rewriter.html#ac60f5419af48d0a49c1da92918f872b9", null ],
     [ "rewrite_imm_Inj", "classmim_1_1Rewriter.html#ab401d47a8d110fa8aea12ba19e25e53f", null ],
     [ "rewrite_imm_Insert", "classmim_1_1Rewriter.html#a41edce9af022e58a82dfddde9d8d0196", null ],
-    [ "rewrite_imm_Join", "classmim_1_1Rewriter.html#a26ab28c6a1fee8d8f89b117da6489acc", null ],
     [ "rewrite_imm_Lam", "classmim_1_1Rewriter.html#afac7fab824b50e8b85f9b5329fda7c7f", null ],
     [ "rewrite_imm_Level", "classmim_1_1Rewriter.html#ae6d1de2a052afc384bd13dd5dc33ec79", null ],
     [ "rewrite_imm_Lit", "classmim_1_1Rewriter.html#aef1bc98d3876a43de2d856872c7a19e8", null ],

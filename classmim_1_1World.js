@@ -93,7 +93,6 @@ var classmim_1_1World =
     [ "insert", "classmim_1_1World.html#af683a753df235a8165495e67ecfe007e", null ],
     [ "is_frozen", "classmim_1_1World.html#a9a622f90d947fca9e37ce9e8eff2ad89", null ],
     [ "is_lenient", "classmim_1_1World.html#a688becfbb97759b9f6cdac6bb3ca8826", null ],
-    [ "join", "classmim_1_1World.html#aac38a3d29d02c10c7de1ffc466e10bbc", null ],
     [ "lam", "classmim_1_1World.html#a327d241cc5bf015bbdc18c2a38aa7e95", null ],
     [ "lam", "classmim_1_1World.html#a5dd07e6b40add9b07277a4611e2d97a6", null ],
     [ "lam", "classmim_1_1World.html#a7adbde375d5af9fa862782695029e9c6", null ],

@@ -100,7 +100,6 @@ var classmim_1_1ast_1_1Tok =
       [ "T_shr", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5aac38f1b07f9eb93b77ff735664a6c8a7", null ],
       [ "T_star", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5adffb83ae407bb72e9b9ac7f79028bb7e", null ],
       [ "T_sub", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a7f1db58d57a8d9b1379297521564ff85", null ],
-      [ "T_union", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5a3f5d39a69c94afa1cdd482e1f29a0ab0", null ],
       [ "T_pipe", "classmim_1_1ast_1_1Tok.html#aecc76e61c0dea79b166216fe1ef732c5ac9b6e7d62e5012f8224ddefc5ddd5804", null ]
     ] ],
     [ "Tok", "classmim_1_1ast_1_1Tok.html#a9183c9bc35c812b5d121b1300ad7c07c", null ],

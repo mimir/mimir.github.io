@@ -200,7 +200,7 @@ Primary Terminals</h3>
 <div class="terminals-code"></div><div class="terminals-code"><div class="fragment"><div class="line">( ) [ ] { }</div>
 <div class="line">‹ › « »</div>
 <div class="line">→ ← =&gt; ⊥ ⊤ * □ λ</div>
-<div class="line">= , ; . : @ $ # | ∪</div>
+<div class="line">= , ; . : @ $ # |</div>
 <div class="line">+ - / % == != &lt; &lt;= &gt; &gt;= &lt;&lt; &gt;&gt;</div>
 <div class="line">&lt;eof&gt;</div>
 </div><!-- fragment --></div><div class="terminals-code"></div><ul>
@@ -535,7 +535,7 @@ Products</h3>
 <li><span class="tt">« ... ; ... »</span> builds an array.</li>
 <li><span class="tt">‹ ... ; ... ›</span> builds a pack. Without the <span class="tt">;</span> both are a <a class="el" href="#single" title="Singletons">singleton</a> instead.</li>
 <li>A <span class="tt">shape</span> lists one or more comma-separated dimensions, as in <span class="tt">«i: m, j: n; body»</span>, and each dimension may optionally be named. All of them fuse into <b>one</b> array of shape <span class="tt">(m, n)</span>, whose index binds every axis at once, so <span class="tt">t#i#j</span> and <span class="tt">t#(i, j)</span> are the same Extract - except through a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component. The exception is a dimension whose extent depends on an earlier index, as in <span class="tt">«i: n, j: s#i; body»</span>: a shape lists extents, not functions of preceding indices, so such a nest stays one array per axis.</li>
-<li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>.</li>
+<li><span class="tt">e#e</span> extracts a component by index, <span class="tt">e#I</span> by <a class="el" href="#field" title="Field Names of Sigmas">field name</a>. A dynamic index <span class="tt">i</span> into <span class="tt">t: [T₀, …, Tₙ₋₁]</span> yields the type <span class="tt">(T₀, …, Tₙ₋₁)#i</span>, which is just <span class="tt">T</span> if all <span class="tt">Tₖ</span> are <span class="tt">T</span>. The <span class="tt">Tₖ</span> must live on one type level.</li>
 <li><span class="tt">tuple#index ← value</span> yields a <b>new</b> aggregate with <span class="tt">index</span> replaced by <span class="tt">value</span>; it does not mutate <span class="tt">tuple</span>. A <span class="tt">#</span> on the left is mandatory: without a component to update there is nothing to insert into.</li>
 <li><span class="tt">←</span> updates the component at the <em>whole</em> <span class="tt">#</span>-path, so <span class="tt">t#i#j#k ← v</span> denotes the outer aggregate <span class="tt">t</span>. The path extends leftward through <span class="tt">#</span> and stops at the first expression that is not itself a <span class="tt">#</span>.<ul>
 <li><span class="tt">( ... )</span> builds a tuple (see above), so it ends a path. Thus, <span class="tt">(t#i)#j ← v</span> denotes <span class="tt">t#i</span> instead.</li>
@@ -558,29 +558,20 @@ Dependent Tuple Types</h3>
 <div class="line">lam f (t: «2; One»): Nat = t#1₂#0₁;    // a real Extract: reads `x` out of the 1-tuple</div>
 <div class="line">lam g (t: «2; One»): One = t#(1₂, 0₁); // the `0₁` axis folds away, so this is just `t#1₂`</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">←</span> is unaffected: writing the component rebuilds the whole 1-tuple either way, so <span class="tt">t#(1₂, 0₁) ← v</span> and <span class="tt">t#1₂#0₁ ← v</span> do agree.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
-Unions</h3>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;∪&quot; e</div>
-<div class="line">     |  e &quot;inj&quot; e</div>
+<h3 class="doxsection"><a class="anchor" id="variant"></a>
+Variants</h3>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;|&quot; (I (&quot;:&quot; e)? (&quot;|&quot; I (&quot;:&quot; e)?)*)?</div>
 <div class="line">     |  &quot;match&quot; e &quot;with&quot; &quot;|&quot;? arm (&quot;|&quot; arm)*</div>
 <div class="line">arm ::= p &quot;=&gt;&quot; e</div>
 <div class="line">     |  (I | L) p? &quot;=&gt;&quot; e</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><ul>
-<li><span class="tt">e ∪ e</span> forms a union type.</li>
-<li><span class="tt">e inj e</span> injects a value into a union type.</li>
-<li><span class="tt">match e with | p =&gt; e | ...</span> eliminates a union value.</li>
-</ul>
-<h3 class="doxsection"><a class="anchor" id="variant"></a>
-Variants</h3>
-<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= &quot;|&quot; (I (&quot;:&quot; e)? (&quot;|&quot; I (&quot;:&quot; e)?)*)?</div>
-</div><!-- fragment --></div><div class="ebnf-code"></div><ul>
 <li><span class="tt">| I₀: e₀ | ... | Iₙ₋₁: eₙ₋₁</span> forms a variant type: a sum whose cases are <em>positional</em>. A constructor without <span class="tt">: e</span> carries <span class="tt">[]</span>, and a lone <span class="tt">|</span> is the empty variant.</li>
-<li>Unlike <span class="tt">∪</span>, nothing is sorted, deduplicated, or flattened: <span class="tt">| A | B | C</span> has three cases where <span class="tt">[] ∪ [] ∪ []</span> is just <span class="tt">[]</span>, and <span class="tt">| A: Nat | B: Nat</span> keeps both.</li>
+<li>Every constructor is a case of its own, even with the same payload: <span class="tt">| A | B | C</span> has three cases, and <span class="tt">| A: Nat | B: Nat</span> two.</li>
 <li>A variant is a type like any other and may be anonymous; <span class="tt">rec</span> makes it recursive, and a <span class="tt">mutual</span> block mutually recursive.</li>
 <li>Its last payload extends as far right as it can, and <span class="tt">|</span> never starts an application argument: write <span class="tt">f (| A | B)</span>, and parenthesize a variant inside a <span class="tt">match</span> arm.</li>
 <li><span class="tt">T#I</span> or <span class="tt">T#n</span> on a variant type <span class="tt">T</span> selects a case by constructor name or by index, counting from <span class="tt">0</span>. That is a value for a <span class="tt">[]</span> payload, and a function from the payload into <span class="tt">T</span> otherwise.</li>
 <li>Like an application, <span class="tt">#</span> first fills the implicit domains of its left-hand side with holes, so for <span class="tt">nom Opt {T: *} = | None | Some: T</span>, <span class="tt">Opt#Some 23</span> infers <span class="tt">T</span>.</li>
-<li>In a <span class="tt">match</span> on a variant, each arm names a constructor or gives its index, optionally followed by a pattern for its payload. <span class="tt">| 1 (h, t) =&gt; e</span> selects the same case as <span class="tt">| Cons (h, t) =&gt; e</span>, just as <span class="tt">T#1</span> and <span class="tt">T#Cons</span> do. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>
+<li><span class="tt">match e with | arm | ...</span> eliminates a variant value; its scrutinee must be of variant type. Each arm names a constructor or gives its index, optionally followed by a pattern for its payload. <span class="tt">| 1 (h, t) =&gt; e</span> selects the same case as <span class="tt">| Cons (h, t) =&gt; e</span>, just as <span class="tt">T#1</span> and <span class="tt">T#Cons</span> do. Every constructor needs an arm; a second arm for the same one is unreachable and warned about.</li>
 <li>Constructor names are looked up in the scrutinee's <em>type</em>, so any scrutinee works, not just an annotated variable. Variants are structural, so two of the same shape are the same type; where they put a name at different positions, it is ambiguous and needs an index. A name reaches only the type it was declared on, so an instance of a polymorphic variant such as <span class="tt">V T</span> carries none and its cases are selected by index.</li>
 <li><span class="tt">_n</span> names case <span class="tt">n</span> of any variant, whatever its constructors are called: <span class="tt">List#_1</span> and <span class="tt">| _1 (h, t) =&gt; e</span> select <span class="tt">Cons</span> below. A dump spells the cases that way, since constructor names live only in the source; a constructor actually declared as <span class="tt">_n</span> takes precedence.</li>
 </ul>
@@ -607,7 +598,8 @@ Singletons</h3>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="nominal"></a>
 Nominal Newtypes</h3>
-<p>A <span class="tt">nom</span> declaration is the one place where <a class="el" href="namespaceMim.html">Mim</a> is not structurally typed: two <span class="tt">nom</span>s over the same underlying type are still distinct types.</p>
+<div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;inj&quot; e</div>
+</div><!-- fragment --></div><div class="ebnf-code"></div><p>A <span class="tt">nom</span> declaration is the one place where <a class="el" href="namespaceMim.html">Mim</a> is not structurally typed: two <span class="tt">nom</span>s over the same underlying type are still distinct types.</p>
 <ul>
 <li><span class="tt">nom I = e</span> declares <span class="tt">I</span> as a fresh type that wraps <span class="tt">e</span>; it is the declaration - not the shape of <span class="tt">e</span> - that tells two <span class="tt">nom</span>s apart.</li>
 <li>If <span class="tt">e</span> is a sigma, a <a class="el" href="#variant" title="Variants">variant</a>, or a function type, <span class="tt">I</span> is already in scope inside <span class="tt">e</span>, so such a <span class="tt">nom</span> may be recursive, and a <span class="tt">mutual</span> block makes a group of them mutually recursive.</li>
@@ -658,7 +650,7 @@ Infix Operators</h3>
 </div><!-- fragment --></div><div class="mim-code"> </div></li>
 <li><span class="tt">*</span> doubles as the multiplication operator, so <span class="tt">f *</span> is a multiplication and not an application of <span class="tt">f</span> to <span class="tt">Type (0:Level)</span>; write <span class="tt">f (*)</span> for the latter.</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 Local Declaration Blocks</h3>
 <div class="ebnf-code"></div><div class="ebnf-code"><div class="fragment"><div class="line">e   ::= e &quot;where&quot; d* &quot;end&quot;</div>
 </div><!-- fragment --></div><div class="ebnf-code"></div><p><span class="tt">where</span> attaches a local declaration block to an already parsed expression. <span class="tt">where</span> blocks bind more weakly than the other infix expression forms.</p>
@@ -691,19 +683,17 @@ Precedence</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">11  </td><td class="markdownTableBodyNone"><span class="tt">Arrow</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e → e</span>  </td><td class="markdownTableBodyNone">Also bounds the codomain after a <span class="tt">→</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">12  </td><td class="markdownTableBodyNone"><span class="tt">Union</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e ∪ e</span>  </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyRight">12  </td><td class="markdownTableBodyNone"><span class="tt">Inj</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e inj e</span>  </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Inj</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e inj e</span>  </td><td class="markdownTableBodyNone">Weaker than <span class="tt">∪</span>, so <span class="tt">x inj A ∪ B</span> is <span class="tt">x inj (A ∪ B)</span>.  </td></tr>
+<td class="markdownTableBodyRight">13  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e("#"e)+ ← e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">14  </td><td class="markdownTableBodyNone"><span class="tt">Ins</span>  </td><td class="markdownTableBodyCenter">right  </td><td class="markdownTableBodyNone"><span class="tt">e("#"e)+ ← e</span>  </td><td class="markdownTableBodyNone">Also bounds a declaration's <span class="tt">: codom</span> slot, which ends at <span class="tt">=</span> and so takes everything short of a <span class="tt">where</span>.  </td></tr>
+<td class="markdownTableBodyRight">14  </td><td class="markdownTableBodyNone"><span class="tt">Where</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e where d* end</span>  </td><td class="markdownTableBodyNone">The loosest surface operator.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">15  </td><td class="markdownTableBodyNone"><span class="tt">Where</span>  </td><td class="markdownTableBodyCenter">left  </td><td class="markdownTableBodyNone"><span class="tt">e where d* end</span>  </td><td class="markdownTableBodyNone">The loosest surface operator.  </td></tr>
+<td class="markdownTableBodyRight">15  </td><td class="markdownTableBodyNone"><span class="tt">Bot</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">A complete expression; the default bound, and the only one a trailing <span class="tt">where</span> fits into.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Bot</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">A complete expression; the default bound, and the only one a trailing <span class="tt">where</span> fits into.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyRight">17  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
+<td class="markdownTableBodyRight">16  </td><td class="markdownTableBodyNone"><span class="tt">Err</span>  </td><td class="markdownTableBodyCenter">-  </td><td class="markdownTableBodyNone"><em>pseudo</em>  </td><td class="markdownTableBodyNone">Below everything; the parser's "no operator seen yet" sentinel.  </td></tr>
 </table>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 Summary: Functions and Types</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses different surface syntax for declarations, expressions, and types:</p>
 <table class="markdownTable">
@@ -716,21 +706,21 @@ Summary: Functions and Types</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">fun</span>  </td><td class="markdownTableBodyNone"><span class="tt">fn</span>  </td><td class="markdownTableBodyNone"><span class="tt">Fn</span>  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 Declarations</h2>
 <p>The following declarations are equivalent:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam f1 (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">con f2 (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">fun f3 (T: *)  (x y: T): T                    = return x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A partial-evaluation filter defaults to <span class="tt">tt</span>, except on the last domain of a <span class="tt">con</span>, <span class="tt">cn</span>, <span class="tt">fun</span>, or <span class="tt">fn</span>, where it defaults to <span class="tt">ff</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 Expressions</h2>
 <p>The following expressions are equivalent. Because they are bound by <span class="tt">let</span>, they behave like the declarations above - except that <span class="tt">f</span> is <em>not</em> in scope inside the body, so they cannot recurse:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let f1 =  λ (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let _  = lm (T: *) ((x y: T), return: T → ⊥)@ff: ⊥ = return x;</div>
 <div class="line">let f2 = cn (T: *) ((x y: T), return: Cn T)        = return x;</div>
 <div class="line">let f3 = fn (T: *)  (x y: T): T                    = return x;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 Applications</h2>
 <p>The following applications of <span class="tt">f</span> are equivalent, where <span class="tt">g</span> is a continuation that consumes the result:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">fun f (T: *)  (x y: T): T = return x;</div>
@@ -741,16 +731,16 @@ Applications</h2>
 <div class="line">fun test2 (): Nat =</div>
 <div class="line">    ret res = f Nat $ (23, 42);</div>
 <div class="line">    return res;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 Function Types</h2>
 <p>The following types are equivalent and describe the type of <span class="tt">f</span> above:</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let _ = [T: *] →    [[T, T], T → ⊥] → ⊥;</div>
 <div class="line">let _ = [T: *] → Cn [[T, T], Cn T];</div>
 <div class="line">let _ = [T: *] → Fn  [T, T] → T;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 Scoping</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope">lexical scoping</a>. Unless noted otherwise, all names live in the same scope. A file is bound in isolation: it never sees the scope of whoever imports it.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Underscore</h2>
 <p>The symbol <span class="tt">_</span> is special: it never binds an entity. As a consequence, <span class="tt">_</span> may appear repeatedly in the same scope without conflict, but any use of <span class="tt">_</span> as a reference is a scoping error.</p>
 <h2 class="doxsection"><a class="anchor" id="annex"></a>
@@ -770,7 +760,7 @@ Field Names of Sigmas</h2>
 <h1 class="doxsection"><a class="anchor" id="normalization"></a>
 Normalizations</h1>
 <p><a class="el" href="namespaceMim.html">Mim</a> nodes are hash-consed and normalized while they are built, so the left-hand sides below never reach the IR - <span class="tt"><a class="el" href="namespacemim.html">mim</a> --output-mim</span> prints the right-hand side. Every argument is <a class="el" href="classmim_1_1Zonker.html" title="mim::Zonker">zonked</a> first, so a resolved <span class="tt">Hole</span> normalizes like the term it stands for. A <em>mutable</em> node is built empty and filled in afterwards and is therefore never normalized; only its body is. While the <span class="tt">World</span> is frozen, a rule that would have to build a new node bails out instead.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 Aggregates</h2>
 <ul>
 <li><span class="tt">(e)</span> -&gt; <span class="tt">e</span>, <span class="tt">[T]</span> -&gt; <span class="tt">T</span> - a one-element aggregate degrades to its element; the sole exception is a <a class="el" href="#mutsigma" title="Dependent Tuple Types">mutable sigma</a> of one component</li>
@@ -779,14 +769,14 @@ Aggregates</h2>
 <li><span class="tt">⊥:[T, U]</span> -&gt; <span class="tt">(⊥:T, ⊥:U)</span>, <span class="tt">⊥:«n; T»</span> -&gt; <span class="tt">‹n; ⊥:T›</span> - <span class="tt">⊥</span>/<span class="tt">⊤</span> are pushed into aggregates</li>
 <li><span class="tt">‹i: 3; e›</span> -&gt; <span class="tt">(e[i ↦ 0₃], e[i ↦ 1₃], e[i ↦ 2₃])</span> - only for a literal arity below <span class="tt">--scalarize-threshold</span> and a body that depends on <span class="tt">i</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 Shapes</h2>
 <ul>
 <li><span class="tt">«1; T»</span> -&gt; <span class="tt">T</span> - a literal size-1 axis folds out of a shape</li>
 <li><span class="tt">«2, 0, 3; T»</span> -&gt; <span class="tt">«2; []»</span> - a literal <span class="tt">0</span> extent empties everything below it</li>
 <li><span class="tt">«a; «b; T»»</span> -&gt; <span class="tt">«a, b; T»</span> - a nest of the same kind fuses into one shape, unless the inner extents depend on the outer index</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Extract</h2>
 <ul>
 <li><span class="tt">d#(i, 0₁, k)</span> -&gt; <span class="tt">d#(i, k)</span> - a literal size-1 axis folds out of an index, mirroring the shape rule</li>
@@ -798,7 +788,7 @@ Extract</h2>
 <li><span class="tt">(d#i ← v)#i</span> -&gt; <span class="tt">v</span></li>
 <li><span class="tt">(d#j ← v)#i</span> -&gt; <span class="tt">d#i</span> for literal <span class="tt">i ≠ j</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Insert</h2>
 <ul>
 <li><span class="tt">d#() ← v</span> -&gt; <span class="tt">v</span>, and likewise for an index of <span class="tt">Idx 1</span> - the write replaces all of <span class="tt">d</span></li>
@@ -809,7 +799,7 @@ Insert</h2>
 <li><span class="tt">d#i ← d#i</span> -&gt; <span class="tt">d</span></li>
 <li><span class="tt">(d#i ← y)#i ← v</span> -&gt; <span class="tt">d#i ← v</span></li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 Application</h2>
 <ul>
 <li><span class="tt">(λ (_: T) = e) a</span> -&gt; <span class="tt">e</span> - an immutable <span class="tt">λ</span> binds no var, so it always β-reduces</li>
@@ -818,38 +808,26 @@ Application</h2>
 <li>an application of an <a class="el" href="#decl" title="Declarations">axiom</a> runs its normalizer once the curry counter hits <span class="tt">0</span></li>
 <li>an application of a <span class="tt">{T: *} → e</span> inserts a <span class="tt">Hole</span> per implicit argument</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
-Unions</h2>
-<ul>
-<li><span class="tt">T ∪ ⊥</span> -&gt; <span class="tt">T</span> - the unit of a join is dropped</li>
-<li><span class="tt">T ∪ ⊤</span> -&gt; <span class="tt">⊤</span></li>
-<li><span class="tt">A ∪ A</span> -&gt; <span class="tt">A</span>; the operands are flattened and sorted, so <span class="tt">∪</span> is commutative, associative, and idempotent</li>
-<li>an empty join is <span class="tt">⊥</span>, and a one-element one is its operand</li>
-<li><span class="tt">x inj T</span> -&gt; <span class="tt">x</span> if <span class="tt">T</span> is not a union type</li>
-<li><span class="tt">match (T inj x) with ...</span> -&gt; the arm handling <span class="tt">T</span> - a constructor fixes the active case</li>
-<li>each case is handled by the <b>first</b> arm accepting it, so the arms are <em>not</em> sorted; an arm accepts a case if its domain is that case, or a union containing it</li>
-<li>a <span class="tt">match</span> whose scrutinee is not a union is the degenerate one-case union and reduces right away</li>
-<li>an arm handling no case is dropped; a case handled by no arm is an error</li>
-</ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 Variants</h2>
 <ul>
-<li>a variant is never sorted, deduplicated, or flattened; an empty or one-case variant stays a variant</li>
+<li>a one-case variant stays a variant, while the empty one is <span class="tt">⊥</span></li>
 <li><span class="tt">match (T#i x) with ...</span> -&gt; the arm for case <span class="tt">i</span></li>
 <li>the arms of a <span class="tt">match</span> on a variant are in the order of its cases, one each</li>
+<li>all arms of a <span class="tt">match</span> on a variant agree on their codomain, which is the type of the <span class="tt">match</span>; an arm into <span class="tt">⊥</span> fits any</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 Singletons</h2>
 <ul>
 <li><span class="tt">#x</span> -&gt; <span class="tt">e</span> for every <span class="tt">x: «e»</span> - the inhabitant is read off the <em>type</em>, so the var of a <span class="tt">λ (x: «e»)</span> never occurs in the body</li>
 <li><span class="tt">#‹e›</span> -&gt; <span class="tt">e</span> - a special case of the above; a singleton elimination is therefore never built</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 Nominal Newtypes</h2>
 <ul>
 <li><span class="tt">#(e inj T)</span> -&gt; <span class="tt">e</span>; on an opaque value the unwrapping stays</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 Universes</h2>
 <ul>
 <li><span class="tt">Type</span> levels: <span class="tt">l + 1</span> folds for a literal <span class="tt">l</span>, nested successors add up, and a successor distributes over an <span class="tt">LMax</span></li>

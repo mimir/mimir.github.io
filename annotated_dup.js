@@ -110,6 +110,7 @@ var annotated_dup =
         [ "core", "namespacemim_1_1plug_1_1core.html", [
           [ "phase", "namespacemim_1_1plug_1_1core_1_1phase.html", [
             [ "LegalizeIdx", "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx.html", "classmim_1_1plug_1_1core_1_1phase_1_1LegalizeIdx" ],
+            [ "LowerDynExtract", "classmim_1_1plug_1_1core_1_1phase_1_1LowerDynExtract.html", "classmim_1_1plug_1_1core_1_1phase_1_1LowerDynExtract" ],
             [ "LowerVariant", "classmim_1_1plug_1_1core_1_1phase_1_1LowerVariant.html", "classmim_1_1plug_1_1core_1_1phase_1_1LowerVariant" ]
           ] ]
         ] ],
@@ -217,8 +218,6 @@ var annotated_dup =
       [ "Importer", "classmim_1_1Importer.html", "classmim_1_1Importer" ],
       [ "Inj", "classmim_1_1Inj.html", "classmim_1_1Inj" ],
       [ "Insert", "classmim_1_1Insert.html", "classmim_1_1Insert" ],
-      [ "Join", "classmim_1_1Join.html", "classmim_1_1Join" ],
-      [ "Join2Variant", "classmim_1_1Join2Variant.html", "classmim_1_1Join2Variant" ],
       [ "Lam", "classmim_1_1Lam.html", "classmim_1_1Lam" ],
       [ "LamSpec", "classmim_1_1LamSpec.html", "classmim_1_1LamSpec" ],
       [ "Level", "classmim_1_1Level.html", "classmim_1_1Level" ],

@@ -97,6 +97,7 @@ var namespacemim_1_1plug_1_1core =
     [ "idx", "namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a", null ],
     [ "idx2nat", "namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2", null ],
     [ "legalize_idx", "namespacemim_1_1plug_1_1core.html#a8375cb6651a461872bef335390554f7a", null ],
+    [ "lower_dyn_extract", "namespacemim_1_1plug_1_1core.html#af77e0b2d4743e70f6dedd9a2d46071ed", null ],
     [ "lower_variant", "namespacemim_1_1plug_1_1core.html#a98dc2decfd857543ae392af96a29ac75", null ],
     [ "M", "namespacemim_1_1plug_1_1core.html#a235e2ad13b75649e9e189bc2dfe83f42", null ],
     [ "minus", "namespacemim_1_1plug_1_1core.html#a61471d207180fc8cb0a28cc1b6a4e313", null ],

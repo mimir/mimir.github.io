@@ -75,7 +75,6 @@ var namespacemim_1_1ast =
     [ "assign", "namespacemim_1_1ast.html#a41aa06d76be9688fda224ca56982610a", null ],
     [ "check_nom_scope", "namespacemim_1_1ast.html#a7f73673f36257750aabe79243693ae1e", null ],
     [ "emit_ctor", "namespacemim_1_1ast.html#a811d9e1c00aa7a88cb0b5b7398856535", null ],
-    [ "emit_union", "namespacemim_1_1ast.html#ac6cc8247d86d61a5e8b5a16c329d57f5", null ],
     [ "emit_var", "namespacemim_1_1ast.html#a54b0669593d64574a33b773fcac7ae37", null ],
     [ "encode_f", "namespacemim_1_1ast.html#a4d5e6bb359fe6aff819c36df26777e77", null ],
     [ "escape_char", "namespacemim_1_1ast.html#a68ae1f1917eb119bcf6ac2a5af99fbf4", null ],

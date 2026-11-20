@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['join_0',['Join',['../classmim_1_1Join.html',1,'mim']]],
-  ['join2variant_1',['Join2Variant',['../classmim_1_1Join2Variant.html',1,'mim']]]
+  ['key_5ffield_0',['Key_field',['../structmim_1_1plug_1_1ord_1_1Key__field.html',1,'mim::plug::ord']]]
 ];

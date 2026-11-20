@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['manifest_0',['Manifest',['../namespacemim.html#structmim_1_1Manifest',1,'mim']]],
-  ['mapredpost_1',['MapRedPost',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html',1,'mim::plug::btensor']]],
-  ['match_2',['Match',['../classmim_1_1Match.html',1,'mim']]],
-  ['matchexpr_3',['MatchExpr',['../classmim_1_1ast_1_1MatchExpr.html',1,'mim::ast']]],
-  ['matrix_4',['Matrix',['../classpbqp_1_1Matrix.html',1,'pbqp']]],
-  ['memchecks_5',['MemChecks',['../classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html',1,'mim::plug::gpu::phase']]],
-  ['moddecl_6',['ModDecl',['../classmim_1_1ast_1_1ModDecl.html',1,'mim::ast']]],
-  ['mods_7',['Mods',['../structmim_1_1ast_1_1Mods.html',1,'mim::ast']]],
-  ['mutualdecl_8',['MutualDecl',['../classmim_1_1ast_1_1MutualDecl.html',1,'mim::ast']]]
+  ['name_0',['Name',['../classmim_1_1ast_1_1AxmDecl_1_1Name.html',1,'mim::ast::AxmDecl::Name'],['../classmim_1_1Name.html',1,'mim::Name']]],
+  ['named_1',['Named',['../classNamed.html',1,'']]],
+  ['names_2',['Names',['../classmim_1_1Driver.html#structmim_1_1Driver_1_1Names',1,'mim::Driver']]],
+  ['nat_3',['Nat',['../classmim_1_1Nat.html',1,'mim']]],
+  ['nest_4',['Nest',['../classmim_1_1Nest.html',1,'mim']]],
+  ['nestphase_5',['NestPhase',['../classmim_1_1NestPhase.html',1,'mim']]],
+  ['nestphase_3c_20lam_20_3e_6',['NestPhase&lt; Lam &gt;',['../classmim_1_1NestPhase.html',1,'mim']]],
+  ['nfa_7',['NFA',['../classautomaton_1_1NFA.html',1,'automaton']]],
+  ['nfanode_8',['NFANode',['../classautomaton_1_1NFANode.html',1,'automaton']]],
+  ['node_9',['Node',['../classmim_1_1ast_1_1Node.html',1,'mim::ast::Node'],['../classmim_1_1Nest_1_1Node.html',1,'mim::Nest::Node']]],
+  ['nom_10',['Nom',['../classmim_1_1Nom.html',1,'mim']]],
+  ['nomdecl_11',['NomDecl',['../classmim_1_1ast_1_1NomDecl.html',1,'mim::ast']]],
+  ['nomerasure_12',['NomErasure',['../classmim_1_1NomErasure.html',1,'mim']]],
+  ['nominfo_13',['NomInfo',['../classmim_1_1ast_1_1Emitter.html#structmim_1_1ast_1_1Emitter_1_1NomInfo',1,'mim::ast::Emitter']]]
 ];
