@@ -61,6 +61,7 @@ var def_8h =
       [ "mim::MutNode::Arr", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a3e09ae791896ec3e7e65b3fe363f0fc3", null ],
       [ "mim::MutNode::Pack", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a4492081ca02b059f9e8af4ddaf0f7292", null ],
       [ "mim::MutNode::Variant", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a492f18b60811bf85ce118c0c6a1a5c4a", null ],
+      [ "mim::MutNode::Rho", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a7216bcf464203aec4864fbeea158a0db", null ],
       [ "mim::MutNode::Rule", "namespacemim.html#a99e09c81af2fdf69220123e2b04a5341aab7a485ebe75b6dd7243ad719f23c7de", null ]
     ] ],
     [ "mim::Node", "namespacemim.html#afb12dbffaaa27bca46f171517d96256d", [
@@ -87,8 +88,9 @@ var def_8h =
       [ "mim::Node::Match", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da6da89265a9a8b0b28eb4946bb2ec0c6d", null ],
       [ "mim::Node::Top", "namespacemim.html#afb12dbffaaa27bca46f171517d96256daa4ffdcf0dc1f31b9acaf295d75b51d00", null ],
       [ "mim::Node::Bot", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da1448e86d90e0feb307c2894c24e87767", null ],
-      [ "mim::Node::Reform", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da6e2c2a9c1daec19b013ee0c41341a2cd", null ],
+      [ "mim::Node::Rho", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da7216bcf464203aec4864fbeea158a0db", null ],
       [ "mim::Node::Rule", "namespacemim.html#afb12dbffaaa27bca46f171517d96256daab7a485ebe75b6dd7243ad719f23c7de", null ],
+      [ "mim::Node::Fire", "namespacemim.html#afb12dbffaaa27bca46f171517d96256dabd2b7e5f85a6ea65065c4ebc6d7c95bb", null ],
       [ "mim::Node::Single", "namespacemim.html#afb12dbffaaa27bca46f171517d96256da66ba162102bbf6ae31b522aec561735e", null ],
       [ "mim::Node::Wrap", "namespacemim.html#afb12dbffaaa27bca46f171517d96256daa212b19ef5f2fb30acf92e6cbccc1f2d", null ],
       [ "mim::Node::Nom", "namespacemim.html#afb12dbffaaa27bca46f171517d96256dad4700b697a54fbd43a1a613d32694e7f", null ],

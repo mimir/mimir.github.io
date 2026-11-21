@@ -6,5 +6,6 @@ var stream_8cpp =
     [ "mim::ast::is_block", "namespacemim_1_1ast.html#a639ae4844956cf41c798a7c33e19c40c", null ],
     [ "mim::ast::operator<<", "namespacemim_1_1ast.html#a1631cb88419d6782f500b090cdb8befc", null ],
     [ "mim::ast::stream_decls", "namespacemim_1_1ast.html#a00267fc58f83e3eca066b5fe7fe10300", null ],
+    [ "mim::ast::stream_rule", "namespacemim_1_1ast.html#a29ac96db30bd1d241a87995408e72e69", null ],
     [ "mim::ast::vis2str", "namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711", null ]
 ];

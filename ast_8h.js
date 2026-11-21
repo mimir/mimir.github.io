@@ -57,7 +57,6 @@ var ast_8h =
     [ "mim::ast::LamDecl::Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
     [ "mim::ast::MutualDecl", "classmim_1_1ast_1_1MutualDecl.html", "classmim_1_1ast_1_1MutualDecl" ],
     [ "mim::ast::AliasDecl", "classmim_1_1ast_1_1AliasDecl.html", "classmim_1_1ast_1_1AliasDecl" ],
-    [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", "classmim_1_1ast_1_1RuleDecl" ],
     [ "mim::ast::ModDecl", "classmim_1_1ast_1_1ModDecl.html", "classmim_1_1ast_1_1ModDecl" ],
     [ "mim::ast::File", "classmim_1_1ast_1_1File.html", "classmim_1_1ast_1_1File" ],
     [ "mim::ast::Dbgs", "namespacemim_1_1ast.html#a7e2e52bb1a0ec7e3119786f9c6c0e444", null ],

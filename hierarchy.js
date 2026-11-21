@@ -165,6 +165,7 @@ var hierarchy =
           [ "mim::TExt< Up >", "classmim_1_1TExt.html", null ]
         ] ],
         [ "mim::Extract", "classmim_1_1Extract.html", null ],
+        [ "mim::Fire", "classmim_1_1Fire.html", null ],
         [ "mim::Hole", "classmim_1_1Hole.html", null ],
         [ "mim::Idx", "classmim_1_1Idx.html", null ],
         [ "mim::Inj", "classmim_1_1Inj.html", null ],
@@ -184,7 +185,7 @@ var hierarchy =
           [ "mim::Tuple", "classmim_1_1Tuple.html", null ]
         ] ],
         [ "mim::Proxy", "classmim_1_1Proxy.html", null ],
-        [ "mim::Reform", "classmim_1_1Reform.html", null ],
+        [ "mim::Rho", "classmim_1_1Rho.html", null ],
         [ "mim::Rule", "classmim_1_1Rule.html", null ],
         [ "mim::Seq", "classmim_1_1Seq.html", [
           [ "mim::Arr", "classmim_1_1Arr.html", null ],
@@ -247,7 +248,6 @@ var hierarchy =
               [ "mim::ast::LamDecl", "classmim_1_1ast_1_1LamDecl.html", null ],
               [ "mim::ast::NomDecl", "classmim_1_1ast_1_1NomDecl.html", null ]
             ] ],
-            [ "mim::ast::RuleDecl", "classmim_1_1ast_1_1RuleDecl.html", null ],
             [ "mim::ast::UseDecl", "classmim_1_1ast_1_1UseDecl.html", null ]
           ] ]
         ] ],
@@ -298,6 +298,9 @@ var hierarchy =
     ] ],
     [ "mim::Setters&lt; Extract &gt;", "classmim_1_1Setters.html", [
       [ "mim::Extract", "classmim_1_1Extract.html", null ]
+    ] ],
+    [ "mim::Setters&lt; Fire &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Fire", "classmim_1_1Fire.html", null ]
     ] ],
     [ "mim::Setters&lt; Hole &gt;", "classmim_1_1Setters.html", [
       [ "mim::Hole", "classmim_1_1Hole.html", null ]
@@ -350,8 +353,8 @@ var hierarchy =
     [ "mim::Setters&lt; Proxy &gt;", "classmim_1_1Setters.html", [
       [ "mim::Proxy", "classmim_1_1Proxy.html", null ]
     ] ],
-    [ "mim::Setters&lt; Reform &gt;", "classmim_1_1Setters.html", [
-      [ "mim::Reform", "classmim_1_1Reform.html", null ]
+    [ "mim::Setters&lt; Rho &gt;", "classmim_1_1Setters.html", [
+      [ "mim::Rho", "classmim_1_1Rho.html", null ]
     ] ],
     [ "mim::Setters&lt; Rule &gt;", "classmim_1_1Setters.html", [
       [ "mim::Rule", "classmim_1_1Rule.html", null ]

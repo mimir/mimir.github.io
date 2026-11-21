@@ -16,7 +16,7 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "phase.cpp", "phase_8cpp.html", "phase_8cpp" ],
     [ "plugin.cpp", "plugin_8cpp.html", null ],
     [ "rewrite.cpp", "rewrite_8cpp.html", "rewrite_8cpp" ],
-    [ "rule.cpp", "rule_8cpp.html", "rule_8cpp" ],
+    [ "rule.cpp", "rule_8cpp.html", null ],
     [ "schedule.cpp", "schedule_8cpp.html", null ],
     [ "tuple.cpp", "tuple_8cpp.html", "tuple_8cpp" ],
     [ "world.cpp", "world_8cpp.html", "world_8cpp" ]
