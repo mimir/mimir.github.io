@@ -1,5 +1,6 @@
 var ll_8cpp =
 [
+    [ "mim::plug::ll::DropHints", "classmim_1_1plug_1_1ll_1_1DropHints.html", "classmim_1_1plug_1_1ll_1_1DropHints" ],
     [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
     [ "mim::plug::ll::fcmp_pred", "namespacemim_1_1plug_1_1ll.html#a614742d52a5c49c02ae5e21b93bca716", null ],
     [ "mim::plug::ll::fmath_flags", "namespacemim_1_1plug_1_1ll.html#ac1b299962452670eed200d4f6fdfbd99", null ],

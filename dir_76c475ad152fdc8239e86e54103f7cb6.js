@@ -22,5 +22,6 @@ var dir_76c475ad152fdc8239e86e54103f7cb6 =
     [ "tensor", "dir_c9013cbff07c8cc66ca81878ee8b9afd.html", "dir_c9013cbff07c8cc66ca81878ee8b9afd" ],
     [ "tuple", "dir_0da823b20cee76759826a87e0ff6d53a.html", "dir_0da823b20cee76759826a87e0ff6d53a" ],
     [ "vec", "dir_479774e0494662c7b2681636d3875a09.html", "dir_479774e0494662c7b2681636d3875a09" ],
-    [ "x86", "dir_ca4dc0eaae43b7f7e9b1b0fb6deaebbe.html", "dir_ca4dc0eaae43b7f7e9b1b0fb6deaebbe" ]
+    [ "x86", "dir_ca4dc0eaae43b7f7e9b1b0fb6deaebbe.html", "dir_ca4dc0eaae43b7f7e9b1b0fb6deaebbe" ],
+    [ "x86_isel", "dir_b90d3c118d4edf5e44a877738d1fc21f.html", "dir_b90d3c118d4edf5e44a877738d1fc21f" ]
 ];

@@ -174,15 +174,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('isel_8cpp.html
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="isel_8h_source.html">mim/plug/x86/phase/isel.h</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;print&gt;</code><br />
+<code>#include &lt;ranges&gt;</code><br />
+<code>#include &lt;span&gt;</code><br />
 <code>#include &lt;<a class="el" href="dot_8h_source.html">pbqp/dot.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="solver_8h_source.html">pbqp/solver.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="core_8h_source.html">mim/plug/core/core.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="ll_2autogen_8h_source.html">mim/plug/ll/autogen.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="math_8h_source.html">mim/plug/math/math.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mem_8h_source.html">mim/plug/mem/mem.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="refly_8h_source.html">mim/plug/refly/refly.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="imm_8h_source.html">mim/plug/x86/imm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="insn_8h_source.html">mim/plug/x86/insn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="isel__rules_8h_source.html">mim/plug/x86/isel_rules.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="x86_8h_source.html">mim/plug/x86/x86.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for isel.cpp:</div>
@@ -192,13 +196,6 @@ Include dependency graph for isel.cpp:</div>
 </div>
 <p><a href="isel_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AInsn_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Insn" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AInsn_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Insn"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Insn">mim::plug::x86::phase::Insn</a></td></tr>
-<tr class="memdesc:structmim_1_1plug_1_1x86_1_1phase_1_1Insn"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> side of a pattern, for the builders that apply one instruction.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Insn">More...</a><br /></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3APattern" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3APattern"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Pattern.html">mim::plug::x86::phase::Pattern</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A program-side operation <span class="tt">match</span> recognizes: its axiom, the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ad2f2301451520676e7cd86b15986d10f" title="Op::Alu is no instruction: as an inner node, it matches any operation with a read-modify-write memory...">Op</a></span> it selects, how to take it apart, and its instruction.  <a href="structmim_1_1plug_1_1x86_1_1phase_1_1Pattern.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:mim" id="r_mim"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html">mim</a></td></tr>
@@ -206,112 +203,7 @@ Namespaces</h2></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86" id="r_mim_3A_3Aplug_3A_3Ax86"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html">mim::plug::x86</a></td></tr>
 <tr class="memdesc:namespacemim_1_1plug_1_1x86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="x86.html" title="The x86 Plugin">The x86 Plugin</a> <br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html">mim::plug::x86::phase</a></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a826edd40636cbaa44266b97c8c6a4fa3" id="r_a826edd40636cbaa44266b97c8c6a4fa3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a826edd40636cbaa44266b97c8c6a4fa3">X</a>(name)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ac26827a6ed95ee748d39385df67dba84" id="r_ac26827a6ed95ee748d39385df67dba84"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84">mim::plug::x86::phase::Tag</a> : u8 { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a18b6d3cfca6bec531d7a521d43a38d06">mim::plug::x86::phase::Lea</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84af19dbf2edb3a0bd74b0524d960ff21eb">mim::plug::x86::phase::Load</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84afdb0c388de01d545017cdf9ccf00eb72">mim::plug::x86::phase::Store</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a807dbe7d1c25a633894d4a231b1c76d3">mim::plug::x86::phase::Bin</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a19c6e8d6e2caeaff0ac8881e05c25010">mim::plug::x86::phase::Unary</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a43d11850893d2fe84a1e618121c1cc0a">mim::plug::x86::phase::Div</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a6adf97f83acf6453d4a6a4b1070f3754">mim::plug::x86::phase::None</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84ae0626222614bdee31951d84c64e5e9ff">mim::plug::x86::phase::Select</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ac26827a6ed95ee748d39385df67dba84"><td class="mdescLeft">&#160;</td><td class="mdescRight">How <span class="tt">match</span> extracts the operands of a pattern.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84">More...</a><br /></td></tr>
-<tr class="memitem:a040eda8a69341b84afffac05e241008e" id="r_a040eda8a69341b84afffac05e241008e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008e">mim::plug::x86::phase::Mem</a> : u8 { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008ea6adf97f83acf6453d4a6a4b1070f3754">mim::plug::x86::phase::None</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008eac67f7ba024e306e2e25891ea1826d67a">mim::plug::x86::phase::Rm</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008ea4daec51668bf1810149ada5a73d120a9">mim::plug::x86::phase::Rmw</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a040eda8a69341b84afffac05e241008e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The memory operand forms of a pattern's <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> instruction.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008e">More...</a><br /></td></tr>
 </table>
-<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
-<a name="structmim_1_1plug_1_1x86_1_1phase_1_1Insn" id="structmim_1_1plug_1_1x86_1_1phase_1_1Insn"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1phase_1_1Insn">&#9670;&#160;</a></span>mim::plug::x86::phase::Insn</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct mim::plug::x86::phase::Insn</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><p>The <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> side of a pattern, for the builders that apply one instruction. </p>
-
-<p class="definition">Definition at line <a class="el" href="isel_8cpp_source.html#l00091">91</a> of file <a class="el" href="isel_8cpp_source.html">isel.cpp</a>.</p>
-</div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a148c62abdc64e9d3436df6780f4b3359" name="a148c62abdc64e9d3436df6780f4b3359"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
-<td class="fieldname">
-id = 0</td>
-<td class="fielddoc">
-The <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> instruction. </td></tr>
-<tr><td class="fieldtype">
-<a id="a9e7b0845533c311bd678ce2b6db024f4" name="a9e7b0845533c311bd678ce2b6db024f4"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008e">Mem</a></td>
-<td class="fieldname">
-mem = <a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a040eda8a69341b84afffac05e241008ea6adf97f83acf6453d4a6a4b1070f3754">Mem::None</a></td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a9eeeb6b600c0df18d1d6bbe4ed40ed16" name="a9eeeb6b600c0df18d1d6bbe4ed40ed16"></a>bool</td>
-<td class="fieldname">
-negate = false</td>
-<td class="fielddoc">
-The result is complemented. </td></tr>
-<tr><td class="fieldtype">
-<a id="acc4d5c858b38d1cc002f4847d92465e7" name="acc4d5c858b38d1cc002f4847d92465e7"></a><a class="el" href="namespacemim.html#ac4e6752bd834d28cb851c128dfa5b8c7">s8</a></td>
-<td class="fieldname">
-res = -1</td>
-<td class="fielddoc">
-The result of a pair-valued instruction, or -1. </td></tr>
-<tr><td class="fieldtype">
-<a id="aacfa5f9fb1cbd65fadfb6720a4fff5b9" name="aacfa5f9fb1cbd65fadfb6720a4fff5b9"></a>bool</td>
-<td class="fieldname">
-sign = false</td>
-<td class="fielddoc">
-Operands narrower than any size the instruction supports are sign-extended. </td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a826edd40636cbaa44266b97c8c6a4fa3" name="a826edd40636cbaa44266b97c8c6a4fa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a826edd40636cbaa44266b97c8c6a4fa3">&#9670;&#160;</a></span>X</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define X</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">case</span> Op::name: <span class="keywordflow">return</span> #name;</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

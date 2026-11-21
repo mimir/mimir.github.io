@@ -12,5 +12,5 @@ var searchData=
   ['use_9',['Use',['../classmim_1_1Use.html#ad1bfa5ee84aa2b6d63b9d8b8767fb7e5',1,'mim::Use::Use()'],['../classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954',1,'mim::Use::Use(const Def *def, size_t index)']]],
   ['usedecl_10',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Ptr&lt; Path &gt; path, Dbg alias)'],['../classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Tok::Tag tag, Ptr&lt; Path &gt; path, Sym file_path, Dbg alias, bool splice, const File *file)']]],
   ['users_11',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
-  ['uses_12',['uses',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a6fa2fb35805cbf72cadd337609be2e67',1,'mim::plug::x86::Liveness::uses()'],['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a94f48bbb140a66ae3e5c1e92fbe95409',1,'mim::plug::x86::phase::ISel::uses()'],['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler::uses()']]]
+  ['uses_12',['uses',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a6fa2fb35805cbf72cadd337609be2e67',1,'mim::plug::x86::Liveness::uses()'],['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler::uses()']]]
 ];

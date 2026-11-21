@@ -1,8 +1,10 @@
 var namespacemim_1_1plug_1_1ll =
 [
     [ "BB", "structmim_1_1plug_1_1ll_1_1BB.html", "structmim_1_1plug_1_1ll_1_1BB" ],
+    [ "DropHints", "classmim_1_1plug_1_1ll_1_1DropHints.html", "classmim_1_1plug_1_1ll_1_1DropHints" ],
     [ "Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", "classmim_1_1plug_1_1ll_1_1Emit" ],
     [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ],
+    [ "drop_hints", "namespacemim_1_1plug_1_1ll.html#a9a676397cecdb6775a3010565e8a833f", null ],
     [ "emit", "namespacemim_1_1plug_1_1ll.html#aa8af5751b0c661fdf794f6c05273f02d", null ],
     [ "novec", "namespacemim_1_1plug_1_1ll.html#a03bac3de20e424d8b2177cb68d1fbbd2", null ],
     [ "vec", "namespacemim_1_1plug_1_1ll.html#aaee9c2cf398a457c5c7805f83765e599", null ],

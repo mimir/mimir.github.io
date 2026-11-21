@@ -95,6 +95,7 @@ var core_2autogen_8h =
     ] ],
     [ "mim::plug::core::idx", "namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a", null ],
     [ "mim::plug::core::idx2nat", "namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2", null ],
+    [ "mim::plug::core::legalize_dyn_idx", "namespacemim_1_1plug_1_1core.html#aa92dbf7eb1b5ba1551a43cafbdd2a9a7", null ],
     [ "mim::plug::core::legalize_idx", "namespacemim_1_1plug_1_1core.html#a8375cb6651a461872bef335390554f7a", null ],
     [ "mim::plug::core::lower_dyn_extract", "namespacemim_1_1plug_1_1core.html#af77e0b2d4743e70f6dedd9a2d46071ed", null ],
     [ "mim::plug::core::lower_variant", "namespacemim_1_1plug_1_1core.html#a98dc2decfd857543ae392af96a29ac75", null ],

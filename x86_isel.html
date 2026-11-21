@@ -1,0 +1,408 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: The x86_isel Plugin</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('x86_isel.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">The x86_isel Plugin </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2x86__isel"></a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1x86__isel.html" title="The x86_isel Plugin">mim::plug::x86_isel</a></dd></dl>
+<p>The instruction-selection rules of the <span class="tt">x86</span> backend. <span class="tt">gen</span> writes them as C++ that the <span class="tt">x86</span> plugin compiles in, so the compiler itself never loads this plugin.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md694"></a>
+Dependencies</h1>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+<div class="line">import compile;</div>
+<div class="line">import mem;</div>
+<div class="line">import x86;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md695"></a>
+Guards</h1>
+<p>A guard is <span class="tt">tt</span> after instantiation or a conjunction of these atoms on meta variables.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md696"></a>
+imm</h2>
+<p>A literal that fits a sign-extended 32-bit immediate; stuck on anything but a literal.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm imm: {s: Nat} → Idx s → Bool, normalize_imm;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md697"></a>
+lit</h2>
+<p>A literal.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lit: {T: *} → T → Bool, normalize_lit;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md698"></a>
+Operands</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md699"></a>
+addr</h2>
+<p>The pointer <span class="tt">p</span> as an address operand. isel picks its form, <span class="tt">x86.Base</span> or <span class="tt">x86.Index</span>, and the builder infers which.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm addr: {T: *, a: Nat} → mem.Ptr (T, a) → x86.Base;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md700"></a>
+reg</h2>
+<p>The pointer <span class="tt">p</span> in a register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg: {T: *, a: Nat} → mem.Ptr (T, a) → I64;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md701"></a>
+nat</h2>
+<p>The <span class="tt">Nat</span> <span class="tt">n</span> in a register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm nat: Nat → I64;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md702"></a>
+ptr</h2>
+<p>The register <span class="tt">x</span> as a byte pointer, which isel's <span class="tt">I64</span> makes the identity.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm ptr: I64 → mem.Ptr0 I8;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md703"></a>
+reg_imm</h2>
+<p>The operand <span class="tt">x</span> in a register or, if it is a literal that fits, as a sign-extended 32-bit immediate.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg_imm: {s: Nat} → Idx s → Idx s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md704"></a>
+reg_sh</h2>
+<p>The shift count <span class="tt">x</span> in a register or, if it is a literal, as an immediate, since x86 masks it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg_sh: {s: Nat} → Idx s → Idx s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md705"></a>
+scaled</h2>
+<p>The <span class="tt">I64</span> <span class="tt">i</span> as an index with its scale.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scaled: I64 → [I64, I2];</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md706"></a>
+Commutativity</h1>
+<p>The operations whose two operands a rule also matches swapped.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let commutes = (core.wrap.add, core.wrap.mul, core.bit2.and, core.bit2.or, core.bit2.xor, core.bit2.nand, core.bit2.nor, core.bit2.nxor, core.nat.add, core.nat.mul);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md707"></a>
+Rules</h1>
+<p>Each family takes the operand size last; the instance tuples fix the sizes its instruction supports. A meta variable that the right-hand side uses and no other meta variable's type mentions is an operand, unless it is a memory. An lhs <span class="tt">(m, e)</span> replaces <span class="tt">e</span> and, by the memory of the rhs, the memory <span class="tt">m</span> of an inner node of <span class="tt">e</span>. A family that takes a marker <span class="tt">r</span> puts its second operand under <span class="tt">reg_imm</span> or <span class="tt">reg_sh</span>. <span class="tt">c</span> is the size of what the instruction yields, which the frontend cannot infer.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let mark = {s: Nat} → Idx s → Idx s;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md708"></a>
+ALU</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule alu   (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (r: mark) (s: Nat) (m: Nat, a b: Idx s): op m (a, b) =&gt; insn (a, r b);</div>
+<div class="line">rule shift (op: {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.gpr s))                       (r: mark) (s: Nat) (a b: Idx s):         op (a, b)   =&gt; insn (a, r b);</div>
+<div class="line">rule neg   (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.logic s))                (r: mark) (s: Nat) (m: Nat, a b: Idx s): op m (a, b) =&gt; let x = insn (a, r b); x86.xor (x, core.bit1.t 0 x);</div>
+<div class="line">rule mul8  (m: Nat, a b: I8): core.wrap.mul m (a, b) =&gt; x86.trunc i8 (x86.imul (x86.movzx i32 a, x86.movzx i32 (reg_imm b)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md709"></a>
+Nat</h2>
+<p><span class="tt">Nat</span> is <span class="tt">I64</span>; <span class="tt">core.nat.sub</span> saturates at 0.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule nat_alu (op: «2; Nat» → Nat, insn: «2; I64» → I64) (a b: Nat): op (a, b)           =&gt; insn (nat a, reg_imm (nat b));</div>
+<div class="line">rule nat_sub                                            (a b: Nat): core.nat.sub (a, b) =&gt; x86.cmovcc.b (x86.cmp (nat a, reg_imm (nat b)), x86.sub (nat a, reg_imm (nat b)), x86.mov 0I64);</div>
+<div class="line">rule nat_div (op: «2; Nat» → Nat, i: Idx 2)             (a b: Nat): op (a, b) =&gt; (x86.div (nat a, nat b))#i;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md710"></a>
+Division</h2>
+<p><span class="tt">div</span> and <span class="tt">idiv</span> yield both the quotient and the remainder at <span class="tt">i</span>; they have no 8-bit form, so <span class="tt">i8</span> widens to <span class="tt">i32</span> by <span class="tt">ext</span>. <span class="tt">core.rem</span> puts its divisor into a register with <span class="tt">x86.mov</span>, whose result type only folds for a literal size.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule div  (op: {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], insn: {s: Nat} → «2; Idx s» → «2; Idx (x86.gpr16 s)», i: Idx 2)                                        (s: Nat) (m: mem.M 0, a b: Idx s): op (m, (a, b)) =&gt; (m, (insn (a, b))#i);</div>
+<div class="line">rule div8 (op: {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], insn: {s: Nat} → «2; Idx s» → «2; Idx (x86.gpr16 s)», i: Idx 2, ext: {s: Nat} → [d: Nat] → Idx s → Idx d)          (m: mem.M 0, a b: I8):    op (m, (a, b)) =&gt; (m, x86.trunc i8 (insn (ext i32 a, ext i32 b))#i);</div>
+<div class="line">rule rem8  (d: Nat, x: I8):  core.rem d x =&gt; x86.trunc i8 (x86.div (x86.movzx i32 x, x86.mov (core.idx 0 i32 d)))#1_2;</div>
+<div class="line">rule rem16 (d: Nat, x: I16): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i16 d)))#1_2;</div>
+<div class="line">rule rem32 (d: Nat, x: I32): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i32 d)))#1_2;</div>
+<div class="line">rule rem64 (d: Nat, x: I64): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i64 d)))#1_2;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md711"></a>
+Conversions</h2>
+<p><span class="tt">mem.legalize_ptr</span> leaves only register sizes; each family takes the source and the destination size. A conversion between sizes of the same register width truncates.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule trunc      (s d: Nat) (x: Idx s):        core.conv.u d x               =&gt; x86.trunc d x;</div>
+<div class="line">rule strunc     (s d: Nat) (x: Idx s):        core.conv.s d x               =&gt; x86.trunc d x;</div>
+<div class="line">rule zext       (s d: Nat) (x: Idx s):        core.conv.u d x               =&gt; x86.movzx d x;</div>
+<div class="line">rule sext       (s d: Nat) (x: Idx s):        core.conv.s d x               =&gt; x86.movsx d x;</div>
+<div class="line">rule cast_trunc (s d: Nat) (x: Idx s):        core.bitcast (Idx d) x        =&gt; x86.trunc d x;</div>
+<div class="line">rule cast_zext  (s d: Nat) (x: Idx s):        core.bitcast (Idx d) x        =&gt; x86.movzx d x;</div>
+<div class="line">rule cast_nat   (d: Nat)   (x: Nat):          core.bitcast (Idx d) x        =&gt; x86.trunc d (nat x);</div>
+<div class="line">rule cast_nat64            (x: Nat):          core.bitcast I64 x            =&gt; nat x;</div>
+<div class="line">rule cast_idx   (s: Nat)   (x: Idx s):        core.bitcast Nat x            =&gt; x86.movzx i64 x;</div>
+<div class="line">rule cast_idx64            (x: I64):          core.bitcast Nat x            =&gt; x;</div>
+<div class="line">rule cast_ptr              (x: mem.Ptr0 I8):  core.bitcast I64 x            =&gt; reg x;</div>
+<div class="line">rule cast_int              (x: I64):          core.bitcast (mem.Ptr0 I8) x  =&gt; x;</div>
+<div class="line">rule idx2nat    (s: Nat)   (x: Idx s):        core.idx2nat x                =&gt; x86.movzx i64 x;</div>
+<div class="line">rule idx2nat64             (x: I64):          core.idx2nat x                =&gt; x;</div>
+<div class="line">rule idx                   (m l: Nat):        core.idx m i64 l              =&gt; nat l;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md712"></a>
+Comparisons</h2>
+<p>Each family takes the predicate and its condition code.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule icmp (p: {s: Nat} → «2; Idx s» → Bool, c: x86.Flags → Bool) (s: Nat, a b: Idx s): p (a, b) =&gt; c (x86.cmp (a, reg_imm b));</div>
+<div class="line">rule ncmp (p: «2; Nat» → Bool, c: x86.Flags → Bool)               (a b: Nat):           p (a, b) =&gt; c (x86.cmp (nat a, reg_imm (nat b)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md713"></a>
+Selects</h2>
+<p><span class="tt">x86.cmovcc</span>'s normalizer fuses a condition code into it; <span class="tt">i8</span> and <span class="tt">Bool</span> go through <span class="tt">i32</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select  (s: Nat) (x y: Idx s, c: Bool): (x, y)#c =&gt; x86.cmovcc.ne (x86.test (c, c), x, y);</div>
+<div class="line">rule select8 (s: Nat) (x y: Idx s, c: Bool): (x, y)#c =&gt; x86.trunc s (x86.cmovcc.ne (x86.test (c, c), x86.movzx i32 x, x86.movzx i32 y));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md714"></a>
+Loads and Stores</h2>
+<p>Every pointer is a byte pointer <span class="tt">mem.Ptr0 I8</span> by now.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load      (s: Nat) (m: mem.M 0, p: mem.Ptr0 (Idx s)):                   mem.load (m, p)                =&gt; x86.load s (m, addr p);</div>
+<div class="line">rule load_ptr           (m: mem.M 0, p: mem.Ptr0 (mem.Ptr0 I8)):             mem.load (m, p)                =&gt; x86.load i64 (m, addr p);</div>
+<div class="line">rule store     (s: Nat, m: mem.M 0, p: mem.Ptr0 (Idx s), x: Idx s):    mem.store (m, p, x) =&gt; x86.store (m, addr p, reg_imm x);</div>
+<div class="line">rule store_ptr (m: mem.M 0, p: mem.Ptr0 (mem.Ptr0 I8), x: mem.Ptr0 I8): mem.store (m, p, x) =&gt; x86.store (m, addr p, reg x);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md715"></a>
+Stack Slots</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule slot (m: mem.M 0, n: Nat, k: Cn [mem.M 0, mem.Ptr0 I8]): mem.mslot (I8, 0) ((m, n), k) when lit n =&gt; let (m, p) = x86.slot n m; k (m, ptr p);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md716"></a>
+Memory Operands</h2>
+<p><span class="tt">op r, m</span> folds a load into the second operand; <span class="tt">op m, r</span> also stores to the address it loads from.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule rm (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s))           (s: Nat) (k: Nat, a: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); (mm, op k (a, v))                  =&gt; x86.rm insn (m, a, addr p);</div>
+<div class="line">rule mr (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (s: Nat) (k: Nat, b: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); mem.store (mm, p, op k (v, b)) =&gt; x86.mr (insn @ s) (m, addr p, reg_imm b);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md717"></a>
+Addresses</h2>
+<p>A product with 2, 4, or 8, or a left shift by 1, 2, or 3, is an index with its scale; an address takes any index as one, scaled by 1 if need be. Of two matches that cost the same, isel keeps the first, so larger patterns come first.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule scale (op: Nat → {s: Nat} → «2; Idx s» → Idx s, k: I64, sc: I2) (n: Nat, i: I64): op n (i, k) =&gt; (i, sc);</div>
+<div class="line">rule index_disp (m: Nat, p: mem.Ptr0 I8, i c: I64): mem.ptradd (p, core.wrap.add m (i, c)) when imm c =&gt; x86.index (x86.addr (core.conv.u i32 c, reg p)) (scaled i);</div>
+<div class="line">rule base_index (m: Nat, p: mem.Ptr0 I8, x i: I64): mem.ptradd (p, core.wrap.add m (x, i))            =&gt; x86.index (x86.addr (0I32, x86.lea (x86.index (x86.addr (0I32, reg p)) (x, x86.scale_1)))) (scaled i);</div>
+<div class="line">rule disp       (p: mem.Ptr0 I8, c: I64):           mem.ptradd (p, c)                      when imm c =&gt; x86.addr (core.conv.u i32 c, reg p);</div>
+<div class="line">rule index      (p: mem.Ptr0 I8, i: I64):           mem.ptradd (p, i)                                 =&gt; x86.index (x86.addr (0I32, reg p)) (scaled i);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md718"></a>
+Non-Terminals</h2>
+<p>A rule whose lhs is all of its meta variables converts between non-terminals; isel chains them. <span class="tt">x86.addr</span> and <span class="tt">x86.lea</span> normalize away what a literal makes trivial. A literal converts by <span class="tt">x86_isel.lit</span>: into an absolute address for free, else into a register first; the builder of <span class="tt">mov</span> takes any size.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule base (x: I64): x =&gt; x86.addr (0I32, x);</div>
+<div class="line">rule abs (x: I64): x when lit x =&gt; x86.addr (0I32, x);</div>
+<div class="line">rule mov (x: I64): x when lit x =&gt; x86.mov x;</div>
+<div class="line">rule lea (i: Bool) (a: x86.Addr i): a =&gt; x86.lea a;</div>
+<div class="line">rule scale1 (i: I64): i =&gt; (i, x86.scale_1);</div>
+<div class="line">rule unscale (s: [I64, I2]): s =&gt; x86.lea (x86.index (x86.addr (0I32, 0I64)) s);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md719"></a>
+Instances</h1>
+<p>Each helper instantiates a family of one shape at the sizes its name says, with the marker <span class="tt">r</span> if it takes one.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam gprs (c: Nat → Nat, r: mark) (f: mark → [s: Nat] → Idx s ↝ Idx (c s)) = (f r i8, f r i16, f r i32, f r i64);</div>
+<div class="line">lam bits (c: Nat → Nat, r: mark) (f: mark → [s: Nat] → Idx s ↝ Idx (c s)) = (f r i1, f r i8, f r i16, f r i32, f r i64);</div>
+<div class="line">lam mrs  (f: [s: Nat] → mem.M 0 ↝ mem.M 0) = (f i8, f i16, f i32, f i64);</div>
+<div class="line">lam rms  (c: Nat → Nat) (f: [s: Nat] → [mem.M 0, Idx s] ↝ [mem.M 0, Idx (c s)]) = (f i8, f i16, f i32, f i64);</div>
+<div class="line">lam divs (f: [s: Nat] → [mem.M 0, Idx s] ↝ [mem.M 0, Idx (x86.gpr16 s)]) = (f i16, f i32, f i64);</div>
+<div class="line">lam narrow (f: [s d: Nat] → Idx d ↝ Idx d) = (f (i64, i32), f (i64, i16), f (i64, i8), f (i64, i1), f (i32, i16), f (i32, i8), f (i32, i1), f (i16, i8), f (i16, i1), f (i8, i1), f (i1, i8));</div>
+<div class="line">lam widen  (f: [s d: Nat] → Idx d ↝ Idx d) = (f (i1, i16), f (i1, i32), f (i1, i64), f (i8, i16), f (i8, i32), f (i8, i64), f (i16, i32), f (i16, i64), f (i32, i64));</div>
+<div class="line">let icmps = (</div>
+<div class="line">    icmp (core.icmp.e,  x86.cc.e), icmp (core.icmp.ne,  x86.cc.ne), icmp (core.icmp.ul, x86.cc.b), icmp (core.icmp.ule, x86.cc.be),</div>
+<div class="line">    icmp (core.icmp.ug, x86.cc.a), icmp (core.icmp.uge, x86.cc.ae), icmp (core.icmp.sl, x86.cc.l), icmp (core.icmp.sle, x86.cc.le),</div>
+<div class="line">    icmp (core.icmp.sg, x86.cc.g), icmp (core.icmp.sge, x86.cc.ge));</div>
+<div class="line">let ncmps = (</div>
+<div class="line">    ncmp (core.ncmp.e,  x86.cc.e),  ncmp (core.ncmp.ne, x86.cc.ne), ncmp (core.ncmp.l, x86.cc.b),</div>
+<div class="line">    ncmp (core.ncmp.le, x86.cc.be), ncmp (core.ncmp.g,  x86.cc.a),  ncmp (core.ncmp.ge, x86.cc.ae));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">imul</span> has no 8-bit form, so <span class="tt">mul8</span> widens to <span class="tt">i32</span>; the logical instructions also take <span class="tt">Bool</span>. x86 has no negated logical instructions, so <span class="tt">nand</span>, <span class="tt">nor</span>, and <span class="tt">nxor</span> complement with an <span class="tt">xor</span>, which yields <span class="tt">x86.logic</span> of <span class="tt">x86.logic</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let logic2 = λ (s: Nat): Nat = x86.logic (x86.logic s);</div>
+<div class="line">let mul    = alu x86.gpr16 (core.wrap.mul, x86.imul);</div>
+<div class="line">anx let arithmetic = (</div>
+<div class="line">    gprs (x86.gpr,   reg_imm) (alu x86.gpr   (core.wrap.add, x86.add)),</div>
+<div class="line">    gprs (x86.gpr,   reg_imm) (alu x86.gpr   (core.wrap.sub, x86.sub)),</div>
+<div class="line">    mul8, mul reg_imm i16, mul reg_imm i32, mul reg_imm i64,</div>
+<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.and, x86.and)),</div>
+<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.or,  x86.or)),</div>
+<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.xor, x86.xor)),</div>
+<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nand, x86.and)),</div>
+<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nor,  x86.or)),</div>
+<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nxor, x86.xor)),</div>
+<div class="line">    gprs (x86.gpr,   reg_sh)  (alu x86.gpr   (core.wrap.shl, x86.shl)),</div>
+<div class="line">    gprs (x86.gpr,   reg_sh)  (shift (core.shr.l, x86.shr)),</div>
+<div class="line">    gprs (x86.gpr,   reg_sh)  (shift (core.shr.a, x86.sar)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">lea</span> adds without overwriting an operand; it costs what <span class="tt">add</span> does, so it only wins where <span class="tt">add</span> would need a copy. A closed rule is an annex of its own, so these follow <span class="tt">arithmetic</span> to lose a tie against its <span class="tt">add</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule lea_add  (m: Nat, a b: I64): core.wrap.add m (a, b)            =&gt; x86.lea (x86.index (x86.addr (0I32, a)) (b, x86.scale_1));</div>
+<div class="line">rule lea_disp (m: Nat, a c: I64): core.wrap.add m (a, c) when imm c =&gt; x86.lea (x86.addr (core.conv.u i32 c, a));</div>
+<div class="line">anx let nats = (</div>
+<div class="line">    nat_alu (core.nat.add, x86.add), nat_sub, nat_alu (core.nat.mul, x86.imul), nat_div (core.nat.div, 0_2), nat_div (core.nat.rem, 1_2));</div>
+<div class="line">anx let conversions = (</div>
+<div class="line">    narrow trunc, narrow strunc, narrow cast_trunc, widen zext, widen sext, widen cast_zext,</div>
+<div class="line">    cast_nat i32, cast_nat i16, cast_nat i8, cast_nat i1, cast_nat64,</div>
+<div class="line">    cast_idx i32, cast_idx i16, cast_idx i8, cast_idx i1, cast_idx64, cast_ptr, cast_int,</div>
+<div class="line">    idx2nat i32, idx2nat i16, idx2nat i8, idx2nat i1, idx2nat64, idx);</div>
+<div class="line">anx let compares = (icmps, ncmps);</div>
+<div class="line">anx let selects = (select i16, select i32, select i64, select8 i8, select8 i1);</div>
+<div class="line">anx let division = (</div>
+<div class="line">    div8 (core.div.udiv, x86.div, 0_2, x86.movzx), divs (div (core.div.udiv, x86.div, 0_2)),</div>
+<div class="line">    div8 (core.div.urem, x86.div, 1_2, x86.movzx), divs (div (core.div.urem, x86.div, 1_2)),</div>
+<div class="line">    div8 (core.div.sdiv, x86.idiv, 0_2, x86.movsx), divs (div (core.div.sdiv, x86.idiv, 0_2)),</div>
+<div class="line">    div8 (core.div.srem, x86.idiv, 1_2, x86.movsx), divs (div (core.div.srem, x86.idiv, 1_2)),</div>
+<div class="line">    rem8, rem16, rem32, rem64);</div>
+<div class="line">anx let nonterminals = (base, abs, mov, lea ff, lea tt, scale1, unscale);</div>
+<div class="line">anx let memory = (load i8, load i16, load i32, load i64, load_ptr, store, store_ptr, slot);</div>
+<div class="line">anx let addresses = (</div>
+<div class="line">    scale (core.wrap.mul, 2I64, x86.scale_2), scale (core.wrap.mul, 4I64, x86.scale_4), scale (core.wrap.mul, 8I64, x86.scale_8),</div>
+<div class="line">    scale (core.wrap.shl, 1I64, x86.scale_2), scale (core.wrap.shl, 2I64, x86.scale_4), scale (core.wrap.shl, 3I64, x86.scale_8),</div>
+<div class="line">    index_disp, base_index, disp, index);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">imul</span> has no <span class="tt">op m, r</span> form.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let mem_ops = (</div>
+<div class="line">    rms x86.gpr   (rm x86.gpr   (core.wrap.add, x86.add)),</div>
+<div class="line">    rms x86.gpr   (rm x86.gpr   (core.wrap.sub, x86.sub)),</div>
+<div class="line">    rm x86.gpr16 (core.wrap.mul, x86.imul) i16, rm x86.gpr16 (core.wrap.mul, x86.imul) i32, rm x86.gpr16 (core.wrap.mul, x86.imul) i64,</div>
+<div class="line">    rms x86.logic (rm x86.logic (core.bit2.and, x86.and)),</div>
+<div class="line">    rms x86.logic (rm x86.logic (core.bit2.or,  x86.or)),</div>
+<div class="line">    rms x86.logic (rm x86.logic (core.bit2.xor, x86.xor)),</div>
+<div class="line">    mrs (mr x86.gpr   (core.wrap.add, x86.add)),</div>
+<div class="line">    mrs (mr x86.gpr   (core.wrap.sub, x86.sub)),</div>
+<div class="line">    mrs (mr x86.logic (core.bit2.and, x86.and)),</div>
+<div class="line">    mrs (mr x86.logic (core.bit2.or,  x86.or)),</div>
+<div class="line">    mrs (mr x86.logic (core.bit2.xor, x86.xor)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md720"></a>
+Phases</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md721"></a>
+gen</h2>
+<p>Writes the closed rules of this plugin as C++ matchers and builders (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html" title="The closed rewrite rules of the x86_isel plugin as C++; x86_isel.gen writes them to isel_rules....">mim::plug::x86::rules</a>) to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> x86_isel:o=&lt;file&gt;</span>, or to stdout.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gen: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

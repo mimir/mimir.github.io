@@ -18,14 +18,12 @@ var searchData=
   ['lbb_15',['lbB',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7eb2f84ffa93bc81d9d8f5945262d5f6',1,'mim::plug::math']]],
   ['lbb_16',['lbb',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dafa3c3dd92b4aec96192029e435b2d895',1,'mim::plug::math']]],
   ['le_17',['le',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ead9180594744f870aeefb086982e980bb',1,'mim::plug::core::le'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3ad9180594744f870aeefb086982e980bb',1,'mim::plug::math::le'],['../namespacemim_1_1plug_1_1x86.html#ac9613fba2c0af77f75acbed918fe28fcad9180594744f870aeefb086982e980bb',1,'mim::plug::x86::le'],['../namespacemim_1_1plug_1_1x86.html#ae124c8afc30b45d2a5737b34609c9f21ad9180594744f870aeefb086982e980bb',1,'mim::plug::x86::le']]],
-  ['lea_18',['Lea',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84a18b6d3cfca6bec531d7a521d43a38d06',1,'mim::plug::x86::phase']]],
-  ['level_19',['Level',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa0db49ba470c1c9ae2128c3470339153',1,'mim']]],
-  ['lit_20',['Lit',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim::Lit'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194ae5e556ecf935270736f5e46e73db06e4',1,'mim::plug::x86::phase::Lit']]],
-  ['lmax_21',['LMax',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dac05ae41f62fd075f931c92069cb01606',1,'mim']]],
-  ['load_22',['Load',['../namespacemim_1_1plug_1_1x86_1_1phase.html#ac26827a6ed95ee748d39385df67dba84af19dbf2edb3a0bd74b0524d960ff21eb',1,'mim::plug::x86::phase']]],
-  ['log_23',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
-  ['log10_24',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
-  ['log2_25',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]],
-  ['lsucc_26',['LSucc',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da4d0cbcbdd48e62b27cf6c271072edfe0',1,'mim']]],
-  ['lt_27',['lt',['../structmim_1_1plug_1_1ord_1_1Key__field.html#a48356ab4e663c565eb786823a75b4f97af46d74a133691f65674512f9a02e715f',1,'mim::plug::ord::Key_field']]]
+  ['level_18',['Level',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daa0db49ba470c1c9ae2128c3470339153',1,'mim']]],
+  ['lit_19',['Lit',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dae5e556ecf935270736f5e46e73db06e4',1,'mim']]],
+  ['lmax_20',['LMax',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256dac05ae41f62fd075f931c92069cb01606',1,'mim']]],
+  ['log_21',['log',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dadc1d71bbb5c4d2a5e936db79ef10c19f',1,'mim::plug::math']]],
+  ['log10_22',['log10',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5dad535e7551733e223769d8c70245e19c2',1,'mim::plug::math']]],
+  ['log2_23',['log2',['../namespacemim_1_1plug_1_1math.html#af959204e5fae636149da2721f26f1f5da7b1a5a4dd8df61dc8e4ea38fa24f4490',1,'mim::plug::math']]],
+  ['lsucc_24',['LSucc',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da4d0cbcbdd48e62b27cf6c271072edfe0',1,'mim']]],
+  ['lt_25',['lt',['../structmim_1_1plug_1_1ord_1_1Key__field.html#a48356ab4e663c565eb786823a75b4f97af46d74a133691f65674512f9a02e715f',1,'mim::plug::ord::Key_field']]]
 ];

@@ -16,7 +16,9 @@ var searchData=
   ['profile_13',['Profile',['../structmim_1_1Flags.html#a859d1deec88adc34df34f6662250d9f5',1,'mim::Flags']]],
   ['proj_5fmap_14',['proj_map',['../namespacemim_1_1plug_1_1btensor.html#ade590d9fd340e93b3e16bf1e890ed864',1,'mim::plug::btensor']]],
   ['ptr_15',['Ptr',['../namespacemim_1_1plug_1_1core.html#abc17a099c36f33dac3086c119b44ebf2',1,'mim::plug::core']]],
-  ['ptr0_16',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
-  ['pxr24_17',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
-  ['pxr24_18',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
+  ['ptr_16',['ptr',['../namespacemim_1_1plug_1_1x86__isel.html#a4e1be9cfe9728e2fb349628064b4b67b',1,'mim::plug::x86_isel']]],
+  ['ptr0_17',['Ptr0',['../namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3',1,'mim::plug::mem']]],
+  ['ptradd_18',['ptradd',['../namespacemim_1_1plug_1_1mem.html#a25ba392fc7ba10482bdd10dbec979906',1,'mim::plug::mem']]],
+  ['pxr24_19',['PXR24',['../namespacemim_1_1plug_1_1math.html#a68aa07d235ebaf61bd329c3875dbeb6b',1,'mim::plug::math']]],
+  ['pxr24_20',['pxr24',['../namespacemim_1_1plug_1_1math.html#a72867d157ec5d20203fa25e0af951d32',1,'mim::plug::math']]]
 ];

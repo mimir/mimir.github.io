@@ -3,11 +3,12 @@ var searchData=
   ['gamma_0',['gamma',['../namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0',1,'mim::plug::math']]],
   ['gather_1',['gather',['../namespacemim_1_1plug_1_1btensor.html#a52e55fb0c4b38eed71595a010c06dadd',1,'mim::plug::btensor::gather'],['../namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59',1,'mim::plug::tensor::gather']]],
   ['gather_5fpointwise_5felem_5fimpl_2',['gather_pointwise_elem_impl',['../namespacemim_1_1plug_1_1tensor.html#a6a7a2d3951d8c63bb4a735edd4a5c143',1,'mim::plug::tensor']]],
-  ['generate_3',['generate',['../namespacemim_1_1plug_1_1tensor.html#a0d1b5850e2bdc481d26c9cc5a189e7c2',1,'mim::plug::tensor']]],
-  ['get_4',['get',['../namespacemim_1_1plug_1_1ord.html#aba44102109a1561a91c6182d20785923',1,'mim::plug::ord::get'],['../namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692',1,'mim::plug::tensor::get']]],
-  ['gid_5',['gid',['../namespacemim_1_1plug_1_1refly.html#a88be063a073d9a29cb463cb2486f9aab',1,'mim::plug::refly']]],
-  ['globalm_6',['GlobalM',['../namespacemim_1_1plug_1_1gpu.html#a5eaa9a2722ece31aabf7e3f5d8795a54',1,'mim::plug::gpu']]],
-  ['globalptr_7',['GlobalPtr',['../namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0',1,'mim::plug::gpu']]],
-  ['gpr_8',['gpr',['../namespacemim_1_1plug_1_1x86.html#a31f42838c138fec36159d1706a848c5d',1,'mim::plug::x86']]],
-  ['gpr16_9',['gpr16',['../namespacemim_1_1plug_1_1x86.html#ace687b37cdc4918348e24810867588d1',1,'mim::plug::x86']]]
+  ['gen_3',['gen',['../namespacemim_1_1plug_1_1x86__isel.html#a07c6c0090011424f5d71188b06b0df81',1,'mim::plug::x86_isel']]],
+  ['generate_4',['generate',['../namespacemim_1_1plug_1_1tensor.html#a0d1b5850e2bdc481d26c9cc5a189e7c2',1,'mim::plug::tensor']]],
+  ['get_5',['get',['../namespacemim_1_1plug_1_1ord.html#aba44102109a1561a91c6182d20785923',1,'mim::plug::ord::get'],['../namespacemim_1_1plug_1_1tensor.html#ad0a78c652af17e223b9e9827ee9ed692',1,'mim::plug::tensor::get']]],
+  ['gid_6',['gid',['../namespacemim_1_1plug_1_1refly.html#a88be063a073d9a29cb463cb2486f9aab',1,'mim::plug::refly']]],
+  ['globalm_7',['GlobalM',['../namespacemim_1_1plug_1_1gpu.html#a5eaa9a2722ece31aabf7e3f5d8795a54',1,'mim::plug::gpu']]],
+  ['globalptr_8',['GlobalPtr',['../namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0',1,'mim::plug::gpu']]],
+  ['gpr_9',['gpr',['../namespacemim_1_1plug_1_1x86.html#a31f42838c138fec36159d1706a848c5d',1,'mim::plug::x86']]],
+  ['gpr16_10',['gpr16',['../namespacemim_1_1plug_1_1x86.html#ace687b37cdc4918348e24810867588d1',1,'mim::plug::x86']]]
 ];

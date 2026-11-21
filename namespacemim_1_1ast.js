@@ -90,7 +90,7 @@ var namespacemim_1_1ast =
     [ "prec_assoc", "namespacemim_1_1ast.html#af537e552f07ed689e1d2df001cd1a35d", null ],
     [ "should_reduce", "namespacemim_1_1ast.html#a73ea7269ed47d29b3408e6ec172f6890", null ],
     [ "stream_decls", "namespacemim_1_1ast.html#a00267fc58f83e3eca066b5fe7fe10300", null ],
-    [ "stream_rule", "namespacemim_1_1ast.html#a29ac96db30bd1d241a87995408e72e69", null ],
+    [ "stream_rule", "namespacemim_1_1ast.html#a1741c7c5eb3cca7bacb1820e557bb47f", null ],
     [ "unwrap_field", "namespacemim_1_1ast.html#a306bf530c6641603d8d243d84dac6ada", null ],
     [ "vis2str", "namespacemim_1_1ast.html#a5e3de289928d31764d7805d8e6f09711", null ],
     [ "Look_Ahead", "namespacemim_1_1ast.html#a34bc31636965297acb1596eeeb396b29", null ],

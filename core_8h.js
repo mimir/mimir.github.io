@@ -1,5 +1,10 @@
 var core_8h =
 [
+    [ "mim::plug::core::Layout", "namespacemim_1_1plug_1_1core.html#structmim_1_1plug_1_1core_1_1Layout", [
+      [ "align", "namespacemim_1_1plug_1_1core.html#a11988b59b1a2c03f953246583bac1566", null ],
+      [ "offsets", "namespacemim_1_1plug_1_1core.html#a9d4754686be056d438aacf140c9a38b8", null ],
+      [ "size", "namespacemim_1_1plug_1_1core.html#ae85d8e8c13cab4248c671d5a3ec88fa7", null ]
+    ] ],
     [ "mim::plug::core::VMode", "namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822", null ],
     [ "mim::plug::core::Mode", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138", [
       [ "mim::plug::core::Mode::none", "namespacemim_1_1plug_1_1core.html#ae3a4dc564294d2e5513168c153462138a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
@@ -22,6 +27,7 @@ var core_8h =
     [ "mim::plug::core::isa_mem", "namespacemim_1_1plug_1_1core.html#a153015a4f894c1d3dfdc9f596f9f6d6a", null ],
     [ "mim::plug::core::isa_odd_idx", "namespacemim_1_1plug_1_1core.html#a3460a746ff6b73c758e1552092fe20fe", null ],
     [ "mim::plug::core::isa_odd_idx_op", "namespacemim_1_1plug_1_1core.html#ab2999edea7b90634ba5c832e39b4b435", null ],
+    [ "mim::plug::core::layout", "namespacemim_1_1plug_1_1core.html#a68e84e6c89abb3495bf2378e7b01043f", null ],
     [ "mim::plug::core::make_truth_table", "namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d", null ],
     [ "mim::plug::core::mem_def", "namespacemim_1_1plug_1_1core.html#a8938e009dbeb34a5b0c03063f0fe5109", null ],
     [ "mim::plug::core::mem_var", "namespacemim_1_1plug_1_1core.html#a946b8805ec30391b47968e3d183f6395", null ],

@@ -55,5 +55,8 @@ var searchData=
   ['mim_5fver_5fsuffix_52',['MIM_VER_SUFFIX',['../config_8h.html#a654388ccf586a85da62a6d443b103a9e',1,'config.h']]],
   ['mim_5fversion_53',['MIM_VERSION',['../plugin_8h.html#a2f1c22749113d1954fe381a30a0d5bb2',1,'plugin.h']]],
   ['mim_5fx86_5fbe_54',['MIM_X86_BE',['../x86_8h.html#a10deea897719aea7028f048ff2f036c3',1,'x86.h']]],
-  ['mim_5fx86_5fisel_5fops_55',['MIM_X86_ISEL_OPS',['../isel_8h.html#a69e7930386793b4dc2cd3f6b14e2164a',1,'isel.h']]]
+  ['mim_5fx86_5fisel_5fnormalizer_5fimpl_55',['MIM_x86_isel_NORMALIZER_IMPL',['../x86__isel_2autogen_8h.html#a8652b41cb3d04e3f13d12a5347af7ae2',1,'autogen.h']]],
+  ['mim_5fx86_5fnormalizer_5fimpl_56',['MIM_x86_NORMALIZER_IMPL',['../x86_2autogen_8h.html#a19a86b196b37696e5da02168e7dca607',1,'autogen.h']]],
+  ['mim_5fx86_5frule_5ftys_57',['MIM_X86_RULE_TYS',['../rule__table_8h.html#a5d61afafe10eb9ee8a9122b48de676bf',1,'rule_table.h']]],
+  ['mim_5fx86_5frule_5fwants_58',['MIM_X86_RULE_WANTS',['../rule__table_8h.html#af220e1605a88dade7f799bb7af5e1e6b',1,'rule_table.h']]]
 ];

@@ -1,6 +1,7 @@
 var namespacemim_1_1plug_1_1core =
 [
     [ "phase", "namespacemim_1_1plug_1_1core_1_1phase.html", "namespacemim_1_1plug_1_1core_1_1phase" ],
+    [ "Layout", "namespacemim_1_1plug_1_1core.html#structmim_1_1plug_1_1core_1_1Layout", "namespacemim_1_1plug_1_1core_structmim_1_1plug_1_1core_1_1Layout_dup" ],
     [ "VMode", "namespacemim_1_1plug_1_1core.html#a3528f63dbef237c0150d660d51249822", null ],
     [ "abs", "namespacemim_1_1plug_1_1core.html#a465c016f162127abd9c362f9a4f21055", null ],
     [ "bit1", "namespacemim_1_1plug_1_1core.html#a7a60a2da3c1482d92696ed97b26f1b4c", [
@@ -96,6 +97,7 @@ var namespacemim_1_1plug_1_1core =
     ] ],
     [ "idx", "namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a", null ],
     [ "idx2nat", "namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2", null ],
+    [ "legalize_dyn_idx", "namespacemim_1_1plug_1_1core.html#aa92dbf7eb1b5ba1551a43cafbdd2a9a7", null ],
     [ "legalize_idx", "namespacemim_1_1plug_1_1core.html#a8375cb6651a461872bef335390554f7a", null ],
     [ "lower_dyn_extract", "namespacemim_1_1plug_1_1core.html#af77e0b2d4743e70f6dedd9a2d46071ed", null ],
     [ "lower_variant", "namespacemim_1_1plug_1_1core.html#a98dc2decfd857543ae392af96a29ac75", null ],
@@ -171,6 +173,7 @@ var namespacemim_1_1plug_1_1core =
     [ "isa_mem", "namespacemim_1_1plug_1_1core.html#a153015a4f894c1d3dfdc9f596f9f6d6a", null ],
     [ "isa_odd_idx", "namespacemim_1_1plug_1_1core.html#a3460a746ff6b73c758e1552092fe20fe", null ],
     [ "isa_odd_idx_op", "namespacemim_1_1plug_1_1core.html#ab2999edea7b90634ba5c832e39b4b435", null ],
+    [ "layout", "namespacemim_1_1plug_1_1core.html#a68e84e6c89abb3495bf2378e7b01043f", null ],
     [ "make_truth_table", "namespacemim_1_1plug_1_1core.html#abf6738221b4980fae94b16a36169399d", null ],
     [ "mem_def", "namespacemim_1_1plug_1_1core.html#a8938e009dbeb34a5b0c03063f0fe5109", null ],
     [ "mem_var", "namespacemim_1_1plug_1_1core.html#a946b8805ec30391b47968e3d183f6395", null ],

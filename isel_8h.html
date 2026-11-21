@@ -172,11 +172,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('isel_8h.html',
   <div class="headertitle"><div class="title">isel.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;array&gt;</code><br />
-<code>#include &lt;optional&gt;</code><br />
-<code>#include &lt;string_view&gt;</code><br />
-<code>#include &lt;<a class="el" href="graph_8h_source.html">pbqp/graph.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="graph_8h_source.html">pbqp/graph.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="rule__table_8h_source.html">mim/plug/x86/rule_table.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for isel.h:</div>
 <div class="dyncontent">
@@ -192,20 +190,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ASlot" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ASlot"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Slot.html">mim::plug::x86::phase::Slot</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One position of a rule's pattern in preorder: a hole, or an inner node whose <code class="param">arity</code> operands follow it.  <a href="structmim_1_1plug_1_1x86_1_1phase_1_1Slot.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ADemand" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ADemand"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Demand.html">mim::plug::x86::phase::Demand</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a match needs of the operand <code class="param">def:</code> a hole of type <code class="param">want</code> or, if <code class="param">inner</code> is set, that inner pattern node.  <a href="structmim_1_1plug_1_1x86_1_1phase_1_1Demand.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ACover_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Cover" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ACover_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Cover"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover">mim::plug::x86::phase::Cover</a></td></tr>
 <tr class="memdesc:structmim_1_1plug_1_1x86_1_1phase_1_1Cover"><td class="mdescLeft">&#160;</td><td class="mdescRight">An inner node a match covers, with what it needs of its own operands.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AAlt_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Alt" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AAlt_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1Alt"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">mim::plug::x86::phase::Alt</a></td></tr>
 <tr class="memdesc:structmim_1_1plug_1_1x86_1_1phase_1_1Alt"><td class="mdescLeft">&#160;</td><td class="mdescRight">An alternative of a PBQP node: a match rooted there, or the class of all matches covering it as the same inner node.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">More...</a><br /></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ARule" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3ARule"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html">mim::plug::x86::phase::Rule</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One pattern ↦ replacement: the root's operation, the pattern's slots, the replacement's type, cost, and builder.  <a href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html#details">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AISel" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AISel"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html">mim::plug::x86::phase::ISel</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">core</a></span> and <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html" title="The mem Plugin">mem</a></span> operations of a lowered world into <a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">x86</a> instructions.  <a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#details">More...</a><br /></td></tr>
-<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AISel_3A_3AAddress_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1ISel_5F1_5F1Address" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase_3A_3AISel_3A_3AAddress_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1phase_5F1_5F1ISel_5F1_5F1Address"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address">mim::plug::x86::phase::ISel::Address</a></td></tr>
-<tr class="memdesc:structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89">base</a> + <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">index</a> * <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766">scale</a> + <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05">disp</a></span> in <a class="el" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a>; a missing <span class="tt"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">index</a></span> is <span class="tt">nullptr</span>.  <a href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -215,70 +207,15 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemim_1_1plug_1_1x86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="x86.html" title="The x86 Plugin">The x86 Plugin</a> <br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Aphase" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Aphase"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html">mim::plug::x86::phase</a></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a5addefc9f566d89d726f6a2a9995c177" id="r_a5addefc9f566d89d726f6a2a9995c177"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5addefc9f566d89d726f6a2a9995c177">X</a>(op)</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
 Rules</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>A rule rewrites a pattern over <span class="tt">core</span>/<span class="tt">mem</span> into an x86 term; the holes of the pattern are typed. </p>
 </td></tr>
-<tr class="memitem:a69e7930386793b4dc2cd3f6b14e2164a" id="r_a69e7930386793b4dc2cd3f6b14e2164a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a69e7930386793b4dc2cd3f6b14e2164a">MIM_X86_ISEL_OPS</a>(<a class="el" href="#a5addefc9f566d89d726f6a2a9995c177">X</a>)</td></tr>
-<tr class="memdesc:a69e7930386793b4dc2cd3f6b14e2164a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operation a rule selects, one per instruction of the pattern surface.  <br /></td></tr>
-<tr class="memitem:a94aba43892c6e6d6e8ccd05c069bc194" id="r_a94aba43892c6e6d6e8ccd05c069bc194"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">mim::plug::x86::phase::Ty</a> : u8 { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a3791fc9668cfd0e7e10650add3cacf6d">mim::plug::x86::phase::Reg</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a095a1b43effec73955e31e790438de49">mim::plug::x86::phase::Base</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194a88fa71f0a6e0dfedbb46d91cc0b37a50">mim::plug::x86::phase::Index</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194ae5e556ecf935270736f5e46e73db06e4">mim::plug::x86::phase::Lit</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194ab3e3076d9b3c53bede50d468b647b109">mim::plug::x86::phase::Num</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a94aba43892c6e6d6e8ccd05c069bc194"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a rule's replacement.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a94aba43892c6e6d6e8ccd05c069bc194">More...</a><br /></td></tr>
-<tr class="memitem:ae5ea8a5a815bb103e66a503acb984841" id="r_ae5ea8a5a815bb103e66a503acb984841"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">mim::plug::x86::phase::Want</a> : u8 { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3791fc9668cfd0e7e10650add3cacf6d">mim::plug::x86::phase::Reg</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ada9470e1aa5be1858e667318254dcb4b">mim::plug::x86::phase::Imm</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a9b5a67295e5540c6368d6f3a67984fad">mim::plug::x86::phase::Sh</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a095a1b43effec73955e31e790438de49">mim::plug::x86::phase::Base</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a88fa71f0a6e0dfedbb46d91cc0b37a50">mim::plug::x86::phase::Index</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841a3649a5e29ad648f3cfe3eea1a93d2f78">mim::plug::x86::phase::Addr</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841ab3e3076d9b3c53bede50d468b647b109">mim::plug::x86::phase::Num</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ae5ea8a5a815bb103e66a503acb984841"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a hole.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">More...</a><br /></td></tr>
-<tr class="memitem:ad2f2301451520676e7cd86b15986d10f" id="r_ad2f2301451520676e7cd86b15986d10f"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ad2f2301451520676e7cd86b15986d10f">mim::plug::x86::phase::Op</a> : u8 </td></tr>
-<tr class="memdesc:ad2f2301451520676e7cd86b15986d10f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">Op::Alu</span> is no instruction: as an inner node, it matches any operation with a read-modify-write memory form.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#ad2f2301451520676e7cd86b15986d10f">More...</a><br /></td></tr>
-<tr class="memitem:aa28aa39a2a33ede367eca9371538eb7c" id="r_aa28aa39a2a33ede367eca9371538eb7c"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7c">mim::plug::x86::phase::Cond</a> : u8 { <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca6adf97f83acf6453d4a6a4b1070f3754">mim::plug::x86::phase::None</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca85a7cd587d6142dbfc1a4de05af7b75d">mim::plug::x86::phase::Scale</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca7b0da812abcd107490aeb0aa803c9cfe">mim::plug::x86::phase::Fold</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca4daec51668bf1810149ada5a73d120a9">mim::plug::x86::phase::Rmw</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7cac90a13d8ec8fe53c6bb33fe10af6f2fe">mim::plug::x86::phase::Same</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7ca4a7ab319be06025840ef3389301424b9">mim::plug::x86::phase::Narrow</a>
-, <br />
-&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7cac43930a350749df9be8979b9c16f921e">mim::plug::x86::phase::Widen</a>
-<br />
- }</td></tr>
-<tr class="memdesc:aa28aa39a2a33ede367eca9371538eb7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A side condition of a rule beyond what its slots state.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#aa28aa39a2a33ede367eca9371538eb7c">More...</a><br /></td></tr>
 <tr class="memitem:af96ce7f3cdfcd133564275ce73c9b4c9" id="r_af96ce7f3cdfcd133564275ce73c9b4c9"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#af96ce7f3cdfcd133564275ce73c9b4c9">mim::plug::x86::phase::Alts</a> = fe::Vector&lt;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&gt;</td></tr>
-<tr class="memitem:a993aa662fa43314e7a1bebf867a10e18" id="r_a993aa662fa43314e7a1bebf867a10e18"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a993aa662fa43314e7a1bebf867a10e18">mim::plug::x86::phase::BuildFn</a> = const <a class="el" href="classmim_1_1Def.html">Def</a>* (ISel::*)(const <a class="el" href="classmim_1_1Def.html">Def</a>*, const <a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt">Alt</a>&amp;)</td></tr>
-<tr class="memdesc:a993aa662fa43314e7a1bebf867a10e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the replacement of the match <code class="param">alt</code> rooted at the old_world() <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a> <code class="param">root</code>.  <br /></td></tr>
-<tr class="memitem:a0c7928c392297b81a8517c0b9a363d45" id="r_a0c7928c392297b81a8517c0b9a363d45"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a0c7928c392297b81a8517c0b9a363d45">mim::plug::x86::phase::is_literal</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#ae5ea8a5a815bb103e66a503acb984841">Want</a> want)</td></tr>
-<tr class="memdesc:a0c7928c392297b81a8517c0b9a363d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a hole of type <code class="param">want</code> take a literal rather than a replacement?  <br /></td></tr>
+<tr class="memitem:a5f033672e1c35c4f8972bd0d41279a77" id="r_a5f033672e1c35c4f8972bd0d41279a77"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#a5f033672e1c35c4f8972bd0d41279a77">mim::plug::x86::phase::Ty</a> </td></tr>
+<tr class="memdesc:a5f033672e1c35c4f8972bd0d41279a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-terminal a rule yields, by the type of its rhs: a register, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">x86.Base</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">x86.Index</a></span>, or an index with its scale <span class="tt">[I64, I2]</span>.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#a5f033672e1c35c4f8972bd0d41279a77">More...</a><br /></td></tr>
+<tr class="memitem:aad6329c29da733d5eb8268fbef0d9111" id="r_aad6329c29da733d5eb8268fbef0d9111"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#aad6329c29da733d5eb8268fbef0d9111">mim::plug::x86::phase::Want</a> </td></tr>
+<tr class="memdesc:aad6329c29da733d5eb8268fbef0d9111"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a rule wants of the term a meta variable matches; a Param is bound but no operand.  <a href="namespacemim_1_1plug_1_1x86_1_1phase.html#aad6329c29da733d5eb8268fbef0d9111">More...</a><br /></td></tr>
 </table>
 <hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
 <a name="structmim_1_1plug_1_1x86_1_1phase_1_1Cover" id="structmim_1_1plug_1_1x86_1_1phase_1_1Cover"></a>
@@ -294,7 +231,7 @@ Rules</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>An inner node a match covers, with what it needs of its own operands. </p>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00126">126</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00030">30</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -315,6 +252,12 @@ demands</td>
 inner = 0</td>
 <td class="fielddoc">
 </td></tr>
+<tr><td class="fieldtype">
+<a id="a6a99dc9e63523a3355c8208c2acb8c87" name="a6a99dc9e63523a3355c8208c2acb8c87"></a>bool</td>
+<td class="fieldname">
+through = false</td>
+<td class="fielddoc">
+The match only looks through it, since something else uses it. </td></tr>
 </table>
 
 </div>
@@ -332,15 +275,15 @@ inner = 0</td>
 </div><div class="memdoc">
 <div class="textblock"><p>An alternative of a PBQP node: a match rooted there, or the class of all matches covering it as the same inner node. </p>
 
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00137">137</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00038">38</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a83b45dbbc5043df9b7a8cf0bf137884f" name="a83b45dbbc5043df9b7a8cf0bf137884f"></a>Cost</td>
+<a id="a65a5ee8d3c5c5babf6204f030cd01e6d" name="a65a5ee8d3c5c5babf6204f030cd01e6d"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
 <td class="fieldname">
-cost = 0</td>
+copies = 0</td>
 <td class="fielddoc">
-</td></tr>
+The operands its two-address instructions overwrite although something else uses them. </td></tr>
 <tr><td class="fieldtype">
 <a id="aba5eb7855c89d2fbfb0c8f561ffa7495" name="aba5eb7855c89d2fbfb0c8f561ffa7495"></a>Vector&lt; <a class="el" href="namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover">Cover</a> &gt;</td>
 <td class="fieldname">
@@ -354,100 +297,18 @@ demands</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a447f3bec732675be40dc37c592ac073a" name="a447f3bec732675be40dc37c592ac073a"></a>const <a class="el" href="structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html">Rule</a> *</td>
+<a id="a7661cede8a2311ec643d18208329d110" name="a7661cede8a2311ec643d18208329d110"></a><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a></td>
+<td class="fieldname">
+metas</td>
+<td class="fielddoc">
+What the meta variables of its rule match. </td></tr>
+<tr><td class="fieldtype">
+<a id="a00be0483475bd713e2cfb5a7659fd0a5" name="a00be0483475bd713e2cfb5a7659fd0a5"></a>const Rewrite *</td>
 <td class="fieldname">
 rule = nullptr</td>
 <td class="fielddoc">
 <span class="tt">nullptr</span> for an inner alternative, whose id is its index plus one. </td></tr>
 </table>
-
-</div>
-</div>
-<a name="structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address" id="structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address">&#9670;&#160;</a></span>mim::plug::x86::phase::ISel::Address</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct mim::plug::x86::phase::ISel::Address</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><p><span class="tt"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a18f8c6ce8d83b57db28a70d15c1e8d89">base</a> + <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">index</a> * <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a348f2023f10800282a1495f4448b9766">scale</a> + <a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05">disp</a></span> in <a class="el" href="classmim_1_1RWPhase.html#a0f7249ac3c85d2f2b1d7c72455c61b19" title="Create new Defs into this.">new_world()</a>; a missing <span class="tt"><a class="el" href="classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a836e8da83468e5403894427602340a41">index</a></span> is <span class="tt">nullptr</span>. </p>
-
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00184">184</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
-</div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a18f8c6ce8d83b57db28a70d15c1e8d89" name="a18f8c6ce8d83b57db28a70d15c1e8d89"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-base</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a9c9274576cf9f31bd7b0c92c26970a05" name="a9c9274576cf9f31bd7b0c92c26970a05"></a><a class="el" href="namespacemim.html#a82bd82851e0f25f0390ebe12e4963ed4">s64</a></td>
-<td class="fieldname">
-disp = 0</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a836e8da83468e5403894427602340a41" name="a836e8da83468e5403894427602340a41"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
-<td class="fieldname">
-index = nullptr</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a348f2023f10800282a1495f4448b9766" name="a348f2023f10800282a1495f4448b9766"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
-<td class="fieldname">
-scale = 1</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a69e7930386793b4dc2cd3f6b14e2164a" name="a69e7930386793b4dc2cd3f6b14e2164a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e7930386793b4dc2cd3f6b14e2164a">&#9670;&#160;</a></span>MIM_X86_ISEL_OPS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIM_X86_ISEL_OPS</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="#a5addefc9f566d89d726f6a2a9995c177">X</a></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The operation a rule selects, one per instruction of the pattern surface. </p>
-
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00043">43</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
-
-</div>
-</div>
-<a id="a5addefc9f566d89d726f6a2a9995c177" name="a5addefc9f566d89d726f6a2a9995c177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5addefc9f566d89d726f6a2a9995c177">&#9670;&#160;</a></span>X</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define X</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>op</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">op,</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="isel_8h_source.html#l00081">81</a> of file <a class="el" href="isel_8h_source.html">isel.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="dfamin_8cpp_source.html#l00102">automaton::minimize_dfa()</a>.</p>
 
 </div>
 </div>

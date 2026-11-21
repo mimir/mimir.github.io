@@ -15,5 +15,6 @@ var searchData=
   ['dom_12',['Dom',['../classmim_1_1ast_1_1LamDecl_1_1Dom.html',1,'mim::ast::LamDecl::Dom'],['../classmim_1_1ast_1_1PiExpr_1_1Dom.html',1,'mim::ast::PiExpr::Dom']]],
   ['dotconfig_13',['DotConfig',['../namespacemim.html#structmim_1_1DotConfig',1,'mim']]],
   ['driver_14',['Driver',['../classmim_1_1Driver.html',1,'mim']]],
-  ['dummydecl_15',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast']]]
+  ['drophints_15',['DropHints',['../classmim_1_1plug_1_1ll_1_1DropHints.html',1,'mim::plug::ll']]],
+  ['dummydecl_16',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast']]]
 ];

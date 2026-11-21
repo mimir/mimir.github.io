@@ -11,7 +11,6 @@ var searchData=
   ['demands_8',['demands',['../namespacemim_1_1plug_1_1x86_1_1phase.html#a3785889cd50ec0410799bdc46f0c1d9b',1,'mim::plug::x86::phase::Cover::demands'],['../namespacemim_1_1plug_1_1x86_1_1phase.html#a363c3640de4614299d049141a4351bec',1,'mim::plug::x86::phase::Alt::demands']]],
   ['depth_9',['depth',['../classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695',1,'mim::Driver::Names']]],
   ['descr_10',['descr',['../namespacemim.html#a0f1ec4662d46ddc5fe2de1c041729422',1,'mim::PluginArg::descr'],['../namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace',1,'mim::PluginEnv::descr']]],
-  ['disp_11',['disp',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#a9c9274576cf9f31bd7b0c92c26970a05',1,'mim::plug::x86::phase::ISel::Address']]],
-  ['dropped_5fedges_12',['dropped_edges',['../namespacepbqp.html#a142c5d12ad79fd54e54bcef2ae2ab722',1,'pbqp::Statistics']]],
-  ['dst_13',['dst',['../classpbqp_1_1Graph.html#ae6defd4939d521bf8e009070f57ba6ba',1,'pbqp::Graph::Ends']]]
+  ['dropped_5fedges_11',['dropped_edges',['../namespacepbqp.html#a142c5d12ad79fd54e54bcef2ae2ab722',1,'pbqp::Statistics']]],
+  ['dst_12',['dst',['../classpbqp_1_1Graph.html#ae6defd4939d521bf8e009070f57ba6ba',1,'pbqp::Graph::Ends']]]
 ];

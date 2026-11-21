@@ -10,6 +10,7 @@ var x86_8h =
     [ "mim::plug::x86::reserved", "namespacemim_1_1plug_1_1x86.html#a852b3f82a82aa3931bd5430714e844a5", null ],
     [ "mim::plug::x86::sched_insn", "namespacemim_1_1plug_1_1x86.html#a086a3f32f745592c575314b263ad9f69", null ],
     [ "mim::plug::x86::strip", "namespacemim_1_1plug_1_1x86.html#a862ccce6e872bbc0ac8d8dbc3e5e6ba8", null ],
+    [ "mim::plug::x86::strip_ptr_cast", "namespacemim_1_1plug_1_1x86.html#ad69bf237ddbccf9558e57f409f3acdd8", null ],
     [ "mim::plug::x86::Arg_Regs", "namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2", null ],
     [ "mim::plug::x86::Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48", null ],
     [ "mim::plug::x86::Num_Allocatable", "namespacemim_1_1plug_1_1x86.html#a9acd4ed745f331c7ebc0d1597d7b9cb9", null ],

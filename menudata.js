@@ -59,7 +59,8 @@ var menudata={children:[
 {text:"tensor",url:"tensor.html"},
 {text:"tuple",url:"tuple.html"},
 {text:"vec",url:"vec.html"},
-{text:"x86",url:"x86.html"}]},
+{text:"x86",url:"x86.html"},
+{text:"x86_isel",url:"x86_isel.html"}]},
 {text:"📦 Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},
 {text:"Namespace Members",url:"namespacemembers.html",children:[
@@ -118,8 +119,10 @@ var menudata={children:[
 {text:"f",url:"namespacemembers_vars.html#index_f"},
 {text:"i",url:"namespacemembers_vars.html#index_i"},
 {text:"l",url:"namespacemembers_vars.html#index_l"},
+{text:"m",url:"namespacemembers_vars.html#index_m"},
 {text:"n",url:"namespacemembers_vars.html#index_n"},
 {text:"p",url:"namespacemembers_vars.html#index_p"},
+{text:"r",url:"namespacemembers_vars.html#index_r"},
 {text:"v",url:"namespacemembers_vars.html#index_v"},
 {text:"w",url:"namespacemembers_vars.html#index_w"}]},
 {text:"Typedefs",url:"namespacemembers_type.html",children:[

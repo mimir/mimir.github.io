@@ -3,7 +3,6 @@ var hierarchy =
     [ "mim::World::Move::[struct].arena", "structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html", null ],
     [ "mim::ast::AnnexInfo::[struct].id", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id", null ],
     [ "mim::ast::AnnexInfo::[struct].sym", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym", null ],
-    [ "mim::plug::x86::phase::ISel::Address", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html#structmim_1_1plug_1_1x86_1_1phase_1_1ISel_1_1Address", null ],
     [ "mim::plug::x86::phase::Alt", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt", null ],
     [ "mim::Annex", "structmim_1_1Annex.html", null ],
     [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", null ],
@@ -26,6 +25,7 @@ var hierarchy =
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
     [ "mim::plug::x86::Liveness::Block", "classmim_1_1plug_1_1x86_1_1Liveness.html#structmim_1_1plug_1_1x86_1_1Liveness_1_1Block", null ],
     [ "mim::plug::mem::EscapeAnalysis::Chain", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#structmim_1_1plug_1_1mem_1_1EscapeAnalysis_1_1Chain", null ],
+    [ "mim::plug::x86::rules::Chains", "structmim_1_1plug_1_1x86_1_1rules_1_1Chains.html", null ],
     [ "mim::Check", "classmim_1_1Check.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
@@ -33,6 +33,7 @@ var hierarchy =
       [ "mim::Diag", "classmim_1_1Diag.html", null ]
     ] ],
     [ "mim::plug::x86::Constraint", "namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Constraint", null ],
+    [ "mim::plug::x86::rules::Conversion", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion", null ],
     [ "pbqp::Cost", "classpbqp_1_1Cost.html", null ],
     [ "mim::plug::x86::phase::Cover", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover", null ],
     [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
@@ -56,11 +57,11 @@ var hierarchy =
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", null ],
     [ "pbqp::Graph", "classpbqp_1_1Graph.html", null ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
-    [ "mim::plug::x86::phase::Insn", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Insn", null ],
     [ "pbqp::Instance", "namespacepbqp.html#structpbqp_1_1Instance", null ],
     [ "mim::Axm::IsA&lt; Id, D &gt;", "classmim_1_1Axm_1_1IsA.html", null ],
     [ "mim::Axm::IsANode&lt; T &gt;", "classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode", null ],
     [ "mim::plug::ord::Key_field", "structmim_1_1plug_1_1ord_1_1Key__field.html", null ],
+    [ "mim::plug::core::Layout", "namespacemim_1_1plug_1_1core.html#structmim_1_1plug_1_1core_1_1Layout", null ],
     [ "mim::plug::tensor::phase::Leaf", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Leaf", null ],
     [ "fe::Lexer", null, [
       [ "mim::ast::Lexer", "classmim_1_1ast_1_1Lexer.html", null ],
@@ -72,6 +73,7 @@ var hierarchy =
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
     [ "mim::Manifest", "namespacemim.html#structmim_1_1Manifest", null ],
     [ "mim::plug::btensor::MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", null ],
+    [ "mim::plug::x86::rules::Matcher", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher", null ],
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
@@ -86,7 +88,6 @@ var hierarchy =
       [ "mim::manifest::Parser", "classmim_1_1manifest_1_1Parser.html", null ]
     ] ],
     [ "mim::Driver::Paths", "classmim_1_1Driver_1_1Paths.html", null ],
-    [ "mim::plug::x86::phase::Pattern", "structmim_1_1plug_1_1x86_1_1phase_1_1Pattern.html", null ],
     [ "mim::PlainNames", "classmim_1_1PlainNames.html", null ],
     [ "mim::Plugin", "structmim_1_1Plugin.html", null ],
     [ "mim::PluginArg", "namespacemim.html#structmim_1_1PluginArg", null ],
@@ -97,6 +98,8 @@ var hierarchy =
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
     [ "mim::plug::btensor::MapRedPost::Ranks", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html", null ],
+    [ "mim::plug::x86::rules::RefInfo", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo", null ],
+    [ "mim::plug::x86::rules::Rewrite", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
         [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ],
@@ -136,9 +139,11 @@ var hierarchy =
         [ "mim::plug::gpu::phase::RemoveDoubleSyncs", "classmim_1_1plug_1_1gpu_1_1phase_1_1RemoveDoubleSyncs.html", null ],
         [ "mim::plug::gpu::phase::SplitApply", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitApply.html", null ],
         [ "mim::plug::gpu::phase::SplitOffKernels", "classmim_1_1plug_1_1gpu_1_1phase_1_1SplitOffKernels.html", null ],
+        [ "mim::plug::ll::DropHints", "classmim_1_1plug_1_1ll_1_1DropHints.html", null ],
         [ "mim::plug::mem::phase::AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", null ],
         [ "mim::plug::mem::phase::FreeLocals", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html", null ],
         [ "mim::plug::mem::phase::Heap2Stack", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html", null ],
+        [ "mim::plug::mem::phase::LegalizePtr", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizePtr.html", null ],
         [ "mim::plug::mem::phase::SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", null ],
         [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
         [ "mim::plug::tensor::phase::Fuse", "classmim_1_1plug_1_1tensor_1_1phase_1_1Fuse.html", null ],
@@ -154,7 +159,7 @@ var hierarchy =
       [ "mim::plug::x86::phase::Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", null ]
     ] ],
     [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
-    [ "mim::plug::x86::phase::Rule", "structmim_1_1plug_1_1x86_1_1phase_1_1Rule.html", null ],
+    [ "mim::plug::x86::rules::Root", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Root", null ],
     [ "fe::RuntimeCast", null, [
       [ "mim::Def", "classmim_1_1Def.html", [
         [ "mim::App", "classmim_1_1App.html", null ],
@@ -222,7 +227,8 @@ var hierarchy =
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
         [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
         [ "mim::plug::nvptx::Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", null ],
-        [ "mim::plug::x86::Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", null ]
+        [ "mim::plug::x86::Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", null ],
+        [ "mim::plug::x86_isel::Gen", "classmim_1_1plug_1_1x86__isel_1_1Gen.html", null ]
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
@@ -394,7 +400,6 @@ var hierarchy =
     [ "mim::Shape", "classmim_1_1Shape.html", null ],
     [ "mim::Nest::Node::SiblDeps", "structmim_1_1Nest_1_1Node_1_1SiblDeps.html", null ],
     [ "mim::Sieve", "classmim_1_1Sieve.html", null ],
-    [ "mim::plug::x86::phase::Slot", "structmim_1_1plug_1_1x86_1_1phase_1_1Slot.html", null ],
     [ "mim::plug::tensor::phase::Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", null ],
     [ "pbqp::Solution", "structpbqp_1_1Solution.html", null ],
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],
@@ -412,6 +417,7 @@ var hierarchy =
     [ "std::unordered_map", null, [
       [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
     ] ],
+    [ "mim::plug::x86::rules::Use", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Use", null ],
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],

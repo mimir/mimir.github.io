@@ -36,5 +36,8 @@ var searchData=
   ['mim_3a_3aplug_3a_3atuple_33',['tuple',['../namespacemim_1_1plug_1_1tuple.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3avec_34',['vec',['../namespacemim_1_1plug_1_1vec.html',1,'mim::plug']]],
   ['mim_3a_3aplug_3a_3ax86_35',['x86',['../namespacemim_1_1plug_1_1x86.html',1,'mim::plug']]],
-  ['mim_3a_3aplug_3a_3ax86_3a_3aphase_36',['phase',['../namespacemim_1_1plug_1_1x86_1_1phase.html',1,'mim::plug::x86']]]
+  ['mim_3a_3aplug_3a_3ax86_3a_3ainsn_36',['insn',['../namespacemim_1_1plug_1_1x86_1_1insn.html',1,'mim::plug::x86']]],
+  ['mim_3a_3aplug_3a_3ax86_3a_3aphase_37',['phase',['../namespacemim_1_1plug_1_1x86_1_1phase.html',1,'mim::plug::x86']]],
+  ['mim_3a_3aplug_3a_3ax86_3a_3arules_38',['rules',['../namespacemim_1_1plug_1_1x86_1_1rules.html',1,'mim::plug::x86']]],
+  ['mim_3a_3aplug_3a_3ax86_5fisel_39',['x86_isel',['../namespacemim_1_1plug_1_1x86__isel.html',1,'mim::plug']]]
 ];

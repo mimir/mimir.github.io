@@ -8,10 +8,9 @@ var searchData=
   ['infixexpr_5',['InfixExpr',['../classmim_1_1ast_1_1InfixExpr.html',1,'mim::ast']]],
   ['inj_6',['Inj',['../classmim_1_1Inj.html',1,'mim']]],
   ['insert_7',['Insert',['../classmim_1_1Insert.html',1,'mim']]],
-  ['insn_8',['Insn',['../namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Insn',1,'mim::plug::x86::phase']]],
-  ['instance_9',['Instance',['../namespacepbqp.html#structpbqp_1_1Instance',1,'pbqp']]],
-  ['isa_10',['IsA',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
-  ['isa_3c_20mem_3a_3am_2c_20mim_3a_3aapp_20_3e_11',['IsA&lt; mem::M, mim::App &gt;',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
-  ['isanode_12',['IsANode',['../classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode',1,'mim::Axm']]],
-  ['isel_13',['ISel',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html',1,'mim::plug::x86::phase']]]
+  ['instance_8',['Instance',['../namespacepbqp.html#structpbqp_1_1Instance',1,'pbqp']]],
+  ['isa_9',['IsA',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
+  ['isa_3c_20mem_3a_3am_2c_20mim_3a_3aapp_20_3e_10',['IsA&lt; mem::M, mim::App &gt;',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
+  ['isanode_11',['IsANode',['../classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode',1,'mim::Axm']]],
+  ['isel_12',['ISel',['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html',1,'mim::plug::x86::phase']]]
 ];

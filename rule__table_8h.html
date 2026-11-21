@@ -1,0 +1,699 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/plug/x86/rule_table.h File Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('rule__table_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">rule_table.h File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">mim/util/types.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for rule_table.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="rule__table_8h__incl.svg" width="434" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="rule__table_8h__dep__incl.svg" width="579" height="242"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="rule__table_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARefInfo_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1RefInfo" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARefInfo_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1RefInfo"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo">mim::plug::x86::rules::RefInfo</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ref of a matcher: its cover and how the lhs refers to it.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AUse_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Use" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AUse_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Use"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Use">mim::plug::x86::rules::Use</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1Use"><td class="mdescLeft">&#160;</td><td class="mdescRight">An operand position of a matcher in preorder: meta variable or Value ref <code class="param">index</code> of the node <code class="param">owner</code>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Use">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AMatcher_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Matcher" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AMatcher_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Matcher"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher">mim::plug::x86::rules::Matcher</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1Matcher"><td class="mdescLeft">&#160;</td><td class="mdescRight">A matcher and the shape of its lhs; a cover's operands follow it in preorder.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARewrite_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Rewrite" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARewrite_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Rewrite"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite">mim::plug::x86::rules::Rewrite</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite"><td class="mdescLeft">&#160;</td><td class="mdescRight">A closed rule <span class="tt">lhs ↦ rhs</span>, whose metas want <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a7a751100d950449d4b0ccccdd6d96681">num_metas</a></span> consecutive entries of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f366abaccb5a5fe012f2669cb224d9">wants</a></span>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARoot_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Root" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3ARoot_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Root"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Root">mim::plug::x86::rules::Root</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1Root"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rewrites <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a753a0edb28f70849307b23893f32acbf">rewrites</a>[<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a>, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a> + <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a652ea545bf995013e485846decad3a56">num</a>)</span> with the root axiom <code class="param">flags</code>; <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a998895329a06e8bca6bbf3b6310e7a70">roots</a></span> is sorted by it.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Root">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AConversion_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Conversion" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AConversion_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1rules_5F1_5F1Conversion"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion">mim::plug::x86::rules::Conversion</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1rules_1_1Conversion"><td class="mdescLeft">&#160;</td><td class="mdescRight">A conversion rule <span class="tt">x ↦ rhs</span>, whose lhs is all of its meta variables: a value of non-terminal <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a8b82d904cfd7bc2f8faca859812c8882">from</a></span> as one of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a9370f0f894ceb22b46c32accd3f00941">to</a></span>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AChains" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules_3A_3AChains"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1rules_1_1Chains.html">mim::plug::x86::rules::Chains</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cheapest chains of conversions between two non-terminals: their costs and each one's first conversion.  <a href="structmim_1_1plug_1_1x86_1_1rules_1_1Chains.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:mim" id="r_mim"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html">mim</a></td></tr>
+<tr class="memitem:mim_3A_3Aplug" id="r_mim_3A_3Aplug"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug.html">mim::plug</a></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86" id="r_mim_3A_3Aplug_3A_3Ax86"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html">mim::plug::x86</a></td></tr>
+<tr class="memdesc:namespacemim_1_1plug_1_1x86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="x86.html" title="The x86 Plugin">The x86 Plugin</a> <br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3Arules" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3Arules"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html">mim::plug::x86::rules</a></td></tr>
+<tr class="memdesc:namespacemim_1_1plug_1_1x86_1_1rules"><td class="mdescLeft">&#160;</td><td class="mdescRight">The closed rewrite rules of the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86__isel.html" title="The x86_isel Plugin">x86_isel</a></span> plugin as C++; <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86__isel.html#a07c6c0090011424f5d71188b06b0df81">x86_isel.gen</a></span> writes them to <span class="tt"><a class="el" href="isel__rules_8h.html">isel_rules.h</a></span>. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af220e1605a88dade7f799bb7af5e1e6b" id="r_af220e1605a88dade7f799bb7af5e1e6b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af220e1605a88dade7f799bb7af5e1e6b">MIM_X86_RULE_WANTS</a>(<a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a>)</td></tr>
+<tr class="memitem:a5d61afafe10eb9ee8a9122b48de676bf" id="r_a5d61afafe10eb9ee8a9122b48de676bf"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5d61afafe10eb9ee8a9122b48de676bf">MIM_X86_RULE_TYS</a>(<a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a182b1872c26ef8d57e212df7289508b8" id="r_a182b1872c26ef8d57e212df7289508b8"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a182b1872c26ef8d57e212df7289508b8">mim::plug::x86::rules::MatchFn</a> = bool (*)(const <a class="el" href="classmim_1_1Def.html">Def</a>* def, <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a> swap, const <a class="el" href="classmim_1_1Def.html">Def</a>** metas, const <a class="el" href="classmim_1_1Def.html">Def</a>** refs)</td></tr>
+<tr class="memdesc:a182b1872c26ef8d57e212df7289508b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches the root <code class="param">def</code> with the commuting nodes in <code class="param">swap</code> swapped and binds <code class="param">metas</code> and <code class="param">refs</code>.  <br /></td></tr>
+<tr class="memitem:a554821839d95411c6b14152b55f889ff" id="r_a554821839d95411c6b14152b55f889ff"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a554821839d95411c6b14152b55f889ff">mim::plug::x86::rules::BuildFn</a> = const <a class="el" href="classmim_1_1Def.html">Def</a>* (*)(<a class="el" href="classmim_1_1World.html">World</a>&amp;, const <a class="el" href="classmim_1_1Def.html">Def</a>* const* holes)</td></tr>
+<tr class="memdesc:a554821839d95411c6b14152b55f889ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the rhs from <code class="param">holes</code>, one per meta variable, already in the new world.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aad6329c29da733d5eb8268fbef0d9111" id="r_aad6329c29da733d5eb8268fbef0d9111"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">mim::plug::x86::rules::Want</a> : u8 </td></tr>
+<tr class="memdesc:aad6329c29da733d5eb8268fbef0d9111"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a rule wants of the term a meta variable matches; a Param is bound but no operand.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">More...</a><br /></td></tr>
+<tr class="memitem:a5f033672e1c35c4f8972bd0d41279a77" id="r_a5f033672e1c35c4f8972bd0d41279a77"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">mim::plug::x86::rules::Ty</a> : u8 </td></tr>
+<tr class="memdesc:a5f033672e1c35c4f8972bd0d41279a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-terminal a rule yields, by the type of its rhs: a register, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">x86.Base</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">x86.Index</a></span>, or an index with its scale <span class="tt">[I64, I2]</span>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">More...</a><br /></td></tr>
+<tr class="memitem:af576d4f234ba124f0ab5635ee128c3ae" id="r_af576d4f234ba124f0ab5635ee128c3ae"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae">mim::plug::x86::rules::Ref</a> : u8 { <br />
+&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3aea689202409e48743b914713f96d93947c">mim::plug::x86::rules::Value</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3aeadba5553473d129a7985fb532dc249ff4">mim::plug::x86::rules::Mem</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:af576d4f234ba124f0ab5635ee128c3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">How the lhs refers to one of its inner nodes.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Costs</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p>Shared by <span class="tt">x86_isel.gen</span>, which checks the rule set with them, and isel. </p>
+</td></tr>
+<tr class="memitem:a0689b092184606c790794ca2140d08e9" id="r_a0689b092184606c790794ca2140d08e9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a>(w)</td></tr>
+<tr class="memitem:a5088c9e633e9da4b5281d31f4c8eae6b" id="r_a5088c9e633e9da4b5281d31f4c8eae6b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5088c9e633e9da4b5281d31f4c8eae6b">X</a>(t)</td></tr>
+<tr class="memitem:a67d332effb1cf6157841ba1bd9b3ec05" id="r_a67d332effb1cf6157841ba1bd9b3ec05"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a67d332effb1cf6157841ba1bd9b3ec05">X</a>(_)</td></tr>
+<tr class="memitem:a75bdc98324fd7eedfe0f118295ad4e75" id="r_a75bdc98324fd7eedfe0f118295ad4e75"><td class="memItemLeft">constexpr <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a75bdc98324fd7eedfe0f118295ad4e75">mim::plug::x86::rules::Inf</a> = <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a>(-1)</td></tr>
+<tr class="memitem:aee83083be4eff5e26a3a6c6d16a82873" id="r_aee83083be4eff5e26a3a6c6d16a82873"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aee83083be4eff5e26a3a6c6d16a82873">mim::plug::x86::rules::Num_Tys</a> = 0 <a class="el" href="#a5d61afafe10eb9ee8a9122b48de676bf">MIM_X86_RULE_TYS</a>(<a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a>)</td></tr>
+<tr class="memitem:aad1dbc2c1369b274ac92fe10e3192ea1" id="r_aad1dbc2c1369b274ac92fe10e3192ea1"><td class="memItemLeft">constexpr <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad1dbc2c1369b274ac92fe10e3192ea1">mim::plug::x86::rules::add</a> (<a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a> a, <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a> b)</td></tr>
+<tr class="memitem:a01702a83cdaad1ae5c5717b173301d31" id="r_a01702a83cdaad1ae5c5717b173301d31"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a01702a83cdaad1ae5c5717b173301d31">mim::plug::x86::rules::is_param</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> w)</td></tr>
+<tr class="memdesc:a01702a83cdaad1ae5c5717b173301d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is a meta variable that <code class="param">w</code> wants bound to its rewrite rather than an operand?  <br /></td></tr>
+<tr class="memitem:aed060b8c9543b29d0ea7218da0e3b8d2" id="r_aed060b8c9543b29d0ea7218da0e3b8d2"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aed060b8c9543b29d0ea7218da0e3b8d2">mim::plug::x86::rules::is_literal</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want)</td></tr>
+<tr class="memdesc:aed060b8c9543b29d0ea7218da0e3b8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a hole of type <code class="param">want</code> take a literal rather than a replacement?  <br /></td></tr>
+<tr class="memitem:a4539557b0a7ee105232132a38d03ea61" id="r_a4539557b0a7ee105232132a38d03ea61"><td class="memItemLeft">constexpr <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a4539557b0a7ee105232132a38d03ea61">mim::plug::x86::rules::literal_of</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want)</td></tr>
+<tr class="memdesc:a4539557b0a7ee105232132a38d03ea61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The literal form of a hole of type <code class="param">want</code>, or <code class="param">want</code> itself.  <br /></td></tr>
+<tr class="memitem:ac75669fdd9523ea301a94adf9a625199" id="r_ac75669fdd9523ea301a94adf9a625199"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ac75669fdd9523ea301a94adf9a625199">mim::plug::x86::rules::fills</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a> ty, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want)</td></tr>
+<tr class="memdesc:ac75669fdd9523ea301a94adf9a625199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a value of non-terminal <code class="param">ty</code> fill a hole of type <code class="param">want</code> as it is?  <br /></td></tr>
+</table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo" id="structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo">&#9670;&#160;</a></span>mim::plug::x86::rules::RefInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::RefInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A ref of a matcher: its cover and how the lhs refers to it. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00052">52</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ae7d135c0732fe1184735a0a910519b90" name="ae7d135c0732fe1184735a0a910519b90"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+cover</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aabbd74a84b6eb6286ed738a1ecb7dfbf" name="aabbd74a84b6eb6286ed738a1ecb7dfbf"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae">Ref</a></td>
+<td class="fieldname">
+kind</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1Use" id="structmim_1_1plug_1_1x86_1_1rules_1_1Use"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1Use">&#9670;&#160;</a></span>mim::plug::x86::rules::Use</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::Use</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>An operand position of a matcher in preorder: meta variable or Value ref <code class="param">index</code> of the node <code class="param">owner</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00058">58</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="abdac89560a7a9fd649d491936dd65f17" name="abdac89560a7a9fd649d491936dd65f17"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+index</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a16f444f93788ecdcef55326dd0a23069" name="a16f444f93788ecdcef55326dd0a23069"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+owner</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a533f57f9bfd66ddb41069e725cb3b13f" name="a533f57f9bfd66ddb41069e725cb3b13f"></a>bool</td>
+<td class="fieldname">
+ref</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1Matcher" id="structmim_1_1plug_1_1x86_1_1rules_1_1Matcher"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher">&#9670;&#160;</a></span>mim::plug::x86::rules::Matcher</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::Matcher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A matcher and the shape of its lhs; a cover's operands follow it in preorder. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00065">65</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a8195403eaaba686280edbec287f6e167" name="a8195403eaaba686280edbec287f6e167"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a182b1872c26ef8d57e212df7289508b8">MatchFn</a></td>
+<td class="fieldname">
+fn</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac3da988dbd54b6c7cee57558eaceca5d" name="ac3da988dbd54b6c7cee57558eaceca5d"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+num_covers</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a1a9073fbfaddfa9627ae7eaafb729393" name="a1a9073fbfaddfa9627ae7eaafb729393"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+num_refs</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a44beda714cc056a957cb267dd964e315" name="a44beda714cc056a957cb267dd964e315"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+num_uses</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ac36fce867ba2332b6dd3dcf86f4872b2" name="ac36fce867ba2332b6dd3dcf86f4872b2"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+refs</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a48ccf7a0f4986c1872a3776a13b57b6f" name="a48ccf7a0f4986c1872a3776a13b57b6f"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+uses</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite" id="structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite">&#9670;&#160;</a></span>mim::plug::x86::rules::Rewrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::Rewrite</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A closed rule <span class="tt">lhs ↦ rhs</span>, whose metas want <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a7a751100d950449d4b0ccccdd6d96681">num_metas</a></span> consecutive entries of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f366abaccb5a5fe012f2669cb224d9">wants</a></span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00075">75</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a66ede71bb303284552440f296cf746a4" name="a66ede71bb303284552440f296cf746a4"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a554821839d95411c6b14152b55f889ff">BuildFn</a></td>
+<td class="fieldname">
+build</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="af7ec91ccebb26c978097888dd3bda9d5" name="af7ec91ccebb26c978097888dd3bda9d5"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+cost</td>
+<td class="fielddoc">
+The summed <a class="el" href="namespacemim_1_1plug_1_1x86_1_1insn.html#a39bf83034723d9ca7156ba3605cfa05b" title="The cost of the instruction app: its latency plus one, so of two equally fast covers the shorter wins...">x86::insn::cost</a> of its rhs. </td></tr>
+<tr><td class="fieldtype">
+<a id="a926c0e9b40efb941d31007bff50261e0" name="a926c0e9b40efb941d31007bff50261e0"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+imm_swaps</td>
+<td class="fielddoc">
+Those of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f161ebd98935eaf00f22678ac50bcb" title="The swaps of match that may yield another match.">swaps</a></span> that only do if a RegImm or RegSh becomes an immediate. </td></tr>
+<tr><td class="fieldtype">
+<a id="a26faf14095e8c7b4eda41d89e96e7801" name="a26faf14095e8c7b4eda41d89e96e7801"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+maps</td>
+<td class="fielddoc">
+<span class="tt">k + 1</span> if the rhs replaces cover <span class="tt">k</span> as a whole, or 0. </td></tr>
+<tr><td class="fieldtype">
+<a id="a9119d26994ea68c0589ed296c9b27f4e" name="a9119d26994ea68c0589ed296c9b27f4e"></a>const <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher">Matcher</a> *</td>
+<td class="fieldname">
+match</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a1e866e3b6676f3429d066cf26752d6eb" name="a1e866e3b6676f3429d066cf26752d6eb"></a>string_view</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a7a751100d950449d4b0ccccdd6d96681" name="a7a751100d950449d4b0ccccdd6d96681"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+num_metas</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="affe356195f308c8ef2c7dd0329735b04" name="affe356195f308c8ef2c7dd0329735b04"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+root</td>
+<td class="fielddoc">
+The axiom at the head of its lhs, or 0 for an <a class="el" href="classmim_1_1Extract.html" title="Extracts from a Sigma or Array-typed Extract::tuple the element at position Extract::index.">Extract</a>. </td></tr>
+<tr><td class="fieldtype">
+<a id="ae2f161ebd98935eaf00f22678ac50bcb" name="ae2f161ebd98935eaf00f22678ac50bcb"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+swaps</td>
+<td class="fielddoc">
+The swaps of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a9119d26994ea68c0589ed296c9b27f4e">match</a></span> that may yield another match. </td></tr>
+<tr><td class="fieldtype">
+<a id="a25c1940c9a02bf480ca079d9700534aa" name="a25c1940c9a02bf480ca079d9700534aa"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+tied</td>
+<td class="fielddoc">
+The meta variables that a two-address instruction of the rhs overwrites. </td></tr>
+<tr><td class="fieldtype">
+<a id="a7e6954c05e50e45cefc12a9732e1d839" name="a7e6954c05e50e45cefc12a9732e1d839"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a></td>
+<td class="fieldname">
+type</td>
+<td class="fielddoc">
+The non-terminal its rhs yields. </td></tr>
+<tr><td class="fieldtype">
+<a id="ae2f366abaccb5a5fe012f2669cb224d9" name="ae2f366abaccb5a5fe012f2669cb224d9"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+wants</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1Root" id="structmim_1_1plug_1_1x86_1_1rules_1_1Root"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1Root">&#9670;&#160;</a></span>mim::plug::x86::rules::Root</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::Root</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>The rewrites <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a753a0edb28f70849307b23893f32acbf">rewrites</a>[<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a>, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a> + <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a652ea545bf995013e485846decad3a56">num</a>)</span> with the root axiom <code class="param">flags</code>; <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a998895329a06e8bca6bbf3b6310e7a70">roots</a></span> is sorted by it. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00091">91</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="ada0732f7670c30e327763dd4141ae0d8" name="ada0732f7670c30e327763dd4141ae0d8"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+first</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aa631889182051a1b7322bc9771d24d96" name="aa631889182051a1b7322bc9771d24d96"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+flags</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a652ea545bf995013e485846decad3a56" name="a652ea545bf995013e485846decad3a56"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+num</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structmim_1_1plug_1_1x86_1_1rules_1_1Conversion" id="structmim_1_1plug_1_1x86_1_1rules_1_1Conversion"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion">&#9670;&#160;</a></span>mim::plug::x86::rules::Conversion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::rules::Conversion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A conversion rule <span class="tt">x ↦ rhs</span>, whose lhs is all of its meta variables: a value of non-terminal <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a8b82d904cfd7bc2f8faca859812c8882">from</a></span> as one of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a9370f0f894ceb22b46c32accd3f00941">to</a></span>. </p>
+<p>Its builder takes the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a1c127ac729d8bb382721439eb8ffc8fb">arity</a></span> projections of the value. </p>
+
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00099">99</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a1c127ac729d8bb382721439eb8ffc8fb" name="a1c127ac729d8bb382721439eb8ffc8fb"></a><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>
+<td class="fieldname">
+arity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5b4772ddc4dcdbb287d2e03624e1ea73" name="a5b4772ddc4dcdbb287d2e03624e1ea73"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a554821839d95411c6b14152b55f889ff">BuildFn</a></td>
+<td class="fieldname">
+build</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aaccd64e9c888b3d9d5ca2a8015b489a7" name="aaccd64e9c888b3d9d5ca2a8015b489a7"></a><a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a></td>
+<td class="fieldname">
+cost</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a8b82d904cfd7bc2f8faca859812c8882" name="a8b82d904cfd7bc2f8faca859812c8882"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a></td>
+<td class="fieldname">
+from</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a22b78facf2a213fb43baf475b3361bec" name="a22b78facf2a213fb43baf475b3361bec"></a>string_view</td>
+<td class="fieldname">
+name</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a9370f0f894ceb22b46c32accd3f00941" name="a9370f0f894ceb22b46c32accd3f00941"></a><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a></td>
+<td class="fieldname">
+to</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a5d61afafe10eb9ee8a9122b48de676bf" name="a5d61afafe10eb9ee8a9122b48de676bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d61afafe10eb9ee8a9122b48de676bf">&#9670;&#160;</a></span>MIM_X86_RULE_TYS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_X86_RULE_TYS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit)</div>
+<div class="ttc" id="arule__table_8h_html_a0689b092184606c790794ca2140d08e9"><div class="ttname"><a href="#a0689b092184606c790794ca2140d08e9">X</a></div><div class="ttdeci">#define X(w)</div><div class="ttdef"><b>Definition</b> <a href="rule__table_8h_source.html#l00025">rule_table.h:25</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00030">30</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+
+</div>
+</div>
+<a id="af220e1605a88dade7f799bb7af5e1e6b" name="af220e1605a88dade7f799bb7af5e1e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af220e1605a88dade7f799bb7af5e1e6b">&#9670;&#160;</a></span>MIM_X86_RULE_WANTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIM_X86_RULE_WANTS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="#a0689b092184606c790794ca2140d08e9">X</a></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Param) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Imm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Sh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegImm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegSh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Addr) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00017">17</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+
+</div>
+</div>
+<a id="a67d332effb1cf6157841ba1bd9b3ec05" name="a67d332effb1cf6157841ba1bd9b3ec05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d332effb1cf6157841ba1bd9b3ec05">&#9670;&#160;</a></span>X <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define X</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>_</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">+1</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+
+</div>
+</div>
+<a id="a5088c9e633e9da4b5281d31f4c8eae6b" name="a5088c9e633e9da4b5281d31f4c8eae6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5088c9e633e9da4b5281d31f4c8eae6b">&#9670;&#160;</a></span>X <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define X</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">t,</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+
+</div>
+</div>
+<a id="a0689b092184606c790794ca2140d08e9" name="a0689b092184606c790794ca2140d08e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0689b092184606c790794ca2140d08e9">&#9670;&#160;</a></span>X <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define X</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>w</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">w,</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="dfamin_8cpp_source.html#l00102">automaton::minimize_dfa()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_3b1e9a08cfbf85cfa8a1068ec81a2c37.html">plug</a></li><li class="navelem"><a href="dir_6d846145c23501a53ba07aa0ffec9812.html">x86</a></li><li class="navelem"><a href="rule__table_8h.html">rule_table.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 var x86_2autogen_8h =
 [
+    [ "MIM_x86_NORMALIZER_IMPL", "x86_2autogen_8h.html#a19a86b196b37696e5da02168e7dca607", null ],
     [ "mim::plug::x86::add", "namespacemim_1_1plug_1_1x86.html#a421add9c4ad31492bb1277ffc7a9f76d", null ],
     [ "mim::plug::x86::Addr", "namespacemim_1_1plug_1_1x86.html#ac3844dd04d0570654cc5c94a9e7ef45d", null ],
     [ "mim::plug::x86::addr", "namespacemim_1_1plug_1_1x86.html#a91e592b260f1dde7393267aac7d888ea", null ],
@@ -102,5 +103,12 @@ var x86_2autogen_8h =
     [ "mim::plug::x86::test", "namespacemim_1_1plug_1_1x86.html#a34cfa70c855856dc7073cdfa05eb29be", null ],
     [ "mim::plug::x86::trunc", "namespacemim_1_1plug_1_1x86.html#ace959ed8dec1302298215b75384697f3", null ],
     [ "mim::plug::x86::xor_", "namespacemim_1_1plug_1_1x86.html#a6150436ed433dd62830948f5f6de4b9e", null ],
+    [ "mim::plug::x86::normalize_addr", "namespacemim_1_1plug_1_1x86.html#a5468f926af08401438f4feb875045bbe", null ],
+    [ "mim::plug::x86::normalize_cmovcc", "namespacemim_1_1plug_1_1x86.html#a7e49de68ccfa2d3b924d41c6641f4a44", null ],
+    [ "mim::plug::x86::normalize_lea", "namespacemim_1_1plug_1_1x86.html#aa68ccc18a8601fc9ad3c142c7268ca7b", null ],
+    [ "mim::plug::x86::normalize_movsx", "namespacemim_1_1plug_1_1x86.html#afe498db561f8a72d998491f67dbc9f03", null ],
+    [ "mim::plug::x86::normalize_movzx", "namespacemim_1_1plug_1_1x86.html#aaaa722e320d06bf52cebc57523a6446b", null ],
+    [ "mim::plug::x86::normalize_trunc", "namespacemim_1_1plug_1_1x86.html#a0f111a46ea483f9b2b9cfd9654631de5", null ],
+    [ "mim::plug::x86::register_normalizers", "namespacemim_1_1plug_1_1x86.html#a7ca0cf0f8c1dee7c14b5dad61ba715dd", null ],
     [ "mim::plug::x86::Plugin_Id", "namespacemim_1_1plug_1_1x86.html#a87af2817ec10726d5f2b6f0cf917e23a", null ]
 ];
