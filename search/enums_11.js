@@ -6,7 +6,7 @@ var searchData=
   ['reassoc_3',['reassoc',['../namespacemim_1_1plug_1_1tensor.html#a0c8dd57ca5347d13154e0dc334c68c2a',1,'mim::plug::tensor']]],
   ['ref_4',['Ref',['../namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae',1,'mim::plug::x86::rules::Ref'],['../namespacemim_1_1plug_1_1x86__isel.html#af576d4f234ba124f0ab5635ee128c3ae',1,'mim::plug::x86_isel::Ref']]],
   ['reflect_5',['reflect',['../namespacemim_1_1plug_1_1refly.html#aee2261b0b7331b07efb5c1cea91421ae',1,'mim::plug::refly']]],
-  ['reg_6',['reg',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0',1,'mim::plug::x86::reg'],['../namespacemim_1_1plug_1_1x86__isel.html#a1cf5817db7d16a6fc613ae234a2b94ce',1,'mim::plug::x86_isel::reg']]],
+  ['reg_6',['reg',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0',1,'mim::plug::x86']]],
   ['reg_5fimm_7',['reg_imm',['../namespacemim_1_1plug_1_1x86__isel.html#a78dbb9a42122406458128461e6201343',1,'mim::plug::x86_isel']]],
   ['reg_5fsh_8',['reg_sh',['../namespacemim_1_1plug_1_1x86__isel.html#a6f0effef955b168c07433aff21f0fe81',1,'mim::plug::x86_isel']]],
   ['reify_9',['reify',['../namespacemim_1_1plug_1_1refly.html#a7d9a82248335e8645a9d39bb906f230b',1,'mim::plug::refly']]],
@@ -27,8 +27,9 @@ var searchData=
   ['ret_5fwrap_24',['ret_wrap',['../namespacemim_1_1plug_1_1compile.html#a97a4572e584e4a78d9a22d735535be34',1,'mim::plug::compile']]],
   ['ring_25',['Ring',['../namespacemim_1_1plug_1_1btensor.html#a2ce521bcc48d0976f41196257b82cd87',1,'mim::plug::btensor']]],
   ['rm_26',['rm',['../namespacemim_1_1plug_1_1x86.html#ac06d974ec2df013fc24ed17f41369c1d',1,'mim::plug::x86::rm'],['../namespacemim_1_1plug_1_1x86__isel.html#a0c31550eccef849cd3201e3ee87fd08b',1,'mim::plug::x86_isel::rm']]],
-  ['round_27',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
-  ['rrt_28',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
-  ['rt_29',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],
-  ['rt_30',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
+  ['rm1_27',['rm1',['../namespacemim_1_1plug_1_1x86.html#aadbfa3144bff05f59d42f6ab9e545827',1,'mim::plug::x86']]],
+  ['round_28',['round',['../namespacemim_1_1plug_1_1math.html#aaf7502aae7bb9f2d1d1a1b56cc65f87a',1,'mim::plug::math']]],
+  ['rrt_29',['rrt',['../namespacemim_1_1plug_1_1math.html#a33b0046022fadb834f2a7afd00da34a0',1,'mim::plug::math']]],
+  ['rt_30',['Rt',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab365ba41671e10ee6a0f56f59a831b64',1,'mim::plug::ll::Emitter']]],
+  ['rt_31',['rt',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598',1,'mim::plug::math']]]
 ];

@@ -63,6 +63,8 @@ var rule__table_8h =
     [ "mim::plug::x86::rules::is_literal", "namespacemim_1_1plug_1_1x86_1_1rules.html#aed060b8c9543b29d0ea7218da0e3b8d2", null ],
     [ "mim::plug::x86::rules::is_param", "namespacemim_1_1plug_1_1x86_1_1rules.html#a01702a83cdaad1ae5c5717b173301d31", null ],
     [ "mim::plug::x86::rules::literal_of", "namespacemim_1_1plug_1_1x86_1_1rules.html#a4539557b0a7ee105232132a38d03ea61", null ],
+    [ "mim::plug::x86::rules::reg_want", "namespacemim_1_1plug_1_1x86_1_1rules.html#a2b4f7fea07cf506e59894f080cdb31a3", null ],
+    [ "mim::plug::x86::rules::same_class", "namespacemim_1_1plug_1_1x86_1_1rules.html#ae90c157b5b1b664085d0a3df0d87a794", null ],
     [ "mim::plug::x86::rules::Inf", "namespacemim_1_1plug_1_1x86_1_1rules.html#a75bdc98324fd7eedfe0f118295ad4e75", null ],
     [ "mim::plug::x86::rules::Num_Tys", "namespacemim_1_1plug_1_1x86_1_1rules.html#aee83083be4eff5e26a3a6c6d16a82873", null ]
 ];

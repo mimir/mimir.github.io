@@ -14,6 +14,10 @@ var liveness_8h =
       [ "term_uses", "classmim_1_1plug_1_1x86_1_1Liveness.html#a6703f910f60a402c3228b79006f16c0f", null ],
       [ "uses", "classmim_1_1plug_1_1x86_1_1Liveness.html#af057b1e130a6e0f4a81ab29df5b56ac5", null ]
     ] ],
+    [ "mim::plug::x86::arg_reg", "namespacemim_1_1plug_1_1x86.html#a03282a75e044cb4185a89ff59b0aadae", null ],
+    [ "mim::plug::x86::caller_saved", "namespacemim_1_1plug_1_1x86.html#a88ee3f0b701564e39bb0919faf4676f6", null ],
     [ "mim::plug::x86::for_each_succ", "namespacemim_1_1plug_1_1x86.html#a4f1e026dc146cbacd7a549b438c80b56", null ],
-    [ "mim::plug::x86::is_gpr", "namespacemim_1_1plug_1_1x86.html#ac6b83bb4ed772f24e27a1ac6af92cf30", null ]
+    [ "mim::plug::x86::is_value", "namespacemim_1_1plug_1_1x86.html#ad6e56513fa9687717a78f02704ec546f", null ],
+    [ "mim::plug::x86::num_arg_regs", "namespacemim_1_1plug_1_1x86.html#ad58b20092408125914afd6f8c12bedcf", null ],
+    [ "mim::plug::x86::ret_reg", "namespacemim_1_1plug_1_1x86.html#abb48745824947bd396e75d5666a378c9", null ]
 ];

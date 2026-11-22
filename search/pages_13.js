@@ -9,7 +9,7 @@ var searchData=
   ['tensor_20plugin_6',['The tensor Plugin',['../tensor.html',1,'']]],
   ['tensor_20tensor_7',['&lt;a class=&quot;el&quot; href=&quot;tensor.html&quot; title=&quot;The tensor Plugin&quot;&gt;tensor&lt;/a&gt;',['../cli.html#xarg_tensor',1,'']]],
   ['tensor_5fcopy_8',['tensor_copy',['../tensor.html#autotoc_md587',1,'']]],
-  ['terminals_9',['Terminals',['../langref.html#autotoc_md62',1,'Lexical Terminals'],['../x86_isel.html#autotoc_md718',1,'Non-Terminals'],['../langref.html#autotoc_md59',1,'Primary Terminals'],['../langref.html#autotoc_md60',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
+  ['terminals_9',['Terminals',['../langref.html#autotoc_md62',1,'Lexical Terminals'],['../x86_isel.html#autotoc_md735',1,'Non-Terminals'],['../langref.html#autotoc_md59',1,'Primary Terminals'],['../langref.html#autotoc_md60',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
   ['testing_10',['Testing',['../coding.html#testing',1,'Testing'],['../refly.html#autotoc_md484',1,'Testing']]],
   ['tests_11',['Tests',['../coding.html#autotoc_md13',1,'lit Tests'],['../coding.html#autotoc_md14',1,'Round-Trip Tests'],['../coding.html#autotoc_md15',1,'Unit Tests']]],
   ['the_20affine_20plugin_12',['The affine Plugin',['../affine.html',1,'']]],

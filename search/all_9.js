@@ -1,14 +1,14 @@
 var searchData=
 [
   ['g_0',['G',['../classmim_1_1Def.html#afefb7dc2241a0caf582a2c4d7ed4b954adfcf28d0734569a6a693bc8194de62bf',1,'mim::Def']]],
-  ['g_1',['g',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985eab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::core::g'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3ab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::math::g'],['../namespacemim_1_1plug_1_1x86.html#ac9613fba2c0af77f75acbed918fe28fcab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::x86::g'],['../namespacemim_1_1plug_1_1x86.html#ae124c8afc30b45d2a5737b34609c9f21ab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::x86::g']]],
+  ['g_1',['g',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985eab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::core::g'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3ab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::math::g'],['../namespacemim_1_1plug_1_1x86.html#ac9613fba2c0af77f75acbed918fe28fcab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::x86::g'],['../namespacemim_1_1plug_1_1x86.html#ae124c8afc30b45d2a5737b34609c9f21ab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::x86::g'],['../namespacemim_1_1plug_1_1x86.html#a13ae014479cd8d911b3dbb830762904bab2f5ff47436671b6e533d8dc3614845d',1,'mim::plug::x86::g']]],
   ['gamma_2',['gamma',['../namespacemim_1_1plug_1_1math.html#aaedd7f208831b780a654632583eed6a0',1,'mim::plug::math::gamma'],['../math.html#autotoc_md408',1,'gamma']]],
   ['gather_3',['gather',['../classmim_1_1Sieve.html#a416e8b9f24579f6b02b4e2be766cdbcb',1,'mim::Sieve::gather()'],['../namespacemim_1_1plug_1_1btensor.html#a52e55fb0c4b38eed71595a010c06dadd',1,'mim::plug::btensor::gather'],['../namespacemim_1_1plug_1_1tensor.html#ae9248526cc023517c4cd46f3df61cf59',1,'mim::plug::tensor::gather'],['../btensor.html#autotoc_md245',1,'gather'],['../tensor.html#autotoc_md555',1,'gather']]],
   ['gather_5fpointwise_5felem_5fimpl_4',['gather_pointwise_elem_impl',['../namespacemim_1_1plug_1_1tensor.html#a6a7a2d3951d8c63bb4a735edd4a5c143',1,'mim::plug::tensor::gather_pointwise_elem_impl'],['../tensor.html#autotoc_md592',1,'gather_pointwise_elem_impl']]],
   ['gdb_5',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md29',1,'']]],
-  ['ge_6',['ge',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::core::ge'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::math::ge'],['../namespacemim_1_1plug_1_1x86.html#ac9613fba2c0af77f75acbed918fe28fca0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::x86::ge'],['../namespacemim_1_1plug_1_1x86.html#ae124c8afc30b45d2a5737b34609c9f21a0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::x86::ge']]],
+  ['ge_6',['ge',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985ea0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::core::ge'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::math::ge'],['../namespacemim_1_1plug_1_1x86.html#ac9613fba2c0af77f75acbed918fe28fca0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::x86::ge'],['../namespacemim_1_1plug_1_1x86.html#ae124c8afc30b45d2a5737b34609c9f21a0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::x86::ge'],['../namespacemim_1_1plug_1_1x86.html#a13ae014479cd8d911b3dbb830762904ba0ba64a0dea00947916dfb6a66866e1ca',1,'mim::plug::x86::ge']]],
   ['gen_7',['Gen',['../classmim_1_1plug_1_1x86__isel_1_1Gen.html',1,'mim::plug::x86_isel::Gen'],['../classmim_1_1plug_1_1x86__isel_1_1Gen.html#a2ad68b159f572196552c0c6946ce9928',1,'mim::plug::x86_isel::Gen::Gen()']]],
-  ['gen_8',['gen',['../namespacemim_1_1plug_1_1x86__isel.html#a07c6c0090011424f5d71188b06b0df81',1,'mim::plug::x86_isel::gen'],['../x86_isel.html#autotoc_md721',1,'gen']]],
+  ['gen_8',['gen',['../namespacemim_1_1plug_1_1x86__isel.html#a07c6c0090011424f5d71188b06b0df81',1,'mim::plug::x86_isel::gen'],['../x86_isel.html#autotoc_md738',1,'gen']]],
   ['gen_2ecpp_9',['gen.cpp',['../gen_8cpp.html',1,'']]],
   ['gen_2eh_10',['gen.h',['../gen_8h.html',1,'']]],
   ['general_20downcast_11',['General Downcast',['../dev.html#autotoc_md43',1,'']]],
@@ -52,8 +52,8 @@ var searchData=
   ['globalptr_49',['GlobalPtr',['../namespacemim_1_1plug_1_1gpu.html#af2f304807510972217a7fbe145f2dfe0',1,'mim::plug::gpu']]],
   ['gone_50',['Gone',['../classmim_1_1Sieve.html#aa7aa4c594865cac1864c249963570aeb',1,'mim::Sieve']]],
   ['gpr_51',['Gpr',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacaca9cfbb1031f99c38ca5d4137ad496aeec',1,'mim::plug::x86::Liveness']]],
-  ['gpr_52',['gpr',['../namespacemim_1_1plug_1_1x86.html#a31f42838c138fec36159d1706a848c5d',1,'mim::plug::x86::gpr'],['../x86.html#autotoc_md660',1,'gpr']]],
-  ['gpr16_53',['gpr16',['../namespacemim_1_1plug_1_1x86.html#ace687b37cdc4918348e24810867588d1',1,'mim::plug::x86::gpr16'],['../x86.html#autotoc_md661',1,'gpr16']]],
+  ['gpr_52',['gpr',['../namespacemim_1_1plug_1_1x86.html#a31f42838c138fec36159d1706a848c5d',1,'mim::plug::x86::gpr'],['../x86.html#autotoc_md661',1,'gpr']]],
+  ['gpr16_53',['gpr16',['../namespacemim_1_1plug_1_1x86.html#ace687b37cdc4918348e24810867588d1',1,'mim::plug::x86::gpr16'],['../x86.html#autotoc_md662',1,'gpr16']]],
   ['gpu_20plugin_54',['The gpu Plugin',['../gpu.html',1,'']]],
   ['gpu_2ecpp_55',['gpu.cpp',['../gpu_8cpp.html',1,'']]],
   ['gpu_2eh_56',['gpu.h',['../gpu_8h.html',1,'']]],
@@ -68,6 +68,6 @@ var searchData=
   ['grpptrn_65',['GrpPtrn',['../classmim_1_1ast_1_1GrpPtrn.html',1,'mim::ast::GrpPtrn'],['../classmim_1_1ast_1_1IdPtrn.html#a292b89345b1a3afca333046f148e10ca',1,'mim::ast::IdPtrn::GrpPtrn()'],['../classmim_1_1ast_1_1GrpPtrn.html#a0890118244cf9fb95d69800c82766ec6',1,'mim::ast::GrpPtrn::GrpPtrn()']]],
   ['guard_66',['guard',['../classmim_1_1ast_1_1RuleExpr.html#ade29848561be33952742abd672616b51',1,'mim::ast::RuleExpr::guard()'],['../classmim_1_1Rule.html#a68e3db5ab019de8b1cd4c32a6178eed9',1,'mim::Rule::guard()']]],
   ['guard_20exists_20at_20all_67',['Why the guard exists at all',['../phases.html#autotoc_md109',1,'']]],
-  ['guards_68',['Guards',['../x86_isel.html#autotoc_md695',1,'']]],
+  ['guards_68',['Guards',['../x86_isel.html#autotoc_md712',1,'']]],
   ['guide_69',['Developer Guide',['../dev.html',1,'']]]
 ];

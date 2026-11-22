@@ -20,8 +20,9 @@ var searchData=
   ['rem_17',['rem',['../namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea5cadb523cb6909f92350f70f124adfb8',1,'mim::plug::affine::rem'],['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566a5cadb523cb6909f92350f70f124adfb8',1,'mim::plug::core::rem'],['../namespacemim_1_1plug_1_1math.html#a5bde3d09d340051c478b4566bca0f686a5cadb523cb6909f92350f70f124adfb8',1,'mim::plug::math::rem']]],
   ['returning_18',['returning',['../namespacemim_1_1plug_1_1clos.html#a590b38b22c7072eb2d10b81f7cdda8baa167a77939d6d79814e846ff5885b63b9',1,'mim::plug::clos']]],
   ['rho_19',['Rho',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da7216bcf464203aec4864fbeea158a0db',1,'mim::Rho'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a7216bcf464203aec4864fbeea158a0db',1,'mim::Rho']]],
-  ['rsi_20',['rsi',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0aa893136449f724af7726ba78208a1c86',1,'mim::plug::x86']]],
-  ['rsp_21',['rsp',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0a451e86cb8c690e064ceb3078192d8615',1,'mim::plug::x86']]],
-  ['rule_22',['Rule',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daab7a485ebe75b6dd7243ad719f23c7de',1,'mim::Rule'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341aab7a485ebe75b6dd7243ad719f23c7de',1,'mim::Rule']]],
-  ['run_23',['run',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977aa53108f7543b75adbb34afc035d4cdf6',1,'mim::plug::core']]]
+  ['rm_20',['rm',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bdad67f249b90615ca158b1258712c3a9fc',1,'mim::plug::x86_isel']]],
+  ['rsi_21',['rsi',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0aa893136449f724af7726ba78208a1c86',1,'mim::plug::x86']]],
+  ['rsp_22',['rsp',['../namespacemim_1_1plug_1_1x86.html#a9050ef3684a38f00877f879d2f2588c0a451e86cb8c690e064ceb3078192d8615',1,'mim::plug::x86']]],
+  ['rule_23',['Rule',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256daab7a485ebe75b6dd7243ad719f23c7de',1,'mim::Rule'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341aab7a485ebe75b6dd7243ad719f23c7de',1,'mim::Rule']]],
+  ['run_24',['run',['../namespacemim_1_1plug_1_1core.html#a9b11d4401cc2514de71bd80baa644977aa53108f7543b75adbb34afc035d4cdf6',1,'mim::plug::core']]]
 ];

@@ -17,7 +17,7 @@ var searchData=
   ['tensor_5fkey_14',['tensor_key',['../namespacemim_1_1plug_1_1tensor.html#aa616ba31e63be9862b37ba1085b9badb',1,'mim::plug::tensor']]],
   ['term_5fuses_15',['term_uses',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a8a10e03ac6811f3fda89d62ff27f94ab',1,'mim::plug::x86::Liveness']]],
   ['test_5falpha_16',['test_alpha',['../classmim_1_1Check.html#ac0c3fab61c712e3291435eae76310682',1,'mim::Check']]],
-  ['tied_17',['tied',['../namespacemim_1_1plug_1_1x86_1_1insn.html#a2bc1fee1c7b72fcd31f2648c8c3e00f6',1,'mim::plug::x86::insn']]],
+  ['tied_17',['tied',['../namespacemim_1_1plug_1_1x86_1_1insn.html#a2bc1fee1c7b72fcd31f2648c8c3e00f6',1,'mim::plug::x86::insn::tied(flags_t base)'],['../namespacemim_1_1plug_1_1x86_1_1insn.html#a4e5c6d35938d7174fca6090cc961339e',1,'mim::plug::x86::insn::tied(const App *app)']]],
   ['tmeta_18',['tmeta',['../classmim_1_1Rule.html#aedff600a331008674ee0fd21516d0cea',1,'mim::Rule']]],
   ['tmetas_19',['tmetas',['../classmim_1_1Rule.html#a1d36d81ed50c45b1b52b51cabad0e580',1,'mim::Rule::tmetas(Projector auto f) const noexcept'],['../classmim_1_1Rule.html#a61cc6a3516b2c21ac946a423966a80ad',1,'mim::Rule::tmetas() const noexcept']]],
   ['to_5fexpr_20',['to_expr',['../classmim_1_1ast_1_1Ptrn.html#a3a8334677088c927f8c8844e00732e2f',1,'mim::ast::Ptrn']]],

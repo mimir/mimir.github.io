@@ -16,6 +16,7 @@ var classmim_1_1plug_1_1x86_1_1Liveness =
     [ "Pressure", "classmim_1_1plug_1_1x86_1_1Liveness.html#ac162622e23f828c83cdd603d1783f60a", null ],
     [ "Class", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacac", [
       [ "Gpr", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacaca9cfbb1031f99c38ca5d4137ad496aeec", null ],
+      [ "Fpr", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacacac89600a101950bd316a7f4660a4badd8", null ],
       [ "Flags", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacaca76fb050e0ee924ac1e8164d5047ab4f8", null ],
       [ "Stack", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacacabe7f06521ed29eda69586b6e02d2e469", null ],
       [ "Num_Classes", "classmim_1_1plug_1_1x86_1_1Liveness.html#a11f707e50024137dd89be279bfbcacacad6a1923afa365d91527ee28c4035fe84", null ]

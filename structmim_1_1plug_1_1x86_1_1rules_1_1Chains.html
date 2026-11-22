@@ -187,9 +187,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a354a699f2cd00cfd2b4dad6000dc1d2b" id="r_a354a699f2cd00cfd2b4dad6000dc1d2b"><td class="memItemLeft">constexpr <a class="el" href="namespacemim.html#ac95ee7c4fe2ecc8c69781e8fb2397ec0">u32</a>&#160;</td><td class="memItemRight"><a class="el" href="#a354a699f2cd00cfd2b4dad6000dc1d2b">conv</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a> from, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want) const</td></tr>
 <tr class="memdesc:a354a699f2cd00cfd2b4dad6000dc1d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cost of converting a replacement or operand of non-terminal <code class="param">from</code> into a hole of type <code class="param">want</code>.  <br /></td></tr>
 <tr class="memitem:a57323a6bae8811ba559ae5ecb56c26f8" id="r_a57323a6bae8811ba559ae5ecb56c26f8"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a57323a6bae8811ba559ae5ecb56c26f8">total</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> w) const</td></tr>
-<tr class="memdesc:a57323a6bae8811ba559ae5ecb56c26f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does every non-terminal convert into a hole of type <code class="param">w</code>, as an atomic rule's holes must?  <br /></td></tr>
+<tr class="memdesc:a57323a6bae8811ba559ae5ecb56c26f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does every non-terminal of <code class="param">w's</code> register class convert into a hole of type <code class="param">w</code>, as an atomic rule's holes must?  <br /></td></tr>
 <tr class="memitem:af7603748bda3c817e856c93e1f52757f" id="r_af7603748bda3c817e856c93e1f52757f"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#af7603748bda3c817e856c93e1f52757f">reachable</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> w) const</td></tr>
-<tr class="memdesc:af7603748bda3c817e856c93e1f52757f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does some non-terminal of a rule convert into a hole of type <code class="param">w</code>?  <br /></td></tr>
+<tr class="memdesc:af7603748bda3c817e856c93e1f52757f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does some non-terminal of the register class of a rule convert into a hole of type <code class="param">w</code>?  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -199,7 +199,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The cheapest chains of conversions between two non-terminals: their costs and each one's first conversion. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00144">144</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00157">157</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a615286ef40c034fc4036a1f2f7bb50cf" name="a615286ef40c034fc4036a1f2f7bb50cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a615286ef40c034fc4036a1f2f7bb50cf">&#9670;&#160;</a></span>Chains()</h2>
@@ -226,9 +226,9 @@ Public Attributes</h2></td></tr>
 
 <p>The closure of <code class="param">conversions</code>, a range of Conversion-like rules with <span class="tt">from</span>, <span class="tt">to</span>, and <span class="tt"><a class="el" href="#afae2c8377b4322cbde4a8476ed6816d2">cost</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00149">149</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00162">162</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00116">mim::plug::x86::rules::add()</a>, <a class="el" href="isel__rules_8h_source.html#l13374">mim::plug::x86::rules::conversions</a>, <a class="el" href="rule__table_8h_source.html#l00145">cost</a>, <a class="el" href="rule__table_8h_source.html#l00146">first</a>, <a class="el" href="rule__table_8h_source.html#l00110">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00113">mim::plug::x86::rules::Num_Tys</a>.</p>
+<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00118">mim::plug::x86::rules::add()</a>, <a class="el" href="isel__rules_8h_source.html#l22687">mim::plug::x86::rules::conversions</a>, <a class="el" href="rule__table_8h_source.html#l00158">cost</a>, <a class="el" href="rule__table_8h_source.html#l00159">first</a>, <a class="el" href="rule__table_8h_source.html#l00112">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00115">mim::plug::x86::rules::Num_Tys</a>.</p>
 
 </div>
 </div>
@@ -262,11 +262,11 @@ Public Attributes</h2></td></tr>
 
 <p>Cost of converting a replacement or operand of non-terminal <code class="param">from</code> into a hole of type <code class="param">want</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00174">174</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00187">187</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00110">mim::plug::x86::rules::Inf</a>, <a class="el" href="rule__table_8h_source.html#l00122">mim::plug::x86::rules::is_literal()</a>, and <a class="el" href="rule__table_8h_source.html#l00166">target()</a>.</p>
+<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00112">mim::plug::x86::rules::Inf</a>, <a class="el" href="rule__table_8h_source.html#l00124">mim::plug::x86::rules::is_literal()</a>, and <a class="el" href="rule__table_8h_source.html#l00179">target()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00187">reachable()</a>, and <a class="el" href="rule__table_8h_source.html#l00180">total()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00201">reachable()</a>, and <a class="el" href="rule__table_8h_source.html#l00194">total()</a>.</p>
 
 </div>
 </div>
@@ -293,11 +293,11 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Does some non-terminal of a rule convert into a hole of type <code class="param">w</code>? </p>
+<p>Does some non-terminal of the register class of a rule convert into a hole of type <code class="param">w</code>? </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00187">187</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00201">201</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00174">conv()</a>, <a class="el" href="rule__table_8h_source.html#l00110">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00113">mim::plug::x86::rules::Num_Tys</a>.</p>
+<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00187">conv()</a>, <a class="el" href="rule__table_8h_source.html#l00112">mim::plug::x86::rules::Inf</a>, <a class="el" href="rule__table_8h_source.html#l00115">mim::plug::x86::rules::Num_Tys</a>, and <a class="el" href="rule__table_8h_source.html#l00151">mim::plug::x86::rules::same_class()</a>.</p>
 
 </div>
 </div>
@@ -330,11 +330,11 @@ Public Attributes</h2></td></tr>
 
 <p>The non-terminal that <code class="param">from</code> converts to most cheaply for a hole of type <code class="param">want</code>, and the cost. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00166">166</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00179">179</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00145">cost</a>, <a class="el" href="rule__table_8h_source.html#l00130">mim::plug::x86::rules::fills()</a>, <a class="el" href="rule__table_8h_source.html#l00110">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00113">mim::plug::x86::rules::Num_Tys</a>.</p>
+<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00158">cost</a>, <a class="el" href="rule__table_8h_source.html#l00132">mim::plug::x86::rules::fills()</a>, <a class="el" href="rule__table_8h_source.html#l00112">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00115">mim::plug::x86::rules::Num_Tys</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00174">conv()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00187">conv()</a>.</p>
 
 </div>
 </div>
@@ -361,11 +361,11 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Does every non-terminal convert into a hole of type <code class="param">w</code>, as an atomic rule's holes must? </p>
+<p>Does every non-terminal of <code class="param">w's</code> register class convert into a hole of type <code class="param">w</code>, as an atomic rule's holes must? </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00180">180</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00194">194</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00174">conv()</a>, <a class="el" href="rule__table_8h_source.html#l00110">mim::plug::x86::rules::Inf</a>, and <a class="el" href="rule__table_8h_source.html#l00113">mim::plug::x86::rules::Num_Tys</a>.</p>
+<p class="reference">References <a class="el" href="rule__table_8h_source.html#l00187">conv()</a>, <a class="el" href="rule__table_8h_source.html#l00112">mim::plug::x86::rules::Inf</a>, <a class="el" href="rule__table_8h_source.html#l00115">mim::plug::x86::rules::Num_Tys</a>, and <a class="el" href="rule__table_8h_source.html#l00151">mim::plug::x86::rules::same_class()</a>.</p>
 
 </div>
 </div>
@@ -382,9 +382,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00145">145</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00158">158</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00149">Chains()</a>, and <a class="el" href="rule__table_8h_source.html#l00166">target()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00162">Chains()</a>, and <a class="el" href="rule__table_8h_source.html#l00179">target()</a>.</p>
 
 </div>
 </div>
@@ -400,9 +400,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00146">146</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00159">159</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00149">Chains()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rule__table_8h_source.html#l00162">Chains()</a>.</p>
 
 </div>
 </div>

@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['icmp_0',['icmp',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673',1,'mim::plug::core::icmp'],['../namespacemim_1_1plug_1_1x86__isel.html#a42783b61d9828382d19a73440249675d',1,'mim::plug::x86_isel::icmp']]],
-  ['id_1',['id',['../namespacemim_1_1plug_1_1affine.html#a4f69da5b055e491948c3adc97f1e0386',1,'mim::plug::affine::id'],['../namespacemim_1_1plug_1_1btensor.html#a178c1d5c474562b4f36e73abb0f7ebb3',1,'mim::plug::btensor::id'],['../namespacemim_1_1plug_1_1tensor.html#a8edcd430d409375d96f02982da7ddd7e',1,'mim::plug::tensor::id']]],
-  ['idiv_2',['idiv',['../namespacemim_1_1plug_1_1x86.html#abe615c8dcdc1c83ea3ed384902923063',1,'mim::plug::x86']]],
-  ['idx_3',['idx',['../namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a',1,'mim::plug::core::idx'],['../namespacemim_1_1plug_1_1x86__isel.html#a17a98cd49042fe45e0d295933070e30e',1,'mim::plug::x86_isel::idx']]],
-  ['idx2nat_4',['idx2nat',['../namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2',1,'mim::plug::core::idx2nat'],['../namespacemim_1_1plug_1_1x86__isel.html#acf3b92785a06af89fda253c65e333ce8',1,'mim::plug::x86_isel::idx2nat']]],
-  ['idx2nat64_5',['idx2nat64',['../namespacemim_1_1plug_1_1x86__isel.html#aea984416e74a4b5e8b1c54a2c86e5c1c',1,'mim::plug::x86_isel']]],
+  ['i2f_0',['i2f',['../namespacemim_1_1plug_1_1x86.html#a5ac8c34568fb1c53fcb2c76b95ce1540',1,'mim::plug::x86']]],
+  ['icmp_1',['icmp',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673',1,'mim::plug::core::icmp'],['../namespacemim_1_1plug_1_1x86__isel.html#a42783b61d9828382d19a73440249675d',1,'mim::plug::x86_isel::icmp']]],
+  ['id_2',['id',['../namespacemim_1_1plug_1_1affine.html#a4f69da5b055e491948c3adc97f1e0386',1,'mim::plug::affine::id'],['../namespacemim_1_1plug_1_1btensor.html#a178c1d5c474562b4f36e73abb0f7ebb3',1,'mim::plug::btensor::id'],['../namespacemim_1_1plug_1_1tensor.html#a8edcd430d409375d96f02982da7ddd7e',1,'mim::plug::tensor::id']]],
+  ['idiv_3',['idiv',['../namespacemim_1_1plug_1_1x86.html#abe615c8dcdc1c83ea3ed384902923063',1,'mim::plug::x86']]],
+  ['idx_4',['idx',['../namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a',1,'mim::plug::core']]],
+  ['idx2nat_5',['idx2nat',['../namespacemim_1_1plug_1_1core.html#ab4d80cf41fcd0a1bdb9e06d24b4196b2',1,'mim::plug::core']]],
   ['if_5fstatic_6',['if_static',['../namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5',1,'mim::plug::tensor']]],
   ['imm_7',['imm',['../namespacemim_1_1plug_1_1x86__isel.html#a43e1b73bf6550333d8c925d5405c1aa3',1,'mim::plug::x86_isel']]],
   ['imul_8',['imul',['../namespacemim_1_1plug_1_1x86.html#acf21e10bf96d7e7364098f485e5c06ae',1,'mim::plug::x86']]],

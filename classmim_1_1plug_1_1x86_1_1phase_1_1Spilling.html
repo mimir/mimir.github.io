@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1pl
 </div><!--header-->
 <div class="contents">
 
-<p>Spills and reloads until at most <span class="tt">k</span> general-purpose values are live at every point of a scheduled function.  
+<p>Spills and reloads until at most <span class="tt">k</span> values of each register class are live at every point of a scheduled function.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spilling_8h_source.html">mim/plug/x86/phase/spilling.h</a>&gt;</code></p>
@@ -240,10 +240,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a0c13c41b1a3d729d9319fd38507be012 pro_attribs_classmim_1_1Phase" id="r_a0c13c41b1a3d729d9319fd38507be012"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Phase.html#a0c13c41b1a3d729d9319fd38507be012">name_</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Spills and reloads until at most <span class="tt">k</span> general-purpose values are live at every point of a scheduled function. </p>
-<p>This is Belady's MIN per block with global next-use distances (Braun &amp; Hack, CC 2009). A value is spilled right after its definition, and only if it is reloaded somewhere or flows into a memory φ. A parameter that is not in a register at the entry of its block becomes a memory φ of type <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a2249c0f497993d845190cf0fdba292f3">x86.Spill</a> s</span>. Reloads give a value several definitions; new block parameters repair SSA form (Braun et al., CC 2013). Critical edges are split first, so coupling code goes to the end of the predecessor. </p>
+<div class="textblock"><p>Spills and reloads until at most <span class="tt">k</span> values of each register class are live at every point of a scheduled function. </p>
+<p>This is Belady's MIN per block with global next-use distances (Braun &amp; Hack, CC 2009). A value is spilled right after its definition, and only if it is reloaded somewhere or flows into a memory φ. A parameter that is not in a register at the entry of its block becomes a memory φ of type <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#a2249c0f497993d845190cf0fdba292f3">x86.Spill</a> s</span>/<span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aee2f119fcdb8cad0960c232889440a27">x86.FSpill</a>
+pe</span>. Reloads give a value several definitions; new block parameters repair SSA form (Braun et al., CC 2013). Critical edges are split first, so coupling code goes to the end of the predecessor. Every XMM register is caller-saved, so a floating-point value never stays in one across a call. </p>
 
-<p class="definition">Definition at line <a class="el" href="spilling_8h_source.html#l00013">13</a> of file <a class="el" href="spilling_8h_source.html">spilling.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spilling_8h_source.html#l00014">14</a> of file <a class="el" href="spilling_8h_source.html">spilling.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4be7ba91e11f7e84966c10037b15fb75" name="a4be7ba91e11f7e84966c10037b15fb75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4be7ba91e11f7e84966c10037b15fb75">&#9670;&#160;</a></span>Spilling()</h2>
@@ -264,9 +265,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="spilling_8cpp_source.html#l00674">674</a> of file <a class="el" href="spilling_8cpp_source.html">spilling.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spilling_8cpp_source.html#l00698">698</a> of file <a class="el" href="spilling_8cpp_source.html">spilling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="phase_8h_source.html#l00063">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00532">mim::ClosedMutPhase&lt; Lam &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::driver()</a>, <a class="el" href="phase_8h_source.html#l00061">mim::Phase::log()</a>, <a class="el" href="x86_8h_source.html#l00032">mim::plug::x86::Num_Allocatable</a>, and <a class="el" href="phase_8h_source.html#l00059">mim::Phase::world()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00063">mim::Phase::annex()</a>, <a class="el" href="phase_8h_source.html#l00532">mim::ClosedMutPhase&lt; Lam &gt;::ClosedMutPhase()</a>, <a class="el" href="phase_8h_source.html#l00060">mim::Phase::driver()</a>, <a class="el" href="phase_8h_source.html#l00061">mim::Phase::log()</a>, and <a class="el" href="phase_8h_source.html#l00059">mim::Phase::world()</a>.</p>
 
 </div>
 </div>
@@ -296,9 +297,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmim_1_1ClosedMutPhase.html#ad472ea7c10d353cbd478faa84708322e">mim::ClosedMutPhase&lt; Lam &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="spilling_8cpp_source.html#l00683">683</a> of file <a class="el" href="spilling_8cpp_source.html">spilling.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="spilling_8cpp_source.html#l00707">707</a> of file <a class="el" href="spilling_8cpp_source.html">spilling.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="lam_8h_source.html#l00129">mim::Lam::isa_mut_returning()</a>.</p>
+<p class="reference">References <a class="el" href="liveness_8h_source.html#l00031">mim::plug::x86::Liveness::Fpr</a>, <a class="el" href="liveness_8h_source.html#l00031">mim::plug::x86::Liveness::Gpr</a>, <a class="el" href="lam_8h_source.html#l00129">mim::Lam::isa_mut_returning()</a>, <a class="el" href="x86_8h_source.html#l00033">mim::plug::x86::Num_Allocatable</a>, and <a class="el" href="x86_8h_source.html#l00021">mim::plug::x86::Num_Fpr</a>.</p>
 
 </div>
 </div>

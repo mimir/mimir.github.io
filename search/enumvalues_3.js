@@ -5,10 +5,14 @@ var searchData=
   ['cb_2',['cb',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598ad0d7fdb6977b26929fb68c6083c0b439',1,'mim::plug::math']]],
   ['ceildiv_3',['ceildiv',['../namespacemim_1_1plug_1_1affine.html#a61bb163c6f9b003c2d98f389c698f70ea6ebca5886947a1e1b1bab29fe3db1ca4',1,'mim::plug::affine']]],
   ['ciff_4',['ciff',['../namespacemim_1_1plug_1_1core.html#a637697cbaa1afab7b361dfebb191d205a870ac2c5fac99933ec00d76e9c6ab759',1,'mim::plug::core']]],
-  ['contract_5',['contract',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract']]],
-  ['core_5ficmp_5fxygle_6',['core_icmp_xYgLE',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a3e1c7c0cb0758565df59b2b4acf8d6ff',1,'mim::plug::autodiff']]],
-  ['core_5fwrap_5fadd_7',['core_wrap_add',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a48f6bbd0b74b75043761bdd3c24bce20',1,'mim::plug::autodiff']]],
-  ['core_5fwrap_5fmul_8',['core_wrap_mul',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2abd92a780b9468178527f7bc8c1260c99',1,'mim::plug::autodiff']]],
-  ['cos_9',['cos',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a4d00d79b6733c9cc066584a02ed03410',1,'mim::plug::math']]],
-  ['cosh_10',['cosh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a1a9b5ee12f27e6f4bd9371ec529aa76f',1,'mim::plug::math']]]
+  ['cmp_5',['cmp',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda31b4e550aa5fd883246f9b9ceae82483',1,'mim::plug::x86_isel']]],
+  ['cmp_5frm_6',['cmp_rm',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda6b9fdc382f1e30fe1e2fcdd96df6dd9c',1,'mim::plug::x86_isel']]],
+  ['comparisons_7',['comparisons',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bdae1dcab7e579aa227becca4cad76d6c11',1,'mim::plug::x86_isel']]],
+  ['contract_8',['contract',['../namespacemim_1_1plug_1_1math.html#a7d11839c924639829f2a269bc0b7db91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract'],['../namespacemim_1_1plug_1_1math.html#ab50c749358526335fc1075e8a756de91a800c327aefb3f9241513cbf551abbfda',1,'mim::plug::math::contract']]],
+  ['conversions_9',['conversions',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda2cf788b632004c0776c820c40534398d',1,'mim::plug::x86_isel']]],
+  ['core_5ficmp_5fxygle_10',['core_icmp_xYgLE',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a3e1c7c0cb0758565df59b2b4acf8d6ff',1,'mim::plug::autodiff']]],
+  ['core_5fwrap_5fadd_11',['core_wrap_add',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2a48f6bbd0b74b75043761bdd3c24bce20',1,'mim::plug::autodiff']]],
+  ['core_5fwrap_5fmul_12',['core_wrap_mul',['../namespacemim_1_1plug_1_1autodiff.html#acbdc601297627cd58309f61d811c76b2abd92a780b9468178527f7bc8c1260c99',1,'mim::plug::autodiff']]],
+  ['cos_13',['cos',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a4d00d79b6733c9cc066584a02ed03410',1,'mim::plug::math']]],
+  ['cosh_14',['cosh',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72a1a9b5ee12f27e6f4bd9371ec529aa76f',1,'mim::plug::math']]]
 ];

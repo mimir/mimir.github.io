@@ -232,7 +232,7 @@ Enumerations</h2></td></tr>
 <tr class="memitem:aad6329c29da733d5eb8268fbef0d9111" id="r_aad6329c29da733d5eb8268fbef0d9111"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">mim::plug::x86::rules::Want</a> : u8 </td></tr>
 <tr class="memdesc:aad6329c29da733d5eb8268fbef0d9111"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a rule wants of the term a meta variable matches; a Param is bound but no operand.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">More...</a><br /></td></tr>
 <tr class="memitem:a5f033672e1c35c4f8972bd0d41279a77" id="r_a5f033672e1c35c4f8972bd0d41279a77"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">mim::plug::x86::rules::Ty</a> : u8 </td></tr>
-<tr class="memdesc:a5f033672e1c35c4f8972bd0d41279a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-terminal a rule yields, by the type of its rhs: a register, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">x86.Base</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">x86.Index</a></span>, or an index with its scale <span class="tt">[I64, I2]</span>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">More...</a><br /></td></tr>
+<tr class="memdesc:a5f033672e1c35c4f8972bd0d41279a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-terminal a rule yields by the type of its rhs: a register of either class, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#aefa3a97424aa92bfb2b9b7e23f9c9e72">x86.Base</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b">x86.Index</a></span>, or <span class="tt">[I64, I2]</span>.  <a href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">More...</a><br /></td></tr>
 <tr class="memitem:af576d4f234ba124f0ab5635ee128c3ae" id="r_af576d4f234ba124f0ab5635ee128c3ae"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae">mim::plug::x86::rules::Ref</a> : u8 { <br />
 &#160;&#160;<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3aea689202409e48743b914713f96d93947c">mim::plug::x86::rules::Value</a>
 , <br />
@@ -259,6 +259,10 @@ Costs</h2></td></tr>
 <tr class="memdesc:a4539557b0a7ee105232132a38d03ea61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The literal form of a hole of type <code class="param">want</code>, or <code class="param">want</code> itself.  <br /></td></tr>
 <tr class="memitem:ac75669fdd9523ea301a94adf9a625199" id="r_ac75669fdd9523ea301a94adf9a625199"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ac75669fdd9523ea301a94adf9a625199">mim::plug::x86::rules::fills</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a> ty, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want)</td></tr>
 <tr class="memdesc:ac75669fdd9523ea301a94adf9a625199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a value of non-terminal <code class="param">ty</code> fill a hole of type <code class="param">want</code> as it is?  <br /></td></tr>
+<tr class="memitem:a2b4f7fea07cf506e59894f080cdb31a3" id="r_a2b4f7fea07cf506e59894f080cdb31a3"><td class="memItemLeft">constexpr <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a2b4f7fea07cf506e59894f080cdb31a3">mim::plug::x86::rules::reg_want</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a> ty)</td></tr>
+<tr class="memdesc:a2b4f7fea07cf506e59894f080cdb31a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The register hole that a value of non-terminal <code class="param">ty</code> fills.  <br /></td></tr>
+<tr class="memitem:ae90c157b5b1b664085d0a3df0d87a794" id="r_ae90c157b5b1b664085d0a3df0d87a794"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ae90c157b5b1b664085d0a3df0d87a794">mim::plug::x86::rules::same_class</a> (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77">Ty</a> ty, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111">Want</a> want)</td></tr>
+<tr class="memdesc:ae90c157b5b1b664085d0a3df0d87a794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is a value of non-terminal <code class="param">ty</code> in the same register class as a hole of type <code class="param">want</code>?  <br /></td></tr>
 </table>
 <hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
 <a name="structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo" id="structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo"></a>
@@ -274,7 +278,7 @@ Costs</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>A ref of a matcher: its cover and how the lhs refers to it. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00052">52</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00054">54</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -306,7 +310,7 @@ kind</td>
 </div><div class="memdoc">
 <div class="textblock"><p>An operand position of a matcher in preorder: meta variable or Value ref <code class="param">index</code> of the node <code class="param">owner</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00058">58</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00060">60</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -344,7 +348,7 @@ ref</td>
 </div><div class="memdoc">
 <div class="textblock"><p>A matcher and the shape of its lhs; a cover's operands follow it in preorder. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00065">65</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00067">67</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -400,7 +404,7 @@ uses</td>
 </div><div class="memdoc">
 <div class="textblock"><p>A closed rule <span class="tt">lhs ↦ rhs</span>, whose metas want <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a7a751100d950449d4b0ccccdd6d96681">num_metas</a></span> consecutive entries of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f366abaccb5a5fe012f2669cb224d9">wants</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00075">75</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00077">77</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -492,7 +496,7 @@ wants</td>
 </div><div class="memdoc">
 <div class="textblock"><p>The rewrites <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a753a0edb28f70849307b23893f32acbf">rewrites</a>[<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a>, <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8">first</a> + <a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a652ea545bf995013e485846decad3a56">num</a>)</span> with the root axiom <code class="param">flags</code>; <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a998895329a06e8bca6bbf3b6310e7a70">roots</a></span> is sorted by it. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00091">91</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00093">93</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -531,7 +535,7 @@ num</td>
 <div class="textblock"><p>A conversion rule <span class="tt">x ↦ rhs</span>, whose lhs is all of its meta variables: a value of non-terminal <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a8b82d904cfd7bc2f8faca859812c8882">from</a></span> as one of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a9370f0f894ceb22b46c32accd3f00941">to</a></span>. </p>
 <p>Its builder takes the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html#a1c127ac729d8bb382721439eb8ffc8fb">arity</a></span> projections of the value. </p>
 
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00099">99</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00101">101</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -589,10 +593,10 @@ to</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit)</div>
-<div class="ttc" id="arule__table_8h_html_a0689b092184606c790794ca2140d08e9"><div class="ttname"><a href="#a0689b092184606c790794ca2140d08e9">X</a></div><div class="ttdeci">#define X(w)</div><div class="ttdef"><b>Definition</b> <a href="rule__table_8h_source.html#l00025">rule_table.h:25</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(FReg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit)</div>
+<div class="ttc" id="arule__table_8h_html_a0689b092184606c790794ca2140d08e9"><div class="ttname"><a href="#a0689b092184606c790794ca2140d08e9">X</a></div><div class="ttdeci">#define X(w)</div><div class="ttdef"><b>Definition</b> <a href="rule__table_8h_source.html#l00027">rule_table.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00030">30</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00032">32</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +614,7 @@ to</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Param) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Imm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Sh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegImm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegSh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Addr) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled)</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Param) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Lit) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Reg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(FReg) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Imm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Sh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegImm) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(RegSh) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Base) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Index) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Addr) <a class="code hl_define" href="#a0689b092184606c790794ca2140d08e9">X</a>(Scaled)</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00017">17</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
@@ -632,7 +636,7 @@ to</td>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">+1</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00027">27</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
 </div>
 </div>
@@ -652,7 +656,7 @@ to</td>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">t,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00027">27</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +676,7 @@ to</td>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">w,</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00025">25</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rule__table_8h_source.html#l00027">27</a> of file <a class="el" href="rule__table_8h_source.html">rule_table.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="dfamin_8cpp_source.html#l00102">automaton::minimize_dfa()</a>.</p>
 

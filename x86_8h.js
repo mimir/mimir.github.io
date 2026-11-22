@@ -15,5 +15,6 @@ var x86_8h =
     [ "mim::plug::x86::Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a0377693fe38215f86a4cc2d992d5aa48", null ],
     [ "mim::plug::x86::Num_Allocatable", "namespacemim_1_1plug_1_1x86.html#a9acd4ed745f331c7ebc0d1597d7b9cb9", null ],
     [ "mim::plug::x86::Num_Caller_Saved", "namespacemim_1_1plug_1_1x86.html#a021725dab45a988da8502b30bff219d0", null ],
+    [ "mim::plug::x86::Num_Fpr", "namespacemim_1_1plug_1_1x86.html#a9763bf4deee1aaa2aee332883b9a7bf0", null ],
     [ "mim::plug::x86::Num_Regs", "namespacemim_1_1plug_1_1x86.html#aa7723aaef2613a7095cb7244ac8c2f53", null ]
 ];
