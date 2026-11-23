@@ -2,7 +2,7 @@ var classmim_1_1ast_1_1LamDecl =
 [
     [ "Dom", "classmim_1_1ast_1_1LamDecl_1_1Dom.html", "classmim_1_1ast_1_1LamDecl_1_1Dom" ],
     [ "VLA_Types", "classmim_1_1ast_1_1LamDecl.html#a52e53855e7a377c77bcc46110c6c5488", null ],
-    [ "LamDecl", "classmim_1_1ast_1_1LamDecl.html#a69229038fd8b40f5d75e88574de83606", null ],
+    [ "LamDecl", "classmim_1_1ast_1_1LamDecl.html#a2f05f65464a2e0bf7c6ce57f60bf3652", null ],
     [ "bind_body", "classmim_1_1ast_1_1LamDecl.html#a0c65aaaf0d0bb4a934ab4db15875762b", null ],
     [ "bind_decl", "classmim_1_1ast_1_1LamDecl.html#a963c27be1ecc0b79fa74ed7b4dd18d32", null ],
     [ "codom", "classmim_1_1ast_1_1LamDecl.html#a4fbcba316e2f2af7cb8669cd3610ba69", null ],
@@ -10,8 +10,8 @@ var classmim_1_1ast_1_1LamDecl =
     [ "doms", "classmim_1_1ast_1_1LamDecl.html#a1f097470e3d793ebe7f294d573e9158e", null ],
     [ "emit_body", "classmim_1_1ast_1_1LamDecl.html#a8961a4109e66444b97ea37840481075f", null ],
     [ "emit_decl", "classmim_1_1ast_1_1LamDecl.html#a704e0a20d94538e29421f8c126a49456", null ],
-    [ "nom_sugar", "classmim_1_1ast_1_1LamDecl.html#aadcbd8072560f51a1c6fa00649f7b99a", null ],
     [ "num_doms", "classmim_1_1ast_1_1LamDecl.html#a881316eb2679ff3f4fca2cd5d7590ea4", null ],
+    [ "rec_sugar", "classmim_1_1ast_1_1LamDecl.html#add6e82a1199989dd9ce0d17850df64de", null ],
     [ "stream_", "classmim_1_1ast_1_1LamDecl.html#ae69a1af244e76b86c6e82be9ee6c35b3", null ],
     [ "tag", "classmim_1_1ast_1_1LamDecl.html#a0bafa724cc44805a8e98494ac987896b", null ]
 ];

@@ -19,7 +19,7 @@ var searchData=
   ['lam_5fspec_16',['lam_spec',['../namespacemim_1_1plug_1_1compile.html#a0c8162ec5ec9b298bf5f7dddb25ae391',1,'mim::plug::compile::lam_spec'],['../compile.html#autotoc_md354',1,'lam_spec']]],
   ['lam_5fspec_2ecpp_17',['lam_spec.cpp',['../lam__spec_8cpp.html',1,'']]],
   ['lam_5fspec_2eh_18',['lam_spec.h',['../lam__spec_8h.html',1,'']]],
-  ['lamdecl_19',['LamDecl',['../classmim_1_1ast_1_1LamDecl.html',1,'mim::ast::LamDecl'],['../classmim_1_1ast_1_1LamDecl_1_1Dom.html#a3d6b84b4849cf59ca68ddf41600ed6f5',1,'mim::ast::LamDecl::Dom::LamDecl()'],['../classmim_1_1ast_1_1LamDecl.html#a69229038fd8b40f5d75e88574de83606',1,'mim::ast::LamDecl::LamDecl()']]],
+  ['lamdecl_19',['LamDecl',['../classmim_1_1ast_1_1LamDecl.html',1,'mim::ast::LamDecl'],['../classmim_1_1ast_1_1LamDecl_1_1Dom.html#a3d6b84b4849cf59ca68ddf41600ed6f5',1,'mim::ast::LamDecl::Dom::LamDecl()'],['../classmim_1_1ast_1_1LamDecl.html#a2f05f65464a2e0bf7c6ce57f60bf3652',1,'mim::ast::LamDecl::LamDecl()']]],
   ['lamexpr_20',['LamExpr',['../classmim_1_1ast_1_1LamExpr.html',1,'mim::ast::LamExpr'],['../classmim_1_1ast_1_1LamExpr.html#aeea7d2d812777cb3c6826cad773b314f',1,'mim::ast::LamExpr::LamExpr()']]],
   ['lammap_21',['LamMap',['../namespacemim.html#a9b9b3ca7beeb379f7bb5dd8999a77034',1,'mim']]],
   ['lamset_22',['LamSet',['../namespacemim.html#a26a0e9df92d9733ba607a78d19edbbe9',1,'mim']]],

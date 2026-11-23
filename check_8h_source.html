@@ -340,11 +340,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('check_8h_sourc
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    Binders binders_;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_typedef" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> bound_; <span class="comment">///&lt; Var%s of all binders_; these are the Var%s subject to renaming.</span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    std::array&lt;ankerl::unordered_dense::set&lt;u64&gt;, 2&gt; memo_;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    fe::Vector&lt;std::pair&lt;const LMax*, const Def*&gt;&gt; deferred_;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>};</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    ankerl::unordered_dense::set&lt;u64&gt; assumed_; <span class="comment">///&lt; memo_key%s of mutables without Var%s assumed α-equivalent.</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    fe::Vector&lt;std::pair&lt;const LMax*, const Def*&gt;&gt; deferred_;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>};</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>} <span class="comment">// namespace mim</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>} <span class="comment">// namespace mim</span></div>
 <div class="ttc" id="aclassmim_1_1Check_html_a50c59b25c3b5c582b83379b6c53e0897"><div class="ttname"><a href="classmim_1_1Check.html#a50c59b25c3b5c582b83379b6c53e0897">mim::Check::is_uniform</a></div><div class="ttdeci">static const Def * is_uniform(Defs defs)</div><div class="ttdoc">Yields defs.front(), if all defs are Check::alpha-equivalent (Mode::Test) and nullptr otherwise.</div><div class="ttdef"><b>Definition</b> <a href="check_8cpp_source.html#l00120">check.cpp:120</a></div></div>
 <div class="ttc" id="aclassmim_1_1Check_html_a53f18f6f24da5b8640468c12d6438d69"><div class="ttname"><a href="classmim_1_1Check.html#a53f18f6f24da5b8640468c12d6438d69">mim::Check::world</a></div><div class="ttdeci">World &amp; world()</div><div class="ttdef"><b>Definition</b> <a href="#l00081">check.h:81</a></div></div>
 <div class="ttc" id="aclassmim_1_1Check_html_a5cf3253a84fa5f1ee21fb68f1647d77b"><div class="ttname"><a href="classmim_1_1Check.html#a5cf3253a84fa5f1ee21fb68f1647d77b">mim::Check::Check</a></div><div class="ttdeci">Check(World &amp;world)</div><div class="ttdef"><b>Definition</b> <a href="#l00078">check.h:78</a></div></div>

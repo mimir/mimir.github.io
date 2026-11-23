@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"demo_2autogen_8h.html#a1ba8774a500268cb4745a2d4400ea419":[5,0,0,1,0,0,10,0,0],
+"demo_2autogen_8h_source.html":[5,0,0,1,0,0,10,0],
 "demo_2normalizers_8cpp.html":[5,0,4,1,3,10,1],
 "demo_2normalizers_8cpp_source.html":[5,0,4,1,3,10,1],
 "demo_8cpp.html":[5,0,4,1,3,10,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "functions_func_s.html":[4,3,1,18],
 "functions_func_t.html":[4,3,1,19],
 "functions_func_u.html":[4,3,1,20],
-"functions_func_v.html":[4,3,1,21],
-"functions_func_w.html":[4,3,1,22],
-"functions_func_z.html":[4,3,1,23]
+"functions_func_v.html":[4,3,1,21]
 };

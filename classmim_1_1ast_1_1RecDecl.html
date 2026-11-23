@@ -197,6 +197,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a25d8d641cb2118fd30da15b55156d838" id="r_a25d8d641cb2118fd30da15b55156d838"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a25d8d641cb2118fd30da15b55156d838">emit</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const override</td></tr>
 <tr class="memitem:a603da42132febe4a8dfb79c8b2a0dbaa" id="r_a603da42132febe4a8dfb79c8b2a0dbaa"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a603da42132febe4a8dfb79c8b2a0dbaa">emit_decl</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const</td></tr>
 <tr class="memitem:a4426a66c6c764d6782087e17a0b515c7" id="r_a4426a66c6c764d6782087e17a0b515c7"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a4426a66c6c764d6782087e17a0b515c7">emit_body</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;) const</td></tr>
+<tr class="memitem:a714916399063d41829a76f0f5c8dde1d" id="r_a714916399063d41829a76f0f5c8dde1d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a714916399063d41829a76f0f5c8dde1d">emit_sugar</a> (<a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;, <a class="el" href="classmim_1_1Lam.html">Lam</a> *lam) const</td></tr>
+<tr class="memdesc:a714916399063d41829a76f0f5c8dde1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <code class="param">lam's</code> body to this <a class="el" href="classmim_1_1ast_1_1LamDecl.html#add6e82a1199989dd9ce0d17850df64de" title="The rec or nom of lam I dom+ = rec I = e; I if rec I dom+ = e or nom I dom+ = e desugared to this; wi...">LamDecl::rec_sugar</a> before emitting the latter's body.  <br /></td></tr>
 <tr class="memitem:a2b2abade33c01a8318083fa41979c2c5" id="r_a2b2abade33c01a8318083fa41979c2c5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b2abade33c01a8318083fa41979c2c5">stream</a> (fe::Tab &amp;, std::ostream &amp;) const override</td></tr>
 <tr class="memitem:a9888bd51e46c1a8fb19bd52e7e5ea85b" id="r_a9888bd51e46c1a8fb19bd52e7e5ea85b"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a9888bd51e46c1a8fb19bd52e7e5ea85b">stream_</a> (fe::Tab &amp;, std::ostream &amp;) const</td></tr>
 <tr class="memdesc:a9888bd51e46c1a8fb19bd52e7e5ea85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streams this declaration without modifiers and without the trailing <span class="tt">;</span>.  <br /></td></tr>
@@ -280,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>, <a class="el" href="ast_8h_source.html#l00303">mim::ast::ValDecl::mods()</a>, and <a class="el" href="ast_8h_source.html#l00295">mim::ast::ValDecl::ValDecl()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01239">mim::ast::LamDecl::LamDecl()</a>, and <a class="el" href="ast_8h_source.html#l01189">mim::ast::NomDecl::NomDecl()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01240">mim::ast::LamDecl::LamDecl()</a>, <a class="el" href="ast_8h_source.html#l01191">mim::ast::NomDecl::NomDecl()</a>, and <a class="el" href="ast_8h_source.html#l01253">mim::ast::LamDecl::rec_sugar()</a>.</p>
 
 </div>
 </div>
@@ -312,9 +314,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classmim_1_1ast_1_1Decl.html#a2b708a1ffafac16fb2ae5ef095b97f2f">mim::ast::Decl</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01175">1175</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01177">1177</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l01178">annex_</a>, and <a class="el" href="ast_8h_source.html#l01179">sub_</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l01180">annex_</a>, and <a class="el" href="ast_8h_source.html#l01181">sub_</a>.</p>
 
 </div>
 </div>
@@ -345,7 +347,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00522">522</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00556">bind_body()</a>, and <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>.</p>
+<p class="reference">References <a class="el" href="bind_8cpp_source.html#l00550">bind_body()</a>, and <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>.</p>
 
 </div>
 </div>
@@ -374,11 +376,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classmim_1_1ast_1_1LamDecl.html#a0c65aaaf0d0bb4a934ab4db15875762b">mim::ast::LamDecl</a>, and <a class="el" href="classmim_1_1ast_1_1NomDecl.html#a5058102be563469e1737d1a744c69969">mim::ast::NomDecl</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00556">556</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00550">550</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l01160">body()</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="bind_8cpp_source.html#l00540">has_mut_body()</a>, and <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00522">bind()</a>, and <a class="el" href="bind_8cpp_source.html#l00558">mim::ast::NomDecl::bind_body()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00522">bind()</a>, and <a class="el" href="bind_8cpp_source.html#l00559">mim::ast::NomDecl::bind_body()</a>.</p>
 
 </div>
 </div>
@@ -409,7 +411,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bind_8cpp_source.html#l00545">545</a> of file <a class="el" href="bind_8cpp_source.html">bind.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l01178">annex_</a>, <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="bind_8cpp_source.html#l00540">has_mut_body()</a>, <a class="el" href="ast_8h_source.html#l00302">mim::ast::ValDecl::is_anx()</a>, <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>, and <a class="el" href="ast_8h_source.html#l01179">sub_</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l01180">annex_</a>, <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="ast_8h_source.html#l00302">mim::ast::ValDecl::is_anx()</a>, and <a class="el" href="ast_8h_source.html#l01181">sub_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00522">bind()</a>.</p>
 
@@ -440,7 +442,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01160">1160</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00599">mim::ast::LamDecl::bind_body()</a>, <a class="el" href="bind_8cpp_source.html#l00556">bind_body()</a>, <a class="el" href="bind_8cpp_source.html#l00569">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01063">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00979">mim::ast::NomDecl::emit_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00540">has_mut_body()</a>, <a class="el" href="ast_8h_source.html#l01239">mim::ast::LamDecl::LamDecl()</a>, <a class="el" href="ast_8h_source.html#l01189">mim::ast::NomDecl::NomDecl()</a>, <a class="el" href="ast_8h_source.html#l01154">RecDecl()</a>, <a class="el" href="stream_8cpp_source.html#l00380">mim::ast::LamDecl::stream_()</a>, <a class="el" href="stream_8cpp_source.html#l00354">mim::ast::NomDecl::stream_()</a>, and <a class="el" href="stream_8cpp_source.html#l00353">stream_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00600">mim::ast::LamDecl::bind_body()</a>, <a class="el" href="bind_8cpp_source.html#l00550">bind_body()</a>, <a class="el" href="bind_8cpp_source.html#l00570">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01069">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00540">has_mut_body()</a>, <a class="el" href="ast_8h_source.html#l01240">mim::ast::LamDecl::LamDecl()</a>, <a class="el" href="ast_8h_source.html#l01191">mim::ast::NomDecl::NomDecl()</a>, <a class="el" href="ast_8h_source.html#l01154">RecDecl()</a>, <a class="el" href="stream_8cpp_source.html#l00380">mim::ast::LamDecl::stream_()</a>, <a class="el" href="stream_8cpp_source.html#l00354">mim::ast::NomDecl::stream_()</a>, and <a class="el" href="stream_8cpp_source.html#l00353">stream_()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +475,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01159">1159</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00569">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01063">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01034">mim::ast::LamDecl::emit_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>, <a class="el" href="ast_8h_source.html#l01239">mim::ast::LamDecl::LamDecl()</a>, <a class="el" href="ast_8h_source.html#l01189">mim::ast::NomDecl::NomDecl()</a>, <a class="el" href="ast_8h_source.html#l01154">RecDecl()</a>, <a class="el" href="stream_8cpp_source.html#l00345">stream()</a>, <a class="el" href="stream_8cpp_source.html#l00380">mim::ast::LamDecl::stream_()</a>, <a class="el" href="stream_8cpp_source.html#l00354">mim::ast::NomDecl::stream_()</a>, and <a class="el" href="stream_8cpp_source.html#l00353">stream_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00570">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01069">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01040">mim::ast::LamDecl::emit_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>, <a class="el" href="ast_8h_source.html#l01240">mim::ast::LamDecl::LamDecl()</a>, <a class="el" href="ast_8h_source.html#l01191">mim::ast::NomDecl::NomDecl()</a>, <a class="el" href="ast_8h_source.html#l01154">RecDecl()</a>, <a class="el" href="stream_8cpp_source.html#l00345">stream()</a>, <a class="el" href="stream_8cpp_source.html#l00380">mim::ast::LamDecl::stream_()</a>, <a class="el" href="stream_8cpp_source.html#l00354">mim::ast::NomDecl::stream_()</a>, and <a class="el" href="stream_8cpp_source.html#l00353">stream_()</a>.</p>
 
 </div>
 </div>
@@ -506,7 +508,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l01063">mim::ast::LamDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l01069">mim::ast::LamDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>.</p>
 
 </div>
 </div>
@@ -537,9 +539,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ast_2emit_8cpp_source.html#l00972">972</a> of file <a class="el" href="ast_2emit_8cpp_source.html">emit.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ast_8h_source.html#l01178">annex_</a>, <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>, and <a class="el" href="ast_8h_source.html#l01179">sub_</a>.</p>
+<p class="reference">References <a class="el" href="ast_8h_source.html#l01180">annex_</a>, <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>, and <a class="el" href="ast_8h_source.html#l01181">sub_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l00954">emit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l00954">emit()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00979">emit_sugar()</a>.</p>
 
 </div>
 </div>
@@ -572,7 +574,44 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l01160">body()</a>, <a class="el" href="ast_8h_source.html#l01159">dbg()</a>, <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, and <a class="el" href="ast_8h_source.html#l00217">mim::ast::Node::loc()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l00954">emit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_2emit_8cpp_source.html#l00954">emit()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00979">emit_sugar()</a>.</p>
+
+</div>
+</div>
+<a id="a714916399063d41829a76f0f5c8dde1d" name="a714916399063d41829a76f0f5c8dde1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714916399063d41829a76f0f5c8dde1d">&#9670;&#160;</a></span>emit_sugar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::ast::RecDecl::emit_sugar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1ast_1_1Emitter.html">Emitter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets <code class="param">lam's</code> body to this <a class="el" href="classmim_1_1ast_1_1LamDecl.html#add6e82a1199989dd9ce0d17850df64de" title="The rec or nom of lam I dom+ = rec I = e; I if rec I dom+ = e or nom I dom+ = e desugared to this; wi...">LamDecl::rec_sugar</a> before emitting the latter's body. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1ast_1_1NomDecl.html#a1a8ec7c396e05defb32a19adbf78b022">mim::ast::NomDecl</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="ast_2emit_8cpp_source.html#l00979">979</a> of file <a class="el" href="ast_2emit_8cpp_source.html">emit.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="ast_8h_source.html#l00272">mim::ast::Decl::def_</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00966">emit_decl()</a>, and <a class="el" href="lam_8h_source.html#l00158">mim::Lam::set_body()</a>.</p>
 
 </div>
 </div>
@@ -597,7 +636,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ast_8h_source.html#l01160">body()</a>, and <a class="el" href="ast_8h_source.html#l00682">mim::ast::InfixExpr::isa_op()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00997">mim::ast::NomDecl::emit_ahead()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00979">mim::ast::NomDecl::emit_decl()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bind_8cpp_source.html#l00550">bind_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01003">mim::ast::NomDecl::emit_ahead()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_decl()</a>.</p>
 
 </div>
 </div>
@@ -696,9 +735,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01178">1178</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01180">1180</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01175">annex_sub()</a>, <a class="el" href="bind_8cpp_source.html#l00569">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01063">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01177">annex_sub()</a>, <a class="el" href="bind_8cpp_source.html#l00570">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01069">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>.</p>
 
 </div>
 </div>
@@ -722,9 +761,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01179">1179</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ast_8h_source.html#l01181">1181</a> of file <a class="el" href="ast_8h_source.html">ast.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01175">annex_sub()</a>, <a class="el" href="bind_8cpp_source.html#l00569">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01063">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00985">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ast_8h_source.html#l01177">annex_sub()</a>, <a class="el" href="bind_8cpp_source.html#l00570">mim::ast::LamDecl::bind_decl()</a>, <a class="el" href="bind_8cpp_source.html#l00545">bind_decl()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l01069">mim::ast::LamDecl::emit_body()</a>, <a class="el" href="ast_2emit_8cpp_source.html#l00991">mim::ast::NomDecl::emit_body()</a>, and <a class="el" href="ast_2emit_8cpp_source.html#l00972">emit_body()</a>.</p>
 
 </div>
 </div>
