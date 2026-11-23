@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"namespacemim.html#a7a45d92b3919eee7b3655a354607e8ed":[2,0,4,209],
 "namespacemim.html#a7d50dc59d277c5e591ef4a74f163ae62":[2,0,4,143],
 "namespacemim.html#a80a97721af9c06073a873d04b426e5cd":[2,0,4,221],
 "namespacemim.html#a81981a41f846c6a9c2a7d3d57fa81189":[2,0,4,121],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "namespacemim_1_1native_1_1rules.html#aabb61f941583d6547b669915bc2f7bd3":[2,0,4,2,0,22],
 "namespacemim_1_1native_1_1rules.html#aaea949d623178528b9a180a6aded7a71":[5,0,3,1,1,4,2,5],
 "namespacemim_1_1native_1_1rules.html#aaecb784c5e7c8e3ae3a1e69c8241b419":[2,0,4,2,0,20],
-"namespacemim_1_1native_1_1rules.html#ab435459689d29f41118a7526e27a4a25":[5,0,3,1,1,4,5,0],
-"namespacemim_1_1native_1_1rules.html#ab459734c5619c755dfbc586d789d5039":[5,0,3,1,1,4,3,3]
+"namespacemim_1_1native_1_1rules.html#ab435459689d29f41118a7526e27a4a25":[5,0,3,1,1,4,5,0]
 };

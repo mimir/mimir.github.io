@@ -1,20 +1,16 @@
 var searchData=
 [
-  ['valgrind_20gdb_0',['Valgrind &amp;amp; GDB',['../coding.html#autotoc_md29',1,'']]],
-  ['values_1',['Values',['../mimir.html#mimir_dep',1,'Types Are Values'],['../regex.html#autotoc_md569',1,'Values']]],
-  ['variables_2',['Variables',['../cli.html#autotoc_md9',1,'Environment Variables'],['../cli.html#clipluginenv',1,'Environment Variables'],['../dev.html#free_vars',1,'Free Variables'],['../cli.html#envs',1,'Plugin Environment Variables'],['../dev.html#autotoc_md37',1,'Variables']]],
-  ['variants_3',['Variants',['../dev.html#autotoc_md54',1,'Thresholded Variants'],['../langref.html#variant',1,'Variants'],['../langref.html#autotoc_md81',1,'Variants'],['../tutorial.html#autotoc_md189',1,'Variants']]],
-  ['varrewriter_4',['VarRewriter',['../rewriting.html#varrewriter',1,'']]],
-  ['vec_5',['vec',['../ll.html#autotoc_md441',1,'']]],
-  ['vec_20plugin_6',['The vec Plugin',['../vec.html',1,'']]],
-  ['vec_5ffor_7',['vec_for',['../btensor.html#autotoc_md297',1,'']]],
-  ['vec_5fwidth_8',['vec_width',['../tensor.html#autotoc_md632',1,'']]],
-  ['vectorize_9',['vectorize',['../tensor.html#autotoc_md640',1,'']]],
-  ['vectorize_5fif_10',['vectorize_if',['../tensor.html#autotoc_md653',1,'']]],
-  ['verdict_11',['Verdict',['../md_docs_2why-cpp.html#autotoc_md180',1,'']]],
-  ['via_20cps_12',['SSA via CPS',['../mimir.html#mimir_cps',1,'']]],
-  ['visibility_13',['Visibility',['../tutorial.html#autotoc_md193',1,'Modules and Visibility'],['../langref.html#autotoc_md65',1,'Visibility']]],
-  ['vs_20global_14',['Local vs. Global',['../dev.html#autotoc_md38',1,'']]],
-  ['vs_20mim_15',['🐉 Naming: MimIR vs. Mim',['../index.html#autotoc_md150',1,'']]],
-  ['vs_20mutables_16',['Immutables vs. Mutables',['../dev.html#mut',1,'']]]
+  ['unary_0',['Unary',['../arm.html#autotoc_md243',1,'Floating-Point Unary'],['../x86.html#autotoc_md765',1,'Floating-Point Unary']]],
+  ['unary_1',['unary',['../tensor.html#autotoc_md623',1,'']]],
+  ['unary_5fimpl_2',['unary_impl',['../tensor.html#autotoc_md702',1,'']]],
+  ['underscore_3',['Underscore',['../langref.html#autotoc_md82',1,'']]],
+  ['union_4',['Union',['../core.html#autotoc_md366',1,'']]],
+  ['unit_20tests_5',['Unit Tests',['../coding.html#autotoc_md22',1,'']]],
+  ['universes_6',['Universes',['../langref.html#autotoc_md91',1,'']]],
+  ['unroll_5fbudget_7',['unroll_budget',['../tensor.html#autotoc_md659',1,'']]],
+  ['unroll_5ftrailing_8',['unroll_trailing',['../tensor.html#autotoc_md646',1,'']]],
+  ['unwrap_5for_9',['unwrap_or',['../option.html#autotoc_md537',1,'']]],
+  ['unwrap_5funsafe_10',['unwrap_unsafe',['../option.html#autotoc_md536',1,'']]],
+  ['usage_11',['Usage',['../backend.html#backend_usage',1,'Usage'],['../cli.html#cliusage',1,'Usage']]],
+  ['using_20it_12',['Using it',['../playground.html#autotoc_md131',1,'']]]
 ];

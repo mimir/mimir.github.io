@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['_7east_0',['~AST',['../classmim_1_1ast_1_1AST.html#af6eb75cf58c8827dfac9515e3552cb9b',1,'mim::ast::AST']]],
-  ['_7eemitter_1',['~Emitter',['../classmim_1_1native_1_1Emitter.html#a31c6ffa36c9d93c3824e51523b0f644b',1,'mim::native::Emitter']]],
-  ['_7ephase_2',['~Phase',['../classmim_1_1Phase.html#af1ee1aba228756a429741fd748f1cf7c',1,'mim::Phase']]],
-  ['_7eplainnames_3',['~PlainNames',['../classmim_1_1PlainNames.html#af141217d84cd0b1ca183de216a08bdb9',1,'mim::PlainNames']]],
-  ['_7erewriter_4',['~Rewriter',['../classmim_1_1Rewriter.html#a927f0d7a4ad6aa61787c9a972eff7f7f',1,'mim::Rewriter']]],
-  ['_7etarget_5',['~Target',['../classmim_1_1Target.html#ace082b896e921f1b70fd5caea6275ed5',1,'mim::Target']]],
-  ['_7eworld_6',['~World',['../classmim_1_1World.html#a922c87591d12a14b67791b4f4106e864',1,'mim::World']]]
+  ['zero_0',['zero',['../namespacemim_1_1plug_1_1autodiff.html#a1e3297839dced2ccc616d130b6404148',1,'mim::plug::autodiff::zero'],['../autodiff.html#autotoc_md274',1,'zero']]],
+  ['zero_5fdef_1',['zero_def',['../namespacemim_1_1plug_1_1autodiff.html#a5fbb31cd7dee586d07837fc5c55eed78',1,'mim::plug::autodiff']]],
+  ['zero_5fpullback_2',['zero_pullback',['../namespacemim_1_1plug_1_1autodiff.html#a7d78f8fc3e4b05738330a02f7f8502e9',1,'mim::plug::autodiff']]],
+  ['zero_5frepl_3',['zero_repl',['../namespacemim_1_1plug_1_1autodiff.html#a12e6386bac07e09fa61550bfa5631b9d',1,'mim::plug::autodiff::zero_repl'],['../autodiff.html#autotoc_md278',1,'zero_repl']]],
+  ['zext_4',['zext',['../namespacemim_1_1plug_1_1arm.html#adf0602711a69db0b315b1fbfe70ef300',1,'mim::plug::arm::zext'],['../namespacemim_1_1plug_1_1arm__isel.html#a56e39f32568517305d8b86018c6a3319',1,'mim::plug::arm_isel::zext'],['../namespacemim_1_1plug_1_1x86__isel.html#a5d59b979f30269d21578ab02092f50e0',1,'mim::plug::x86_isel::zext'],['../namespacemim_1_1plug_1_1core.html#a6a70712a47e2ebdd9405db61ab297876',1,'mim::plug::core::zext()']]],
+  ['zip_5',['zip',['../namespacemim_1_1plug_1_1tuple.html#a135279856795948a173cceb114cb7dc2',1,'mim::plug::tuple::zip'],['../namespacemim_1_1plug_1_1vec.html#a2e32f89440fc8e5beac96559a98f4303',1,'mim::plug::vec::zip'],['../tuple.html#autotoc_md716',1,'zip'],['../vec.html#autotoc_md720',1,'zip']]],
+  ['zonk_6',['zonk',['../classmim_1_1Def.html#a29019dd6f96db3881b604f0b16cba29a',1,'mim::Def::zonk() const'],['../classmim_1_1Def.html#ad05a164140ecb2c8ce14e3faf9bf38ac',1,'mim::Def::zonk(Defs defs)'],['../classmim_1_1Shape.html#a0fc2e1a074003918bb60a590b4c47e52',1,'mim::Shape::zonk()']]],
+  ['zonk_5fmut_7',['zonk_mut',['../classmim_1_1Def.html#a0925012c7594fc1d034415a529a5a154',1,'mim::Def']]],
+  ['zonker_8',['Zonker',['../classmim_1_1Zonker.html',1,'mim::Zonker'],['../classmim_1_1Zonker.html#acfad5d4a8e2eb21b9ad54bf912bffc08',1,'mim::Zonker::Zonker()']]],
+  ['zonker_9',['zonker',['../classmim_1_1World.html#a2a88991106de4223e4ed8d5fb0c7bfa0',1,'mim::World']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['—_20a_20four_20way_20sum_20type_20in_20one_20machine_20word_0',['&lt;span class=&quot;tt&quot;&gt;Patricia::Set&lt;/span&gt; — a four-way sum type in one machine word',['../md_docs_2why-cpp.html#autotoc_md162',1,'']]]
+  ['zero_0',['zero',['../autodiff.html#autotoc_md274',1,'']]],
+  ['zero_5frepl_1',['zero_repl',['../autodiff.html#autotoc_md278',1,'']]],
+  ['zip_2',['zip',['../tuple.html#autotoc_md716',1,'zip'],['../vec.html#autotoc_md720',1,'zip']]]
 ];

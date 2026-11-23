@@ -34,6 +34,7 @@ var menudata={children:[
 {text:"Developer Guide",url:"dev.html"},
 {text:"Rewriting",url:"rewriting.html"},
 {text:"Phases",url:"phases.html"},
+{text:"Native Backends",url:"backend.html"},
 {text:"Python Bindings",url:"python.html"},
 {text:"Playground",url:"playground.html"}]},
 {text:"🧩 Plugins",url:"usergroup1.html",children:[

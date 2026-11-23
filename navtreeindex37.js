@@ -1,5 +1,6 @@
 var NAVTREEINDEX37 =
 {
+"namespacepbqp.html#a5816dd4745f4e43e7f80ca3604363469":[2,0,5,20],
 "namespacepbqp.html#a581fa36de2b05788a50f5522f6aa3432":[2,0,5,17],
 "namespacepbqp.html#a601107c626e0aa1bed5d5e49992e8cb4":[5,0,3,2,3,0,4],
 "namespacepbqp.html#a64166371d46e791156e50cee73839218":[2,0,5,22],
@@ -115,7 +116,7 @@ var NAVTREEINDEX37 =
 "phase_8h.html#a5524d37751342ad354f02d31c7fd6a55":[5,0,3,1,16,10],
 "phase_8h_source.html":[5,0,3,1,16],
 "phases.html":[0,8],
-"playground.html":[0,10],
+"playground.html":[0,11],
 "plug_2arm_2emit_8cpp.html":[5,0,4,1,4,1,2],
 "plug_2arm_2emit_8cpp_source.html":[5,0,4,1,4,1,2],
 "plug_2arm_2emit_8h.html":[5,0,3,1,3,1,2],
@@ -158,7 +159,7 @@ var NAVTREEINDEX37 =
 "plugin_8h.html#aea38a65eb5bcdbc6a7d10bb54cda7283":[5,0,3,1,17,7],
 "plugin_8h_source.html":[5,0,3,1,17],
 "plugins.html":[0,5],
-"python.html":[0,9],
+"python.html":[0,10],
 "range__helper_8h.html":[5,0,3,0,5],
 "range__helper_8h_source.html":[5,0,3,0,5],
 "reassoc_8cpp.html":[5,0,4,1,4,22,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX37 =
 "seo_8h.html":[5,0,3,1,3,15,0,6],
 "seo_8h_source.html":[5,0,3,1,3,15,0,6],
 "single_8h.html":[5,0,3,1,21],
-"single_8h_source.html":[5,0,3,1,21],
-"single__erasure_8cpp.html":[5,0,4,1,3,11]
+"single_8h_source.html":[5,0,3,1,21]
 };

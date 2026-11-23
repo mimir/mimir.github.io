@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "0[_abcdefghijklmnopqrstuvwxyz~—⊥⚖✨🌊🐉💡💬📖📦🔥🚀🧩🪾",
+  0: "06[_abcdefghijklmnopqrstuvwxyz~—⊥⚖✨🌊🐉💡💬📖📦🔥🚀🧩🪾",
   1: "[abcdefghiklmnoprstuvwz",
   2: "adfmprs",
   3: "abcdefghijlmnoprstvwx",
@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   8: "_abcdefghiklmnoprstuvwx",
   9: "acdfgilmnopsw",
   10: "cgimpx",
-  11: "0abcdefghiklmnopqrstuvwxyz—⊥⚖✨🌊🐉💡💬📖📦🔥🚀🧩🪾",
+  11: "06abcdefghiklmnopqrstuvwxyz—⊥⚖✨🌊🐉💡💬📖📦🔥🚀🧩🪾",
   12: "ademp"
 };
 
