@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lam_0',['lam',['../classmim_1_1Liveness.html#a9a6bf0957a8d1aff53033fd2c869169f',1,'mim::Liveness::Block']]],
+  ['lam_0',['lam',['../classmim_1_1plug_1_1mach_1_1Liveness.html#a2d88581a76aa8abf12e6f13d6cc40c05',1,'mim::plug::mach::Liveness::Block']]],
   ['lam2bb_5f_1',['lam2bb_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#aa633591addd9905309e2e7233a10553e',1,'mim::plug::ll::Emitter']]],
   ['last_2',['last',['../classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a2f482983e067f3de59c78432ca13bfa5',1,'mim::plug::mem::EscapeAnalysis::Chain']]],
   ['lean_5flabels_3',['lean_labels',['../namespacemim.html#acaa35768c4b7133803c062227060c512',1,'mim::DotConfig']]],
@@ -8,8 +8,8 @@ var searchData=
   ['list_5',['list',['../namespacemim_1_1manifest.html#a7b238893a9940d7029cb944dfa6b2152',1,'mim::manifest::List_Entry']]],
   ['lists_6',['lists',['../namespacemim_1_1manifest.html#a1109cbccbdcf393c12b847427e727cd1',1,'mim::manifest']]],
   ['lit_7',['lit',['../classmim_1_1plug_1_1mach_1_1Gen.html#a8ef50e1e2daece04e6823f832b113097',1,'mim::plug::mach::Gen::Annexes']]],
-  ['live_5fin_8',['live_in',['../classmim_1_1Liveness.html#a71a4af1c4b5eb91e09ff7b9354f834c2',1,'mim::Liveness::Block']]],
-  ['live_5fout_9',['live_out',['../classmim_1_1Liveness.html#a865160b17ea0b5f7de12bcb6ed26227c',1,'mim::Liveness::Block']]],
+  ['live_5fin_8',['live_in',['../classmim_1_1plug_1_1mach_1_1Liveness.html#ac5b9d0c2c8f285aa1680242da1eb11f0',1,'mim::plug::mach::Liveness::Block']]],
+  ['live_5fout_9',['live_out',['../classmim_1_1plug_1_1mach_1_1Liveness.html#af145689eaa1bfebbbf3fa9ae113fdbd0',1,'mim::plug::mach::Liveness::Block']]],
   ['load_10',['Load',['../namespacemim_1_1plug_1_1x86_1_1insn.html#a0f40a229b4fb2e4d9e2497fe1b13b2f7',1,'mim::plug::x86::insn']]],
   ['loc_11',['loc',['../classmim_1_1World.html#abdb537c1c783aa4c2b68ed2ad9ec6dc3',1,'mim::World::CurrLoc']]],
   ['locals_5f_12',['locals_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#acf6f744b3fc336a81c1d4e804014245d',1,'mim::plug::ll::Emitter']]],

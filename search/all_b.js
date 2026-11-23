@@ -21,7 +21,7 @@ var searchData=
   ['haskell_20specifically_18',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md177',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_19',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md182',1,'']]],
   ['head_20',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB::head()'],['../namespacemim_1_1plug_1_1tuple.html#a370c2dee7f4c5136cff38baa0310fc2e',1,'mim::plug::tuple::head']]],
-  ['head_20tail_21',['head / tail',['../tuple.html#autotoc_md714',1,'']]],
+  ['head_20tail_21',['head / tail',['../tuple.html#autotoc_md711',1,'']]],
   ['header_22',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['heap2stack_23',['Heap2Stack',['../classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html',1,'mim::plug::mem::phase::Heap2Stack'],['../classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html#a901b069771b03ae51a194aad13d03f14',1,'mim::plug::mem::phase::Heap2Stack::Heap2Stack()']]],
   ['heap2stack_24',['heap2stack',['../namespacemim_1_1plug_1_1mem.html#aebc739f361b2f38c1d0b03c122054777',1,'mim::plug::mem::heap2stack'],['../mem.html#autotoc_md519',1,'heap2stack']]],
@@ -35,9 +35,10 @@ var searchData=
   ['hole_32',['Hole',['../classmim_1_1Hole.html',1,'mim::Hole'],['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#a99e09c81af2fdf69220123e2b04a5341a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole'],['../namespacemim.html#adccbc1a0a55e33b72bc7e987075c2293a6368a5bde7853b2f6c660f010adbb988',1,'mim::Hole']]],
   ['holeexpr_33',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html',1,'mim::ast::HoleExpr'],['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr::HoleExpr()']]],
   ['honest_20caveats_34',['Two honest caveats',['../md_docs_2why-cpp.html#autotoc_md181',1,'']]],
-  ['hook_35',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase::hook()'],['../namespacemim_1_1native.html#af6588d8b02761af379d8f72b4823b515',1,'mim::native::hook()']]],
-  ['host_5fmalloc2gpualloc_5frepl_36',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu::host_malloc2gpualloc_repl'],['../gpu.html#autotoc_md437',1,'host_malloc2gpualloc_repl']]],
-  ['host_5fspecific_5fphases_37',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
-  ['hostemitter_38',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html',1,'mim::plug::nvptx::HostEmitter'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter::HostEmitter()']]],
-  ['how_20defs_20are_20placed_20in_20them_39',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
+  ['hook_35',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase::hook()'],['../namespacemim_1_1plug_1_1mach.html#ae11c44d2b79dd859ec603b22045de96b',1,'mim::plug::mach::hook(Flags2Phases &amp;phases)']]],
+  ['hook_5fisel_36',['hook_isel',['../namespacemim_1_1plug_1_1mach.html#a15386307c876725dc07a01237f120f95',1,'mim::plug::mach']]],
+  ['host_5fmalloc2gpualloc_5frepl_37',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu::host_malloc2gpualloc_repl'],['../gpu.html#autotoc_md435',1,'host_malloc2gpualloc_repl']]],
+  ['host_5fspecific_5fphases_38',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
+  ['hostemitter_39',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html',1,'mim::plug::nvptx::HostEmitter'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter::HostEmitter()']]],
+  ['how_20defs_20are_20placed_20in_20them_40',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
 ];

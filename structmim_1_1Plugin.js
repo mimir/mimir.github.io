@@ -10,6 +10,6 @@ var structmim_1_1Plugin =
     [ "register_normalizers", "structmim_1_1Plugin.html#ac0ac5f34a6a6931800afd5e96409e759", null ],
     [ "register_phases", "structmim_1_1Plugin.html#af90ef3171fec7560c02a2b54d0c1012f", null ],
     [ "syms", "structmim_1_1Plugin.html#a9694d18d0c739a254a97cf3091cecb28", null ],
-    [ "target", "structmim_1_1Plugin.html#ad2b2ada96614a6ecea65a4b12d72d3c0", null ],
+    [ "target", "structmim_1_1Plugin.html#a1554b019d07a395552c195de8a50ae0b", null ],
     [ "version", "structmim_1_1Plugin.html#af99e681bd393606bb50411b319fce251", null ]
 ];

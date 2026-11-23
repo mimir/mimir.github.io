@@ -173,9 +173,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mach_8cpp.html
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="mach_8h_source.html">mim/plug/mach/mach.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="phase_8h_source.html">mim/phase.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="regalloc_8h_source.html">mim/native/regalloc.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="mach_2emit_8h_source.html">mim/plug/mach/emit.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mach_2gen_8h_source.html">mim/plug/mach/gen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="isel_8h_source.html">mim/plug/mach/isel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="legalize_8h_source.html">mim/plug/mach/legalize.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="regalloc_8h_source.html">mim/plug/mach/regalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="plug_2mach_2schedule_8h_source.html">mim/plug/mach/schedule.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mach.cpp:</div>
 <div class="dyncontent">
@@ -191,7 +196,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a32913a9d0d0f5f5186410c360f723967" id="r_a32913a9d0d0f5f5186410c360f723967"><td class="memItemLeft">static const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a>&#160;</td><td class="memItemRight"><a class="el" href="#a32913a9d0d0f5f5186410c360f723967">known_syms</a> [] = {<a class="el" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="el" href="namespacemim_1_1plug_1_1mach.html#a1bcc4cdee0370936239314e935543f0c">mim_mach_gen</a>)}</td></tr>
+<tr class="memitem:a32913a9d0d0f5f5186410c360f723967" id="r_a32913a9d0d0f5f5186410c360f723967"><td class="memItemLeft">static const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a>&#160;</td><td class="memItemRight"><a class="el" href="#a32913a9d0d0f5f5186410c360f723967">known_syms</a> []</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ac242f8cafe4dc920fe3689feeda7d13f" name="ac242f8cafe4dc920fe3689feeda7d13f"></a>
@@ -209,9 +214,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00022">22</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00032">32</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="mach_8cpp_source.html#l00020">known_syms</a>, <a class="el" href="plugin_8h_source.html#l00198">MIM_PLUGIN_ENTRY</a>, <a class="el" href="mach_8cpp_source.html#l00011">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1mach.html#a75af17fd16e274454d480e1f09f15f60">mim::plug::mach::register_normalizers()</a>.</p>
+<p class="reference">References <a class="el" href="mach_8cpp_source.html#l00026">known_syms</a>, <a class="el" href="plugin_8h_source.html#l00198">MIM_PLUGIN_ENTRY</a>, <a class="el" href="mach_8cpp_source.html#l00016">reg_phases()</a>, and <a class="el" href="namespacemim_1_1plug_1_1mach.html#a75af17fd16e274454d480e1f09f15f60">mim::plug::mach::register_normalizers()</a>.</p>
 
 </div>
 </div>
@@ -238,11 +243,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00011">11</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00016">16</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="native_8h_source.html#l00013">mim::native::hook()</a>, and <a class="el" href="mach_8cpp_source.html#l00011">reg_phases()</a>.</p>
+<p class="reference">References <a class="el" href="phase_8h_source.html#l00052">mim::Phase::hook()</a>, <a class="el" href="plug_2mach_2phase_8h_source.html#l00012">mim::plug::mach::hook()</a>, and <a class="el" href="mach_8cpp_source.html#l00016">reg_phases()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00022">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="mach_8cpp_source.html#l00011">reg_phases()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00032">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="mach_8cpp_source.html#l00016">reg_phases()</a>.</p>
 
 </div>
 </div>
@@ -257,7 +262,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a> known_syms[] = {<a class="el" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="el" href="namespacemim_1_1plug_1_1mach.html#a1bcc4cdee0370936239314e935543f0c">mim_mach_gen</a>)}</td>
+          <td class="memname">const <a class="el" href="namespacemim.html#structmim_1_1PluginSym">PluginSym</a> known_syms[]</td>
         </tr>
       </table>
   </td>
@@ -266,10 +271,19 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                  = {</div>
+<div class="line">    <a class="code hl_define" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="code hl_function" href="namespacemim_1_1plug_1_1mach.html#a1bcc4cdee0370936239314e935543f0c">mim_mach_gen</a>),</div>
+<div class="line">    <a class="code hl_define" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="code hl_function" href="namespacemim_1_1plug_1_1mach.html#a22593a954333aa8c2c47613c32a1c14f">mim_mach_emit</a>),</div>
+<div class="line">    <a class="code hl_define" href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a>(<a class="code hl_function" href="namespacemim_1_1plug_1_1mach.html#abbe1e22659a2c926224183d68f45eee5">mim_mach_isel</a>),</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mach_html_a1bcc4cdee0370936239314e935543f0c"><div class="ttname"><a href="namespacemim_1_1plug_1_1mach.html#a1bcc4cdee0370936239314e935543f0c">mim::plug::mach::mim_mach_gen</a></div><div class="ttdeci">void mim_mach_gen(Gen &amp;)</div><div class="ttdoc">Gen::start, compiled once into libmim_mach; Gen reaches it via GET_FUN_PTR.</div><div class="ttdef"><b>Definition</b> <a href="mach_2gen_8cpp_source.html#l00995">gen.cpp:995</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mach_html_a22593a954333aa8c2c47613c32a1c14f"><div class="ttname"><a href="namespacemim_1_1plug_1_1mach.html#a22593a954333aa8c2c47613c32a1c14f">mim::plug::mach::mim_mach_emit</a></div><div class="ttdeci">void mim_mach_emit(Emitter &amp;, bool global)</div><div class="ttdoc">Emitter::emit, compiled once into libmim_mach; Emitter reaches it via GET_FUN_PTR.</div><div class="ttdef"><b>Definition</b> <a href="plug_2mach_2emit_8cpp_source.html#l00242">emit.cpp:242</a></div></div>
+<div class="ttc" id="anamespacemim_1_1plug_1_1mach_html_abbe1e22659a2c926224183d68f45eee5"><div class="ttname"><a href="namespacemim_1_1plug_1_1mach.html#abbe1e22659a2c926224183d68f45eee5">mim::plug::mach::mim_mach_isel</a></div><div class="ttdeci">Phase * mim_mach_isel(World &amp;, flags_t annex, const rules::Table &amp;table)</div><div class="ttdoc">A new ISel for the annex annex of a backend, with the rules table; compiled once into libmim_mach.</div><div class="ttdef"><b>Definition</b> <a href="isel_8cpp_source.html#l00420">isel.cpp:420</a></div></div>
+<div class="ttc" id="aplugin_8h_html_ae823dbd90013953aa434dd05f1433754"><div class="ttname"><a href="plugin_8h.html#ae823dbd90013953aa434dd05f1433754">MIM_PLUGIN_SYM</a></div><div class="ttdeci">#define MIM_PLUGIN_SYM(f)</div><div class="ttdoc">Builds a PluginSym for f, so name and address cannot drift apart.</div><div class="ttdef"><b>Definition</b> <a href="plugin_8h_source.html#l00055">plugin.h:55</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00026">26</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="mach_8cpp_source.html#l00020">20</a> of file <a class="el" href="mach_8cpp_source.html">mach.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00022">MIM_PLUGIN_ENTRY()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00032">MIM_PLUGIN_ENTRY()</a>.</p>
 
 </div>
 </div>

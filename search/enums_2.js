@@ -8,7 +8,7 @@ var searchData=
   ['check_5',['check',['../namespacemim_1_1plug_1_1refly.html#ad1ff0c022f81a11c0fad8b96314d2a9d',1,'mim::plug::refly']]],
   ['check_5faddr_5fspaces_5frepl_6',['check_addr_spaces_repl',['../namespacemim_1_1plug_1_1gpu.html#a1a3dd6851806a943500d14ecbd0942bf',1,'mim::plug::gpu']]],
   ['check_5fbot_7',['check_bot',['../namespacemim_1_1plug_1_1refly.html#ae126de749f0ee7091b07962d66cf99af',1,'mim::plug::refly']]],
-  ['class_8',['Class',['../classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6',1,'mim::Target']]],
+  ['class_8',['Class',['../classmim_1_1plug_1_1mach_1_1Target.html#a2789df362ffe7057e21d108f766ef3b6',1,'mim::plug::mach::Target']]],
   ['cleanup_9',['cleanup',['../namespacemim_1_1plug_1_1compile.html#ae235bfddfd892ffbaa18b0c84e1c7b0a',1,'mim::plug::compile']]],
   ['clos2sjlj_10',['clos2sjlj',['../namespacemim_1_1plug_1_1clos.html#ab1814afe4b899c4eba79b3a3d54bfb74',1,'mim::plug::clos']]],
   ['clos_5fconv_11',['clos_conv',['../namespacemim_1_1plug_1_1clos.html#a4ea291e12c94ea52f42e8ed0ee635d50',1,'mim::plug::clos']]],

@@ -236,32 +236,28 @@ Example</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">extern con f (m: mem.M 0, a b: I64, ret: Cn [mem.M 0, I64]) =</div>
 <div class="line">    let a_rax = mach.in 0I4 a;</div>
 <div class="line">    let b_rsi = mach.in 6I4 b;</div>
-<div class="line">    let x     = mem.sched (x86.add @ 0) m (a_rax, b_rsi);</div>
+<div class="line">    let x     = mach.sched (x86.add @ 0) m (a_rax, b_rsi);</div>
 <div class="line">    let x_rax = mach.in 0I4 x#tt;</div>
-<div class="line">    let y     = mem.sched (x86.imul @ 0) x#ff (x_rax, 3I64);</div>
+<div class="line">    let y     = mach.sched (x86.imul @ 0) x#ff (x_rax, 3I64);</div>
 <div class="line">    ret (y#ff, mach.in 0I4 y#tt);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>Every instruction sits on the <span class="tt">mem.M</span> chain via <span class="tt">mem.sched</span>, and every use of a value states its register with <span class="tt">mach.in</span>. The entry parameter <span class="tt">a</span> arrives in <span class="tt">rdi</span> but lives in <span class="tt">rax</span>, so the emitter copies it there; the return is the copy <span class="tt">rax → rax</span>, which vanishes.</p>
+</div><!-- fragment --></div><div class="mim-code"></div><p>Every instruction sits on the <span class="tt">mem.M</span> chain via <span class="tt">mach.sched</span>, and every use of a value states its register with <span class="tt">mach.in</span>. The entry parameter <span class="tt">a</span> arrives in <span class="tt">rdi</span> but lives in <span class="tt">rax</span>, so the emitter copies it there; the return is the copy <span class="tt">rax → rax</span>, which vanishes.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_code"></a>
 Code Organization</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Where  </th><th class="markdownTableHeadNone">What  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">src/mim/native/</span>, <span class="tt">include/mim/native/</span>  </td><td class="markdownTableBodyNone">The target-independent phases in libmim: <span class="tt">native::ISel</span>, <span class="tt">native::Spilling</span>, <span class="tt">native::Constrain</span>, <span class="tt">native::Color</span>, <span class="tt">native::Live</span>, and <span class="tt">native::Emitter</span>, all parametrized by a <span class="tt"><a class="el" href="classmim_1_1Target.html" title="The machine facts that the target-independent parts of a native backend need, such as Liveness and me...">mim::Target</a></span>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">include/mim/target.h</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classmim_1_1Target.html" title="The machine a native backend compiles for, as far as libmim needs to know it.">mim::Target</a></span>: the name and pointer size of the loaded backend, which is all that libmim (<span class="tt">Driver::target</span>, <span class="tt">core.trait</span>) needs.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">include/mim/target.h</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="classmim_1_1Target.html" title="The machine facts that the target-independent parts of a native backend need, such as Liveness and me...">mim::Target</a></span>: register classes, the register file and ABI per class, and fixed-register constraints.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/mach/</span>, <span class="tt">include/mim/plug/mach/</span>  </td><td class="markdownTableBodyNone">Everything target-independent: the axioms (<span class="tt">mach.Flags</span>, <span class="tt">mach.Spill</span>, <span class="tt">mach.in</span>, <span class="tt">mach.sched</span>, <span class="tt">mach.slot</span>, <span class="tt">mach.load</span>/<span class="tt">store</span>, <span class="tt">mach.spill</span>/<span class="tt">reload</span>, the float format checks <span class="tt">fpe</span>/<span class="tt">fok</span>); the phases <span class="tt">mach::Legalize</span>, <span class="tt">mach::Schedule</span>, <span class="tt">mach::ISel</span>, <span class="tt">mach::Spilling</span>, <span class="tt">mach::Constrain</span>, <span class="tt">mach::Color</span>, and <span class="tt">mach::Live</span>; <span class="tt">mach::Liveness</span>; the bases <span class="tt">mach::Emitter</span> and <span class="tt">mach::AsmEmit</span>; the rule generator <span class="tt">mach::Gen</span>; and <span class="tt">mach::Target</span>, the register classes, the register file and ABI per class, and fixed-register constraints.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/mach/</span>  </td><td class="markdownTableBodyNone">The machine-independent axioms (<span class="tt">mach.Flags</span>, <span class="tt">mach.Spill</span>, <span class="tt">mach.in</span>, <span class="tt">mach.slot</span>, <span class="tt">mach.spill</span>/<span class="tt">reload</span>, the float format checks <span class="tt">fpe</span>/<span class="tt">fok</span>), the phases <span class="tt">mach.spilling</span>, <span class="tt">mach.constrain</span>, <span class="tt">mach.color</span>, <span class="tt">mach.live</span>, the rule generator <span class="tt">mach::Gen</span>, and <span class="tt">mach::Target</span>.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">src/mim/plug/x86/</span>, <span class="tt">src/mim/plug/arm/</span>  </td><td class="markdownTableBodyNone">Registers, instructions, and condition codes as axioms; the target description (<span class="tt">target.h</span>: memory instructions, register file, ABI, constraints); instruction costs (<span class="tt">insn.h</span>); the phases <span class="tt">&lt;backend&gt;.isel</span> and <span class="tt">&lt;backend&gt;.emit</span>.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/x86_isel/</span>, <span class="tt">src/mim/plug/arm_isel/</span>  </td><td class="markdownTableBodyNone">The instruction-selection rules in <a class="el" href="namespaceMim.html">Mim</a> and the phase <span class="tt">&lt;backend&gt;_isel.gen</span>, which writes them as C++ tables into <span class="tt">build/include/mim/plug/&lt;backend&gt;/isel_rules.h</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/mem/phase/</span>  </td><td class="markdownTableBodyNone"><span class="tt">mem.add_mem</span>, <span class="tt">mem.legalize_ptr</span>, <span class="tt">mem.legalize_native</span>, and <span class="tt">mem.schedule</span>, which take the target from the <a class="el" href="classmim_1_1Driver.html" title="mim::Driver"><span class="tt">Driver</span></a>.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">src/mim/plug/x86_isel/</span>, <span class="tt">src/mim/plug/arm_isel/</span>  </td><td class="markdownTableBodyNone">The instruction-selection rules in <a class="el" href="namespaceMim.html">Mim</a> and the phase <span class="tt">&lt;backend&gt;_isel.gen</span>, which writes them as C++ tables into <span class="tt">build/include/mim/plug/&lt;backend&gt;/isel_rules.h</span>.  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">src/pbqp/</span>  </td><td class="markdownTableBodyNone">The PBQP solver with the RN heuristic and a <span class="tt">rn_priority</span> hook.  </td></tr>
 </table>
-<p>A backend plugin is thin: it registers its <span class="tt">Target</span> via <span class="tt">Plugin::target</span> and supplies its instructions, its rules, and the textual form of its instructions; the rest is shared.</p>
+<p>A backend plugin is thin: it registers its <span class="tt">Target</span> via <span class="tt">Plugin::target</span> and supplies its instructions, its rules, and the textual form of its instructions; the rest is shared. Plugins never link each other, so what a backend derives from or instantiates is header-only, as with <span class="tt">ll::Emitter</span>: <span class="tt">mach::Emitter</span> reaches its control flow and <span class="tt">mach::hook_isel</span> the selector in <span class="tt">libmim_mach</span> via <span class="tt"><a class="el" href="driver_8h.html#ab004995be061e8045533148b21580ed8">GET_FUN_PTR</a></span>.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_pipeline"></a>
 Pipeline</h1>
 <p>The backend phases run at the end of the default pipeline, after the usual optimizations and closure conversion:</p>
@@ -275,23 +271,21 @@ Pipeline</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">core.legalize_dyn_idx</span>  </td><td class="markdownTableBodyNone">rewrite  </td><td class="markdownTableBodyNone">Turns each <span class="tt">Idx n</span> with a dynamic <span class="tt">n</span> into <span class="tt">I64</span>.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">mem.legalize_ptr</span>  </td><td class="markdownTableBodyNone">rewrite  </td><td class="markdownTableBodyNone">Makes every pointer a byte pointer and every <span class="tt">mem.lea</span> a <span class="tt">mem.ptradd</span> with the target's layout.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">mach.legalize</span>  </td><td class="markdownTableBodyNone">rewrite  </td><td class="markdownTableBodyNone">Turns every <span class="tt">Nat</span> value and every pointer into <span class="tt">I64</span>, every <span class="tt">mem.lea</span> into a <span class="tt">core.wrap.add</span> of its byte offset, <span class="tt">mem.load</span>/<span class="tt">store</span> into <span class="tt">mach.load</span>/<span class="tt">store</span>, and every literal-sized <span class="tt">mem.mslot</span> into <span class="tt">mach.slot</span>, so isel only sees register types.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">mem.legalize_native</span>  </td><td class="markdownTableBodyNone">rewrite  </td><td class="markdownTableBodyNone">Turns every <span class="tt">Nat</span> value and every pointer into <span class="tt">I64</span> and every literal-sized <span class="tt">mem.mslot</span> into <span class="tt">mach.slot</span>, so isel only sees register types.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">&lt;backend&gt;.isel</span>  </td><td class="markdownTableBodyNone"><span class="tt">RWPhase</span>  </td><td class="markdownTableBodyNone">Covers <span class="tt">core</span>/<span class="tt">mach</span>/<span class="tt">math</span> operations with machine instructions by PBQP.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">&lt;backend&gt;.isel</span>  </td><td class="markdownTableBodyNone"><span class="tt">RWPhase</span>  </td><td class="markdownTableBodyNone">Covers <span class="tt">core</span>/<span class="tt">mem</span>/<span class="tt">math</span> operations with machine instructions by PBQP.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">mach.schedule</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Places every instruction and threads it onto its block's <span class="tt">mem.M</span> chain.  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">mem.schedule</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Places every instruction and threads it onto its block's <span class="tt">mem.M</span> chain.  </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">mach.spilling</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Brings register pressure down to <span class="tt">k</span> per register class.  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">mach.constrain</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Splits live ranges around fixed-register and two-address instructions (x86 only; AArch64 has none).  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">mach.color</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Assigns registers by PBQP and checks the result.  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">mach.constrain</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Splits live ranges around fixed-register and two-address instructions (x86 only; AArch64 has none).  </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">mach.color</span>  </td><td class="markdownTableBodyNone">in place  </td><td class="markdownTableBodyNone">Assigns registers by PBQP and checks the result.  </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">&lt;backend&gt;.emit</span>  </td><td class="markdownTableBodyNone">output  </td><td class="markdownTableBodyNone">Writes the assembly.  </td></tr>
 </table>
-<p>Only the legalizations and isel change types; the later phases rewrite each function in place and create a new continuation only where a block's signature changes.</p>
+<p>Only <span class="tt">core.legalize_dyn_idx</span>, <span class="tt">mach.legalize</span>, and isel change types; the later phases rewrite each function in place and create a new continuation only where a block's signature changes.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_insns"></a>
 Instructions as Axioms</h1>
 <p>A machine instruction is an axiom typed over plain integers and floats, e.g.</p>
@@ -309,11 +303,11 @@ Instruction Selection</h1>
 <p>Instruction selection follows Buchwald &amp; Zwinkau, <em>Instruction Selection by Graph Transformation</em> (CASES 2010): the program graph is covered by matches of rewrite rules, and the choice of cover is a PBQP. MimIR generalizes the holes of a pattern from "a value in a register" to typed terms, which factors the grammar (Ebner et al., LCTES 2008).</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Rules</h2>
-<p>A rule rewrites a <span class="tt">core</span>/<span class="tt">mem</span>/<span class="tt">math</span> pattern into machine instructions:</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load  {s: Nat} (m: mem.M 0, p: mem.Ptr0 (Idx s)): mem.load (m, p) =&gt; x86.load s (m, addr p);</div>
+<p>A rule rewrites a <span class="tt">core</span>/<span class="tt">mach</span>/<span class="tt">math</span> pattern into machine instructions:</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load  {s: Nat} (m: mem.M 0, p: I64): mach.load (Idx s) (m, p) =&gt; x86.load s (m, addr p);</div>
 <div class="line">rule icmp  (p: …, c: mach.Flags → Bool) (s: Nat, a b: Idx s): p (a, b) =&gt; c (x86.cmp (a, reg_imm b));</div>
-<div class="line">rule rm    … (k: Nat, a: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)):</div>
-<div class="line">    let (mm, v) = mem.load (m, p); (mm, op k (a, v)) when x86.is_gpr s =&gt; x86.rm insn (m, a, addr p);</div>
+<div class="line">rule rm    … (k: Nat, a: Idx s, m: mem.M 0, p: I64):</div>
+<div class="line">    let (mm, v) = mach.load (Idx s) (m, p); (mm, op k (a, v)) when x86.is_gpr s =&gt; x86.rm insn (m, a, addr p);</div>
 <div class="line">rule lea   (i: Bool) (a: x86.Addr i): a =&gt; x86.lea a;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><ul>
 <li>The meta variables are the holes. Each hole has a <em>want</em>, derived from its type and markers: a register (<span class="tt">Reg</span>, <span class="tt">FReg</span>), an address (<span class="tt">Base</span>, <span class="tt">Index</span>, <span class="tt">Addr</span>), a scaled index, an immediate (<span class="tt">reg_imm</span> lets a literal that fits become <span class="tt">Imm</span>), or a literal (<span class="tt">mach.lit</span>). The type of the replacement is the rule's <em>non-terminal</em>.</li>
@@ -329,7 +323,7 @@ Rules</h2>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 The PBQP</h2>
-<p><span class="tt">native::ISel</span> builds one PBQP for the whole World:</p>
+<p><span class="tt">mach::ISel</span> builds one PBQP for the whole World:</p>
 <ul>
 <li>Every operation with a matching rule is a node; Vars and literals are not.</li>
 <li>A node's alternatives are one <em>root</em> alternative per rule rooted at it and one <em>inner</em> alternative per class of matches that cover it as an inner node. A rule's cost sits on its root alternative.</li>
@@ -337,12 +331,12 @@ The PBQP</h2>
 <li>Conversions live on edges, so each user converts for itself: one shared address can fold into a load and be materialized by <span class="tt">lea</span> for a call.</li>
 <li>A two-address instruction (x86) charges a copy for each overwritten operand that something else uses, so the solver prefers a <span class="tt">lea</span> where an <span class="tt">add</span> would need a copy.</li>
 </ul>
-<p>After solving, the rewrite builds each root alternative's replacement with its holes substituted by the rewritten and converted operands; any <span class="tt">core</span>/<span class="tt">mem</span>/<span class="tt">math</span> operation left over is an error naming the axiom.</p>
+<p>After solving, the rewrite builds each root alternative's replacement with its holes substituted by the rewritten and converted operands; any <span class="tt">core</span>/<span class="tt">mem</span>/<span class="tt">math</span> operation or <span class="tt">mach.load</span>/<span class="tt">store</span> left over is an error naming the axiom.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_sched"></a>
 Scheduling</h1>
-<p>There is no list of instructions per block. Instead, the schedule is the <span class="tt">mem.M</span> chain: after <span class="tt">mem.schedule</span>, every instruction of a block sits on that block's chain, memory instructions directly and pure ones via</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sched: {D C: *} → (D → C) → M 0 → D → [M 0, C]; // in mem.mim</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p>e.g. <span class="tt">let (m, x) = mem.sched x86.add m (a, b)</span>.</p>
+<p>There is no list of instructions per block. Instead, the schedule is the <span class="tt">mem.M</span> chain: after <span class="tt">mach.schedule</span>, every instruction of a block sits on that block's chain, memory instructions directly and pure ones via</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sched: {D C: *} → (D → C) → mem.M 0 → D → [mem.M 0, C]; // in mach.mim</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>e.g. <span class="tt">let (m, x) = mach.sched x86.add m (a, b)</span>.</p>
 <ul>
 <li>Each instruction is placed once, as late as possible but out of loops, and the chain follows a topological order.</li>
 <li>The chain token makes each placement a distinct Def, so copies, spills, reloads, and rematerializations at different program points never merge under hash-consing.</li>
@@ -355,7 +349,7 @@ Register Allocation</h1>
 <p>Allocation is SSA-based: spill until the register pressure fits, then assign registers to the still chordal interference graph, then destroy SSA while emitting.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Liveness</h2>
-<p><span class="tt"><a class="el" href="classmim_1_1Liveness.html" title="Liveness of the values of one scheduled function, as a side table.">mim::Liveness</a></span> is a side table over one scheduled function: its blocks with their chains, predecessors and successors, live-in and live-out sets, and the maximal pressure (MaxLive) per register class. A value's class comes from its type: <span class="tt">math.F pe</span> is floating-point, <span class="tt">mach.Spill T</span> a stack slot, <span class="tt">mach.Flags</span> the flags, everything else general-purpose. A block parameter is defined at the block's entry and a jump uses its arguments, so parameters are the φs.</p>
+<p><span class="tt">mach::Liveness</span> is a side table over one scheduled function: its blocks with their chains, predecessors and successors, live-in and live-out sets, and the maximal pressure (MaxLive) per register class. A value's class comes from its type: <span class="tt">math.F pe</span> is floating-point, <span class="tt">mach.Spill T</span> a stack slot, <span class="tt">mach.Flags</span> the flags, everything else general-purpose. A block parameter is defined at the block's entry and a jump uses its arguments, so parameters are the φs.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Spilling</h2>
 <p><span class="tt">mach.spilling</span> implements Braun &amp; Hack, <em>Register Spilling and Live-Range Splitting for SSA-Form Programs</em> (CC 2009), once per register class:</p>
@@ -390,12 +384,12 @@ Coloring</h2>
 <p>A checker then recomputes <span class="tt">Liveness</span> and verifies the result: every use is wrapped with one agreeing register, simultaneously live values differ, ties and fixed registers hold, nothing live across a call is in a caller-saved register, and no instruction is off the chain. Any violation is an error naming the values.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_emit"></a>
 Emission</h1>
-<p><span class="tt">native::Emitter</span> handles everything that is not an instruction, and <span class="tt">x86.emit</span>/<span class="tt">arm.emit</span> print the instructions:</p>
+<p><span class="tt">mach::Emitter</span> handles everything that is not an instruction, and <span class="tt">x86.emit</span>/<span class="tt">arm.emit</span> print the instructions:</p>
 <ul>
 <li><b>Blocks</b> are laid out by chasing each block's last jump, so a block falls through to its successor where possible.</li>
 <li><b>Jumps, calls, returns, and the entry are parallel copies</b>, which is where SSA destruction happens: spill slots first, then register moves in dependency order, breaking cycles with <span class="tt">xchg</span> (x86) or a scratch register (AArch64), then immediates. A call copies its arguments into the ABI registers, and its return continuation's parameter out of the result register.</li>
 <li><b>The frame</b> holds the callee-saved registers in use, one slot per <span class="tt">mach.Spill</span> value, and the <span class="tt">mach.slot</span> areas, keeping the stack 16-byte aligned at calls.</li>
-<li><b>Flags</b> are emitted where <span class="tt">mem.schedule</span> placed the comparison; the emitter tracks which result the flags hold and rejects a consumer whose flags something clobbered.</li>
+<li><b>Flags</b> are emitted where <span class="tt">mach.schedule</span> placed the comparison; the emitter tracks which result the flags hold and rejects a consumer whose flags something clobbered.</li>
 <li><b>Float literals</b> come from a <span class="tt">.rodata</span> constant pool (x86) or an <span class="tt">fmov</span> immediate or a general-purpose register (AArch64).</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="backend_compare"></a>
@@ -426,8 +420,8 @@ Testing and Debugging</h1>
 <ul>
 <li><span class="tt">lit/x86/</span> and <span class="tt">lit/arm/</span> test each stage, mostly with FileCheck over the assembly; the x86 tests also assemble and run the result on an x86-64 Linux host.</li>
 <li>Integer and float programs elsewhere in <span class="tt">lit/</span> that run under <span class="tt">-p ll</span> also run under the host's native backend, via <span class="tt">if native %{ … -p native … %}</span> RUN lines; see <span class="tt">lit/lit.cfg.py</span>.</li>
-<li><a class="el" href="coding.html#native_ksweep" title="Native Backends at Small Register Counts"><span class="tt">scripts/native_ksweep.sh</span></a> reruns that allowlist at small register counts <span class="tt">k</span>, which exercises spilling, memory φs, and parallel-copy cycles.</li>
-<li>Each stage dumps and round-trips, so <span class="tt">-o -</span> shows the IR after the backend: <span class="tt">mem.sched</span> chains, <span class="tt">mach.spill</span>/<span class="tt">reload</span>, and <span class="tt">mach.in</span> registers. To stop after a stage, write a local <span class="tt">_compile</span> with just the phases you need.</li>
+<li><a class="el" href="coding.html#mach_ksweep" title="Native Backends at Small Register Counts"><span class="tt">scripts/mach_ksweep.sh</span></a> reruns that allowlist at small register counts <span class="tt">k</span>, which exercises spilling, memory φs, and parallel-copy cycles.</li>
+<li>Each stage dumps and round-trips, so <span class="tt">-o -</span> shows the IR after the backend: <span class="tt">mach.sched</span> chains, <span class="tt">mach.spill</span>/<span class="tt">reload</span>, and <span class="tt">mach.in</span> registers. To stop after a stage, write a local <span class="tt">_compile</span> with just the phases you need.</li>
 <li><span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> x86:isel-dot=</span> and <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;backend&gt;:color-dot=</span> show the PBQPs and the chosen options; <span class="tt">mach.live</span> prints liveness.</li>
 <li><span class="tt">mim-pbqp-test</span> checks the solver against exhaustive search on small instances.</li>
 </ul>

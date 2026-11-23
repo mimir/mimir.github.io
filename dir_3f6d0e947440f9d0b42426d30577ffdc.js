@@ -2,10 +2,8 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
 [
     [ "ast", "dir_2ddc41045f35623bc177b300918cc2ff.html", "dir_2ddc41045f35623bc177b300918cc2ff" ],
     [ "cli", "dir_78d50f5e9392a83b0326955836e457eb.html", "dir_78d50f5e9392a83b0326955836e457eb" ],
-    [ "native", "dir_fafd358199a73000e4ff2e43940f8d0b.html", "dir_fafd358199a73000e4ff2e43940f8d0b" ],
     [ "phase", "dir_4ad15e0004aa2fc2424d5bded02c9369.html", "dir_4ad15e0004aa2fc2424d5bded02c9369" ],
     [ "plug", "dir_07110a8747d2517ee97007224f1d2994.html", "dir_07110a8747d2517ee97007224f1d2994" ],
-    [ "asm.cpp", "asm_8cpp.html", null ],
     [ "axm.cpp", "axm_8cpp.html", null ],
     [ "check.cpp", "check_8cpp.html", "check_8cpp" ],
     [ "def.cpp", "def_8cpp.html", "def_8cpp" ],
@@ -13,7 +11,6 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "driver.cpp", "driver_8cpp.html", "driver_8cpp" ],
     [ "dump.cpp", "dump_8cpp.html", "dump_8cpp" ],
     [ "lam.cpp", "lam_8cpp.html", "lam_8cpp" ],
-    [ "liveness.cpp", "liveness_8cpp.html", "liveness_8cpp" ],
     [ "manifest.cpp", "manifest_8cpp.html", "manifest_8cpp" ],
     [ "nest.cpp", "nest_8cpp.html", null ],
     [ "phase.cpp", "phase_8cpp.html", "phase_8cpp" ],
@@ -21,7 +18,6 @@ var dir_3f6d0e947440f9d0b42426d30577ffdc =
     [ "rewrite.cpp", "rewrite_8cpp.html", "rewrite_8cpp" ],
     [ "rule.cpp", "rule_8cpp.html", null ],
     [ "schedule.cpp", "schedule_8cpp.html", null ],
-    [ "target.cpp", "target_8cpp.html", null ],
     [ "tuple.cpp", "tuple_8cpp.html", "tuple_8cpp" ],
     [ "world.cpp", "world_8cpp.html", "world_8cpp" ]
 ];

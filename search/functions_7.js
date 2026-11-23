@@ -15,6 +15,7 @@ var searchData=
   ['head_12',['head',['../structmim_1_1plug_1_1ll_1_1BB.html#a7f7888e5e1558a0b530fad7a1f0865a6',1,'mim::plug::ll::BB']]],
   ['heap2stack_13',['Heap2Stack',['../classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html#a901b069771b03ae51a194aad13d03f14',1,'mim::plug::mem::phase::Heap2Stack']]],
   ['holeexpr_14',['HoleExpr',['../classmim_1_1ast_1_1HoleExpr.html#af222f6ce623acf0004bf17ca86d59048',1,'mim::ast::HoleExpr']]],
-  ['hook_15',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase::hook()'],['../namespacemim_1_1native.html#af6588d8b02761af379d8f72b4823b515',1,'mim::native::hook()']]],
-  ['hostemitter_16',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter']]]
+  ['hook_15',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase::hook()'],['../namespacemim_1_1plug_1_1mach.html#ae11c44d2b79dd859ec603b22045de96b',1,'mim::plug::mach::hook(Flags2Phases &amp;phases)']]],
+  ['hook_5fisel_16',['hook_isel',['../namespacemim_1_1plug_1_1mach.html#a15386307c876725dc07a01237f120f95',1,'mim::plug::mach']]],
+  ['hostemitter_17',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter']]]
 ];

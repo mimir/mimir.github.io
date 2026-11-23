@@ -73,7 +73,7 @@ var namespacemim_1_1plug_1_1x86__isel =
     [ "strunc", "namespacemim_1_1plug_1_1x86__isel.html#a2cf81493a5d8df59f8d1b4b52446f1aa", null ],
     [ "trunc", "namespacemim_1_1plug_1_1x86__isel.html#ab6ff69d429efea45e325a214621907f7", null ],
     [ "unscale", "namespacemim_1_1plug_1_1x86__isel.html#a7937edef68263e3e1ff3d18b5e3e5b3b", null ],
-    [ "Want", "namespacemim_1_1plug_1_1x86__isel.html#a64924231a53a04c38653e217c2944524", null ],
+    [ "Want", "namespacemim_1_1plug_1_1x86__isel.html#a96eec8a9da9b8fe672f12af0de3d448b", null ],
     [ "zext", "namespacemim_1_1plug_1_1x86__isel.html#a5d59b979f30269d21578ab02092f50e0", null ],
     [ "normalize_imm", "namespacemim_1_1plug_1_1x86__isel.html#a83b5360869accd28a4f7c0f88d73d6df", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1x86__isel.html#aea5db33c0facbd4e0ff01f18ccba7894", null ],

@@ -1,11 +1,11 @@
 var searchData=
 [
   ['fields_0',['fields',['../structmim_1_1ast_1_1AnnexInfo.html#aea4baaea1596dbc00d50f68d6f5a3fb3',1,'mim::ast::AnnexInfo']]],
-  ['first_1',['first',['../namespacemim_1_1native_1_1rules.html#a7fe67522bc73900f654bd026d42404ec',1,'mim::native::rules::Root::first'],['../structmim_1_1native_1_1rules_1_1Chains.html#a04ab56c31625bb4919a63b0fb4b7fed0',1,'mim::native::rules::Chains::first']]],
-  ['fixed_2',['fixed',['../namespacemim.html#a0c3525cff77b605234a3a5f38b682ce9',1,'mim::Constraint']]],
-  ['flags_3',['flags',['../namespacemim_1_1native_1_1rules.html#a4e7fb620521015631af77eb330132f30',1,'mim::native::rules::Root::flags'],['../classmim_1_1Target.html#a060f17374391ca34159b7cb2c5275126',1,'mim::Target::Annexes::flags']]],
+  ['first_1',['first',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a2c7ea53d755f560a9e5d289149e03b25',1,'mim::plug::mach::rules::Root::first'],['../structmim_1_1plug_1_1mach_1_1rules_1_1Chains.html#a6806999c6c2444bfc137d04d590cf864',1,'mim::plug::mach::rules::Chains::first']]],
+  ['fixed_2',['fixed',['../namespacemim_1_1plug_1_1mach.html#a89a0a831476f8a75c24b699023e3fd77',1,'mim::plug::mach::Constraint']]],
+  ['flags_3',['flags',['../namespacemim_1_1plug_1_1mach_1_1rules.html#ab105c82bf2576d02ccb9cfe9a0836377',1,'mim::plug::mach::rules::Root']]],
   ['flags_5f_4',['flags_',['../classmim_1_1Def.html#ad97de2c17c3c86c04d2b0078ad386588',1,'mim::Def']]],
-  ['fn_5',['fn',['../namespacemim_1_1native_1_1rules.html#a84777cb8116faa67b857103e021b037b',1,'mim::native::rules::Matcher']]],
+  ['fn_5',['fn',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a333841c3d7271e1ebea4da3007df3f19',1,'mim::plug::mach::rules::Matcher']]],
   ['follow_5ftypes_6',['follow_types',['../namespacemim.html#a281d4e910e9913b8ce626aa19bc1de9c',1,'mim::DotConfig']]],
   ['forbidden_5foptions_7',['forbidden_options',['../namespacepbqp.html#a38fcae31f1f142d003d6364aa7978da2',1,'pbqp::Statistics']]],
   ['force_5fload_8',['force_load',['../structmim_1_1Flags.html#ac51779de7dc26d692adab99bcc8a9a39',1,'mim::Flags']]],
@@ -14,7 +14,7 @@ var searchData=
   ['fpr_5farg_5fregs_11',['Fpr_Arg_Regs',['../namespacemim_1_1plug_1_1arm.html#a21fcc1b782d6d8d52491d29cb1d42d4c',1,'mim::plug::arm']]],
   ['fpr_5fscratch_12',['Fpr_Scratch',['../namespacemim_1_1plug_1_1arm.html#ab75d591562680134d6bbad20edc4560b',1,'mim::plug::arm']]],
   ['fresh_13',['fresh',['../structmim_1_1ast_1_1AnnexInfo.html#a48446c60c76575b7b3e6e7bb5cc54162',1,'mim::ast::AnnexInfo']]],
-  ['from_14',['from',['../namespacemim_1_1native_1_1rules.html#a3ad64da188f0026f85778886a3c8331c',1,'mim::native::rules::Conversion']]],
+  ['from_14',['from',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a26f847e77c743e36a4dd2ec0320c11bd',1,'mim::plug::mach::rules::Conversion']]],
   ['frozen_15',['frozen',['../structmim_1_1World_1_1State.html#a3fbd87f24478b2e87fb87e19e6206a13',1,'mim::World::State::POD']]],
   ['func_5fdecls_5f_16',['func_decls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#aa27e43c7bfe8e0e3284eadf1fd17060a',1,'mim::plug::ll::Emitter']]],
   ['func_5fimpls_5f_17',['func_impls_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#ab31bbfcaecd5d6fc4d1e54e1d19716be',1,'mim::plug::ll::Emitter']]]

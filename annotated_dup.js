@@ -71,31 +71,6 @@ var annotated_dup =
         [ "Parser", "classmim_1_1manifest_1_1Parser.html", "classmim_1_1manifest_1_1Parser" ],
         [ "List_Entry", "namespacemim_1_1manifest.html#structmim_1_1manifest_1_1List__Entry", "namespacemim_1_1manifest_structmim_1_1manifest_1_1List__Entry_dup" ]
       ] ],
-      [ "native", "namespacemim_1_1native.html", [
-        [ "rules", "namespacemim_1_1native_1_1rules.html", [
-          [ "RefInfo", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1RefInfo", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1RefInfo_dup" ],
-          [ "Use", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Use", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Use_dup" ],
-          [ "Matcher", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Matcher", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Matcher_dup" ],
-          [ "Rewrite", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Rewrite", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Rewrite_dup" ],
-          [ "Root", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Root", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Root_dup" ],
-          [ "Conversion", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Conversion", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Conversion_dup" ],
-          [ "Chains", "structmim_1_1native_1_1rules_1_1Chains.html", "structmim_1_1native_1_1rules_1_1Chains" ],
-          [ "Table", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Table", "namespacemim_1_1native_1_1rules_structmim_1_1native_1_1rules_1_1Table_dup" ]
-        ] ],
-        [ "Alt", "namespacemim_1_1native.html#structmim_1_1native_1_1Alt", "namespacemim_1_1native_structmim_1_1native_1_1Alt_dup" ],
-        [ "Color", "classmim_1_1native_1_1Color.html", "classmim_1_1native_1_1Color" ],
-        [ "Constrain", "classmim_1_1native_1_1Constrain.html", "classmim_1_1native_1_1Constrain" ],
-        [ "Cover", "namespacemim_1_1native.html#structmim_1_1native_1_1Cover", "namespacemim_1_1native_structmim_1_1native_1_1Cover_dup" ],
-        [ "Demand", "structmim_1_1native_1_1Demand.html", "structmim_1_1native_1_1Demand" ],
-        [ "Emitter", "classmim_1_1native_1_1Emitter.html", "classmim_1_1native_1_1Emitter" ],
-        [ "FunPhase", "classmim_1_1native_1_1FunPhase.html", "classmim_1_1native_1_1FunPhase" ],
-        [ "ISel", "classmim_1_1native_1_1ISel.html", "classmim_1_1native_1_1ISel" ],
-        [ "Live", "classmim_1_1native_1_1Live.html", "classmim_1_1native_1_1Live" ],
-        [ "Reg", "structmim_1_1native_1_1Reg.html", "structmim_1_1native_1_1Reg" ],
-        [ "Spilling", "classmim_1_1native_1_1Spilling.html", "classmim_1_1native_1_1Spilling" ],
-        [ "Src", "namespacemim_1_1native.html#structmim_1_1native_1_1Src", "namespacemim_1_1native_structmim_1_1native_1_1Src_dup" ],
-        [ "Subst", "classmim_1_1native_1_1Subst.html", "classmim_1_1native_1_1Subst" ]
-      ] ],
       [ "plug", "namespacemim_1_1plug.html", [
         [ "affine", "namespacemim_1_1plug_1_1affine.html", [
           [ "phase", "namespacemim_1_1plug_1_1affine_1_1phase.html", [
@@ -104,9 +79,6 @@ var annotated_dup =
           ] ]
         ] ],
         [ "arm", "namespacemim_1_1plug_1_1arm.html", [
-          [ "phase", "namespacemim_1_1plug_1_1arm_1_1phase.html", [
-            [ "ISel", "classmim_1_1plug_1_1arm_1_1phase_1_1ISel.html", "classmim_1_1plug_1_1arm_1_1phase_1_1ISel" ]
-          ] ],
           [ "Emit", "classmim_1_1plug_1_1arm_1_1Emit.html", "classmim_1_1plug_1_1arm_1_1Emit" ],
           [ "Reg", "structmim_1_1plug_1_1arm_1_1Reg.html", "structmim_1_1plug_1_1arm_1_1Reg" ],
           [ "Src", "namespacemim_1_1plug_1_1arm.html#structmim_1_1plug_1_1arm_1_1Src", "namespacemim_1_1plug_1_1arm_structmim_1_1plug_1_1arm_1_1Src_dup" ],
@@ -170,7 +142,36 @@ var annotated_dup =
           [ "Emitter", "classmim_1_1plug_1_1ll_1_1Emitter.html", "classmim_1_1plug_1_1ll_1_1Emitter" ]
         ] ],
         [ "mach", "namespacemim_1_1plug_1_1mach.html", [
+          [ "rules", "namespacemim_1_1plug_1_1mach_1_1rules.html", [
+            [ "RefInfo", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1RefInfo", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1RefInfo_dup" ],
+            [ "Use", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Use", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Use_dup" ],
+            [ "Matcher", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Matcher", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Matcher_dup" ],
+            [ "Rewrite", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Rewrite", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Rewrite_dup" ],
+            [ "Root", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Root", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Root_dup" ],
+            [ "Conversion", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Conversion", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Conversion_dup" ],
+            [ "Chains", "structmim_1_1plug_1_1mach_1_1rules_1_1Chains.html", "structmim_1_1plug_1_1mach_1_1rules_1_1Chains" ],
+            [ "Table", "namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Table", "namespacemim_1_1plug_1_1mach_1_1rules_structmim_1_1plug_1_1mach_1_1rules_1_1Table_dup" ]
+          ] ],
+          [ "Alt", "namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Alt", "namespacemim_1_1plug_1_1mach_structmim_1_1plug_1_1mach_1_1Alt_dup" ],
+          [ "AsmEmit", "classmim_1_1plug_1_1mach_1_1AsmEmit.html", "classmim_1_1plug_1_1mach_1_1AsmEmit" ],
+          [ "Assign", "classmim_1_1plug_1_1mach_1_1Assign.html", "classmim_1_1plug_1_1mach_1_1Assign" ],
+          [ "Color", "classmim_1_1plug_1_1mach_1_1Color.html", "classmim_1_1plug_1_1mach_1_1Color" ],
+          [ "Constrain", "classmim_1_1plug_1_1mach_1_1Constrain.html", "classmim_1_1plug_1_1mach_1_1Constrain" ],
+          [ "Constraint", "namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Constraint", "namespacemim_1_1plug_1_1mach_structmim_1_1plug_1_1mach_1_1Constraint_dup" ],
+          [ "Cover", "namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Cover", "namespacemim_1_1plug_1_1mach_structmim_1_1plug_1_1mach_1_1Cover_dup" ],
+          [ "Demand", "structmim_1_1plug_1_1mach_1_1Demand.html", "structmim_1_1plug_1_1mach_1_1Demand" ],
+          [ "Emitter", "classmim_1_1plug_1_1mach_1_1Emitter.html", "classmim_1_1plug_1_1mach_1_1Emitter" ],
+          [ "FunPhase", "classmim_1_1plug_1_1mach_1_1FunPhase.html", "classmim_1_1plug_1_1mach_1_1FunPhase" ],
           [ "Gen", "classmim_1_1plug_1_1mach_1_1Gen.html", "classmim_1_1plug_1_1mach_1_1Gen" ],
+          [ "ISel", "classmim_1_1plug_1_1mach_1_1ISel.html", "classmim_1_1plug_1_1mach_1_1ISel" ],
+          [ "Legalize", "classmim_1_1plug_1_1mach_1_1Legalize.html", "classmim_1_1plug_1_1mach_1_1Legalize" ],
+          [ "Live", "classmim_1_1plug_1_1mach_1_1Live.html", "classmim_1_1plug_1_1mach_1_1Live" ],
+          [ "Liveness", "classmim_1_1plug_1_1mach_1_1Liveness.html", "classmim_1_1plug_1_1mach_1_1Liveness" ],
+          [ "Reg", "structmim_1_1plug_1_1mach_1_1Reg.html", "structmim_1_1plug_1_1mach_1_1Reg" ],
+          [ "Schedule", "classmim_1_1plug_1_1mach_1_1Schedule.html", "classmim_1_1plug_1_1mach_1_1Schedule" ],
+          [ "Spilling", "classmim_1_1plug_1_1mach_1_1Spilling.html", "classmim_1_1plug_1_1mach_1_1Spilling" ],
+          [ "Src", "namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Src", "namespacemim_1_1plug_1_1mach_structmim_1_1plug_1_1mach_1_1Src_dup" ],
+          [ "Subst", "classmim_1_1plug_1_1mach_1_1Subst.html", "classmim_1_1plug_1_1mach_1_1Subst" ],
           [ "Target", "classmim_1_1plug_1_1mach_1_1Target.html", "classmim_1_1plug_1_1mach_1_1Target" ]
         ] ],
         [ "mem", "namespacemim_1_1plug_1_1mem.html", [
@@ -178,9 +179,6 @@ var annotated_dup =
             [ "AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem" ],
             [ "FreeLocals", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals" ],
             [ "Heap2Stack", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack" ],
-            [ "LegalizeNative", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizeNative.html", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizeNative" ],
-            [ "LegalizePtr", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizePtr.html", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizePtr" ],
-            [ "Schedule", "classmim_1_1plug_1_1mem_1_1phase_1_1Schedule.html", "classmim_1_1plug_1_1mem_1_1phase_1_1Schedule" ],
             [ "SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO" ]
           ] ],
           [ "EscapeAnalysis", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis" ]
@@ -216,9 +214,6 @@ var annotated_dup =
           [ "PureRead", "namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead", "namespacemim_1_1plug_1_1tensor_structmim_1_1plug_1_1tensor_1_1PureRead_dup" ]
         ] ],
         [ "x86", "namespacemim_1_1plug_1_1x86.html", [
-          [ "phase", "namespacemim_1_1plug_1_1x86_1_1phase.html", [
-            [ "ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel" ]
-          ] ],
           [ "Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", "classmim_1_1plug_1_1x86_1_1Emit" ],
           [ "Reg", "structmim_1_1plug_1_1x86_1_1Reg.html", "structmim_1_1plug_1_1x86_1_1Reg" ],
           [ "Src", "namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Src", "namespacemim_1_1plug_1_1x86_structmim_1_1plug_1_1x86_1_1Src_dup" ],
@@ -233,15 +228,12 @@ var annotated_dup =
       [ "Annex", "structmim_1_1Annex.html", "structmim_1_1Annex" ],
       [ "App", "classmim_1_1App.html", "classmim_1_1App" ],
       [ "Arr", "classmim_1_1Arr.html", "classmim_1_1Arr" ],
-      [ "AsmEmit", "classmim_1_1AsmEmit.html", "classmim_1_1AsmEmit" ],
-      [ "Assign", "classmim_1_1Assign.html", "classmim_1_1Assign" ],
       [ "Axm", "classmim_1_1Axm.html", "classmim_1_1Axm" ],
       [ "BetaRed", "classmim_1_1BetaRed.html", "classmim_1_1BetaRed" ],
       [ "Branch", "classmim_1_1Branch.html", "classmim_1_1Branch" ],
       [ "Check", "classmim_1_1Check.html", "classmim_1_1Check" ],
       [ "Cleanup", "classmim_1_1Cleanup.html", "classmim_1_1Cleanup" ],
       [ "ClosedMutPhase", "classmim_1_1ClosedMutPhase.html", "classmim_1_1ClosedMutPhase" ],
-      [ "Constraint", "namespacemim.html#structmim_1_1Constraint", "namespacemim_structmim_1_1Constraint_dup" ],
       [ "Def", "classmim_1_1Def.html", "classmim_1_1Def" ],
       [ "DefKey", "structmim_1_1DefKey.html", "structmim_1_1DefKey" ],
       [ "Diag", "classmim_1_1Diag.html", "classmim_1_1Diag" ],
@@ -265,7 +257,6 @@ var annotated_dup =
       [ "LamSpec", "classmim_1_1LamSpec.html", "classmim_1_1LamSpec" ],
       [ "Level", "classmim_1_1Level.html", "classmim_1_1Level" ],
       [ "Lit", "classmim_1_1Lit.html", "classmim_1_1Lit" ],
-      [ "Liveness", "classmim_1_1Liveness.html", "classmim_1_1Liveness" ],
       [ "LMax", "classmim_1_1LMax.html", "classmim_1_1LMax" ],
       [ "LSucc", "classmim_1_1LSucc.html", "classmim_1_1LSucc" ],
       [ "Manifest", "namespacemim.html#structmim_1_1Manifest", "namespacemim_structmim_1_1Manifest_dup" ],

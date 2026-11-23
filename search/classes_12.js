@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['table_0',['Table',['../namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Table',1,'mim::native::rules']]],
+  ['table_0',['Table',['../namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Table',1,'mim::plug::mach::rules']]],
   ['target_1',['Target',['../classmim_1_1plug_1_1arm_1_1Target.html',1,'mim::plug::arm::Target'],['../classmim_1_1plug_1_1mach_1_1Target.html',1,'mim::plug::mach::Target'],['../classmim_1_1plug_1_1x86_1_1Target.html',1,'mim::plug::x86::Target'],['../classmim_1_1Target.html',1,'mim::Target']]],
   ['tensortype_2',['TensorType',['../structmim_1_1plug_1_1tensor_1_1TensorType.html',1,'mim::plug::tensor']]],
   ['text_3',['TExt',['../classmim_1_1TExt.html',1,'mim']]],

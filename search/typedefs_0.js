@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['alts_0',['Alts',['../namespacemim_1_1native.html#afa1f04deeef8c5abb76f2e642d301ede',1,'mim::native']]]
+  ['alts_0',['Alts',['../namespacemim_1_1plug_1_1mach.html#ad5b06c8e3be6ea23e1d0808091426bf4',1,'mim::plug::mach']]]
 ];

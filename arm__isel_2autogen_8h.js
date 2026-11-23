@@ -36,7 +36,6 @@ var arm__isel_2autogen_8h =
     [ "mim::plug::arm_isel::mov", "namespacemim_1_1plug_1_1arm__isel.html#afb2f7fe78d8df34b7ebf583d85b00ef6", null ],
     [ "mim::plug::arm_isel::neg", "namespacemim_1_1plug_1_1arm__isel.html#a56215027c75ffb4ced6d9e9be017989e", null ],
     [ "mim::plug::arm_isel::quot", "namespacemim_1_1plug_1_1arm__isel.html#a6755ad7afedd7bb837aab428a1645e28", null ],
-    [ "mim::plug::arm_isel::reg", "namespacemim_1_1plug_1_1arm__isel.html#a7cc8799515f0d1faf07420aa9389378a", null ],
     [ "mim::plug::arm_isel::remainder", "namespacemim_1_1plug_1_1arm__isel.html#a07f57cd6b1082c9aa501ad8590022514", null ],
     [ "mim::plug::arm_isel::select", "namespacemim_1_1plug_1_1arm__isel.html#a7cfe58d5557a0e0e03074154c4ef6feb", null ],
     [ "mim::plug::arm_isel::sext", "namespacemim_1_1plug_1_1arm__isel.html#afea8e65e8b1f3005d4d22fcb76611a82", null ],

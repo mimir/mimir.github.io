@@ -7,7 +7,6 @@ var mach_2gen_8h =
       [ "formats", "classmim_1_1plug_1_1mach_1_1Gen.html#aea394b0bebdcb81bf952cb1627e21920", null ],
       [ "imm", "classmim_1_1plug_1_1mach_1_1Gen.html#ae7faeb73efaf8b431b62adc12845810b", null ],
       [ "lit", "classmim_1_1plug_1_1mach_1_1Gen.html#a8ef50e1e2daece04e6823f832b113097", null ],
-      [ "reg", "classmim_1_1plug_1_1mach_1_1Gen.html#a911e82f1d10422b36b7be2266193eb35", null ],
       [ "reg_imm", "classmim_1_1plug_1_1mach_1_1Gen.html#a724473b41affe5ff4f5c247f1026e6ed", null ],
       [ "reg_sh", "classmim_1_1plug_1_1mach_1_1Gen.html#a1ba1fec705f61906e61e0388759405e0", null ],
       [ "scaled", "classmim_1_1plug_1_1mach_1_1Gen.html#ad39b195c1e7bbb7431a9be95f2f3fb78", null ],

@@ -10,6 +10,6 @@ var searchData=
   ['annex_5f_7',['annex_',['../classmim_1_1ast_1_1RecDecl.html#ab3d9775004afbc19c0e9494ad4600b67',1,'mim::ast::RecDecl']]],
   ['arg_5fregs_8',['Arg_Regs',['../namespacemim_1_1plug_1_1arm.html#ab2c07804a1da745a51fae3aca1d9679c',1,'mim::plug::arm::Arg_Regs'],['../namespacemim_1_1plug_1_1x86.html#a8743fb5ce05a2b1bb4f8b94fcad7a1b2',1,'mim::plug::x86::Arg_Regs']]],
   ['args_9',['args',['../structmim_1_1Plugin.html#aa1db5972caaf1e7548690a26efb282d0',1,'mim::Plugin']]],
-  ['arity_10',['arity',['../namespacemim_1_1native_1_1rules.html#ab435459689d29f41118a7526e27a4a25',1,'mim::native::rules::Conversion']]],
+  ['arity_10',['arity',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a1297f472a73b60d3753e6c47b02b6f37',1,'mim::plug::mach::rules::Conversion']]],
   ['ascii_11',['ascii',['../structmim_1_1Flags.html#ab215ed00a54cbe6b05280568ac1a6f7b',1,'mim::Flags']]]
 ];

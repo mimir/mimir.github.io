@@ -30,7 +30,7 @@ var searchData=
   ['sq_27',['sq',['../namespacemim_1_1plug_1_1math.html#a57a9fbfdbd3e0df3260236539c3c3598a4bc92a7aeb9478e6bf3f989025232b22',1,'mim::plug::math']]],
   ['sqrt_5frm_28',['sqrt_rm',['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda387f1d0d1995c91aa669bc64074fabc7',1,'mim::plug::x86_isel']]],
   ['srem_29',['srem',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9a6dcaf449415765e1fc8503e76318736b',1,'mim::plug::core']]],
-  ['stack_30',['Stack',['../classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09',1,'mim::Target']]],
+  ['stack_30',['Stack',['../classmim_1_1plug_1_1mach_1_1Target.html#a2789df362ffe7057e21d108f766ef3b6aaeb28740eb3c95be841629359f7027f8',1,'mim::plug::mach::Target']]],
   ['star_31',['star',['../namespacemim_1_1plug_1_1regex.html#abd57dc57f7b22176767063e1fe2e2c55a8ff953dd97c4405234a04291dee39e0b',1,'mim::plug::regex']]],
   ['store_32',['store',['../namespacemim_1_1plug_1_1arm__isel.html#a6f6d1f7743792777157b136cb98c6ce1a8cd892b7b97ef9489ae4479d3f4ef0fc',1,'mim::plug::arm_isel::store'],['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda8cd892b7b97ef9489ae4479d3f4ef0fc',1,'mim::plug::x86_isel::store']]],
   ['struc_33',['Struc',['../namespacemim.html#afb12dbffaaa27bca46f171517d96256da1e34fb5c62463618bcc8eb702dc94232',1,'mim']]],

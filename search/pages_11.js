@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['quant_0',['quant.*',['../regex.html#autotoc_md585',1,'']]],
-  ['quantifiers_1',['Quantifiers',['../regex.html#autotoc_md584',1,'']]],
+  ['quant_0',['quant.*',['../regex.html#autotoc_md582',1,'']]],
+  ['quantifiers_1',['Quantifiers',['../regex.html#autotoc_md581',1,'']]],
   ['queries_2',['Local Yes/No Queries',['../dev.html#autotoc_md48',1,'']]],
   ['quick_20start_3',['Quick Start',['../index.html#autotoc_md151',1,'🚀 Quick Start'],['../coding.html#building',1,'Contributor Quick Start']]]
 ];

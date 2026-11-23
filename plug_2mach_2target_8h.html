@@ -172,7 +172,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('plug_2mach_2ta
   <div class="headertitle"><div class="title">target.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="target_8h_source.html">mim/target.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;<a class="el" href="driver_8h_source.html">mim/driver.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="target_8h_source.html">mim/target.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="core_8h_source.html">mim/plug/core/core.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="math_8h_source.html">mim/plug/math/math.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mem_8h_source.html">mim/plug/mem/mem.h</a>&gt;</code><br />
@@ -192,8 +194,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Amach_3A_3AConstraint_5Fstructmim_5F1_5F1plug_5F1_5F1mach_5F1_5F1Constraint" id="r_mim_3A_3Aplug_3A_3Amach_3A_3AConstraint_5Fstructmim_5F1_5F1plug_5F1_5F1mach_5F1_5F1Constraint"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Constraint">mim::plug::mach::Constraint</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1mach_1_1Constraint"><td class="mdescLeft">&#160;</td><td class="mdescRight">What an instruction on the chain prescribes about the registers of its operands; registers are hardware encodings.  <a href="namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Constraint">More...</a><br /></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Amach_3A_3ATarget" id="r_mim_3A_3Aplug_3A_3Amach_3A_3ATarget"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html">mim::plug::mach::Target</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html" title="A Target whose machine-independent axioms are those of the plugin mach.">Target</a> whose machine-independent axioms are those of the plugin <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html" title="The mach Plugin">mach</a></span>.  <a href="classmim_1_1plug_1_1mach_1_1Target.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The machine facts of a native backend that the phases of <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html" title="The mach Plugin">mach</a></span> need.  <a href="classmim_1_1plug_1_1mach_1_1Target.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -201,7 +205,63 @@ Namespaces</h2></td></tr>
 <tr class="memitem:mim_3A_3Aplug" id="r_mim_3A_3Aplug"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug.html">mim::plug</a></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Amach" id="r_mim_3A_3Aplug_3A_3Amach"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1mach.html">mim::plug::mach</a></td></tr>
 <tr class="memdesc:namespacemim_1_1plug_1_1mach"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="mach.html" title="The mach Plugin">The mach Plugin</a> <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5587d40d51f3a7665680173327693946" id="r_a5587d40d51f3a7665680173327693946"><td class="memItemLeft">fe::Vector&lt; std::pair&lt; size_t, std::optional&lt; size_t &gt; &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1mach.html#a5587d40d51f3a7665680173327693946">mim::plug::mach::copies</a> (const <a class="el" href="namespacemim_1_1plug_1_1mach.html#structmim_1_1plug_1_1mach_1_1Constraint">Constraint</a> &amp;c, auto live_after)</td></tr>
+<tr class="memdesc:a5587d40d51f3a7665680173327693946"><td class="mdescLeft">&#160;</td><td class="mdescRight">The fixed operands with their registers, and the tied one with no register if it is <code class="param">live_after</code>.  <br /></td></tr>
 </table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1plug_1_1mach_1_1Constraint" id="structmim_1_1plug_1_1mach_1_1Constraint"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1mach_1_1Constraint">&#9670;&#160;</a></span>mim::plug::mach::Constraint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::mach::Constraint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>What an instruction on the chain prescribes about the registers of its operands; registers are hardware encodings. </p>
+
+<p class="definition">Definition at line <a class="el" href="plug_2mach_2target_8h_source.html#l00017">17</a> of file <a class="el" href="plug_2mach_2target_8h_source.html">target.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a0e4d2661830bca6120e52d838fb985df" name="a0e4d2661830bca6120e52d838fb985df"></a>Vector&lt; size_t &gt;</td>
+<td class="fieldname">
+clobbers</td>
+<td class="fielddoc">
+Registers written while the operands still occupy theirs. </td></tr>
+<tr><td class="fieldtype">
+<a id="a89a0a831476f8a75c24b699023e3fd77" name="a89a0a831476f8a75c24b699023e3fd77"></a>Vector&lt; pair&lt; size_t, size_t &gt; &gt;</td>
+<td class="fieldname">
+fixed</td>
+<td class="fielddoc">
+Non-literal operands that have to be in a given register. </td></tr>
+<tr><td class="fieldtype">
+<a id="a4cf69ba43134cecd0aaba9292bdf9ddc" name="a4cf69ba43134cecd0aaba9292bdf9ddc"></a><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a></td>
+<td class="fieldname">
+ops</td>
+<td class="fielddoc">
+See <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a0601513577b13b19670366c26b22556e" title="The operands of insn: the argument of a sched&#39;s instruction, otherwise the arguments including the me...">Target::operands</a>. </td></tr>
+<tr><td class="fieldtype">
+<a id="a18398c538a8bcbc0f3fbb3025ad52ca0" name="a18398c538a8bcbc0f3fbb3025ad52ca0"></a>Vector&lt; pair&lt; size_t, size_t &gt; &gt;</td>
+<td class="fieldname">
+results</td>
+<td class="fielddoc">
+Results, see <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#af716517d033651e48fe524f12e799cff" title="The j-th projection of the non-memory result of insn.">Target::result</a>, that land in a given register. </td></tr>
+<tr><td class="fieldtype">
+<a id="a8f3db36f09ea1478c54d4a61977f3f9b" name="a8f3db36f09ea1478c54d4a61977f3f9b"></a>optional&lt; size_t &gt;</td>
+<td class="fieldname">
+tied</td>
+<td class="fielddoc">
+The operand whose register the (only) result takes. </td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

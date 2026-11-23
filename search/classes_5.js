@@ -1,7 +1,7 @@
 var searchData=
 [
   ['emit_0',['Emit',['../classmim_1_1plug_1_1arm_1_1Emit.html',1,'mim::plug::arm::Emit'],['../classmim_1_1plug_1_1ll_1_1Emit.html',1,'mim::plug::ll::Emit'],['../classmim_1_1plug_1_1nvptx_1_1Emit.html',1,'mim::plug::nvptx::Emit'],['../classmim_1_1plug_1_1x86_1_1Emit.html',1,'mim::plug::x86::Emit']]],
-  ['emitter_1',['Emitter',['../classmim_1_1ast_1_1Emitter.html',1,'mim::ast::Emitter'],['../classmim_1_1native_1_1Emitter.html',1,'mim::native::Emitter'],['../classmim_1_1plug_1_1ll_1_1Emitter.html',1,'mim::plug::ll::Emitter']]],
+  ['emitter_1',['Emitter',['../classmim_1_1ast_1_1Emitter.html',1,'mim::ast::Emitter'],['../classmim_1_1plug_1_1ll_1_1Emitter.html',1,'mim::plug::ll::Emitter'],['../classmim_1_1plug_1_1mach_1_1Emitter.html',1,'mim::plug::mach::Emitter']]],
   ['ends_2',['Ends',['../classpbqp_1_1Graph.html#structpbqp_1_1Graph_1_1Ends',1,'pbqp::Graph']]],
   ['entry_3',['Entry',['../classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry',1,'mim::Driver::Imports::Entry'],['../classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry',1,'mim::World::Annexes::Entry']]],
   ['errorexpr_4',['ErrorExpr',['../classmim_1_1ast_1_1ErrorExpr.html',1,'mim::ast']]],

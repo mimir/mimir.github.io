@@ -12,5 +12,5 @@ var searchData=
   ['isa_9',['IsA',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
   ['isa_3c_20mem_3a_3am_2c_20mim_3a_3aapp_20_3e_10',['IsA&lt; mem::M, mim::App &gt;',['../classmim_1_1Axm_1_1IsA.html',1,'mim::Axm']]],
   ['isanode_11',['IsANode',['../classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode',1,'mim::Axm']]],
-  ['isel_12',['ISel',['../classmim_1_1native_1_1ISel.html',1,'mim::native::ISel'],['../classmim_1_1plug_1_1arm_1_1phase_1_1ISel.html',1,'mim::plug::arm::phase::ISel'],['../classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html',1,'mim::plug::x86::phase::ISel']]]
+  ['isel_12',['ISel',['../classmim_1_1plug_1_1mach_1_1ISel.html',1,'mim::plug::mach']]]
 ];

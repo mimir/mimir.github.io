@@ -6,13 +6,13 @@ var searchData=
   ['hash_20consing_20is_20inherently_20impure_3',['Hash-consing is inherently impure',['../md_docs_2why-cpp.html#autotoc_md175',1,'']]],
   ['haskell_20specifically_4',['Haskell specifically',['../md_docs_2why-cpp.html#autotoc_md177',1,'']]],
   ['hatch_20and_20why_20it_20defeats_20the_20purpose_5',['The escape hatch, and why it defeats the purpose',['../md_docs_2why-cpp.html#autotoc_md182',1,'']]],
-  ['head_20tail_6',['head / tail',['../tuple.html#autotoc_md714',1,'']]],
+  ['head_20tail_6',['head / tail',['../tuple.html#autotoc_md711',1,'']]],
   ['header_7',['Generated Header',['../plugins.html#plugin_h',1,'']]],
   ['heap2stack_8',['heap2stack',['../mem.html#autotoc_md519',1,'']]],
   ['helpers_9',['Error Handling Helpers',['../python.html#autotoc_md145',1,'']]],
   ['here_10',['The idiomatic dividend does not apply here',['../md_docs_2why-cpp.html#autotoc_md179',1,'']]],
   ['highlighting_11',['Syntax Highlighting',['../coding.html#autotoc_md30',1,'']]],
   ['honest_20caveats_12',['Two honest caveats',['../md_docs_2why-cpp.html#autotoc_md181',1,'']]],
-  ['host_5fmalloc2gpualloc_5frepl_13',['host_malloc2gpualloc_repl',['../gpu.html#autotoc_md437',1,'']]],
+  ['host_5fmalloc2gpualloc_5frepl_13',['host_malloc2gpualloc_repl',['../gpu.html#autotoc_md435',1,'']]],
   ['how_20defs_20are_20placed_20in_20them_14',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
 ];

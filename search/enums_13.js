@@ -11,7 +11,7 @@ var searchData=
   ['transpose_5fimpl_8',['transpose_impl',['../namespacemim_1_1plug_1_1tensor.html#a975b1b3baf6d3029a2bc229d5ac1e319',1,'mim::plug::tensor']]],
   ['tri_9',['tri',['../namespacemim_1_1plug_1_1math.html#a2ed29920a6ee618bffa2224415faaf72',1,'mim::plug::math']]],
   ['trunc_10',['trunc',['../namespacemim_1_1plug_1_1arm.html#acf13eae11db84109c6f0eeb2f5f30887',1,'mim::plug::arm::trunc'],['../namespacemim_1_1plug_1_1arm__isel.html#a5e681c6e1486ad0033e5bca1c39ec786',1,'mim::plug::arm_isel::trunc'],['../namespacemim_1_1plug_1_1x86.html#ace959ed8dec1302298215b75384697f3',1,'mim::plug::x86::trunc'],['../namespacemim_1_1plug_1_1x86__isel.html#ab6ff69d429efea45e325a214621907f7',1,'mim::plug::x86_isel::trunc']]],
-  ['ty_11',['Ty',['../namespacemim_1_1native_1_1rules.html#ad9d516ea1ac3a89bdeee2b1234c43e03',1,'mim::native::rules::Ty'],['../namespacemim_1_1native.html#ad9d516ea1ac3a89bdeee2b1234c43e03',1,'mim::native::Ty']]],
+  ['ty_11',['Ty',['../namespacemim_1_1plug_1_1mach_1_1rules.html#adccb2915623608ac1d17a56f478491cf',1,'mim::plug::mach::rules::Ty'],['../namespacemim_1_1plug_1_1mach.html#adccb2915623608ac1d17a56f478491cf',1,'mim::plug::mach::Ty'],['../namespacemim_1_1plug_1_1mach.html#adccb2915623608ac1d17a56f478491cf',1,'mim::plug::mach::Ty']]],
   ['type_12',['type',['../namespacemim_1_1plug_1_1refly.html#a28d21b99af5c1d61200601d069b512a4',1,'mim::plug::refly']]],
   ['typecat_13',['typecat',['../namespacemim_1_1plug_1_1tuple.html#a7947132a755044df3687e189d12929a3',1,'mim::plug::tuple']]]
 ];
