@@ -16,12 +16,15 @@ var namespacemim_1_1plug_1_1mem =
     [ "fresh", "namespacemim_1_1plug_1_1mem.html#a3c26b1775337b77e47a97ca86c342dd6", null ],
     [ "heap2stack", "namespacemim_1_1plug_1_1mem.html#aebc739f361b2f38c1d0b03c122054777", null ],
     [ "lea", "namespacemim_1_1plug_1_1mem.html#add102b8e1cf16c9e60dbcacb03c9f4eb", null ],
+    [ "legalize_native", "namespacemim_1_1plug_1_1mem.html#aa44903c4b9cb4b840cd6ea470545efb1", null ],
     [ "legalize_ptr", "namespacemim_1_1plug_1_1mem.html#a5941b40a6fa034df0955fe93866d17d2", null ],
     [ "load", "namespacemim_1_1plug_1_1mem.html#a029144aa6e194281070cc4406fe2268e", null ],
     [ "malloc", "namespacemim_1_1plug_1_1mem.html#ad6931e3bea27087eb6646508f7db27f5", null ],
     [ "mslot", "namespacemim_1_1plug_1_1mem.html#a966b87ce8236f82e10a5c87dc544b9c9", null ],
     [ "Ptr0", "namespacemim_1_1plug_1_1mem.html#ace46b7b29a70a8a286dd0a1fc74855f3", null ],
     [ "ptradd", "namespacemim_1_1plug_1_1mem.html#a25ba392fc7ba10482bdd10dbec979906", null ],
+    [ "sched", "namespacemim_1_1plug_1_1mem.html#a24d915e170a29ea00ecdbeba61320737", null ],
+    [ "schedule", "namespacemim_1_1plug_1_1mem.html#af04d08b301929d73bcacf70f48c6897f", null ],
     [ "seo", "namespacemim_1_1plug_1_1mem.html#a145c0289fe1e8b476c2753d14eb16010", null ],
     [ "slot", "namespacemim_1_1plug_1_1mem.html#ae34ad21e9af0dc16eaaba90794a316f4", null ],
     [ "store", "namespacemim_1_1plug_1_1mem.html#a0accf352be5afdd02647f035fc72cb3c", null ],
@@ -46,5 +49,6 @@ var namespacemim_1_1plug_1_1mem =
     [ "register_normalizers", "namespacemim_1_1plug_1_1mem.html#a04961411480726ed252bc02a62e51aa6", null ],
     [ "split_slot", "namespacemim_1_1plug_1_1mem.html#ae22de884df815481d063ceda8244366d", null ],
     [ "strip_mem_ty", "namespacemim_1_1plug_1_1mem.html#aa094c752c5f61284d2ec02f9818bb740", null ],
+    [ "strip_ptr_cast", "namespacemim_1_1plug_1_1mem.html#a9480b06532bea7b3e3deb35e16e30d76", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1mem.html#aa07d1f14255050ea3f0949fcb341c83f", null ]
 ];

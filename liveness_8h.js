@@ -1,23 +1,26 @@
 var liveness_8h =
 [
-    [ "mim::plug::x86::Liveness", "classmim_1_1plug_1_1x86_1_1Liveness.html", "classmim_1_1plug_1_1x86_1_1Liveness" ],
-    [ "mim::plug::x86::Liveness::Block", "classmim_1_1plug_1_1x86_1_1Liveness.html#structmim_1_1plug_1_1x86_1_1Liveness_1_1Block", [
-      [ "defs", "classmim_1_1plug_1_1x86_1_1Liveness.html#a8ac8d3eb9e7ed77380cecaa3d528eaeb", null ],
-      [ "insns", "classmim_1_1plug_1_1x86_1_1Liveness.html#aa9f327a081af074010a6d5cb9ff0e091", null ],
-      [ "lam", "classmim_1_1plug_1_1x86_1_1Liveness.html#a8da499493d122766eb3e41fd6ed28673", null ],
-      [ "live_in", "classmim_1_1plug_1_1x86_1_1Liveness.html#aa1b627dcc1a515087eed6c3b7cce4327", null ],
-      [ "live_out", "classmim_1_1plug_1_1x86_1_1Liveness.html#a90714274d0c994aaf00d67b612780a0f", null ],
-      [ "max_live", "classmim_1_1plug_1_1x86_1_1Liveness.html#aff376ea2a4cd60c7caa44de79390030b", null ],
-      [ "params", "classmim_1_1plug_1_1x86_1_1Liveness.html#a64a57d53b19b96b997a3a4cc76a6e61e", null ],
-      [ "preds", "classmim_1_1plug_1_1x86_1_1Liveness.html#af8ccebe429f8ce8a255a00e0f836ba88", null ],
-      [ "succs", "classmim_1_1plug_1_1x86_1_1Liveness.html#aec428a5c8045945929caddbfdd6024db", null ],
-      [ "term_uses", "classmim_1_1plug_1_1x86_1_1Liveness.html#a6703f910f60a402c3228b79006f16c0f", null ],
-      [ "uses", "classmim_1_1plug_1_1x86_1_1Liveness.html#af057b1e130a6e0f4a81ab29df5b56ac5", null ]
+    [ "mim::Liveness", "classmim_1_1Liveness.html", "classmim_1_1Liveness" ],
+    [ "mim::Liveness::Block", "classmim_1_1Liveness.html#structmim_1_1Liveness_1_1Block", [
+      [ "defs", "classmim_1_1Liveness.html#ac403df37125569af58a64d6b129458c0", null ],
+      [ "insns", "classmim_1_1Liveness.html#aee9a8caf38277000bbfd16578d5cebf1", null ],
+      [ "lam", "classmim_1_1Liveness.html#a9a6bf0957a8d1aff53033fd2c869169f", null ],
+      [ "live_in", "classmim_1_1Liveness.html#a71a4af1c4b5eb91e09ff7b9354f834c2", null ],
+      [ "live_out", "classmim_1_1Liveness.html#a865160b17ea0b5f7de12bcb6ed26227c", null ],
+      [ "max_live", "classmim_1_1Liveness.html#a4767a3f853884612d60757098ee4b7c5", null ],
+      [ "params", "classmim_1_1Liveness.html#ab0dfd45de84da39b8b739cd40ca3844f", null ],
+      [ "preds", "classmim_1_1Liveness.html#a60b722881433b50761bdddf82349ac6b", null ],
+      [ "succs", "classmim_1_1Liveness.html#a2a24a764147aa5fc7b64cab84721216a", null ],
+      [ "term_uses", "classmim_1_1Liveness.html#a2fe18e753be8c7fb6643a5415db9485a", null ],
+      [ "uses", "classmim_1_1Liveness.html#a506cd9df887b770fc57e2cc1f8c4777e", null ]
     ] ],
-    [ "mim::plug::x86::arg_reg", "namespacemim_1_1plug_1_1x86.html#a03282a75e044cb4185a89ff59b0aadae", null ],
-    [ "mim::plug::x86::caller_saved", "namespacemim_1_1plug_1_1x86.html#a88ee3f0b701564e39bb0919faf4676f6", null ],
-    [ "mim::plug::x86::for_each_succ", "namespacemim_1_1plug_1_1x86.html#a4f1e026dc146cbacd7a549b438c80b56", null ],
-    [ "mim::plug::x86::is_value", "namespacemim_1_1plug_1_1x86.html#ad6e56513fa9687717a78f02704ec546f", null ],
-    [ "mim::plug::x86::num_arg_regs", "namespacemim_1_1plug_1_1x86.html#ad58b20092408125914afd6f8c12bedcf", null ],
-    [ "mim::plug::x86::ret_reg", "namespacemim_1_1plug_1_1x86.html#abb48745824947bd396e75d5666a378c9", null ]
+    [ "mim::Assign", "classmim_1_1Assign.html", "classmim_1_1Assign" ],
+    [ "mim::call_cont", "namespacemim.html#a53c90f69f59e613f1472ce73f3358fe8", null ],
+    [ "mim::for_each_succ", "namespacemim.html#a895d32ae780b8c90563c5bce06d5b243", null ],
+    [ "mim::for_each_use", "namespacemim.html#aed38388f9b37f423043ad2e6cebfbf10", null ],
+    [ "mim::interferences", "namespacemim.html#a635d0ea5002114bdc1886339726c25a1", null ],
+    [ "mim::is_value", "namespacemim.html#add8b8b7228219ca646606c0d75166d8c", null ],
+    [ "mim::layout", "namespacemim.html#a0e6960cc2a424d159572c683a9641609", null ],
+    [ "mim::rewrite_blocks", "namespacemim.html#afda5e9497367a873faa7daf15b3d2d7b", null ],
+    [ "mim::takes_values", "namespacemim.html#a80a97721af9c06073a873d04b426e5cd", null ]
 ];

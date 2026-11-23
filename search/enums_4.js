@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['emit_0',['emit',['../namespacemim_1_1plug_1_1ll.html#aa8af5751b0c661fdf794f6c05273f02d',1,'mim::plug::ll::emit'],['../namespacemim_1_1plug_1_1nvptx.html#a722a1414794e0a22e4562525d1eb680d',1,'mim::plug::nvptx::emit'],['../namespacemim_1_1plug_1_1x86.html#a0c3a111259be84a066caa80359d10924',1,'mim::plug::x86::emit']]],
+  ['emit_0',['emit',['../namespacemim_1_1plug_1_1arm.html#a30bf9006806f1a3bd8a1d8f7a82930d9',1,'mim::plug::arm::emit'],['../namespacemim_1_1plug_1_1ll.html#aa8af5751b0c661fdf794f6c05273f02d',1,'mim::plug::ll::emit'],['../namespacemim_1_1plug_1_1nvptx.html#a722a1414794e0a22e4562525d1eb680d',1,'mim::plug::nvptx::emit'],['../namespacemim_1_1plug_1_1x86.html#a0c3a111259be84a066caa80359d10924',1,'mim::plug::x86::emit']]],
   ['empty_1',['empty',['../namespacemim_1_1plug_1_1regex.html#a8e7fb7d4e2c8eb1dce002cff7a43cf24',1,'mim::plug::regex']]],
   ['er_2',['er',['../namespacemim_1_1plug_1_1math.html#acad4db7382e2aa7eb1580c177148e4bb',1,'mim::plug::math']]],
   ['error_3',['error',['../namespacemim_1_1plug_1_1refly.html#a4fcbc03e42bd8c41c1e524e747d3e5ed',1,'mim::plug::refly']]],

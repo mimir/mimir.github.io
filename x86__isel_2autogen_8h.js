@@ -17,8 +17,6 @@ var x86__isel_2autogen_8h =
     [ "mim::plug::x86_isel::div8", "namespacemim_1_1plug_1_1x86__isel.html#a10da7cf480ab0e08842ecec49b530918", null ],
     [ "mim::plug::x86_isel::division", "namespacemim_1_1plug_1_1x86__isel.html#a2a0698bba81dacf3bc1a43fff36f4c76", null ],
     [ "mim::plug::x86_isel::float_", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bd", [
-      [ "mim::plug::x86_isel::float_::arith", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda4d0b05c8b4480d7ada20a44c3b506388", null ],
-      [ "mim::plug::x86_isel::float_::unary", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda94a69b2994dec7f49a12bb036c3d2ac8", null ],
       [ "mim::plug::x86_isel::float_::rm", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bdad67f249b90615ca158b1258712c3a9fc", null ],
       [ "mim::plug::x86_isel::float_::sqrt_rm", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda387f1d0d1995c91aa669bc64074fabc7", null ],
       [ "mim::plug::x86_isel::float_::arithmetic", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda26e816805c2eb54063da29d3d21a3641", null ],
@@ -49,7 +47,6 @@ var x86__isel_2autogen_8h =
     [ "mim::plug::x86_isel::index", "namespacemim_1_1plug_1_1x86__isel.html#a247e04d7611a798936f00217ac4e91c0", null ],
     [ "mim::plug::x86_isel::index_disp", "namespacemim_1_1plug_1_1x86__isel.html#a00c067f4df5a10a44adcb27b45abf16b", null ],
     [ "mim::plug::x86_isel::lea", "namespacemim_1_1plug_1_1x86__isel.html#a1cfb783cb97dd7eac905d3147f51aa9f", null ],
-    [ "mim::plug::x86_isel::lit", "namespacemim_1_1plug_1_1x86__isel.html#a6fbca435705e7a8d52d533683c482464", null ],
     [ "mim::plug::x86_isel::load", "namespacemim_1_1plug_1_1x86__isel.html#ac0fc218c5f719f19af2b647eb370eba1", null ],
     [ "mim::plug::x86_isel::mem_ops", "namespacemim_1_1plug_1_1x86__isel.html#ae6a0c2979cc09e04ab465b32c5316ea6", null ],
     [ "mim::plug::x86_isel::mov", "namespacemim_1_1plug_1_1x86__isel.html#af59eaa61bd8d182fc1559242e030f588", null ],
@@ -78,7 +75,6 @@ var x86__isel_2autogen_8h =
     [ "mim::plug::x86_isel::unscale", "namespacemim_1_1plug_1_1x86__isel.html#a7937edef68263e3e1ff3d18b5e3e5b3b", null ],
     [ "mim::plug::x86_isel::zext", "namespacemim_1_1plug_1_1x86__isel.html#a5d59b979f30269d21578ab02092f50e0", null ],
     [ "mim::plug::x86_isel::normalize_imm", "namespacemim_1_1plug_1_1x86__isel.html#a83b5360869accd28a4f7c0f88d73d6df", null ],
-    [ "mim::plug::x86_isel::normalize_lit", "namespacemim_1_1plug_1_1x86__isel.html#a2be416406074919c08fa4adde3f0f8ef", null ],
     [ "mim::plug::x86_isel::register_normalizers", "namespacemim_1_1plug_1_1x86__isel.html#aea5db33c0facbd4e0ff01f18ccba7894", null ],
     [ "mim::plug::x86_isel::Plugin_Id", "namespacemim_1_1plug_1_1x86__isel.html#a32630f46a0ec17a6acd28854fc08795a", null ]
 ];

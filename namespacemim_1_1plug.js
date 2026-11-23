@@ -1,6 +1,8 @@
 var namespacemim_1_1plug =
 [
     [ "affine", "namespacemim_1_1plug_1_1affine.html", "namespacemim_1_1plug_1_1affine" ],
+    [ "arm", "namespacemim_1_1plug_1_1arm.html", "namespacemim_1_1plug_1_1arm" ],
+    [ "arm_isel", "namespacemim_1_1plug_1_1arm__isel.html", "namespacemim_1_1plug_1_1arm__isel" ],
     [ "autodiff", "namespacemim_1_1plug_1_1autodiff.html", "namespacemim_1_1plug_1_1autodiff" ],
     [ "btensor", "namespacemim_1_1plug_1_1btensor.html", "namespacemim_1_1plug_1_1btensor" ],
     [ "buffer", "namespacemim_1_1plug_1_1buffer.html", "namespacemim_1_1plug_1_1buffer" ],
@@ -41,6 +43,7 @@ var namespacemim_1_1plug =
     ] ],
     [ "gpu", "namespacemim_1_1plug_1_1gpu.html", "namespacemim_1_1plug_1_1gpu" ],
     [ "ll", "namespacemim_1_1plug_1_1ll.html", "namespacemim_1_1plug_1_1ll" ],
+    [ "mach", "namespacemim_1_1plug_1_1mach.html", "namespacemim_1_1plug_1_1mach" ],
     [ "math", "namespacemim_1_1plug_1_1math.html", [
       [ "VMode", "namespacemim_1_1plug_1_1math.html#a940e481c253b52c293f203e453d8057a", null ],
       [ "abs", "namespacemim_1_1plug_1_1math.html#aac0617de60d5ac15e13c9962e4eea02b", null ],

@@ -1,0 +1,426 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: include/mim/native/emit.h Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('native_2emit_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">emit.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="native_2emit_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;print&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;fe/algo.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="asm_8h.html">mim/asm.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="liveness_8h.html">mim/liveness.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacemim_1_1native.html">   14</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1native.html">mim::native</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"></span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// A physical register of a register class.</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structmim_1_1native_1_1Reg.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structmim_1_1native_1_1Reg.html#a4e712a7ee2a77db3b2cf45b72f9aa2e0">   18</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structmim_1_1native_1_1Reg.html#a4e712a7ee2a77db3b2cf45b72f9aa2e0">num</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structmim_1_1native_1_1Reg.html#a34d74d8d45dacc7e3b723856d3945c8e">   19</a></span>    <a class="code hl_enumeration" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">Target::Class</a> <a class="code hl_variable" href="structmim_1_1native_1_1Reg.html#a34d74d8d45dacc7e3b723856d3945c8e">cls</a>                 = <a class="code hl_enumvalue" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454">Target::Gpr</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structmim_1_1native_1_1Reg.html#ad8c98083f8b078b8757791eb9b544e40">   20</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structmim_1_1native_1_1Reg.html#ad8c98083f8b078b8757791eb9b544e40">operator==</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a>&amp;) <span class="keyword">const</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// The source of a copy: a register or a literal; `reg.cls` is the class of either.</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacemim_1_1native.html">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">Src</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacemim_1_1native.html#a5ad18f8f5e23c96ca541507f716e9d5e">   25</a></span>    <a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> <a class="code hl_variable" href="namespacemim_1_1native.html#a5ad18f8f5e23c96ca541507f716e9d5e">reg</a>        = {};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacemim_1_1native.html#a8d1b3583fee2b958f30da06d20e5a808">   26</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_variable" href="namespacemim_1_1native.html#a8d1b3583fee2b958f30da06d20e5a808">imm</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacemim_1_1native.html#a08ffc6acdeb429e7c904c28d0ea9fe71">   29</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacemim_1_1native.html#a08ffc6acdeb429e7c904c28d0ea9fe71">Moves</a> = fe::Vector&lt;std::pair&lt;Reg, Src&gt;&gt;;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// Writes the GNU assembler code of one function on the registers that Color assigned.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// The control flow is target-independent: jumps, calls, returns, and the entry are parallel copies, the blocks are</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// laid out by layout(), and the callee-saved registers that hold values are saved.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// A backend derives from it and emits its instructions, moves, branches, prologue, and epilogue.</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html">   35</a></span><span class="keyword">class </span><a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a85d6761d37abb5ddee3861384d1fd692">Emitter</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a85d6761d37abb5ddee3861384d1fd692">   37</a></span>    <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a85d6761d37abb5ddee3861384d1fd692">Emitter</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Target.html">Target</a>&amp; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>, std::ostream&amp; os, <a class="code hl_class" href="classmim_1_1AsmEmit.html">AsmEmit</a>&amp; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a68ef8e2bbad888891868a5bbe6ba7a9b">emit</a>, <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">fun</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        : target_(<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        , os_(os)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        , emit_(<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a68ef8e2bbad888891868a5bbe6ba7a9b">emit</a>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        , fun_(<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">fun</a>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        , ret_(<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">fun</a>-&gt;ret_var())</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        , live_(<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>, <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">fun</a>) {}</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a31c6ffa36c9d93c3824e51523b0f644b">   44</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a31c6ffa36c9d93c3824e51523b0f644b">~Emitter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a68ef8e2bbad888891868a5bbe6ba7a9b">emit</a>(<span class="keywordtype">bool</span> global);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">protected</span>:<span class="comment"></span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">    /// @name Hooks</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">    ///@{</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    /// Emits the instruction @p app on the chain.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a8bc429db6000b88dc95e4c4ef89642c9">   52</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a8bc429db6000b88dc95e4c4ef89642c9">step</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* app)             = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a40482ece493f6dd356ce2055669c0953">   53</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a40482ece493f6dd356ce2055669c0953">move</a>(<a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> dst, <a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> src)           = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a1fe12f08f4d6da572b20dfa2e4612cad">   54</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a1fe12f08f4d6da572b20dfa2e4612cad">mov_imm</a>(<a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> dst, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* lit) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    /// Exchanges two registers of one class; only called if there is no scratch().</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#aa7866865fd364af72d2a5868d473ce8f">   56</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa7866865fd364af72d2a5868d473ce8f">swap</a>(<a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a>, <a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a>) { std::unreachable(); }<span class="comment"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    /// A register of class @p cls that breaks a copy cycle instead of swap(), if any.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a6ee2567de4643b8a0a50af601e2dd4dc">   58</a></span>    <span class="keyword">virtual</span> std::optional&lt;Reg&gt; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a6ee2567de4643b8a0a50af601e2dd4dc">scratch</a>(<a class="code hl_enumeration" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">Target::Class</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> {}; }<span class="comment"></span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    /// Pushes the spill slot @p i; the pops come in reverse order.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#af342fbb5e049cc29adf7c6feb030f28a">   60</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#af342fbb5e049cc29adf7c6feb030f28a">push_slot</a>(<span class="keywordtype">size_t</span> i) = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a5c7a94e003c9c952c710e28683980a57">   61</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a5c7a94e003c9c952c710e28683980a57">pop_slot</a>(<span class="keywordtype">size_t</span> i)  = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">    /// Stores @p src, a value of @p type, into the spill slot @p i.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a80714274c598794e9eb8d042e7d9a9af">   63</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a80714274c598794e9eb8d042e7d9a9af">spill</a>(<a class="code hl_struct" href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">Src</a> src, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* type, <span class="keywordtype">size_t</span> i) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">    /// Loads the spill slot @p i, a value of @p type, into @p dst.</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a5fec5e8b3a763e660b719c49bde69cea">   65</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a5fec5e8b3a763e660b719c49bde69cea">reload</a>(<a class="code hl_struct" href="structmim_1_1native_1_1Reg.html">Reg</a> dst, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* type, <span class="keywordtype">size_t</span> i) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">    /// Puts the address of the @p n slots from @p first on into the register @p dst.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#acfb5c83774842ef868705062d3a7492a">   67</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#acfb5c83774842ef868705062d3a7492a">slot_addr</a>(<span class="keywordtype">size_t</span> dst, <span class="keywordtype">size_t</span> first, <span class="keywordtype">size_t</span> n) = 0;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#ab3797b82f9e46dae7a67c2c306e3c9a2">   68</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#ab3797b82f9e46dae7a67c2c306e3c9a2">jmp</a>(std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>)                   = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    /// Branches to @p label if the condition code @p cc holds.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#aa7be391374ec8b24bc19524a6fb50c8a">   70</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa7be391374ec8b24bc19524a6fb50c8a">branch_cc</a>(<span class="keywordtype">size_t</span> cc, std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">    /// Branches to @p label if the `Bool` in register @p r is set.</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#aee048120dae1bec209e9303736e14dfb">   72</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aee048120dae1bec209e9303736e14dfb">branch_if</a>(<span class="keywordtype">size_t</span> r, std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    /// Calls @p sym with @p num_args arguments per register class in their registers.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a24bfec96e527641051c287dd5b5923de">   74</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a24bfec96e527641051c287dd5b5923de">call_insn</a>(std::string_view sym, <span class="keyword">const</span> std::array&lt;size_t, Target::Num_Classes&gt;&amp; num_args) = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    /// The code between the function&#39;s label and its body; slots() and saved() are final by then.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a2e84a8120d86636c1abd5361790428aa">   76</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a2e84a8120d86636c1abd5361790428aa">prologue</a>(std::ostream&amp; os) = 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a90c26dec2381b6f45941977368fa2e60">   77</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a90c26dec2381b6f45941977368fa2e60">epilogue</a>()                 = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    /// The argument of `.type`, e.g. `@function`.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a5345de423e02b8fadb23f22630f39f83">   79</a></span>    <span class="keyword">virtual</span> std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a5345de423e02b8fadb23f22630f39f83">function_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;@function&quot;</span>; }<span class="comment"></span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">    ///@}</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a574725c0e6d2dc2c01edae93c4b0adb4">   83</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a574725c0e6d2dc2c01edae93c4b0adb4">line</a>(std::format_string&lt;Args...&gt; fmt, Args&amp;&amp;... args) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        std::print(body_, <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        std::println(body_, fmt, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#ab7e42f8ca740dfc3a3977da6b69c409a">   87</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#ab7e42f8ca740dfc3a3977da6b69c409a">label_here</a>(std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>) { std::println(body_, <span class="stringliteral">&quot;{}:&quot;</span>, <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>); }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">   89</a></span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Target.html">Target</a>&amp; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> target_; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#acf904cf4ec52a33b7c14335198e392a3">   90</a></span>    std::string_view <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#acf904cf4ec52a33b7c14335198e392a3">backend</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> target_.name(); }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">   91</a></span>    <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">fun</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fun_; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">   92</a></span>    std::string <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">label</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* lam)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::format(<span class="stringliteral">&quot;{}{}&quot;</span>, target_.local_prefix(), lam-&gt;<a class="code hl_function" href="classmim_1_1Def.html#ae61aa184493aa3f3bf685758d27f982a">unique_name</a>()); }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a8111b3f7c05181a667a37f4744158fa0">   93</a></span>    std::string <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a8111b3f7c05181a667a37f4744158fa0">symbol</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* lam) { <span class="keywordflow">return</span> emit_.symbol(lam); }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_typedef" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#ac23471a66b31dff60370c11fd89499e7">nat</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"></span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">    /// The register of the result @p def.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#af46ff44d0d44c28e6a5366951b7788c7">def_reg</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    /// The register of the operand @p def, a Target::in.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a1aac424c765697542ef07bd0579b24a8">use_reg</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def) <span class="keyword">const</span>;</div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a6749acf6cd8fd8e1bb235ba5e210df2f">  100</a></span>    std::optional&lt;size_t&gt; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a6749acf6cd8fd8e1bb235ba5e210df2f">isa_reg</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span> r = fe::lookup(regs_, def)) <span class="keywordflow">return</span> *r;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a54958236894628185b57cf39b192e6bc">  104</a></span>    <a class="code hl_struct" href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">Src</a> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a54958236894628185b57cf39b192e6bc">source</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">auto</span> cls = target_.cls(target_.strip(def));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">Lit::isa</a>(def) ? <a class="code hl_struct" href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">Src</a>{.reg = {0, cls}, .imm = def} : <a class="code hl_struct" href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">Src</a>{.reg = {<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a1aac424c765697542ef07bd0579b24a8">use_reg</a>(def), cls}};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment"></span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">    /// @name Flags</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">    ///@{</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">    /// Records that the flags hold the result @p fl.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a221f3e3a6f439d0681153efc0d1e63d1">  112</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a221f3e3a6f439d0681153efc0d1e63d1">set_flags</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* fl) { flags_ = fl; }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a8b5690ed50d77051ccffd676ecbf458d">  113</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a8b5690ed50d77051ccffd676ecbf458d">clobber_flags</a>() { flags_ = <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a1ad54582933ff1a9e6ec3d47e1f2fa47">  114</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a1ad54582933ff1a9e6ec3d47e1f2fa47">flags_clobbered</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> flags_ == <span class="keyword">nullptr</span>; }<span class="comment"></span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    /// Rejects a use of the flags @p fl if something clobbered them since.</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a6e93e76c3e2b81c8e3216aacf10c4f4f">use_flags</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* fl) <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    ///@}</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment"></span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    /// @name Frame</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">    /// The frame holds 8-byte slots: spill slots and the areas of `slot` instructions.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    ///@{</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">    /// The slot of the spilled value @p def.</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#acdb6b1eb0afef384f7cc031bcd853793">spill_slot</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def);<span class="comment"></span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">    /// Reserves @p bytes and yields the index of their first slot.</span></div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#ad2446f68f18bbc9db968f363c436f0e4">  125</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#ad2446f68f18bbc9db968f363c436f0e4">alloc_slots</a>(<a class="code hl_typedef" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> bytes) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keyword">auto</span> res = num_slots_;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        num_slots_ += (bytes + 7) / 8;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#ae345aacefb8a0deaa19c0f22375605e1">  130</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#ae345aacefb8a0deaa19c0f22375605e1">num_slots</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> num_slots_; }<span class="comment"></span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">    /// The callee-saved registers of class @p cls that hold values.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a1046bf4da0df3e88fd4d4042ac3433b5">  132</a></span>    <span class="keyword">const</span> fe::Vector&lt;size_t&gt;&amp; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a1046bf4da0df3e88fd4d4042ac3433b5">saved</a>(<a class="code hl_enumeration" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">Target::Class</a> cls)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> saved_[cls]; }</div>
+<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#aff0282a593630cb9325a151ddb9e3650">  133</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aff0282a593630cb9325a151ddb9e3650">num_saved</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">return</span> std::ranges::fold_left(saved_, <span class="keywordtype">size_t</span>(0), [](<span class="keywordtype">size_t</span> n, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rs) { <span class="keywordflow">return</span> n + rs.size(); });</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }<span class="comment"></span></div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">    ///@}</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#adff6ddc8019ecba8c73a9aa2d4ab8e36">  138</a></span>    std::ostringstream&amp; <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#adff6ddc8019ecba8c73a9aa2d4ab8e36">body</a>() { <span class="keywordflow">return</span> body_; }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment"></span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">    /// The bytes of the callee-saved registers, slots, and spill slots, rounded up to keep `sp` 16-byte aligned.</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classmim_1_1native_1_1Emitter.html#a05f44d433d23e61c0e22dad6155ae023">  141</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#a05f44d433d23e61c0e22dad6155ae023">frame_size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> fe::pad(8 * (<a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aff0282a593630cb9325a151ddb9e3650">num_saved</a>() + num_slots_), 16); }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> insn(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">void</span> collect(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>*, <a class="code hl_typedef" href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">DefSet</a>&amp;);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordtype">void</span> block(<span class="keyword">const</span> <a class="code hl_struct" href="classmim_1_1Liveness.html#structmim_1_1Liveness_1_1Block">Liveness::Block</a>&amp;);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> parallel(<a class="code hl_typedef" href="namespacemim_1_1native.html#a08ffc6acdeb429e7c904c28d0ea9fe71">Moves</a> moves, fe::Vector&lt;std::pair&lt;size_t, size_t&gt;&gt; slot_moves);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> copy(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> jump(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* <a class="code hl_function" href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">target</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> call(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* callee, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Target.html">Target</a>&amp; target_;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    std::ostream&amp; os_;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_class" href="classmim_1_1AsmEmit.html">AsmEmit</a>&amp; emit_;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* fun_;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* ret_;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_class" href="classmim_1_1Liveness.html">Liveness</a> live_;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    std::ostringstream body_;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;size_t&gt;</a> regs_;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_typedef" href="namespacemim.html#a879f9e518002de13d65d757536033f0e">DefMap&lt;size_t&gt;</a> slots_;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordtype">size_t</span> num_slots_ = 0;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    std::array&lt;fe::Vector&lt;size_t&gt;, <a class="code hl_enumvalue" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33">Target::Num_Classes</a>&gt; saved_;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* next_        = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* flags_ = <span class="keyword">nullptr</span>; <span class="comment">///&lt; The result of the instruction that set the flags.</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>} <span class="comment">// namespace mim::native</span></div>
+</div>
+<div class="ttc" id="aasm_8h_html"><div class="ttname"><a href="asm_8h.html">asm.h</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
+<div class="ttc" id="aclassmim_1_1AsmEmit_html"><div class="ttname"><a href="classmim_1_1AsmEmit.html">mim::AsmEmit</a></div><div class="ttdoc">The emit Phase of a native backend: writes GNU assembler code for each external function and each fun...</div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00014">asm.h:14</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00286">def.h:286</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_ae61aa184493aa3f3bf685758d27f982a"><div class="ttname"><a href="classmim_1_1Def.html#ae61aa184493aa3f3bf685758d27f982a">mim::Def::unique_name</a></div><div class="ttdeci">std::string unique_name() const</div><div class="ttdoc">name + &quot;_&quot; + Def::gid</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00640">def.cpp:640</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00091">lam.h:91</a></div></div>
+<div class="ttc" id="aclassmim_1_1Lit_html_a429b15b3da51e9b60ffab09a744896b7"><div class="ttname"><a href="classmim_1_1Lit.html#a429b15b3da51e9b60ffab09a744896b7">mim::Lit::isa</a></div><div class="ttdeci">static std::optional&lt; T &gt; isa(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00973">def.h:973</a></div></div>
+<div class="ttc" id="aclassmim_1_1Liveness_html"><div class="ttname"><a href="classmim_1_1Liveness.html">mim::Liveness</a></div><div class="ttdoc">Liveness of the values of one scheduled function, as a side table.</div><div class="ttdef"><b>Definition</b> <a href="liveness_8h_source.html#l00031">liveness.h:31</a></div></div>
+<div class="ttc" id="aclassmim_1_1Liveness_html_structmim_1_1Liveness_1_1Block"><div class="ttname"><a href="classmim_1_1Liveness.html#structmim_1_1Liveness_1_1Block">mim::Liveness::Block</a></div><div class="ttdef"><b>Definition</b> <a href="liveness_8h_source.html#l00037">liveness.h:37</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html"><div class="ttname"><a href="classmim_1_1Target.html">mim::Target</a></div><div class="ttdoc">The machine facts that the target-independent parts of a native backend need, such as Liveness and me...</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00033">target.h:33</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a02baeebd8c3db39c0637db0184c2d9a6"><div class="ttname"><a href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">mim::Target::Class</a></div><div class="ttdeci">Class</div><div class="ttdoc">The register classes; Stack values live in a spill slot and are unbounded.</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00036">target.h:36</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33"><div class="ttname"><a href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33">mim::Target::Num_Classes</a></div><div class="ttdeci">@ Num_Classes</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00036">target.h:36</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454"><div class="ttname"><a href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454">mim::Target::Gpr</a></div><div class="ttdeci">@ Gpr</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00036">target.h:36</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a05f44d433d23e61c0e22dad6155ae023"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a05f44d433d23e61c0e22dad6155ae023">mim::native::Emitter::frame_size</a></div><div class="ttdeci">size_t frame_size() const</div><div class="ttdoc">The bytes of the callee-saved registers, slots, and spill slots, rounded up to keep sp 16-byte aligne...</div><div class="ttdef"><b>Definition</b> <a href="#l00141">emit.h:141</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a1046bf4da0df3e88fd4d4042ac3433b5"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a1046bf4da0df3e88fd4d4042ac3433b5">mim::native::Emitter::saved</a></div><div class="ttdeci">const fe::Vector&lt; size_t &gt; &amp; saved(Target::Class cls) const</div><div class="ttdoc">The callee-saved registers of class cls that hold values.</div><div class="ttdef"><b>Definition</b> <a href="#l00132">emit.h:132</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a1aac424c765697542ef07bd0579b24a8"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a1aac424c765697542ef07bd0579b24a8">mim::native::Emitter::use_reg</a></div><div class="ttdeci">size_t use_reg(const Def *def) const</div><div class="ttdoc">The register of the operand def, a Target::in.</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00033">emit.cpp:33</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a1ad54582933ff1a9e6ec3d47e1f2fa47"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a1ad54582933ff1a9e6ec3d47e1f2fa47">mim::native::Emitter::flags_clobbered</a></div><div class="ttdeci">bool flags_clobbered() const</div><div class="ttdef"><b>Definition</b> <a href="#l00114">emit.h:114</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a1fe12f08f4d6da572b20dfa2e4612cad"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a1fe12f08f4d6da572b20dfa2e4612cad">mim::native::Emitter::mov_imm</a></div><div class="ttdeci">virtual void mov_imm(Reg dst, const Def *lit)=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a221f3e3a6f439d0681153efc0d1e63d1"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a221f3e3a6f439d0681153efc0d1e63d1">mim::native::Emitter::set_flags</a></div><div class="ttdeci">void set_flags(const Def *fl)</div><div class="ttdef"><b>Definition</b> <a href="#l00112">emit.h:112</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a24bfec96e527641051c287dd5b5923de"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a24bfec96e527641051c287dd5b5923de">mim::native::Emitter::call_insn</a></div><div class="ttdeci">virtual void call_insn(std::string_view sym, const std::array&lt; size_t, Target::Num_Classes &gt; &amp;num_args)=0</div><div class="ttdoc">Calls sym with num_args arguments per register class in their registers.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a2e84a8120d86636c1abd5361790428aa"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a2e84a8120d86636c1abd5361790428aa">mim::native::Emitter::prologue</a></div><div class="ttdeci">virtual void prologue(std::ostream &amp;os)=0</div><div class="ttdoc">The code between the function&#39;s label and its body; slots() and saved() are final by then.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a31c6ffa36c9d93c3824e51523b0f644b"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a31c6ffa36c9d93c3824e51523b0f644b">mim::native::Emitter::~Emitter</a></div><div class="ttdeci">virtual ~Emitter()=default</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a40482ece493f6dd356ce2055669c0953"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a40482ece493f6dd356ce2055669c0953">mim::native::Emitter::move</a></div><div class="ttdeci">virtual void move(Reg dst, Reg src)=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a419847e57fcb50c3973d96aeee388192"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a419847e57fcb50c3973d96aeee388192">mim::native::Emitter::label</a></div><div class="ttdeci">std::string label(Lam *lam) const</div><div class="ttdef"><b>Definition</b> <a href="#l00092">emit.h:92</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a5345de423e02b8fadb23f22630f39f83"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a5345de423e02b8fadb23f22630f39f83">mim::native::Emitter::function_type</a></div><div class="ttdeci">virtual std::string_view function_type() const</div><div class="ttdoc">The argument of .type, e.g. @function.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">emit.h:79</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a54958236894628185b57cf39b192e6bc"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a54958236894628185b57cf39b192e6bc">mim::native::Emitter::source</a></div><div class="ttdeci">Src source(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="#l00104">emit.h:104</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a574725c0e6d2dc2c01edae93c4b0adb4"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a574725c0e6d2dc2c01edae93c4b0adb4">mim::native::Emitter::line</a></div><div class="ttdeci">void line(std::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> <a href="#l00083">emit.h:83</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a5c7a94e003c9c952c710e28683980a57"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a5c7a94e003c9c952c710e28683980a57">mim::native::Emitter::pop_slot</a></div><div class="ttdeci">virtual void pop_slot(size_t i)=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a5fec5e8b3a763e660b719c49bde69cea"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a5fec5e8b3a763e660b719c49bde69cea">mim::native::Emitter::reload</a></div><div class="ttdeci">virtual void reload(Reg dst, const Def *type, size_t i)=0</div><div class="ttdoc">Loads the spill slot i, a value of type, into dst.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a618091cfa851fcf68b8e914b581fdb13"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a618091cfa851fcf68b8e914b581fdb13">mim::native::Emitter::fun</a></div><div class="ttdeci">Lam * fun() const</div><div class="ttdef"><b>Definition</b> <a href="#l00091">emit.h:91</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a6749acf6cd8fd8e1bb235ba5e210df2f"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a6749acf6cd8fd8e1bb235ba5e210df2f">mim::native::Emitter::isa_reg</a></div><div class="ttdeci">std::optional&lt; size_t &gt; isa_reg(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="#l00100">emit.h:100</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a68ef8e2bbad888891868a5bbe6ba7a9b"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a68ef8e2bbad888891868a5bbe6ba7a9b">mim::native::Emitter::emit</a></div><div class="ttdeci">void emit(bool global)</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00207">emit.cpp:207</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a6e93e76c3e2b81c8e3216aacf10c4f4f"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a6e93e76c3e2b81c8e3216aacf10c4f4f">mim::native::Emitter::use_flags</a></div><div class="ttdeci">void use_flags(const Def *fl) const</div><div class="ttdoc">Rejects a use of the flags fl if something clobbered them since.</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00039">emit.cpp:39</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a6ee2567de4643b8a0a50af601e2dd4dc"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a6ee2567de4643b8a0a50af601e2dd4dc">mim::native::Emitter::scratch</a></div><div class="ttdeci">virtual std::optional&lt; Reg &gt; scratch(Target::Class) const</div><div class="ttdoc">A register of class cls that breaks a copy cycle instead of swap(), if any.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">emit.h:58</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a80714274c598794e9eb8d042e7d9a9af"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a80714274c598794e9eb8d042e7d9a9af">mim::native::Emitter::spill</a></div><div class="ttdeci">virtual void spill(Src src, const Def *type, size_t i)=0</div><div class="ttdoc">Stores src, a value of type, into the spill slot i.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a8111b3f7c05181a667a37f4744158fa0"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a8111b3f7c05181a667a37f4744158fa0">mim::native::Emitter::symbol</a></div><div class="ttdeci">std::string symbol(Lam *lam)</div><div class="ttdef"><b>Definition</b> <a href="#l00093">emit.h:93</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a85d6761d37abb5ddee3861384d1fd692"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a85d6761d37abb5ddee3861384d1fd692">mim::native::Emitter::Emitter</a></div><div class="ttdeci">Emitter(const Target &amp;target, std::ostream &amp;os, AsmEmit &amp;emit, Lam *fun)</div><div class="ttdef"><b>Definition</b> <a href="#l00037">emit.h:37</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a8b5690ed50d77051ccffd676ecbf458d"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a8b5690ed50d77051ccffd676ecbf458d">mim::native::Emitter::clobber_flags</a></div><div class="ttdeci">void clobber_flags()</div><div class="ttdef"><b>Definition</b> <a href="#l00113">emit.h:113</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a8bc429db6000b88dc95e4c4ef89642c9"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a8bc429db6000b88dc95e4c4ef89642c9">mim::native::Emitter::step</a></div><div class="ttdeci">virtual void step(const App *app)=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_a90c26dec2381b6f45941977368fa2e60"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#a90c26dec2381b6f45941977368fa2e60">mim::native::Emitter::epilogue</a></div><div class="ttdeci">virtual void epilogue()=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_aa59ca581defed545094bb05eec670022"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#aa59ca581defed545094bb05eec670022">mim::native::Emitter::target</a></div><div class="ttdeci">const Target &amp; target() const</div><div class="ttdef"><b>Definition</b> <a href="#l00089">emit.h:89</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_aa7866865fd364af72d2a5868d473ce8f"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#aa7866865fd364af72d2a5868d473ce8f">mim::native::Emitter::swap</a></div><div class="ttdeci">virtual void swap(Reg, Reg)</div><div class="ttdoc">Exchanges two registers of one class; only called if there is no scratch().</div><div class="ttdef"><b>Definition</b> <a href="#l00056">emit.h:56</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_aa7be391374ec8b24bc19524a6fb50c8a"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#aa7be391374ec8b24bc19524a6fb50c8a">mim::native::Emitter::branch_cc</a></div><div class="ttdeci">virtual void branch_cc(size_t cc, std::string_view label)=0</div><div class="ttdoc">Branches to label if the condition code cc holds.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_ab3797b82f9e46dae7a67c2c306e3c9a2"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#ab3797b82f9e46dae7a67c2c306e3c9a2">mim::native::Emitter::jmp</a></div><div class="ttdeci">virtual void jmp(std::string_view label)=0</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_ab7e42f8ca740dfc3a3977da6b69c409a"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#ab7e42f8ca740dfc3a3977da6b69c409a">mim::native::Emitter::label_here</a></div><div class="ttdeci">void label_here(std::string_view label)</div><div class="ttdef"><b>Definition</b> <a href="#l00087">emit.h:87</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_ac23471a66b31dff60370c11fd89499e7"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#ac23471a66b31dff60370c11fd89499e7">mim::native::Emitter::nat</a></div><div class="ttdeci">nat_t nat(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00007">emit.cpp:7</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_acdb6b1eb0afef384f7cc031bcd853793"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#acdb6b1eb0afef384f7cc031bcd853793">mim::native::Emitter::spill_slot</a></div><div class="ttdeci">size_t spill_slot(const Def *def)</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00022">emit.cpp:22</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_acf904cf4ec52a33b7c14335198e392a3"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#acf904cf4ec52a33b7c14335198e392a3">mim::native::Emitter::backend</a></div><div class="ttdeci">std::string_view backend() const</div><div class="ttdef"><b>Definition</b> <a href="#l00090">emit.h:90</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_acfb5c83774842ef868705062d3a7492a"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#acfb5c83774842ef868705062d3a7492a">mim::native::Emitter::slot_addr</a></div><div class="ttdeci">virtual void slot_addr(size_t dst, size_t first, size_t n)=0</div><div class="ttdoc">Puts the address of the n slots from first on into the register dst.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_ad2446f68f18bbc9db968f363c436f0e4"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#ad2446f68f18bbc9db968f363c436f0e4">mim::native::Emitter::alloc_slots</a></div><div class="ttdeci">size_t alloc_slots(nat_t bytes)</div><div class="ttdoc">Reserves bytes and yields the index of their first slot.</div><div class="ttdef"><b>Definition</b> <a href="#l00125">emit.h:125</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_adff6ddc8019ecba8c73a9aa2d4ab8e36"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#adff6ddc8019ecba8c73a9aa2d4ab8e36">mim::native::Emitter::body</a></div><div class="ttdeci">std::ostringstream &amp; body()</div><div class="ttdef"><b>Definition</b> <a href="#l00138">emit.h:138</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_ae345aacefb8a0deaa19c0f22375605e1"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#ae345aacefb8a0deaa19c0f22375605e1">mim::native::Emitter::num_slots</a></div><div class="ttdeci">size_t num_slots() const</div><div class="ttdef"><b>Definition</b> <a href="#l00130">emit.h:130</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_aee048120dae1bec209e9303736e14dfb"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#aee048120dae1bec209e9303736e14dfb">mim::native::Emitter::branch_if</a></div><div class="ttdeci">virtual void branch_if(size_t r, std::string_view label)=0</div><div class="ttdoc">Branches to label if the Bool in register r is set.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_af342fbb5e049cc29adf7c6feb030f28a"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#af342fbb5e049cc29adf7c6feb030f28a">mim::native::Emitter::push_slot</a></div><div class="ttdeci">virtual void push_slot(size_t i)=0</div><div class="ttdoc">Pushes the spill slot i; the pops come in reverse order.</div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_af46ff44d0d44c28e6a5366951b7788c7"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#af46ff44d0d44c28e6a5366951b7788c7">mim::native::Emitter::def_reg</a></div><div class="ttdeci">size_t def_reg(const Def *def) const</div><div class="ttdoc">The register of the result def.</div><div class="ttdef"><b>Definition</b> <a href="native_2emit_8cpp_source.html#l00028">emit.cpp:28</a></div></div>
+<div class="ttc" id="aclassmim_1_1native_1_1Emitter_html_aff0282a593630cb9325a151ddb9e3650"><div class="ttname"><a href="classmim_1_1native_1_1Emitter.html#aff0282a593630cb9325a151ddb9e3650">mim::native::Emitter::num_saved</a></div><div class="ttdeci">size_t num_saved() const</div><div class="ttdef"><b>Definition</b> <a href="#l00133">emit.h:133</a></div></div>
+<div class="ttc" id="aliveness_8h_html"><div class="ttname"><a href="liveness_8h.html">liveness.h</a></div></div>
+<div class="ttc" id="anamespacemim_1_1native_html"><div class="ttname"><a href="namespacemim_1_1native.html">mim::native</a></div><div class="ttdoc">The target-independent phases of a native backend, parametrized by its Target.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">emit.h:14</a></div></div>
+<div class="ttc" id="anamespacemim_1_1native_html_a08ffc6acdeb429e7c904c28d0ea9fe71"><div class="ttname"><a href="namespacemim_1_1native.html#a08ffc6acdeb429e7c904c28d0ea9fe71">mim::native::Moves</a></div><div class="ttdeci">fe::Vector&lt; std::pair&lt; Reg, Src &gt; &gt; Moves</div><div class="ttdef"><b>Definition</b> <a href="#l00029">emit.h:29</a></div></div>
+<div class="ttc" id="anamespacemim_1_1native_html_a5ad18f8f5e23c96ca541507f716e9d5e"><div class="ttname"><a href="namespacemim_1_1native.html#a5ad18f8f5e23c96ca541507f716e9d5e">mim::native::Src::reg</a></div><div class="ttdeci">Reg reg</div><div class="ttdef"><b>Definition</b> <a href="#l00025">emit.h:25</a></div></div>
+<div class="ttc" id="anamespacemim_1_1native_html_a8d1b3583fee2b958f30da06d20e5a808"><div class="ttname"><a href="namespacemim_1_1native.html#a8d1b3583fee2b958f30da06d20e5a808">mim::native::Src::imm</a></div><div class="ttdeci">const Def * imm</div><div class="ttdef"><b>Definition</b> <a href="#l00026">emit.h:26</a></div></div>
+<div class="ttc" id="anamespacemim_1_1native_html_structmim_1_1native_1_1Src"><div class="ttname"><a href="namespacemim_1_1native.html#structmim_1_1native_1_1Src">mim::native::Src</a></div><div class="ttdoc">The source of a copy: a register or a literal; reg.cls is the class of either.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">emit.h:24</a></div></div>
+<div class="ttc" id="anamespacemim_html_a02aae51c2293663cb7352f21c7fbe490"><div class="ttname"><a href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">mim::nat_t</a></div><div class="ttdeci">u64 nat_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00037">types.h:37</a></div></div>
+<div class="ttc" id="anamespacemim_html_a879f9e518002de13d65d757536033f0e"><div class="ttname"><a href="namespacemim.html#a879f9e518002de13d65d757536033f0e">mim::DefMap</a></div><div class="ttdeci">GIDMap&lt; const Def *, To &gt; DefMap</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00091">def.h:91</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa55cde5ad8246840d0a046cc728f987d"><div class="ttname"><a href="namespacemim.html#aa55cde5ad8246840d0a046cc728f987d">mim::DefSet</a></div><div class="ttdeci">GIDSet&lt; const Def * &gt; DefSet</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00092">def.h:92</a></div></div>
+<div class="ttc" id="astructmim_1_1native_1_1Reg_html"><div class="ttname"><a href="structmim_1_1native_1_1Reg.html">mim::native::Reg</a></div><div class="ttdoc">A physical register of a register class.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">emit.h:17</a></div></div>
+<div class="ttc" id="astructmim_1_1native_1_1Reg_html_a34d74d8d45dacc7e3b723856d3945c8e"><div class="ttname"><a href="structmim_1_1native_1_1Reg.html#a34d74d8d45dacc7e3b723856d3945c8e">mim::native::Reg::cls</a></div><div class="ttdeci">Target::Class cls</div><div class="ttdef"><b>Definition</b> <a href="#l00019">emit.h:19</a></div></div>
+<div class="ttc" id="astructmim_1_1native_1_1Reg_html_a4e712a7ee2a77db3b2cf45b72f9aa2e0"><div class="ttname"><a href="structmim_1_1native_1_1Reg.html#a4e712a7ee2a77db3b2cf45b72f9aa2e0">mim::native::Reg::num</a></div><div class="ttdeci">size_t num</div><div class="ttdef"><b>Definition</b> <a href="#l00018">emit.h:18</a></div></div>
+<div class="ttc" id="astructmim_1_1native_1_1Reg_html_ad8c98083f8b078b8757791eb9b544e40"><div class="ttname"><a href="structmim_1_1native_1_1Reg.html#ad8c98083f8b078b8757791eb9b544e40">mim::native::Reg::operator==</a></div><div class="ttdeci">bool operator==(const Reg &amp;) const =default</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_4c100286d577d9b034a54bf80a8d92ed.html">mim</a></li><li class="navelem"><a href="dir_ebf2499d8917a2ba47be07dbdec91ba6.html">native</a></li><li class="navelem"><a href="native_2emit_8h.html">emit.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

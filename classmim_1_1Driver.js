@@ -25,6 +25,7 @@ var classmim_1_1Driver =
     [ "imports", "classmim_1_1Driver.html#aa939fca89bce0a05dcb49489a1ad155b", null ],
     [ "imports", "classmim_1_1Driver.html#a1d6b289f7ef74bd4ffee8fb2d7d84589", null ],
     [ "is_loaded", "classmim_1_1Driver.html#a885fd383bee5d9bb4a1ec63e809f275a", null ],
+    [ "isa_target", "classmim_1_1Driver.html#a119fa8dbad70d73a273e31739ae5260f", null ],
     [ "keys", "classmim_1_1Driver.html#ad375cb77bcc27010d49db9b105812b7c", null ],
     [ "known_args", "classmim_1_1Driver.html#a5f7e5ef39e1ffaf2f857528fdee91e1e", null ],
     [ "known_envs", "classmim_1_1Driver.html#a00f6fb77429b6f7b353e95d42b2a1bd2", null ],
@@ -46,6 +47,7 @@ var classmim_1_1Driver =
     [ "profiler", "classmim_1_1Driver.html#ad0f40deb62f2385f196c02555928dcfc", null ],
     [ "profiler", "classmim_1_1Driver.html#a94819cdc2d23c7b56404f9e87aae4d4a", null ],
     [ "rt_paths", "classmim_1_1Driver.html#a9df26aec8d1f56990f363ef28723f648", null ],
+    [ "target", "classmim_1_1Driver.html#a67a1ba4dde29a9705b0f2f441f974bb6", null ],
     [ "version", "classmim_1_1Driver.html#a5e7d9604187e806e3a156717bcfba540", null ],
     [ "world", "classmim_1_1Driver.html#a6bb261071b0b8c994cf8dd9c90e78351", null ]
 ];

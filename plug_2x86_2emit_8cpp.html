@@ -172,18 +172,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('plug_2x86_2emi
   <div class="headertitle"><div class="title">emit.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="emit_8h_source.html">mim/plug/x86/emit.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="plug_2x86_2emit_8h_source.html">mim/plug/x86/emit.h</a>&quot;</code><br />
 <code>#include &lt;bit&gt;</code><br />
-<code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;print&gt;</code><br />
 <code>#include &lt;ranges&gt;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;<a class="el" href="plugin_8h_source.html">mim/plugin.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="native_2emit_8h_source.html">mim/native/emit.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="math_8h_source.html">mim/plug/math/math.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="constraint_8h_source.html">mim/plug/x86/constraint.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="insn_8h_source.html">mim/plug/x86/insn.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="liveness_8h_source.html">mim/plug/x86/liveness.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="x86_2insn_8h_source.html">mim/plug/x86/insn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="plug_2x86_2target_8h_source.html">mim/plug/x86/target.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="x86_8h_source.html">mim/plug/x86/x86.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for emit.cpp:</div>
@@ -193,6 +191,13 @@ Include dependency graph for emit.cpp:</div>
 </div>
 <p><a href="plug_2x86_2emit_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3AReg" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3AReg"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmim_1_1plug_1_1x86_1_1Reg.html">mim::plug::x86::Reg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A physical register of a register class.  <a href="structmim_1_1plug_1_1x86_1_1Reg.html#details">More...</a><br /></td></tr>
+<tr class="memitem:mim_3A_3Aplug_3A_3Ax86_3A_3ASrc_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1Src" id="r_mim_3A_3Aplug_3A_3Ax86_3A_3ASrc_5Fstructmim_5F1_5F1plug_5F1_5F1x86_5F1_5F1Src"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Src">mim::plug::x86::Src</a></td></tr>
+<tr class="memdesc:structmim_1_1plug_1_1x86_1_1Src"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source of a copy: a register or a literal; <span class="tt">reg.cls</span> is the class of either.  <a href="namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Src">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:mim" id="r_mim"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim.html">mim</a></td></tr>
@@ -200,6 +205,39 @@ Namespaces</h2></td></tr>
 <tr class="memitem:mim_3A_3Aplug_3A_3Ax86" id="r_mim_3A_3Aplug_3A_3Ax86"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemim_1_1plug_1_1x86.html">mim::plug::x86</a></td></tr>
 <tr class="memdesc:namespacemim_1_1plug_1_1x86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="x86.html" title="The x86 Plugin">The x86 Plugin</a> <br /></td></tr>
 </table>
+<hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1plug_1_1x86_1_1Src" id="structmim_1_1plug_1_1x86_1_1Src"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1plug_1_1x86_1_1Src">&#9670;&#160;</a></span>mim::plug::x86::Src</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::plug::x86::Src</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>The source of a copy: a register or a literal; <span class="tt">reg.cls</span> is the class of either. </p>
+
+<p class="definition">Definition at line <a class="el" href="native_2emit_8h_source.html#l00024">24</a> of file <a class="el" href="native_2emit_8h_source.html">emit.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a8d1b3583fee2b958f30da06d20e5a808" name="a8d1b3583fee2b958f30da06d20e5a808"></a>const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>
+<td class="fieldname">
+imm = nullptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5ad18f8f5e23c96ca541507f716e9d5e" name="a5ad18f8f5e23c96ca541507f716e9d5e"></a><a class="el" href="structmim_1_1native_1_1Reg.html">Reg</a></td>
+<td class="fieldname">
+reg = {}</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

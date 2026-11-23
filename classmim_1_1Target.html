@@ -1,0 +1,1843 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::Target Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classmim_1_1Target.html','','classmim_1_1Target-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::Target Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>The machine facts that the target-independent parts of a native backend need, such as <a class="el" href="classmim_1_1Liveness.html" title="Liveness of the values of one scheduled function, as a side table.">Liveness</a> and <span class="tt">mem.schedule</span>.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="target_8h_source.html">mim/target.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for mim::Target:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classmim_1_1Target__inherit__graph.svg" width="371" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Annexes_5Fstructmim_5F1_5F1Target_5F1_5F1Annexes" id="r_Annexes_5Fstructmim_5F1_5F1Target_5F1_5F1Annexes"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="#structmim_1_1Target_1_1Annexes">Annexes</a></td></tr>
+<tr class="memdesc:structmim_1_1Target_1_1Annexes"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base flags of the annexes that libmim knows only through the <a class="el" href="classmim_1_1Target.html" title="The machine facts that the target-independent parts of a native backend need, such as Liveness and me...">Target</a>.  <a href="#structmim_1_1Target_1_1Annexes">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a02baeebd8c3db39c0637db0184c2d9a6" id="r_a02baeebd8c3db39c0637db0184c2d9a6"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> : size_t { <br />
+&#160;&#160;<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454">Gpr</a>
+, <br />
+&#160;&#160;<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6a63867235569b449c215276925d3a1c82">Fpr</a>
+, <br />
+&#160;&#160;<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6af1fe8a6c544721c82876e26e6f241ee3">Flags</a>
+, <br />
+&#160;&#160;<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09">Stack</a>
+, <br />
+&#160;&#160;<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33">Num_Classes</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a02baeebd8c3db39c0637db0184c2d9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The register classes; <span class="tt"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09">Stack</a></span> values live in a spill slot and are unbounded.  <a href="#a02baeebd8c3db39c0637db0184c2d9a6">More...</a><br /></td></tr>
+<tr class="memitem:afc723912ac64b229b2ad890c03cca907" id="r_afc723912ac64b229b2ad890c03cca907"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#afc723912ac64b229b2ad890c03cca907">Format</a> { <br />
+&#160;&#160;<a class="el" href="#afc723912ac64b229b2ad890c03cca907a53094f9586f36c74b0346af8885a3884">Elf</a>
+, <br />
+&#160;&#160;<a class="el" href="#afc723912ac64b229b2ad890c03cca907aac31557c8007c18ece769f4a532733f0">MachO</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:afc723912ac64b229b2ad890c03cca907"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object format of the assembler output.  <a href="#afc723912ac64b229b2ad890c03cca907">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad6cc2658c0491b6d68ba99d45335fe9f" id="r_ad6cc2658c0491b6d68ba99d45335fe9f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad6cc2658c0491b6d68ba99d45335fe9f">Target</a> (std::string_view name, <a class="el" href="#structmim_1_1Target_1_1Annexes">Annexes</a> annexes)</td></tr>
+<tr class="memitem:ace082b896e921f1b70fd5caea6275ed5" id="r_ace082b896e921f1b70fd5caea6275ed5"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#ace082b896e921f1b70fd5caea6275ed5">~Target</a> ()=default</td></tr>
+<tr class="memitem:a24f25d57f8adb0362802f5ad51759c18" id="r_a24f25d57f8adb0362802f5ad51759c18"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="#a24f25d57f8adb0362802f5ad51759c18">name</a> () const</td></tr>
+<tr class="memdesc:a24f25d57f8adb0362802f5ad51759c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">The plugin name, used as the prefix of diagnostics.  <br /></td></tr>
+<tr class="memitem:a6528f873eb1eaf81020a296e8d627e19" id="r_a6528f873eb1eaf81020a296e8d627e19"><td class="memItemLeft">const <a class="el" href="#structmim_1_1Target_1_1Annexes">Annexes</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a6528f873eb1eaf81020a296e8d627e19">annexes</a> () const</td></tr>
+<tr class="memitem:af2ad3efd345e4abac0288b113a93c32d" id="r_af2ad3efd345e4abac0288b113a93c32d"><td class="memItemLeft">virtual <a class="el" href="#afc723912ac64b229b2ad890c03cca907">Format</a>&#160;</td><td class="memItemRight"><a class="el" href="#af2ad3efd345e4abac0288b113a93c32d">format</a> () const</td></tr>
+<tr class="memdesc:af2ad3efd345e4abac0288b113a93c32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object format of the host that the emitted assembly is assembled and linked on.  <br /></td></tr>
+<tr class="memitem:a2d3a5484efc6533a833c7ccee960be23" id="r_a2d3a5484efc6533a833c7ccee960be23"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2d3a5484efc6533a833c7ccee960be23">is_elf</a> () const</td></tr>
+<tr class="memitem:a73821e8caeb780c8257ba35e8428cd61" id="r_a73821e8caeb780c8257ba35e8428cd61"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="#a73821e8caeb780c8257ba35e8428cd61">global_prefix</a> () const</td></tr>
+<tr class="memdesc:a73821e8caeb780c8257ba35e8428cd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The prefix that the object format adds to a C symbol.  <br /></td></tr>
+<tr class="memitem:a3350b0fa24e98ab7539efd0fde425d0b" id="r_a3350b0fa24e98ab7539efd0fde425d0b"><td class="memItemLeft">std::string_view&#160;</td><td class="memItemRight"><a class="el" href="#a3350b0fa24e98ab7539efd0fde425d0b">local_prefix</a> () const</td></tr>
+<tr class="memdesc:a3350b0fa24e98ab7539efd0fde425d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The prefix of an assembler-local label.  <br /></td></tr>
+<tr class="memitem:a92954e1cfaf4d40b7d6681fe6cb9ed64" id="r_a92954e1cfaf4d40b7d6681fe6cb9ed64"><td class="memItemLeft">virtual <a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a>&#160;</td><td class="memItemRight"><a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const =0</td></tr>
+<tr class="memdesc:a92954e1cfaf4d40b7d6681fe6cb9ed64"><td class="mdescLeft">&#160;</td><td class="mdescRight">The register class of the value <code class="param">def</code>, from its type.  <br /></td></tr>
+<tr class="memitem:a84476b046a2f387b41de80c3a1746bd7" id="r_a84476b046a2f387b41de80c3a1746bd7"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a84476b046a2f387b41de80c3a1746bd7">is_machine_insn</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app) const =0</td></tr>
+<tr class="memdesc:a84476b046a2f387b41de80c3a1746bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">app</code> an instruction of this backend, other than <span class="tt">mem.sched</span>, that belongs on a <span class="tt">mem.M 0</span> chain?  <br /></td></tr>
+<tr class="memitem:a54ebd6026d6646d2b0345db4579e96f9" id="r_a54ebd6026d6646d2b0345db4579e96f9"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a54ebd6026d6646d2b0345db4579e96f9">is_mem_insn</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app) const =0</td></tr>
+<tr class="memdesc:a54ebd6026d6646d2b0345db4579e96f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">app</code> an instruction that takes the <span class="tt">mem.M 0</span> it continues as its first argument?  <br /></td></tr>
+<tr class="memitem:a9edf328df3b73c7fdbba10d754589066" id="r_a9edf328df3b73c7fdbba10d754589066"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a9edf328df3b73c7fdbba10d754589066">is_in</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const =0</td></tr>
+<tr class="memdesc:a9edf328df3b73c7fdbba10d754589066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">def</code> a register operand <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>?  <br /></td></tr>
+<tr class="memitem:a28edf3cae66d73dd220160017daf1936" id="r_a28edf3cae66d73dd220160017daf1936"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a28edf3cae66d73dd220160017daf1936">in</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls, size_t r, const <a class="el" href="classmim_1_1Def.html">Def</a> *v) const =0</td></tr>
+<tr class="memdesc:a28edf3cae66d73dd220160017daf1936"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value <code class="param">v</code> of class <code class="param">cls</code> in register <code class="param">r</code>.  <br /></td></tr>
+<tr class="memitem:ab027d731494f27e4bf821078c1682480" id="r_ab027d731494f27e4bf821078c1682480"><td class="memItemLeft">virtual <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab027d731494f27e4bf821078c1682480">ptr_size</a> () const =0</td></tr>
+<tr class="memdesc:ab027d731494f27e4bf821078c1682480"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size and alignment of a pointer in bytes; see <span class="tt">core.trait</span>.  <br /></td></tr>
+<tr class="memitem:a25e97f1d1987ab7764a6c7378004da04" id="r_a25e97f1d1987ab7764a6c7378004da04"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a25e97f1d1987ab7764a6c7378004da04">is_lowered</a> (const <a class="el" href="classmim_1_1Axm.html">Axm</a> *axm) const =0</td></tr>
+<tr class="memdesc:a25e97f1d1987ab7764a6c7378004da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">axm</code> an operation that instruction selection must have replaced?  <br /></td></tr>
+<tr class="memitem:abe62787d0590f5f81cf50c610a09d2d8" id="r_abe62787d0590f5f81cf50c610a09d2d8"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#abe62787d0590f5f81cf50c610a09d2d8">strip_ptr_cast</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const =0</td></tr>
+<tr class="memdesc:abe62787d0590f5f81cf50c610a09d2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The integer under <code class="param">def</code> if <code class="param">def</code> is a cast of one to a pointer, otherwise <code class="param">def</code>.  <br /></td></tr>
+<tr class="memitem:a6301288369ee8662578b76d6a884c3b1" id="r_a6301288369ee8662578b76d6a884c3b1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6301288369ee8662578b76d6a884c3b1">is_insn</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app) const</td></tr>
+<tr class="memdesc:a6301288369ee8662578b76d6a884c3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">app</code> an instruction that belongs on a <span class="tt">mem.M 0</span> chain?  <br /></td></tr>
+<tr class="memitem:a43e2a42ad4fcc625defcabccf8e94508" id="r_a43e2a42ad4fcc625defcabccf8e94508"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a43e2a42ad4fcc625defcabccf8e94508">is_mem</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memitem:ad0fb7e15c6ade058a5513af9074b0c2c" id="r_ad0fb7e15c6ade058a5513af9074b0c2c"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad0fb7e15c6ade058a5513af9074b0c2c">mem_def</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memdesc:ad0fb7e15c6ade058a5513af9074b0c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The memory in <code class="param">def</code>, or <span class="tt">nullptr</span>; see <span class="tt">core::mem_def</span>.  <br /></td></tr>
+<tr class="memitem:a32b6ae42e30100f0e8e60eaee61a0bd4" id="r_a32b6ae42e30100f0e8e60eaee61a0bd4"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a32b6ae42e30100f0e8e60eaee61a0bd4">mem_var</a> (<a class="el" href="classmim_1_1Lam.html">Lam</a> *lam) const</td></tr>
+<tr class="memdesc:a32b6ae42e30100f0e8e60eaee61a0bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The memory parameter of <code class="param">lam</code>, or <span class="tt">nullptr</span>.  <br /></td></tr>
+<tr class="memitem:a0d70298521fc5c62df496a4172d87534" id="r_a0d70298521fc5c62df496a4172d87534"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a0d70298521fc5c62df496a4172d87534">prev_mem</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app) const</td></tr>
+<tr class="memdesc:a0d70298521fc5c62df496a4172d87534"><td class="mdescLeft">&#160;</td><td class="mdescRight">The memory <code class="param">app</code> continues, if <code class="param">app</code> is an instruction on a <span class="tt">mem.M 0</span> chain.  <br /></td></tr>
+<tr class="memitem:a6b7aec1955615df0da4d5a567e287130" id="r_a6b7aec1955615df0da4d5a567e287130"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6b7aec1955615df0da4d5a567e287130">strip</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memdesc:a6b7aec1955615df0da4d5a567e287130"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <span class="tt">v</span> of <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>, otherwise <code class="param">def</code>.  <br /></td></tr>
+<tr class="memitem:ad7486cd608362f00181c099cb6286231" id="r_ad7486cd608362f00181c099cb6286231"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad7486cd608362f00181c099cb6286231">is_flags</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *def) const</td></tr>
+<tr class="memdesc:ad7486cd608362f00181c099cb6286231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">def</code> a <span class="tt"><a class="el" href="structmim_1_1Flags.html" title="Compiler switches that must be saved and looked up in later phases of compilation.">Flags</a></span> value or a condition tested on one, neither of which is a register value?  <br /></td></tr>
+<tr class="memitem:ad0234e2d4dafe3173412c22075200fa1" id="r_ad0234e2d4dafe3173412c22075200fa1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad0234e2d4dafe3173412c22075200fa1">is_sched_cc</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app) const</td></tr>
+<tr class="memitem:a4e69f48c986a38897e46d93dbef256af" id="r_a4e69f48c986a38897e46d93dbef256af"><td class="memItemLeft">const <a class="el" href="classmim_1_1App.html">App</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4e69f48c986a38897e46d93dbef256af">isa_sched_cc</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *cond) const</td></tr>
+<tr class="memdesc:a4e69f48c986a38897e46d93dbef256af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <span class="tt">mem.sched</span> of a <span class="tt">cc</span> that yields <code class="param">cond</code>, if any.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Register File and ABI</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Registers are hardware encodings within their <a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6" title="The register classes; Stack values live in a spill slot and are unbounded.">Class</a>. </p>
+</div></td></tr>
+<tr class="memitem:a2fafaf7e24b0ab55bda0048069718100" id="r_a2fafaf7e24b0ab55bda0048069718100"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="#a2fafaf7e24b0ab55bda0048069718100">num_regs</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls) const =0</td></tr>
+<tr class="memitem:aabfd516ff8637ecbe03e185e63128f9d" id="r_aabfd516ff8637ecbe03e185e63128f9d"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#aabfd516ff8637ecbe03e185e63128f9d">reserved</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls, size_t r) const =0</td></tr>
+<tr class="memdesc:aabfd516ff8637ecbe03e185e63128f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">r</code> never available to register allocation?  <br /></td></tr>
+<tr class="memitem:a6f79909d52a05a534d7c24038a763474" id="r_a6f79909d52a05a534d7c24038a763474"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a6f79909d52a05a534d7c24038a763474">caller_saved</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls, size_t r) const =0</td></tr>
+<tr class="memitem:acf0c5cecb993f3db2b7e8921420cd551" id="r_acf0c5cecb993f3db2b7e8921420cd551"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="#acf0c5cecb993f3db2b7e8921420cd551">num_arg_regs</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls) const =0</td></tr>
+<tr class="memitem:aa8785e0b5672f2ffd9c3e77f8482b9f0" id="r_aa8785e0b5672f2ffd9c3e77f8482b9f0"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="#aa8785e0b5672f2ffd9c3e77f8482b9f0">arg_reg</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls, size_t i) const =0</td></tr>
+<tr class="memdesc:aa8785e0b5672f2ffd9c3e77f8482b9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The register of the <code class="param">i-th</code> argument of class <code class="param">cls</code>.  <br /></td></tr>
+<tr class="memitem:ab0ad4653230451f3b6b513c13245a1d1" id="r_ab0ad4653230451f3b6b513c13245a1d1"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="#ab0ad4653230451f3b6b513c13245a1d1">ret_reg</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls) const =0</td></tr>
+<tr class="memitem:a32be755544e331e1c14b09956e7f4597" id="r_a32be755544e331e1c14b09956e7f4597"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a32be755544e331e1c14b09956e7f4597">num_allocatable</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls) const</td></tr>
+<tr class="memdesc:a32be755544e331e1c14b09956e7f4597"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of registers of <code class="param">cls</code> that register allocation may assign.  <br /></td></tr>
+<tr class="memitem:a5df9cb67152be4d475a5db8980ef376b" id="r_a5df9cb67152be4d475a5db8980ef376b"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a5df9cb67152be4d475a5db8980ef376b">num_caller_saved</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> cls) const</td></tr>
+<tr class="memdesc:a5df9cb67152be4d475a5db8980ef376b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of those that a call may clobber.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abcb2e65ad2013cf5be1e57d9ed237972" id="r_abcb2e65ad2013cf5be1e57d9ed237972"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#abcb2e65ad2013cf5be1e57d9ed237972">is_axm</a> (<a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a> base, const <a class="el" href="classmim_1_1Def.html">Def</a> *def, <a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a> curry=0)</td></tr>
+<tr class="memdesc:abcb2e65ad2013cf5be1e57d9ed237972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is <code class="param">def</code> an application of the axiom with base flags <code class="param">base</code>, with <code class="param">curry</code> arguments to go?  <br /></td></tr>
+<tr class="memitem:a9def4ee22a94bdb36ccddeee911fecca" id="r_a9def4ee22a94bdb36ccddeee911fecca"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a9def4ee22a94bdb36ccddeee911fecca">sched_insn</a> (const <a class="el" href="classmim_1_1App.html">App</a> *app)</td></tr>
+<tr class="memdesc:a9def4ee22a94bdb36ccddeee911fecca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <span class="tt">f</span> of <span class="tt">mem.sched f m x</span>.  <br /></td></tr>
+<tr class="memitem:a162711a44a67346a063281443c5272c6" id="r_a162711a44a67346a063281443c5272c6"><td class="memItemLeft">static size_t&#160;</td><td class="memItemRight"><a class="el" href="#a162711a44a67346a063281443c5272c6">in_reg</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *in)</td></tr>
+<tr class="memdesc:a162711a44a67346a063281443c5272c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The register <span class="tt">r</span> of <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Instructions</h2></td></tr>
+<tr class="memitem:a8b56daebb5d7d1de66060e340edd0464" id="r_a8b56daebb5d7d1de66060e340edd0464"><td class="memItemLeft">virtual <a class="el" href="namespacemim.html#structmim_1_1Constraint">Constraint</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8b56daebb5d7d1de66060e340edd0464">constraint</a> (const <a class="el" href="classmim_1_1App.html">App</a> *insn) const</td></tr>
+<tr class="memitem:a02c25f98451d3eba4817e8d12d3393b3" id="r_a02c25f98451d3eba4817e8d12d3393b3"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a02c25f98451d3eba4817e8d12d3393b3">is_removable</a> (const <a class="el" href="classmim_1_1App.html">App</a> *insn) const</td></tr>
+<tr class="memdesc:a02c25f98451d3eba4817e8d12d3393b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">May <code class="param">insn</code> go if nothing uses its results, e.g. a load?  <br /></td></tr>
+<tr class="memitem:a6554a53f0b46280387567e9d9b6715c6" id="r_a6554a53f0b46280387567e9d9b6715c6"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6554a53f0b46280387567e9d9b6715c6">spill</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *) const</td></tr>
+<tr class="memdesc:a6554a53f0b46280387567e9d9b6715c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instruction <span class="tt">f</span> of <span class="tt">mem.sched f m x</span> that spills a value of class <code class="param">cls</code> and <code class="param">type</code>, or <span class="tt">nullptr</span>.  <br /></td></tr>
+<tr class="memitem:a74d233d3edc4e7fd592a4a2eef6cf266" id="r_a74d233d3edc4e7fd592a4a2eef6cf266"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a74d233d3edc4e7fd592a4a2eef6cf266">reload</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *) const</td></tr>
+<tr class="memdesc:a74d233d3edc4e7fd592a4a2eef6cf266"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instruction that reloads a value of class <code class="param">cls</code> and <code class="param">type</code> from its spill slot.  <br /></td></tr>
+<tr class="memitem:ad5bb5bf0a5b84e3d8c7ce66b61fca567" id="r_ad5bb5bf0a5b84e3d8c7ce66b61fca567"><td class="memItemLeft">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad5bb5bf0a5b84e3d8c7ce66b61fca567">spill_type</a> (<a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a>, const <a class="el" href="classmim_1_1Def.html">Def</a> *) const</td></tr>
+<tr class="memdesc:ad5bb5bf0a5b84e3d8c7ce66b61fca567"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the spill slot of a value of class <code class="param">cls</code> and <code class="param">type</code>.  <br /></td></tr>
+<tr class="memitem:a497f485cf59e5a7e6f832ee19549dc86" id="r_a497f485cf59e5a7e6f832ee19549dc86"><td class="memItemLeft"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&#160;</td><td class="memItemRight"><a class="el" href="#a497f485cf59e5a7e6f832ee19549dc86">operands</a> (const <a class="el" href="classmim_1_1App.html">App</a> *insn) const</td></tr>
+<tr class="memdesc:a497f485cf59e5a7e6f832ee19549dc86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operands of <code class="param">insn:</code> the argument of a <span class="tt">sched</span>'s instruction, otherwise the arguments including the memory.  <br /></td></tr>
+<tr class="memitem:a041ec5dd18a341936c80546d240c1bdc" id="r_a041ec5dd18a341936c80546d240c1bdc"><td class="memItemLeft">const <a class="el" href="classmim_1_1App.html">App</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a041ec5dd18a341936c80546d240c1bdc">rebuild</a> (const <a class="el" href="classmim_1_1App.html">App</a> *insn, const <a class="el" href="classmim_1_1Def.html">Def</a> *m, const <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> &amp;ops) const</td></tr>
+<tr class="memdesc:a041ec5dd18a341936c80546d240c1bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">insn</code> continuing <code class="param">m</code> with <code class="param">ops</code> instead of its operands.  <br /></td></tr>
+<tr class="memitem:aecfeeea6c382a5c43c6dde613513b4a8" id="r_aecfeeea6c382a5c43c6dde613513b4a8"><td class="memItemLeft">static const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aecfeeea6c382a5c43c6dde613513b4a8">result</a> (const <a class="el" href="classmim_1_1App.html">App</a> *insn, size_t j)</td></tr>
+<tr class="memdesc:aecfeeea6c382a5c43c6dde613513b4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <code class="param">j-th</code> projection of the non-memory result of <code class="param">insn</code>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The machine facts that the target-independent parts of a native backend need, such as <a class="el" href="classmim_1_1Liveness.html" title="Liveness of the values of one scheduled function, as a side table.">Liveness</a> and <span class="tt">mem.schedule</span>. </p>
+<p>A backend plugin registers its <a class="el" href="classmim_1_1Target.html" title="The machine facts that the target-independent parts of a native backend need, such as Liveness and me...">Target</a> via <a class="el" href="structmim_1_1Plugin.html#ad2b2ada96614a6ecea65a4b12d72d3c0" title="The machine a native backend Plugin compiles for; see Driver::target.">Plugin::target</a>; see <a class="el" href="classmim_1_1Driver.html#a67a1ba4dde29a9705b0f2f441f974bb6" title="The Target of the one loaded native backend; errors at loc if there is none or more than one.">Driver::target</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00033">33</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+</div><hr/><h2 id="header-inline_5Fclasses" class="groupheader">Class Documentation</h2>
+<a name="structmim_1_1Target_1_1Annexes" id="structmim_1_1Target_1_1Annexes"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structmim_1_1Target_1_1Annexes">&#9670;&#160;</a></span>mim::Target::Annexes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct mim::Target::Annexes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>The base flags of the annexes that libmim knows only through the <a class="el" href="classmim_1_1Target.html" title="The machine facts that the target-independent parts of a native backend need, such as Liveness and me...">Target</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00041">41</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="aa1f70a783295c464753b09c3f8b269e3" name="aa1f70a783295c464753b09c3f8b269e3"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+cc</td>
+<td class="fielddoc">
+The backend's condition-code family. </td></tr>
+<tr><td class="fieldtype">
+<a id="a060f17374391ca34159b7cb2c5275126" name="a060f17374391ca34159b7cb2c5275126"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+flags</td>
+<td class="fielddoc">
+The type <span class="tt"><a class="el" href="structmim_1_1Flags.html" title="Compiler switches that must be saved and looked up in later phases of compilation.">Flags</a></span>. </td></tr>
+<tr><td class="fieldtype">
+<a id="aa7df3185a31263697e39b2cca52fd4b4" name="aa7df3185a31263697e39b2cca52fd4b4"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+mem</td>
+<td class="fielddoc">
+<span class="tt">core.M</span>. </td></tr>
+<tr><td class="fieldtype">
+<a id="a1f20ae3a5bde8d4e45533365c142eac8" name="a1f20ae3a5bde8d4e45533365c142eac8"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+reload</td>
+<td class="fielddoc">
+<span class="tt"><a class="el" href="#a1f20ae3a5bde8d4e45533365c142eac8" title="reload T, the instruction that reloads it.">reload</a> T</span>, the instruction that reloads it. </td></tr>
+<tr><td class="fieldtype">
+<a id="a1570489413a8f3587608ee11bf70151f" name="a1570489413a8f3587608ee11bf70151f"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+sched</td>
+<td class="fielddoc">
+<span class="tt">mem.sched</span>. </td></tr>
+<tr><td class="fieldtype">
+<a id="a74c62d8f557d8f122514737fb4561e32" name="a74c62d8f557d8f122514737fb4561e32"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+slot</td>
+<td class="fielddoc">
+<span class="tt"><a class="el" href="#a74c62d8f557d8f122514737fb4561e32" title="slot n m, which allocates n bytes of the stack frame.">slot</a> n m</span>, which allocates <span class="tt">n</span> bytes of the stack frame. </td></tr>
+<tr><td class="fieldtype">
+<a id="a2399942135465516ff11803196c21ea6" name="a2399942135465516ff11803196c21ea6"></a><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+<td class="fieldname">
+spill</td>
+<td class="fielddoc">
+<span class="tt"><a class="el" href="#a2399942135465516ff11803196c21ea6" title="spill T, the instruction that spills a value of type T.">spill</a> T</span>, the instruction that spills a value of type <span class="tt">T</span>. </td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a02baeebd8c3db39c0637db0184c2d9a6" name="a02baeebd8c3db39c0637db0184c2d9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02baeebd8c3db39c0637db0184c2d9a6">&#9670;&#160;</a></span>Class</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">mim::Target::Class</a> : size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The register classes; <span class="tt"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09">Stack</a></span> values live in a spill slot and are unbounded. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454" name="a02baeebd8c3db39c0637db0184c2d9a6a332da947c0c472174c71c18eab0f0454"></a>Gpr&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02baeebd8c3db39c0637db0184c2d9a6a63867235569b449c215276925d3a1c82" name="a02baeebd8c3db39c0637db0184c2d9a6a63867235569b449c215276925d3a1c82"></a>Fpr&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02baeebd8c3db39c0637db0184c2d9a6af1fe8a6c544721c82876e26e6f241ee3" name="a02baeebd8c3db39c0637db0184c2d9a6af1fe8a6c544721c82876e26e6f241ee3"></a>Flags&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09" name="a02baeebd8c3db39c0637db0184c2d9a6abfbe6d36fbdd7d79c78946c9d6969c09"></a>Stack&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33" name="a02baeebd8c3db39c0637db0184c2d9a6a2f5bf96e2a37a8bcd7a83a70f4307a33"></a>Num_Classes&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00036">36</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+</div>
+</div>
+<a id="afc723912ac64b229b2ad890c03cca907" name="afc723912ac64b229b2ad890c03cca907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc723912ac64b229b2ad890c03cca907">&#9670;&#160;</a></span>Format</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#afc723912ac64b229b2ad890c03cca907">mim::Target::Format</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The object format of the assembler output. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afc723912ac64b229b2ad890c03cca907a53094f9586f36c74b0346af8885a3884" name="afc723912ac64b229b2ad890c03cca907a53094f9586f36c74b0346af8885a3884"></a>Elf&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afc723912ac64b229b2ad890c03cca907aac31557c8007c18ece769f4a532733f0" name="afc723912ac64b229b2ad890c03cca907aac31557c8007c18ece769f4a532733f0"></a>MachO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00038">38</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad6cc2658c0491b6d68ba99d45335fe9f" name="ad6cc2658c0491b6d68ba99d45335fe9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6cc2658c0491b6d68ba99d45335fe9f">&#9670;&#160;</a></span>Target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mim::Target::Target </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#structmim_1_1Target_1_1Annexes">Annexes</a></td>          <td class="paramname"><span class="paramname"><em>annexes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00051">51</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00058">annexes()</a>, and <a class="el" href="target_8h_source.html#l00057">name()</a>.</p>
+
+</div>
+</div>
+<a id="ace082b896e921f1b70fd5caea6275ed5" name="ace082b896e921f1b70fd5caea6275ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace082b896e921f1b70fd5caea6275ed5">&#9670;&#160;</a></span>~Target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual mim::Target::~Target </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a6528f873eb1eaf81020a296e8d627e19" name="a6528f873eb1eaf81020a296e8d627e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6528f873eb1eaf81020a296e8d627e19">&#9670;&#160;</a></span>annexes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#structmim_1_1Target_1_1Annexes">Annexes</a> &amp; mim::Target::annexes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00058">58</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="legalize__native_8cpp_source.html#l00063">mim::plug::mem::phase::LegalizeNative::rewrite_imm_App()</a>, and <a class="el" href="target_8h_source.html#l00051">Target()</a>.</p>
+
+</div>
+</div>
+<a id="aa8785e0b5672f2ffd9c3e77f8482b9f0" name="aa8785e0b5672f2ffd9c3e77f8482b9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8785e0b5672f2ffd9c3e77f8482b9f0">&#9670;&#160;</a></span>arg_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t mim::Target::arg_reg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The register of the <code class="param">i-th</code> argument of class <code class="param">cls</code>. </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#ab9ffea06761990c3089535448e1e3cc3">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#ac44572fc5d800c8b8c670a4cd7413f27">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+</div>
+</div>
+<a id="a6f79909d52a05a534d7c24038a763474" name="a6f79909d52a05a534d7c24038a763474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f79909d52a05a534d7c24038a763474">&#9670;&#160;</a></span>caller_saved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::caller_saved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#a68a13b46c4e4b1ef6a6de260f4de6e5f">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a116cc055a27fc2c0797d395daee58952">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8cpp_source.html#l00014">num_caller_saved()</a>.</p>
+
+</div>
+</div>
+<a id="a92954e1cfaf4d40b7d6681fe6cb9ed64" name="a92954e1cfaf4d40b7d6681fe6cb9ed64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">&#9670;&#160;</a></span>cls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> mim::Target::cls </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The register class of the value <code class="param">def</code>, from its type. </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a857f418901e0315f10cc046160b978b2">mim::plug::mach::Target</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#aa8785e0b5672f2ffd9c3e77f8482b9f0">arg_reg()</a>, <a class="el" href="#a6f79909d52a05a534d7c24038a763474">caller_saved()</a>, <a class="el" href="#a28edf3cae66d73dd220160017daf1936">in()</a>, <a class="el" href="liveness_8h_source.html#l00085">mim::is_value()</a>, <a class="el" href="target_8cpp_source.html#l00007">num_allocatable()</a>, <a class="el" href="#acf0c5cecb993f3db2b7e8921420cd551">num_arg_regs()</a>, <a class="el" href="target_8cpp_source.html#l00014">num_caller_saved()</a>, <a class="el" href="#a2fafaf7e24b0ab55bda0048069718100">num_regs()</a>, <a class="el" href="#aabfd516ff8637ecbe03e185e63128f9d">reserved()</a>, and <a class="el" href="#ab0ad4653230451f3b6b513c13245a1d1">ret_reg()</a>.</p>
+
+</div>
+</div>
+<a id="a8b56daebb5d7d1de66060e340edd0464" name="a8b56daebb5d7d1de66060e340edd0464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b56daebb5d7d1de66060e340edd0464">&#9670;&#160;</a></span>constraint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespacemim.html#structmim_1_1Constraint">Constraint</a> mim::Target::constraint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>insn</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The register constraint of <code class="param">insn</code>; by default, it has none. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a944d9c01958ef0c49f09819a45e946e5">mim::plug::x86::Target</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00110">110</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8cpp_source.html#l00030">operands()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="plug_2x86_2target_8cpp_source.html#l00012">mim::plug::x86::Target::constraint()</a>.</p>
+
+</div>
+</div>
+<a id="af2ad3efd345e4abac0288b113a93c32d" name="af2ad3efd345e4abac0288b113a93c32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ad3efd345e4abac0288b113a93c32d">&#9670;&#160;</a></span>format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#afc723912ac64b229b2ad890c03cca907">Format</a> mim::Target::format </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The object format of the host that the emitted assembly is assembled and linked on. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00060">60</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00038">Elf</a>, and <a class="el" href="target_8h_source.html#l00038">MachO</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00067">is_elf()</a>.</p>
+
+</div>
+</div>
+<a id="a73821e8caeb780c8257ba35e8428cd61" name="a73821e8caeb780c8257ba35e8428cd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73821e8caeb780c8257ba35e8428cd61">&#9670;&#160;</a></span>global_prefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view mim::Target::global_prefix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The prefix that the object format adds to a C symbol. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00069">69</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00067">is_elf()</a>.</p>
+
+</div>
+</div>
+<a id="a28edf3cae66d73dd220160017daf1936" name="a28edf3cae66d73dd220160017daf1936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28edf3cae66d73dd220160017daf1936">&#9670;&#160;</a></span>in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::in </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The value <code class="param">v</code> of class <code class="param">cls</code> in register <code class="param">r</code>. </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#ac0fc1a3c197b595379620b06c6853c0b">mim::plug::mach::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00139">in_reg()</a>.</p>
+
+</div>
+</div>
+<a id="a162711a44a67346a063281443c5272c6" name="a162711a44a67346a063281443c5272c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a162711a44a67346a063281443c5272c6">&#9670;&#160;</a></span>in_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Target::in_reg </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>in</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The register <span class="tt">r</span> of <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00139">139</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>, <a class="el" href="#a28edf3cae66d73dd220160017daf1936">in()</a>, and <a class="el" href="def_8h_source.html#l00973">mim::Lit::isa()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="native_2emit_8cpp_source.html#l00033">mim::native::Emitter::use_reg()</a>.</p>
+
+</div>
+</div>
+<a id="abcb2e65ad2013cf5be1e57d9ed237972" name="abcb2e65ad2013cf5be1e57d9ed237972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb2e65ad2013cf5be1e57d9ed237972">&#9670;&#160;</a></span>is_axm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_axm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>          <td class="paramname"><span class="paramname"><em>base</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#aef2afb7040e6345a0b89b209ae7560c7">u8</a></td>          <td class="paramname"><span class="paramname"><em>curry</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">def</code> an application of the axiom with base flags <code class="param">base</code>, with <code class="param">curry</code> arguments to go? </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00132">132</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="axm_8cpp_source.html#l00038">mim::Axm::get()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00161">is_flags()</a>, <a class="el" href="target_8h_source.html#l00144">is_insn()</a>, <a class="el" href="target_8h_source.html#l00145">is_mem()</a>, <a class="el" href="target_8h_source.html#l00116">is_removable()</a>, <a class="el" href="target_8h_source.html#l00162">is_sched_cc()</a>, <a class="el" href="target_8cpp_source.html#l00030">operands()</a>, <a class="el" href="target_8h_source.html#l00154">prev_mem()</a>, <a class="el" href="target_8cpp_source.html#l00040">rebuild()</a>, and <a class="el" href="native_2isel_8cpp_source.html#l00409">mim::native::ISel::rewrite_imm_App()</a>.</p>
+
+</div>
+</div>
+<a id="a2d3a5484efc6533a833c7ccee960be23" name="a2d3a5484efc6533a833c7ccee960be23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3a5484efc6533a833c7ccee960be23">&#9670;&#160;</a></span>is_elf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_elf </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00067">67</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00038">Elf</a>, and <a class="el" href="target_8h_source.html#l00060">format()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00069">global_prefix()</a>, and <a class="el" href="target_8h_source.html#l00071">local_prefix()</a>.</p>
+
+</div>
+</div>
+<a id="ad7486cd608362f00181c099cb6286231" name="ad7486cd608362f00181c099cb6286231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7486cd608362f00181c099cb6286231">&#9670;&#160;</a></span>is_flags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_flags </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">def</code> a <span class="tt"><a class="el" href="structmim_1_1Flags.html" title="Compiler switches that must be saved and looked up in later phases of compilation.">Flags</a></span> value or a condition tested on one, neither of which is a register value? </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00161">161</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
+
+</div>
+</div>
+<a id="a9edf328df3b73c7fdbba10d754589066" name="a9edf328df3b73c7fdbba10d754589066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edf328df3b73c7fdbba10d754589066">&#9670;&#160;</a></span>is_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::is_in </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">def</code> a register operand <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>? </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a996b6694db71ed3244b5b84104c58972">mim::plug::mach::Target</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00159">strip()</a>.</p>
+
+</div>
+</div>
+<a id="a6301288369ee8662578b76d6a884c3b1" name="a6301288369ee8662578b76d6a884c3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6301288369ee8662578b76d6a884c3b1">&#9670;&#160;</a></span>is_insn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_insn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">app</code> an instruction that belongs on a <span class="tt">mem.M 0</span> chain? </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00144">144</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="#a84476b046a2f387b41de80c3a1746bd7">is_machine_insn()</a>.</p>
+
+</div>
+</div>
+<a id="a25e97f1d1987ab7764a6c7378004da04" name="a25e97f1d1987ab7764a6c7378004da04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e97f1d1987ab7764a6c7378004da04">&#9670;&#160;</a></span>is_lowered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::is_lowered </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Axm.html">Axm</a> *</td>          <td class="paramname"><span class="paramname"><em>axm</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">axm</code> an operation that instruction selection must have replaced? </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a07ada9ea9511491f2e56a6bbacf04dc0">mim::plug::mach::Target</a>.</p>
+
+</div>
+</div>
+<a id="a84476b046a2f387b41de80c3a1746bd7" name="a84476b046a2f387b41de80c3a1746bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84476b046a2f387b41de80c3a1746bd7">&#9670;&#160;</a></span>is_machine_insn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::is_machine_insn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">app</code> an instruction of this backend, other than <span class="tt">mem.sched</span>, that belongs on a <span class="tt">mem.M 0</span> chain? </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a833147408e1cd6b6bf730f9815af183a">mim::plug::mach::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a36c2a01e0b0c755f88620ade82b3f964">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00144">is_insn()</a>.</p>
+
+</div>
+</div>
+<a id="a43e2a42ad4fcc625defcabccf8e94508" name="a43e2a42ad4fcc625defcabccf8e94508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43e2a42ad4fcc625defcabccf8e94508">&#9670;&#160;</a></span>is_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_mem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00145">145</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="liveness_8h_source.html#l00085">mim::is_value()</a>, and <a class="el" href="target_8cpp_source.html#l00021">mem_def()</a>.</p>
+
+</div>
+</div>
+<a id="a54ebd6026d6646d2b0345db4579e96f9" name="a54ebd6026d6646d2b0345db4579e96f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ebd6026d6646d2b0345db4579e96f9">&#9670;&#160;</a></span>is_mem_insn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::is_mem_insn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">app</code> an instruction that takes the <span class="tt">mem.M 0</span> it continues as its first argument? </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#a8267671d1401fb35884d95e1a8d13cea">mim::plug::arm::Target</a>, <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a5cce460540e9fc0ff83ea797d0ccc0e0">mim::plug::mach::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a175e0297a26d3b24546c9d8a90457a19">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00154">prev_mem()</a>.</p>
+
+</div>
+</div>
+<a id="a02c25f98451d3eba4817e8d12d3393b3" name="a02c25f98451d3eba4817e8d12d3393b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c25f98451d3eba4817e8d12d3393b3">&#9670;&#160;</a></span>is_removable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::is_removable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>insn</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>May <code class="param">insn</code> go if nothing uses its results, e.g. a load? </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#a345a3cd6a9093f2e50370675bfd12a82">mim::plug::arm::Target</a>, <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#a8b0ac544aa2a71962ffff32ebe6f42e3">mim::plug::mach::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#ae26f8d2fb5324099d80e60c3784ef230">mim::plug::x86::Target</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00116">116</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00132">is_axm()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="plug_2mach_2target_8h_source.html#l00059">mim::plug::mach::Target::is_removable()</a>.</p>
+
+</div>
+</div>
+<a id="ad0234e2d4dafe3173412c22075200fa1" name="ad0234e2d4dafe3173412c22075200fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0234e2d4dafe3173412c22075200fa1">&#9670;&#160;</a></span>is_sched_cc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mim::Target::is_sched_cc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00162">162</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="target_8h_source.html#l00137">sched_insn()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00166">isa_sched_cc()</a>.</p>
+
+</div>
+</div>
+<a id="a4e69f48c986a38897e46d93dbef256af" name="a4e69f48c986a38897e46d93dbef256af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e69f48c986a38897e46d93dbef256af">&#9670;&#160;</a></span>isa_sched_cc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1App.html">App</a> * mim::Target::isa_sched_cc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <span class="tt">mem.sched</span> of a <span class="tt">cc</span> that yields <code class="param">cond</code>, if any. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00166">166</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00162">is_sched_cc()</a>.</p>
+
+</div>
+</div>
+<a id="a3350b0fa24e98ab7539efd0fde425d0b" name="a3350b0fa24e98ab7539efd0fde425d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3350b0fa24e98ab7539efd0fde425d0b">&#9670;&#160;</a></span>local_prefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view mim::Target::local_prefix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The prefix of an assembler-local label. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00071">71</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00067">is_elf()</a>.</p>
+
+</div>
+</div>
+<a id="ad0fb7e15c6ade058a5513af9074b0c2c" name="ad0fb7e15c6ade058a5513af9074b0c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0fb7e15c6ade058a5513af9074b0c2c">&#9670;&#160;</a></span>mem_def()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::mem_def </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The memory in <code class="param">def</code>, or <span class="tt">nullptr</span>; see <span class="tt">core::mem_def</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00021">21</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8h_source.html#l00145">is_mem()</a>, <a class="el" href="target_8cpp_source.html#l00021">mem_def()</a>, <a class="el" href="def_8h_source.html#l01136">mim::Def::num_projs()</a>, <a class="el" href="def_8h_source.html#l00454">mim::Def::projs()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8cpp_source.html#l00021">mem_def()</a>, and <a class="el" href="target_8h_source.html#l00152">mem_var()</a>.</p>
+
+</div>
+</div>
+<a id="a32b6ae42e30100f0e8e60eaee61a0bd4" name="a32b6ae42e30100f0e8e60eaee61a0bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b6ae42e30100f0e8e60eaee61a0bd4">&#9670;&#160;</a></span>mem_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::mem_var </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1Lam.html">Lam</a> *</td>          <td class="paramname"><span class="paramname"><em>lam</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The memory parameter of <code class="param">lam</code>, or <span class="tt">nullptr</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00152">152</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="target_8cpp_source.html#l00021">mem_def()</a>, and <a class="el" href="def_8h_source.html#l00489">mim::Def::var()</a>.</p>
+
+</div>
+</div>
+<a id="a24f25d57f8adb0362802f5ad51759c18" name="a24f25d57f8adb0362802f5ad51759c18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f25d57f8adb0362802f5ad51759c18">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view mim::Target::name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The plugin name, used as the prefix of diagnostics. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00057">57</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="legalize__native_8cpp_source.html#l00063">mim::plug::mem::phase::LegalizeNative::rewrite_imm_App()</a>, <a class="el" href="spilling_8cpp_source.html#l00691">mim::native::Spilling::Spilling()</a>, <a class="el" href="plug_2mach_2target_8h_source.html#l00018">mim::plug::mach::Target::Target()</a>, and <a class="el" href="target_8h_source.html#l00051">Target()</a>.</p>
+
+</div>
+</div>
+<a id="a32be755544e331e1c14b09956e7f4597" name="a32be755544e331e1c14b09956e7f4597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32be755544e331e1c14b09956e7f4597">&#9670;&#160;</a></span>num_allocatable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Target::num_allocatable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of registers of <code class="param">cls</code> that register allocation may assign. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00007">7</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>, <a class="el" href="#a2fafaf7e24b0ab55bda0048069718100">num_regs()</a>, and <a class="el" href="#aabfd516ff8637ecbe03e185e63128f9d">reserved()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ab0ad4653230451f3b6b513c13245a1d1">ret_reg()</a>.</p>
+
+</div>
+</div>
+<a id="acf0c5cecb993f3db2b7e8921420cd551" name="acf0c5cecb993f3db2b7e8921420cd551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0c5cecb993f3db2b7e8921420cd551">&#9670;&#160;</a></span>num_arg_regs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t mim::Target::num_arg_regs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#aa57d787e562b38f98033cc5145fa63f2">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#af972322558be21e652f621beeafbab55">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+</div>
+</div>
+<a id="a5df9cb67152be4d475a5db8980ef376b" name="a5df9cb67152be4d475a5db8980ef376b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df9cb67152be4d475a5db8980ef376b">&#9670;&#160;</a></span>num_caller_saved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::Target::num_caller_saved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The number of those that a call may clobber. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00014">14</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="#a6f79909d52a05a534d7c24038a763474">caller_saved()</a>, <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>, <a class="el" href="#a2fafaf7e24b0ab55bda0048069718100">num_regs()</a>, and <a class="el" href="#aabfd516ff8637ecbe03e185e63128f9d">reserved()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="#ab0ad4653230451f3b6b513c13245a1d1">ret_reg()</a>.</p>
+
+</div>
+</div>
+<a id="a2fafaf7e24b0ab55bda0048069718100" name="a2fafaf7e24b0ab55bda0048069718100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fafaf7e24b0ab55bda0048069718100">&#9670;&#160;</a></span>num_regs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t mim::Target::num_regs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#ac0e32fba28e45efc9d3427ce6863b62a">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a84d2032f9e1b76bd4bd667e1267091a2">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="plug_2mach_2target_8h_source.html#l00046">mim::plug::mach::Target::in()</a>, <a class="el" href="target_8cpp_source.html#l00007">num_allocatable()</a>, and <a class="el" href="target_8cpp_source.html#l00014">num_caller_saved()</a>.</p>
+
+</div>
+</div>
+<a id="a497f485cf59e5a7e6f832ee19549dc86" name="a497f485cf59e5a7e6f832ee19549dc86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497f485cf59e5a7e6f832ee19549dc86">&#9670;&#160;</a></span>operands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> mim::Target::operands </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>insn</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The operands of <code class="param">insn:</code> the argument of a <span class="tt">sched</span>'s instruction, otherwise the arguments including the memory. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00030">30</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00252">mim::App::args()</a>, <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="def_8h_source.html#l00454">mim::Def::projs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8h_source.html#l00110">constraint()</a>.</p>
+
+</div>
+</div>
+<a id="a0d70298521fc5c62df496a4172d87534" name="a0d70298521fc5c62df496a4172d87534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d70298521fc5c62df496a4172d87534">&#9670;&#160;</a></span>prev_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::prev_mem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The memory <code class="param">app</code> continues, if <code class="param">app</code> is an instruction on a <span class="tt">mem.M 0</span> chain. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00154">154</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>, <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, <a class="el" href="#a54ebd6026d6646d2b0345db4579e96f9">is_mem_insn()</a>, and <a class="el" href="lam_8h_source.html#l00252">mim::App::num_args()</a>.</p>
+
+</div>
+</div>
+<a id="ab027d731494f27e4bf821078c1682480" name="ab027d731494f27e4bf821078c1682480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab027d731494f27e4bf821078c1682480">&#9670;&#160;</a></span>ptr_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespacemim.html#a02aae51c2293663cb7352f21c7fbe490">nat_t</a> mim::Target::ptr_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The size and alignment of a pointer in bytes; see <span class="tt">core.trait</span>. </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#ac48142b24c786840db73d0e11ae6b2a3">mim::plug::mach::Target</a>.</p>
+
+</div>
+</div>
+<a id="a041ec5dd18a341936c80546d240c1bdc" name="a041ec5dd18a341936c80546d240c1bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041ec5dd18a341936c80546d240c1bdc">&#9670;&#160;</a></span>rebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1App.html">App</a> * mim::Target::rebuild </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>insn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ops</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code class="param">insn</code> continuing <code class="param">m</code> with <code class="param">ops</code> instead of its operands. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00040">40</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>, <a class="el" href="target_8h_source.html#l00132">is_axm()</a>, and <a class="el" href="def_8h_source.html#l01101">mim::Def::world()</a>.</p>
+
+</div>
+</div>
+<a id="a74d233d3edc4e7fd592a4a2eef6cf266" name="a74d233d3edc4e7fd592a4a2eef6cf266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d233d3edc4e7fd592a4a2eef6cf266">&#9670;&#160;</a></span>reload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::reload </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The instruction that reloads a value of class <code class="param">cls</code> and <code class="param">type</code> from its spill slot. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#af61353c66841367b5187358fd3821069">mim::plug::mach::Target</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00120">120</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+</div>
+</div>
+<a id="aabfd516ff8637ecbe03e185e63128f9d" name="aabfd516ff8637ecbe03e185e63128f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabfd516ff8637ecbe03e185e63128f9d">&#9670;&#160;</a></span>reserved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool mim::Target::reserved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is <code class="param">r</code> never available to register allocation? </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#a8ee8ea046367e2e9fb229ec4428ec5de">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#afded267015cfdab75270ae86d9b96aa6">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="target_8cpp_source.html#l00007">num_allocatable()</a>, and <a class="el" href="target_8cpp_source.html#l00014">num_caller_saved()</a>.</p>
+
+</div>
+</div>
+<a id="aecfeeea6c382a5c43c6dde613513b4a8" name="aecfeeea6c382a5c43c6dde613513b4a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecfeeea6c382a5c43c6dde613513b4a8">&#9670;&#160;</a></span>result()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::result </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>insn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>j</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <code class="param">j-th</code> projection of the non-memory result of <code class="param">insn</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8cpp_source.html#l00035">35</a> of file <a class="el" href="target_8cpp_source.html">target.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8cpp_source.html#l00653">mim::Def::proj()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="native_2emit_8cpp_source.html#l00207">mim::native::Emitter::emit()</a>, and <a class="el" href="constrain_8cpp_source.html#l00042">mim::native::Constrain::visit()</a>.</p>
+
+</div>
+</div>
+<a id="ab0ad4653230451f3b6b513c13245a1d1" name="ab0ad4653230451f3b6b513c13245a1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ad4653230451f3b6b513c13245a1d1">&#9670;&#160;</a></span>ret_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t mim::Target::ret_reg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em>cls</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1arm_1_1Target.html#a0a239932869c22aaf9e238095ffee352">mim::plug::arm::Target</a>, and <a class="el" href="classmim_1_1plug_1_1x86_1_1Target.html#a74d5b52986f2985b4c76507463de8d4e">mim::plug::x86::Target</a>.</p>
+
+<p class="reference">References <a class="el" href="#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls()</a>, <a class="el" href="target_8cpp_source.html#l00007">num_allocatable()</a>, and <a class="el" href="target_8cpp_source.html#l00014">num_caller_saved()</a>.</p>
+
+</div>
+</div>
+<a id="a9def4ee22a94bdb36ccddeee911fecca" name="a9def4ee22a94bdb36ccddeee911fecca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9def4ee22a94bdb36ccddeee911fecca">&#9670;&#160;</a></span>sched_insn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::sched_insn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1App.html">App</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <span class="tt">f</span> of <span class="tt">mem.sched f m x</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00137">137</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="plug_2x86_2target_8cpp_source.html#l00012">mim::plug::x86::Target::constraint()</a>, and <a class="el" href="target_8h_source.html#l00162">is_sched_cc()</a>.</p>
+
+</div>
+</div>
+<a id="a6554a53f0b46280387567e9d9b6715c6" name="a6554a53f0b46280387567e9d9b6715c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6554a53f0b46280387567e9d9b6715c6">&#9670;&#160;</a></span>spill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::spill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The instruction <span class="tt">f</span> of <span class="tt">mem.sched f m x</span> that spills a value of class <code class="param">cls</code> and <code class="param">type</code>, or <span class="tt">nullptr</span>. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#ab7644a502ad5de0349a6c19e7ec3f431">mim::plug::mach::Target</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00118">118</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5bb5bf0a5b84e3d8c7ce66b61fca567" name="ad5bb5bf0a5b84e3d8c7ce66b61fca567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5bb5bf0a5b84e3d8c7ce66b61fca567">&#9670;&#160;</a></span>spill_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::spill_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a02baeebd8c3db39c0637db0184c2d9a6">Class</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The type of the spill slot of a value of class <code class="param">cls</code> and <code class="param">type</code>. </p>
+
+<p>Reimplemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#ae115a06c4b5802c7708ffb9c3f4d7424">mim::plug::mach::Target</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00122">122</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+</div>
+</div>
+<a id="a6b7aec1955615df0da4d5a567e287130" name="a6b7aec1955615df0da4d5a567e287130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7aec1955615df0da4d5a567e287130">&#9670;&#160;</a></span>strip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::strip </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The <span class="tt">v</span> of <span class="tt"><a class="el" href="#a28edf3cae66d73dd220160017daf1936" title="The value v of class cls in register r.">in</a> r v</span>, otherwise <code class="param">def</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="target_8h_source.html#l00159">159</a> of file <a class="el" href="target_8h_source.html">target.h</a>.</p>
+
+<p class="reference">References <a class="el" href="#a9edf328df3b73c7fdbba10d754589066">is_in()</a>.</p>
+
+</div>
+</div>
+<a id="abe62787d0590f5f81cf50c610a09d2d8" name="abe62787d0590f5f81cf50c610a09d2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe62787d0590f5f81cf50c610a09d2d8">&#9670;&#160;</a></span>strip_ptr_cast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::Target::strip_ptr_cast </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>def</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The integer under <code class="param">def</code> if <code class="param">def</code> is a cast of one to a pointer, otherwise <code class="param">def</code>. </p>
+
+<p>Implemented in <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html#ae4800b567c0da6b9634ae71d4b155562">mim::plug::mach::Target</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/mim/<a class="el" href="target_8h_source.html">target.h</a></li>
+<li>src/mim/<a class="el" href="target_8cpp_source.html">target.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="classmim_1_1Target.html">Target</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

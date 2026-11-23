@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['i2f_0',['i2f',['../namespacemim_1_1plug_1_1x86.html#a5ac8c34568fb1c53fcb2c76b95ce1540',1,'mim::plug::x86']]],
-  ['icmp_1',['icmp',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673',1,'mim::plug::core::icmp'],['../namespacemim_1_1plug_1_1x86__isel.html#a42783b61d9828382d19a73440249675d',1,'mim::plug::x86_isel::icmp']]],
+  ['i2f_0',['i2f',['../namespacemim_1_1plug_1_1arm.html#a84602081f628cdbb8d043d782359d334',1,'mim::plug::arm::i2f'],['../namespacemim_1_1plug_1_1x86.html#a5ac8c34568fb1c53fcb2c76b95ce1540',1,'mim::plug::x86::i2f']]],
+  ['icmp_1',['icmp',['../namespacemim_1_1plug_1_1arm__isel.html#a4490876731d65d0ac582c21456ddb841',1,'mim::plug::arm_isel::icmp'],['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673',1,'mim::plug::core::icmp'],['../namespacemim_1_1plug_1_1x86__isel.html#a42783b61d9828382d19a73440249675d',1,'mim::plug::x86_isel::icmp']]],
   ['id_2',['id',['../namespacemim_1_1plug_1_1affine.html#a4f69da5b055e491948c3adc97f1e0386',1,'mim::plug::affine::id'],['../namespacemim_1_1plug_1_1btensor.html#a178c1d5c474562b4f36e73abb0f7ebb3',1,'mim::plug::btensor::id'],['../namespacemim_1_1plug_1_1tensor.html#a8edcd430d409375d96f02982da7ddd7e',1,'mim::plug::tensor::id']]],
   ['idiv_3',['idiv',['../namespacemim_1_1plug_1_1x86.html#abe615c8dcdc1c83ea3ed384902923063',1,'mim::plug::x86']]],
   ['idx_4',['idx',['../namespacemim_1_1plug_1_1core.html#ae12140314b5646597f83bfce8339c50a',1,'mim::plug::core']]],
@@ -9,7 +9,7 @@ var searchData=
   ['if_5fstatic_6',['if_static',['../namespacemim_1_1plug_1_1tensor.html#a3427adbcddd20ca4f04c05188bc455f5',1,'mim::plug::tensor']]],
   ['imm_7',['imm',['../namespacemim_1_1plug_1_1x86__isel.html#a43e1b73bf6550333d8c925d5405c1aa3',1,'mim::plug::x86_isel']]],
   ['imul_8',['imul',['../namespacemim_1_1plug_1_1x86.html#acf21e10bf96d7e7364098f485e5c06ae',1,'mim::plug::x86']]],
-  ['in_9',['in',['../namespacemim_1_1plug_1_1x86.html#a3e7c0b20a640755cd3b3d72a250b831a',1,'mim::plug::x86']]],
+  ['in_9',['in',['../namespacemim_1_1plug_1_1mach.html#a1bad03b7ba74bce4c0e87690b81fe001',1,'mim::plug::mach']]],
   ['index_10',['Index',['../namespacemim_1_1plug_1_1affine.html#ac0e4826be60027e1f02ab710ae4171d4',1,'mim::plug::affine::Index'],['../namespacemim_1_1plug_1_1x86.html#ac67e069414185d981e8d4f597447f69b',1,'mim::plug::x86::Index']]],
   ['index_11',['index',['../namespacemim_1_1plug_1_1x86.html#ae670f0e33d9bbc339ab381161bccb2d2',1,'mim::plug::x86::index'],['../namespacemim_1_1plug_1_1x86__isel.html#a247e04d7611a798936f00217ac4e91c0',1,'mim::plug::x86_isel::index']]],
   ['index_5fdisp_12',['index_disp',['../namespacemim_1_1plug_1_1x86__isel.html#a00c067f4df5a10a44adcb27b45abf16b',1,'mim::plug::x86_isel']]],
@@ -25,6 +25,6 @@ var searchData=
   ['is_5floaded_22',['is_loaded',['../namespacemim_1_1plug_1_1compile.html#a9019e60cd2374943087f2750b6ce0515',1,'mim::plug::compile']]],
   ['is_5fsome_23',['is_some',['../namespacemim_1_1plug_1_1option.html#a0e9176a1f35fa6ac1439fed01f871263',1,'mim::plug::option']]],
   ['is_5funique_24',['is_unique',['../namespacemim_1_1plug_1_1vec.html#a091d66d323366df2a44ace85c3e624a8',1,'mim::plug::vec']]],
-  ['isel_25',['isel',['../namespacemim_1_1plug_1_1x86.html#a6482e9fd3bb101e1f7b9bb023cf7ed13',1,'mim::plug::x86']]],
+  ['isel_25',['isel',['../namespacemim_1_1plug_1_1arm.html#a260169664593b975ff15737cf4cb576a',1,'mim::plug::arm::isel'],['../namespacemim_1_1plug_1_1x86.html#a6482e9fd3bb101e1f7b9bb023cf7ed13',1,'mim::plug::x86::isel']]],
   ['item_26',['item',['../namespacemim_1_1plug_1_1tensor.html#aa2755bb847066b81f1f31f533ed9c1aa',1,'mim::plug::tensor']]]
 ];

@@ -3,8 +3,10 @@ var hierarchy =
     [ "mim::World::Move::[struct].arena", "structmim_1_1World_1_1Move_1_1_0fstruct_0e_8arena.html", null ],
     [ "mim::ast::AnnexInfo::[struct].id", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8id", null ],
     [ "mim::ast::AnnexInfo::[struct].sym", "structmim_1_1ast_1_1AnnexInfo.html#structmim_1_1ast_1_1AnnexInfo_1_1_0fstruct_0e_8sym", null ],
-    [ "mim::plug::x86::phase::Alt", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Alt", null ],
+    [ "mim::native::Alt", "namespacemim_1_1native.html#structmim_1_1native_1_1Alt", null ],
     [ "mim::Annex", "structmim_1_1Annex.html", null ],
+    [ "mim::plug::mach::Gen::Annexes", "classmim_1_1plug_1_1mach_1_1Gen.html#structmim_1_1plug_1_1mach_1_1Gen_1_1Annexes", null ],
+    [ "mim::Target::Annexes", "classmim_1_1Target.html#structmim_1_1Target_1_1Annexes", null ],
     [ "mim::World::Annexes", "classmim_1_1World_1_1Annexes.html", null ],
     [ "mim::ast::AnnexInfo", "structmim_1_1ast_1_1AnnexInfo.html", null ],
     [ "mim::plug::regex::app_range", "structmim_1_1plug_1_1regex_1_1app__range.html", null ],
@@ -23,22 +25,22 @@ var hierarchy =
     ] ],
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
-    [ "mim::plug::x86::Liveness::Block", "classmim_1_1plug_1_1x86_1_1Liveness.html#structmim_1_1plug_1_1x86_1_1Liveness_1_1Block", null ],
+    [ "mim::Liveness::Block", "classmim_1_1Liveness.html#structmim_1_1Liveness_1_1Block", null ],
     [ "mim::plug::mem::EscapeAnalysis::Chain", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#structmim_1_1plug_1_1mem_1_1EscapeAnalysis_1_1Chain", null ],
-    [ "mim::plug::x86::rules::Chains", "structmim_1_1plug_1_1x86_1_1rules_1_1Chains.html", null ],
+    [ "mim::native::rules::Chains", "structmim_1_1native_1_1rules_1_1Chains.html", null ],
     [ "mim::Check", "classmim_1_1Check.html", null ],
     [ "mim::Nest::Node::Children", "structmim_1_1Nest_1_1Node_1_1Children.html", null ],
     [ "mim::plug::clos::ClosLit", "classmim_1_1plug_1_1clos_1_1ClosLit.html", null ],
     [ "fe::CodeDiag", null, [
       [ "mim::Diag", "classmim_1_1Diag.html", null ]
     ] ],
-    [ "mim::plug::x86::Constraint", "namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Constraint", null ],
-    [ "mim::plug::x86::rules::Conversion", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion", null ],
+    [ "mim::Constraint", "namespacemim.html#structmim_1_1Constraint", null ],
+    [ "mim::native::rules::Conversion", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Conversion", null ],
     [ "pbqp::Cost", "classpbqp_1_1Cost.html", null ],
-    [ "mim::plug::x86::phase::Cover", "namespacemim_1_1plug_1_1x86_1_1phase.html#structmim_1_1plug_1_1x86_1_1phase_1_1Cover", null ],
+    [ "mim::native::Cover", "namespacemim_1_1native.html#structmim_1_1native_1_1Cover", null ],
     [ "mim::World::CurrLoc", "classmim_1_1World.html#structmim_1_1World_1_1CurrLoc", null ],
     [ "mim::DefKey", "structmim_1_1DefKey.html", null ],
-    [ "mim::plug::x86::phase::Demand", "structmim_1_1plug_1_1x86_1_1phase_1_1Demand.html", null ],
+    [ "mim::native::Demand", "structmim_1_1native_1_1Demand.html", null ],
     [ "mim::plug::nvptx::DeviceEmitFlags", "namespacemim_1_1plug_1_1nvptx.html#structmim_1_1plug_1_1nvptx_1_1DeviceEmitFlags", null ],
     [ "automaton::DFANode", "classautomaton_1_1DFANode.html", null ],
     [ "mim::DotConfig", "namespacemim.html#structmim_1_1DotConfig", null ],
@@ -46,6 +48,7 @@ var hierarchy =
       [ "mim::Driver", "classmim_1_1Driver.html", null ]
     ] ],
     [ "mim::ast::Emitter", "classmim_1_1ast_1_1Emitter.html", null ],
+    [ "mim::native::Emitter", "classmim_1_1native_1_1Emitter.html", null ],
     [ "pbqp::Graph::Ends", "classpbqp_1_1Graph.html#structpbqp_1_1Graph_1_1Ends", null ],
     [ "mim::Driver::Imports::Entry", "classmim_1_1Driver_1_1Imports.html#structmim_1_1Driver_1_1Imports_1_1Entry", null ],
     [ "mim::World::Annexes::Entry", "classmim_1_1World_1_1Annexes.html#structmim_1_1World_1_1Annexes_1_1Entry", null ],
@@ -68,12 +71,12 @@ var hierarchy =
       [ "mim::manifest::Lexer", "classmim_1_1manifest_1_1Lexer.html", null ]
     ] ],
     [ "mim::manifest::List_Entry", "namespacemim_1_1manifest.html#structmim_1_1manifest_1_1List__Entry", null ],
-    [ "mim::plug::x86::Liveness", "classmim_1_1plug_1_1x86_1_1Liveness.html", null ],
+    [ "mim::Liveness", "classmim_1_1Liveness.html", null ],
     [ "automaton::DFANode::Lt", "structautomaton_1_1DFANode_1_1Lt.html", null ],
     [ "automaton::NFANode::Lt", "structautomaton_1_1NFANode_1_1Lt.html", null ],
     [ "mim::Manifest", "namespacemim.html#structmim_1_1Manifest", null ],
     [ "mim::plug::btensor::MapRedPost", "structmim_1_1plug_1_1btensor_1_1MapRedPost.html", null ],
-    [ "mim::plug::x86::rules::Matcher", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher", null ],
+    [ "mim::native::rules::Matcher", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Matcher", null ],
     [ "mim::ast::Mods", "structmim_1_1ast_1_1Mods.html", null ],
     [ "mim::Driver::Names", "classmim_1_1Driver.html#structmim_1_1Driver_1_1Names", null ],
     [ "mim::Nest", "classmim_1_1Nest.html", null ],
@@ -98,13 +101,17 @@ var hierarchy =
     [ "mim::ast::R&lt; T &gt;", "structmim_1_1ast_1_1R.html", null ],
     [ "automaton::RangeCompare", "structautomaton_1_1RangeCompare.html", null ],
     [ "mim::plug::btensor::MapRedPost::Ranks", "structmim_1_1plug_1_1btensor_1_1MapRedPost_1_1Ranks.html", null ],
-    [ "mim::plug::x86::rules::RefInfo", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo", null ],
-    [ "mim::plug::x86::rules::Rewrite", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite", null ],
+    [ "mim::native::rules::RefInfo", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1RefInfo", null ],
+    [ "mim::native::Reg", "structmim_1_1native_1_1Reg.html", null ],
+    [ "mim::plug::arm::Reg", "structmim_1_1plug_1_1arm_1_1Reg.html", null ],
+    [ "mim::plug::x86::Reg", "structmim_1_1plug_1_1x86_1_1Reg.html", null ],
+    [ "mim::native::rules::Rewrite", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Rewrite", null ],
     [ "mim::Rewriter", "classmim_1_1Rewriter.html", [
       [ "mim::Analysis", "classmim_1_1Analysis.html", [
         [ "mim::plug::gpu::phase::MemChecks", "classmim_1_1plug_1_1gpu_1_1phase_1_1MemChecks.html", null ],
         [ "mim::plug::mem::EscapeAnalysis", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html", null ]
       ] ],
+      [ "mim::Assign", "classmim_1_1Assign.html", null ],
       [ "mim::Importer", "classmim_1_1Importer.html", null ],
       [ "mim::RWPhase", "classmim_1_1RWPhase.html", [
         [ "mim::ADCE", "classmim_1_1ADCE.html", null ],
@@ -120,6 +127,10 @@ var hierarchy =
         [ "mim::Scalarize", "classmim_1_1Scalarize.html", null ],
         [ "mim::SingleErasure", "classmim_1_1SingleErasure.html", null ],
         [ "mim::StaticArgOpt", "classmim_1_1StaticArgOpt.html", null ],
+        [ "mim::native::ISel", "classmim_1_1native_1_1ISel.html", [
+          [ "mim::plug::arm::phase::ISel", "classmim_1_1plug_1_1arm_1_1phase_1_1ISel.html", null ],
+          [ "mim::plug::x86::phase::ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", null ]
+        ] ],
         [ "mim::plug::affine::phase::LowerFor", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerFor.html", null ],
         [ "mim::plug::affine::phase::LowerIndex", "classmim_1_1plug_1_1affine_1_1phase_1_1LowerIndex.html", null ],
         [ "mim::plug::autodiff::phase::Eval", "classmim_1_1plug_1_1autodiff_1_1phase_1_1Eval.html", null ],
@@ -143,6 +154,7 @@ var hierarchy =
         [ "mim::plug::mem::phase::AddMem", "classmim_1_1plug_1_1mem_1_1phase_1_1AddMem.html", null ],
         [ "mim::plug::mem::phase::FreeLocals", "classmim_1_1plug_1_1mem_1_1phase_1_1FreeLocals.html", null ],
         [ "mim::plug::mem::phase::Heap2Stack", "classmim_1_1plug_1_1mem_1_1phase_1_1Heap2Stack.html", null ],
+        [ "mim::plug::mem::phase::LegalizeNative", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizeNative.html", null ],
         [ "mim::plug::mem::phase::LegalizePtr", "classmim_1_1plug_1_1mem_1_1phase_1_1LegalizePtr.html", null ],
         [ "mim::plug::mem::phase::SEO", "classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html", null ],
         [ "mim::plug::regex::LowerRegex", "classmim_1_1plug_1_1regex_1_1LowerRegex.html", null ],
@@ -150,17 +162,15 @@ var hierarchy =
         [ "mim::plug::tensor::phase::Lower", "classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html", null ],
         [ "mim::plug::tensor::phase::LowerMapReduce", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html", null ],
         [ "mim::plug::tensor::phase::LowerToMem", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html", null ],
-        [ "mim::plug::tensor::phase::Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", null ],
-        [ "mim::plug::x86::phase::ISel", "classmim_1_1plug_1_1x86_1_1phase_1_1ISel.html", null ],
-        [ "mim::plug::x86::phase::Legalize", "classmim_1_1plug_1_1x86_1_1phase_1_1Legalize.html", null ]
+        [ "mim::plug::tensor::phase::Reassoc", "classmim_1_1plug_1_1tensor_1_1phase_1_1Reassoc.html", null ]
       ] ],
       [ "mim::VarRewriter", "classmim_1_1VarRewriter.html", null ],
       [ "mim::Zonker", "classmim_1_1Zonker.html", null ],
-      [ "mim::plug::x86::Subst", "classmim_1_1plug_1_1x86_1_1Subst.html", null ],
-      [ "mim::plug::x86::phase::Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", null ]
+      [ "mim::native::Subst", "classmim_1_1native_1_1Subst.html", null ],
+      [ "mim::plug::mem::phase::Schedule", "classmim_1_1plug_1_1mem_1_1phase_1_1Schedule.html", null ]
     ] ],
     [ "mim::plug::btensor::Ring_field", "structmim_1_1plug_1_1btensor_1_1Ring__field.html", null ],
-    [ "mim::plug::x86::rules::Root", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Root", null ],
+    [ "mim::native::rules::Root", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Root", null ],
     [ "fe::RuntimeCast", null, [
       [ "mim::Def", "classmim_1_1Def.html", [
         [ "mim::App", "classmim_1_1App.html", null ],
@@ -214,22 +224,30 @@ var hierarchy =
               [ "mim::plug::nvptx::DeviceEmitter", "classmim_1_1plug_1_1nvptx_1_1DeviceEmitter.html", null ],
               [ "mim::plug::nvptx::HostEmitter", "classmim_1_1plug_1_1nvptx_1_1HostEmitter.html", null ]
             ] ],
-            [ "mim::plug::x86::phase::Schedule", "classmim_1_1plug_1_1x86_1_1phase_1_1Schedule.html", null ]
+            [ "mim::plug::mem::phase::Schedule", "classmim_1_1plug_1_1mem_1_1phase_1_1Schedule.html", null ]
           ] ],
-          [ "mim::plug::x86::phase::Color", "classmim_1_1plug_1_1x86_1_1phase_1_1Color.html", null ],
-          [ "mim::plug::x86::phase::Constrain", "classmim_1_1plug_1_1x86_1_1phase_1_1Constrain.html", null ],
-          [ "mim::plug::x86::phase::Live", "classmim_1_1plug_1_1x86_1_1phase_1_1Live.html", null ],
-          [ "mim::plug::x86::phase::Spilling", "classmim_1_1plug_1_1x86_1_1phase_1_1Spilling.html", null ]
+          [ "mim::native::FunPhase", "classmim_1_1native_1_1FunPhase.html", [
+            [ "mim::native::Color", "classmim_1_1native_1_1Color.html", null ],
+            [ "mim::native::Constrain", "classmim_1_1native_1_1Constrain.html", null ],
+            [ "mim::native::Live", "classmim_1_1native_1_1Live.html", null ],
+            [ "mim::native::Spilling", "classmim_1_1native_1_1Spilling.html", null ]
+          ] ]
         ] ],
         [ "Named", "classNamed.html", null ],
         [ "mim::Analysis", "classmim_1_1Analysis.html", null ],
+        [ "mim::AsmEmit", "classmim_1_1AsmEmit.html", [
+          [ "mim::plug::arm::Emit", "classmim_1_1plug_1_1arm_1_1Emit.html", null ],
+          [ "mim::plug::x86::Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", null ]
+        ] ],
         [ "mim::ClosedMutPhase< M >", "classmim_1_1ClosedMutPhase.html", null ],
         [ "mim::PhaseMan", "classmim_1_1PhaseMan.html", null ],
         [ "mim::RWPhase", "classmim_1_1RWPhase.html", null ],
         [ "mim::plug::ll::Emit", "classmim_1_1plug_1_1ll_1_1Emit.html", null ],
-        [ "mim::plug::nvptx::Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", null ],
-        [ "mim::plug::x86::Emit", "classmim_1_1plug_1_1x86_1_1Emit.html", null ],
-        [ "mim::plug::x86_isel::Gen", "classmim_1_1plug_1_1x86__isel_1_1Gen.html", null ]
+        [ "mim::plug::mach::Gen", "classmim_1_1plug_1_1mach_1_1Gen.html", [
+          [ "mim::plug::arm_isel::Gen", "classmim_1_1plug_1_1arm__isel_1_1Gen.html", null ],
+          [ "mim::plug::x86_isel::Gen", "classmim_1_1plug_1_1x86__isel_1_1Gen.html", null ]
+        ] ],
+        [ "mim::plug::nvptx::Emit", "classmim_1_1plug_1_1nvptx_1_1Emit.html", null ]
       ] ],
       [ "mim::ast::Node", "classmim_1_1ast_1_1Node.html", [
         [ "mim::ast::Decl", "classmim_1_1ast_1_1Decl.html", [
@@ -404,6 +422,9 @@ var hierarchy =
     [ "mim::plug::tensor::phase::Slots", "structmim_1_1plug_1_1tensor_1_1phase_1_1Slots.html", null ],
     [ "pbqp::Solution", "structpbqp_1_1Solution.html", null ],
     [ "mim::plug::tensor::phase::Split", "namespacemim_1_1plug_1_1tensor_1_1phase.html#structmim_1_1plug_1_1tensor_1_1phase_1_1Split", null ],
+    [ "mim::native::Src", "namespacemim_1_1native.html#structmim_1_1native_1_1Src", null ],
+    [ "mim::plug::arm::Src", "namespacemim_1_1plug_1_1arm.html#structmim_1_1plug_1_1arm_1_1Src", null ],
+    [ "mim::plug::x86::Src", "namespacemim_1_1plug_1_1x86.html#structmim_1_1plug_1_1x86_1_1Src", null ],
     [ "mim::World::State", "structmim_1_1World_1_1State.html", null ],
     [ "pbqp::Statistics", "namespacepbqp.html#structpbqp_1_1Statistics", null ],
     [ "mim::Switch", "classmim_1_1Switch.html", [
@@ -412,13 +433,20 @@ var hierarchy =
         [ "mim::Branch", "classmim_1_1Branch.html", null ]
       ] ]
     ] ],
+    [ "mim::native::rules::Table", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Table", null ],
+    [ "mim::Target", "classmim_1_1Target.html", [
+      [ "mim::plug::mach::Target", "classmim_1_1plug_1_1mach_1_1Target.html", [
+        [ "mim::plug::arm::Target", "classmim_1_1plug_1_1arm_1_1Target.html", null ],
+        [ "mim::plug::x86::Target", "classmim_1_1plug_1_1x86_1_1Target.html", null ]
+      ] ]
+    ] ],
     [ "mim::plug::tensor::TensorType", "structmim_1_1plug_1_1tensor_1_1TensorType.html", null ],
     [ "mim::ast::Tok", "classmim_1_1ast_1_1Tok.html", null ],
     [ "mim::manifest::Tok", "classmim_1_1manifest_1_1Tok.html", null ],
     [ "std::unordered_map", null, [
       [ "mim::ast::AST::Files", "structmim_1_1ast_1_1AST_1_1Files.html", null ]
     ] ],
-    [ "mim::plug::x86::rules::Use", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Use", null ],
+    [ "mim::native::rules::Use", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Use", null ],
     [ "mim::Use", "classmim_1_1Use.html", null ],
     [ "mim::UseEq", "structmim_1_1UseEq.html", null ],
     [ "mim::UseHash", "structmim_1_1UseHash.html", null ],

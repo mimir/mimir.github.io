@@ -4,7 +4,7 @@ var searchData=
   ['nan_1',['nan',['../namespacemim_1_1plug_1_1math.html#ab8b0e933c317c3c056f71c14d76852a0',1,'mim::plug::math']]],
   ['nat_2',['nat',['../namespacemim_1_1plug_1_1core.html#a310a7363139e360a1370c73dc6038566',1,'mim::plug::core']]],
   ['ncmp_3',['ncmp',['../namespacemim_1_1plug_1_1core.html#a4fd1e12f25215e48e67478a04191985e',1,'mim::plug::core']]],
-  ['neg_4',['neg',['../namespacemim_1_1plug_1_1x86__isel.html#a4f57482079c99d296efc2fc52f9b6341',1,'mim::plug::x86_isel']]],
+  ['neg_4',['neg',['../namespacemim_1_1plug_1_1arm__isel.html#a56215027c75ffb4ced6d9e9be017989e',1,'mim::plug::arm_isel::neg'],['../namespacemim_1_1plug_1_1x86__isel.html#a4f57482079c99d296efc2fc52f9b6341',1,'mim::plug::x86_isel::neg']]],
   ['neg_5finf_5',['neg_inf',['../namespacemim_1_1plug_1_1math.html#a6e9a58ec11bf2a5a3b7f44123ff9b303',1,'mim::plug::math']]],
   ['neg_5flookahead_6',['neg_lookahead',['../namespacemim_1_1plug_1_1regex.html#a2418f6142a8f29b02363e0e23315f0be',1,'mim::plug::regex']]],
   ['nestt_7',['NestT',['../namespacemim_1_1plug_1_1btensor.html#ad7c70ee7385f733efc4f3c571b42e6a8',1,'mim::plug::btensor']]],

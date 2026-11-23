@@ -10,7 +10,9 @@ var searchData=
   ['update_5fplayground_5fversions_7',['update_playground_versions',['../namespacedeploy.html#a14d83a6b236f6a8de8f4773f5a18cfa3',1,'deploy']]],
   ['update_5fversions_8',['update_versions',['../namespacedeploy.html#a732f85f15a31c1539303b21782a9cdf7',1,'deploy']]],
   ['use_9',['Use',['../classmim_1_1Use.html#ad1bfa5ee84aa2b6d63b9d8b8767fb7e5',1,'mim::Use::Use()'],['../classmim_1_1Use.html#a5a79f76e19dec42cc52438ae4c77b954',1,'mim::Use::Use(const Def *def, size_t index)']]],
-  ['usedecl_10',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Ptr&lt; Path &gt; path, Dbg alias)'],['../classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Tok::Tag tag, Ptr&lt; Path &gt; path, Sym file_path, Dbg alias, bool splice, const File *file)']]],
-  ['users_11',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
-  ['uses_12',['uses',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a6fa2fb35805cbf72cadd337609be2e67',1,'mim::plug::x86::Liveness::uses()'],['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler::uses()']]]
+  ['use_5fflags_10',['use_flags',['../classmim_1_1native_1_1Emitter.html#a6e93e76c3e2b81c8e3216aacf10c4f4f',1,'mim::native::Emitter']]],
+  ['use_5freg_11',['use_reg',['../classmim_1_1native_1_1Emitter.html#a1aac424c765697542ef07bd0579b24a8',1,'mim::native::Emitter']]],
+  ['usedecl_12',['UseDecl',['../classmim_1_1ast_1_1UseDecl.html#a242921ba679a132b05641234ab465fc5',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Ptr&lt; Path &gt; path, Dbg alias)'],['../classmim_1_1ast_1_1UseDecl.html#acc7a818c5b6274d9a29e2926aaa13a62',1,'mim::ast::UseDecl::UseDecl(Loc loc, Mods mods, Tok::Tag tag, Ptr&lt; Path &gt; path, Sym file_path, Dbg alias, bool splice, const File *file)']]],
+  ['users_13',['users',['../classmim_1_1Def.html#aec0c90f905b8d981b9e3580ba89f7d63',1,'mim::Def']]],
+  ['uses_14',['uses',['../classmim_1_1Liveness.html#ab465df1b006e05db75683de8b87c532d',1,'mim::Liveness::uses()'],['../classmim_1_1Scheduler.html#a81893f9b1c9c94ba0404306ec20648ee',1,'mim::Scheduler::uses()']]]
 ];

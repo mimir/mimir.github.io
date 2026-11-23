@@ -201,6 +201,7 @@ var namespacemim_1_1plug_1_1core =
     [ "op", "namespacemim_1_1plug_1_1core.html#a5c14a5971107e0e3158eaf0c29bef4ca", null ],
     [ "op", "namespacemim_1_1plug_1_1core.html#a927f40ea1451c951c7e434c881f2f6ee", null ],
     [ "pointee", "namespacemim_1_1plug_1_1core.html#a66bb966b460d43a27279dacb69860af5", null ],
+    [ "ptr_size", "namespacemim_1_1plug_1_1core.html#a7458033805f8bf583b1e13d7ccbc00f9", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1core.html#a9a3103f39984e3487e3466d00107eacf", null ],
     [ "strip_mem_ty", "namespacemim_1_1plug_1_1core.html#aa094c752c5f61284d2ec02f9818bb740", null ],
     [ "widen_idx", "namespacemim_1_1plug_1_1core.html#a18f69c76a785c406fb57b6624e76e92d", null ],

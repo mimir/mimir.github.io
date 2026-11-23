@@ -1,12 +1,9 @@
 var dir_6d846145c23501a53ba07aa0ffec9812 =
 [
     [ "phase", "dir_ca3af2d3ca3b0ce798c5eaab1fd72507.html", "dir_ca3af2d3ca3b0ce798c5eaab1fd72507" ],
-    [ "constraint.h", "constraint_8h.html", "constraint_8h" ],
-    [ "emit.h", "emit_8h.html", "emit_8h" ],
+    [ "emit.h", "plug_2x86_2emit_8h.html", "plug_2x86_2emit_8h" ],
     [ "imm.h", "imm_8h.html", "imm_8h" ],
-    [ "insn.h", "insn_8h.html", "insn_8h" ],
-    [ "liveness.h", "liveness_8h.html", "liveness_8h" ],
-    [ "rule_table.h", "rule__table_8h.html", "rule__table_8h" ],
-    [ "subst.h", "subst_8h.html", "subst_8h" ],
+    [ "insn.h", "x86_2insn_8h.html", "x86_2insn_8h" ],
+    [ "target.h", "plug_2x86_2target_8h.html", "plug_2x86_2target_8h" ],
     [ "x86.h", "x86_8h.html", "x86_8h" ]
 ];

@@ -1,6 +1,8 @@
 var dir_07110a8747d2517ee97007224f1d2994 =
 [
     [ "affine", "dir_8c34c88b1970410abbbfcce932012c82.html", "dir_8c34c88b1970410abbbfcce932012c82" ],
+    [ "arm", "dir_45e86cad194de66a5cf16e94b2c9aeab.html", "dir_45e86cad194de66a5cf16e94b2c9aeab" ],
+    [ "arm_isel", "dir_a18a04a1e70a79782776c79bc360c6a9.html", "dir_a18a04a1e70a79782776c79bc360c6a9" ],
     [ "autodiff", "dir_5846563cd8698f55b6851f31365c1d54.html", "dir_5846563cd8698f55b6851f31365c1d54" ],
     [ "btensor", "dir_4e170ce6e97bdf3fe9129e8b138b7c6a.html", "dir_4e170ce6e97bdf3fe9129e8b138b7c6a" ],
     [ "buffer", "dir_9687309da4295ab8de66927476485754.html", "dir_9687309da4295ab8de66927476485754" ],
@@ -11,6 +13,7 @@ var dir_07110a8747d2517ee97007224f1d2994 =
     [ "demo", "dir_562b34b4ab42cde4b310ce77c87959df.html", "dir_562b34b4ab42cde4b310ce77c87959df" ],
     [ "gpu", "dir_2aff747bd961ffeb05f3766c17b5a0e1.html", "dir_2aff747bd961ffeb05f3766c17b5a0e1" ],
     [ "ll", "dir_4bff4963178dd3af326357f55551eed7.html", "dir_4bff4963178dd3af326357f55551eed7" ],
+    [ "mach", "dir_d6b2f13be54e44741d74f0a9c57c7bda.html", "dir_d6b2f13be54e44741d74f0a9c57c7bda" ],
     [ "math", "dir_1ea65b4e4e2ba01b1cb1531bfcd90b96.html", "dir_1ea65b4e4e2ba01b1cb1531bfcd90b96" ],
     [ "mem", "dir_a8769299ba688646b3b09d59765dd001.html", "dir_a8769299ba688646b3b09d59765dd001" ],
     [ "nvptx", "dir_4276a08a3183a9eedbb765ed0f0d15ea.html", "dir_4276a08a3183a9eedbb765ed0f0d15ea" ],

@@ -1,0 +1,332 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: The arm_isel Plugin</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('arm_isel.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">The arm_isel Plugin </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2arm__isel"></a></p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1arm__isel.html" title="The arm_isel Plugin">mim::plug::arm_isel</a></dd></dl>
+<p>The instruction-selection rules of the <span class="tt">arm</span> backend. <span class="tt">gen</span> writes them as C++ that the <span class="tt">arm</span> plugin compiles in, so the compiler itself never loads this plugin. AArch64 is three-address, and the emitter materializes a literal operand where the encoding has no immediate, so every hole is a register.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md242"></a>
+Dependencies</h1>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
+<div class="line">plugin math;</div>
+<div class="line">import compile;</div>
+<div class="line">import mem;</div>
+<div class="line">plugin mach;</div>
+<div class="line">import arm;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md243"></a>
+Operands</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md244"></a>
+reg</h2>
+<p>The pointer <span class="tt">p</span>, an <span class="tt">I64</span> under the cast of <span class="tt">mem.legalize_native</span>, in a register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg: {T: *, a: Nat} → mem.Ptr (T, a) → I64;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md245"></a>
+Commutativity</h1>
+<p>The operations whose two operands a rule also matches swapped.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let commutes = (core.wrap.add, core.wrap.mul, core.bit2.and, core.bit2.or, core.bit2.xor, core.bit2.nand, core.bit2.nor, core.bit2.nxor);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md246"></a>
+Rules</h1>
+<p>Each family takes the operand size as <span class="tt">{s: Nat}</span>, which becomes a meta variable of its rules, since no instruction checks it.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md247"></a>
+ALU</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule alu   (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx s) {s: Nat} (m: Nat, a b: Idx s): op m (a, b) =&gt; insn (a, b);</div>
+<div class="line">rule shift (op: {s: Nat} → «2; Idx s» → Idx s,       insn: {s: Nat} → «2; Idx s» → Idx s) {s: Nat} (a b: Idx s):         op (a, b)   =&gt; insn (a, b);</div>
+<div class="line">rule neg   (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx s) {s: Nat} (m: Nat, a b: Idx s): op m (a, b) =&gt; let x = insn (a, b); arm.xor (x, core.bit1.t 0 x);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">nand</span>, <span class="tt">nor</span>, and <span class="tt">nxor</span> complement with an <span class="tt">eor</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let arithmetic = (</div>
+<div class="line">    alu (core.wrap.add, arm.add), alu (core.wrap.sub, arm.sub), alu (core.wrap.mul, arm.mul), alu (core.wrap.shl, arm.shl),</div>
+<div class="line">    alu (core.bit2.and, arm.and), alu (core.bit2.or,  arm.or),  alu (core.bit2.xor, arm.xor),</div>
+<div class="line">    neg (core.bit2.nand, arm.and), neg (core.bit2.nor, arm.or), neg (core.bit2.nxor, arm.xor),</div>
+<div class="line">    shift (core.shr.l, arm.shr), shift (core.shr.a, arm.sar));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>A sum with a product that nothing else uses is one <span class="tt">madd</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule madd {s: Nat} (m n: Nat, a b c: Idx s): core.wrap.add m (core.wrap.mul n (a, b), c) =&gt; arm.madd (a, b, c);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md248"></a>
+Division</h2>
+<p><span class="tt">udiv</span>/<span class="tt">sdiv</span> yield the quotient only; a remainder is a <span class="tt">mul</span> and a <span class="tt">sub</span> around them. <span class="tt">core.rem</span> has a literal divisor.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let Div  = {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s];</div>
+<div class="line">let Insn = {s: Nat} → «2; Idx s» → Idx s;</div>
+<div class="line">rule quot      (op: Div, insn: Insn) {s: Nat} (m: mem.M 0, a b: Idx s): op (m, (a, b)) =&gt; (m, insn (a, b));</div>
+<div class="line">rule remainder (op: Div, insn: Insn) {s: Nat} (m: mem.M 0, a b: Idx s): op (m, (a, b)) =&gt; (m, arm.sub (a, arm.mul (insn (a, b), b)));</div>
+<div class="line">rule modulo {s: Nat} (d: Nat, x: Idx s): core.rem d x =&gt; arm.sub (x, arm.mul (arm.udiv (x, core.idx 0 s d), core.idx 0 s d));</div>
+<div class="line">anx let division = (</div>
+<div class="line">    quot (core.div.udiv, arm.udiv), quot (core.div.sdiv, arm.sdiv),</div>
+<div class="line">    remainder (core.div.urem, arm.udiv), remainder (core.div.srem, arm.sdiv));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md249"></a>
+Conversions</h2>
+<p>Each family takes the source and the destination size; <span class="tt">rank</span> orders the sizes by bit width.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam rank (s: Nat): Nat = ((((0, 1)#(core.ncmp.e (s, i8)), 2)#(core.ncmp.e (s, i16)), 3)#(core.ncmp.e (s, i32)), 4)#(core.ncmp.e (s, i64));</div>
+<div class="line">lam narrows (s d: Nat): Bool = core.ncmp.l (rank d, rank s);</div>
+<div class="line">lam widens (s d: Nat): Bool = core.ncmp.l (rank s, rank d);</div>
+<div class="line">rule trunc      {s: Nat} {d: Nat} (x: Idx s): core.conv.u d x        when narrows (s, d) =&gt; arm.trunc d x;</div>
+<div class="line">rule strunc     {s: Nat} {d: Nat} (x: Idx s): core.conv.s d x        when narrows (s, d) =&gt; arm.trunc d x;</div>
+<div class="line">rule zext       {s: Nat} {d: Nat} (x: Idx s): core.conv.u d x        when widens (s, d)  =&gt; arm.zext d x;</div>
+<div class="line">rule sext       {s: Nat} {d: Nat} (x: Idx s): core.conv.s d x        when widens (s, d)  =&gt; arm.sext d x;</div>
+<div class="line">rule cast_trunc {s: Nat} {d: Nat} (x: Idx s): core.bitcast (Idx d) x when narrows (s, d) =&gt; arm.trunc d x;</div>
+<div class="line">rule cast_zext  {s: Nat} {d: Nat} (x: Idx s): core.bitcast (Idx d) x when widens (s, d)  =&gt; arm.zext d x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md250"></a>
+Comparisons and Selects</h2>
+<p>Each <span class="tt">icmp</span> takes the predicate and its condition code. <span class="tt">arm.csel</span>'s normalizer fuses a condition code into it, so a select on a comparison is one <span class="tt">cmp</span> and one <span class="tt">csel</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule icmp (p: {s: Nat} → «2; Idx s» → Bool, c: mach.Flags → Bool) (s: Nat, a b: Idx s): p (a, b) =&gt; c (arm.cmp (a, b));</div>
+<div class="line">anx let compares = (</div>
+<div class="line">    icmp (core.icmp.e,  arm.cc.eq), icmp (core.icmp.ne,  arm.cc.ne), icmp (core.icmp.ul, arm.cc.cc), icmp (core.icmp.ule, arm.cc.ls),</div>
+<div class="line">    icmp (core.icmp.ug, arm.cc.hi), icmp (core.icmp.uge, arm.cc.cs), icmp (core.icmp.sl, arm.cc.lt), icmp (core.icmp.sle, arm.cc.le),</div>
+<div class="line">    icmp (core.icmp.sg, arm.cc.gt), icmp (core.icmp.sge, arm.cc.ge));</div>
+<div class="line">rule select {s: Nat} (x y: Idx s, c: Bool): (x, y)#c =&gt; arm.csel.ne (arm.cmp (c, 0_2), x, y);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md251"></a>
+Loads and Stores</h2>
+<p>A pointer is an <span class="tt">I64</span> by now, which <span class="tt">mem.legalize_native</span> casts to the pointer type of each memory operation.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load  {s: Nat} (m: mem.M 0, p: mem.Ptr0 (Idx s)):         mem.load (m, p)     =&gt; arm.load s (m, reg p);</div>
+<div class="line">rule store (s: Nat, m: mem.M 0, p: mem.Ptr0 (Idx s), x: Idx s): mem.store (m, p, x) =&gt; arm.store s (m, reg p, x);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md252"></a>
+Floating Point</h2>
+<p>Float instructions work on <span class="tt">math.F pe</span> values in the registers of <span class="tt">arm.fpr</span>. A family takes the format as <span class="tt">{pe: «2; Nat»}</span>, which gen instantiates at each of <span class="tt">formats</span> that the <span class="tt">mach.fpe</span> or <span class="tt">mach.fok</span> in its rule admits. AArch64 has no memory operand, so no rule folds a load.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod float</div>
+<div class="line">    use mach.float;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md253"></a>
+Arithmetic</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let arithmetic = (</div>
+<div class="line">    arith (math.arith.add, arm.fadd), arith (math.arith.sub, arm.fsub),</div>
+<div class="line">    arith (math.arith.mul, arm.fmul), arith (math.arith.div, arm.fdiv),</div>
+<div class="line">    unary (math.abs, arm.fabs), unary (math.rt.sq, arm.fsqrt));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md254"></a>
+Comparisons</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>Each predicate is a condition code on the flags of <span class="tt">arm.fcmp</span>, except <span class="tt">ne</span> and <span class="tt">ue</span>, which take two.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule cmp  (op: Pred, c: mach.Flags → Bool) {pe: «2; Nat»} (k: Nat, a b: math.F pe):   op k (a, b) =&gt; mach.fok pe (c (arm.fcmp (a, b)));</div>
+<div class="line">rule cmp2 (op: Pred, c d: mach.Flags → Bool) {pe: «2; Nat»} (k: Nat, a b: math.F pe): op k (a, b) =&gt; mach.fok pe (arm.or (c (arm.fcmp (a, b)), d (arm.fcmp (a, b))));</div>
+<div class="line">anx let comparisons = (</div>
+<div class="line">    cmp (math.cmp.e,   arm.cc.eq), cmp (math.cmp.l,   arm.cc.mi), cmp (math.cmp.le,  arm.cc.ls), cmp (math.cmp.g,  arm.cc.gt),</div>
+<div class="line">    cmp (math.cmp.ge,  arm.cc.ge), cmp (math.cmp.o,   arm.cc.vc), cmp (math.cmp.u,   arm.cc.vs), cmp (math.cmp.ul, arm.cc.lt),</div>
+<div class="line">    cmp (math.cmp.ule, arm.cc.le), cmp (math.cmp.ug,  arm.cc.hi), cmp (math.cmp.uge, arm.cc.cs), cmp (math.cmp.une, arm.cc.ne),</div>
+<div class="line">    cmp2 (math.cmp.ne, arm.cc.mi, arm.cc.gt), cmp2 (math.cmp.ue, arm.cc.eq, arm.cc.vs));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md255"></a>
+Selects, Loads, and Stores</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select {pe: «2; Nat»} (x y: math.F pe, c: Bool):                           (x, y)#c            =&gt; arm.fcsel.ne (arm.cmp (c, 0_2), x, y);</div>
+<div class="line">rule load   {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe)):               mem.load (m, p)     =&gt; arm.fload pe (m, reg p);</div>
+<div class="line">rule store  {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe), x: math.F pe): mem.store (m, p, x) =&gt; arm.fstore (m, reg p, x);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md256"></a>
+Conversions</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The integer size is a family parameter, since neither side determines it.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">f2f</span> takes both formats explicitly and only has the two mixed pairs, since a float of the same format converts to itself.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule s2f (s: Nat) {pe: «2; Nat»} (x: Idx s):              math.conv.s2f pe x  =&gt; arm.i2f s pe x;</div>
+<div class="line">rule u2f (s: Nat) {pe: «2; Nat»} (x: Idx s):              math.conv.u2f pe x  =&gt; arm.u2f s pe x;</div>
+<div class="line">rule f2s (s: Nat) {pe: «2; Nat»} (x: math.F pe):         math.conv.f2s s x   =&gt; arm.f2i pe s x;</div>
+<div class="line">rule f2u (s: Nat) {pe: «2; Nat»} (x: math.F pe):         math.conv.f2u s x   =&gt; arm.f2u pe s x;</div>
+<div class="line">rule f2f (spe: «2; Nat», dpe: «2; Nat») (x: math.F spe): math.conv.f2f dpe x =&gt; arm.f2f spe dpe x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>A narrower integer converts through a <span class="tt">w</span> register.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">    rule s2f_ext   (s: Nat) {pe: «2; Nat»} (x: Idx s):      math.conv.s2f pe x =&gt; arm.i2f i32 pe (arm.sext i32 x);</div>
+<div class="line">    rule u2f_ext   (s: Nat) {pe: «2; Nat»} (x: Idx s):      math.conv.u2f pe x =&gt; arm.u2f i32 pe (arm.zext i32 x);</div>
+<div class="line">    rule f2s_trunc (s: Nat) {pe: «2; Nat»} (x: math.F pe): math.conv.f2s s x  =&gt; arm.trunc s (arm.f2i pe i32 x);</div>
+<div class="line">    rule f2u_trunc (s: Nat) {pe: «2; Nat»} (x: math.F pe): math.conv.f2u s x  =&gt; arm.trunc s (arm.f2u pe i32 x);</div>
+<div class="line">    anx let conversions = (</div>
+<div class="line">        s2f i32, s2f i64, u2f i32, u2f i64,</div>
+<div class="line">        f2s i32, f2s i64, f2u i32, f2u i64,</div>
+<div class="line">        s2f_ext i8, s2f_ext i16, u2f_ext i8, u2f_ext i16,</div>
+<div class="line">        f2s_trunc i8, f2s_trunc i16, f2u_trunc i8, f2u_trunc i16,</div>
+<div class="line">        f2f (math.f32, math.f64), f2f (math.f64, math.f32));</div>
+<div class="line">end</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>A float literal becomes a register with <span class="tt">fmov</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule fmov {pe: «2; Nat»} (x: math.F pe): x when mach.lit x =&gt; arm.fmov x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md257"></a>
+Non-Terminals</h2>
+<p>A literal stays a literal operand; the emitter puts it into a register where the encoding has no immediate.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule mov (x: I64): x when mach.lit x =&gt; x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md258"></a>
+Instances</h1>
+<p>The values of a family's <span class="tt">{s: Nat}</span>: the register sizes that <span class="tt">mem.legalize_ptr</span> and <span class="tt">mem.legalize_native</span> leave.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let sizes = (i1, i8, i16, i32, i64);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The values of a family's <span class="tt">{pe: «2; Nat»}</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let formats = (math.f32, math.f64);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md259"></a>
+Phases</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md260"></a>
+gen</h2>
+<p>Writes the closed rules of this plugin as C++ matchers and builders (<a class="el" href="namespacemim_1_1plug_1_1arm_1_1rules.html">mim::plug::arm::rules</a>) to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> arm_isel:o=&lt;file&gt;</span>, or to stdout.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gen: compile.Phase;</div>
+</div><!-- fragment --></div><div class="mim-code"></div> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

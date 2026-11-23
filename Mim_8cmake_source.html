@@ -167,11 +167,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Mim_8cmake_sou
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"># A cross build cannot run the mim it just built.</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>set(MIM_NATIVE_MIM <span class="stringliteral">&quot;&quot;</span> CACHE FILEPATH <span class="stringliteral">&quot;Native mim executable that bootstraps the plugins.&quot;</span>)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"># x86 compiles in the rule table that the mim it builds generates with x86_isel loaded as a module.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"># A native backend compiles in the rule table that the mim it builds generates with its isel plugin loaded as a module.</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>if(MIM_STATIC_PLUGINS OR MIM_NATIVE_MIM)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    set(MIM_X86 OFF)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    set(MIM_NATIVE_BACKENDS OFF)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>else()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    set(MIM_X86 ON)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    set(MIM_NATIVE_BACKENDS ON)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>endif()</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"># Where a plugin&#39;s `.mim` half is staged, so an uninstalled tree can load it.</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>set(MIM_PLUGIN_DIR <span class="stringliteral">&quot;${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}/mim&quot;</span>)</div>

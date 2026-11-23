@@ -17,8 +17,6 @@ var namespacemim_1_1plug_1_1x86__isel =
     [ "div8", "namespacemim_1_1plug_1_1x86__isel.html#a10da7cf480ab0e08842ecec49b530918", null ],
     [ "division", "namespacemim_1_1plug_1_1x86__isel.html#a2a0698bba81dacf3bc1a43fff36f4c76", null ],
     [ "float_", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bd", [
-      [ "arith", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda4d0b05c8b4480d7ada20a44c3b506388", null ],
-      [ "unary", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda94a69b2994dec7f49a12bb036c3d2ac8", null ],
       [ "rm", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bdad67f249b90615ca158b1258712c3a9fc", null ],
       [ "sqrt_rm", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda387f1d0d1995c91aa669bc64074fabc7", null ],
       [ "arithmetic", "namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda26e816805c2eb54063da29d3d21a3641", null ],
@@ -49,7 +47,6 @@ var namespacemim_1_1plug_1_1x86__isel =
     [ "index", "namespacemim_1_1plug_1_1x86__isel.html#a247e04d7611a798936f00217ac4e91c0", null ],
     [ "index_disp", "namespacemim_1_1plug_1_1x86__isel.html#a00c067f4df5a10a44adcb27b45abf16b", null ],
     [ "lea", "namespacemim_1_1plug_1_1x86__isel.html#a1cfb783cb97dd7eac905d3147f51aa9f", null ],
-    [ "lit", "namespacemim_1_1plug_1_1x86__isel.html#a6fbca435705e7a8d52d533683c482464", null ],
     [ "load", "namespacemim_1_1plug_1_1x86__isel.html#ac0fc218c5f719f19af2b647eb370eba1", null ],
     [ "mem_ops", "namespacemim_1_1plug_1_1x86__isel.html#ae6a0c2979cc09e04ab465b32c5316ea6", null ],
     [ "mov", "namespacemim_1_1plug_1_1x86__isel.html#af59eaa61bd8d182fc1559242e030f588", null ],
@@ -57,7 +54,6 @@ var namespacemim_1_1plug_1_1x86__isel =
     [ "mul8", "namespacemim_1_1plug_1_1x86__isel.html#aa8034e4a83764b9dde149e9058b49906", null ],
     [ "neg", "namespacemim_1_1plug_1_1x86__isel.html#a4f57482079c99d296efc2fc52f9b6341", null ],
     [ "nonterminals", "namespacemim_1_1plug_1_1x86__isel.html#a5595ecf949cb540b998f33e88b7f1717", null ],
-    [ "Ref", "namespacemim_1_1plug_1_1x86__isel.html#af576d4f234ba124f0ab5635ee128c3ae", null ],
     [ "reg_imm", "namespacemim_1_1plug_1_1x86__isel.html#a78dbb9a42122406458128461e6201343", null ],
     [ "reg_sh", "namespacemim_1_1plug_1_1x86__isel.html#a6f0effef955b168c07433aff21f0fe81", null ],
     [ "rem16", "namespacemim_1_1plug_1_1x86__isel.html#a31134b00b802e08ef45f9d4dcff588b8", null ],
@@ -76,12 +72,10 @@ var namespacemim_1_1plug_1_1x86__isel =
     [ "store", "namespacemim_1_1plug_1_1x86__isel.html#a7ba7175e7016251783ea3344e354879d", null ],
     [ "strunc", "namespacemim_1_1plug_1_1x86__isel.html#a2cf81493a5d8df59f8d1b4b52446f1aa", null ],
     [ "trunc", "namespacemim_1_1plug_1_1x86__isel.html#ab6ff69d429efea45e325a214621907f7", null ],
-    [ "Ty", "namespacemim_1_1plug_1_1x86__isel.html#a5f033672e1c35c4f8972bd0d41279a77", null ],
     [ "unscale", "namespacemim_1_1plug_1_1x86__isel.html#a7937edef68263e3e1ff3d18b5e3e5b3b", null ],
-    [ "Want", "namespacemim_1_1plug_1_1x86__isel.html#aad6329c29da733d5eb8268fbef0d9111", null ],
+    [ "Want", "namespacemim_1_1plug_1_1x86__isel.html#a64924231a53a04c38653e217c2944524", null ],
     [ "zext", "namespacemim_1_1plug_1_1x86__isel.html#a5d59b979f30269d21578ab02092f50e0", null ],
     [ "normalize_imm", "namespacemim_1_1plug_1_1x86__isel.html#a83b5360869accd28a4f7c0f88d73d6df", null ],
-    [ "normalize_lit", "namespacemim_1_1plug_1_1x86__isel.html#a2be416406074919c08fa4adde3f0f8ef", null ],
     [ "register_normalizers", "namespacemim_1_1plug_1_1x86__isel.html#aea5db33c0facbd4e0ff01f18ccba7894", null ],
     [ "Plugin_Id", "namespacemim_1_1plug_1_1x86__isel.html#a32630f46a0ec17a6acd28854fc08795a", null ]
 ];

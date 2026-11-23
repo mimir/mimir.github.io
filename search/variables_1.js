@@ -6,5 +6,5 @@ var searchData=
   ['break_5fon_5ferror_3',['break_on_error',['../structmim_1_1Flags.html#a815524784f39e99f0d5929c8ef950552',1,'mim::Flags']]],
   ['break_5fon_5fwarn_4',['break_on_warn',['../structmim_1_1Flags.html#accee3d68c6800853cbb887679212d540',1,'mim::Flags']]],
   ['breakpoints_5',['breakpoints',['../structmim_1_1World_1_1State.html#a997cc9617373311cf06fae3478b71bd6',1,'mim::World::State']]],
-  ['build_6',['build',['../namespacemim_1_1plug_1_1x86_1_1rules.html#a66ede71bb303284552440f296cf746a4',1,'mim::plug::x86::rules::Rewrite::build'],['../namespacemim_1_1plug_1_1x86_1_1rules.html#a5b4772ddc4dcdbb287d2e03624e1ea73',1,'mim::plug::x86::rules::Conversion::build']]]
+  ['build_6',['build',['../namespacemim_1_1native_1_1rules.html#a4d68ec18d74bccf7d40561412c8b05e4',1,'mim::native::rules::Rewrite::build'],['../namespacemim_1_1native_1_1rules.html#a9d9cc1b22fc392db69b52654e955ecaf',1,'mim::native::rules::Conversion::build']]]
 ];

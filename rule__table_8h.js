@@ -1,70 +1,84 @@
 var rule__table_8h =
 [
-    [ "mim::plug::x86::rules::RefInfo", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1RefInfo", [
-      [ "cover", "namespacemim_1_1plug_1_1x86_1_1rules.html#ae7d135c0732fe1184735a0a910519b90", null ],
-      [ "kind", "namespacemim_1_1plug_1_1x86_1_1rules.html#aabbd74a84b6eb6286ed738a1ecb7dfbf", null ]
+    [ "mim::native::rules::RefInfo", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1RefInfo", [
+      [ "cover", "namespacemim_1_1native_1_1rules.html#a799d689e9e681352d96bf0f6a516bd24", null ],
+      [ "kind", "namespacemim_1_1native_1_1rules.html#a4e8ed196b5bb0f593c904ece6ffda160", null ]
     ] ],
-    [ "mim::plug::x86::rules::Use", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Use", [
-      [ "index", "namespacemim_1_1plug_1_1x86_1_1rules.html#abdac89560a7a9fd649d491936dd65f17", null ],
-      [ "owner", "namespacemim_1_1plug_1_1x86_1_1rules.html#a16f444f93788ecdcef55326dd0a23069", null ],
-      [ "ref", "namespacemim_1_1plug_1_1x86_1_1rules.html#a533f57f9bfd66ddb41069e725cb3b13f", null ]
+    [ "mim::native::rules::Use", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Use", [
+      [ "index", "namespacemim_1_1native_1_1rules.html#affc24e69a0f0607a9597fd9e2fcb0bc8", null ],
+      [ "owner", "namespacemim_1_1native_1_1rules.html#a96028fd83641f5a5f34d7c97ee3447a6", null ],
+      [ "ref", "namespacemim_1_1native_1_1rules.html#ac5adf167e05f244c0193ebd69c929633", null ]
     ] ],
-    [ "mim::plug::x86::rules::Matcher", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Matcher", [
-      [ "fn", "namespacemim_1_1plug_1_1x86_1_1rules.html#a8195403eaaba686280edbec287f6e167", null ],
-      [ "num_covers", "namespacemim_1_1plug_1_1x86_1_1rules.html#ac3da988dbd54b6c7cee57558eaceca5d", null ],
-      [ "num_refs", "namespacemim_1_1plug_1_1x86_1_1rules.html#a1a9073fbfaddfa9627ae7eaafb729393", null ],
-      [ "num_uses", "namespacemim_1_1plug_1_1x86_1_1rules.html#a44beda714cc056a957cb267dd964e315", null ],
-      [ "refs", "namespacemim_1_1plug_1_1x86_1_1rules.html#ac36fce867ba2332b6dd3dcf86f4872b2", null ],
-      [ "uses", "namespacemim_1_1plug_1_1x86_1_1rules.html#a48ccf7a0f4986c1872a3776a13b57b6f", null ]
+    [ "mim::native::rules::Matcher", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Matcher", [
+      [ "fn", "namespacemim_1_1native_1_1rules.html#a84777cb8116faa67b857103e021b037b", null ],
+      [ "num_covers", "namespacemim_1_1native_1_1rules.html#a6c8ae4ab3c23b9a3b7cac2c9e39ef8d1", null ],
+      [ "num_refs", "namespacemim_1_1native_1_1rules.html#ae867753cbac168363275b4c18887c11d", null ],
+      [ "num_uses", "namespacemim_1_1native_1_1rules.html#a02e935c3680ba33808346e70ff6e21a9", null ],
+      [ "refs", "namespacemim_1_1native_1_1rules.html#aefc80a1efe4b79bf97c33b70b6124951", null ],
+      [ "uses", "namespacemim_1_1native_1_1rules.html#aaea949d623178528b9a180a6aded7a71", null ]
     ] ],
-    [ "mim::plug::x86::rules::Rewrite", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Rewrite", [
-      [ "build", "namespacemim_1_1plug_1_1x86_1_1rules.html#a66ede71bb303284552440f296cf746a4", null ],
-      [ "cost", "namespacemim_1_1plug_1_1x86_1_1rules.html#af7ec91ccebb26c978097888dd3bda9d5", null ],
-      [ "imm_swaps", "namespacemim_1_1plug_1_1x86_1_1rules.html#a926c0e9b40efb941d31007bff50261e0", null ],
-      [ "maps", "namespacemim_1_1plug_1_1x86_1_1rules.html#a26faf14095e8c7b4eda41d89e96e7801", null ],
-      [ "match", "namespacemim_1_1plug_1_1x86_1_1rules.html#a9119d26994ea68c0589ed296c9b27f4e", null ],
-      [ "name", "namespacemim_1_1plug_1_1x86_1_1rules.html#a1e866e3b6676f3429d066cf26752d6eb", null ],
-      [ "num_metas", "namespacemim_1_1plug_1_1x86_1_1rules.html#a7a751100d950449d4b0ccccdd6d96681", null ],
-      [ "root", "namespacemim_1_1plug_1_1x86_1_1rules.html#affe356195f308c8ef2c7dd0329735b04", null ],
-      [ "swaps", "namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f161ebd98935eaf00f22678ac50bcb", null ],
-      [ "tied", "namespacemim_1_1plug_1_1x86_1_1rules.html#a25c1940c9a02bf480ca079d9700534aa", null ],
-      [ "type", "namespacemim_1_1plug_1_1x86_1_1rules.html#a7e6954c05e50e45cefc12a9732e1d839", null ],
-      [ "wants", "namespacemim_1_1plug_1_1x86_1_1rules.html#ae2f366abaccb5a5fe012f2669cb224d9", null ]
+    [ "mim::native::rules::Rewrite", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Rewrite", [
+      [ "build", "namespacemim_1_1native_1_1rules.html#a4d68ec18d74bccf7d40561412c8b05e4", null ],
+      [ "cost", "namespacemim_1_1native_1_1rules.html#af574cdda5dabb6d567ce9d4c286c1122", null ],
+      [ "imm_swaps", "namespacemim_1_1native_1_1rules.html#a26eb6a427e8614914973dfbeea9a8fdc", null ],
+      [ "maps", "namespacemim_1_1native_1_1rules.html#ab459734c5619c755dfbc586d789d5039", null ],
+      [ "match", "namespacemim_1_1native_1_1rules.html#a67b1df9b93256c2cba544491c21762a2", null ],
+      [ "name", "namespacemim_1_1native_1_1rules.html#a5493707e2334a24b2acb7b8375226e46", null ],
+      [ "num_metas", "namespacemim_1_1native_1_1rules.html#a09839d9f980f975f4802b8cd64505fe0", null ],
+      [ "root", "namespacemim_1_1native_1_1rules.html#a4dd18e478e6f37a5146fffdb1affb622", null ],
+      [ "swaps", "namespacemim_1_1native_1_1rules.html#abf0cb337728151f770fb0ac2f68a0cd8", null ],
+      [ "tied", "namespacemim_1_1native_1_1rules.html#a77e144b0292e24d030d2508bc1434355", null ],
+      [ "type", "namespacemim_1_1native_1_1rules.html#af49f86a346f280b8285a8049569957a6", null ],
+      [ "wants", "namespacemim_1_1native_1_1rules.html#a8ecee5859d800a94d06755e55829fc8a", null ]
     ] ],
-    [ "mim::plug::x86::rules::Root", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Root", [
-      [ "first", "namespacemim_1_1plug_1_1x86_1_1rules.html#ada0732f7670c30e327763dd4141ae0d8", null ],
-      [ "flags", "namespacemim_1_1plug_1_1x86_1_1rules.html#aa631889182051a1b7322bc9771d24d96", null ],
-      [ "num", "namespacemim_1_1plug_1_1x86_1_1rules.html#a652ea545bf995013e485846decad3a56", null ]
+    [ "mim::native::rules::Root", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Root", [
+      [ "first", "namespacemim_1_1native_1_1rules.html#a7fe67522bc73900f654bd026d42404ec", null ],
+      [ "flags", "namespacemim_1_1native_1_1rules.html#a4e7fb620521015631af77eb330132f30", null ],
+      [ "num", "namespacemim_1_1native_1_1rules.html#a6dfd3a630dacbd218552a67b7fc23680", null ]
     ] ],
-    [ "mim::plug::x86::rules::Conversion", "namespacemim_1_1plug_1_1x86_1_1rules.html#structmim_1_1plug_1_1x86_1_1rules_1_1Conversion", [
-      [ "arity", "namespacemim_1_1plug_1_1x86_1_1rules.html#a1c127ac729d8bb382721439eb8ffc8fb", null ],
-      [ "build", "namespacemim_1_1plug_1_1x86_1_1rules.html#a5b4772ddc4dcdbb287d2e03624e1ea73", null ],
-      [ "cost", "namespacemim_1_1plug_1_1x86_1_1rules.html#aaccd64e9c888b3d9d5ca2a8015b489a7", null ],
-      [ "from", "namespacemim_1_1plug_1_1x86_1_1rules.html#a8b82d904cfd7bc2f8faca859812c8882", null ],
-      [ "name", "namespacemim_1_1plug_1_1x86_1_1rules.html#a22b78facf2a213fb43baf475b3361bec", null ],
-      [ "to", "namespacemim_1_1plug_1_1x86_1_1rules.html#a9370f0f894ceb22b46c32accd3f00941", null ]
+    [ "mim::native::rules::Conversion", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Conversion", [
+      [ "arity", "namespacemim_1_1native_1_1rules.html#ab435459689d29f41118a7526e27a4a25", null ],
+      [ "build", "namespacemim_1_1native_1_1rules.html#a9d9cc1b22fc392db69b52654e955ecaf", null ],
+      [ "cost", "namespacemim_1_1native_1_1rules.html#a96e7c5a7e098edc40a3dcdca2ac95ccc", null ],
+      [ "from", "namespacemim_1_1native_1_1rules.html#a3ad64da188f0026f85778886a3c8331c", null ],
+      [ "name", "namespacemim_1_1native_1_1rules.html#af6c96e8a61328aa6e376e70a42eeb7bd", null ],
+      [ "to", "namespacemim_1_1native_1_1rules.html#a2f1cf151b382684b1c9d10a96dbf4325", null ]
     ] ],
-    [ "mim::plug::x86::rules::Chains", "structmim_1_1plug_1_1x86_1_1rules_1_1Chains.html", "structmim_1_1plug_1_1x86_1_1rules_1_1Chains" ],
-    [ "MIM_X86_RULE_TYS", "rule__table_8h.html#a5d61afafe10eb9ee8a9122b48de676bf", null ],
-    [ "MIM_X86_RULE_WANTS", "rule__table_8h.html#af220e1605a88dade7f799bb7af5e1e6b", null ],
+    [ "mim::native::rules::Chains", "structmim_1_1native_1_1rules_1_1Chains.html", "structmim_1_1native_1_1rules_1_1Chains" ],
+    [ "mim::native::rules::Table", "namespacemim_1_1native_1_1rules.html#structmim_1_1native_1_1rules_1_1Table", [
+      [ "chains", "namespacemim_1_1native_1_1rules.html#a5bdfe311cdffcd80efb2853628d689ad", null ],
+      [ "conversions", "namespacemim_1_1native_1_1rules.html#a065865a3a190f2da852f7368629d53ce", null ],
+      [ "matchers", "namespacemim_1_1native_1_1rules.html#abc0a3f7963705633e388db93c774975d", null ],
+      [ "max_covers", "namespacemim_1_1native_1_1rules.html#ac4af0a4b07308c56e97ad41258d51cc9", null ],
+      [ "max_metas", "namespacemim_1_1native_1_1rules.html#abde269b34148fe667b28a3513b6801db", null ],
+      [ "max_refs", "namespacemim_1_1native_1_1rules.html#a98e44211035f5f0a51b8a915b3e32076", null ],
+      [ "refs", "namespacemim_1_1native_1_1rules.html#a6c3bd56a133594277f4015929ac8d3c7", null ],
+      [ "rewrites", "namespacemim_1_1native_1_1rules.html#a99452e0c054ebc28fd9d7f5dfcac1c89", null ],
+      [ "roots", "namespacemim_1_1native_1_1rules.html#a79e8ec4685d12f9bfad797a3568ea2f8", null ],
+      [ "uses", "namespacemim_1_1native_1_1rules.html#a45b647666b34c57e0cffa259e2d768b2", null ],
+      [ "wants", "namespacemim_1_1native_1_1rules.html#a00bd1f50af4bd72c454e3b39cccbd06d", null ]
+    ] ],
+    [ "MIM_NATIVE_RULE_TYS", "rule__table_8h.html#acc6df1783925292d6467fa8993b8c5c7", null ],
+    [ "MIM_NATIVE_RULE_WANTS", "rule__table_8h.html#ada73ff6d8463e9828c04434804b5f32a", null ],
     [ "X", "rule__table_8h.html#a67d332effb1cf6157841ba1bd9b3ec05", null ],
     [ "X", "rule__table_8h.html#a5088c9e633e9da4b5281d31f4c8eae6b", null ],
     [ "X", "rule__table_8h.html#a0689b092184606c790794ca2140d08e9", null ],
-    [ "mim::plug::x86::rules::BuildFn", "namespacemim_1_1plug_1_1x86_1_1rules.html#a554821839d95411c6b14152b55f889ff", null ],
-    [ "mim::plug::x86::rules::MatchFn", "namespacemim_1_1plug_1_1x86_1_1rules.html#a182b1872c26ef8d57e212df7289508b8", null ],
-    [ "mim::plug::x86::rules::Ref", "namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3ae", [
-      [ "mim::plug::x86::rules::Ref::Value", "namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3aea689202409e48743b914713f96d93947c", null ],
-      [ "mim::plug::x86::rules::Ref::Mem", "namespacemim_1_1plug_1_1x86_1_1rules.html#af576d4f234ba124f0ab5635ee128c3aeadba5553473d129a7985fb532dc249ff4", null ]
+    [ "mim::native::rules::BuildFn", "namespacemim_1_1native_1_1rules.html#add31ac1507c25e17a319c3bfb0518516", null ],
+    [ "mim::native::rules::MatchFn", "namespacemim_1_1native_1_1rules.html#a44b182456e0e64f00d4097a4a420810d", null ],
+    [ "mim::native::rules::Ref", "namespacemim_1_1native_1_1rules.html#aba595023e4a0059858ab9f20ee96f6d6", [
+      [ "mim::native::rules::Ref::Value", "namespacemim_1_1native_1_1rules.html#aba595023e4a0059858ab9f20ee96f6d6a689202409e48743b914713f96d93947c", null ],
+      [ "mim::native::rules::Ref::Mem", "namespacemim_1_1native_1_1rules.html#aba595023e4a0059858ab9f20ee96f6d6adba5553473d129a7985fb532dc249ff4", null ]
     ] ],
-    [ "mim::plug::x86::rules::Ty", "namespacemim_1_1plug_1_1x86_1_1rules.html#a5f033672e1c35c4f8972bd0d41279a77", null ],
-    [ "mim::plug::x86::rules::Want", "namespacemim_1_1plug_1_1x86_1_1rules.html#aad6329c29da733d5eb8268fbef0d9111", null ],
-    [ "mim::plug::x86::rules::add", "namespacemim_1_1plug_1_1x86_1_1rules.html#aad1dbc2c1369b274ac92fe10e3192ea1", null ],
-    [ "mim::plug::x86::rules::fills", "namespacemim_1_1plug_1_1x86_1_1rules.html#ac75669fdd9523ea301a94adf9a625199", null ],
-    [ "mim::plug::x86::rules::is_literal", "namespacemim_1_1plug_1_1x86_1_1rules.html#aed060b8c9543b29d0ea7218da0e3b8d2", null ],
-    [ "mim::plug::x86::rules::is_param", "namespacemim_1_1plug_1_1x86_1_1rules.html#a01702a83cdaad1ae5c5717b173301d31", null ],
-    [ "mim::plug::x86::rules::literal_of", "namespacemim_1_1plug_1_1x86_1_1rules.html#a4539557b0a7ee105232132a38d03ea61", null ],
-    [ "mim::plug::x86::rules::reg_want", "namespacemim_1_1plug_1_1x86_1_1rules.html#a2b4f7fea07cf506e59894f080cdb31a3", null ],
-    [ "mim::plug::x86::rules::same_class", "namespacemim_1_1plug_1_1x86_1_1rules.html#ae90c157b5b1b664085d0a3df0d87a794", null ],
-    [ "mim::plug::x86::rules::Inf", "namespacemim_1_1plug_1_1x86_1_1rules.html#a75bdc98324fd7eedfe0f118295ad4e75", null ],
-    [ "mim::plug::x86::rules::Num_Tys", "namespacemim_1_1plug_1_1x86_1_1rules.html#aee83083be4eff5e26a3a6c6d16a82873", null ]
+    [ "mim::native::rules::Ty", "namespacemim_1_1native_1_1rules.html#ad9d516ea1ac3a89bdeee2b1234c43e03", null ],
+    [ "mim::native::rules::Want", "namespacemim_1_1native_1_1rules.html#a64924231a53a04c38653e217c2944524", null ],
+    [ "mim::native::rules::add", "namespacemim_1_1native_1_1rules.html#a345d2e7c2ad95113dac2905980d5f316", null ],
+    [ "mim::native::rules::fills", "namespacemim_1_1native_1_1rules.html#acad5f837c5d7db94582bbdcffff113dc", null ],
+    [ "mim::native::rules::is_literal", "namespacemim_1_1native_1_1rules.html#a3e6311efa7ab26ab2716f21692640b25", null ],
+    [ "mim::native::rules::is_param", "namespacemim_1_1native_1_1rules.html#aa74ad8a8ac493aaacf822fa494742a50", null ],
+    [ "mim::native::rules::literal_of", "namespacemim_1_1native_1_1rules.html#ab9e9987c94c158c8a81de31264147d82", null ],
+    [ "mim::native::rules::reg_want", "namespacemim_1_1native_1_1rules.html#ad52461500c9f4b0ddd64de094b645b1e", null ],
+    [ "mim::native::rules::same_class", "namespacemim_1_1native_1_1rules.html#a1340d7a5740168864e87b2fb62a71f90", null ],
+    [ "mim::native::rules::Copy", "namespacemim_1_1native_1_1rules.html#aaecb784c5e7c8e3ae3a1e69c8241b419", null ],
+    [ "mim::native::rules::Inf", "namespacemim_1_1native_1_1rules.html#aa41658c7175d3ee13469afc58763c194", null ],
+    [ "mim::native::rules::Num_Tys", "namespacemim_1_1native_1_1rules.html#aabb61f941583d6547b669915bc2f7bd3", null ]
 ];

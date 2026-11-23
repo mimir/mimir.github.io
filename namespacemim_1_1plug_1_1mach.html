@@ -1,0 +1,737 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: mim::plug::mach Namespace Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemim_1_1plug_1_1mach.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mim::plug::mach Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="mach.html" title="The mach Plugin">The mach Plugin</a>  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Gen" id="r_Gen"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html">Gen</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the closed rules among the annexes of a backend's isel plugin as the C++ matchers and builders of a rules::Table in <span class="tt"><a class="el" href="namespacemim_1_1plug.html">mim::plug</a>::&lt;<a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html#a16166426c2fc9d9f72aec8d4275c9de2">backend</a>&gt;::rules</span>, to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;<a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html#ac902e1d262ce3fb2c4ece27141fe2a03">isel</a>&gt;:o=&lt;file&gt;</span> or stdout.  <a href="classmim_1_1plug_1_1mach_1_1Gen.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Target" id="r_Target"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html">Target</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classmim_1_1plug_1_1mach_1_1Target.html" title="A Target whose machine-independent axioms are those of the plugin mach.">Target</a> whose machine-independent axioms are those of the plugin <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html" title="The mach Plugin">mach</a></span>.  <a href="classmim_1_1plug_1_1mach_1_1Target.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr id="enum-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.Flags&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a35a7a735f07fa6c47aae78ea91a89650" id="r_a35a7a735f07fa6c47aae78ea91a89650"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a35a7a735f07fa6c47aae78ea91a89650">Flags</a> : flags_t </td></tr>
+<tr id="enum-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.Spill&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a7043f77a64e62f0801330d557cf6744b" id="r_a7043f77a64e62f0801330d557cf6744b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a7043f77a64e62f0801330d557cf6744b">Spill</a> : flags_t </td></tr>
+<tr class="memitem:ac5c81a1fc064b0fc5939fd39e0a3dfc0" id="r_ac5c81a1fc064b0fc5939fd39e0a3dfc0"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ac5c81a1fc064b0fc5939fd39e0a3dfc0">spill</a> : flags_t </td></tr>
+<tr id="enum-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.in&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a1bad03b7ba74bce4c0e87690b81fe001" id="r_a1bad03b7ba74bce4c0e87690b81fe001"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a1bad03b7ba74bce4c0e87690b81fe001">in</a> : flags_t </td></tr>
+<tr id="enum-members-3" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.slot&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a4016a3ecc4a13bf4e1280a2f62538ce6" id="r_a4016a3ecc4a13bf4e1280a2f62538ce6"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a4016a3ecc4a13bf4e1280a2f62538ce6">slot</a> : flags_t </td></tr>
+<tr id="enum-members-4" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.reload&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a03146f3bc9c8e22ebbc36ab62c2ad98e" id="r_a03146f3bc9c8e22ebbc36ab62c2ad98e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a03146f3bc9c8e22ebbc36ab62c2ad98e">reload</a> : flags_t </td></tr>
+<tr id="enum-members-5" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.fpe&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:aca3fefb09702dd2b9229d9bce00455c8" id="r_aca3fefb09702dd2b9229d9bce00455c8"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#aca3fefb09702dd2b9229d9bce00455c8">fpe</a> : flags_t </td></tr>
+<tr id="enum-members-6" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.fok&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a20fdc4f9d0f2827e3f7c6b18a03428c7" id="r_a20fdc4f9d0f2827e3f7c6b18a03428c7"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a20fdc4f9d0f2827e3f7c6b18a03428c7">fok</a> : flags_t </td></tr>
+<tr id="enum-members-7" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.float&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a4e2fd2208f307caa1ebc8fdbaac310a6" id="r_a4e2fd2208f307caa1ebc8fdbaac310a6"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a4e2fd2208f307caa1ebc8fdbaac310a6">float_</a> : flags_t { <br />
+&#160;&#160;<a class="el" href="#a4e2fd2208f307caa1ebc8fdbaac310a6a4d0b05c8b4480d7ada20a44c3b506388">arith</a> = 0x3821090000000800
+, <br />
+&#160;&#160;<a class="el" href="#a4e2fd2208f307caa1ebc8fdbaac310a6a94a69b2994dec7f49a12bb036c3d2ac8">unary</a> = 0x3821090000000801
+<br />
+ }</td></tr>
+<tr id="enum-members-8" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.spilling&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:ad5163b98367b72b1ed5ab4426d943c59" id="r_ad5163b98367b72b1ed5ab4426d943c59"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad5163b98367b72b1ed5ab4426d943c59">spilling</a> : flags_t </td></tr>
+<tr id="enum-members-9" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.constrain&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a9c2a8dc140250adf77c50ef6e651d913" id="r_a9c2a8dc140250adf77c50ef6e651d913"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a9c2a8dc140250adf77c50ef6e651d913">constrain</a> : flags_t </td></tr>
+<tr id="enum-members-10" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.color&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:adbd4b0281f10770d8170d27b0973550b" id="r_adbd4b0281f10770d8170d27b0973550b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#adbd4b0281f10770d8170d27b0973550b">color</a> : flags_t </td></tr>
+<tr id="enum-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.live&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a3f5ae91df9778479c0519b5917cefc43" id="r_a3f5ae91df9778479c0519b5917cefc43"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a3f5ae91df9778479c0519b5917cefc43">live</a> : flags_t </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1bcc4cdee0370936239314e935543f0c" id="r_a1bcc4cdee0370936239314e935543f0c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1bcc4cdee0370936239314e935543f0c">mim_mach_gen</a> (<a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html">Gen</a> &amp;)</td></tr>
+<tr class="memdesc:a1bcc4cdee0370936239314e935543f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html#a805763b8ea10bf22843d2c03ffbf3a27" title="Actual entry.">Gen::start</a>, compiled once into <span class="tt">libmim_mach</span>; <a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html" title="Writes the closed rules among the annexes of a backend&#39;s isel plugin as the C++ matchers and builders...">Gen</a> reaches it via <span class="tt"><a class="el" href="driver_8h.html#ab004995be061e8045533148b21580ed8">GET_FUN_PTR</a></span>.  <br /></td></tr>
+<tr class="memitem:a3c9596d422bd4ef69675446ed10c93b2" id="r_a3c9596d422bd4ef69675446ed10c93b2"><td class="memTemplParams" colspan="2">template&lt;class Reg&gt; </td></tr>
+<tr class="memitem:a3c9596d422bd4ef69675446ed10c93b2 template"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a3c9596d422bd4ef69675446ed10c93b2">encoding</a> (Reg r)</td></tr>
+<tr class="memdesc:a3c9596d422bd4ef69675446ed10c93b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hardware encoding of the register <code class="param">r</code> of a backend's module <span class="tt">reg</span>, whose subtags are in encoding order.  <br /></td></tr>
+<tr class="memitem:a75af17fd16e274454d480e1f09f15f60" id="r_a75af17fd16e274454d480e1f09f15f60"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers</a> (<a class="el" href="namespacemim.html#a2f22db57ec53935eb9dfedebd9b9b0b2">Normalizers</a> &amp;normalizers)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aeac73afb474ace21aad6855b2fb23b16" id="r_aeac73afb474ace21aad6855b2fb23b16"><td class="memItemLeft">static constexpr <a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#aeac73afb474ace21aad6855b2fb23b16">Plugin_Id</a> = 0x3821090000000000</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+&lt;tt&gt;mach.lit&lt;/tt&gt;</h2></td></tr>
+<tr class="memitem:a1bc4060dec157b2c36bb3b185cc66009" id="r_a1bc4060dec157b2c36bb3b185cc66009"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a1bc4060dec157b2c36bb3b185cc66009">lit</a> : flags_t </td></tr>
+<tr class="memitem:a18581b602e29d7ce24ef112a4983d1a9" id="r_a18581b602e29d7ce24ef112a4983d1a9"><td class="memItemLeft">const <a class="el" href="classmim_1_1Def.html">Def</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a18581b602e29d7ce24ef112a4983d1a9">normalize_lit</a> (const <a class="el" href="classmim_1_1Def.html">Def</a> *type, const <a class="el" href="classmim_1_1Def.html">Def</a> *, const <a class="el" href="classmim_1_1Def.html">Def</a> *arg)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="mach.html" title="The mach Plugin">The mach Plugin</a> </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
+<a id="adbd4b0281f10770d8170d27b0973550b" name="adbd4b0281f10770d8170d27b0973550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbd4b0281f10770d8170d27b0973550b">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#adbd4b0281f10770d8170d27b0973550b">mim::plug::mach::color</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00101">101</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c2a8dc140250adf77c50ef6e651d913" name="a9c2a8dc140250adf77c50ef6e651d913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2a8dc140250adf77c50ef6e651d913">&#9670;&#160;</a></span>constrain</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a9c2a8dc140250adf77c50ef6e651d913">mim::plug::mach::constrain</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00094">94</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a35a7a735f07fa6c47aae78ea91a89650" name="a35a7a735f07fa6c47aae78ea91a89650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a7a735f07fa6c47aae78ea91a89650">&#9670;&#160;</a></span>Flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a35a7a735f07fa6c47aae78ea91a89650">mim::plug::mach::Flags</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00014">14</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e2fd2208f307caa1ebc8fdbaac310a6" name="a4e2fd2208f307caa1ebc8fdbaac310a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2fd2208f307caa1ebc8fdbaac310a6">&#9670;&#160;</a></span>float_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4e2fd2208f307caa1ebc8fdbaac310a6">mim::plug::mach::float_</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4e2fd2208f307caa1ebc8fdbaac310a6a4d0b05c8b4480d7ada20a44c3b506388" name="a4e2fd2208f307caa1ebc8fdbaac310a6a4d0b05c8b4480d7ada20a44c3b506388"></a>arith&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e2fd2208f307caa1ebc8fdbaac310a6a94a69b2994dec7f49a12bb036c3d2ac8" name="a4e2fd2208f307caa1ebc8fdbaac310a6a94a69b2994dec7f49a12bb036c3d2ac8"></a>unary&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00070">70</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a20fdc4f9d0f2827e3f7c6b18a03428c7" name="a20fdc4f9d0f2827e3f7c6b18a03428c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20fdc4f9d0f2827e3f7c6b18a03428c7">&#9670;&#160;</a></span>fok</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a20fdc4f9d0f2827e3f7c6b18a03428c7">mim::plug::mach::fok</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00063">63</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="aca3fefb09702dd2b9229d9bce00455c8" name="aca3fefb09702dd2b9229d9bce00455c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3fefb09702dd2b9229d9bce00455c8">&#9670;&#160;</a></span>fpe</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aca3fefb09702dd2b9229d9bce00455c8">mim::plug::mach::fpe</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00056">56</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a1bad03b7ba74bce4c0e87690b81fe001" name="a1bad03b7ba74bce4c0e87690b81fe001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bad03b7ba74bce4c0e87690b81fe001">&#9670;&#160;</a></span>in</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a1bad03b7ba74bce4c0e87690b81fe001">mim::plug::mach::in</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00028">28</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a1bc4060dec157b2c36bb3b185cc66009" name="a1bc4060dec157b2c36bb3b185cc66009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc4060dec157b2c36bb3b185cc66009">&#9670;&#160;</a></span>lit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a1bc4060dec157b2c36bb3b185cc66009">mim::plug::mach::lit</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00079">79</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a3f5ae91df9778479c0519b5917cefc43" name="a3f5ae91df9778479c0519b5917cefc43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5ae91df9778479c0519b5917cefc43">&#9670;&#160;</a></span>live</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a3f5ae91df9778479c0519b5917cefc43">mim::plug::mach::live</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00108">108</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a03146f3bc9c8e22ebbc36ab62c2ad98e" name="a03146f3bc9c8e22ebbc36ab62c2ad98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03146f3bc9c8e22ebbc36ab62c2ad98e">&#9670;&#160;</a></span>reload</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a03146f3bc9c8e22ebbc36ab62c2ad98e">mim::plug::mach::reload</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00049">49</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a4016a3ecc4a13bf4e1280a2f62538ce6" name="a4016a3ecc4a13bf4e1280a2f62538ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4016a3ecc4a13bf4e1280a2f62538ce6">&#9670;&#160;</a></span>slot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4016a3ecc4a13bf4e1280a2f62538ce6">mim::plug::mach::slot</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00035">35</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a7043f77a64e62f0801330d557cf6744b" name="a7043f77a64e62f0801330d557cf6744b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7043f77a64e62f0801330d557cf6744b">&#9670;&#160;</a></span>Spill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a7043f77a64e62f0801330d557cf6744b">mim::plug::mach::Spill</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00021">21</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5c81a1fc064b0fc5939fd39e0a3dfc0" name="ac5c81a1fc064b0fc5939fd39e0a3dfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c81a1fc064b0fc5939fd39e0a3dfc0">&#9670;&#160;</a></span>spill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ac5c81a1fc064b0fc5939fd39e0a3dfc0">mim::plug::mach::spill</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00042">42</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5163b98367b72b1ed5ab4426d943c59" name="ad5163b98367b72b1ed5ab4426d943c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5163b98367b72b1ed5ab4426d943c59">&#9670;&#160;</a></span>spilling</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ad5163b98367b72b1ed5ab4426d943c59">mim::plug::mach::spilling</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00087">87</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a3c9596d422bd4ef69675446ed10c93b2" name="a3c9596d422bd4ef69675446ed10c93b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9596d422bd4ef69675446ed10c93b2">&#9670;&#160;</a></span>encoding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Reg&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mim::plug::mach::encoding </td>
+          <td>(</td>
+          <td class="paramtype">Reg</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The hardware encoding of the register <code class="param">r</code> of a backend's module <span class="tt">reg</span>, whose subtags are in encoding order. </p>
+
+<p class="definition">Definition at line <a class="el" href="mach_8h_source.html#l00013">13</a> of file <a class="el" href="mach_8h_source.html">mach.h</a>.</p>
+
+<p class="reference">References <a class="el" href="mach_8h_source.html#l00013">encoding()</a>, and <a class="el" href="plugin_8h_source.html#l00262">mim::Annex::flags2sub()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mach_8h_source.html#l00013">encoding()</a>.</p>
+
+</div>
+</div>
+<a id="a1bcc4cdee0370936239314e935543f0c" name="a1bcc4cdee0370936239314e935543f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bcc4cdee0370936239314e935543f0c">&#9670;&#160;</a></span>mim_mach_gen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::mach::mim_mach_gen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html">Gen</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gen</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html#a805763b8ea10bf22843d2c03ffbf3a27" title="Actual entry.">Gen::start</a>, compiled once into <span class="tt">libmim_mach</span>; <a class="el" href="classmim_1_1plug_1_1mach_1_1Gen.html" title="Writes the closed rules among the annexes of a backend&#39;s isel plugin as the C++ matchers and builders...">Gen</a> reaches it via <span class="tt"><a class="el" href="driver_8h.html#ab004995be061e8045533148b21580ed8">GET_FUN_PTR</a></span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="mach_2gen_8cpp_source.html#l01013">1013</a> of file <a class="el" href="mach_2gen_8cpp_source.html">gen.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="plugin_8h_source.html#l00065">mim::arg_value()</a>, <a class="el" href="plugin_8h_source.html#l00256">mim::Annex::flags2plugin()</a>, <a class="el" href="mach_2gen_8cpp_source.html#l01013">mim_mach_gen()</a>, and <a class="el" href="classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f">mim::Out::Out()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mach_2gen_8cpp_source.html#l01013">mim_mach_gen()</a>, and <a class="el" href="mach_2gen_8h_source.html#l00052">mim::plug::mach::Gen::start()</a>.</p>
+
+</div>
+</div>
+<a id="a18581b602e29d7ce24ef112a4983d1a9" name="a18581b602e29d7ce24ef112a4983d1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18581b602e29d7ce24ef112a4983d1a9">&#9670;&#160;</a></span>normalize_lit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmim_1_1Def.html">Def</a> * mim::plug::mach::normalize_lit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmim_1_1Def.html">Def</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">7</a> of file <a class="el" href="mach_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="def_8h_source.html#l00973">mim::Lit::isa()</a>, and <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">normalize_lit()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">normalize_lit()</a>.</p>
+
+</div>
+</div>
+<a id="a75af17fd16e274454d480e1f09f15f60" name="a75af17fd16e274454d480e1f09f15f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75af17fd16e274454d480e1f09f15f60">&#9670;&#160;</a></span>register_normalizers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mim::plug::mach::register_normalizers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemim.html#a2f22db57ec53935eb9dfedebd9b9b0b2">Normalizers</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>normalizers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00022">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="aeac73afb474ace21aad6855b2fb23b16" name="aeac73afb474ace21aad6855b2fb23b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac73afb474ace21aad6855b2fb23b16">&#9670;&#160;</a></span>Plugin_Id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacemim.html#abb3c4d87d349db095756fced097d8ac8">plugin_t</a> mim::plug::mach::Plugin_Id = 0x3821090000000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00010">10</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespacemim.html">mim</a></li><li class="navelem"><a href="namespacemim_1_1plug.html">plug</a></li><li class="navelem"><a href="namespacemim_1_1plug_1_1mach.html">mach</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!-- HTML header for doxygen 1.9.3-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.18.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MimIR: src/mim/target.cpp Source File</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+// Doxygen no longer ships jQuery, but doxygen-awesome's extensions still expect it.
+window.$ = (() => {
+    const ready = fn => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn();
+    return target => typeof target === 'function' ? ready(target) : {ready, resize: fn => window.addEventListener('resize', fn)};
+})();
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript" src="ebnf.js"></script>
+<script type="text/javascript" src="llvm.js"></script>
+<script type="text/javascript" src="share-link.js"></script>
+<script type="text/javascript" src="mim.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeParagraphLink.init()
+    Code.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="theme.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-fixes.css" rel="stylesheet" type="text/css"/>
+<link href="version-switcher.css" rel="stylesheet" type="text/css"/>
+<link href="dotgraph.css" rel="stylesheet" type="text/css"/>
+<link href="fences.css" rel="stylesheet" type="text/css"/>
+<link href="button.css" rel="stylesheet" type="text/css"/>
+<link href="code.css" rel="stylesheet" type="text/css"/>
+<link href="ebnf.css" rel="stylesheet" type="text/css"/>
+<link href="mim.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/mimir/mimir" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="https://mimir.github.io"><img alt="Logo" src="logo.svg"/></a></td>
+  <td id="projectalign">
+   <div id="projectname">MimIR
+    <div id="projectnumber" class="version-switcher" data-manifest="versions.json">
+     <button class="version-switcher__button" type="button" aria-expanded="false" aria-haspopup="true">0.6-dev</button>
+     <div class="version-switcher__menu" hidden></div>
+    </div>
+    <script type="text/javascript" src="version-switcher.js"></script>
+    </div>
+   <div id="projectbrief">MimIR is my Intermediate Representation</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.18.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('target_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">target.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="target_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="target_8h.html">mim/target.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="world_8h.html">mim/world.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim.html">mim</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#a32be755544e331e1c14b09956e7f4597">    7</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1Target.html#a32be755544e331e1c14b09956e7f4597">Target::num_allocatable</a>(<a class="code hl_enumeration" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> <a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">size_t</span> n = 0;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0, e = <a class="code hl_function" href="classmim_1_1Target.html#a2fafaf7e24b0ab55bda0048069718100">num_regs</a>(<a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>); r != e; ++r)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        n += !<a class="code hl_function" href="classmim_1_1Target.html#aabfd516ff8637ecbe03e185e63128f9d">reserved</a>(<a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>, r);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> n;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#a5df9cb67152be4d475a5db8980ef376b">   14</a></span><span class="keywordtype">size_t</span> <a class="code hl_function" href="classmim_1_1Target.html#a5df9cb67152be4d475a5db8980ef376b">Target::num_caller_saved</a>(<a class="code hl_enumeration" href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">Class</a> <a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">size_t</span> n = 0;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0, e = <a class="code hl_function" href="classmim_1_1Target.html#a2fafaf7e24b0ab55bda0048069718100">num_regs</a>(<a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>); r != e; ++r)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        n += !<a class="code hl_function" href="classmim_1_1Target.html#aabfd516ff8637ecbe03e185e63128f9d">reserved</a>(<a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>, r) &amp;&amp; <a class="code hl_function" href="classmim_1_1Target.html#a6f79909d52a05a534d7c24038a763474">caller_saved</a>(<a class="code hl_function" href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">cls</a>, r);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> n;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#ad0fb7e15c6ade058a5513af9074b0c2c">   21</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1Target.html#ad0fb7e15c6ade058a5513af9074b0c2c">Target::mem_def</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* def)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Target.html#a43e2a42ad4fcc625defcabccf8e94508">is_mem</a>(def)) <span class="keywordflow">return</span> def;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (def-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Arr.html">Arr</a>&gt;() || def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">type</a>()-&gt;isa&lt;<a class="code hl_class" href="classmim_1_1Arr.html">Arr</a>&gt;()) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; <span class="comment">// don&#39;t look into possibly gigantic arrays</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#ad531ece40a890922a7deb83e3d8de8ea">num_projs</a>() &gt; 1)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> proj : def-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e">projs</a>())</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">if</span> (<span class="keyword">auto</span> m = <a class="code hl_function" href="classmim_1_1Target.html#ad0fb7e15c6ade058a5513af9074b0c2c">mem_def</a>(proj)) <span class="keywordflow">return</span> m;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#a497f485cf59e5a7e6f832ee19549dc86">   30</a></span><a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a> <a class="code hl_function" href="classmim_1_1Target.html#a497f485cf59e5a7e6f832ee19549dc86">Target::operands</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* insn)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">auto</span> ops = <a class="code hl_function" href="classmim_1_1Target.html#abcb2e65ad2013cf5be1e57d9ed237972">is_axm</a>(annexes_.sched, insn) ? insn-&gt;<a class="code hl_function" href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">arg</a>()-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e">projs</a>() : insn-&gt;<a class="code hl_function" href="classmim_1_1App.html#a555a3ef453cda56355671c93204ac8e3">args</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>(ops.begin(), ops.end());</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#aecfeeea6c382a5c43c6dde613513b4a8">   35</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1Target.html#aecfeeea6c382a5c43c6dde613513b4a8">Target::result</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* insn, <span class="keywordtype">size_t</span> j) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">auto</span> res = insn-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592">proj</a>(2, 1);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> res-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592">proj</a>(res-&gt;num_projs(), j);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classmim_1_1Target.html#a041ec5dd18a341936c80546d240c1bdc">   40</a></span><span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* <a class="code hl_function" href="classmim_1_1Target.html#a041ec5dd18a341936c80546d240c1bdc">Target::rebuild</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* insn, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* m, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">DefVec</a>&amp; ops)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">auto</span>&amp; w = insn-&gt;<a class="code hl_function" href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">world</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmim_1_1Target.html#abcb2e65ad2013cf5be1e57d9ed237972">is_axm</a>(annexes_.sched, insn))</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> w.app(w.app(insn-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>()-&gt;as&lt;<a class="code hl_class" href="classmim_1_1App.html">App</a>&gt;()-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>(), m), w.tuple(ops))-&gt;as&lt;<a class="code hl_class" href="classmim_1_1App.html">App</a>&gt;();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">auto</span> args = ops;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    args[0]   = m;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> w.app(insn-&gt;<a class="code hl_function" href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">callee</a>(), w.tuple(args))-&gt;as&lt;<a class="code hl_class" href="classmim_1_1App.html">App</a>&gt;();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace mim</span></div>
+<div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_a555a3ef453cda56355671c93204ac8e3"><div class="ttname"><a href="classmim_1_1App.html#a555a3ef453cda56355671c93204ac8e3">mim::App::args</a></div><div class="ttdeci">auto args(Projector auto f) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00252">lam.h:252</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_a9df7e6baae6a143ed3af2bc7ec643641"><div class="ttname"><a href="classmim_1_1App.html#a9df7e6baae6a143ed3af2bc7ec643641">mim::App::callee</a></div><div class="ttdeci">const Def * callee() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00237">lam.h:237</a></div></div>
+<div class="ttc" id="aclassmim_1_1App_html_adf118f16568ef138e33bdb1f330112d1"><div class="ttname"><a href="classmim_1_1App.html#adf118f16568ef138e33bdb1f330112d1">mim::App::arg</a></div><div class="ttdeci">const Def * arg() const</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00251">lam.h:251</a></div></div>
+<div class="ttc" id="aclassmim_1_1Arr_html"><div class="ttname"><a href="classmim_1_1Arr.html">mim::Arr</a></div><div class="ttdoc">A (possibly paramterized) Array.</div><div class="ttdef"><b>Definition</b> <a href="tuple_8h_source.html#l00305">tuple.h:305</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00286">def.h:286</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a0f9f1712cb342d713c51aaf519d18592"><div class="ttname"><a href="classmim_1_1Def.html#a0f9f1712cb342d713c51aaf519d18592">mim::Def::proj</a></div><div class="ttdeci">const Def * proj(nat_t a, nat_t i) const</div><div class="ttdoc">Similar to World::extract while assuming an arity of a, but also works on Sigmas and Arrays.</div><div class="ttdef"><b>Definition</b> <a href="def_8cpp_source.html#l00653">def.cpp:653</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a2d85181e61754391ee525fc255cac90e"><div class="ttname"><a href="classmim_1_1Def.html#a2d85181e61754391ee525fc255cac90e">mim::Def::world</a></div><div class="ttdeci">World &amp; world() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01101">def.h:1101</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a91096a2f915fcbf0dffcbe29074bd76e"><div class="ttname"><a href="classmim_1_1Def.html#a91096a2f915fcbf0dffcbe29074bd76e">mim::Def::projs</a></div><div class="ttdeci">auto projs(Projector auto f) const</div><div class="ttdoc">Splits this Def via Def::projections into an Array (if A == std::dynamic_extent) or std::array (other...</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00454">def.h:454</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_a9ab6cb5c35d630f631fd365cf7fa8f0c"><div class="ttname"><a href="classmim_1_1Def.html#a9ab6cb5c35d630f631fd365cf7fa8f0c">mim::Def::type</a></div><div class="ttdeci">const Def * type() const noexcept</div><div class="ttdoc">Yields the &quot;raw&quot; type of this Def (maybe nullptr).</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01115">def.h:1115</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html_ad531ece40a890922a7deb83e3d8de8ea"><div class="ttname"><a href="classmim_1_1Def.html#ad531ece40a890922a7deb83e3d8de8ea">mim::Def::num_projs</a></div><div class="ttdeci">nat_t num_projs() const</div><div class="ttdoc">Yields Def::arity(), if it is a Lit, or 1 otherwise.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l01136">def.h:1136</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a02baeebd8c3db39c0637db0184c2d9a6"><div class="ttname"><a href="classmim_1_1Target.html#a02baeebd8c3db39c0637db0184c2d9a6">mim::Target::Class</a></div><div class="ttdeci">Class</div><div class="ttdoc">The register classes; Stack values live in a spill slot and are unbounded.</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00036">target.h:36</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a041ec5dd18a341936c80546d240c1bdc"><div class="ttname"><a href="classmim_1_1Target.html#a041ec5dd18a341936c80546d240c1bdc">mim::Target::rebuild</a></div><div class="ttdeci">const App * rebuild(const App *insn, const Def *m, const DefVec &amp;ops) const</div><div class="ttdoc">insn continuing m with ops instead of its operands.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">target.cpp:40</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a2fafaf7e24b0ab55bda0048069718100"><div class="ttname"><a href="classmim_1_1Target.html#a2fafaf7e24b0ab55bda0048069718100">mim::Target::num_regs</a></div><div class="ttdeci">virtual size_t num_regs(Class cls) const =0</div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a32be755544e331e1c14b09956e7f4597"><div class="ttname"><a href="classmim_1_1Target.html#a32be755544e331e1c14b09956e7f4597">mim::Target::num_allocatable</a></div><div class="ttdeci">size_t num_allocatable(Class cls) const</div><div class="ttdoc">The number of registers of cls that register allocation may assign.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">target.cpp:7</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a43e2a42ad4fcc625defcabccf8e94508"><div class="ttname"><a href="classmim_1_1Target.html#a43e2a42ad4fcc625defcabccf8e94508">mim::Target::is_mem</a></div><div class="ttdeci">bool is_mem(const Def *def) const</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00145">target.h:145</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a497f485cf59e5a7e6f832ee19549dc86"><div class="ttname"><a href="classmim_1_1Target.html#a497f485cf59e5a7e6f832ee19549dc86">mim::Target::operands</a></div><div class="ttdeci">DefVec operands(const App *insn) const</div><div class="ttdoc">The operands of insn: the argument of a sched&#39;s instruction, otherwise the arguments including the me...</div><div class="ttdef"><b>Definition</b> <a href="#l00030">target.cpp:30</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a5df9cb67152be4d475a5db8980ef376b"><div class="ttname"><a href="classmim_1_1Target.html#a5df9cb67152be4d475a5db8980ef376b">mim::Target::num_caller_saved</a></div><div class="ttdeci">size_t num_caller_saved(Class cls) const</div><div class="ttdoc">The number of those that a call may clobber.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">target.cpp:14</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a6f79909d52a05a534d7c24038a763474"><div class="ttname"><a href="classmim_1_1Target.html#a6f79909d52a05a534d7c24038a763474">mim::Target::caller_saved</a></div><div class="ttdeci">virtual bool caller_saved(Class cls, size_t r) const =0</div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_a92954e1cfaf4d40b7d6681fe6cb9ed64"><div class="ttname"><a href="classmim_1_1Target.html#a92954e1cfaf4d40b7d6681fe6cb9ed64">mim::Target::cls</a></div><div class="ttdeci">virtual Class cls(const Def *def) const =0</div><div class="ttdoc">The register class of the value def, from its type.</div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_aabfd516ff8637ecbe03e185e63128f9d"><div class="ttname"><a href="classmim_1_1Target.html#aabfd516ff8637ecbe03e185e63128f9d">mim::Target::reserved</a></div><div class="ttdeci">virtual bool reserved(Class cls, size_t r) const =0</div><div class="ttdoc">Is r never available to register allocation?</div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_abcb2e65ad2013cf5be1e57d9ed237972"><div class="ttname"><a href="classmim_1_1Target.html#abcb2e65ad2013cf5be1e57d9ed237972">mim::Target::is_axm</a></div><div class="ttdeci">static bool is_axm(flags_t base, const Def *def, u8 curry=0)</div><div class="ttdoc">Is def an application of the axiom with base flags base, with curry arguments to go?</div><div class="ttdef"><b>Definition</b> <a href="target_8h_source.html#l00132">target.h:132</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_ad0fb7e15c6ade058a5513af9074b0c2c"><div class="ttname"><a href="classmim_1_1Target.html#ad0fb7e15c6ade058a5513af9074b0c2c">mim::Target::mem_def</a></div><div class="ttdeci">const Def * mem_def(const Def *def) const</div><div class="ttdoc">The memory in def, or nullptr; see core::mem_def.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">target.cpp:21</a></div></div>
+<div class="ttc" id="aclassmim_1_1Target_html_aecfeeea6c382a5c43c6dde613513b4a8"><div class="ttname"><a href="classmim_1_1Target.html#aecfeeea6c382a5c43c6dde613513b4a8">mim::Target::result</a></div><div class="ttdeci">static const Def * result(const App *insn, size_t j)</div><div class="ttdoc">The j-th projection of the non-memory result of insn.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">target.cpp:35</a></div></div>
+<div class="ttc" id="anamespacemim_html"><div class="ttname"><a href="namespacemim.html">mim</a></div><div class="ttdef"><b>Definition</b> <a href="asm_8h_source.html#l00010">asm.h:10</a></div></div>
+<div class="ttc" id="anamespacemim_html_aa432220e1051080319865a2d84b1cdaf"><div class="ttname"><a href="namespacemim.html#aa432220e1051080319865a2d84b1cdaf">mim::DefVec</a></div><div class="ttdeci">fe::Vector&lt; const Def * &gt; DefVec</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00096">def.h:96</a></div></div>
+<div class="ttc" id="atarget_8h_html"><div class="ttname"><a href="target_8h.html">target.h</a></div></div>
+<div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_3f6d0e947440f9d0b42426d30577ffdc.html">mim</a></li><li class="navelem"><a href="target_8cpp.html">target.cpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
+</body>
+</html>

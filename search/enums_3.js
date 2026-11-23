@@ -13,7 +13,7 @@ var searchData=
   ['dispatch_5fnormalize_10',['dispatch_normalize',['../namespacemim_1_1plug_1_1compile.html#ac4951ff3ac61d4f9befbe4bb4fff43f4',1,'mim::plug::compile']]],
   ['div_11',['div',['../namespacemim_1_1plug_1_1core.html#a12a963046afc5c121f244b761faad6e9',1,'mim::plug::core::div'],['../namespacemim_1_1plug_1_1x86.html#a1806cd0e43b4d7e26ae01508e9f8c308',1,'mim::plug::x86::div'],['../namespacemim_1_1plug_1_1x86__isel.html#a01d9d4399102e79eec8060e027727f0e',1,'mim::plug::x86_isel::div']]],
   ['div8_12',['div8',['../namespacemim_1_1plug_1_1x86__isel.html#a10da7cf480ab0e08842ecec49b530918',1,'mim::plug::x86_isel']]],
-  ['division_13',['division',['../namespacemim_1_1plug_1_1x86__isel.html#a2a0698bba81dacf3bc1a43fff36f4c76',1,'mim::plug::x86_isel']]],
+  ['division_13',['division',['../namespacemim_1_1plug_1_1arm__isel.html#aa985d221a332a5a0e44aad9a6332875b',1,'mim::plug::arm_isel::division'],['../namespacemim_1_1plug_1_1x86__isel.html#a2a0698bba81dacf3bc1a43fff36f4c76',1,'mim::plug::x86_isel::division']]],
   ['dot_5fproduct_14',['dot_product',['../namespacemim_1_1plug_1_1tensor.html#ae26becdae7b75b74d866d27b72a1050e',1,'mim::plug::tensor']]],
   ['dot_5fproduct_5fimpl_15',['dot_product_impl',['../namespacemim_1_1plug_1_1tensor.html#ab1a9fdc15538fd9c84437aacf860daba',1,'mim::plug::tensor']]],
   ['drop_5fhints_16',['drop_hints',['../namespacemim_1_1plug_1_1ll.html#a9a676397cecdb6775a3010565e8a833f',1,'mim::plug::ll']]],
