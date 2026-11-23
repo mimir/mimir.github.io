@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unary_0',['Floating-Point Unary',['../x86.html#autotoc_md698',1,'']]],
+  ['unary_0',['Floating-Point Unary',['../x86.html#autotoc_md699',1,'']]],
   ['unary_1',['unary',['../tensor.html#autotoc_md544',1,'']]],
   ['unary_5fimpl_2',['unary_impl',['../tensor.html#autotoc_md623',1,'']]],
   ['underscore_3',['Underscore',['../langref.html#autotoc_md75',1,'']]],

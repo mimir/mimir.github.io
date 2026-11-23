@@ -32,7 +32,7 @@ var searchData=
   ['ule_29',['ule',['../namespacemim_1_1plug_1_1core.html#a71990bc58e6ff4b5bcaf17be1af7d673a76cf56920355319ad148e25a340b0f18',1,'mim::plug::core::ule'],['../namespacemim_1_1plug_1_1math.html#ae3a6dfeff4da46f734e0a2c19588f6e3a76cf56920355319ad148e25a340b0f18',1,'mim::plug::math::ule'],['../namespacemim_1_1plug_1_1x86.html#a13ae014479cd8d911b3dbb830762904ba76cf56920355319ad148e25a340b0f18',1,'mim::plug::x86::ule']]],
   ['umax_30',['umax',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a82c1089b8c973b65be6d620f765ed1f5',1,'mim::plug::core']]],
   ['umin_31',['umin',['../namespacemim_1_1plug_1_1core.html#a62c64aa3fc09a5b7a1b6d99f6896a9a2a017163727bc806385f1453c130b4fce3',1,'mim::plug::core']]],
-  ['unary_32',['Floating-Point Unary',['../x86.html#autotoc_md698',1,'']]],
+  ['unary_32',['Floating-Point Unary',['../x86.html#autotoc_md699',1,'']]],
   ['unary_33',['unary',['../namespacemim_1_1plug_1_1tensor.html#a03f4f61d77ec833081cc0cb0eb99da65',1,'mim::plug::tensor::unary'],['../namespacemim_1_1plug_1_1x86__isel.html#afe614b4d87c1c252053aabf88776a5bda94a69b2994dec7f49a12bb036c3d2ac8',1,'mim::plug::x86_isel::unary'],['../tensor.html#autotoc_md544',1,'unary']]],
   ['unary_5fimpl_34',['unary_impl',['../namespacemim_1_1plug_1_1tensor.html#a51c4fcbc65448f8b44bf94df242b25bd',1,'mim::plug::tensor::unary_impl'],['../tensor.html#autotoc_md623',1,'unary_impl']]],
   ['uncurry_5fargs_35',['uncurry_args',['../classmim_1_1App.html#aa6d570d00183417757fd4ebdf2ee45b8',1,'mim::App::uncurry_args(const Def *def)'],['../classmim_1_1App.html#ac69c2673100202cef7725773dcc08d5f',1,'mim::App::uncurry_args() const']]],

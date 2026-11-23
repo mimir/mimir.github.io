@@ -175,121 +175,120 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('x86_isel.html'
 <div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2x86__isel"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1x86__isel.html" title="The x86_isel Plugin">mim::plug::x86_isel</a></dd></dl>
 <p>The instruction-selection rules of the <span class="tt">x86</span> backend. <span class="tt">gen</span> writes them as C++ that the <span class="tt">x86</span> plugin compiles in, so the compiler itself never loads this plugin.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md711"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md712"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin math;</div>
 <div class="line">import compile;</div>
 <div class="line">import mem;</div>
 <div class="line">import x86;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md712"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md713"></a>
 Guards</h1>
 <p>A guard is <span class="tt">tt</span> after instantiation or a conjunction of these atoms on meta variables.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md713"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md714"></a>
 imm</h2>
 <p>A literal that fits a sign-extended 32-bit immediate; stuck on anything but a literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm imm: {s: Nat} → Idx s → Bool, normalize_imm;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md714"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md715"></a>
 lit</h2>
 <p>A literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lit: {T: *} → T → Bool, normalize_lit;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md715"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md716"></a>
 Operands</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md716"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md717"></a>
 addr</h2>
 <p>The pointer <span class="tt">p</span>, an <span class="tt">I64</span> under the cast of <span class="tt">x86.legalize</span>, as an address operand. isel picks its form, <span class="tt">x86.Base</span> or <span class="tt">x86.Index</span>, and the builder infers which.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm addr: {T: *, a: Nat} → mem.Ptr (T, a) → x86.Base;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md717"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md718"></a>
 reg_imm</h2>
 <p>The operand <span class="tt">x</span> in a register or, if it is a literal that fits, as a sign-extended 32-bit immediate.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg_imm: {s: Nat} → Idx s → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md718"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md719"></a>
 reg_sh</h2>
 <p>The shift count <span class="tt">x</span> in a register or, if it is a literal, as an immediate, since x86 masks it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reg_sh: {s: Nat} → Idx s → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md719"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md720"></a>
 scaled</h2>
 <p>The <span class="tt">I64</span> <span class="tt">i</span> as an index with its scale.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm scaled: I64 → [I64, I2];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md720"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md721"></a>
 Commutativity</h1>
 <p>The operations whose two operands a rule also matches swapped.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let commutes = (core.wrap.add, core.wrap.mul, math.arith.add, math.arith.mul, core.bit2.and, core.bit2.or, core.bit2.xor, core.bit2.nand, core.bit2.nor, core.bit2.nxor);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md721"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md722"></a>
 Rules</h1>
-<p>Each family takes the operand size last; the instance tuples fix the sizes its instruction supports. A meta variable that the right-hand side uses and no other meta variable's type mentions is an operand, unless it is a memory. An lhs <span class="tt">(m, e)</span> replaces <span class="tt">e</span> and, by the memory of the rhs, the memory <span class="tt">m</span> of an inner node of <span class="tt">e</span>. A family that takes a marker <span class="tt">r</span> puts its second operand under <span class="tt">reg_imm</span> or <span class="tt">reg_sh</span>. <span class="tt">c</span> is the size of what the instruction yields, which the frontend cannot infer.</p>
+<p>Each family takes the operand size as <span class="tt">{s: Nat}</span>, which gen instantiates at each of <span class="tt">sizes</span> that the <span class="tt">refly.check</span>s of its instructions and its guard admit. A meta variable that the right-hand side uses and no other meta variable's type mentions is an operand, unless it is a memory. An lhs <span class="tt">(m, e)</span> replaces <span class="tt">e</span> and, by the memory of the rhs, the memory <span class="tt">m</span> of an inner node of <span class="tt">e</span>. A family that takes a marker <span class="tt">r</span> puts its second operand under <span class="tt">reg_imm</span> or <span class="tt">reg_sh</span>. <span class="tt">c</span> is the size of what the instruction yields, which the frontend cannot infer.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let mark = {s: Nat} → Idx s → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md722"></a>
-ALU</h2>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule alu   (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (r: mark) (s: Nat) (m: Nat, a b: Idx s): op m (a, b) =&gt; insn (a, r b);</div>
-<div class="line">rule shift (op: {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.gpr s))                       (r: mark) (s: Nat) (a b: Idx s):         op (a, b)   =&gt; insn (a, r b);</div>
-<div class="line">rule neg   (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.logic s))                (r: mark) (s: Nat) (m: Nat, a b: Idx s): op m (a, b) =&gt; let x = insn (a, r b); x86.xor (x, core.bit1.t 0 x);</div>
-<div class="line">rule mul8  (m: Nat, a b: I8): core.wrap.mul m (a, b) =&gt; x86.trunc i8 (x86.imul (x86.movzx i32 a, x86.movzx i32 (reg_imm b)));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md723"></a>
+ALU</h2>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule alu   (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (r: mark) {s: Nat} (m: Nat, a b: Idx s): op m (a, b) =&gt; insn (a, r b);</div>
+<div class="line">rule shift (op: {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.gpr s))                (r: mark) {s: Nat} (        a b: Idx s): op (a, b)   =&gt; insn (a, r b);</div>
+<div class="line">rule neg   (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (x86.logic s))        (r: mark) {s: Nat} (m: Nat, a b: Idx s): op m (a, b) =&gt; let x = insn (a, r b); x86.xor (x, core.bit1.t 0 x);</div>
+<div class="line">rule mul8  (m: Nat, a b: I8): core.wrap.mul m (a, b) =&gt; x86.trunc i8 (x86.imul (x86.movzx i32 a, x86.movzx i32 (reg_imm b)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md724"></a>
 Division</h2>
 <p><span class="tt">div</span> and <span class="tt">idiv</span> yield both the quotient and the remainder at <span class="tt">i</span>; they have no 8-bit form, so <span class="tt">i8</span> widens to <span class="tt">i32</span> by <span class="tt">ext</span>. <span class="tt">core.rem</span> puts its divisor into a register with <span class="tt">x86.mov</span>, whose result type only folds for a literal size.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule div  (op: {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], insn: {s: Nat} → «2; Idx s» → «2; Idx (x86.gpr16 s)», i: Idx 2)      (s: Nat)                             (m: mem.M 0, a b: Idx s): op (m, (a, b)) =&gt; (m, (insn (a, b))#i);</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule div  (op: {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], insn: {s: Nat} → «2; Idx s» → «2; Idx (x86.gpr16 s)», i: Idx 2)      {s: Nat}                             (m: mem.M 0, a b: Idx s): op (m, (a, b)) =&gt; (m, (insn (a, b))#i);</div>
 <div class="line">rule div8 (op: {s a: Nat} → [mem.M a, «2; Idx s»] → [mem.M a, Idx s], insn: {s: Nat} → «2; Idx s» → «2; Idx (x86.gpr16 s)», i: Idx 2, ext: {s: Nat} → [d: Nat] → Idx s → Idx d) (m: mem.M 0, a b: I8   ): op (m, (a, b)) =&gt; (m, x86.trunc i8 (insn (ext i32 a, ext i32 b))#i);</div>
 <div class="line">rule rem8  (d: Nat, x: I8):  core.rem d x =&gt; x86.trunc i8 (x86.div (x86.movzx i32 x, x86.mov (core.idx 0 i32 d)))#1_2;</div>
 <div class="line">rule rem16 (d: Nat, x: I16): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i16 d)))#1_2;</div>
 <div class="line">rule rem32 (d: Nat, x: I32): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i32 d)))#1_2;</div>
 <div class="line">rule rem64 (d: Nat, x: I64): core.rem d x =&gt; (x86.div (x, x86.mov (core.idx 0 i64 d)))#1_2;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md724"></a>
-Conversions</h2>
-<p><span class="tt">mem.legalize_ptr</span> and <span class="tt">x86.legalize</span> leave only register sizes; each family takes the source and the destination size. A conversion between sizes of the same register width truncates.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule trunc      (s d: Nat) (x: Idx s): core.conv.u d x        =&gt; x86.trunc d x;</div>
-<div class="line">rule strunc     (s d: Nat) (x: Idx s): core.conv.s d x        =&gt; x86.trunc d x;</div>
-<div class="line">rule zext       (s d: Nat) (x: Idx s): core.conv.u d x        =&gt; x86.movzx d x;</div>
-<div class="line">rule sext       (s d: Nat) (x: Idx s): core.conv.s d x        =&gt; x86.movsx d x;</div>
-<div class="line">rule cast_trunc (s d: Nat) (x: Idx s): core.bitcast (Idx d) x =&gt; x86.trunc d x;</div>
-<div class="line">rule cast_zext  (s d: Nat) (x: Idx s): core.bitcast (Idx d) x =&gt; x86.movzx d x;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md725"></a>
+Conversions</h2>
+<p><span class="tt">mem.legalize_ptr</span> and <span class="tt">x86.legalize</span> leave only register sizes; each family takes the source and the destination size. A conversion between sizes of the same register width truncates; <span class="tt">rank</span> is the register width of a size.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam rank (s: Nat): Nat = (((1, 2)#(core.ncmp.e (s, i16)), 3)#(core.ncmp.e (s, i32)), 4)#(core.ncmp.e (s, i64));</div>
+<div class="line">lam narrows (s d: Nat): Bool = core.bit2.and 0 (core.ncmp.ne (s, d), core.ncmp.le (rank d, rank s));</div>
+<div class="line">lam widens (s d: Nat): Bool = core.ncmp.l (rank s, rank d);</div>
+<div class="line">rule trunc      {s: Nat} {d: Nat} (x: Idx s): core.conv.u d x        when narrows (s, d) =&gt; x86.trunc d x;</div>
+<div class="line">rule strunc     {s: Nat} {d: Nat} (x: Idx s): core.conv.s d x        when narrows (s, d) =&gt; x86.trunc d x;</div>
+<div class="line">rule zext       {s: Nat} {d: Nat} (x: Idx s): core.conv.u d x        when widens (s, d)  =&gt; x86.movzx d x;</div>
+<div class="line">rule sext       {s: Nat} {d: Nat} (x: Idx s): core.conv.s d x        when widens (s, d)  =&gt; x86.movsx d x;</div>
+<div class="line">rule cast_trunc {s: Nat} {d: Nat} (x: Idx s): core.bitcast (Idx d) x when narrows (s, d) =&gt; x86.trunc d x;</div>
+<div class="line">rule cast_zext  {s: Nat} {d: Nat} (x: Idx s): core.bitcast (Idx d) x when widens (s, d)  =&gt; x86.movzx d x;</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md726"></a>
 Comparisons</h2>
 <p>Each family takes the predicate and its condition code.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule icmp (p: {s: Nat} → «2; Idx s» → Bool, c: x86.Flags → Bool) (s: Nat, a b: Idx s): p (a, b) =&gt; c (x86.cmp (a, reg_imm b));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md726"></a>
-Selects</h2>
-<p><span class="tt">x86.cmovcc</span>'s normalizer fuses a condition code into it; <span class="tt">i8</span> and <span class="tt">Bool</span> go through <span class="tt">i32</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select  (s: Nat) (x y: Idx s, c: Bool): (x, y)#c =&gt; x86.cmovcc.ne (x86.test (c, c), x, y);</div>
-<div class="line">rule select8 (s: Nat) (x y: Idx s, c: Bool): (x, y)#c =&gt; x86.trunc s (x86.cmovcc.ne (x86.test (c, c), x86.movzx i32 x, x86.movzx i32 y));</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md727"></a>
+Selects</h2>
+<p><span class="tt">x86.cmovcc</span>'s normalizer fuses a condition code into it; <span class="tt">i8</span> and <span class="tt">Bool</span>, which it has no form for, go through <span class="tt">i32</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select  {s: Nat} (x y: Idx s, c: Bool): (x, y)#c                                                 =&gt; x86.cmovcc.ne (x86.test (c, c), x, y);</div>
+<div class="line">rule select8 {s: Nat} (x y: Idx s, c: Bool): (x, y)#c when core.bit2.or 0 (core.ncmp.e (s, i1), core.ncmp.e (s, i8)) =&gt; x86.trunc s (x86.cmovcc.ne (x86.test (c, c), x86.movzx i32 x, x86.movzx i32 y));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md728"></a>
 Floating Point</h2>
-<p>Float instructions work on <span class="tt">math.F pe</span> values in XMM registers. Each family takes the format <span class="tt">pe</span>, since neither an operand nor the result names it; only <span class="tt">f32</span> and <span class="tt">f64</span> are supported. A family <span class="tt">op</span> with an <span class="tt">insn</span> maps a <span class="tt">math</span> operation onto an <span class="tt">x86</span> instruction, <span class="tt">rm</span> folds a sole load into its source, and <span class="tt">swap</span> takes the converse predicate.</p>
+<p>Float instructions work on <span class="tt">math.F pe</span> values in XMM registers. A family takes the format as <span class="tt">{pe: «2; Nat»}</span>, which gen instantiates at each of <span class="tt">formats</span> that the <span class="tt">x86.fpe</span> or <span class="tt">x86.fok</span> in its rule's type admits. <span class="tt">f2f</span> takes both formats explicitly, since one of the same format would convert a float to itself. A family <span class="tt">op</span> with an <span class="tt">insn</span> maps a <span class="tt">math</span> operation onto an <span class="tt">x86</span> instruction, <span class="tt">rm</span> folds a sole load into its source, and <span class="tt">swap</span> takes the converse predicate.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod float</div>
 <div class="line">    let Op1   = Nat → {pe: «2; Nat»} → math.F pe → math.F pe;</div>
 <div class="line">    let Op2   = Nat → {pe: «2; Nat»} → «2; math.F pe» → math.F pe;</div>
 <div class="line">    let Pred  = Nat → {pe: «2; Nat»} → «2; math.F pe» → Bool;</div>
 <div class="line">    let Insn1 = {pe: «2; Nat»} → math.F pe → math.F (x86.fpe pe);</div>
 <div class="line">    let Insn2 = {pe: «2; Nat»} → «2; math.F pe» → math.F (x86.fpe pe);</div>
-<div class="line">    let Cmp   = {pe: «2; Nat»} → «2; math.F pe» → Bool;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md728"></a>
-Arithmetic</h3>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule arith (pe: «2; Nat») (op: Op2, insn: Insn2) (k: Nat, a b: math.F pe): op k (a, b) =&gt; insn (a, b);</div>
-<div class="line">rule unary (pe: «2; Nat») (op: Op1, insn: Insn1) (k: Nat, x: math.F pe):   op k x      =&gt; insn x;</div>
-<div class="line">rule rm    (pe: «2; Nat») (op: Op2, insn: Insn2) (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (a, v)) =&gt; x86.rm insn (m, a, addr p);</div>
-<div class="line">rule sqrt_rm (pe: «2; Nat») (k: Nat, m: mem.M 0, p: mem.Ptr0 (math.F pe)):                               let (mm, v) = mem.load (m, p); (mm, math.rt.sq k v) =&gt; x86.rm1 (x86.fsqrt @ pe) (m, addr p);</div>
-<div class="line">lam ariths (op: Op2, insn: Insn2) = (arith math.f32 (op, insn), arith math.f64 (op, insn));</div>
-<div class="line">lam rms    (op: Op2, insn: Insn2) = (rm math.f32 (op, insn), rm math.f64 (op, insn));</div>
-<div class="line">anx let arithmetic = (</div>
-<div class="line">    ariths (math.arith.add, x86.fadd), ariths (math.arith.sub, x86.fsub),</div>
-<div class="line">    ariths (math.arith.mul, x86.fmul), ariths (math.arith.div, x86.fdiv),</div>
-<div class="line">    unary math.f32 (math.abs, x86.fabs), unary math.f64 (math.abs, x86.fabs),</div>
-<div class="line">    unary math.f32 (math.rt.sq, x86.fsqrt), unary math.f64 (math.rt.sq, x86.fsqrt),</div>
-<div class="line">    sqrt_rm math.f32, sqrt_rm math.f64,</div>
-<div class="line">    rms (math.arith.add, x86.fadd), rms (math.arith.sub, x86.fsub),</div>
-<div class="line">    rms (math.arith.mul, x86.fmul), rms (math.arith.div, x86.fdiv));</div>
+<div class="line">    let Cmp   = {pe: «2; Nat»} → «2; math.F pe» → Idx (x86.fok pe 2);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md729"></a>
+Arithmetic</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule arith (op: Op2, insn: Insn2) {pe: «2; Nat»} (k: Nat, a b: math.F pe): op k (a, b) =&gt; insn (a, b);</div>
+<div class="line">rule unary (op: Op1, insn: Insn1) {pe: «2; Nat»} (k: Nat, x: math.F pe):   op k x      =&gt; insn x;</div>
+<div class="line">rule rm    (op: Op2, insn: Insn2) {pe: «2; Nat»} (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (a, v)) =&gt; x86.rm insn (m, a, addr p);</div>
+<div class="line">rule sqrt_rm {pe: «2; Nat»} (k: Nat, m: mem.M 0, p: mem.Ptr0 (math.F pe)):                                 let (mm, v) = mem.load (m, p); (mm, math.rt.sq k v) =&gt; x86.rm1 (x86.fsqrt @ pe) (m, addr p);</div>
+<div class="line">anx let arithmetic = (</div>
+<div class="line">    arith (math.arith.add, x86.fadd), arith (math.arith.sub, x86.fsub),</div>
+<div class="line">    arith (math.arith.mul, x86.fmul), arith (math.arith.div, x86.fdiv),</div>
+<div class="line">    unary (math.abs, x86.fabs), unary (math.rt.sq, x86.fsqrt),</div>
+<div class="line">    rm (math.arith.add, x86.fadd), rm (math.arith.sub, x86.fsub),</div>
+<div class="line">    rm (math.arith.mul, x86.fmul), rm (math.arith.div, x86.fdiv));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md730"></a>
 Comparisons</h3>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">ucomiss</span> compares its register operand to its source, which may be a load.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">swap</span> takes the converse predicate, so that <span class="tt">setcc</span> already gets the unordered case right.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule cmp     (pe: «2; Nat») (op: Pred, c: Cmp) (k: Nat, a b: math.F pe): op k (a, b) =&gt; c (a, b);</div>
-<div class="line">rule swap    (pe: «2; Nat») (op: Pred, c: Cmp) (k: Nat, a b: math.F pe): op k (a, b) =&gt; c (b, a);</div>
-<div class="line">rule cmp_rm  (pe: «2; Nat») (op: Pred, c: Cmp) (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (a, v)) =&gt; x86.rm c (m, a, addr p);</div>
-<div class="line">rule swap_rm (pe: «2; Nat») (op: Pred, c: Cmp) (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (v, a)) =&gt; x86.rm c (m, a, addr p);</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule cmp     (op: Pred, c: Cmp) {pe: «2; Nat»} (k: Nat, a b: math.F pe): op k (a, b) =&gt; c (a, b);</div>
+<div class="line">rule swap    (op: Pred, c: Cmp) {pe: «2; Nat»} (k: Nat, a b: math.F pe): op k (a, b) =&gt; c (b, a);</div>
+<div class="line">rule cmp_rm  (op: Pred, c: Cmp) {pe: «2; Nat»} (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (a, v)) =&gt; x86.rm c (m, a, addr p);</div>
+<div class="line">rule swap_rm (op: Pred, c: Cmp) {pe: «2; Nat»} (k: Nat, a: math.F pe, m: mem.M 0, p: mem.Ptr0 (math.F pe)): let (mm, v) = mem.load (m, p); (mm, op k (v, a)) =&gt; x86.rm c (m, a, addr p);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">cmps</span> folds a load into the second operand, <span class="tt">swaps</span> into the first via the converse, and <span class="tt">syms</span> of a symmetric predicate into either.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam cmps  (op: Pred, c: Cmp) = (cmp math.f32 (op, c), cmp math.f64 (op, c), cmp_rm math.f32 (op, c), cmp_rm math.f64 (op, c));</div>
-<div class="line">lam swaps (op: Pred, c: Cmp) = (swap math.f32 (op, c), swap math.f64 (op, c), swap_rm math.f32 (op, c), swap_rm math.f64 (op, c));</div>
-<div class="line">lam syms  (op: Pred, c: Cmp) = (cmps (op, c), swap_rm math.f32 (op, c), swap_rm math.f64 (op, c));</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam cmps  (op: Pred, c: Cmp) = (cmp (op, c), cmp_rm (op, c));</div>
+<div class="line">lam swaps (op: Pred, c: Cmp) = (swap (op, c), swap_rm (op, c));</div>
+<div class="line">lam syms  (op: Pred, c: Cmp) = (cmps (op, c), swap_rm (op, c));</div>
 <div class="line">anx let comparisons = (</div>
 <div class="line">    syms (math.cmp.e, x86.fcmp.e),    syms (math.cmp.ne, x86.fcmp.ne), syms (math.cmp.o, x86.fcmp.o),</div>
 <div class="line">    syms (math.cmp.u, x86.fcmp.u),    syms (math.cmp.ue, x86.fcmp.ue), syms (math.cmp.une, x86.fcmp.une),</div>
@@ -297,52 +296,48 @@ Comparisons</h3>
 <div class="line">    cmps (math.cmp.ul, x86.fcmp.ul),  cmps (math.cmp.ule, x86.fcmp.ule),</div>
 <div class="line">    swaps (math.cmp.l, x86.fcmp.g),   swaps (math.cmp.le, x86.fcmp.ge),</div>
 <div class="line">    swaps (math.cmp.ug, x86.fcmp.ul), swaps (math.cmp.uge, x86.fcmp.ule));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md730"></a>
-Selects, Loads, and Stores</h3>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select (pe: «2; Nat») (x y: math.F pe, c: Bool):                          (x, y)#c            =&gt; x86.fsel (c, x, y);</div>
-<div class="line">rule load   (pe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (math.F pe)):              mem.load (m, p)     =&gt; x86.fload pe (m, addr p);</div>
-<div class="line">rule store  (pe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (math.F pe), x: math.F pe): mem.store (m, p, x) =&gt; x86.fstore (m, addr p, x);</div>
-<div class="line">anx let memory = (select math.f32, select math.f64, load math.f32, load math.f64, store math.f32, store math.f64);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md731"></a>
+Selects, Loads, and Stores</h3>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule select {pe: «2; Nat»} (x y: math.F pe, c: Bool):                           (x, y)#c            =&gt; x86.fsel (c, x, y);</div>
+<div class="line">rule load   {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe)):               mem.load (m, p)     =&gt; x86.fload pe (m, addr p);</div>
+<div class="line">rule store  {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe), x: math.F pe): mem.store (m, p, x) =&gt; x86.fstore (m, addr p, x);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md732"></a>
 Conversions</h3>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>The integer size is a family parameter, since neither side determines it.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p>A float of the same format converts to itself, so <span class="tt">f2f</span> only has the two mixed pairs.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">u2f</span> and <span class="tt">f2u</span> have only the <span class="tt">i32</span> form: not every <span class="tt">u64</span> is an exact <span class="tt">f64</span>; <span class="tt">u2f</span> reads its operand twice, so it folds no load.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">    rule s2f (s: Nat, pe: «2; Nat») (x: Idx s):                   math.conv.s2f pe x  =&gt; x86.i2f s pe x;</div>
-<div class="line">    rule u2f (s: Nat, pe: «2; Nat») (x: Idx s):                   math.conv.u2f pe x  =&gt; x86.u2f s pe x;</div>
-<div class="line">    rule f2s (s: Nat, pe: «2; Nat») (x: math.F pe):               math.conv.f2s s x   =&gt; x86.f2i pe s x;</div>
-<div class="line">    rule f2u (s: Nat, pe: «2; Nat») (x: math.F pe):               math.conv.f2u s x   =&gt; x86.f2u pe s x;</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">    rule s2f (s: Nat) {pe: «2; Nat»} (x: Idx s):                   math.conv.s2f pe x  =&gt; x86.i2f s pe x;</div>
+<div class="line">    rule u2f (s: Nat) {pe: «2; Nat»} (x: Idx s):                   math.conv.u2f pe x  =&gt; x86.u2f s pe x;</div>
+<div class="line">    rule f2s (s: Nat) {pe: «2; Nat»} (x: math.F pe):              math.conv.f2s s x   =&gt; x86.f2i pe s x;</div>
+<div class="line">    rule f2u (s: Nat) {pe: «2; Nat»} (x: math.F pe):              math.conv.f2u s x   =&gt; x86.f2u pe s x;</div>
 <div class="line">    rule f2f (spe: «2; Nat», dpe: «2; Nat») (x: math.F spe):      math.conv.f2f dpe x =&gt; x86.f2f spe dpe x;</div>
-<div class="line">    rule s2f_rm (s: Nat, pe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (Idx s)):              let (mm, v) = mem.load (m, p); (mm, math.conv.s2f pe v)  =&gt; x86.rm1 (x86.i2f s pe) (m, addr p);</div>
-<div class="line">    rule f2s_rm (s: Nat, pe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (math.F pe)):          let (mm, v) = mem.load (m, p); (mm, math.conv.f2s s v)   =&gt; x86.rm1 (x86.f2i pe s) (m, addr p);</div>
-<div class="line">    rule f2u_rm (s: Nat, pe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (math.F pe)):          let (mm, v) = mem.load (m, p); (mm, math.conv.f2u s v)   =&gt; x86.rm1 (x86.f2u pe s) (m, addr p);</div>
+<div class="line">    rule s2f_rm (s: Nat) {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (Idx s)):              let (mm, v) = mem.load (m, p); (mm, math.conv.s2f pe v)  =&gt; x86.rm1 (x86.i2f s pe) (m, addr p);</div>
+<div class="line">    rule f2s_rm (s: Nat) {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe)):         let (mm, v) = mem.load (m, p); (mm, math.conv.f2s s v)   =&gt; x86.rm1 (x86.f2i pe s) (m, addr p);</div>
+<div class="line">    rule f2u_rm (s: Nat) {pe: «2; Nat»} (m: mem.M 0, p: mem.Ptr0 (math.F pe)):         let (mm, v) = mem.load (m, p); (mm, math.conv.f2u s v)   =&gt; x86.rm1 (x86.f2u pe s) (m, addr p);</div>
 <div class="line">    rule f2f_rm (spe: «2; Nat», dpe: «2; Nat») (m: mem.M 0, p: mem.Ptr0 (math.F spe)): let (mm, v) = mem.load (m, p); (mm, math.conv.f2f dpe v) =&gt; x86.rm1 (x86.f2f spe dpe) (m, addr p);</div>
 <div class="line">    anx let conversions = (</div>
-<div class="line">        s2f (i32, math.f32), s2f (i32, math.f64), s2f (i64, math.f32), s2f (i64, math.f64),</div>
-<div class="line">        u2f (i32, math.f32), u2f (i32, math.f64),</div>
-<div class="line">        f2s (i32, math.f32), f2s (i32, math.f64), f2s (i64, math.f32), f2s (i64, math.f64),</div>
-<div class="line">        f2u (i32, math.f32), f2u (i32, math.f64),</div>
+<div class="line">        s2f i32, s2f i64, u2f i32,</div>
+<div class="line">        f2s i32, f2s i64, f2u i32,</div>
 <div class="line">        f2f (math.f32, math.f64), f2f (math.f64, math.f32),</div>
-<div class="line">        s2f_rm (i32, math.f32), s2f_rm (i32, math.f64), s2f_rm (i64, math.f32), s2f_rm (i64, math.f64),</div>
-<div class="line">        f2s_rm (i32, math.f32), f2s_rm (i32, math.f64), f2s_rm (i64, math.f32), f2s_rm (i64, math.f64),</div>
-<div class="line">        f2u_rm (i32, math.f32), f2u_rm (i32, math.f64),</div>
+<div class="line">        s2f_rm i32, s2f_rm i64,</div>
+<div class="line">        f2s_rm i32, f2s_rm i64, f2u_rm i32,</div>
 <div class="line">        f2f_rm (math.f32, math.f64), f2f_rm (math.f64, math.f32));</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md732"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md733"></a>
 Loads and Stores</h2>
 <p>A pointer is an <span class="tt">I64</span> by now, which <span class="tt">x86.legalize</span> casts to the pointer type of each memory operation.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load  (s: Nat) (m: mem.M 0, p: mem.Ptr0 (Idx s)):          mem.load (m, p)     =&gt; x86.load s (m, addr p);</div>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule load  {s: Nat} (m: mem.M 0, p: mem.Ptr0 (Idx s)):          mem.load (m, p)     =&gt; x86.load s (m, addr p);</div>
 <div class="line">rule store (s: Nat, m: mem.M 0, p: mem.Ptr0 (Idx s), x: Idx s):  mem.store (m, p, x) =&gt; x86.store (m, addr p, reg_imm x);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md733"></a>
-Memory Operands</h2>
-<p><span class="tt">op r, m</span> folds a load into the second operand; <span class="tt">op m, r</span> also stores to the address it loads from.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule rm (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (s: Nat) (k: Nat, a: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); (mm, op k (a, v))              =&gt; x86.rm insn (m, a, addr p);</div>
-<div class="line">rule mr (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) (s: Nat) (k: Nat, b: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); mem.store (mm, p, op k (v, b)) =&gt; x86.mr (insn @ s) (m, addr p, reg_imm b);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md734"></a>
+Memory Operands</h2>
+<p><span class="tt">op r, m</span> folds a load into the second operand; <span class="tt">op m, r</span> also stores to the address it loads from. Either takes only a size that <span class="tt">x86.load</span> takes.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule rm (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) {s: Nat} (k: Nat, a: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); (mm, op k (a, v))              when x86.is_gpr s =&gt; x86.rm insn (m, a, addr p);</div>
+<div class="line">rule mr (c: Nat → Nat) (op: Nat → {s: Nat} → «2; Idx s» → Idx s, insn: {s: Nat} → «2; Idx s» → Idx (c s)) {s: Nat} (k: Nat, b: Idx s, m: mem.M 0, p: mem.Ptr0 (Idx s)): let (mm, v) = mem.load (m, p); mem.store (mm, p, op k (v, b)) when x86.is_gpr s =&gt; x86.mr (insn @ s) (m, addr p, reg_imm b);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md735"></a>
 Addresses</h2>
 <p>A product with 2, 4, or 8, or a left shift by 1, 2, or 3, is an index with its scale; an address takes any index as one, scaled by 1 if need be. Of two matches that cost the same, isel keeps the first, so larger patterns come first. The <span class="tt">core.wrap.add</span> normalizer pulls a literal out of a nested sum, so a displacement sits outermost.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule scale (op: Nat → {s: Nat} → «2; Idx s» → Idx s, k: I64, sc: I2) (n: Nat, i: I64): op n (i, k) =&gt; (i, sc);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md735"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md736"></a>
 Non-Terminals</h2>
 <p>A rule whose lhs is all of its meta variables converts between non-terminals; isel chains them. <span class="tt">x86.addr</span> and <span class="tt">x86.lea</span> normalize away what a literal makes trivial. A literal converts by <span class="tt">x86_isel.lit</span>: into an absolute address for free, else into a register first; the builder of <span class="tt">mov</span> takes any size.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule base (x: I64): x =&gt; x86.addr (0I32, x);</div>
@@ -352,72 +347,64 @@ Non-Terminals</h2>
 <div class="line">rule lea (i: Bool) (a: x86.Addr i): a =&gt; x86.lea a;</div>
 <div class="line">rule scale1 (i: I64): i =&gt; (i, x86.scale_1);</div>
 <div class="line">rule unscale (s: [I64, I2]): s =&gt; x86.lea (x86.index (x86.addr (0I32, 0I64)) s);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md736"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md737"></a>
 Instances</h1>
-<p>Each helper instantiates a family of one shape at the sizes its name says, with the marker <span class="tt">r</span> if it takes one.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam gprs (c: Nat → Nat, r: mark) (f: mark → [s: Nat] → Idx s ↝ Idx (c s)) = (f r i8, f r i16, f r i32, f r i64);</div>
-<div class="line">lam bits (c: Nat → Nat, r: mark) (f: mark → [s: Nat] → Idx s ↝ Idx (c s)) = (f r i1, f r i8, f r i16, f r i32, f r i64);</div>
-<div class="line">lam mrs  (f: [s: Nat] → mem.M 0 ↝ mem.M 0) = (f i8, f i16, f i32, f i64);</div>
-<div class="line">lam rms  (c: Nat → Nat) (f: [s: Nat] → [mem.M 0, Idx s] ↝ [mem.M 0, Idx (c s)]) = (f i8, f i16, f i32, f i64);</div>
-<div class="line">lam divs (f: [s: Nat] → [mem.M 0, Idx s] ↝ [mem.M 0, Idx (x86.gpr16 s)]) = (f i16, f i32, f i64);</div>
-<div class="line">lam narrow (f: [s d: Nat] → Idx d ↝ Idx d) = (f (i64, i32), f (i64, i16), f (i64, i8), f (i64, i1), f (i32, i16), f (i32, i8), f (i32, i1), f (i16, i8), f (i16, i1), f (i8, i1), f (i1, i8));</div>
-<div class="line">lam widen  (f: [s d: Nat] → Idx d ↝ Idx d) = (f (i1, i16), f (i1, i32), f (i1, i64), f (i8, i16), f (i8, i32), f (i8, i64), f (i16, i32), f (i16, i64), f (i32, i64));</div>
+<p>The values of a family's <span class="tt">{pe: «2; Nat»}</span>; the <span class="tt">x86.fpe</span>s in its rule's type keep those x86 supports.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let formats = (math.f16, math.f32, math.f64, math.bf16, math.nvtf32, math.amdfp24, math.pxr24);</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p>The values of a family's <span class="tt">{s: Nat}</span>: the register sizes that <span class="tt">mem.legalize_ptr</span> and <span class="tt">x86.legalize</span> leave.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let sizes = (i1, i8, i16, i32, i64);</div>
 <div class="line">let icmps = (</div>
 <div class="line">    icmp (core.icmp.e,  x86.cc.e), icmp (core.icmp.ne,  x86.cc.ne), icmp (core.icmp.ul, x86.cc.b), icmp (core.icmp.ule, x86.cc.be),</div>
 <div class="line">    icmp (core.icmp.ug, x86.cc.a), icmp (core.icmp.uge, x86.cc.ae), icmp (core.icmp.sl, x86.cc.l), icmp (core.icmp.sle, x86.cc.le),</div>
 <div class="line">    icmp (core.icmp.sg, x86.cc.g), icmp (core.icmp.sge, x86.cc.ge));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">imul</span> has no 8-bit form, so <span class="tt">mul8</span> widens to <span class="tt">i32</span>; the logical instructions also take <span class="tt">Bool</span>. x86 has no negated logical instructions, so <span class="tt">nand</span>, <span class="tt">nor</span>, and <span class="tt">nxor</span> complement with an <span class="tt">xor</span>, which yields <span class="tt">x86.logic</span> of <span class="tt">x86.logic</span>.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">let logic2 = λ (s: Nat): Nat = x86.logic (x86.logic s);</div>
-<div class="line">let mul    = alu x86.gpr16 (core.wrap.mul, x86.imul);</div>
-<div class="line">anx let arithmetic = (</div>
-<div class="line">    gprs (x86.gpr,   reg_imm) (alu x86.gpr   (core.wrap.add, x86.add)),</div>
-<div class="line">    gprs (x86.gpr,   reg_imm) (alu x86.gpr   (core.wrap.sub, x86.sub)),</div>
-<div class="line">    mul8, mul reg_imm i16, mul reg_imm i32, mul reg_imm i64,</div>
-<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.and, x86.and)),</div>
-<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.or,  x86.or)),</div>
-<div class="line">    bits (x86.logic, reg_imm) (alu x86.logic (core.bit2.xor, x86.xor)),</div>
-<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nand, x86.and)),</div>
-<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nor,  x86.or)),</div>
-<div class="line">    bits (logic2,    reg_imm) (neg (core.bit2.nxor, x86.xor)),</div>
-<div class="line">    gprs (x86.gpr,   reg_sh)  (alu x86.gpr   (core.wrap.shl, x86.shl)),</div>
-<div class="line">    gprs (x86.gpr,   reg_sh)  (shift (core.shr.l, x86.shr)),</div>
-<div class="line">    gprs (x86.gpr,   reg_sh)  (shift (core.shr.a, x86.sar)));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">imul</span> has no 8-bit form, so <span class="tt">mul8</span> widens to <span class="tt">i32</span>; the logical instructions also take <span class="tt">Bool</span>. x86 has no negated logical instructions, so <span class="tt">nand</span>, <span class="tt">nor</span>, and <span class="tt">nxor</span> complement with an <span class="tt">xor</span>.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let arithmetic = (</div>
+<div class="line">    alu x86.gpr   (core.wrap.add, x86.add)  reg_imm,</div>
+<div class="line">    alu x86.gpr   (core.wrap.sub, x86.sub)  reg_imm,</div>
+<div class="line">    mul8,</div>
+<div class="line">    alu x86.gpr16 (core.wrap.mul, x86.imul) reg_imm,</div>
+<div class="line">    alu x86.logic (core.bit2.and, x86.and)  reg_imm,</div>
+<div class="line">    alu x86.logic (core.bit2.or,  x86.or)   reg_imm,</div>
+<div class="line">    alu x86.logic (core.bit2.xor, x86.xor)  reg_imm,</div>
+<div class="line">    neg (core.bit2.nand, x86.and) reg_imm,</div>
+<div class="line">    neg (core.bit2.nor,  x86.or)  reg_imm,</div>
+<div class="line">    neg (core.bit2.nxor, x86.xor) reg_imm,</div>
+<div class="line">    alu x86.gpr   (core.wrap.shl, x86.shl)  reg_sh,</div>
+<div class="line">    shift (core.shr.l, x86.shr) reg_sh,</div>
+<div class="line">    shift (core.shr.a, x86.sar) reg_sh);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>A closed rule is an annex of its own, so the address forms follow <span class="tt">arithmetic</span> to lose a tie against its <span class="tt">add</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">rule index_disp (m n: Nat, p i c: I64): core.wrap.add n (core.wrap.add m (p, i), c) when imm c =&gt; x86.index (x86.addr (core.conv.u i32 c, p)) (scaled i);</div>
 <div class="line">rule base_index (m n: Nat, p x i: I64): core.wrap.add n (p, core.wrap.add m (x, i))            =&gt; x86.index (x86.addr (0I32, x86.lea (x86.index (x86.addr (0I32, p)) (x, x86.scale_1)))) (scaled i);</div>
 <div class="line">rule disp       (m: Nat, p c: I64):     core.wrap.add m (p, c)                      when imm c =&gt; x86.addr (core.conv.u i32 c, p);</div>
 <div class="line">rule index      (m: Nat, p i: I64):     core.wrap.add m (p, i)                                 =&gt; x86.index (x86.addr (0I32, p)) (scaled i);</div>
-<div class="line">anx let conversions = (narrow trunc, narrow strunc, narrow cast_trunc, widen zext, widen sext, widen cast_zext);</div>
 <div class="line">anx let compares = icmps;</div>
-<div class="line">anx let selects = (select i16, select i32, select i64, select8 i8, select8 i1);</div>
 <div class="line">anx let division = (</div>
-<div class="line">    div8 (core.div.udiv, x86.div, 0_2, x86.movzx), divs (div (core.div.udiv, x86.div, 0_2)),</div>
-<div class="line">    div8 (core.div.urem, x86.div, 1_2, x86.movzx), divs (div (core.div.urem, x86.div, 1_2)),</div>
-<div class="line">    div8 (core.div.sdiv, x86.idiv, 0_2, x86.movsx), divs (div (core.div.sdiv, x86.idiv, 0_2)),</div>
-<div class="line">    div8 (core.div.srem, x86.idiv, 1_2, x86.movsx), divs (div (core.div.srem, x86.idiv, 1_2)),</div>
+<div class="line">    div8 (core.div.udiv, x86.div, 0_2, x86.movzx), div (core.div.udiv, x86.div, 0_2),</div>
+<div class="line">    div8 (core.div.urem, x86.div, 1_2, x86.movzx), div (core.div.urem, x86.div, 1_2),</div>
+<div class="line">    div8 (core.div.sdiv, x86.idiv, 0_2, x86.movsx), div (core.div.sdiv, x86.idiv, 0_2),</div>
+<div class="line">    div8 (core.div.srem, x86.idiv, 1_2, x86.movsx), div (core.div.srem, x86.idiv, 1_2),</div>
 <div class="line">    rem8, rem16, rem32, rem64);</div>
 <div class="line">anx let nonterminals = (base, abs, mov, fmov math.f32, fmov math.f64, lea ff, lea tt, scale1, unscale);</div>
-<div class="line">anx let memory = (load i8, load i16, load i32, load i64, store);</div>
 <div class="line">anx let addresses = (</div>
 <div class="line">    scale (core.wrap.mul, 2I64, x86.scale_2), scale (core.wrap.mul, 4I64, x86.scale_4), scale (core.wrap.mul, 8I64, x86.scale_8),</div>
 <div class="line">    scale (core.wrap.shl, 1I64, x86.scale_2), scale (core.wrap.shl, 2I64, x86.scale_4), scale (core.wrap.shl, 3I64, x86.scale_8),</div>
 <div class="line">    index_disp, base_index, disp, index);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p><span class="tt">imul</span> has no <span class="tt">op m, r</span> form.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let mem_ops = (</div>
-<div class="line">    rms x86.gpr   (rm x86.gpr   (core.wrap.add, x86.add)),</div>
-<div class="line">    rms x86.gpr   (rm x86.gpr   (core.wrap.sub, x86.sub)),</div>
-<div class="line">    rm x86.gpr16 (core.wrap.mul, x86.imul) i16, rm x86.gpr16 (core.wrap.mul, x86.imul) i32, rm x86.gpr16 (core.wrap.mul, x86.imul) i64,</div>
-<div class="line">    rms x86.logic (rm x86.logic (core.bit2.and, x86.and)),</div>
-<div class="line">    rms x86.logic (rm x86.logic (core.bit2.or,  x86.or)),</div>
-<div class="line">    rms x86.logic (rm x86.logic (core.bit2.xor, x86.xor)),</div>
-<div class="line">    mrs (mr x86.gpr   (core.wrap.add, x86.add)),</div>
-<div class="line">    mrs (mr x86.gpr   (core.wrap.sub, x86.sub)),</div>
-<div class="line">    mrs (mr x86.logic (core.bit2.and, x86.and)),</div>
-<div class="line">    mrs (mr x86.logic (core.bit2.or,  x86.or)),</div>
-<div class="line">    mrs (mr x86.logic (core.bit2.xor, x86.xor)));</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md737"></a>
+<div class="line">    rm x86.gpr   (core.wrap.add, x86.add),</div>
+<div class="line">    rm x86.gpr   (core.wrap.sub, x86.sub),</div>
+<div class="line">    rm x86.gpr16 (core.wrap.mul, x86.imul),</div>
+<div class="line">    rm x86.logic (core.bit2.and, x86.and),</div>
+<div class="line">    rm x86.logic (core.bit2.or,  x86.or),</div>
+<div class="line">    rm x86.logic (core.bit2.xor, x86.xor),</div>
+<div class="line">    mr x86.gpr   (core.wrap.add, x86.add),</div>
+<div class="line">    mr x86.gpr   (core.wrap.sub, x86.sub),</div>
+<div class="line">    mr x86.logic (core.bit2.and, x86.and),</div>
+<div class="line">    mr x86.logic (core.bit2.or,  x86.or),</div>
+<div class="line">    mr x86.logic (core.bit2.xor, x86.xor));</div>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md738"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md738"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md739"></a>
 gen</h2>
 <p>Writes the closed rules of this plugin as C++ matchers and builders (<a class="el" href="namespacemim_1_1plug_1_1x86_1_1rules.html" title="The closed rewrite rules of the x86_isel plugin as C++; x86_isel.gen writes them to isel_rules....">mim::plug::x86::rules</a>) to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> x86_isel:o=&lt;file&gt;</span>, or to stdout.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm gen: compile.Phase;</div>

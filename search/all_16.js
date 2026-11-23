@@ -68,7 +68,7 @@ var searchData=
   ['tensor_5fkey_65',['tensor_key',['../namespacemim_1_1plug_1_1tensor.html#aa616ba31e63be9862b37ba1085b9badb',1,'mim::plug::tensor']]],
   ['tensortype_66',['TensorType',['../structmim_1_1plug_1_1tensor_1_1TensorType.html',1,'mim::plug::tensor']]],
   ['term_5fuses_67',['term_uses',['../classmim_1_1plug_1_1x86_1_1Liveness.html#a6703f910f60a402c3228b79006f16c0f',1,'mim::plug::x86::Liveness::Block::term_uses'],['../classmim_1_1plug_1_1x86_1_1Liveness.html#a8a10e03ac6811f3fda89d62ff27f94ab',1,'mim::plug::x86::Liveness::term_uses()']]],
-  ['terminals_68',['Terminals',['../langref.html#autotoc_md62',1,'Lexical Terminals'],['../x86_isel.html#autotoc_md735',1,'Non-Terminals'],['../langref.html#autotoc_md59',1,'Primary Terminals'],['../langref.html#autotoc_md60',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
+  ['terminals_68',['Terminals',['../langref.html#autotoc_md62',1,'Lexical Terminals'],['../x86_isel.html#autotoc_md736',1,'Non-Terminals'],['../langref.html#autotoc_md59',1,'Primary Terminals'],['../langref.html#autotoc_md60',1,'Secondary Terminals'],['../langref.html#terminals',1,'Terminals']]],
   ['test_69',['test',['../namespacemim_1_1plug_1_1x86.html#a34cfa70c855856dc7073cdfa05eb29be',1,'mim::plug::x86']]],
   ['test_5falpha_70',['test_alpha',['../classmim_1_1Check.html#ac0c3fab61c712e3291435eae76310682',1,'mim::Check']]],
   ['testing_71',['Testing',['../coding.html#testing',1,'Testing'],['../refly.html#autotoc_md484',1,'Testing']]],
