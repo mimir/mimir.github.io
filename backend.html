@@ -232,14 +232,11 @@ Example</h2>
 <div class="line">    mov sp, x29</div>
 <div class="line">    ldp x29, x30, [sp], #16</div>
 <div class="line">    ret</div>
-</div><!-- fragment --><p>Right before emission, the x86 World reads (with <span class="tt">-o -</span>, abridged and with binders renamed):</p>
+</div><!-- fragment --><p>Right before emission, the x86 World reads (with <span class="tt">-o -</span>, slightly edited):</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">extern con f (m: mem.M 0, a b: I64, ret: Cn [mem.M 0, I64]) =</div>
-<div class="line">    let a_rax = mach.in 0I4 a;</div>
-<div class="line">    let b_rsi = mach.in 6I4 b;</div>
-<div class="line">    let x     = mach.sched (x86.add @ 0) m (a_rax, b_rsi);</div>
-<div class="line">    let x_rax = mach.in 0I4 x#tt;</div>
-<div class="line">    let y     = mach.sched (x86.imul @ 0) x#ff (x_rax, 3I64);</div>
-<div class="line">    ret (y#ff, mach.in 0I4 y#tt);</div>
+<div class="line">    let (m, x) = mach.sched (x86.add  @ 0) m (mach.in x86.rax a, mach.in x86.rsi b);</div>
+<div class="line">    let (m, y) = mach.sched (x86.imul @ 0) m (mach.in x86.rax x, 3I64);</div>
+<div class="line">    ret (m, mach.in x86.rax y);</div>
 </div><!-- fragment --></div><div class="mim-code"></div><p>Every instruction sits on the <span class="tt">mem.M</span> chain via <span class="tt">mach.sched</span>, and every use of a value states its register with <span class="tt">mach.in</span>. The entry parameter <span class="tt">a</span> arrives in <span class="tt">rdi</span> but lives in <span class="tt">rax</span>, so the emitter copies it there; the return is the copy <span class="tt">rax → rax</span>, which vanishes.</p>
 <h1 class="doxsection"><a class="anchor" id="backend_code"></a>
 Code Organization</h1>
