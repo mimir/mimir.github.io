@@ -347,14 +347,13 @@ buf_copy_to_host</h3>
 Kernel Launch</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md429"></a>
 launch</h3>
-<p>Launches a kernel function on the device with dynamic shared memory and module symbols.</p>
-<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">// TODO: refactor to {n m: N, Ts: «n; *»} as soon as type inference bug is fixed</div>
-<div class="line">axm launch: {n: Nat, Ts: «n; *»}</div>
-<div class="line">          → [n_groups n_items: Nat, Stream, m: Bool, MT: «core.idx2nat m; *»]</div>
+<p>Launches a kernel with <span class="tt">m</span> (0 or 1, checked by the emitter) shared-memory buffers of types <span class="tt">MT</span> and arguments <span class="tt">Ts</span>. <span class="tt">Ts</span> is a tuple since arrays ≥ <span class="tt">scalarize_threshold</span> are not flattened.</p>
+<div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm launch: {m: Nat, MT: «m; *», Ts: *}</div>
+<div class="line">          → [n_groups n_items: Nat, Stream]</div>
 <div class="line">          → Cn [GlobalM, SharedM, ConstM, LocalM, Idx n_groups, Idx n_items,</div>
-<div class="line">                «i: core.idx2nat m; SharedPtr MT#i», «i: n; Ts#i»,</div>
+<div class="line">                «i: m; SharedPtr MT#i», Ts,</div>
 <div class="line">                Cn [GlobalM, SharedM, ConstM, LocalM]]</div>
-<div class="line">          → «i: n; Ts#i»</div>
+<div class="line">          → Ts</div>
 <div class="line">          → Fn [mem.M 0, GlobalM, ConstM]</div>
 <div class="line">          → [mem.M 0, GlobalM, ConstM];</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md430"></a>
@@ -398,7 +397,7 @@ split_apply</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm split_apply: compile.Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md439"></a>
 lower_btensor_map_reduce</h2>
-<p>Lowers <span class="tt">btensor.map_reduce_post</span> to a kernel launch; skipped if the program already contains an explicit <span class="tt">init</span>.</p>
+<p>Lowers <span class="tt">btensor.map_reduce_post</span> to a kernel launch; skipped if the program already contains an explicit <span class="tt">init</span>. A result that only feeds another lowered call stays on the device, and contraction- and convolution-shaped reductions get a shared-memory kernel.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lower_btensor_map_reduce: compile.Phase;</div>
 </div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md440"></a>
 Pipelines</h2>

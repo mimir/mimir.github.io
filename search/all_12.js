@@ -106,10 +106,11 @@ var searchData=
   ['other_20operations_103',['Other Operations',['../core.html#autotoc_md385',1,'Other Operations'],['../math.html#autotoc_md489',1,'Other Operations']]],
   ['out_104',['Out',['../classmim_1_1Out.html',1,'mim::Out'],['../classmim_1_1Out.html#a4751adbd2da31dad1081dbb2d10ac25f',1,'mim::Out::Out()=default'],['../classmim_1_1Out.html#a91b5d8f55b26fd324d0c0c032d3b6141',1,'mim::Out::Out(std::string name)']]],
   ['out_20of_20the_20node_105',['Caches must move out of the node',['../md_docs_2why-cpp.html#autotoc_md176',1,'']]],
-  ['outermost_5fbinder_106',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
-  ['output_107',['Output',['../cli.html#autotoc_md10',1,'DOT Output'],['../cli.html#autotoc_md11',1,'Mim Output'],['../cli.html#autotoc_md9',1,'Output']]],
-  ['output_20oracles_108',['Output Oracles',['../coding.html#oracles',1,'']]],
-  ['over_20the_20program_109',['Iterating over the Program',['../dev.html#autotoc_md64',1,'']]],
-  ['overview_110',['Overview',['../phases.html#autotoc_md96',1,'']]],
-  ['owner_111',['owner',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a300e9bae308b0219d326631af607025b',1,'mim::plug::mach::rules::Use::owner'],['../classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249',1,'mim::ast::Emitter::NomInfo::owner']]]
+  ['out_5fdims_106',['out_dims',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#a6f50d02cdad4bf8594ad7685563adab3',1,'mim::plug::gpu::phase::LowerMapReduce::Call']]],
+  ['outermost_5fbinder_107',['outermost_binder',['../classmim_1_1Def.html#a9d019e48598f086164307808997b1553',1,'mim::Def']]],
+  ['output_108',['Output',['../cli.html#autotoc_md10',1,'DOT Output'],['../cli.html#autotoc_md11',1,'Mim Output'],['../cli.html#autotoc_md9',1,'Output']]],
+  ['output_20oracles_109',['Output Oracles',['../coding.html#oracles',1,'']]],
+  ['over_20the_20program_110',['Iterating over the Program',['../dev.html#autotoc_md64',1,'']]],
+  ['overview_111',['Overview',['../phases.html#autotoc_md96',1,'']]],
+  ['owner_112',['owner',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a300e9bae308b0219d326631af607025b',1,'mim::plug::mach::rules::Use::owner'],['../classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249',1,'mim::ast::Emitter::NomInfo::owner']]]
 ];

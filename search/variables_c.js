@@ -17,10 +17,12 @@ var searchData=
   ['max_5fplugin_5fsize_14',['Max_Plugin_Size',['../structmim_1_1Annex.html#a594bbf71c24643d9667e03f6172e621b',1,'mim::Annex']]],
   ['max_5frefs_15',['Max_Refs',['../namespacemim_1_1plug_1_1arm_1_1rules.html#a909ff5f58caca93d54dc99bd0e90190a',1,'mim::plug::arm::rules::Max_Refs'],['../namespacemim_1_1plug_1_1x86_1_1rules.html#a7e135fccd5e6de1927eb7eca7129f38c',1,'mim::plug::x86::rules::Max_Refs']]],
   ['max_5frefs_16',['max_refs',['../namespacemim_1_1plug_1_1mach_1_1rules.html#ab2e0291da8ba2225d228d076178be8bd',1,'mim::plug::mach::rules::Table']]],
-  ['meta_17',['meta',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a752ec154f7186e28dd9fc549cd31287b',1,'mim::plug::btensor::MapRedPost']]],
-  ['metas_18',['metas',['../namespacemim_1_1plug_1_1mach.html#ae15a2f75a31eca32ffccd3ab45b86347',1,'mim::plug::mach::Alt']]],
-  ['mim_5ftyped_5flet_19',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
-  ['minor_20',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
-  ['mods_21',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]],
-  ['muts_5fbit_22',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]]
+  ['mem_17',['mem',['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#aa9367798ee69720b888bf020fbb878b3',1,'mim::plug::gpu::phase::LowerMapReduce::Session']]],
+  ['meta_18',['meta',['../structmim_1_1plug_1_1btensor_1_1MapRedPost.html#a752ec154f7186e28dd9fc549cd31287b',1,'mim::plug::btensor::MapRedPost']]],
+  ['metas_19',['metas',['../namespacemim_1_1plug_1_1mach.html#ae15a2f75a31eca32ffccd3ab45b86347',1,'mim::plug::mach::Alt']]],
+  ['mim_5ftyped_5flet_20',['mim_typed_let',['../structmim_1_1Flags.html#a6fce7dfde53fe6c26ad650dafd265aa9',1,'mim::Flags']]],
+  ['minor_21',['minor',['../structmim_1_1Version.html#a3e91ae9feba6716ce5d6adc9ce45bc49',1,'mim::Version']]],
+  ['mods_22',['mods',['../classmim_1_1ast_1_1Scopes.html#a928fbbd454909b0506bcebcf1c089194',1,'mim::ast::Scopes::Barrier']]],
+  ['mr_23',['mr',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#ac613228b2170fabea8997757fa4b9ad8',1,'mim::plug::gpu::phase::LowerMapReduce::Call']]],
+  ['muts_5fbit_24',['Muts_Bit',['../classmim_1_1Proxy.html#a9f87fdd48c7e93abfefedb8aa149d94e',1,'mim::Proxy']]]
 ];

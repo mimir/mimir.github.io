@@ -37,8 +37,12 @@ var searchData=
   ['honest_20caveats_34',['Two honest caveats',['../md_docs_2why-cpp.html#autotoc_md181',1,'']]],
   ['hook_35',['hook',['../classmim_1_1Phase.html#a19df66aeb259f2d7208c70f4484ab7c3',1,'mim::Phase::hook()'],['../namespacemim_1_1plug_1_1mach.html#ae11c44d2b79dd859ec603b22045de96b',1,'mim::plug::mach::hook(Flags2Phases &amp;phases)']]],
   ['hook_5fisel_36',['hook_isel',['../namespacemim_1_1plug_1_1mach.html#a15386307c876725dc07a01237f120f95',1,'mim::plug::mach']]],
-  ['host_5fmalloc2gpualloc_5frepl_37',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu::host_malloc2gpualloc_repl'],['../gpu.html#autotoc_md435',1,'host_malloc2gpualloc_repl']]],
-  ['host_5fspecific_5fphases_38',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
-  ['hostemitter_39',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html',1,'mim::plug::nvptx::HostEmitter'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter::HostEmitter()']]],
-  ['how_20defs_20are_20placed_20in_20them_40',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
+  ['host_37',['host',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#a071f535f6fe71fc92d3b910c39539813',1,'mim::plug::gpu::phase::LowerMapReduce::Call::In']]],
+  ['host_5fidx_38',['host_idx',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#a889b14ff8df2758f0e121a4eaa327e6a',1,'mim::plug::gpu::phase::LowerMapReduce::Call::In']]],
+  ['host_5fmalloc2gpualloc_5frepl_39',['host_malloc2gpualloc_repl',['../namespacemim_1_1plug_1_1gpu.html#ab0c58a0e76a2eca63c73657a4f4bd0e2',1,'mim::plug::gpu::host_malloc2gpualloc_repl'],['../gpu.html#autotoc_md435',1,'host_malloc2gpualloc_repl']]],
+  ['host_5freaders_40',['host_readers',['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#affe194684db04ee997ddae4e48ffa05b',1,'mim::plug::gpu::phase::LowerMapReduce::Session']]],
+  ['host_5fspecific_5fphases_41',['host_specific_phases',['../namespacemim_1_1plug_1_1gpu.html#a64f3392d668152ed1454963026eff0ef',1,'mim::plug::gpu']]],
+  ['hostemitter_42',['HostEmitter',['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html',1,'mim::plug::nvptx::HostEmitter'],['../classmim_1_1plug_1_1nvptx_1_1HostEmitter.html#a6f733fc7f77c9a943b3e466e8e346622',1,'mim::plug::nvptx::HostEmitter::HostEmitter()']]],
+  ['hosts_43',['hosts',['../classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#aae021c142c4b0bc338bedeae691faf2e',1,'mim::plug::gpu::phase::LowerMapReduce::Session']]],
+  ['how_20defs_20are_20placed_20in_20them_44',['Arenas, and how &lt;span class=&quot;tt&quot;&gt;Def&lt;/span&gt;s are placed in them',['../md_docs_2why-cpp.html#autotoc_md171',1,'']]]
 ];

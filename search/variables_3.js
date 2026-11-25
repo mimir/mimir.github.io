@@ -11,6 +11,7 @@ var searchData=
   ['demands_8',['demands',['../namespacemim_1_1plug_1_1mach.html#ab54d0eba4c02a31dce51f42ce03cca73',1,'mim::plug::mach::Cover::demands'],['../namespacemim_1_1plug_1_1mach.html#a92f25f9d2df767c9ab8cfbf079478e50',1,'mim::plug::mach::Alt::demands']]],
   ['depth_9',['depth',['../classmim_1_1Driver.html#ac5bf487026a200547023dbf745350695',1,'mim::Driver::Names']]],
   ['descr_10',['descr',['../namespacemim.html#a0f1ec4662d46ddc5fe2de1c041729422',1,'mim::PluginArg::descr'],['../namespacemim.html#ac7b90f780e11bddea979ae71b81c2ace',1,'mim::PluginEnv::descr']]],
-  ['dropped_5fedges_11',['dropped_edges',['../namespacepbqp.html#a142c5d12ad79fd54e54bcef2ae2ab722',1,'pbqp::Statistics']]],
-  ['dst_12',['dst',['../classpbqp_1_1Graph.html#ae6defd4939d521bf8e009070f57ba6ba',1,'pbqp::Graph::Ends']]]
+  ['dptr_11',['dptr',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#a21c5c8ba64ece4db68caa03d3da010c5',1,'mim::plug::gpu::phase::LowerMapReduce::Call']]],
+  ['dropped_5fedges_12',['dropped_edges',['../namespacepbqp.html#a142c5d12ad79fd54e54bcef2ae2ab722',1,'pbqp::Statistics']]],
+  ['dst_13',['dst',['../classpbqp_1_1Graph.html#ae6defd4939d521bf8e009070f57ba6ba',1,'pbqp::Graph::Ends']]]
 ];

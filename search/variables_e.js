@@ -5,5 +5,6 @@ var searchData=
   ['old_5fvars_2',['old_vars',['../classmim_1_1Rewriter.html#a5b05cfe513b30314587567b484517e71',1,'mim::Rewriter::Scope']]],
   ['ops_3',['ops',['../namespacemim_1_1plug_1_1mach.html#a4cf69ba43134cecd0aaba9292bdf9ddc',1,'mim::plug::mach::Constraint::ops'],['../classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#a920ff38aa02d92620a883ace248586f2',1,'mim::plug::mem::EscapeAnalysis::Chain::ops']]],
   ['ostream_5f_4',['ostream_',['../classmim_1_1plug_1_1ll_1_1Emitter.html#a7aa7f71a0c051fed33e64f3e986c797e',1,'mim::plug::ll::Emitter']]],
-  ['owner_5',['owner',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a300e9bae308b0219d326631af607025b',1,'mim::plug::mach::rules::Use::owner'],['../classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249',1,'mim::ast::Emitter::NomInfo::owner']]]
+  ['out_5fdims_5',['out_dims',['../structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#a6f50d02cdad4bf8594ad7685563adab3',1,'mim::plug::gpu::phase::LowerMapReduce::Call']]],
+  ['owner_6',['owner',['../namespacemim_1_1plug_1_1mach_1_1rules.html#a300e9bae308b0219d326631af607025b',1,'mim::plug::mach::rules::Use::owner'],['../classmim_1_1ast_1_1Emitter.html#ab7d5523c677161eeb102e477eec2c249',1,'mim::ast::Emitter::NomInfo::owner']]]
 ];

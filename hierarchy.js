@@ -25,6 +25,8 @@ var hierarchy =
     [ "mim::plug::ll::BB", "structmim_1_1plug_1_1ll_1_1BB.html", null ],
     [ "mim::ast::Bind", "namespacemim_1_1ast.html#structmim_1_1ast_1_1Bind", null ],
     [ "mim::plug::mach::Liveness::Block", "classmim_1_1plug_1_1mach_1_1Liveness.html#structmim_1_1plug_1_1mach_1_1Liveness_1_1Block", null ],
+    [ "mim::plug::gpu::phase::LowerMapReduce::Call", "structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html", null ],
+    [ "mim::plug::gpu::phase::LowerMapReduce::Chain", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Chain", null ],
     [ "mim::plug::mem::EscapeAnalysis::Chain", "classmim_1_1plug_1_1mem_1_1EscapeAnalysis.html#structmim_1_1plug_1_1mem_1_1EscapeAnalysis_1_1Chain", null ],
     [ "mim::plug::mach::rules::Chains", "structmim_1_1plug_1_1mach_1_1rules_1_1Chains.html", null ],
     [ "mim::Check", "classmim_1_1Check.html", null ],
@@ -59,6 +61,7 @@ var hierarchy =
     [ "mim::GIDLt&lt; T &gt;", "structmim_1_1GIDLt.html", null ],
     [ "pbqp::Graph", "classpbqp_1_1Graph.html", null ],
     [ "mim::Driver::Imports", "classmim_1_1Driver_1_1Imports.html", null ],
+    [ "mim::plug::gpu::phase::LowerMapReduce::Call::In", "structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call.html#structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Call_1_1In", null ],
     [ "pbqp::Instance", "namespacepbqp.html#structpbqp_1_1Instance", null ],
     [ "mim::Axm::IsA&lt; Id, D &gt;", "classmim_1_1Axm_1_1IsA.html", null ],
     [ "mim::Axm::IsANode&lt; T &gt;", "classmim_1_1Axm.html#structmim_1_1Axm_1_1IsANode", null ],
@@ -306,6 +309,7 @@ var hierarchy =
     [ "mim::Scheduler", "classmim_1_1Scheduler.html", null ],
     [ "mim::Rewriter::Scope", "classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope", null ],
     [ "mim::ast::Scopes", "classmim_1_1ast_1_1Scopes.html", null ],
+    [ "mim::plug::gpu::phase::LowerMapReduce::Session", "classmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce.html#structmim_1_1plug_1_1gpu_1_1phase_1_1LowerMapReduce_1_1Session", null ],
     [ "mim::Setters&lt; P, D &gt;", "classmim_1_1Setters.html", null ],
     [ "mim::Setters&lt; App &gt;", "classmim_1_1Setters.html", [
       [ "mim::App", "classmim_1_1App.html", null ]
