@@ -175,59 +175,59 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('mach.html','',
 <div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2mach"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1mach.html" title="The mach Plugin">mim::plug::mach</a></dd></dl>
 <p>The machine-independent surface of the native backends <span class="tt">x86</span> and <span class="tt">arm</span>. A backend plugin loads it and supplies its own instructions, registers, and condition codes; this plugin holds the types, pseudo-instructions, and phases they share. The phases work on the one loaded backend (<span class="tt">Driver::target</span>) and read their arguments as that backend's, e.g. <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> x86:k=&lt;n&gt;</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md448"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md441"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
 <div class="line">plugin math;</div>
 <div class="line">plugin refly;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md449"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md442"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md450"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md443"></a>
 Flags</h2>
 <p>The condition flags that a comparison sets and a condition code tests.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Flags: *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md451"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md444"></a>
 Spill</h2>
 <p>A spill slot holding a value of type <span class="tt">T</span>. It is no register value; the emitter gives it a place in the stack frame.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Spill: * → *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md452"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md445"></a>
 Registers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md453"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md446"></a>
 in</h2>
 <p><span class="tt">in r v</span> is <span class="tt">v</span>, which lives in register <span class="tt">r</span> of the class of <span class="tt">v</span>'s type; <span class="tt">n</span> is the number of registers of the backend. Register allocation wraps every use of a value, so all uses of <span class="tt">v</span> share one <span class="tt">in r v</span>. It is no instruction: it is neither scheduled nor on the chain.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm in: {n: Nat} → [r: Idx n] → {T: *} → T → T;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md454"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md447"></a>
 Instructions</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md455"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md448"></a>
 sched</h2>
 <p>Places the pure instruction <span class="tt">f x</span> on the <span class="tt">mem.M 0</span> chain right after <span class="tt">m</span>: <span class="tt">let (m, y) = mach.sched x86.add m (a, b)</span>. The chain token makes each placement a distinct Def, so copies, spills, and reloads at different points never merge.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm sched: {D C: *} → (D → C) → mem.M 0 → D → [mem.M 0, C];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md456"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md449"></a>
 slot</h2>
 <p>Reserves <span class="tt">n</span> bytes in the stack frame and yields their address.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm slot: [n: Nat] → mem.M 0 → [mem.M 0, I64];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md457"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md450"></a>
 load</h2>
 <p>Loads a <span class="tt">T</span> from the address <span class="tt">p</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm load: [T: *] → [mem.M 0, p: I64] → [mem.M 0, T];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md458"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md451"></a>
 store</h2>
 <p>Stores <span class="tt">x</span> to the address <span class="tt">p</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm store: {T: *} → [mem.M 0, p: I64, x: T] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md459"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md452"></a>
 spill</h2>
 <p><span class="tt">spill x</span> stores <span class="tt">x</span> into a spill slot; it is placed on the chain via <span class="tt">sched</span> like any other pure instruction.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm spill: {T: *} → T → Spill T;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md460"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md453"></a>
 reload</h2>
 <p><span class="tt">reload x</span> loads <span class="tt">x</span> from its spill slot.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm reload: {T: *} → Spill T → T;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md461"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md454"></a>
 Floating-Point Formats</h1>
 <p>A backend supports <span class="tt">math.f32</span> and <span class="tt">math.f64</span> only; its float instructions check the format in their codomain.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md455"></a>
 fpe</h2>
 <p><span class="tt">math.f32</span> or <span class="tt">math.f64</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam is_fpe (pe: «2; Nat»): Bool =</div>
@@ -238,11 +238,11 @@ fpe</h2>
 <div class="line">    let eq64 = core.bit2.and 0 (core.ncmp.e (p, p64), core.ncmp.e (e, e64));</div>
 <div class="line">    core.bit2.or 0 (eq32, eq64);</div>
 <div class="line">anx lam fpe (pe: «2; Nat»): «2; Nat» = refly.check (is_fpe pe, pe, &quot;native backend: float type must be f32 or f64&quot;);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md456"></a>
 fok</h2>
 <p><span class="tt">x</span>, if <span class="tt">pe</span> is <span class="tt">math.f32</span> or <span class="tt">math.f64</span>: the check of <span class="tt">fpe</span> for a codomain that does not name the format, e.g. <span class="tt">Idx (fok pe 2)</span> for <span class="tt">Bool</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam fok {T: *} (pe: «2; Nat») (x: T): T = refly.check (is_fpe pe, x, &quot;native backend: float type must be f32 or f64&quot;);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md457"></a>
 float</h2>
 <p>The types of <span class="tt">math</span>'s float operations and of a backend's float instructions, as the parameters of isel rule families.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod float</div>
@@ -255,39 +255,39 @@ float</h2>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"></div><!-- fragment --></div><div class="mim-code"></div><div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">    rule arith (op: Op2, insn: Insn2) {pe: «2; Nat»} (k: Nat, a b: math.F pe): op k (a, b) =&gt; insn (a, b);</div>
 <div class="line">    rule unary (op: Op1, insn: Insn1) {pe: «2; Nat»} (k: Nat, x: math.F pe):   op k x      =&gt; insn x;</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md458"></a>
 Instruction Selection</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md459"></a>
 lit</h2>
 <p>The guard <span class="tt">lit x</span> of an isel rule holds if <span class="tt">x</span> is a literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lit: {T: *} → T → Bool, normalize_lit;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md460"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md468"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md461"></a>
 libm</h2>
 <p>Turns each <span class="tt">math</span> operation that a backend has no instruction for into a call of its libm function, e.g. <span class="tt">math.exp</span> on an <span class="tt">f32</span> into <span class="tt">expf</span> (see <a class="el" href="classmim_1_1plug_1_1mach_1_1Libm.html" title="Turns each math operation without a native instruction into a call of its libm function,...">mim::plug::mach::Libm</a>). It covers <span class="tt">exp</span>, <span class="tt">tri</span>, <span class="tt">pow</span>, <span class="tt">rt.cb</span>, <span class="tt">er</span>, <span class="tt">gamma</span>, <span class="tt">round</span>, <span class="tt">arith.rem</span>, and <span class="tt">extrema.fmin</span>/<span class="tt">fmax</span> on <span class="tt">f32</span> and <span class="tt">f64</span>, and runs before <span class="tt">mem.add_mem</span>, which threads the memory through the calls.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm libm: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md469"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md462"></a>
 legalize</h2>
 <p>Turns every <span class="tt">Nat</span> value and every pointer into an <span class="tt">I64</span>, so that instruction selection only sees register types (see <a class="el" href="classmim_1_1plug_1_1mach_1_1Legalize.html" title="Turns every Nat value and every pointer into an I64, so that instruction selection only sees register...">mim::plug::mach::Legalize</a>). <span class="tt">mem.lea</span> becomes a <span class="tt">core.wrap.add</span> of its byte offset by the layout of <span class="tt">core.trait</span>, <span class="tt">mem.load</span> and <span class="tt">mem.store</span> become <span class="tt">load</span> and <span class="tt">store</span>, <span class="tt">mem.mslot</span> of a literal size becomes <span class="tt">slot</span>, and the <span class="tt">Nat</span> operations become their <span class="tt">I64</span> counterparts. <span class="tt">mem.malloc</span> and <span class="tt">mem.free</span> become calls of the C functions, lifted into continuations like <span class="tt">cps.conv</span> does. Only address space 0 is supported.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm legalize: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md470"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md463"></a>
 schedule</h2>
 <p>Makes each continuation's <span class="tt">mem.M 0</span> chain total over the instructions of the backend, in a topological order (see <a class="el" href="classmim_1_1plug_1_1mach_1_1Schedule.html" title="Makes each continuation&#39;s mem.M 0 chain total over the instructions of the Target,...">mim::plug::mach::Schedule</a>). Memory instructions are rethreaded onto the chain; all others are wrapped in <span class="tt">sched</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm schedule: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md471"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md464"></a>
 spilling</h2>
 <p>Spills and reloads until at most <span class="tt">k</span> values of each register class are live at every point (Braun &amp; Hack, CC 2009). <span class="tt">k</span> is the number of allocatable registers of the class by default, and <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;backend&gt;:k=&lt;n&gt;</span> overrides it for the general-purpose one.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm spilling: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md472"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md465"></a>
 constrain</h2>
 <p>Moves the operands that an instruction needs in a fixed register, and a two-address operand that stays live, into a fresh continuation right before it. The jump is the copy, so the copies' live ranges end at the instruction and the interference graph stays chordal. The fixed operands are wrapped in <span class="tt">in</span>. Likewise, a fixed result that stays live is passed on to a fresh continuation right after its instruction.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm constrain: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md473"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md466"></a>
 color</h2>
 <p>Assigns a register to every value by one PBQP per function and register class (Buchwald, Zwinkau, Bersch, CC 2011) and wraps each use of a value in <span class="tt">in</span>. Jumps, calls, and returns are parallel copies: their arguments only prefer the registers of the parameters they bind. Removes chain instructions whose results are all dead. <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;backend&gt;:color-dot=&lt;file&gt;</span> writes the PBQP graph of each function in Graphviz DOT format, with the chosen options highlighted.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm color: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md474"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md467"></a>
 live</h2>
 <p>Prints the liveness of every scheduled function to stdout, or to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;backend&gt;:live=&lt;file&gt;</span>: per block the live-in and live-out values and the maximum number of live values per register class. It is not part of the default pipeline.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm live: compile.Phase;</div>

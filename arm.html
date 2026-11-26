@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('arm.html','','
 <div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2arm"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1arm.html" title="The ARM Plugin">mim::plug::arm</a></dd></dl>
 <p>The native AArch64 backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p arm</span>) appends instruction selection, register allocation, and emission to the compilation pipeline. Instruction selection rewrites a scalar subset of <span class="tt">core</span>, <span class="tt">mem</span>, and <span class="tt">math</span> into the axioms below and those of <span class="tt">mach</span>; register allocation is the phases of <span class="tt">mach</span>. AArch64 is three-address, so no operand is tied to a result. Registers are no concern of these types; register allocation introduces them later. The schedule is the <span class="tt">mem.M 0</span> chain: memory instructions sit on it, and <span class="tt">mach.schedule</span> threads all other instructions onto it via <span class="tt">mach.sched</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md214"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
@@ -183,9 +183,9 @@ Dependencies</h1>
 <div class="line">plugin mach;</div>
 <div class="line">plugin opt;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md215"></a>
 Registers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md216"></a>
 reg</h2>
 <p>The general-purpose registers in hardware encoding order, as the register <span class="tt">r</span> of <span class="tt">mach.in r v</span>. A register's subtag is its hardware encoding, so they have to stay in this order.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod reg</div>
@@ -221,7 +221,7 @@ reg</h2>
 <div class="line">    anx let x29 = 29I5;</div>
 <div class="line">    anx let x30 = 30I5;</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md217"></a>
 fpr</h2>
 <p>The floating-point registers in hardware encoding order, as the register <span class="tt">r</span> of <span class="tt">mach.in r v</span> for a <span class="tt">math.F pe</span> value <span class="tt">v</span>. The operand size selects the <span class="tt">s</span> or <span class="tt">d</span> name of a register. A register's subtag is its hardware encoding, so they have to stay in this order.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod fpr</div>
@@ -258,43 +258,43 @@ fpr</h2>
 <div class="line">    anx let d30 = 30I5;</div>
 <div class="line">    anx let d31 = 31I5;</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md218"></a>
 Instructions</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md219"></a>
 load</h2>
 <p><span class="tt">ldr r, [addr]</span>, zero-extending a narrower value to its register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm load: [s: Nat] → [mem.M 0, I64] → [mem.M 0, Idx s];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md220"></a>
 store</h2>
 <p><span class="tt">str [addr], r</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm store: [s: Nat] → [mem.M 0, I64, Idx s] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md228"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md221"></a>
 Arithmetic</h2>
 <p>Three-address arithmetic <span class="tt">op d, a, b</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (add, sub, and, or, xor, mul): {s: Nat} → «2; Idx s» → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md229"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md222"></a>
 madd</h2>
 <p><span class="tt">madd (a, b, c)</span> is <span class="tt">a * b + c</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm madd: {s: Nat} → «3; Idx s» → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md230"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md223"></a>
 Shifts</h2>
 <p><span class="tt">lsl</span>, <span class="tt">lsr</span>, and <span class="tt">asr</span> by a register or an immediate.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (shl, shr, sar): {s: Nat} → «2; Idx s» → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md231"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md224"></a>
 Division</h2>
 <p><span class="tt">udiv</span>/<span class="tt">sdiv</span> yield the quotient only; a remainder is a <span class="tt">mul</span> and a <span class="tt">sub</span> around them.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (udiv, sdiv): {s: Nat} → «2; Idx s» → Idx s;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md232"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md225"></a>
 Conversions</h2>
 <p><span class="tt">ubfx</span>/<span class="tt">sbfx</span> and truncation to the low bits of the register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm zext: {s: Nat} → [d: Nat] → Idx s → Idx d;</div>
 <div class="line">axm sext: {s: Nat} → [d: Nat] → Idx s → Idx d;</div>
 <div class="line">axm trunc: {s: Nat} → [d: Nat] → Idx s → Idx d;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md233"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md226"></a>
 Comparisons</h2>
 <p><span class="tt">cmp a, b</span> sets the flags from <span class="tt">a - b</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cmp: {s: Nat} → «2; Idx s» → mach.Flags;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md234"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md227"></a>
 Condition Codes</h1>
 <p>The condition codes in hardware encoding order:</p>
 <table class="markdownTable">
@@ -333,46 +333,46 @@ Condition Codes</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">nv</span>  </td><td class="markdownTableBodyNone">15  </td></tr>
 </table>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md235"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md228"></a>
 csel</h2>
 <p><span class="tt">csel.&lt;c&gt; (f, x, y)</span> yields <span class="tt">y</span> if <span class="tt">&lt;c&gt;</span> holds on <span class="tt">f</span>, else <span class="tt">x</span>, like <span class="tt">(x, y)#cond</span>. <span class="tt">csel.ne (cmp (cc.&lt;c&gt; f, 0), x, y)</span> normalizes to <span class="tt">csel.&lt;c&gt; (f, x, y)</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm csel.(eq, ne, cs, cc, mi, pl, vs, vc, hi, ls, ge, lt, gt, le, al, nv): {s: Nat} → [mach.Flags, Idx s, Idx s] → Idx s, normalize_csel;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md236"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md229"></a>
 fcsel</h2>
 <p><span class="tt">fcsel.&lt;c&gt; (f, x, y)</span> yields <span class="tt">y</span> if <span class="tt">&lt;c&gt;</span> holds on <span class="tt">f</span>, else <span class="tt">x</span>, and normalizes like <span class="tt">csel</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fcsel.(eq, ne, cs, cc, mi, pl, vs, vc, hi, ls, ge, lt, gt, le, al, nv): {pe: «2; Nat»} → [mach.Flags, math.F pe, math.F pe] → math.F (mach.fpe pe), normalize_fcsel;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md237"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md230"></a>
 cc</h2>
 <p>Tests a condition code on the flags: <span class="tt">bcc</span> as a branch condition, <span class="tt">cset</span> otherwise.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cc.(eq, ne, cs, cc, mi, pl, vs, vc, hi, ls, ge, lt, gt, le, al, nv): mach.Flags → Bool;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md238"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md231"></a>
 Floating-Point Instructions</h1>
 <p>A <span class="tt">math.F pe</span> value is a whole <span class="tt">d</span> register, whatever its format; the instruction names the <span class="tt">s</span> or <span class="tt">d</span> form. An operand is always a register: a literal is materialized by <span class="tt">fmov</span> first.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md239"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md232"></a>
 fmov</h2>
 <p>Materializes a floating-point constant via a general-purpose scratch register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fmov: {pe: «2; Nat»} → math.F pe → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md240"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md233"></a>
 fload</h2>
 <p><span class="tt">ldr</span> of an <span class="tt">s</span> or <span class="tt">d</span> register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fload: [pe: «2; Nat»] → [mem.M 0, I64] → [mem.M 0, math.F (mach.fpe pe)];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md241"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md234"></a>
 fstore</h2>
 <p><span class="tt">str</span> of an <span class="tt">s</span> or <span class="tt">d</span> register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fstore: {pe: «2; Nat»} → [mem.M 0, I64, math.F pe] → mem.M (mach.fok pe 0);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md242"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md235"></a>
 Floating-Point Arithmetic</h2>
 <p><span class="tt">fadd</span>, <span class="tt">fsub</span>, <span class="tt">fmul</span>, and <span class="tt">fdiv</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (fadd, fsub, fmul, fdiv): {pe: «2; Nat»} → «2; math.F pe» → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md243"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md236"></a>
 Floating-Point Unary</h2>
 <p><span class="tt">fsqrt</span> and <span class="tt">fabs</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (fsqrt, fabs): {pe: «2; Nat»} → math.F pe → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md244"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md237"></a>
 fcmp</h2>
 <p><span class="tt">fcmp a, b</span> sets the flags: <span class="tt">Z C</span> if equal, <span class="tt">N</span> if less, <span class="tt">C</span> if greater, and <span class="tt">C V</span> if unordered.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fcmp: {pe: «2; Nat»} → «2; math.F pe» → mach.Flags;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md245"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md238"></a>
 Floating-Point Conversions</h2>
 <p>Both formats and sizes are explicit, since a conversion has no operand that names them.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm i2f: [s: Nat] → [pe: «2; Nat»] → Idx s → math.F (mach.fpe pe);</div>
@@ -380,13 +380,13 @@ Floating-Point Conversions</h2>
 <div class="line">axm f2i: [pe: «2; Nat»] → [s: Nat] → math.F pe → Idx (mach.fok pe s);</div>
 <div class="line">axm f2u: [pe: «2; Nat»] → [s: Nat] → math.F pe → Idx (mach.fok pe s);</div>
 <div class="line">axm f2f: [spe: «2; Nat»] → [dpe: «2; Nat»] → math.F spe → math.F (mach.fpe dpe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md246"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md239"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md247"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md240"></a>
 isel</h2>
 <p>Instruction selection for a scalar subset of <span class="tt">core</span>, <span class="tt">mem</span>, and <span class="tt">math</span> by the rules of <span class="tt">arm_isel</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm isel: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md248"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md241"></a>
 emit</h2>
 <p>Emits GNU assembler code (AArch64 syntax) to <span class="tt">&lt;world&gt;.s</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm emit: compile.Phase;</div>
