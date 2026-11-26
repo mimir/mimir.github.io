@@ -6,7 +6,6 @@ var classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem =
     [ "rewrite_imm_Nom", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#adcfee2625f09d72d0af6d6f9989e776b", null ],
     [ "rewrite_imm_Struc", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a29f8f9e753e99bf8b5dcf73a4c2bf9ce", null ],
     [ "rewrite_mut_Lam", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a480cdad4144ad3661ce7f994ee9bc0b9", null ],
-    [ "RWPhase", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a338b4217843a5a9514433f2c70edeb5c", null ],
-    [ "RWPhase", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a8ef0c8aebc6eabaa582028156aaf081e", null ],
+    [ "rewrite_ops", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a78bd7dae155b844d3c76124fc29c9c69", null ],
     [ "start", "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerToMem.html#a8fbd11ed3a18be75ac5e3b972486cae6", null ]
 ];

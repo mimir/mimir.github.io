@@ -12,6 +12,7 @@ var mach_2autogen_8h =
     [ "mim::plug::mach::fpe", "namespacemim_1_1plug_1_1mach.html#aca3fefb09702dd2b9229d9bce00455c8", null ],
     [ "mim::plug::mach::in", "namespacemim_1_1plug_1_1mach.html#a1bad03b7ba74bce4c0e87690b81fe001", null ],
     [ "mim::plug::mach::legalize", "namespacemim_1_1plug_1_1mach.html#a54333709cee17b23f259530eedcceb34", null ],
+    [ "mim::plug::mach::libm", "namespacemim_1_1plug_1_1mach.html#a4e46767afd19e235e78fde0d4023f9ce", null ],
     [ "mim::plug::mach::lit", "namespacemim_1_1plug_1_1mach.html#a1bc4060dec157b2c36bb3b185cc66009", null ],
     [ "mim::plug::mach::live", "namespacemim_1_1plug_1_1mach.html#a3f5ae91df9778479c0519b5917cefc43", null ],
     [ "mim::plug::mach::load", "namespacemim_1_1plug_1_1mach.html#ad94ad94536fa5f4e107501a9f3e8778c", null ],

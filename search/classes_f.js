@@ -15,10 +15,11 @@ var searchData=
   ['pluginenv_12',['PluginEnv',['../namespacemim.html#structmim_1_1PluginEnv',1,'mim']]],
   ['pluginsym_13',['PluginSym',['../namespacemim.html#structmim_1_1PluginSym',1,'mim']]],
   ['pod_14',['POD',['../structmim_1_1World_1_1State.html#structmim_1_1World_1_1State_1_1POD',1,'mim::World::State']]],
-  ['prefixexpr_15',['PrefixExpr',['../classmim_1_1ast_1_1PrefixExpr.html',1,'mim::ast']]],
-  ['primaryexpr_16',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
-  ['prod_17',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
-  ['proxy_18',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
-  ['ptrn_19',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]],
-  ['pureread_20',['PureRead',['../namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead',1,'mim::plug::tensor']]]
+  ['pop_15',['Pop',['../classmim_1_1Rewriter_1_1Pop.html',1,'mim::Rewriter']]],
+  ['prefixexpr_16',['PrefixExpr',['../classmim_1_1ast_1_1PrefixExpr.html',1,'mim::ast']]],
+  ['primaryexpr_17',['PrimaryExpr',['../classmim_1_1ast_1_1PrimaryExpr.html',1,'mim::ast']]],
+  ['prod_18',['Prod',['../classmim_1_1Prod.html',1,'mim']]],
+  ['proxy_19',['Proxy',['../classmim_1_1Proxy.html',1,'mim']]],
+  ['ptrn_20',['Ptrn',['../classmim_1_1ast_1_1Ptrn.html',1,'mim::ast']]],
+  ['pureread_21',['PureRead',['../namespacemim_1_1plug_1_1tensor.html#structmim_1_1plug_1_1tensor_1_1PureRead',1,'mim::plug::tensor']]]
 ];

@@ -16,5 +16,6 @@ var searchData=
   ['dotconfig_13',['DotConfig',['../namespacemim.html#structmim_1_1DotConfig',1,'mim']]],
   ['driver_14',['Driver',['../classmim_1_1Driver.html',1,'mim']]],
   ['drophints_15',['DropHints',['../classmim_1_1plug_1_1ll_1_1DropHints.html',1,'mim::plug::ll']]],
-  ['dummydecl_16',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast']]]
+  ['ds2cps_16',['DS2CPS',['../classmim_1_1DS2CPS.html',1,'mim']]],
+  ['dummydecl_17',['DummyDecl',['../classmim_1_1ast_1_1DummyDecl.html',1,'mim::ast']]]
 ];

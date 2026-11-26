@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('x86.html','','
 <div class="textblock"><p><a class="anchor" id="md_build-docs_2docs_2plug_2x86"></a></p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacemim_1_1plug_1_1x86.html" title="The x86 Plugin">mim::plug::x86</a></dd></dl>
 <p>The native x86-64 backend. Loading this plugin (<span class="tt"><a class="el" href="namespacemim.html">mim</a> foo.mim -p x86</span>) appends instruction selection, register allocation, and emission to the compilation pipeline. Instruction selection rewrites <span class="tt">core</span>, <span class="tt">math</span>, and <span class="tt">mem</span> into the axioms below and <span class="tt">mach.slot</span>; register allocation is the phases of <span class="tt">mach</span>. A literal operand of an instruction is an immediate and has to fit its encoding; <span class="tt">mov</span> puts any other constant into a register. Registers are no concern of these types; register allocation introduces them later. The schedule is the <span class="tt">mem.M 0</span> chain: memory instructions sit on it, and scheduling threads all other instructions onto it via <span class="tt">sched</span>.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md726"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md727"></a>
 Dependencies</h1>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">plugin core;</div>
 <div class="line">plugin mem;</div>
@@ -184,25 +184,25 @@ Dependencies</h1>
 <div class="line">plugin opt;</div>
 <div class="line">plugin refly;</div>
 <div class="line">import compile;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md727"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md728"></a>
 Types</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md728"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md729"></a>
 Addr</h2>
 <p>A memory operand <span class="tt">disp(base, index, scale)</span>; the <span class="tt">Bool</span> states whether it has an index. It is no value and occupies no register of its own; only memory instructions and <span class="tt">lea</span> take one.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm Addr: Bool → *;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md729"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md730"></a>
 Base</h2>
 <p>An address <span class="tt">disp(base)</span> without an index.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let Base = Addr ff;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md730"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md731"></a>
 Index</h2>
 <p>An address <span class="tt">disp(base, index, scale)</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx let Index = Addr tt;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md731"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md732"></a>
 addr</h2>
 <p><span class="tt">addr (disp, base)</span> addresses <span class="tt">disp + base</span>, like AT&amp;T's <span class="tt">disp(base)</span>. A literal <span class="tt">0I64</span> as <span class="tt">base</span> means there is none. A literal <span class="tt">base</span> folds into <span class="tt">disp</span> if the sum fits, else it goes into a register.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm addr: [disp: I32, base: I64] → Base, normalize_addr;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md732"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md733"></a>
 index</h2>
 <p><span class="tt">index a (i, scale)</span> addresses <span class="tt">a + (i &lt;&lt; scale)</span>, like AT&amp;T's <span class="tt">disp(base, index, scale)</span>. An address has at most one index.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm index: Base → [index: I64, scale: I2] → Index;</div>
@@ -211,45 +211,45 @@ index</h2>
 <div class="line">anx let scale_2 = 1I2;</div>
 <div class="line">anx let scale_4 = 2I2;</div>
 <div class="line">anx let scale_8 = 3I2;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md733"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md734"></a>
 Operand Sizes</h1>
 <p>Instructions are polymorphic in the operand size <span class="tt">s</span> and state which sizes they support via <span class="tt">refly.check</span> in their codomain. A literal <span class="tt">s</span> folds the check away; an unsupported one is an error.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">lam is (s n: Nat): Bool = core.ncmp.e (s, n);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md734"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md735"></a>
 gpr</h2>
 <p><span class="tt">i8</span>, <span class="tt">i16</span>, <span class="tt">i32</span>, or <span class="tt">i64</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam is_gpr (s: Nat): Bool = core.bit2.or 0 (core.bit2.or 0 (is (s, i8), is (s, i16)), core.bit2.or 0 (is (s, i32), is (s, i64)));</div>
 <div class="line">anx lam gpr (s: Nat): Nat = refly.check (is_gpr s, s, &quot;x86: operand size must be i8, i16, i32, or i64&quot;);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md735"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md736"></a>
 gpr16</h2>
 <p><span class="tt">i16</span>, <span class="tt">i32</span>, or <span class="tt">i64</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam gpr16 (s: Nat): Nat =</div>
 <div class="line">    let ok = core.bit2.or 0 (is (s, i16), core.bit2.or 0 (is (s, i32), is (s, i64)));</div>
 <div class="line">    refly.check (ok, s, &quot;x86: operand size must be i16, i32, or i64&quot;);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md736"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md737"></a>
 logic</h2>
 <p><span class="tt">Bool</span> or a gpr size.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">anx lam logic (s: Nat): Nat =</div>
 <div class="line">    let ok = core.bit2.or 0 (is (s, 2), core.bit2.or 0 (core.bit2.or 0 (is (s, i8), is (s, i16)), core.bit2.or 0 (is (s, i32), is (s, i64))));</div>
 <div class="line">    refly.check (ok, s, &quot;x86: operand size must be Bool, i8, i16, i32, or i64&quot;);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md737"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md738"></a>
 Instruction Forms</h1>
 <p>The plugin pretends that x86 uses three-address code and copes with x86's two-address code later on. However, some artifacts shine through: for two-address instructions the tied value operand comes first; the tie is only a register-assignment constraint (<span class="tt">add (a, b)</span> computes <span class="tt">a + b</span>), and <span class="tt">x86.emit</span> reverses the value operands for its AT&amp;T output.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md738"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md739"></a>
 rm</h2>
 <p><span class="tt">op r, addr</span>: <span class="tt">rm f (m, a, addr)</span> is <span class="tt">f (a, b)</span> with <span class="tt">b</span> loaded from <span class="tt">addr</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm rm: {T C: *, i: Bool} → («2; T» → C) → [mem.M 0, T, Addr i] → [mem.M 0, C];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md739"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md740"></a>
 rm1</h2>
 <p><span class="tt">op r, addr</span> of a unary operation: <span class="tt">rm1 f (m, addr)</span> is <span class="tt">f b</span> with <span class="tt">b</span> loaded from <span class="tt">addr</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm rm1: {T C: *, i: Bool} → (T → C) → [mem.M 0, Addr i] → [mem.M 0, C];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md740"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md741"></a>
 mr</h2>
 <p><span class="tt">op addr, r</span>: <span class="tt">mr f (m, addr, b)</span> stores <span class="tt">f (a, b)</span> to <span class="tt">addr</span> with <span class="tt">a</span> loaded from <span class="tt">addr</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mr: {s: Nat, C: *, i: Bool} → («2; Idx s» → C) → [mem.M 0, Addr i, Idx s] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md741"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md742"></a>
 Registers</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md742"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md743"></a>
 reg</h2>
 <p>The general-purpose registers in hardware encoding order, as the register <span class="tt">r</span> of <span class="tt">mach.in r v</span>; the operand size selects the subregister. A register's subtag is its hardware encoding, so they have to stay in this order.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod reg</div>
@@ -270,7 +270,7 @@ reg</h2>
 <div class="line">    anx let r14 = 14I4;</div>
 <div class="line">    anx let r15 = 15I4;</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md743"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md744"></a>
 xmm</h2>
 <p>The floating-point registers in hardware encoding order, as the register <span class="tt">r</span> of <span class="tt">mach.in r v</span> for a <span class="tt">math.F pe</span> value <span class="tt">v</span>. A register's subtag is its hardware encoding, so they have to stay in this order.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">pub mod xmm</div>
@@ -291,49 +291,49 @@ xmm</h2>
 <div class="line">    anx let xmm14 = 14I4;</div>
 <div class="line">    anx let xmm15 = 15I4;</div>
 <div class="line">end</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md744"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md745"></a>
 Instructions</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md745"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md746"></a>
 lea</h2>
 <p><span class="tt">lea r, addr</span> materializes an address as a value. The address <span class="tt">addr (0, b)</span> is <span class="tt">b</span>, and <span class="tt">addr (d, 0)</span> the literal <span class="tt">d</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm lea: {i: Bool} → Addr i → I64, normalize_lea;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md746"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md747"></a>
 mov</h2>
 <p><span class="tt">mov r, imm</span> materializes a constant.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm mov: {s: Nat} → Idx s → Idx (logic s);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md747"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md748"></a>
 load</h2>
 <p><span class="tt">mov r, addr</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm load: [s: Nat] → {i: Bool} → [mem.M 0, Addr i] → [mem.M 0, Idx (gpr s)];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md748"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md749"></a>
 store</h2>
 <p><span class="tt">mov addr, r</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm store: {s: Nat, i: Bool} → [mem.M 0, Addr i, Idx s] → mem.M 0;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md749"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md750"></a>
 Arithmetic</h2>
 <p>Two-address arithmetic <span class="tt">op r, r/imm</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (add, sub): {s: Nat} → «2; Idx s» → Idx (gpr s);</div>
 <div class="line">axm (and, or, xor): {s: Nat} → «2; Idx s» → Idx (logic s);</div>
 <div class="line">axm imul: {s: Nat} → «2; Idx s» → Idx (gpr16 s);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md750"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md751"></a>
 Division</h2>
 <p><span class="tt">div</span>/<span class="tt">idiv</span> yield the quotient (<span class="tt">rax</span>) and the remainder (<span class="tt">rdx</span>).</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (div, idiv): {s: Nat} → «2; Idx s» → «2; Idx (gpr16 s)»;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md751"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md752"></a>
 Shifts</h2>
 <p>Shifts by <span class="tt">cl</span> or an immediate.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (shl, shr, sar): {s: Nat} → «2; Idx s» → Idx (gpr s);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md752"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md753"></a>
 Conversions</h2>
 <p><span class="tt">movzx</span>, <span class="tt">movsx</span>, and truncation to the low bits of the register; they fold a literal.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm movzx: {s: Nat} → [d: Nat] → Idx s → Idx d, normalize_movzx;</div>
 <div class="line">axm movsx: {s: Nat} → [d: Nat] → Idx s → Idx d, normalize_movsx;</div>
 <div class="line">axm trunc: {s: Nat} → [d: Nat] → Idx s → Idx d, normalize_trunc;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md753"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md754"></a>
 Comparisons</h2>
 <p><span class="tt">cmp r, r/imm</span> and <span class="tt">test r, r/imm</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (cmp, test): {s: Nat} → «2; Idx s» → mach.Flags;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md754"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md755"></a>
 Condition Codes</h2>
 <p>The condition codes in hardware encoding order:</p>
 <table class="markdownTable">
@@ -372,39 +372,39 @@ Condition Codes</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">g</span>  </td><td class="markdownTableBodyNone">15  </td></tr>
 </table>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md755"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md756"></a>
 cc</h3>
 <p>Tests a condition code on the flags: <span class="tt">jcc</span> as a branch condition, <span class="tt">setcc</span> otherwise.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cc.(o, no, b, ae, e, ne, be, a, s, ns, p, np, l, ge, le, g): mach.Flags → Bool;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md756"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h3 class="doxsection"><a class="anchor" id="autotoc_md757"></a>
 cmovcc</h3>
 <p><span class="tt">cmovcc.l (f, x, y)</span> yields <span class="tt">y</span> if <span class="tt">l</span> holds on <span class="tt">f</span>, else <span class="tt">x</span>, like <span class="tt">(x, y)#cond</span>.</p>
 <p><span class="tt">cmovcc.ne (test (cc.l f, cc.l f), x, y)</span> normalizes to <span class="tt">cmovcc.l (f, x, y)</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm cmovcc.(o, no, b, ae, e, ne, be, a, s, ns, p, np, l, ge, le, g): {s: Nat} → [mach.Flags, Idx s, Idx s] → Idx (gpr16 s), normalize_cmovcc;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md757"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md758"></a>
 Floating-Point Instructions</h1>
 <p>Floating-point values live in the XMM registers; the type <span class="tt">math.F pe</span> is one value, so its format depends on <span class="tt">pe</span>. An operand is never an immediate: a literal is materialized by <span class="tt">fmov</span> first.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md758"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md759"></a>
 fmov</h2>
 <p><span class="tt">mov r, imm</span> materializes a floating-point constant from the constant pool.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fmov: {pe: «2; Nat»} → math.F pe → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md759"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md760"></a>
 fload</h2>
 <p><span class="tt">movss</span>/<span class="tt">movsd r, addr</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fload: [pe: «2; Nat»] → {i: Bool} → [mem.M 0, Addr i] → [mem.M 0, math.F (mach.fpe pe)];</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md760"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md761"></a>
 fstore</h2>
 <p><span class="tt">movss</span>/<span class="tt">movsd addr, r</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fstore: {pe: «2; Nat», i: Bool} → [mem.M 0, Addr i, math.F pe] → mem.M (mach.fok pe 0);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md761"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md762"></a>
 Floating-Point Arithmetic</h2>
 <p>Two-address arithmetic <span class="tt">op r, r</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (fadd, fsub, fmul, fdiv): {pe: «2; Nat»} → «2; math.F pe» → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md762"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md763"></a>
 Floating-Point Unary</h2>
 <p><span class="tt">sqrtss</span>/<span class="tt">sqrtsd</span> and <span class="tt">andps</span>/<span class="tt">andpd</span> with a mask clearing the sign bit.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm (fsqrt, fabs): {pe: «2; Nat»} → math.F pe → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md763"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md764"></a>
 fcmp</h2>
 <p>Floating-point comparison; the predicates are those of <span class="tt">math.cmp</span> in its order:</p>
 <table class="markdownTable">
@@ -444,11 +444,11 @@ fcmp</h2>
 <td class="markdownTableBodyNone"><span class="tt">t</span>  </td><td class="markdownTableBodyNone">always true  </td></tr>
 </table>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fcmp.(f, e, l, le, g, ge, ne, o, u, ue, ul, ule, ug, uge, une, t): {pe: «2; Nat»} → «2; math.F pe» → Idx (mach.fok pe 2);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md764"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md765"></a>
 fsel</h2>
 <p><span class="tt">fsel (c, x, y)</span> yields <span class="tt">y</span> if <span class="tt">c</span> holds, else <span class="tt">x</span>, like <span class="tt">(x, y)#c</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm fsel: {pe: «2; Nat»} → [Bool, math.F pe, math.F pe] → math.F (mach.fpe pe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md765"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md766"></a>
 Floating-Point Conversions</h2>
 <p>Both formats and sizes are explicit, since a folded load (<span class="tt">x86.rm1</span>) leaves no operand to infer them from. The instances of <span class="tt">x86_isel</span> name the sizes; only <span class="tt">i32</span> and <span class="tt">i64</span> are supported.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm i2f: [s: Nat] → [pe: «2; Nat»] → Idx s → math.F (mach.fpe pe);</div>
@@ -456,13 +456,13 @@ Floating-Point Conversions</h2>
 <div class="line">axm f2i: [pe: «2; Nat»] → [s: Nat] → math.F pe → Idx (mach.fok pe s);</div>
 <div class="line">axm f2u: [pe: «2; Nat»] → [s: Nat] → math.F pe → Idx (mach.fok pe s);</div>
 <div class="line">axm f2f: [spe: «2; Nat»] → [dpe: «2; Nat»] → math.F spe → math.F (mach.fpe dpe);</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md766"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h1 class="doxsection"><a class="anchor" id="autotoc_md767"></a>
 Phases</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md767"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md768"></a>
 isel</h2>
 <p>Instruction selection. <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> x86:isel-dot=&lt;file&gt;</span> writes the PBQP graph in Graphviz DOT format, with the chosen options highlighted.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm isel: compile.Phase;</div>
-</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md768"></a>
+</div><!-- fragment --></div><div class="mim-code"></div><h2 class="doxsection"><a class="anchor" id="autotoc_md769"></a>
 emit</h2>
 <p>Emits GNU assembler code (AT&amp;T syntax) to <span class="tt">&lt;world&gt;.s</span>.</p>
 <div class="mim-code"></div><div class="mim-code"><div class="fragment"><div class="line">axm emit: compile.Phase;</div>

@@ -209,6 +209,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites the <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1core.html" title="The core Plugin">core</a></span>, <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html" title="The mach Plugin">mach</a></span>, and <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1math.html" title="The math Plugin">math</a></span> operations of a world that <span class="tt"><a class="el" href="#a54333709cee17b23f259530eedcceb34">mach.legalize</a></span> lowered into the instructions of a backend by the rules of its generated <a class="el" href="namespacemim_1_1plug_1_1mach_1_1rules.html#structmim_1_1plug_1_1mach_1_1rules_1_1Table" title="The generated tables of one backend, as its isel_rules.h defines them.">rules::Table</a>.  <a href="classmim_1_1plug_1_1mach_1_1ISel.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Legalize" id="r_Legalize"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Legalize.html">Legalize</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns every <span class="tt"><a class="el" href="classmim_1_1Nat.html">Nat</a></span> value and every pointer into an <span class="tt">I64</span>, so that instruction selection only sees register types.  <a href="classmim_1_1plug_1_1mach_1_1Legalize.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Libm" id="r_Libm"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Libm.html">Libm</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns each <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1math.html" title="The math Plugin">math</a></span> operation without a native instruction into a call of its libm function, e.g.  <a href="classmim_1_1plug_1_1mach_1_1Libm.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Live" id="r_Live"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Live.html">Live</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the <a class="el" href="classmim_1_1plug_1_1mach_1_1Liveness.html" title="Liveness of the values of one scheduled function, as a side table.">Liveness</a> of every function to <span class="tt">-<a class="el" href="rule__table_8h.html#a0689b092184606c790794ca2140d08e9">X</a> &lt;backend&gt;:<a class="el" href="#a3f5ae91df9778479c0519b5917cefc43">live</a>=&lt;file&gt;</span> or stdout; a debugging and testing aid.  <a href="classmim_1_1plug_1_1mach_1_1Live.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Liveness" id="r_Liveness"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1plug_1_1mach_1_1Liveness.html">Liveness</a></td></tr>
@@ -266,17 +268,19 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#a4e2fd2208f307caa1ebc8fdbaac310a6a94a69b2994dec7f49a12bb036c3d2ac8">unary</a> = 0x3821090000000b01
 <br />
  }</td></tr>
-<tr id="enum-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.legalize&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-11" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.libm&lt;/tt&gt;</div></td></tr>
+<tr class="memitem:a4e46767afd19e235e78fde0d4023f9ce" id="r_a4e46767afd19e235e78fde0d4023f9ce"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a4e46767afd19e235e78fde0d4023f9ce">libm</a> : flags_t </td></tr>
+<tr id="enum-members-12" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.legalize&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:a54333709cee17b23f259530eedcceb34" id="r_a54333709cee17b23f259530eedcceb34"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a54333709cee17b23f259530eedcceb34">legalize</a> : flags_t </td></tr>
-<tr id="enum-members-12" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.schedule&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-13" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.schedule&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:a697bf45b3d90d453ae495d037094adb1" id="r_a697bf45b3d90d453ae495d037094adb1"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a697bf45b3d90d453ae495d037094adb1">schedule</a> : flags_t </td></tr>
-<tr id="enum-members-13" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.spilling&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-14" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.spilling&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:ad5163b98367b72b1ed5ab4426d943c59" id="r_ad5163b98367b72b1ed5ab4426d943c59"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#ad5163b98367b72b1ed5ab4426d943c59">spilling</a> : flags_t </td></tr>
-<tr id="enum-members-14" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.constrain&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-15" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.constrain&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:a9c2a8dc140250adf77c50ef6e651d913" id="r_a9c2a8dc140250adf77c50ef6e651d913"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a9c2a8dc140250adf77c50ef6e651d913">constrain</a> : flags_t </td></tr>
-<tr id="enum-members-15" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.color&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-16" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.color&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:adbd4b0281f10770d8170d27b0973550b" id="r_adbd4b0281f10770d8170d27b0973550b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#adbd4b0281f10770d8170d27b0973550b">color</a> : flags_t </td></tr>
-<tr id="enum-members-16" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.live&lt;/tt&gt;</div></td></tr>
+<tr id="enum-members-17" class="groupHeader"><td colspan="2"><div class="groupHeader">&lt;tt&gt;mach.live&lt;/tt&gt;</div></td></tr>
 <tr class="memitem:a3f5ae91df9778479c0519b5917cefc43" id="r_a3f5ae91df9778479c0519b5917cefc43"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a3f5ae91df9778479c0519b5917cefc43">live</a> : flags_t </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
@@ -569,7 +573,7 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00136">136</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00143">143</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
 </div>
@@ -593,7 +597,7 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00129">129</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00136">136</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
 </div>
@@ -741,6 +745,30 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00115">115</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+
+</div>
+</div>
+<a id="a4e46767afd19e235e78fde0d4023f9ce" name="a4e46767afd19e235e78fde0d4023f9ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e46767afd19e235e78fde0d4023f9ce">&#9670;&#160;</a></span>libm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4e46767afd19e235e78fde0d4023f9ce">mim::plug::mach::libm</a> : <a class="el" href="namespacemim.html#a2aaf0a830058bfdf4884b0addad6a93f">flags_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00108">108</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
@@ -789,7 +817,7 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00143">143</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00150">150</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
 </div>
@@ -911,7 +939,7 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00115">115</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00122">122</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
 </div>
@@ -1007,7 +1035,7 @@ reg = {}</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00122">122</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mach_2autogen_8h_source.html#l00129">129</a> of file <a class="el" href="mach_2autogen_8h_source.html">autogen.h</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1375,7 @@ template&lt;class A, class P&gt; </div>
 
 <p class="reference">References <a class="el" href="plugin_8h_source.html#l00278">mim::Annex::base()</a>, <a class="el" href="world_8h_source.html#l00107">mim::World::driver()</a>, <a class="el" href="plug_2mach_2phase_8h_source.html#l00012">hook()</a>, and <a class="el" href="plug_2mach_2target_8h_source.html#l00047">mim::plug::mach::Target::of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plug_2mach_2phase_8h_source.html#l00012">hook()</a>, and <a class="el" href="mach_8cpp_source.html#l00016">reg_phases()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plug_2mach_2phase_8h_source.html#l00012">hook()</a>, and <a class="el" href="mach_8cpp_source.html#l00017">reg_phases()</a>.</p>
 
 </div>
 </div>
@@ -1460,7 +1488,7 @@ template&lt;class Keep, class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="liveness_8h_source.html#l00086">86</a> of file <a class="el" href="liveness_8h_source.html">liveness.h</a>.</p>
 
-<p class="reference">References <a class="el" href="plug_2mach_2target_8h_source.html#l00097">mim::plug::mach::Target::cls()</a>, <a class="el" href="plug_2mach_2target_8h_source.html#l00184">mim::plug::mach::Target::is_mem()</a>, <a class="el" href="liveness_8h_source.html#l00086">is_value()</a>, and <a class="el" href="def_8h_source.html#l01115">mim::Def::type()</a>.</p>
+<p class="reference">References <a class="el" href="plug_2mach_2target_8h_source.html#l00097">mim::plug::mach::Target::cls()</a>, <a class="el" href="plug_2mach_2target_8h_source.html#l00184">mim::plug::mach::Target::is_mem()</a>, <a class="el" href="liveness_8h_source.html#l00086">is_value()</a>, and <a class="el" href="def_8h_source.html#l01114">mim::Def::type()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="liveness_8h_source.html#l00086">is_value()</a>.</p>
 
@@ -1601,7 +1629,7 @@ template&lt;class Keep, class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">7</a> of file <a class="el" href="mach_2normalizers_8cpp_source.html">normalizers.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00973">mim::Lit::isa()</a>, and <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">normalize_lit()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00972">mim::Lit::isa()</a>, and <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">normalize_lit()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="mach_2normalizers_8cpp_source.html#l00007">normalize_lit()</a>.</p>
 
@@ -1624,7 +1652,7 @@ template&lt;class Keep, class F&gt; </div>
 
 <p class="reference">References <a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00032">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mach_8cpp_source.html#l00034">MIM_PLUGIN_ENTRY()</a>, and <a class="el" href="#a75af17fd16e274454d480e1f09f15f60">register_normalizers()</a>.</p>
 
 </div>
 </div>
@@ -1676,7 +1704,7 @@ template&lt;class Keep, class F&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="liveness_8cpp_source.html#l00186">186</a> of file <a class="el" href="liveness_8cpp_source.html">liveness.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="liveness_8cpp_source.html#l00186">takes_values()</a>, and <a class="el" href="def_8h_source.html#l00489">mim::Def::vars()</a>.</p>
+<p class="reference">References <a class="el" href="liveness_8cpp_source.html#l00186">takes_values()</a>, and <a class="el" href="def_8h_source.html#l00488">mim::Def::vars()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="liveness_8cpp_source.html#l00186">takes_values()</a>.</p>
 

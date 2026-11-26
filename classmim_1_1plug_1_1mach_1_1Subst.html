@@ -198,6 +198,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5fdd3ce8c4bd5220007469a503338854 pub_methods_classmim_1_1Rewriter" id="r_a5fdd3ce8c4bd5220007469a503338854"><td class="memItemLeft"><a class="el" href="classmim_1_1World.html">World</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a5fdd3ce8c4bd5220007469a503338854">world</a> ()</td></tr>
 <tr class="memitem:ae87c2d59b0f724757b7e22f7135f7799 pub_methods_classmim_1_1Rewriter" id="r_ae87c2d59b0f724757b7e22f7135f7799"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">push</a> (<a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> old_vars={}, <a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> new_vars={})</td></tr>
 <tr class="memitem:a28c9f380cebbda61ac84a9d8a2fad257 pub_methods_classmim_1_1Rewriter" id="r_a28c9f380cebbda61ac84a9d8a2fad257"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257">pop</a> ()</td></tr>
+<tr class="memitem:af7ac84080929301be183e6d9aad800ce pub_methods_classmim_1_1Rewriter" id="r_af7ac84080929301be183e6d9aad800ce"><td class="memItemLeft"><a class="el" href="classmim_1_1Rewriter_1_1Pop.html">Pop</a>&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#af7ac84080929301be183e6d9aad800ce">scoped</a> (<a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> old_vars={}, <a class="el" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a> new_vars={})</td></tr>
+<tr class="memdesc:af7ac84080929301be183e6d9aad800ce pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">push()</a>es a scope that lives as long as the returned <a class="el" href="classmim_1_1Rewriter_1_1Pop.html" title="pop()s at the end of its C++ scope.">Pop</a>.  <br /></td></tr>
 <tr class="memitem:a28a8fb944e1cc2c8338550fc5115cdc9 pub_methods_classmim_1_1Rewriter" id="r_a28a8fb944e1cc2c8338550fc5115cdc9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a28a8fb944e1cc2c8338550fc5115cdc9">bind_old</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *var)</td></tr>
 <tr class="memdesc:a28a8fb944e1cc2c8338550fc5115cdc9 pub_methods_classmim_1_1Rewriter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the old <code class="param">var</code> - if any - to the innermost scope.  <br /></td></tr>
 <tr class="memitem:a98be1bc048c16e53e2ca4dcd5e8121b2 pub_methods_classmim_1_1Rewriter" id="r_a98be1bc048c16e53e2ca4dcd5e8121b2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="classmim_1_1Rewriter.html#a98be1bc048c16e53e2ca4dcd5e8121b2">bind_new</a> (const <a class="el" href="classmim_1_1Var.html">Var</a> *var)</td></tr>
@@ -275,8 +277,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Rewrites a value of a block under reconstruction: memory becomes <code class="param">m</code>; <code class="param">map</code> and <code class="param">lams</code> replace values and blocks. </p>
+<p><span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html#ad5163b98367b72b1ed5ab4426d943c59">mach.spilling</a></span> and <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mach.html#a9c2a8dc140250adf77c50ef6e651d913">mach.constrain</a></span> rebuild a block in place, which neither <a class="el" href="classmim_1_1Rewriter.html" title="Recurseivly rebuilds part of a program into the provided World w.r.t. Rewriter::map.">Rewriter</a> nor <a class="el" href="classmim_1_1VarRewriter.html" title="Extends Rewriter for variable substitution.">VarRewriter</a> can do:</p><ul>
+<li>The keys are no <a class="el" href="classmim_1_1Var.html" title="A variable introduced by a binder (mutable).">Var</a>s: <code class="param">map</code> holds the current version of each value, instructions and projections alike. After reloads, splits, and SSA reconstruction, a value has several definitions.</li>
+<li>Every <span class="tt"><a class="el" href="namespacemim_1_1plug_1_1mem.html#ae1c38e0bc69501922f6d575df5e5af24">mem.M</a></span> becomes <code class="param">m</code>, the block's current chain end.</li>
+<li>It never builds an instruction itself, since the chain places them one by one; reaching an unmapped one bails. Closed <a class="el" href="classmim_1_1Def.html" title="Base class for all Defs.">Def</a>s and mutables pass through as they are.</li>
+<li>The substitution changes after every instruction, as <code class="param">map</code> and <code class="param">m</code> move on. A memo shared across instructions would be wrong, so each instruction gets a <a class="el" href="classmim_1_1plug_1_1mach_1_1Subst.html" title="Rewrites a value of a block under reconstruction: memory becomes m; map and lams replace values and b...">Subst</a> of its own. </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00011">11</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00019">19</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9863248185886922a36086d449337875" name="a9863248185886922a36086d449337875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9863248185886922a36086d449337875">&#9670;&#160;</a></span>Subst()</h2>
@@ -320,7 +328,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00013">13</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00021">21</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
 
 <p class="reference">References <a class="el" href="rewrite_8cpp_source.html#l00029">mim::Rewriter::map()</a>, <a class="el" href="rewrite_8cpp_source.html#l00016">mim::Rewriter::Rewriter()</a>, and <a class="el" href="rewrite_8h_source.html#l00033">mim::Rewriter::world()</a>.</p>
 
@@ -356,9 +364,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="subst_8cpp_source.html#l00005">5</a> of file <a class="el" href="subst_8cpp_source.html">subst.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="def_8h_source.html#l00330">mim::Def::blame()</a>, <a class="el" href="def_8cpp_source.html#l00358">mim::Def::is_closed()</a>, <a class="el" href="def_8h_source.html#l00585">mim::Def::isa_mut()</a>, and <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>.</p>
+<p class="reference">References <a class="el" href="def_8h_source.html#l00329">mim::Def::blame()</a>, <a class="el" href="def_8cpp_source.html#l00358">mim::Def::is_closed()</a>, <a class="el" href="def_8h_source.html#l00584">mim::Def::isa_mut()</a>, <a class="el" href="rewrite_8cpp_source.html#l00062">mim::Rewriter::rewrite()</a>, <a class="el" href="world_8cpp_source.html#l00546">mim::World::tuple()</a>, and <a class="el" href="rewrite_8h_source.html#l00033">mim::Rewriter::world()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="subst_8h_source.html#l00023">rewrite_jump()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="subst_8h_source.html#l00031">rewrite_jump()</a>.</p>
 
 </div>
 </div>
@@ -387,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Rewrites <code class="param">term</code> per argument, so an instruction passed as the whole argument gets the new memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00023">23</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="subst_8h_source.html#l00031">31</a> of file <a class="el" href="subst_8h_source.html">subst.h</a>.</p>
 
 <p class="reference">References <a class="el" href="world_8cpp_source.html#l00416">mim::World::app()</a>, <a class="el" href="lam_8h_source.html#l00251">mim::App::arg()</a>, <a class="el" href="lam_8h_source.html#l00237">mim::App::callee()</a>, <a class="el" href="lam_8h_source.html#l00252">mim::App::num_args()</a>, <a class="el" href="subst_8cpp_source.html#l00005">rewrite()</a>, and <a class="el" href="rewrite_8h_source.html#l00033">mim::Rewriter::world()</a>.</p>
 

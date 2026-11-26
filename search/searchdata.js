@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "acdfgilmnopsw",
   10: "cgimpx",
   11: "06abcdefghiklmnopqrstuvwxyz—⊥⚖✨🌊🐉💡💬📖📦🔥🚀🧩🪾",
-  12: "ademp"
+  12: "aemp"
 };
 
 var indexSectionNames =

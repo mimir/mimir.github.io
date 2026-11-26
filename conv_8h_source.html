@@ -158,107 +158,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conv_8h_source
 <div class="contents">
 <a href="conv_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="def_8h.html">mim/def.h</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="phase_8h.html">mim/phase.h</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1cps.html">mim::plug::cps</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// Full CPS conversion in one recursive rewrite.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">///</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// Each term-level, direct-style function</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// f: [a: A] → B</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// becomes</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// f_cps: Cn [a: A, Cn B]</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// and every use of `f` is replaced by `cps.cps2ds_dep (A, λ a: B) f_cps` to remain type-correct.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">///</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// Call sites are lifted on the fly:</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// When the recursive rewrite encounters `App (cps.cps2ds_dep (T, U) k) arg` inside a continuation,</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// it allocates a fresh continuation `cont` receiving the result, records the pending call `k (arg, cont)`,</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// and uses `cont`&#39;s variable as the value of the App.</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// Once the enclosing Lam is done, the pending calls are wired up in encounter order - which respects</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/// data dependencies, because operands are always rewritten before their users:</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/// lam   = k₀ (arg₀, cont₀)</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// cont₀ = k₁ (arg₁, cont₁)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/// ...</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/// contₙ = rewritten body of lam</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// ```</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// A lifted call simply lives in the Lam whose body rewriting first reaches it.</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// Rewrites whose result mentions such a continuation variable are scoped to that Lam (see Conv::map) and</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/// re-derived - and thus re-lifted - in sibling scopes.</span></div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1cps_1_1Conv.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="classmim_1_1plug_1_1cps_1_1Conv.html">Conv</a> : <span class="keyword">public</span> <a class="code hl_function" href="classmim_1_1plug_1_1cps_1_1Conv.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">using </span><a class="code hl_function" href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">RWPhase::RWPhase</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:<span class="comment"></span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    /// A lifted call `callee (arg, cont)` waiting to be wired into the body of the enclosing Lam.</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">struct </span>Pending {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* callee; <span class="comment">///&lt; CPS callee `k: Cn [T, Cn U]`.</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg;    <span class="comment">///&lt; Rewritten argument - still without the continuation.</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>* cont;         <span class="comment">///&lt; Fresh continuation receiving the result of the call.</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    };</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">    /// RAII guard for rewriting the body of one mutable Lam:</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">    /// fences pending_, pushes a map scope for contaminated rewrites, and tracks whether lifting is legal here.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">class </span>Scope {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Scope(<a class="code hl_class" href="classmim_1_1plug_1_1cps_1_1Conv.html">Conv</a>&amp; <a class="code hl_enumeration" href="namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec">conv</a>, <span class="keywordtype">bool</span> liftable)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            : conv_(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec">conv</a>)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            , base_(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec">conv</a>.pending_.size())</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            , old_liftable_(<a class="code hl_enumeration" href="namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec">conv</a>.liftable_) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            conv_.<a class="code hl_function" href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">push</a>(<a class="code hl_typedef" href="namespacemim.html#aaa812145285556e31140df683b2367f7">Vars</a>());</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            conv_.liftable_ = liftable;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        ~Scope() {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            assert(conv_.pending_.size() == base_ &amp;&amp; <span class="stringliteral">&quot;pending calls must have been wire()d&quot;</span>);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            conv_.<a class="code hl_function" href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257">pop</a>();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            conv_.liftable_ = old_liftable_;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">size_t</span> base()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> base_; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_class" href="classmim_1_1plug_1_1cps_1_1Conv.html">Conv</a>&amp; conv_;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">size_t</span> base_;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">bool</span> old_liftable_;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1cps_1_1Conv.html#a1af1c6c1055719c757fee55165d1c0bf">rewrite_mut_Lam</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*) <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1cps_1_1Conv.html#a8d365d8edadf4c80074061e782565cc9">rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*) <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"></span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">    /// Converts direct-style `f: [a: A] → B` to `f_cps: Cn [a: A, Cn B]` and returns the `cps2ds_dep`-wrapped f_cps.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* convert(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*);<span class="comment"></span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    /// Turns the call `k (arg, cont)` into a Pending entry and returns `cont`&#39;s variable as call result.</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* lift(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* k, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* arg, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>* old_app);<span class="comment"></span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    /// Wires all Pending calls above @p base around @p body and returns the new body.</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* wire(<span class="keywordtype">size_t</span> base, <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* body);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    fe::Vector&lt;Pending&gt; pending_;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> liftable_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="ds2cps_8h.html">mim/phase/ds2cps.h</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemim_1_1plug_1_1cps.html">mim::plug::cps</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// Full CPS conversion in one recursive rewrite.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">///</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// Each term-level, direct-style function</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// ```</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// f: [a: A] → B</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/// ```</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// becomes</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// ```</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// f_cps: Cn [a: A, Cn B]</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// ```</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/// and every use of `f` is replaced by `cps.cps2ds_dep (A, λ a: B) f_cps` to remain type-correct.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// Each call `App (cps.cps2ds_dep (T, U) k) arg` inside a continuation is lifted (see DS2CPS).</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classmim_1_1plug_1_1cps_1_1Conv.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classmim_1_1plug_1_1cps_1_1Conv.html">Conv</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmim_1_1DS2CPS.html">DS2CPS</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">using </span>DS2CPS::DS2CPS;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1cps_1_1Conv.html#a1af1c6c1055719c757fee55165d1c0bf">rewrite_mut_Lam</a>(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* <a class="code hl_function" href="classmim_1_1plug_1_1cps_1_1Conv.html#a8d365d8edadf4c80074061e782565cc9">rewrite_imm_App</a>(<span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1App.html">App</a>*) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">    /// Converts direct-style `f: [a: A] → B` to `f_cps: Cn [a: A, Cn B]` and returns the `cps2ds_dep`-wrapped f_cps.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> <a class="code hl_class" href="classmim_1_1Def.html">Def</a>* convert(<a class="code hl_class" href="classmim_1_1Lam.html">Lam</a>*);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>} <span class="comment">// namespace mim::plug::cps</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <span class="comment">// namespace mim::plug::cps</span></div>
 <div class="ttc" id="aclassmim_1_1App_html"><div class="ttname"><a href="classmim_1_1App.html">mim::App</a></div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00215">lam.h:215</a></div></div>
-<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00286">def.h:286</a></div></div>
+<div class="ttc" id="aclassmim_1_1DS2CPS_html"><div class="ttname"><a href="classmim_1_1DS2CPS.html">mim::DS2CPS</a></div><div class="ttdoc">An RWPhase that lifts direct-style calls of CPS functions out of the bodies of continuations.</div><div class="ttdef"><b>Definition</b> <a href="ds2cps_8h_source.html#l00025">ds2cps.h:25</a></div></div>
+<div class="ttc" id="aclassmim_1_1Def_html"><div class="ttname"><a href="classmim_1_1Def.html">mim::Def</a></div><div class="ttdoc">Base class for all Defs.</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00285">def.h:285</a></div></div>
 <div class="ttc" id="aclassmim_1_1Lam_html"><div class="ttname"><a href="classmim_1_1Lam.html">mim::Lam</a></div><div class="ttdoc">A function.</div><div class="ttdef"><b>Definition</b> <a href="lam_8h_source.html#l00091">lam.h:91</a></div></div>
-<div class="ttc" id="aclassmim_1_1RWPhase_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1RWPhase.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::RWPhase::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00335">phase.h:335</a></div></div>
-<div class="ttc" id="aclassmim_1_1Rewriter_html_a28c9f380cebbda61ac84a9d8a2fad257"><div class="ttname"><a href="classmim_1_1Rewriter.html#a28c9f380cebbda61ac84a9d8a2fad257">mim::Rewriter::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00041">rewrite.h:41</a></div></div>
-<div class="ttc" id="aclassmim_1_1Rewriter_html_ae87c2d59b0f724757b7e22f7135f7799"><div class="ttname"><a href="classmim_1_1Rewriter.html#ae87c2d59b0f724757b7e22f7135f7799">mim::Rewriter::push</a></div><div class="ttdeci">void push(Vars old_vars={}, Vars new_vars={})</div><div class="ttdef"><b>Definition</b> <a href="rewrite_8h_source.html#l00040">rewrite.h:40</a></div></div>
-<div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html">mim::plug::cps::Conv</a></div><div class="ttdoc">Full CPS conversion in one recursive rewrite.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">conv.h:35</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html">mim::plug::cps::Conv</a></div><div class="ttdoc">Full CPS conversion in one recursive rewrite.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">conv.h:19</a></div></div>
 <div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html_a1af1c6c1055719c757fee55165d1c0bf"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html#a1af1c6c1055719c757fee55165d1c0bf">mim::plug::cps::Conv::rewrite_mut_Lam</a></div><div class="ttdeci">const Def * rewrite_mut_Lam(Lam *) final</div><div class="ttdef"><b>Definition</b> <a href="conv_8cpp_source.html#l00015">conv.cpp:15</a></div></div>
-<div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html_a8d365d8edadf4c80074061e782565cc9"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html#a8d365d8edadf4c80074061e782565cc9">mim::plug::cps::Conv::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="conv_8cpp_source.html#l00064">conv.cpp:64</a></div></div>
-<div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html_a8ef0c8aebc6eabaa582028156aaf081e"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html#a8ef0c8aebc6eabaa582028156aaf081e">mim::plug::cps::Conv::RWPhase</a></div><div class="ttdeci">RWPhase(World &amp;world, std::string name, Analysis *analysis=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="phase_8h_source.html#l00335">phase.h:335</a></div></div>
-<div class="ttc" id="adef_8h_html"><div class="ttname"><a href="def_8h.html">def.h</a></div></div>
+<div class="ttc" id="aclassmim_1_1plug_1_1cps_1_1Conv_html_a8d365d8edadf4c80074061e782565cc9"><div class="ttname"><a href="classmim_1_1plug_1_1cps_1_1Conv.html#a8d365d8edadf4c80074061e782565cc9">mim::plug::cps::Conv::rewrite_imm_App</a></div><div class="ttdeci">const Def * rewrite_imm_App(const App *) final</div><div class="ttdef"><b>Definition</b> <a href="conv_8cpp_source.html#l00055">conv.cpp:55</a></div></div>
+<div class="ttc" id="ads2cps_8h_html"><div class="ttname"><a href="ds2cps_8h.html">ds2cps.h</a></div></div>
 <div class="ttc" id="anamespacemim_1_1plug_1_1cps_html"><div class="ttname"><a href="namespacemim_1_1plug_1_1cps.html">mim::plug::cps</a></div><div class="ttdoc">The CPS Plugin</div><div class="ttdef"><b>Definition</b> <a href="cps_8h_source.html#l00008">cps.h:8</a></div></div>
-<div class="ttc" id="anamespacemim_1_1plug_1_1cps_html_a9993b063bc6bae603928b0c568b731ec"><div class="ttname"><a href="namespacemim_1_1plug_1_1cps.html#a9993b063bc6bae603928b0c568b731ec">mim::plug::cps::conv</a></div><div class="ttdeci">conv</div><div class="ttdef"><b>Definition</b> <a href="cps_2autogen_8h_source.html#l00028">autogen.h:28</a></div></div>
-<div class="ttc" id="anamespacemim_html_aaa812145285556e31140df683b2367f7"><div class="ttname"><a href="namespacemim.html#aaa812145285556e31140df683b2367f7">mim::Vars</a></div><div class="ttdeci">fe::Patricia&lt; const Var, DefKey &gt;::Set Vars</div><div class="ttdef"><b>Definition</b> <a href="def_8h_source.html#l00113">def.h:113</a></div></div>
-<div class="ttc" id="aphase_8h_html"><div class="ttname"><a href="phase_8h.html">phase.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

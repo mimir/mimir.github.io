@@ -1,5 +1,6 @@
 var classmim_1_1Rewriter =
 [
+    [ "Pop", "classmim_1_1Rewriter_1_1Pop.html", "classmim_1_1Rewriter_1_1Pop" ],
     [ "Scope", "classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope", [
       [ "new_vars", "classmim_1_1Rewriter.html#a71a715059ca25a70f064cbc63c22eb51", null ],
       [ "old2new", "classmim_1_1Rewriter.html#a43bde2c1888e4526192180e650e76785", null ],
@@ -71,6 +72,7 @@ var classmim_1_1Rewriter =
     [ "rewrite_mut_Variant", "classmim_1_1Rewriter.html#a774d62a669366e57a2eed64a3cd02c14", null ],
     [ "rewrite_stub", "classmim_1_1Rewriter.html#a82d16f0f2d9cc130004428a547920ffd", null ],
     [ "rewrite_stub", "classmim_1_1Rewriter.html#a53b074ec43d29eb4e104ee5f1e4fa1ef", null ],
+    [ "scoped", "classmim_1_1Rewriter.html#af7ac84080929301be183e6d9aad800ce", null ],
     [ "seal", "classmim_1_1Rewriter.html#ab6b6478915afad4df1563eabea005120", null ],
     [ "world", "classmim_1_1Rewriter.html#a5fdd3ce8c4bd5220007469a503338854", null ],
     [ "swap", "classmim_1_1Rewriter.html#a173bf3b3d9deeef3e89e07419b61934e", null ],

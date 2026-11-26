@@ -6,7 +6,7 @@ var searchData=
   ['sched_5ffield_3',['Sched_field',['../structmim_1_1plug_1_1btensor_1_1Sched__field.html',1,'mim::plug::btensor']]],
   ['schedule_4',['Schedule',['../classmim_1_1plug_1_1mach_1_1Schedule.html',1,'mim::plug::mach']]],
   ['scheduler_5',['Scheduler',['../classmim_1_1Scheduler.html',1,'mim']]],
-  ['scope_6',['Scope',['../classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope',1,'mim::Rewriter']]],
+  ['scope_6',['Scope',['../classmim_1_1DS2CPS_1_1Scope.html',1,'mim::DS2CPS::Scope'],['../classmim_1_1Rewriter.html#structmim_1_1Rewriter_1_1Scope',1,'mim::Rewriter::Scope']]],
   ['scopes_7',['Scopes',['../classmim_1_1ast_1_1Scopes.html',1,'mim::ast']]],
   ['select_8',['Select',['../classmim_1_1Select.html',1,'mim']]],
   ['seo_9',['SEO',['../classmim_1_1plug_1_1mem_1_1phase_1_1SEO.html',1,'mim::plug::mem::phase']]],
