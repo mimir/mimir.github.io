@@ -1,5 +1,10 @@
 var NAVTREEINDEX40 =
 {
+"structmim_1_1plug_1_1mach_1_1Reg.html":[4,0,1,2,11,17],
+"structmim_1_1plug_1_1mach_1_1Reg.html#a5c0e3b229e64a61a183d9460744dc066":[2,0,4,2,13,17,0],
+"structmim_1_1plug_1_1mach_1_1Reg.html#a5c0e3b229e64a61a183d9460744dc066":[4,0,1,2,11,17,0],
+"structmim_1_1plug_1_1mach_1_1Reg.html#ab25ecd25ba6b17dbe67cf33ba0a9bbab":[2,0,4,2,13,17,2],
+"structmim_1_1plug_1_1mach_1_1Reg.html#ab25ecd25ba6b17dbe67cf33ba0a9bbab":[4,0,1,2,11,17,2],
 "structmim_1_1plug_1_1mach_1_1Reg.html#af86ca6cd9fee20110c4d4b2b2e8573ae":[2,0,4,2,13,17,1],
 "structmim_1_1plug_1_1mach_1_1Reg.html#af86ca6cd9fee20110c4d4b2b2e8573ae":[4,0,1,2,11,17,1],
 "structmim_1_1plug_1_1mach_1_1rules_1_1Chains.html":[2,0,4,2,13,0,6],

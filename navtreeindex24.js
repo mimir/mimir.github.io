@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"dir_ff79ea9a0e93f1b322097d6642888840.html":[5,0,3,1,2,20],
+"dispatch__normalize_8cpp.html":[5,0,4,1,2,2],
+"dispatch__normalize_8cpp_source.html":[5,0,4,1,2,2],
+"dispatch__normalize_8h.html":[5,0,3,1,1,2],
 "dispatch__normalize_8h_source.html":[5,0,3,1,1,2],
 "dot_8h.html":[5,0,3,2,0],
 "dot_8h_source.html":[5,0,3,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "lower__for_8cpp.html":[5,0,4,1,3,0,0,0],
 "lower__for_8cpp_source.html":[5,0,4,1,3,0,0,0],
 "lower__for_8h.html":[5,0,3,1,2,0,0,0],
-"lower__for_8h_source.html":[5,0,3,1,2,0,0,0],
-"lower__index_8cpp.html":[5,0,4,1,3,0,0,1],
-"lower__index_8cpp_source.html":[5,0,4,1,3,0,0,1],
-"lower__index_8h.html":[5,0,3,1,2,0,0,1],
-"lower__index_8h_source.html":[5,0,3,1,2,0,0,1]
+"lower__for_8h_source.html":[5,0,3,1,2,0,0,0]
 };

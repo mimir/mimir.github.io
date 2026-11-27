@@ -4,7 +4,7 @@ var dir_4ad15e0004aa2fc2424d5bded02c9369 =
     [ "beta_red.cpp", "beta__red_8cpp.html", "beta__red_8cpp" ],
     [ "dispatch_normalize.cpp", "dispatch__normalize_8cpp.html", null ],
     [ "ds2cps.cpp", "ds2cps_8cpp.html", null ],
-    [ "eta_conv.cpp", "eta__conv_8cpp.html", null ],
+    [ "eta_conv.cpp", "eta__conv_8cpp.html", "eta__conv_8cpp" ],
     [ "lam_spec.cpp", "lam__spec_8cpp.html", null ],
     [ "nom_erasure.cpp", "nom__erasure_8cpp.html", null ],
     [ "optimize.cpp", "optimize_8cpp.html", "optimize_8cpp" ],

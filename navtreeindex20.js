@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"classmim_1_1plug_1_1mach_1_1Emitter.html#a0413772fa8f888c9807d970136f58465":[4,0,1,2,11,9,7],
+"classmim_1_1plug_1_1mach_1_1Emitter.html#a0572a5903c2f545721ea936d35c3564b":[2,0,4,2,13,9,21],
+"classmim_1_1plug_1_1mach_1_1Emitter.html#a0572a5903c2f545721ea936d35c3564b":[4,0,1,2,11,9,21],
+"classmim_1_1plug_1_1mach_1_1Emitter.html#a0706477513ae97326ff896d29438c750":[2,0,4,2,13,9,27],
 "classmim_1_1plug_1_1mach_1_1Emitter.html#a0706477513ae97326ff896d29438c750":[4,0,1,2,11,9,27],
 "classmim_1_1plug_1_1mach_1_1Emitter.html#a182fc65acbab7d796b2a0d996515ed7b":[2,0,4,2,13,9,36],
 "classmim_1_1plug_1_1mach_1_1Emitter.html#a182fc65acbab7d796b2a0d996515ed7b":[4,0,1,2,11,9,36],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "classmim_1_1plug_1_1mach_1_1Schedule.html#a7b7578dbcad45c289efca32ac764460f":[4,0,1,2,11,18,2],
 "classmim_1_1plug_1_1mach_1_1Schedule.html#ad0f7bae400ca45aa59002bc28dbebe0d":[2,0,4,2,13,18,0],
 "classmim_1_1plug_1_1mach_1_1Schedule.html#ad0f7bae400ca45aa59002bc28dbebe0d":[4,0,1,2,11,18,0],
-"classmim_1_1plug_1_1mach_1_1Spilling.html":[2,0,4,2,13,19],
-"classmim_1_1plug_1_1mach_1_1Spilling.html":[4,0,1,2,11,19],
-"classmim_1_1plug_1_1mach_1_1Spilling.html#a4c9799fea15a365411339eede7e79af5":[2,0,4,2,13,19,1],
-"classmim_1_1plug_1_1mach_1_1Spilling.html#a4c9799fea15a365411339eede7e79af5":[4,0,1,2,11,19,1],
-"classmim_1_1plug_1_1mach_1_1Spilling.html#a8448be9db0477152f0d41eec071f7030":[2,0,4,2,13,19,0]
+"classmim_1_1plug_1_1mach_1_1Spilling.html":[2,0,4,2,13,19]
 };

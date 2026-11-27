@@ -1,5 +1,9 @@
 var NAVTREEINDEX22 =
 {
+"classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#a338b4217843a5a9514433f2c70edeb5c":[2,0,4,2,22,0,2,1],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#a338b4217843a5a9514433f2c70edeb5c":[4,0,1,2,17,0,2,1],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#a8ef0c8aebc6eabaa582028156aaf081e":[2,0,4,2,22,0,2,2],
+"classmim_1_1plug_1_1tensor_1_1phase_1_1Lower.html#a8ef0c8aebc6eabaa582028156aaf081e":[4,0,1,2,17,0,2,2],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html":[2,0,4,2,22,0,3],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html":[4,0,1,2,17,0,3],
 "classmim_1_1plug_1_1tensor_1_1phase_1_1LowerMapReduce.html#a338b4217843a5a9514433f2c70edeb5c":[2,0,4,2,22,0,3,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX22 =
 "clos__conv__prep_8cpp.html":[5,0,4,1,3,6,0,3],
 "clos__conv__prep_8cpp_source.html":[5,0,4,1,3,6,0,3],
 "clos__conv__prep_8h.html":[5,0,3,1,2,6,0,3],
-"clos__conv__prep_8h_source.html":[5,0,3,1,2,6,0,3],
-"coding.html":[0,4],
-"color_8cpp.html":[5,0,4,1,3,13,0],
-"color_8cpp_source.html":[5,0,4,1,3,13,0],
-"compile.html":[1,5]
+"clos__conv__prep_8h_source.html":[5,0,3,1,2,6,0,3]
 };

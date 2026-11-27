@@ -1,5 +1,9 @@
 var NAVTREEINDEX23 =
 {
+"coding.html":[0,4],
+"color_8cpp.html":[5,0,4,1,3,13,0],
+"color_8cpp_source.html":[5,0,4,1,3,13,0],
+"compile.html":[1,5],
 "compile_2autogen_8h.html":[5,0,0,1,0,0,7,0],
 "compile_2autogen_8h.html#a7664b0fbc28b9dafd6c4ca3f00dad9a8":[5,0,0,1,0,0,7,0,0],
 "compile_2autogen_8h_source.html":[5,0,0,1,0,0,7,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX23 =
 "dir_f984b2ba368b09e30d6d58c581c51286.html":[5,0,3,1,2,15],
 "dir_fba9cd6857c2e91c3ff2cd5bcec14186.html":[5,0,4,1,3,25],
 "dir_fc4e987e9e88bcd95d211c0529787292.html":[5,0,0,1,0,0,10],
-"dir_ff1b7b5329a4b5bde2c45ec2ac3be82c.html":[5,0,3,1,3],
-"dir_ff79ea9a0e93f1b322097d6642888840.html":[5,0,3,1,2,20],
-"dispatch__normalize_8cpp.html":[5,0,4,1,2,2],
-"dispatch__normalize_8cpp_source.html":[5,0,4,1,2,2],
-"dispatch__normalize_8h.html":[5,0,3,1,1,2]
+"dir_ff1b7b5329a4b5bde2c45ec2ac3be82c.html":[5,0,3,1,3]
 };

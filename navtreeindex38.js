@@ -1,5 +1,10 @@
 var NAVTREEINDEX38 =
 {
+"single_8h_source.html":[5,0,3,1,18],
+"single__erasure_8cpp.html":[5,0,4,1,2,12],
+"single__erasure_8cpp_source.html":[5,0,4,1,2,12],
+"single__erasure_8h.html":[5,0,3,1,1,11],
+"single__erasure_8h_source.html":[5,0,3,1,1,11],
 "solver_8cpp.html":[5,0,4,2,3],
 "solver_8cpp.html#ab3d4fe2d0565e3b25fe3b86ce09d8ef1":[5,0,4,2,3,0],
 "solver_8cpp_source.html":[5,0,4,2,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX38 =
 "structmim_1_1ast_1_1AnnexInfo.html":[4,0,1,0,2],
 "structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8":[2,0,4,0,2,5],
 "structmim_1_1ast_1_1AnnexInfo.html#a45584d99d9d4b8724395dd875a2508f8":[4,0,1,0,2,5],
-"structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c":[2,0,4,0,2,13],
-"structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c":[4,0,1,0,2,13],
-"structmim_1_1ast_1_1AnnexInfo.html#a48446c60c76575b7b3e6e7bb5cc54162":[2,0,4,0,2,7],
-"structmim_1_1ast_1_1AnnexInfo.html#a48446c60c76575b7b3e6e7bb5cc54162":[4,0,1,0,2,7],
-"structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793":[2,0,4,0,2,8],
-"structmim_1_1ast_1_1AnnexInfo.html#a4da3f49e54045b50bc1bc35bf43f3793":[4,0,1,0,2,8]
+"structmim_1_1ast_1_1AnnexInfo.html#a45a305128bb709bfbf50dcb5a8e7943c":[2,0,4,0,2,13]
 };
